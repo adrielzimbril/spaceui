@@ -46,6 +46,7 @@
     "@usespaceui/sounds": "^0.1.2",
     "@usespaceui/squircle": "^0.1.1",
     "@usespaceui/squishmoji": "^0.1.0",
+    "@vercel/speed-insights": "^2.0.0",
     "ai": "^7.0.44",
     "class-variance-authority": "^0.7.1",
     "cmdk": "^1.1.1",
