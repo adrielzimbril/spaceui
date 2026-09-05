@@ -4,6 +4,7 @@ import { Inter, Geist_Mono } from 'next/font/google'
 import type { ReactNode } from 'react'
 import type { Metadata } from 'next'
 import Script from 'next/script'
+import { SpeedInsights } from '@vercel/speed-insights/next'
 import './globals.css'
 import { jsonLd } from '@/lib/json-ld'
 import { GlobalLayoutWrapper } from '@/components/layout/global-layout-wrapper'
@@ -136,6 +137,7 @@ export default async function Layout({ children }: { children: ReactNode }) {
             <GlobalLayoutWrapper initialLayoutMode={initialLayoutMode}>{children}</GlobalLayoutWrapper>
           </NuqsAdapter>
         </RootProvider>
+        <SpeedInsights />
       </body>
     </html>
   )
