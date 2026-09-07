@@ -165,5 +165,5 @@ export interface SpeechLanguageItem {
 export const speechLanguageItems: SpeechLanguageItem[] = speechLanguages.map(([id, label]) => ({
   id,
   label,
-  image: `/assets/flags/circle/${speechLanguageFlagCodes[id]}.svg`,
+  image: `https://cdn.spaceui.one/common/flags/circle/${speechLanguageFlagCodes[id]}.svg`,
 }))

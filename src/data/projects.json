@@ -1,0 +1,594 @@
+{
+  "projects": [
+    {
+      "number": 1,
+      "name": "cosmos-ai-landing",
+      "title": "Cosmos AI",
+      "headline": "Professional Generative Intelligence",
+      "description": "Cosmos AI is a conceptual cinematic AI image generation platform mockup.",
+      "url": "https://cosmos-ai-landing.adrielzimbril.com",
+      "repo": "adrielzimbril/cosmos-ai-landing",
+      "repo_url": "https://github.com/adrielzimbril/cosmos-ai-landing",
+      "isPro": false,
+      "preview": {
+        "image": {
+          "format": "png",
+          "resolution": "1536×1150",
+          "width": 1536,
+          "height": 1150,
+          "size": 1554496,
+          "size_human": "1.48 MB",
+          "url": "https://cdn.spaceui.one/atom/templates/screenshot-cosmos-ai-landing.png"
+        },
+        "video": {
+          "format": "mp4",
+          "size": 63743699,
+          "size_human": "60.79 MB",
+          "url": "https://cdn.spaceui.one/atom/templates/screenshot-cosmos-ai-landing.mp4"
+        }
+      },
+      "created_at": "2026-05-02T12:29:04.000Z",
+      "updated_at": "2026-09-06T04:33:41.114Z",
+      "timestamp": "02 May 2026 12:29:04"
+    },
+    {
+      "number": 2,
+      "name": "twelve-ai-landing",
+      "title": "Twelve AI",
+      "headline": "AI Image Generation for Production Visual Systems",
+      "description": "Twelve AI is a conceptual AI image generation workspace that turns campaign prompts into coherent brand-safe visual systems.",
+      "url": "https://twelve-ai-landing.adrielzimbril.com",
+      "repo": "adrielzimbril/twelve-ai-landing",
+      "repo_url": "https://github.com/adrielzimbril/twelve-ai-landing",
+      "isPro": false,
+      "preview": {
+        "image": {
+          "format": "png",
+          "resolution": "1596×1196",
+          "width": 1596,
+          "height": 1196,
+          "size": 1928767,
+          "size_human": "1.84 MB",
+          "url": "https://cdn.spaceui.one/atom/templates/screenshot-twelve-ai-landing.png"
+        },
+        "video": {
+          "format": "mp4",
+          "size": 28228230,
+          "size_human": "26.92 MB",
+          "url": "https://cdn.spaceui.one/atom/templates/screenshot-twelve-ai-landing.mp4"
+        }
+      },
+      "created_at": "2026-05-03T22:54:54.000Z",
+      "updated_at": "2026-09-06T04:33:41.129Z",
+      "timestamp": "03 May 2026 22:54:54"
+    },
+    {
+      "number": 3,
+      "name": "framey-landing",
+      "title": "Framey",
+      "headline": "AI Website Builder for Production Landing Pages",
+      "description": "Framey is a conceptual AI website builder that turns prompts into production-ready landing pages.",
+      "url": "https://framey-landing.adrielzimbril.com",
+      "repo": "adrielzimbril/framey-landing",
+      "repo_url": "https://github.com/adrielzimbril/framey-landing",
+      "isPro": false,
+      "preview": {
+        "image": {
+          "format": "png",
+          "resolution": "1680×1260",
+          "width": 1680,
+          "height": 1260,
+          "size": 434848,
+          "size_human": "424.7 KB",
+          "url": "https://cdn.spaceui.one/atom/templates/screenshot-framey-landing.png"
+        },
+        "video": {
+          "format": "mp4",
+          "size": 9178972,
+          "size_human": "8.75 MB",
+          "url": "https://cdn.spaceui.one/atom/templates/screenshot-framey-landing.mp4"
+        }
+      },
+      "created_at": "2026-05-03T22:55:54.000Z",
+      "updated_at": "2026-09-06T04:33:41.131Z",
+      "timestamp": "03 May 2026 22:55:54"
+    },
+    {
+      "number": 4,
+      "name": "tera-landing",
+      "title": "Tera",
+      "headline": "Premium Real Estate & Architectural Development",
+      "description": "Tera is a conceptual architecture studio that specializes in brutalist, climate-positive structures.",
+      "url": "https://tera-landing.adrielzimbril.com",
+      "repo": "adrielzimbril/tera-landing",
+      "repo_url": "https://github.com/adrielzimbril/tera-landing",
+      "isPro": false,
+      "preview": {
+        "image": {
+          "format": "png",
+          "resolution": "1864×1398",
+          "width": 1864,
+          "height": 1398,
+          "size": 3182584,
+          "size_human": "3.04 MB",
+          "url": "https://cdn.spaceui.one/atom/templates/screenshot-tera-landing.png"
+        },
+        "video": {
+          "format": "mp4",
+          "size": 30332061,
+          "size_human": "28.93 MB",
+          "url": "https://cdn.spaceui.one/atom/templates/screenshot-tera-landing.mp4"
+        }
+      },
+      "created_at": "2026-05-05T16:31:37.000Z",
+      "updated_at": "2026-09-06T04:33:41.132Z",
+      "timestamp": "05 May 2026 16:31:37"
+    },
+    {
+      "number": 5,
+      "name": "rival-landing",
+      "title": "Rival",
+      "headline": "The Future of Digital Banking",
+      "description": "Rival is a conceptual digital bank that simplifies global wealth management with high-yield savings and instant cross-border transfers.",
+      "url": "https://rival-landing.adrielzimbril.com",
+      "repo": "adrielzimbril/rival-landing",
+      "repo_url": "https://github.com/adrielzimbril/rival-landing",
+      "isPro": false,
+      "preview": {
+        "image": {
+          "format": "png",
+          "resolution": "1776×1066",
+          "width": 1776,
+          "height": 1066,
+          "size": 1260727,
+          "size_human": "1.20 MB",
+          "url": "https://cdn.spaceui.one/atom/templates/screenshot-rival-landing.png"
+        },
+        "video": {
+          "format": "mp4",
+          "size": 39785350,
+          "size_human": "37.94 MB",
+          "url": "https://cdn.spaceui.one/atom/templates/screenshot-rival-landing.mp4"
+        }
+      },
+      "created_at": "2026-05-06T05:16:01.000Z",
+      "updated_at": "2026-09-06T04:33:41.132Z",
+      "timestamp": "06 May 2026 05:16:01"
+    },
+    {
+      "number": 6,
+      "name": "staria-landing",
+      "title": "Staria",
+      "headline": "AI-Powered Social Media Content Factory",
+      "description": "Staria is a conceptual AI social media content generator that transforms ideas into viral posts.",
+      "url": "https://staria-landing.adrielzimbril.com",
+      "repo": "adrielzimbril/staria-landing",
+      "repo_url": "https://github.com/adrielzimbril/staria-landing",
+      "isPro": false,
+      "preview": {
+        "image": {
+          "format": "png",
+          "resolution": "1500×1124",
+          "width": 1500,
+          "height": 1124,
+          "size": 1360302,
+          "size_human": "1.30 MB",
+          "url": "https://cdn.spaceui.one/atom/templates/screenshot-staria-landing.png"
+        },
+        "video": {
+          "format": "mp4",
+          "size": 22781095,
+          "size_human": "21.73 MB",
+          "url": "https://cdn.spaceui.one/atom/templates/screenshot-staria-landing.mp4"
+        }
+      },
+      "created_at": "2026-05-07T03:44:36.000Z",
+      "updated_at": "2026-09-06T04:33:41.132Z",
+      "timestamp": "07 May 2026 03:44:36"
+    },
+    {
+      "number": 7,
+      "name": "forger-landing",
+      "title": "Forger",
+      "headline": "Build a Job-Winning Resume in Minutes",
+      "description": "Forger is a conceptual recruitment platform that sources candidates and secures the perfect match with precision.",
+      "url": "https://forger-landing.adrielzimbril.com",
+      "repo": "adrielzimbril/forger-landing",
+      "repo_url": "https://github.com/adrielzimbril/forger-landing",
+      "isPro": false,
+      "preview": {
+        "image": {
+          "format": "png",
+          "resolution": "1556×1168",
+          "width": 1556,
+          "height": 1168,
+          "size": 991976,
+          "size_human": "968.7 KB",
+          "url": "https://cdn.spaceui.one/atom/templates/screenshot-forger-landing.png"
+        },
+        "video": {
+          "format": "mp4",
+          "size": 16249412,
+          "size_human": "15.50 MB",
+          "url": "https://cdn.spaceui.one/atom/templates/screenshot-forger-landing.mp4"
+        }
+      },
+      "created_at": "2026-05-08T03:14:50.000Z",
+      "updated_at": "2026-09-06T04:33:41.132Z",
+      "timestamp": "08 May 2026 03:14:50"
+    },
+    {
+      "number": 8,
+      "name": "netra-landing",
+      "title": "Netra",
+      "headline": "Bio Data Center Intelligence for Sustainable Compute",
+      "description": "Netra is a conceptual bio data center intelligence platform that orchestrates low-carbon compute with living thermal systems and real-time facility autonomy.",
+      "url": "https://netra-landing.adrielzimbril.com",
+      "repo": "adrielzimbril/netra-landing",
+      "repo_url": "https://github.com/adrielzimbril/netra-landing",
+      "isPro": false,
+      "preview": {
+        "image": {
+          "format": "png",
+          "resolution": "1556×1168",
+          "width": 1556,
+          "height": 1168,
+          "size": 711331,
+          "size_human": "694.7 KB",
+          "url": "https://cdn.spaceui.one/atom/templates/screenshot-netra-landing.png"
+        },
+        "video": {
+          "format": "mp4",
+          "size": 11177038,
+          "size_human": "10.66 MB",
+          "url": "https://cdn.spaceui.one/atom/templates/screenshot-netra-landing.mp4"
+        }
+      },
+      "created_at": "2026-05-09T14:24:26.000Z",
+      "updated_at": "2026-09-06T04:33:41.132Z",
+      "timestamp": "09 May 2026 14:24:26"
+    },
+    {
+      "number": 9,
+      "name": "aura-landing",
+      "title": "Aura Robotics",
+      "headline": "Humanoid AGI Robot for Next-Generation Embodied Intelligence",
+      "description": "Aura Robotics is a conceptual humanoid AGI robot that bridges the gap between digital cognition and physical actuation.",
+      "url": "https://aura-landing.adrielzimbril.com",
+      "repo": "adrielzimbril/aura-landing",
+      "repo_url": "https://github.com/adrielzimbril/aura-landing",
+      "isPro": false,
+      "preview": {
+        "image": {
+          "format": "png",
+          "resolution": "2104×1184",
+          "width": 2104,
+          "height": 1184,
+          "size": 1418177,
+          "size_human": "1.35 MB",
+          "url": "https://cdn.spaceui.one/atom/templates/screenshot-aura-landing.png"
+        },
+        "video": {
+          "format": "mp4",
+          "size": 44132853,
+          "size_human": "42.09 MB",
+          "url": "https://cdn.spaceui.one/atom/templates/screenshot-aura-landing.mp4"
+        }
+      },
+      "created_at": "2026-05-11T09:47:00.000Z",
+      "updated_at": "2026-09-06T04:33:41.132Z",
+      "timestamp": "11 May 2026 09:47:00"
+    },
+    {
+      "number": 10,
+      "name": "zeusx-landing",
+      "title": "ZeusX",
+      "headline": "Flagship Tactical Drone Systems",
+      "description": "ZeusX is a conceptual high-performance web platform that delivers exceptional speed and modern digital experiences.",
+      "url": "https://zeusx-landing.adrielzimbril.com",
+      "repo": "adrielzimbril/zeusx-landing",
+      "repo_url": "https://github.com/adrielzimbril/zeusx-landing",
+      "isPro": false,
+      "preview": {
+        "image": {
+          "format": "png",
+          "resolution": "1556×1166",
+          "width": 1556,
+          "height": 1166,
+          "size": 1151259,
+          "size_human": "1.10 MB",
+          "url": "https://cdn.spaceui.one/atom/templates/screenshot-zeusx-landing.png"
+        },
+        "video": {
+          "format": "mp4",
+          "size": 34631905,
+          "size_human": "33.03 MB",
+          "url": "https://cdn.spaceui.one/atom/templates/screenshot-zeusx-landing.mp4"
+        }
+      },
+      "created_at": "2026-05-12T15:32:02.000Z",
+      "updated_at": "2026-09-06T04:33:41.134Z",
+      "timestamp": "12 May 2026 15:32:02"
+    },
+    {
+      "number": 11,
+      "name": "folio-landing",
+      "title": "Somey Amegnibo",
+      "headline": "Creative Direction Portfolio",
+      "description": "Folio Landing is a conceptual creative director portfolio that presents public campaigns, art direction, and visual identity work for memorable brands.",
+      "url": "https://folio-landing.adrielzimbril.com",
+      "repo": "adrielzimbril/folio-landing",
+      "repo_url": "https://github.com/adrielzimbril/folio-landing",
+      "isPro": false,
+      "preview": {
+        "image": {
+          "format": "png",
+          "resolution": "1624×1218",
+          "width": 1624,
+          "height": 1218,
+          "size": 1644049,
+          "size_human": "1.57 MB",
+          "url": "https://cdn.spaceui.one/atom/templates/screenshot-folio-landing.png"
+        },
+        "video": {
+          "format": "mp4",
+          "size": 32134593,
+          "size_human": "30.65 MB",
+          "url": "https://cdn.spaceui.one/atom/templates/screenshot-folio-landing.mp4"
+        }
+      },
+      "created_at": "2026-05-13T15:24:21.000Z",
+      "updated_at": "2026-09-06T04:33:41.134Z",
+      "timestamp": "13 May 2026 15:24:21"
+    },
+    {
+      "number": 12,
+      "name": "ashura-landing",
+      "title": "Ashura",
+      "headline": "AI-Driven Branding & Creative Studio",
+      "description": "Ashura is a conceptual branding and communication agency that uses AI as a strategic vector for sharper brand platforms and campaign systems.",
+      "url": "https://ashura-landing.adrielzimbril.com",
+      "repo": "adrielzimbril/ashura-landing",
+      "repo_url": "https://github.com/adrielzimbril/ashura-landing",
+      "isPro": false,
+      "preview": {
+        "image": {
+          "format": "png",
+          "resolution": "1556×1168",
+          "width": 1556,
+          "height": 1168,
+          "size": 2133228,
+          "size_human": "2.03 MB",
+          "url": "https://cdn.spaceui.one/atom/templates/screenshot-ashura-landing.png"
+        },
+        "video": {
+          "format": "mp4",
+          "size": 23787495,
+          "size_human": "22.69 MB",
+          "url": "https://cdn.spaceui.one/atom/templates/screenshot-ashura-landing.mp4"
+        }
+      },
+      "created_at": "2026-05-14T20:20:56.000Z",
+      "updated_at": "2026-09-06T04:33:41.134Z",
+      "timestamp": "14 May 2026 20:20:56"
+    },
+    {
+      "number": 13,
+      "name": "sunabase-landing",
+      "title": "Sunabase",
+      "headline": "The Modern Backend Standard",
+      "description": "Sunabase is a conceptual high-performance database backend infrastructure mockup.",
+      "url": "https://sunabase-landing.adrielzimbril.com",
+      "repo": "adrielzimbril/sunabase-landing",
+      "repo_url": "https://github.com/adrielzimbril/sunabase-landing",
+      "isPro": false,
+      "preview": {
+        "image": {
+          "format": "png",
+          "resolution": "1976×1192",
+          "width": 1976,
+          "height": 1192,
+          "size": 1195922,
+          "size_human": "1.14 MB",
+          "url": "https://cdn.spaceui.one/atom/templates/screenshot-sunabase-landing.png"
+        },
+        "video": {
+          "format": "mp4",
+          "size": 26988903,
+          "size_human": "25.74 MB",
+          "url": "https://cdn.spaceui.one/atom/templates/screenshot-sunabase-landing.mp4"
+        }
+      },
+      "created_at": "2026-05-16T14:10:38.000Z",
+      "updated_at": "2026-09-06T04:33:41.134Z",
+      "timestamp": "16 May 2026 14:10:38"
+    },
+    {
+      "number": 14,
+      "name": "oleap-landing",
+      "title": "Oleap",
+      "headline": "Turn Customer Support into Product Intelligence",
+      "description": "Oleap is a conceptual AI customer support platform that closes the support feedback loop.",
+      "url": "https://oleap-landing.adrielzimbril.com",
+      "repo": "adrielzimbril/oleap-landing",
+      "repo_url": "https://github.com/adrielzimbril/oleap-landing",
+      "isPro": false,
+      "preview": {
+        "image": {
+          "format": "png",
+          "resolution": "2072×1166",
+          "width": 2072,
+          "height": 1166,
+          "size": 799738,
+          "size_human": "781.0 KB",
+          "url": "https://cdn.spaceui.one/atom/templates/screenshot-oleap-landing.png"
+        },
+        "video": {
+          "format": "mp4",
+          "size": 43946213,
+          "size_human": "41.91 MB",
+          "url": "https://cdn.spaceui.one/atom/templates/screenshot-oleap-landing.mp4"
+        }
+      },
+      "created_at": "2026-05-16T19:01:56.000Z",
+      "updated_at": "2026-09-06T04:33:41.134Z",
+      "timestamp": "16 May 2026 19:01:56"
+    },
+    {
+      "number": 15,
+      "name": "rocoon-landing",
+      "title": "Rocoon",
+      "headline": "AI Architecture for Modern Smart Homes",
+      "description": "Rocoon is a conceptual AI architecture agency that designs modern smart homes with predictive planning, generative concepts, and connected build intelligence.",
+      "url": "https://rocoon-landing.adrielzimbril.com",
+      "repo": "adrielzimbril/rocoon-landing",
+      "repo_url": "https://github.com/adrielzimbril/rocoon-landing",
+      "isPro": false,
+      "preview": {
+        "image": {
+          "format": "png",
+          "resolution": "1600×1200",
+          "width": 1600,
+          "height": 1200,
+          "size": 1760940,
+          "size_human": "1.68 MB",
+          "url": "https://cdn.spaceui.one/atom/templates/screenshot-rocoon-landing.png"
+        },
+        "video": {
+          "format": "mp4",
+          "size": 30673401,
+          "size_human": "29.25 MB",
+          "url": "https://cdn.spaceui.one/atom/templates/screenshot-rocoon-landing.mp4"
+        }
+      },
+      "created_at": "2026-05-17T09:45:37.000Z",
+      "updated_at": "2026-09-06T04:33:41.134Z",
+      "timestamp": "17 May 2026 09:45:37"
+    },
+    {
+      "number": 16,
+      "name": "haumea-landing",
+      "title": "Haumea",
+      "headline": "Somatic Ritual & Circadian Intelligence",
+      "description": "Haumea is a conceptual somatic renewal and circadian intelligence platform that aligns your body's biology with natural rhythms.",
+      "url": "https://haumea-landing.adrielzimbril.com",
+      "repo": "adrielzimbril/haumea-landing",
+      "repo_url": "https://github.com/adrielzimbril/haumea-landing",
+      "isPro": false,
+      "preview": {
+        "image": {
+          "format": "png",
+          "resolution": "2076×1168",
+          "width": 2076,
+          "height": 1168,
+          "size": 2817857,
+          "size_human": "2.69 MB",
+          "url": "https://cdn.spaceui.one/atom/templates/screenshot-haumea-landing.png"
+        },
+        "video": {
+          "format": "mp4",
+          "size": 36871961,
+          "size_human": "35.16 MB",
+          "url": "https://cdn.spaceui.one/atom/templates/screenshot-haumea-landing.mp4"
+        }
+      },
+      "created_at": "2026-05-18T12:22:48.000Z",
+      "updated_at": "2026-09-06T04:33:41.134Z",
+      "timestamp": "18 May 2026 12:22:48"
+    },
+    {
+      "number": 17,
+      "name": "one-piece-landing",
+      "title": "One Piece Landing",
+      "headline": "Cinematic Straw Hat Crew Showcase",
+      "description": "One Piece Landing is a conceptual anime pirate crew showcase that turns the Straw Hat crew, Luffy's gears, bounties, audio, and cinematic motion into an immersive fan landing page.",
+      "url": "https://one-piece-landing.adrielzimbril.com",
+      "repo": "adrielzimbril/one-piece-landing",
+      "repo_url": "https://github.com/adrielzimbril/one-piece-landing",
+      "isPro": false,
+      "preview": {
+        "image": {
+          "format": "png",
+          "resolution": "2076×1168",
+          "width": 2076,
+          "height": 1168,
+          "size": 4498197,
+          "size_human": "4.29 MB",
+          "url": "https://cdn.spaceui.one/atom/templates/screenshot-one-piece-landing.png"
+        },
+        "video": {
+          "format": "mp4",
+          "size": 43652412,
+          "size_human": "41.63 MB",
+          "url": "https://cdn.spaceui.one/atom/templates/screenshot-one-piece-landing.mp4"
+        }
+      },
+      "created_at": "2026-05-19T13:42:32.000Z",
+      "updated_at": "2026-09-06T04:33:41.134Z",
+      "timestamp": "19 May 2026 13:42:32"
+    },
+    {
+      "number": 18,
+      "name": "cinemax-landing",
+      "title": "CineMax",
+      "headline": "Premium Anime Presentation Platform",
+      "description": "Cinemax is a conceptual premium anime presentation platform that turns legendary titles into widescreen cinematic reels.",
+      "url": "https://cinemax-landing.adrielzimbril.com",
+      "repo": "adrielzimbril/cinemax-landing",
+      "repo_url": "https://github.com/adrielzimbril/cinemax-landing",
+      "isPro": true,
+      "preview": {
+        "image": {
+          "format": "png",
+          "resolution": "2076×1166",
+          "width": 2076,
+          "height": 1166,
+          "size": 4039798,
+          "size_human": "3.85 MB",
+          "url": "https://cdn.spaceui.one/atom/templates/screenshot-cinemax-landing.png"
+        },
+        "video": {
+          "format": "mp4",
+          "size": 58842784,
+          "size_human": "56.12 MB",
+          "url": "https://cdn.spaceui.one/atom/templates/screenshot-cinemax-landing.mp4"
+        }
+      },
+      "created_at": "2026-05-21T23:06:21.000Z",
+      "updated_at": "2026-09-06T04:33:41.134Z",
+      "timestamp": "21 May 2026 23:06:21"
+    },
+    {
+      "number": 19,
+      "name": "marveen-landing",
+      "title": "Marveen",
+      "headline": "Holistic Wellness Sanctuary & Mindful Retreats",
+      "description": "Marveen is a conceptual premium holistic wellness sanctuary that connects seekers with high-end, immersive, and transformative zen/mindfulness retreats around the globe.",
+      "url": "https://marveen-landing.adrielzimbril.com",
+      "repo": "adrielzimbril/marveen-landing",
+      "repo_url": "https://github.com/adrielzimbril/marveen-landing",
+      "isPro": true,
+      "preview": {
+        "image": {
+          "format": "png",
+          "resolution": "2184×1228",
+          "width": 2184,
+          "height": 1228,
+          "size": 3447622,
+          "size_human": "3.29 MB",
+          "url": "https://cdn.spaceui.one/atom/templates/screenshot-marveen-landing.png"
+        },
+        "video": {
+          "format": "mp4",
+          "size": 35867944,
+          "size_human": "34.21 MB",
+          "url": "https://cdn.spaceui.one/atom/templates/screenshot-marveen-landing.mp4"
+        }
+      },
+      "created_at": "2026-05-21T23:38:28.000Z",
+      "updated_at": "2026-09-06T04:33:41.134Z",
+      "timestamp": "21 May 2026 23:38:28"
+    }
+  ],
+  "total": 19
+}
