@@ -10,12 +10,12 @@ const groups = [
     ],
   },
   {
-    title: 'Resources',
+    title: 'Tools',
     links: [
+      ['All tools', '/tools'],
+      ['Avatars', '/tools/avatars'],
+      ['Emoji', '/tools/emoji'],
       ['Documentation', '/docs'],
-      ['Installation', '/docs/installation'],
-      ['MCP', '/docs/mcp'],
-      ['Roadmap', '/docs/roadmap'],
     ],
   },
   {

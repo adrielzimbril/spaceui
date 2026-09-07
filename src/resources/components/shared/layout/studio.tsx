@@ -3,7 +3,7 @@
 import type { ReactNode } from 'react'
 import { motion } from 'motion/react'
 import { cn } from '@/registry/lib/utils'
-import { useMediaQuery } from '@/registry/hooks/browser/use-media-query'
+import { useResourceDesktop } from '@/resources/components/shared/layout/viewport'
 import { Drawer, DrawerPanel, DrawerPopup } from '@/registry/primitives/drawer'
 
 const SPRING = { type: 'spring', stiffness: 150, damping: 26, mass: 0.82 } as const
@@ -44,7 +44,7 @@ export function ResourceStudio({
   float,
   installBar,
   showLeft = false,
-  showRight = true,
+  showRight = false,
   leftWidth = '18rem',
   rightWidth = '20rem',
   onToggleLeft,
@@ -65,7 +65,7 @@ export function ResourceStudio({
   onToggleRight?: (show: boolean) => void
   className?: string
 }) {
-  const isDesktop = useMediaQuery('(min-width: 768px)', true)
+  const isDesktop = useResourceDesktop()
   const leftOpen = Boolean(isDesktop && left && showLeft)
   const rightOpen = Boolean(isDesktop && right && showRight)
 
@@ -106,7 +106,7 @@ export function ResourceStudio({
           {installBar ? (
             <div
               data-resource-ui
-              className="pointer-events-auto absolute bottom-6 left-1/2 z-30 hidden -translate-x-1/2 md:block max-w-[calc(100%-2rem)]"
+              className="pointer-events-auto absolute bottom-6 left-1/2 z-30 w-[calc(100%-2rem)] max-w-[calc(100%-2rem)] -translate-x-1/2 md:w-auto"
             >
               {installBar}
             </div>
@@ -134,7 +134,10 @@ export function ResourceStudio({
         ) : null}
       </div>
       {bottom ? (
-        <div data-resource-ui className="mt-2 shrink-0 overflow-hidden rounded-2xl bg-background">
+        <div
+          data-resource-ui
+          className="mt-2 max-h-[38%] shrink-0 overflow-hidden rounded-2xl bg-background md:max-h-none"
+        >
           {bottom}
         </div>
       ) : null}

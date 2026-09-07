@@ -11,7 +11,7 @@ import {
   IconArrowsMinimize,
   IconDeviceDesktop,
   IconLayoutGrid,
-  IconAdjustments,
+  IconInputSpark,
   IconVideo,
   IconRotateClockwise,
   IconSun,
@@ -110,12 +110,7 @@ export function ResourceToolbar({
       e.preventDefault()
       bloomSound()
       onToggleExpand(false)
-    } else if (
-      (e.key === 'f' || e.key === 'F') &&
-      !e.metaKey &&
-      !e.ctrlKey &&
-      !e.altKey
-    ) {
+    } else if ((e.key === 'f' || e.key === 'F') && !e.metaKey && !e.ctrlKey && !e.altKey) {
       e.preventDefault()
       bloomSound()
       onToggleExpand(!expanded)
@@ -139,6 +134,26 @@ export function ResourceToolbar({
 
   const leftButtons = (
     <>
+      {/* {info && !expanded ? (
+        <ToolbarButton
+          label={infoVisible ? 'Hide side panel' : 'Show side panel'}
+          pressed={infoVisible}
+          onClick={handleToggleInfo}
+        >
+          <MorphIcon activeKey={infoVisible ? 'expanded' : 'collapsed'} variant="blur-scale">
+            {infoVisible ? (
+              <IconLayoutSidebarLeftCollapse className="size-4" />
+            ) : (
+              <IconLayoutSidebarLeftExpand className="size-4" />
+            )}
+          </MorphIcon>
+        </ToolbarButton>
+      ) : null} */}
+    </>
+  )
+
+  const defaultButtons = (
+    <>
       {info && !expanded ? (
         <ToolbarButton
           label={infoVisible ? 'Hide side panel' : 'Show side panel'}
@@ -154,11 +169,6 @@ export function ResourceToolbar({
           </MorphIcon>
         </ToolbarButton>
       ) : null}
-    </>
-  )
-
-  const defaultButtons = (
-    <>
       {sidebar && !expanded ? (
         <ToolbarButton
           label={sidebarVisible ? 'Hide controls' : 'Show controls'}
@@ -189,19 +199,19 @@ export function ResourceToolbar({
       ) : null}
 
       {/* 4. Vue (Gallery / Mockup / Seed) */}
-      {viewToggle ? (
+      {viewToggle && !expanded ? (
         <ToolbarButton label={viewLabel} pressed={view !== 'gallery' && view !== 'video'} onClick={cycleView}>
           {view === 'gallery' ? (
             <IconLayoutGrid className="size-4" />
           ) : view === 'mockup' ? (
             <IconDeviceDesktop className="size-4" />
           ) : (
-            <IconAdjustments className="size-4" />
+            <IconInputSpark className="size-4" />
           )}
         </ToolbarButton>
       ) : null}
 
-      {video ? (
+      {video && !expanded ? (
         <ToolbarButton
           label="Video"
           pressed={view === 'video'}
@@ -212,7 +222,7 @@ export function ResourceToolbar({
       ) : null}
 
       {/* 5. Reset */}
-      {reset ? (
+      {reset && !expanded ? (
         <ToolbarButton label="Reset" onClick={onReset}>
           <IconRotateClockwise className="size-4" />
         </ToolbarButton>

@@ -2,7 +2,7 @@ import {
   menuConfig,
   megaMenuDocs,
   megaMenuUiKit,
-  megaMenuResources,
+  megaMenuTools,
   mobileNavGroups,
   searchNavShortcuts,
   searchStaticResources,
@@ -17,7 +17,7 @@ export {
   menuConfig,
   megaMenuDocs,
   megaMenuUiKit,
-  megaMenuResources,
+  megaMenuTools,
   mobileNavGroups,
   searchNavShortcuts,
   searchStaticResources,
@@ -33,7 +33,7 @@ const appInfo = {
   appName: 'Space UI',
   namespace: 'usespaceui',
   // repoPath: 'usespaceui/ui',
-  repoPath: 'adrielzimbril/space-ui',
+  repoPath: 'adrielzimbril/spaceui',
   twitterHandle: '@usespaceui',
 }
 
@@ -48,7 +48,7 @@ export const siteConfig = {
   links: {
     docs: `${appInfo.site}/docs`,
     // github: `https://github.com/${appInfo.repoPath}/`,
-    github: `https://github.com/adrielzimbril/space-ui`,
+    github: `https://github.com/adrielzimbril/spaceui`,
     // twitter: `https://x.com/${appInfo.twitterHandle}`,
     x: 'https://x.com/adrielzimbril',
     authorTwitter: 'https://x.com/adrielzimbril',
@@ -65,5 +65,5 @@ export const siteConfig = {
   megaMenu: menuConfig.megaMenu,
   mobileMenu: menuConfig.mobileMenu,
   search: menuConfig.search,
-  resources: menuConfig.megaMenu.resources,
+  tools: menuConfig.megaMenu.tools,
 }

@@ -60,11 +60,11 @@ const MenuIcon = ({ children, className, color = DEFAULT_COLOR_CODE.BLUE, iconCo
   )
 }
 
-import { megaMenuDocs, megaMenuUiKit, megaMenuResources } from '@/lib/menu-config'
+import { megaMenuDocs, megaMenuUiKit, megaMenuTools } from '@/lib/menu-config'
 
 const docs = megaMenuDocs
 const uiKitComponents = megaMenuUiKit
-const designTools = megaMenuResources
+const designTools = megaMenuTools
 
 export function MegaMenu({ className }: { className?: string }) {
   const [value, setValue] = React.useState<string | null>(null)
@@ -236,10 +236,10 @@ export function MegaMenu({ className }: { className?: string }) {
             </NavigationMenuContent>
           </NavigationMenuItem>
 
-          {/* Resources Menu */}
-          <NavigationMenuItem value="resources">
+          {/* Tools Menu */}
+          <NavigationMenuItem value="tools">
             <NavigationMenuTrigger className="bg-transparent hover:bg-muted/50 focus:bg-muted/50">
-              Resources
+              Tools
             </NavigationMenuTrigger>
             <NavigationMenuContent className="w-175 p-3">
               <div className="flex flex-col gap-1">

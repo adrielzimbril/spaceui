@@ -94,10 +94,10 @@ export const HUBS: HubItem[] = [
     color: DEFAULT_COLOR_CODE.LIME,
   },
   {
-    id: 'resources',
-    title: 'Resources & Icons',
+    id: 'tools',
+    title: 'Tools',
     description: 'Avatars, logos, flags & animated icons',
-    url: '/resources',
+    url: '/tools',
     icon: IconPalette,
     color: DEFAULT_COLOR_CODE.ORANGE,
   },
@@ -303,7 +303,7 @@ export function getActiveHub(pathname: string): HubItem {
   ) {
     return HUBS[2]
   }
-  if (pathname.startsWith('/resources')) {
+  if (pathname.startsWith('/tools')) {
     return HUBS[3]
   }
   return HUBS[0]

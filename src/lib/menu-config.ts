@@ -14,6 +14,7 @@ import {
   IconFlag,
   IconPhoto,
   IconLayoutGrid,
+  IconVolume,
 } from '@tabler/icons-react'
 import { DEFAULT_COLOR_CODE } from '@/lib/theme-colors'
 
@@ -121,41 +122,51 @@ export const megaMenuUiKit: MegaMenuItem[] = [
   },
 ]
 
-export const megaMenuResources: ResourceItem[] = [
+export const megaMenuTools: ResourceItem[] = [
   {
     title: 'UI Avatars',
     label: 'avatars',
     description: 'Customizable 3D & flat user profile avatars.',
-    href: '/resources/avatars',
+    href: '/tools/avatars',
     icon: IconUserCircle,
     upcoming: false,
-    release: 'beta',
+    release: 'updated',
     color: DEFAULT_COLOR_CODE.INDIGO,
   },
   {
     title: 'Squishmoji',
     label: 'squishmoji',
     description: 'Deterministic squishy SVG avatars and animated emojis.',
-    href: '/resources/squishmoji',
+    href: '/tools/avatars?type=squishmoji',
+    icon: IconMoodSmile,
+    upcoming: false,
+    release: 'updated',
+    color: DEFAULT_COLOR_CODE.YELLOW,
+  },
+  {
+    title: 'Sounds',
+    label: 'sounds',
+    description: 'Procedural Web Audio UI sounds with 3D spatial panning.',
+    href: 'https://sounds.spaceui.one',
+    icon: IconVolume,
+    upcoming: false,
+    release: 'new',
+    color: DEFAULT_COLOR_CODE.VIOLET,
+  },
+  {
+    title: 'Emoji',
+    label: 'emoji',
+    description: 'High-res 3D & animated fluent emoji sets.',
+    href: '/tools/emoji',
     icon: IconMoodSmile,
     upcoming: false,
     release: 'beta',
     color: DEFAULT_COLOR_CODE.YELLOW,
   },
   {
-    title: 'Emoji',
-    label: 'emoji',
-    description: 'High-res 3D & animated fluent emoji sets.',
-    href: '#',
-    icon: IconMoodSmile,
-    upcoming: true,
-    release: 'coming-soon',
-    color: DEFAULT_COLOR_CODE.YELLOW,
-  },
-  {
-    title: 'Gradient Generator',
+    title: 'Gradients',
     label: 'gradients',
-    description: 'Create and customize color gradients.',
+    description: 'Procedural mesh gradients and organic color palettes.',
     href: '#',
     icon: IconPalette,
     upcoming: true,
@@ -173,9 +184,9 @@ export const megaMenuResources: ResourceItem[] = [
     color: DEFAULT_COLOR_CODE.ORANGE,
   },
   {
-    title: 'Country Flags',
+    title: 'Flags',
     label: 'flags',
-    description: 'Vector flags of the world in clean SVG & JSX.',
+    description: '430 country and 201 language flags in circle, square, and 4×3 SVG.',
     href: '#',
     icon: IconFlag,
     upcoming: true,
@@ -206,7 +217,7 @@ export const megaMenuResources: ResourceItem[] = [
     title: 'View all tools',
     label: 'all-tools',
     description: 'Explore the complete suite of creative assets.',
-    href: '/resources',
+    href: '/tools',
     icon: IconLayoutGrid,
     upcoming: false,
     color: DEFAULT_COLOR_CODE.PINKISH_GREEN,
@@ -245,11 +256,11 @@ export const mobileNavGroups: NavGroup[] = [
     ],
   },
   {
-    label: 'Resources',
-    items: megaMenuResources.map((item) => ({
+    label: 'Tools',
+    items: megaMenuTools.map((item) => ({
       title: item.title,
       href: item.href,
-      group: 'Resources',
+      group: 'Tools',
       badge: item.upcoming ? 'coming-soon' : item.release,
       upcoming: item.upcoming,
       isDrillable: false,
@@ -267,24 +278,25 @@ export const searchNavShortcuts: SearchShortcutItem[] = [
   { label: 'Hooks & Utils', href: '/ui-kit/hooks', keywords: ['hooks', 'utilities', 'react'] },
   { label: 'Blocks', href: '/ui-kit/blocks/sign-in', keywords: ['blocks', 'sections', 'pages'] },
   { label: 'Documentation', href: '/docs', keywords: ['docs', 'guide', 'getting started'] },
-  { label: 'Resources', href: '/resources', keywords: ['resources', 'tools', 'avatars', 'icons'] },
+  {
+    label: 'Tools',
+    href: '/tools',
+    keywords: ['tools', 'avatars', 'icons', 'sounds', 'gradients', 'flags', 'emoji'],
+  },
 ]
 
 /**
- * Static resources to index in the Command Menu search, ensuring tools like
- * Icons, Emoji, Flags, etc. are immediately discoverable even if they don't
- * yet have dedicated MDX files.
+ * Static tools to index in the Command Menu search.
  */
-export const searchStaticResources = megaMenuResources.map((tool) => ({
-  value: `resources-${tool.label || tool.title.toLowerCase().replace(/\s+/g, '-')}`,
+export const searchStaticResources = megaMenuTools.map((tool) => ({
+  value: `tools-${tool.label || tool.title.toLowerCase().replace(/\s+/g, '-')}`,
   label: tool.title,
-  url: tool.href === '#' ? '/resources' : tool.href,
-  group: 'Resources',
+  url: tool.href === '#' ? '/tools' : tool.href,
+  group: 'Tools',
   isComponent: false,
   description: tool.description,
   badge: tool.upcoming ? 'coming-soon' : tool.release,
   keywords: [
-    'resources',
     'tools',
     tool.title.toLowerCase(),
     tool.label || '',
@@ -300,7 +312,7 @@ export const menuConfig = {
   megaMenu: {
     docs: megaMenuDocs,
     uiKit: megaMenuUiKit,
-    resources: megaMenuResources,
+    tools: megaMenuTools,
   },
   mobileMenu: {
     groups: mobileNavGroups,
