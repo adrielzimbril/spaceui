@@ -3,7 +3,17 @@
 import type { AvatarEffect, AvatarVariant } from '@usespaceui/avatars'
 import { ScrollArea } from '@/registry/primitives/scroll-area'
 import { MockupGallery } from './mockups/MockupGallery'
-import { playgroundMockupImages, dataList, dataTwitter, dataSuggested, dataShared, nameProfile, nameInstagram, nameUpload, nameUploadLikes } from './mock-data'
+import {
+  playgroundMockupImages,
+  dataList,
+  dataTwitter,
+  dataSuggested,
+  dataShared,
+  nameProfile,
+  nameInstagram,
+  nameUpload,
+  nameUploadLikes,
+} from './mock-data'
 
 export function MockupView({
   pool,

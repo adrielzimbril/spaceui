@@ -13,5 +13,5 @@ export function getSelectedAvatarDetails(pattern: AvatarVariant | 'all'): Avatar
   return getAvatarDetails(pattern === 'all' ? AvatarVariant.triton : pattern) ?? getAvatarDetails(AvatarVariant.triton)!
 }
 
-export { getRandomPersonas, toLabel } from '@/resources/shared/utils'
+export { getRandomPersonas, shufflePersonas, toLabel } from '@/resources/shared/utils'
 export type { ResourceViewMode as AvatarViewMode } from '@/resources/shared/types'

@@ -8,7 +8,11 @@ import {
   type SquishLayout,
   type SquishShapeChoice,
 } from '@usespaceui/squishmoji'
+import { pngsToApng } from './apng'
 import { imageFor, save } from './raster'
+import { WebmMuxer } from './webm'
+
+export type MotionFormat = 'webm' | 'apng'
 
 export interface SequenceStep {
   id: string
@@ -21,6 +25,8 @@ export interface SequenceStep {
   wobble: boolean
   animate: boolean
 }
+
+const FPS = 30
 
 function adjusted(
   engine: SquishEngine,
@@ -60,6 +66,48 @@ function adjusted(
   )
 }
 
+const FRAME_US = 1_000_000 / FPS
+
+const WEBM_PRESETS: { codec: string; mux: string }[] = [
+  { codec: 'vp8', mux: 'V_VP8' },
+  { codec: 'vp09.00.10.08', mux: 'V_VP9' },
+  { codec: 'vp09.00.20.08', mux: 'V_VP9' },
+]
+
+async function createEncoder(
+  width: number,
+  height: number,
+  output: EncodedVideoChunkOutputCallback,
+  presets: { codec: string; mux?: string }[],
+  muxCodec?: { value: string },
+) {
+  const bitrate = Math.min(6_000_000, Math.max(1_500_000, Math.floor((width * height) / 2)))
+  for (const preset of presets) {
+    const base = { codec: preset.codec, width, height, bitrate, framerate: FPS }
+    const variants: VideoEncoderConfig[] = [
+      { ...base, hardwareAcceleration: 'no-preference' },
+      { ...base, hardwareAcceleration: 'prefer-software' },
+      base,
+    ]
+    for (const config of variants) {
+      try {
+        const support = await VideoEncoder.isConfigSupported(config)
+        if (!support.supported) continue
+        const encoder = new VideoEncoder({
+          output,
+          error: () => {},
+        })
+        encoder.configure(support.config ?? config)
+        if (muxCodec && preset.mux) muxCodec.value = preset.mux
+        return encoder
+      } catch {
+        continue
+      }
+    }
+  }
+  return null
+}
+
 async function recordGenerated(
   duration: number,
   fileName: string,
@@ -73,56 +121,81 @@ async function recordGenerated(
   },
   width = 1080,
   height = 1080,
+  format: MotionFormat = 'webm',
 ) {
+  width &= ~1
+  height &= ~1
   const canvas = document.createElement('canvas')
   canvas.width = width
   canvas.height = height
   const side = Math.min(width, height)
   const ox = (width - side) / 2
   const oy = (height - side) / 2
-  const context = canvas.getContext('2d')!
-  const type = ['video/webm;codecs=vp9', 'video/webm', 'video/mp4'].find(
-    (item) => typeof MediaRecorder !== 'undefined' && MediaRecorder.isTypeSupported(item),
-  )
-  if (!type) return
-  const recorder = new MediaRecorder(canvas.captureStream(30), { mimeType: type })
-  const chunks: Blob[] = []
-  recorder.ondataavailable = (event) => {
-    if (event.data.size) chunks.push(event.data)
-  }
-  recorder.onstop = () => save(new Blob(chunks, { type }), `${fileName}.${type.includes('mp4') ? 'mp4' : 'webm'}`)
-  recorder.start()
-  try {
-    const frames = Math.ceil(duration * 30)
-    const frameDuration = 1000 / 30
-    const startedAt = performance.now()
-    for (let frame = 0; frame < frames; frame++) {
-      const time = frame / 30
-      const state = frameAt(time)
-      const svg = renderLayout(state.layout, { size: side, seed: state.seed, backgroundStyle: state.backgroundStyle })
-      const image = await imageFor(svg, side)
-      if (background === 'transparent') context.clearRect(0, 0, width, height)
-      else {
-        context.fillStyle = background
-        context.fillRect(0, 0, width, height)
-      }
-      context.save()
-      if (state.wobble) {
-        const dx = Math.sin(time * 1.7) * 3.75
-        const dy = Math.cos(time * 1.3) * 3.75
-        const angle = (Math.sin(time) * 0.45 * Math.PI) / 180
-        context.translate(ox + side / 2 + dx, oy + side / 2 + dy)
-        context.rotate(angle)
-        context.translate(-(ox + side / 2), -(oy + side / 2))
-      }
-      context.drawImage(image, ox, oy, side, side)
-      context.restore()
-      const wait = startedAt + (frame + 1) * frameDuration - performance.now()
-      if (wait > 0) await new Promise((resolve) => window.setTimeout(resolve, wait))
+  const context = canvas.getContext('2d', { alpha: true, desynchronized: true })
+  if (!context) throw new Error('Canvas is unavailable')
+  context.imageSmoothingEnabled = true
+  context.imageSmoothingQuality = 'high'
+  const image = new Image()
+  const frames = Math.max(1, Math.round(duration * FPS))
+  const paint = async (frame: number) => {
+    const time = Math.min(duration, frame / FPS)
+    const state = frameAt(time)
+    const svg = renderLayout(state.layout, { size: side, seed: state.seed, backgroundStyle: state.backgroundStyle })
+    const bitmap = await imageFor(svg, side, image)
+    if (background === 'transparent') context.clearRect(0, 0, width, height)
+    else {
+      context.fillStyle = background
+      context.fillRect(0, 0, width, height)
     }
-  } finally {
-    if (recorder.state !== 'inactive') recorder.stop()
+    context.save()
+    if (state.wobble) {
+      const dx = Math.sin(time * 1.7) * 3.75
+      const dy = Math.cos(time * 1.3) * 3.75
+      const angle = (Math.sin(time) * 0.45 * Math.PI) / 180
+      context.translate(ox + side / 2 + dx, oy + side / 2 + dy)
+      context.rotate(angle)
+      context.translate(-(ox + side / 2), -(oy + side / 2))
+    }
+    context.drawImage(bitmap, ox, oy, side, side)
+    context.restore()
   }
+  if (format === 'apng') {
+    const pngs: Uint8Array[] = []
+    for (let frame = 0; frame < frames; frame++) {
+      await paint(frame)
+      const blob = await new Promise<Blob | null>((resolve) => canvas.toBlob(resolve, 'image/png'))
+      if (!blob) throw new Error('PNG frame failed')
+      pngs.push(new Uint8Array(await blob.arrayBuffer()))
+    }
+    save(await pngsToApng(pngs, FPS), `${fileName}.png`)
+    return
+  }
+  if (typeof VideoEncoder === 'undefined' || typeof VideoFrame === 'undefined') {
+    throw new Error('No video encoder available')
+  }
+  const muxCodec = { value: 'V_VP8' }
+  const muxer = new WebmMuxer(width, height)
+  const encoder = await createEncoder(width, height, (chunk) => muxer.add(chunk), WEBM_PRESETS, muxCodec)
+  if (!encoder) throw new Error('No video encoder available')
+  muxer.setCodec(muxCodec.value)
+  try {
+    for (let frame = 0; frame < frames; frame++) {
+      await paint(frame)
+      const videoFrame = new VideoFrame(canvas, {
+        timestamp: Math.round(frame * FRAME_US),
+        duration: Math.round(FRAME_US),
+      })
+      while (encoder.encodeQueueSize > 4) {
+        await new Promise<void>((resolve) => encoder.addEventListener('dequeue', () => resolve(), { once: true }))
+      }
+      encoder.encode(videoFrame, { keyFrame: frame % FPS === 0 })
+      videoFrame.close()
+    }
+    await encoder.flush()
+  } finally {
+    if (encoder.state !== 'closed') encoder.close()
+  }
+  save(muxer.build(), `${fileName}.webm`)
 }
 
 export async function exportToVideoAuto(
@@ -139,15 +212,24 @@ export async function exportToVideoAuto(
   backgroundStyle: SquishBackgroundStyleChoice = 'solid',
   width = 1080,
   height = 1080,
+  format: MotionFormat = 'webm',
 ) {
   const engine = new SquishEngine(seed, { shape, expression })
-  await recordGenerated(duration, fileName, background, (time) => ({
-    layout: adjusted(engine, time, duration, eyeY, split, scale, gaze, false, 0, true),
-    backgroundStyle,
-    seed,
-    wobble: false,
-    animate: true,
-  }), width, height)
+  await recordGenerated(
+    duration,
+    fileName,
+    background,
+    (time) => ({
+      layout: adjusted(engine, time, duration, eyeY, split, scale, gaze, false, 0, true),
+      backgroundStyle,
+      seed,
+      wobble: false,
+      animate: true,
+    }),
+    width,
+    height,
+    format,
+  )
 }
 
 export async function exportToVideoSequence(
@@ -160,6 +242,7 @@ export async function exportToVideoSequence(
   gaze = 1,
   width = 1080,
   height = 1080,
+  format: MotionFormat = 'webm',
 ) {
   if (!steps.length) return
   const engine = new SquishEngine(steps[0]!.seed, { shape: steps[0]!.shape, expression: steps[0]!.expression })
@@ -167,23 +250,30 @@ export async function exportToVideoSequence(
   let boundary = steps[0]!.durationSec
   let stepStart = 0
   const total = steps.reduce((sum, step) => sum + step.durationSec, 0)
-  await recordGenerated(total, fileName, background, (time) => {
-    if (time >= boundary && current < steps.length - 1) {
-      current += 1
-      stepStart = boundary
-      boundary += steps[current]!.durationSec
-      engine.name = steps[current]!.seed
-      engine.setShape(resolveShape(engine.name, steps[current]!.shape), time)
-      engine.setExpression(resolveExpression(engine.name, steps[current]!.expression), time)
-    }
-    const stepTime = time - stepStart
-    const step = steps[current]!
-    return {
-      layout: adjusted(engine, time, total, eyeY, split, scale, gaze, step.blink, stepTime, step.animate),
-      backgroundStyle: step.backgroundStyle,
-      seed: step.seed,
-      wobble: step.wobble,
-      animate: step.animate,
-    }
-  }, width, height)
+  await recordGenerated(
+    total,
+    fileName,
+    background,
+    (time) => {
+      while (current < steps.length - 1 && time >= boundary) {
+        current += 1
+        stepStart = boundary
+        boundary += steps[current]!.durationSec
+        engine.name = steps[current]!.seed
+        engine.setShape(resolveShape(engine.name, steps[current]!.shape), time)
+        engine.setExpression(resolveExpression(engine.name, steps[current]!.expression), time)
+      }
+      const step = steps[current]!
+      return {
+        layout: adjusted(engine, time, total, eyeY, split, scale, gaze, step.blink, time - stepStart, step.animate),
+        backgroundStyle: step.backgroundStyle,
+        seed: step.seed,
+        wobble: step.wobble,
+        animate: step.animate,
+      }
+    },
+    width,
+    height,
+    format,
+  )
 }

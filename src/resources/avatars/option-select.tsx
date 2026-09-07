@@ -21,15 +21,7 @@ const AVATAR_FAMILY_GROUPS = Object.values(AvatarFamily).map((family) => ({
   styles: getFamilyVariants(family),
 }))
 
-function OptionAvatar({
-  seed,
-  variant,
-  colors,
-}: {
-  seed: string
-  variant: AvatarFamilyValue
-  colors?: string[]
-}) {
+function OptionAvatar({ seed, variant, colors }: { seed: string; variant: AvatarFamilyValue; colors?: string[] }) {
   return (
     <span className="grid size-6 shrink-0 place-items-center overflow-hidden rounded-full bg-muted">
       <Avatar name={seed} variant={variant === 'all' ? 'triton' : variant} colors={colors} size={24} circle />
@@ -59,7 +51,7 @@ export function AvatarVariantSelect({
         </SelectValue>
       </SelectTrigger>
       <SelectContent>
-        <SelectItem value="all">
+        <SelectItem value="all" label="All families">
           <span className="flex items-center gap-2">
             <OptionAvatar seed={seed} variant="all" colors={colors} />
             All families
@@ -69,7 +61,7 @@ export function AvatarVariantSelect({
           <SelectGroup key={label}>
             <SelectGroupLabel>{label === 'Paletteless' ? 'Illustrations' : label}</SelectGroupLabel>
             {styles.map((variant) => (
-              <SelectItem key={variant} value={variant}>
+              <SelectItem key={variant} value={variant} label={toLabel(variant)}>
                 <span className="flex items-center gap-2">
                   <OptionAvatar seed={`${seed}-${variant}`} variant={variant} colors={colors} />
                   {toLabel(variant)}
@@ -126,28 +118,26 @@ export function PaletteSelect({
   return (
     <Select value={value} onValueChange={(next) => next && onChange(next)}>
       <SelectTrigger aria-label="Color palette" className="h-10 border-0 bg-muted px-2.5 text-xs">
-        <SelectValue>
-          <span className="flex min-w-0 items-center gap-2">
-            <PaletteSwatches colors={value === '-1' ? defaultColors : activeColors} />
-            <span className="truncate">{activeLabel}</span>
-          </span>
-        </SelectValue>
+        <span className="flex min-w-0 items-center gap-2">
+          <PaletteSwatches colors={value === '-1' ? defaultColors : activeColors} />
+          <span className="truncate">{activeLabel}</span>
+        </span>
       </SelectTrigger>
       <SelectContent>
-        <SelectItem value="-2">
+        <SelectItem value="-2" label="Seeded / automatic">
           <span className="flex items-center gap-2">
             <PaletteSwatches colors={activeColors} />
             Seeded / automatic
           </span>
         </SelectItem>
-        <SelectItem value="-1">
+        <SelectItem value="-1" label="Custom colors">
           <span className="flex items-center gap-2">
             <PaletteSwatches colors={defaultColors} />
             Custom colors
           </span>
         </SelectItem>
         {PRESET_PALETTES.map((palette, index) => (
-          <SelectItem key={palette.name} value={String(index)}>
+          <SelectItem key={palette.name} value={String(index)} label={palette.name}>
             <span className="flex items-center gap-2">
               <PaletteSwatches colors={palette.colors} />
               {palette.name}

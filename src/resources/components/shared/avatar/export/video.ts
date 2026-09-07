@@ -64,7 +64,8 @@ export function stopLiveRecording(fileName: string) {
   activeRecording = null
   window.cancelAnimationFrame(session.frame)
   const ext = session.recorder.mimeType.includes('mp4') ? 'mp4' : 'webm'
-  session.recorder.onstop = () => save(new Blob(session.chunks, { type: session.recorder.mimeType }), `${fileName}.${ext}`)
+  session.recorder.onstop = () =>
+    save(new Blob(session.chunks, { type: session.recorder.mimeType }), `${fileName}.${ext}`)
   if (session.recorder.state === 'recording') {
     session.recorder.requestData()
     session.recorder.stop()

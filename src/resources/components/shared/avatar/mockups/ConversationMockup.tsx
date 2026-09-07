@@ -1,6 +1,7 @@
 import { IconHeart, IconMessageCircle } from '@tabler/icons-react'
 import { Persona as Avatar } from '@/resources/components/shared/avatar/persona'
 import type { MockupAvatarOptions } from './MockupPrimitives'
+import { Button } from '@/registry/primitives/button'
 import { cn } from '@/registry/lib/utils'
 
 interface ConversationUser {
@@ -33,20 +34,24 @@ export default function ConversationMockup({
         </div>
       </div>
       <div className="ms-11 mt-2 flex items-center gap-2">
-        <button
+        <Button
           type="button"
-          className="inline-flex items-center gap-1.5 rounded-lg bg-muted px-2.5 py-1.5 text-[0.625rem] font-semibold text-muted-foreground hover:text-foreground active:scale-[0.96] [&_svg]:size-auto"
+          variant="secondary"
+          size="xs"
+          className="h-auto gap-1.5 rounded-lg bg-muted px-2.5 py-1.5 text-[0.625rem] font-semibold text-muted-foreground hover:text-foreground"
         >
           <IconMessageCircle aria-hidden="true" size={14} className="size-auto" />
           Reply
-        </button>
-        <button
+        </Button>
+        <Button
           type="button"
-          className="inline-flex items-center gap-1.5 rounded-lg bg-muted px-2.5 py-1.5 text-[0.625rem] font-semibold text-muted-foreground hover:text-foreground active:scale-[0.96] [&_svg]:size-auto"
+          variant="secondary"
+          size="xs"
+          className="h-auto gap-1.5 rounded-lg bg-muted px-2.5 py-1.5 text-[0.625rem] font-semibold text-muted-foreground hover:text-foreground"
         >
           <IconHeart aria-hidden="true" size={14} className="size-auto" />
           React
-        </button>
+        </Button>
       </div>
       <div className="ms-11 mt-4 flex flex-col gap-2">
         {replies.map((user) => (

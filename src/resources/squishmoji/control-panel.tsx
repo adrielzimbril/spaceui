@@ -3,13 +3,15 @@
 import { IconRefresh } from '@tabler/icons-react'
 import {
   EXPRESSION_VALUES,
+  resolveBackgroundStyle,
+  resolveExpression,
+  resolveShape,
   SHAPE_VALUES,
   type SquishBackgroundStyleChoice,
   type SquishExpressionChoice,
   type SquishShapeChoice,
 } from '@usespaceui/squishmoji'
 import { Squishmoji } from '@usespaceui/squishmoji/react'
-import { squishPalette } from './palette'
 import { ScrollArea } from '@/registry/primitives/scroll-area'
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/registry/primitives/select'
 import { Slider } from '@/registry/primitives/slider'
@@ -36,17 +38,6 @@ const BACKGROUND_SWATCHES: Array<{ id: SquishBackgroundStyleChoice; label: strin
   { id: 'alcyone', label: 'Alcyone' },
 ]
 
-function backgroundFill(id: SquishBackgroundStyleChoice, body: string, palette: string[]) {
-  const mid = palette[1] ?? body
-  const accent = palette[2] ?? body
-  if (id === 'all') return `conic-gradient(from 210deg, ${body}, ${mid}, ${accent}, ${body})`
-  if (id === 'solid') return body
-  if (id === 'taygeta' || id === 'maia' || id === 'merope')
-    return `radial-gradient(circle at 25% 25%, ${mid}, ${body} 68%)`
-  if (id === 'celaeno') return `linear-gradient(155deg, #ffffff, ${body} 42%, #0f172a)`
-  return `radial-gradient(ellipse at 30% 25%, ${accent}, ${body} 62%, #0f172a)`
-}
-
 function OptionPreview({
   seed,
   shape,
@@ -59,15 +50,14 @@ function OptionPreview({
   backgroundStyle: SquishBackgroundStyleChoice
 }) {
   return (
-    <span className="grid size-6 shrink-0 place-items-center overflow-hidden rounded-full bg-muted [&_svg]:size-full! [&_svg]:shrink-0 [&_svg]:self-center">
+    <span className="grid size-7 shrink-0 place-items-center overflow-hidden rounded-md bg-muted [&_svg]:size-full! [&_svg]:shrink-0 [&_svg]:self-center">
       <Squishmoji
         seed={seed}
         size={24}
-        shape={shape}
-        expression={expression}
-        backgroundStyle={backgroundStyle}
+        shape={resolveShape(seed, shape)}
+        expression={resolveExpression(seed, expression)}
+        backgroundStyle={resolveBackgroundStyle(seed, backgroundStyle)}
         animate={false}
-        frozenAt={0}
       />
     </span>
   )
@@ -119,7 +109,6 @@ export function SquishmojiControlPanel({
   children?: ReactNode
 }) {
   const activeSeed = seed.trim() || DEFAULT_SEEDS
-  const { body, palette } = squishPalette(activeSeed)
 
   return (
     <div className="flex h-full min-h-0 flex-col">
@@ -138,11 +127,10 @@ export function SquishmojiControlPanel({
               <Squishmoji
                 seed={activeSeed}
                 size={44}
-                shape={shape}
-                expression={expression}
-                backgroundStyle={backgroundStyle}
+                shape={resolveShape(activeSeed, shape)}
+                expression={resolveExpression(activeSeed, expression)}
+                backgroundStyle={resolveBackgroundStyle(activeSeed, backgroundStyle)}
                 animate={false}
-                frozenAt={0}
               />
             </div>
             <div className="min-w-0 flex-1">
@@ -173,7 +161,7 @@ export function SquishmojiControlPanel({
                 </SelectValue>
               </SelectTrigger>
               <SelectContent>
-                <SelectItem value="all">
+                <SelectItem value="all" label="All shapes">
                   <span className="flex items-center gap-2">
                     <OptionPreview
                       seed={activeSeed}
@@ -185,10 +173,10 @@ export function SquishmojiControlPanel({
                   </span>
                 </SelectItem>
                 {SHAPE_VALUES.map((item) => (
-                  <SelectItem key={item} value={item}>
+                  <SelectItem key={item} value={item} label={toLabel(item)}>
                     <span className="flex items-center gap-2">
                       <OptionPreview
-                        seed={`${activeSeed}-${item}`}
+                        seed={activeSeed}
                         shape={item}
                         expression={expression}
                         backgroundStyle={backgroundStyle}
@@ -221,17 +209,17 @@ export function SquishmojiControlPanel({
                 </SelectValue>
               </SelectTrigger>
               <SelectContent>
-                <SelectItem value="all">
+                <SelectItem value="all" label="All expressions">
                   <span className="flex items-center gap-2">
                     <OptionPreview seed={activeSeed} shape={shape} expression="all" backgroundStyle={backgroundStyle} />
                     All expressions
                   </span>
                 </SelectItem>
                 {EXPRESSION_VALUES.map((item) => (
-                  <SelectItem key={item} value={item}>
+                  <SelectItem key={item} value={item} label={toLabel(item)}>
                     <span className="flex items-center gap-2">
                       <OptionPreview
-                        seed={`${activeSeed}-${item}`}
+                        seed={activeSeed}
                         shape={shape}
                         expression={item}
                         backgroundStyle={backgroundStyle}
@@ -253,9 +241,11 @@ export function SquishmojiControlPanel({
               <SelectTrigger className="h-10 border-0 bg-muted px-2.5 text-xs">
                 <SelectValue>
                   <span className="flex min-w-0 items-center gap-2">
-                    <span
-                      className="size-6 shrink-0 rounded-full border border-border"
-                      style={{ background: backgroundFill(backgroundStyle, body, palette) }}
+                    <OptionPreview
+                      seed={activeSeed}
+                      shape={shape}
+                      expression={expression}
+                      backgroundStyle={backgroundStyle}
                     />
                     <span className="truncate">
                       {BACKGROUND_SWATCHES.find((item) => item.id === backgroundStyle)?.label ??
@@ -266,11 +256,13 @@ export function SquishmojiControlPanel({
               </SelectTrigger>
               <SelectContent>
                 {BACKGROUND_SWATCHES.map((swatch) => (
-                  <SelectItem key={swatch.id} value={swatch.id}>
+                  <SelectItem key={swatch.id} value={swatch.id} label={swatch.label}>
                     <span className="flex items-center gap-2">
-                      <span
-                        className="size-6 shrink-0 rounded-full border border-border"
-                        style={{ background: backgroundFill(swatch.id, body, palette) }}
+                      <OptionPreview
+                        seed={activeSeed}
+                        shape={shape}
+                        expression={expression}
+                        backgroundStyle={swatch.id}
                       />
                       {swatch.label}
                     </span>

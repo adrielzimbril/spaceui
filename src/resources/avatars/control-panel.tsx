@@ -9,6 +9,7 @@ import {
 import { Avatar } from '@usespaceui/avatars/react'
 import { PRESET_PALETTES } from '@usespaceui/gradients'
 import { IconRefresh } from '@tabler/icons-react'
+import { Button } from '@/registry/primitives/button'
 import { ScrollArea } from '@/registry/primitives/scroll-area'
 import { Slider } from '@/registry/primitives/slider'
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/registry/primitives/select'
@@ -93,14 +94,16 @@ export function AvatarControlPanel({
               <p className="truncate text-xs font-semibold">{pattern === 'all' ? 'All families' : toLabel(pattern)}</p>
               <p className="truncate text-[0.625rem] text-muted-foreground">Infinite canvas</p>
             </div>
-            <button
+            <Button
               type="button"
+              variant="ghost"
+              size="icon-sm"
               onClick={regenerateSeeds}
               aria-label="Randomize avatar seeds"
-              className="grid size-8 shrink-0 place-items-center rounded-lg bg-background text-muted-foreground hover:text-foreground"
+              className="size-8 shrink-0 rounded-lg bg-background text-muted-foreground hover:bg-background hover:text-foreground"
             >
               <IconRefresh className="size-3.5" />
-            </button>
+            </Button>
           </div>
 
           <div className="flex flex-col gap-2">
@@ -181,11 +184,16 @@ export function AvatarControlPanel({
               }}
             >
               <SelectTrigger aria-label="Avatar effect" className="h-9 border-0 bg-muted px-3 text-xs">
-                <SelectValue>{toLabel(effect)}</SelectValue>
+                <SelectValue placeholder={toLabel(effect)} />
               </SelectTrigger>
               <SelectContent>
                 {Object.values(AvatarEffect).map((item) => (
-                  <SelectItem key={item} value={item} disabled={!details?.supportedEffects.includes(item)}>
+                  <SelectItem
+                    key={item}
+                    value={item}
+                    label={toLabel(item)}
+                    disabled={!details?.supportedEffects.includes(item)}
+                  >
                     {toLabel(item)}
                   </SelectItem>
                 ))}

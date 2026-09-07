@@ -1,5 +1,6 @@
 'use client'
 
+import type { Dispatch, ReactNode, SetStateAction } from 'react'
 import { useEffect, useMemo, useRef, useState } from 'react'
 import {
   resolveExpression,
@@ -12,17 +13,14 @@ import { Squishmoji } from '@usespaceui/squishmoji/react'
 import { bloomSound } from '@/components/providers/sound-provider'
 import { toastManager } from '@/registry/primitives/toast'
 import { Button } from '@/registry/primitives/button'
-import { useMediaQuery } from '@/registry/hooks/browser/use-media-query'
-import { ResourceStudio } from '@/resources/components/shared/layout/studio'
-import { ResourceNav } from '@/resources/components/shared/layout/nav'
-import { ResourceToolbar, type ResourceToolbarConfig } from '@/resources/components/shared/layout/toolbar'
-import { InlineInstallBar } from '@/components/docs/installation/inline-install-bar'
+import { ResourceInstallCluster } from '@/resources/components/shared/layout/install-cluster'
+import { TOOL_OUTBOUND } from '@/resources/shared/links'
 import { ResourceGallery } from '@/resources/components/shared/layout/gallery'
 import { ResourceSeedView } from '@/resources/components/shared/layout/seed-stage'
 import { PersonaProvider } from '@/resources/components/shared/avatar/persona'
 import { MockupView } from '@/resources/components/shared/avatar/mockup-view'
 import { DEFAULT_SEEDS } from '@/resources/shared/seeds'
-import { getRandomPersonas } from '@/resources/shared/utils'
+import { getRandomPersonas, shufflePersonas } from '@/resources/shared/utils'
 import type { ResourceViewMode } from '@/resources/shared/types'
 import { SquishmojiControlPanel } from './control-panel'
 import { SquishmojiCodeModal } from './code-modal'
@@ -35,6 +33,7 @@ import { startLiveRecording, stopLiveRecording } from '@/resources/components/sh
 import {
   exportToVideoAuto,
   exportToVideoSequence,
+  type MotionFormat,
   type SequenceStep,
 } from '@/resources/components/shared/avatar/export/squish-video'
 
@@ -76,22 +75,50 @@ function snippetFor({
   return `import { Squishmoji } from '@usespaceui/squishmoji/react'\n\n${lines.join('\n')}`
 }
 
-export function SquishmojiPlayground() {
-  const [pool, setPool] = useState<string[]>(() => getRandomPersonas(126))
+export function useSquishmojiStudio({
+  pool,
+  setPool,
+  seedName,
+  setSeedName,
+  size,
+  setSize,
+  animate,
+  setAnimate,
+  view,
+  setView,
+  showRight,
+  expanded,
+}: {
+  pool: string[]
+  setPool: Dispatch<SetStateAction<string[]>>
+  seedName: string
+  setSeedName: (value: string) => void
+  size: number
+  setSize: (value: number) => void
+  animate: boolean
+  setAnimate: Dispatch<SetStateAction<boolean>>
+  view: ResourceViewMode
+  setView: (value: ResourceViewMode) => void
+  showRight: boolean
+  expanded: boolean
+}): {
+  canvas: ReactNode
+  right: ReactNode
+  bottom: ReactNode
+  installBar: ReactNode
+  modal: ReactNode
+  reset: () => void
+  changeView: (next: ResourceViewMode) => void
+} {
   const [shape, setShape] = useState<SquishShapeChoice>('all')
   const [expression, setExpression] = useState<SquishExpressionChoice>('all')
   const [backgroundStyle, setBackgroundStyle] = useState<SquishBackgroundStyleChoice>('all')
-  const [size, setSize] = useState(164)
-  const [animate, setAnimate] = useState(false)
-  const [animWobble, setAnimWobble] = useState(false)
-  const [animOnHover, setAnimOnHover] = useState(false)
-  const [animOnClick, setAnimOnClick] = useState(false)
-  const [view, setView] = useState<ResourceViewMode>('gallery')
-  const [seedName, setSeedName] = useState(DEFAULT_SEEDS)
-  const [showRight, setShowRight] = useState(true)
-  const [expanded, setExpanded] = useState(false)
+  const [animWobble, setAnimWobble] = useState(true)
+  const [animOnHover, setAnimOnHover] = useState(true)
+  const [animOnClick, setAnimOnClick] = useState(true)
   const [videoBg, setVideoBg] = useState('transparent')
   const [stillFormat, setStillFormat] = useState<'png' | 'svg'>('png')
+  const [motionFormat, setMotionFormat] = useState<MotionFormat>('webm')
   const [videoAspect, setVideoAspect] = useState<VideoAspect>('1:1')
   const [videoSize, setVideoSize] = useState<VideoExportSize>(1080)
   const [recording, setRecording] = useState(false)
@@ -105,13 +132,10 @@ export function SquishmojiPlayground() {
     animOnHover: boolean
     animOnClick: boolean
   } | null>(null)
-  const isDesktop = useMediaQuery('(min-width: 768px)', true)
 
   const getSvg = () => stageRef.current?.querySelector('svg') ?? null
-
-  useEffect(() => {
-    if (!isDesktop) setShowRight(false)
-  }, [isDesktop])
+  const name = seedName.trim() || DEFAULT_SEEDS
+  const fileBase = `squishmoji-${name}`
 
   useEffect(() => {
     if (!recording) return
@@ -120,8 +144,6 @@ export function SquishmojiPlayground() {
     toastManager.add({ type: 'info', title: 'Recording stopped' })
   }, [videoAspect, videoSize])
 
-  const name = seedName.trim() || DEFAULT_SEEDS
-  const fileBase = `squishmoji-${name}`
   const code = useMemo(
     () =>
       snippetFor({
@@ -165,19 +187,12 @@ export function SquishmojiPlayground() {
   }
 
   const reset = () => {
-    setPool(getRandomPersonas(126))
     setShape('all')
     setExpression('all')
     setBackgroundStyle('all')
-    setSize(164)
-    setAnimate(true)
-    setAnimWobble(false)
-    setAnimOnHover(false)
-    setAnimOnClick(false)
-    setSeedName(DEFAULT_SEEDS)
-    setView('gallery')
-    setShowRight(isDesktop)
-    setExpanded(false)
+    setAnimWobble(true)
+    setAnimOnHover(true)
+    setAnimOnClick(true)
     motionSnapshot.current = null
   }
 
@@ -198,24 +213,6 @@ export function SquishmojiPlayground() {
       motionSnapshot.current = null
     }
     setView(next)
-  }
-
-  const toolbarConfig: ResourceToolbarConfig = {
-    theme: true,
-    expand: true,
-    info: false,
-    sidebar: true,
-    reset: true,
-    viewToggle: true,
-    view,
-    views: ['gallery', 'mockup', 'seed'],
-    video: true,
-    onViewChange: changeView,
-    onReset: reset,
-    onToggleExpand: setExpanded,
-    onToggleSidebar: setShowRight,
-    sidebarVisible: showRight,
-    expanded,
   }
 
   const select = (seed: string) => {
@@ -265,6 +262,7 @@ export function SquishmojiPlayground() {
       }
     })
   }
+
   const videoActions = (
     <div className="flex flex-col gap-2">
       <Button type="button" size="sm" variant="secondary" onClick={() => setBlinkTrigger((count) => count + 1)}>
@@ -313,6 +311,7 @@ export function SquishmojiPlayground() {
                 backgroundStyle,
                 frame.width,
                 frame.height,
+                motionFormat,
               ),
             )
           }
@@ -334,6 +333,8 @@ export function SquishmojiPlayground() {
         setExportSize={setVideoSize}
         format={stillFormat}
         setFormat={setStillFormat}
+        motionFormat={motionFormat}
+        setMotionFormat={setMotionFormat}
         onExport={() => {
           const svg = getSvg()
           if (!svg) {
@@ -351,163 +352,160 @@ export function SquishmojiPlayground() {
       />
     ) : null
 
-  return (
-    <>
-      <ResourceStudio
-        showLeft={false}
-        showRight={showRight && !expanded}
-        rightWidth="20rem"
-        onToggleRight={setShowRight}
-        className={expanded ? 'p-0' : undefined}
-        bottom={
-          view === 'video' && !expanded ? (
-            <SequenceTimeline
-              sequence={sequence}
-              onAdd={addShot}
-              onUpdate={(id, patch) =>
-                setSequence((steps) => steps.map((step) => (step.id === id ? { ...step, ...patch } : step)))
-              }
-              onRemove={(id) => setSequence((steps) => steps.filter((step) => step.id !== id))}
-              onReorder={setSequence}
-              onExport={() =>
-                void notify('Sequence', () =>
-                  exportToVideoSequence(
-                    sequence,
-                    videoBg,
-                    `${fileBase}-sequence`,
-                    0,
-                    0,
-                    1,
-                    1,
-                    frame.width,
-                    frame.height,
-                  ),
-                )
-              }
-              onExportJson={exportSequenceJson}
-              onImportJson={importSequenceJson}
-            />
-          ) : null
-        }
-        installBar={
-          view !== 'seed' && view !== 'video' && !expanded ? (
-            <InlineInstallBar packageName="@usespaceui/squishmoji" isShadcn={false} />
-          ) : null
-        }
-        canvas={
-          view === 'mockup' ? (
-            <PersonaProvider
-              render={(props) => (
-                <Squishmoji
-                  seed={props.name ?? DEFAULT_SEEDS}
-                  size={props.size}
-                  shape={shape}
-                  expression={expression}
-                  backgroundStyle={backgroundStyle}
-                  animate={false}
-                  frozenAt={0}
-                />
-              )}
-            >
-              <MockupView
-                pool={pool}
-                pattern="all"
-                size={size}
-                effect="none"
-                animate={false}
-                circle
-                parsedColors={undefined}
-                paletteIndex={-2}
-              />
-            </PersonaProvider>
-          ) : view === 'gallery' ? (
-            <ResourceGallery
-              pool={pool}
-              onSelect={select}
-              limit={126}
-              sidebarLeft={false}
-              sidebarRight={showRight && !expanded}
-              renderMedia={(seed) => (
-                <div className="flex size-full max-h-full max-w-full items-center justify-center [&_svg]:size-full">
-                  {renderSquish(seed, 184, false)}
-                </div>
-              )}
-              caption={(seed) => captionFor(seed, shape, expression)}
-            />
-          ) : view === 'seed' ? (
-            <ResourceSeedView
-              title="Squishmoji"
-              description="Deterministic squishy SVG avatars from any string. Alive with motion, no assets, no network."
-              findLabel="Let's find your squishmoji"
-              seed={seedName}
-              setSeed={setSeedName}
-              placeholder={DEFAULT_SEEDS}
-              onRandomize={() => setSeedName(getRandomPersonas(1)[0] ?? DEFAULT_SEEDS)}
-              packageName="@usespaceui/squishmoji"
-              code={code}
-              codeTitle="Squishmoji.tsx"
-              footnote="Seed is the only required prop. The same seed always renders the same squishmoji."
-              preview={renderSquish(name, size, true)}
-            />
-          ) : (
-            <VideoStage
-              stageRef={stageRef}
-              seed={seedName}
-              setSeed={setSeedName}
-              placeholder={DEFAULT_SEEDS}
-              onRandomize={() => setSeedName(getRandomPersonas(1)[0] ?? DEFAULT_SEEDS)}
-              aspect={videoAspect}
-              preview={
-                <Squishmoji
-                  key={name}
-                  seed={name}
-                  size={'100%'}
-                  className="flex size-full items-center justify-center aspect-square [&_span]:size-[stretch]"
-                  shape={shape}
-                  expression={expression}
-                  backgroundStyle={backgroundStyle}
-                  animate={animate || recording}
-                  animWobble={animWobble}
-                  animOnHover={animOnHover}
-                  animOnClick={animOnClick}
-                  blinkTrigger={blinkTrigger}
-                />
-              }
-            />
-          )
-        }
-        float={<ResourceToolbar config={toolbarConfig} left={<ResourceNav />} />}
-        right={
-          <SquishmojiControlPanel
-            seed={view === 'seed' || view === 'video' ? seedName : (pool[0] ?? DEFAULT_SEEDS)}
+  const canvas =
+    view === 'mockup' ? (
+      <PersonaProvider
+        render={(props) => (
+          <Squishmoji
+            seed={props.name ?? DEFAULT_SEEDS}
+            size={props.size}
             shape={shape}
-            setShape={setShape}
             expression={expression}
-            setExpression={setExpression}
             backgroundStyle={backgroundStyle}
-            setBackgroundStyle={setBackgroundStyle}
-            size={size}
-            setSize={setSize}
             animate={animate}
-            setAnimate={setAnimate}
             animWobble={animWobble}
-            setAnimWobble={setAnimWobble}
             animOnHover={animOnHover}
-            setAnimOnHover={setAnimOnHover}
             animOnClick={animOnClick}
-            setAnimOnClick={setAnimOnClick}
-            regenerateSeeds={() => {
-              const next = getRandomPersonas(126)
-              setPool(next)
-              setSeedName(next[0] ?? DEFAULT_SEEDS)
-            }}
-            view={view}
-            videoActions={videoActions}
-          >
-            {exportPanel}
-          </SquishmojiControlPanel>
+            blinkTrigger={blinkTrigger}
+            frozenAt={animate ? undefined : 0}
+          />
+        )}
+      >
+        <MockupView
+          pool={pool}
+          pattern="all"
+          size={size}
+          effect="none"
+          animate={animate}
+          circle
+          parsedColors={undefined}
+          paletteIndex={-2}
+        />
+      </PersonaProvider>
+    ) : view === 'gallery' ? (
+      <ResourceGallery
+        pool={pool}
+        onSelect={select}
+        loop
+        sidebarLeft={false}
+        sidebarRight={showRight && !expanded}
+        mediaClassName="inset-0 sm:inset-1"
+        renderMedia={(seed) => (
+          <div className="flex size-full max-h-full max-w-full origin-center scale-[1.2] items-center justify-center lg:scale-[1.3] 2xl:scale-[1.4] 3xl:scale-[1.7] [&_svg]:size-full">
+            {renderSquish(seed, 320, true)}
+          </div>
+        )}
+        caption={(seed) => captionFor(seed, shape, expression)}
+      />
+    ) : view === 'seed' ? (
+      <ResourceSeedView
+        title="Squishmoji"
+        description="Deterministic squishy SVG avatars from any string. Alive with motion, no assets, no network."
+        findLabel="Let's find your squishmoji"
+        seed={seedName}
+        setSeed={setSeedName}
+        placeholder={DEFAULT_SEEDS}
+        onRandomize={() => setSeedName(getRandomPersonas(1)[0] ?? DEFAULT_SEEDS)}
+        packageName="@usespaceui/squishmoji"
+        code={code}
+        codeTitle="Squishmoji.tsx"
+        footnote="Seed is the only required prop. The same seed always renders the same squishmoji."
+        preview={renderSquish(name, size, true)}
+      />
+    ) : (
+      <VideoStage
+        stageRef={stageRef}
+        seed={seedName}
+        setSeed={setSeedName}
+        placeholder={DEFAULT_SEEDS}
+        onRandomize={() => setSeedName(getRandomPersonas(1)[0] ?? DEFAULT_SEEDS)}
+        aspect={videoAspect}
+        preview={
+          <Squishmoji
+            key={name}
+            seed={name}
+            size={'100%'}
+            className="flex size-full items-center justify-center [&_span]:size-[stretch]"
+            shape={shape}
+            expression={expression}
+            backgroundStyle={backgroundStyle}
+            animate={animate || recording}
+            animWobble={animWobble}
+            animOnHover={animOnHover}
+            animOnClick={animOnClick}
+            blinkTrigger={blinkTrigger}
+          />
         }
       />
+    )
+
+  return {
+    canvas,
+    right: (
+      <SquishmojiControlPanel
+        seed={seedName.trim() || DEFAULT_SEEDS}
+        shape={shape}
+        setShape={setShape}
+        expression={expression}
+        setExpression={setExpression}
+        backgroundStyle={backgroundStyle}
+        setBackgroundStyle={setBackgroundStyle}
+        size={size}
+        setSize={setSize}
+        animate={animate}
+        setAnimate={setAnimate}
+        animWobble={animWobble}
+        setAnimWobble={setAnimWobble}
+        animOnHover={animOnHover}
+        setAnimOnHover={setAnimOnHover}
+        animOnClick={animOnClick}
+        setAnimOnClick={setAnimOnClick}
+        regenerateSeeds={() => {
+          const next = shufflePersonas()
+          setPool(next)
+          setSeedName(next[0] ?? DEFAULT_SEEDS)
+        }}
+        view={view}
+        videoActions={videoActions}
+      >
+        {exportPanel}
+      </SquishmojiControlPanel>
+    ),
+    bottom:
+      view === 'video' && !expanded ? (
+        <SequenceTimeline
+          sequence={sequence}
+          onAdd={addShot}
+          onUpdate={(id, patch) =>
+            setSequence((steps) => steps.map((step) => (step.id === id ? { ...step, ...patch } : step)))
+          }
+          onRemove={(id) => setSequence((steps) => steps.filter((step) => step.id !== id))}
+          onReorder={setSequence}
+          onExport={() =>
+            void notify('Sequence', () =>
+              exportToVideoSequence(
+                sequence,
+                videoBg,
+                `${fileBase}-sequence`,
+                0,
+                0,
+                1,
+                1,
+                frame.width,
+                frame.height,
+                motionFormat,
+              ),
+            )
+          }
+          onExportJson={exportSequenceJson}
+          onImportJson={importSequenceJson}
+        />
+      ) : null,
+    installBar:
+      view !== 'seed' && view !== 'video' && !expanded ? (
+        <ResourceInstallCluster packageName="@usespaceui/squishmoji" links={TOOL_OUTBOUND.squishmoji} />
+      ) : null,
+    modal: (
       <SquishmojiCodeModal
         target={selectedSeed ? { seed: selectedSeed } : null}
         config={{
@@ -521,6 +519,8 @@ export function SquishmojiPlayground() {
         }}
         onClose={() => setSelectedSeed(null)}
       />
-    </>
-  )
+    ),
+    reset,
+    changeView,
+  }
 }

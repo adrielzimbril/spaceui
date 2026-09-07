@@ -24,7 +24,9 @@ export function PersonaProvider({
   children: ReactNode
   render?: (props: PersonaProps) => ReactNode
 }) {
-  return <PersonaContext.Provider value={render ?? ((props) => <Avatar {...props} />)}>{children}</PersonaContext.Provider>
+  return (
+    <PersonaContext.Provider value={render ?? ((props) => <Avatar {...props} />)}>{children}</PersonaContext.Provider>
+  )
 }
 
 export function Persona(props: PersonaProps) {
