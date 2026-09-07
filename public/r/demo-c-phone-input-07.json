@@ -9,7 +9,7 @@
   "files": [
     {
       "path": "src/registry/demo/components/spaceui/phone-input/c-phone-input-07/index.tsx",
-      "content": "import { PhoneInput } from '@/components/spaceui/phone-input'\n\nexport default function Demo() {\n  return <PhoneInput defaultCountry=\"FR\" placeholder=\"Enter phone number\" />\n}\n",
+      "content": "'use client'\n\nimport { useState } from 'react'\nimport { PhoneInput } from '@/components/spaceui/phone-input'\n\nexport default function Demo() {\n  const [value, setValue] = useState('')\n  return <PhoneInput defaultCountry=\"FR\" value={value} onChange={setValue} placeholder=\"Enter phone number\" />\n}\n",
       "type": "registry:component",
       "target": "components/spaceui/phone-input.tsx"
     }

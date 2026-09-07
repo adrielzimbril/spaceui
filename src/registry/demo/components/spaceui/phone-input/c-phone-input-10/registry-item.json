@@ -1,0 +1,24 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-c-phone-input-10",
+  "type": "registry:component",
+  "title": "Phone input with field and label",
+  "description": "Phone input integrated in a field with label and description.",
+  "registryDependencies": [
+    "https://www.spaceui.one/r/components-spaceui-phone-input.json",
+    "https://www.spaceui.one/r/primitives-field.json"
+  ],
+  "categories": [
+    "component",
+    "phone-input"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/components/spaceui/phone-input/c-phone-input-10/index.tsx",
+      "type": "registry:component",
+      "target": "components/spaceui/phone-input.tsx"
+    }
+  ],
+  "createdAt": "2026-09-05",
+  "updatedAt": "2026-09-05"
+}

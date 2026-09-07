@@ -13,7 +13,7 @@ import { FloatNav } from '@/components/layout/float-nav'
 function GlobalLayoutContent({ children }: { children: React.ReactNode }) {
   const pathname = usePathname()
   const { isStandard, isImmersive } = useLayoutMode()
-  const isResourceStudio = pathname.startsWith('/resources')
+  const isResourceStudio = pathname.startsWith('/tools')
 
   if (isImmersive || isResourceStudio) {
     return <>{children}</>

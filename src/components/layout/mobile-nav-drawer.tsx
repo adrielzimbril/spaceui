@@ -84,7 +84,7 @@ function getGroupIcon(group: string, title?: string) {
       return IconDeviceDesktop
     case 'Icons':
       return IconMoodSmile
-    case 'Resources':
+    case 'Tools':
       return IconTool
     default:
       return IconSparkles

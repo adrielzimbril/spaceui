@@ -89,7 +89,7 @@ function DataGridColumnHeaderInner<TData, TValue>({
   )
 
   const headerButtonClassName = cn(
-    'text-secondary-foreground/80 hover:bg-secondary data-[state=open]:bg-secondary hover:text-foreground data-[state=open]:text-foreground px-2 font-normal h-6 style-vega:rounded-md style-nova:rounded-lg style-maia:rounded-full style-lyra:rounded-none style-mira:rounded-md style-luma:rounded-full style-sera:rounded-none style-rhea:rounded-full',
+    'text-secondary-foreground/80 hover:bg-secondary data-[state=open]:bg-secondary hover:text-foreground data-[state=open]:text-foreground px-2 font-normal h-6 rounded-lg',
     className,
   )
 
@@ -296,7 +296,7 @@ function DataGridColumnHeaderInner<TData, TValue>({
           <Button
             size="icon-sm"
             variant="ghost"
-            className="style-vega:rounded-md style-nova:rounded-lg style-maia:rounded-full style-lyra:rounded-none style-mira:rounded-md style-luma:rounded-full style-sera:rounded-none style-rhea:rounded-full -me-1 size-7"
+            className="rounded-lg -me-1 size-7"
             onClick={() => column.pin(false)}
             aria-label={`Unpin ${resolvedTitle} column`}
             title={`Unpin ${resolvedTitle} column`}

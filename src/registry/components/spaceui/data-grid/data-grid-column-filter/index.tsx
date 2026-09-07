@@ -106,13 +106,13 @@ function DataGridColumnFilter<TData, TValue>({ column, title, options }: DataGri
                       }
                     }}
                     className={cn(
-                      'style-vega:rounded-sm style-nova:rounded-md style-maia:rounded-xl style-lyra:rounded-none style-mira:rounded-md style-luma:rounded-2xl style-sera:rounded-none style-rhea:rounded-2xl relative flex cursor-pointer items-center gap-2 px-2 py-1.5 text-sm outline-hidden select-none',
+                      'rounded-md relative flex cursor-pointer items-center gap-2 px-2 py-1.5 text-sm outline-hidden select-none',
                       'hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground',
                     )}
                   >
                     <div
                       className={cn(
-                        'border-primary style-vega:rounded-sm style-nova:rounded-sm style-maia:rounded-md style-lyra:rounded-none style-mira:rounded-sm style-luma:rounded-md style-sera:rounded-none style-rhea:rounded-md flex h-4 w-4 items-center justify-center border',
+                        'border-primary rounded-sm flex h-4 w-4 items-center justify-center border',
                         isSelected ? 'bg-primary text-primary-foreground' : 'opacity-50 [&_svg]:invisible',
                       )}
                     >
@@ -144,7 +144,7 @@ function DataGridColumnFilter<TData, TValue>({ column, title, options }: DataGri
                       column?.setFilterValue(undefined)
                     }
                   }}
-                  className="hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground style-vega:rounded-sm style-nova:rounded-md style-maia:rounded-xl style-lyra:rounded-none style-mira:rounded-md style-luma:rounded-2xl style-sera:rounded-none style-rhea:rounded-2xl relative flex cursor-pointer items-center justify-center px-2 py-1.5 text-sm outline-hidden select-none"
+                  className="hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground rounded-md relative flex cursor-pointer items-center justify-center px-2 py-1.5 text-sm outline-hidden select-none"
                 >
                   Clear filters
                 </div>

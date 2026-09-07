@@ -51,11 +51,34 @@ The main component for entering phone numbers with country selection.
 
 ---
 
+### Utilities
+
+The component re-exports essential phone number utilities:
+
+```tsx
+import {
+  PhoneInput,
+  isValidPhoneNumber,
+  formatPhoneNumber,
+  formatPhoneNumberIntl,
+  isPossiblePhoneNumber,
+  getCountryCallingCode,
+} from '@/components/spaceui/phone-input'
+```
+
+- **`isValidPhoneNumber(value)`**: Checks if the phone number is valid according to international metadata.
+- **`formatPhoneNumber(value)`**: Formats the phone number in national format.
+- **`formatPhoneNumberIntl(value)`**: Formats the phone number in international format (e.g. `+1 213 373 4253`).
+- **`isPossiblePhoneNumber(value)`**: Quick length check to see if the number could be possible.
+- **`getCountryCallingCode(country)`**: Returns the calling code for a given ISO country code (e.g. `'FR'` -> `'33'`).
+
+---
+
 ### External Props
 
 This component also accepts all props from the [react-phone-number-input](https://gitlab.com/catamphetamine/react-phone-number-input#props) library.
 
-## All 8 variations
+## Examples
 
 ### Large phone input
 
@@ -80,3 +103,11 @@ This component also accepts all props from the [react-phone-number-input](https:
 ### Read-only phone input
 
 <ComponentPreview name="demo-c-phone-input-08" />
+
+### Real-time validation
+
+<ComponentPreview name="demo-c-phone-input-09" />
+
+### With Field, Label and Description
+
+<ComponentPreview name="demo-c-phone-input-10" />

@@ -57,6 +57,23 @@ export function SoundProvider({ children }: { children: React.ReactNode }) {
   const [enabled, setEnabledState] = useLocalStorage<boolean>(STORAGE_KEY, false)
   const [suppressed, setSuppressed] = useState(false)
 
+  // Initialize Space UI sound bindings once on mount
+  useEffect(() => {
+    try {
+      if (typeof spaceSounds.setVoice === 'function') {
+        spaceSounds.setVoice('Space UI')
+      }
+      if (typeof spaceSounds.setVolume === 'function') {
+        spaceSounds.setVolume(0.35)
+      }
+      if (typeof spaceSounds.bind === 'function') {
+        spaceSounds.bind()
+      }
+    } catch {
+      // Ignore audio init errors
+    }
+  }, [])
+
   useEffect(() => {
     const coarse = window.matchMedia('(pointer: coarse)').matches
     const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
@@ -64,16 +81,31 @@ export function SoundProvider({ children }: { children: React.ReactNode }) {
     if (coarse || reducedMotion) {
       setSuppressed(true)
       isSoundActive = false
+      try {
+        if (typeof spaceSounds.setEnabled === 'function') {
+          spaceSounds.setEnabled(false)
+        }
+      } catch {}
       return
     }
 
     isSoundActive = enabled
+    try {
+      if (typeof spaceSounds.setEnabled === 'function') {
+        spaceSounds.setEnabled(enabled)
+      }
+    } catch {}
   }, [enabled])
 
   const updateEnabled = useCallback(
     (next: boolean) => {
       setEnabledState(next)
       isSoundActive = next
+      try {
+        if (typeof spaceSounds.setEnabled === 'function') {
+          spaceSounds.setEnabled(next)
+        }
+      } catch {}
     },
     [setEnabledState],
   )

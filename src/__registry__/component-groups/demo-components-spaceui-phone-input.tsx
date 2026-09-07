@@ -64,4 +64,12 @@ export const registryComponents: Record<string, RegistryComponent> = {
     () => import("@/registry/demo/components/spaceui/phone-input/c-phone-input-08/index.tsx"),
     {},
   ),
+  "demo-c-phone-input-09": lazyRegistryComponent(
+    () => import("@/registry/demo/components/spaceui/phone-input/c-phone-input-09/index.tsx"),
+    {},
+  ),
+  "demo-c-phone-input-10": lazyRegistryComponent(
+    () => import("@/registry/demo/components/spaceui/phone-input/c-phone-input-10/index.tsx"),
+    {},
+  ),
 };

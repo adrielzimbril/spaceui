@@ -1,5 +1,9 @@
+'use client'
+
+import { useState } from 'react'
 import { PhoneInput } from '@/registry/components/spaceui/phone-input'
 
 export default function Demo() {
-  return <PhoneInput value="+12125551234" placeholder="Enter phone number" />
+  const [value, setValue] = useState('+12125551234')
+  return <PhoneInput value={value} onChange={setValue} placeholder="Enter phone number" />
 }

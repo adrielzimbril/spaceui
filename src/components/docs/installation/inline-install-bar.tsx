@@ -45,9 +45,7 @@ export function InlineInstallBar({
   const commands = isShadcn ? getShadcnAddCommands(rawPkg) : getPackageInstallCommands(rawPkg)
 
   const command =
-    (typeof commandOverride === 'string'
-      ? commandOverride
-      : commandOverride?.[manager]) ||
+    (typeof commandOverride === 'string' ? commandOverride : commandOverride?.[manager]) ||
     commands[manager] ||
     commands.npm
 

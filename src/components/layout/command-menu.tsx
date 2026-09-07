@@ -96,7 +96,7 @@ const GROUP_ORDER = [
   'Blocks',
   'Templates',
   'Icons',
-  'Resources',
+  'Tools',
 ]
 
 function getGroupIcon(group: string, isComponent: boolean) {
@@ -127,7 +127,7 @@ function getGroupIcon(group: string, isComponent: boolean) {
       return IconMoodSmile
     case 'Documentation':
       return IconBook2
-    case 'Resources':
+    case 'Tools':
       return IconFolderHeart
     default:
       return isComponent ? IconAtom : IconBook2
@@ -217,8 +217,8 @@ export function CommandMenu({
         } else if (url.startsWith('/docs')) {
           group = 'Documentation'
           isComponent = false
-        } else if (url.startsWith('/resources')) {
-          group = 'Resources'
+        } else if (url.startsWith('/tools')) {
+          group = 'Tools'
           isComponent = false
         }
 
@@ -258,7 +258,7 @@ export function CommandMenu({
           value: res.value,
           label: res.label,
           url: res.url,
-          group: 'Resources',
+          group: 'Tools',
           isComponent: false,
           keywords: res.keywords,
         })
@@ -407,11 +407,19 @@ export function CommandMenu({
                   <CommandCollection>
                     {(item: PageItem) => {
                       const ItemIcon = getGroupIcon(item.group, item.isComponent)
+                      const isExternal = item.url.startsWith('http')
                       return (
                         <CommandItem
                           className="flex w-full items-center justify-between"
                           key={item.value}
-                          render={<Link href={item.url} onClick={() => setOpen(false)} />}
+                          render={
+                            <Link
+                              href={item.url}
+                              target={isExternal ? '_blank' : undefined}
+                              rel={isExternal ? 'noopener noreferrer' : undefined}
+                              onClick={() => setOpen(false)}
+                            />
+                          }
                         >
                           <div className="flex items-center gap-2.5 min-w-0">
                             <ItemIcon className="size-4 shrink-0 text-muted-foreground" />

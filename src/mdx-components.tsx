@@ -36,7 +36,8 @@ import {
   Blockquote,
   Strong,
 } from '@/components/docs/mdx/typography'
-import { TypographyPlayground, HeadingSpecs, BodySpecs } from '@/components/docs/mdx/typography-interactive'
+import { HeadingSpecs, BodySpecs } from '@/components/docs/mdx/typography-interactive'
+import { TypographyPlayground } from '@/components/docs/mdx/typography-playground'
 import { ColorToken, ColorSwatch } from '@/components/docs/mdx/color-swatch'
 import { IconPreview } from '@/components/docs/mdx/icon-preview'
 

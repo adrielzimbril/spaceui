@@ -1,6 +1,7 @@
 'use client'
 
 import { IconWorld } from '@tabler/icons-react'
+import * as React from 'react'
 import { createContext, useContext, useMemo, useState } from 'react'
 import * as BasePhoneInput from 'react-phone-number-input'
 import flags from 'react-phone-number-input/flags'
@@ -20,6 +21,7 @@ import {
 } from '@/registry/primitives/combobox'
 import { Input } from '@/registry/primitives/input'
 import { ScrollArea } from '@/registry/primitives/scroll-area'
+
 type PhoneInputSize = 'sm' | 'default' | 'lg'
 
 const PhoneInputContext = createContext<{
@@ -35,7 +37,7 @@ const PhoneInputContext = createContext<{
 type PhoneInputProps = Omit<React.ComponentProps<'input'>, 'onChange' | 'value' | 'ref'> &
   Omit<
     BasePhoneInput.Props<typeof BasePhoneInput.default>,
-    'onChange' | 'variant' | 'popupClassName' | 'scrollAreaClassName'
+    'onChange' | 'variant' | 'popupClassName' | 'scrollAreaClassName' | 'ref'
   > & {
     onChange?: (value: BasePhoneInput.Value) => void
     variant?: PhoneInputSize
@@ -43,19 +45,21 @@ type PhoneInputProps = Omit<React.ComponentProps<'input'>, 'onChange' | 'value' 
     scrollAreaClassName?: string
   }
 
-function PhoneInput({
-  className,
-  variant,
-  popupClassName,
-  scrollAreaClassName,
-  onChange,
-  value,
-  ...props
-}: PhoneInputProps) {
+const PhoneInput = React.forwardRef<HTMLInputElement, PhoneInputProps>(function PhoneInput(
+  { className, variant, popupClassName, scrollAreaClassName, onChange, value, ...props },
+  ref,
+) {
   const phoneInputSize = variant || 'default'
+
+  const contextValue = useMemo(
+    () => ({ variant: phoneInputSize, popupClassName, scrollAreaClassName }),
+    [phoneInputSize, popupClassName, scrollAreaClassName],
+  )
+
   return (
-    <PhoneInputContext.Provider value={{ variant: phoneInputSize, popupClassName, scrollAreaClassName }}>
+    <PhoneInputContext.Provider value={contextValue}>
       <BasePhoneInput.default
+        ref={ref}
         className={cn(
           'flex',
           props['aria-invalid'] &&
@@ -72,13 +76,18 @@ function PhoneInput({
       />
     </PhoneInputContext.Provider>
   )
-}
+})
+PhoneInput.displayName = 'PhoneInput'
 
-function InputComponent({ className, ...props }: React.ComponentProps<typeof Input>) {
+const InputComponent = React.forwardRef<HTMLInputElement, React.ComponentProps<typeof Input>>(function InputComponent(
+  { className, ...props },
+  ref,
+) {
   const { variant } = useContext(PhoneInputContext)
 
   return (
     <Input
+      ref={ref}
       className={cn(
         'ring-none! rounded-s-none outline-none! focus:z-1',
         variant === 'sm' && 'h-7',
@@ -88,7 +97,8 @@ function InputComponent({ className, ...props }: React.ComponentProps<typeof Inp
       {...props}
     />
   )
-}
+})
+InputComponent.displayName = 'InputComponent'
 
 type CountryEntry = {
   label: string
@@ -104,20 +114,69 @@ type CountrySelectProps = {
 
 function CountrySelect({ disabled, value: selectedCountry, options: countryList, onChange }: CountrySelectProps) {
   const { variant, popupClassName } = useContext(PhoneInputContext)
+  const [open, setOpen] = useState(false)
   const [searchValue, setSearchValue] = useState('')
 
   const filteredCountries = useMemo(() => {
-    if (!searchValue) return countryList
-    return countryList.filter(({ label }) => label.toLowerCase().includes(searchValue.toLowerCase()))
+    if (!searchValue.trim()) return countryList
+
+    const query = searchValue.trim().toLowerCase()
+    const normalizedQuery = query.startsWith('+') ? query.slice(1) : query
+
+    return countryList
+      .map((item) => {
+        if (!item.value) return { item, score: 0 }
+
+        const labelLower = item.label.toLowerCase()
+        const isoCodeLower = item.value.toLowerCase()
+        let callingCode = ''
+
+        try {
+          callingCode = BasePhoneInput.getCountryCallingCode(item.value)
+        } catch {
+          // ignore invalid country code
+        }
+
+        let score = 0
+        if (callingCode === normalizedQuery) {
+          score = 100
+        } else if (callingCode.startsWith(normalizedQuery)) {
+          score = 80
+        } else if (isoCodeLower === normalizedQuery) {
+          score = 90
+        } else if (labelLower.startsWith(query)) {
+          score = 70
+        } else if (labelLower.includes(query)) {
+          score = 50
+        } else if (callingCode.includes(normalizedQuery)) {
+          score = 40
+        }
+
+        return { item, score }
+      })
+      .filter(({ score }) => score > 0)
+      .sort((a, b) => b.score - a.score)
+      .map(({ item }) => item)
   }, [countryList, searchValue])
+
+  const handleOpenChange = (isOpen: boolean) => {
+    setOpen(isOpen)
+    if (!isOpen) {
+      setSearchValue('')
+    }
+  }
 
   return (
     <Combobox
+      open={open}
+      onOpenChange={handleOpenChange}
       items={filteredCountries}
       value={selectedCountry || ''}
       onValueChange={(country: BasePhoneInput.Country | null) => {
         if (country) {
           onChange(country)
+          setOpen(false)
+          setSearchValue('')
         }
       }}
     >
@@ -127,7 +186,7 @@ function CountrySelect({ disabled, value: selectedCountry, options: countryList,
             variant="outline"
             size={variant}
             className={cn(
-              'style-vega:rounded-s-md style-nova:rounded-s-lg style-maia:rounded-s-4xl style-lyra:rounded-s-none style-mira:rounded-s-md style-luma:rounded-s-3xl style-rhea:rounded-s-xl style-sera:rounded-s-none rounded-e-none flex gap-1 border-e-0 px-2.5 py-0 leading-none hover:bg-transparent focus:z-10 data-pressed:bg-transparent',
+              'rounded-s-lg rounded-e-none flex gap-1 border-e-0 px-2.5 py-0 leading-none hover:bg-transparent focus:z-10 data-pressed:bg-transparent',
               disabled && 'opacity-50',
             )}
             disabled={disabled}
@@ -141,7 +200,7 @@ function CountrySelect({ disabled, value: selectedCountry, options: countryList,
       />
       <ComboboxPopup className={cn('w-xs *:data-[slot=input-group]:bg-transparent', popupClassName)}>
         <ComboboxInput
-          placeholder="e.g. United States"
+          placeholder="Search country or +code..."
           value={searchValue}
           onChange={(e) => setSearchValue(e.target.value)}
           showTrigger={false}
@@ -183,4 +242,12 @@ function FlagComponent({ country, countryName }: BasePhoneInput.FlagProps) {
   )
 }
 
-export { PhoneInput }
+export { PhoneInput, type PhoneInputProps, type PhoneInputSize }
+
+export {
+  formatPhoneNumber,
+  formatPhoneNumberIntl,
+  isPossiblePhoneNumber,
+  isValidPhoneNumber,
+  getCountryCallingCode,
+} from 'react-phone-number-input'

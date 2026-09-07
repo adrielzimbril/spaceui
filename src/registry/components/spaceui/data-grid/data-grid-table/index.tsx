@@ -886,7 +886,7 @@ function DataGridTableResizeIndicator({ viewportNodeRef }: { viewportNodeRef: Re
       <div className="bg-primary/85 absolute inset-y-0 left-0 w-px -translate-x-1/2" />
       <div
         ref={indicatorHeadRef}
-        className="bg-primary style-vega:rounded-b-sm style-nova:rounded-b-sm style-maia:rounded-b-md style-lyra:rounded-b-none style-mira:rounded-b-sm style-luma:rounded-b-lg style-sera:rounded-b-none style-rhea:rounded-b-lg absolute top-0 left-0 -translate-x-1/2 shadow-xs"
+        className="bg-primary rounded-b-sm absolute top-0 left-0 -translate-x-1/2 shadow-xs"
         style={{ width: 5 }}
       />
     </div>
@@ -904,10 +904,7 @@ function DataGridTableBody({ children }: { children: ReactNode }) {
     <tbody
       data-slot="data-grid-table-body"
       className={cn(
-        props.tableLayout?.rowRounded &&
-          'style-vega:[&_td:first-child]:rounded-l-lg style-nova:[&_td:first-child]:rounded-l-lg style-maia:[&_td:first-child]:rounded-l-2xl style-lyra:[&_td:first-child]:rounded-l-none style-mira:[&_td:first-child]:rounded-l-lg style-luma:[&_td:first-child]:rounded-l-3xl style-sera:[&_td:first-child]:rounded-l-none style-rhea:[&_td:first-child]:rounded-l-2xl',
-        props.tableLayout?.rowRounded &&
-          'style-vega:[&_td:last-child]:rounded-r-lg style-nova:[&_td:last-child]:rounded-r-lg style-maia:[&_td:last-child]:rounded-r-2xl style-lyra:[&_td:last-child]:rounded-r-none style-mira:[&_td:last-child]:rounded-r-lg style-luma:[&_td:last-child]:rounded-r-3xl style-sera:[&_td:last-child]:rounded-r-none style-rhea:[&_td:last-child]:rounded-r-2xl',
+        props.tableLayout?.rowRounded && '[&_td:first-child]:rounded-l-lg [&_td:last-child]:rounded-r-lg',
         props.tableClassNames?.body,
       )}
     >
@@ -1215,7 +1212,7 @@ function DataGridTableLoader() {
 
   return (
     <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
-      <div className="text-muted-foreground bg-card style-vega:rounded-lg style-nova:rounded-lg style-maia:rounded-2xl style-lyra:rounded-none style-mira:rounded-lg style-luma:rounded-3xl style-sera:rounded-none style-rhea:rounded-2xl flex items-center gap-2 border px-4 py-2 text-sm leading-none font-medium">
+      <div className="text-muted-foreground bg-card rounded-lg flex items-center gap-2 border px-4 py-2 text-sm leading-none font-medium">
         <Spinner className="size-5 opacity-60" />
         {props.loadingMessage || 'Loading...'}
       </div>
@@ -1241,7 +1238,7 @@ function DataGridTableRowPin<TData>({ row }: { row: Row<TData> }) {
         }
       }}
       className={cn(
-        'text-muted-foreground hover:text-foreground style-vega:rounded-md style-nova:rounded-lg style-maia:rounded-full style-lyra:rounded-none style-mira:rounded-md style-luma:rounded-full style-sera:rounded-none style-rhea:rounded-full inline-flex size-7 items-center justify-center transition-colors',
+        'text-muted-foreground hover:text-foreground rounded-lg inline-flex size-7 items-center justify-center transition-colors',
         isPinned && 'text-primary hover:text-primary/80',
       )}
     >

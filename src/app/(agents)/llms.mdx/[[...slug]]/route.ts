@@ -6,7 +6,6 @@ import { notFound } from 'next/navigation'
 export async function GET(_req: NextRequest, { params }: { params: Promise<{ slug?: string[] }> }) {
   const { slug = [] } = await params
 
-  // Normalize slug by removing any trailing .mdx extension
   const cleanSlug = [...slug]
   if (cleanSlug.length > 0 && cleanSlug[cleanSlug.length - 1].endsWith('.mdx')) {
     cleanSlug[cleanSlug.length - 1] = cleanSlug[cleanSlug.length - 1].replace(/\.mdx$/, '')
@@ -16,7 +15,7 @@ export async function GET(_req: NextRequest, { params }: { params: Promise<{ slu
 
   if (cleanSlug[0] === 'ui-kit') {
     page = uiKitSource.getPage(cleanSlug.slice(1))
-  } else if (cleanSlug[0] === 'resources') {
+  } else if (cleanSlug[0] === 'tools' || cleanSlug[0] === 'resources') {
     page = resourcesSource.getPage(cleanSlug.slice(1))
   } else if (cleanSlug[0] === 'docs') {
     page = source.getPage(cleanSlug.slice(1))
@@ -43,6 +42,6 @@ export function generateStaticParams() {
   return [
     ...source.generateParams().map((p) => ({ slug: ['docs', ...(p.slug || [])] })),
     ...uiKitSource.generateParams().map((p) => ({ slug: ['ui-kit', ...(p.slug || [])] })),
-    ...resourcesSource.generateParams().map((p) => ({ slug: ['resources', ...(p.slug || [])] })),
+    ...resourcesSource.generateParams().map((p) => ({ slug: ['tools', ...(p.slug || [])] })),
   ]
 }

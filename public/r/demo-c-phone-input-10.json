@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-c-phone-input-10",
+  "title": "Phone input with field and label",
+  "description": "Phone input integrated in a field with label and description.",
+  "registryDependencies": [
+    "https://www.spaceui.one/r/components-spaceui-phone-input.json",
+    "https://www.spaceui.one/r/primitives-field.json"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/components/spaceui/phone-input/c-phone-input-10/index.tsx",
+      "content": "'use client'\n\nimport { useState } from 'react'\nimport { PhoneInput } from '@/components/spaceui/phone-input'\nimport { Field, FieldLabel, FieldDescription } from '@/components/ui/field'\n\nexport default function Demo() {\n  const [value, setValue] = useState('')\n\n  return (\n    <Field className=\"w-full max-w-xs\">\n      <FieldLabel>Phone number</FieldLabel>\n      <PhoneInput value={value} onChange={setValue} placeholder=\"Enter phone number\" defaultCountry=\"US\" />\n      <FieldDescription>Include country code if calling from abroad.</FieldDescription>\n    </Field>\n  )\n}\n",
+      "type": "registry:component",
+      "target": "components/spaceui/phone-input.tsx"
+    }
+  ],
+  "categories": [
+    "component",
+    "phone-input"
+  ],
+  "type": "registry:component"
+}

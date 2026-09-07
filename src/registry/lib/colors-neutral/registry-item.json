@@ -6,7 +6,7 @@
   "description": "Utility and configuration helper for Colors Neutral.",
   "cssVars": {
     "dark": {
-      "background": "hsl(0 0% 9%)",
+      "background": "lab(5 0 0)",
       "foreground": "hsl(0 0% 100%)",
       "muted": "hsl(240 4% 16%)",
       "muted-foreground": "hsl(0 0% 64%)",
@@ -14,15 +14,13 @@
       "card-foreground": "hsl(0 0% 98%)",
       "border": "--alpha(var(--color-white) / 8%)",
       "pill-active-bg": "--alpha(var(--color-white) / 14%)",
-      "destructive": "var(--color-red-800)",
-      "destructive-foreground": "var(--color-red-400)",
       "popover": "hsl(0 0% 4%)",
       "popover-foreground": "hsl(0 0% 98%)",
       "primary": "hsl(0 0% 98%)",
       "primary-foreground": "hsl(0 0% 4%)",
       "secondary": "hsl(240 4% 16%)",
       "secondary-foreground": "hsl(0 0% 98%)",
-      "accent": "hsl(0 0% 9%)",
+      "accent": "hsl(0, 0%, 15%)",
       "accent-foreground": "hsl(0 0% 98%)",
       "input": "--alpha(var(--color-white) / 15%)",
       "ring": "transparent",
@@ -33,7 +31,9 @@
       "warning": "var(--color-amber-100)",
       "warning-foreground": "var(--color-amber-800)",
       "error": "var(--color-red-100)",
-      "error-foreground": "var(--color-red-800)"
+      "error-foreground": "var(--color-red-800)",
+      "destructive": "var(--color-red-800)",
+      "destructive-foreground": "var(--color-red-400)"
     },
     "light": {
       "background": "hsl(0 0% 100%)",
@@ -44,8 +44,6 @@
       "card-foreground": "hsl(0 0% 4%)",
       "border": "--alpha(var(--color-black) / 8%)",
       "pill-active-bg": "--alpha(var(--color-black) / 10%)",
-      "destructive": "var(--color-red-500)",
-      "destructive-foreground": "var(--color-red-500)",
       "popover": "hsl(0 0% 100%)",
       "popover-foreground": "hsl(0 0% 4%)",
       "primary": "hsl(0 0% 4%)",
@@ -63,7 +61,9 @@
       "warning": "var(--color-amber-100)",
       "warning-foreground": "var(--color-amber-900)",
       "error": "var(--color-red-100)",
-      "error-foreground": "var(--color-red-900)"
+      "error-foreground": "var(--color-red-900)",
+      "destructive": "var(--color-red-500)",
+      "destructive-foreground": "var(--color-red-500)"
     }
   },
   "categories": [

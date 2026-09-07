@@ -318,22 +318,7 @@ function FilterInput<T = unknown>({
   }
 
   return (
-    <InputGroup
-      className={cn(
-        'w-36',
-        // Height follows each style's own control ladder. `default` sets no
-        // height on purpose so the style's `.cn-input-group` applies (h-8 nova,
-        // h-9 maia/luma, h-7 mira, h-10 sera); sm/lg step down/up from it.
-        // Base covers nova/lyra/rhea/vega; only deviating styles are listed.
-        context.size == 'sm' && 'h-7! style-maia:h-8! style-luma:h-8! style-mira:h-6! style-sera:h-9!',
-        context.size == 'lg' && 'h-9! style-maia:h-10! style-luma:h-10! style-mira:h-8! style-sera:h-11!',
-        // Sera's `.cn-input` is `px-0` (underline inputs sit flush); inside a
-        // segmented chip that collides with the neighbouring segment, so give
-        // the value input the same inline padding sera uses elsewhere.
-        'style-sera:px-2.5',
-        className,
-      )}
-    >
+    <InputGroup className={cn('w-36', context.size == 'sm' && 'h-7!', context.size == 'lg' && 'h-9!', className)}>
       {field?.prefix && (
         <InputGroupAddon>
           <InputGroupText>{field.prefix}</InputGroupText>
@@ -345,10 +330,7 @@ function FilterInput<T = unknown>({
         aria-describedby={!isValid && validationMessage ? `${field?.key || 'input'}-error` : undefined}
         onBlur={handleBlur}
         onKeyDown={handleKeyDown}
-        className={cn(
-          context.size == 'sm' && 'h-7! text-xs style-maia:h-8! style-luma:h-8! style-mira:h-6! style-sera:h-9!',
-          context.size == 'lg' && 'h-9! style-maia:h-10! style-luma:h-10! style-mira:h-8! style-sera:h-11!',
-        )}
+        className={cn(context.size == 'sm' && 'h-7! text-xs', context.size == 'lg' && 'h-9!')}
         {...props}
       />
       {!isValid && validationMessage && (
@@ -1161,14 +1143,7 @@ export const FiltersContent = <T = unknown,>({ filters, fields, onChange }: Filt
         if (!field) return null
 
         return (
-          <ButtonGroup
-            key={filter.id}
-            // Sera is an underline style: its group text and input group carry
-            // only a bottom border. Normalise the boxed segments (the operator,
-            // value and remove buttons) to the same treatment so the whole chip
-            // reads as one underlined group instead of mixing boxes and rules.
-            className="style-sera:*:border-transparent style-sera:*:border-b-input style-sera:*:rounded-none"
-          >
+          <ButtonGroup key={filter.id}>
             <ButtonGroupText>
               {field.icon && field.icon}
               {field.label}
@@ -1870,14 +1845,7 @@ export function Filters<T = unknown>({
           const field = fieldsMap[filter.field]
           if (!field) return null
           return (
-            <ButtonGroup
-              key={filter.id}
-              // Sera is an underline style: its group text and input group carry
-              // only a bottom border. Normalise the boxed segments (operator,
-              // value, remove) to the same treatment so the whole chip reads as
-              // one underlined group instead of mixing boxes and rules.
-              className="style-sera:*:border-transparent style-sera:*:border-b-input style-sera:*:rounded-none"
-            >
+            <ButtonGroup key={filter.id}>
               <ButtonGroupText className="bg-background dark:bg-input/30">
                 {field.icon && field.icon}
                 {field.label}

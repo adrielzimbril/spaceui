@@ -35,7 +35,7 @@ export const uiKitSource = loader({
 })
 
 export const resourcesSource = loader({
-  baseUrl: '/resources',
+  baseUrl: '/tools',
   source: resources.toFumadocsSource(),
   ...commonLoaderOptions,
 })

@@ -5697,6 +5697,70 @@ export const index: Record<string, any> = {
     })(),
     command: '@usespaceui/demo-c-phone-input-08',
   },
+  "demo-c-phone-input-09": {
+    name: "demo-c-phone-input-09",
+    description: "Phone input with real-time validation and format feedback.",
+    type: "registry:component",
+    dependencies: undefined,
+    devDependencies: undefined,
+    registryDependencies: ["https://www.spaceui.one/r/components-spaceui-phone-input.json"],
+    files: [
+  {
+    "path": "src/registry/demo/components/spaceui/phone-input/c-phone-input-09/index.tsx",
+    "type": "registry:component",
+    "target": "components/spaceui/phone-input.tsx"
+  }
+],
+    keywords: [],
+    component: (() => {
+      const LazyComp = React.lazy(async () => {
+        const mod = await import("@/registry/demo/components/spaceui/phone-input/c-phone-input-09/index.tsx");
+        const exportName = Object.keys(mod).find(
+          key => typeof mod[key] === 'function' || typeof mod[key] === 'object'
+        ) || "demo-c-phone-input-09";
+        const Comp = mod.default || mod[exportName];
+        if (mod.animations) {
+          (LazyComp as any).animations = mod.animations;
+        }
+        return { default: Comp };
+      });
+      LazyComp.demoProps = {};
+      return LazyComp;
+    })(),
+    command: '@usespaceui/demo-c-phone-input-09',
+  },
+  "demo-c-phone-input-10": {
+    name: "demo-c-phone-input-10",
+    description: "Phone input integrated in a field with label and description.",
+    type: "registry:component",
+    dependencies: undefined,
+    devDependencies: undefined,
+    registryDependencies: ["https://www.spaceui.one/r/components-spaceui-phone-input.json","https://www.spaceui.one/r/primitives-field.json"],
+    files: [
+  {
+    "path": "src/registry/demo/components/spaceui/phone-input/c-phone-input-10/index.tsx",
+    "type": "registry:component",
+    "target": "components/spaceui/phone-input.tsx"
+  }
+],
+    keywords: [],
+    component: (() => {
+      const LazyComp = React.lazy(async () => {
+        const mod = await import("@/registry/demo/components/spaceui/phone-input/c-phone-input-10/index.tsx");
+        const exportName = Object.keys(mod).find(
+          key => typeof mod[key] === 'function' || typeof mod[key] === 'object'
+        ) || "demo-c-phone-input-10";
+        const Comp = mod.default || mod[exportName];
+        if (mod.animations) {
+          (LazyComp as any).animations = mod.animations;
+        }
+        return { default: Comp };
+      });
+      LazyComp.demoProps = {};
+      return LazyComp;
+    })(),
+    command: '@usespaceui/demo-c-phone-input-10',
+  },
   "demo-c-pin-list-01": {
     name: "demo-c-pin-list-01",
     description: "Demo showing a pin list.",

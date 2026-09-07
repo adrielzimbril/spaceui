@@ -26,8 +26,6 @@
   --card-foreground: hsl(0 0% 4%);
   --border: --alpha(var(--color-black) / 8%);
   --pill-active-bg: --alpha(var(--color-black) / 10%);
-  --destructive: var(--color-red-500);
-  --destructive-foreground: var(--color-red-500);
 
   --popover: hsl(0 0% 100%);
   --popover-foreground: hsl(0 0% 4%);
@@ -47,10 +45,12 @@
   --warning-foreground: var(--color-amber-900);
   --error: var(--color-red-100);
   --error-foreground: var(--color-red-900);
+  --destructive: var(--color-red-500);
+  --destructive-foreground: var(--color-red-500);
 }
 
 .dark {
-  --background: hsl(0 0% 9%);
+  --background: lab(5 0 0);
   --foreground: hsl(0 0% 100%);
   --muted: hsl(240 4% 16%);
   --muted-foreground: hsl(0 0% 64%);
@@ -58,8 +58,6 @@
   --card-foreground: hsl(0 0% 98%);
   --border: --alpha(var(--color-white) / 8%);
   --pill-active-bg: --alpha(var(--color-white) / 14%);
-  --destructive: var(--color-red-800);
-  --destructive-foreground: var(--color-red-400);
 
   --popover: hsl(0 0% 4%);
   --popover-foreground: hsl(0 0% 98%);
@@ -67,7 +65,7 @@
   --primary-foreground: hsl(0 0% 4%);
   --secondary: hsl(240 4% 16%);
   --secondary-foreground: hsl(0 0% 98%);
-  --accent: hsl(0 0% 9%);
+  --accent: hsl(0, 0%, 15%);
   --accent-foreground: hsl(0 0% 98%);
   --input: --alpha(var(--color-white) / 15%);
   --ring: transparent;
@@ -79,6 +77,8 @@
   --warning-foreground: var(--color-amber-800);
   --error: var(--color-red-100);
   --error-foreground: var(--color-red-800);
+  --destructive: var(--color-red-800);
+  --destructive-foreground: var(--color-red-400);
 }
 
 @theme inline {
@@ -86,6 +86,7 @@
   --font-mono: var(--font-geist-mono), ui-monospace, monospace;
   --font-body: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
   --font-heading: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-open-runde: var(--font-open-runde), sans-serif;
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-muted: var(--muted);
@@ -94,7 +95,6 @@
   --color-card-foreground: var(--card-foreground);
   --color-border: var(--border);
   --color-pill-active-bg: var(--pill-active-bg);
-  --color-destructive-foreground: var(--destructive-foreground);
 
   --color-popover: var(--popover);
   --color-popover-foreground: var(--popover-foreground);
@@ -104,7 +104,6 @@
   --color-secondary-foreground: var(--secondary-foreground);
   --color-accent: var(--accent);
   --color-accent-foreground: var(--accent-foreground);
-  --color-destructive: var(--destructive);
   --color-input: var(--input);
   --color-ring: var(--ring);
   --color-ink: var(--ink);
@@ -134,6 +133,8 @@
   --color-info: var(--info);
   --color-error: var(--error);
   --color-error-foreground: var(--error-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
 }
 
 html,

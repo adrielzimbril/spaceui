@@ -175,6 +175,8 @@ export const componentGroups: Record<string, string> = {
   "demo-c-phone-input-06": "demo-components-spaceui-phone-input",
   "demo-c-phone-input-07": "demo-components-spaceui-phone-input",
   "demo-c-phone-input-08": "demo-components-spaceui-phone-input",
+  "demo-c-phone-input-09": "demo-components-spaceui-phone-input",
+  "demo-c-phone-input-10": "demo-components-spaceui-phone-input",
   "demo-c-pin-list-01": "demo-components-spaceui-pin-list",
   "demo-c-rating-01": "demo-components-spaceui-rating",
   "demo-c-rating-02": "demo-components-spaceui-rating",

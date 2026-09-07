@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-c-phone-input-09",
+  "title": "Phone input with validation",
+  "description": "Phone input with real-time validation and format feedback.",
+  "registryDependencies": [
+    "https://www.spaceui.one/r/components-spaceui-phone-input.json"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/components/spaceui/phone-input/c-phone-input-09/index.tsx",
+      "content": "'use client'\n\nimport { useState } from 'react'\nimport { PhoneInput, isValidPhoneNumber, formatPhoneNumberIntl } from '@/components/spaceui/phone-input'\n\nexport default function Demo() {\n  const [value, setValue] = useState('')\n  const isValid = value ? isValidPhoneNumber(value) : null\n\n  return (\n    <div className=\"w-full max-w-xs space-y-2\">\n      <PhoneInput\n        value={value}\n        onChange={setValue}\n        placeholder=\"Enter phone number\"\n        defaultCountry=\"US\"\n        aria-invalid={isValid === false}\n      />\n      {value && (\n        <div className=\"text-xs\">\n          {isValid ? (\n            <span className=\"text-emerald-600 dark:text-emerald-400\">Valid format: {formatPhoneNumberIntl(value)}</span>\n          ) : (\n            <span className=\"text-destructive\">Please enter a valid phone number.</span>\n          )}\n        </div>\n      )}\n    </div>\n  )\n}\n",
+      "type": "registry:component",
+      "target": "components/spaceui/phone-input.tsx"
+    }
+  ],
+  "categories": [
+    "component",
+    "phone-input"
+  ],
+  "type": "registry:component"
+}

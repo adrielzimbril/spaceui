@@ -18,18 +18,24 @@ export function Hero() {
               Space UI
             </Badge>
             <h1 className="mt-6 text-4xl font-semibold leading-[1.02] tracking-[-0.03em] text-balance sm:text-6xl">
-              Nested trays on quiet paper.
+              Control your interface down to the atom.
             </h1>
             <p className="mt-5 max-w-xl text-base leading-7 text-muted-foreground text-pretty sm:text-lg">
-              Primitives, components, hooks, and blocks for Next.js. Hierarchy comes from stacking surfaces, not from
-              drop shadows. One carbon fill does the work color usually does.
+              Primitives, composed patterns, and interactive blocks for Next.js. Hierarchy comes from stacking surfaces,
+              not drop shadows. Change a variable once, and every screen follows.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
-              <Button size="lg" render={<Link href="/docs" />}>
+              <Button size="lg" data-space-hover data-space-click="confirm" render={<Link href="/docs" />}>
                 Get started
                 <IconArrowRight />
               </Button>
-              <Button size="lg" variant="outline" render={<Link href="/ui-kit/components" />}>
+              <Button
+                size="lg"
+                variant="outline"
+                data-space-hover
+                data-space-click="open"
+                render={<Link href="/ui-kit/components" />}
+              >
                 Browse the kit
               </Button>
             </div>

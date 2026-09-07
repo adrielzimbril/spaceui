@@ -6,9 +6,7 @@ import path from 'node:path'
 
 const withMDX = createMDX()
 
-const isLocalMonorepo =
-  !process.env.VERCEL &&
-  fs.existsSync(path.resolve(process.cwd(), '../../pnpm-workspace.yaml'))
+const isLocalMonorepo = !process.env.VERCEL && fs.existsSync(path.resolve(process.cwd(), '../../pnpm-workspace.yaml'))
 
 const config: NextConfig = {
   ...(isLocalMonorepo
@@ -41,6 +39,15 @@ const config: NextConfig = {
       {
         hostname: '30tools.com',
       },
+      {
+        hostname: 'cdn.aurthle.one',
+      },
+      {
+        hostname: 'cdn.aurthle.com',
+      },
+      {
+        hostname: 'fonts.gstatic.com',
+      },
     ],
   },
   cacheComponents: true,
@@ -53,6 +60,7 @@ const config: NextConfig = {
   experimental: {
     useTypeScriptCli: true,
     turbopackRustReactCompiler: true,
+    useOffline: true,
   },
   outputFileTracingIncludes: {
     '/llms.mdx/**': ['./src/content/**/*'],
@@ -68,8 +76,8 @@ const config: NextConfig = {
         destination: '/llms.mdx/ui-kit/:path*',
       },
       {
-        source: '/resources/:path*.mdx',
-        destination: '/llms.mdx/resources/:path*',
+        source: '/tools/:path*.mdx',
+        destination: '/llms.mdx/tools/:path*',
       },
       {
         source: '/:path*.mdx',
@@ -83,6 +91,36 @@ const config: NextConfig = {
         source: '/ui-kit',
         destination: '/ui-kit/components',
         permanent: false,
+      },
+      {
+        source: '/resources',
+        destination: '/tools',
+        permanent: true,
+      },
+      {
+        source: '/resources/squishmoji',
+        destination: '/tools/avatars?type=squishmoji',
+        permanent: true,
+      },
+      {
+        source: '/resources/:path*',
+        destination: '/tools/:path*',
+        permanent: true,
+      },
+      {
+        source: '/tools/squishmoji',
+        destination: '/tools/avatars?type=squishmoji',
+        permanent: true,
+      },
+      {
+        source: '/tools/squishmoji/:path*',
+        destination: '/tools/avatars?type=squishmoji',
+        permanent: true,
+      },
+      {
+        source: '/tools/avatars/squish',
+        destination: '/tools/avatars?type=squishmoji',
+        permanent: true,
       },
     ]
   },

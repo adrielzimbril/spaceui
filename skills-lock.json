@@ -1,0 +1,65 @@
+{
+  "version": 1,
+  "skills": {
+    "better-accessibility": {
+      "source": "jakubkrehel/skills",
+      "sourceType": "github",
+      "skillPath": ".agent/skills/better-accessibility/SKILL.md",
+      "computedHash": "a7b0b70403af4625052410d239a8683b35221efbf6b61b396110ce000da05e26"
+    },
+    "better-colors": {
+      "source": "jakubkrehel/skills",
+      "sourceType": "github",
+      "skillPath": ".agent/skills/better-colors/SKILL.md",
+      "computedHash": "094fbf1d8e31d225179f5d3ca80246b08b3dd9154f4058d7ee86a95e1139e563"
+    },
+    "better-interface": {
+      "source": "jakubkrehel/skills",
+      "sourceType": "github",
+      "skillPath": ".agent/skills/better-interface/SKILL.md",
+      "computedHash": "90e23bcfdea67e937a17ce43d91467f67ab71120803161ba0c2dabeb47066cd7"
+    },
+    "better-layout": {
+      "source": "jakubkrehel/skills",
+      "sourceType": "github",
+      "skillPath": ".agent/skills/better-layout/SKILL.md",
+      "computedHash": "e4eda446af4127a9b0ea97f0cc1e7c77cc1120b91fce25e3947af5e0884b74e5"
+    },
+    "better-typography": {
+      "source": "jakubkrehel/skills",
+      "sourceType": "github",
+      "skillPath": ".agent/skills/better-typography/SKILL.md",
+      "computedHash": "bbe024b4a78a56cd08b6d2e90d53bf268b559262c20665a440931645ed1861d4"
+    },
+    "better-ui": {
+      "source": "jakubkrehel/skills",
+      "sourceType": "github",
+      "skillPath": ".agent/skills/better-ui/SKILL.md",
+      "computedHash": "3d745409bc2de890c04c110ea9d43a305b33abb500a5c664f26d44774a02c79f"
+    },
+    "better-writing": {
+      "source": "jakubkrehel/skills",
+      "sourceType": "github",
+      "skillPath": ".agent/skills/better-writing/SKILL.md",
+      "computedHash": "450dc38b88fc7207044bf918e52a29422ad7a3de71517119cfd12fb65c7b05ee"
+    },
+    "coss": {
+      "source": "cosscom/coss",
+      "sourceType": "github",
+      "skillPath": ".agent/skills/coss/SKILL.md",
+      "computedHash": "93eafc9552ea34e3b0cab8cef2f789a375bdad3f05162dafc9bd370aac96eab4"
+    },
+    "coss-particles": {
+      "source": "cosscom/coss",
+      "sourceType": "github",
+      "skillPath": ".agent/skills/coss-particles/SKILL.md",
+      "computedHash": "189b06158600d157cf08da5915dda370732dde4e949aff4baabb7f37349d4fdd"
+    },
+    "no-ai-slop": {
+      "source": "petergyang/no-ai-slop",
+      "sourceType": "github",
+      "skillPath": ".agent/skills/no-ai-slop/SKILL.md",
+      "computedHash": "1c3273e39af9b4bddae66a3f07f2dde1d0d3732e482965cfdd372beac7cf09ac"
+    }
+  }
+}

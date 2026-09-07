@@ -16,64 +16,23 @@ import {
   IconTypography,
   IconLetterCase,
 } from '@tabler/icons-react'
-import {
-  OpenRunde,
-  fontInter,
-  fontRoboto,
-  fontOpenSans,
-  fontManrope,
-  fontGeist,
-  fontRubik,
-  fontDMSans,
-  fontLato,
-  fontRaleway,
-  fontWorkSans,
-  fontIBMPlexSans,
-  fontFigtree,
-  fontBricolage,
-  fontHanken,
-  fontLibreBaskerville,
-  fontCrimsonPro,
-} from '@/registry/lib/fonts/fonts'
-
 type ViewportMode = 'desktop' | 'tablet' | 'mobile'
 
-interface FontOption {
+export type PlaygroundFont = {
   id: string
   name: string
   category: 'Sans-serif' | 'Serif' | 'Grotesk'
-  font: {
-    className: string
-    variable?: string
-    style: { fontFamily: string }
-  }
+  className: string
+  variable?: string
+  fontFamily: string
 }
 
-const FONT_OPTIONS: FontOption[] = [
-  { id: 'open-runde', name: 'Open Runde', category: 'Sans-serif', font: OpenRunde },
-  { id: 'inter', name: 'Inter', category: 'Sans-serif', font: fontInter },
-  { id: 'roboto', name: 'Roboto', category: 'Sans-serif', font: fontRoboto },
-  { id: 'open-sans', name: 'Open Sans', category: 'Sans-serif', font: fontOpenSans },
-  { id: 'manrope', name: 'Manrope', category: 'Sans-serif', font: fontManrope },
-  { id: 'geist', name: 'Geist', category: 'Sans-serif', font: fontGeist },
-  { id: 'rubik', name: 'Rubik', category: 'Sans-serif', font: fontRubik },
-  { id: 'dm-sans', name: 'DM Sans', category: 'Sans-serif', font: fontDMSans },
-  { id: 'lato', name: 'Lato', category: 'Sans-serif', font: fontLato },
-  { id: 'raleway', name: 'Raleway', category: 'Sans-serif', font: fontRaleway },
-  { id: 'work-sans', name: 'Work Sans', category: 'Sans-serif', font: fontWorkSans },
-  { id: 'ibm-plex-sans', name: 'IBM Plex Sans', category: 'Sans-serif', font: fontIBMPlexSans },
-  { id: 'figtree', name: 'Figtree', category: 'Sans-serif', font: fontFigtree },
-  { id: 'bricolage', name: 'Bricolage Grotesque', category: 'Grotesk', font: fontBricolage },
-  { id: 'hanken', name: 'Hanken Grotesk', category: 'Grotesk', font: fontHanken },
-  { id: 'libre-baskerville', name: 'Libre Baskerville', category: 'Serif', font: fontLibreBaskerville },
-  { id: 'crimson-pro', name: 'Crimson Pro', category: 'Serif', font: fontCrimsonPro },
-]
-
-export function TypographyPlayground() {
+export function TypographyPlaygroundClient({ fonts }: { fonts: PlaygroundFont[] }) {
   const [viewport, setViewport] = React.useState<ViewportMode>('desktop')
   const [selectedFontId, setSelectedFontId] = React.useState<string>('open-runde')
 
-  const currentFont = FONT_OPTIONS.find((f) => f.id === selectedFontId) ?? FONT_OPTIONS[0]
+  const currentFont = fonts.find((f) => f.id === selectedFontId) ?? fonts[0]
+  if (!currentFont) return null
 
   const containerWidthClass = {
     desktop: 'w-full',
@@ -85,7 +44,7 @@ export function TypographyPlayground() {
     <div
       className={cn(
         'rounded-3xl p-2 bg-muted text-sm my-6 not-prose overflow-hidden',
-        ...FONT_OPTIONS.map((f) => f.font.variable).filter(Boolean),
+        ...fonts.map((f) => f.variable).filter(Boolean),
       )}
     >
       <div className="flex flex-wrap items-center justify-between gap-3 px-4 pb-2">
@@ -106,7 +65,7 @@ export function TypographyPlayground() {
                 <SelectValue>{currentFont.name}</SelectValue>
               </SelectTrigger>
               <SelectContent align="start">
-                {FONT_OPTIONS.map((font) => (
+                {fonts.map((font) => (
                   <SelectItem key={font.id} value={font.id}>
                     <div className="flex items-center justify-between gap-3 w-full">
                       <span className="font-medium">{font.name}</span>
@@ -154,9 +113,9 @@ export function TypographyPlayground() {
         <div
           className={cn(
             'p-5 sm:p-8 bg-background transition-all duration-200 [&_*]:font-[inherit]',
-            currentFont.font.className,
+            currentFont.className,
           )}
-          style={{ fontFamily: currentFont.font.style.fontFamily }}
+          style={{ fontFamily: currentFont.fontFamily }}
         >
           <div
             className={cn(
@@ -179,13 +138,13 @@ export function TypographyPlayground() {
                   viewport === 'tablet' && 'text-3xl leading-tight',
                   viewport === 'mobile' && 'text-2xl leading-snug',
                 )}
-                style={{ fontFamily: currentFont.font.style.fontFamily }}
+                style={{ fontFamily: currentFont.fontFamily }}
               >
                 Levy Chronicles : Type Architecture
               </h2>
               <p
                 className="text-muted-foreground text-sm sm:text-base leading-relaxed max-w-[65ch]"
-                style={{ fontFamily: currentFont.font.style.fontFamily }}
+                style={{ fontFamily: currentFont.fontFamily }}
               >
                 In modern product interfaces, typography is the core structural foundation. Space UI combines responsive
                 scale ratios, optical line-heights, and strict measure limits to maximize legibility across all screen
@@ -208,13 +167,13 @@ export function TypographyPlayground() {
                   viewport === 'tablet' && 'text-xl leading-snug',
                   viewport === 'mobile' && 'text-lg leading-normal',
                 )}
-                style={{ fontFamily: currentFont.font.style.fontFamily }}
+                style={{ fontFamily: currentFont.fontFamily }}
               >
                 The Practice of Typographic Restraint
               </h4>
               <p
                 className="text-muted-foreground text-sm sm:text-base leading-relaxed max-w-[65ch]"
-                style={{ fontFamily: currentFont.font.style.fontFamily }}
+                style={{ fontFamily: currentFont.fontFamily }}
               >
                 Good typography is mostly restraint. Rather than hundreds of random one-off font sizes, we maintain a
                 coherent descending hierarchy with dedicated roles for headings, body copy, and UI controls.
@@ -224,7 +183,7 @@ export function TypographyPlayground() {
             {/* Blockquote with clean Space UI border */}
             <blockquote
               className="border-s-2 border-primary ps-4 py-1.5 text-sm sm:text-[15px] italic text-muted-foreground leading-relaxed bg-muted/30 rounded-e-md"
-              style={{ fontFamily: currentFont.font.style.fontFamily }}
+              style={{ fontFamily: currentFont.fontFamily }}
             >
               &ldquo;Every interface begins with text. Every typographic choice must prioritize clarity and reading
               comfort before ornamentation.&rdquo;
@@ -238,15 +197,12 @@ export function TypographyPlayground() {
                 </Badge>
                 <span className="text-xs text-muted-foreground font-mono">SemiBold / 600</span>
               </div>
-              <h6
-                className="text-base font-semibold text-foreground"
-                style={{ fontFamily: currentFont.font.style.fontFamily }}
-              >
+              <h6 className="text-base font-semibold text-foreground" style={{ fontFamily: currentFont.fontFamily }}>
                 Core Typography Benchmarks
               </h6>
               <ul
                 className="flex flex-col gap-2 text-sm text-muted-foreground list-disc ps-5"
-                style={{ fontFamily: currentFont.font.style.fontFamily }}
+                style={{ fontFamily: currentFont.fontFamily }}
               >
                 <li>
                   <strong className="font-medium text-foreground">Headings:</strong> tight line-height (
@@ -278,19 +234,19 @@ export function TypographyPlayground() {
               </div>
               <Accordion className="w-full" defaultValue={['faq-1']}>
                 <AccordionItem value="faq-1">
-                  <AccordionTrigger style={{ fontFamily: currentFont.font.style.fontFamily }}>
+                  <AccordionTrigger style={{ fontFamily: currentFont.fontFamily }}>
                     How does Space UI adapt typography for mobile viewports?
                   </AccordionTrigger>
-                  <AccordionPanel style={{ fontFamily: currentFont.font.style.fontFamily }}>
+                  <AccordionPanel style={{ fontFamily: currentFont.fontFamily }}>
                     Using CSS variables and Tailwind CSS v4 utilities, heading and body sizes scale down smoothly on
                     smaller screens while maintaining optimal line-heights and comfortable reading measures.
                   </AccordionPanel>
                 </AccordionItem>
                 <AccordionItem value="faq-2">
-                  <AccordionTrigger style={{ fontFamily: currentFont.font.style.fontFamily }}>
+                  <AccordionTrigger style={{ fontFamily: currentFont.fontFamily }}>
                     Why use tabular numerals for metric displays?
                   </AccordionTrigger>
-                  <AccordionPanel style={{ fontFamily: currentFont.font.style.fontFamily }}>
+                  <AccordionPanel style={{ fontFamily: currentFont.fontFamily }}>
                     Enabling tabular numbers gives every digit an identical width, eliminating layout shifts and jitter
                     during real-time data streaming or countdowns.
                   </AccordionPanel>
