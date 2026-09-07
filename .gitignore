@@ -32,3 +32,6 @@ output.txt
 # yalc
 .yalc/
 yalc.lock
+
+# lockfile
+pnpm-lock.yaml
