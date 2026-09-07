@@ -24,6 +24,9 @@ import { ResourceToolbar, type ResourceToolbarConfig } from '@/resources/compone
 import { ResourceGallery } from '@/resources/components/shared/layout/gallery'
 import { ResourceSeedView } from '@/resources/components/shared/layout/seed-stage'
 import type { ResourceViewMode } from '@/resources/shared/types'
+import { viewFromQuery, writeViewQuery } from '@/resources/shared/view'
+
+const EMOJI_VIEWS: ResourceViewMode[] = ['gallery', 'seed']
 import { EmojiControlPanel } from './control-panel'
 import { DEFAULT_EMOJI, randomEmoji } from './pool'
 
@@ -35,7 +38,7 @@ function snippetFor(emoji: string, source: EmojiSourceType, type: EmojiTypeType,
   return `import { Emoji } from '@usespaceui/emoji/react'\n\n${lines.join('\n')}`
 }
 
-export function EmojiPlayground() {
+export function EmojiPlayground({ initialView }: { initialView?: string } = {}) {
   const [source, setSource] = useState<EmojiSourceType>(EmojiSource.Fluent)
   const [type, setType] = useState<EmojiTypeType>(EmojiType.Anim)
   const [format, setFormat] = useState<EmojiFormat | undefined>(
@@ -43,7 +46,7 @@ export function EmojiPlayground() {
   )
   const [size, setSize] = useState(164)
   const [emoji, setEmoji] = useState(DEFAULT_EMOJI)
-  const [view, setView] = useState<ResourceViewMode>('gallery')
+  const [view, setView] = useState<ResourceViewMode>(() => viewFromQuery(initialView, EMOJI_VIEWS))
   const [expanded, setExpanded] = useState(false)
   const [query, setQuery] = useState('')
   const { isDesktop, showRight, setShowRight } = useResourceSidebars()
@@ -95,6 +98,7 @@ export function EmojiPlayground() {
     setEmoji(DEFAULT_EMOJI)
     setQuery('')
     setView('gallery')
+    writeViewQuery('gallery')
     setShowRight(isDesktop)
     setExpanded(false)
   }
@@ -108,7 +112,11 @@ export function EmojiPlayground() {
     viewToggle: true,
     view,
     views: ['gallery', 'seed'],
-    onViewChange: setView,
+    onViewChange: (next) => {
+      const resolved = viewFromQuery(next, EMOJI_VIEWS)
+      setView(resolved)
+      writeViewQuery(resolved)
+    },
     onReset: reset,
     onToggleExpand: setExpanded,
     onToggleSidebar: setShowRight,
@@ -153,6 +161,7 @@ export function EmojiPlayground() {
               bloomSound()
               setEmoji(character)
               setView('seed')
+              writeViewQuery('seed')
             }}
             limit={visible.length}
             keepPosition

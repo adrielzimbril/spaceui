@@ -23,10 +23,10 @@
   "homepage": "https://www.spaceui.one",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/adrielzimbril/space-ui.git"
+    "url": "git+https://github.com/adrielzimbril/spaceui.git"
   },
   "bugs": {
-    "url": "https://github.com/adrielzimbril/space-ui/issues",
+    "url": "https://github.com/adrielzimbril/spaceui/issues",
     "email": "hello@spaceui.one"
   },
   "keywords": [

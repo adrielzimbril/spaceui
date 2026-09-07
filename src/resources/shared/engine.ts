@@ -9,7 +9,10 @@ export function enginePath(engine: AvatarEngine) {
 }
 
 export function writeEngineUrl(engine: AvatarEngine) {
-  const path = enginePath(engine)
+  const url = new URL(window.location.href)
+  if (engine === 'squishmoji') url.searchParams.set('type', 'squishmoji')
+  else url.searchParams.delete('type')
+  const path = url.pathname + url.search
   if (window.location.pathname + window.location.search === path) return
   window.history.replaceState(window.history.state, '', path)
 }

@@ -12,6 +12,10 @@ import { ResourceInstallCluster } from '@/resources/components/shared/layout/ins
 import { TOOL_OUTBOUND } from '@/resources/shared/links'
 import { type AvatarEngine, writeEngineUrl } from '@/resources/shared/engine'
 import type { ResourceViewMode } from '@/resources/shared/types'
+import { viewFromQuery, writeViewQuery } from '@/resources/shared/view'
+
+const AVATAR_VIEWS: ResourceViewMode[] = ['gallery', 'mockup', 'seed']
+const SQUISH_VIEWS: ResourceViewMode[] = ['gallery', 'mockup', 'seed', 'video']
 import { AvatarCodeModal } from './code-modal'
 import { AvatarControlPanel } from './control-panel'
 import { MockupView } from '@/resources/components/shared/avatar/mockup-view'
@@ -23,9 +27,16 @@ import type { SelectedAvatar } from './types'
 import { shufflePersonas, getSelectedAvatarDetails, resolvePaletteColors } from './utils'
 import { useSquishmojiStudio } from '@/resources/squishmoji/playground'
 
-export function AvatarsPlayground({ initialEngine = 'avatars' }: { initialEngine?: AvatarEngine }) {
+export function AvatarsPlayground({
+  initialEngine = 'avatars',
+  initialView,
+}: {
+  initialEngine?: AvatarEngine
+  initialView?: string
+}) {
   const [engine, setEngine] = useState<AvatarEngine>(initialEngine)
   const squish = engine === 'squishmoji'
+  const allowedViews = squish ? SQUISH_VIEWS : AVATAR_VIEWS
   const [pool, setPool] = useState<string[]>(() => shufflePersonas())
   const [pattern, setPattern] = useState<AvatarVariant | 'all'>('all')
   const [size, setSize] = useState(164)
@@ -34,7 +45,9 @@ export function AvatarsPlayground({ initialEngine = 'avatars' }: { initialEngine
   const [paletteIndex, setPaletteIndex] = useState(-2)
   const [customColors, setCustomColors] = useState<string[]>([])
   const [circle, setCircle] = useState(true)
-  const [view, setView] = useState<ResourceViewMode>('gallery')
+  const [view, setView] = useState<ResourceViewMode>(() =>
+    viewFromQuery(initialView, initialEngine === 'squishmoji' ? SQUISH_VIEWS : AVATAR_VIEWS),
+  )
   const [seedName, setSeedName] = useState(DEFAULT_SEEDS)
   const [expanded, setExpanded] = useState(false)
   const [selectedAvatar, setSelectedAvatar] = useState<SelectedAvatar | null>(null)
@@ -57,8 +70,11 @@ export function AvatarsPlayground({ initialEngine = 'avatars' }: { initialEngine
 
   useEffect(() => {
     const onPop = () => {
-      const type = new URLSearchParams(window.location.search).get('type')
-      setEngine(type === 'squishmoji' || type === 'squish' ? 'squishmoji' : 'avatars')
+      const params = new URLSearchParams(window.location.search)
+      const type = params.get('type')
+      const nextEngine = type === 'squishmoji' || type === 'squish' ? 'squishmoji' : 'avatars'
+      setEngine(nextEngine)
+      setView(viewFromQuery(params.get('view'), nextEngine === 'squishmoji' ? SQUISH_VIEWS : AVATAR_VIEWS))
     }
     window.addEventListener('popstate', onPop)
     return () => window.removeEventListener('popstate', onPop)
@@ -67,11 +83,21 @@ export function AvatarsPlayground({ initialEngine = 'avatars' }: { initialEngine
   const parsedColors = useMemo(() => resolvePaletteColors(paletteIndex, customColors), [paletteIndex, customColors])
   const details = useMemo(() => getSelectedAvatarDetails(pattern), [pattern])
 
+  const changeView = (next: ResourceViewMode) => {
+    const resolved = viewFromQuery(next, allowedViews)
+    if (squish) squishmoji.changeView(resolved)
+    else setView(resolved)
+    writeViewQuery(resolved)
+  }
+
   const changeEngine = (next: AvatarEngine) => {
     if (next === engine) return
-    if (next === 'avatars' && view === 'video') setView('gallery')
+    const nextViews = next === 'squishmoji' ? SQUISH_VIEWS : AVATAR_VIEWS
+    const nextView = viewFromQuery(view, nextViews)
+    if (nextView !== view) setView(nextView)
     setEngine(next)
     writeEngineUrl(next)
+    writeViewQuery(nextView)
   }
 
   const selectAvatar = (avatar: SelectedAvatar) => {
@@ -88,6 +114,7 @@ export function AvatarsPlayground({ initialEngine = 'avatars' }: { initialEngine
     setAnimate(true)
     setSeedName(DEFAULT_SEEDS)
     setView('gallery')
+    writeViewQuery('gallery')
     setShowLeft(false)
     setShowRight(isDesktop)
     setExpanded(false)
@@ -113,7 +140,7 @@ export function AvatarsPlayground({ initialEngine = 'avatars' }: { initialEngine
     view,
     views: ['gallery', 'mockup', 'seed'],
     video: squish,
-    onViewChange: squish ? squishmoji.changeView : setView,
+    onViewChange: changeView,
     onReset: reset,
     onToggleExpand: setExpanded,
     onToggleInfo: setShowLeft,
@@ -221,7 +248,7 @@ export function AvatarsPlayground({ initialEngine = 'avatars' }: { initialEngine
                 setSeedName(next[0] ?? DEFAULT_SEEDS)
               }}
               view={view}
-              setView={setView}
+              setView={changeView}
               previewSeed={seedName}
             />
           )

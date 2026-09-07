@@ -193,7 +193,7 @@ export function PlaygroundCanvasStage({
       >
         {/* Top Left Navigation, Search (hidden in immersive mode) */}
         {!isImmersive && (
-          <ToolbarSection aria-label="Navigation and Drawer triggers" className="left-2 top-6">
+          <ToolbarSection aria-label="Navigation and Drawer triggers" className="left-2 top-2 md:top-4">
             {/* Global Navigation Drawer Button */}
             <MobileNavDrawer
               trees={[source.pageTree, uiKitSource.pageTree, resourcesSource.pageTree]}

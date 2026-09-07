@@ -5,8 +5,13 @@ export const metadata = {
   description: 'Fluent, Apple and Telegram emoji playground.',
 }
 
-export default function EmojiResourcePage() {
-  return <EmojiPlayground />
+export default async function EmojiResourcePage({
+  searchParams,
+}: {
+  searchParams: Promise<{ view?: string }>
+}) {
+  const { view } = await searchParams
+  return <EmojiPlayground initialView={view} />
 }
 
 export const instant = false

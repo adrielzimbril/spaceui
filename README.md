@@ -18,7 +18,7 @@
 
 <p align="center">
   <a href="https://www.spaceui.one">Live Demo</a> •
-  <a href="https://github.com/adrielzimbril/space-ui">Source Code</a> •
+  <a href="https://github.com/adrielzimbril/spaceui">Source Code</a> •
   <a href="https://www.spaceui.one">SpaceUI.one</a>
 </p>
 
@@ -29,11 +29,11 @@
 </p>
 
 <div align="center">
-  <a href="https://github.com/adrielzimbril/space-ui">
-    <img src="https://img.shields.io/github/repo-size/adrielzimbril/space-ui">
+  <a href="https://github.com/adrielzimbril/spaceui">
+    <img src="https://img.shields.io/github/repo-size/adrielzimbril/spaceui">
   </a>
-  <a href="https://github.com/adrielzimbril/space-ui/blob/main/LICENSE.md">
-    <img src="https://img.shields.io/github/license/adrielzimbril/space-ui" />
+  <a href="https://github.com/adrielzimbril/spaceui/blob/main/LICENSE.md">
+    <img src="https://img.shields.io/github/license/adrielzimbril/spaceui" />
   </a>
   <br><br>
 </div>
@@ -89,7 +89,7 @@ MIT — Free for commercial and personal use.
 
 ## 🛠 Maintenance
 
-If you find a bug or have a feature request, please open an [issue on GitHub](https://github.com/adrielzimbril/space-ui/issues).
+If you find a bug or have a feature request, please open an [issue on GitHub](https://github.com/adrielzimbril/spaceui/issues).
 
 ---
 

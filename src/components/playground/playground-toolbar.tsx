@@ -105,7 +105,7 @@ export function PlaygroundToolbar({
   }
 
   return (
-    <ToolbarSection aria-label="Playground actions" className={cn('right-2 top-6', className)}>
+    <ToolbarSection aria-label="Playground actions" className={cn('right-2 top-2 md:top-4', className)}>
       {/* 1. Toggle Doc Panel (Hide/Show side elements to expand canvas) */}
       <ToolbarButton label={showInfo ? 'Hide side panel' : 'Show side panel'} pressed={showInfo} onClick={onToggleInfo}>
         <MorphIcon activeKey={showInfo ? 'expanded' : 'collapsed'} variant="blur-scale">

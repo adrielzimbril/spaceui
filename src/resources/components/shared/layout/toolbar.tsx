@@ -245,12 +245,12 @@ export function ResourceToolbar({
   return (
     <>
       {left || info ? (
-        <ToolbarSection aria-label="Resource navigation" className="left-2 top-6">
+        <ToolbarSection aria-label="Resource navigation" className="left-2 top-2 md:top-4">
           {left}
           {leftButtons}
         </ToolbarSection>
       ) : null}
-      <ToolbarSection aria-label="Resource actions" className="right-2 top-6">
+      <ToolbarSection aria-label="Resource actions" className="right-2 top-2 md:top-4">
         {defaultButtons}
         {right}
       </ToolbarSection>
