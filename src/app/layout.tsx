@@ -10,7 +10,7 @@ import './globals.css'
 import { jsonLd } from '@/lib/json-ld'
 import { GlobalLayoutWrapper } from '@/components/layout/global-layout-wrapper'
 import { cn } from '@/registry/lib/utils'
-import { siteConfig } from '@/lib/space-config'
+import { siteConfig } from '@/config/space-config'
 
 // TODO: Cache Components adoption. Refactor this route so this opt-out can be removed.
 // See: https://nextjs.org/docs/app/guides/migrating-to-cache-components

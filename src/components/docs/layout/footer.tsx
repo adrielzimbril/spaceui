@@ -1,5 +1,5 @@
 import { Link } from '@/registry/primitives/link'
-import { siteConfig } from '@/lib/space-config'
+import { siteConfig } from '@/config/space-config'
 
 export function Footer() {
   return (

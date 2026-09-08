@@ -18,7 +18,7 @@ import { Link } from '@/registry/primitives/link'
 import { useBundle, prettify } from '@/components/providers/bundle-provider'
 import { useUiSound } from '@/components/providers/sound-provider'
 import { useClipboard } from '@/registry/hooks/browser/use-clipboard'
-import { siteConfig } from '@/lib/space-config'
+import { siteConfig } from '@/config/space-config'
 
 const cache = new Map<string, string>()
 

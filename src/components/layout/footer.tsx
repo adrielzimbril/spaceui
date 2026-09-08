@@ -1,4 +1,4 @@
-import { siteConfig } from '@/lib/space-config'
+import { siteConfig } from '@/config/space-config'
 import { MotionEffect } from '@/registry/components/spaceui/motion-effect'
 
 export const Footer = () => {

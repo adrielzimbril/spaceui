@@ -50,7 +50,7 @@ import { useConfig } from '@/hooks/use-config'
 import type { source } from '@/lib/source'
 import { EmptyMedia } from '@/registry/primitives/empty'
 import { cn } from '@/registry/lib/utils'
-import { searchStaticResources, searchNavShortcuts } from '@/lib/menu-config'
+import { searchStaticResources, searchNavShortcuts } from '@/config/menu-config'
 
 interface PageItem {
   value: string

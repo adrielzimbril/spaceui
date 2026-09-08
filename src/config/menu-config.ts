@@ -15,6 +15,7 @@ import {
   IconPhoto,
   IconLayoutGrid,
   IconVolume,
+  IconCut,
 } from '@tabler/icons-react'
 import { DEFAULT_COLOR_CODE } from '@/lib/theme-colors'
 
@@ -123,6 +124,16 @@ export const megaMenuUiKit: MegaMenuItem[] = [
 ]
 
 export const megaMenuTools: ResourceItem[] = [
+  {
+    title: 'Xplit',
+    label: 'xplit',
+    description: 'Split images into seamless carousels, grids and columns.',
+    href: '/tools/xplit',
+    icon: IconCut,
+    upcoming: false,
+    release: 'new',
+    color: DEFAULT_COLOR_CODE.TURQUOISE,
+  },
   {
     title: 'UI Avatars',
     label: 'avatars',

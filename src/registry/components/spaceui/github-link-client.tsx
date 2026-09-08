@@ -1,7 +1,7 @@
 'use client'
 
 import { Button } from '@/registry/primitives/button'
-import { siteConfig } from '@/lib/space-config'
+import { siteConfig } from '@/config/space-config'
 import { IconBrandGithub } from '@tabler/icons-react'
 import type * as React from 'react'
 import { Link } from '@/registry/primitives/link'

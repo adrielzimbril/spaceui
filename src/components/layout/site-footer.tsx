@@ -13,6 +13,7 @@ const groups = [
     title: 'Tools',
     links: [
       ['All tools', '/tools'],
+      ['Xplit', '/tools/xplit'],
       ['Avatars', '/tools/avatars'],
       ['Emoji', '/tools/emoji'],
       ['Documentation', '/docs'],

@@ -31,7 +31,7 @@ import { InstallCommandBlock } from '@/components/docs/installation/install-comm
 import { DynamicCodeBlock } from '@/components/docs/code/dynamic-codeblock'
 import { bloomSound } from '@/components/providers/sound-provider'
 import { useClipboard } from '@/registry/hooks/browser/use-clipboard'
-import { siteConfig } from '@/lib/space-config'
+import { siteConfig } from '@/config/space-config'
 
 export interface CodeDrawerProps {
   open: boolean

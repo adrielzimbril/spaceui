@@ -91,7 +91,7 @@ function getGroupIcon(group: string, title?: string) {
   }
 }
 
-import { mobileNavGroups, type NavItem } from '@/lib/menu-config'
+import { mobileNavGroups, type NavItem } from '@/config/menu-config'
 
 const NAV_GROUPS = mobileNavGroups
 

@@ -13,7 +13,7 @@ import { useOffline } from '@/registry/hooks/browser/use-network'
 import { Link } from '@/registry/primitives/link'
 import { Badge } from '@/registry/primitives/badge'
 import { GitHubLink } from '@/registry/components/spaceui/github-link'
-import { searchNavShortcuts } from '@/lib/menu-config'
+import { searchNavShortcuts } from '@/config/menu-config'
 
 export const SITE_NAV_ITEMS = searchNavShortcuts
 

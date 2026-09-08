@@ -60,7 +60,7 @@ const MenuIcon = ({ children, className, color = DEFAULT_COLOR_CODE.BLUE, iconCo
   )
 }
 
-import { megaMenuDocs, megaMenuUiKit, megaMenuTools } from '@/lib/menu-config'
+import { megaMenuDocs, megaMenuUiKit, megaMenuTools } from '@/config/menu-config'
 
 const docs = megaMenuDocs
 const uiKitComponents = megaMenuUiKit

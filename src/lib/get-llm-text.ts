@@ -5,7 +5,7 @@ import { remarkInclude } from 'fumadocs-mdx/config'
 import type { Page } from '@/lib/source'
 import fs from 'node:fs/promises'
 import path from 'node:path'
-import { siteConfig } from '@/lib/space-config'
+import { siteConfig } from '@/config/space-config'
 
 const processor = remark()
   .use(remarkMdx)

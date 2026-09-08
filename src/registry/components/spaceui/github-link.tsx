@@ -2,7 +2,7 @@
 
 import { Skeleton } from '@/registry/primitives/skeleton'
 import { GitHubLinkClient } from '@/registry/components/spaceui/github-link-client'
-import { siteConfig } from '@/lib/space-config'
+import { siteConfig } from '@/config/space-config'
 import { logger } from '@/registry/utils/logger'
 import * as React from 'react'
 
