@@ -15,7 +15,7 @@ const PRINCIPLES = [
   {
     title: 'Install a piece',
     icon: IconPackage,
-    body: 'Registry items land in your app. Take a primitive, a hook, or a block — not a locked theme.',
+    body: 'Registry items land in your app. You and your agent hit the same @spaceui name. You own the file.',
   },
 ]
 

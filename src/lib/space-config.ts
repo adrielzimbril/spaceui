@@ -40,11 +40,11 @@ const appInfo = {
 export const siteConfig = {
   name: 'spaceui.one',
   appName: appInfo.appName,
-  title: 'Space UI - Motion-Powered React & Tailwind Components',
+  title: 'Space UI - Open-source design library for humans and AI',
   description:
-    'Space UI - A modern, high-performance UI kit built with React, TypeScript, Tailwind CSS, Base UI, and Framer Motion. Explore sensory components, blocks, primitives, and full starter kits.',
+    'An open-source design library built for humans and AI to create expressive, polished, and high-quality interfaces, helping you build better products, faster',
   ogDescription:
-    'Space UI - A modern, high-performance UI kit built with React, TypeScript, Tailwind CSS, Base UI, and Framer Motion.',
+    'An open-source design library built for humans and AI to create expressive, polished, and high-quality interfaces, helping you build better products, faster',
   links: {
     docs: `${appInfo.site}/docs`,
     // github: `https://github.com/${appInfo.repoPath}/`,

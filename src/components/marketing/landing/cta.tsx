@@ -12,7 +12,7 @@ export function Cta() {
           <div>
             <h2 className="text-3xl font-semibold tracking-[-0.03em] sm:text-5xl">Take a piece. Keep going.</h2>
             <p className="mt-4 max-w-lg text-base leading-7 text-muted-foreground">
-              Start with a button, or open the full kit. The command is the same shape as the docs.
+              Start with a button, or open the full kit. Same command in the docs and in your agent.
             </p>
             <Button size="lg" className="mt-8" render={<Link href="/docs" />}>
               Read the docs

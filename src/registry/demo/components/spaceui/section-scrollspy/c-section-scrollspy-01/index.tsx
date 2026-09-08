@@ -41,7 +41,7 @@ export default function Demo() {
   const scrollRef = React.useRef<HTMLDivElement>(null)
 
   return (
-    <div className="relative w-full overflow-hidden rounded-[0.875rem] bg-muted">
+    <div className="relative w-full overflow-hidden rounded-[0.875rem] bg-background">
       <div ref={scrollRef} className="h-full max-h-[60dvh] overflow-y-auto p-5 pb-28">
         {SECTIONS.map((section) => (
           <section key={section.title} data-page-section className="mb-8 space-y-3">
@@ -49,7 +49,7 @@ export default function Demo() {
               {section.title}
               <Badge variant="secondary">{section.badge}</Badge>
             </h2>
-            <div className="h-40 rounded-2xl bg-background" />
+            <div className="h-40 rounded-2xl bg-muted" />
           </section>
         ))}
       </div>

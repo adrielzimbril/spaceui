@@ -18,11 +18,10 @@ export function Hero() {
               Space UI
             </Badge>
             <h1 className="mt-6 text-4xl font-semibold leading-[1.02] tracking-[-0.03em] text-balance sm:text-6xl">
-              Control your interface down to the atom.
+              An open-source design library for humans and AI.
             </h1>
             <p className="mt-5 max-w-xl text-base leading-7 text-muted-foreground text-pretty sm:text-lg">
-              Primitives, composed patterns, and interactive blocks for Next.js. Hierarchy comes from stacking surfaces,
-              not drop shadows. Change a variable once, and every screen follows.
+              Create expressive, polished, high-quality interfaces. Build better products, faster.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Button size="lg" data-space-hover data-space-click="confirm" render={<Link href="/docs" />}>

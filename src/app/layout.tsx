@@ -17,22 +17,25 @@ import { siteConfig } from '@/lib/space-config'
 export const instant = false
 
 export const metadata: Metadata = {
+  metadataBase: new URL(siteConfig.url),
   title: {
     template: `%s - ${siteConfig.appName}`,
     default: siteConfig.title,
   },
-  description: siteConfig.ogDescription,
+  description: siteConfig.description,
   keywords: [
     'Space UI',
-    'React',
-    'TypeScript',
-    'Tailwind CSS',
-    'Motion',
-    'Base UI',
-    'Sensory UI',
+    'open-source design library',
     'Open-source components',
-    'Animated UI components',
+    'React',
+    'Next.js',
+    'Tailwind CSS',
+    'Base UI',
+    'Motion',
+    'shadcn registry',
+    'AI UI kit',
     'UI library',
+    'UI components',
   ],
   icons: [
     {
@@ -61,7 +64,7 @@ export const metadata: Metadata = {
   ],
   publisher: siteConfig.appName,
   openGraph: {
-    title: siteConfig.appName,
+    title: siteConfig.title,
     description: siteConfig.ogDescription,
     url: siteConfig.url,
     siteName: siteConfig.appName,
@@ -70,7 +73,7 @@ export const metadata: Metadata = {
         url: siteConfig.ogImage,
         width: 1200,
         height: 630,
-        alt: siteConfig.appName,
+        alt: siteConfig.title,
       },
     ],
     locale: 'en_US',
@@ -79,14 +82,14 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     site: siteConfig.twitterHandle,
-    title: siteConfig.appName,
+    title: siteConfig.title,
     description: siteConfig.ogDescription,
     images: [
       {
         url: siteConfig.ogImage,
         width: 1200,
         height: 630,
-        alt: siteConfig.appName,
+        alt: siteConfig.title,
       },
     ],
   },

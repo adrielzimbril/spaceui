@@ -7,7 +7,7 @@ export const jsonLd = {
       url: 'https://www.spaceui.one',
       name: 'Space UI',
       description:
-        'Space UI - A modern, high-performance UI kit built with React, TypeScript, Tailwind CSS, Base UI, and Framer Motion.',
+        'An open-source design library built for humans and AI to create expressive, polished, and high-quality interfaces, helping you build better products, faster',
       inLanguage: 'en',
       publisher: {
         '@id': 'https://www.spaceui.one/#organization',

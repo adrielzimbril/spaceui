@@ -35,7 +35,7 @@ export function Catalog() {
       <div className="mx-auto w-full max-w-6xl">
         <h2 className="text-3xl font-semibold tracking-[-0.03em] sm:text-4xl">The kit.</h2>
         <p className="mt-4 max-w-xl text-base leading-7 text-muted-foreground">
-          Open a family, copy a command, keep going. Nothing here is a locked starter.
+          Open a family, copy a command, keep going. Named so you and your agent install the same file.
         </p>
         <div className="mt-10 grid gap-4 sm:grid-cols-2">
           {KITS.map((kit) => (

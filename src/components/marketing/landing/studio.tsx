@@ -11,7 +11,7 @@ export function Studio() {
         <div>
           <h2 className="text-3xl font-semibold tracking-[-0.03em] sm:text-4xl">Built like the docs.</h2>
           <p className="mt-4 max-w-md text-base leading-7 text-muted-foreground">
-            The same trays, springs, and orbs you install. This page is the kit, not a screenshot of it.
+            The same trays, springs, and orbs you install. This page is the kit, in the registry, and in your agent.
           </p>
         </div>
         <Surface innerClassName="p-3 sm:p-4">
