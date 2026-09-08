@@ -140,10 +140,6 @@ export const registryComponents: Record<string, RegistryComponent> = {
     () => import("@/registry/components/spaceui/tournament-bracket/index.tsx"),
     {},
   ),
-  "components-spaceui-tree": lazyRegistryComponent(
-    () => import("@/registry/components/spaceui/tree/index.tsx"),
-    {},
-  ),
   "components-spaceui-user-presence-avatar": lazyRegistryComponent(
     () => import("@/registry/components/spaceui/user-presence-avatar/index.tsx"),
     {},

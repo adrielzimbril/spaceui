@@ -5488,62 +5488,6 @@
     "dependents": [],
     "related": []
   },
-  "tree": {
-    "name": "components-spaceui-tree",
-    "shortName": "tree",
-    "title": "Tree",
-    "description": "Tree component for Space UI.",
-    "type": "registry:component",
-    "url": "/ui-kit/components/spaceui/tree",
-    "category": "Tree",
-    "categories": [
-      "tree"
-    ],
-    "createdAt": "2026-08-21",
-    "updatedAt": "2026-08-21",
-    "size": "5.7 KB",
-    "rawSize": 5882,
-    "directSize": "5.7 KB",
-    "fileCount": 1,
-    "dependencies": [
-      "@base-ui/react",
-      "@headless-tree/core",
-      "@tabler/icons-react"
-    ],
-    "registryDependencies": [
-      "https://www.spaceui.one/r/lib-utils.json"
-    ],
-    "dependents": [],
-    "related": []
-  },
-  "components-spaceui-tree": {
-    "name": "components-spaceui-tree",
-    "shortName": "tree",
-    "title": "Tree",
-    "description": "Tree component for Space UI.",
-    "type": "registry:component",
-    "url": "/ui-kit/components/spaceui/tree",
-    "category": "Tree",
-    "categories": [
-      "tree"
-    ],
-    "createdAt": "2026-08-21",
-    "updatedAt": "2026-08-21",
-    "size": "5.7 KB",
-    "rawSize": 5882,
-    "directSize": "5.7 KB",
-    "fileCount": 1,
-    "dependencies": [
-      "@base-ui/react",
-      "@headless-tree/core",
-      "@tabler/icons-react"
-    ],
-    "registryDependencies": [
-      "https://www.spaceui.one/r/lib-utils.json"
-    ],
-    "dependents": [],
-    "related": []
-  },
   "user-presence-avatar": {
     "name": "components-spaceui-user-presence-avatar",
     "shortName": "user-presence-avatar",
