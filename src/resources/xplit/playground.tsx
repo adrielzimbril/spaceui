@@ -1,32 +1,33 @@
 'use client'
 
 import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react'
-import JSZip from 'jszip'
-import Link from 'next/link'
+import { AnimatePresence, motion, useReducedMotion } from 'motion/react'
 import {
-  IconArrowLeft,
-  IconColumns,
   IconCut,
   IconDownload,
-  IconFileZip,
   IconPhoto,
-  IconRefresh,
   IconUpload,
-  IconZoomIn,
-  IconSparkles,
 } from '@tabler/icons-react'
+import { Button } from '@/registry/primitives/button'
+import { Badge } from '@/registry/primitives/badge'
+import { bloomSound } from '@/components/providers/sound-provider'
 import { ResourceNav } from '@/resources/components/shared/layout/nav'
+import { ResourceStudio } from '@/resources/components/shared/layout/studio'
+import { ResourceToolbar, type ResourceToolbarConfig } from '@/resources/components/shared/layout/toolbar'
+import { useResourceSidebars } from '@/resources/components/shared/layout/viewport'
+import { XplitControlPanel } from './control-panel'
 import {
+  createZipArchive,
   extFor,
-  formatBytes,
   frameAspect,
+  getColFlex,
   prepareSource,
   renderStage,
   sliceStage,
   toBlob,
   MAX_STAGE,
-  type SplitConfig,
   type Ratio,
+  type SplitConfig,
   type Tile,
 } from './split'
 
@@ -38,7 +39,7 @@ const DEFAULTS: SplitConfig = {
   panX: 0.5,
   panY: 0.5,
   gap: 0,
-  bg: '#09090b',
+  bg: 'transparent',
   padding: 0,
   radius: 0,
   scale: 1,
@@ -47,22 +48,6 @@ const DEFAULTS: SplitConfig = {
   prefix: 'slice',
   reverse: false,
 }
-
-const RATIOS: { label: string; value: Ratio; desc: string }[] = [
-  { label: 'Original', value: 'original', desc: 'Ratio source' },
-  { label: '4:5', value: 4 / 5, desc: 'Insta Portrait' },
-  { label: '1:1', value: 1, desc: 'Carré' },
-  { label: '3:4', value: 3 / 4, desc: 'Standard' },
-  { label: '9:16', value: 9 / 16, desc: 'Story / Reel' },
-  { label: '16:9', value: 16 / 9, desc: 'Landscape' },
-]
-
-const PRESETS: { label: string; cols: number; ratio: Ratio; desc: string }[] = [
-  { label: 'Carousel ×3', cols: 3, ratio: 4 / 5, desc: 'Post Instagram 3 panneaux' },
-  { label: 'Carousel ×4', cols: 4, ratio: 4 / 5, desc: 'Post Instagram 4 panneaux' },
-  { label: 'Panorama ×2', cols: 2, ratio: 'original', desc: 'Double page panoramique' },
-  { label: 'Story strip ×5', cols: 5, ratio: 9 / 16, desc: 'Série de 5 Stories' },
-]
 
 const DEMO_PREVIEWS = [
   {
@@ -85,11 +70,21 @@ export function XplitPlayground() {
   const [file, setFile] = useState<{ name: string; size: number } | null>(null)
   const [dragOver, setDragOver] = useState(false)
   const [busy, setBusy] = useState(false)
+  const [expanded, setExpanded] = useState(false)
+  const { isDesktop, showRight, setShowRight } = useResourceSidebars()
+
   const previewRef = useRef<HTMLDivElement>(null)
   const fileInputRef = useRef<HTMLInputElement>(null)
 
-  const set = useCallback(<K extends keyof SplitConfig>(key: K, value: SplitConfig[K]) => {
-    setCfg((c) => ({ ...c, [key]: value }))
+  const colFlex = getColFlex(cfg)
+
+  const toggleColFlex = useCallback((colIndex: number) => {
+    bloomSound()
+    setCfg((prev) => {
+      const current = getColFlex(prev).slice()
+      current[colIndex] = current[colIndex] === 1 ? 2 : 1
+      return { ...prev, colFlex: current }
+    })
   }, [])
 
   const loadFile = useCallback((f: File) => {
@@ -99,6 +94,7 @@ export function XplitPlayground() {
     image.onload = () => {
       setImg(image)
       setFile({ name: f.name, size: f.size })
+      bloomSound()
     }
     image.src = url
   }, [])
@@ -109,6 +105,7 @@ export function XplitPlayground() {
     image.onload = () => {
       setImg(image)
       setFile({ name, size: 450000 })
+      bloomSound()
     }
     image.src = url
   }, [])
@@ -129,7 +126,10 @@ export function XplitPlayground() {
       stageW = Math.round(stageW / over)
       stageH = Math.round(stageH / over)
     }
-    const tileW = Math.round((stageW - cfg.gap * (cfg.cols - 1)) / cfg.cols) + cfg.padding * 2
+    const flexes = getColFlex(cfg)
+    const totalFlex = flexes.reduce((a, b) => a + b, 0)
+    const availW = Math.max(1, stageW - cfg.gap * (cfg.cols - 1))
+    const tileW = Math.round((availW * flexes[0]) / totalFlex) + cfg.padding * 2
     const tileH = Math.round(stageH) + cfg.padding * 2
     return { stageW, stageH, tileW, tileH }
   }, [prepared, cfg])
@@ -152,7 +152,7 @@ export function XplitPlayground() {
     return sliceStage(stage, previewCfg)
   }, [prepared, previewCfg])
 
-  // Pan et Zoom interactifs
+  // Interactive Pan and Zoom
   useEffect(() => {
     const el = previewRef.current
     if (!el || !prepared) return
@@ -218,6 +218,7 @@ export function XplitPlayground() {
 
   const downloadOne = useCallback(
     async (i: number) => {
+      bloomSound()
       const files = await buildExport()
       const f = files[i]
       if (!f) return
@@ -226,491 +227,257 @@ export function XplitPlayground() {
     [buildExport],
   )
 
-  const downloadAll = useCallback(async () => {
+  const downloadZip = useCallback(async () => {
     setBusy(true)
+    bloomSound()
     try {
       const files = await buildExport()
-      const zip = new JSZip()
-      files.forEach((f) => zip.file(f.name, f.blob))
-      const blob = await zip.generateAsync({ type: 'blob' })
+      const blob = await createZipArchive(files)
       saveBlob(blob, `${cfg.prefix || 'slice'}-${files.length}-parts.zip`)
     } finally {
       setBusy(false)
     }
   }, [buildExport, cfg.prefix])
 
+  const downloadBatch = useCallback(async () => {
+    setBusy(true)
+    bloomSound()
+    try {
+      const files = await buildExport()
+      for (const f of files) {
+        saveBlob(f.blob, f.name)
+        await new Promise((resolve) => setTimeout(resolve, 150))
+      }
+    } finally {
+      setBusy(false)
+    }
+  }, [buildExport])
+
+  const reset = () => {
+    bloomSound()
+    setCfg(DEFAULTS)
+    setExpanded(false)
+  }
+
+  const toolbarConfig: ResourceToolbarConfig = {
+    theme: true,
+    expand: true,
+    info: false,
+    sidebar: true,
+    reset: true,
+    viewToggle: false,
+    onReset: reset,
+    onToggleExpand: setExpanded,
+    onToggleSidebar: setShowRight,
+    sidebarVisible: showRight,
+    expanded,
+  }
+
+  const reduced = useReducedMotion() ?? false
+  const springConfig = reduced
+    ? { duration: 0 }
+    : { type: 'spring' as const, stiffness: 300, damping: 24 }
+
   return (
-    <div className="relative flex h-dvh w-full flex-col overflow-hidden bg-background text-foreground select-none">
-      {/* Top Header */}
-      <header className="flex h-14 shrink-0 items-center justify-between border-b border-border bg-card px-3 md:px-4 z-20">
-        <div className="flex items-center gap-2">
-          <ResourceNav />
-          <Link
-            href="/tools"
-            className="flex items-center gap-1.5 rounded-lg px-2 py-1 text-xs font-medium text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
-          >
-            <IconArrowLeft className="size-3.5" />
-            <span>Tools</span>
-          </Link>
-          <span className="text-muted-foreground/40">/</span>
-          <div className="flex items-center gap-2">
-            <span className="flex items-center gap-1.5 font-semibold text-sm">
-              <IconCut className="size-4 text-primary" />
-              <span>Xplit</span>
-            </span>
-            <span className="rounded-full bg-primary/10 px-2 py-0.5 text-[10px] font-medium text-primary">
-              Studio
-            </span>
-          </div>
-        </div>
-
-        {file && (
-          <div className="hidden sm:flex items-center gap-2 text-xs text-muted-foreground">
-            <span className="max-w-[180px] truncate font-medium text-foreground">{file.name}</span>
-            <span>·</span>
-            <span>
-              {img?.naturalWidth}×{img?.naturalHeight} px
-            </span>
-            <span>·</span>
-            <span>{formatBytes(file.size)}</span>
-          </div>
-        )}
-
-        <div className="flex items-center gap-2">
-          {img && (
-            <button
-              onClick={() => fileInputRef.current?.click()}
-              className="flex items-center gap-1.5 rounded-lg border border-border bg-card px-2.5 py-1 text-xs font-medium transition-colors hover:bg-muted"
-            >
-              <IconUpload className="size-3.5" />
-              <span>Remplacer</span>
-            </button>
-          )}
-          <button
-            onClick={() => setCfg(DEFAULTS)}
-            title="Réinitialiser tous les paramètres"
-            className="flex items-center gap-1 rounded-lg border border-border bg-card px-2 py-1 text-xs text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
-          >
-            <IconRefresh className="size-3.5" />
-            <span className="hidden sm:inline">Reset</span>
-          </button>
-          <input
-            ref={fileInputRef}
-            type="file"
-            accept="image/*"
-            className="hidden"
-            onChange={(e) => {
-              const f = e.target.files?.[0]
-              if (f) loadFile(f)
-            }}
-          />
-        </div>
-      </header>
-
-      {/* Main Studio Area */}
-      <div className="flex min-h-0 flex-1 flex-col lg:flex-row overflow-hidden">
-        {/* Central Canvas / Dropzone Area */}
-        <main className="relative flex flex-1 flex-col items-center justify-center overflow-hidden bg-muted/20 p-4 md:p-8">
-          {!img ? (
-            <div
-              onDragOver={(e) => {
-                e.preventDefault()
-                setDragOver(true)
-              }}
-              onDragLeave={() => setDragOver(false)}
-              onDrop={(e) => {
-                e.preventDefault()
-                setDragOver(false)
-                const f = e.dataTransfer.files[0]
-                if (f) loadFile(f)
-              }}
-              onClick={() => fileInputRef.current?.click()}
-              className={`flex w-full max-w-xl cursor-pointer flex-col items-center justify-center rounded-3xl border-2 border-dashed p-10 text-center transition-all ${
-                dragOver
-                  ? 'border-primary bg-primary/5 scale-[0.99]'
-                  : 'border-border/80 bg-card hover:border-primary/50 hover:bg-muted/40 shadow-sm'
-              }`}
-            >
-              <div className="grid size-16 place-items-center rounded-2xl bg-primary/10 text-primary mb-4">
-                <IconCut className="size-8" />
-              </div>
-              <h2 className="text-lg font-semibold tracking-tight mb-1">Déposez une image pour la découper</h2>
-              <p className="text-xs text-muted-foreground max-w-sm mb-6">
-                Glissez-déposez votre visuel ou cliquez pour parcourir. Formats supportés : PNG, JPG, WebP.
-              </p>
-              <button
-                type="button"
-                className="inline-flex items-center gap-2 rounded-full bg-primary px-4 py-2 text-xs font-semibold text-primary-foreground shadow-sm hover:opacity-90 transition-opacity"
-              >
-                <IconUpload className="size-4" />
-                <span>Sélectionner un fichier</span>
-              </button>
-
-              <div className="mt-8 pt-6 border-t border-border w-full">
-                <p className="text-[11px] text-muted-foreground mb-3 uppercase tracking-wider font-semibold">
-                  Ou essayer un exemple
-                </p>
-                <div className="flex flex-wrap justify-center gap-2">
-                  {DEMO_PREVIEWS.map((demo) => (
-                    <button
-                      key={demo.label}
-                      type="button"
-                      onClick={(e) => {
-                        e.stopPropagation()
-                        loadFromUrl(demo.url, `${demo.label.toLowerCase().replace(' ', '-')}.jpg`)
-                      }}
-                      className="rounded-full border border-border bg-muted/60 px-3 py-1 text-xs hover:border-primary/40 hover:bg-muted transition-colors"
-                    >
-                      {demo.label}
-                    </button>
-                  ))}
-                </div>
-              </div>
-            </div>
-          ) : (
-            <div className="flex flex-col items-center justify-center w-full h-full max-h-full overflow-hidden">
-              <div
-                ref={previewRef}
-                className="grid cursor-grab touch-none select-none active:cursor-grabbing rounded-2xl p-2 bg-card/60 shadow-lg border border-border/80 backdrop-blur-sm max-w-full max-h-[calc(100%-4rem)] overflow-hidden transition-shadow"
-                style={{
-                  gridTemplateColumns: `repeat(${cfg.cols}, minmax(0, 1fr))`,
-                  gap: cfg.gap > 0 ? '6px' : '2px',
-                }}
-              >
-                {tiles.map((t, i) => (
-                  <div
-                    key={t.col}
-                    className="group relative overflow-hidden rounded-lg bg-black/5 shadow-xs transition-transform"
-                  >
-                    <CanvasView canvas={t.canvas} />
-                    <span className="pointer-events-none absolute left-2 top-2 grid size-6 place-items-center rounded-full bg-background/80 backdrop-blur-md text-[11px] font-bold shadow-xs border border-border/40">
-                      {i + 1}
-                    </span>
-                    <button
-                      type="button"
-                      onClick={(e) => {
-                        e.stopPropagation()
-                        void downloadOne(i)
-                      }}
-                      className="absolute right-2 top-2 grid size-7 place-items-center rounded-full bg-background/90 text-foreground opacity-0 shadow-md backdrop-blur-md transition-all hover:bg-primary hover:text-primary-foreground group-hover:opacity-100"
-                      title={`Télécharger la partie ${i + 1}`}
-                      aria-label={`Télécharger la tranche ${i + 1}`}
-                    >
-                      <IconDownload className="size-3.5" />
-                    </button>
-                  </div>
-                ))}
-              </div>
-
-              {/* Status footer bar */}
-              <div className="mt-4 flex flex-wrap items-center justify-center gap-2 text-xs text-muted-foreground">
-                <span className="rounded-full bg-card border border-border px-3 py-1 font-medium text-foreground">
-                  {cfg.cols} parties {dims ? `· ${dims.tileW} × ${dims.tileH} px par tranche` : ''}
-                </span>
-                <span className="rounded-full bg-card border border-border px-3 py-1">
-                  Glisser pour déplacer le cadrage · Molette pour zoomer ({cfg.zoom.toFixed(2)}×)
-                </span>
-              </div>
-            </div>
-          )}
-        </main>
-
-        {/* Sidebar Controls */}
-        <aside className="w-full lg:w-88 border-t lg:border-t-0 lg:border-l border-border bg-card flex flex-col shrink-0 overflow-y-auto max-h-[50dvh] lg:max-h-full">
-          <div className="p-4 space-y-5">
-            {/* Presets */}
-            <section className="space-y-2.5">
-              <div className="flex items-center justify-between">
-                <h3 className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
-                  Presets rapides
-                </h3>
-              </div>
-              <div className="grid grid-cols-2 gap-1.5">
-                {PRESETS.map((p) => (
-                  <button
-                    key={p.label}
-                    type="button"
-                    onClick={() => setCfg((c) => ({ ...c, cols: p.cols, ratio: p.ratio }))}
-                    className="flex flex-col items-start rounded-xl border border-border/80 bg-muted/30 p-2.5 text-left transition-all hover:border-primary/50 hover:bg-muted/70"
-                  >
-                    <span className="text-xs font-semibold">{p.label}</span>
-                    <span className="text-[10px] text-muted-foreground">{p.desc}</span>
-                  </button>
-                ))}
-              </div>
-            </section>
-
-            {/* Framing Controls */}
-            <section className="space-y-3 pt-2 border-t border-border">
-              <h3 className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
-                Cadrage & Découpage
-              </h3>
-
-              <div className="space-y-1.5">
-                <div className="flex items-center justify-between text-xs">
-                  <span className="text-muted-foreground">Nombre de colonnes</span>
-                  <span className="font-semibold">{cfg.cols}</span>
-                </div>
-                <div className="flex items-center justify-between rounded-full bg-muted/60 p-1 border border-border/60">
-                  <button
-                    type="button"
-                    onClick={() => set('cols', Math.max(1, cfg.cols - 1))}
-                    className="grid size-7 place-items-center rounded-full hover:bg-card transition-colors text-sm font-bold"
-                  >
-                    −
-                  </button>
-                  <span className="text-xs font-bold">{cfg.cols} parties</span>
-                  <button
-                    type="button"
-                    onClick={() => set('cols', Math.min(10, cfg.cols + 1))}
-                    className="grid size-7 place-items-center rounded-full hover:bg-card transition-colors text-sm font-bold"
-                  >
-                    +
-                  </button>
-                </div>
-              </div>
-
-              <div className="space-y-1.5">
-                <span className="text-xs text-muted-foreground">Format de tranche</span>
-                <div className="grid grid-cols-3 gap-1 rounded-xl bg-muted/40 p-1 border border-border/60">
-                  {RATIOS.map((r) => (
-                    <button
-                      key={String(r.value)}
-                      type="button"
-                      onClick={() => set('ratio', r.value === 'original' ? 'original' : (Number(r.value) as Ratio))}
-                      className={`rounded-lg py-1.5 text-xs font-medium transition-all ${
-                        String(cfg.ratio) === String(r.value)
-                          ? 'bg-card text-foreground shadow-xs font-semibold'
-                          : 'text-muted-foreground hover:text-foreground'
-                      }`}
-                    >
-                      {r.label}
-                    </button>
-                  ))}
-                </div>
-              </div>
-
-              <div className="space-y-1.5">
-                <span className="text-xs text-muted-foreground">Mode de remplissage</span>
-                <div className="grid grid-cols-2 gap-1 rounded-xl bg-muted/40 p-1 border border-border/60">
-                  <button
-                    type="button"
-                    onClick={() => set('fit', 'cover')}
-                    className={`rounded-lg py-1.5 text-xs font-medium transition-all ${
-                      cfg.fit === 'cover'
-                        ? 'bg-card text-foreground shadow-xs font-semibold'
-                        : 'text-muted-foreground hover:text-foreground'
-                    }`}
-                  >
-                    Remplir (Cover)
-                  </button>
-                  <button
-                    type="button"
-                    onClick={() => set('fit', 'contain')}
-                    className={`rounded-lg py-1.5 text-xs font-medium transition-all ${
-                      cfg.fit === 'contain'
-                        ? 'bg-card text-foreground shadow-xs font-semibold'
-                        : 'text-muted-foreground hover:text-foreground'
-                    }`}
-                  >
-                    Adapter (Contain)
-                  </button>
-                </div>
-              </div>
-
-              <RangeSlider
-                label="Zoom"
-                value={cfg.zoom}
-                min={1}
-                max={5}
-                step={0.01}
-                suffix="×"
-                onChange={(v) => set('zoom', v)}
-              />
-
-              <RangeSlider
-                label="Position horizontale (Pan X)"
-                value={cfg.panX}
-                min={0}
-                max={1}
-                step={0.005}
-                format={(v) => `${Math.round(v * 100)}%`}
-                onChange={(v) => set('panX', v)}
-              />
-
-              <RangeSlider
-                label="Position verticale (Pan Y)"
-                value={cfg.panY}
-                min={0}
-                max={1}
-                step={0.005}
-                format={(v) => `${Math.round(v * 100)}%`}
-                onChange={(v) => set('panY', v)}
-              />
-
-              <button
-                type="button"
-                onClick={() => setCfg((c) => ({ ...c, zoom: 1, panX: 0.5, panY: 0.5 }))}
-                className="w-full rounded-xl border border-border/80 bg-muted/30 py-1.5 text-xs font-medium text-muted-foreground hover:bg-muted hover:text-foreground transition-colors"
-              >
-                Réinitialiser le cadrage
-              </button>
-            </section>
-
-            {/* Styling & Margins */}
-            <section className="space-y-3 pt-2 border-t border-border">
-              <h3 className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
-                Style & Finition
-              </h3>
-
-              <RangeSlider
-                label="Espacement (Gap)"
-                value={cfg.gap}
-                min={0}
-                max={120}
-                step={1}
-                suffix=" px"
-                onChange={(v) => set('gap', Math.round(v))}
-              />
-
-              <RangeSlider
-                label="Bordure interne (Padding)"
-                value={cfg.padding}
-                min={0}
-                max={120}
-                step={1}
-                suffix=" px"
-                onChange={(v) => set('padding', Math.round(v))}
-              />
-
-              <RangeSlider
-                label="Coins arrondis (Radius)"
-                value={cfg.radius}
-                min={0}
-                max={120}
-                step={1}
-                suffix=" px"
-                onChange={(v) => set('radius', Math.round(v))}
-              />
-
-              <div className="flex items-center justify-between gap-2">
-                <span className="text-xs text-muted-foreground">Couleur de fond</span>
-                <div className="flex items-center gap-2">
-                  <span className="text-xs font-mono uppercase text-muted-foreground">{cfg.bg}</span>
-                  <input
-                    type="color"
-                    value={cfg.bg}
-                    onChange={(e) => set('bg', e.target.value)}
-                    className="size-8 cursor-pointer rounded-lg border border-border bg-transparent p-0.5"
-                  />
-                </div>
-              </div>
-
-              <div className="flex items-center justify-between">
-                <span className="text-xs text-muted-foreground">Inverser l'ordre des colonnes</span>
-                <button
-                  type="button"
-                  onClick={() => set('reverse', !cfg.reverse)}
-                  className={`rounded-full px-3 py-1 text-xs font-medium transition-colors ${
-                    cfg.reverse ? 'bg-primary text-primary-foreground' : 'bg-muted text-muted-foreground hover:bg-muted/80'
-                  }`}
+    <>
+      <ResourceStudio
+        showRight={showRight && !expanded}
+        rightWidth="20rem"
+        onToggleRight={setShowRight}
+        className={expanded ? 'p-0' : undefined}
+        canvas={
+          <div className="relative flex h-full w-full flex-col items-center justify-center overflow-hidden p-3 md:p-6 select-none">
+            <AnimatePresence mode="popLayout" initial={false}>
+              {!img ? (
+                <motion.article
+                  key="empty-card"
+                  layout
+                  layoutId="xplit-card"
+                  initial={reduced ? false : { opacity: 0, scale: 0.96, filter: 'blur(4px)' }}
+                  animate={{ opacity: 1, scale: 1, filter: 'blur(0px)' }}
+                  exit={reduced ? { opacity: 0 } : { opacity: 0, scale: 0.96, filter: 'blur(4px)' }}
+                  transition={springConfig}
+                  className="flex w-full max-w-xl flex-col rounded-3xl bg-muted p-1.5 overflow-hidden"
                 >
-                  {cfg.reverse ? 'Inversé' : 'Normal'}
-                </button>
-              </div>
-            </section>
+                  <header className="flex items-center justify-between gap-3 px-4 py-2.5">
+                    <span className="text-xs font-semibold text-foreground">Image Slicer</span>
+                    <span className="rounded-xl bg-background px-2.5 py-1 text-[0.625rem] font-medium text-muted-foreground">
+                      Instagram & Panorama
+                    </span>
+                  </header>
+                  <div className="flex flex-col items-center text-center rounded-[1.125rem] bg-background p-6 sm:p-8">
+                    <Badge variant="secondary" className="rounded-sm mb-3">
+                      Xplit
+                    </Badge>
+                    <h1 className="text-2xl sm:text-3xl font-semibold tracking-[-0.03em] text-balance">
+                      Split images into seamless columns.
+                    </h1>
+                    <p className="mt-2 max-w-md text-xs sm:text-sm text-muted-foreground leading-relaxed text-pretty mb-6">
+                      Upload an image to slice into seamless Instagram carousels, panorama strips, and custom multi-part layouts with pixel-accurate framing.
+                    </p>
 
-            {/* Export Section */}
-            <section className="space-y-3 pt-2 border-t border-border">
-              <h3 className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
-                Export & Téléchargement
-              </h3>
-
-              <div className="space-y-1.5">
-                <span className="text-xs text-muted-foreground">Format de sortie</span>
-                <div className="grid grid-cols-3 gap-1 rounded-xl bg-muted/40 p-1 border border-border/60">
-                  {(['image/png', 'image/jpeg', 'image/webp'] as const).map((fmt) => (
-                    <button
-                      key={fmt}
-                      type="button"
-                      onClick={() => set('format', fmt)}
-                      className={`rounded-lg py-1 text-xs font-medium transition-all ${
-                        cfg.format === fmt
-                          ? 'bg-card text-foreground shadow-xs font-semibold'
-                          : 'text-muted-foreground hover:text-foreground'
+                    <div
+                      onDragOver={(e) => {
+                        e.preventDefault()
+                        setDragOver(true)
+                      }}
+                      onDragLeave={() => setDragOver(false)}
+                      onDrop={(e) => {
+                        e.preventDefault()
+                        setDragOver(false)
+                        const f = e.dataTransfer.files[0]
+                        if (f) loadFile(f)
+                      }}
+                      onClick={() => fileInputRef.current?.click()}
+                      className={`flex w-full cursor-pointer flex-col items-center justify-center rounded-2xl border-2 border-dashed p-7 ${
+                        dragOver
+                          ? 'border-primary bg-muted'
+                          : 'border-border/80 bg-background'
                       }`}
                     >
-                      {fmt === 'image/png' ? 'PNG' : fmt === 'image/jpeg' ? 'JPEG' : 'WebP'}
-                    </button>
-                  ))}
-                </div>
-              </div>
+                      <div className="grid size-11 place-items-center rounded-xl bg-muted text-foreground mb-2.5">
+                        <IconCut className="size-5" />
+                      </div>
+                      <p className="text-xs sm:text-sm font-semibold">Drop an image here</p>
+                      <p className="text-[0.6875rem] text-muted-foreground mt-0.5 mb-3.5">PNG, JPG, or WebP up to 8000px</p>
+                      <Button
+                        type="button"
+                        size="sm"
+                      >
+                        <IconUpload className="size-3.5 mr-1.5" />
+                        <span>Browse files</span>
+                      </Button>
+                    </div>
 
-              {cfg.format !== 'image/png' && (
-                <RangeSlider
-                  label="Qualité d'image"
-                  value={cfg.quality}
-                  min={0.3}
-                  max={1}
-                  step={0.01}
-                  format={(v) => `${Math.round(v * 100)}%`}
-                  onChange={(v) => set('quality', v)}
-                />
+                    <div className="mt-6 flex flex-wrap items-center justify-center gap-2">
+                      <span className="text-[0.6875rem] font-semibold text-muted-foreground mr-1">Examples:</span>
+                      {DEMO_PREVIEWS.map((demo) => (
+                        <Button
+                          key={demo.label}
+                          type="button"
+                          variant="outline"
+                          size="xs"
+                          onClick={() => loadFromUrl(demo.url, `${demo.label.toLowerCase().replace(' ', '-')}.jpg`)}
+                        >
+                          {demo.label}
+                        </Button>
+                      ))}
+                    </div>
+                  </div>
+                </motion.article>
+              ) : (
+                <motion.article
+                  key="preview-card"
+                  layout
+                  layoutId="xplit-card"
+                  initial={reduced ? false : { opacity: 0, scale: 0.96, filter: 'blur(4px)' }}
+                  animate={{ opacity: 1, scale: 1, filter: 'blur(0px)' }}
+                  exit={reduced ? { opacity: 0 } : { opacity: 0, scale: 0.96, filter: 'blur(4px)' }}
+                  transition={springConfig}
+                  className="flex w-fit max-w-full max-h-full flex-col rounded-2xl bg-muted p-1.5 select-none shadow-none overflow-hidden"
+                  style={{
+                    maxWidth: dims
+                      ? `min(100%, calc((100vh - 12rem) * (${dims.stageW} / ${dims.stageH})))`
+                      : '100%',
+                  }}
+                >
+                  <header className="flex shrink-0 items-center justify-between gap-3 px-2 py-1.5 pb-2">
+                    <div className="flex items-center gap-2 min-w-0">
+                      <h2 className="truncate text-xs sm:text-sm font-semibold text-foreground">
+                        {file?.name ?? 'Canvas Preview'}
+                      </h2>
+                      <span className="shrink-0 rounded-md bg-background px-2 py-0.5 text-[0.625rem] font-medium text-muted-foreground">
+                        {cfg.cols} parts
+                      </span>
+                    </div>
+                    <div className="flex items-center gap-1.5 shrink-0">
+                      {dims && (
+                        <span className="rounded-md bg-background px-2 py-0.5 font-mono text-[0.625rem] text-muted-foreground">
+                          {dims.stageW} × {dims.stageH} px
+                        </span>
+                      )}
+                      <span className="rounded-md bg-background px-2 py-0.5 text-[0.625rem] font-medium uppercase text-muted-foreground">
+                        {cfg.fit}
+                      </span>
+                    </div>
+                  </header>
+
+                  <div
+                    ref={previewRef}
+                    className="grid w-full touch-none select-none overflow-hidden rounded-xl bg-background"
+                    style={{
+                      gridTemplateColumns: colFlex.map((f) => `${f}fr`).join(' '),
+                      gap: '2px',
+                      aspectRatio: dims ? `${dims.stageW} / ${dims.stageH}` : undefined,
+                    }}
+                  >
+                    {tiles.map((t, i) => (
+                      <div
+                        key={`tile-${t.col}-${t.flex}`}
+                        onClick={() => toggleColFlex(i)}
+                        className="relative h-full w-full overflow-hidden cursor-pointer"
+                      >
+                        <CanvasView canvas={t.canvas} />
+
+                        {/* Column Number Badge - solid, no opacity games */}
+                        <span className="pointer-events-none absolute left-2 top-2 flex size-5 sm:size-6 items-center justify-center rounded-md bg-background text-[10px] sm:text-[11px] font-mono font-medium text-foreground">
+                          {i + 1}
+                        </span>
+
+                        {/* Download button - solid, no opacity games */}
+                        <button
+                          type="button"
+                          onClick={(e) => {
+                            e.stopPropagation()
+                            void downloadOne(i)
+                          }}
+                          aria-label={`Download slice ${i + 1}`}
+                          title={`Download slice ${i + 1}`}
+                          className="absolute right-2 top-2 flex size-6 sm:size-7 items-center justify-center rounded-md bg-background text-muted-foreground hover:text-foreground cursor-pointer"
+                        >
+                          <IconDownload className="size-3.5" />
+                        </button>
+                      </div>
+                    ))}
+                  </div>
+                </motion.article>
               )}
-
-              <div className="space-y-1.5">
-                <span className="text-xs text-muted-foreground">Facteur d'échelle (Résolution)</span>
-                <div className="grid grid-cols-4 gap-1 rounded-xl bg-muted/40 p-1 border border-border/60">
-                  {[0.5, 1, 2, 3].map((s) => (
-                    <button
-                      key={s}
-                      type="button"
-                      onClick={() => set('scale', s)}
-                      className={`rounded-lg py-1 text-xs font-medium transition-all ${
-                        cfg.scale === s
-                          ? 'bg-card text-foreground shadow-xs font-semibold'
-                          : 'text-muted-foreground hover:text-foreground'
-                      }`}
-                    >
-                      {s}×
-                    </button>
-                  ))}
-                </div>
-              </div>
-
-              <div className="space-y-1.5">
-                <span className="text-xs text-muted-foreground">Préfixe du nom de fichier</span>
-                <input
-                  type="text"
-                  value={cfg.prefix}
-                  onChange={(e) => set('prefix', e.target.value)}
-                  placeholder="slice"
-                  className="w-full rounded-xl border border-border bg-muted/30 px-3 py-1.5 text-xs font-medium outline-none focus:border-primary focus:bg-background transition-colors"
-                />
-              </div>
-
-              <button
-                type="button"
-                disabled={!img || busy}
-                onClick={() => void downloadAll()}
-                className="flex w-full items-center justify-center gap-2 rounded-2xl bg-primary py-3 text-xs font-semibold text-primary-foreground shadow-sm transition-all hover:opacity-90 disabled:opacity-40 disabled:cursor-not-allowed cursor-pointer"
-              >
-                <IconFileZip className="size-4" />
-                <span>
-                  {busy ? 'Génération du ZIP…' : `Télécharger tout en ZIP (${cfg.cols} fichiers)`}
-                </span>
-              </button>
-
-              <p className="text-center text-[11px] text-muted-foreground">
-                {dims
-                  ? `Archive ZIP · ${dims.tileW} × ${dims.tileH} px par tranche`
-                  : 'Importez une image pour activer le téléchargement'}
-              </p>
-            </section>
+            </AnimatePresence>
           </div>
-        </aside>
-      </div>
-    </div>
+        }
+        float={
+          <ResourceToolbar
+            config={toolbarConfig}
+            left={<ResourceNav />}
+          />
+        }
+        right={
+          <XplitControlPanel
+            cfg={cfg}
+            setCfg={setCfg}
+            file={file}
+            img={img}
+            dims={dims}
+            busy={busy}
+            onReset={reset}
+            onDownloadZip={() => void downloadZip()}
+            onDownloadBatch={() => void downloadBatch()}
+            onPickFile={() => fileInputRef.current?.click()}
+          />
+        }
+      />
+
+      <input
+        ref={fileInputRef}
+        type="file"
+        accept="image/*"
+        className="hidden"
+        onChange={(e) => {
+          const f = e.target.files?.[0]
+          if (f) loadFile(f)
+        }}
+      />
+    </>
   )
 }
 
@@ -720,51 +487,12 @@ function CanvasView({ canvas }: { canvas: HTMLCanvasElement }) {
     const el = ref.current
     if (!el) return
     canvas.style.width = '100%'
-    canvas.style.height = 'auto'
+    canvas.style.height = '100%'
+    canvas.style.objectFit = 'cover'
     canvas.style.display = 'block'
     el.replaceChildren(canvas)
   }, [canvas])
-  return <div ref={ref} className="w-full" />
-}
-
-function RangeSlider({
-  label,
-  value,
-  min,
-  max,
-  step,
-  suffix = '',
-  format,
-  onChange,
-}: {
-  label: string
-  value: number
-  min: number
-  max: number
-  step: number
-  suffix?: string
-  format?: (v: number) => string
-  onChange: (v: number) => void
-}) {
-  return (
-    <div className="space-y-1.5">
-      <div className="flex items-center justify-between text-xs">
-        <span className="text-muted-foreground">{label}</span>
-        <span className="font-semibold text-foreground">
-          {format ? format(value) : `${Math.round(value * 100) / 100}${suffix}`}
-        </span>
-      </div>
-      <input
-        type="range"
-        min={min}
-        max={max}
-        step={step}
-        value={value}
-        onChange={(e) => onChange(Number(e.target.value))}
-        className="w-full accent-primary h-1.5 bg-muted rounded-lg appearance-none cursor-pointer"
-      />
-    </div>
-  )
+  return <div ref={ref} className="h-full w-full overflow-hidden" />
 }
 
 function saveBlob(blob: Blob, name: string) {
