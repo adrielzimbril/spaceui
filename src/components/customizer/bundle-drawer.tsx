@@ -23,6 +23,7 @@ import {
 import { IconPackage, IconPackageExport, IconX, IconBox, IconShare, IconTrash } from '@tabler/icons-react'
 import { useClipboard } from '@/registry/hooks/browser/use-clipboard'
 import { cn } from '@/registry/lib/utils'
+import { REGISTRY_NAMESPACE } from '@/lib/install-command'
 
 export function BundleDrawer() {
   const { items, count, remove, clear, message } = useBundle()
@@ -175,7 +176,7 @@ export function BundleDrawer() {
                   <div className="bg-border/70 mx-2 my-1.5 h-px" aria-hidden="true" />
                   <div className="px-2 pt-1">
                     <InlineInstallBar
-                      packageName={items.map((i) => `@usespaceui/${i.slug}`).join(' ')}
+                      packageName={items.map((i) => `${REGISTRY_NAMESPACE}/${i.slug}`).join(' ')}
                       isShadcn={true}
                       className="w-full"
                     />

@@ -18,6 +18,7 @@ import { source, uiKitSource, resourcesSource } from '@/lib/source'
 import { getEffectiveContained } from '@/config/preview-config'
 import { useMediaQuery, useIsMobile } from '@/registry/hooks/browser/use-media-query'
 import { useRegistryEntry } from '@/components/docs/preview/hooks/use-registry-entry'
+import { REGISTRY_NAMESPACE } from '@/lib/install-command'
 
 export interface PlaygroundCanvasStageProps {
   showInfo: boolean
@@ -277,7 +278,9 @@ export function PlaygroundCanvasStage({
             data-playground-ui
             className="pointer-events-auto fixed bottom-18 left-1/2 z-30 hidden -translate-x-1/2 lg:block"
           >
-            <InlineInstallBar packageName={activePreview?.name ? `@usespaceui/${activePreview.name}` : undefined} />
+            <InlineInstallBar
+              packageName={activePreview?.name ? `${REGISTRY_NAMESPACE}/${activePreview.name}` : undefined}
+            />
           </div>
         )}
       </motion.div>

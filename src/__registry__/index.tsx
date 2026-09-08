@@ -41,7 +41,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/block-card-info-1',
+    command: '@spaceui/block-card-info-1',
   },
   "block-card-info-2": {
     name: "block-card-info-2",
@@ -78,7 +78,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/block-card-info-2',
+    command: '@spaceui/block-card-info-2',
   },
   "block-eleven-labs": {
     name: "block-eleven-labs",
@@ -180,7 +180,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/block-eleven-labs',
+    command: '@spaceui/block-eleven-labs',
   },
   "block-interactive-fun-facts": {
     name: "block-interactive-fun-facts",
@@ -227,7 +227,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/block-interactive-fun-facts',
+    command: '@spaceui/block-interactive-fun-facts',
   },
   "block-sign-in": {
     name: "block-sign-in",
@@ -259,7 +259,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {"title":{"value":"Welcome back"},"description":{"value":"Enter your credentials to access your account"},"buttonText":{"value":"Sign In"},"variant":{"value":"default","options":{"Default":"default","Elevated":"elevated","Bordered":"bordered","Soft":"soft"}},"buttonVariant":{"value":"default","options":{"Default":"default","Outline":"outline","Secondary":"secondary","Ghost":"ghost"}},"cardWidth":{"value":384,"min":280,"max":600,"step":8},"borderRadius":{"value":16,"min":0,"max":32,"step":2},"padding":{"value":24,"min":12,"max":48,"step":4},"socialColumns":{"value":2,"options":{"1 Column":1,"2 Columns":2}},"maxAttempts":{"value":5,"min":0,"max":10,"step":1},"showSocials":{"value":true},"showRememberMe":{"value":true},"showForgotPassword":{"value":true}};
       return LazyComp;
     })(),
-    command: '@usespaceui/block-sign-in',
+    command: '@spaceui/block-sign-in',
   },
   "components-backgrounds-bubble": {
     name: "components-backgrounds-bubble",
@@ -291,7 +291,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/components-backgrounds-bubble',
+    command: '@spaceui/components-backgrounds-bubble',
   },
   "components-backgrounds-gradient": {
     name: "components-backgrounds-gradient",
@@ -323,7 +323,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/components-backgrounds-gradient',
+    command: '@spaceui/components-backgrounds-gradient',
   },
   "components-orb-bloop": {
     name: "components-orb-bloop",
@@ -380,7 +380,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/components-orb-bloop',
+    command: '@spaceui/components-orb-bloop',
   },
   "components-orb-smooth": {
     name: "components-orb-smooth",
@@ -437,7 +437,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/components-orb-smooth',
+    command: '@spaceui/components-orb-smooth',
   },
   "components-shader-cloud": {
     name: "components-shader-cloud",
@@ -474,7 +474,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/components-shader-cloud',
+    command: '@spaceui/components-shader-cloud',
   },
   "components-shader-paper-shader": {
     name: "components-shader-paper-shader",
@@ -506,7 +506,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/components-shader-paper-shader',
+    command: '@spaceui/components-shader-paper-shader',
   },
   "components-spaceui-autoscale-input": {
     name: "components-spaceui-autoscale-input",
@@ -538,7 +538,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/components-spaceui-autoscale-input',
+    command: '@spaceui/components-spaceui-autoscale-input',
   },
   "components-spaceui-avatar-extended": {
     name: "components-spaceui-avatar-extended",
@@ -570,7 +570,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/components-spaceui-avatar-extended',
+    command: '@spaceui/components-spaceui-avatar-extended',
   },
   "components-spaceui-avatar-group": {
     name: "components-spaceui-avatar-group",
@@ -602,7 +602,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/components-spaceui-avatar-group',
+    command: '@spaceui/components-spaceui-avatar-group',
   },
   "components-spaceui-bouncy-accordion": {
     name: "components-spaceui-bouncy-accordion",
@@ -634,7 +634,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/components-spaceui-bouncy-accordion',
+    command: '@spaceui/components-spaceui-bouncy-accordion',
   },
   "components-spaceui-copy": {
     name: "components-spaceui-copy",
@@ -666,7 +666,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/components-spaceui-copy',
+    command: '@spaceui/components-spaceui-copy',
   },
   "components-spaceui-data-grid": {
     name: "components-spaceui-data-grid",
@@ -698,7 +698,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/components-spaceui-data-grid',
+    command: '@spaceui/components-spaceui-data-grid',
   },
   "components-spaceui-data-grid-column-filter": {
     name: "components-spaceui-data-grid-column-filter",
@@ -730,7 +730,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/components-spaceui-data-grid-column-filter',
+    command: '@spaceui/components-spaceui-data-grid-column-filter',
   },
   "components-spaceui-data-grid-column-header": {
     name: "components-spaceui-data-grid-column-header",
@@ -762,7 +762,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/components-spaceui-data-grid-column-header',
+    command: '@spaceui/components-spaceui-data-grid-column-header',
   },
   "components-spaceui-data-grid-column-visibility": {
     name: "components-spaceui-data-grid-column-visibility",
@@ -794,7 +794,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/components-spaceui-data-grid-column-visibility',
+    command: '@spaceui/components-spaceui-data-grid-column-visibility',
   },
   "components-spaceui-data-grid-pagination": {
     name: "components-spaceui-data-grid-pagination",
@@ -826,7 +826,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/components-spaceui-data-grid-pagination',
+    command: '@spaceui/components-spaceui-data-grid-pagination',
   },
   "components-spaceui-data-grid-scroll-area": {
     name: "components-spaceui-data-grid-scroll-area",
@@ -858,7 +858,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/components-spaceui-data-grid-scroll-area',
+    command: '@spaceui/components-spaceui-data-grid-scroll-area',
   },
   "components-spaceui-data-grid-table": {
     name: "components-spaceui-data-grid-table",
@@ -890,7 +890,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/components-spaceui-data-grid-table',
+    command: '@spaceui/components-spaceui-data-grid-table',
   },
   "components-spaceui-data-grid-table-dnd": {
     name: "components-spaceui-data-grid-table-dnd",
@@ -922,7 +922,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/components-spaceui-data-grid-table-dnd',
+    command: '@spaceui/components-spaceui-data-grid-table-dnd',
   },
   "components-spaceui-data-grid-table-dnd-rows": {
     name: "components-spaceui-data-grid-table-dnd-rows",
@@ -954,7 +954,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/components-spaceui-data-grid-table-dnd-rows',
+    command: '@spaceui/components-spaceui-data-grid-table-dnd-rows',
   },
   "components-spaceui-data-grid-table-virtual": {
     name: "components-spaceui-data-grid-table-virtual",
@@ -986,7 +986,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/components-spaceui-data-grid-table-virtual',
+    command: '@spaceui/components-spaceui-data-grid-table-virtual',
   },
   "components-spaceui-date-selector": {
     name: "components-spaceui-date-selector",
@@ -1018,7 +1018,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/components-spaceui-date-selector',
+    command: '@spaceui/components-spaceui-date-selector',
   },
   "components-spaceui-dirt-carousel": {
     name: "components-spaceui-dirt-carousel",
@@ -1050,7 +1050,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/components-spaceui-dirt-carousel',
+    command: '@spaceui/components-spaceui-dirt-carousel',
   },
   "components-spaceui-event-calendar": {
     name: "components-spaceui-event-calendar",
@@ -1082,7 +1082,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/components-spaceui-event-calendar',
+    command: '@spaceui/components-spaceui-event-calendar',
   },
   "components-spaceui-event-calendar-agenda-view": {
     name: "components-spaceui-event-calendar-agenda-view",
@@ -1114,7 +1114,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/components-spaceui-event-calendar-agenda-view',
+    command: '@spaceui/components-spaceui-event-calendar-agenda-view',
   },
   "components-spaceui-event-calendar-content": {
     name: "components-spaceui-event-calendar-content",
@@ -1146,7 +1146,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/components-spaceui-event-calendar-content',
+    command: '@spaceui/components-spaceui-event-calendar-content',
   },
   "components-spaceui-event-calendar-dnd": {
     name: "components-spaceui-event-calendar-dnd",
@@ -1178,7 +1178,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/components-spaceui-event-calendar-dnd',
+    command: '@spaceui/components-spaceui-event-calendar-dnd',
   },
   "components-spaceui-event-calendar-event": {
     name: "components-spaceui-event-calendar-event",
@@ -1210,7 +1210,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/components-spaceui-event-calendar-event',
+    command: '@spaceui/components-spaceui-event-calendar-event',
   },
   "components-spaceui-event-calendar-i18n": {
     name: "components-spaceui-event-calendar-i18n",
@@ -1242,7 +1242,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/components-spaceui-event-calendar-i18n',
+    command: '@spaceui/components-spaceui-event-calendar-i18n',
   },
   "components-spaceui-event-calendar-lib": {
     name: "components-spaceui-event-calendar-lib",
@@ -1274,7 +1274,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/components-spaceui-event-calendar-lib',
+    command: '@spaceui/components-spaceui-event-calendar-lib',
   },
   "components-spaceui-event-calendar-month-view": {
     name: "components-spaceui-event-calendar-month-view",
@@ -1306,7 +1306,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/components-spaceui-event-calendar-month-view',
+    command: '@spaceui/components-spaceui-event-calendar-month-view',
   },
   "components-spaceui-event-calendar-nav": {
     name: "components-spaceui-event-calendar-nav",
@@ -1338,7 +1338,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/components-spaceui-event-calendar-nav',
+    command: '@spaceui/components-spaceui-event-calendar-nav',
   },
   "components-spaceui-event-calendar-recurrence": {
     name: "components-spaceui-event-calendar-recurrence",
@@ -1370,7 +1370,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/components-spaceui-event-calendar-recurrence',
+    command: '@spaceui/components-spaceui-event-calendar-recurrence',
   },
   "components-spaceui-event-calendar-resource-view": {
     name: "components-spaceui-event-calendar-resource-view",
@@ -1402,7 +1402,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/components-spaceui-event-calendar-resource-view',
+    command: '@spaceui/components-spaceui-event-calendar-resource-view',
   },
   "components-spaceui-event-calendar-time-grid": {
     name: "components-spaceui-event-calendar-time-grid",
@@ -1434,7 +1434,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/components-spaceui-event-calendar-time-grid',
+    command: '@spaceui/components-spaceui-event-calendar-time-grid',
   },
   "components-spaceui-event-calendar-types": {
     name: "components-spaceui-event-calendar-types",
@@ -1466,7 +1466,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/components-spaceui-event-calendar-types',
+    command: '@spaceui/components-spaceui-event-calendar-types',
   },
   "components-spaceui-filters": {
     name: "components-spaceui-filters",
@@ -1498,7 +1498,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/components-spaceui-filters',
+    command: '@spaceui/components-spaceui-filters',
   },
   "components-spaceui-icon-stack": {
     name: "components-spaceui-icon-stack",
@@ -1530,7 +1530,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/components-spaceui-icon-stack',
+    command: '@spaceui/components-spaceui-icon-stack',
   },
   "components-spaceui-image-dark": {
     name: "components-spaceui-image-dark",
@@ -1562,7 +1562,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/components-spaceui-image-dark',
+    command: '@spaceui/components-spaceui-image-dark',
   },
   "components-spaceui-kanban": {
     name: "components-spaceui-kanban",
@@ -1594,7 +1594,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/components-spaceui-kanban',
+    command: '@spaceui/components-spaceui-kanban',
   },
   "components-spaceui-liquid-metal-avatar": {
     name: "components-spaceui-liquid-metal-avatar",
@@ -1626,7 +1626,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/components-spaceui-liquid-metal-avatar',
+    command: '@spaceui/components-spaceui-liquid-metal-avatar',
   },
   "components-spaceui-liquid-metal-button": {
     name: "components-spaceui-liquid-metal-button",
@@ -1658,7 +1658,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/components-spaceui-liquid-metal-button',
+    command: '@spaceui/components-spaceui-liquid-metal-button',
   },
   "components-spaceui-liquid-metal-card": {
     name: "components-spaceui-liquid-metal-card",
@@ -1690,7 +1690,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/components-spaceui-liquid-metal-card',
+    command: '@spaceui/components-spaceui-liquid-metal-card',
   },
   "components-spaceui-morph-icon": {
     name: "components-spaceui-morph-icon",
@@ -1722,7 +1722,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/components-spaceui-morph-icon',
+    command: '@spaceui/components-spaceui-morph-icon',
   },
   "components-spaceui-notification-list": {
     name: "components-spaceui-notification-list",
@@ -1754,7 +1754,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/components-spaceui-notification-list',
+    command: '@spaceui/components-spaceui-notification-list',
   },
   "components-spaceui-phone-input": {
     name: "components-spaceui-phone-input",
@@ -1786,7 +1786,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/components-spaceui-phone-input',
+    command: '@spaceui/components-spaceui-phone-input',
   },
   "components-spaceui-pin-list": {
     name: "components-spaceui-pin-list",
@@ -1818,7 +1818,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/components-spaceui-pin-list',
+    command: '@spaceui/components-spaceui-pin-list',
   },
   "components-spaceui-rating": {
     name: "components-spaceui-rating",
@@ -1850,7 +1850,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/components-spaceui-rating',
+    command: '@spaceui/components-spaceui-rating',
   },
   "components-spaceui-resizable": {
     name: "components-spaceui-resizable",
@@ -1882,7 +1882,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/components-spaceui-resizable',
+    command: '@spaceui/components-spaceui-resizable',
   },
   "components-spaceui-scrollspy": {
     name: "components-spaceui-scrollspy",
@@ -1914,7 +1914,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/components-spaceui-scrollspy',
+    command: '@spaceui/components-spaceui-scrollspy',
   },
   "components-spaceui-section-scrollspy": {
     name: "components-spaceui-section-scrollspy",
@@ -1946,7 +1946,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/components-spaceui-section-scrollspy',
+    command: '@spaceui/components-spaceui-section-scrollspy',
   },
   "components-spaceui-sortable": {
     name: "components-spaceui-sortable",
@@ -1978,7 +1978,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/components-spaceui-sortable',
+    command: '@spaceui/components-spaceui-sortable',
   },
   "components-spaceui-status-badge": {
     name: "components-spaceui-status-badge",
@@ -2010,7 +2010,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/components-spaceui-status-badge',
+    command: '@spaceui/components-spaceui-status-badge',
   },
   "components-spaceui-theme-toggle": {
     name: "components-spaceui-theme-toggle",
@@ -2042,7 +2042,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/components-spaceui-theme-toggle',
+    command: '@spaceui/components-spaceui-theme-toggle',
   },
   "components-spaceui-timeline": {
     name: "components-spaceui-timeline",
@@ -2074,7 +2074,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/components-spaceui-timeline',
+    command: '@spaceui/components-spaceui-timeline',
   },
   "components-spaceui-tournament-bracket": {
     name: "components-spaceui-tournament-bracket",
@@ -2106,7 +2106,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/components-spaceui-tournament-bracket',
+    command: '@spaceui/components-spaceui-tournament-bracket',
   },
   "components-spaceui-tree": {
     name: "components-spaceui-tree",
@@ -2138,7 +2138,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/components-spaceui-tree',
+    command: '@spaceui/components-spaceui-tree',
   },
   "components-spaceui-user-presence-avatar": {
     name: "components-spaceui-user-presence-avatar",
@@ -2170,7 +2170,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/components-spaceui-user-presence-avatar',
+    command: '@spaceui/components-spaceui-user-presence-avatar',
   },
   "components-spaceui-words-preloader": {
     name: "components-spaceui-words-preloader",
@@ -2202,7 +2202,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/components-spaceui-words-preloader',
+    command: '@spaceui/components-spaceui-words-preloader',
   },
   "demo-c-backgrounds-bubble-01": {
     name: "demo-c-backgrounds-bubble-01",
@@ -2234,7 +2234,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-c-backgrounds-bubble-01',
+    command: '@spaceui/demo-c-backgrounds-bubble-01',
   },
   "demo-c-backgrounds-gradient-01": {
     name: "demo-c-backgrounds-gradient-01",
@@ -2266,7 +2266,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-c-backgrounds-gradient-01',
+    command: '@spaceui/demo-c-backgrounds-gradient-01',
   },
   "demo-c-orb-bloop-01": {
     name: "demo-c-orb-bloop-01",
@@ -2298,7 +2298,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {"palette":{"value":"BLUE","options":{"Blue":"BLUE","Dark Blue":"DARK_BLUE","Green":"GREEN","Yellow":"YELLOW","Orange":"ORANGE","Amber":"AMBER","Pink":"PINK","Purple":"PURPLE","Greyscale":"GREYSCALE","Charcoal":"CHARCOAL","White":"WHITE","Black":"BLACK"}},"orbState":{"value":"listen","options":{"Idle":"idle","Listen":"listen","Think":"think","Speak":"speak"}},"size":{"value":240,"min":120,"max":520,"step":10},"watercolor":{"value":true},"watercolorStrength":{"value":0.5,"min":0,"max":1,"step":0.05,"dependsOn":{"watercolor":true}},"audioMode":{"value":"ambient","options":{"Ambient":"ambient","Microphone":"mic","Audio Track":"file"}},"audioSource":{"value":"url","options":{"Remote URL":"url","Upload File":"upload"},"dependsOn":{"audioMode":"file"}},"audioUrl":{"value":"https://cdn.pixabay.com/audio/2025/05/10/audio_3317d9a155.mp3","dependsOn":{"audioMode":"file","audioSource":"url"}},"audioFile":{"type":"file","accept":"audio/*","value":"","dependsOn":{"audioMode":"file","audioSource":"upload"}}};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-c-orb-bloop-01',
+    command: '@spaceui/demo-c-orb-bloop-01',
   },
   "demo-c-orb-smooth-01": {
     name: "demo-c-orb-smooth-01",
@@ -2330,7 +2330,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {"textureSource":{"value":"url","options":{"Remote URL":"url","Upload File":"upload"}},"textureUrl":{"value":"https://avatars.spaceui.one/v1?name=luna&variant=lumina&size=2000&format=png","dependsOn":{"textureSource":"url"}},"textureFile":{"type":"file","accept":"image/*","value":"","dependsOn":{"textureSource":"upload"}},"grain":{"value":true},"grainAnimated":{"value":true,"dependsOn":{"grain":true}},"grainOpacity":{"value":0.67,"min":0,"max":1,"step":0.05,"dependsOn":{"grain":true}},"watercolor":{"value":true},"watercolorStrength":{"value":0.5,"min":0,"max":1,"step":0.05,"dependsOn":{"watercolor":true}},"size":{"value":240,"min":120,"max":520,"step":10},"audioMode":{"value":"ambient","options":{"Ambient":"ambient","Microphone":"mic","Audio Track":"file"}},"audioSource":{"value":"url","options":{"Remote URL":"url","Upload File":"upload"},"dependsOn":{"audioMode":"file"}},"audioUrl":{"value":"https://cdn.pixabay.com/audio/2025/05/10/audio_3317d9a155.mp3","dependsOn":{"audioMode":"file","audioSource":"url"}},"audioFile":{"type":"file","accept":"audio/*","value":"","dependsOn":{"audioMode":"file","audioSource":"upload"}}};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-c-orb-smooth-01',
+    command: '@spaceui/demo-c-orb-smooth-01',
   },
   "demo-c-cloud-01": {
     name: "demo-c-cloud-01",
@@ -2362,7 +2362,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {"speed":{"value":1,"min":0,"max":5,"step":0.1},"sky":{"value":"#68b8d7"},"cloudColor":{"value":"#adc1de"},"shadow":{"value":"#183550"},"sun":{"value":"#ff9919"},"glare":{"value":"#ff6633"},"sunlight":{"value":"#ff9933"},"bg":{"value":"#ffffff"}};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-c-cloud-01',
+    command: '@spaceui/demo-c-cloud-01',
   },
   "demo-c-paper-shader-01": {
     name: "demo-c-paper-shader-01",
@@ -2399,7 +2399,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-c-paper-shader-01',
+    command: '@spaceui/demo-c-paper-shader-01',
   },
   "demo-c-autoscale-input-01": {
     name: "demo-c-autoscale-input-01",
@@ -2431,7 +2431,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-c-autoscale-input-01',
+    command: '@spaceui/demo-c-autoscale-input-01',
   },
   "demo-c-bouncy-accordion-01": {
     name: "demo-c-bouncy-accordion-01",
@@ -2463,7 +2463,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-c-bouncy-accordion-01',
+    command: '@spaceui/demo-c-bouncy-accordion-01',
   },
   "demo-c-liquid-metal-avatar-custom-01": {
     name: "demo-c-liquid-metal-avatar-custom-01",
@@ -2495,7 +2495,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-c-liquid-metal-avatar-custom-01',
+    command: '@spaceui/demo-c-liquid-metal-avatar-custom-01',
   },
   "demo-c-liquid-metal-avatar-default-01": {
     name: "demo-c-liquid-metal-avatar-default-01",
@@ -2527,7 +2527,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-c-liquid-metal-avatar-default-01',
+    command: '@spaceui/demo-c-liquid-metal-avatar-default-01',
   },
   "demo-c-liquid-metal-avatar-fallback-01": {
     name: "demo-c-liquid-metal-avatar-fallback-01",
@@ -2559,7 +2559,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-c-liquid-metal-avatar-fallback-01',
+    command: '@spaceui/demo-c-liquid-metal-avatar-fallback-01',
   },
   "demo-c-liquid-metal-avatar-sizes-01": {
     name: "demo-c-liquid-metal-avatar-sizes-01",
@@ -2591,7 +2591,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-c-liquid-metal-avatar-sizes-01',
+    command: '@spaceui/demo-c-liquid-metal-avatar-sizes-01',
   },
   "demo-c-liquid-metal-button-custom-01": {
     name: "demo-c-liquid-metal-button-custom-01",
@@ -2623,7 +2623,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-c-liquid-metal-button-custom-01',
+    command: '@spaceui/demo-c-liquid-metal-button-custom-01',
   },
   "demo-c-liquid-metal-button-default-01": {
     name: "demo-c-liquid-metal-button-default-01",
@@ -2655,7 +2655,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-c-liquid-metal-button-default-01',
+    command: '@spaceui/demo-c-liquid-metal-button-default-01',
   },
   "demo-c-liquid-metal-button-sizes-01": {
     name: "demo-c-liquid-metal-button-sizes-01",
@@ -2687,7 +2687,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-c-liquid-metal-button-sizes-01',
+    command: '@spaceui/demo-c-liquid-metal-button-sizes-01',
   },
   "demo-c-liquid-metal-card-custom-01": {
     name: "demo-c-liquid-metal-card-custom-01",
@@ -2719,7 +2719,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-c-liquid-metal-card-custom-01',
+    command: '@spaceui/demo-c-liquid-metal-card-custom-01',
   },
   "demo-c-liquid-metal-card-default-01": {
     name: "demo-c-liquid-metal-card-default-01",
@@ -2751,7 +2751,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-c-liquid-metal-card-default-01',
+    command: '@spaceui/demo-c-liquid-metal-card-default-01',
   },
   "demo-c-liquid-metal-card-login-01": {
     name: "demo-c-liquid-metal-card-login-01",
@@ -2783,7 +2783,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-c-liquid-metal-card-login-01',
+    command: '@spaceui/demo-c-liquid-metal-card-login-01',
   },
   "demo-c-liquid-metal-card-player-01": {
     name: "demo-c-liquid-metal-card-player-01",
@@ -2815,7 +2815,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-c-liquid-metal-card-player-01',
+    command: '@spaceui/demo-c-liquid-metal-card-player-01',
   },
   "demo-c-data-grid-01": {
     name: "demo-c-data-grid-01",
@@ -2847,7 +2847,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-c-data-grid-01',
+    command: '@spaceui/demo-c-data-grid-01',
   },
   "demo-c-data-grid-02": {
     name: "demo-c-data-grid-02",
@@ -2879,7 +2879,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-c-data-grid-02',
+    command: '@spaceui/demo-c-data-grid-02',
   },
   "demo-c-data-grid-03": {
     name: "demo-c-data-grid-03",
@@ -2911,7 +2911,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-c-data-grid-03',
+    command: '@spaceui/demo-c-data-grid-03',
   },
   "demo-c-data-grid-04": {
     name: "demo-c-data-grid-04",
@@ -2943,7 +2943,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-c-data-grid-04',
+    command: '@spaceui/demo-c-data-grid-04',
   },
   "demo-c-data-grid-05": {
     name: "demo-c-data-grid-05",
@@ -2975,7 +2975,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-c-data-grid-05',
+    command: '@spaceui/demo-c-data-grid-05',
   },
   "demo-c-data-grid-06": {
     name: "demo-c-data-grid-06",
@@ -3007,7 +3007,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-c-data-grid-06',
+    command: '@spaceui/demo-c-data-grid-06',
   },
   "demo-c-data-grid-07": {
     name: "demo-c-data-grid-07",
@@ -3039,7 +3039,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-c-data-grid-07',
+    command: '@spaceui/demo-c-data-grid-07',
   },
   "demo-c-data-grid-08": {
     name: "demo-c-data-grid-08",
@@ -3071,7 +3071,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-c-data-grid-08',
+    command: '@spaceui/demo-c-data-grid-08',
   },
   "demo-c-data-grid-09": {
     name: "demo-c-data-grid-09",
@@ -3103,7 +3103,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-c-data-grid-09',
+    command: '@spaceui/demo-c-data-grid-09',
   },
   "demo-c-data-grid-10": {
     name: "demo-c-data-grid-10",
@@ -3135,7 +3135,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-c-data-grid-10',
+    command: '@spaceui/demo-c-data-grid-10',
   },
   "demo-c-data-grid-11": {
     name: "demo-c-data-grid-11",
@@ -3167,7 +3167,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-c-data-grid-11',
+    command: '@spaceui/demo-c-data-grid-11',
   },
   "demo-c-data-grid-12": {
     name: "demo-c-data-grid-12",
@@ -3199,7 +3199,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-c-data-grid-12',
+    command: '@spaceui/demo-c-data-grid-12',
   },
   "demo-c-data-grid-13": {
     name: "demo-c-data-grid-13",
@@ -3231,7 +3231,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-c-data-grid-13',
+    command: '@spaceui/demo-c-data-grid-13',
   },
   "demo-c-data-grid-14": {
     name: "demo-c-data-grid-14",
@@ -3263,7 +3263,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-c-data-grid-14',
+    command: '@spaceui/demo-c-data-grid-14',
   },
   "demo-c-data-grid-15": {
     name: "demo-c-data-grid-15",
@@ -3295,7 +3295,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-c-data-grid-15',
+    command: '@spaceui/demo-c-data-grid-15',
   },
   "demo-c-data-grid-16": {
     name: "demo-c-data-grid-16",
@@ -3327,7 +3327,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-c-data-grid-16',
+    command: '@spaceui/demo-c-data-grid-16',
   },
   "demo-c-data-grid-17": {
     name: "demo-c-data-grid-17",
@@ -3359,7 +3359,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-c-data-grid-17',
+    command: '@spaceui/demo-c-data-grid-17',
   },
   "demo-c-data-grid-18": {
     name: "demo-c-data-grid-18",
@@ -3391,7 +3391,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-c-data-grid-18',
+    command: '@spaceui/demo-c-data-grid-18',
   },
   "demo-c-data-grid-19": {
     name: "demo-c-data-grid-19",
@@ -3423,7 +3423,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-c-data-grid-19',
+    command: '@spaceui/demo-c-data-grid-19',
   },
   "demo-c-data-grid-20": {
     name: "demo-c-data-grid-20",
@@ -3455,7 +3455,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-c-data-grid-20',
+    command: '@spaceui/demo-c-data-grid-20',
   },
   "demo-c-data-grid-21": {
     name: "demo-c-data-grid-21",
@@ -3487,7 +3487,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-c-data-grid-21',
+    command: '@spaceui/demo-c-data-grid-21',
   },
   "demo-c-data-grid-22": {
     name: "demo-c-data-grid-22",
@@ -3519,7 +3519,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-c-data-grid-22',
+    command: '@spaceui/demo-c-data-grid-22',
   },
   "demo-c-data-grid-23": {
     name: "demo-c-data-grid-23",
@@ -3551,7 +3551,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-c-data-grid-23',
+    command: '@spaceui/demo-c-data-grid-23',
   },
   "demo-c-data-grid-24": {
     name: "demo-c-data-grid-24",
@@ -3583,7 +3583,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-c-data-grid-24',
+    command: '@spaceui/demo-c-data-grid-24',
   },
   "demo-c-data-grid-25": {
     name: "demo-c-data-grid-25",
@@ -3615,7 +3615,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-c-data-grid-25',
+    command: '@spaceui/demo-c-data-grid-25',
   },
   "demo-c-data-grid-26": {
     name: "demo-c-data-grid-26",
@@ -3647,7 +3647,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-c-data-grid-26',
+    command: '@spaceui/demo-c-data-grid-26',
   },
   "demo-c-data-grid-27": {
     name: "demo-c-data-grid-27",
@@ -3679,7 +3679,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-c-data-grid-27',
+    command: '@spaceui/demo-c-data-grid-27',
   },
   "demo-c-data-grid-28": {
     name: "demo-c-data-grid-28",
@@ -3711,7 +3711,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-c-data-grid-28',
+    command: '@spaceui/demo-c-data-grid-28',
   },
   "demo-c-data-grid-29": {
     name: "demo-c-data-grid-29",
@@ -3743,7 +3743,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-c-data-grid-29',
+    command: '@spaceui/demo-c-data-grid-29',
   },
   "demo-c-date-selector-01": {
     name: "demo-c-date-selector-01",
@@ -3775,7 +3775,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-c-date-selector-01',
+    command: '@spaceui/demo-c-date-selector-01',
   },
   "demo-c-date-selector-02": {
     name: "demo-c-date-selector-02",
@@ -3807,7 +3807,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-c-date-selector-02',
+    command: '@spaceui/demo-c-date-selector-02',
   },
   "demo-c-date-selector-03": {
     name: "demo-c-date-selector-03",
@@ -3839,7 +3839,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-c-date-selector-03',
+    command: '@spaceui/demo-c-date-selector-03',
   },
   "demo-c-date-selector-04": {
     name: "demo-c-date-selector-04",
@@ -3871,7 +3871,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-c-date-selector-04',
+    command: '@spaceui/demo-c-date-selector-04',
   },
   "demo-c-dirt-carousel-01": {
     name: "demo-c-dirt-carousel-01",
@@ -3903,7 +3903,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {"direction":{"value":"flat","options":{"Flat":"flat","Up":"up","Down":"down"}},"radius":{"value":800,"min":300,"max":1200,"step":20},"ballSize":{"value":800,"min":300,"max":1200,"step":20},"bounce":{"value":false},"mouseTilt":{"value":false},"snap":{"value":true},"autoRotate":{"value":false}};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-c-dirt-carousel-01',
+    command: '@spaceui/demo-c-dirt-carousel-01',
   },
   "demo-c-event-calendar-01": {
     name: "demo-c-event-calendar-01",
@@ -3935,7 +3935,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-c-event-calendar-01',
+    command: '@spaceui/demo-c-event-calendar-01',
   },
   "demo-c-event-calendar-02": {
     name: "demo-c-event-calendar-02",
@@ -3967,7 +3967,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-c-event-calendar-02',
+    command: '@spaceui/demo-c-event-calendar-02',
   },
   "demo-c-event-calendar-03": {
     name: "demo-c-event-calendar-03",
@@ -3999,7 +3999,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-c-event-calendar-03',
+    command: '@spaceui/demo-c-event-calendar-03',
   },
   "demo-c-event-calendar-04": {
     name: "demo-c-event-calendar-04",
@@ -4031,7 +4031,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-c-event-calendar-04',
+    command: '@spaceui/demo-c-event-calendar-04',
   },
   "demo-c-event-calendar-05": {
     name: "demo-c-event-calendar-05",
@@ -4063,7 +4063,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-c-event-calendar-05',
+    command: '@spaceui/demo-c-event-calendar-05',
   },
   "demo-c-file-upload-01": {
     name: "demo-c-file-upload-01",
@@ -4095,7 +4095,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-c-file-upload-01',
+    command: '@spaceui/demo-c-file-upload-01',
   },
   "demo-c-file-upload-02": {
     name: "demo-c-file-upload-02",
@@ -4127,7 +4127,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-c-file-upload-02',
+    command: '@spaceui/demo-c-file-upload-02',
   },
   "demo-c-file-upload-03": {
     name: "demo-c-file-upload-03",
@@ -4159,7 +4159,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-c-file-upload-03',
+    command: '@spaceui/demo-c-file-upload-03',
   },
   "demo-c-file-upload-04": {
     name: "demo-c-file-upload-04",
@@ -4191,7 +4191,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-c-file-upload-04',
+    command: '@spaceui/demo-c-file-upload-04',
   },
   "demo-c-file-upload-05": {
     name: "demo-c-file-upload-05",
@@ -4223,7 +4223,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-c-file-upload-05',
+    command: '@spaceui/demo-c-file-upload-05',
   },
   "demo-c-file-upload-06": {
     name: "demo-c-file-upload-06",
@@ -4255,7 +4255,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-c-file-upload-06',
+    command: '@spaceui/demo-c-file-upload-06',
   },
   "demo-c-file-upload-07": {
     name: "demo-c-file-upload-07",
@@ -4287,7 +4287,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-c-file-upload-07',
+    command: '@spaceui/demo-c-file-upload-07',
   },
   "demo-c-file-upload-08": {
     name: "demo-c-file-upload-08",
@@ -4319,7 +4319,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-c-file-upload-08',
+    command: '@spaceui/demo-c-file-upload-08',
   },
   "demo-c-file-upload-09": {
     name: "demo-c-file-upload-09",
@@ -4351,7 +4351,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-c-file-upload-09',
+    command: '@spaceui/demo-c-file-upload-09',
   },
   "demo-c-file-upload-10": {
     name: "demo-c-file-upload-10",
@@ -4383,7 +4383,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-c-file-upload-10',
+    command: '@spaceui/demo-c-file-upload-10',
   },
   "demo-c-filters-01": {
     name: "demo-c-filters-01",
@@ -4415,7 +4415,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-c-filters-01',
+    command: '@spaceui/demo-c-filters-01',
   },
   "demo-c-filters-02": {
     name: "demo-c-filters-02",
@@ -4447,7 +4447,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-c-filters-02',
+    command: '@spaceui/demo-c-filters-02',
   },
   "demo-c-filters-03": {
     name: "demo-c-filters-03",
@@ -4479,7 +4479,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-c-filters-03',
+    command: '@spaceui/demo-c-filters-03',
   },
   "demo-c-filters-04": {
     name: "demo-c-filters-04",
@@ -4511,7 +4511,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-c-filters-04',
+    command: '@spaceui/demo-c-filters-04',
   },
   "demo-c-filters-05": {
     name: "demo-c-filters-05",
@@ -4543,7 +4543,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-c-filters-05',
+    command: '@spaceui/demo-c-filters-05',
   },
   "demo-c-filters-06": {
     name: "demo-c-filters-06",
@@ -4575,7 +4575,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-c-filters-06',
+    command: '@spaceui/demo-c-filters-06',
   },
   "demo-c-filters-07": {
     name: "demo-c-filters-07",
@@ -4607,7 +4607,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-c-filters-07',
+    command: '@spaceui/demo-c-filters-07',
   },
   "demo-c-filters-08": {
     name: "demo-c-filters-08",
@@ -4639,7 +4639,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-c-filters-08',
+    command: '@spaceui/demo-c-filters-08',
   },
   "demo-c-filters-09": {
     name: "demo-c-filters-09",
@@ -4671,7 +4671,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-c-filters-09',
+    command: '@spaceui/demo-c-filters-09',
   },
   "demo-c-filters-10": {
     name: "demo-c-filters-10",
@@ -4703,7 +4703,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-c-filters-10',
+    command: '@spaceui/demo-c-filters-10',
   },
   "demo-c-filters-11": {
     name: "demo-c-filters-11",
@@ -4735,7 +4735,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-c-filters-11',
+    command: '@spaceui/demo-c-filters-11',
   },
   "demo-c-filters-12": {
     name: "demo-c-filters-12",
@@ -4767,7 +4767,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-c-filters-12',
+    command: '@spaceui/demo-c-filters-12',
   },
   "demo-c-icon-stack-01": {
     name: "demo-c-icon-stack-01",
@@ -4799,7 +4799,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-c-icon-stack-01',
+    command: '@spaceui/demo-c-icon-stack-01',
   },
   "demo-c-icon-stack-02": {
     name: "demo-c-icon-stack-02",
@@ -4831,7 +4831,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-c-icon-stack-02',
+    command: '@spaceui/demo-c-icon-stack-02',
   },
   "demo-c-icon-stack-03": {
     name: "demo-c-icon-stack-03",
@@ -4863,7 +4863,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-c-icon-stack-03',
+    command: '@spaceui/demo-c-icon-stack-03',
   },
   "demo-c-icon-stack-04": {
     name: "demo-c-icon-stack-04",
@@ -4895,7 +4895,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-c-icon-stack-04',
+    command: '@spaceui/demo-c-icon-stack-04',
   },
   "demo-c-icon-stack-05": {
     name: "demo-c-icon-stack-05",
@@ -4927,7 +4927,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-c-icon-stack-05',
+    command: '@spaceui/demo-c-icon-stack-05',
   },
   "demo-c-icon-stack-06": {
     name: "demo-c-icon-stack-06",
@@ -4959,7 +4959,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-c-icon-stack-06',
+    command: '@spaceui/demo-c-icon-stack-06',
   },
   "demo-c-image-dark-01": {
     name: "demo-c-image-dark-01",
@@ -4991,7 +4991,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-c-image-dark-01',
+    command: '@spaceui/demo-c-image-dark-01',
   },
   "demo-c-image-dark-02": {
     name: "demo-c-image-dark-02",
@@ -5023,7 +5023,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-c-image-dark-02',
+    command: '@spaceui/demo-c-image-dark-02',
   },
   "demo-c-kanban-01": {
     name: "demo-c-kanban-01",
@@ -5055,7 +5055,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-c-kanban-01',
+    command: '@spaceui/demo-c-kanban-01',
   },
   "demo-c-kanban-02": {
     name: "demo-c-kanban-02",
@@ -5087,7 +5087,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-c-kanban-02',
+    command: '@spaceui/demo-c-kanban-02',
   },
   "demo-c-kanban-03": {
     name: "demo-c-kanban-03",
@@ -5119,7 +5119,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-c-kanban-03',
+    command: '@spaceui/demo-c-kanban-03',
   },
   "demo-c-kanban-04": {
     name: "demo-c-kanban-04",
@@ -5151,7 +5151,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-c-kanban-04',
+    command: '@spaceui/demo-c-kanban-04',
   },
   "demo-c-kanban-05": {
     name: "demo-c-kanban-05",
@@ -5183,7 +5183,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-c-kanban-05',
+    command: '@spaceui/demo-c-kanban-05',
   },
   "demo-c-kanban-06": {
     name: "demo-c-kanban-06",
@@ -5215,7 +5215,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-c-kanban-06',
+    command: '@spaceui/demo-c-kanban-06',
   },
   "demo-c-morph-icon-01": {
     name: "demo-c-morph-icon-01",
@@ -5247,7 +5247,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-c-morph-icon-01',
+    command: '@spaceui/demo-c-morph-icon-01',
   },
   "demo-c-morph-icon-02": {
     name: "demo-c-morph-icon-02",
@@ -5279,7 +5279,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-c-morph-icon-02',
+    command: '@spaceui/demo-c-morph-icon-02',
   },
   "demo-c-morph-icon-03": {
     name: "demo-c-morph-icon-03",
@@ -5311,7 +5311,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-c-morph-icon-03',
+    command: '@spaceui/demo-c-morph-icon-03',
   },
   "demo-c-morph-icon-04": {
     name: "demo-c-morph-icon-04",
@@ -5343,7 +5343,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-c-morph-icon-04',
+    command: '@spaceui/demo-c-morph-icon-04',
   },
   "demo-c-morph-icon-05": {
     name: "demo-c-morph-icon-05",
@@ -5375,7 +5375,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-c-morph-icon-05',
+    command: '@spaceui/demo-c-morph-icon-05',
   },
   "demo-c-morph-icon-06": {
     name: "demo-c-morph-icon-06",
@@ -5407,7 +5407,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-c-morph-icon-06',
+    command: '@spaceui/demo-c-morph-icon-06',
   },
   "demo-c-notification-list-01": {
     name: "demo-c-notification-list-01",
@@ -5439,7 +5439,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-c-notification-list-01',
+    command: '@spaceui/demo-c-notification-list-01',
   },
   "demo-c-phone-input-01": {
     name: "demo-c-phone-input-01",
@@ -5471,7 +5471,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-c-phone-input-01',
+    command: '@spaceui/demo-c-phone-input-01',
   },
   "demo-c-phone-input-02": {
     name: "demo-c-phone-input-02",
@@ -5503,7 +5503,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-c-phone-input-02',
+    command: '@spaceui/demo-c-phone-input-02',
   },
   "demo-c-phone-input-03": {
     name: "demo-c-phone-input-03",
@@ -5535,7 +5535,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-c-phone-input-03',
+    command: '@spaceui/demo-c-phone-input-03',
   },
   "demo-c-phone-input-04": {
     name: "demo-c-phone-input-04",
@@ -5567,7 +5567,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-c-phone-input-04',
+    command: '@spaceui/demo-c-phone-input-04',
   },
   "demo-c-phone-input-05": {
     name: "demo-c-phone-input-05",
@@ -5599,7 +5599,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-c-phone-input-05',
+    command: '@spaceui/demo-c-phone-input-05',
   },
   "demo-c-phone-input-06": {
     name: "demo-c-phone-input-06",
@@ -5631,7 +5631,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-c-phone-input-06',
+    command: '@spaceui/demo-c-phone-input-06',
   },
   "demo-c-phone-input-07": {
     name: "demo-c-phone-input-07",
@@ -5663,7 +5663,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-c-phone-input-07',
+    command: '@spaceui/demo-c-phone-input-07',
   },
   "demo-c-phone-input-08": {
     name: "demo-c-phone-input-08",
@@ -5695,7 +5695,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-c-phone-input-08',
+    command: '@spaceui/demo-c-phone-input-08',
   },
   "demo-c-phone-input-09": {
     name: "demo-c-phone-input-09",
@@ -5727,7 +5727,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-c-phone-input-09',
+    command: '@spaceui/demo-c-phone-input-09',
   },
   "demo-c-phone-input-10": {
     name: "demo-c-phone-input-10",
@@ -5759,7 +5759,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-c-phone-input-10',
+    command: '@spaceui/demo-c-phone-input-10',
   },
   "demo-c-pin-list-01": {
     name: "demo-c-pin-list-01",
@@ -5791,7 +5791,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-c-pin-list-01',
+    command: '@spaceui/demo-c-pin-list-01',
   },
   "demo-c-rating-01": {
     name: "demo-c-rating-01",
@@ -5823,7 +5823,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-c-rating-01',
+    command: '@spaceui/demo-c-rating-01',
   },
   "demo-c-rating-02": {
     name: "demo-c-rating-02",
@@ -5855,7 +5855,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-c-rating-02',
+    command: '@spaceui/demo-c-rating-02',
   },
   "demo-c-rating-03": {
     name: "demo-c-rating-03",
@@ -5887,7 +5887,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-c-rating-03',
+    command: '@spaceui/demo-c-rating-03',
   },
   "demo-c-rating-04": {
     name: "demo-c-rating-04",
@@ -5919,7 +5919,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-c-rating-04',
+    command: '@spaceui/demo-c-rating-04',
   },
   "demo-c-rating-05": {
     name: "demo-c-rating-05",
@@ -5951,7 +5951,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-c-rating-05',
+    command: '@spaceui/demo-c-rating-05',
   },
   "demo-c-rating-06": {
     name: "demo-c-rating-06",
@@ -5983,7 +5983,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-c-rating-06',
+    command: '@spaceui/demo-c-rating-06',
   },
   "demo-c-rating-07": {
     name: "demo-c-rating-07",
@@ -6015,7 +6015,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-c-rating-07',
+    command: '@spaceui/demo-c-rating-07',
   },
   "demo-c-rating-08": {
     name: "demo-c-rating-08",
@@ -6047,7 +6047,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-c-rating-08',
+    command: '@spaceui/demo-c-rating-08',
   },
   "demo-c-rating-09": {
     name: "demo-c-rating-09",
@@ -6079,7 +6079,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-c-rating-09',
+    command: '@spaceui/demo-c-rating-09',
   },
   "demo-c-resizable-01": {
     name: "demo-c-resizable-01",
@@ -6111,7 +6111,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-c-resizable-01',
+    command: '@spaceui/demo-c-resizable-01',
   },
   "demo-c-resizable-02": {
     name: "demo-c-resizable-02",
@@ -6143,7 +6143,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-c-resizable-02',
+    command: '@spaceui/demo-c-resizable-02',
   },
   "demo-c-resizable-03": {
     name: "demo-c-resizable-03",
@@ -6175,7 +6175,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-c-resizable-03',
+    command: '@spaceui/demo-c-resizable-03',
   },
   "demo-c-resizable-04": {
     name: "demo-c-resizable-04",
@@ -6207,7 +6207,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-c-resizable-04',
+    command: '@spaceui/demo-c-resizable-04',
   },
   "demo-c-resizable-05": {
     name: "demo-c-resizable-05",
@@ -6239,7 +6239,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-c-resizable-05',
+    command: '@spaceui/demo-c-resizable-05',
   },
   "demo-c-resizable-06": {
     name: "demo-c-resizable-06",
@@ -6271,7 +6271,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-c-resizable-06',
+    command: '@spaceui/demo-c-resizable-06',
   },
   "demo-c-resizable-07": {
     name: "demo-c-resizable-07",
@@ -6303,7 +6303,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-c-resizable-07',
+    command: '@spaceui/demo-c-resizable-07',
   },
   "demo-c-resizable-08": {
     name: "demo-c-resizable-08",
@@ -6335,7 +6335,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-c-resizable-08',
+    command: '@spaceui/demo-c-resizable-08',
   },
   "demo-c-resizable-09": {
     name: "demo-c-resizable-09",
@@ -6367,7 +6367,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-c-resizable-09',
+    command: '@spaceui/demo-c-resizable-09',
   },
   "demo-c-resizable-10": {
     name: "demo-c-resizable-10",
@@ -6399,7 +6399,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-c-resizable-10',
+    command: '@spaceui/demo-c-resizable-10',
   },
   "demo-c-scrollspy-01": {
     name: "demo-c-scrollspy-01",
@@ -6431,7 +6431,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-c-scrollspy-01',
+    command: '@spaceui/demo-c-scrollspy-01',
   },
   "demo-c-scrollspy-02": {
     name: "demo-c-scrollspy-02",
@@ -6463,7 +6463,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-c-scrollspy-02',
+    command: '@spaceui/demo-c-scrollspy-02',
   },
   "demo-c-section-scrollspy-01": {
     name: "demo-c-section-scrollspy-01",
@@ -6495,7 +6495,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-c-section-scrollspy-01',
+    command: '@spaceui/demo-c-section-scrollspy-01',
   },
   "demo-c-sortable-01": {
     name: "demo-c-sortable-01",
@@ -6527,7 +6527,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-c-sortable-01',
+    command: '@spaceui/demo-c-sortable-01',
   },
   "demo-c-sortable-02": {
     name: "demo-c-sortable-02",
@@ -6559,7 +6559,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-c-sortable-02',
+    command: '@spaceui/demo-c-sortable-02',
   },
   "demo-c-sortable-03": {
     name: "demo-c-sortable-03",
@@ -6591,7 +6591,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-c-sortable-03',
+    command: '@spaceui/demo-c-sortable-03',
   },
   "demo-c-sortable-04": {
     name: "demo-c-sortable-04",
@@ -6623,7 +6623,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-c-sortable-04',
+    command: '@spaceui/demo-c-sortable-04',
   },
   "demo-c-sortable-05": {
     name: "demo-c-sortable-05",
@@ -6655,7 +6655,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-c-sortable-05',
+    command: '@spaceui/demo-c-sortable-05',
   },
   "demo-c-sortable-06": {
     name: "demo-c-sortable-06",
@@ -6687,7 +6687,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-c-sortable-06',
+    command: '@spaceui/demo-c-sortable-06',
   },
   "demo-c-sortable-07": {
     name: "demo-c-sortable-07",
@@ -6719,7 +6719,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-c-sortable-07',
+    command: '@spaceui/demo-c-sortable-07',
   },
   "demo-c-sortable-08": {
     name: "demo-c-sortable-08",
@@ -6751,7 +6751,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-c-sortable-08',
+    command: '@spaceui/demo-c-sortable-08',
   },
   "demo-c-squircle-01": {
     name: "demo-c-squircle-01",
@@ -6783,7 +6783,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-c-squircle-01',
+    command: '@spaceui/demo-c-squircle-01',
   },
   "demo-c-status-badge-01": {
     name: "demo-c-status-badge-01",
@@ -6815,7 +6815,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-c-status-badge-01',
+    command: '@spaceui/demo-c-status-badge-01',
   },
   "demo-c-status-badge-02": {
     name: "demo-c-status-badge-02",
@@ -6847,7 +6847,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-c-status-badge-02',
+    command: '@spaceui/demo-c-status-badge-02',
   },
   "demo-c-status-badge-03": {
     name: "demo-c-status-badge-03",
@@ -6879,7 +6879,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-c-status-badge-03',
+    command: '@spaceui/demo-c-status-badge-03',
   },
   "demo-c-status-badge-04": {
     name: "demo-c-status-badge-04",
@@ -6911,7 +6911,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-c-status-badge-04',
+    command: '@spaceui/demo-c-status-badge-04',
   },
   "demo-c-status-badge-05": {
     name: "demo-c-status-badge-05",
@@ -6943,7 +6943,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-c-status-badge-05',
+    command: '@spaceui/demo-c-status-badge-05',
   },
   "demo-c-status-badge-06": {
     name: "demo-c-status-badge-06",
@@ -6975,7 +6975,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-c-status-badge-06',
+    command: '@spaceui/demo-c-status-badge-06',
   },
   "demo-c-status-badge-07": {
     name: "demo-c-status-badge-07",
@@ -7007,7 +7007,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-c-status-badge-07',
+    command: '@spaceui/demo-c-status-badge-07',
   },
   "demo-c-status-badge-08": {
     name: "demo-c-status-badge-08",
@@ -7039,7 +7039,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-c-status-badge-08',
+    command: '@spaceui/demo-c-status-badge-08',
   },
   "demo-c-theme-toggle-01": {
     name: "demo-c-theme-toggle-01",
@@ -7071,7 +7071,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {"variant":{"value":"circle","options":{"Circle":"circle","Circle Blur":"circle-blur","Rectangle":"rectangle","Polygon":"polygon"}},"startCircle":{"value":"center","label":"Direction","options":{"Center":"center","Top Left":"top-left","Top Right":"top-right","Bottom Left":"bottom-left","Bottom Right":"bottom-right","Top Center":"top-center","Bottom Center":"bottom-center"},"dependsOn":{"variant":["circle","circle-blur"]}},"startRectangle":{"value":"bottom-up","label":"Direction","options":{"Bottom Up":"bottom-up","Top Down":"top-down","Left Right":"left-right","Right Left":"right-left","Top Left":"top-left","Top Right":"top-right","Bottom Left":"bottom-left","Bottom Right":"bottom-right"},"dependsOn":{"variant":"rectangle"}},"startPolygon":{"value":"top-left","label":"Direction","options":{"Top Left":"top-left","Top Right":"top-right"},"dependsOn":{"variant":"polygon"}},"blur":{"value":false,"dependsOn":{"variant":["circle","rectangle","polygon"]}},"buttonVariant":{"value":"outline","options":{"Outline":"outline","Secondary":"secondary","Default":"default","Ghost":"ghost"}},"size":{"value":"lg","options":{"XS":"xs","SM":"sm","MD":"md","LG":"lg","XL":"xl"}}};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-c-theme-toggle-01',
+    command: '@spaceui/demo-c-theme-toggle-01',
   },
   "demo-c-timeline-01": {
     name: "demo-c-timeline-01",
@@ -7103,7 +7103,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-c-timeline-01',
+    command: '@spaceui/demo-c-timeline-01',
   },
   "demo-c-timeline-02": {
     name: "demo-c-timeline-02",
@@ -7135,7 +7135,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-c-timeline-02',
+    command: '@spaceui/demo-c-timeline-02',
   },
   "demo-c-timeline-03": {
     name: "demo-c-timeline-03",
@@ -7167,7 +7167,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-c-timeline-03',
+    command: '@spaceui/demo-c-timeline-03',
   },
   "demo-c-timeline-04": {
     name: "demo-c-timeline-04",
@@ -7199,7 +7199,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-c-timeline-04',
+    command: '@spaceui/demo-c-timeline-04',
   },
   "demo-c-timeline-05": {
     name: "demo-c-timeline-05",
@@ -7231,7 +7231,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-c-timeline-05',
+    command: '@spaceui/demo-c-timeline-05',
   },
   "demo-c-timeline-06": {
     name: "demo-c-timeline-06",
@@ -7263,7 +7263,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-c-timeline-06',
+    command: '@spaceui/demo-c-timeline-06',
   },
   "demo-c-timeline-07": {
     name: "demo-c-timeline-07",
@@ -7295,7 +7295,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-c-timeline-07',
+    command: '@spaceui/demo-c-timeline-07',
   },
   "demo-c-timeline-08": {
     name: "demo-c-timeline-08",
@@ -7327,7 +7327,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-c-timeline-08',
+    command: '@spaceui/demo-c-timeline-08',
   },
   "demo-c-timeline-09": {
     name: "demo-c-timeline-09",
@@ -7359,7 +7359,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-c-timeline-09',
+    command: '@spaceui/demo-c-timeline-09',
   },
   "demo-c-timeline-10": {
     name: "demo-c-timeline-10",
@@ -7391,7 +7391,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-c-timeline-10',
+    command: '@spaceui/demo-c-timeline-10',
   },
   "demo-c-timeline-11": {
     name: "demo-c-timeline-11",
@@ -7423,7 +7423,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-c-timeline-11',
+    command: '@spaceui/demo-c-timeline-11',
   },
   "demo-c-timeline-12": {
     name: "demo-c-timeline-12",
@@ -7455,7 +7455,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-c-timeline-12',
+    command: '@spaceui/demo-c-timeline-12',
   },
   "demo-c-tournament-bracket-01": {
     name: "demo-c-tournament-bracket-01",
@@ -7487,7 +7487,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-c-tournament-bracket-01',
+    command: '@spaceui/demo-c-tournament-bracket-01',
   },
   "demo-c-tree-01": {
     name: "demo-c-tree-01",
@@ -7519,7 +7519,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-c-tree-01',
+    command: '@spaceui/demo-c-tree-01',
   },
   "demo-c-tree-02": {
     name: "demo-c-tree-02",
@@ -7551,7 +7551,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-c-tree-02',
+    command: '@spaceui/demo-c-tree-02',
   },
   "demo-c-tree-03": {
     name: "demo-c-tree-03",
@@ -7583,7 +7583,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-c-tree-03',
+    command: '@spaceui/demo-c-tree-03',
   },
   "demo-c-tree-04": {
     name: "demo-c-tree-04",
@@ -7615,7 +7615,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-c-tree-04',
+    command: '@spaceui/demo-c-tree-04',
   },
   "demo-c-tree-05": {
     name: "demo-c-tree-05",
@@ -7647,7 +7647,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-c-tree-05',
+    command: '@spaceui/demo-c-tree-05',
   },
   "demo-c-tree-06": {
     name: "demo-c-tree-06",
@@ -7679,7 +7679,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-c-tree-06',
+    command: '@spaceui/demo-c-tree-06',
   },
   "demo-c-tree-07": {
     name: "demo-c-tree-07",
@@ -7711,7 +7711,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-c-tree-07',
+    command: '@spaceui/demo-c-tree-07',
   },
   "demo-c-user-presence-avatar-01": {
     name: "demo-c-user-presence-avatar-01",
@@ -7743,7 +7743,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-c-user-presence-avatar-01',
+    command: '@spaceui/demo-c-user-presence-avatar-01',
   },
   "demo-c-words-preloader-01": {
     name: "demo-c-words-preloader-01",
@@ -7775,7 +7775,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-c-words-preloader-01',
+    command: '@spaceui/demo-c-words-preloader-01',
   },
   "demo-h-auto-height-01": {
     name: "demo-h-auto-height-01",
@@ -7807,7 +7807,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-h-auto-height-01',
+    command: '@spaceui/demo-h-auto-height-01',
   },
   "demo-h-auto-height-02": {
     name: "demo-h-auto-height-02",
@@ -7839,7 +7839,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-h-auto-height-02',
+    command: '@spaceui/demo-h-auto-height-02',
   },
   "demo-h-controlled-state-01": {
     name: "demo-h-controlled-state-01",
@@ -7871,7 +7871,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-h-controlled-state-01',
+    command: '@spaceui/demo-h-controlled-state-01',
   },
   "demo-h-data-state-01": {
     name: "demo-h-data-state-01",
@@ -7903,7 +7903,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-h-data-state-01',
+    command: '@spaceui/demo-h-data-state-01',
   },
   "demo-h-use-in-view-01": {
     name: "demo-h-use-in-view-01",
@@ -7935,7 +7935,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-h-use-in-view-01',
+    command: '@spaceui/demo-h-use-in-view-01',
   },
   "demo-h-motion-value-state-01": {
     name: "demo-h-motion-value-state-01",
@@ -7967,7 +7967,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-h-motion-value-state-01',
+    command: '@spaceui/demo-h-motion-value-state-01',
   },
   "demo-h-battery-status-01": {
     name: "demo-h-battery-status-01",
@@ -7999,7 +7999,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-h-battery-status-01',
+    command: '@spaceui/demo-h-battery-status-01',
   },
   "demo-h-clipboard-01": {
     name: "demo-h-clipboard-01",
@@ -8031,7 +8031,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-h-clipboard-01',
+    command: '@spaceui/demo-h-clipboard-01',
   },
   "demo-h-clipboard-02": {
     name: "demo-h-clipboard-02",
@@ -8063,7 +8063,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-h-clipboard-02',
+    command: '@spaceui/demo-h-clipboard-02',
   },
   "demo-h-clipboard-03": {
     name: "demo-h-clipboard-03",
@@ -8095,7 +8095,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-h-clipboard-03',
+    command: '@spaceui/demo-h-clipboard-03',
   },
   "demo-h-use-cookie-01": {
     name: "demo-h-use-cookie-01",
@@ -8127,7 +8127,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-h-use-cookie-01',
+    command: '@spaceui/demo-h-use-cookie-01',
   },
   "demo-h-cookie-listener-01": {
     name: "demo-h-cookie-listener-01",
@@ -8159,7 +8159,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-h-cookie-listener-01',
+    command: '@spaceui/demo-h-cookie-listener-01',
   },
   "demo-h-device-os-01": {
     name: "demo-h-device-os-01",
@@ -8191,7 +8191,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-h-device-os-01',
+    command: '@spaceui/demo-h-device-os-01',
   },
   "demo-h-favicon-01": {
     name: "demo-h-favicon-01",
@@ -8223,7 +8223,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-h-favicon-01',
+    command: '@spaceui/demo-h-favicon-01',
   },
   "demo-h-fullscreen-01": {
     name: "demo-h-fullscreen-01",
@@ -8255,7 +8255,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-h-fullscreen-01',
+    command: '@spaceui/demo-h-fullscreen-01',
   },
   "demo-h-is-mac-01": {
     name: "demo-h-is-mac-01",
@@ -8287,7 +8287,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-h-is-mac-01',
+    command: '@spaceui/demo-h-is-mac-01',
   },
   "demo-h-local-storage-01": {
     name: "demo-h-local-storage-01",
@@ -8319,7 +8319,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-h-local-storage-01',
+    command: '@spaceui/demo-h-local-storage-01',
   },
   "demo-h-local-storage-02": {
     name: "demo-h-local-storage-02",
@@ -8351,7 +8351,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-h-local-storage-02',
+    command: '@spaceui/demo-h-local-storage-02',
   },
   "demo-h-local-storage-03": {
     name: "demo-h-local-storage-03",
@@ -8383,7 +8383,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-h-local-storage-03',
+    command: '@spaceui/demo-h-local-storage-03',
   },
   "demo-h-media-query-01": {
     name: "demo-h-media-query-01",
@@ -8415,7 +8415,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-h-media-query-01',
+    command: '@spaceui/demo-h-media-query-01',
   },
   "demo-h-network-01": {
     name: "demo-h-network-01",
@@ -8447,7 +8447,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-h-network-01',
+    command: '@spaceui/demo-h-network-01',
   },
   "demo-h-orientation-01": {
     name: "demo-h-orientation-01",
@@ -8479,7 +8479,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-h-orientation-01',
+    command: '@spaceui/demo-h-orientation-01',
   },
   "demo-h-prefers-theme-01": {
     name: "demo-h-prefers-theme-01",
@@ -8511,7 +8511,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-h-prefers-theme-01',
+    command: '@spaceui/demo-h-prefers-theme-01',
   },
   "demo-h-script-01": {
     name: "demo-h-script-01",
@@ -8543,7 +8543,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-h-script-01',
+    command: '@spaceui/demo-h-script-01',
   },
   "demo-h-session-storage-01": {
     name: "demo-h-session-storage-01",
@@ -8575,7 +8575,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-h-session-storage-01',
+    command: '@spaceui/demo-h-session-storage-01',
   },
   "demo-h-share-01": {
     name: "demo-h-share-01",
@@ -8607,7 +8607,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-h-share-01',
+    command: '@spaceui/demo-h-share-01',
   },
   "demo-h-tab-notification-01": {
     name: "demo-h-tab-notification-01",
@@ -8639,7 +8639,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-h-tab-notification-01',
+    command: '@spaceui/demo-h-tab-notification-01',
   },
   "demo-h-title-01": {
     name: "demo-h-title-01",
@@ -8671,7 +8671,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-h-title-01',
+    command: '@spaceui/demo-h-title-01',
   },
   "demo-h-class-01": {
     name: "demo-h-class-01",
@@ -8703,7 +8703,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-h-class-01',
+    command: '@spaceui/demo-h-class-01',
   },
   "demo-h-for-01": {
     name: "demo-h-for-01",
@@ -8735,7 +8735,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-h-for-01',
+    command: '@spaceui/demo-h-for-01',
   },
   "demo-h-for-02": {
     name: "demo-h-for-02",
@@ -8767,7 +8767,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-h-for-02',
+    command: '@spaceui/demo-h-for-02',
   },
   "demo-h-if-01": {
     name: "demo-h-if-01",
@@ -8799,7 +8799,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-h-if-01',
+    command: '@spaceui/demo-h-if-01',
   },
   "demo-h-image-01": {
     name: "demo-h-image-01",
@@ -8831,7 +8831,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-h-image-01',
+    command: '@spaceui/demo-h-image-01',
   },
   "demo-h-in-view-01": {
     name: "demo-h-in-view-01",
@@ -8863,7 +8863,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-h-in-view-01',
+    command: '@spaceui/demo-h-in-view-01',
   },
   "demo-h-render-after-01": {
     name: "demo-h-render-after-01",
@@ -8895,7 +8895,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-h-render-after-01',
+    command: '@spaceui/demo-h-render-after-01',
   },
   "demo-h-show-01": {
     name: "demo-h-show-01",
@@ -8927,7 +8927,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-h-show-01',
+    command: '@spaceui/demo-h-show-01',
   },
   "demo-h-switch-01": {
     name: "demo-h-switch-01",
@@ -8959,7 +8959,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-h-switch-01',
+    command: '@spaceui/demo-h-switch-01',
   },
   "demo-h-switch-02": {
     name: "demo-h-switch-02",
@@ -8991,7 +8991,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-h-switch-02',
+    command: '@spaceui/demo-h-switch-02',
   },
   "demo-h-click-outside-01": {
     name: "demo-h-click-outside-01",
@@ -9023,7 +9023,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-h-click-outside-01',
+    command: '@spaceui/demo-h-click-outside-01',
   },
   "demo-h-event-listener-01": {
     name: "demo-h-event-listener-01",
@@ -9055,7 +9055,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-h-event-listener-01',
+    command: '@spaceui/demo-h-event-listener-01',
   },
   "demo-h-hover-01": {
     name: "demo-h-hover-01",
@@ -9087,7 +9087,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-h-hover-01',
+    command: '@spaceui/demo-h-hover-01',
   },
   "demo-h-hover-02": {
     name: "demo-h-hover-02",
@@ -9119,7 +9119,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-h-hover-02',
+    command: '@spaceui/demo-h-hover-02',
   },
   "demo-h-intersection-observer-01": {
     name: "demo-h-intersection-observer-01",
@@ -9151,7 +9151,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-h-intersection-observer-01',
+    command: '@spaceui/demo-h-intersection-observer-01',
   },
   "demo-h-key-press-01": {
     name: "demo-h-key-press-01",
@@ -9183,7 +9183,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-h-key-press-01',
+    command: '@spaceui/demo-h-key-press-01',
   },
   "demo-h-lock-body-scroll-01": {
     name: "demo-h-lock-body-scroll-01",
@@ -9215,7 +9215,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-h-lock-body-scroll-01',
+    command: '@spaceui/demo-h-lock-body-scroll-01',
   },
   "demo-h-mouse-position-01": {
     name: "demo-h-mouse-position-01",
@@ -9247,7 +9247,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-h-mouse-position-01',
+    command: '@spaceui/demo-h-mouse-position-01',
   },
   "demo-h-scroll-device-01": {
     name: "demo-h-scroll-device-01",
@@ -9279,7 +9279,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-h-scroll-device-01',
+    command: '@spaceui/demo-h-scroll-device-01',
   },
   "demo-h-scroll-position-01": {
     name: "demo-h-scroll-position-01",
@@ -9311,7 +9311,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-h-scroll-position-01',
+    command: '@spaceui/demo-h-scroll-position-01',
   },
   "demo-h-scroll-to-01": {
     name: "demo-h-scroll-to-01",
@@ -9343,7 +9343,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-h-scroll-to-01',
+    command: '@spaceui/demo-h-scroll-to-01',
   },
   "demo-h-size-01": {
     name: "demo-h-size-01",
@@ -9375,7 +9375,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-h-size-01',
+    command: '@spaceui/demo-h-size-01',
   },
   "demo-h-window-size-01": {
     name: "demo-h-window-size-01",
@@ -9407,7 +9407,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-h-window-size-01',
+    command: '@spaceui/demo-h-window-size-01',
   },
   "demo-h-character-limit-01": {
     name: "demo-h-character-limit-01",
@@ -9439,7 +9439,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-h-character-limit-01',
+    command: '@spaceui/demo-h-character-limit-01',
   },
   "demo-h-character-limit-02": {
     name: "demo-h-character-limit-02",
@@ -9471,7 +9471,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-h-character-limit-02',
+    command: '@spaceui/demo-h-character-limit-02',
   },
   "demo-h-file-upload-01": {
     name: "demo-h-file-upload-01",
@@ -9503,7 +9503,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-h-file-upload-01',
+    command: '@spaceui/demo-h-file-upload-01',
   },
   "demo-h-file-upload-02": {
     name: "demo-h-file-upload-02",
@@ -9535,7 +9535,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-h-file-upload-02',
+    command: '@spaceui/demo-h-file-upload-02',
   },
   "demo-h-file-upload-03": {
     name: "demo-h-file-upload-03",
@@ -9567,7 +9567,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-h-file-upload-03',
+    command: '@spaceui/demo-h-file-upload-03',
   },
   "demo-h-input-value-01": {
     name: "demo-h-input-value-01",
@@ -9599,7 +9599,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-h-input-value-01',
+    command: '@spaceui/demo-h-input-value-01',
   },
   "demo-h-load-more-01": {
     name: "demo-h-load-more-01",
@@ -9631,7 +9631,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-h-load-more-01',
+    command: '@spaceui/demo-h-load-more-01',
   },
   "demo-h-map-01": {
     name: "demo-h-map-01",
@@ -9663,7 +9663,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-h-map-01',
+    command: '@spaceui/demo-h-map-01',
   },
   "demo-h-mutation-01": {
     name: "demo-h-mutation-01",
@@ -9695,7 +9695,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-h-mutation-01',
+    command: '@spaceui/demo-h-mutation-01',
   },
   "demo-h-pagination-01": {
     name: "demo-h-pagination-01",
@@ -9727,7 +9727,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-h-pagination-01',
+    command: '@spaceui/demo-h-pagination-01',
   },
   "demo-h-parse-markdown-01": {
     name: "demo-h-parse-markdown-01",
@@ -9759,7 +9759,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-h-parse-markdown-01',
+    command: '@spaceui/demo-h-parse-markdown-01',
   },
   "demo-h-reading-time-01": {
     name: "demo-h-reading-time-01",
@@ -9791,7 +9791,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-h-reading-time-01',
+    command: '@spaceui/demo-h-reading-time-01',
   },
   "demo-h-sanitize-content-01": {
     name: "demo-h-sanitize-content-01",
@@ -9823,7 +9823,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-h-sanitize-content-01',
+    command: '@spaceui/demo-h-sanitize-content-01',
   },
   "demo-h-confirm-exit-01": {
     name: "demo-h-confirm-exit-01",
@@ -9855,7 +9855,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-h-confirm-exit-01',
+    command: '@spaceui/demo-h-confirm-exit-01',
   },
   "demo-h-debounce-01": {
     name: "demo-h-debounce-01",
@@ -9887,7 +9887,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-h-debounce-01',
+    command: '@spaceui/demo-h-debounce-01',
   },
   "demo-h-debounce-02": {
     name: "demo-h-debounce-02",
@@ -9919,7 +9919,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-h-debounce-02',
+    command: '@spaceui/demo-h-debounce-02',
   },
   "demo-h-event-callback-01": {
     name: "demo-h-event-callback-01",
@@ -9951,7 +9951,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-h-event-callback-01',
+    command: '@spaceui/demo-h-event-callback-01',
   },
   "demo-h-first-render-01": {
     name: "demo-h-first-render-01",
@@ -9983,7 +9983,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-h-first-render-01',
+    command: '@spaceui/demo-h-first-render-01',
   },
   "demo-h-first-visit-01": {
     name: "demo-h-first-visit-01",
@@ -10015,7 +10015,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-h-first-visit-01',
+    command: '@spaceui/demo-h-first-visit-01',
   },
   "demo-h-hold-01": {
     name: "demo-h-hold-01",
@@ -10047,7 +10047,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-h-hold-01',
+    command: '@spaceui/demo-h-hold-01',
   },
   "demo-h-idle-01": {
     name: "demo-h-idle-01",
@@ -10079,7 +10079,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-h-idle-01',
+    command: '@spaceui/demo-h-idle-01',
   },
   "demo-h-interval-01": {
     name: "demo-h-interval-01",
@@ -10111,7 +10111,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-h-interval-01',
+    command: '@spaceui/demo-h-interval-01',
   },
   "demo-h-interval-02": {
     name: "demo-h-interval-02",
@@ -10143,7 +10143,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-h-interval-02',
+    command: '@spaceui/demo-h-interval-02',
   },
   "demo-h-is-mounted-01": {
     name: "demo-h-is-mounted-01",
@@ -10175,7 +10175,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-h-is-mounted-01',
+    command: '@spaceui/demo-h-is-mounted-01',
   },
   "demo-h-isomorphic-layout-effect-01": {
     name: "demo-h-isomorphic-layout-effect-01",
@@ -10207,7 +10207,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-h-isomorphic-layout-effect-01',
+    command: '@spaceui/demo-h-isomorphic-layout-effect-01',
   },
   "demo-h-leave-detection-01": {
     name: "demo-h-leave-detection-01",
@@ -10239,7 +10239,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-h-leave-detection-01',
+    command: '@spaceui/demo-h-leave-detection-01',
   },
   "demo-h-performance-mode-01": {
     name: "demo-h-performance-mode-01",
@@ -10271,7 +10271,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-h-performance-mode-01',
+    command: '@spaceui/demo-h-performance-mode-01',
   },
   "demo-h-single-effect-01": {
     name: "demo-h-single-effect-01",
@@ -10303,7 +10303,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-h-single-effect-01',
+    command: '@spaceui/demo-h-single-effect-01',
   },
   "demo-h-toggle-01": {
     name: "demo-h-toggle-01",
@@ -10335,7 +10335,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-h-toggle-01',
+    command: '@spaceui/demo-h-toggle-01',
   },
   "demo-h-update-effect-01": {
     name: "demo-h-update-effect-01",
@@ -10367,7 +10367,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-h-update-effect-01',
+    command: '@spaceui/demo-h-update-effect-01',
   },
   "demo-h-urgent-update-01": {
     name: "demo-h-urgent-update-01",
@@ -10399,7 +10399,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-h-urgent-update-01',
+    command: '@spaceui/demo-h-urgent-update-01',
   },
   "demo-h-cache-01": {
     name: "demo-h-cache-01",
@@ -10431,7 +10431,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-h-cache-01',
+    command: '@spaceui/demo-h-cache-01',
   },
   "demo-h-cookie-01": {
     name: "demo-h-cookie-01",
@@ -10463,7 +10463,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-h-cookie-01',
+    command: '@spaceui/demo-h-cookie-01',
   },
   "demo-h-event-01": {
     name: "demo-h-event-01",
@@ -10495,7 +10495,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-h-event-01',
+    command: '@spaceui/demo-h-event-01',
   },
   "demo-h-format-bytes-01": {
     name: "demo-h-format-bytes-01",
@@ -10527,7 +10527,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-h-format-bytes-01',
+    command: '@spaceui/demo-h-format-bytes-01',
   },
   "demo-h-format-bytes-02": {
     name: "demo-h-format-bytes-02",
@@ -10559,7 +10559,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-h-format-bytes-02',
+    command: '@spaceui/demo-h-format-bytes-02',
   },
   "demo-h-format-content-01": {
     name: "demo-h-format-content-01",
@@ -10591,7 +10591,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-h-format-content-01',
+    command: '@spaceui/demo-h-format-content-01',
   },
   "demo-h-format-date-01": {
     name: "demo-h-format-date-01",
@@ -10623,7 +10623,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-h-format-date-01',
+    command: '@spaceui/demo-h-format-date-01',
   },
   "demo-h-format-text-01": {
     name: "demo-h-format-text-01",
@@ -10655,7 +10655,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-h-format-text-01',
+    command: '@spaceui/demo-h-format-text-01',
   },
   "demo-h-is-negative-01": {
     name: "demo-h-is-negative-01",
@@ -10687,7 +10687,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-h-is-negative-01',
+    command: '@spaceui/demo-h-is-negative-01',
   },
   "demo-h-logger-01": {
     name: "demo-h-logger-01",
@@ -10719,7 +10719,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-h-logger-01',
+    command: '@spaceui/demo-h-logger-01',
   },
   "demo-h-range-map-01": {
     name: "demo-h-range-map-01",
@@ -10751,7 +10751,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-h-range-map-01',
+    command: '@spaceui/demo-h-range-map-01',
   },
   "demo-h-range-map-02": {
     name: "demo-h-range-map-02",
@@ -10783,7 +10783,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-h-range-map-02',
+    command: '@spaceui/demo-h-range-map-02',
   },
   "demo-h-sleep-01": {
     name: "demo-h-sleep-01",
@@ -10815,7 +10815,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-h-sleep-01',
+    command: '@spaceui/demo-h-sleep-01',
   },
   "demo-p-accordion-01": {
     name: "demo-p-accordion-01",
@@ -10847,7 +10847,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-accordion-01',
+    command: '@spaceui/demo-p-accordion-01',
   },
   "demo-p-accordion-02": {
     name: "demo-p-accordion-02",
@@ -10879,7 +10879,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-accordion-02',
+    command: '@spaceui/demo-p-accordion-02',
   },
   "demo-p-accordion-03": {
     name: "demo-p-accordion-03",
@@ -10911,7 +10911,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-accordion-03',
+    command: '@spaceui/demo-p-accordion-03',
   },
   "demo-p-alert-01": {
     name: "demo-p-alert-01",
@@ -10943,7 +10943,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-alert-01',
+    command: '@spaceui/demo-p-alert-01',
   },
   "demo-p-alert-02": {
     name: "demo-p-alert-02",
@@ -10975,7 +10975,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-alert-02',
+    command: '@spaceui/demo-p-alert-02',
   },
   "demo-p-alert-03": {
     name: "demo-p-alert-03",
@@ -11007,7 +11007,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-alert-03',
+    command: '@spaceui/demo-p-alert-03',
   },
   "demo-p-alert-04": {
     name: "demo-p-alert-04",
@@ -11039,7 +11039,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-alert-04',
+    command: '@spaceui/demo-p-alert-04',
   },
   "demo-p-alert-dialog-01": {
     name: "demo-p-alert-dialog-01",
@@ -11071,7 +11071,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-alert-dialog-01',
+    command: '@spaceui/demo-p-alert-dialog-01',
   },
   "demo-p-alert-dialog-02": {
     name: "demo-p-alert-dialog-02",
@@ -11103,7 +11103,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-alert-dialog-02',
+    command: '@spaceui/demo-p-alert-dialog-02',
   },
   "demo-p-aspect-ratio-01": {
     name: "demo-p-aspect-ratio-01",
@@ -11135,7 +11135,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-aspect-ratio-01',
+    command: '@spaceui/demo-p-aspect-ratio-01',
   },
   "demo-p-aspect-ratio-02": {
     name: "demo-p-aspect-ratio-02",
@@ -11167,7 +11167,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-aspect-ratio-02',
+    command: '@spaceui/demo-p-aspect-ratio-02',
   },
   "demo-p-aspect-ratio-03": {
     name: "demo-p-aspect-ratio-03",
@@ -11199,7 +11199,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-aspect-ratio-03',
+    command: '@spaceui/demo-p-aspect-ratio-03',
   },
   "demo-p-aspect-ratio-04": {
     name: "demo-p-aspect-ratio-04",
@@ -11231,7 +11231,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-aspect-ratio-04',
+    command: '@spaceui/demo-p-aspect-ratio-04',
   },
   "demo-p-aspect-ratio-05": {
     name: "demo-p-aspect-ratio-05",
@@ -11263,7 +11263,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-aspect-ratio-05',
+    command: '@spaceui/demo-p-aspect-ratio-05',
   },
   "demo-p-aspect-ratio-06": {
     name: "demo-p-aspect-ratio-06",
@@ -11295,7 +11295,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-aspect-ratio-06',
+    command: '@spaceui/demo-p-aspect-ratio-06',
   },
   "demo-p-aspect-ratio-07": {
     name: "demo-p-aspect-ratio-07",
@@ -11327,7 +11327,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-aspect-ratio-07',
+    command: '@spaceui/demo-p-aspect-ratio-07',
   },
   "demo-p-aspect-ratio-08": {
     name: "demo-p-aspect-ratio-08",
@@ -11359,7 +11359,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-aspect-ratio-08',
+    command: '@spaceui/demo-p-aspect-ratio-08',
   },
   "demo-p-autocomplete-01": {
     name: "demo-p-autocomplete-01",
@@ -11391,7 +11391,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-autocomplete-01',
+    command: '@spaceui/demo-p-autocomplete-01',
   },
   "demo-p-autocomplete-02": {
     name: "demo-p-autocomplete-02",
@@ -11423,7 +11423,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-autocomplete-02',
+    command: '@spaceui/demo-p-autocomplete-02',
   },
   "demo-p-autocomplete-03": {
     name: "demo-p-autocomplete-03",
@@ -11455,7 +11455,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-autocomplete-03',
+    command: '@spaceui/demo-p-autocomplete-03',
   },
   "demo-p-autocomplete-04": {
     name: "demo-p-autocomplete-04",
@@ -11487,7 +11487,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-autocomplete-04',
+    command: '@spaceui/demo-p-autocomplete-04',
   },
   "demo-p-autocomplete-05": {
     name: "demo-p-autocomplete-05",
@@ -11519,7 +11519,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-autocomplete-05',
+    command: '@spaceui/demo-p-autocomplete-05',
   },
   "demo-p-autocomplete-06": {
     name: "demo-p-autocomplete-06",
@@ -11551,7 +11551,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-autocomplete-06',
+    command: '@spaceui/demo-p-autocomplete-06',
   },
   "demo-p-autocomplete-07": {
     name: "demo-p-autocomplete-07",
@@ -11583,7 +11583,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-autocomplete-07',
+    command: '@spaceui/demo-p-autocomplete-07',
   },
   "demo-p-autocomplete-08": {
     name: "demo-p-autocomplete-08",
@@ -11615,7 +11615,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-autocomplete-08',
+    command: '@spaceui/demo-p-autocomplete-08',
   },
   "demo-p-autocomplete-09": {
     name: "demo-p-autocomplete-09",
@@ -11647,7 +11647,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-autocomplete-09',
+    command: '@spaceui/demo-p-autocomplete-09',
   },
   "demo-p-autocomplete-10": {
     name: "demo-p-autocomplete-10",
@@ -11679,7 +11679,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-autocomplete-10',
+    command: '@spaceui/demo-p-autocomplete-10',
   },
   "demo-p-autocomplete-11": {
     name: "demo-p-autocomplete-11",
@@ -11711,7 +11711,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-autocomplete-11',
+    command: '@spaceui/demo-p-autocomplete-11',
   },
   "demo-p-autocomplete-12": {
     name: "demo-p-autocomplete-12",
@@ -11743,7 +11743,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-autocomplete-12',
+    command: '@spaceui/demo-p-autocomplete-12',
   },
   "demo-p-autocomplete-13": {
     name: "demo-p-autocomplete-13",
@@ -11775,7 +11775,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-autocomplete-13',
+    command: '@spaceui/demo-p-autocomplete-13',
   },
   "demo-p-autocomplete-14": {
     name: "demo-p-autocomplete-14",
@@ -11807,7 +11807,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-autocomplete-14',
+    command: '@spaceui/demo-p-autocomplete-14',
   },
   "demo-p-autocomplete-15": {
     name: "demo-p-autocomplete-15",
@@ -11839,7 +11839,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-autocomplete-15',
+    command: '@spaceui/demo-p-autocomplete-15',
   },
   "demo-p-avatar-01": {
     name: "demo-p-avatar-01",
@@ -11871,7 +11871,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-avatar-01',
+    command: '@spaceui/demo-p-avatar-01',
   },
   "demo-p-avatar-02": {
     name: "demo-p-avatar-02",
@@ -11903,7 +11903,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-avatar-02',
+    command: '@spaceui/demo-p-avatar-02',
   },
   "demo-p-avatar-03": {
     name: "demo-p-avatar-03",
@@ -11935,7 +11935,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-avatar-03',
+    command: '@spaceui/demo-p-avatar-03',
   },
   "demo-p-avatar-04": {
     name: "demo-p-avatar-04",
@@ -11967,7 +11967,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-avatar-04',
+    command: '@spaceui/demo-p-avatar-04',
   },
   "demo-p-avatar-05": {
     name: "demo-p-avatar-05",
@@ -11999,7 +11999,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-avatar-05',
+    command: '@spaceui/demo-p-avatar-05',
   },
   "demo-p-avatar-06": {
     name: "demo-p-avatar-06",
@@ -12031,7 +12031,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-avatar-06',
+    command: '@spaceui/demo-p-avatar-06',
   },
   "demo-p-avatar-07": {
     name: "demo-p-avatar-07",
@@ -12063,7 +12063,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-avatar-07',
+    command: '@spaceui/demo-p-avatar-07',
   },
   "demo-p-avatar-08": {
     name: "demo-p-avatar-08",
@@ -12095,7 +12095,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-avatar-08',
+    command: '@spaceui/demo-p-avatar-08',
   },
   "demo-p-avatar-09": {
     name: "demo-p-avatar-09",
@@ -12127,7 +12127,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-avatar-09',
+    command: '@spaceui/demo-p-avatar-09',
   },
   "demo-p-badge-01": {
     name: "demo-p-badge-01",
@@ -12159,7 +12159,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-badge-01',
+    command: '@spaceui/demo-p-badge-01',
   },
   "demo-p-badge-02": {
     name: "demo-p-badge-02",
@@ -12191,7 +12191,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-badge-02',
+    command: '@spaceui/demo-p-badge-02',
   },
   "demo-p-badge-03": {
     name: "demo-p-badge-03",
@@ -12223,7 +12223,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-badge-03',
+    command: '@spaceui/demo-p-badge-03',
   },
   "demo-p-badge-04": {
     name: "demo-p-badge-04",
@@ -12255,7 +12255,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-badge-04',
+    command: '@spaceui/demo-p-badge-04',
   },
   "demo-p-badge-05": {
     name: "demo-p-badge-05",
@@ -12287,7 +12287,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-badge-05',
+    command: '@spaceui/demo-p-badge-05',
   },
   "demo-p-badge-06": {
     name: "demo-p-badge-06",
@@ -12319,7 +12319,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-badge-06',
+    command: '@spaceui/demo-p-badge-06',
   },
   "demo-p-badge-07": {
     name: "demo-p-badge-07",
@@ -12351,7 +12351,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-badge-07',
+    command: '@spaceui/demo-p-badge-07',
   },
   "demo-p-badge-08": {
     name: "demo-p-badge-08",
@@ -12383,7 +12383,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-badge-08',
+    command: '@spaceui/demo-p-badge-08',
   },
   "demo-p-badge-09": {
     name: "demo-p-badge-09",
@@ -12415,7 +12415,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-badge-09',
+    command: '@spaceui/demo-p-badge-09',
   },
   "demo-p-breadcrumb-01": {
     name: "demo-p-breadcrumb-01",
@@ -12447,7 +12447,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-breadcrumb-01',
+    command: '@spaceui/demo-p-breadcrumb-01',
   },
   "demo-p-breadcrumb-02": {
     name: "demo-p-breadcrumb-02",
@@ -12479,7 +12479,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-breadcrumb-02',
+    command: '@spaceui/demo-p-breadcrumb-02',
   },
   "demo-p-breadcrumb-03": {
     name: "demo-p-breadcrumb-03",
@@ -12511,7 +12511,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-breadcrumb-03',
+    command: '@spaceui/demo-p-breadcrumb-03',
   },
   "demo-p-breadcrumb-04": {
     name: "demo-p-breadcrumb-04",
@@ -12543,7 +12543,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-breadcrumb-04',
+    command: '@spaceui/demo-p-breadcrumb-04',
   },
   "demo-p-breadcrumb-05": {
     name: "demo-p-breadcrumb-05",
@@ -12575,7 +12575,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-breadcrumb-05',
+    command: '@spaceui/demo-p-breadcrumb-05',
   },
   "demo-p-breadcrumb-06": {
     name: "demo-p-breadcrumb-06",
@@ -12607,7 +12607,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-breadcrumb-06',
+    command: '@spaceui/demo-p-breadcrumb-06',
   },
   "demo-p-breadcrumb-07": {
     name: "demo-p-breadcrumb-07",
@@ -12639,7 +12639,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-breadcrumb-07',
+    command: '@spaceui/demo-p-breadcrumb-07',
   },
   "demo-p-button-01": {
     name: "demo-p-button-01",
@@ -12671,7 +12671,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-button-01',
+    command: '@spaceui/demo-p-button-01',
   },
   "demo-p-button-02": {
     name: "demo-p-button-02",
@@ -12703,7 +12703,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-button-02',
+    command: '@spaceui/demo-p-button-02',
   },
   "demo-p-button-03": {
     name: "demo-p-button-03",
@@ -12735,7 +12735,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-button-03',
+    command: '@spaceui/demo-p-button-03',
   },
   "demo-p-button-04": {
     name: "demo-p-button-04",
@@ -12767,7 +12767,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-button-04',
+    command: '@spaceui/demo-p-button-04',
   },
   "demo-p-button-05": {
     name: "demo-p-button-05",
@@ -12799,7 +12799,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-button-05',
+    command: '@spaceui/demo-p-button-05',
   },
   "demo-p-button-06": {
     name: "demo-p-button-06",
@@ -12831,7 +12831,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-button-06',
+    command: '@spaceui/demo-p-button-06',
   },
   "demo-p-button-07": {
     name: "demo-p-button-07",
@@ -12863,7 +12863,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-button-07',
+    command: '@spaceui/demo-p-button-07',
   },
   "demo-p-button-08": {
     name: "demo-p-button-08",
@@ -12895,7 +12895,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-button-08',
+    command: '@spaceui/demo-p-button-08',
   },
   "demo-p-button-09": {
     name: "demo-p-button-09",
@@ -12927,7 +12927,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-button-09',
+    command: '@spaceui/demo-p-button-09',
   },
   "demo-p-button-10": {
     name: "demo-p-button-10",
@@ -12959,7 +12959,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-button-10',
+    command: '@spaceui/demo-p-button-10',
   },
   "demo-p-button-11": {
     name: "demo-p-button-11",
@@ -12991,7 +12991,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-button-11',
+    command: '@spaceui/demo-p-button-11',
   },
   "demo-p-button-12": {
     name: "demo-p-button-12",
@@ -13023,7 +13023,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-button-12',
+    command: '@spaceui/demo-p-button-12',
   },
   "demo-p-button-13": {
     name: "demo-p-button-13",
@@ -13055,7 +13055,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-button-13',
+    command: '@spaceui/demo-p-button-13',
   },
   "demo-p-button-14": {
     name: "demo-p-button-14",
@@ -13087,7 +13087,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-button-14',
+    command: '@spaceui/demo-p-button-14',
   },
   "demo-p-button-15": {
     name: "demo-p-button-15",
@@ -13119,7 +13119,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-button-15',
+    command: '@spaceui/demo-p-button-15',
   },
   "demo-p-button-16": {
     name: "demo-p-button-16",
@@ -13151,7 +13151,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-button-16',
+    command: '@spaceui/demo-p-button-16',
   },
   "demo-p-button-17": {
     name: "demo-p-button-17",
@@ -13183,7 +13183,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-button-17',
+    command: '@spaceui/demo-p-button-17',
   },
   "demo-p-button-18": {
     name: "demo-p-button-18",
@@ -13215,7 +13215,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-button-18',
+    command: '@spaceui/demo-p-button-18',
   },
   "demo-p-button-19": {
     name: "demo-p-button-19",
@@ -13247,7 +13247,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-button-19',
+    command: '@spaceui/demo-p-button-19',
   },
   "demo-p-button-20": {
     name: "demo-p-button-20",
@@ -13279,7 +13279,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-button-20',
+    command: '@spaceui/demo-p-button-20',
   },
   "demo-p-button-21": {
     name: "demo-p-button-21",
@@ -13311,7 +13311,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-button-21',
+    command: '@spaceui/demo-p-button-21',
   },
   "demo-p-button-22": {
     name: "demo-p-button-22",
@@ -13343,7 +13343,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-button-22',
+    command: '@spaceui/demo-p-button-22',
   },
   "demo-p-button-23": {
     name: "demo-p-button-23",
@@ -13375,7 +13375,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-button-23',
+    command: '@spaceui/demo-p-button-23',
   },
   "demo-p-button-24": {
     name: "demo-p-button-24",
@@ -13407,7 +13407,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-button-24',
+    command: '@spaceui/demo-p-button-24',
   },
   "demo-p-button-25": {
     name: "demo-p-button-25",
@@ -13439,7 +13439,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-button-25',
+    command: '@spaceui/demo-p-button-25',
   },
   "demo-p-button-26": {
     name: "demo-p-button-26",
@@ -13471,7 +13471,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-button-26',
+    command: '@spaceui/demo-p-button-26',
   },
   "demo-p-button-27": {
     name: "demo-p-button-27",
@@ -13503,7 +13503,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-button-27',
+    command: '@spaceui/demo-p-button-27',
   },
   "demo-p-button-28": {
     name: "demo-p-button-28",
@@ -13535,7 +13535,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-button-28',
+    command: '@spaceui/demo-p-button-28',
   },
   "demo-p-button-29": {
     name: "demo-p-button-29",
@@ -13567,7 +13567,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-button-29',
+    command: '@spaceui/demo-p-button-29',
   },
   "demo-p-calendar-01": {
     name: "demo-p-calendar-01",
@@ -13599,7 +13599,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-calendar-01',
+    command: '@spaceui/demo-p-calendar-01',
   },
   "demo-p-calendar-02": {
     name: "demo-p-calendar-02",
@@ -13631,7 +13631,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-calendar-02',
+    command: '@spaceui/demo-p-calendar-02',
   },
   "demo-p-calendar-03": {
     name: "demo-p-calendar-03",
@@ -13663,7 +13663,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-calendar-03',
+    command: '@spaceui/demo-p-calendar-03',
   },
   "demo-p-calendar-04": {
     name: "demo-p-calendar-04",
@@ -13695,7 +13695,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-calendar-04',
+    command: '@spaceui/demo-p-calendar-04',
   },
   "demo-p-calendar-05": {
     name: "demo-p-calendar-05",
@@ -13727,7 +13727,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-calendar-05',
+    command: '@spaceui/demo-p-calendar-05',
   },
   "demo-p-calendar-06": {
     name: "demo-p-calendar-06",
@@ -13759,7 +13759,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-calendar-06',
+    command: '@spaceui/demo-p-calendar-06',
   },
   "demo-p-calendar-07": {
     name: "demo-p-calendar-07",
@@ -13791,7 +13791,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-calendar-07',
+    command: '@spaceui/demo-p-calendar-07',
   },
   "demo-p-calendar-08": {
     name: "demo-p-calendar-08",
@@ -13823,7 +13823,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-calendar-08',
+    command: '@spaceui/demo-p-calendar-08',
   },
   "demo-p-calendar-09": {
     name: "demo-p-calendar-09",
@@ -13855,7 +13855,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-calendar-09',
+    command: '@spaceui/demo-p-calendar-09',
   },
   "demo-p-calendar-10": {
     name: "demo-p-calendar-10",
@@ -13887,7 +13887,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-calendar-10',
+    command: '@spaceui/demo-p-calendar-10',
   },
   "demo-p-calendar-11": {
     name: "demo-p-calendar-11",
@@ -13919,7 +13919,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-calendar-11',
+    command: '@spaceui/demo-p-calendar-11',
   },
   "demo-p-calendar-12": {
     name: "demo-p-calendar-12",
@@ -13951,7 +13951,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-calendar-12',
+    command: '@spaceui/demo-p-calendar-12',
   },
   "demo-p-calendar-13": {
     name: "demo-p-calendar-13",
@@ -13983,7 +13983,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-calendar-13',
+    command: '@spaceui/demo-p-calendar-13',
   },
   "demo-p-calendar-14": {
     name: "demo-p-calendar-14",
@@ -14015,7 +14015,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-calendar-14',
+    command: '@spaceui/demo-p-calendar-14',
   },
   "demo-p-calendar-15": {
     name: "demo-p-calendar-15",
@@ -14047,7 +14047,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-calendar-15',
+    command: '@spaceui/demo-p-calendar-15',
   },
   "demo-p-calendar-16": {
     name: "demo-p-calendar-16",
@@ -14079,7 +14079,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-calendar-16',
+    command: '@spaceui/demo-p-calendar-16',
   },
   "demo-p-calendar-17": {
     name: "demo-p-calendar-17",
@@ -14111,7 +14111,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-calendar-17',
+    command: '@spaceui/demo-p-calendar-17',
   },
   "demo-p-calendar-18": {
     name: "demo-p-calendar-18",
@@ -14143,7 +14143,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-calendar-18',
+    command: '@spaceui/demo-p-calendar-18',
   },
   "demo-p-calendar-19": {
     name: "demo-p-calendar-19",
@@ -14175,7 +14175,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-calendar-19',
+    command: '@spaceui/demo-p-calendar-19',
   },
   "demo-p-calendar-20": {
     name: "demo-p-calendar-20",
@@ -14207,7 +14207,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-calendar-20',
+    command: '@spaceui/demo-p-calendar-20',
   },
   "demo-p-calendar-21": {
     name: "demo-p-calendar-21",
@@ -14239,7 +14239,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-calendar-21',
+    command: '@spaceui/demo-p-calendar-21',
   },
   "demo-p-calendar-22": {
     name: "demo-p-calendar-22",
@@ -14271,7 +14271,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-calendar-22',
+    command: '@spaceui/demo-p-calendar-22',
   },
   "demo-p-calendar-23": {
     name: "demo-p-calendar-23",
@@ -14303,7 +14303,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-calendar-23',
+    command: '@spaceui/demo-p-calendar-23',
   },
   "demo-p-calendar-24": {
     name: "demo-p-calendar-24",
@@ -14335,7 +14335,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-calendar-24',
+    command: '@spaceui/demo-p-calendar-24',
   },
   "demo-p-calendar-25": {
     name: "demo-p-calendar-25",
@@ -14367,7 +14367,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-calendar-25',
+    command: '@spaceui/demo-p-calendar-25',
   },
   "demo-p-card-01": {
     name: "demo-p-card-01",
@@ -14399,7 +14399,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-card-01',
+    command: '@spaceui/demo-p-card-01',
   },
   "demo-p-card-02": {
     name: "demo-p-card-02",
@@ -14431,7 +14431,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-card-02',
+    command: '@spaceui/demo-p-card-02',
   },
   "demo-p-card-03": {
     name: "demo-p-card-03",
@@ -14463,7 +14463,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-card-03',
+    command: '@spaceui/demo-p-card-03',
   },
   "demo-p-card-04": {
     name: "demo-p-card-04",
@@ -14495,7 +14495,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-card-04',
+    command: '@spaceui/demo-p-card-04',
   },
   "demo-p-card-05": {
     name: "demo-p-card-05",
@@ -14527,7 +14527,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-card-05',
+    command: '@spaceui/demo-p-card-05',
   },
   "demo-p-card-06": {
     name: "demo-p-card-06",
@@ -14559,7 +14559,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-card-06',
+    command: '@spaceui/demo-p-card-06',
   },
   "demo-p-card-07": {
     name: "demo-p-card-07",
@@ -14591,7 +14591,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-card-07',
+    command: '@spaceui/demo-p-card-07',
   },
   "demo-p-card-08": {
     name: "demo-p-card-08",
@@ -14623,7 +14623,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-card-08',
+    command: '@spaceui/demo-p-card-08',
   },
   "demo-p-card-09": {
     name: "demo-p-card-09",
@@ -14655,7 +14655,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-card-09',
+    command: '@spaceui/demo-p-card-09',
   },
   "demo-p-card-10": {
     name: "demo-p-card-10",
@@ -14687,7 +14687,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-card-10',
+    command: '@spaceui/demo-p-card-10',
   },
   "demo-p-card-11": {
     name: "demo-p-card-11",
@@ -14719,7 +14719,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-card-11',
+    command: '@spaceui/demo-p-card-11',
   },
   "demo-p-checkbox-01": {
     name: "demo-p-checkbox-01",
@@ -14751,7 +14751,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-checkbox-01',
+    command: '@spaceui/demo-p-checkbox-01',
   },
   "demo-p-checkbox-02": {
     name: "demo-p-checkbox-02",
@@ -14783,7 +14783,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-checkbox-02',
+    command: '@spaceui/demo-p-checkbox-02',
   },
   "demo-p-checkbox-03": {
     name: "demo-p-checkbox-03",
@@ -14815,7 +14815,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-checkbox-03',
+    command: '@spaceui/demo-p-checkbox-03',
   },
   "demo-p-checkbox-04": {
     name: "demo-p-checkbox-04",
@@ -14847,7 +14847,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-checkbox-04',
+    command: '@spaceui/demo-p-checkbox-04',
   },
   "demo-p-checkbox-group-01": {
     name: "demo-p-checkbox-group-01",
@@ -14879,7 +14879,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-checkbox-group-01',
+    command: '@spaceui/demo-p-checkbox-group-01',
   },
   "demo-p-checkbox-group-02": {
     name: "demo-p-checkbox-group-02",
@@ -14911,7 +14911,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-checkbox-group-02',
+    command: '@spaceui/demo-p-checkbox-group-02',
   },
   "demo-p-checkbox-group-03": {
     name: "demo-p-checkbox-group-03",
@@ -14943,7 +14943,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-checkbox-group-03',
+    command: '@spaceui/demo-p-checkbox-group-03',
   },
   "demo-p-checkbox-group-04": {
     name: "demo-p-checkbox-group-04",
@@ -14975,7 +14975,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-checkbox-group-04',
+    command: '@spaceui/demo-p-checkbox-group-04',
   },
   "demo-p-checkbox-group-05": {
     name: "demo-p-checkbox-group-05",
@@ -15007,7 +15007,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-checkbox-group-05',
+    command: '@spaceui/demo-p-checkbox-group-05',
   },
   "demo-p-collapsible-01": {
     name: "demo-p-collapsible-01",
@@ -15039,7 +15039,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-collapsible-01',
+    command: '@spaceui/demo-p-collapsible-01',
   },
   "demo-p-combobox-01": {
     name: "demo-p-combobox-01",
@@ -15071,7 +15071,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-combobox-01',
+    command: '@spaceui/demo-p-combobox-01',
   },
   "demo-p-combobox-02": {
     name: "demo-p-combobox-02",
@@ -15103,7 +15103,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-combobox-02',
+    command: '@spaceui/demo-p-combobox-02',
   },
   "demo-p-combobox-03": {
     name: "demo-p-combobox-03",
@@ -15135,7 +15135,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-combobox-03',
+    command: '@spaceui/demo-p-combobox-03',
   },
   "demo-p-combobox-04": {
     name: "demo-p-combobox-04",
@@ -15167,7 +15167,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-combobox-04',
+    command: '@spaceui/demo-p-combobox-04',
   },
   "demo-p-combobox-05": {
     name: "demo-p-combobox-05",
@@ -15199,7 +15199,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-combobox-05',
+    command: '@spaceui/demo-p-combobox-05',
   },
   "demo-p-combobox-06": {
     name: "demo-p-combobox-06",
@@ -15231,7 +15231,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-combobox-06',
+    command: '@spaceui/demo-p-combobox-06',
   },
   "demo-p-combobox-07": {
     name: "demo-p-combobox-07",
@@ -15263,7 +15263,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-combobox-07',
+    command: '@spaceui/demo-p-combobox-07',
   },
   "demo-p-combobox-08": {
     name: "demo-p-combobox-08",
@@ -15295,7 +15295,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-combobox-08',
+    command: '@spaceui/demo-p-combobox-08',
   },
   "demo-p-combobox-09": {
     name: "demo-p-combobox-09",
@@ -15327,7 +15327,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-combobox-09',
+    command: '@spaceui/demo-p-combobox-09',
   },
   "demo-p-combobox-10": {
     name: "demo-p-combobox-10",
@@ -15359,7 +15359,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-combobox-10',
+    command: '@spaceui/demo-p-combobox-10',
   },
   "demo-p-combobox-11": {
     name: "demo-p-combobox-11",
@@ -15391,7 +15391,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-combobox-11',
+    command: '@spaceui/demo-p-combobox-11',
   },
   "demo-p-combobox-12": {
     name: "demo-p-combobox-12",
@@ -15423,7 +15423,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-combobox-12',
+    command: '@spaceui/demo-p-combobox-12',
   },
   "demo-p-combobox-13": {
     name: "demo-p-combobox-13",
@@ -15455,7 +15455,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-combobox-13',
+    command: '@spaceui/demo-p-combobox-13',
   },
   "demo-p-combobox-14": {
     name: "demo-p-combobox-14",
@@ -15487,7 +15487,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-combobox-14',
+    command: '@spaceui/demo-p-combobox-14',
   },
   "demo-p-combobox-15": {
     name: "demo-p-combobox-15",
@@ -15519,7 +15519,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-combobox-15',
+    command: '@spaceui/demo-p-combobox-15',
   },
   "demo-p-combobox-16": {
     name: "demo-p-combobox-16",
@@ -15551,7 +15551,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-combobox-16',
+    command: '@spaceui/demo-p-combobox-16',
   },
   "demo-p-combobox-17": {
     name: "demo-p-combobox-17",
@@ -15583,7 +15583,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-combobox-17',
+    command: '@spaceui/demo-p-combobox-17',
   },
   "demo-p-combobox-18": {
     name: "demo-p-combobox-18",
@@ -15615,7 +15615,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-combobox-18',
+    command: '@spaceui/demo-p-combobox-18',
   },
   "demo-p-combobox-19": {
     name: "demo-p-combobox-19",
@@ -15647,7 +15647,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-combobox-19',
+    command: '@spaceui/demo-p-combobox-19',
   },
   "demo-p-command-01": {
     name: "demo-p-command-01",
@@ -15679,7 +15679,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-command-01',
+    command: '@spaceui/demo-p-command-01',
   },
   "demo-p-command-02": {
     name: "demo-p-command-02",
@@ -15711,7 +15711,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-command-02',
+    command: '@spaceui/demo-p-command-02',
   },
   "demo-p-context-menu-01": {
     name: "demo-p-context-menu-01",
@@ -15743,7 +15743,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-context-menu-01',
+    command: '@spaceui/demo-p-context-menu-01',
   },
   "demo-p-context-menu-02": {
     name: "demo-p-context-menu-02",
@@ -15775,7 +15775,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-context-menu-02',
+    command: '@spaceui/demo-p-context-menu-02',
   },
   "demo-p-context-menu-03": {
     name: "demo-p-context-menu-03",
@@ -15807,7 +15807,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-context-menu-03',
+    command: '@spaceui/demo-p-context-menu-03',
   },
   "demo-p-context-menu-04": {
     name: "demo-p-context-menu-04",
@@ -15839,7 +15839,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-context-menu-04',
+    command: '@spaceui/demo-p-context-menu-04',
   },
   "demo-p-context-menu-05": {
     name: "demo-p-context-menu-05",
@@ -15871,7 +15871,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-context-menu-05',
+    command: '@spaceui/demo-p-context-menu-05',
   },
   "demo-p-context-menu-06": {
     name: "demo-p-context-menu-06",
@@ -15903,7 +15903,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-context-menu-06',
+    command: '@spaceui/demo-p-context-menu-06',
   },
   "demo-p-context-menu-07": {
     name: "demo-p-context-menu-07",
@@ -15935,7 +15935,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-context-menu-07',
+    command: '@spaceui/demo-p-context-menu-07',
   },
   "demo-p-context-menu-08": {
     name: "demo-p-context-menu-08",
@@ -15967,7 +15967,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-context-menu-08',
+    command: '@spaceui/demo-p-context-menu-08',
   },
   "demo-p-date-picker-01": {
     name: "demo-p-date-picker-01",
@@ -15999,7 +15999,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-date-picker-01',
+    command: '@spaceui/demo-p-date-picker-01',
   },
   "demo-p-date-picker-02": {
     name: "demo-p-date-picker-02",
@@ -16031,7 +16031,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-date-picker-02',
+    command: '@spaceui/demo-p-date-picker-02',
   },
   "demo-p-date-picker-03": {
     name: "demo-p-date-picker-03",
@@ -16063,7 +16063,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-date-picker-03',
+    command: '@spaceui/demo-p-date-picker-03',
   },
   "demo-p-date-picker-04": {
     name: "demo-p-date-picker-04",
@@ -16095,7 +16095,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-date-picker-04',
+    command: '@spaceui/demo-p-date-picker-04',
   },
   "demo-p-date-picker-05": {
     name: "demo-p-date-picker-05",
@@ -16127,7 +16127,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-date-picker-05',
+    command: '@spaceui/demo-p-date-picker-05',
   },
   "demo-p-date-picker-06": {
     name: "demo-p-date-picker-06",
@@ -16159,7 +16159,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-date-picker-06',
+    command: '@spaceui/demo-p-date-picker-06',
   },
   "demo-p-date-picker-07": {
     name: "demo-p-date-picker-07",
@@ -16191,7 +16191,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-date-picker-07',
+    command: '@spaceui/demo-p-date-picker-07',
   },
   "demo-p-date-picker-08": {
     name: "demo-p-date-picker-08",
@@ -16223,7 +16223,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-date-picker-08',
+    command: '@spaceui/demo-p-date-picker-08',
   },
   "demo-p-date-picker-09": {
     name: "demo-p-date-picker-09",
@@ -16255,7 +16255,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-date-picker-09',
+    command: '@spaceui/demo-p-date-picker-09',
   },
   "demo-p-dialog-01": {
     name: "demo-p-dialog-01",
@@ -16287,7 +16287,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-dialog-01',
+    command: '@spaceui/demo-p-dialog-01',
   },
   "demo-p-dialog-02": {
     name: "demo-p-dialog-02",
@@ -16319,7 +16319,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-dialog-02',
+    command: '@spaceui/demo-p-dialog-02',
   },
   "demo-p-dialog-03": {
     name: "demo-p-dialog-03",
@@ -16351,7 +16351,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-dialog-03',
+    command: '@spaceui/demo-p-dialog-03',
   },
   "demo-p-dialog-04": {
     name: "demo-p-dialog-04",
@@ -16383,7 +16383,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-dialog-04',
+    command: '@spaceui/demo-p-dialog-04',
   },
   "demo-p-dialog-05": {
     name: "demo-p-dialog-05",
@@ -16415,7 +16415,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-dialog-05',
+    command: '@spaceui/demo-p-dialog-05',
   },
   "demo-p-dialog-06": {
     name: "demo-p-dialog-06",
@@ -16447,7 +16447,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-dialog-06',
+    command: '@spaceui/demo-p-dialog-06',
   },
   "demo-p-drawer-01": {
     name: "demo-p-drawer-01",
@@ -16479,7 +16479,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-drawer-01',
+    command: '@spaceui/demo-p-drawer-01',
   },
   "demo-p-drawer-02": {
     name: "demo-p-drawer-02",
@@ -16511,7 +16511,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-drawer-02',
+    command: '@spaceui/demo-p-drawer-02',
   },
   "demo-p-drawer-03": {
     name: "demo-p-drawer-03",
@@ -16543,7 +16543,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-drawer-03',
+    command: '@spaceui/demo-p-drawer-03',
   },
   "demo-p-drawer-04": {
     name: "demo-p-drawer-04",
@@ -16575,7 +16575,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-drawer-04',
+    command: '@spaceui/demo-p-drawer-04',
   },
   "demo-p-drawer-05": {
     name: "demo-p-drawer-05",
@@ -16607,7 +16607,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-drawer-05',
+    command: '@spaceui/demo-p-drawer-05',
   },
   "demo-p-drawer-06": {
     name: "demo-p-drawer-06",
@@ -16639,7 +16639,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-drawer-06',
+    command: '@spaceui/demo-p-drawer-06',
   },
   "demo-p-drawer-07": {
     name: "demo-p-drawer-07",
@@ -16671,7 +16671,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-drawer-07',
+    command: '@spaceui/demo-p-drawer-07',
   },
   "demo-p-drawer-08": {
     name: "demo-p-drawer-08",
@@ -16703,7 +16703,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-drawer-08',
+    command: '@spaceui/demo-p-drawer-08',
   },
   "demo-p-drawer-09": {
     name: "demo-p-drawer-09",
@@ -16735,7 +16735,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-drawer-09',
+    command: '@spaceui/demo-p-drawer-09',
   },
   "demo-p-drawer-10": {
     name: "demo-p-drawer-10",
@@ -16767,7 +16767,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-drawer-10',
+    command: '@spaceui/demo-p-drawer-10',
   },
   "demo-p-drawer-11": {
     name: "demo-p-drawer-11",
@@ -16799,7 +16799,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-drawer-11',
+    command: '@spaceui/demo-p-drawer-11',
   },
   "demo-p-drawer-12": {
     name: "demo-p-drawer-12",
@@ -16831,7 +16831,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-drawer-12',
+    command: '@spaceui/demo-p-drawer-12',
   },
   "demo-p-drawer-13": {
     name: "demo-p-drawer-13",
@@ -16863,7 +16863,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-drawer-13',
+    command: '@spaceui/demo-p-drawer-13',
   },
   "demo-p-drawer-14": {
     name: "demo-p-drawer-14",
@@ -16895,7 +16895,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-drawer-14',
+    command: '@spaceui/demo-p-drawer-14',
   },
   "demo-p-empty-01": {
     name: "demo-p-empty-01",
@@ -16927,7 +16927,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-empty-01',
+    command: '@spaceui/demo-p-empty-01',
   },
   "demo-p-field-01": {
     name: "demo-p-field-01",
@@ -16959,7 +16959,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-field-01',
+    command: '@spaceui/demo-p-field-01',
   },
   "demo-p-field-02": {
     name: "demo-p-field-02",
@@ -16991,7 +16991,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-field-02',
+    command: '@spaceui/demo-p-field-02',
   },
   "demo-p-field-03": {
     name: "demo-p-field-03",
@@ -17023,7 +17023,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-field-03',
+    command: '@spaceui/demo-p-field-03',
   },
   "demo-p-field-04": {
     name: "demo-p-field-04",
@@ -17055,7 +17055,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-field-04',
+    command: '@spaceui/demo-p-field-04',
   },
   "demo-p-field-05": {
     name: "demo-p-field-05",
@@ -17087,7 +17087,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-field-05',
+    command: '@spaceui/demo-p-field-05',
   },
   "demo-p-field-06": {
     name: "demo-p-field-06",
@@ -17119,7 +17119,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-field-06',
+    command: '@spaceui/demo-p-field-06',
   },
   "demo-p-field-07": {
     name: "demo-p-field-07",
@@ -17151,7 +17151,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-field-07',
+    command: '@spaceui/demo-p-field-07',
   },
   "demo-p-field-08": {
     name: "demo-p-field-08",
@@ -17183,7 +17183,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-field-08',
+    command: '@spaceui/demo-p-field-08',
   },
   "demo-p-field-09": {
     name: "demo-p-field-09",
@@ -17215,7 +17215,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-field-09',
+    command: '@spaceui/demo-p-field-09',
   },
   "demo-p-field-10": {
     name: "demo-p-field-10",
@@ -17247,7 +17247,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-field-10',
+    command: '@spaceui/demo-p-field-10',
   },
   "demo-p-field-11": {
     name: "demo-p-field-11",
@@ -17279,7 +17279,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-field-11',
+    command: '@spaceui/demo-p-field-11',
   },
   "demo-p-field-12": {
     name: "demo-p-field-12",
@@ -17311,7 +17311,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-field-12',
+    command: '@spaceui/demo-p-field-12',
   },
   "demo-p-field-13": {
     name: "demo-p-field-13",
@@ -17343,7 +17343,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-field-13',
+    command: '@spaceui/demo-p-field-13',
   },
   "demo-p-field-14": {
     name: "demo-p-field-14",
@@ -17375,7 +17375,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-field-14',
+    command: '@spaceui/demo-p-field-14',
   },
   "demo-p-field-15": {
     name: "demo-p-field-15",
@@ -17407,7 +17407,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-field-15',
+    command: '@spaceui/demo-p-field-15',
   },
   "demo-p-field-16": {
     name: "demo-p-field-16",
@@ -17439,7 +17439,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-field-16',
+    command: '@spaceui/demo-p-field-16',
   },
   "demo-p-field-17": {
     name: "demo-p-field-17",
@@ -17471,7 +17471,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-field-17',
+    command: '@spaceui/demo-p-field-17',
   },
   "demo-p-field-18": {
     name: "demo-p-field-18",
@@ -17503,7 +17503,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-field-18',
+    command: '@spaceui/demo-p-field-18',
   },
   "demo-p-fieldset-01": {
     name: "demo-p-fieldset-01",
@@ -17535,7 +17535,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-fieldset-01',
+    command: '@spaceui/demo-p-fieldset-01',
   },
   "demo-p-form-01": {
     name: "demo-p-form-01",
@@ -17567,7 +17567,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-form-01',
+    command: '@spaceui/demo-p-form-01',
   },
   "demo-p-form-02": {
     name: "demo-p-form-02",
@@ -17599,7 +17599,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-form-02',
+    command: '@spaceui/demo-p-form-02',
   },
   "demo-p-frame-01": {
     name: "demo-p-frame-01",
@@ -17631,7 +17631,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-frame-01',
+    command: '@spaceui/demo-p-frame-01',
   },
   "demo-p-frame-02": {
     name: "demo-p-frame-02",
@@ -17663,7 +17663,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-frame-02',
+    command: '@spaceui/demo-p-frame-02',
   },
   "demo-p-frame-03": {
     name: "demo-p-frame-03",
@@ -17695,7 +17695,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-frame-03',
+    command: '@spaceui/demo-p-frame-03',
   },
   "demo-p-frame-04": {
     name: "demo-p-frame-04",
@@ -17727,7 +17727,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-frame-04',
+    command: '@spaceui/demo-p-frame-04',
   },
   "demo-p-group-01": {
     name: "demo-p-group-01",
@@ -17759,7 +17759,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-group-01',
+    command: '@spaceui/demo-p-group-01',
   },
   "demo-p-group-02": {
     name: "demo-p-group-02",
@@ -17791,7 +17791,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-group-02',
+    command: '@spaceui/demo-p-group-02',
   },
   "demo-p-group-03": {
     name: "demo-p-group-03",
@@ -17823,7 +17823,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-group-03',
+    command: '@spaceui/demo-p-group-03',
   },
   "demo-p-group-04": {
     name: "demo-p-group-04",
@@ -17855,7 +17855,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-group-04',
+    command: '@spaceui/demo-p-group-04',
   },
   "demo-p-group-05": {
     name: "demo-p-group-05",
@@ -17887,7 +17887,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-group-05',
+    command: '@spaceui/demo-p-group-05',
   },
   "demo-p-group-06": {
     name: "demo-p-group-06",
@@ -17919,7 +17919,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-group-06',
+    command: '@spaceui/demo-p-group-06',
   },
   "demo-p-group-07": {
     name: "demo-p-group-07",
@@ -17951,7 +17951,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-group-07',
+    command: '@spaceui/demo-p-group-07',
   },
   "demo-p-group-08": {
     name: "demo-p-group-08",
@@ -17983,7 +17983,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-group-08',
+    command: '@spaceui/demo-p-group-08',
   },
   "demo-p-group-09": {
     name: "demo-p-group-09",
@@ -18015,7 +18015,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-group-09',
+    command: '@spaceui/demo-p-group-09',
   },
   "demo-p-group-10": {
     name: "demo-p-group-10",
@@ -18047,7 +18047,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-group-10',
+    command: '@spaceui/demo-p-group-10',
   },
   "demo-p-group-11": {
     name: "demo-p-group-11",
@@ -18079,7 +18079,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-group-11',
+    command: '@spaceui/demo-p-group-11',
   },
   "demo-p-group-12": {
     name: "demo-p-group-12",
@@ -18111,7 +18111,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-group-12',
+    command: '@spaceui/demo-p-group-12',
   },
   "demo-p-group-13": {
     name: "demo-p-group-13",
@@ -18143,7 +18143,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-group-13',
+    command: '@spaceui/demo-p-group-13',
   },
   "demo-p-group-14": {
     name: "demo-p-group-14",
@@ -18175,7 +18175,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-group-14',
+    command: '@spaceui/demo-p-group-14',
   },
   "demo-p-group-15": {
     name: "demo-p-group-15",
@@ -18207,7 +18207,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-group-15',
+    command: '@spaceui/demo-p-group-15',
   },
   "demo-p-group-16": {
     name: "demo-p-group-16",
@@ -18239,7 +18239,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-group-16',
+    command: '@spaceui/demo-p-group-16',
   },
   "demo-p-group-17": {
     name: "demo-p-group-17",
@@ -18271,7 +18271,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-group-17',
+    command: '@spaceui/demo-p-group-17',
   },
   "demo-p-group-18": {
     name: "demo-p-group-18",
@@ -18303,7 +18303,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-group-18',
+    command: '@spaceui/demo-p-group-18',
   },
   "demo-p-group-19": {
     name: "demo-p-group-19",
@@ -18335,7 +18335,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-group-19',
+    command: '@spaceui/demo-p-group-19',
   },
   "demo-p-group-20": {
     name: "demo-p-group-20",
@@ -18367,7 +18367,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-group-20',
+    command: '@spaceui/demo-p-group-20',
   },
   "demo-p-group-21": {
     name: "demo-p-group-21",
@@ -18399,7 +18399,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-group-21',
+    command: '@spaceui/demo-p-group-21',
   },
   "demo-p-group-22": {
     name: "demo-p-group-22",
@@ -18431,7 +18431,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-group-22',
+    command: '@spaceui/demo-p-group-22',
   },
   "demo-p-group-23": {
     name: "demo-p-group-23",
@@ -18463,7 +18463,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-group-23',
+    command: '@spaceui/demo-p-group-23',
   },
   "demo-p-group-24": {
     name: "demo-p-group-24",
@@ -18495,7 +18495,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-group-24',
+    command: '@spaceui/demo-p-group-24',
   },
   "demo-p-group-25": {
     name: "demo-p-group-25",
@@ -18527,7 +18527,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-group-25',
+    command: '@spaceui/demo-p-group-25',
   },
   "demo-p-group-26": {
     name: "demo-p-group-26",
@@ -18559,7 +18559,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-group-26',
+    command: '@spaceui/demo-p-group-26',
   },
   "demo-p-group-27": {
     name: "demo-p-group-27",
@@ -18591,7 +18591,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-group-27',
+    command: '@spaceui/demo-p-group-27',
   },
   "demo-p-group-28": {
     name: "demo-p-group-28",
@@ -18623,7 +18623,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-group-28',
+    command: '@spaceui/demo-p-group-28',
   },
   "demo-p-group-29": {
     name: "demo-p-group-29",
@@ -18655,7 +18655,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-group-29',
+    command: '@spaceui/demo-p-group-29',
   },
   "demo-p-input-01": {
     name: "demo-p-input-01",
@@ -18687,7 +18687,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-input-01',
+    command: '@spaceui/demo-p-input-01',
   },
   "demo-p-input-02": {
     name: "demo-p-input-02",
@@ -18719,7 +18719,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-input-02',
+    command: '@spaceui/demo-p-input-02',
   },
   "demo-p-input-03": {
     name: "demo-p-input-03",
@@ -18751,7 +18751,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-input-03',
+    command: '@spaceui/demo-p-input-03',
   },
   "demo-p-input-04": {
     name: "demo-p-input-04",
@@ -18783,7 +18783,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-input-04',
+    command: '@spaceui/demo-p-input-04',
   },
   "demo-p-input-05": {
     name: "demo-p-input-05",
@@ -18815,7 +18815,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-input-05',
+    command: '@spaceui/demo-p-input-05',
   },
   "demo-p-input-06": {
     name: "demo-p-input-06",
@@ -18847,7 +18847,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-input-06',
+    command: '@spaceui/demo-p-input-06',
   },
   "demo-p-input-07": {
     name: "demo-p-input-07",
@@ -18879,7 +18879,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-input-07',
+    command: '@spaceui/demo-p-input-07',
   },
   "demo-p-input-08": {
     name: "demo-p-input-08",
@@ -18911,7 +18911,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-input-08',
+    command: '@spaceui/demo-p-input-08',
   },
   "demo-p-input-09": {
     name: "demo-p-input-09",
@@ -18943,7 +18943,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-input-09',
+    command: '@spaceui/demo-p-input-09',
   },
   "demo-p-input-10": {
     name: "demo-p-input-10",
@@ -18975,7 +18975,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-input-10',
+    command: '@spaceui/demo-p-input-10',
   },
   "demo-p-input-11": {
     name: "demo-p-input-11",
@@ -19007,7 +19007,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-input-11',
+    command: '@spaceui/demo-p-input-11',
   },
   "demo-p-input-12": {
     name: "demo-p-input-12",
@@ -19039,7 +19039,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-input-12',
+    command: '@spaceui/demo-p-input-12',
   },
   "demo-p-input-13": {
     name: "demo-p-input-13",
@@ -19071,7 +19071,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-input-13',
+    command: '@spaceui/demo-p-input-13',
   },
   "demo-p-input-14": {
     name: "demo-p-input-14",
@@ -19103,7 +19103,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-input-14',
+    command: '@spaceui/demo-p-input-14',
   },
   "demo-p-input-15": {
     name: "demo-p-input-15",
@@ -19135,7 +19135,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-input-15',
+    command: '@spaceui/demo-p-input-15',
   },
   "demo-p-input-16": {
     name: "demo-p-input-16",
@@ -19167,7 +19167,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-input-16',
+    command: '@spaceui/demo-p-input-16',
   },
   "demo-p-input-17": {
     name: "demo-p-input-17",
@@ -19199,7 +19199,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-input-17',
+    command: '@spaceui/demo-p-input-17',
   },
   "demo-p-input-18": {
     name: "demo-p-input-18",
@@ -19231,7 +19231,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-input-18',
+    command: '@spaceui/demo-p-input-18',
   },
   "demo-p-input-group-01": {
     name: "demo-p-input-group-01",
@@ -19263,7 +19263,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-input-group-01',
+    command: '@spaceui/demo-p-input-group-01',
   },
   "demo-p-input-group-02": {
     name: "demo-p-input-group-02",
@@ -19295,7 +19295,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-input-group-02',
+    command: '@spaceui/demo-p-input-group-02',
   },
   "demo-p-input-group-03": {
     name: "demo-p-input-group-03",
@@ -19327,7 +19327,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-input-group-03',
+    command: '@spaceui/demo-p-input-group-03',
   },
   "demo-p-input-group-04": {
     name: "demo-p-input-group-04",
@@ -19359,7 +19359,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-input-group-04',
+    command: '@spaceui/demo-p-input-group-04',
   },
   "demo-p-input-group-05": {
     name: "demo-p-input-group-05",
@@ -19391,7 +19391,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-input-group-05',
+    command: '@spaceui/demo-p-input-group-05',
   },
   "demo-p-input-group-06": {
     name: "demo-p-input-group-06",
@@ -19423,7 +19423,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-input-group-06',
+    command: '@spaceui/demo-p-input-group-06',
   },
   "demo-p-input-group-07": {
     name: "demo-p-input-group-07",
@@ -19455,7 +19455,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-input-group-07',
+    command: '@spaceui/demo-p-input-group-07',
   },
   "demo-p-input-group-08": {
     name: "demo-p-input-group-08",
@@ -19487,7 +19487,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-input-group-08',
+    command: '@spaceui/demo-p-input-group-08',
   },
   "demo-p-input-group-09": {
     name: "demo-p-input-group-09",
@@ -19519,7 +19519,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-input-group-09',
+    command: '@spaceui/demo-p-input-group-09',
   },
   "demo-p-input-group-10": {
     name: "demo-p-input-group-10",
@@ -19551,7 +19551,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-input-group-10',
+    command: '@spaceui/demo-p-input-group-10',
   },
   "demo-p-input-group-11": {
     name: "demo-p-input-group-11",
@@ -19583,7 +19583,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-input-group-11',
+    command: '@spaceui/demo-p-input-group-11',
   },
   "demo-p-input-group-12": {
     name: "demo-p-input-group-12",
@@ -19615,7 +19615,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-input-group-12',
+    command: '@spaceui/demo-p-input-group-12',
   },
   "demo-p-input-group-13": {
     name: "demo-p-input-group-13",
@@ -19647,7 +19647,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-input-group-13',
+    command: '@spaceui/demo-p-input-group-13',
   },
   "demo-p-input-group-14": {
     name: "demo-p-input-group-14",
@@ -19679,7 +19679,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-input-group-14',
+    command: '@spaceui/demo-p-input-group-14',
   },
   "demo-p-input-group-15": {
     name: "demo-p-input-group-15",
@@ -19711,7 +19711,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-input-group-15',
+    command: '@spaceui/demo-p-input-group-15',
   },
   "demo-p-input-group-16": {
     name: "demo-p-input-group-16",
@@ -19743,7 +19743,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-input-group-16',
+    command: '@spaceui/demo-p-input-group-16',
   },
   "demo-p-input-group-17": {
     name: "demo-p-input-group-17",
@@ -19775,7 +19775,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-input-group-17',
+    command: '@spaceui/demo-p-input-group-17',
   },
   "demo-p-input-group-18": {
     name: "demo-p-input-group-18",
@@ -19807,7 +19807,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-input-group-18',
+    command: '@spaceui/demo-p-input-group-18',
   },
   "demo-p-input-group-19": {
     name: "demo-p-input-group-19",
@@ -19839,7 +19839,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-input-group-19',
+    command: '@spaceui/demo-p-input-group-19',
   },
   "demo-p-input-group-20": {
     name: "demo-p-input-group-20",
@@ -19871,7 +19871,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-input-group-20',
+    command: '@spaceui/demo-p-input-group-20',
   },
   "demo-p-input-group-21": {
     name: "demo-p-input-group-21",
@@ -19903,7 +19903,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-input-group-21',
+    command: '@spaceui/demo-p-input-group-21',
   },
   "demo-p-input-group-22": {
     name: "demo-p-input-group-22",
@@ -19935,7 +19935,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-input-group-22',
+    command: '@spaceui/demo-p-input-group-22',
   },
   "demo-p-input-group-23": {
     name: "demo-p-input-group-23",
@@ -19967,7 +19967,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-input-group-23',
+    command: '@spaceui/demo-p-input-group-23',
   },
   "demo-p-input-group-24": {
     name: "demo-p-input-group-24",
@@ -19999,7 +19999,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-input-group-24',
+    command: '@spaceui/demo-p-input-group-24',
   },
   "demo-p-input-group-25": {
     name: "demo-p-input-group-25",
@@ -20031,7 +20031,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-input-group-25',
+    command: '@spaceui/demo-p-input-group-25',
   },
   "demo-p-input-group-26": {
     name: "demo-p-input-group-26",
@@ -20063,7 +20063,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-input-group-26',
+    command: '@spaceui/demo-p-input-group-26',
   },
   "demo-p-input-group-27": {
     name: "demo-p-input-group-27",
@@ -20095,7 +20095,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-input-group-27',
+    command: '@spaceui/demo-p-input-group-27',
   },
   "demo-p-input-group-28": {
     name: "demo-p-input-group-28",
@@ -20127,7 +20127,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-input-group-28',
+    command: '@spaceui/demo-p-input-group-28',
   },
   "demo-p-kbd-01": {
     name: "demo-p-kbd-01",
@@ -20159,7 +20159,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-kbd-01',
+    command: '@spaceui/demo-p-kbd-01',
   },
   "demo-p-link-01": {
     name: "demo-p-link-01",
@@ -20191,7 +20191,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-link-01',
+    command: '@spaceui/demo-p-link-01',
   },
   "demo-p-link-03": {
     name: "demo-p-link-03",
@@ -20223,7 +20223,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-link-03',
+    command: '@spaceui/demo-p-link-03',
   },
   "demo-p-link-05": {
     name: "demo-p-link-05",
@@ -20255,7 +20255,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-link-05',
+    command: '@spaceui/demo-p-link-05',
   },
   "demo-p-link-07": {
     name: "demo-p-link-07",
@@ -20287,7 +20287,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-link-07',
+    command: '@spaceui/demo-p-link-07',
   },
   "demo-p-navigation-02": {
     name: "demo-p-navigation-02",
@@ -20319,7 +20319,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-navigation-02',
+    command: '@spaceui/demo-p-navigation-02',
   },
   "demo-p-navigation-04": {
     name: "demo-p-navigation-04",
@@ -20351,7 +20351,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-navigation-04',
+    command: '@spaceui/demo-p-navigation-04',
   },
   "demo-p-navigation-06": {
     name: "demo-p-navigation-06",
@@ -20383,7 +20383,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-navigation-06',
+    command: '@spaceui/demo-p-navigation-06',
   },
   "demo-p-menu-01": {
     name: "demo-p-menu-01",
@@ -20415,7 +20415,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-menu-01',
+    command: '@spaceui/demo-p-menu-01',
   },
   "demo-p-menu-02": {
     name: "demo-p-menu-02",
@@ -20447,7 +20447,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-menu-02',
+    command: '@spaceui/demo-p-menu-02',
   },
   "demo-p-menu-03": {
     name: "demo-p-menu-03",
@@ -20479,7 +20479,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-menu-03',
+    command: '@spaceui/demo-p-menu-03',
   },
   "demo-p-menu-04": {
     name: "demo-p-menu-04",
@@ -20511,7 +20511,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-menu-04',
+    command: '@spaceui/demo-p-menu-04',
   },
   "demo-p-menu-05": {
     name: "demo-p-menu-05",
@@ -20543,7 +20543,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-menu-05',
+    command: '@spaceui/demo-p-menu-05',
   },
   "demo-p-menu-06": {
     name: "demo-p-menu-06",
@@ -20575,7 +20575,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-menu-06',
+    command: '@spaceui/demo-p-menu-06',
   },
   "demo-p-menu-07": {
     name: "demo-p-menu-07",
@@ -20607,7 +20607,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-menu-07',
+    command: '@spaceui/demo-p-menu-07',
   },
   "demo-p-menu-08": {
     name: "demo-p-menu-08",
@@ -20639,7 +20639,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-menu-08',
+    command: '@spaceui/demo-p-menu-08',
   },
   "demo-p-menu-09": {
     name: "demo-p-menu-09",
@@ -20671,7 +20671,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-menu-09',
+    command: '@spaceui/demo-p-menu-09',
   },
   "demo-p-menubar-01": {
     name: "demo-p-menubar-01",
@@ -20703,7 +20703,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-menubar-01',
+    command: '@spaceui/demo-p-menubar-01',
   },
   "demo-p-meter-01": {
     name: "demo-p-meter-01",
@@ -20735,7 +20735,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-meter-01',
+    command: '@spaceui/demo-p-meter-01',
   },
   "demo-p-meter-02": {
     name: "demo-p-meter-02",
@@ -20767,7 +20767,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-meter-02',
+    command: '@spaceui/demo-p-meter-02',
   },
   "demo-p-meter-03": {
     name: "demo-p-meter-03",
@@ -20799,7 +20799,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-meter-03',
+    command: '@spaceui/demo-p-meter-03',
   },
   "demo-p-meter-04": {
     name: "demo-p-meter-04",
@@ -20831,7 +20831,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-meter-04',
+    command: '@spaceui/demo-p-meter-04',
   },
   "demo-p-navigation-menu-01": {
     name: "demo-p-navigation-menu-01",
@@ -20863,7 +20863,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-navigation-menu-01',
+    command: '@spaceui/demo-p-navigation-menu-01',
   },
   "demo-p-number-field-01": {
     name: "demo-p-number-field-01",
@@ -20895,7 +20895,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-number-field-01',
+    command: '@spaceui/demo-p-number-field-01',
   },
   "demo-p-number-field-02": {
     name: "demo-p-number-field-02",
@@ -20927,7 +20927,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-number-field-02',
+    command: '@spaceui/demo-p-number-field-02',
   },
   "demo-p-number-field-03": {
     name: "demo-p-number-field-03",
@@ -20959,7 +20959,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-number-field-03',
+    command: '@spaceui/demo-p-number-field-03',
   },
   "demo-p-number-field-04": {
     name: "demo-p-number-field-04",
@@ -20991,7 +20991,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-number-field-04',
+    command: '@spaceui/demo-p-number-field-04',
   },
   "demo-p-number-field-05": {
     name: "demo-p-number-field-05",
@@ -21023,7 +21023,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-number-field-05',
+    command: '@spaceui/demo-p-number-field-05',
   },
   "demo-p-number-field-06": {
     name: "demo-p-number-field-06",
@@ -21055,7 +21055,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-number-field-06',
+    command: '@spaceui/demo-p-number-field-06',
   },
   "demo-p-number-field-07": {
     name: "demo-p-number-field-07",
@@ -21087,7 +21087,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-number-field-07',
+    command: '@spaceui/demo-p-number-field-07',
   },
   "demo-p-number-field-08": {
     name: "demo-p-number-field-08",
@@ -21119,7 +21119,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-number-field-08',
+    command: '@spaceui/demo-p-number-field-08',
   },
   "demo-p-number-field-09": {
     name: "demo-p-number-field-09",
@@ -21151,7 +21151,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-number-field-09',
+    command: '@spaceui/demo-p-number-field-09',
   },
   "demo-p-number-field-10": {
     name: "demo-p-number-field-10",
@@ -21183,7 +21183,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-number-field-10',
+    command: '@spaceui/demo-p-number-field-10',
   },
   "demo-p-number-field-11": {
     name: "demo-p-number-field-11",
@@ -21215,7 +21215,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-number-field-11',
+    command: '@spaceui/demo-p-number-field-11',
   },
   "demo-p-otp-field-01": {
     name: "demo-p-otp-field-01",
@@ -21247,7 +21247,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-otp-field-01',
+    command: '@spaceui/demo-p-otp-field-01',
   },
   "demo-p-otp-field-02": {
     name: "demo-p-otp-field-02",
@@ -21279,7 +21279,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-otp-field-02',
+    command: '@spaceui/demo-p-otp-field-02',
   },
   "demo-p-otp-field-03": {
     name: "demo-p-otp-field-03",
@@ -21311,7 +21311,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-otp-field-03',
+    command: '@spaceui/demo-p-otp-field-03',
   },
   "demo-p-otp-field-04": {
     name: "demo-p-otp-field-04",
@@ -21343,7 +21343,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-otp-field-04',
+    command: '@spaceui/demo-p-otp-field-04',
   },
   "demo-p-otp-field-05": {
     name: "demo-p-otp-field-05",
@@ -21375,7 +21375,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-otp-field-05',
+    command: '@spaceui/demo-p-otp-field-05',
   },
   "demo-p-otp-field-06": {
     name: "demo-p-otp-field-06",
@@ -21407,7 +21407,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-otp-field-06',
+    command: '@spaceui/demo-p-otp-field-06',
   },
   "demo-p-otp-field-07": {
     name: "demo-p-otp-field-07",
@@ -21439,7 +21439,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-otp-field-07',
+    command: '@spaceui/demo-p-otp-field-07',
   },
   "demo-p-otp-field-08": {
     name: "demo-p-otp-field-08",
@@ -21471,7 +21471,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-otp-field-08',
+    command: '@spaceui/demo-p-otp-field-08',
   },
   "demo-p-otp-field-09": {
     name: "demo-p-otp-field-09",
@@ -21503,7 +21503,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-otp-field-09',
+    command: '@spaceui/demo-p-otp-field-09',
   },
   "demo-p-preview-link-card-01": {
     name: "demo-p-preview-link-card-01",
@@ -21535,7 +21535,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-preview-link-card-01',
+    command: '@spaceui/demo-p-preview-link-card-01',
   },
   "demo-p-pagination-01": {
     name: "demo-p-pagination-01",
@@ -21567,7 +21567,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-pagination-01',
+    command: '@spaceui/demo-p-pagination-01',
   },
   "demo-p-pagination-02": {
     name: "demo-p-pagination-02",
@@ -21599,7 +21599,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-pagination-02',
+    command: '@spaceui/demo-p-pagination-02',
   },
   "demo-p-pagination-03": {
     name: "demo-p-pagination-03",
@@ -21631,7 +21631,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-pagination-03',
+    command: '@spaceui/demo-p-pagination-03',
   },
   "demo-p-popover-01": {
     name: "demo-p-popover-01",
@@ -21663,7 +21663,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-popover-01',
+    command: '@spaceui/demo-p-popover-01',
   },
   "demo-p-popover-02": {
     name: "demo-p-popover-02",
@@ -21695,7 +21695,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-popover-02',
+    command: '@spaceui/demo-p-popover-02',
   },
   "demo-p-popover-03": {
     name: "demo-p-popover-03",
@@ -21727,7 +21727,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-popover-03',
+    command: '@spaceui/demo-p-popover-03',
   },
   "demo-p-popover-04": {
     name: "demo-p-popover-04",
@@ -21759,7 +21759,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-popover-04',
+    command: '@spaceui/demo-p-popover-04',
   },
   "demo-p-preview-card-01": {
     name: "demo-p-preview-card-01",
@@ -21791,7 +21791,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-preview-card-01',
+    command: '@spaceui/demo-p-preview-card-01',
   },
   "demo-p-progress-01": {
     name: "demo-p-progress-01",
@@ -21823,7 +21823,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-progress-01',
+    command: '@spaceui/demo-p-progress-01',
   },
   "demo-p-progress-02": {
     name: "demo-p-progress-02",
@@ -21855,7 +21855,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-progress-02',
+    command: '@spaceui/demo-p-progress-02',
   },
   "demo-p-progress-03": {
     name: "demo-p-progress-03",
@@ -21887,7 +21887,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-progress-03',
+    command: '@spaceui/demo-p-progress-03',
   },
   "demo-p-radio-group-01": {
     name: "demo-p-radio-group-01",
@@ -21919,7 +21919,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-radio-group-01',
+    command: '@spaceui/demo-p-radio-group-01',
   },
   "demo-p-radio-group-02": {
     name: "demo-p-radio-group-02",
@@ -21951,7 +21951,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-radio-group-02',
+    command: '@spaceui/demo-p-radio-group-02',
   },
   "demo-p-radio-group-03": {
     name: "demo-p-radio-group-03",
@@ -21983,7 +21983,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-radio-group-03',
+    command: '@spaceui/demo-p-radio-group-03',
   },
   "demo-p-radio-group-04": {
     name: "demo-p-radio-group-04",
@@ -22015,7 +22015,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-radio-group-04',
+    command: '@spaceui/demo-p-radio-group-04',
   },
   "demo-p-radio-group-05": {
     name: "demo-p-radio-group-05",
@@ -22047,7 +22047,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-radio-group-05',
+    command: '@spaceui/demo-p-radio-group-05',
   },
   "demo-p-radio-group-06": {
     name: "demo-p-radio-group-06",
@@ -22079,7 +22079,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-radio-group-06',
+    command: '@spaceui/demo-p-radio-group-06',
   },
   "demo-p-radio-group-07": {
     name: "demo-p-radio-group-07",
@@ -22111,7 +22111,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-radio-group-07',
+    command: '@spaceui/demo-p-radio-group-07',
   },
   "demo-p-radio-group-08": {
     name: "demo-p-radio-group-08",
@@ -22143,7 +22143,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-radio-group-08',
+    command: '@spaceui/demo-p-radio-group-08',
   },
   "demo-p-scroll-area-01": {
     name: "demo-p-scroll-area-01",
@@ -22175,7 +22175,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-scroll-area-01',
+    command: '@spaceui/demo-p-scroll-area-01',
   },
   "demo-p-scroll-area-02": {
     name: "demo-p-scroll-area-02",
@@ -22207,7 +22207,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-scroll-area-02',
+    command: '@spaceui/demo-p-scroll-area-02',
   },
   "demo-p-scroll-area-03": {
     name: "demo-p-scroll-area-03",
@@ -22239,7 +22239,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-scroll-area-03',
+    command: '@spaceui/demo-p-scroll-area-03',
   },
   "demo-p-scroll-area-04": {
     name: "demo-p-scroll-area-04",
@@ -22271,7 +22271,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-scroll-area-04',
+    command: '@spaceui/demo-p-scroll-area-04',
   },
   "demo-p-scroll-area-05": {
     name: "demo-p-scroll-area-05",
@@ -22303,7 +22303,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-scroll-area-05',
+    command: '@spaceui/demo-p-scroll-area-05',
   },
   "demo-p-select-01": {
     name: "demo-p-select-01",
@@ -22335,7 +22335,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-select-01',
+    command: '@spaceui/demo-p-select-01',
   },
   "demo-p-select-02": {
     name: "demo-p-select-02",
@@ -22367,7 +22367,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-select-02',
+    command: '@spaceui/demo-p-select-02',
   },
   "demo-p-select-03": {
     name: "demo-p-select-03",
@@ -22399,7 +22399,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-select-03',
+    command: '@spaceui/demo-p-select-03',
   },
   "demo-p-select-04": {
     name: "demo-p-select-04",
@@ -22431,7 +22431,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-select-04',
+    command: '@spaceui/demo-p-select-04',
   },
   "demo-p-select-05": {
     name: "demo-p-select-05",
@@ -22463,7 +22463,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-select-05',
+    command: '@spaceui/demo-p-select-05',
   },
   "demo-p-select-06": {
     name: "demo-p-select-06",
@@ -22495,7 +22495,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-select-06',
+    command: '@spaceui/demo-p-select-06',
   },
   "demo-p-select-07": {
     name: "demo-p-select-07",
@@ -22527,7 +22527,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-select-07',
+    command: '@spaceui/demo-p-select-07',
   },
   "demo-p-select-08": {
     name: "demo-p-select-08",
@@ -22559,7 +22559,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-select-08',
+    command: '@spaceui/demo-p-select-08',
   },
   "demo-p-select-09": {
     name: "demo-p-select-09",
@@ -22591,7 +22591,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-select-09',
+    command: '@spaceui/demo-p-select-09',
   },
   "demo-p-select-10": {
     name: "demo-p-select-10",
@@ -22623,7 +22623,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-select-10',
+    command: '@spaceui/demo-p-select-10',
   },
   "demo-p-select-11": {
     name: "demo-p-select-11",
@@ -22655,7 +22655,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-select-11',
+    command: '@spaceui/demo-p-select-11',
   },
   "demo-p-select-12": {
     name: "demo-p-select-12",
@@ -22687,7 +22687,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-select-12',
+    command: '@spaceui/demo-p-select-12',
   },
   "demo-p-select-13": {
     name: "demo-p-select-13",
@@ -22719,7 +22719,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-select-13',
+    command: '@spaceui/demo-p-select-13',
   },
   "demo-p-select-14": {
     name: "demo-p-select-14",
@@ -22751,7 +22751,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-select-14',
+    command: '@spaceui/demo-p-select-14',
   },
   "demo-p-select-15": {
     name: "demo-p-select-15",
@@ -22783,7 +22783,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-select-15',
+    command: '@spaceui/demo-p-select-15',
   },
   "demo-p-select-16": {
     name: "demo-p-select-16",
@@ -22815,7 +22815,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-select-16',
+    command: '@spaceui/demo-p-select-16',
   },
   "demo-p-select-17": {
     name: "demo-p-select-17",
@@ -22847,7 +22847,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-select-17',
+    command: '@spaceui/demo-p-select-17',
   },
   "demo-p-select-18": {
     name: "demo-p-select-18",
@@ -22879,7 +22879,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-select-18',
+    command: '@spaceui/demo-p-select-18',
   },
   "demo-p-select-19": {
     name: "demo-p-select-19",
@@ -22911,7 +22911,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-select-19',
+    command: '@spaceui/demo-p-select-19',
   },
   "demo-p-select-20": {
     name: "demo-p-select-20",
@@ -22943,7 +22943,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-select-20',
+    command: '@spaceui/demo-p-select-20',
   },
   "demo-p-select-21": {
     name: "demo-p-select-21",
@@ -22975,7 +22975,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-select-21',
+    command: '@spaceui/demo-p-select-21',
   },
   "demo-p-select-22": {
     name: "demo-p-select-22",
@@ -23007,7 +23007,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-select-22',
+    command: '@spaceui/demo-p-select-22',
   },
   "demo-p-separator-01": {
     name: "demo-p-separator-01",
@@ -23039,7 +23039,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-separator-01',
+    command: '@spaceui/demo-p-separator-01',
   },
   "demo-p-sheet-01": {
     name: "demo-p-sheet-01",
@@ -23071,7 +23071,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-sheet-01',
+    command: '@spaceui/demo-p-sheet-01',
   },
   "demo-p-sheet-02": {
     name: "demo-p-sheet-02",
@@ -23103,7 +23103,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-sheet-02',
+    command: '@spaceui/demo-p-sheet-02',
   },
   "demo-p-sheet-03": {
     name: "demo-p-sheet-03",
@@ -23135,7 +23135,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-sheet-03',
+    command: '@spaceui/demo-p-sheet-03',
   },
   "demo-p-sidebar-01": {
     name: "demo-p-sidebar-01",
@@ -23167,7 +23167,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-sidebar-01',
+    command: '@spaceui/demo-p-sidebar-01',
   },
   "demo-p-skeleton-01": {
     name: "demo-p-skeleton-01",
@@ -23199,7 +23199,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-skeleton-01',
+    command: '@spaceui/demo-p-skeleton-01',
   },
   "demo-p-skeleton-02": {
     name: "demo-p-skeleton-02",
@@ -23231,7 +23231,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-skeleton-02',
+    command: '@spaceui/demo-p-skeleton-02',
   },
   "demo-p-slider-01": {
     name: "demo-p-slider-01",
@@ -23263,7 +23263,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-slider-01',
+    command: '@spaceui/demo-p-slider-01',
   },
   "demo-p-slider-02": {
     name: "demo-p-slider-02",
@@ -23295,7 +23295,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-slider-02',
+    command: '@spaceui/demo-p-slider-02',
   },
   "demo-p-slider-03": {
     name: "demo-p-slider-03",
@@ -23327,7 +23327,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-slider-03',
+    command: '@spaceui/demo-p-slider-03',
   },
   "demo-p-slider-04": {
     name: "demo-p-slider-04",
@@ -23359,7 +23359,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-slider-04',
+    command: '@spaceui/demo-p-slider-04',
   },
   "demo-p-slider-05": {
     name: "demo-p-slider-05",
@@ -23391,7 +23391,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-slider-05',
+    command: '@spaceui/demo-p-slider-05',
   },
   "demo-p-slider-06": {
     name: "demo-p-slider-06",
@@ -23423,7 +23423,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-slider-06',
+    command: '@spaceui/demo-p-slider-06',
   },
   "demo-p-slider-07": {
     name: "demo-p-slider-07",
@@ -23455,7 +23455,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-slider-07',
+    command: '@spaceui/demo-p-slider-07',
   },
   "demo-p-slider-08": {
     name: "demo-p-slider-08",
@@ -23487,7 +23487,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-slider-08',
+    command: '@spaceui/demo-p-slider-08',
   },
   "demo-p-slider-09": {
     name: "demo-p-slider-09",
@@ -23519,7 +23519,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-slider-09',
+    command: '@spaceui/demo-p-slider-09',
   },
   "demo-p-slider-10": {
     name: "demo-p-slider-10",
@@ -23551,7 +23551,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-slider-10',
+    command: '@spaceui/demo-p-slider-10',
   },
   "demo-p-slider-11": {
     name: "demo-p-slider-11",
@@ -23583,7 +23583,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-slider-11',
+    command: '@spaceui/demo-p-slider-11',
   },
   "demo-p-slider-12": {
     name: "demo-p-slider-12",
@@ -23615,7 +23615,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-slider-12',
+    command: '@spaceui/demo-p-slider-12',
   },
   "demo-p-slider-13": {
     name: "demo-p-slider-13",
@@ -23647,7 +23647,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-slider-13',
+    command: '@spaceui/demo-p-slider-13',
   },
   "demo-p-slider-14": {
     name: "demo-p-slider-14",
@@ -23679,7 +23679,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-slider-14',
+    command: '@spaceui/demo-p-slider-14',
   },
   "demo-p-slider-15": {
     name: "demo-p-slider-15",
@@ -23711,7 +23711,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-slider-15',
+    command: '@spaceui/demo-p-slider-15',
   },
   "demo-p-slider-16": {
     name: "demo-p-slider-16",
@@ -23743,7 +23743,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-slider-16',
+    command: '@spaceui/demo-p-slider-16',
   },
   "demo-p-slider-17": {
     name: "demo-p-slider-17",
@@ -23775,7 +23775,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-slider-17',
+    command: '@spaceui/demo-p-slider-17',
   },
   "demo-p-slider-18": {
     name: "demo-p-slider-18",
@@ -23807,7 +23807,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-slider-18',
+    command: '@spaceui/demo-p-slider-18',
   },
   "demo-p-slider-19": {
     name: "demo-p-slider-19",
@@ -23839,7 +23839,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-slider-19',
+    command: '@spaceui/demo-p-slider-19',
   },
   "demo-p-slider-20": {
     name: "demo-p-slider-20",
@@ -23871,7 +23871,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-slider-20',
+    command: '@spaceui/demo-p-slider-20',
   },
   "demo-p-slider-21": {
     name: "demo-p-slider-21",
@@ -23903,7 +23903,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-slider-21',
+    command: '@spaceui/demo-p-slider-21',
   },
   "demo-p-slider-22": {
     name: "demo-p-slider-22",
@@ -23935,7 +23935,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-slider-22',
+    command: '@spaceui/demo-p-slider-22',
   },
   "demo-p-slider-23": {
     name: "demo-p-slider-23",
@@ -23967,7 +23967,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-slider-23',
+    command: '@spaceui/demo-p-slider-23',
   },
   "demo-p-spinner-01": {
     name: "demo-p-spinner-01",
@@ -23999,7 +23999,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-spinner-01',
+    command: '@spaceui/demo-p-spinner-01',
   },
   "demo-p-switch-01": {
     name: "demo-p-switch-01",
@@ -24031,7 +24031,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-switch-01',
+    command: '@spaceui/demo-p-switch-01',
   },
   "demo-p-switch-02": {
     name: "demo-p-switch-02",
@@ -24063,7 +24063,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-switch-02',
+    command: '@spaceui/demo-p-switch-02',
   },
   "demo-p-switch-03": {
     name: "demo-p-switch-03",
@@ -24095,7 +24095,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-switch-03',
+    command: '@spaceui/demo-p-switch-03',
   },
   "demo-p-switch-04": {
     name: "demo-p-switch-04",
@@ -24127,7 +24127,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-switch-04',
+    command: '@spaceui/demo-p-switch-04',
   },
   "demo-p-switch-05": {
     name: "demo-p-switch-05",
@@ -24159,7 +24159,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-switch-05',
+    command: '@spaceui/demo-p-switch-05',
   },
   "demo-p-switch-06": {
     name: "demo-p-switch-06",
@@ -24191,7 +24191,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-switch-06',
+    command: '@spaceui/demo-p-switch-06',
   },
   "demo-p-switch-07": {
     name: "demo-p-switch-07",
@@ -24223,7 +24223,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-switch-07',
+    command: '@spaceui/demo-p-switch-07',
   },
   "demo-p-switch-08": {
     name: "demo-p-switch-08",
@@ -24255,7 +24255,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-switch-08',
+    command: '@spaceui/demo-p-switch-08',
   },
   "demo-p-table-01": {
     name: "demo-p-table-01",
@@ -24287,7 +24287,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-table-01',
+    command: '@spaceui/demo-p-table-01',
   },
   "demo-p-table-02": {
     name: "demo-p-table-02",
@@ -24319,7 +24319,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-table-02',
+    command: '@spaceui/demo-p-table-02',
   },
   "demo-p-table-03": {
     name: "demo-p-table-03",
@@ -24351,7 +24351,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-table-03',
+    command: '@spaceui/demo-p-table-03',
   },
   "demo-p-table-04": {
     name: "demo-p-table-04",
@@ -24383,7 +24383,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-table-04',
+    command: '@spaceui/demo-p-table-04',
   },
   "demo-p-table-05": {
     name: "demo-p-table-05",
@@ -24415,7 +24415,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-table-05',
+    command: '@spaceui/demo-p-table-05',
   },
   "demo-p-table-06": {
     name: "demo-p-table-06",
@@ -24447,7 +24447,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-table-06',
+    command: '@spaceui/demo-p-table-06',
   },
   "demo-p-table-07": {
     name: "demo-p-table-07",
@@ -24479,7 +24479,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-table-07',
+    command: '@spaceui/demo-p-table-07',
   },
   "demo-p-table-08": {
     name: "demo-p-table-08",
@@ -24511,7 +24511,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-table-08',
+    command: '@spaceui/demo-p-table-08',
   },
   "demo-p-table-09": {
     name: "demo-p-table-09",
@@ -24543,7 +24543,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-table-09',
+    command: '@spaceui/demo-p-table-09',
   },
   "demo-p-tabs-01": {
     name: "demo-p-tabs-01",
@@ -24575,7 +24575,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-tabs-01',
+    command: '@spaceui/demo-p-tabs-01',
   },
   "demo-p-tabs-02": {
     name: "demo-p-tabs-02",
@@ -24607,7 +24607,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-tabs-02',
+    command: '@spaceui/demo-p-tabs-02',
   },
   "demo-p-tabs-03": {
     name: "demo-p-tabs-03",
@@ -24639,7 +24639,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-tabs-03',
+    command: '@spaceui/demo-p-tabs-03',
   },
   "demo-p-tabs-04": {
     name: "demo-p-tabs-04",
@@ -24671,7 +24671,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-tabs-04',
+    command: '@spaceui/demo-p-tabs-04',
   },
   "demo-p-tabs-05": {
     name: "demo-p-tabs-05",
@@ -24703,7 +24703,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-tabs-05',
+    command: '@spaceui/demo-p-tabs-05',
   },
   "demo-p-tabs-06": {
     name: "demo-p-tabs-06",
@@ -24735,7 +24735,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-tabs-06',
+    command: '@spaceui/demo-p-tabs-06',
   },
   "demo-p-tabs-07": {
     name: "demo-p-tabs-07",
@@ -24767,7 +24767,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-tabs-07',
+    command: '@spaceui/demo-p-tabs-07',
   },
   "demo-p-tabs-08": {
     name: "demo-p-tabs-08",
@@ -24799,7 +24799,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-tabs-08',
+    command: '@spaceui/demo-p-tabs-08',
   },
   "demo-p-tabs-09": {
     name: "demo-p-tabs-09",
@@ -24831,7 +24831,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-tabs-09',
+    command: '@spaceui/demo-p-tabs-09',
   },
   "demo-p-tabs-10": {
     name: "demo-p-tabs-10",
@@ -24863,7 +24863,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-tabs-10',
+    command: '@spaceui/demo-p-tabs-10',
   },
   "demo-p-tabs-11": {
     name: "demo-p-tabs-11",
@@ -24895,7 +24895,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-tabs-11',
+    command: '@spaceui/demo-p-tabs-11',
   },
   "demo-p-tabs-12": {
     name: "demo-p-tabs-12",
@@ -24927,7 +24927,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-tabs-12',
+    command: '@spaceui/demo-p-tabs-12',
   },
   "demo-p-tabs-13": {
     name: "demo-p-tabs-13",
@@ -24959,7 +24959,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-tabs-13',
+    command: '@spaceui/demo-p-tabs-13',
   },
   "demo-p-textarea-01": {
     name: "demo-p-textarea-01",
@@ -24991,7 +24991,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-textarea-01',
+    command: '@spaceui/demo-p-textarea-01',
   },
   "demo-p-textarea-02": {
     name: "demo-p-textarea-02",
@@ -25023,7 +25023,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-textarea-02',
+    command: '@spaceui/demo-p-textarea-02',
   },
   "demo-p-textarea-03": {
     name: "demo-p-textarea-03",
@@ -25055,7 +25055,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-textarea-03',
+    command: '@spaceui/demo-p-textarea-03',
   },
   "demo-p-textarea-04": {
     name: "demo-p-textarea-04",
@@ -25087,7 +25087,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-textarea-04',
+    command: '@spaceui/demo-p-textarea-04',
   },
   "demo-p-textarea-05": {
     name: "demo-p-textarea-05",
@@ -25119,7 +25119,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-textarea-05',
+    command: '@spaceui/demo-p-textarea-05',
   },
   "demo-p-textarea-06": {
     name: "demo-p-textarea-06",
@@ -25151,7 +25151,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-textarea-06',
+    command: '@spaceui/demo-p-textarea-06',
   },
   "demo-p-textarea-07": {
     name: "demo-p-textarea-07",
@@ -25183,7 +25183,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-textarea-07',
+    command: '@spaceui/demo-p-textarea-07',
   },
   "demo-p-textarea-08": {
     name: "demo-p-textarea-08",
@@ -25215,7 +25215,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-textarea-08',
+    command: '@spaceui/demo-p-textarea-08',
   },
   "demo-p-textarea-09": {
     name: "demo-p-textarea-09",
@@ -25247,7 +25247,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-textarea-09',
+    command: '@spaceui/demo-p-textarea-09',
   },
   "demo-p-textarea-10": {
     name: "demo-p-textarea-10",
@@ -25279,7 +25279,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-textarea-10',
+    command: '@spaceui/demo-p-textarea-10',
   },
   "demo-p-textarea-11": {
     name: "demo-p-textarea-11",
@@ -25311,7 +25311,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-textarea-11',
+    command: '@spaceui/demo-p-textarea-11',
   },
   "demo-p-textarea-12": {
     name: "demo-p-textarea-12",
@@ -25343,7 +25343,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-textarea-12',
+    command: '@spaceui/demo-p-textarea-12',
   },
   "demo-p-textarea-13": {
     name: "demo-p-textarea-13",
@@ -25375,7 +25375,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-textarea-13',
+    command: '@spaceui/demo-p-textarea-13',
   },
   "demo-p-textarea-14": {
     name: "demo-p-textarea-14",
@@ -25407,7 +25407,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-textarea-14',
+    command: '@spaceui/demo-p-textarea-14',
   },
   "demo-p-toast-01": {
     name: "demo-p-toast-01",
@@ -25439,7 +25439,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-toast-01',
+    command: '@spaceui/demo-p-toast-01',
   },
   "demo-p-toast-02": {
     name: "demo-p-toast-02",
@@ -25471,7 +25471,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-toast-02',
+    command: '@spaceui/demo-p-toast-02',
   },
   "demo-p-toast-03": {
     name: "demo-p-toast-03",
@@ -25503,7 +25503,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-toast-03',
+    command: '@spaceui/demo-p-toast-03',
   },
   "demo-p-toast-04": {
     name: "demo-p-toast-04",
@@ -25535,7 +25535,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-toast-04',
+    command: '@spaceui/demo-p-toast-04',
   },
   "demo-p-toast-05": {
     name: "demo-p-toast-05",
@@ -25567,7 +25567,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-toast-05',
+    command: '@spaceui/demo-p-toast-05',
   },
   "demo-p-toast-06": {
     name: "demo-p-toast-06",
@@ -25599,7 +25599,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-toast-06',
+    command: '@spaceui/demo-p-toast-06',
   },
   "demo-p-toast-07": {
     name: "demo-p-toast-07",
@@ -25631,7 +25631,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-toast-07',
+    command: '@spaceui/demo-p-toast-07',
   },
   "demo-p-toast-08": {
     name: "demo-p-toast-08",
@@ -25663,7 +25663,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-toast-08',
+    command: '@spaceui/demo-p-toast-08',
   },
   "demo-p-toast-09": {
     name: "demo-p-toast-09",
@@ -25695,7 +25695,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-toast-09',
+    command: '@spaceui/demo-p-toast-09',
   },
   "demo-p-toggle-01": {
     name: "demo-p-toggle-01",
@@ -25727,7 +25727,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-toggle-01',
+    command: '@spaceui/demo-p-toggle-01',
   },
   "demo-p-toggle-02": {
     name: "demo-p-toggle-02",
@@ -25759,7 +25759,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-toggle-02',
+    command: '@spaceui/demo-p-toggle-02',
   },
   "demo-p-toggle-03": {
     name: "demo-p-toggle-03",
@@ -25791,7 +25791,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-toggle-03',
+    command: '@spaceui/demo-p-toggle-03',
   },
   "demo-p-toggle-04": {
     name: "demo-p-toggle-04",
@@ -25823,7 +25823,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-toggle-04',
+    command: '@spaceui/demo-p-toggle-04',
   },
   "demo-p-toggle-05": {
     name: "demo-p-toggle-05",
@@ -25855,7 +25855,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-toggle-05',
+    command: '@spaceui/demo-p-toggle-05',
   },
   "demo-p-toggle-06": {
     name: "demo-p-toggle-06",
@@ -25887,7 +25887,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-toggle-06',
+    command: '@spaceui/demo-p-toggle-06',
   },
   "demo-p-toggle-group-01": {
     name: "demo-p-toggle-group-01",
@@ -25919,7 +25919,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-toggle-group-01',
+    command: '@spaceui/demo-p-toggle-group-01',
   },
   "demo-p-toggle-group-02": {
     name: "demo-p-toggle-group-02",
@@ -25951,7 +25951,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-toggle-group-02',
+    command: '@spaceui/demo-p-toggle-group-02',
   },
   "demo-p-toggle-group-03": {
     name: "demo-p-toggle-group-03",
@@ -25983,7 +25983,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-toggle-group-03',
+    command: '@spaceui/demo-p-toggle-group-03',
   },
   "demo-p-toggle-group-04": {
     name: "demo-p-toggle-group-04",
@@ -26015,7 +26015,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-toggle-group-04',
+    command: '@spaceui/demo-p-toggle-group-04',
   },
   "demo-p-toggle-group-05": {
     name: "demo-p-toggle-group-05",
@@ -26047,7 +26047,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-toggle-group-05',
+    command: '@spaceui/demo-p-toggle-group-05',
   },
   "demo-p-toggle-group-06": {
     name: "demo-p-toggle-group-06",
@@ -26079,7 +26079,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-toggle-group-06',
+    command: '@spaceui/demo-p-toggle-group-06',
   },
   "demo-p-toggle-group-07": {
     name: "demo-p-toggle-group-07",
@@ -26111,7 +26111,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-toggle-group-07',
+    command: '@spaceui/demo-p-toggle-group-07',
   },
   "demo-p-toolbar-01": {
     name: "demo-p-toolbar-01",
@@ -26143,7 +26143,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-toolbar-01',
+    command: '@spaceui/demo-p-toolbar-01',
   },
   "demo-p-tooltip-01": {
     name: "demo-p-tooltip-01",
@@ -26175,7 +26175,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-tooltip-01',
+    command: '@spaceui/demo-p-tooltip-01',
   },
   "demo-p-tooltip-02": {
     name: "demo-p-tooltip-02",
@@ -26207,7 +26207,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-tooltip-02',
+    command: '@spaceui/demo-p-tooltip-02',
   },
   "demo-p-tooltip-03": {
     name: "demo-p-tooltip-03",
@@ -26239,7 +26239,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-tooltip-03',
+    command: '@spaceui/demo-p-tooltip-03',
   },
   "demo-p-tooltip-04": {
     name: "demo-p-tooltip-04",
@@ -26271,7 +26271,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/demo-p-tooltip-04',
+    command: '@spaceui/demo-p-tooltip-04',
   },
   "hooks-animation-use-auto-height": {
     name: "hooks-animation-use-auto-height",
@@ -26303,7 +26303,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/hooks-animation-use-auto-height',
+    command: '@spaceui/hooks-animation-use-auto-height',
   },
   "hooks-animation-use-controlled-state": {
     name: "hooks-animation-use-controlled-state",
@@ -26335,7 +26335,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/hooks-animation-use-controlled-state',
+    command: '@spaceui/hooks-animation-use-controlled-state',
   },
   "hooks-animation-use-data-state": {
     name: "hooks-animation-use-data-state",
@@ -26367,7 +26367,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/hooks-animation-use-data-state',
+    command: '@spaceui/hooks-animation-use-data-state',
   },
   "hooks-animation-use-in-view": {
     name: "hooks-animation-use-in-view",
@@ -26399,7 +26399,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/hooks-animation-use-in-view',
+    command: '@spaceui/hooks-animation-use-in-view',
   },
   "hooks-animation-use-motion-value-state": {
     name: "hooks-animation-use-motion-value-state",
@@ -26431,7 +26431,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/hooks-animation-use-motion-value-state',
+    command: '@spaceui/hooks-animation-use-motion-value-state',
   },
   "hooks-browser-use-battery-status": {
     name: "hooks-browser-use-battery-status",
@@ -26463,7 +26463,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/hooks-browser-use-battery-status',
+    command: '@spaceui/hooks-browser-use-battery-status',
   },
   "hooks-browser-use-clipboard": {
     name: "hooks-browser-use-clipboard",
@@ -26495,7 +26495,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/hooks-browser-use-clipboard',
+    command: '@spaceui/hooks-browser-use-clipboard',
   },
   "hooks-browser-use-cookie": {
     name: "hooks-browser-use-cookie",
@@ -26527,7 +26527,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/hooks-browser-use-cookie',
+    command: '@spaceui/hooks-browser-use-cookie',
   },
   "hooks-browser-use-cookie-listener": {
     name: "hooks-browser-use-cookie-listener",
@@ -26559,7 +26559,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/hooks-browser-use-cookie-listener',
+    command: '@spaceui/hooks-browser-use-cookie-listener',
   },
   "hooks-browser-use-device-os": {
     name: "hooks-browser-use-device-os",
@@ -26591,7 +26591,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/hooks-browser-use-device-os',
+    command: '@spaceui/hooks-browser-use-device-os',
   },
   "hooks-browser-use-favicon": {
     name: "hooks-browser-use-favicon",
@@ -26623,7 +26623,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/hooks-browser-use-favicon',
+    command: '@spaceui/hooks-browser-use-favicon',
   },
   "hooks-browser-use-fullscreen": {
     name: "hooks-browser-use-fullscreen",
@@ -26655,7 +26655,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/hooks-browser-use-fullscreen',
+    command: '@spaceui/hooks-browser-use-fullscreen',
   },
   "hooks-browser-use-is-mac": {
     name: "hooks-browser-use-is-mac",
@@ -26687,7 +26687,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/hooks-browser-use-is-mac',
+    command: '@spaceui/hooks-browser-use-is-mac',
   },
   "hooks-browser-use-local-storage": {
     name: "hooks-browser-use-local-storage",
@@ -26719,7 +26719,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/hooks-browser-use-local-storage',
+    command: '@spaceui/hooks-browser-use-local-storage',
   },
   "hooks-browser-use-media-query": {
     name: "hooks-browser-use-media-query",
@@ -26751,7 +26751,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/hooks-browser-use-media-query',
+    command: '@spaceui/hooks-browser-use-media-query',
   },
   "hooks-browser-use-network": {
     name: "hooks-browser-use-network",
@@ -26783,7 +26783,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/hooks-browser-use-network',
+    command: '@spaceui/hooks-browser-use-network',
   },
   "hooks-browser-use-orientation": {
     name: "hooks-browser-use-orientation",
@@ -26815,7 +26815,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/hooks-browser-use-orientation',
+    command: '@spaceui/hooks-browser-use-orientation',
   },
   "hooks-browser-use-prefers-theme": {
     name: "hooks-browser-use-prefers-theme",
@@ -26847,7 +26847,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/hooks-browser-use-prefers-theme',
+    command: '@spaceui/hooks-browser-use-prefers-theme',
   },
   "hooks-browser-use-script": {
     name: "hooks-browser-use-script",
@@ -26879,7 +26879,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/hooks-browser-use-script',
+    command: '@spaceui/hooks-browser-use-script',
   },
   "hooks-browser-use-session-storage": {
     name: "hooks-browser-use-session-storage",
@@ -26911,7 +26911,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/hooks-browser-use-session-storage',
+    command: '@spaceui/hooks-browser-use-session-storage',
   },
   "hooks-browser-use-share": {
     name: "hooks-browser-use-share",
@@ -26943,7 +26943,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/hooks-browser-use-share',
+    command: '@spaceui/hooks-browser-use-share',
   },
   "hooks-browser-use-tab-notification": {
     name: "hooks-browser-use-tab-notification",
@@ -26975,7 +26975,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/hooks-browser-use-tab-notification',
+    command: '@spaceui/hooks-browser-use-tab-notification',
   },
   "hooks-browser-use-title": {
     name: "hooks-browser-use-title",
@@ -27007,7 +27007,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/hooks-browser-use-title',
+    command: '@spaceui/hooks-browser-use-title',
   },
   "hooks-components-class": {
     name: "hooks-components-class",
@@ -27039,7 +27039,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/hooks-components-class',
+    command: '@spaceui/hooks-components-class',
   },
   "hooks-components-for": {
     name: "hooks-components-for",
@@ -27071,7 +27071,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/hooks-components-for',
+    command: '@spaceui/hooks-components-for',
   },
   "hooks-components-if": {
     name: "hooks-components-if",
@@ -27103,7 +27103,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/hooks-components-if',
+    command: '@spaceui/hooks-components-if',
   },
   "hooks-components-image": {
     name: "hooks-components-image",
@@ -27135,7 +27135,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/hooks-components-image',
+    command: '@spaceui/hooks-components-image',
   },
   "hooks-components-in-view": {
     name: "hooks-components-in-view",
@@ -27167,7 +27167,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/hooks-components-in-view',
+    command: '@spaceui/hooks-components-in-view',
   },
   "hooks-components-render-after": {
     name: "hooks-components-render-after",
@@ -27199,7 +27199,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/hooks-components-render-after',
+    command: '@spaceui/hooks-components-render-after',
   },
   "hooks-components-show": {
     name: "hooks-components-show",
@@ -27231,7 +27231,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/hooks-components-show',
+    command: '@spaceui/hooks-components-show',
   },
   "hooks-components-switch": {
     name: "hooks-components-switch",
@@ -27263,7 +27263,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/hooks-components-switch',
+    command: '@spaceui/hooks-components-switch',
   },
   "hooks-dom-use-click-outside": {
     name: "hooks-dom-use-click-outside",
@@ -27295,7 +27295,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/hooks-dom-use-click-outside',
+    command: '@spaceui/hooks-dom-use-click-outside',
   },
   "hooks-dom-use-event-listener": {
     name: "hooks-dom-use-event-listener",
@@ -27327,7 +27327,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/hooks-dom-use-event-listener',
+    command: '@spaceui/hooks-dom-use-event-listener',
   },
   "hooks-dom-use-hover": {
     name: "hooks-dom-use-hover",
@@ -27359,7 +27359,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/hooks-dom-use-hover',
+    command: '@spaceui/hooks-dom-use-hover',
   },
   "hooks-dom-use-intersection-observer": {
     name: "hooks-dom-use-intersection-observer",
@@ -27391,7 +27391,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/hooks-dom-use-intersection-observer',
+    command: '@spaceui/hooks-dom-use-intersection-observer',
   },
   "hooks-dom-use-key-press": {
     name: "hooks-dom-use-key-press",
@@ -27423,7 +27423,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/hooks-dom-use-key-press',
+    command: '@spaceui/hooks-dom-use-key-press',
   },
   "hooks-dom-use-lock-body-scroll": {
     name: "hooks-dom-use-lock-body-scroll",
@@ -27455,7 +27455,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/hooks-dom-use-lock-body-scroll',
+    command: '@spaceui/hooks-dom-use-lock-body-scroll',
   },
   "hooks-dom-use-mouse-position": {
     name: "hooks-dom-use-mouse-position",
@@ -27487,7 +27487,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/hooks-dom-use-mouse-position',
+    command: '@spaceui/hooks-dom-use-mouse-position',
   },
   "hooks-dom-use-scroll-device": {
     name: "hooks-dom-use-scroll-device",
@@ -27519,7 +27519,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/hooks-dom-use-scroll-device',
+    command: '@spaceui/hooks-dom-use-scroll-device',
   },
   "hooks-dom-use-scroll-position": {
     name: "hooks-dom-use-scroll-position",
@@ -27551,7 +27551,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/hooks-dom-use-scroll-position',
+    command: '@spaceui/hooks-dom-use-scroll-position',
   },
   "hooks-dom-use-scroll-to": {
     name: "hooks-dom-use-scroll-to",
@@ -27583,7 +27583,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/hooks-dom-use-scroll-to',
+    command: '@spaceui/hooks-dom-use-scroll-to',
   },
   "hooks-dom-use-size": {
     name: "hooks-dom-use-size",
@@ -27615,7 +27615,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/hooks-dom-use-size',
+    command: '@spaceui/hooks-dom-use-size',
   },
   "hooks-dom-use-window-size": {
     name: "hooks-dom-use-window-size",
@@ -27647,7 +27647,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/hooks-dom-use-window-size',
+    command: '@spaceui/hooks-dom-use-window-size',
   },
   "hooks-form-use-character-limit": {
     name: "hooks-form-use-character-limit",
@@ -27679,7 +27679,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/hooks-form-use-character-limit',
+    command: '@spaceui/hooks-form-use-character-limit',
   },
   "hooks-form-use-file-upload": {
     name: "hooks-form-use-file-upload",
@@ -27711,7 +27711,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/hooks-form-use-file-upload',
+    command: '@spaceui/hooks-form-use-file-upload',
   },
   "hooks-form-use-input-value": {
     name: "hooks-form-use-input-value",
@@ -27743,7 +27743,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/hooks-form-use-input-value',
+    command: '@spaceui/hooks-form-use-input-value',
   },
   "hooks-form-use-load-more": {
     name: "hooks-form-use-load-more",
@@ -27775,7 +27775,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/hooks-form-use-load-more',
+    command: '@spaceui/hooks-form-use-load-more',
   },
   "hooks-form-use-map": {
     name: "hooks-form-use-map",
@@ -27807,7 +27807,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/hooks-form-use-map',
+    command: '@spaceui/hooks-form-use-map',
   },
   "hooks-form-use-mutation": {
     name: "hooks-form-use-mutation",
@@ -27839,7 +27839,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/hooks-form-use-mutation',
+    command: '@spaceui/hooks-form-use-mutation',
   },
   "hooks-form-use-pagination": {
     name: "hooks-form-use-pagination",
@@ -27871,7 +27871,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/hooks-form-use-pagination',
+    command: '@spaceui/hooks-form-use-pagination',
   },
   "hooks-form-use-parse-markdown": {
     name: "hooks-form-use-parse-markdown",
@@ -27903,7 +27903,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/hooks-form-use-parse-markdown',
+    command: '@spaceui/hooks-form-use-parse-markdown',
   },
   "hooks-form-use-reading-time": {
     name: "hooks-form-use-reading-time",
@@ -27935,7 +27935,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/hooks-form-use-reading-time',
+    command: '@spaceui/hooks-form-use-reading-time',
   },
   "hooks-form-use-sanitize-content": {
     name: "hooks-form-use-sanitize-content",
@@ -27967,7 +27967,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/hooks-form-use-sanitize-content',
+    command: '@spaceui/hooks-form-use-sanitize-content',
   },
   "hooks-lifecycle-use-confirm-exit": {
     name: "hooks-lifecycle-use-confirm-exit",
@@ -27999,7 +27999,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/hooks-lifecycle-use-confirm-exit',
+    command: '@spaceui/hooks-lifecycle-use-confirm-exit',
   },
   "hooks-lifecycle-use-debounce": {
     name: "hooks-lifecycle-use-debounce",
@@ -28031,7 +28031,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/hooks-lifecycle-use-debounce',
+    command: '@spaceui/hooks-lifecycle-use-debounce',
   },
   "hooks-lifecycle-use-event-callback": {
     name: "hooks-lifecycle-use-event-callback",
@@ -28063,7 +28063,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/hooks-lifecycle-use-event-callback',
+    command: '@spaceui/hooks-lifecycle-use-event-callback',
   },
   "hooks-lifecycle-use-first-render": {
     name: "hooks-lifecycle-use-first-render",
@@ -28095,7 +28095,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/hooks-lifecycle-use-first-render',
+    command: '@spaceui/hooks-lifecycle-use-first-render',
   },
   "hooks-lifecycle-use-first-visit": {
     name: "hooks-lifecycle-use-first-visit",
@@ -28127,7 +28127,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/hooks-lifecycle-use-first-visit',
+    command: '@spaceui/hooks-lifecycle-use-first-visit',
   },
   "hooks-lifecycle-use-hold": {
     name: "hooks-lifecycle-use-hold",
@@ -28159,7 +28159,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/hooks-lifecycle-use-hold',
+    command: '@spaceui/hooks-lifecycle-use-hold',
   },
   "hooks-lifecycle-use-idle": {
     name: "hooks-lifecycle-use-idle",
@@ -28191,7 +28191,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/hooks-lifecycle-use-idle',
+    command: '@spaceui/hooks-lifecycle-use-idle',
   },
   "hooks-lifecycle-use-interval": {
     name: "hooks-lifecycle-use-interval",
@@ -28223,7 +28223,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/hooks-lifecycle-use-interval',
+    command: '@spaceui/hooks-lifecycle-use-interval',
   },
   "hooks-lifecycle-use-is-mounted": {
     name: "hooks-lifecycle-use-is-mounted",
@@ -28255,7 +28255,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/hooks-lifecycle-use-is-mounted',
+    command: '@spaceui/hooks-lifecycle-use-is-mounted',
   },
   "hooks-lifecycle-use-isomorphic-layout-effect": {
     name: "hooks-lifecycle-use-isomorphic-layout-effect",
@@ -28287,7 +28287,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/hooks-lifecycle-use-isomorphic-layout-effect',
+    command: '@spaceui/hooks-lifecycle-use-isomorphic-layout-effect',
   },
   "hooks-lifecycle-use-leave-detection": {
     name: "hooks-lifecycle-use-leave-detection",
@@ -28319,7 +28319,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/hooks-lifecycle-use-leave-detection',
+    command: '@spaceui/hooks-lifecycle-use-leave-detection',
   },
   "hooks-lifecycle-use-performance-mode": {
     name: "hooks-lifecycle-use-performance-mode",
@@ -28351,7 +28351,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/hooks-lifecycle-use-performance-mode',
+    command: '@spaceui/hooks-lifecycle-use-performance-mode',
   },
   "hooks-lifecycle-use-single-effect": {
     name: "hooks-lifecycle-use-single-effect",
@@ -28383,7 +28383,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/hooks-lifecycle-use-single-effect',
+    command: '@spaceui/hooks-lifecycle-use-single-effect',
   },
   "hooks-lifecycle-use-toggle": {
     name: "hooks-lifecycle-use-toggle",
@@ -28415,7 +28415,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/hooks-lifecycle-use-toggle',
+    command: '@spaceui/hooks-lifecycle-use-toggle',
   },
   "hooks-lifecycle-use-update-effect": {
     name: "hooks-lifecycle-use-update-effect",
@@ -28447,7 +28447,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/hooks-lifecycle-use-update-effect',
+    command: '@spaceui/hooks-lifecycle-use-update-effect',
   },
   "hooks-lifecycle-use-urgent-update": {
     name: "hooks-lifecycle-use-urgent-update",
@@ -28479,7 +28479,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/hooks-lifecycle-use-urgent-update',
+    command: '@spaceui/hooks-lifecycle-use-urgent-update',
   },
   "lib-base-ui": {
     name: "lib-base-ui",
@@ -28526,7 +28526,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/lib-base-ui',
+    command: '@spaceui/lib-base-ui',
   },
   "lib-base-ui-csp-provider": {
     name: "lib-base-ui-csp-provider",
@@ -28558,7 +28558,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/lib-base-ui-csp-provider',
+    command: '@spaceui/lib-base-ui-csp-provider',
   },
   "lib-base-ui-direction-provider": {
     name: "lib-base-ui-direction-provider",
@@ -28590,7 +28590,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/lib-base-ui-direction-provider',
+    command: '@spaceui/lib-base-ui-direction-provider',
   },
   "lib-base-ui-merge-props": {
     name: "lib-base-ui-merge-props",
@@ -28622,7 +28622,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/lib-base-ui-merge-props',
+    command: '@spaceui/lib-base-ui-merge-props',
   },
   "lib-base-ui-use-render": {
     name: "lib-base-ui-use-render",
@@ -28654,7 +28654,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/lib-base-ui-use-render',
+    command: '@spaceui/lib-base-ui-use-render',
   },
   "lib-colors-neutral": {
     name: "lib-colors-neutral",
@@ -28666,7 +28666,7 @@ export const index: Record<string, any> = {
     files: [],
     keywords: [],
     component: null,
-    command: '@usespaceui/lib-colors-neutral',
+    command: '@spaceui/lib-colors-neutral',
   },
   "lib-font-heading": {
     name: "lib-font-heading",
@@ -28678,7 +28678,7 @@ export const index: Record<string, any> = {
     files: [],
     keywords: [],
     component: null,
-    command: '@usespaceui/lib-font-heading',
+    command: '@spaceui/lib-font-heading',
   },
   "lib-font-mono": {
     name: "lib-font-mono",
@@ -28690,7 +28690,7 @@ export const index: Record<string, any> = {
     files: [],
     keywords: [],
     component: null,
-    command: '@usespaceui/lib-font-mono',
+    command: '@spaceui/lib-font-mono',
   },
   "lib-font-open-runde": {
     name: "lib-font-open-runde",
@@ -28723,7 +28723,7 @@ export const index: Record<string, any> = {
 ],
     keywords: [],
     component: null,
-    command: '@usespaceui/lib-font-open-runde',
+    command: '@spaceui/lib-font-open-runde',
   },
   "lib-font-sans": {
     name: "lib-font-sans",
@@ -28735,7 +28735,7 @@ export const index: Record<string, any> = {
     files: [],
     keywords: [],
     component: null,
-    command: '@usespaceui/lib-font-sans',
+    command: '@spaceui/lib-font-sans',
   },
   "lib-get-strict-context": {
     name: "lib-get-strict-context",
@@ -28767,7 +28767,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/lib-get-strict-context',
+    command: '@spaceui/lib-get-strict-context',
   },
   "lib-gpu-runtime": {
     name: "lib-gpu-runtime",
@@ -28799,7 +28799,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/lib-gpu-runtime',
+    command: '@spaceui/lib-gpu-runtime',
   },
   "lib-segmented-control": {
     name: "lib-segmented-control",
@@ -28831,11 +28831,11 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/lib-segmented-control',
+    command: '@spaceui/lib-segmented-control',
   },
   "lib-style": {
     name: "lib-style",
-    description: "Complete Space UI theme: colors, sidebar, fonts, and base styles. Use with `npx shadcn init @usespaceui/lib-style` for full project setup.",
+    description: "Complete Space UI theme: colors, sidebar, fonts, and base styles. Use with `npx shadcn init @spaceui/lib-style` for full project setup.",
     type: "registry:style",
     dependencies: ["@base-ui/react","class-variance-authority","lucide-react"],
     devDependencies: ["tw-animate-css"],
@@ -28843,7 +28843,7 @@ export const index: Record<string, any> = {
     files: [],
     keywords: [],
     component: null,
-    command: '@usespaceui/lib-style',
+    command: '@spaceui/lib-style',
   },
   "lib-utils": {
     name: "lib-utils",
@@ -28875,7 +28875,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/lib-utils',
+    command: '@spaceui/lib-utils',
   },
   "primitives-accordion": {
     name: "primitives-accordion",
@@ -28907,7 +28907,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/primitives-accordion',
+    command: '@spaceui/primitives-accordion',
   },
   "primitives-alert": {
     name: "primitives-alert",
@@ -28939,7 +28939,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/primitives-alert',
+    command: '@spaceui/primitives-alert',
   },
   "primitives-alert-dialog": {
     name: "primitives-alert-dialog",
@@ -28971,7 +28971,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/primitives-alert-dialog',
+    command: '@spaceui/primitives-alert-dialog',
   },
   "primitives-aspect-ratio": {
     name: "primitives-aspect-ratio",
@@ -29003,7 +29003,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/primitives-aspect-ratio',
+    command: '@spaceui/primitives-aspect-ratio',
   },
   "primitives-autocomplete": {
     name: "primitives-autocomplete",
@@ -29035,7 +29035,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/primitives-autocomplete',
+    command: '@spaceui/primitives-autocomplete',
   },
   "primitives-avatar": {
     name: "primitives-avatar",
@@ -29067,7 +29067,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/primitives-avatar',
+    command: '@spaceui/primitives-avatar',
   },
   "primitives-badge": {
     name: "primitives-badge",
@@ -29099,7 +29099,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/primitives-badge',
+    command: '@spaceui/primitives-badge',
   },
   "primitives-breadcrumb": {
     name: "primitives-breadcrumb",
@@ -29131,7 +29131,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/primitives-breadcrumb',
+    command: '@spaceui/primitives-breadcrumb',
   },
   "primitives-button": {
     name: "primitives-button",
@@ -29163,7 +29163,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/primitives-button',
+    command: '@spaceui/primitives-button',
   },
   "primitives-calendar": {
     name: "primitives-calendar",
@@ -29195,7 +29195,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/primitives-calendar',
+    command: '@spaceui/primitives-calendar',
   },
   "primitives-card": {
     name: "primitives-card",
@@ -29227,7 +29227,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/primitives-card',
+    command: '@spaceui/primitives-card',
   },
   "primitives-checkbox": {
     name: "primitives-checkbox",
@@ -29259,7 +29259,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/primitives-checkbox',
+    command: '@spaceui/primitives-checkbox',
   },
   "primitives-checkbox-group": {
     name: "primitives-checkbox-group",
@@ -29291,7 +29291,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/primitives-checkbox-group',
+    command: '@spaceui/primitives-checkbox-group',
   },
   "primitives-collapsible": {
     name: "primitives-collapsible",
@@ -29323,7 +29323,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/primitives-collapsible',
+    command: '@spaceui/primitives-collapsible',
   },
   "primitives-combobox": {
     name: "primitives-combobox",
@@ -29355,7 +29355,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/primitives-combobox',
+    command: '@spaceui/primitives-combobox',
   },
   "primitives-command": {
     name: "primitives-command",
@@ -29387,7 +29387,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/primitives-command',
+    command: '@spaceui/primitives-command',
   },
   "primitives-context-menu": {
     name: "primitives-context-menu",
@@ -29419,7 +29419,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/primitives-context-menu',
+    command: '@spaceui/primitives-context-menu',
   },
   "primitives-dialog": {
     name: "primitives-dialog",
@@ -29451,7 +29451,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/primitives-dialog',
+    command: '@spaceui/primitives-dialog',
   },
   "primitives-direction": {
     name: "primitives-direction",
@@ -29483,7 +29483,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/primitives-direction',
+    command: '@spaceui/primitives-direction',
   },
   "primitives-drawer": {
     name: "primitives-drawer",
@@ -29515,7 +29515,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/primitives-drawer',
+    command: '@spaceui/primitives-drawer',
   },
   "primitives-empty": {
     name: "primitives-empty",
@@ -29547,7 +29547,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/primitives-empty',
+    command: '@spaceui/primitives-empty',
   },
   "primitives-field": {
     name: "primitives-field",
@@ -29579,7 +29579,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/primitives-field',
+    command: '@spaceui/primitives-field',
   },
   "primitives-fieldset": {
     name: "primitives-fieldset",
@@ -29611,7 +29611,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/primitives-fieldset',
+    command: '@spaceui/primitives-fieldset',
   },
   "primitives-form": {
     name: "primitives-form",
@@ -29643,7 +29643,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/primitives-form',
+    command: '@spaceui/primitives-form',
   },
   "primitives-frame": {
     name: "primitives-frame",
@@ -29675,7 +29675,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/primitives-frame',
+    command: '@spaceui/primitives-frame',
   },
   "primitives-group": {
     name: "primitives-group",
@@ -29707,7 +29707,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/primitives-group',
+    command: '@spaceui/primitives-group',
   },
   "primitives-input": {
     name: "primitives-input",
@@ -29739,7 +29739,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/primitives-input',
+    command: '@spaceui/primitives-input',
   },
   "primitives-input-group": {
     name: "primitives-input-group",
@@ -29771,7 +29771,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/primitives-input-group',
+    command: '@spaceui/primitives-input-group',
   },
   "primitives-kbd": {
     name: "primitives-kbd",
@@ -29803,7 +29803,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/primitives-kbd',
+    command: '@spaceui/primitives-kbd',
   },
   "primitives-label": {
     name: "primitives-label",
@@ -29835,7 +29835,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/primitives-label',
+    command: '@spaceui/primitives-label',
   },
   "primitives-link": {
     name: "primitives-link",
@@ -29867,7 +29867,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/primitives-link',
+    command: '@spaceui/primitives-link',
   },
   "primitives-menu": {
     name: "primitives-menu",
@@ -29899,7 +29899,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/primitives-menu',
+    command: '@spaceui/primitives-menu',
   },
   "primitives-menubar": {
     name: "primitives-menubar",
@@ -29931,7 +29931,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/primitives-menubar',
+    command: '@spaceui/primitives-menubar',
   },
   "primitives-meter": {
     name: "primitives-meter",
@@ -29963,7 +29963,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/primitives-meter',
+    command: '@spaceui/primitives-meter',
   },
   "primitives-navigation-menu": {
     name: "primitives-navigation-menu",
@@ -29995,7 +29995,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/primitives-navigation-menu',
+    command: '@spaceui/primitives-navigation-menu',
   },
   "primitives-number-field": {
     name: "primitives-number-field",
@@ -30027,7 +30027,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/primitives-number-field',
+    command: '@spaceui/primitives-number-field',
   },
   "primitives-otp-field": {
     name: "primitives-otp-field",
@@ -30059,7 +30059,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/primitives-otp-field',
+    command: '@spaceui/primitives-otp-field',
   },
   "primitives-pagination": {
     name: "primitives-pagination",
@@ -30091,7 +30091,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/primitives-pagination',
+    command: '@spaceui/primitives-pagination',
   },
   "primitives-popover": {
     name: "primitives-popover",
@@ -30123,7 +30123,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/primitives-popover',
+    command: '@spaceui/primitives-popover',
   },
   "primitives-preview-card": {
     name: "primitives-preview-card",
@@ -30155,7 +30155,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/primitives-preview-card',
+    command: '@spaceui/primitives-preview-card',
   },
   "primitives-preview-link-card": {
     name: "primitives-preview-link-card",
@@ -30187,7 +30187,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/primitives-preview-link-card',
+    command: '@spaceui/primitives-preview-link-card',
   },
   "primitives-progress": {
     name: "primitives-progress",
@@ -30219,7 +30219,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/primitives-progress',
+    command: '@spaceui/primitives-progress',
   },
   "primitives-radio-group": {
     name: "primitives-radio-group",
@@ -30251,7 +30251,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/primitives-radio-group',
+    command: '@spaceui/primitives-radio-group',
   },
   "primitives-scroll-area": {
     name: "primitives-scroll-area",
@@ -30283,7 +30283,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/primitives-scroll-area',
+    command: '@spaceui/primitives-scroll-area',
   },
   "primitives-select": {
     name: "primitives-select",
@@ -30315,7 +30315,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/primitives-select',
+    command: '@spaceui/primitives-select',
   },
   "primitives-separator": {
     name: "primitives-separator",
@@ -30347,7 +30347,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/primitives-separator',
+    command: '@spaceui/primitives-separator',
   },
   "primitives-sheet": {
     name: "primitives-sheet",
@@ -30379,7 +30379,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/primitives-sheet',
+    command: '@spaceui/primitives-sheet',
   },
   "primitives-sidebar": {
     name: "primitives-sidebar",
@@ -30411,7 +30411,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/primitives-sidebar',
+    command: '@spaceui/primitives-sidebar',
   },
   "primitives-skeleton": {
     name: "primitives-skeleton",
@@ -30443,7 +30443,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/primitives-skeleton',
+    command: '@spaceui/primitives-skeleton',
   },
   "primitives-slider": {
     name: "primitives-slider",
@@ -30475,7 +30475,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/primitives-slider',
+    command: '@spaceui/primitives-slider',
   },
   "primitives-spinner": {
     name: "primitives-spinner",
@@ -30507,7 +30507,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/primitives-spinner',
+    command: '@spaceui/primitives-spinner',
   },
   "primitives-switch": {
     name: "primitives-switch",
@@ -30539,7 +30539,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/primitives-switch',
+    command: '@spaceui/primitives-switch',
   },
   "primitives-table": {
     name: "primitives-table",
@@ -30571,7 +30571,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/primitives-table',
+    command: '@spaceui/primitives-table',
   },
   "primitives-tabs": {
     name: "primitives-tabs",
@@ -30603,7 +30603,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/primitives-tabs',
+    command: '@spaceui/primitives-tabs',
   },
   "primitives-textarea": {
     name: "primitives-textarea",
@@ -30635,7 +30635,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/primitives-textarea',
+    command: '@spaceui/primitives-textarea',
   },
   "primitives-toast": {
     name: "primitives-toast",
@@ -30667,7 +30667,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/primitives-toast',
+    command: '@spaceui/primitives-toast',
   },
   "primitives-toggle": {
     name: "primitives-toggle",
@@ -30699,7 +30699,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/primitives-toggle',
+    command: '@spaceui/primitives-toggle',
   },
   "primitives-toggle-group": {
     name: "primitives-toggle-group",
@@ -30731,7 +30731,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/primitives-toggle-group',
+    command: '@spaceui/primitives-toggle-group',
   },
   "primitives-toolbar": {
     name: "primitives-toolbar",
@@ -30763,7 +30763,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/primitives-toolbar',
+    command: '@spaceui/primitives-toolbar',
   },
   "primitives-tooltip": {
     name: "primitives-tooltip",
@@ -30795,7 +30795,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/primitives-tooltip',
+    command: '@spaceui/primitives-tooltip',
   },
   "template-immersive-lens": {
     name: "template-immersive-lens",
@@ -30897,7 +30897,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/template-immersive-lens',
+    command: '@spaceui/template-immersive-lens',
   },
   "hooks-utils-cache": {
     name: "hooks-utils-cache",
@@ -30929,7 +30929,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/hooks-utils-cache',
+    command: '@spaceui/hooks-utils-cache',
   },
   "hooks-utils-cookie": {
     name: "hooks-utils-cookie",
@@ -30961,7 +30961,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/hooks-utils-cookie',
+    command: '@spaceui/hooks-utils-cookie',
   },
   "hooks-utils-event": {
     name: "hooks-utils-event",
@@ -30993,7 +30993,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/hooks-utils-event',
+    command: '@spaceui/hooks-utils-event',
   },
   "hooks-utils-format-bytes": {
     name: "hooks-utils-format-bytes",
@@ -31025,7 +31025,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/hooks-utils-format-bytes',
+    command: '@spaceui/hooks-utils-format-bytes',
   },
   "hooks-utils-format-content": {
     name: "hooks-utils-format-content",
@@ -31057,7 +31057,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/hooks-utils-format-content',
+    command: '@spaceui/hooks-utils-format-content',
   },
   "hooks-utils-format-date": {
     name: "hooks-utils-format-date",
@@ -31089,7 +31089,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/hooks-utils-format-date',
+    command: '@spaceui/hooks-utils-format-date',
   },
   "hooks-utils-format-text": {
     name: "hooks-utils-format-text",
@@ -31121,7 +31121,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/hooks-utils-format-text',
+    command: '@spaceui/hooks-utils-format-text',
   },
   "hooks-utils-is-negative": {
     name: "hooks-utils-is-negative",
@@ -31153,7 +31153,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/hooks-utils-is-negative',
+    command: '@spaceui/hooks-utils-is-negative',
   },
   "hooks-utils-logger": {
     name: "hooks-utils-logger",
@@ -31185,7 +31185,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/hooks-utils-logger',
+    command: '@spaceui/hooks-utils-logger',
   },
   "hooks-utils-range-map": {
     name: "hooks-utils-range-map",
@@ -31217,7 +31217,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/hooks-utils-range-map',
+    command: '@spaceui/hooks-utils-range-map',
   },
   "hooks-utils-sleep": {
     name: "hooks-utils-sleep",
@@ -31249,7 +31249,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/hooks-utils-sleep',
+    command: '@spaceui/hooks-utils-sleep',
   },
   "hooks-utils-states-catch-error": {
     name: "hooks-utils-states-catch-error",
@@ -31281,7 +31281,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/hooks-utils-states-catch-error',
+    command: '@spaceui/hooks-utils-states-catch-error',
   },
   "hooks-utils-states-create-error": {
     name: "hooks-utils-states-create-error",
@@ -31313,6 +31313,6 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@usespaceui/hooks-utils-states-create-error',
+    command: '@spaceui/hooks-utils-states-create-error',
   },
   }

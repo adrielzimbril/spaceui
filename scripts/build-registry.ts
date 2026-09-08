@@ -102,7 +102,7 @@ async function ensureRegistry() {
       JSON.stringify(
         {
           $schema: 'https://ui.shadcn.com/schema/registry.json',
-          name: 'space-ui',
+          name: 'spaceui',
           homepage: 'https://www.spaceui.one',
           items: [],
         },
@@ -132,6 +132,7 @@ async function buildRegistryFile() {
   const registryFolderPath = path.join(process.cwd(), 'src', 'registry')
   const newItems = await getRegistryItemsFromFolder(registryFolderPath)
 
+  registryData.name = 'spaceui'
   registryData.items = [...newItems]
 
   await writeFileWithRetry(REGISTRY_JSON_PATH, JSON.stringify(registryData, null, 2))
@@ -610,7 +611,7 @@ export const index: Record<string, any> = {`
     })()`
         : 'null'
     },
-    command: '@usespaceui/${item.name}',
+    command: '@spaceui/${item.name}',
   },`
   }
 
@@ -1052,7 +1053,7 @@ async function ensureRegistryFiles() {
       JSON.stringify(
         {
           $schema: 'https://ui.shadcn.com/schema/registry.json',
-          name: 'space-ui',
+          name: 'spaceui',
           homepage: 'https://www.spaceui.one',
           items: [],
         },

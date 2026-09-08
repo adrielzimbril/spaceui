@@ -6,7 +6,7 @@ import { usePackageManager, type PackageManager } from '@/components/providers/p
 import { Select, SelectTrigger, SelectValue, SelectPopup, SelectItem } from '@/registry/primitives/select'
 import { CopyButton } from '@/registry/components/spaceui/copy'
 import { ShikiRenderer } from '@/components/docs/code/shiki-renderer'
-import { getShadcnAddCommands, getPackageInstallCommands, formatRegistryItem } from '@/lib/install-command'
+import { getShadcnAddCommands, getPackageInstallCommands, REGISTRY_NAMESPACE } from '@/lib/install-command'
 import { cn } from '@/registry/lib/utils'
 
 const MANAGERS: { id: PackageManager; name: string }[] = [
@@ -31,10 +31,10 @@ export function InlineInstallBar({
 }: InlineInstallBarProps) {
   const [manager, setManager] = usePackageManager()
 
-  const rawPkg = packageName || '@usespaceui/ui'
+  const rawPkg = packageName || `${REGISTRY_NAMESPACE}/ui`
   const isShadcn =
     explicitIsShadcn ??
-    (rawPkg.startsWith('@usespaceui/') ||
+    (rawPkg.startsWith(`${REGISTRY_NAMESPACE}/`) ||
       rawPkg.startsWith('components-') ||
       rawPkg.startsWith('primitives-') ||
       rawPkg.startsWith('icons-') ||

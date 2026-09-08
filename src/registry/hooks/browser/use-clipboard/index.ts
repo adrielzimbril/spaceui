@@ -46,7 +46,7 @@ export interface UseClipboardReturn {
  * const { copy, copied } = useClipboard({ timeout: 2000 });
  *
  * return (
- *   <button onClick={() => copy('npx shadcn add @usespaceui/hooks-browser-use-clipboard')}>
+ *   <button onClick={() => copy('npx shadcn add @spaceui/hooks-browser-use-clipboard')}>
  *     {copied ? 'Copied!' : 'Copy Command'}
  *   </button>
  * );

@@ -79,7 +79,13 @@ export function matchesQuery(id: string, query: string) {
   const slug = q.replace(/\s+/g, '-')
   if (name) {
     const tokens = name.split('-')
-    if (name === q || name === slug || name.startsWith(`${slug}-`) || name.endsWith(`-${slug}`) || name.includes(`-${slug}-`))
+    if (
+      name === q ||
+      name === slug ||
+      name.startsWith(`${slug}-`) ||
+      name.endsWith(`-${slug}`) ||
+      name.includes(`-${slug}-`)
+    )
       return true
     if (tokens.some((token) => token === q || token.startsWith(q))) return true
   }

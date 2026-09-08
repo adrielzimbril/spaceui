@@ -3,7 +3,7 @@ title: Registry
 description: Learn how to use the Space UI Registry with shadcn/ui.
 ---
 
-The catalog uses the `@usespaceui` namespace. The shadcn CLI resolves the full alias suffix into the registry URL, so you can install everything from one namespace.
+The catalog uses the `@spaceui` namespace. The shadcn CLI resolves the full alias suffix into the registry URL, so you can install everything from one namespace.
 
 ## Setup Space UI Registry
 
@@ -12,7 +12,7 @@ Add the Space UI registry namespace to your `components.json`. Learn more about 
 ```json
 {
   "registries": {
-    "@usespaceui": "https://www.spaceui.one/r/{name}.json"
+    "@spaceui": "https://www.spaceui.one/r/{name}.json"
   }
 }
 ```
@@ -22,10 +22,10 @@ Add the Space UI registry namespace to your `components.json`. Learn more about 
 Component examples use the `c-*` naming pattern and install with no license key or account:
 
 ```bash
-npx shadcn@latest add @usespaceui/components-spaceui-c-alert-1
+npx shadcn@latest add @spaceui/components-spaceui-c-alert-1
 ```
 
-Some `c-*` items pull shared `@usespaceui/*` primitives as registry dependencies. Those supporting files are resolved automatically, so installs keep working out of the box.
+Some `c-*` items pull shared `@spaceui/*` primitives as registry dependencies. Those supporting files are resolved automatically, so installs keep working out of the box.
 
 ## Styles
 

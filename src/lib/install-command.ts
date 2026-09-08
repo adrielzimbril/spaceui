@@ -7,7 +7,7 @@ export type InstallCommands = {
   bun: string
 }
 
-export const REGISTRY_NAMESPACE = '@usespaceui'
+export const REGISTRY_NAMESPACE = '@spaceui'
 export const REGISTRY_BASE_URL = 'https://www.spaceui.one/r'
 
 /**

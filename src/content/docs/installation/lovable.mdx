@@ -22,7 +22,7 @@ In your Lovable project, open **Settings → Registries** (or in `components.jso
 ```json title="components.json"
 {
   "registries": {
-    "@usespaceui": "https://www.spaceui.one/r/{name}.json"
+    "@spaceui": "https://www.spaceui.one/r/{name}.json"
   }
 }
 ```
@@ -37,9 +37,9 @@ Use specific component handles in your prompt instructions:
 
 ```text
 Build a modern dashboard settings view with:
-- Tabs using @usespaceui/tabs
-- Modal dialog for user invitations using @usespaceui/dialog
-- Button controls from @usespaceui/button with squircle radius
+- Tabs using @spaceui/tabs
+- Modal dialog for user invitations using @spaceui/dialog
+- Button controls from @spaceui/button with squircle radius
 - Follow the design tokens and dark mode styling from Space UI
 ```
 
@@ -115,9 +115,9 @@ You are an expert React 19 & Tailwind CSS v4 developer working with Space UI.
 
 When asked to add or use new UI components:
 
-1. Always check if the component exists in the Space UI registry (@usespaceui).
+1. Always check if the component exists in the Space UI registry (@spaceui).
 2. Install via shadcn CLI:
-   npx shadcn@latest add @usespaceui/<component-name>
+   npx shadcn@latest add @spaceui/<component-name>
 3. Import from `@/components/ui/<component-name>`
 
 ## Theming & Styling Rules

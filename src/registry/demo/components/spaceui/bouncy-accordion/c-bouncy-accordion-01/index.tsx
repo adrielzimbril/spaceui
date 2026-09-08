@@ -14,7 +14,7 @@ import { Badge } from '@/registry/primitives/badge'
 
 export default function Demo() {
   return (
-    <div className="size-full min-w-52 max-w-xs p-4">
+    <div className="w-full min-w-52 max-w-xs p-4">
       <BouncyAccordion
         items={[
           {

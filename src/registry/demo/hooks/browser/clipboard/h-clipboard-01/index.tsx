@@ -13,7 +13,7 @@ interface DemoProps {
 }
 
 export default function Demo({ timeout = 2000 }: DemoProps) {
-  const [text, setText] = React.useState('npx shadcn add @usespaceui/hooks-browser-use-clipboard')
+  const [text, setText] = React.useState('npx shadcn add @spaceui/hooks-browser-use-clipboard')
   const { copy, copied } = useClipboard({ timeout })
 
   return (

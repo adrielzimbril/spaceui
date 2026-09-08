@@ -2,7 +2,7 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "lib-style",
   "title": "Style",
-  "description": "Complete Space UI theme: colors, sidebar, fonts, and base styles. Use with `npx shadcn init @usespaceui/lib-style` for full project setup.",
+  "description": "Complete Space UI theme: colors, sidebar, fonts, and base styles. Use with `npx shadcn init @spaceui/lib-style` for full project setup.",
   "dependencies": [
     "@base-ui/react",
     "class-variance-authority",

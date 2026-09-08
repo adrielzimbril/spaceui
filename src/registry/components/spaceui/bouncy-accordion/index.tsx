@@ -43,7 +43,6 @@ export function BouncyAccordion({ items, defaultValue = 0, value, onValueChange,
               key={item.title}
               animate={{
                 marginBlock: isOpen ? '10px' : '0px',
-                height: isOpen ? 'auto' : '100%',
                 borderTopLeftRadius: index === 0 || isOpen || active === index - 1 ? `${radius}px` : '0px',
                 borderTopRightRadius: index === 0 || isOpen || active === index - 1 ? `${radius}px` : '0px',
                 borderBottomRightRadius:
@@ -53,7 +52,7 @@ export function BouncyAccordion({ items, defaultValue = 0, value, onValueChange,
               }}
               transition={reduced ? { duration: 0 } : { type: 'spring', stiffness: 300, damping: 20 }}
               className={cn(
-                'relative gap-2 overflow-hidden border-muted bg-muted p-2 last:border-b-0',
+                'relative overflow-hidden border-muted bg-muted p-2 last:border-b-0',
                 !isOpen && 'border-b border-b-background',
               )}
             >
@@ -89,7 +88,8 @@ export function BouncyAccordion({ items, defaultValue = 0, value, onValueChange,
                     initial={reduced ? false : { opacity: 0, filter: 'blur(2px)', height: 0 }}
                     animate={{ opacity: 1, filter: 'blur(0px)', height: 'auto' }}
                     exit={reduced ? { opacity: 0 } : { opacity: 0, filter: 'blur(2px)', height: 0 }}
-                    className="mt-2 rounded-lg bg-background px-4 pb-4 pt-3 text-sm leading-relaxed text-muted-foreground"
+                    transition={reduced ? { duration: 0 } : { type: 'spring', stiffness: 300, damping: 24 }}
+                    className="mt-2 overflow-hidden rounded-lg bg-background px-4 pb-4 pt-3 text-sm leading-relaxed text-muted-foreground"
                   >
                     {item.description}
                   </motion.div>

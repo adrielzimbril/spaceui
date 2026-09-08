@@ -6,8 +6,8 @@ description: Connect Claude Code, Cursor, VS Code, and Windsurf to Space UI's co
 The **Model Context Protocol (MCP)** allows AI assistants to query the Space UI registry directly inside your editor. When enabled, your AI coding agent can search components, inspect TypeScript signatures, and install primitives without leaving the chat.
 
 <Callout>
-  Space UI leverages the official **shadcn MCP server**. Once configured, any `@usespaceui` primitive can be discovered
-  and installed autonomously by your AI tools.
+  Space UI leverages the official **shadcn MCP server**. Once configured, any `@spaceui` primitive can be discovered and
+  installed autonomously by your AI tools.
 </Callout>
 
 ---
@@ -131,11 +131,11 @@ If you prefer adding the MCP server manually, save the corresponding JSON snippe
 
 When the MCP server is active, your AI agent has access to these capabilities:
 
-| Tool                    | Purpose                                              | Example Interaction                                               |
-| :---------------------- | :--------------------------------------------------- | :---------------------------------------------------------------- |
-| **`search_components`** | Finds matching primitives and blocks                 | _"Find dialog and drawer components in Space UI"_                 |
-| **`get_component`**     | Inspects TypeScript props, imports, and CSS tokens   | _"Show me the props and sub-components for `@usespaceui/dialog`"_ |
-| **`add_component`**     | Directly executes `shadcn add` inside your workspace | _"Install `@usespaceui/dialog` and create a confirmation modal"_  |
+| Tool                    | Purpose                                              | Example Interaction                                            |
+| :---------------------- | :--------------------------------------------------- | :------------------------------------------------------------- |
+| **`search_components`** | Finds matching primitives and blocks                 | _"Find dialog and drawer components in Space UI"_              |
+| **`get_component`**     | Inspects TypeScript props, imports, and CSS tokens   | _"Show me the props and sub-components for `@spaceui/dialog`"_ |
+| **`add_component`**     | Directly executes `shadcn add` inside your workspace | _"Install `@spaceui/dialog` and create a confirmation modal"_  |
 
 ---
 
@@ -144,7 +144,7 @@ When the MCP server is active, your AI agent has access to these capabilities:
 Try prompting your AI assistant with natural language instructions:
 
 ```text
-1. Search Space UI for animated tab primitives and install @usespaceui/tabs.
+1. Search Space UI for animated tab primitives and install @spaceui/tabs.
 2. Build a project settings view with 3 tabs: General, Members, and Billing.
-3. Add a delete confirmation dialog using @usespaceui/dialog with destructive styling.
+3. Add a delete confirmation dialog using @spaceui/dialog with destructive styling.
 ```

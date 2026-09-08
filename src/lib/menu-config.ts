@@ -296,12 +296,9 @@ export const searchStaticResources = megaMenuTools.map((tool) => ({
   isComponent: false,
   description: tool.description,
   badge: tool.upcoming ? 'coming-soon' : tool.release,
-  keywords: [
-    'tools',
-    tool.title.toLowerCase(),
-    tool.label || '',
-    ...tool.title.toLowerCase().split(' '),
-  ].filter(Boolean),
+  keywords: ['tools', tool.title.toLowerCase(), tool.label || '', ...tool.title.toLowerCase().split(' ')].filter(
+    Boolean,
+  ),
 }))
 
 // -----------------------------------------------------------------------------

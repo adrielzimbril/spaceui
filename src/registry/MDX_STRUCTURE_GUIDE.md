@@ -102,7 +102,7 @@ Toujours utiliser le composant unifié `<ComponentInstallation />`. **Ne plus ut
 ```
 
 *Ce Server Component async génère automatiquement :*
-- *L'onglet **CLI** : `npx shadcn add @usespaceui/[name]`*
+- *L'onglet **CLI** : `npx shadcn add @spaceui/[name]`*
 - *L'onglet **Manual** : dépendances npm, dépendances registre, code source complet (`<ComponentSource />`), et étapes d'import.*
 
 > **⚠️ Pour les compositions (ex: DatePicker = Calendar + Popover + Button)**, enchaîner plusieurs `<ComponentInstallation />` :
@@ -284,7 +284,7 @@ Lors de la création, la modification ou le refactoring de pages MDX :
 3. **Pas de previews sous API Reference** : Déplacer toute prévisualisation (`<ComponentPreview />`) vers `## Features` ou `## Examples`.
 4. **Format des tables** : Toujours utiliser la syntaxe Markdown standard avec backticks sur les noms de props et types courts.
 5. **Cohérence des noms de démo** : Veiller à ce que les attributs `name="..."` dans `<ComponentPreview />` et `<ShowcaseCard />` correspondent exactement aux identifiants du registre (`demo-*`).
-6. **Scope des Packages** : Toujours utiliser le scope officiel `@usespaceui/` (ex: `@usespaceui/button`, `@usespaceui/accordion`). Ne jamais utiliser `@space/`.
+6. **Scope des Packages** : Toujours utiliser le scope officiel `@spaceui/` (ex: `@spaceui/button`, `@spaceui/accordion`). Ne jamais utiliser `@space/`.
 7. **⛔ Ne JAMAIS utiliser `<SpaceCodeTabs>` pour les sections Installation** : La section `## Installation` utilise **uniquement** `<ComponentInstallation name="[name]" />`. Les composants `<SpaceCodeTabs>`, `<TabsList>`, `<TabsTab>`, `<TabsPanel>`, `<InstallCommandBlock>`, `<ComponentSource>` et `<Steps>` sont **interdits dans la section Installation** — ils sont gérés en interne par `ComponentInstallation`.
 8. **✂️ Formatage du bloc `## Usage` (Zéro point-virgule Prettier)** : Toujours séparer l'import et le JSX en deux blocs de code distincts ````tsx ... ````. Ne jamais mettre un import et du JSX racine dans le même bloc pour éviter l'injection de point-virgule défensif Prettier (`;<Tag>`).
 9. **📜 Section `## Changelog`** : Si le composant a fait l'objet d'une mise à jour majeure ou d'un breaking change notable, ajouter une section `## Changelog` en fin de document avec les dates et liens d'ancres vers la documentation globale.

@@ -50,7 +50,7 @@ Run the official initialization command to configure the Space UI design tokens,
 
 ### Configure `components.json`
 
-Ensure your `components.json` includes the `@usespaceui` registry namespace alongside your project path aliases:
+Ensure your `components.json` includes the `@spaceui` registry namespace alongside your project path aliases:
 
 ```json title="components.json"
 {
@@ -73,7 +73,7 @@ Ensure your `components.json` includes the `@usespaceui` registry namespace alon
     "hooks": "@/hooks"
   },
   "registries": {
-    "@usespaceui": "https://www.spaceui.one/r/{name}.json"
+    "@spaceui": "https://www.spaceui.one/r/{name}.json"
   }
 }
 ```
@@ -176,7 +176,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 
 Install any component from the catalog:
 
-<InstallCommandBlock isShadcn packages="@usespaceui/dialog @usespaceui/button" />
+<InstallCommandBlock isShadcn packages="@spaceui/dialog @spaceui/button" />
 
 </Step>
 
