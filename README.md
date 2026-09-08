@@ -91,6 +91,8 @@ MIT — Free for commercial and personal use.
 
 If you find a bug or have a feature request, please open an [issue on GitHub](https://github.com/adrielzimbril/spaceui/issues).
 
+This project follows a [Code of Conduct](./CODE_OF_CONDUCT.md).
+
 ---
 
 <p align="center">
