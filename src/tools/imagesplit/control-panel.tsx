@@ -9,7 +9,18 @@ import { Slider } from '@/registry/primitives/slider'
 import { Badge } from '@/registry/primitives/badge'
 import { Tabs, TabsList, TabsTab } from '@/registry/primitives/tabs'
 import { ToggleGroup, ToggleGroupItem } from '@/registry/primitives/toggle-group'
-import { bloomSound } from '@/components/providers/sound-provider'
+import {
+  bloomSound,
+  chimeSound,
+  confirmSound,
+  nudgeSound,
+  openSound,
+  pageSound,
+  sparkleSound,
+  tapSound,
+  tickSound,
+  toggleSound,
+} from '@/components/providers/sound-provider'
 import { cn } from '@/registry/lib/utils'
 import { formatBytes, getColFlex, type Ratio, type SplitConfig } from './split'
 
@@ -31,6 +42,7 @@ const RESOLUTION_OPTIONS = [
 
 const FORMAT_OPTIONS = [
   { value: 'image/png', label: 'PNG' },
+  { value: 'image/apng', label: 'APNG' },
   { value: 'image/jpeg', label: 'JPEG' },
   { value: 'image/webp', label: 'WebP' },
 ]
@@ -104,16 +116,19 @@ export function ImageSplitControlPanel({
     return match ? match.value : null
   }, [cfg])
 
+  const lastZoomTick = React.useRef(0)
+
   const toggleColFlex = (index: number) => {
-    bloomSound()
     const next = [...colFlex]
-    next[index] = next[index] === 1 ? 2 : 1
+    const isNowTwo = next[index] === 1
+    next[index] = isNowTwo ? 2 : 1
+    toggleSound(isNowTwo ? 'on' : 'off')
     setCfg((c) => ({ ...c, colFlex: next }))
   }
 
   const applyPreset = (preset: string | null) => {
     if (!preset || preset === 'custom') return
-    bloomSound()
+    pageSound()
     const opt = PRESET_OPTIONS.find((p) => p.value === preset)
     if (!opt) return
     setCfg((c) => ({
@@ -169,8 +184,12 @@ export function ImageSplitControlPanel({
                 type="button"
                 variant="ghost"
                 size="icon-sm"
-                onClick={onPickFile}
+                onClick={() => {
+                  openSound()
+                  onPickFile()
+                }}
                 aria-label="Replace image"
+                data-space-hover="tick"
                 className="size-8 shrink-0 rounded-lg bg-background text-muted-foreground hover:bg-background hover:text-foreground"
               >
                 <IconUpload className="size-3.5" />
@@ -180,8 +199,12 @@ export function ImageSplitControlPanel({
                 type="button"
                 variant="ghost"
                 size="icon-sm"
-                onClick={onPickFile}
+                onClick={() => {
+                  openSound()
+                  onPickFile()
+                }}
                 aria-label="Upload image"
+                data-space-hover="tick"
                 className="size-8 shrink-0 rounded-lg bg-background text-muted-foreground hover:bg-background hover:text-foreground"
               >
                 <IconPhoto className="size-3.5" />
@@ -193,7 +216,7 @@ export function ImageSplitControlPanel({
           <div className="flex flex-col gap-2">
             <span className="text-[0.6875rem] font-semibold text-muted-foreground">Preset</span>
             <Select value={activePreset ?? (isCustom ? 'custom' : '')} onValueChange={applyPreset}>
-              <SelectTrigger aria-label="Preset" className="h-9 border-0 bg-muted px-3 text-xs">
+              <SelectTrigger aria-label="Preset" data-space-hover="tick" className="h-9 border-0 bg-muted px-3 text-xs">
                 <SelectValue>
                   {activePresetOption ? (
                     <div className="flex items-center gap-2">
@@ -212,7 +235,7 @@ export function ImageSplitControlPanel({
               </SelectTrigger>
               <SelectContent>
                 {isCustom && (
-                  <SelectItem value="custom" label="Custom">
+                  <SelectItem value="custom" label="Custom" data-space-hover="tick">
                     <div className="flex items-center gap-2.5">
                       <PresetSkeleton flex={colFlex} />
                       <span className="truncate">Custom ({cfg.cols} cols)</span>
@@ -220,7 +243,7 @@ export function ImageSplitControlPanel({
                   </SelectItem>
                 )}
                 {PRESET_OPTIONS.map((item) => (
-                  <SelectItem key={item.value} value={item.value} label={item.label}>
+                  <SelectItem key={item.value} value={item.value} label={item.label} data-space-hover="tick">
                     <div className="flex items-center gap-2.5">
                       <PresetSkeleton flex={item.flex} />
                       <span className="truncate">{item.label}</span>
@@ -241,7 +264,7 @@ export function ImageSplitControlPanel({
               value={String(cfg.cols)}
               onValueChange={(val) => {
                 if (!val) return
-                bloomSound()
+                nudgeSound('up')
                 const n = Number(val)
                 setCfg((c) => {
                   const current = getColFlex(c)
@@ -253,7 +276,7 @@ export function ImageSplitControlPanel({
             >
               <TabsList className="grid grid-cols-5 w-full h-auto p-0.5 gap-0.5">
                 {COLUMN_TABS.map((n) => (
-                  <TabsTab key={n} value={String(n)} className="text-xs py-1.5 px-2">
+                  <TabsTab key={n} value={String(n)} data-space-hover="tick" className="text-xs py-1.5 px-2">
                     {n}
                   </TabsTab>
                 ))}
@@ -272,6 +295,7 @@ export function ImageSplitControlPanel({
                   variant={f === 2 ? 'default' : 'secondary'}
                   size="xs"
                   onClick={() => toggleColFlex(i)}
+                  data-space-hover="tick"
                   className="flex-1 text-[0.6875rem] font-mono h-7 border-0 cursor-pointer"
                   title={`Column ${i + 1}: click to toggle flex (1x / 2x)`}
                 >
@@ -290,7 +314,7 @@ export function ImageSplitControlPanel({
                 if (!val) return
                 const found = RATIO_TABS.find((item) => item.value === val)
                 if (found) {
-                  bloomSound()
+                  pageSound()
                   set('ratio', found.ratio)
                 }
               }}
@@ -298,7 +322,7 @@ export function ImageSplitControlPanel({
             >
               <TabsList className="grid grid-cols-4 w-full h-auto p-0.5 gap-0.5">
                 {RATIO_TABS.map((r) => (
-                  <TabsTab key={r.value} value={r.value} className="text-xs py-1.5 px-2">
+                  <TabsTab key={r.value} value={r.value} data-space-hover="tick" className="text-xs py-1.5 px-2">
                     {r.label}
                   </TabsTab>
                 ))}
@@ -314,16 +338,16 @@ export function ImageSplitControlPanel({
               onValueChange={(val) => {
                 const next = val[0]
                 if (next === 'cover' || next === 'contain') {
-                  bloomSound()
+                  toggleSound(next === 'cover' ? 'on' : 'off')
                   set('fit', next)
                 }
               }}
               className="w-full"
             >
-              <ToggleGroupItem value="cover" className="flex-1 text-xs">
+              <ToggleGroupItem value="cover" data-space-hover="tick" className="flex-1 text-xs">
                 Cover
               </ToggleGroupItem>
-              <ToggleGroupItem value="contain" className="flex-1 text-xs">
+              <ToggleGroupItem value="contain" data-space-hover="tick" className="flex-1 text-xs">
                 Contain
               </ToggleGroupItem>
             </ToggleGroup>
@@ -342,7 +366,14 @@ export function ImageSplitControlPanel({
               step={0.01}
               onValueChange={(val) => {
                 const next = Array.isArray(val) ? val[0] : val
-                if (typeof next === 'number') set('zoom', next)
+                if (typeof next === 'number') {
+                  const now = performance.now()
+                  if (now - lastZoomTick.current > 75) {
+                    tickSound()
+                    lastZoomTick.current = now
+                  }
+                  set('zoom', next)
+                }
               }}
             />
           </div>
@@ -358,16 +389,16 @@ export function ImageSplitControlPanel({
                   value={String(cfg.scale)}
                   onValueChange={(val) => {
                     if (!val) return
-                    bloomSound()
+                    nudgeSound('up')
                     set('scale', Number(val))
                   }}
                 >
-                  <SelectTrigger className="h-9 border-0 bg-muted px-2.5 text-xs">
+                  <SelectTrigger data-space-hover="tick" className="h-9 border-0 bg-muted px-2.5 text-xs">
                     <SelectValue placeholder="Resolution">{activeScale?.label ?? `${cfg.scale}×`}</SelectValue>
                   </SelectTrigger>
                   <SelectContent>
                     {RESOLUTION_OPTIONS.map((r) => (
-                      <SelectItem key={r.value} value={r.value} label={r.label}>
+                      <SelectItem key={r.value} value={r.value} label={r.label} data-space-hover="tick">
                         {r.label}
                       </SelectItem>
                     ))}
@@ -381,16 +412,16 @@ export function ImageSplitControlPanel({
                   value={cfg.format}
                   onValueChange={(val) => {
                     if (!val) return
-                    bloomSound()
+                    tapSound()
                     set('format', val as SplitConfig['format'])
                   }}
                 >
-                  <SelectTrigger className="h-9 border-0 bg-muted px-2.5 text-xs">
+                  <SelectTrigger data-space-hover="tick" className="h-9 border-0 bg-muted px-2.5 text-xs">
                     <SelectValue placeholder="Format">{activeFormat?.label ?? 'PNG'}</SelectValue>
                   </SelectTrigger>
                   <SelectContent>
                     {FORMAT_OPTIONS.map((f) => (
-                      <SelectItem key={f.value} value={f.value} label={f.label}>
+                      <SelectItem key={f.value} value={f.value} label={f.label} data-space-hover="tick">
                         {f.label}
                       </SelectItem>
                     ))}
@@ -403,19 +434,25 @@ export function ImageSplitControlPanel({
               <Button
                 type="button"
                 disabled={!img || busy}
-                onClick={onDownloadZip}
+                onClick={() => {
+                  sparkleSound()
+                  onDownloadZip()
+                }}
                 className="w-full h-9 font-medium cursor-pointer border-0"
-                data-space-click="confirm"
+                data-space-hover="tick"
               >
-                {busy ? 'Downloading…' : 'Download'}
+                {busy ? 'Downloading…' : 'Download ZIP'}
               </Button>
               <Button
                 type="button"
                 variant="secondary"
                 disabled={!img || busy}
-                onClick={onDownloadBatch}
+                onClick={() => {
+                  chimeSound()
+                  onDownloadBatch()
+                }}
                 className="w-full h-9 border-0 bg-muted text-xs font-medium text-muted-foreground hover:text-foreground hover:bg-muted/80 cursor-pointer"
-                data-space-click="open"
+                data-space-hover="tick"
               >
                 {busy ? 'Exporting…' : 'Download Batch'}
               </Button>

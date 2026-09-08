@@ -5,7 +5,20 @@ import { AnimatePresence, motion, useReducedMotion } from 'motion/react'
 import { IconCut, IconDownload, IconPhoto } from '@tabler/icons-react'
 import { Button } from '@/registry/primitives/button'
 import { Badge } from '@/registry/primitives/badge'
-import { bloomSound } from '@/components/providers/sound-provider'
+import {
+  bloomSound,
+  chimeSound,
+  confirmSound,
+  dropletSound,
+  nudgeSound,
+  openSound,
+  pageSound,
+  readySound,
+  removeSound,
+  sparkleSound,
+  tickSound,
+  toggleSound,
+} from '@/components/providers/sound-provider'
 import { cn } from '@/registry/lib/utils'
 import { ResourceNav } from '@/tools/components/shared/layout/nav'
 import { ResourceStudio } from '@/tools/components/shared/layout/studio'
@@ -18,15 +31,19 @@ import { ImagePreviewLoading } from './loading'
 import { useFileUpload } from '@/registry/hooks/form/use-file-upload'
 import { Squishmoji } from '@usespaceui/squishmoji/react'
 import {
+  canvasesToApng,
   createZipArchive,
+  decodeApng,
   extFor,
   frameAspect,
   getColFlex,
+  isApng,
   prepareSource,
   renderStage,
   sliceStage,
   toBlob,
   MAX_STAGE,
+  type DecodedApng,
   type Ratio,
   type SplitConfig,
   type Tile,
@@ -56,6 +73,8 @@ export function ImageSplitPlayground() {
   const [cfg, setCfg] = useState<SplitConfig>(DEFAULTS)
   const [img, setImg] = useState<HTMLImageElement | null>(null)
   const [file, setFile] = useState<{ name: string; size: number } | null>(null)
+  const [apngData, setApngData] = useState<DecodedApng | null>(null)
+  const [frameIdx, setFrameIdx] = useState(0)
   const [loadingImage, setLoadingImage] = useState<string | null>(null)
   const [busy, setBusy] = useState(false)
   const [expanded, setExpanded] = useState(false)
@@ -66,24 +85,90 @@ export function ImageSplitPlayground() {
   const colFlex = getColFlex(cfg)
 
   const toggleColFlex = useCallback((colIndex: number) => {
-    bloomSound()
     setCfg((prev) => {
       const current = getColFlex(prev).slice()
-      current[colIndex] = current[colIndex] === 1 ? 2 : 1
+      const isNowTwo = current[colIndex] === 1
+      current[colIndex] = isNowTwo ? 2 : 1
+      toggleSound(isNowTwo ? 'on' : 'off')
       return { ...prev, colFlex: current }
     })
   }, [])
 
-  const loadFile = useCallback((f: File) => {
-    if (!f.type.startsWith('image/')) return
+  // Animation ticker for APNG
+  useEffect(() => {
+    if (!apngData || apngData.frames.length <= 1) return
+    let timer: ReturnType<typeof setTimeout>
+    let active = true
+
+    const tick = () => {
+      if (!active) return
+      setFrameIdx((prev) => {
+        const next = (prev + 1) % apngData.frames.length
+        const delay = apngData.frames[next]?.delay || 100
+        timer = setTimeout(tick, delay)
+        return next
+      })
+    }
+
+    const initialDelay = apngData.frames[0]?.delay || 100
+    timer = setTimeout(tick, initialDelay)
+
+    return () => {
+      active = false
+      clearTimeout(timer)
+    }
+  }, [apngData])
+
+  const loadFile = useCallback(async (f: File) => {
+    const isImg = f.type.startsWith('image/') || /\.(png|apng|jpg|jpeg|webp|gif)$/i.test(f.name)
+    if (!isImg) return
+    openSound()
     setLoadingImage(f.name)
+
+    try {
+      const buffer = await f.arrayBuffer()
+      if (isApng(buffer)) {
+        const decoded = await decodeApng(buffer)
+        if (decoded && decoded.frames.length > 0) {
+          setApngData(decoded)
+          setFrameIdx(0)
+          setCfg((prev) => ({ ...prev, format: 'image/apng' }))
+          const blob = new Blob([buffer], { type: 'image/png' })
+          const blobUrl = URL.createObjectURL(blob)
+          const image = new Image()
+          image.onload = () => {
+            setImg(image)
+            setFile({ name: f.name, size: f.size })
+            setLoadingImage(null)
+            readySound()
+          }
+          image.onerror = () => {
+            const fallbackImage = new Image()
+            fallbackImage.src = decoded.frames[0].canvas.toDataURL()
+            fallbackImage.onload = () => {
+              setImg(fallbackImage)
+              setFile({ name: f.name, size: f.size })
+              setLoadingImage(null)
+              readySound()
+            }
+          }
+          image.src = blobUrl
+          return
+        }
+      }
+    } catch {
+      // fallback
+    }
+
+    setApngData(null)
+    setFrameIdx(0)
     const url = URL.createObjectURL(f)
     const image = new Image()
     image.onload = () => {
       setImg(image)
       setFile({ name: f.name, size: f.size })
       setLoadingImage(null)
-      bloomSound()
+      readySound()
     }
     image.onerror = () => {
       setLoadingImage(null)
@@ -92,25 +177,54 @@ export function ImageSplitPlayground() {
   }, [])
 
   const { isDragging, getRootProps, getInputProps, openFileDialog, clearFiles } = useFileUpload({
-    accept: 'image',
+    accept: ['image/*', '.png', '.jpg', '.jpeg', '.webp', '.apng', '.gif'],
     multiple: false,
     onFilesAdded: (added) => {
       const item = added[0]
       if (item && item.file instanceof File) {
-        loadFile(item.file)
+        void loadFile(item.file)
       }
     },
   })
 
-  const loadFromUrl = useCallback((url: string, name: string) => {
+  const loadFromUrl = useCallback(async (url: string, name: string) => {
+    pageSound()
     setLoadingImage(name)
+    try {
+      const res = await fetch(url)
+      const buffer = await res.arrayBuffer()
+      if (isApng(buffer)) {
+        const decoded = await decodeApng(buffer)
+        if (decoded && decoded.frames.length > 0) {
+          setApngData(decoded)
+          setFrameIdx(0)
+          setCfg((prev) => ({ ...prev, format: 'image/apng' }))
+          const blob = new Blob([buffer], { type: 'image/png' })
+          const blobUrl = URL.createObjectURL(blob)
+          const image = new Image()
+          image.onload = () => {
+            setImg(image)
+            setFile({ name, size: buffer.byteLength })
+            setLoadingImage(null)
+            readySound()
+          }
+          image.src = blobUrl
+          return
+        }
+      }
+    } catch {
+      // fallback
+    }
+
+    setApngData(null)
+    setFrameIdx(0)
     const image = new Image()
     image.crossOrigin = 'anonymous'
     image.onload = () => {
       setImg(image)
       setFile({ name, size: 450000 })
       setLoadingImage(null)
-      bloomSound()
+      readySound()
     }
     image.onerror = () => {
       setLoadingImage(null)
@@ -119,14 +233,23 @@ export function ImageSplitPlayground() {
   }, [])
 
   const prepared = useMemo(() => {
+    if (apngData && apngData.frames.length > 0) {
+      return apngData.frames[frameIdx % apngData.frames.length].canvas
+    }
     if (!img) return null
     return prepareSource(img)
-  }, [img])
+  }, [img, apngData, frameIdx])
+
+  const sourceDims = useMemo(() => {
+    if (apngData) return { width: apngData.width, height: apngData.height }
+    if (img) return { width: img.naturalWidth || img.width, height: img.naturalHeight || img.height }
+    return null
+  }, [apngData, img])
 
   const dims = useMemo(() => {
-    if (!prepared) return null
-    const aspect = frameAspect(prepared, cfg)
-    const baseW = Math.min(prepared.width, prepared.height * aspect)
+    if (!sourceDims) return null
+    const aspect = frameAspect(sourceDims, cfg)
+    const baseW = Math.min(sourceDims.width, sourceDims.height * aspect)
     let stageW = Math.max(cfg.cols * 8, Math.round(baseW * cfg.scale))
     let stageH = Math.max(8, Math.round(stageW / aspect))
     const over = Math.max(stageW, stageH) / MAX_STAGE
@@ -140,7 +263,7 @@ export function ImageSplitPlayground() {
     const tileW = Math.round((availW * flexes[0]) / totalFlex) + cfg.padding * 2
     const tileH = Math.round(stageH) + cfg.padding * 2
     return { stageW, stageH, tileW, tileH }
-  }, [prepared, cfg])
+  }, [sourceDims, cfg])
 
   const previewCfg = useMemo<SplitConfig>(() => {
     if (!prepared || !dims) return cfg
@@ -175,12 +298,18 @@ export function ImageSplitPlayground() {
       last = { x: e.clientX, y: e.clientY }
       el.setPointerCapture(e.pointerId)
     }
+    let lastMoveSound = 0
     const move = (e: PointerEvent) => {
       if (!dragging) return
       const rect = el.getBoundingClientRect()
       const dx = (e.clientX - last.x) / rect.width
       const dy = (e.clientY - last.y) / rect.height
       last = { x: e.clientX, y: e.clientY }
+      const now = performance.now()
+      if (now - lastMoveSound > 120) {
+        tickSound()
+        lastMoveSound = now
+      }
       setCfg((c) => ({
         ...c,
         panX: Math.min(1, Math.max(0, c.panX - dx / c.zoom)),
@@ -190,9 +319,15 @@ export function ImageSplitPlayground() {
     const up = () => {
       dragging = false
     }
+    let lastWheelSound = 0
     const wheel = (e: WheelEvent) => {
       e.preventDefault()
       const dy = e.deltaY * (e.deltaMode === 1 ? 16 : e.deltaMode === 2 ? 100 : 1)
+      const now = performance.now()
+      if (now - lastWheelSound > 100) {
+        nudgeSound(dy > 0 ? 'down' : 'up')
+        lastWheelSound = now
+      }
       setCfg((c) => ({
         ...c,
         zoom: Math.min(5, Math.max(1, c.zoom * Math.exp(-dy * 0.0015))),
@@ -216,6 +351,34 @@ export function ImageSplitPlayground() {
 
   const buildExport = useCallback(async () => {
     if (!prepared) return []
+
+    // If exporting as APNG and we have a multi-frame APNG source
+    if (cfg.format === 'image/apng' && apngData && apngData.frames.length > 1) {
+      const numCols = cfg.cols
+      const colCanvases: HTMLCanvasElement[][] = Array.from({ length: numCols }, () => [])
+
+      for (let f = 0; f < apngData.frames.length; f++) {
+        const frameCanvas = apngData.frames[f].canvas
+        const stage = renderStage(frameCanvas, cfg)
+        const parts = sliceStage(stage, cfg)
+        parts.forEach((tile, colIdx) => {
+          if (colCanvases[colIdx]) {
+            colCanvases[colIdx].push(tile.canvas)
+          }
+        })
+      }
+
+      return Promise.all(
+        colCanvases.map(async (frameSlices, i) => {
+          const blob = await canvasesToApng(frameSlices, apngData.fps)
+          return {
+            name: `${cfg.prefix || 'slice'}-${String(i + 1).padStart(2, '0')}.apng`,
+            blob,
+          }
+        }),
+      )
+    }
+
     const stage = renderStage(prepared, cfg)
     const parts = sliceStage(stage, cfg)
     const ext = extFor(cfg.format)
@@ -225,11 +388,11 @@ export function ImageSplitPlayground() {
         blob: await toBlob(t.canvas, cfg),
       })),
     )
-  }, [prepared, cfg])
+  }, [prepared, cfg, apngData])
 
   const downloadOne = useCallback(
     async (i: number) => {
-      bloomSound()
+      sparkleSound()
       const files = await buildExport()
       const f = files[i]
       if (!f) return
@@ -240,11 +403,12 @@ export function ImageSplitPlayground() {
 
   const downloadZip = useCallback(async () => {
     setBusy(true)
-    bloomSound()
+    readySound()
     try {
       const files = await buildExport()
       const blob = await createZipArchive(files)
       saveBlob(blob, `${cfg.prefix || 'slice'}-${files.length}-parts.zip`)
+      confirmSound()
     } finally {
       setBusy(false)
     }
@@ -252,27 +416,31 @@ export function ImageSplitPlayground() {
 
   const downloadBatch = useCallback(async () => {
     setBusy(true)
-    bloomSound()
+    chimeSound()
     try {
       const files = await buildExport()
       const sorted = files.slice().sort((a, b) => a.name.localeCompare(b.name, undefined, { numeric: true }))
       for (let i = 0; i < sorted.length; i++) {
         const f = sorted[i]
+        dropletSound()
         saveBlob(f.blob, f.name)
         if (i < sorted.length - 1) {
           await new Promise((resolve) => setTimeout(resolve, 500))
         }
       }
+      confirmSound()
     } finally {
       setBusy(false)
     }
   }, [buildExport])
 
   const reset = useCallback(() => {
-    bloomSound()
+    removeSound()
     setCfg(DEFAULTS)
     setImg(null)
     setFile(null)
+    setApngData(null)
+    setFrameIdx(0)
     setLoadingImage(null)
     setExpanded(false)
     clearFiles()
@@ -304,6 +472,7 @@ export function ImageSplitPlayground() {
         className={expanded ? 'p-0' : undefined}
         canvas={
           <div className="relative grid place-items-center h-full w-full overflow-hidden p-3 md:p-6 select-none">
+            <input {...getInputProps()} className="sr-only pointer-events-none" />
             <AnimatePresence initial={false}>
               {loadingImage ? (
                 <motion.div
@@ -369,12 +538,11 @@ export function ImageSplitPlayground() {
                           isDragging ? 'border-primary bg-muted' : 'border-border/80 bg-background',
                         )}
                       >
-                        <input {...getInputProps()} className="invisible [text-align-last:center]" />
                         <div className="grid size-11 place-items-center rounded-xl bg-muted text-foreground mb-2.5">
                           <IconCut className="size-5" />
                         </div>
                         <p className="text-xs sm:text-sm font-semibold">Drop an image here or click to browse</p>
-                        <p className="text-[0.6875rem] text-muted-foreground mt-0.5">PNG, JPG, or WebP</p>
+                        <p className="text-[0.6875rem] text-muted-foreground mt-0.5">PNG, APNG, JPG, or WebP</p>
                       </div>
                     </div>
                   </article>
@@ -386,6 +554,7 @@ export function ImageSplitPlayground() {
                         key={sample.id}
                         type="button"
                         variant="ghost"
+                        data-space-hover="tick"
                         onClick={() => loadFromUrl(sample.url, `${sample.name.toLowerCase().replace(/\s+/g, '-')}.png`)}
                         className="group flex h-auto! flex-col items-center gap-1.5 rounded-2xl bg-muted p-1.5 hover:bg-muted/70 cursor-pointer shadow-none"
                       >
@@ -459,6 +628,7 @@ export function ImageSplitPlayground() {
                       <div
                         key={`tile-${t.col}-${t.flex}`}
                         onClick={() => toggleColFlex(i)}
+                        data-space-hover="tick"
                         className="relative h-full w-full overflow-hidden cursor-pointer"
                       >
                         <CanvasView canvas={t.canvas} />
@@ -476,6 +646,7 @@ export function ImageSplitPlayground() {
                           type="button"
                           variant="secondary"
                           size="icon-xs"
+                          data-space-hover="tick"
                           onPointerDown={(e) => e.stopPropagation()}
                           onClick={(e) => {
                             e.stopPropagation()
@@ -517,17 +688,22 @@ export function ImageSplitPlayground() {
 }
 
 function CanvasView({ canvas }: { canvas: HTMLCanvasElement }) {
-  const ref = useRef<HTMLDivElement>(null)
+  const canvasRef = useRef<HTMLCanvasElement>(null)
   useEffect(() => {
-    const el = ref.current
-    if (!el) return
-    canvas.style.width = '100%'
-    canvas.style.height = '100%'
-    canvas.style.objectFit = 'cover'
-    canvas.style.display = 'block'
-    el.replaceChildren(canvas)
+    const target = canvasRef.current
+    if (!target) return
+    if (target.width !== canvas.width || target.height !== canvas.height) {
+      target.width = canvas.width
+      target.height = canvas.height
+    }
+    const ctx = target.getContext('2d')
+    if (ctx) {
+      ctx.clearRect(0, 0, target.width, target.height)
+      ctx.drawImage(canvas, 0, 0)
+    }
   }, [canvas])
-  return <div ref={ref} className="h-full w-full overflow-hidden" />
+
+  return <canvas ref={canvasRef} className="h-full w-full object-cover block" />
 }
 
 function saveBlob(blob: Blob, name: string) {

@@ -7,7 +7,7 @@ import { useLocalStorage } from '@/registry/hooks/browser/use-local-storage'
 const STORAGE_KEY = 'space-ui-sounds-enabled'
 
 // Module-level state for zero-latency synchronous checks
-let isSoundActive = false
+let isSoundActive = true
 
 export function isAudioEnabled() {
   return isSoundActive
@@ -35,8 +35,95 @@ export function slideSound(...args: any[]) {
   }
 }
 
-export function toggleSound() {
-  bloomSound()
+export function tapSound() {
+  if (!isSoundActive) return
+  try {
+    spaceSounds.tap()
+  } catch {}
+}
+
+export function tickSound() {
+  if (!isSoundActive) return
+  try {
+    spaceSounds.tick()
+  } catch {}
+}
+
+export function toggleSound(state?: 'on' | 'off') {
+  if (!isSoundActive) return
+  try {
+    spaceSounds.toggle(state ?? 'on')
+  } catch {}
+}
+
+export function confirmSound() {
+  if (!isSoundActive) return
+  try {
+    spaceSounds.confirm()
+  } catch {}
+}
+
+export function sparkleSound() {
+  if (!isSoundActive) return
+  try {
+    spaceSounds.sparkle()
+  } catch {}
+}
+
+export function chimeSound() {
+  if (!isSoundActive) return
+  try {
+    spaceSounds.chime()
+  } catch {}
+}
+
+export function dropletSound() {
+  if (!isSoundActive) return
+  try {
+    spaceSounds.droplet()
+  } catch {}
+}
+
+export function readySound() {
+  if (!isSoundActive) return
+  try {
+    spaceSounds.ready()
+  } catch {}
+}
+
+export function openSound() {
+  if (!isSoundActive) return
+  try {
+    spaceSounds.open()
+  } catch {}
+}
+
+export function closeSound() {
+  if (!isSoundActive) return
+  try {
+    spaceSounds.close()
+  } catch {}
+}
+
+export function removeSound() {
+  if (!isSoundActive) return
+  try {
+    spaceSounds.remove()
+  } catch {}
+}
+
+export function nudgeSound(dir: 'up' | 'down' = 'up') {
+  if (!isSoundActive) return
+  try {
+    spaceSounds.nudge(dir)
+  } catch {}
+}
+
+export function pageSound() {
+  if (!isSoundActive) return
+  try {
+    spaceSounds.page()
+  } catch {}
 }
 
 type SoundContextValue = {
@@ -54,7 +141,7 @@ const SoundContext = createContext<SoundContextValue>({
 })
 
 export function SoundProvider({ children }: { children: React.ReactNode }) {
-  const [enabled, setEnabledState] = useLocalStorage<boolean>(STORAGE_KEY, false)
+  const [enabled, setEnabledState] = useLocalStorage<boolean>(STORAGE_KEY, true)
   const [suppressed, setSuppressed] = useState(false)
 
   // Initialize Space UI sound bindings once on mount

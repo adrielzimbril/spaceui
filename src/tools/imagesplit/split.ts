@@ -13,7 +13,7 @@ export interface SplitConfig {
   padding: number
   radius: number
   scale: number
-  format: 'image/png' | 'image/jpeg' | 'image/webp'
+  format: 'image/png' | 'image/apng' | 'image/jpeg' | 'image/webp'
   quality: number
   prefix: string
   reverse: boolean
@@ -21,7 +21,7 @@ export interface SplitConfig {
 
 export const MAX_STAGE = 8000
 
-export type Source = HTMLImageElement | HTMLCanvasElement
+export type Source = HTMLImageElement | HTMLCanvasElement | { width: number; height: number }
 
 export function getColFlex(cfg: SplitConfig): number[] {
   if (cfg.colFlex && cfg.colFlex.length === cfg.cols) {
@@ -46,7 +46,7 @@ export function frameAspect(src: Source, cfg: SplitConfig): number {
   return cfg.ratio
 }
 
-export function renderStage(src: Source, cfg: SplitConfig): HTMLCanvasElement {
+export function renderStage(src: HTMLImageElement | HTMLCanvasElement, cfg: SplitConfig): HTMLCanvasElement {
   const w = src.width
   const h = src.height
   const aspect = frameAspect(src, cfg)
@@ -147,11 +147,13 @@ export function sliceStage(stage: HTMLCanvasElement, cfg: SplitConfig): Tile[] {
 }
 
 export async function toBlob(canvas: HTMLCanvasElement, cfg: SplitConfig): Promise<Blob> {
+  const mime = cfg.format === 'image/apng' ? 'image/png' : cfg.format
+  const quality = cfg.format === 'image/png' || cfg.format === 'image/apng' ? undefined : cfg.quality
   const rawBlob = await new Promise<Blob>((resolve) => {
-    canvas.toBlob((b) => resolve(b!), cfg.format, cfg.format === 'image/png' ? undefined : cfg.quality)
+    canvas.toBlob((b) => resolve(b!), mime, quality)
   })
 
-  if (cfg.format === 'image/png') {
+  if (cfg.format === 'image/png' || cfg.format === 'image/apng') {
     return injectPngMetadata(rawBlob)
   }
   if (cfg.format === 'image/jpeg') {
@@ -161,7 +163,7 @@ export async function toBlob(canvas: HTMLCanvasElement, cfg: SplitConfig): Promi
 }
 
 export function extFor(format: SplitConfig['format']) {
-  return format === 'image/png' ? 'png' : format === 'image/webp' ? 'webp' : 'jpg'
+  return format === 'image/png' ? 'png' : format === 'image/apng' ? 'apng' : format === 'image/webp' ? 'webp' : 'jpg'
 }
 
 export function formatBytes(bytes: number) {
@@ -531,4 +533,340 @@ export async function createZipArchive(files: { name: string; blob: Blob }[]): P
   endView.setUint16(20, 0, true)
 
   return new Blob([...localChunks, ...centralChunks, endRecord] as unknown as BlobPart[], { type: 'application/zip' })
+}
+
+// -----------------------------------------------------------------------------
+// APNG Decoder & Encoder (Pure client-side animation support)
+// -----------------------------------------------------------------------------
+
+const APNG_SIGNATURE = new Uint8Array([137, 80, 78, 71, 13, 10, 26, 10])
+
+function u32(value: number): Uint8Array {
+  return new Uint8Array([(value >>> 24) & 0xff, (value >>> 16) & 0xff, (value >>> 8) & 0xff, value & 0xff])
+}
+
+function concat(parts: Uint8Array[]): Uint8Array {
+  const size = parts.reduce((sum, part) => sum + part.length, 0)
+  const out = new Uint8Array(size)
+  let offset = 0
+  for (const part of parts) {
+    out.set(part, offset)
+    offset += part.length
+  }
+  return out
+}
+
+function makeChunk(type: string, data: Uint8Array): Uint8Array {
+  const encoder = new TextEncoder()
+  const name = encoder.encode(type)
+  const body = concat([name, data])
+  return concat([u32(data.length), body, u32(crc32(body))])
+}
+
+export function isApng(buffer: ArrayBuffer | Uint8Array): boolean {
+  const bytes = buffer instanceof Uint8Array ? buffer : new Uint8Array(buffer)
+  if (bytes.length < 8) return false
+  for (let i = 0; i < 8; i++) {
+    if (bytes[i] !== APNG_SIGNATURE[i]) return false
+  }
+  let offset = 8
+  const view = new DataView(bytes.buffer, bytes.byteOffset, bytes.byteLength)
+  while (offset + 8 <= bytes.length) {
+    const len = view.getUint32(offset)
+    const type = String.fromCharCode(bytes[offset + 4], bytes[offset + 5], bytes[offset + 6], bytes[offset + 7])
+    if (type === 'acTL') return true
+    if (type === 'IEND') break
+    offset += 12 + len
+  }
+  return false
+}
+
+interface RawFrame {
+  width: number
+  height: number
+  x: number
+  y: number
+  delay: number
+  disposeOp: number
+  blendOp: number
+  dataParts: Uint8Array[]
+}
+
+export interface DecodedApng {
+  width: number
+  height: number
+  numPlays: number
+  frames: {
+    canvas: HTMLCanvasElement
+    delay: number
+  }[]
+  fps: number
+}
+
+export async function decodeApng(buffer: ArrayBuffer): Promise<DecodedApng | null> {
+  const bytes = new Uint8Array(buffer)
+  if (!isApng(bytes)) return null
+
+  const view = new DataView(bytes.buffer, bytes.byteOffset, bytes.byteLength)
+  let offset = 8
+  let mainIhdr: Uint8Array | null = null
+  const headerChunks: { type: string; data: Uint8Array }[] = []
+  const rawFrames: RawFrame[] = []
+  let currentFrame: RawFrame | null = null
+  let numPlays = 0
+
+  while (offset + 8 <= bytes.length) {
+    const len = view.getUint32(offset)
+    const type = String.fromCharCode(bytes[offset + 4], bytes[offset + 5], bytes[offset + 6], bytes[offset + 7])
+    const data = bytes.subarray(offset + 8, offset + 8 + len)
+
+    if (type === 'IHDR') {
+      mainIhdr = data
+    } else if (type === 'acTL') {
+      numPlays = (data[4] << 24) | (data[5] << 16) | (data[6] << 8) | data[7]
+    } else if (type === 'fcTL') {
+      const fView = new DataView(data.buffer, data.byteOffset, data.byteLength)
+      const width = fView.getUint32(4)
+      const height = fView.getUint32(8)
+      const x = fView.getUint32(12)
+      const y = fView.getUint32(16)
+      const delayNum = fView.getUint16(20)
+      const delayDen = fView.getUint16(22) || 100
+      let delay = (delayNum / delayDen) * 1000
+      if (delay <= 10) delay = 100
+      const disposeOp = data[24]
+      const blendOp = data[25]
+      currentFrame = { width, height, x, y, delay, disposeOp, blendOp, dataParts: [] }
+      rawFrames.push(currentFrame)
+    } else if (type === 'IDAT') {
+      if (currentFrame) {
+        currentFrame.dataParts.push(data)
+      } else {
+        const dView = new DataView(mainIhdr!.buffer, mainIhdr!.byteOffset, mainIhdr!.byteLength)
+        currentFrame = {
+          width: dView.getUint32(0),
+          height: dView.getUint32(4),
+          x: 0,
+          y: 0,
+          delay: 100,
+          disposeOp: 0,
+          blendOp: 0,
+          dataParts: [data],
+        }
+        rawFrames.push(currentFrame)
+      }
+    } else if (type === 'fdAT') {
+      if (currentFrame) {
+        currentFrame.dataParts.push(data.subarray(4))
+      }
+    } else if (
+      type === 'PLTE' ||
+      type === 'tRNS' ||
+      type === 'cHRM' ||
+      type === 'gAMA' ||
+      type === 'iCCP' ||
+      type === 'sRGB'
+    ) {
+      headerChunks.push({ type, data })
+    } else if (type === 'IEND') {
+      break
+    }
+    offset += 12 + len
+  }
+
+  if (!mainIhdr || rawFrames.length === 0) return null
+
+  const mainW = (mainIhdr[0] << 24) | (mainIhdr[1] << 16) | (mainIhdr[2] << 8) | mainIhdr[3]
+  const mainH = (mainIhdr[4] << 24) | (mainIhdr[5] << 16) | (mainIhdr[6] << 8) | mainIhdr[7]
+
+  const fullCanvas = document.createElement('canvas')
+  fullCanvas.width = mainW
+  fullCanvas.height = mainH
+  const fullCtx = fullCanvas.getContext('2d', { willReadFrequently: true })!
+
+  let prevCanvas: HTMLCanvasElement | null = null
+  const decodedFrames: { canvas: HTMLCanvasElement; delay: number }[] = []
+
+  for (const rf of rawFrames) {
+    const frameIhdr = new Uint8Array(13)
+    frameIhdr.set(u32(rf.width), 0)
+    frameIhdr.set(u32(rf.height), 4)
+    frameIhdr.set(mainIhdr.subarray(8, 13), 8)
+
+    const parts: Uint8Array[] = [APNG_SIGNATURE, makeChunk('IHDR', frameIhdr)]
+    for (const hc of headerChunks) {
+      parts.push(makeChunk(hc.type, hc.data))
+    }
+    for (const idat of rf.dataParts) {
+      parts.push(makeChunk('IDAT', idat))
+    }
+    parts.push(makeChunk('IEND', new Uint8Array(0)))
+
+    const framePngBytes = concat(parts)
+    const blob = new Blob([framePngBytes as unknown as BlobPart], { type: 'image/png' })
+
+    let frameImage: ImageBitmap | HTMLImageElement
+    try {
+      frameImage = await createImageBitmap(blob)
+    } catch {
+      frameImage = await new Promise<HTMLImageElement>((res, rej) => {
+        const im = new Image()
+        const url = URL.createObjectURL(blob)
+        im.onload = () => {
+          URL.revokeObjectURL(url)
+          res(im)
+        }
+        im.onerror = rej
+        im.src = url
+      })
+    }
+
+    if (rf.disposeOp === 2) {
+      prevCanvas = document.createElement('canvas')
+      prevCanvas.width = mainW
+      prevCanvas.height = mainH
+      prevCanvas.getContext('2d')!.drawImage(fullCanvas, 0, 0)
+    }
+
+    if (rf.blendOp === 0) {
+      fullCtx.clearRect(rf.x, rf.y, rf.width, rf.height)
+    }
+    fullCtx.drawImage(frameImage, rf.x, rf.y)
+
+    const snap = document.createElement('canvas')
+    snap.width = mainW
+    snap.height = mainH
+    snap.getContext('2d')!.drawImage(fullCanvas, 0, 0)
+    decodedFrames.push({ canvas: snap, delay: rf.delay })
+
+    if (rf.disposeOp === 1) {
+      fullCtx.clearRect(rf.x, rf.y, rf.width, rf.height)
+    } else if (rf.disposeOp === 2 && prevCanvas) {
+      fullCtx.clearRect(0, 0, mainW, mainH)
+      fullCtx.drawImage(prevCanvas, 0, 0)
+    }
+  }
+
+  const avgDelay = decodedFrames.reduce((a, b) => a + b.delay, 0) / (decodedFrames.length || 1)
+  const fps = Math.max(1, Math.round(1000 / (avgDelay || 100)))
+
+  return {
+    width: mainW,
+    height: mainH,
+    numPlays,
+    frames: decodedFrames,
+    fps,
+  }
+}
+
+function createAcTL(numFrames: number, numPlays = 0): Uint8Array {
+  const buf = new Uint8Array(8)
+  const view = new DataView(buf.buffer)
+  view.setUint32(0, numFrames, false)
+  view.setUint32(4, numPlays, false)
+  return makeChunk('acTL', buf)
+}
+
+function createFcTL(seq: number, width: number, height: number, delayNum: number, delayDen: number): Uint8Array {
+  const buf = new Uint8Array(26)
+  const view = new DataView(buf.buffer)
+  view.setUint32(0, seq, false)
+  view.setUint32(4, width, false)
+  view.setUint32(8, height, false)
+  view.setUint32(12, 0, false) // x_offset
+  view.setUint32(16, 0, false) // y_offset
+  view.setUint16(20, delayNum, false)
+  view.setUint16(22, delayDen, false)
+  buf[24] = 0 // APNG_DISPOSE_OP_NONE
+  buf[25] = 0 // APNG_BLEND_OP_SOURCE
+  return makeChunk('fcTL', buf)
+}
+
+export async function pngsToApng(pngBuffers: Uint8Array[], fps: number): Promise<Blob> {
+  if (pngBuffers.length === 0) {
+    return new Blob([], { type: 'image/apng' })
+  }
+  if (pngBuffers.length === 1) {
+    return new Blob([pngBuffers[0] as unknown as BlobPart], { type: 'image/apng' })
+  }
+
+  const chunks: Uint8Array[] = [APNG_SIGNATURE]
+  const delayDen = 1000
+  const delayNum = Math.max(10, Math.round(1000 / (fps || 15)))
+
+  // Parse frame 0
+  const f0 = pngBuffers[0]
+  const f0View = new DataView(f0.buffer, f0.byteOffset, f0.byteLength)
+  let offset = 8
+  let width = 0
+  let height = 0
+  let ihdrChunk: Uint8Array | null = null
+  const frame0Idats: Uint8Array[] = []
+
+  while (offset + 8 <= f0.length) {
+    const len = f0View.getUint32(offset, false)
+    const type = String.fromCharCode(f0[offset + 4], f0[offset + 5], f0[offset + 6], f0[offset + 7])
+    const fullChunk = f0.subarray(offset, offset + 12 + len)
+    if (type === 'IHDR') {
+      ihdrChunk = fullChunk
+      width = f0View.getUint32(offset + 8, false)
+      height = f0View.getUint32(offset + 12, false)
+    } else if (type === 'IDAT') {
+      frame0Idats.push(fullChunk)
+    }
+    offset += 12 + len
+  }
+
+  if (!ihdrChunk) {
+    return new Blob([pngBuffers[0] as unknown as BlobPart], { type: 'image/apng' })
+  }
+
+  chunks.push(ihdrChunk)
+  chunks.push(createAcTL(pngBuffers.length, 0))
+
+  let seq = 0
+  // Frame 0 fcTL + IDATs
+  chunks.push(createFcTL(seq++, width, height, delayNum, delayDen))
+  for (const idat of frame0Idats) {
+    chunks.push(idat)
+  }
+
+  // Subsequent frames: fcTL + fdATs
+  for (let i = 1; i < pngBuffers.length; i++) {
+    const fi = pngBuffers[i]
+    const fiView = new DataView(fi.buffer, fi.byteOffset, fi.byteLength)
+    let o = 8
+    chunks.push(createFcTL(seq++, width, height, delayNum, delayDen))
+
+    while (o + 8 <= fi.length) {
+      const len = fiView.getUint32(o, false)
+      const type = String.fromCharCode(fi[o + 4], fi[o + 5], fi[o + 6], fi[o + 7])
+      if (type === 'IDAT') {
+        const idatData = fi.subarray(o + 8, o + 8 + len)
+        const fdatData = new Uint8Array(4 + idatData.length)
+        const fView = new DataView(fdatData.buffer)
+        fView.setUint32(0, seq++, false)
+        fdatData.set(idatData, 4)
+        chunks.push(makeChunk('fdAT', fdatData))
+      }
+      o += 12 + len
+    }
+  }
+
+  // End with IEND chunk
+  chunks.push(makeChunk('IEND', new Uint8Array(0)))
+
+  return new Blob([concat(chunks) as unknown as BlobPart], { type: 'image/apng' })
+}
+
+export async function canvasesToApng(canvases: HTMLCanvasElement[], fps: number): Promise<Blob> {
+  const pngBuffers: Uint8Array[] = []
+  for (const c of canvases) {
+    const blob = await new Promise<Blob>((res) => c.toBlob((b) => res(b!), 'image/png'))
+    const buf = await blob.arrayBuffer()
+    pngBuffers.push(new Uint8Array(buf))
+  }
+  const apngBlob = await pngsToApng(pngBuffers, fps)
+  const metaBlob = await injectPngMetadata(apngBlob)
+  return new Blob([await metaBlob.arrayBuffer()], { type: 'image/apng' })
 }
