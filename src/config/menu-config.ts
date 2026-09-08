@@ -125,10 +125,10 @@ export const megaMenuUiKit: MegaMenuItem[] = [
 
 export const megaMenuTools: ResourceItem[] = [
   {
-    title: 'Xplit',
-    label: 'xplit',
+    title: 'Image Split',
+    label: 'imagesplit',
     description: 'Split images into seamless carousels, grids and columns.',
-    href: '/tools/xplit',
+    href: '/tools/imagesplit',
     icon: IconCut,
     upcoming: false,
     release: 'new',

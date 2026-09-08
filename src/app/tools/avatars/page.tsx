@@ -1,5 +1,5 @@
-import { AvatarsPlayground } from '@/resources/avatars/playground'
-import { engineFromType } from '@/resources/shared/engine'
+import { AvatarsPlayground } from '@/tools/avatars/playground'
+import { engineFromType } from '@/tools/shared/engine'
 
 export const metadata = {
   title: 'Avatars',

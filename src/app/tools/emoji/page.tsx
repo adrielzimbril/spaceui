@@ -1,4 +1,4 @@
-import { EmojiPlayground } from '@/resources/emoji/playground'
+import { EmojiPlayground } from '@/tools/emoji/playground'
 
 export const metadata = {
   title: 'Emoji',
