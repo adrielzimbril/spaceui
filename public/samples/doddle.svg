@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 200 200" role="img" aria-label="Avatar for Kentaro Miura">
+    <rect width="200" height="200" fill="#f8faf5" />
+    <path d="M50 96 Q48 46 100 40 Q152 46 150 96 L150 150 Q136 142 134 112 Q118 62 66 62 Q66 112 66 150 Q52 142 50 96 Z" fill="#f38630" stroke="#000000" stroke-width="5" stroke-linejoin="round" />
+    <path d="M50 104 Q40 104 41 114 Q42 124 52 122" fill="transparent" stroke="#000000" stroke-width="5" stroke-linecap="round" />
+    <path d="M150 104 Q160 104 159 114 Q158 124 148 122" fill="transparent" stroke="#000000" stroke-width="5" stroke-linecap="round" />
+    <path d="M50 100 A50 60 0 0 0 150 100 A50 60 0 0 0 50 100 Z" fill="transparent" stroke="#000000" stroke-width="6" stroke-linejoin="round" />
+    
+    <g stroke="#000000" stroke-width="5" stroke-linejoin="round">
+      <path d="M54 82 Q58 44 100 42 Q142 44 146 82 Q130 66 100 66 Q70 66 54 82 Z" fill="#f38630" />
+      <path d="M74 66 L82 50 M96 62 L100 46 M118 66 L124 52" fill="none" stroke-linecap="round" />
+    </g>
+  
+    
+    <g fill="none" stroke="#000000" stroke-width="6" stroke-linecap="round"><path d="M68 102 Q78 92 88 102" /><path d="M112 102 Q122 92 132 102" /></g>
+    <circle cx="100" cy="117" r="3.5" fill="#000000" />
+    <path d="M84 134 Q92 127 100 134 T116 134" fill="none" stroke="#000000" stroke-width="5.5" stroke-linecap="round" />
+    
+    <g fill="none" stroke="#000000" stroke-width="5">
+      <circle cx="78" cy="100" r="17" />
+      <circle cx="122" cy="100" r="17" />
+      <line x1="95" y1="100" x2="105" y2="100" />
+      <line x1="61" y1="97" x2="52" y2="93" stroke-linecap="round" />
+      <line x1="139" y1="97" x2="148" y2="93" stroke-linecap="round" />
+    </g>
+  
+  </svg>

@@ -125,16 +125,6 @@ export const megaMenuUiKit: MegaMenuItem[] = [
 
 export const megaMenuTools: ResourceItem[] = [
   {
-    title: 'Image Split',
-    label: 'imagesplit',
-    description: 'Split images into seamless carousels, grids and columns.',
-    href: '/tools/imagesplit',
-    icon: IconCut,
-    upcoming: false,
-    release: 'new',
-    color: DEFAULT_COLOR_CODE.TURQUOISE,
-  },
-  {
     title: 'UI Avatars',
     label: 'avatars',
     description: 'Customizable 3D & flat user profile avatars.',
@@ -165,6 +155,16 @@ export const megaMenuTools: ResourceItem[] = [
     color: DEFAULT_COLOR_CODE.VIOLET,
   },
   {
+    title: 'Plush',
+    label: 'plush',
+    description: 'Interactive 3D tactile fur cushions with grooming physics & animations.',
+    href: '/tools/plush',
+    icon: IconSparkles,
+    upcoming: false,
+    release: 'new',
+    color: DEFAULT_COLOR_CODE.PINKISH_PURPLE,
+  },
+  {
     title: 'Emoji',
     label: 'emoji',
     description: 'High-res 3D & animated fluent emoji sets.',
@@ -173,6 +173,16 @@ export const megaMenuTools: ResourceItem[] = [
     upcoming: false,
     release: 'beta',
     color: DEFAULT_COLOR_CODE.YELLOW,
+  },
+  {
+    title: 'Image Split',
+    label: 'imagesplit',
+    description: 'Split images into seamless carousels, grids and columns.',
+    href: '/tools/imagesplit',
+    icon: IconCut,
+    upcoming: false,
+    release: 'new',
+    color: DEFAULT_COLOR_CODE.TURQUOISE,
   },
   {
     title: 'Gradients',
