@@ -258,7 +258,7 @@ export function ImageSplitControlPanel({
           <div className="flex flex-col gap-2">
             <div className="flex items-center justify-between">
               <span className="text-[0.6875rem] font-semibold text-muted-foreground">Columns</span>
-              <span className="text-[0.625rem] font-mono text-muted-foreground">{cfg.cols} parts</span>
+              <span className="text-[0.625rem] text-muted-foreground">{cfg.cols} parts</span>
             </div>
             <Tabs
               value={String(cfg.cols)}
@@ -296,7 +296,7 @@ export function ImageSplitControlPanel({
                   size="xs"
                   onClick={() => toggleColFlex(i)}
                   data-space-hover="tick"
-                  className="flex-1 text-[0.6875rem] font-mono h-7 border-0 cursor-pointer"
+                  className="flex-1 text-[0.6875rem] h-7 border-0 cursor-pointer"
                   title={`Column ${i + 1}: click to toggle flex (1x / 2x)`}
                 >
                   {f}×
@@ -357,7 +357,7 @@ export function ImageSplitControlPanel({
           <div className="flex flex-col gap-2">
             <div className="flex items-center justify-between">
               <span className="text-[0.6875rem] font-semibold text-muted-foreground">Zoom</span>
-              <span className="text-[0.625rem] font-mono text-muted-foreground">{cfg.zoom.toFixed(2)}×</span>
+              <span className="text-[0.625rem] text-muted-foreground">{cfg.zoom.toFixed(2)}×</span>
             </div>
             <Slider
               value={[cfg.zoom]}

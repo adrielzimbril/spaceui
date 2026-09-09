@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 200 200" role="img" aria-label="Avatar for Guillaume Alric">
+    <defs>
+      <clipPath id="kendo-clip-3652464925">
+        <rect width="200" height="200" />
+      </clipPath>
+    </defs>
+    <rect width="200" height="200" fill="#0e0e11" />
+    <circle cx="100" cy="96" r="76" fill="#d8332c" opacity="0.9" />
+    <g clip-path="url(#kendo-clip-3652464925)">
+      <path d="M100 44 C138 44 156 68 156 104 C156 140 136 168 100 168 C64 168 44 140 44 104 C44 68 62 44 100 44 Z" fill="#0e0e11" />
+      
+    <g fill="#f4f1e9">
+      <circle cx="80" cy="120" r="5.5" />
+      <circle cx="120" cy="120" r="5.5" />
+    </g>
+  <path d="M100 126 v10" stroke="#f4f1e9" stroke-width="4" stroke-linecap="round" /><path d="M88 148 q12 6 24 0" stroke="#f4f1e9" stroke-width="5" fill="none" stroke-linecap="round" />
+      
+    <g>
+      <path d="M100 12 C134 12 176 52 184 74 L16 74 C24 52 66 12 100 12 Z" fill="#f4f1e9" />
+      <path d="M16 74 h168 v8 H16 Z" fill="#f4f1e9" />
+      <path d="M96 82 q4 -34 8 0 Z" fill="#d8332c" />
+    </g>
+  
+    </g>
+  </svg>

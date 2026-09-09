@@ -126,6 +126,15 @@ export function pageSound() {
   } catch {}
 }
 
+export function whisperSound(...args: any[]) {
+  if (!isSoundActive) return
+  try {
+    if (typeof spaceSounds.whisper === 'function') {
+      spaceSounds.whisper(...args)
+    }
+  } catch {}
+}
+
 type SoundContextValue = {
   enabled: boolean
   setEnabled: (value: boolean) => void

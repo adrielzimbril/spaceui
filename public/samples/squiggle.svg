@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 200 200" role="img" aria-label="Avatar for Gesaffelstein">
+    <rect width="200" height="200" fill="#f8faf5" />
+    <g transform="translate(100 108) scale(0.82) translate(-100 -104)">
+      <path d="M100 44 C133 44 158 70 158 106 C158 146 132 172 100 172 C68 172 42 146 42 106 C42 70 67 44 100 44 Z" fill="#ffd700" />
+      <g fill="none" stroke="#000000" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"><path d="M70 102 L80 112 L90 102" /><path d="M112 102 L122 112 L132 102" /></g>
+      <path d="M100 100 V118 H112" fill="none" stroke="#000000" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" opacity="1" />
+      <circle cx="100" cy="136" r="8" fill="none" stroke="#000000" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" />
+      <g fill="none" stroke="#000000" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"><path d="M50 84 C56 60 72 52 76 64 C79 74 64 78 62 62 C60 46 74 40 82 52" /><path d="M84 50 C88 32 106 30 110 44 C113 56 98 60 96 46" /><path d="M114 46 C120 30 140 32 140 48 C140 60 124 62 124 50" /><path d="M46 90 C70 66 128 60 152 82" /></g>
+    </g>
+  </svg>
