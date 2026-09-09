@@ -28,15 +28,14 @@ export const PLUSH_PRESETS: PlushPreset[] = imagelib.tools.plush.map((item) => (
   defaultAutoColor: item.id !== 'squish',
 }))
 
-export const DEFAULT_PRESET =
-  PLUSH_PRESETS.find((p) => p.id === DEFAULT_PRESET_ID) ?? PLUSH_PRESETS[0]
+export const DEFAULT_PRESET = PLUSH_PRESETS.find((p) => p.id === DEFAULT_PRESET_ID) ?? PLUSH_PRESETS[0]
 
 export const DEFAULT_CONFIG: PlushConfig = {
-  furSize: 1.35,
-  furThickness: 1.45,
-  furHighlight: 0.7,
-  handSize: 1.3,
-  pressure: 0.75,
+  furSize: 1.62,
+  furThickness: 1.5,
+  furHighlight: 0.85,
+  handSize: 1.4,
+  pressure: 1,
   iconOpacity: 1,
   sideColor: DEFAULT_PRESET.sideColor,
   roundness: DEFAULT_PRESET.defaultRoundness ?? 1.0,
