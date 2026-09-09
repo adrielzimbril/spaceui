@@ -530,6 +530,7 @@ export class PlushEngine {
       samples: 4,
       minFilter: THREE.NearestFilter,
       magFilter: THREE.NearestFilter,
+      colorSpace: THREE.SRGBColorSpace,
     })
     this.orthoCamera = new THREE.OrthographicCamera(-1, 1, 1, -1, 0, 1)
 
@@ -1025,8 +1026,10 @@ export class PlushEngine {
         .multiplyScalar(0.4)
 
       this.renderer.setRenderTarget(this.renderTarget)
+      this.renderer.setClearColor(0xffffff, 0)
       this.renderer.render(this.scene, this.camera)
       this.renderer.setRenderTarget(null)
+      this.renderer.setClearColor(0xffffff, 0)
       this.renderer.render(this.postScene, this.orthoCamera)
 
       this.animFrameId = requestAnimationFrame(renderLoop)

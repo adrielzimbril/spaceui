@@ -16,4 +16,7 @@ export const TOOL_OUTBOUND = {
   emoji: {
     github: 'https://github.com/usespaceui/emoji',
   },
+  flags: {
+    github: 'https://github.com/usespaceui/space-ui',
+  },
 } satisfies Record<string, ToolOutboundLinks>

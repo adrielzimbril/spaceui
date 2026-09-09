@@ -16,6 +16,7 @@ const groups = [
       ['Image Split', '/tools/imagesplit'],
       ['Avatars', '/tools/avatars'],
       ['Emoji', '/tools/emoji'],
+      ['Flags', '/tools/flags'],
       ['Plush', '/tools/plush'],
       ['Documentation', '/docs'],
     ],

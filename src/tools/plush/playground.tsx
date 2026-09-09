@@ -282,7 +282,7 @@ export function PlushPlayground() {
             onDragOver={onDragOver}
             onDragLeave={onDragLeave}
             onDrop={onDrop}
-            className="relative size-full flex items-center justify-center bg-radial from-muted/30 via-background to-background select-none overflow-hidden"
+            className="relative size-full flex items-center justify-center bg-background select-none overflow-hidden"
           >
             <div ref={canvasContainerRef} className="size-full" />
 

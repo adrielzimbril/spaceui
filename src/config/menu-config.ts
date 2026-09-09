@@ -207,11 +207,11 @@ export const megaMenuTools: ResourceItem[] = [
   {
     title: 'Flags',
     label: 'flags',
-    description: '430 country and 201 language flags in circle, square, and 4×3 SVG.',
-    href: '#',
+    description: '429 country and 201 language flags in circle, square, and 4×3 SVG.',
+    href: '/tools/flags',
     icon: IconFlag,
-    upcoming: true,
-    release: 'coming-soon',
+    upcoming: false,
+    release: 'new',
     color: DEFAULT_COLOR_CODE.RED,
   },
   {
