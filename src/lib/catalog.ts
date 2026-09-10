@@ -10,8 +10,6 @@ import { uiKitSource } from '@/lib/source'
 export const CATALOG_SECTIONS = ['hooks', 'primitives', 'components', 'blocks', 'templates'] as const
 export type CatalogSection = (typeof CATALOG_SECTIONS)[number]
 
-export const NESTED_COMPONENT_CATALOGS = ['orb', 'shader', 'backgrounds'] as const
-
 const META: Record<CatalogSection, { title: string; pages: string[] }> = {
   hooks: hooksMeta,
   primitives: primitivesMeta,
@@ -20,11 +18,11 @@ const META: Record<CatalogSection, { title: string; pages: string[] }> = {
   templates: templatesMeta,
 }
 
-function categoryBadge(section: CatalogSection, groupTitle: string, folder?: string) {
+function categoryBadge(section: CatalogSection, groupTitle: string) {
   const title = groupTitle.toLowerCase()
-  if (folder === 'orb' || title === 'orb') return 'Orb'
-  if (folder === 'shader' || title.includes('shader')) return 'Shader'
-  if (folder === 'backgrounds' || title.includes('background')) return 'Background'
+  if (title === 'orb') return 'Orb'
+  if (title.includes('shader')) return 'Shader'
+  if (title.includes('background')) return 'Background'
   if (section === 'hooks') {
     if (title.includes('control-flow')) return 'Component'
     if (title.includes('utilit')) return 'Utility'
@@ -49,12 +47,7 @@ export function isCatalogSection(value: string | undefined): value is CatalogSec
 
 export function isCatalogIndex(slug: string[] | undefined) {
   if (!slug?.length) return false
-  if (isCatalogSection(slug[0]) && (slug.length === 1 || slug[1] === 'index')) return true
-  return (
-    slug[0] === 'components' &&
-    NESTED_COMPONENT_CATALOGS.includes(slug[1] as (typeof NESTED_COMPONENT_CATALOGS)[number]) &&
-    (slug.length === 2 || slug[2] === 'index')
-  )
+  return isCatalogSection(slug[0]) && (slug.length === 1 || slug[1] === 'index')
 }
 
 function pageMap(section: CatalogSection) {
@@ -83,28 +76,7 @@ function toItem(
 export function getUiKitCatalog(slug: string[] | undefined): RelatedGroup[] {
   const section = slug?.[0]
   if (!isCatalogSection(section)) return []
-
-  if (slug.length === 2 && section === 'components') {
-    return getNestedCatalog(slug[1])
-  }
-
   return getSectionCatalog(section)
-}
-
-function getNestedCatalog(folder: string): RelatedGroup[] {
-  const prefix = `${folder}/`
-  const bySlug = pageMap('components')
-  const items: RelatedComponent[] = []
-
-  for (const entry of componentsMeta.pages) {
-    if (!entry.startsWith(prefix) || entry === folder) continue
-    const page = bySlug.get(entry)
-    if (!page) continue
-    items.push(toItem(entry, page, categoryBadge('components', folder, folder)))
-  }
-
-  if (items.length === 0) return []
-  return [{ id: folder, title: folder.charAt(0).toUpperCase() + folder.slice(1), items }]
 }
 
 function getSectionCatalog(section: CatalogSection): RelatedGroup[] {
@@ -124,15 +96,13 @@ function getSectionCatalog(section: CatalogSection): RelatedGroup[] {
     return group
   }
 
-  const nestedRoots = new Set(NESTED_COMPONENT_CATALOGS as readonly string[])
-
   for (const entry of meta.pages) {
     if (entry.startsWith('---')) {
       ensureGroup(entry.replace(/^-+/, '').replace(/-+$/, '').trim())
       continue
     }
 
-    if (entry === 'index' || nestedRoots.has(entry)) continue
+    if (entry === 'index') continue
     const group = current ?? ensureGroup(meta.title)
 
     const page = bySlug.get(entry)

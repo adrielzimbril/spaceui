@@ -7,16 +7,64 @@ import { Avatar } from '@usespaceui/avatars/react'
 import { Squishmoji } from '@usespaceui/squishmoji/react'
 
 export const SHOWCASE_FLAGS = [
-  'us', 'gb', 'ca', 'fr', 'de', 'jp', 'br', 'in', 'au', 'es',
-  'it', 'nl', 'se', 'kr', 'mx', 'za', 'ch', 'no', 'sg', 'ae',
-  'ci', 'cn', 'pt', 'ar', 'ie', 'pl', 'nz', 'dk', 'fi', 'be',
-  'gr', 'tr', 'at', 'id', 'ph', 'eg', 'ng', 'ke', 'co', 'cl',
+  'us',
+  'gb',
+  'ca',
+  'fr',
+  'de',
+  'jp',
+  'br',
+  'in',
+  'au',
+  'es',
+  'it',
+  'nl',
+  'se',
+  'kr',
+  'mx',
+  'za',
+  'ch',
+  'no',
+  'sg',
+  'ae',
+  'ci',
+  'cn',
+  'pt',
+  'ar',
+  'ie',
+  'pl',
+  'nz',
+  'dk',
+  'fi',
+  'be',
+  'gr',
+  'tr',
+  'at',
+  'id',
+  'ph',
+  'eg',
+  'ng',
+  'ke',
+  'co',
+  'cl',
 ] as const
 
 export const TECH_KEYS = [
-  'laravel', 'vue', 'react', 'nextjs', 'ts', 'js',
-  'tailwind', 'vite', 'bun', 'astro', 'python', 'figma',
-  'supabase', 'docker', 'node',
+  'laravel',
+  'vue',
+  'react',
+  'nextjs',
+  'ts',
+  'js',
+  'tailwind',
+  'vite',
+  'bun',
+  'astro',
+  'python',
+  'figma',
+  'supabase',
+  'docker',
+  'node',
 ] as const
 
 export type TechKey = (typeof TECH_KEYS)[number]
@@ -78,14 +126,20 @@ export function TechIcon({ name, size = 24, className }: { name: string; size?: 
       return (
         <svg width={size} height={size} viewBox="0 0 24 24" fill="none" className={className}>
           <rect width="24" height="24" rx="4" fill="#3178C6" />
-          <path d="M5.5 10.2h6.2V12H9.3v8H7.3v-8H5.5v-1.8ZM13.2 18.2c.6.6 1.5 1 2.5 1 1.4 0 2.2-.8 2.2-1.8 0-1.2-.8-1.7-2.1-2.2-1.7-.7-2.8-1.5-2.8-3.2 0-1.8 1.4-3.2 3.5-3.2 1.3 0 2.3.4 3 1.1l-1 1.5c-.5-.4-1.2-.7-2-.7-1 0-1.6.6-1.6 1.4 0 1 .7 1.4 2 2 1.9.8 3 1.7 3 3.4 0 2.1-1.6 3.4-4 3.4-1.6 0-2.8-.5-3.7-1.4l1-1.5Z" fill="#fff" />
+          <path
+            d="M5.5 10.2h6.2V12H9.3v8H7.3v-8H5.5v-1.8ZM13.2 18.2c.6.6 1.5 1 2.5 1 1.4 0 2.2-.8 2.2-1.8 0-1.2-.8-1.7-2.1-2.2-1.7-.7-2.8-1.5-2.8-3.2 0-1.8 1.4-3.2 3.5-3.2 1.3 0 2.3.4 3 1.1l-1 1.5c-.5-.4-1.2-.7-2-.7-1 0-1.6.6-1.6 1.4 0 1 .7 1.4 2 2 1.9.8 3 1.7 3 3.4 0 2.1-1.6 3.4-4 3.4-1.6 0-2.8-.5-3.7-1.4l1-1.5Z"
+            fill="#fff"
+          />
         </svg>
       )
     case 'js':
       return (
         <svg width={size} height={size} viewBox="0 0 24 24" fill="none" className={className}>
           <rect width="24" height="24" rx="4" fill="#F7DF1E" />
-          <path d="M6.5 10.5h2.2v6.6c0 1.5-.7 2.3-2.1 2.3-.6 0-1.3-.2-1.7-.5l.4-1.6c.3.2.7.3 1 .3.6 0 .9-.3.9-.9v-6.2ZM12.2 18.2c.6.6 1.5 1 2.5 1 1.4 0 2.2-.8 2.2-1.8 0-1.2-.8-1.7-2.1-2.2-1.7-.7-2.8-1.5-2.8-3.2 0-1.8 1.4-3.2 3.5-3.2 1.3 0 2.3.4 3 1.1l-1 1.5c-.5-.4-1.2-.7-2-.7-1 0-1.6.6-1.6 1.4 0 1 .7 1.4 2 2 1.9.8 3 1.7 3 3.4 0 2.1-1.6 3.4-4 3.4-1.6 0-2.8-.5-3.7-1.4l1-1.5Z" fill="#000" />
+          <path
+            d="M6.5 10.5h2.2v6.6c0 1.5-.7 2.3-2.1 2.3-.6 0-1.3-.2-1.7-.5l.4-1.6c.3.2.7.3 1 .3.6 0 .9-.3.9-.9v-6.2ZM12.2 18.2c.6.6 1.5 1 2.5 1 1.4 0 2.2-.8 2.2-1.8 0-1.2-.8-1.7-2.1-2.2-1.7-.7-2.8-1.5-2.8-3.2 0-1.8 1.4-3.2 3.5-3.2 1.3 0 2.3.4 3 1.1l-1 1.5c-.5-.4-1.2-.7-2-.7-1 0-1.6.6-1.6 1.4 0 1 .7 1.4 2 2 1.9.8 3 1.7 3 3.4 0 2.1-1.6 3.4-4 3.4-1.6 0-2.8-.5-3.7-1.4l1-1.5Z"
+            fill="#000"
+          />
         </svg>
       )
     case 'tailwind':
@@ -118,7 +172,10 @@ export function TechIcon({ name, size = 24, className }: { name: string; size?: 
     case 'bun':
       return (
         <svg width={size} height={size} viewBox="0 0 24 24" fill="none" className={className}>
-          <path d="M12 2C6.5 2 2 6.2 2 11.5c0 4.2 3.1 7.8 7.3 8.8l.4 1.7h4.6l.4-1.7c4.2-1 7.3-4.6 7.3-8.8C22 6.2 17.5 2 12 2Z" fill="#FBF0DF" />
+          <path
+            d="M12 2C6.5 2 2 6.2 2 11.5c0 4.2 3.1 7.8 7.3 8.8l.4 1.7h4.6l.4-1.7c4.2-1 7.3-4.6 7.3-8.8C22 6.2 17.5 2 12 2Z"
+            fill="#FBF0DF"
+          />
           <ellipse cx="8.5" cy="11.5" rx="1.5" ry="2" fill="#231F20" />
           <ellipse cx="15.5" cy="11.5" rx="1.5" ry="2" fill="#231F20" />
           <circle cx="9" cy="11" r=".6" fill="#fff" />
@@ -137,8 +194,14 @@ export function TechIcon({ name, size = 24, className }: { name: string; size?: 
     case 'python':
       return (
         <svg width={size} height={size} viewBox="0 0 24 24" fill="none" className={className}>
-          <path d="M11.9 2c-3.1 0-5.3.7-5.3 3.1v2.3h5.4v.8H4.4C2 8.2 2 10.6 2 13.1c0 2.7.9 4.3 3.8 4.3h1.8v-2.5c0-2.2 1.9-4.2 4.3-4.2h5.3v-.8c0-2.5-1.9-3.7-4.3-3.7H11c0-1 .9-2 2-2h4V2h-5.1ZM9.2 4a.8.8 0 1 1 0 1.6.8.8 0 0 1 0-1.6Z" fill="#3776AB" />
-          <path d="M12.1 22c3.1 0 5.3-.7 5.3-3.1v-2.3H12v-.8h7.6c2.4 0 2.4-2.4 2.4-4.9 0-2.7-.9-4.3-3.8-4.3h-1.8v2.5c0 2.2-1.9 4.2-4.3 4.2H6.8v.8c0 2.5 1.9 3.7 4.3 3.7H13c0 1-.9 2-2 2H7V22h5.1ZM14.8 20a.8.8 0 1 1 0-1.6.8.8 0 0 1 0 1.6Z" fill="#FFD43B" />
+          <path
+            d="M11.9 2c-3.1 0-5.3.7-5.3 3.1v2.3h5.4v.8H4.4C2 8.2 2 10.6 2 13.1c0 2.7.9 4.3 3.8 4.3h1.8v-2.5c0-2.2 1.9-4.2 4.3-4.2h5.3v-.8c0-2.5-1.9-3.7-4.3-3.7H11c0-1 .9-2 2-2h4V2h-5.1ZM9.2 4a.8.8 0 1 1 0 1.6.8.8 0 0 1 0-1.6Z"
+            fill="#3776AB"
+          />
+          <path
+            d="M12.1 22c3.1 0 5.3-.7 5.3-3.1v-2.3H12v-.8h7.6c2.4 0 2.4-2.4 2.4-4.9 0-2.7-.9-4.3-3.8-4.3h-1.8v2.5c0 2.2-1.9 4.2-4.3 4.2H6.8v.8c0 2.5 1.9 3.7 4.3 3.7H13c0 1-.9 2-2 2H7V22h5.1ZM14.8 20a.8.8 0 1 1 0-1.6.8.8 0 0 1 0 1.6Z"
+            fill="#FFD43B"
+          />
         </svg>
       )
     case 'figma':
@@ -154,7 +217,10 @@ export function TechIcon({ name, size = 24, className }: { name: string; size?: 
     case 'supabase':
       return (
         <svg width={size} height={size} viewBox="0 0 24 24" fill="none" className={className}>
-          <path d="M13.4 2.5c.3-.6 1.1-.7 1.6-.2l7.7 8.2c.6.6.1 1.6-.7 1.6h-8.8v9.4c0 .7-.8 1.1-1.3.6l-7.7-8.2c-.6-.6-.1-1.6.7-1.6h8.8V2.5Z" fill="#3ECF8E" />
+          <path
+            d="M13.4 2.5c.3-.6 1.1-.7 1.6-.2l7.7 8.2c.6.6.1 1.6-.7 1.6h-8.8v9.4c0 .7-.8 1.1-1.3.6l-7.7-8.2c-.6-.6-.1-1.6.7-1.6h8.8V2.5Z"
+            fill="#3ECF8E"
+          />
         </svg>
       )
     case 'docker':
@@ -166,7 +232,10 @@ export function TechIcon({ name, size = 24, className }: { name: string; size?: 
           <rect x="10.5" y="6.5" width="2" height="2" rx=".3" fill="#2496ED" />
           <rect x="13.5" y="6.5" width="2" height="2" rx=".3" fill="#2496ED" />
           <rect x="16.5" y="9.5" width="2" height="2" rx=".3" fill="#2496ED" />
-          <path d="M22.5 12.8c-.8-.2-1.7-.1-2.4.3-.4-1.3-1.4-2.2-2.8-2.4-.2-.8-.8-1.5-1.6-1.8v3.6H4.2c-.2.8-.2 1.6-.1 2.4.6 3.5 3.7 6.1 7.2 6.1 5.3 0 9.8-3.6 11.2-8.2Z" fill="#2496ED" />
+          <path
+            d="M22.5 12.8c-.8-.2-1.7-.1-2.4.3-.4-1.3-1.4-2.2-2.8-2.4-.2-.8-.8-1.5-1.6-1.8v3.6H4.2c-.2.8-.2 1.6-.1 2.4.6 3.5 3.7 6.1 7.2 6.1 5.3 0 9.8-3.6 11.2-8.2Z"
+            fill="#2496ED"
+          />
         </svg>
       )
     case 'node':
@@ -356,11 +425,7 @@ export function ShowcaseItem({
   )
 }
 
-export function WaveDivider({
-  color = 'rgba(255, 255, 255, 0.85)',
-}: {
-  color?: string
-}) {
+export function WaveDivider({ color = 'rgba(255, 255, 255, 0.85)' }: { color?: string }) {
   return (
     <div
       style={{
@@ -403,8 +468,7 @@ export function ShowcaseGallery({ s }: { s: OgState }) {
           justifyContent: 'center',
           overflow: 'hidden',
           zIndex: 1,
-          maskImage:
-            'radial-gradient(ellipse 90% 85% at 50% 95%, black 45%, rgba(0, 0, 0, 0.5) 75%, transparent 100%)',
+          maskImage: 'radial-gradient(ellipse 90% 85% at 50% 95%, black 45%, rgba(0, 0, 0, 0.5) 75%, transparent 100%)',
           WebkitMaskImage:
             'radial-gradient(ellipse 90% 85% at 50% 95%, black 45%, rgba(0, 0, 0, 0.5) 75%, transparent 100%)',
         }}
@@ -423,15 +487,7 @@ export function ShowcaseGallery({ s }: { s: OgState }) {
             >
               {Array.from({ length: perRow }).map((_, colIndex) => {
                 const idx = rowIndex * perRow + colIndex
-                return (
-                  <ShowcaseItem
-                    key={idx}
-                    type={s.showcaseType}
-                    index={idx}
-                    shape={s.showcaseShape}
-                    size={size}
-                  />
-                )
+                return <ShowcaseItem key={idx} type={s.showcaseType} index={idx} shape={s.showcaseShape} size={size} />
               })}
             </div>
           )
@@ -456,13 +512,7 @@ export function ShowcaseGallery({ s }: { s: OgState }) {
         }}
       >
         {Array.from({ length: count }).map((_, idx) => (
-          <ShowcaseItem
-            key={idx}
-            type={s.showcaseType}
-            index={idx}
-            shape={s.showcaseShape}
-            size={size}
-          />
+          <ShowcaseItem key={idx} type={s.showcaseType} index={idx} shape={s.showcaseShape} size={size} />
         ))}
       </div>
     )
@@ -495,7 +545,6 @@ export function ShowcaseGallery({ s }: { s: OgState }) {
         pointerEvents: 'none',
       }}
     >
-
       {Array.from({ length: cloudRows }).map((_, r) => {
         const rowShift = r % 2 === 1 ? -(size + gap) * 0.5 : 0
         return (
@@ -511,15 +560,7 @@ export function ShowcaseGallery({ s }: { s: OgState }) {
             {Array.from({ length: cloudCols }).map((_, c) => {
               const idx = r * cloudCols + c
               if (idx >= count) return null
-              return (
-                <ShowcaseItem
-                  key={idx}
-                  type={s.showcaseType}
-                  index={idx}
-                  shape={s.showcaseShape}
-                  size={size}
-                />
-              )
+              return <ShowcaseItem key={idx} type={s.showcaseType} index={idx} shape={s.showcaseShape} size={size} />
             })}
           </div>
         )

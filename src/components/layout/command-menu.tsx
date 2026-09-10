@@ -174,27 +174,37 @@ export function CommandMenu({
         let group = defaultGroup
         let isComponent = false
 
-        if (url.startsWith('/ui-kit/primitives')) {
+        const BACKGROUND_SLUGS = new Set(['bubble', 'gradient'])
+        const ORB_SLUGS = new Set(['smooth', 'bloop'])
+        const SHADER_SLUGS = new Set(['cloud', 'paper-shader'])
+
+        if (url.startsWith('/primitives')) {
           group = 'Primitives'
           isComponent = true
-        } else if (url.startsWith('/ui-kit/components/backgrounds') || url.includes('/backgrounds/')) {
+        } else if (url.startsWith('/components') && BACKGROUND_SLUGS.has(slug)) {
           group = 'Backgrounds'
           isComponent = true
+        } else if (url.startsWith('/components') && ORB_SLUGS.has(slug)) {
+          group = 'Orb'
+          isComponent = true
+        } else if (url.startsWith('/components') && SHADER_SLUGS.has(slug)) {
+          group = 'Shader'
+          isComponent = true
         } else if (
-          url.startsWith('/ui-kit/components/effects') ||
+          url.startsWith('/components/effects') ||
           url.includes('/effects/') ||
           slug === 'motion-effect' ||
           slug === 'motion-highlight'
         ) {
           group = 'Effects'
           isComponent = true
-        } else if (url.startsWith('/ui-kit/components/texts') || url.includes('/texts/') || slug === 'splitting') {
+        } else if (url.startsWith('/components/texts') || url.includes('/texts/') || slug === 'splitting') {
           group = 'Texts'
           isComponent = true
-        } else if (url.startsWith('/ui-kit/components')) {
+        } else if (url.startsWith('/components')) {
           group = 'Components'
           isComponent = true
-        } else if (url.startsWith('/ui-kit/hooks')) {
+        } else if (url.startsWith('/hooks')) {
           if (HOOK_COMPONENTS.has(slug)) {
             group = 'Hook Components'
             isComponent = true
@@ -205,10 +215,10 @@ export function CommandMenu({
             group = 'Hooks'
             isComponent = false
           }
-        } else if (url.startsWith('/ui-kit/blocks')) {
+        } else if (url.startsWith('/blocks')) {
           group = 'Blocks'
           isComponent = true
-        } else if (url.startsWith('/ui-kit/templates')) {
+        } else if (url.startsWith('/templates')) {
           group = 'Templates'
           isComponent = true
         } else if (url.startsWith('/docs/icons')) {

@@ -64,7 +64,7 @@ export async function generateMetadata(props: { params: Promise<{ slug?: string[
 export default async function Page(props: { params: Promise<{ slug?: string[] }> }) {
   const params = await props.params
   if (!params.slug || params.slug.length === 0) {
-    redirect('/ui-kit/components')
+    redirect('/components')
   }
   const page = source.getPage(params.slug)
 
@@ -86,14 +86,14 @@ export default async function Page(props: { params: Promise<{ slug?: string[] }>
   const isBlocksOrComponents =
     params.slug?.[0] === 'blocks' ||
     params.slug?.[0] === 'components' ||
-    page.url.startsWith('/ui-kit/blocks') ||
-    page.url.startsWith('/ui-kit/components')
+    page.url.startsWith('/blocks') ||
+    page.url.startsWith('/components')
   const catalog = showCatalog ? getUiKitCatalog(params.slug) : []
 
   const previewConfig = normalizePreviewConfig(pageData.preview)
   const isTemplate =
     params.slug?.[0] === 'templates' ||
-    page.url.startsWith('/ui-kit/templates') ||
+    page.url.startsWith('/templates') ||
     Boolean(previewConfig?.name.startsWith('template-'))
 
   return (

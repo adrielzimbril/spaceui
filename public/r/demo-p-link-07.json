@@ -9,7 +9,7 @@
   "files": [
     {
       "path": "src/registry/demo/primitives/link/p-link-07/index.tsx",
-      "content": "import NextLink from 'next/link'\nimport { Link } from '@/components/ui/link'\n\nexport default function Demo() {\n  return (\n    <div className=\"flex flex-wrap items-center justify-center  gap-6 text-sm\">\n      <Link render={<NextLink href=\"/ui-kit/primitives/button\" />}>Next.js Internal Link</Link>\n\n      <Link asButton variant=\"underline\" size=\"sm\" render={<NextLink href=\"/ui-kit/primitives/button\" />}>\n        Go to Button Primitive\n      </Link>\n    </div>\n  )\n}\n",
+      "content": "import NextLink from 'next/link'\nimport { Link } from '@/components/ui/link'\n\nexport default function Demo() {\n  return (\n    <div className=\"flex flex-wrap items-center justify-center  gap-6 text-sm\">\n      <Link render={<NextLink href=\"/primitives/button\" />}>Next.js Internal Link</Link>\n\n      <Link asButton variant=\"underline\" size=\"sm\" render={<NextLink href=\"/primitives/button\" />}>\n        Go to Button Primitive\n      </Link>\n    </div>\n  )\n}\n",
       "type": "registry:ui",
       "target": "components/spaceui/link.tsx"
     }

@@ -29,7 +29,7 @@ export const source = loader({
 })
 
 export const uiKitSource = loader({
-  baseUrl: '/ui-kit',
+  baseUrl: '',
   source: uiKit.toFumadocsSource(),
   ...commonLoaderOptions,
 })

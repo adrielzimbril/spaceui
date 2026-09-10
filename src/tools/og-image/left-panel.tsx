@@ -21,14 +21,7 @@ interface OgLeftPanelProps {
   onImportJson?: () => void
 }
 
-export function OgLeftPanel({
-  s,
-  set,
-  onSelectPreset,
-  activePresetId,
-  onSelectSize,
-  onImportJson,
-}: OgLeftPanelProps) {
+export function OgLeftPanel({ s, set, onSelectPreset, activePresetId, onSelectSize, onImportJson }: OgLeftPanelProps) {
   const handleSlider = <K extends keyof OgState>(key: K, val: number | readonly number[]) => {
     const num = Array.isArray(val) ? val[0] : val
     set(key, num as OgState[K])
@@ -274,10 +267,7 @@ function PresetMiniSwatch({ preset }: { preset: Preset }) {
     <div
       className="size-full rounded-md relative overflow-hidden transition-transform group-hover:scale-105"
       style={{
-        background:
-          mode === 'gradient'
-            ? `linear-gradient(135deg, ${from}, ${via}, ${to})`
-            : base,
+        background: mode === 'gradient' ? `linear-gradient(135deg, ${from}, ${via}, ${to})` : base,
       }}
     >
       {mode === 'orbs' && (
@@ -442,10 +432,7 @@ function WireframeSkeleton({ layout }: { layout: Layout }) {
 
 /** Ratio silhouette */
 function RatioShape({ ratio, isSelected }: { ratio: string; isSelected: boolean }) {
-  const boxCls = cn(
-    'rounded transition-colors',
-    isSelected ? 'bg-muted-foreground/70' : 'bg-muted-foreground/25',
-  )
+  const boxCls = cn('rounded transition-colors', isSelected ? 'bg-muted-foreground/70' : 'bg-muted-foreground/25')
 
   switch (ratio) {
     case 'square':
@@ -457,4 +444,3 @@ function RatioShape({ ratio, isSelected }: { ratio: string; isSelected: boolean 
       return <div className={cn(boxCls, 'w-5 h-2.5')} />
   }
 }
-

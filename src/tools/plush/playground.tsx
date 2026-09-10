@@ -1,13 +1,7 @@
 'use client'
 
 import React, { useCallback, useEffect, useRef, useState } from 'react'
-import {
-  IconSparkles,
-  IconUpload,
-  IconHandFinger,
-  IconCamera,
-  IconFocus2,
-} from '@tabler/icons-react'
+import { IconSparkles, IconUpload, IconHandFinger, IconCamera, IconFocus2 } from '@tabler/icons-react'
 import { ToolbarButton } from '@/components/playground/playground-toolbar-button'
 import { Button } from '@/registry/primitives/button'
 import { Badge } from '@/registry/primitives/badge'
@@ -119,15 +113,12 @@ export function PlushPlayground() {
         .then((art) => {
           engineRef.current?.setArtwork(art)
           setActiveArtwork(art)
-          const shouldAutoColor = preset.defaultAutoColor ?? (preset.id !== 'squish')
+          const shouldAutoColor = preset.defaultAutoColor ?? preset.id !== 'squish'
           const patch: Partial<PlushConfig> = { autoColor: shouldAutoColor }
           if (shouldAutoColor) {
             if (art.hasAlpha) {
               const vibrant = art.palette?.find(
-                (c) =>
-                  c.toLowerCase() !== '#ffffff' &&
-                  c.toLowerCase() !== '#121214' &&
-                  c.toLowerCase() !== '#000000',
+                (c) => c.toLowerCase() !== '#ffffff' && c.toLowerCase() !== '#121214' && c.toLowerCase() !== '#000000',
               )
               patch.sideColor = vibrant || preset.sideColor || art.palette?.[0] || art.edgeColor || '#ffffff'
             } else if (art.edgeColor) {
@@ -167,10 +158,7 @@ export function PlushPlayground() {
           const patch: Partial<PlushConfig> = { autoColor: true }
           if (art.hasAlpha) {
             const vibrant = art.palette?.find(
-              (c) =>
-                c.toLowerCase() !== '#ffffff' &&
-                c.toLowerCase() !== '#121214' &&
-                c.toLowerCase() !== '#000000',
+              (c) => c.toLowerCase() !== '#ffffff' && c.toLowerCase() !== '#121214' && c.toLowerCase() !== '#000000',
             )
             patch.sideColor = vibrant || art.palette?.[0] || art.edgeColor || '#ffffff'
           } else if (art.edgeColor) {
@@ -226,15 +214,18 @@ export function PlushPlayground() {
     }
   }
 
-  const handleSnapshot = useCallback((frontView = true) => {
-    if (!engineRef.current) return
-    const dataUrl = engineRef.current.takeSnapshot({ frontView })
-    const a = document.createElement('a')
-    a.href = dataUrl
-    a.download = `plush-${activePreset?.id ?? 'custom'}-${frontView ? 'front' : '3d'}-${Date.now()}.png`
-    a.click()
-    sparkleSound()
-  }, [activePreset])
+  const handleSnapshot = useCallback(
+    (frontView = true) => {
+      if (!engineRef.current) return
+      const dataUrl = engineRef.current.takeSnapshot({ frontView })
+      const a = document.createElement('a')
+      a.href = dataUrl
+      a.download = `plush-${activePreset?.id ?? 'custom'}-${frontView ? 'front' : '3d'}-${Date.now()}.png`
+      a.click()
+      sparkleSound()
+    },
+    [activePreset],
+  )
 
   const handleCenterView = useCallback(() => {
     engineRef.current?.resetOrientation()

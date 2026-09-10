@@ -93,9 +93,9 @@ export function getEffectiveContained(
  * Prevents flashing in standard mode for split-preferred routes like shaders and blocks.
  *
  * Rules:
- * - Shaders (/ui-kit/components/shader/*): defaultMode 'split' (can be locked via frontmatter)
- * - Individual Block pages (/ui-kit/blocks/[slug]): defaultMode 'split', mode 'both' (not locked to dual)
- * - Catalog index pages (/ui-kit/blocks, /ui-kit/components/shader): standard
+ * - Shaders (now flat: /components/cloud, /components/paper-shader): defaultMode 'split'
+ * - Individual Block pages (/blocks/[slug]): defaultMode 'split', mode 'both' (not locked to dual)
+ * - Catalog index pages (/blocks, /components): standard
  */
 export function isDocsRoute(pathname?: string | null): boolean {
   if (!pathname) return false
@@ -112,16 +112,7 @@ export function isCatalogRoute(pathname?: string | null): boolean {
   if (clean === '/ui-kit') return true
   if (clean.endsWith('/index')) return true
 
-  const catalogExactRoutes = [
-    '/ui-kit/primitives',
-    '/ui-kit/components',
-    '/ui-kit/blocks',
-    '/ui-kit/templates',
-    '/ui-kit/hooks',
-    '/ui-kit/components/shader',
-    '/ui-kit/components/orb',
-    '/ui-kit/components/backgrounds',
-  ]
+  const catalogExactRoutes = ['/primitives', '/components', '/blocks', '/templates', '/hooks']
 
   return catalogExactRoutes.includes(clean)
 }
@@ -132,10 +123,10 @@ export function isCatalogRoute(pathname?: string | null): boolean {
  *
  * Rules:
  * - Docs pages (/docs, /docs/*): strictly locked to standard mode (no dual mode)
- * - Catalog index pages (/ui-kit, /ui-kit/blocks, /ui-kit/templates, /ui-kit/primitives, /ui-kit/components, /ui-kit/hooks, ...): strictly locked to standard mode (no dual mode)
- * - Shaders detail pages (/ui-kit/components/shader/*): defaultMode 'split' (can be locked via frontmatter)
- * - Individual Block pages (/ui-kit/blocks/[slug]): defaultMode 'split', mode 'split'
- * - Individual Template pages (/ui-kit/templates/[slug]): defaultMode 'split', mode 'split'
+ * - Catalog index pages (/ui-kit, /blocks, /templates, /primitives, /components, /hooks, ...): strictly locked to standard mode (no dual mode)
+ * - Shaders detail pages (now flat: /components/cloud, /components/paper-shader): defaultMode 'split'
+ * - Individual Block pages (/blocks/[slug]): defaultMode 'split', mode 'split'
+ * - Individual Template pages (/templates/[slug]): defaultMode 'split', mode 'split'
  */
 export function getRouteLayoutDefaults(pathname?: string | null): {
   mode: LayoutMode
@@ -159,24 +150,25 @@ export function getRouteLayoutDefaults(pathname?: string | null): {
     }
   }
 
-  // 3. Shaders detail pages (/ui-kit/components/shader/...)
-  if (pathname.includes('/components/shader')) {
+  // 3. Shaders detail pages (now flat: /components/cloud, /components/paper-shader)
+  const SHADER_SLUGS = ['/components/cloud', '/components/paper-shader']
+  if (SHADER_SLUGS.some((s) => pathname === s || pathname.startsWith(s + '/'))) {
     return {
       mode: Mode.split,
       constraint: { mode: Mode.both, defaultMode: Mode.split },
     }
   }
 
-  // 4. Individual Blocks detail pages (/ui-kit/blocks/...)
-  if (pathname.includes('/blocks/') || pathname.startsWith('/ui-kit/blocks/')) {
+  // 4. Individual Blocks detail pages (/blocks/...)
+  if (pathname.includes('/blocks/') || pathname.startsWith('/blocks/')) {
     return {
       mode: Mode.split,
       constraint: { mode: Mode.split, defaultMode: Mode.split },
     }
   }
 
-  // 5. Individual Templates detail pages (/ui-kit/templates/...)
-  if (pathname.includes('/templates/') || pathname.startsWith('/ui-kit/templates/')) {
+  // 5. Individual Templates detail pages (/templates/...)
+  if (pathname.includes('/templates/') || pathname.startsWith('/templates/')) {
     return {
       mode: Mode.split,
       constraint: { mode: Mode.split, defaultMode: Mode.split },

@@ -6,7 +6,15 @@ import { ResourcesMdx } from '../resources-mdx'
 
 export default async function Page(props: { params: Promise<{ slug: string[] }> }) {
   const { slug } = await props.params
-  if (slug[0] === 'avatars' || slug[0] === 'squishmoji' || slug[0] === 'emoji' || slug[0] === 'imagesplit' || slug[0] === 'og-image' || slug[0] === '_empty') notFound()
+  if (
+    slug[0] === 'avatars' ||
+    slug[0] === 'squishmoji' ||
+    slug[0] === 'emoji' ||
+    slug[0] === 'imagesplit' ||
+    slug[0] === 'og-image' ||
+    slug[0] === '_empty'
+  )
+    notFound()
   return (
     <UiKitLayoutWrapper>
       <ResourcesMdx slug={slug} />

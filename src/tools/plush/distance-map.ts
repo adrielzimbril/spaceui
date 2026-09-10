@@ -1,11 +1,7 @@
 // @ts-nocheck
 import * as THREE from 'three'
 
-export function generateDistanceMap(
-  srcCanvas: HTMLCanvasElement,
-  size = 256,
-  maxBevel = 22,
-): THREE.DataTexture {
+export function generateDistanceMap(srcCanvas: HTMLCanvasElement, size = 256, maxBevel = 22): THREE.DataTexture {
   const canvas = document.createElement('canvas')
   canvas.width = size
   canvas.height = size

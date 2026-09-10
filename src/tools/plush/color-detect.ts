@@ -80,7 +80,7 @@ export function analyzeArtwork(imgOrCanvas: HTMLImageElement | HTMLCanvasElement
   }
 
   for (let y = 1; y < sampleH - 1; y++) {
-    samplePixel((y * sampleW) * 4)
+    samplePixel(y * sampleW * 4)
     samplePixel((y * sampleW + sampleW - 1) * 4)
   }
 
@@ -88,11 +88,12 @@ export function analyzeArtwork(imgOrCanvas: HTMLImageElement | HTMLCanvasElement
     perimeterTransparent / Math.max(1, perimeterCount) > 0.12 ||
     (transparentPixels / totalPixels > 0.04 && perimeterTransparent > 0)
 
-  const isWhiteBorder =
-    !isTransparentCutout &&
-    perimeterWhite / Math.max(1, perimeterCount) > 0.7
+  const isWhiteBorder = !isTransparentCutout && perimeterWhite / Math.max(1, perimeterCount) > 0.7
 
-  const toHex = (n: number) => Math.min(255, Math.max(0, Math.round(n))).toString(16).padStart(2, '0')
+  const toHex = (n: number) =>
+    Math.min(255, Math.max(0, Math.round(n)))
+      .toString(16)
+      .padStart(2, '0')
 
   let edgeColor = '#ffffff'
   if (isTransparentCutout || isWhiteBorder) {

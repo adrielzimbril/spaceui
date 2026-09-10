@@ -66,9 +66,7 @@ export function ResourceSeedView({
                 <IconRefresh />
               </Button>
             </div>
-            <div className="flex w-full items-center justify-center lg:justify-start">
-              {preview}
-            </div>
+            <div className="flex w-full items-center justify-center lg:justify-start">{preview}</div>
           </div>
           <div className="flex w-full max-w-md shrink-0 flex-col gap-4">
             <InstallCommandBlock packages={packageName} title="Install" className="my-0" />

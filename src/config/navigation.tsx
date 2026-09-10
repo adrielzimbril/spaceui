@@ -30,7 +30,7 @@ export const SIDEBAR_TABS = [
         <IconBox />
       </div>
     ),
-    url: '/ui-kit/primitives',
+    url: '/primitives',
   },
   {
     title: 'Components',
@@ -40,6 +40,6 @@ export const SIDEBAR_TABS = [
         <IconLayoutGrid />
       </div>
     ),
-    url: '/ui-kit/components',
+    url: '/components',
   },
 ]

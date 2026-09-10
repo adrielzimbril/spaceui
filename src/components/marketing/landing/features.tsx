@@ -21,7 +21,7 @@ const COMPONENTS = [
   },
   {
     name: 'Blocks',
-    href: '/ui-kit/blocks/sign-in',
+    href: '/blocks/sign-in',
     icon: (
       <div className="relative">
         <Blocks />

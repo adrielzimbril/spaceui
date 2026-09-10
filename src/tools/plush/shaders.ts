@@ -80,7 +80,7 @@ export const aI = `
     vec3 after = sampleArtwork(p, uArtwork, uArtworkMode, uSideColor);
     return mix(before, after, uArtworkMix);
   }
-`;
+`
 
 export const aD = `
   ${aI}
@@ -100,7 +100,7 @@ export const aD = `
     vView = -mv.xyz;
     gl_Position = projectionMatrix * mv;
   }
-`;
+`
 
 export const aO = `
   ${aI}
@@ -120,7 +120,7 @@ export const aO = `
     #include <tonemapping_fragment>
     #include <colorspace_fragment>
   }
-`;
+`
 
 export const aF = `
   ${aI}
@@ -180,7 +180,7 @@ export const aF = `
     vTangent = normalize(normalMatrix * direction);
     vView = -mv.xyz;
   }
-`;
+`
 
 export const aB = `
   uniform float uFurHighlight;
@@ -235,7 +235,7 @@ export const aB = `
     #include <tonemapping_fragment>
     #include <colorspace_fragment>
   }
-`;
+`
 
 export const blurFrag = `
   uniform sampler2D uImage;
@@ -262,4 +262,4 @@ export const blurFrag = `
     #include <tonemapping_fragment>
     #include <colorspace_fragment>
   }
-`;
+`

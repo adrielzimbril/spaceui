@@ -56,8 +56,7 @@ export function applySizeScale(prev: OgState, newW: number, newH: number): OgSta
     return { ...prev, width: newW, height: newH }
   }
   const ratio = Math.sqrt(newArea / oldArea)
-  const scale = (val: number, min: number, max: number) =>
-    Math.min(max, Math.max(min, Math.round(val * ratio)))
+  const scale = (val: number, min: number, max: number) => Math.min(max, Math.max(min, Math.round(val * ratio)))
 
   const scaleChip = (c: Chip): Chip => ({
     ...c,

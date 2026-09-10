@@ -95,28 +95,28 @@ export const megaMenuDocs: MegaMenuItem[] = [
 export const megaMenuUiKit: MegaMenuItem[] = [
   {
     title: 'Primitives',
-    href: '/ui-kit/primitives',
+    href: '/primitives',
     description: 'Basic accessible UI elements like Buttons, Inputs, Dialogs.',
     icon: IconBox,
     color: DEFAULT_COLOR_CODE.BLUE,
   },
   {
     title: 'Components',
-    href: '/ui-kit/components',
+    href: '/components',
     description: 'Complex components and animations to build interfaces.',
     icon: IconAtom,
     color: DEFAULT_COLOR_CODE.GREEN,
   },
   {
     title: 'Blocks',
-    href: '/ui-kit/blocks',
+    href: '/blocks',
     description: 'Ready-to-use section blocks and page sections.',
     icon: IconFolderHeart,
     color: DEFAULT_COLOR_CODE.PINKISH_PINK,
   },
   {
     title: 'Hooks & Utils',
-    href: '/ui-kit/hooks',
+    href: '/hooks',
     description: 'Sensory React hooks, flow-control and pure DX utilities.',
     icon: IconSparkles,
     color: DEFAULT_COLOR_CODE.PINKISH_PURPLE,
@@ -273,7 +273,7 @@ export const mobileNavGroups: NavGroup[] = [
         badge: item.badge,
         isDrillable: true,
       })),
-      { title: 'Templates', href: '/ui-kit/templates', group: 'Templates', isDrillable: true },
+      { title: 'Templates', href: '/templates', group: 'Templates', isDrillable: true },
     ],
   },
   {
@@ -294,10 +294,10 @@ export const mobileNavGroups: NavGroup[] = [
 // -----------------------------------------------------------------------------
 
 export const searchNavShortcuts: SearchShortcutItem[] = [
-  { label: 'Components', href: '/ui-kit/components', keywords: ['components', 'ui', 'widgets'] },
-  { label: 'Primitives', href: '/ui-kit/primitives', keywords: ['primitives', 'base', 'elements'] },
-  { label: 'Hooks & Utils', href: '/ui-kit/hooks', keywords: ['hooks', 'utilities', 'react'] },
-  { label: 'Blocks', href: '/ui-kit/blocks/sign-in', keywords: ['blocks', 'sections', 'pages'] },
+  { label: 'Components', href: '/components', keywords: ['components', 'ui', 'widgets'] },
+  { label: 'Primitives', href: '/primitives', keywords: ['primitives', 'base', 'elements'] },
+  { label: 'Hooks & Utils', href: '/hooks', keywords: ['hooks', 'utilities', 'react'] },
+  { label: 'Blocks', href: '/blocks/sign-in', keywords: ['blocks', 'sections', 'pages'] },
   { label: 'Documentation', href: '/docs', keywords: ['docs', 'guide', 'getting started'] },
   {
     label: 'Tools',

@@ -1,9 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
-import {
-  IconArrowRight,
-  IconClock,
-} from '@tabler/icons-react'
+import { IconArrowRight, IconClock } from '@tabler/icons-react'
 import { megaMenuTools, type ResourceItem } from '@/config/menu-config'
 import { SiteFooter } from '@/components/layout/site-footer'
 import { Badge } from '@/registry/primitives/badge'
@@ -23,9 +20,7 @@ export const metadata: Metadata = {
 }
 
 export default function ToolsIndexPage() {
-  const availableTools = megaMenuTools.filter(
-    (tool) => !tool.upcoming && tool.href !== '/tools',
-  )
+  const availableTools = megaMenuTools.filter((tool) => !tool.upcoming && tool.href !== '/tools')
   const upcomingTools = megaMenuTools.filter((tool) => tool.upcoming)
 
   return (
@@ -33,10 +28,7 @@ export default function ToolsIndexPage() {
       <main className="flex-1 px-4 pb-20 pt-10 sm:px-6 lg:px-8 lg:pb-28 lg:pt-14">
         <div className="mx-auto w-full max-w-6xl">
           {/* Hero Banner with Space UI Surface */}
-          <Surface
-            innerClassName="flex flex-col items-start px-6 py-10 sm:px-10 sm:py-14"
-            className="mb-12"
-          >
+          <Surface innerClassName="flex flex-col items-start px-6 py-10 sm:px-10 sm:py-14" className="mb-12">
             <Badge variant="secondary" className="rounded-sm mb-4">
               Creative Tools & Playgrounds
             </Badge>
@@ -46,7 +38,8 @@ export default function ToolsIndexPage() {
             </h1>
 
             <p className="mt-4 max-w-2xl text-base leading-7 text-muted-foreground text-pretty sm:text-lg">
-              Explore generative deterministic avatars, fluent emojis, spatial web audio sounds, and image carousel slicers. All client-side, instant and zero-latency.
+              Explore generative deterministic avatars, fluent emojis, spatial web audio sounds, and image carousel
+              slicers. All client-side, instant and zero-latency.
             </p>
           </Surface>
 
@@ -59,9 +52,7 @@ export default function ToolsIndexPage() {
                   Interactive studios you can use right in your browser or install in your app.
                 </p>
               </div>
-              <span className="text-xs text-muted-foreground font-mono">
-                {availableTools.length} tools
-              </span>
+              <span className="text-xs text-muted-foreground font-mono">{availableTools.length} tools</span>
             </div>
 
             <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
@@ -157,9 +148,7 @@ function ToolCard({ tool }: { tool: ResourceItem }) {
             </h3>
           </div>
 
-          <p className="text-xs leading-5 text-muted-foreground">
-            {tool.description}
-          </p>
+          <p className="text-xs leading-5 text-muted-foreground">{tool.description}</p>
         </div>
 
         <div className="mt-6 flex items-center justify-between pt-3 border-t border-border/40">

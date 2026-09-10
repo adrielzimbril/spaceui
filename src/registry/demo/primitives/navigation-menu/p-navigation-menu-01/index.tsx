@@ -68,7 +68,7 @@ export default function Demo() {
             <NavigationMenuContent>
               <div className="grid w-[500px] grid-cols-2 gap-2 p-3">
                 <NavigationMenuLink
-                  href="/ui-kit/primitives"
+                  href="/primitives"
                   className="flex flex-col gap-1 rounded-xl p-2.5 transition-colors hover:bg-muted"
                 >
                   <div className="flex items-center gap-2">
@@ -81,7 +81,7 @@ export default function Demo() {
                 </NavigationMenuLink>
 
                 <NavigationMenuLink
-                  href="/ui-kit/components"
+                  href="/components"
                   className="flex flex-col gap-1 rounded-xl p-2.5 transition-colors hover:bg-muted"
                 >
                   <div className="flex items-center gap-2">
@@ -92,7 +92,7 @@ export default function Demo() {
                 </NavigationMenuLink>
 
                 <NavigationMenuLink
-                  href="/ui-kit/hooks"
+                  href="/hooks"
                   className="flex flex-col gap-1 rounded-xl p-2.5 transition-colors hover:bg-muted"
                 >
                   <div className="flex items-center gap-2">

@@ -363,7 +363,7 @@ function CardContent({
             <span
               key={i}
               style={{
-                color: part.isAccent ? (s.titleAccentColor || s.bgFrom) : undefined,
+                color: part.isAccent ? s.titleAccentColor || s.bgFrom : undefined,
               }}
             >
               {part.text}
@@ -449,7 +449,15 @@ function CardContent({
           }}
         >
           {isShelf ? (
-            <div style={{ width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'space-between', zIndex: 2 }}>
+            <div
+              style={{
+                width: '100%',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'space-between',
+                zIndex: 2,
+              }}
+            >
               {brandRow ?? <span />}
               <div style={{ display: 'flex', alignItems: 'center', gap: 18 }}>
                 {footer}
@@ -457,7 +465,7 @@ function CardContent({
               </div>
             </div>
           ) : (
-            brandRow ?? <span />
+            (brandRow ?? <span />)
           )}
           <div
             style={{

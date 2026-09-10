@@ -66,32 +66,29 @@ const config: NextConfig = {
     '/llms.mdx/**': ['./src/content/**/*'],
   },
   async rewrites() {
-    return [
-      {
-        source: '/docs/:path*.mdx',
-        destination: '/llms.mdx/docs/:path*',
-      },
-      {
-        source: '/ui-kit/:path*.mdx',
-        destination: '/llms.mdx/ui-kit/:path*',
-      },
-      {
-        source: '/tools/:path*.mdx',
-        destination: '/llms.mdx/tools/:path*',
-      },
-      {
-        source: '/:path*.mdx',
-        destination: '/llms.mdx/:path*',
-      },
-    ]
+    return {
+      // Transparent proxy: /components/* → served by the ui-kit/[[...slug]] route
+      beforeFiles: [
+        { source: '/components/:path*', destination: '/ui-kit/components/:path*' },
+        { source: '/primitives/:path*', destination: '/ui-kit/primitives/:path*' },
+        { source: '/blocks/:path*', destination: '/ui-kit/blocks/:path*' },
+        { source: '/hooks/:path*', destination: '/ui-kit/hooks/:path*' },
+        { source: '/templates/:path*', destination: '/ui-kit/templates/:path*' },
+      ],
+      afterFiles: [
+        { source: '/docs/:path*.mdx', destination: '/llms.mdx/docs/:path*' },
+        { source: '/components/:path*.mdx', destination: '/llms.mdx/components/:path*' },
+        { source: '/primitives/:path*.mdx', destination: '/llms.mdx/primitives/:path*' },
+        { source: '/blocks/:path*.mdx', destination: '/llms.mdx/blocks/:path*' },
+        { source: '/hooks/:path*.mdx', destination: '/llms.mdx/hooks/:path*' },
+        { source: '/templates/:path*.mdx', destination: '/llms.mdx/templates/:path*' },
+        { source: '/tools/:path*.mdx', destination: '/llms.mdx/tools/:path*' },
+        { source: '/:path*.mdx', destination: '/llms.mdx/:path*' },
+      ],
+    }
   },
   async redirects() {
     return [
-      {
-        source: '/ui-kit',
-        destination: '/ui-kit/components',
-        permanent: false,
-      },
       {
         source: '/resources',
         destination: '/tools',
@@ -130,6 +127,33 @@ const config: NextConfig = {
       {
         source: '/tools/og',
         destination: '/tools/og-image',
+        permanent: true,
+      },
+      // All old /ui-kit/* URLs → /* (covers groups, sections, everything)
+      {
+        source: '/ui-kit/:path*',
+        destination: '/:path*',
+        permanent: true,
+      },
+      // Flatten component group URLs → /ui-kit/components/:path*
+      {
+        source: '/components/backgrounds/:path*',
+        destination: '/components/:path*',
+        permanent: true,
+      },
+      {
+        source: '/components/orb/:path*',
+        destination: '/components/:path*',
+        permanent: true,
+      },
+      {
+        source: '/components/shader/:path*',
+        destination: '/components/:path*',
+        permanent: true,
+      },
+      {
+        source: '/components/spaceui/:path*',
+        destination: '/components/:path*',
         permanent: true,
       },
     ]

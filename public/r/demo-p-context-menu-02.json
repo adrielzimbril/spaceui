@@ -9,7 +9,7 @@
   "files": [
     {
       "path": "src/registry/demo/primitives/context-menu/p-context-menu-02/index.tsx",
-      "content": "import Link from 'next/link'\nimport {\n  ContextMenu,\n  ContextMenuLinkItem,\n  ContextMenuPopup,\n  ContextMenuTrigger,\n} from '@/components/ui/context-menu'\n\nexport default function Demo() {\n  return (\n    <ContextMenu>\n      <ContextMenuTrigger className=\"flex h-32 w-full max-w-sm items-center justify-center rounded-lg border border-dashed text-muted-foreground text-sm\">\n        Right click here\n      </ContextMenuTrigger>\n      <ContextMenuPopup>\n        <ContextMenuLinkItem render={<Link href=\"/docs\" />}>Docs</ContextMenuLinkItem>\n        <ContextMenuLinkItem render={<Link href=\"/ui-kit/components\" />}>Components</ContextMenuLinkItem>\n      </ContextMenuPopup>\n    </ContextMenu>\n  )\n}\n",
+      "content": "import Link from 'next/link'\nimport {\n  ContextMenu,\n  ContextMenuLinkItem,\n  ContextMenuPopup,\n  ContextMenuTrigger,\n} from '@/components/ui/context-menu'\n\nexport default function Demo() {\n  return (\n    <ContextMenu>\n      <ContextMenuTrigger className=\"flex h-32 w-full max-w-sm items-center justify-center rounded-lg border border-dashed text-muted-foreground text-sm\">\n        Right click here\n      </ContextMenuTrigger>\n      <ContextMenuPopup>\n        <ContextMenuLinkItem render={<Link href=\"/docs\" />}>Docs</ContextMenuLinkItem>\n        <ContextMenuLinkItem render={<Link href=\"/components\" />}>Components</ContextMenuLinkItem>\n      </ContextMenuPopup>\n    </ContextMenu>\n  )\n}\n",
       "type": "registry:ui",
       "target": "components/spaceui/context-menu.tsx"
     }

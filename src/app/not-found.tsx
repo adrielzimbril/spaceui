@@ -20,7 +20,7 @@ export default function NotFound() {
             <IconArrowLeft />
             Home
           </Button>
-          <Button variant="outline" render={<Link href="/ui-kit/components" />}>
+          <Button variant="outline" render={<Link href="/components" />}>
             <IconLayoutGrid />
             Browse the kit
           </Button>

@@ -81,7 +81,7 @@ export const HUBS: HubItem[] = [
     id: 'hooks',
     title: 'React Hooks & Utils',
     description: 'Sensory hooks, control-flow & DX utilities',
-    url: '/ui-kit/hooks',
+    url: '/hooks',
     icon: IconSparkles,
     color: DEFAULT_COLOR_CODE.PURPLE,
   },
@@ -89,7 +89,7 @@ export const HUBS: HubItem[] = [
     id: 'components',
     title: 'Components & Blocks',
     description: 'Complex components, animations & layouts',
-    url: '/ui-kit/components',
+    url: '/components',
     icon: IconLayoutGrid,
     color: DEFAULT_COLOR_CODE.LIME,
   },
@@ -293,14 +293,10 @@ export function sortComponentsSections(sections: SectionItem[]): SectionItem[] {
 }
 
 export function getActiveHub(pathname: string): HubItem {
-  if (pathname.startsWith('/ui-kit/hooks')) {
+  if (pathname.startsWith('/hooks')) {
     return HUBS[1]
   }
-  if (
-    pathname.startsWith('/ui-kit/components') ||
-    pathname.startsWith('/ui-kit/blocks') ||
-    pathname.startsWith('/ui-kit/templates')
-  ) {
+  if (pathname.startsWith('/components') || pathname.startsWith('/blocks') || pathname.startsWith('/templates')) {
     return HUBS[2]
   }
   if (pathname.startsWith('/tools')) {
@@ -310,7 +306,7 @@ export function getActiveHub(pathname: string): HubItem {
 }
 
 export function resolvePathSections(pathname: string, docsTree: any[] = [], uiKitTree: any[] = []): SectionItem[] {
-  if (pathname.startsWith('/ui-kit/hooks')) {
+  if (pathname.startsWith('/hooks')) {
     const hooksFolder = uiKitTree.find(
       (n: any) => n.type === 'folder' && (n.name?.toLowerCase().includes('hook') || n.$id?.includes('hooks')),
     )
@@ -318,12 +314,10 @@ export function resolvePathSections(pathname: string, docsTree: any[] = [], uiKi
   }
 
   const isDocsOrPrimitives =
-    (pathname.startsWith('/docs') && !pathname.startsWith('/docs/icons')) || pathname.startsWith('/ui-kit/primitives')
+    (pathname.startsWith('/docs') && !pathname.startsWith('/docs/icons')) || pathname.startsWith('/primitives')
 
   const isComponents =
-    pathname.startsWith('/ui-kit/components') ||
-    pathname.startsWith('/ui-kit/blocks') ||
-    pathname.startsWith('/ui-kit/templates')
+    pathname.startsWith('/components') || pathname.startsWith('/blocks') || pathname.startsWith('/templates')
 
   if (isDocsOrPrimitives) {
     const primitivesFolder = uiKitTree.find(

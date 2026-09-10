@@ -8,7 +8,7 @@ export default function Demo() {
       <MenuTrigger render={<Button variant="outline" />}>Open menu</MenuTrigger>
       <MenuPopup>
         <MenuLinkItem render={<Link href="/docs" />}>Docs</MenuLinkItem>
-        <MenuLinkItem render={<Link href="/ui-kit/components" />}>Components</MenuLinkItem>
+        <MenuLinkItem render={<Link href="/components" />}>Components</MenuLinkItem>
       </MenuPopup>
     </Menu>
   )

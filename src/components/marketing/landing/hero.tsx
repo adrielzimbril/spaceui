@@ -33,7 +33,7 @@ export function Hero() {
                 variant="outline"
                 data-space-hover
                 data-space-click="open"
-                render={<Link href="/ui-kit/components" />}
+                render={<Link href="/components" />}
               >
                 Browse the kit
               </Button>

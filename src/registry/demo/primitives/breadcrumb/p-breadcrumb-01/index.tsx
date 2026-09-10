@@ -26,13 +26,13 @@ export default function Demo() {
             </MenuTrigger>
             <MenuPopup align="start">
               <MenuItem render={<Link href="/docs" />}>Docs</MenuItem>
-              <MenuItem render={<Link href="/ui-kit/components" />}>Components</MenuItem>
+              <MenuItem render={<Link href="/components" />}>Components</MenuItem>
             </MenuPopup>
           </Menu>
         </BreadcrumbItem>
         <BreadcrumbSeparator />
         <BreadcrumbItem>
-          <BreadcrumbLink render={<Link href="/ui-kit/components" />}>Components</BreadcrumbLink>
+          <BreadcrumbLink render={<Link href="/components" />}>Components</BreadcrumbLink>
         </BreadcrumbItem>
         <BreadcrumbSeparator />
         <BreadcrumbItem>

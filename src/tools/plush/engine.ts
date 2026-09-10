@@ -9,12 +9,7 @@ import type { PlushConfig, ArtworkData } from './types'
 const lerp = (a: number, b: number, t: number) => a + (b - a) * t
 const clamp = (val: number, min: number, max: number) => Math.max(min, Math.min(max, val))
 
-export function buildCushionGeometries(
-  roundness: number,
-  cornerRadius: number,
-  puffiness: number,
-  isMobile: boolean,
-) {
+export function buildCushionGeometries(roundness: number, cornerRadius: number, puffiness: number, isMobile: boolean) {
   const baseGeom = new THREE.BoxGeometry(2, 2, 2, 70, 70, 26)
   const posAttr = baseGeom.getAttribute('position')
   const tmpV = new THREE.Vector3()
@@ -171,10 +166,7 @@ export function buildCushionGeometries(
 
     pTmp.toArray(aRoot, i * 3)
     nTmp.toArray(aNormal, i * 3)
-    aVariation.set(
-      [rand(), 0.065 + 0.085 * Math.pow(rand(), 1.5), 0.0024 + 0.0008 * rand(), rand()],
-      i * 4,
-    )
+    aVariation.set([rand(), 0.065 + 0.085 * Math.pow(rand(), 1.5), 0.0024 + 0.0008 * rand(), rand()], i * 4)
   }
 
   furGeom.setAttribute('aRoot', new THREE.InstancedBufferAttribute(aRoot, 3))
@@ -307,7 +299,10 @@ export async function loadPlushArtwork(
             let h = parseFloat(svgEl.getAttribute('height') || '0')
 
             if ((!w || !h || isNaN(w) || isNaN(h)) && viewBox) {
-              const parts = viewBox.trim().split(/[\s,]+/).map(Number)
+              const parts = viewBox
+                .trim()
+                .split(/[\s,]+/)
+                .map(Number)
               if (parts.length === 4 && parts[2] > 0 && parts[3] > 0) {
                 w = parts[2]
                 h = parts[3]
@@ -321,9 +316,7 @@ export async function loadPlushArtwork(
               if (!viewBox) svgEl.setAttribute('viewBox', '0 0 512 512')
             }
 
-            const hasSmil = Boolean(
-              svgEl.querySelector('animate, animateTransform, animateMotion, set'),
-            )
+            const hasSmil = Boolean(svgEl.querySelector('animate, animateTransform, animateMotion, set'))
             const hasKeyframes = /@keyframes|animation\s*:/i.test(text)
             isAnimatedSvg = hasSmil || hasKeyframes
 
@@ -387,7 +380,9 @@ export async function loadPlushArtwork(
     const edgeColor = analysis.edgeColor
     const palette = analysis.palette
     const resolvedSideColor = analysis.hasAlpha
-      ? (defaultSideColor && defaultSideColor !== '#ffffff' ? defaultSideColor : edgeColor)
+      ? defaultSideColor && defaultSideColor !== '#ffffff'
+        ? defaultSideColor
+        : edgeColor
       : edgeColor
 
     const art: ArtworkData = {
@@ -503,7 +498,8 @@ export class PlushEngine {
 
   private init() {
     this.container.innerHTML = ''
-    this.isReducedMotion = typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    this.isReducedMotion =
+      typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches
     this.isMobile = typeof window !== 'undefined' && window.matchMedia('(pointer: coarse)').matches
 
     this.renderer = new THREE.WebGLRenderer({
@@ -584,11 +580,7 @@ export class PlushEngine {
       uTrail: { value: Array.from({ length: 5 }, () => new THREE.Vector4(0, 0, 4, 0)) },
     }
 
-    const initialGeoms = this.getGeoms(
-      this.config.roundness,
-      this.config.cornerRadius,
-      this.config.puffiness,
-    )
+    const initialGeoms = this.getGeoms(this.config.roundness, this.config.cornerRadius, this.config.puffiness)
     const baseMat = new THREE.ShaderMaterial({
       uniforms: this.uniforms,
       vertexShader: aD,
@@ -665,11 +657,7 @@ export class PlushEngine {
   }
 
   public refreshGeometries() {
-    const geoms = this.getGeoms(
-      this.config.roundness,
-      this.config.cornerRadius,
-      this.config.puffiness,
-    )
+    const geoms = this.getGeoms(this.config.roundness, this.config.cornerRadius, this.config.puffiness)
     this.baseMesh.geometry = geoms.baseGeom
     this.furMesh.geometry = geoms.furGeom
   }
@@ -695,10 +683,7 @@ export class PlushEngine {
       if (this.pointerId !== null && this.pointerId !== e.pointerId) return
 
       const rect = canvas.getBoundingClientRect()
-      this.pointer.set(
-        ((e.clientX - rect.left) / rect.width) * 2 - 1,
-        -((e.clientY - rect.top) / rect.height) * 2 + 1,
-      )
+      this.pointer.set(((e.clientX - rect.left) / rect.width) * 2 - 1, -((e.clientY - rect.top) / rect.height) * 2 + 1)
       this.isHovering = true
 
       if (this.pointerId !== null) {
@@ -1210,11 +1195,7 @@ export class PlushEngine {
     const puffinessChanged = Math.abs(prev.puffiness - newConfig.puffiness) > 0.001
 
     if (roundnessChanged || cornerRadiusChanged || puffinessChanged) {
-      const newGeoms = this.getGeoms(
-        this.config.roundness,
-        this.config.cornerRadius,
-        this.config.puffiness,
-      )
+      const newGeoms = this.getGeoms(this.config.roundness, this.config.cornerRadius, this.config.puffiness)
       if (this.baseMesh && newGeoms.baseGeom) {
         this.baseMesh.geometry = newGeoms.baseGeom
       }

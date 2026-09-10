@@ -5,25 +5,25 @@ import { Surface } from './surface'
 const KITS = [
   {
     title: 'Primitives',
-    href: '/ui-kit/primitives',
+    href: '/primitives',
     body: 'Buttons, dialogs, inputs, menus. Accessible Base UI, Space chrome.',
     icon: IconBox,
   },
   {
     title: 'Components',
-    href: '/ui-kit/components',
+    href: '/components',
     body: 'Orbs, accordions, calendars, data grids. The pieces that take a page.',
     icon: IconAtom,
   },
   {
     title: 'Hooks',
-    href: '/ui-kit/hooks',
+    href: '/hooks',
     body: 'Clipboard, debounce, media, scroll. Small utilities with live trays.',
     icon: IconWebhook,
   },
   {
     title: 'Blocks',
-    href: '/ui-kit/blocks',
+    href: '/blocks',
     body: 'Sign-in, mastermind, card-info. Sections you drop in, then own.',
     icon: IconFolderHeart,
   },

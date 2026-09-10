@@ -13,7 +13,14 @@ import {
 import { Button } from '@/registry/primitives/button'
 import { ToolbarButton } from '@/components/playground/playground-toolbar-button'
 import { useFileUpload } from '@/registry/hooks/form/use-file-upload'
-import { bloomSound, confirmSound, nudgeSound, openSound, pageSound, toggleSound } from '@/components/providers/sound-provider'
+import {
+  bloomSound,
+  confirmSound,
+  nudgeSound,
+  openSound,
+  pageSound,
+  toggleSound,
+} from '@/components/providers/sound-provider'
 import { ResourceStudio } from '@/tools/components/shared/layout/studio'
 import { ResourceNav } from '@/tools/components/shared/layout/nav'
 import { ResourceToolbar, type ResourceToolbarConfig } from '@/tools/components/shared/layout/toolbar'

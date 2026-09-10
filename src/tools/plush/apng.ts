@@ -58,12 +58,7 @@ export function isAPNG(buffer: ArrayBuffer): boolean {
   let offset = 8
   while (offset + 8 <= bytes.length) {
     const len = view.getUint32(offset)
-    const type = String.fromCharCode(
-      bytes[offset + 4],
-      bytes[offset + 5],
-      bytes[offset + 6],
-      bytes[offset + 7],
-    )
+    const type = String.fromCharCode(bytes[offset + 4], bytes[offset + 5], bytes[offset + 6], bytes[offset + 7])
     if (type === 'acTL') return true
     if (type === 'IEND') break
     offset += 12 + len
@@ -104,12 +99,7 @@ export async function parseAPNG(buffer: ArrayBuffer): Promise<APNGData | null> {
 
   while (offset + 8 <= bytes.length) {
     const len = view.getUint32(offset)
-    const type = String.fromCharCode(
-      bytes[offset + 4],
-      bytes[offset + 5],
-      bytes[offset + 6],
-      bytes[offset + 7],
-    )
+    const type = String.fromCharCode(bytes[offset + 4], bytes[offset + 5], bytes[offset + 6], bytes[offset + 7])
     const chunkDataOffset = offset + 8
 
     if (type === 'IHDR') {
@@ -262,7 +252,7 @@ export async function parseAPNG(buffer: ArrayBuffer): Promise<APNGData | null> {
         }
 
         return frameItem
-      })
+      }),
     )
     frames.push(...batchResults)
   }

@@ -10,7 +10,7 @@
   "files": [
     {
       "path": "src/registry/demo/primitives/menu/p-menu-05/index.tsx",
-      "content": "import Link from 'next/link'\nimport { Button } from '@/components/ui/button'\nimport { Menu, MenuLinkItem, MenuPopup, MenuTrigger } from '@/components/ui/menu'\n\nexport default function Demo() {\n  return (\n    <Menu>\n      <MenuTrigger render={<Button variant=\"outline\" />}>Open menu</MenuTrigger>\n      <MenuPopup>\n        <MenuLinkItem render={<Link href=\"/docs\" />}>Docs</MenuLinkItem>\n        <MenuLinkItem render={<Link href=\"/ui-kit/components\" />}>Components</MenuLinkItem>\n      </MenuPopup>\n    </Menu>\n  )\n}\n",
+      "content": "import Link from 'next/link'\nimport { Button } from '@/components/ui/button'\nimport { Menu, MenuLinkItem, MenuPopup, MenuTrigger } from '@/components/ui/menu'\n\nexport default function Demo() {\n  return (\n    <Menu>\n      <MenuTrigger render={<Button variant=\"outline\" />}>Open menu</MenuTrigger>\n      <MenuPopup>\n        <MenuLinkItem render={<Link href=\"/docs\" />}>Docs</MenuLinkItem>\n        <MenuLinkItem render={<Link href=\"/components\" />}>Components</MenuLinkItem>\n      </MenuPopup>\n    </Menu>\n  )\n}\n",
       "type": "registry:ui",
       "target": "components/spaceui/menu.tsx"
     }

@@ -210,7 +210,7 @@ export function MegaMenu({ className }: { className?: string }) {
                   <ListItem
                     key="Templates"
                     title="Templates"
-                    href="/ui-kit/templates"
+                    href="/templates"
                     icon={IconLayoutGrid}
                     color={DEFAULT_COLOR_CODE.ORANGE}
                     className="bg-muted"

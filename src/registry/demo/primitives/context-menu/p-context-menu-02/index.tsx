@@ -14,7 +14,7 @@ export default function Demo() {
       </ContextMenuTrigger>
       <ContextMenuPopup>
         <ContextMenuLinkItem render={<Link href="/docs" />}>Docs</ContextMenuLinkItem>
-        <ContextMenuLinkItem render={<Link href="/ui-kit/components" />}>Components</ContextMenuLinkItem>
+        <ContextMenuLinkItem render={<Link href="/components" />}>Components</ContextMenuLinkItem>
       </ContextMenuPopup>
     </ContextMenu>
   )
