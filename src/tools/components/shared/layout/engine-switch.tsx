@@ -49,7 +49,7 @@ export function AvatarEngineSwitch({
       }}
       aria-label="Avatar engine"
       size="sm"
-      className="h-8 rounded-xl bg-muted"
+      className="h-8 rounded-lg bg-muted"
     >
       {ENGINES.map((item) => (
         <ToggleGroupItem

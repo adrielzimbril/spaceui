@@ -23,7 +23,7 @@ export function ToolbarButton({ label, pressed, onClick, children, className }: 
         aria-pressed={pressed}
         title={label}
         className={cn(
-          'size-full rounded-xl text-muted-foreground transition-all duration-300 hover:bg-background hover:text-foreground cursor-pointer',
+          'size-full rounded-lg text-muted-foreground transition-all duration-300 hover:bg-background hover:text-foreground cursor-pointer',
           pressed && 'text-foreground font-semibold bg-background',
         )}
       >

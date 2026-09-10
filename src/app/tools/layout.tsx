@@ -7,13 +7,11 @@ export default function ToolsLayout({ children }: { children: ReactNode }) {
     <div
       className={cn(
         OpenRunde.variable,
-        'font-open-runde',
-        '[--font-body:var(--font-open-runde),sans-serif] [--font-heading:var(--font-open-runde),sans-serif] [--font-sans:var(--font-open-runde),sans-serif]',
+        'font-open-runde!',
+        '[--font-body:var(--font-open-runde),sans-serif]! [--font-heading:var(--font-open-runde),sans-serif]! [--font-sans:var(--font-open-runde),sans-serif]!',
       )}
-      style={{ fontFamily: 'var(--font-open-runde), sans-serif' }}
     >
       {children}
     </div>
   )
 }
-

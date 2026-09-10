@@ -122,6 +122,16 @@ const config: NextConfig = {
         destination: '/tools/avatars?type=squishmoji',
         permanent: true,
       },
+      {
+        source: '/og',
+        destination: '/tools/og-image',
+        permanent: true,
+      },
+      {
+        source: '/tools/og',
+        destination: '/tools/og-image',
+        permanent: true,
+      },
     ]
   },
 }

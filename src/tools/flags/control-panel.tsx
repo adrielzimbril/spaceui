@@ -38,12 +38,8 @@ export function FlagControlPanel({
       {/* Top Title Bar */}
       <div className="flex h-10 shrink-0 items-center justify-between px-3">
         <div className="flex items-center gap-2">
-          <h2 className="text-xs font-semibold">Flags Studio</h2>
-          <span className="text-[0.625rem] text-muted-foreground uppercase tracking-wider">Gallery</span>
+          <h2 className="text-xs font-semibold">Country & Language Flags</h2>
         </div>
-        <Badge variant="outline" className="text-[10px] px-1.5 py-0 h-4.5 font-mono">
-          {count} items
-        </Badge>
       </div>
 
       <ScrollArea className="min-h-0 flex-1">
@@ -79,7 +75,7 @@ export function FlagControlPanel({
               variant="ghost"
               size="icon-sm"
               aria-label="Randomize flag"
-              className="size-8 shrink-0 rounded-lg bg-background text-muted-foreground hover:bg-background hover:text-foreground shadow-2xs"
+              className="size-8 shrink-0 rounded-lg bg-background text-muted-foreground hover:bg-background hover:text-foreground"
               onClick={() => {
                 bloomSound()
                 regenerate()

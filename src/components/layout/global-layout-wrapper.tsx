@@ -8,6 +8,7 @@ import { PackageManagerProvider } from '@/components/providers/package-manager-p
 import { BrandColorProvider } from '@/components/providers/brand-color-provider'
 import { BundleProvider } from '@/components/providers/bundle-provider'
 import { LayoutModeProvider, useLayoutMode, Mode, type LayoutMode } from '@/components/providers/layout-mode-provider'
+import { SquircleProvider } from '@/components/providers/squircle-provider'
 import { FloatNav } from '@/components/layout/float-nav'
 
 function GlobalLayoutContent({ children }: { children: React.ReactNode }) {
@@ -49,20 +50,22 @@ export function GlobalLayoutWrapper({
   const isPreview = pathname.startsWith('/registry/view') || pathname.startsWith('/examples')
 
   return (
-    <ToastProvider>
-      <AnchoredToastProvider>
-        <SoundProvider>
-          <PackageManagerProvider>
-            <BrandColorProvider>
-              <BundleProvider>
-                <LayoutModeProvider initialMode={initialLayoutMode}>
-                  {isPreview ? <>{children}</> : <GlobalLayoutContent>{children}</GlobalLayoutContent>}
-                </LayoutModeProvider>
-              </BundleProvider>
-            </BrandColorProvider>
-          </PackageManagerProvider>
-        </SoundProvider>
-      </AnchoredToastProvider>
-    </ToastProvider>
+    <SquircleProvider>
+      <ToastProvider>
+        <AnchoredToastProvider>
+          <SoundProvider>
+            <PackageManagerProvider>
+              <BrandColorProvider>
+                <BundleProvider>
+                  <LayoutModeProvider initialMode={initialLayoutMode}>
+                    {isPreview ? <>{children}</> : <GlobalLayoutContent>{children}</GlobalLayoutContent>}
+                  </LayoutModeProvider>
+                </BundleProvider>
+              </BrandColorProvider>
+            </PackageManagerProvider>
+          </SoundProvider>
+        </AnchoredToastProvider>
+      </ToastProvider>
+    </SquircleProvider>
   )
 }

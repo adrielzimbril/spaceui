@@ -250,3 +250,11 @@ pre {
   --warning: var(--color-amber-500);
   --warning-foreground: var(--color-amber-400);
 }
+
+@utility display-whisper {
+  font-family: var(--font-display, inherit);
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  line-height: 1.08;
+}
+

@@ -17,6 +17,7 @@ const groups = [
       ['Avatars', '/tools/avatars'],
       ['Emoji', '/tools/emoji'],
       ['Flags', '/tools/flags'],
+      ['OG Image Generator', '/tools/og-image'],
       ['Plush', '/tools/plush'],
       ['Documentation', '/docs'],
     ],

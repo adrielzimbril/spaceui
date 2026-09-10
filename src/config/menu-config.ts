@@ -218,10 +218,10 @@ export const megaMenuTools: ResourceItem[] = [
     title: 'OG Image Generator',
     label: 'og-image',
     description: 'Generate dynamic social share images.',
-    href: '#',
+    href: '/tools/og-image',
     icon: IconPhoto,
-    upcoming: true,
-    release: 'coming-soon',
+    upcoming: false,
+    release: 'new',
     color: DEFAULT_COLOR_CODE.TEAL,
   },
   {
