@@ -980,12 +980,14 @@
       "avatar"
     ],
     "createdAt": "2026-09-01",
-    "updatedAt": "2026-09-01",
-    "size": "1.8 KB",
-    "rawSize": 1828,
-    "directSize": "1.8 KB",
+    "updatedAt": "2026-09-11",
+    "size": "3.1 KB",
+    "rawSize": 3196,
+    "directSize": "3.1 KB",
     "fileCount": 1,
-    "dependencies": [],
+    "dependencies": [
+      "@base-ui/react"
+    ],
     "registryDependencies": [
       "https://www.spaceui.one/r/lib-utils.json",
       "https://www.spaceui.one/r/primitives-badge.json"
@@ -1026,12 +1028,14 @@
       "avatar"
     ],
     "createdAt": "2026-09-01",
-    "updatedAt": "2026-09-01",
-    "size": "1.8 KB",
-    "rawSize": 1828,
-    "directSize": "1.8 KB",
+    "updatedAt": "2026-09-11",
+    "size": "3.1 KB",
+    "rawSize": 3196,
+    "directSize": "3.1 KB",
     "fileCount": 1,
-    "dependencies": [],
+    "dependencies": [
+      "@base-ui/react"
+    ],
     "registryDependencies": [
       "https://www.spaceui.one/r/lib-utils.json",
       "https://www.spaceui.one/r/primitives-badge.json"

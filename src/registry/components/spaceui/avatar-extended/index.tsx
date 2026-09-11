@@ -1,8 +1,65 @@
 'use client'
 
 import React from 'react'
+import { Avatar as AvatarPrimitive } from '@base-ui/react/avatar'
 import { cn } from '@/registry/lib/utils'
 import { Badge, type BadgeProps } from '@/registry/primitives/badge'
+
+export type AvatarVariant =
+  | 'all'
+  // gradient
+  | 'lumina'
+  | 'shaula'
+  | 'singularity'
+  | 'triton'
+  | 'solar-flare'
+  | 'titan'
+  | 'glass'
+  // fluid
+  | 'splash'
+  | 'astronaut'
+  | 'ghost'
+  | 'bot'
+  | 'glitch'
+  | 'animals'
+  // classic
+  | 'pebble'
+  | 'invader'
+  | 'grunge'
+  | 'bored'
+  | 'doodle'
+  | 'squiggle'
+  // paletteless
+  | 'critter'
+  | 'kendo'
+
+export interface AvatarFallbackProps extends AvatarPrimitive.Fallback.Props {
+  /** The name used to generate the avatar. Falls back to children if it is a string. */
+  name?: string
+  /** Avatar style variant. Defaults to 'all' (random pick by the API). */
+  variant?: AvatarVariant
+}
+
+export function AvatarFallback({
+  name,
+  variant = 'all',
+  children,
+  className,
+  ...props
+}: AvatarFallbackProps): React.ReactElement {
+  const resolvedName = name ?? (typeof children === 'string' ? children : undefined) ?? 'User'
+  const src = `https://avatars.spaceui.one/v1?name=${encodeURIComponent(resolvedName)}&variant=${variant}`
+
+  return (
+    <AvatarPrimitive.Fallback
+      className={cn('size-full rounded-[inherit]', className)}
+      data-slot="avatar-fallback"
+      {...props}
+    >
+      <img src={src} alt={resolvedName} className="size-full rounded-[inherit] object-cover" />
+    </AvatarPrimitive.Fallback>
+  )
+}
 
 export function AvatarExtended({ className, children, ...props }: React.HTMLAttributes<HTMLDivElement>) {
   return (

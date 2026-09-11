@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-p-avatar-10",
+  "title": "Avatar Fallback",
+  "description": "AvatarFallback generates a procedural avatar from a name via the SpaceUI Avatars API.",
+  "registryDependencies": [
+    "https://www.spaceui.one/r/components-spaceui-avatar-extended.json",
+    "https://www.spaceui.one/r/primitives-avatar.json"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/primitives/avatar/p-avatar-10/index.tsx",
+      "content": "import { Avatar } from '@/components/ui/avatar'\nimport { AvatarExtended, AvatarFallback } from '@/components/spaceui/avatar-extended'\n\nexport default function Demo() {\n  return (\n    <div className=\"flex flex-wrap items-center gap-4\">\n      <AvatarExtended>\n        <Avatar className=\"size-8\">\n          <AvatarFallback name=\"Alice Martin\" />\n        </Avatar>\n      </AvatarExtended>\n\n      <AvatarExtended>\n        <Avatar className=\"size-10\">\n          <AvatarFallback name=\"Bob Chen\" />\n        </Avatar>\n      </AvatarExtended>\n\n      <AvatarExtended>\n        <Avatar className=\"size-12\">\n          <AvatarFallback name=\"Carol Davis\" />\n        </Avatar>\n      </AvatarExtended>\n\n      <AvatarExtended>\n        <Avatar className=\"size-16\">\n          <AvatarFallback name=\"Dave Kim\" />\n        </Avatar>\n      </AvatarExtended>\n\n      <AvatarExtended>\n        <Avatar className=\"size-20 rounded-xl\">\n          <AvatarFallback name=\"Eve Lopez\" />\n        </Avatar>\n      </AvatarExtended>\n    </div>\n  )\n}\n",
+      "type": "registry:ui",
+      "target": "components/spaceui/avatar-fallback.tsx"
+    }
+  ],
+  "categories": [
+    "avatar"
+  ],
+  "type": "registry:ui"
+}

@@ -1,6 +1,6 @@
 ---
 title: Avatar Extended
-description: Extended Avatar components with rings, status badges, indicators, and icons.
+description: Extended Avatar components with rings, status badges, indicators, icons, and a built-in procedural fallback powered by the SpaceUI Avatars API.
 preview: demo-p-avatar-05
 ---
 
@@ -11,9 +11,10 @@ preview: demo-p-avatar-05
 ## Anatomy
 
 ```tsx
-import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
+import { Avatar, AvatarImage } from '@/components/ui/avatar'
 import {
   AvatarExtended,
+  AvatarFallback,
   AvatarRing,
   AvatarBadge,
   AvatarIndicator,
@@ -51,6 +52,18 @@ Apply custom selection states or decorative borders using the `AvatarRing` compo
 
 <ComponentPreview name="demo-p-avatar-03" />
 
+### AvatarFallback
+
+Generates a procedural avatar image from a name via the [SpaceUI Avatars API](https://avatars.spaceui.one). It replaces the primitive `<AvatarFallback>` with a rich, generated image instead of initials.
+
+<ComponentPreview name="demo-p-avatar-10" />
+
+#### AvatarFallback Variants
+
+Pass a `variant` prop to choose a specific style family. Defaults to `'all'` which lets the API pick a random style.
+
+<ComponentPreview name="demo-p-avatar-11" />
+
 ### Avatar Badges (Counts)
 
 Display unread notifications or counters cleanly over the avatar using the `AvatarBadge` component.
@@ -59,7 +72,26 @@ Display unread notifications or counters cleanly over the avatar using the `Avat
 
 ## API Reference
 
-The extended components accept standard HTML attributes and use `className` for styling.
+### AvatarFallback
+
+Generates a procedural avatar image from the SpaceUI Avatars API. Extends `React.ImgHTMLAttributes<HTMLImageElement>`.
+
+| Prop      | Type            | Default | Description                                                             |
+| :-------- | :-------------- | :------ | :---------------------------------------------------------------------- |
+| `name`    | `string`        | -       | The name used to seed the avatar. Falls back to `children` if a string. |
+| `variant` | `AvatarVariant` | `'all'` | The visual style family. `'all'` picks a random variant.                |
+
+**`AvatarVariant`** values:
+
+| Family      | Variants                                                               |
+| :---------- | :--------------------------------------------------------------------- |
+| Gradient    | `lumina` `shaula` `singularity` `triton` `solar-flare` `titan` `glass` |
+| Fluid       | `splash` `astronaut` `ghost` `bot` `glitch` `animals`                  |
+| Classic     | `pebble` `invader` `grunge` `bored` `doodle` `squiggle`                |
+| Paletteless | `critter` `kendo`                                                      |
+| All         | `all` (random — default)                                               |
+
+---
 
 ### AvatarExtended
 

@@ -4,6 +4,9 @@
   "type": "registry:component",
   "title": "Avatar Extended",
   "description": "Extended avatar components with badges, indicators, and logos.",
+  "dependencies": [
+    "@base-ui/react"
+  ],
   "registryDependencies": [
     "https://www.spaceui.one/r/lib-utils.json",
     "https://www.spaceui.one/r/primitives-badge.json"
@@ -19,5 +22,5 @@
     }
   ],
   "createdAt": "2026-09-01",
-  "updatedAt": "2026-09-01"
+  "updatedAt": "2026-09-11"
 }

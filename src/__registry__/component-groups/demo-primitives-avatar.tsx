@@ -68,4 +68,12 @@ export const registryComponents: Record<string, RegistryComponent> = {
     () => import("@/registry/demo/primitives/avatar/p-avatar-09/index.tsx"),
     {},
   ),
+  "demo-p-avatar-10": lazyRegistryComponent(
+    () => import("@/registry/demo/primitives/avatar/p-avatar-10/index.tsx"),
+    {},
+  ),
+  "demo-p-avatar-11": lazyRegistryComponent(
+    () => import("@/registry/demo/primitives/avatar/p-avatar-11/index.tsx"),
+    {},
+  ),
 };

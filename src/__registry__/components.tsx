@@ -368,6 +368,8 @@ export const componentGroups: Record<string, string> = {
   "demo-p-avatar-07": "demo-primitives-avatar",
   "demo-p-avatar-08": "demo-primitives-avatar",
   "demo-p-avatar-09": "demo-primitives-avatar",
+  "demo-p-avatar-10": "demo-primitives-avatar",
+  "demo-p-avatar-11": "demo-primitives-avatar",
   "demo-p-badge-01": "demo-primitives-badge",
   "demo-p-badge-02": "demo-primitives-badge",
   "demo-p-badge-03": "demo-primitives-badge",

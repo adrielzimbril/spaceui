@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-p-avatar-11",
+  "title": "Avatar Fallback Variants",
+  "description": "Showcase of all AvatarFallback style variants from the SpaceUI Avatars API.",
+  "registryDependencies": [
+    "https://www.spaceui.one/r/components-spaceui-avatar-extended.json",
+    "https://www.spaceui.one/r/primitives-avatar.json"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/primitives/avatar/p-avatar-11/index.tsx",
+      "content": "import { Avatar } from '@/components/ui/avatar'\nimport { AvatarExtended, AvatarFallback } from '@/components/spaceui/avatar-extended'\n\nconst VARIANTS = [\n  { name: 'Lumina', variant: 'lumina' },\n  { name: 'Shaula', variant: 'shaula' },\n  { name: 'Titan', variant: 'titan' },\n  { name: 'Glass', variant: 'glass' },\n  { name: 'Splash', variant: 'splash' },\n  { name: 'Astronaut', variant: 'astronaut' },\n  { name: 'Ghost', variant: 'ghost' },\n  { name: 'Bot', variant: 'bot' },\n  { name: 'Pebble', variant: 'pebble' },\n  { name: 'Invader', variant: 'invader' },\n  { name: 'Grunge', variant: 'grunge' },\n  { name: 'Bored', variant: 'bored' },\n  { name: 'Critter', variant: 'critter' },\n  { name: 'Kendo', variant: 'kendo' },\n] as const\n\nexport default function Demo() {\n  return (\n    <div className=\"flex flex-wrap items-center justify-center gap-3\">\n      {VARIANTS.map(({ name, variant }) => (\n        <div key={variant} className=\"flex flex-col items-center gap-1.5\">\n          <AvatarExtended>\n            <Avatar className=\"size-12\">\n              <AvatarFallback name={name} variant={variant} />\n            </Avatar>\n          </AvatarExtended>\n          <span className=\"text-muted-foreground text-xs\">{variant}</span>\n        </div>\n      ))}\n    </div>\n  )\n}\n",
+      "type": "registry:ui",
+      "target": "components/spaceui/avatar-fallback-variants.tsx"
+    }
+  ],
+  "categories": [
+    "avatar"
+  ],
+  "type": "registry:ui"
+}

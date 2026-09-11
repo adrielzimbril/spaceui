@@ -544,7 +544,7 @@ export const index: Record<string, any> = {
     name: "components-spaceui-avatar-extended",
     description: "Extended avatar components with badges, indicators, and logos.",
     type: "registry:component",
-    dependencies: undefined,
+    dependencies: ["@base-ui/react"],
     devDependencies: undefined,
     registryDependencies: ["https://www.spaceui.one/r/lib-utils.json","https://www.spaceui.one/r/primitives-badge.json"],
     files: [
@@ -11872,6 +11872,70 @@ export const index: Record<string, any> = {
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-avatar-09',
+  },
+  "demo-p-avatar-10": {
+    name: "demo-p-avatar-10",
+    description: "AvatarFallback generates a procedural avatar from a name via the SpaceUI Avatars API.",
+    type: "registry:ui",
+    dependencies: undefined,
+    devDependencies: undefined,
+    registryDependencies: ["https://www.spaceui.one/r/components-spaceui-avatar-extended.json","https://www.spaceui.one/r/primitives-avatar.json"],
+    files: [
+  {
+    "path": "src/registry/demo/primitives/avatar/p-avatar-10/index.tsx",
+    "type": "registry:ui",
+    "target": "components/spaceui/avatar-fallback.tsx"
+  }
+],
+    keywords: [],
+    component: (() => {
+      const LazyComp = React.lazy(async () => {
+        const mod = await import("@/registry/demo/primitives/avatar/p-avatar-10/index.tsx");
+        const exportName = Object.keys(mod).find(
+          key => typeof mod[key] === 'function' || typeof mod[key] === 'object'
+        ) || "demo-p-avatar-10";
+        const Comp = mod.default || mod[exportName];
+        if (mod.animations) {
+          (LazyComp as any).animations = mod.animations;
+        }
+        return { default: Comp };
+      });
+      LazyComp.demoProps = {};
+      return LazyComp;
+    })(),
+    command: '@spaceui/demo-p-avatar-10',
+  },
+  "demo-p-avatar-11": {
+    name: "demo-p-avatar-11",
+    description: "Showcase of all AvatarFallback style variants from the SpaceUI Avatars API.",
+    type: "registry:ui",
+    dependencies: undefined,
+    devDependencies: undefined,
+    registryDependencies: ["https://www.spaceui.one/r/components-spaceui-avatar-extended.json","https://www.spaceui.one/r/primitives-avatar.json"],
+    files: [
+  {
+    "path": "src/registry/demo/primitives/avatar/p-avatar-11/index.tsx",
+    "type": "registry:ui",
+    "target": "components/spaceui/avatar-fallback-variants.tsx"
+  }
+],
+    keywords: [],
+    component: (() => {
+      const LazyComp = React.lazy(async () => {
+        const mod = await import("@/registry/demo/primitives/avatar/p-avatar-11/index.tsx");
+        const exportName = Object.keys(mod).find(
+          key => typeof mod[key] === 'function' || typeof mod[key] === 'object'
+        ) || "demo-p-avatar-11";
+        const Comp = mod.default || mod[exportName];
+        if (mod.animations) {
+          (LazyComp as any).animations = mod.animations;
+        }
+        return { default: Comp };
+      });
+      LazyComp.demoProps = {};
+      return LazyComp;
+    })(),
+    command: '@spaceui/demo-p-avatar-11',
   },
   "demo-p-badge-01": {
     name: "demo-p-badge-01",

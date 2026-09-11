@@ -539,6 +539,9 @@
       "type": "registry:component",
       "title": "Avatar Extended",
       "description": "Extended avatar components with badges, indicators, and logos.",
+      "dependencies": [
+        "@base-ui/react"
+      ],
       "registryDependencies": [
         "https://www.spaceui.one/r/lib-utils.json",
         "https://www.spaceui.one/r/primitives-badge.json"
@@ -554,7 +557,7 @@
         }
       ],
       "createdAt": "2026-09-01",
-      "updatedAt": "2026-09-01"
+      "updatedAt": "2026-09-11"
     },
     {
       "name": "components-spaceui-avatar-group",
@@ -10391,6 +10394,50 @@
       ],
       "createdAt": "2026-09-01",
       "updatedAt": "2026-09-01"
+    },
+    {
+      "name": "demo-p-avatar-10",
+      "type": "registry:ui",
+      "title": "Avatar Fallback",
+      "description": "AvatarFallback generates a procedural avatar from a name via the SpaceUI Avatars API.",
+      "registryDependencies": [
+        "https://www.spaceui.one/r/components-spaceui-avatar-extended.json",
+        "https://www.spaceui.one/r/primitives-avatar.json"
+      ],
+      "categories": [
+        "avatar"
+      ],
+      "files": [
+        {
+          "path": "src/registry/demo/primitives/avatar/p-avatar-10/index.tsx",
+          "type": "registry:ui",
+          "target": "components/spaceui/avatar-fallback.tsx"
+        }
+      ],
+      "createdAt": "2026-09-11",
+      "updatedAt": "2026-09-11"
+    },
+    {
+      "name": "demo-p-avatar-11",
+      "type": "registry:ui",
+      "title": "Avatar Fallback Variants",
+      "description": "Showcase of all AvatarFallback style variants from the SpaceUI Avatars API.",
+      "registryDependencies": [
+        "https://www.spaceui.one/r/components-spaceui-avatar-extended.json",
+        "https://www.spaceui.one/r/primitives-avatar.json"
+      ],
+      "categories": [
+        "avatar"
+      ],
+      "files": [
+        {
+          "path": "src/registry/demo/primitives/avatar/p-avatar-11/index.tsx",
+          "type": "registry:ui",
+          "target": "components/spaceui/avatar-fallback-variants.tsx"
+        }
+      ],
+      "createdAt": "2026-09-11",
+      "updatedAt": "2026-09-11"
     },
     {
       "name": "demo-p-badge-01",
