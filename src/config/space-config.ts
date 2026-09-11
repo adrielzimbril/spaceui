@@ -68,3 +68,7 @@ export const siteConfig = {
   search: menuConfig.search,
   tools: menuConfig.megaMenu.tools,
 }
+
+// ── Global Bento Cycle & Interaction Settings ──
+export const BENTO_CYCLE_INTERVAL = 5000
+export const USER_INTERACTION_DEBOUNCE = 3000
