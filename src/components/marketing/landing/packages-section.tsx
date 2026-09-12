@@ -462,7 +462,6 @@ export function PackagesSection() {
 
       {/* ── Bento Grid: Plush (2x2), Avatars & Squishmoji (2x1), Split (2x1), Flags, Emoji, Audio, Squircle ── */}
       <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-        {/* ── CARD 1: PLUSH (COL-2 ROW-2) ── */}
         <Frame className="flex flex-col h-full sm:col-span-2 sm:row-span-2 lg:col-span-2 lg:row-span-2">
           <FrameHeader className="flex flex-row items-center justify-between p-2">
             <FrameTitle>Plush 3D Fur</FrameTitle>
@@ -536,7 +535,6 @@ export function PackagesSection() {
           </Card>
         </Frame>
 
-        {/* ── CARD 2: GENERATIVE AVATARS & SQUISHMOJI (COL-2 ROW-1) ── */}
         <Frame className="flex flex-col h-full sm:col-span-2 lg:col-span-2">
           <FrameHeader className="flex flex-row items-center justify-between p-2">
             <FrameTitle>Generative Avatars &amp; Squishmoji</FrameTitle>
@@ -587,7 +585,6 @@ export function PackagesSection() {
           </Card>
         </Frame>
 
-        {/* ── CARD 3: SVG FLAGS (COL-1) ── */}
         <Frame className="flex flex-col h-full">
           <FrameHeader className="flex flex-row items-center justify-between p-2">
             <FrameTitle>SVG Flags</FrameTitle>
@@ -624,7 +621,6 @@ export function PackagesSection() {
           </Card>
         </Frame>
 
-        {/* ── CARD 4: SQUIRCLE CORNER SMOOTHING (COL-1) ── */}
         <Frame className="flex flex-col h-full">
           <FrameHeader className="flex flex-row items-center justify-between p-2">
             <FrameTitle>Squircle Smoothing</FrameTitle>
@@ -645,7 +641,6 @@ export function PackagesSection() {
           </Card>
         </Frame>
 
-        {/* ── CARD 5: IMAGE SPLIT (COL-2 ROW-1, EN BAS) ── */}
         <Frame className="flex flex-col h-full sm:col-span-2 lg:col-span-2">
           <FrameHeader className="flex flex-row items-center justify-between p-2">
             <FrameTitle>Image Split</FrameTitle>
@@ -746,7 +741,6 @@ export function PackagesSection() {
           </Card>
         </Frame>
 
-        {/* ── CARD 6: EMOJI HUB (COL-1) ── */}
         <Frame className="flex flex-col h-full">
           <FrameHeader className="flex flex-row items-center justify-between p-2">
             <FrameTitle>Emoji Hub</FrameTitle>
@@ -807,7 +801,6 @@ export function PackagesSection() {
           </Card>
         </Frame>
 
-        {/* ── CARD 7: PROCEDURAL AUDIO (COL-1) ── */}
         <Frame className="flex flex-col h-full">
           <FrameHeader className="flex flex-row items-center justify-between p-2">
             <FrameTitle>Procedural Audio</FrameTitle>

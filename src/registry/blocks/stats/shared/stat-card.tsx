@@ -94,7 +94,8 @@ export function StatCard({
                   decorationPattern ? 'bg-[#8e8eff] text-white size-max' : 'bg-[#ffd3ad] text-stone-900 size-max',
                 )}
                 variant="default"
-                size="lg"
+                size="sm"
+                square
               >
                 {icon}
               </Badge>

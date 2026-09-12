@@ -101,7 +101,7 @@ export function ChangelogUpdatesCard({ count, changelog, className }: ChangelogU
                   />
                   <div className="z-20 inline-block w-[100px] space-y-px squircle-2xl/100 bg-background border-2 border-muted px-2 py-1.5 text-xs overflow-hidden">
                     <div className="flex items-center gap-1">
-                      <Badge className="p-[0.075rem] relative" size="xs">
+                      <Badge className="p-[0.075rem] relative" size="sm" square>
                         <Icon className={cn(typeColors[itemType])} size={12} />
                       </Badge>
                       <div className="flex flex-col items-start">
@@ -130,7 +130,8 @@ export function ChangelogUpdatesCard({ count, changelog, className }: ChangelogU
           <div className="relative flex flex-row items-center gap-2">
             <Badge
               className="capitalize text-xs font-medium bg-[#8e8eff] text-white size-max"
-              size="lg"
+              size="sm"
+              square
               variant="default"
             >
               <IconSparklesFilled size={32} />

@@ -97,6 +97,7 @@ export function ContributionGraphCard({ contributions, className, delay = 0 }: C
             <Badge
               className="capitalize text-xs font-medium bg-[#8e8eff] text-white size-max squircle-2xl/80 md:squircle-3xl/80 text-primary-foreground!"
               size="sm"
+              square
               variant="default"
             >
               <GithubSvg size={32} />

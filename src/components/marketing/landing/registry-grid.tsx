@@ -54,7 +54,7 @@ const SMOOTH_STATES = [
   { id: 'watercolor-pure', label: 'Watercolor Silk · No Grain', speed: 3.6, watercolor: 0.5, timeScale: 1.2, grain: 0 },
 ] as const
 
-const SMOOTH_LUMINA_SEEDS = ['luna', 'atlas', 'aurora', 'orion', 'nova', 'sol', 'echo', 'iris'] as const
+const SMOOTH_LUMINA_SEEDS = ['space-ui', 'atlas', 'aurora', 'orion', 'nova', 'sol', 'echo', 'iris'] as const
 
 const TAILWIND_COLORS = [
   { label: 'Foreground', className: 'text-foreground' },
@@ -453,7 +453,6 @@ export function RegistryGrid() {
           </Card>
         </Frame>
 
-        {/* ── Card 2: WebGL OrbSmooth (Only Lumina) ── */}
         <Frame className="flex flex-col h-full">
           <FrameHeader className="flex flex-row items-center justify-between p-2">
             <FrameTitle>Orb Smooth</FrameTitle>
@@ -481,7 +480,7 @@ export function RegistryGrid() {
             </CardPanel>
           </Card>
         </Frame>
-        {/* ── Card 4: Bouncy Accordion ── */}
+
         <Frame className="flex flex-col h-full">
           <FrameHeader className="flex flex-row items-center justify-between p-2">
             <FrameTitle>Bouncy Accordion</FrameTitle>
@@ -517,7 +516,6 @@ export function RegistryGrid() {
           </Card>
         </Frame>
 
-        {/* ── Card 5: Pin List ── */}
         <Frame className="flex flex-col h-full">
           <FrameHeader className="flex flex-row items-center justify-between p-2">
             <FrameTitle>Pin List</FrameTitle>
@@ -538,10 +536,9 @@ export function RegistryGrid() {
           </Card>
         </Frame>
 
-        {/* ── Card 3: Demo C Orb Loading 03 ── */}
         <Frame className="flex flex-col h-full">
           <FrameHeader className="flex flex-row items-center justify-between p-2">
-            <FrameTitle>Demo C Orb Loading 03</FrameTitle>
+            <FrameTitle>Loading Orb</FrameTitle>
             <Link
               href="/components/loading"
               data-space-hover
@@ -564,7 +561,6 @@ export function RegistryGrid() {
           </Card>
         </Frame>
 
-        {/* ── Card 6: Words Preloader ── */}
         <Frame className="flex flex-col h-full">
           <FrameHeader className="flex flex-row items-center justify-between p-2">
             <FrameTitle>Words Preloader</FrameTitle>
@@ -626,7 +622,6 @@ export function RegistryGrid() {
           </Card>
         </Frame>
 
-        {/* ── Card 7: Timeline (Demo C Timeline 06) ── */}
         <Frame className="flex flex-col h-full">
           <FrameHeader className="flex flex-row items-center justify-between p-2">
             <FrameTitle>Timeline</FrameTitle>
@@ -645,7 +640,6 @@ export function RegistryGrid() {
           </Card>
         </Frame>
 
-        {/* ── Card 7: GitHub Activity ── */}
         <Frame className="flex flex-col h-full sm:col-span-2 lg:col-span-2">
           <FrameHeader className="flex flex-row items-center justify-between p-2">
             <FrameTitle>GitHub Activity</FrameTitle>
@@ -667,52 +661,24 @@ export function RegistryGrid() {
 
       {/* ── Real Registry Counters Strip ── */}
       <div className="mt-14 grid gap-4 sm:grid-cols-4">
-        <div className="rounded-2xl bg-secondary/40 p-6 sm:p-8">
-          <p className="text-4xl font-semibold tracking-tight text-foreground">{registryStats.total}</p>
-          <p className="mt-2 text-sm font-medium text-muted-foreground">Total Registry Items</p>
-        </div>
-
-        <div className="rounded-2xl bg-secondary/40 p-6 sm:p-8">
+        <div className="rounded-2xl bg-muted p-6 sm:p-8">
           <p className="text-4xl font-semibold tracking-tight text-foreground">{registryStats.primitives}</p>
           <p className="mt-2 text-sm font-medium text-muted-foreground">Base UI Primitives</p>
         </div>
 
-        <div className="rounded-2xl bg-secondary/40 p-6 sm:p-8">
+        <div className="rounded-2xl bg-muted p-6 sm:p-8">
           <p className="text-4xl font-semibold tracking-tight text-foreground">{registryStats.components}</p>
           <p className="mt-2 text-sm font-medium text-muted-foreground">Interactive Components</p>
         </div>
 
-        <div className="rounded-2xl bg-secondary/40 p-6 sm:p-8">
-          <p className="text-4xl font-semibold tracking-tight text-foreground">{registryStats.hooks}</p>
-          <p className="mt-2 text-sm font-medium text-muted-foreground">Production Hooks</p>
+        <div className="rounded-2xl bg-muted p-6 sm:p-8">
+          <p className="text-4xl font-semibold tracking-tight text-foreground">{registryStats.templates}</p>
+          <p className="mt-2 text-sm font-medium text-muted-foreground">Templates</p>
         </div>
-      </div>
 
-      {/* ── Bottom Directory Link ── */}
-      <div className="mt-8 rounded-2xl bg-secondary/50 p-8 text-center sm:p-12">
-        <h3 className="text-2xl font-semibold tracking-tight text-foreground sm:text-3xl">
-          Ready to explore all {registryStats.total} registry items?
-        </h3>
-        <p className="mx-auto mt-2 max-w-lg text-sm text-muted-foreground">
-          Browse {registryStats.primitives} Base UI primitives, {registryStats.components} interactive components,{' '}
-          {registryStats.hooks} production hooks, fluid shaders, and templates.
-        </p>
-        <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
-          <Link
-            href="/components"
-            data-space-hover
-            className="inline-flex items-center gap-2 rounded-xl bg-primary px-6 py-3 text-sm font-medium text-primary-foreground transition-all hover:opacity-90"
-          >
-            <span>Open Component Directory</span>
-            <ArrowUpRight className="size-4" />
-          </Link>
-          <Link
-            href="/primitives"
-            data-space-hover
-            className="inline-flex items-center gap-1.5 rounded-xl bg-card px-5 py-3 text-sm font-medium text-foreground hover:bg-muted transition-colors"
-          >
-            <span>Base UI Primitives</span>
-          </Link>
+        <div className="rounded-2xl bg-muted p-6 sm:p-8">
+          <p className="text-4xl font-semibold tracking-tight text-foreground">{registryStats.hooksOnly}</p>
+          <p className="mt-2 text-sm font-medium text-muted-foreground">Production Hooks</p>
         </div>
       </div>
     </section>

@@ -4,7 +4,6 @@ import { Hero } from '@/components/marketing/landing/hero'
 import { RegistryGrid } from '@/components/marketing/landing/registry-grid'
 import { PackagesSection } from '@/components/marketing/landing/packages-section'
 import { TestimonialsSection } from '@/components/marketing/landing/testimonials'
-import { FinalCta } from '@/components/marketing/landing/final-cta'
 import { SectionScrollspy } from '@/registry/components/spaceui/section-scrollspy'
 
 export default function HomePage() {
@@ -21,9 +20,6 @@ export default function HomePage() {
 
       {/* 4. Social Proof — Loved by builders who ship */}
       <TestimonialsSection />
-
-      {/* 5. Final CTA — Closing card with quick CLI and GitHub star */}
-      <FinalCta />
 
       {/* Section Scrollspy */}
       <SectionScrollspy portal />

@@ -181,7 +181,8 @@ export function LighthouseScoreCard({ scores, strategy, className }: LighthouseS
             <Badge
               className="capitalize text-xs font-medium bg-[#8e8eff] text-white size-max"
               variant="default"
-              size="lg"
+              size="sm"
+              square
             >
               <DeviceIcon size={32} />
             </Badge>

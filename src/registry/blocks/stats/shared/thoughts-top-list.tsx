@@ -55,7 +55,8 @@ export function ThoughtsTopList({
           <div className={cn('relative flex flex-row items-center gap-2 md:gap-4 mb-4')}>
             <Badge
               className="capitalize text-xs font-medium bg-[#8e8eff] text-white size-max"
-              size="lg"
+              size="sm"
+              square
               variant="default"
             >
               {icon}

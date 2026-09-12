@@ -202,7 +202,8 @@ export function GitHubStatsCard({ type, label, value, period, className }: GitHu
           <Badge
             className={cn('capitalize whitespace-pre-line size-auto squircle-2xl/80 md:squircle-3xl/80', theme.badgeBg)}
             variant="default"
-            size="lg"
+            size="sm"
+            square
           >
             <Icon size={32} />
           </Badge>

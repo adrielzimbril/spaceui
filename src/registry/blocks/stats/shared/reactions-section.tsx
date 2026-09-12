@@ -83,7 +83,8 @@ export function ReactionCard({ char = '👍', label, count, className }: Reactio
           <div className="relative flex flex-row items-center gap-2 md:gap-4">
             <Badge
               className="capitalize text-xs font-medium size-max bg-muted text-foreground p-2 squircle-2xl/80 md:squircle-3xl/80 border-0 flex items-center justify-center"
-              size="lg"
+              size="sm"
+              square
             >
               {emojiUrl ? (
                 <Image
