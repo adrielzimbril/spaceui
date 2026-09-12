@@ -1,0 +1,28 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-c-badge-squircle-03",
+  "type": "registry:component",
+  "title": "Badge Squircle Icons & Polymorphic Render",
+  "description": "Showcase of tactile squircle badges with icons and polymorphic link and button rendering.",
+  "dependencies": [
+    "@tabler/icons-react"
+  ],
+  "registryDependencies": [
+    "https://www.spaceui.one/r/components-spaceui-badge-squircle.json"
+  ],
+  "categories": [
+    "component",
+    "badge",
+    "squircle",
+    "features"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/components/spaceui/badge-squircle/c-badge-squircle-03/index.tsx",
+      "type": "registry:component",
+      "target": "components/spaceui/badge-squircle-demo-03.tsx"
+    }
+  ],
+  "createdAt": "2026-09-12",
+  "updatedAt": "2026-09-12"
+}

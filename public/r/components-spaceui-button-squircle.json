@@ -1,0 +1,30 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "components-spaceui-button-squircle",
+  "title": "Button Squircle",
+  "description": "Tactile squircle button and badge components featuring dynamic curvature morphing on hover from the original portfolio design.",
+  "dependencies": [
+    "@usespaceui/squircle",
+    "@base-ui/react",
+    "class-variance-authority"
+  ],
+  "registryDependencies": [
+    "https://www.spaceui.one/r/lib-utils.json"
+  ],
+  "files": [
+    {
+      "path": "src/registry/components/spaceui/button-squircle/index.tsx",
+      "content": "'use client'\n\nimport { mergeProps } from '@base-ui/react/merge-props'\nimport { useRender } from '@base-ui/react/use-render'\nimport { type VariantProps, cva } from 'class-variance-authority'\nimport * as React from 'react'\nimport { cn } from '@/lib/utils'\n\nconst buttonVariants = cva(\n  'inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium transition-all duration-300 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0',\n  {\n    variants: {\n      variant: {\n        primary: 'border-2 border-primary bg-primary text-primary-foreground hover:bg-primary/90',\n        secondary: 'border-2 border-secondary bg-secondary text-secondary-foreground hover:bg-secondary/90',\n        destructive: 'border-2 border-destructive bg-destructive text-white hover:bg-destructive/90',\n        outline: 'border-2 border-input bg-transparent text-foreground hover:bg-accent hover:text-accent-foreground',\n        ghost: 'hover:bg-accent hover:text-accent-foreground',\n        icon: 'hover:bg-accent hover:text-accent-foreground',\n        link: 'text-foreground underline-offset-4 hover:underline',\n      },\n      size: {\n        xs: 'px-3 py-2',\n        sm: 'px-3 py-4 h-auto',\n        default: 'px-6 py-3',\n        lg: 'px-6 py-3 text-lg',\n        'icon-xs': 'size-7 p-0',\n        'icon-sm': 'size-8 p-0',\n        icon: 'size-9 p-0',\n        'icon-lg': 'size-10 p-0',\n      },\n    },\n    defaultVariants: {\n      variant: 'primary',\n      size: 'default',\n    },\n  },\n)\n\nexport interface ButtonProps extends useRender.ComponentProps<'button'>, VariantProps<typeof buttonVariants> {\n  variant?: 'primary' | 'secondary' | 'destructive' | 'outline' | 'ghost' | 'icon' | 'link'\n  size?: 'xs' | 'sm' | 'default' | 'lg' | 'icon-xs' | 'icon-sm' | 'icon' | 'icon-lg'\n  full?: boolean\n  asFull?: boolean\n  icon?: boolean\n  asIcon?: boolean\n  pointer?: boolean\n  asPointer?: boolean\n  hover?: boolean\n  whileTap?: boolean\n  squircle?: boolean\n}\n\nconst Button = React.forwardRef<HTMLButtonElement, ButtonProps>(\n  (\n    {\n      className,\n      variant,\n      size,\n      render,\n      full = false,\n      asFull,\n      icon = false,\n      asIcon,\n      pointer = false,\n      asPointer,\n      hover = false,\n      whileTap,\n      squircle = true,\n      ...props\n    },\n    ref,\n  ) => {\n    const isFull = full || asFull || false\n    const isIcon = icon || asIcon || false\n    const isPointer = pointer || asPointer || false\n    const isHover = hover || whileTap || false\n\n    const defaultProps = {\n      className: cn(\n        buttonVariants({ variant, size, className }),\n        squircle && 'squircle-7xl/100 hover:squircle-3xl/100',\n        isFull && 'w-full flex text-center items-center justify-center',\n        isIcon && '[&_svg]:size-auto',\n        isPointer && 'cursor-pointer',\n        isHover && 'hover:scale-105',\n      ),\n      'data-space-click': variant === 'destructive' ? 'deny' : 'tap',\n      'data-space-hover': 'tick',\n      ref,\n      children: props.children,\n    }\n\n    return useRender({\n      defaultTagName: 'button',\n      props: mergeProps<'button'>(defaultProps, props),\n      render,\n    })\n  },\n)\nButton.displayName = 'Button'\n\nexport { Button, buttonVariants }\nexport type { ButtonProps }\n",
+      "type": "registry:component",
+      "target": "components/spaceui/button-squircle.tsx"
+    }
+  ],
+  "categories": [
+    "component",
+    "button",
+    "badge",
+    "squircle",
+    "tactile"
+  ],
+  "type": "registry:component"
+}

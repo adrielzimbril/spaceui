@@ -1,0 +1,24 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-c-button-squircle-02",
+  "title": "Button Squircle Sizes",
+  "description": "Tactile squircle button standard sizing scale from extra small to large.",
+  "registryDependencies": [
+    "https://www.spaceui.one/r/components-spaceui-button-squircle.json"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/components/spaceui/button-squircle/c-button-squircle-02/index.tsx",
+      "content": "'use client'\n\nimport * as React from 'react'\nimport { Button } from '@/components/spaceui/button-squircle'\n\nexport default function Demo() {\n  return (\n    <div className=\"flex flex-wrap items-center justify-center gap-3 p-8\">\n      <Button size=\"xs\" variant=\"secondary\">\n        <span>Extra Small</span>\n      </Button>\n\n      <Button size=\"sm\" variant=\"secondary\">\n        <span>Small</span>\n      </Button>\n\n      <Button size=\"default\">\n        <span>Default</span>\n      </Button>\n\n      <Button size=\"lg\">\n        <span>Large</span>\n      </Button>\n    </div>\n  )\n}\n",
+      "type": "registry:component",
+      "target": "components/spaceui/button-squircle-demo-02.tsx"
+    }
+  ],
+  "categories": [
+    "component",
+    "button",
+    "squircle",
+    "sizes"
+  ],
+  "type": "registry:component"
+}

@@ -1,0 +1,34 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "template-stats",
+  "type": "registry:block",
+  "title": "Portfolio Statistics & Analytics Template",
+  "description": "Comprehensive portfolio statistics dashboard template featuring general metrics, audience engagement, content analytics, GitHub heatmap, and Lighthouse scores.",
+  "dependencies": ["motion", "@tabler/icons-react"],
+  "categories": [
+    "templates",
+    "portfolios",
+    "stats"
+  ],
+  "registryDependencies": [
+    "https://www.spaceui.one/r/block-stats-general.json",
+    "https://www.spaceui.one/r/block-stats-github.json",
+    "https://www.spaceui.one/r/block-stats-blog.json",
+    "https://www.spaceui.one/r/block-stats-performance.json",
+    "https://www.spaceui.one/r/block-stats-engagement.json"
+  ],
+  "files": [
+    {
+      "path": "src/registry/templates/stats/index.tsx",
+      "type": "registry:page",
+      "target": "pages/stats.tsx"
+    },
+    {
+      "path": "src/registry/blocks/stats/shared/header-section.tsx",
+      "type": "registry:component",
+      "target": "components/blocks/stats/header-section.tsx"
+    }
+  ],
+  "createdAt": "2026-09-12",
+  "updatedAt": "2026-09-12"
+}

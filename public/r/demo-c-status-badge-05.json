@@ -1,18 +1,15 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "demo-c-status-badge-05",
-  "title": "Status Badge with Link",
-  "description": "Interactive availability status badge with direct booking link.",
-  "dependencies": [
-    "@tabler/icons-react"
-  ],
+  "title": "Status Badge Stacked Mode",
+  "description": "Multi-line badge with standard indicator and enclosed badge indicator variants.",
   "registryDependencies": [
     "https://www.spaceui.one/r/components-spaceui-status-badge.json"
   ],
   "files": [
     {
       "path": "src/registry/demo/components/spaceui/status-badge/c-status-badge-05/index.tsx",
-      "content": "import Link from 'next/link'\nimport { IconArrowUpRight } from '@tabler/icons-react'\nimport { StatusBadge } from '@/components/spaceui/status-badge'\n\nexport default function Demo() {\n  return (\n    <div className=\"flex flex-wrap items-center justify-center gap-4 p-4\">\n      <StatusBadge mode=\"inline\" status=\"available\" primaryText=\"Disponible\" size=\"default\">\n        <Link href=\"#contact\" className=\"inline-flex items-center gap-1 hover:text-foreground transition-colors\">\n          <span>1 place restante pour ce mois-ci</span>\n          <IconArrowUpRight className=\"size-3.5\" />\n        </Link>\n      </StatusBadge>\n    </div>\n  )\n}\n",
+      "content": "import { StatusBadge } from '@/components/spaceui/status-badge'\n\nexport default function Demo() {\n  return (\n    <div className=\"flex flex-col items-center justify-center gap-5 p-4\">\n      <div className=\"flex flex-wrap items-center justify-center gap-4\">\n        <StatusBadge mode=\"stack\" status=\"online\" primaryText=\"Production API\" animated>\n          Operational • 99.99% uptime\n        </StatusBadge>\n        <StatusBadge mode=\"stack\" status=\"away\" primaryText=\"Database Backup\">\n          Maintenance in progress\n        </StatusBadge>\n        <StatusBadge mode=\"stack\" status=\"error\" primaryText=\"Auth Cluster\" animated>\n          Incident reported\n        </StatusBadge>\n      </div>\n\n      <div className=\"flex flex-wrap items-center justify-center gap-4\">\n        <StatusBadge mode=\"stack\" indicatorBadge status=\"online\" primaryText=\"Production API\" animated>\n          Operational • 99.99% uptime\n        </StatusBadge>\n        <StatusBadge mode=\"stack\" indicatorBadge status=\"away\" primaryText=\"Database Backup\">\n          Maintenance in progress\n        </StatusBadge>\n        <StatusBadge mode=\"stack\" indicatorBadge status=\"error\" primaryText=\"Auth Cluster\" animated>\n          Incident reported\n        </StatusBadge>\n      </div>\n    </div>\n  )\n}\n",
       "type": "registry:component",
       "target": "components/spaceui/status-badge.tsx"
     }

@@ -1,0 +1,33 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-stats-general",
+  "type": "registry:block",
+  "title": "General Stats Metrics Block",
+  "description": "Interactive metric overview cards with floating spring emoji decorations and semantic color accents.",
+  "registryDependencies": [
+    "https://www.spaceui.one/r/lib-utils.json"
+  ],
+  "dependencies": ["motion", "@tabler/icons-react"],
+  "categories": [
+    "stats"
+  ],
+  "files": [
+    {
+      "path": "src/registry/blocks/stats/stats-general/index.tsx",
+      "type": "registry:block",
+      "target": "components/blocks/stats/stats-general.tsx"
+    },
+    {
+      "path": "src/registry/blocks/stats/shared/section-layout.tsx",
+      "type": "registry:component",
+      "target": "components/blocks/stats/section-layout.tsx"
+    },
+    {
+      "path": "src/registry/blocks/stats/shared/stat-card.tsx",
+      "type": "registry:component",
+      "target": "components/blocks/stats/stat-card.tsx"
+    }
+  ],
+  "createdAt": "2026-09-12",
+  "updatedAt": "2026-09-12"
+}

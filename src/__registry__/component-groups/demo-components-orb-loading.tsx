@@ -46,6 +46,6 @@ export const registryComponents: Record<string, RegistryComponent> = {
   ),
   "demo-c-orb-loading-04": lazyRegistryComponent(
     () => import("@/registry/demo/components/orb/loading/c-orb-loading-04/index.tsx"),
-    {"state":{"value":"Building","options":{"Building":"Building","Thinking":"Thinking","Searching":"Searching","Generating":"Generating","Connecting":"Connecting"}},"color":{"value":"text-foreground","options":{"Default":"text-foreground","Primary":"text-primary","Emerald":"text-emerald-500","Indigo":"text-indigo-500","Amber":"text-amber-500","Rose":"text-rose-500"}},"showShimmer":{"value":true}},
+    {},
   ),
 };

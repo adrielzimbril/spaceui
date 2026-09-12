@@ -168,14 +168,15 @@ export function GeneratingOrbCanvas({
       }
     }
 
-    const intersectionObserver = typeof IntersectionObserver !== 'undefined'
-      ? new IntersectionObserver(
-          ([entry]) => {
-            isIntersecting = entry?.isIntersecting !== false
-          },
-          { rootMargin: '100px' },
-        )
-      : null
+    const intersectionObserver =
+      typeof IntersectionObserver !== 'undefined'
+        ? new IntersectionObserver(
+            ([entry]) => {
+              isIntersecting = entry?.isIntersecting !== false
+            },
+            { rootMargin: '100px' },
+          )
+        : null
     intersectionObserver?.observe(container)
 
     animId = requestAnimationFrame(render)

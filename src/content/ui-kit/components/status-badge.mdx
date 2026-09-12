@@ -27,55 +27,43 @@ import { StatusBadge } from '@/components/spaceui/status-badge'
 
 ### StatusBadge Props
 
-| Prop                     | Type                                                                                         | Default     | Description                                                         |
-| ------------------------ | -------------------------------------------------------------------------------------------- | ----------- | ------------------------------------------------------------------- |
-| `status`                 | `"online" \| "available" \| "busy" \| "away" \| "offline" \| "error" \| "warning" \| "info"` | `"online"`  | Semantic status controlling indicator dot color and ping wave color |
-| `primaryText`            | `string`                                                                                     | -           | Primary bold label text shown next to the indicator                 |
-| `mode`                   | `"inline" \| "stack"`                                                                        | `"inline"`  | Layout mode (`inline` for badge, `stack` for multi-line card)       |
-| `animated`               | `boolean`                                                                                    | `true`      | Enables animated radar ping wave effect                             |
-| `showIndicator`          | `boolean`                                                                                    | `true`      | Whether to display the status indicator dot                         |
-| `variant`                | `VariantProps<typeof badgeVariants>['variant']`                                              | `"default"` | Visual style variant for the badge container                        |
-| `size`                   | `VariantProps<typeof badgeVariants>['size']`                                                 | `"default"` | Sizing scale for badge and indicator                                |
-| `indicatorClassName`     | `string`                                                                                     | -           | Custom class name for the indicator dot                             |
-| `primaryTextClassName`   | `string`                                                                                     | -           | Custom class name for the primary text label                        |
-| `secondaryTextClassName` | `string`                                                                                     | -           | Custom class name for the secondary text / children                 |
+| Prop                     | Type                                                                                         | Default     | Description                                                             |
+| ------------------------ | -------------------------------------------------------------------------------------------- | ----------- | ----------------------------------------------------------------------- |
+| `status`                 | `"online" \| "available" \| "busy" \| "away" \| "offline" \| "error" \| "warning" \| "info"` | `"online"`  | Semantic status controlling indicator dot color and ping wave color     |
+| `primaryText`            | `string`                                                                                     | -           | Primary bold label text shown next to the indicator                     |
+| `mode`                   | `"inline" \| "stack"`                                                                        | `"inline"`  | Layout mode (`inline` for badge, `stack` for multi-line card)           |
+| `animated`               | `boolean`                                                                                    | `true`      | Enables animated radar ping wave effect                                 |
+| `showIndicator`          | `boolean`                                                                                    | `true`      | Whether to display the status indicator dot                             |
+| `variant`                | `"default" \| "inverted" \| "outline"`                                                       | `"default"` | Visual style variant for the badge container                            |
+| `size`                   | `"default" \| "xs" \| "sm" \| "md" \| "lg"`                                                  | `"default"` | Sizing scale for badge and indicator                                    |
+| `indicatorClassName`     | `string`                                                                                     | -           | Custom class name for the indicator dot                                 |
+| `primaryTextClassName`   | `string`                                                                                     | -           | Custom class name for the primary text label                            |
+| `secondaryTextClassName` | `string`                                                                                     | -           | Custom class name for the secondary text / children                     |
+| `indicatorBadge`         | `boolean`                                                                                    | `false`     | In stacked mode, encloses the indicator dot in a square badge container |
+
+## Features
 
 ### Sizes
 
 <ComponentPreview name="demo-c-status-badge-02" />
 
-### Radar Ping & Animation
+### Variants
 
 <ComponentPreview name="demo-c-status-badge-03" />
 
-### Stacked Mode
+### Radar Ping & Animation
 
 <ComponentPreview name="demo-c-status-badge-04" />
 
-### Planning Availability with Link
+### Stacked Mode
 
 <ComponentPreview name="demo-c-status-badge-05" />
-
-### Unavailable with Resumption Date
-
-<ComponentPreview name="demo-c-status-badge-06" />
-
-### Mission Quotas
-
-<ComponentPreview name="demo-c-status-badge-07" />
-
-### Freelance & Direct Project Callout
-
-<ComponentPreview name="demo-c-status-badge-08" />
 
 ## Examples
 
 <ShowcaseGrid>
-  <ShowcaseCard name="demo-c-status-badge-02" description="Status badge sizes" />
-  <ShowcaseCard name="demo-c-status-badge-03" description="Status badge radar ping" />
-  <ShowcaseCard name="demo-c-status-badge-04" description="Status badge stacked mode" />
-  <ShowcaseCard name="demo-c-status-badge-05" description="Planning availability with link" />
-  <ShowcaseCard name="demo-c-status-badge-06" description="Unavailable with resumption date" />
-  <ShowcaseCard name="demo-c-status-badge-07" description="Mission quotas" />
-  <ShowcaseCard name="demo-c-status-badge-08" description="Freelance and direct project callout" />
+  <ShowcaseCard name="demo-c-status-badge-06" description="Planning availability with link" />
+  <ShowcaseCard name="demo-c-status-badge-07" description="Unavailable with resumption date" />
+  <ShowcaseCard name="demo-c-status-badge-08" description="Mission quotas" />
+  <ShowcaseCard name="demo-c-status-badge-09" description="Freelance and direct project callout" />
 </ShowcaseGrid>

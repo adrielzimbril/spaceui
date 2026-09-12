@@ -3,7 +3,7 @@
   "name": "demo-c-status-badge-02",
   "type": "registry:component",
   "title": "Status Badge Sizes",
-  "description": "Standard sizing scale from extra-small to extra-large.",
+  "description": "Standard sizing scale from extra-small to large.",
   "registryDependencies": [
     "https://www.spaceui.one/r/components-spaceui-status-badge.json"
   ],

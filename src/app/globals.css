@@ -135,6 +135,12 @@
   --color-error-foreground: var(--error-foreground);
   --color-destructive: var(--destructive);
   --color-destructive-foreground: var(--destructive-foreground);
+
+  /* Radius in */
+  --radius-4xl: 2rem;
+  --radius-5xl: 2.5rem;
+  --radius-6xl: 3.125rem;
+  --radius-7xl: 3.75rem;
 }
 
 html,

@@ -1,0 +1,33 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-stats-performance",
+  "type": "registry:block",
+  "title": "Performance & Lighthouse Block",
+  "description": "Lighthouse audit results dashboard featuring mobile & desktop scores with radar chart visuals.",
+  "registryDependencies": [
+    "https://www.spaceui.one/r/lib-utils.json"
+  ],
+  "dependencies": ["@tabler/icons-react"],
+  "categories": [
+    "stats"
+  ],
+  "files": [
+    {
+      "path": "src/registry/blocks/stats/stats-performance/index.tsx",
+      "type": "registry:block",
+      "target": "components/blocks/stats/stats-performance.tsx"
+    },
+    {
+      "path": "src/registry/blocks/stats/shared/section-layout.tsx",
+      "type": "registry:component",
+      "target": "components/blocks/stats/section-layout.tsx"
+    },
+    {
+      "path": "src/registry/blocks/stats/shared/lighthouse-score-card.tsx",
+      "type": "registry:component",
+      "target": "components/blocks/stats/lighthouse-score-card.tsx"
+    }
+  ],
+  "createdAt": "2026-09-12",
+  "updatedAt": "2026-09-12"
+}

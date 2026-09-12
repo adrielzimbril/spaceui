@@ -4,6 +4,7 @@
   "icon": "Layout",
   "root": true,
   "pages": [
-    "immersive-lens"
+    "immersive-lens",
+    "stats"
   ]
 }

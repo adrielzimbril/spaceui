@@ -1,0 +1,27 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-c-badge-squircle-03",
+  "title": "Badge Squircle Icons & Polymorphic Render",
+  "description": "Showcase of tactile squircle badges with icons and polymorphic link and button rendering.",
+  "dependencies": [
+    "@tabler/icons-react"
+  ],
+  "registryDependencies": [
+    "https://www.spaceui.one/r/components-spaceui-badge-squircle.json"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/components/spaceui/badge-squircle/c-badge-squircle-03/index.tsx",
+      "content": "'use client'\n\nimport * as React from 'react'\nimport { Badge } from '@/components/spaceui/badge-squircle'\nimport { IconArrowUpRight, IconEyeFilled, IconSparkles } from '@tabler/icons-react'\n\nexport default function Demo() {\n  return (\n    <div className=\"flex flex-col items-center justify-center gap-6 p-8 max-w-md mx-auto\">\n      {/* Icons & Media Badges */}\n      <div className=\"flex flex-wrap items-center justify-center gap-3\">\n        <Badge variant=\"default\">\n          <IconSparkles className=\"size-3 text-amber-500\" />\n          <span>Featured</span>\n        </Badge>\n\n        <Badge variant=\"secondary\">\n          <IconSparkles className=\"size-3 text-primary\" />\n          <span>New Release</span>\n        </Badge>\n\n        <Badge variant=\"inverted\">\n          <IconEyeFilled className=\"size-3.5\" />\n          <span>14.2k views</span>\n        </Badge>\n      </div>\n\n      {/* Polymorphic Render as Interactive Link */}\n      <div className=\"flex flex-wrap items-center justify-center gap-3\">\n        <Badge\n          variant=\"outline\"\n          render={<a href=\"#explore\" className=\"cursor-pointer hover:border-foreground/30 transition-colors\" />}\n        >\n          <span>Explore Docs</span>\n          <IconArrowUpRight className=\"size-3\" />\n        </Badge>\n\n        <Badge\n          variant=\"accent\"\n          render={\n            <button\n              type=\"button\"\n              onClick={() => alert('Clicked Badge Button!')}\n              className=\"cursor-pointer hover:opacity-90 transition-opacity\"\n            />\n          }\n        >\n          <span>Clickable Action</span>\n        </Badge>\n      </div>\n    </div>\n  )\n}\n",
+      "type": "registry:component",
+      "target": "components/spaceui/badge-squircle-demo-03.tsx"
+    }
+  ],
+  "categories": [
+    "component",
+    "badge",
+    "squircle",
+    "features"
+  ],
+  "type": "registry:component"
+}

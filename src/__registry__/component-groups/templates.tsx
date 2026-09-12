@@ -36,4 +36,8 @@ export const registryComponents: Record<string, RegistryComponent> = {
     () => import("@/registry/templates/immersive-lens/index.tsx"),
     {},
   ),
+  "template-stats": lazyRegistryComponent(
+    () => import("@/registry/templates/stats/index.tsx"),
+    {},
+  ),
 };

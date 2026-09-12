@@ -1,9 +1,4 @@
-import {
-  type RenderDot,
-  type RenderLine,
-  type RenderPassData,
-  filterAndSortElements,
-} from './canvas-utils'
+import { type RenderDot, type RenderLine, type RenderPassData, filterAndSortElements } from './canvas-utils'
 import {
   angleDelta,
   create3DRotation,
@@ -255,7 +250,7 @@ export function renderRubik(size: number, time: number, opts: BaseConfig): Rende
         x: px,
         y: py,
         z: pz,
-        r: ((opts.rBase ?? 0.6) + (opts.rDepth ?? 1.7) * depth + (isActive ? opts.rActive ?? 0.3 : 0)) * scale,
+        r: ((opts.rBase ?? 0.6) + (opts.rDepth ?? 1.7) * depth + (isActive ? (opts.rActive ?? 0.3) : 0)) * scale,
         white: (opts.inkFar ?? 0.62) - (opts.inkSpan ?? 0.54) * depth - (isActive ? 0.14 : 0),
       })
     }

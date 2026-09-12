@@ -92,7 +92,8 @@ export default function Demo({
       </div>
 
       <div className="text-center text-xs text-muted-foreground">
-        Active Engine: <span className="font-semibold text-foreground uppercase">{activeRenderer}</span> &bull; Cycle: {duration}ms &bull; Depth: {depth}×
+        Active Engine: <span className="font-semibold text-foreground uppercase">{activeRenderer}</span> &bull; Cycle:{' '}
+        {duration}ms &bull; Depth: {depth}×
       </div>
     </div>
   )

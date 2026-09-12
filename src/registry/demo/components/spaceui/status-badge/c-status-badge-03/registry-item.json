@@ -2,8 +2,8 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "demo-c-status-badge-03",
   "type": "registry:component",
-  "title": "Status Badge Radar Ping",
-  "description": "Animated ping wave and pulsing indicators for live system states.",
+  "title": "Status Badge Variants",
+  "description": "Visual style variants for the badge container: default, inverted, and outline.",
   "registryDependencies": [
     "https://www.spaceui.one/r/components-spaceui-status-badge.json"
   ],
@@ -18,6 +18,6 @@
       "target": "components/spaceui/status-badge.tsx"
     }
   ],
-  "createdAt": "2026-08-21",
-  "updatedAt": "2026-08-21"
+  "createdAt": "2026-09-12",
+  "updatedAt": "2026-09-12"
 }

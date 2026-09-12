@@ -2,8 +2,8 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "demo-c-status-badge-06",
   "type": "registry:component",
-  "title": "Status Badge Unavailable",
-  "description": "Unavailable status badge displaying upcoming resumption date.",
+  "title": "Status Badge with Link",
+  "description": "Interactive availability status badge with direct booking link.",
   "dependencies": [
     "@tabler/icons-react"
   ],

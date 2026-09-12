@@ -1,0 +1,27 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-c-github-activity-03",
+  "type": "registry:component",
+  "title": "GitHub Activity with Stats at Bottom",
+  "description": "Layout configuration displaying the contribution activity graph on top with KPI stat cards positioned below.",
+  "registryDependencies": [
+    "https://www.spaceui.one/r/components-spaceui-github-activity.json",
+    "https://www.spaceui.one/r/primitives-frame.json",
+    "https://www.spaceui.one/r/primitives-card.json",
+    "https://www.spaceui.one/r/components-spaceui-button-squircle.json"
+  ],
+  "categories": [
+    "component",
+    "github",
+    "activity"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/components/spaceui/github-activity/c-github-activity-03/index.tsx",
+      "type": "registry:component",
+      "target": "components/spaceui/github-activity-demo-03.tsx"
+    }
+  ],
+  "createdAt": "2026-09-12",
+  "updatedAt": "2026-09-12"
+}

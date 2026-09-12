@@ -234,6 +234,117 @@
     "dependents": [],
     "related": []
   },
+  "block-footer-tactile": {
+    "name": "block-footer-tactile",
+    "shortName": "block-footer-tactile",
+    "title": "Footer Tactile",
+    "description": "An expressive, tactile portfolio and product footer crafted with squircle curvature, live status indicator, local clock, and multi-column navigation.",
+    "type": "registry:block",
+    "url": "/ui-kit/blocks/block",
+    "category": "Block",
+    "categories": [
+      "block",
+      "footer",
+      "tactile",
+      "portfolio"
+    ],
+    "createdAt": "2026-09-12",
+    "updatedAt": "2026-09-12",
+    "size": "9 KB",
+    "rawSize": 9208,
+    "directSize": "9 KB",
+    "fileCount": 1,
+    "dependencies": [
+      "motion",
+      "@tabler/icons-react",
+      "@usespaceui/squircle",
+      "@base-ui/react",
+      "class-variance-authority"
+    ],
+    "registryDependencies": [
+      "https://www.spaceui.one/r/primitives-frame.json",
+      "https://www.spaceui.one/r/primitives-card.json",
+      "https://www.spaceui.one/r/primitives-select.json",
+      "https://www.spaceui.one/r/components-spaceui-button-squircle.json",
+      "https://www.spaceui.one/r/lib-utils.json"
+    ],
+    "dependents": [],
+    "related": []
+  },
+  "block": {
+    "name": "block-footer-tactile",
+    "shortName": "block-footer-tactile",
+    "title": "Footer Tactile",
+    "description": "An expressive, tactile portfolio and product footer crafted with squircle curvature, live status indicator, local clock, and multi-column navigation.",
+    "type": "registry:block",
+    "url": "/ui-kit/blocks/block",
+    "category": "Block",
+    "categories": [
+      "block",
+      "footer",
+      "tactile",
+      "portfolio"
+    ],
+    "createdAt": "2026-09-12",
+    "updatedAt": "2026-09-12",
+    "size": "9 KB",
+    "rawSize": 9208,
+    "directSize": "9 KB",
+    "fileCount": 1,
+    "dependencies": [
+      "motion",
+      "@tabler/icons-react",
+      "@usespaceui/squircle",
+      "@base-ui/react",
+      "class-variance-authority"
+    ],
+    "registryDependencies": [
+      "https://www.spaceui.one/r/primitives-frame.json",
+      "https://www.spaceui.one/r/primitives-card.json",
+      "https://www.spaceui.one/r/primitives-select.json",
+      "https://www.spaceui.one/r/components-spaceui-button-squircle.json",
+      "https://www.spaceui.one/r/lib-utils.json"
+    ],
+    "dependents": [],
+    "related": []
+  },
+  "blocks-block": {
+    "name": "block-footer-tactile",
+    "shortName": "block-footer-tactile",
+    "title": "Footer Tactile",
+    "description": "An expressive, tactile portfolio and product footer crafted with squircle curvature, live status indicator, local clock, and multi-column navigation.",
+    "type": "registry:block",
+    "url": "/ui-kit/blocks/block",
+    "category": "Block",
+    "categories": [
+      "block",
+      "footer",
+      "tactile",
+      "portfolio"
+    ],
+    "createdAt": "2026-09-12",
+    "updatedAt": "2026-09-12",
+    "size": "9 KB",
+    "rawSize": 9208,
+    "directSize": "9 KB",
+    "fileCount": 1,
+    "dependencies": [
+      "motion",
+      "@tabler/icons-react",
+      "@usespaceui/squircle",
+      "@base-ui/react",
+      "class-variance-authority"
+    ],
+    "registryDependencies": [
+      "https://www.spaceui.one/r/primitives-frame.json",
+      "https://www.spaceui.one/r/primitives-card.json",
+      "https://www.spaceui.one/r/primitives-select.json",
+      "https://www.spaceui.one/r/components-spaceui-button-squircle.json",
+      "https://www.spaceui.one/r/lib-utils.json"
+    ],
+    "dependents": [],
+    "related": []
+  },
   "block-interactive-fun-facts": {
     "name": "block-interactive-fun-facts",
     "shortName": "block-interactive-fun-facts",
@@ -419,6 +530,411 @@
     ],
     "dependents": [],
     "related": []
+  },
+  "block-stats-blog": {
+    "name": "block-stats-blog",
+    "shortName": "block-stats-blog",
+    "title": "Blog & Content Stats Block",
+    "description": "Content publication metrics including total articles, words written, reader messages, and reading time.",
+    "type": "registry:block",
+    "url": "/ui-kit/blocks/stats",
+    "category": "Stats",
+    "categories": [
+      "stats"
+    ],
+    "createdAt": "2026-09-12",
+    "updatedAt": "2026-09-12",
+    "size": "8.5 KB",
+    "rawSize": 8671,
+    "directSize": "8.5 KB",
+    "fileCount": 3,
+    "dependencies": [
+      "motion",
+      "@tabler/icons-react"
+    ],
+    "registryDependencies": [
+      "https://www.spaceui.one/r/lib-utils.json"
+    ],
+    "dependents": [],
+    "related": [
+      {
+        "name": "block-stats-engagement",
+        "title": "Engagement & Community Activity Block",
+        "description": "Comprehensive reader engagement showcase with top articles, interactive emoji reaction counters, category tags, and changelog updates.",
+        "url": "/ui-kit/blocks/stats",
+        "category": "Stats",
+        "categories": [
+          "stats"
+        ]
+      },
+      {
+        "name": "block-stats-general",
+        "title": "General Stats Metrics Block",
+        "description": "Interactive metric overview cards with floating spring emoji decorations and semantic color accents.",
+        "url": "/ui-kit/blocks/stats",
+        "category": "Stats",
+        "categories": [
+          "stats"
+        ]
+      },
+      {
+        "name": "block-stats-github",
+        "title": "GitHub & Open-Source Activity Block",
+        "description": "Interactive GitHub contribution activity heatmap graph with metrics for stars, forks, and commits.",
+        "url": "/ui-kit/blocks/stats",
+        "category": "Stats",
+        "categories": [
+          "stats"
+        ]
+      }
+    ]
+  },
+  "stats": {
+    "name": "block-stats-blog",
+    "shortName": "block-stats-blog",
+    "title": "Blog & Content Stats Block",
+    "description": "Content publication metrics including total articles, words written, reader messages, and reading time.",
+    "type": "registry:block",
+    "url": "/ui-kit/blocks/stats",
+    "category": "Stats",
+    "categories": [
+      "stats"
+    ],
+    "createdAt": "2026-09-12",
+    "updatedAt": "2026-09-12",
+    "size": "8.5 KB",
+    "rawSize": 8671,
+    "directSize": "8.5 KB",
+    "fileCount": 3,
+    "dependencies": [
+      "motion",
+      "@tabler/icons-react"
+    ],
+    "registryDependencies": [
+      "https://www.spaceui.one/r/lib-utils.json"
+    ],
+    "dependents": [],
+    "related": [
+      {
+        "name": "block-stats-engagement",
+        "title": "Engagement & Community Activity Block",
+        "description": "Comprehensive reader engagement showcase with top articles, interactive emoji reaction counters, category tags, and changelog updates.",
+        "url": "/ui-kit/blocks/stats",
+        "category": "Stats",
+        "categories": [
+          "stats"
+        ]
+      },
+      {
+        "name": "block-stats-general",
+        "title": "General Stats Metrics Block",
+        "description": "Interactive metric overview cards with floating spring emoji decorations and semantic color accents.",
+        "url": "/ui-kit/blocks/stats",
+        "category": "Stats",
+        "categories": [
+          "stats"
+        ]
+      },
+      {
+        "name": "block-stats-github",
+        "title": "GitHub & Open-Source Activity Block",
+        "description": "Interactive GitHub contribution activity heatmap graph with metrics for stars, forks, and commits.",
+        "url": "/ui-kit/blocks/stats",
+        "category": "Stats",
+        "categories": [
+          "stats"
+        ]
+      }
+    ]
+  },
+  "blocks-stats": {
+    "name": "block-stats-blog",
+    "shortName": "block-stats-blog",
+    "title": "Blog & Content Stats Block",
+    "description": "Content publication metrics including total articles, words written, reader messages, and reading time.",
+    "type": "registry:block",
+    "url": "/ui-kit/blocks/stats",
+    "category": "Stats",
+    "categories": [
+      "stats"
+    ],
+    "createdAt": "2026-09-12",
+    "updatedAt": "2026-09-12",
+    "size": "8.5 KB",
+    "rawSize": 8671,
+    "directSize": "8.5 KB",
+    "fileCount": 3,
+    "dependencies": [
+      "motion",
+      "@tabler/icons-react"
+    ],
+    "registryDependencies": [
+      "https://www.spaceui.one/r/lib-utils.json"
+    ],
+    "dependents": [],
+    "related": [
+      {
+        "name": "block-stats-engagement",
+        "title": "Engagement & Community Activity Block",
+        "description": "Comprehensive reader engagement showcase with top articles, interactive emoji reaction counters, category tags, and changelog updates.",
+        "url": "/ui-kit/blocks/stats",
+        "category": "Stats",
+        "categories": [
+          "stats"
+        ]
+      },
+      {
+        "name": "block-stats-general",
+        "title": "General Stats Metrics Block",
+        "description": "Interactive metric overview cards with floating spring emoji decorations and semantic color accents.",
+        "url": "/ui-kit/blocks/stats",
+        "category": "Stats",
+        "categories": [
+          "stats"
+        ]
+      },
+      {
+        "name": "block-stats-github",
+        "title": "GitHub & Open-Source Activity Block",
+        "description": "Interactive GitHub contribution activity heatmap graph with metrics for stars, forks, and commits.",
+        "url": "/ui-kit/blocks/stats",
+        "category": "Stats",
+        "categories": [
+          "stats"
+        ]
+      }
+    ]
+  },
+  "block-stats-engagement": {
+    "name": "block-stats-engagement",
+    "shortName": "block-stats-engagement",
+    "title": "Engagement & Community Activity Block",
+    "description": "Comprehensive reader engagement showcase with top articles, interactive emoji reaction counters, category tags, and changelog updates.",
+    "type": "registry:block",
+    "url": "/ui-kit/blocks/stats",
+    "category": "Stats",
+    "categories": [
+      "stats"
+    ],
+    "createdAt": "2026-09-12",
+    "updatedAt": "2026-09-12",
+    "size": "30.7 KB",
+    "rawSize": 31464,
+    "directSize": "30.7 KB",
+    "fileCount": 7,
+    "dependencies": [
+      "motion",
+      "@tabler/icons-react"
+    ],
+    "registryDependencies": [
+      "https://www.spaceui.one/r/lib-utils.json"
+    ],
+    "dependents": [],
+    "related": [
+      {
+        "name": "block-stats-blog",
+        "title": "Blog & Content Stats Block",
+        "description": "Content publication metrics including total articles, words written, reader messages, and reading time.",
+        "url": "/ui-kit/blocks/stats",
+        "category": "Stats",
+        "categories": [
+          "stats"
+        ]
+      },
+      {
+        "name": "block-stats-general",
+        "title": "General Stats Metrics Block",
+        "description": "Interactive metric overview cards with floating spring emoji decorations and semantic color accents.",
+        "url": "/ui-kit/blocks/stats",
+        "category": "Stats",
+        "categories": [
+          "stats"
+        ]
+      },
+      {
+        "name": "block-stats-github",
+        "title": "GitHub & Open-Source Activity Block",
+        "description": "Interactive GitHub contribution activity heatmap graph with metrics for stars, forks, and commits.",
+        "url": "/ui-kit/blocks/stats",
+        "category": "Stats",
+        "categories": [
+          "stats"
+        ]
+      }
+    ]
+  },
+  "block-stats-general": {
+    "name": "block-stats-general",
+    "shortName": "block-stats-general",
+    "title": "General Stats Metrics Block",
+    "description": "Interactive metric overview cards with floating spring emoji decorations and semantic color accents.",
+    "type": "registry:block",
+    "url": "/ui-kit/blocks/stats",
+    "category": "Stats",
+    "categories": [
+      "stats"
+    ],
+    "createdAt": "2026-09-12",
+    "updatedAt": "2026-09-12",
+    "size": "8.2 KB",
+    "rawSize": 8409,
+    "directSize": "8.2 KB",
+    "fileCount": 3,
+    "dependencies": [
+      "motion",
+      "@tabler/icons-react"
+    ],
+    "registryDependencies": [
+      "https://www.spaceui.one/r/lib-utils.json"
+    ],
+    "dependents": [],
+    "related": [
+      {
+        "name": "block-stats-blog",
+        "title": "Blog & Content Stats Block",
+        "description": "Content publication metrics including total articles, words written, reader messages, and reading time.",
+        "url": "/ui-kit/blocks/stats",
+        "category": "Stats",
+        "categories": [
+          "stats"
+        ]
+      },
+      {
+        "name": "block-stats-engagement",
+        "title": "Engagement & Community Activity Block",
+        "description": "Comprehensive reader engagement showcase with top articles, interactive emoji reaction counters, category tags, and changelog updates.",
+        "url": "/ui-kit/blocks/stats",
+        "category": "Stats",
+        "categories": [
+          "stats"
+        ]
+      },
+      {
+        "name": "block-stats-github",
+        "title": "GitHub & Open-Source Activity Block",
+        "description": "Interactive GitHub contribution activity heatmap graph with metrics for stars, forks, and commits.",
+        "url": "/ui-kit/blocks/stats",
+        "category": "Stats",
+        "categories": [
+          "stats"
+        ]
+      }
+    ]
+  },
+  "block-stats-github": {
+    "name": "block-stats-github",
+    "shortName": "block-stats-github",
+    "title": "GitHub & Open-Source Activity Block",
+    "description": "Interactive GitHub contribution activity heatmap graph with metrics for stars, forks, and commits.",
+    "type": "registry:block",
+    "url": "/ui-kit/blocks/stats",
+    "category": "Stats",
+    "categories": [
+      "stats"
+    ],
+    "createdAt": "2026-09-12",
+    "updatedAt": "2026-09-12",
+    "size": "27.2 KB",
+    "rawSize": 27893,
+    "directSize": "27.2 KB",
+    "fileCount": 4,
+    "dependencies": [
+      "motion",
+      "@tabler/icons-react"
+    ],
+    "registryDependencies": [
+      "https://www.spaceui.one/r/lib-utils.json"
+    ],
+    "dependents": [],
+    "related": [
+      {
+        "name": "block-stats-blog",
+        "title": "Blog & Content Stats Block",
+        "description": "Content publication metrics including total articles, words written, reader messages, and reading time.",
+        "url": "/ui-kit/blocks/stats",
+        "category": "Stats",
+        "categories": [
+          "stats"
+        ]
+      },
+      {
+        "name": "block-stats-engagement",
+        "title": "Engagement & Community Activity Block",
+        "description": "Comprehensive reader engagement showcase with top articles, interactive emoji reaction counters, category tags, and changelog updates.",
+        "url": "/ui-kit/blocks/stats",
+        "category": "Stats",
+        "categories": [
+          "stats"
+        ]
+      },
+      {
+        "name": "block-stats-general",
+        "title": "General Stats Metrics Block",
+        "description": "Interactive metric overview cards with floating spring emoji decorations and semantic color accents.",
+        "url": "/ui-kit/blocks/stats",
+        "category": "Stats",
+        "categories": [
+          "stats"
+        ]
+      }
+    ]
+  },
+  "block-stats-performance": {
+    "name": "block-stats-performance",
+    "shortName": "block-stats-performance",
+    "title": "Performance & Lighthouse Block",
+    "description": "Lighthouse audit results dashboard featuring mobile & desktop scores with radar chart visuals.",
+    "type": "registry:block",
+    "url": "/ui-kit/blocks/stats",
+    "category": "Stats",
+    "categories": [
+      "stats"
+    ],
+    "createdAt": "2026-09-12",
+    "updatedAt": "2026-09-12",
+    "size": "10.7 KB",
+    "rawSize": 10918,
+    "directSize": "10.7 KB",
+    "fileCount": 3,
+    "dependencies": [
+      "@tabler/icons-react"
+    ],
+    "registryDependencies": [
+      "https://www.spaceui.one/r/lib-utils.json"
+    ],
+    "dependents": [],
+    "related": [
+      {
+        "name": "block-stats-blog",
+        "title": "Blog & Content Stats Block",
+        "description": "Content publication metrics including total articles, words written, reader messages, and reading time.",
+        "url": "/ui-kit/blocks/stats",
+        "category": "Stats",
+        "categories": [
+          "stats"
+        ]
+      },
+      {
+        "name": "block-stats-engagement",
+        "title": "Engagement & Community Activity Block",
+        "description": "Comprehensive reader engagement showcase with top articles, interactive emoji reaction counters, category tags, and changelog updates.",
+        "url": "/ui-kit/blocks/stats",
+        "category": "Stats",
+        "categories": [
+          "stats"
+        ]
+      },
+      {
+        "name": "block-stats-general",
+        "title": "General Stats Metrics Block",
+        "description": "Interactive metric overview cards with floating spring emoji decorations and semantic color accents.",
+        "url": "/ui-kit/blocks/stats",
+        "category": "Stats",
+        "categories": [
+          "stats"
+        ]
+      }
+    ]
   },
   "bubble": {
     "name": "components-backgrounds-bubble",
@@ -747,7 +1263,7 @@
     "createdAt": "2026-09-11",
     "updatedAt": "2026-09-11",
     "size": "17.7 KB",
-    "rawSize": 18147,
+    "rawSize": 18120,
     "directSize": "17.7 KB",
     "fileCount": 4,
     "dependencies": [],
@@ -809,7 +1325,7 @@
     "createdAt": "2026-09-11",
     "updatedAt": "2026-09-11",
     "size": "17.7 KB",
-    "rawSize": 18147,
+    "rawSize": 18120,
     "directSize": "17.7 KB",
     "fileCount": 4,
     "dependencies": [],
@@ -869,9 +1385,9 @@
     ],
     "createdAt": "2026-09-12",
     "updatedAt": "2026-09-12",
-    "size": "9 KB",
-    "rawSize": 9225,
-    "directSize": "9 KB",
+    "size": "9.3 KB",
+    "rawSize": 9542,
+    "directSize": "9.3 KB",
     "fileCount": 1,
     "dependencies": [
       "motion"
@@ -933,9 +1449,9 @@
     ],
     "createdAt": "2026-09-12",
     "updatedAt": "2026-09-12",
-    "size": "9 KB",
-    "rawSize": 9225,
-    "directSize": "9 KB",
+    "size": "9.3 KB",
+    "rawSize": 9542,
+    "directSize": "9.3 KB",
     "fileCount": 1,
     "dependencies": [
       "motion"
@@ -1134,9 +1650,9 @@
     ],
     "createdAt": "2026-09-11",
     "updatedAt": "2026-09-12",
-    "size": "46.4 KB",
-    "rawSize": 47465,
-    "directSize": "46.4 KB",
+    "size": "46.3 KB",
+    "rawSize": 47381,
+    "directSize": "46.3 KB",
     "fileCount": 16,
     "dependencies": [],
     "registryDependencies": [],
@@ -1197,9 +1713,9 @@
     ],
     "createdAt": "2026-09-11",
     "updatedAt": "2026-09-12",
-    "size": "46.4 KB",
-    "rawSize": 47465,
-    "directSize": "46.4 KB",
+    "size": "46.3 KB",
+    "rawSize": 47381,
+    "directSize": "46.3 KB",
     "fileCount": 16,
     "dependencies": [],
     "registryDependencies": [],
@@ -1632,6 +2148,88 @@
       }
     ]
   },
+  "badge-squircle": {
+    "name": "components-spaceui-badge-squircle",
+    "shortName": "badge-squircle",
+    "title": "Badge Squircle",
+    "description": "Tactile squircle badge component with Base UI polymorphic rendering and dynamic curvature morphing.",
+    "type": "registry:component",
+    "url": "/ui-kit/components/spaceui/badge-squircle",
+    "category": "Badge",
+    "categories": [
+      "badge",
+      "squircle",
+      "tactile"
+    ],
+    "createdAt": "2026-09-12",
+    "updatedAt": "2026-09-12",
+    "size": "2.4 KB",
+    "rawSize": 2413,
+    "directSize": "2.4 KB",
+    "fileCount": 1,
+    "dependencies": [
+      "@usespaceui/squircle",
+      "@base-ui/react",
+      "class-variance-authority"
+    ],
+    "registryDependencies": [
+      "https://www.spaceui.one/r/lib-utils.json"
+    ],
+    "dependents": [],
+    "related": [
+      {
+        "name": "badge",
+        "title": "Badge",
+        "description": "Accessible Badge primitive component for Space UI.",
+        "url": "/ui-kit/primitives/badge",
+        "category": "Badge",
+        "categories": [
+          "badge"
+        ]
+      }
+    ]
+  },
+  "components-spaceui-badge-squircle": {
+    "name": "components-spaceui-badge-squircle",
+    "shortName": "badge-squircle",
+    "title": "Badge Squircle",
+    "description": "Tactile squircle badge component with Base UI polymorphic rendering and dynamic curvature morphing.",
+    "type": "registry:component",
+    "url": "/ui-kit/components/spaceui/badge-squircle",
+    "category": "Badge",
+    "categories": [
+      "badge",
+      "squircle",
+      "tactile"
+    ],
+    "createdAt": "2026-09-12",
+    "updatedAt": "2026-09-12",
+    "size": "2.4 KB",
+    "rawSize": 2413,
+    "directSize": "2.4 KB",
+    "fileCount": 1,
+    "dependencies": [
+      "@usespaceui/squircle",
+      "@base-ui/react",
+      "class-variance-authority"
+    ],
+    "registryDependencies": [
+      "https://www.spaceui.one/r/lib-utils.json"
+    ],
+    "dependents": [],
+    "related": [
+      {
+        "name": "badge",
+        "title": "Badge",
+        "description": "Accessible Badge primitive component for Space UI.",
+        "url": "/ui-kit/primitives/badge",
+        "category": "Badge",
+        "categories": [
+          "badge"
+        ]
+      }
+    ]
+  },
   "bouncy-accordion": {
     "name": "components-spaceui-bouncy-accordion",
     "shortName": "bouncy-accordion",
@@ -1687,6 +2285,90 @@
     ],
     "dependents": [],
     "related": []
+  },
+  "button-squircle": {
+    "name": "components-spaceui-button-squircle",
+    "shortName": "button-squircle",
+    "title": "Button Squircle",
+    "description": "Tactile squircle button and badge components featuring dynamic curvature morphing on hover from the original portfolio design.",
+    "type": "registry:component",
+    "url": "/ui-kit/components/spaceui/button-squircle",
+    "category": "Button",
+    "categories": [
+      "button",
+      "badge",
+      "squircle",
+      "tactile"
+    ],
+    "createdAt": "2026-09-12",
+    "updatedAt": "2026-09-12",
+    "size": "3.3 KB",
+    "rawSize": 3363,
+    "directSize": "3.3 KB",
+    "fileCount": 1,
+    "dependencies": [
+      "@usespaceui/squircle",
+      "@base-ui/react",
+      "class-variance-authority"
+    ],
+    "registryDependencies": [
+      "https://www.spaceui.one/r/lib-utils.json"
+    ],
+    "dependents": [],
+    "related": [
+      {
+        "name": "button",
+        "title": "Button",
+        "description": "Accessible Button primitive component for Space UI.",
+        "url": "/ui-kit/primitives/button",
+        "category": "Button",
+        "categories": [
+          "button"
+        ]
+      }
+    ]
+  },
+  "components-spaceui-button-squircle": {
+    "name": "components-spaceui-button-squircle",
+    "shortName": "button-squircle",
+    "title": "Button Squircle",
+    "description": "Tactile squircle button and badge components featuring dynamic curvature morphing on hover from the original portfolio design.",
+    "type": "registry:component",
+    "url": "/ui-kit/components/spaceui/button-squircle",
+    "category": "Button",
+    "categories": [
+      "button",
+      "badge",
+      "squircle",
+      "tactile"
+    ],
+    "createdAt": "2026-09-12",
+    "updatedAt": "2026-09-12",
+    "size": "3.3 KB",
+    "rawSize": 3363,
+    "directSize": "3.3 KB",
+    "fileCount": 1,
+    "dependencies": [
+      "@usespaceui/squircle",
+      "@base-ui/react",
+      "class-variance-authority"
+    ],
+    "registryDependencies": [
+      "https://www.spaceui.one/r/lib-utils.json"
+    ],
+    "dependents": [],
+    "related": [
+      {
+        "name": "button",
+        "title": "Button",
+        "description": "Accessible Button primitive component for Space UI.",
+        "url": "/ui-kit/primitives/button",
+        "category": "Button",
+        "categories": [
+          "button"
+        ]
+      }
+    ]
   },
   "copy": {
     "name": "components-spaceui-copy",
@@ -4950,6 +5632,74 @@
     "dependents": [],
     "related": []
   },
+  "github-activity": {
+    "name": "components-spaceui-github-activity",
+    "shortName": "github-activity",
+    "title": "GitHub Activity",
+    "description": "An interactive GitHub ecosystem showcase featuring stars, forks, and commits KPI cards with floating particles and a 52-week contribution heatmap matrix.",
+    "type": "registry:component",
+    "url": "/ui-kit/components/spaceui/github-activity",
+    "category": "Github",
+    "categories": [
+      "github",
+      "activity",
+      "stats"
+    ],
+    "createdAt": "2026-09-12",
+    "updatedAt": "2026-09-12",
+    "size": "23.9 KB",
+    "rawSize": 24456,
+    "directSize": "23.9 KB",
+    "fileCount": 1,
+    "dependencies": [
+      "motion",
+      "@tabler/icons-react"
+    ],
+    "registryDependencies": [
+      "https://www.spaceui.one/r/primitives-frame.json",
+      "https://www.spaceui.one/r/primitives-card.json",
+      "https://www.spaceui.one/r/primitives-button.json",
+      "https://www.spaceui.one/r/primitives-tooltip.json",
+      "https://www.spaceui.one/r/components-spaceui-status-badge.json",
+      "https://www.spaceui.one/r/lib-utils.json"
+    ],
+    "dependents": [],
+    "related": []
+  },
+  "components-spaceui-github-activity": {
+    "name": "components-spaceui-github-activity",
+    "shortName": "github-activity",
+    "title": "GitHub Activity",
+    "description": "An interactive GitHub ecosystem showcase featuring stars, forks, and commits KPI cards with floating particles and a 52-week contribution heatmap matrix.",
+    "type": "registry:component",
+    "url": "/ui-kit/components/spaceui/github-activity",
+    "category": "Github",
+    "categories": [
+      "github",
+      "activity",
+      "stats"
+    ],
+    "createdAt": "2026-09-12",
+    "updatedAt": "2026-09-12",
+    "size": "23.9 KB",
+    "rawSize": 24456,
+    "directSize": "23.9 KB",
+    "fileCount": 1,
+    "dependencies": [
+      "motion",
+      "@tabler/icons-react"
+    ],
+    "registryDependencies": [
+      "https://www.spaceui.one/r/primitives-frame.json",
+      "https://www.spaceui.one/r/primitives-card.json",
+      "https://www.spaceui.one/r/primitives-button.json",
+      "https://www.spaceui.one/r/primitives-tooltip.json",
+      "https://www.spaceui.one/r/components-spaceui-status-badge.json",
+      "https://www.spaceui.one/r/lib-utils.json"
+    ],
+    "dependents": [],
+    "related": []
+  },
   "icon-stack": {
     "name": "components-spaceui-icon-stack",
     "shortName": "icon-stack",
@@ -5447,9 +6197,9 @@
     ],
     "createdAt": "2026-08-21",
     "updatedAt": "2026-09-04",
-    "size": "11.3 KB",
-    "rawSize": 11568,
-    "directSize": "11.3 KB",
+    "size": "10.9 KB",
+    "rawSize": 11176,
+    "directSize": "10.9 KB",
     "fileCount": 1,
     "dependencies": [
       "motion",
@@ -5474,9 +6224,9 @@
     ],
     "createdAt": "2026-08-21",
     "updatedAt": "2026-09-04",
-    "size": "11.3 KB",
-    "rawSize": 11568,
-    "directSize": "11.3 KB",
+    "size": "10.9 KB",
+    "rawSize": 11176,
+    "directSize": "10.9 KB",
     "fileCount": 1,
     "dependencies": [
       "motion",
@@ -5762,17 +6512,16 @@
       "status-badge"
     ],
     "createdAt": "2026-08-21",
-    "updatedAt": "2026-08-21",
-    "size": "3.6 KB",
-    "rawSize": 3637,
-    "directSize": "3.6 KB",
+    "updatedAt": "2026-09-12",
+    "size": "5.7 KB",
+    "rawSize": 5887,
+    "directSize": "5.7 KB",
     "fileCount": 1,
     "dependencies": [
       "class-variance-authority"
     ],
     "registryDependencies": [
-      "https://www.spaceui.one/r/lib-utils.json",
-      "https://www.spaceui.one/r/primitives-badge.json"
+      "https://www.spaceui.one/r/lib-utils.json"
     ],
     "dependents": [],
     "related": []
@@ -5789,17 +6538,16 @@
       "status-badge"
     ],
     "createdAt": "2026-08-21",
-    "updatedAt": "2026-08-21",
-    "size": "3.6 KB",
-    "rawSize": 3637,
-    "directSize": "3.6 KB",
+    "updatedAt": "2026-09-12",
+    "size": "5.7 KB",
+    "rawSize": 5887,
+    "directSize": "5.7 KB",
     "fileCount": 1,
     "dependencies": [
       "class-variance-authority"
     ],
     "registryDependencies": [
-      "https://www.spaceui.one/r/lib-utils.json",
-      "https://www.spaceui.one/r/primitives-badge.json"
+      "https://www.spaceui.one/r/lib-utils.json"
     ],
     "dependents": [],
     "related": []
@@ -18593,7 +19341,20 @@
       "https://www.spaceui.one/r/lib-utils.json"
     ],
     "dependents": [],
-    "related": []
+    "related": [
+      {
+        "name": "badge-squircle",
+        "title": "Badge Squircle",
+        "description": "Tactile squircle badge component with Base UI polymorphic rendering and dynamic curvature morphing.",
+        "url": "/ui-kit/components/spaceui/badge-squircle",
+        "category": "Badge",
+        "categories": [
+          "badge",
+          "squircle",
+          "tactile"
+        ]
+      }
+    ]
   },
   "primitives-badge": {
     "name": "primitives-badge",
@@ -18620,7 +19381,20 @@
       "https://www.spaceui.one/r/lib-utils.json"
     ],
     "dependents": [],
-    "related": []
+    "related": [
+      {
+        "name": "badge-squircle",
+        "title": "Badge Squircle",
+        "description": "Tactile squircle badge component with Base UI polymorphic rendering and dynamic curvature morphing.",
+        "url": "/ui-kit/components/spaceui/badge-squircle",
+        "category": "Badge",
+        "categories": [
+          "badge",
+          "squircle",
+          "tactile"
+        ]
+      }
+    ]
   },
   "breadcrumb": {
     "name": "primitives-breadcrumb",
@@ -18702,7 +19476,21 @@
       "https://www.spaceui.one/r/primitives-spinner.json"
     ],
     "dependents": [],
-    "related": []
+    "related": [
+      {
+        "name": "button-squircle",
+        "title": "Button Squircle",
+        "description": "Tactile squircle button and badge components featuring dynamic curvature morphing on hover from the original portfolio design.",
+        "url": "/ui-kit/components/spaceui/button-squircle",
+        "category": "Button",
+        "categories": [
+          "button",
+          "badge",
+          "squircle",
+          "tactile"
+        ]
+      }
+    ]
   },
   "primitives-button": {
     "name": "primitives-button",
@@ -18730,7 +19518,21 @@
       "https://www.spaceui.one/r/primitives-spinner.json"
     ],
     "dependents": [],
-    "related": []
+    "related": [
+      {
+        "name": "button-squircle",
+        "title": "Button Squircle",
+        "description": "Tactile squircle button and badge components featuring dynamic curvature morphing on hover from the original portfolio design.",
+        "url": "/ui-kit/components/spaceui/button-squircle",
+        "category": "Button",
+        "categories": [
+          "button",
+          "badge",
+          "squircle",
+          "tactile"
+        ]
+      }
+    ]
   },
   "calendar": {
     "name": "primitives-calendar",
@@ -21461,7 +22263,20 @@
     ],
     "registryDependencies": [],
     "dependents": [],
-    "related": []
+    "related": [
+      {
+        "name": "template-stats",
+        "title": "Portfolio Statistics & Analytics Template",
+        "description": "Comprehensive portfolio statistics dashboard template featuring general metrics, audience engagement, content analytics, GitHub heatmap, and Lighthouse scores.",
+        "url": "/ui-kit/blocks/templates",
+        "category": "Templates",
+        "categories": [
+          "templates",
+          "portfolios",
+          "stats"
+        ]
+      }
+    ]
   },
   "templates": {
     "name": "template-immersive-lens",
@@ -21488,7 +22303,20 @@
     ],
     "registryDependencies": [],
     "dependents": [],
-    "related": []
+    "related": [
+      {
+        "name": "template-stats",
+        "title": "Portfolio Statistics & Analytics Template",
+        "description": "Comprehensive portfolio statistics dashboard template featuring general metrics, audience engagement, content analytics, GitHub heatmap, and Lighthouse scores.",
+        "url": "/ui-kit/blocks/templates",
+        "category": "Templates",
+        "categories": [
+          "templates",
+          "portfolios",
+          "stats"
+        ]
+      }
+    ]
   },
   "blocks-templates": {
     "name": "template-immersive-lens",
@@ -21515,7 +22343,65 @@
     ],
     "registryDependencies": [],
     "dependents": [],
-    "related": []
+    "related": [
+      {
+        "name": "template-stats",
+        "title": "Portfolio Statistics & Analytics Template",
+        "description": "Comprehensive portfolio statistics dashboard template featuring general metrics, audience engagement, content analytics, GitHub heatmap, and Lighthouse scores.",
+        "url": "/ui-kit/blocks/templates",
+        "category": "Templates",
+        "categories": [
+          "templates",
+          "portfolios",
+          "stats"
+        ]
+      }
+    ]
+  },
+  "template-stats": {
+    "name": "template-stats",
+    "shortName": "template-stats",
+    "title": "Portfolio Statistics & Analytics Template",
+    "description": "Comprehensive portfolio statistics dashboard template featuring general metrics, audience engagement, content analytics, GitHub heatmap, and Lighthouse scores.",
+    "type": "registry:block",
+    "url": "/ui-kit/blocks/templates",
+    "category": "Templates",
+    "categories": [
+      "templates",
+      "portfolios",
+      "stats"
+    ],
+    "createdAt": "2026-09-12",
+    "updatedAt": "2026-09-12",
+    "size": "2.6 KB",
+    "rawSize": 2625,
+    "directSize": "2.6 KB",
+    "fileCount": 2,
+    "dependencies": [
+      "motion",
+      "@tabler/icons-react"
+    ],
+    "registryDependencies": [
+      "https://www.spaceui.one/r/block-stats-general.json",
+      "https://www.spaceui.one/r/block-stats-github.json",
+      "https://www.spaceui.one/r/block-stats-blog.json",
+      "https://www.spaceui.one/r/block-stats-performance.json",
+      "https://www.spaceui.one/r/block-stats-engagement.json"
+    ],
+    "dependents": [],
+    "related": [
+      {
+        "name": "template-immersive-lens",
+        "title": "Immersive Lens Portfolio",
+        "description": "Full-page immersive photography template with Three.js WebGL distortion, inertial dragging, and GSAP lightbox.",
+        "url": "/ui-kit/blocks/templates",
+        "category": "Templates",
+        "categories": [
+          "templates",
+          "portfolios"
+        ]
+      }
+    ]
   },
   "cache": {
     "name": "hooks-utils-cache",

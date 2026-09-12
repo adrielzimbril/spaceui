@@ -1,15 +1,15 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "demo-c-status-badge-03",
-  "title": "Status Badge Radar Ping",
-  "description": "Animated ping wave and pulsing indicators for live system states.",
+  "title": "Status Badge Variants",
+  "description": "Visual style variants for the badge container: default, inverted, and outline.",
   "registryDependencies": [
     "https://www.spaceui.one/r/components-spaceui-status-badge.json"
   ],
   "files": [
     {
       "path": "src/registry/demo/components/spaceui/status-badge/c-status-badge-03/index.tsx",
-      "content": "import { StatusBadge } from '@/components/spaceui/status-badge'\n\nexport default function Demo() {\n  return (\n    <div className=\"flex flex-wrap items-center justify-center gap-4 p-4\">\n      <StatusBadge status=\"online\" primaryText=\"Live\" animated>\n        Production Active\n      </StatusBadge>\n      <StatusBadge status=\"busy\" primaryText=\"Recording\" animated>\n        Audio stream\n      </StatusBadge>\n      <StatusBadge status=\"error\" primaryText=\"Alert\" animated>\n        CPU Spike\n      </StatusBadge>\n    </div>\n  )\n}\n",
+      "content": "import { StatusBadge } from '@/components/spaceui/status-badge'\n\nexport default function Demo() {\n  return (\n    <div className=\"flex flex-wrap items-center justify-center gap-3 p-4\">\n      <StatusBadge variant=\"default\" status=\"online\" primaryText=\"Default\">\n        System active\n      </StatusBadge>\n      <StatusBadge variant=\"inverted\" status=\"online\" primaryText=\"Inverted\">\n        Dark contrast\n      </StatusBadge>\n      <StatusBadge variant=\"outline\" status=\"online\" primaryText=\"Outline\">\n        Standalone\n      </StatusBadge>\n    </div>\n  )\n}\n",
       "type": "registry:component",
       "target": "components/spaceui/status-badge.tsx"
     }

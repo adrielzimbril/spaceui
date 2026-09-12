@@ -11,12 +11,7 @@ import { OrbShaping } from './orb-shaping'
 import { OrbSolving } from './orb-solving'
 import { OrbWeaving } from './orb-weaving'
 import { OrbWorking } from './orb-working'
-import type {
-  ThinkingOrbDescriptor,
-  ThinkingOrbMode,
-  ThinkingOrbProps,
-  ThinkingOrbVariant,
-} from './types'
+import type { ThinkingOrbDescriptor, ThinkingOrbMode, ThinkingOrbProps, ThinkingOrbVariant } from './types'
 
 export * from './types'
 export {
@@ -142,19 +137,10 @@ function getDescriptor(modeOrVariant: ThinkingOrbVariant | ThinkingOrbMode): Thi
   return THINKING_ORBS.find((item) => item.mode === mode) ?? THINKING_ORBS[0]
 }
 
-export function ThinkingOrb({
-  variant = 'working',
-  ...props
-}: ThinkingOrbProps) {
+export function ThinkingOrb({ variant = 'working', ...props }: ThinkingOrbProps) {
   const desc = getDescriptor(variant)
   return (
-    <BaseThinkingOrb
-      mode={desc.mode}
-      caption={desc.caption}
-      summary={desc.summary}
-      frame={desc.frame}
-      {...props}
-    />
+    <BaseThinkingOrb mode={desc.mode} caption={desc.caption} summary={desc.summary} frame={desc.frame} {...props} />
   )
 }
 

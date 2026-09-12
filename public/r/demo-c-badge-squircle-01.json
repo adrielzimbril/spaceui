@@ -1,0 +1,24 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-c-badge-squircle-01",
+  "title": "Badge Squircle Variants",
+  "description": "Visual style variants for the squircle badge component.",
+  "registryDependencies": [
+    "https://www.spaceui.one/r/components-spaceui-badge-squircle.json"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/components/spaceui/badge-squircle/c-badge-squircle-01/index.tsx",
+      "content": "'use client'\n\nimport { Badge } from '@/components/spaceui/badge-squircle'\n\nexport default function Demo() {\n  return (\n    <div className=\"flex flex-wrap items-center justify-center gap-3 p-8\">\n      <Badge variant=\"default\">\n        <span>Default</span>\n      </Badge>\n\n      <Badge variant=\"primary\">\n        <span>Primary</span>\n      </Badge>\n\n      <Badge variant=\"secondary\">\n        <span>Secondary</span>\n      </Badge>\n\n      <Badge variant=\"outline\">\n        <span>Outline</span>\n      </Badge>\n\n      <Badge variant=\"accent\">\n        <span>Accent</span>\n      </Badge>\n\n      <Badge variant=\"destructive\">\n        <span>Destructive</span>\n      </Badge>\n\n      <Badge variant=\"inverted\">\n        <span>Inverted</span>\n      </Badge>\n    </div>\n  )\n}\n",
+      "type": "registry:component",
+      "target": "components/spaceui/badge-squircle-demo-01.tsx"
+    }
+  ],
+  "categories": [
+    "component",
+    "badge",
+    "squircle",
+    "variants"
+  ],
+  "type": "registry:component"
+}

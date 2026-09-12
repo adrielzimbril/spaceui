@@ -1,0 +1,53 @@
+---
+title: GitHub Activity
+description: An interactive GitHub ecosystem showcase featuring pure 52-week contribution heatmap matrix content with live fetch for users and repositories.
+---
+
+<ComponentPreview name="demo-c-github-activity-01" contained={false} />
+
+## Installation
+
+<ComponentInstallation name="components-spaceui-github-activity" />
+
+## Anatomy
+
+```tsx
+import { GitHubActivity } from '@/components/spaceui/github-activity'
+
+export default function Example() {
+  return (
+    <GitHubActivity user="https://github.com/adrielzimbril/spaceui" shape="rounded" />
+  )
+}
+```
+
+## Features
+
+### Repository Activity with Stats on Top
+
+Layout demonstrating repository commit activity with KPI metric cards positioned above the graph.
+
+<ComponentPreview name="demo-c-github-activity-02" contained={false} />
+
+### User Activity with Stats at Bottom
+
+Layout demonstrating user contribution activity with KPI metric cards positioned below the graph.
+
+<ComponentPreview name="demo-c-github-activity-03" contained={false} />
+
+## Props
+
+### GitHubActivity
+
+| Prop            | Type                                | Default           | Description                                                                                                            |
+| --------------- | ----------------------------------- | ----------------- | ---------------------------------------------------------------------------------------------------------------------- |
+| `user`          | `string`                            | -                 | Target GitHub identifier: user handle (`'shadcn'`), profile URL, repository slug (`'facebook/react'`), or repo URL. Auto-detects user vs repository. |
+| `repo`          | `string`                            | -                 | Explicit alias for `user` when targeting a repository (`'owner/repo'` or GitHub URL)                                  |
+| `target`        | `string`                            | -                 | Unified alias for `user`                                                                                               |
+| `username`      | `string`                            | -                 | Alias for `user` for backwards compatibility                                                                           |
+| `shape`         | `'square' \| 'rounded' \| 'circle'` | `'rounded'`       | Corner geometry style for inner elements (no squircle)                                                                 |
+| `contributions` | `ContributionData`                  | -                 | 52-week contribution heatmap calendar data (skips live fetch if provided)                                              |
+| `showHeader`    | `boolean`                           | `true`            | Toggles the top summary header                                                                                         |
+| `showLegend`    | `boolean`                           | `true`            | Toggles the bottom color level legend                                                                                  |
+| `title`         | `string`                            | `'Contributions'` | Custom header title (displayed if no user/repo is given)                                                              |
+| `subtitle`      | `string`                            | `'Past 52 weeks'` | Custom header subtitle (defaults to `'Repository commit activity'` for repos)                                         |

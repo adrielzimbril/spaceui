@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-c-button-squircle-01",
+  "title": "Button Squircle Variants",
+  "description": "Showcase of tactile squircle buttons with curvature morphing across default, secondary, outline, accent, glass, and ghost variants.",
+  "registryDependencies": [
+    "https://www.spaceui.one/r/components-spaceui-button-squircle.json"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/components/spaceui/button-squircle/c-button-squircle-01/index.tsx",
+      "content": "'use client'\n\nimport * as React from 'react'\nimport { Button } from '@/components/spaceui/button-squircle'\nimport { IconArrowRight } from '@tabler/icons-react'\n\nexport default function Demo() {\n  return (\n    <div className=\"flex flex-wrap items-center justify-center gap-4 p-8\">\n      <Button variant=\"primary\">\n        <span>Default Squircle</span>\n      </Button>\n\n      <Button variant=\"secondary\">\n        <span>Secondary</span>\n      </Button>\n\n      <Button variant=\"outline\">\n        <span>Outline</span>\n      </Button>\n\n      <Button variant=\"destructive\">\n        <span>Destructive</span>\n      </Button>\n\n      <Button variant=\"ghost\">\n        <span>Ghost</span>\n      </Button>\n    </div>\n  )\n}\n",
+      "type": "registry:component",
+      "target": "components/spaceui/button-squircle-demo-01.tsx"
+    }
+  ],
+  "categories": [
+    "component",
+    "button",
+    "squircle"
+  ],
+  "type": "registry:component"
+}

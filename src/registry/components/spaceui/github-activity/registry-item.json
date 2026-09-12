@@ -1,0 +1,34 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "components-spaceui-github-activity",
+  "type": "registry:component",
+  "title": "GitHub Activity",
+  "description": "An interactive GitHub ecosystem showcase featuring stars, forks, and commits KPI cards with floating particles and a 52-week contribution heatmap matrix.",
+  "dependencies": [
+    "motion",
+    "@tabler/icons-react"
+  ],
+  "registryDependencies": [
+    "https://www.spaceui.one/r/primitives-frame.json",
+    "https://www.spaceui.one/r/primitives-card.json",
+    "https://www.spaceui.one/r/primitives-button.json",
+    "https://www.spaceui.one/r/primitives-tooltip.json",
+    "https://www.spaceui.one/r/components-spaceui-status-badge.json",
+    "https://www.spaceui.one/r/lib-utils.json"
+  ],
+  "categories": [
+    "component",
+    "github",
+    "activity",
+    "stats"
+  ],
+  "files": [
+    {
+      "path": "src/registry/components/spaceui/github-activity/index.tsx",
+      "type": "registry:component",
+      "target": "components/spaceui/github-activity.tsx"
+    }
+  ],
+  "createdAt": "2026-09-12",
+  "updatedAt": "2026-09-12"
+}

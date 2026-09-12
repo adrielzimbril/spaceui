@@ -1,16 +1,31 @@
-import Link from 'next/link'
-import { IconArrowUpRight } from '@tabler/icons-react'
 import { StatusBadge } from '@/registry/components/spaceui/status-badge'
 
 export default function Demo() {
   return (
-    <div className="flex flex-wrap items-center justify-center gap-4 p-4">
-      <StatusBadge mode="inline" status="available" primaryText="Disponible" size="default">
-        <Link href="#contact" className="inline-flex items-center gap-1 hover:text-foreground transition-colors">
-          <span>1 place restante pour ce mois-ci</span>
-          <IconArrowUpRight className="size-3.5" />
-        </Link>
-      </StatusBadge>
+    <div className="flex flex-col items-center justify-center gap-5 p-4">
+      <div className="flex flex-wrap items-center justify-center gap-4">
+        <StatusBadge mode="stack" status="online" primaryText="Production API" animated>
+          Operational • 99.99% uptime
+        </StatusBadge>
+        <StatusBadge mode="stack" status="away" primaryText="Database Backup">
+          Maintenance in progress
+        </StatusBadge>
+        <StatusBadge mode="stack" status="error" primaryText="Auth Cluster" animated>
+          Incident reported
+        </StatusBadge>
+      </div>
+
+      <div className="flex flex-wrap items-center justify-center gap-4">
+        <StatusBadge mode="stack" indicatorBadge status="online" primaryText="Production API" animated>
+          Operational • 99.99% uptime
+        </StatusBadge>
+        <StatusBadge mode="stack" indicatorBadge status="away" primaryText="Database Backup">
+          Maintenance in progress
+        </StatusBadge>
+        <StatusBadge mode="stack" indicatorBadge status="error" primaryText="Auth Cluster" animated>
+          Incident reported
+        </StatusBadge>
+      </div>
     </div>
   )
 }

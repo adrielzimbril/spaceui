@@ -121,8 +121,7 @@ export function PinList({
               {...labelMotionProps}
             >
               <div className={cn('flex items-center justify-between px-2', labelClassName)}>
-                <div className="flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-muted-foreground">
-                  <IconPinFilled className="size-3.5 rotate-45 text-foreground" />
+                <div className="flex items-center gap-1.5 text-xs font-semibold tracking-wider text-muted-foreground">
                   <span>{labels.pinned}</span>
                 </div>
                 <span className="rounded-full bg-muted px-2 py-0.5 text-xs font-semibold text-muted-foreground">
@@ -132,7 +131,7 @@ export function PinList({
 
               <div
                 className={cn(
-                  'relative flex flex-col gap-1 rounded-2xl border border-border/50 bg-muted/70 p-1.5 backdrop-blur-xs',
+                  'relative flex flex-col gap-1 rounded-2xl bg-muted p-1.5 backdrop-blur-xs',
                   togglingGroup === 'pinned' ? 'z-20' : 'z-10',
                   pinnedSectionClassName,
                 )}
@@ -159,11 +158,11 @@ export function PinList({
                     tabIndex={0}
                     role="button"
                     aria-label={`${item.name}, pinned`}
-                    className="group relative flex cursor-pointer items-center justify-between gap-3 rounded-xl border border-border/30 bg-background p-2.5 transition-colors hover:border-border/70 focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-foreground"
+                    className="group relative flex cursor-pointer items-center justify-between gap-3 rounded-xl bg-background p-2.5 transition-colors focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-foreground"
                   >
                     <div className="flex min-w-0 items-center gap-3">
                       {item.icon ? (
-                        <div className="flex size-9 shrink-0 items-center justify-center rounded-lg bg-muted/80 text-muted-foreground transition-colors group-hover:bg-muted group-hover:text-foreground">
+                        <div className="flex size-9 shrink-0 items-center justify-center rounded-lg bg-muted text-muted-foreground transition-colors group-hover:bg-muted group-hover:text-foreground">
                           {renderIcon(item.icon)}
                         </div>
                       ) : null}
@@ -202,9 +201,7 @@ export function PinList({
               {...labelMotionProps}
             >
               <div className={cn('flex items-center justify-between px-2', labelClassName)}>
-                <span className="text-xs font-bold uppercase tracking-wider text-muted-foreground">
-                  {labels.unpinned}
-                </span>
+                <span className="text-xs font-semibold tracking-wider text-muted-foreground">{labels.unpinned}</span>
                 <span className="rounded-full bg-muted px-2 py-0.5 text-xs font-semibold text-muted-foreground">
                   {unpinned.length}
                 </span>
@@ -212,7 +209,7 @@ export function PinList({
 
               <div
                 className={cn(
-                  'relative flex flex-col gap-1 rounded-2xl border border-border/50 bg-muted/70 p-1.5 backdrop-blur-xs',
+                  'relative flex flex-col gap-1 rounded-2xl bg-muted p-1.5 backdrop-blur-xs',
                   togglingGroup === 'unpinned' ? 'z-20' : 'z-10',
                   unpinnedSectionClassName,
                 )}
@@ -239,7 +236,7 @@ export function PinList({
                     tabIndex={0}
                     role="button"
                     aria-label={`${item.name}, unpinned`}
-                    className="group relative flex cursor-pointer items-center justify-between gap-3 rounded-xl border border-border/30 bg-background p-2.5 transition-colors hover:border-border/70 focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-foreground"
+                    className="group relative flex cursor-pointer items-center justify-between gap-3 rounded-xl bg-background p-2.5 transition-colors focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-foreground"
                   >
                     <div className="flex min-w-0 items-center gap-3">
                       {item.icon ? (
@@ -259,7 +256,7 @@ export function PinList({
                       type="button"
                       aria-label={`Pin ${item.name}`}
                       onClick={(e) => handleToggle(item.id, e)}
-                      className="flex size-7 shrink-0 items-center justify-center rounded-full bg-muted text-muted-foreground opacity-40 transition-all hover:scale-110 hover:bg-foreground hover:text-background hover:opacity-100 active:scale-95 group-hover:opacity-100 group-focus-within:opacity-100 focus-visible:opacity-100 focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-foreground"
+                      className="flex size-7 shrink-0 items-center justify-center rounded-full bg-muted text-muted-foreground transition-all hover:scale-110 hover:bg-foreground hover:text-background active:scale-95 focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-foreground"
                     >
                       <IconPin className="size-3.5 -rotate-45" />
                     </button>

@@ -2,11 +2,8 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "demo-c-status-badge-05",
   "type": "registry:component",
-  "title": "Status Badge with Link",
-  "description": "Interactive availability status badge with direct booking link.",
-  "dependencies": [
-    "@tabler/icons-react"
-  ],
+  "title": "Status Badge Stacked Mode",
+  "description": "Multi-line badge with standard indicator and enclosed badge indicator variants.",
   "registryDependencies": [
     "https://www.spaceui.one/r/components-spaceui-status-badge.json"
   ],
@@ -22,5 +19,5 @@
     }
   ],
   "createdAt": "2026-08-21",
-  "updatedAt": "2026-08-21"
+  "updatedAt": "2026-09-12"
 }

@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-c-button-squircle-02",
+  "type": "registry:component",
+  "title": "Button Squircle Sizes",
+  "description": "Tactile squircle button standard sizing scale from extra small to large.",
+  "registryDependencies": [
+    "https://www.spaceui.one/r/components-spaceui-button-squircle.json"
+  ],
+  "categories": [
+    "component",
+    "button",
+    "squircle",
+    "sizes"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/components/spaceui/button-squircle/c-button-squircle-02/index.tsx",
+      "type": "registry:component",
+      "target": "components/spaceui/button-squircle-demo-02.tsx"
+    }
+  ],
+  "createdAt": "2026-09-12",
+  "updatedAt": "2026-09-12"
+}

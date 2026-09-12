@@ -1,8 +1,8 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "demo-c-status-badge-06",
-  "title": "Status Badge Unavailable",
-  "description": "Unavailable status badge displaying upcoming resumption date.",
+  "title": "Status Badge with Link",
+  "description": "Interactive availability status badge with direct booking link.",
   "dependencies": [
     "@tabler/icons-react"
   ],
@@ -12,7 +12,7 @@
   "files": [
     {
       "path": "src/registry/demo/components/spaceui/status-badge/c-status-badge-06/index.tsx",
-      "content": "import Link from 'next/link'\nimport { IconArrowUpRight } from '@tabler/icons-react'\nimport { StatusBadge } from '@/components/spaceui/status-badge'\n\nexport default function Demo() {\n  return (\n    <div className=\"flex flex-wrap items-center justify-center gap-4 p-4\">\n      <StatusBadge mode=\"inline\" status=\"offline\" primaryText=\"Complet\" size=\"default\">\n        <Link href=\"#planning\" className=\"inline-flex items-center gap-1 hover:text-foreground transition-colors\">\n          <span>Prochaines disponibilités : 15 Septembre</span>\n          <IconArrowUpRight className=\"size-3.5\" />\n        </Link>\n      </StatusBadge>\n    </div>\n  )\n}\n",
+      "content": "import Link from 'next/link'\nimport { IconArrowUpRight } from '@tabler/icons-react'\nimport { StatusBadge } from '@/components/spaceui/status-badge'\n\nexport default function Demo() {\n  return (\n    <div className=\"flex flex-wrap items-center justify-center gap-4 p-4\">\n      <StatusBadge mode=\"inline\" status=\"available\" primaryText=\"Available\" size=\"default\">\n        <Link href=\"#contact\" className=\"inline-flex items-center gap-1 hover:text-foreground transition-colors\">\n          <span>1 slot remaining this month</span>\n          <IconArrowUpRight className=\"size-3.5\" />\n        </Link>\n      </StatusBadge>\n    </div>\n  )\n}\n",
       "type": "registry:component",
       "target": "components/spaceui/status-badge.tsx"
     }

@@ -23,35 +23,27 @@ export default function App() {
       <LoadingOrb pattern="diamond" className="text-emerald-500" size={48} />
 
       {/* Companion assistant status card */}
-      <BuildingLoader
-        state="Building"
-        detail="Composing response from context"
-        className="text-foreground"
-      />
+      <BuildingLoader state="Building" detail="Composing response from context" className="text-foreground" />
     </div>
   )
 }
 ```
 
-## Live Interactive Loader
+## Features
 
-Live cycling loader with configurable animation speed, motion transitions, dot radius, matrix gap, ghost dots, and Tailwind color utilities:
-
-<ComponentPreview name="demo-c-orb-loading-01" />
-
-## All States Overview
+### All States Overview
 
 All 6 geometric matrix patterns (`diamond`, `corners`, `bands`, `scatter`, `diagonal`, `glyph`) displayed simultaneously on a single line:
 
 <ComponentPreview name="demo-c-orb-loading-02" />
 
-## Tailwind Colors
+### Tailwind Colors
 
 Style with standard Tailwind text or background utilities (`text-primary`, `text-emerald-500`, `text-indigo-500`, etc.). Tonal depth is automatically calculated across opacities:
 
 <ComponentPreview name="demo-c-orb-loading-03" />
 
-## Assistant Status Banner
+### Assistant Status Banner
 
 Agentic workflow status card with reactive states and real-time shimmer progress:
 
@@ -61,25 +53,25 @@ Agentic workflow status card with reactive states and real-time shimmer progress
 
 ### LoadingOrb
 
-| Prop | Type | Default | Description |
-| --- | --- | --- | --- |
-| `size` | `number` | `56` | Pixel size of the 4x4 matrix container |
-| `speed` | `number` | `750` | Interval in milliseconds between pattern steps |
-| `pattern` | `'diamond' \| 'corners' \| 'bands' \| 'scatter' \| 'diagonal' \| 'glyph' \| number` | `undefined` | Specific pattern to display, or omitted to auto-cycle |
-| `motionPreset` | `'morph' \| 'fade' \| 'scale' \| 'blur' \| 'flip'` | `'morph'` | Spring animation curve applied on cell transitions |
-| `className` | `string` | — | Tailwind classes (e.g. `text-foreground`, `text-primary`, `text-emerald-500`) |
-| `dotClassName` | `string` | `'bg-current'` | Custom Tailwind utility applied to every cell |
-| `radius` | `number` | `3` | Border radius in pixels for each matrix dot |
-| `gap` | `number` | `3` | Spacing between dots in pixels |
-| `showGhost` | `boolean` | `false` | When true, renders inactive dots with subtle ghost opacity |
+| Prop           | Type                                                                                | Default        | Description                                                                   |
+| -------------- | ----------------------------------------------------------------------------------- | -------------- | ----------------------------------------------------------------------------- |
+| `size`         | `number`                                                                            | `56`           | Pixel size of the 4x4 matrix container                                        |
+| `speed`        | `number`                                                                            | `750`          | Interval in milliseconds between pattern steps                                |
+| `pattern`      | `'diamond' \| 'corners' \| 'bands' \| 'scatter' \| 'diagonal' \| 'glyph' \| number` | `undefined`    | Specific pattern to display, or omitted to auto-cycle                         |
+| `motionPreset` | `'morph' \| 'fade' \| 'scale' \| 'blur' \| 'flip'`                                  | `'morph'`      | Spring animation curve applied on cell transitions                            |
+| `className`    | `string`                                                                            | —              | Tailwind classes (e.g. `text-foreground`, `text-primary`, `text-emerald-500`) |
+| `dotClassName` | `string`                                                                            | `'bg-current'` | Custom Tailwind utility applied to every cell                                 |
+| `radius`       | `number`                                                                            | `3`            | Border radius in pixels for each matrix dot                                   |
+| `gap`          | `number`                                                                            | `3`            | Spacing between dots in pixels                                                |
+| `showGhost`    | `boolean`                                                                           | `false`        | When true, renders inactive dots with subtle ghost opacity                    |
 
 ### BuildingLoader
 
-| Prop | Type | Default | Description |
-| --- | --- | --- | --- |
-| `state` | `string` | `'Building'` | Primary state label (e.g. "Building", "Thinking", "Searching") |
-| `detail` | `string` | `'Composing response from context'` | Secondary explanatory caption |
-| `showShimmer` | `boolean` | `true` | Whether to display the bottom shimmer progress bar |
-| `size` | `number` | `38` | Size of the embedded `LoadingOrb` |
-| `pattern` | `'diamond' \| 'corners' \| 'bands' \| 'scatter' \| 'diagonal' \| 'glyph' \| number` | `undefined` | Specific pattern for the embedded orb |
-| `className` | `string` | — | Classes for the container card |
+| Prop          | Type                                                                                | Default                             | Description                                                    |
+| ------------- | ----------------------------------------------------------------------------------- | ----------------------------------- | -------------------------------------------------------------- |
+| `state`       | `string`                                                                            | `'Building'`                        | Primary state label (e.g. "Building", "Thinking", "Searching") |
+| `detail`      | `string`                                                                            | `'Composing response from context'` | Secondary explanatory caption                                  |
+| `showShimmer` | `boolean`                                                                           | `true`                              | Whether to display the bottom shimmer progress bar             |
+| `size`        | `number`                                                                            | `38`                                | Size of the embedded `LoadingOrb`                              |
+| `pattern`     | `'diamond' \| 'corners' \| 'bands' \| 'scatter' \| 'diagonal' \| 'glyph' \| number` | `undefined`                         | Specific pattern for the embedded orb                          |
+| `className`   | `string`                                                                            | —                                   | Classes for the container card                                 |

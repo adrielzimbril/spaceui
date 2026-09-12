@@ -1,0 +1,53 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-stats-engagement",
+  "type": "registry:block",
+  "title": "Engagement & Community Activity Block",
+  "description": "Comprehensive reader engagement showcase with top articles, interactive emoji reaction counters, category tags, and changelog updates.",
+  "registryDependencies": [
+    "https://www.spaceui.one/r/lib-utils.json"
+  ],
+  "dependencies": ["motion", "@tabler/icons-react"],
+  "categories": [
+    "stats"
+  ],
+  "files": [
+    {
+      "path": "src/registry/blocks/stats/stats-engagement/index.tsx",
+      "type": "registry:block",
+      "target": "components/blocks/stats/stats-engagement.tsx"
+    },
+    {
+      "path": "src/registry/blocks/stats/shared/section-layout.tsx",
+      "type": "registry:component",
+      "target": "components/blocks/stats/section-layout.tsx"
+    },
+    {
+      "path": "src/registry/blocks/stats/shared/thoughts-top-list.tsx",
+      "type": "registry:component",
+      "target": "components/blocks/stats/thoughts-top-list.tsx"
+    },
+    {
+      "path": "src/registry/blocks/stats/shared/reactions-section.tsx",
+      "type": "registry:component",
+      "target": "components/blocks/stats/reactions-section.tsx"
+    },
+    {
+      "path": "src/registry/blocks/stats/shared/thought-most-viewed-card.tsx",
+      "type": "registry:component",
+      "target": "components/blocks/stats/thought-most-viewed-card.tsx"
+    },
+    {
+      "path": "src/registry/blocks/stats/shared/thoughts-categories-card.tsx",
+      "type": "registry:component",
+      "target": "components/blocks/stats/thoughts-categories-card.tsx"
+    },
+    {
+      "path": "src/registry/blocks/stats/shared/changelog-updates-card.tsx",
+      "type": "registry:component",
+      "target": "components/blocks/stats/changelog-updates-card.tsx"
+    }
+  ],
+  "createdAt": "2026-09-12",
+  "updatedAt": "2026-09-12"
+}

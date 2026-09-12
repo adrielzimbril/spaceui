@@ -157,6 +157,41 @@
       "updatedAt": "2026-09-04"
     },
     {
+      "name": "block-footer-tactile",
+      "type": "registry:block",
+      "title": "Footer Tactile",
+      "description": "An expressive, tactile portfolio and product footer crafted with squircle curvature, live status indicator, local clock, and multi-column navigation.",
+      "dependencies": [
+        "motion",
+        "@tabler/icons-react",
+        "@usespaceui/squircle",
+        "@base-ui/react",
+        "class-variance-authority"
+      ],
+      "registryDependencies": [
+        "https://www.spaceui.one/r/primitives-frame.json",
+        "https://www.spaceui.one/r/primitives-card.json",
+        "https://www.spaceui.one/r/primitives-select.json",
+        "https://www.spaceui.one/r/components-spaceui-button-squircle.json",
+        "https://www.spaceui.one/r/lib-utils.json"
+      ],
+      "categories": [
+        "block",
+        "footer",
+        "tactile",
+        "portfolio"
+      ],
+      "files": [
+        {
+          "path": "src/registry/blocks/footer/footer-tactile/index.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/footer/footer-tactile.tsx"
+        }
+      ],
+      "createdAt": "2026-09-12",
+      "updatedAt": "2026-09-12"
+    },
+    {
       "name": "block-interactive-fun-facts",
       "type": "registry:block",
       "title": "Interactive 3D Fun Facts Game",
@@ -299,6 +334,205 @@
       ],
       "createdAt": "2026-08-21",
       "updatedAt": "2026-08-21"
+    },
+    {
+      "name": "block-stats-blog",
+      "type": "registry:block",
+      "title": "Blog & Content Stats Block",
+      "description": "Content publication metrics including total articles, words written, reader messages, and reading time.",
+      "registryDependencies": [
+        "https://www.spaceui.one/r/lib-utils.json"
+      ],
+      "dependencies": [
+        "motion",
+        "@tabler/icons-react"
+      ],
+      "categories": [
+        "stats"
+      ],
+      "files": [
+        {
+          "path": "src/registry/blocks/stats/stats-blog/index.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/stats/stats-blog.tsx"
+        },
+        {
+          "path": "src/registry/blocks/stats/shared/section-layout.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/stats/section-layout.tsx"
+        },
+        {
+          "path": "src/registry/blocks/stats/shared/stat-card.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/stats/stat-card.tsx"
+        }
+      ],
+      "createdAt": "2026-09-12",
+      "updatedAt": "2026-09-12"
+    },
+    {
+      "name": "block-stats-engagement",
+      "type": "registry:block",
+      "title": "Engagement & Community Activity Block",
+      "description": "Comprehensive reader engagement showcase with top articles, interactive emoji reaction counters, category tags, and changelog updates.",
+      "registryDependencies": [
+        "https://www.spaceui.one/r/lib-utils.json"
+      ],
+      "dependencies": [
+        "motion",
+        "@tabler/icons-react"
+      ],
+      "categories": [
+        "stats"
+      ],
+      "files": [
+        {
+          "path": "src/registry/blocks/stats/stats-engagement/index.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/stats/stats-engagement.tsx"
+        },
+        {
+          "path": "src/registry/blocks/stats/shared/section-layout.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/stats/section-layout.tsx"
+        },
+        {
+          "path": "src/registry/blocks/stats/shared/thoughts-top-list.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/stats/thoughts-top-list.tsx"
+        },
+        {
+          "path": "src/registry/blocks/stats/shared/reactions-section.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/stats/reactions-section.tsx"
+        },
+        {
+          "path": "src/registry/blocks/stats/shared/thought-most-viewed-card.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/stats/thought-most-viewed-card.tsx"
+        },
+        {
+          "path": "src/registry/blocks/stats/shared/thoughts-categories-card.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/stats/thoughts-categories-card.tsx"
+        },
+        {
+          "path": "src/registry/blocks/stats/shared/changelog-updates-card.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/stats/changelog-updates-card.tsx"
+        }
+      ],
+      "createdAt": "2026-09-12",
+      "updatedAt": "2026-09-12"
+    },
+    {
+      "name": "block-stats-general",
+      "type": "registry:block",
+      "title": "General Stats Metrics Block",
+      "description": "Interactive metric overview cards with floating spring emoji decorations and semantic color accents.",
+      "registryDependencies": [
+        "https://www.spaceui.one/r/lib-utils.json"
+      ],
+      "dependencies": [
+        "motion",
+        "@tabler/icons-react"
+      ],
+      "categories": [
+        "stats"
+      ],
+      "files": [
+        {
+          "path": "src/registry/blocks/stats/stats-general/index.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/stats/stats-general.tsx"
+        },
+        {
+          "path": "src/registry/blocks/stats/shared/section-layout.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/stats/section-layout.tsx"
+        },
+        {
+          "path": "src/registry/blocks/stats/shared/stat-card.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/stats/stat-card.tsx"
+        }
+      ],
+      "createdAt": "2026-09-12",
+      "updatedAt": "2026-09-12"
+    },
+    {
+      "name": "block-stats-github",
+      "type": "registry:block",
+      "title": "GitHub & Open-Source Activity Block",
+      "description": "Interactive GitHub contribution activity heatmap graph with metrics for stars, forks, and commits.",
+      "registryDependencies": [
+        "https://www.spaceui.one/r/lib-utils.json"
+      ],
+      "dependencies": [
+        "motion",
+        "@tabler/icons-react"
+      ],
+      "categories": [
+        "stats"
+      ],
+      "files": [
+        {
+          "path": "src/registry/blocks/stats/stats-github/index.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/stats/stats-github.tsx"
+        },
+        {
+          "path": "src/registry/blocks/stats/shared/section-layout.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/stats/section-layout.tsx"
+        },
+        {
+          "path": "src/registry/blocks/stats/shared/github-stats-card.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/stats/github-stats-card.tsx"
+        },
+        {
+          "path": "src/registry/blocks/stats/shared/contribution-graph-card.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/stats/contribution-graph-card.tsx"
+        }
+      ],
+      "createdAt": "2026-09-12",
+      "updatedAt": "2026-09-12"
+    },
+    {
+      "name": "block-stats-performance",
+      "type": "registry:block",
+      "title": "Performance & Lighthouse Block",
+      "description": "Lighthouse audit results dashboard featuring mobile & desktop scores with radar chart visuals.",
+      "registryDependencies": [
+        "https://www.spaceui.one/r/lib-utils.json"
+      ],
+      "dependencies": [
+        "@tabler/icons-react"
+      ],
+      "categories": [
+        "stats"
+      ],
+      "files": [
+        {
+          "path": "src/registry/blocks/stats/stats-performance/index.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/stats/stats-performance.tsx"
+        },
+        {
+          "path": "src/registry/blocks/stats/shared/section-layout.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/stats/section-layout.tsx"
+        },
+        {
+          "path": "src/registry/blocks/stats/shared/lighthouse-score-card.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/stats/lighthouse-score-card.tsx"
+        }
+      ],
+      "createdAt": "2026-09-12",
+      "updatedAt": "2026-09-12"
     },
     {
       "name": "components-backgrounds-bubble",
@@ -741,6 +975,35 @@
       "updatedAt": "2026-09-01"
     },
     {
+      "name": "components-spaceui-badge-squircle",
+      "type": "registry:component",
+      "title": "Badge Squircle",
+      "description": "Tactile squircle badge component with Base UI polymorphic rendering and dynamic curvature morphing.",
+      "dependencies": [
+        "@usespaceui/squircle",
+        "@base-ui/react",
+        "class-variance-authority"
+      ],
+      "registryDependencies": [
+        "https://www.spaceui.one/r/lib-utils.json"
+      ],
+      "categories": [
+        "component",
+        "badge",
+        "squircle",
+        "tactile"
+      ],
+      "files": [
+        {
+          "path": "src/registry/components/spaceui/badge-squircle/index.tsx",
+          "type": "registry:component",
+          "target": "components/spaceui/badge-squircle.tsx"
+        }
+      ],
+      "createdAt": "2026-09-12",
+      "updatedAt": "2026-09-12"
+    },
+    {
       "name": "components-spaceui-bouncy-accordion",
       "type": "registry:component",
       "title": "Bouncy Accordion",
@@ -766,6 +1029,36 @@
       ],
       "createdAt": "2026-09-04",
       "updatedAt": "2026-09-04"
+    },
+    {
+      "name": "components-spaceui-button-squircle",
+      "type": "registry:component",
+      "title": "Button Squircle",
+      "description": "Tactile squircle button and badge components featuring dynamic curvature morphing on hover from the original portfolio design.",
+      "dependencies": [
+        "@usespaceui/squircle",
+        "@base-ui/react",
+        "class-variance-authority"
+      ],
+      "registryDependencies": [
+        "https://www.spaceui.one/r/lib-utils.json"
+      ],
+      "categories": [
+        "component",
+        "button",
+        "badge",
+        "squircle",
+        "tactile"
+      ],
+      "files": [
+        {
+          "path": "src/registry/components/spaceui/button-squircle/index.tsx",
+          "type": "registry:component",
+          "target": "components/spaceui/button-squircle.tsx"
+        }
+      ],
+      "createdAt": "2026-09-12",
+      "updatedAt": "2026-09-12"
     },
     {
       "name": "components-spaceui-copy",
@@ -1588,6 +1881,39 @@
       "updatedAt": "2026-08-21"
     },
     {
+      "name": "components-spaceui-github-activity",
+      "type": "registry:component",
+      "title": "GitHub Activity",
+      "description": "An interactive GitHub ecosystem showcase featuring stars, forks, and commits KPI cards with floating particles and a 52-week contribution heatmap matrix.",
+      "dependencies": [
+        "motion",
+        "@tabler/icons-react"
+      ],
+      "registryDependencies": [
+        "https://www.spaceui.one/r/primitives-frame.json",
+        "https://www.spaceui.one/r/primitives-card.json",
+        "https://www.spaceui.one/r/primitives-button.json",
+        "https://www.spaceui.one/r/primitives-tooltip.json",
+        "https://www.spaceui.one/r/components-spaceui-status-badge.json",
+        "https://www.spaceui.one/r/lib-utils.json"
+      ],
+      "categories": [
+        "component",
+        "github",
+        "activity",
+        "stats"
+      ],
+      "files": [
+        {
+          "path": "src/registry/components/spaceui/github-activity/index.tsx",
+          "type": "registry:component",
+          "target": "components/spaceui/github-activity.tsx"
+        }
+      ],
+      "createdAt": "2026-09-12",
+      "updatedAt": "2026-09-12"
+    },
+    {
       "name": "components-spaceui-icon-stack",
       "type": "registry:component",
       "title": "Icon Stack",
@@ -1973,8 +2299,7 @@
         "class-variance-authority"
       ],
       "registryDependencies": [
-        "https://www.spaceui.one/r/lib-utils.json",
-        "https://www.spaceui.one/r/primitives-badge.json"
+        "https://www.spaceui.one/r/lib-utils.json"
       ],
       "categories": [
         "component",
@@ -1988,7 +2313,7 @@
         }
       ],
       "createdAt": "2026-08-21",
-      "updatedAt": "2026-08-21"
+      "updatedAt": "2026-09-12"
     },
     {
       "name": "components-spaceui-theme-toggle",
@@ -2521,34 +2846,6 @@
         "orb",
         "loading"
       ],
-      "meta": {
-        "demoProps": {
-          "state": {
-            "value": "Building",
-            "options": {
-              "Building": "Building",
-              "Thinking": "Thinking",
-              "Searching": "Searching",
-              "Generating": "Generating",
-              "Connecting": "Connecting"
-            }
-          },
-          "color": {
-            "value": "text-foreground",
-            "options": {
-              "Default": "text-foreground",
-              "Primary": "text-primary",
-              "Emerald": "text-emerald-500",
-              "Indigo": "text-indigo-500",
-              "Amber": "text-amber-500",
-              "Rose": "text-rose-500"
-            }
-          },
-          "showShimmer": {
-            "value": true
-          }
-        }
-      },
       "files": [
         {
           "path": "src/registry/demo/components/orb/loading/c-orb-loading-04/index.tsx",
@@ -3320,6 +3617,81 @@
       "updatedAt": "2026-09-03"
     },
     {
+      "name": "demo-c-badge-squircle-01",
+      "type": "registry:component",
+      "title": "Badge Squircle Variants",
+      "description": "Visual style variants for the squircle badge component.",
+      "registryDependencies": [
+        "https://www.spaceui.one/r/components-spaceui-badge-squircle.json"
+      ],
+      "categories": [
+        "component",
+        "badge",
+        "squircle",
+        "variants"
+      ],
+      "files": [
+        {
+          "path": "src/registry/demo/components/spaceui/badge-squircle/c-badge-squircle-01/index.tsx",
+          "type": "registry:component",
+          "target": "components/spaceui/badge-squircle-demo-01.tsx"
+        }
+      ],
+      "createdAt": "2026-09-12",
+      "updatedAt": "2026-09-12"
+    },
+    {
+      "name": "demo-c-badge-squircle-02",
+      "type": "registry:component",
+      "title": "Badge Squircle Sizes",
+      "description": "Standard sizing scale for the squircle badge component from extra small to large.",
+      "registryDependencies": [
+        "https://www.spaceui.one/r/components-spaceui-badge-squircle.json"
+      ],
+      "categories": [
+        "component",
+        "badge",
+        "squircle",
+        "sizes"
+      ],
+      "files": [
+        {
+          "path": "src/registry/demo/components/spaceui/badge-squircle/c-badge-squircle-02/index.tsx",
+          "type": "registry:component",
+          "target": "components/spaceui/badge-squircle-demo-02.tsx"
+        }
+      ],
+      "createdAt": "2026-09-12",
+      "updatedAt": "2026-09-12"
+    },
+    {
+      "name": "demo-c-badge-squircle-03",
+      "type": "registry:component",
+      "title": "Badge Squircle Icons & Polymorphic Render",
+      "description": "Showcase of tactile squircle badges with icons and polymorphic link and button rendering.",
+      "dependencies": [
+        "@tabler/icons-react"
+      ],
+      "registryDependencies": [
+        "https://www.spaceui.one/r/components-spaceui-badge-squircle.json"
+      ],
+      "categories": [
+        "component",
+        "badge",
+        "squircle",
+        "features"
+      ],
+      "files": [
+        {
+          "path": "src/registry/demo/components/spaceui/badge-squircle/c-badge-squircle-03/index.tsx",
+          "type": "registry:component",
+          "target": "components/spaceui/badge-squircle-demo-03.tsx"
+        }
+      ],
+      "createdAt": "2026-09-12",
+      "updatedAt": "2026-09-12"
+    },
+    {
       "name": "demo-c-bouncy-accordion-01",
       "type": "registry:component",
       "title": "Bouncy Accordion Demo",
@@ -3344,6 +3716,77 @@
       "dependencies": [
         "@tabler/icons-react"
       ]
+    },
+    {
+      "name": "demo-c-button-squircle-01",
+      "type": "registry:component",
+      "title": "Button Squircle Variants",
+      "description": "Showcase of tactile squircle buttons with curvature morphing across default, secondary, outline, accent, glass, and ghost variants.",
+      "registryDependencies": [
+        "https://www.spaceui.one/r/components-spaceui-button-squircle.json"
+      ],
+      "categories": [
+        "component",
+        "button",
+        "squircle"
+      ],
+      "files": [
+        {
+          "path": "src/registry/demo/components/spaceui/button-squircle/c-button-squircle-01/index.tsx",
+          "type": "registry:component",
+          "target": "components/spaceui/button-squircle-demo-01.tsx"
+        }
+      ],
+      "createdAt": "2026-09-12",
+      "updatedAt": "2026-09-12"
+    },
+    {
+      "name": "demo-c-button-squircle-02",
+      "type": "registry:component",
+      "title": "Button Squircle Sizes",
+      "description": "Tactile squircle button standard sizing scale from extra small to large.",
+      "registryDependencies": [
+        "https://www.spaceui.one/r/components-spaceui-button-squircle.json"
+      ],
+      "categories": [
+        "component",
+        "button",
+        "squircle",
+        "sizes"
+      ],
+      "files": [
+        {
+          "path": "src/registry/demo/components/spaceui/button-squircle/c-button-squircle-02/index.tsx",
+          "type": "registry:component",
+          "target": "components/spaceui/button-squircle-demo-02.tsx"
+        }
+      ],
+      "createdAt": "2026-09-12",
+      "updatedAt": "2026-09-12"
+    },
+    {
+      "name": "demo-c-button-squircle-03",
+      "type": "registry:component",
+      "title": "Button Squircle Icon Sizes",
+      "description": "Tactile squircle icon button sizing scale from small to large.",
+      "registryDependencies": [
+        "https://www.spaceui.one/r/components-spaceui-button-squircle.json"
+      ],
+      "categories": [
+        "component",
+        "button",
+        "squircle",
+        "icons"
+      ],
+      "files": [
+        {
+          "path": "src/registry/demo/components/spaceui/button-squircle/c-button-squircle-03/index.tsx",
+          "type": "registry:component",
+          "target": "components/spaceui/button-squircle-demo-03.tsx"
+        }
+      ],
+      "createdAt": "2026-09-12",
+      "updatedAt": "2026-09-12"
     },
     {
       "name": "demo-c-liquid-metal-avatar-custom-01",
@@ -5526,6 +5969,104 @@
       "updatedAt": "2026-08-21"
     },
     {
+      "name": "demo-c-github-activity-01",
+      "type": "registry:component",
+      "title": "GitHub Activity Pure",
+      "description": "Pure GitHub activity component with meta controls for username, shape, header, and legend.",
+      "registryDependencies": [
+        "https://www.spaceui.one/r/components-spaceui-github-activity.json",
+        "https://www.spaceui.one/r/primitives-frame.json",
+        "https://www.spaceui.one/r/primitives-card.json"
+      ],
+      "categories": [
+        "component",
+        "github",
+        "activity"
+      ],
+      "meta": {
+        "demoProps": {
+          "username": {
+            "value": "adrielzimbril"
+          },
+          "shape": {
+            "value": "rounded",
+            "options": {
+              "Rounded": "rounded",
+              "Square": "square",
+              "Circle": "circle"
+            }
+          },
+          "showHeader": {
+            "value": true
+          },
+          "showLegend": {
+            "value": true
+          }
+        }
+      },
+      "files": [
+        {
+          "path": "src/registry/demo/components/spaceui/github-activity/c-github-activity-01/index.tsx",
+          "type": "registry:component",
+          "target": "components/spaceui/github-activity-demo-01.tsx"
+        }
+      ],
+      "createdAt": "2026-09-12",
+      "updatedAt": "2026-09-12"
+    },
+    {
+      "name": "demo-c-github-activity-02",
+      "type": "registry:component",
+      "title": "GitHub Activity with Stats on Top",
+      "description": "Layout configuration displaying KPI stat metric cards positioned above the contribution activity graph.",
+      "registryDependencies": [
+        "https://www.spaceui.one/r/components-spaceui-github-activity.json",
+        "https://www.spaceui.one/r/primitives-frame.json",
+        "https://www.spaceui.one/r/primitives-card.json",
+        "https://www.spaceui.one/r/components-spaceui-button-squircle.json"
+      ],
+      "categories": [
+        "component",
+        "github",
+        "activity"
+      ],
+      "files": [
+        {
+          "path": "src/registry/demo/components/spaceui/github-activity/c-github-activity-02/index.tsx",
+          "type": "registry:component",
+          "target": "components/spaceui/github-activity-demo-02.tsx"
+        }
+      ],
+      "createdAt": "2026-09-12",
+      "updatedAt": "2026-09-12"
+    },
+    {
+      "name": "demo-c-github-activity-03",
+      "type": "registry:component",
+      "title": "GitHub Activity with Stats at Bottom",
+      "description": "Layout configuration displaying the contribution activity graph on top with KPI stat cards positioned below.",
+      "registryDependencies": [
+        "https://www.spaceui.one/r/components-spaceui-github-activity.json",
+        "https://www.spaceui.one/r/primitives-frame.json",
+        "https://www.spaceui.one/r/primitives-card.json",
+        "https://www.spaceui.one/r/components-spaceui-button-squircle.json"
+      ],
+      "categories": [
+        "component",
+        "github",
+        "activity"
+      ],
+      "files": [
+        {
+          "path": "src/registry/demo/components/spaceui/github-activity/c-github-activity-03/index.tsx",
+          "type": "registry:component",
+          "target": "components/spaceui/github-activity-demo-03.tsx"
+        }
+      ],
+      "createdAt": "2026-09-12",
+      "updatedAt": "2026-09-12"
+    },
+    {
       "name": "demo-c-icon-stack-01",
       "type": "registry:component",
       "title": "Isometric icon stack",
@@ -7083,7 +7624,7 @@
       "name": "demo-c-status-badge-02",
       "type": "registry:component",
       "title": "Status Badge Sizes",
-      "description": "Standard sizing scale from extra-small to extra-large.",
+      "description": "Standard sizing scale from extra-small to large.",
       "registryDependencies": [
         "https://www.spaceui.one/r/components-spaceui-status-badge.json"
       ],
@@ -7104,8 +7645,8 @@
     {
       "name": "demo-c-status-badge-03",
       "type": "registry:component",
-      "title": "Status Badge Radar Ping",
-      "description": "Animated ping wave and pulsing indicators for live system states.",
+      "title": "Status Badge Variants",
+      "description": "Visual style variants for the badge container: default, inverted, and outline.",
       "registryDependencies": [
         "https://www.spaceui.one/r/components-spaceui-status-badge.json"
       ],
@@ -7120,14 +7661,14 @@
           "target": "components/spaceui/status-badge.tsx"
         }
       ],
-      "createdAt": "2026-08-21",
-      "updatedAt": "2026-08-21"
+      "createdAt": "2026-09-12",
+      "updatedAt": "2026-09-12"
     },
     {
       "name": "demo-c-status-badge-04",
       "type": "registry:component",
-      "title": "Status Badge Stacked Mode",
-      "description": "Multi-line badge with title and description subtitle.",
+      "title": "Status Badge Radar Ping",
+      "description": "Animated ping wave and pulsing indicators for live system states.",
       "registryDependencies": [
         "https://www.spaceui.one/r/components-spaceui-status-badge.json"
       ],
@@ -7148,11 +7689,8 @@
     {
       "name": "demo-c-status-badge-05",
       "type": "registry:component",
-      "title": "Status Badge with Link",
-      "description": "Interactive availability status badge with direct booking link.",
-      "dependencies": [
-        "@tabler/icons-react"
-      ],
+      "title": "Status Badge Stacked Mode",
+      "description": "Multi-line badge with standard indicator and enclosed badge indicator variants.",
       "registryDependencies": [
         "https://www.spaceui.one/r/components-spaceui-status-badge.json"
       ],
@@ -7168,13 +7706,13 @@
         }
       ],
       "createdAt": "2026-08-21",
-      "updatedAt": "2026-08-21"
+      "updatedAt": "2026-09-12"
     },
     {
       "name": "demo-c-status-badge-06",
       "type": "registry:component",
-      "title": "Status Badge Unavailable",
-      "description": "Unavailable status badge displaying upcoming resumption date.",
+      "title": "Status Badge with Link",
+      "description": "Interactive availability status badge with direct booking link.",
       "dependencies": [
         "@tabler/icons-react"
       ],
@@ -7198,8 +7736,8 @@
     {
       "name": "demo-c-status-badge-07",
       "type": "registry:component",
-      "title": "Status Badge Mission Quota",
-      "description": "Availability status badge with mission quota and booking details.",
+      "title": "Status Badge Unavailable",
+      "description": "Unavailable status badge displaying upcoming resumption date.",
       "dependencies": [
         "@tabler/icons-react"
       ],
@@ -7223,6 +7761,31 @@
     {
       "name": "demo-c-status-badge-08",
       "type": "registry:component",
+      "title": "Status Badge Mission Quota",
+      "description": "Availability status badge with mission quota and booking details.",
+      "dependencies": [
+        "@tabler/icons-react"
+      ],
+      "registryDependencies": [
+        "https://www.spaceui.one/r/components-spaceui-status-badge.json"
+      ],
+      "categories": [
+        "component",
+        "status-badge"
+      ],
+      "files": [
+        {
+          "path": "src/registry/demo/components/spaceui/status-badge/c-status-badge-08/index.tsx",
+          "type": "registry:component",
+          "target": "components/spaceui/status-badge.tsx"
+        }
+      ],
+      "createdAt": "2026-08-21",
+      "updatedAt": "2026-08-21"
+    },
+    {
+      "name": "demo-c-status-badge-09",
+      "type": "registry:component",
       "title": "Status Badge Freelance & Direct Hire",
       "description": "Friendly freelance presence badge with direct project contact callout.",
       "dependencies": [
@@ -7237,7 +7800,7 @@
       ],
       "files": [
         {
-          "path": "src/registry/demo/components/spaceui/status-badge/c-status-badge-08/index.tsx",
+          "path": "src/registry/demo/components/spaceui/status-badge/c-status-badge-09/index.tsx",
           "type": "registry:component",
           "target": "components/spaceui/status-badge.tsx"
         }
@@ -25847,6 +26410,42 @@
       ],
       "createdAt": "2026-09-04",
       "updatedAt": "2026-09-04"
+    },
+    {
+      "name": "template-stats",
+      "type": "registry:block",
+      "title": "Portfolio Statistics & Analytics Template",
+      "description": "Comprehensive portfolio statistics dashboard template featuring general metrics, audience engagement, content analytics, GitHub heatmap, and Lighthouse scores.",
+      "dependencies": [
+        "motion",
+        "@tabler/icons-react"
+      ],
+      "categories": [
+        "templates",
+        "portfolios",
+        "stats"
+      ],
+      "registryDependencies": [
+        "https://www.spaceui.one/r/block-stats-general.json",
+        "https://www.spaceui.one/r/block-stats-github.json",
+        "https://www.spaceui.one/r/block-stats-blog.json",
+        "https://www.spaceui.one/r/block-stats-performance.json",
+        "https://www.spaceui.one/r/block-stats-engagement.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/templates/stats/index.tsx",
+          "type": "registry:page",
+          "target": "pages/stats.tsx"
+        },
+        {
+          "path": "src/registry/blocks/stats/shared/header-section.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/stats/header-section.tsx"
+        }
+      ],
+      "createdAt": "2026-09-12",
+      "updatedAt": "2026-09-12"
     },
     {
       "name": "hooks-utils-cache",

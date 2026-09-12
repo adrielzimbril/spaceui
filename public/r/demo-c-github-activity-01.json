@@ -1,0 +1,46 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-c-github-activity-01",
+  "title": "GitHub Activity Pure",
+  "description": "Pure GitHub activity component with meta controls for username, shape, header, and legend.",
+  "registryDependencies": [
+    "https://www.spaceui.one/r/components-spaceui-github-activity.json",
+    "https://www.spaceui.one/r/primitives-frame.json",
+    "https://www.spaceui.one/r/primitives-card.json"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/components/spaceui/github-activity/c-github-activity-01/index.tsx",
+      "content": "'use client'\n\nimport * as React from 'react'\nimport { GitHubActivity, type GitHubActivityShape } from '@/components/spaceui/github-activity'\n\nexport interface GitHubActivityDemoProps {\n  user?: string\n  username?: string\n  shape?: GitHubActivityShape\n  showHeader?: boolean\n  showLegend?: boolean\n}\n\nexport default function Demo({\n  user = 'https://github.com/adrielzimbril/spaceui',\n  shape = 'rounded',\n  showHeader = true,\n  showLegend = true,\n}: GitHubActivityDemoProps) {\n  return (\n    <div className=\"w-full max-w-4xl mx-auto p-4 flex flex-col items-center\">\n      <GitHubActivity user={user} shape={shape} showHeader={showHeader} showLegend={showLegend} />\n    </div>\n  )\n}\n",
+      "type": "registry:component",
+      "target": "components/spaceui/github-activity-demo-01.tsx"
+    }
+  ],
+  "meta": {
+    "demoProps": {
+      "username": {
+        "value": "adrielzimbril"
+      },
+      "shape": {
+        "value": "rounded",
+        "options": {
+          "Rounded": "rounded",
+          "Square": "square",
+          "Circle": "circle"
+        }
+      },
+      "showHeader": {
+        "value": true
+      },
+      "showLegend": {
+        "value": true
+      }
+    }
+  },
+  "categories": [
+    "component",
+    "github",
+    "activity"
+  ],
+  "type": "registry:component"
+}

@@ -1,0 +1,47 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-c-github-activity-01",
+  "type": "registry:component",
+  "title": "GitHub Activity Pure",
+  "description": "Pure GitHub activity component with meta controls for username, shape, header, and legend.",
+  "registryDependencies": [
+    "https://www.spaceui.one/r/components-spaceui-github-activity.json",
+    "https://www.spaceui.one/r/primitives-frame.json",
+    "https://www.spaceui.one/r/primitives-card.json"
+  ],
+  "categories": [
+    "component",
+    "github",
+    "activity"
+  ],
+  "meta": {
+    "demoProps": {
+      "username": {
+        "value": "adrielzimbril"
+      },
+      "shape": {
+        "value": "rounded",
+        "options": {
+          "Rounded": "rounded",
+          "Square": "square",
+          "Circle": "circle"
+        }
+      },
+      "showHeader": {
+        "value": true
+      },
+      "showLegend": {
+        "value": true
+      }
+    }
+  },
+  "files": [
+    {
+      "path": "src/registry/demo/components/spaceui/github-activity/c-github-activity-01/index.tsx",
+      "type": "registry:component",
+      "target": "components/spaceui/github-activity-demo-01.tsx"
+    }
+  ],
+  "createdAt": "2026-09-12",
+  "updatedAt": "2026-09-12"
+}

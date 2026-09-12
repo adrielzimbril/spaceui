@@ -1,8 +1,8 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "demo-c-status-badge-08",
-  "title": "Status Badge Freelance & Direct Hire",
-  "description": "Friendly freelance presence badge with direct project contact callout.",
+  "title": "Status Badge Mission Quota",
+  "description": "Availability status badge with mission quota and booking details.",
   "dependencies": [
     "@tabler/icons-react"
   ],
@@ -12,7 +12,7 @@
   "files": [
     {
       "path": "src/registry/demo/components/spaceui/status-badge/c-status-badge-08/index.tsx",
-      "content": "import Link from 'next/link'\nimport { IconArrowUpRight } from '@tabler/icons-react'\nimport { StatusBadge } from '@/components/spaceui/status-badge'\n\nexport default function Demo() {\n  return (\n    <div className=\"flex flex-wrap items-center justify-center gap-4 p-4\">\n      <StatusBadge mode=\"inline\" status=\"available\" primaryText=\"Freelance\" size=\"default\">\n        <Link href=\"#hire\" className=\"inline-flex items-center gap-1 hover:text-foreground transition-colors\">\n          <span>Disponible pour de nouveaux projets 👋🏻</span>\n          <IconArrowUpRight className=\"size-3.5\" />\n        </Link>\n      </StatusBadge>\n    </div>\n  )\n}\n",
+      "content": "import Link from 'next/link'\nimport { IconArrowUpRight } from '@tabler/icons-react'\nimport { StatusBadge } from '@/components/spaceui/status-badge'\n\nexport default function Demo() {\n  return (\n    <div className=\"flex flex-wrap items-center justify-center gap-4 p-4\">\n      <StatusBadge mode=\"inline\" status=\"available\" primaryText=\"Open for Work\" size=\"default\">\n        <Link href=\"#calendar\" className=\"inline-flex items-center gap-1 hover:text-foreground transition-colors\">\n          <span>4 slots max • Q4 bookings open</span>\n          <IconArrowUpRight className=\"size-3.5\" />\n        </Link>\n      </StatusBadge>\n    </div>\n  )\n}\n",
       "type": "registry:component",
       "target": "components/spaceui/status-badge.tsx"
     }

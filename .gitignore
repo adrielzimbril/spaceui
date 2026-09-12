@@ -22,6 +22,13 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
+# yalc
+.yalc/
+yalc.lock
+
+# lockfile
+pnpm-lock.yaml
+
 # others
 .env*.local
 .vercel
@@ -29,9 +36,5 @@ next-env.d.ts
 .turbo
 output.txt
 
-# yalc
-.yalc/
-yalc.lock
-
-# lockfile
-pnpm-lock.yaml
+# custom
+.noread/*

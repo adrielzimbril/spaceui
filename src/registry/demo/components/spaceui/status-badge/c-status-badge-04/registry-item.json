@@ -2,8 +2,8 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "demo-c-status-badge-04",
   "type": "registry:component",
-  "title": "Status Badge Stacked Mode",
-  "description": "Multi-line badge with title and description subtitle.",
+  "title": "Status Badge Radar Ping",
+  "description": "Animated ping wave and pulsing indicators for live system states.",
   "registryDependencies": [
     "https://www.spaceui.one/r/components-spaceui-status-badge.json"
   ],

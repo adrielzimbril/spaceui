@@ -1,0 +1,24 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-c-badge-squircle-02",
+  "title": "Badge Squircle Sizes",
+  "description": "Standard sizing scale for the squircle badge component from extra small to large.",
+  "registryDependencies": [
+    "https://www.spaceui.one/r/components-spaceui-badge-squircle.json"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/components/spaceui/badge-squircle/c-badge-squircle-02/index.tsx",
+      "content": "'use client'\n\nimport * as React from 'react'\nimport { Badge } from '@/components/spaceui/badge-squircle'\n\nexport default function Demo() {\n  return (\n    <div className=\"flex flex-wrap items-center justify-center gap-3 p-8\">\n      <Badge size=\"xs\" variant=\"secondary\">\n        <span>Extra Small</span>\n      </Badge>\n\n      <Badge size=\"sm\" variant=\"secondary\">\n        <span>Small</span>\n      </Badge>\n\n      <Badge size=\"default\">\n        <span>Default</span>\n      </Badge>\n\n      <Badge size=\"md\">\n        <span>Medium</span>\n      </Badge>\n\n      <Badge size=\"lg\">\n        <span>Large</span>\n      </Badge>\n    </div>\n  )\n}\n",
+      "type": "registry:component",
+      "target": "components/spaceui/badge-squircle-demo-02.tsx"
+    }
+  ],
+  "categories": [
+    "component",
+    "badge",
+    "squircle",
+    "sizes"
+  ],
+  "type": "registry:component"
+}

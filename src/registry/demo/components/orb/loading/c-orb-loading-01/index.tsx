@@ -1,11 +1,7 @@
 'use client'
 
 import * as React from 'react'
-import {
-  LoadingOrb,
-  type LoaderMotion,
-  type LoadingOrbProps,
-} from '@/registry/components/orb/loading'
+import { LoadingOrb, type LoaderMotion, type LoadingOrbProps } from '@/registry/components/orb/loading'
 
 export interface LoadingOrbLiveDemoProps extends LoadingOrbProps {
   speed?: number

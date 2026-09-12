@@ -64,4 +64,8 @@ export const registryComponents: Record<string, RegistryComponent> = {
     () => import("@/registry/demo/components/spaceui/status-badge/c-status-badge-08/index.tsx"),
     {},
   ),
+  "demo-c-status-badge-09": lazyRegistryComponent(
+    () => import("@/registry/demo/components/spaceui/status-badge/c-status-badge-09/index.tsx"),
+    {},
+  ),
 };

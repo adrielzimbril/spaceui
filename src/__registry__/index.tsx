@@ -182,6 +182,38 @@ export const index: Record<string, any> = {
     })(),
     command: '@spaceui/block-eleven-labs',
   },
+  "block-footer-tactile": {
+    name: "block-footer-tactile",
+    description: "An expressive, tactile portfolio and product footer crafted with squircle curvature, live status indicator, local clock, and multi-column navigation.",
+    type: "registry:block",
+    dependencies: ["motion","@tabler/icons-react","@usespaceui/squircle","@base-ui/react","class-variance-authority"],
+    devDependencies: undefined,
+    registryDependencies: ["https://www.spaceui.one/r/primitives-frame.json","https://www.spaceui.one/r/primitives-card.json","https://www.spaceui.one/r/primitives-select.json","https://www.spaceui.one/r/components-spaceui-button-squircle.json","https://www.spaceui.one/r/lib-utils.json"],
+    files: [
+  {
+    "path": "src/registry/blocks/footer/footer-tactile/index.tsx",
+    "type": "registry:block",
+    "target": "components/blocks/footer/footer-tactile.tsx"
+  }
+],
+    keywords: [],
+    component: (() => {
+      const LazyComp = React.lazy(async () => {
+        const mod = await import("@/registry/blocks/footer/footer-tactile/index.tsx");
+        const exportName = Object.keys(mod).find(
+          key => typeof mod[key] === 'function' || typeof mod[key] === 'object'
+        ) || "block-footer-tactile";
+        const Comp = mod.default || mod[exportName];
+        if (mod.animations) {
+          (LazyComp as any).animations = mod.animations;
+        }
+        return { default: Comp };
+      });
+      LazyComp.demoProps = {};
+      return LazyComp;
+    })(),
+    command: '@spaceui/block-footer-tactile',
+  },
   "block-interactive-fun-facts": {
     name: "block-interactive-fun-facts",
     description: "Interactive 3D stacked deck quiz game block with True/False feedback, live score and dialog summary.",
@@ -260,6 +292,241 @@ export const index: Record<string, any> = {
       return LazyComp;
     })(),
     command: '@spaceui/block-sign-in',
+  },
+  "block-stats-blog": {
+    name: "block-stats-blog",
+    description: "Content publication metrics including total articles, words written, reader messages, and reading time.",
+    type: "registry:block",
+    dependencies: ["motion","@tabler/icons-react"],
+    devDependencies: undefined,
+    registryDependencies: ["https://www.spaceui.one/r/lib-utils.json"],
+    files: [
+  {
+    "path": "src/registry/blocks/stats/stats-blog/index.tsx",
+    "type": "registry:block",
+    "target": "components/blocks/stats/stats-blog.tsx"
+  },
+  {
+    "path": "src/registry/blocks/stats/shared/section-layout.tsx",
+    "type": "registry:component",
+    "target": "components/blocks/stats/section-layout.tsx"
+  },
+  {
+    "path": "src/registry/blocks/stats/shared/stat-card.tsx",
+    "type": "registry:component",
+    "target": "components/blocks/stats/stat-card.tsx"
+  }
+],
+    keywords: [],
+    component: (() => {
+      const LazyComp = React.lazy(async () => {
+        const mod = await import("@/registry/blocks/stats/stats-blog/index.tsx");
+        const exportName = Object.keys(mod).find(
+          key => typeof mod[key] === 'function' || typeof mod[key] === 'object'
+        ) || "block-stats-blog";
+        const Comp = mod.default || mod[exportName];
+        if (mod.animations) {
+          (LazyComp as any).animations = mod.animations;
+        }
+        return { default: Comp };
+      });
+      LazyComp.demoProps = {};
+      return LazyComp;
+    })(),
+    command: '@spaceui/block-stats-blog',
+  },
+  "block-stats-engagement": {
+    name: "block-stats-engagement",
+    description: "Comprehensive reader engagement showcase with top articles, interactive emoji reaction counters, category tags, and changelog updates.",
+    type: "registry:block",
+    dependencies: ["motion","@tabler/icons-react"],
+    devDependencies: undefined,
+    registryDependencies: ["https://www.spaceui.one/r/lib-utils.json"],
+    files: [
+  {
+    "path": "src/registry/blocks/stats/stats-engagement/index.tsx",
+    "type": "registry:block",
+    "target": "components/blocks/stats/stats-engagement.tsx"
+  },
+  {
+    "path": "src/registry/blocks/stats/shared/section-layout.tsx",
+    "type": "registry:component",
+    "target": "components/blocks/stats/section-layout.tsx"
+  },
+  {
+    "path": "src/registry/blocks/stats/shared/thoughts-top-list.tsx",
+    "type": "registry:component",
+    "target": "components/blocks/stats/thoughts-top-list.tsx"
+  },
+  {
+    "path": "src/registry/blocks/stats/shared/reactions-section.tsx",
+    "type": "registry:component",
+    "target": "components/blocks/stats/reactions-section.tsx"
+  },
+  {
+    "path": "src/registry/blocks/stats/shared/thought-most-viewed-card.tsx",
+    "type": "registry:component",
+    "target": "components/blocks/stats/thought-most-viewed-card.tsx"
+  },
+  {
+    "path": "src/registry/blocks/stats/shared/thoughts-categories-card.tsx",
+    "type": "registry:component",
+    "target": "components/blocks/stats/thoughts-categories-card.tsx"
+  },
+  {
+    "path": "src/registry/blocks/stats/shared/changelog-updates-card.tsx",
+    "type": "registry:component",
+    "target": "components/blocks/stats/changelog-updates-card.tsx"
+  }
+],
+    keywords: [],
+    component: (() => {
+      const LazyComp = React.lazy(async () => {
+        const mod = await import("@/registry/blocks/stats/stats-engagement/index.tsx");
+        const exportName = Object.keys(mod).find(
+          key => typeof mod[key] === 'function' || typeof mod[key] === 'object'
+        ) || "block-stats-engagement";
+        const Comp = mod.default || mod[exportName];
+        if (mod.animations) {
+          (LazyComp as any).animations = mod.animations;
+        }
+        return { default: Comp };
+      });
+      LazyComp.demoProps = {};
+      return LazyComp;
+    })(),
+    command: '@spaceui/block-stats-engagement',
+  },
+  "block-stats-general": {
+    name: "block-stats-general",
+    description: "Interactive metric overview cards with floating spring emoji decorations and semantic color accents.",
+    type: "registry:block",
+    dependencies: ["motion","@tabler/icons-react"],
+    devDependencies: undefined,
+    registryDependencies: ["https://www.spaceui.one/r/lib-utils.json"],
+    files: [
+  {
+    "path": "src/registry/blocks/stats/stats-general/index.tsx",
+    "type": "registry:block",
+    "target": "components/blocks/stats/stats-general.tsx"
+  },
+  {
+    "path": "src/registry/blocks/stats/shared/section-layout.tsx",
+    "type": "registry:component",
+    "target": "components/blocks/stats/section-layout.tsx"
+  },
+  {
+    "path": "src/registry/blocks/stats/shared/stat-card.tsx",
+    "type": "registry:component",
+    "target": "components/blocks/stats/stat-card.tsx"
+  }
+],
+    keywords: [],
+    component: (() => {
+      const LazyComp = React.lazy(async () => {
+        const mod = await import("@/registry/blocks/stats/stats-general/index.tsx");
+        const exportName = Object.keys(mod).find(
+          key => typeof mod[key] === 'function' || typeof mod[key] === 'object'
+        ) || "block-stats-general";
+        const Comp = mod.default || mod[exportName];
+        if (mod.animations) {
+          (LazyComp as any).animations = mod.animations;
+        }
+        return { default: Comp };
+      });
+      LazyComp.demoProps = {};
+      return LazyComp;
+    })(),
+    command: '@spaceui/block-stats-general',
+  },
+  "block-stats-github": {
+    name: "block-stats-github",
+    description: "Interactive GitHub contribution activity heatmap graph with metrics for stars, forks, and commits.",
+    type: "registry:block",
+    dependencies: ["motion","@tabler/icons-react"],
+    devDependencies: undefined,
+    registryDependencies: ["https://www.spaceui.one/r/lib-utils.json"],
+    files: [
+  {
+    "path": "src/registry/blocks/stats/stats-github/index.tsx",
+    "type": "registry:block",
+    "target": "components/blocks/stats/stats-github.tsx"
+  },
+  {
+    "path": "src/registry/blocks/stats/shared/section-layout.tsx",
+    "type": "registry:component",
+    "target": "components/blocks/stats/section-layout.tsx"
+  },
+  {
+    "path": "src/registry/blocks/stats/shared/github-stats-card.tsx",
+    "type": "registry:component",
+    "target": "components/blocks/stats/github-stats-card.tsx"
+  },
+  {
+    "path": "src/registry/blocks/stats/shared/contribution-graph-card.tsx",
+    "type": "registry:component",
+    "target": "components/blocks/stats/contribution-graph-card.tsx"
+  }
+],
+    keywords: [],
+    component: (() => {
+      const LazyComp = React.lazy(async () => {
+        const mod = await import("@/registry/blocks/stats/stats-github/index.tsx");
+        const exportName = Object.keys(mod).find(
+          key => typeof mod[key] === 'function' || typeof mod[key] === 'object'
+        ) || "block-stats-github";
+        const Comp = mod.default || mod[exportName];
+        if (mod.animations) {
+          (LazyComp as any).animations = mod.animations;
+        }
+        return { default: Comp };
+      });
+      LazyComp.demoProps = {};
+      return LazyComp;
+    })(),
+    command: '@spaceui/block-stats-github',
+  },
+  "block-stats-performance": {
+    name: "block-stats-performance",
+    description: "Lighthouse audit results dashboard featuring mobile & desktop scores with radar chart visuals.",
+    type: "registry:block",
+    dependencies: ["@tabler/icons-react"],
+    devDependencies: undefined,
+    registryDependencies: ["https://www.spaceui.one/r/lib-utils.json"],
+    files: [
+  {
+    "path": "src/registry/blocks/stats/stats-performance/index.tsx",
+    "type": "registry:block",
+    "target": "components/blocks/stats/stats-performance.tsx"
+  },
+  {
+    "path": "src/registry/blocks/stats/shared/section-layout.tsx",
+    "type": "registry:component",
+    "target": "components/blocks/stats/section-layout.tsx"
+  },
+  {
+    "path": "src/registry/blocks/stats/shared/lighthouse-score-card.tsx",
+    "type": "registry:component",
+    "target": "components/blocks/stats/lighthouse-score-card.tsx"
+  }
+],
+    keywords: [],
+    component: (() => {
+      const LazyComp = React.lazy(async () => {
+        const mod = await import("@/registry/blocks/stats/stats-performance/index.tsx");
+        const exportName = Object.keys(mod).find(
+          key => typeof mod[key] === 'function' || typeof mod[key] === 'object'
+        ) || "block-stats-performance";
+        const Comp = mod.default || mod[exportName];
+        if (mod.animations) {
+          (LazyComp as any).animations = mod.animations;
+        }
+        return { default: Comp };
+      });
+      LazyComp.demoProps = {};
+      return LazyComp;
+    })(),
+    command: '@spaceui/block-stats-performance',
   },
   "components-backgrounds-bubble": {
     name: "components-backgrounds-bubble",
@@ -790,6 +1057,38 @@ export const index: Record<string, any> = {
     })(),
     command: '@spaceui/components-spaceui-avatar-group',
   },
+  "components-spaceui-badge-squircle": {
+    name: "components-spaceui-badge-squircle",
+    description: "Tactile squircle badge component with Base UI polymorphic rendering and dynamic curvature morphing.",
+    type: "registry:component",
+    dependencies: ["@usespaceui/squircle","@base-ui/react","class-variance-authority"],
+    devDependencies: undefined,
+    registryDependencies: ["https://www.spaceui.one/r/lib-utils.json"],
+    files: [
+  {
+    "path": "src/registry/components/spaceui/badge-squircle/index.tsx",
+    "type": "registry:component",
+    "target": "components/spaceui/badge-squircle.tsx"
+  }
+],
+    keywords: [],
+    component: (() => {
+      const LazyComp = React.lazy(async () => {
+        const mod = await import("@/registry/components/spaceui/badge-squircle/index.tsx");
+        const exportName = Object.keys(mod).find(
+          key => typeof mod[key] === 'function' || typeof mod[key] === 'object'
+        ) || "components-spaceui-badge-squircle";
+        const Comp = mod.default || mod[exportName];
+        if (mod.animations) {
+          (LazyComp as any).animations = mod.animations;
+        }
+        return { default: Comp };
+      });
+      LazyComp.demoProps = {};
+      return LazyComp;
+    })(),
+    command: '@spaceui/components-spaceui-badge-squircle',
+  },
   "components-spaceui-bouncy-accordion": {
     name: "components-spaceui-bouncy-accordion",
     description: "Spring accordion that splits rounded rows when a panel opens.",
@@ -821,6 +1120,38 @@ export const index: Record<string, any> = {
       return LazyComp;
     })(),
     command: '@spaceui/components-spaceui-bouncy-accordion',
+  },
+  "components-spaceui-button-squircle": {
+    name: "components-spaceui-button-squircle",
+    description: "Tactile squircle button and badge components featuring dynamic curvature morphing on hover from the original portfolio design.",
+    type: "registry:component",
+    dependencies: ["@usespaceui/squircle","@base-ui/react","class-variance-authority"],
+    devDependencies: undefined,
+    registryDependencies: ["https://www.spaceui.one/r/lib-utils.json"],
+    files: [
+  {
+    "path": "src/registry/components/spaceui/button-squircle/index.tsx",
+    "type": "registry:component",
+    "target": "components/spaceui/button-squircle.tsx"
+  }
+],
+    keywords: [],
+    component: (() => {
+      const LazyComp = React.lazy(async () => {
+        const mod = await import("@/registry/components/spaceui/button-squircle/index.tsx");
+        const exportName = Object.keys(mod).find(
+          key => typeof mod[key] === 'function' || typeof mod[key] === 'object'
+        ) || "components-spaceui-button-squircle";
+        const Comp = mod.default || mod[exportName];
+        if (mod.animations) {
+          (LazyComp as any).animations = mod.animations;
+        }
+        return { default: Comp };
+      });
+      LazyComp.demoProps = {};
+      return LazyComp;
+    })(),
+    command: '@spaceui/components-spaceui-button-squircle',
   },
   "components-spaceui-copy": {
     name: "components-spaceui-copy",
@@ -1686,6 +2017,38 @@ export const index: Record<string, any> = {
     })(),
     command: '@spaceui/components-spaceui-filters',
   },
+  "components-spaceui-github-activity": {
+    name: "components-spaceui-github-activity",
+    description: "An interactive GitHub ecosystem showcase featuring stars, forks, and commits KPI cards with floating particles and a 52-week contribution heatmap matrix.",
+    type: "registry:component",
+    dependencies: ["motion","@tabler/icons-react"],
+    devDependencies: undefined,
+    registryDependencies: ["https://www.spaceui.one/r/primitives-frame.json","https://www.spaceui.one/r/primitives-card.json","https://www.spaceui.one/r/primitives-button.json","https://www.spaceui.one/r/primitives-tooltip.json","https://www.spaceui.one/r/components-spaceui-status-badge.json","https://www.spaceui.one/r/lib-utils.json"],
+    files: [
+  {
+    "path": "src/registry/components/spaceui/github-activity/index.tsx",
+    "type": "registry:component",
+    "target": "components/spaceui/github-activity.tsx"
+  }
+],
+    keywords: [],
+    component: (() => {
+      const LazyComp = React.lazy(async () => {
+        const mod = await import("@/registry/components/spaceui/github-activity/index.tsx");
+        const exportName = Object.keys(mod).find(
+          key => typeof mod[key] === 'function' || typeof mod[key] === 'object'
+        ) || "components-spaceui-github-activity";
+        const Comp = mod.default || mod[exportName];
+        if (mod.animations) {
+          (LazyComp as any).animations = mod.animations;
+        }
+        return { default: Comp };
+      });
+      LazyComp.demoProps = {};
+      return LazyComp;
+    })(),
+    command: '@spaceui/components-spaceui-github-activity',
+  },
   "components-spaceui-icon-stack": {
     name: "components-spaceui-icon-stack",
     description: "Icon Stack component for Space UI.",
@@ -2172,7 +2535,7 @@ export const index: Record<string, any> = {
     type: "registry:component",
     dependencies: ["class-variance-authority"],
     devDependencies: undefined,
-    registryDependencies: ["https://www.spaceui.one/r/lib-utils.json","https://www.spaceui.one/r/primitives-badge.json"],
+    registryDependencies: ["https://www.spaceui.one/r/lib-utils.json"],
     files: [
   {
     "path": "src/registry/components/spaceui/status-badge/index.tsx",
@@ -2609,7 +2972,7 @@ export const index: Record<string, any> = {
         }
         return { default: Comp };
       });
-      LazyComp.demoProps = {"state":{"value":"Building","options":{"Building":"Building","Thinking":"Thinking","Searching":"Searching","Generating":"Generating","Connecting":"Connecting"}},"color":{"value":"text-foreground","options":{"Default":"text-foreground","Primary":"text-primary","Emerald":"text-emerald-500","Indigo":"text-indigo-500","Amber":"text-amber-500","Rose":"text-rose-500"}},"showShimmer":{"value":true}};
+      LazyComp.demoProps = {};
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-orb-loading-04',
@@ -3035,6 +3398,102 @@ export const index: Record<string, any> = {
     })(),
     command: '@spaceui/demo-c-autoscale-input-01',
   },
+  "demo-c-badge-squircle-01": {
+    name: "demo-c-badge-squircle-01",
+    description: "Visual style variants for the squircle badge component.",
+    type: "registry:component",
+    dependencies: undefined,
+    devDependencies: undefined,
+    registryDependencies: ["https://www.spaceui.one/r/components-spaceui-badge-squircle.json"],
+    files: [
+  {
+    "path": "src/registry/demo/components/spaceui/badge-squircle/c-badge-squircle-01/index.tsx",
+    "type": "registry:component",
+    "target": "components/spaceui/badge-squircle-demo-01.tsx"
+  }
+],
+    keywords: [],
+    component: (() => {
+      const LazyComp = React.lazy(async () => {
+        const mod = await import("@/registry/demo/components/spaceui/badge-squircle/c-badge-squircle-01/index.tsx");
+        const exportName = Object.keys(mod).find(
+          key => typeof mod[key] === 'function' || typeof mod[key] === 'object'
+        ) || "demo-c-badge-squircle-01";
+        const Comp = mod.default || mod[exportName];
+        if (mod.animations) {
+          (LazyComp as any).animations = mod.animations;
+        }
+        return { default: Comp };
+      });
+      LazyComp.demoProps = {};
+      return LazyComp;
+    })(),
+    command: '@spaceui/demo-c-badge-squircle-01',
+  },
+  "demo-c-badge-squircle-02": {
+    name: "demo-c-badge-squircle-02",
+    description: "Standard sizing scale for the squircle badge component from extra small to large.",
+    type: "registry:component",
+    dependencies: undefined,
+    devDependencies: undefined,
+    registryDependencies: ["https://www.spaceui.one/r/components-spaceui-badge-squircle.json"],
+    files: [
+  {
+    "path": "src/registry/demo/components/spaceui/badge-squircle/c-badge-squircle-02/index.tsx",
+    "type": "registry:component",
+    "target": "components/spaceui/badge-squircle-demo-02.tsx"
+  }
+],
+    keywords: [],
+    component: (() => {
+      const LazyComp = React.lazy(async () => {
+        const mod = await import("@/registry/demo/components/spaceui/badge-squircle/c-badge-squircle-02/index.tsx");
+        const exportName = Object.keys(mod).find(
+          key => typeof mod[key] === 'function' || typeof mod[key] === 'object'
+        ) || "demo-c-badge-squircle-02";
+        const Comp = mod.default || mod[exportName];
+        if (mod.animations) {
+          (LazyComp as any).animations = mod.animations;
+        }
+        return { default: Comp };
+      });
+      LazyComp.demoProps = {};
+      return LazyComp;
+    })(),
+    command: '@spaceui/demo-c-badge-squircle-02',
+  },
+  "demo-c-badge-squircle-03": {
+    name: "demo-c-badge-squircle-03",
+    description: "Showcase of tactile squircle badges with icons and polymorphic link and button rendering.",
+    type: "registry:component",
+    dependencies: ["@tabler/icons-react"],
+    devDependencies: undefined,
+    registryDependencies: ["https://www.spaceui.one/r/components-spaceui-badge-squircle.json"],
+    files: [
+  {
+    "path": "src/registry/demo/components/spaceui/badge-squircle/c-badge-squircle-03/index.tsx",
+    "type": "registry:component",
+    "target": "components/spaceui/badge-squircle-demo-03.tsx"
+  }
+],
+    keywords: [],
+    component: (() => {
+      const LazyComp = React.lazy(async () => {
+        const mod = await import("@/registry/demo/components/spaceui/badge-squircle/c-badge-squircle-03/index.tsx");
+        const exportName = Object.keys(mod).find(
+          key => typeof mod[key] === 'function' || typeof mod[key] === 'object'
+        ) || "demo-c-badge-squircle-03";
+        const Comp = mod.default || mod[exportName];
+        if (mod.animations) {
+          (LazyComp as any).animations = mod.animations;
+        }
+        return { default: Comp };
+      });
+      LazyComp.demoProps = {};
+      return LazyComp;
+    })(),
+    command: '@spaceui/demo-c-badge-squircle-03',
+  },
   "demo-c-bouncy-accordion-01": {
     name: "demo-c-bouncy-accordion-01",
     description: "Spring accordion with icons and badge copy.",
@@ -3066,6 +3525,102 @@ export const index: Record<string, any> = {
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-bouncy-accordion-01',
+  },
+  "demo-c-button-squircle-01": {
+    name: "demo-c-button-squircle-01",
+    description: "Showcase of tactile squircle buttons with curvature morphing across default, secondary, outline, accent, glass, and ghost variants.",
+    type: "registry:component",
+    dependencies: undefined,
+    devDependencies: undefined,
+    registryDependencies: ["https://www.spaceui.one/r/components-spaceui-button-squircle.json"],
+    files: [
+  {
+    "path": "src/registry/demo/components/spaceui/button-squircle/c-button-squircle-01/index.tsx",
+    "type": "registry:component",
+    "target": "components/spaceui/button-squircle-demo-01.tsx"
+  }
+],
+    keywords: [],
+    component: (() => {
+      const LazyComp = React.lazy(async () => {
+        const mod = await import("@/registry/demo/components/spaceui/button-squircle/c-button-squircle-01/index.tsx");
+        const exportName = Object.keys(mod).find(
+          key => typeof mod[key] === 'function' || typeof mod[key] === 'object'
+        ) || "demo-c-button-squircle-01";
+        const Comp = mod.default || mod[exportName];
+        if (mod.animations) {
+          (LazyComp as any).animations = mod.animations;
+        }
+        return { default: Comp };
+      });
+      LazyComp.demoProps = {};
+      return LazyComp;
+    })(),
+    command: '@spaceui/demo-c-button-squircle-01',
+  },
+  "demo-c-button-squircle-02": {
+    name: "demo-c-button-squircle-02",
+    description: "Tactile squircle button standard sizing scale from extra small to large.",
+    type: "registry:component",
+    dependencies: undefined,
+    devDependencies: undefined,
+    registryDependencies: ["https://www.spaceui.one/r/components-spaceui-button-squircle.json"],
+    files: [
+  {
+    "path": "src/registry/demo/components/spaceui/button-squircle/c-button-squircle-02/index.tsx",
+    "type": "registry:component",
+    "target": "components/spaceui/button-squircle-demo-02.tsx"
+  }
+],
+    keywords: [],
+    component: (() => {
+      const LazyComp = React.lazy(async () => {
+        const mod = await import("@/registry/demo/components/spaceui/button-squircle/c-button-squircle-02/index.tsx");
+        const exportName = Object.keys(mod).find(
+          key => typeof mod[key] === 'function' || typeof mod[key] === 'object'
+        ) || "demo-c-button-squircle-02";
+        const Comp = mod.default || mod[exportName];
+        if (mod.animations) {
+          (LazyComp as any).animations = mod.animations;
+        }
+        return { default: Comp };
+      });
+      LazyComp.demoProps = {};
+      return LazyComp;
+    })(),
+    command: '@spaceui/demo-c-button-squircle-02',
+  },
+  "demo-c-button-squircle-03": {
+    name: "demo-c-button-squircle-03",
+    description: "Tactile squircle icon button sizing scale from small to large.",
+    type: "registry:component",
+    dependencies: undefined,
+    devDependencies: undefined,
+    registryDependencies: ["https://www.spaceui.one/r/components-spaceui-button-squircle.json"],
+    files: [
+  {
+    "path": "src/registry/demo/components/spaceui/button-squircle/c-button-squircle-03/index.tsx",
+    "type": "registry:component",
+    "target": "components/spaceui/button-squircle-demo-03.tsx"
+  }
+],
+    keywords: [],
+    component: (() => {
+      const LazyComp = React.lazy(async () => {
+        const mod = await import("@/registry/demo/components/spaceui/button-squircle/c-button-squircle-03/index.tsx");
+        const exportName = Object.keys(mod).find(
+          key => typeof mod[key] === 'function' || typeof mod[key] === 'object'
+        ) || "demo-c-button-squircle-03";
+        const Comp = mod.default || mod[exportName];
+        if (mod.animations) {
+          (LazyComp as any).animations = mod.animations;
+        }
+        return { default: Comp };
+      });
+      LazyComp.demoProps = {};
+      return LazyComp;
+    })(),
+    command: '@spaceui/demo-c-button-squircle-03',
   },
   "demo-c-liquid-metal-avatar-custom-01": {
     name: "demo-c-liquid-metal-avatar-custom-01",
@@ -5371,6 +5926,102 @@ export const index: Record<string, any> = {
     })(),
     command: '@spaceui/demo-c-filters-12',
   },
+  "demo-c-github-activity-01": {
+    name: "demo-c-github-activity-01",
+    description: "Pure GitHub activity component with meta controls for username, shape, header, and legend.",
+    type: "registry:component",
+    dependencies: undefined,
+    devDependencies: undefined,
+    registryDependencies: ["https://www.spaceui.one/r/components-spaceui-github-activity.json","https://www.spaceui.one/r/primitives-frame.json","https://www.spaceui.one/r/primitives-card.json"],
+    files: [
+  {
+    "path": "src/registry/demo/components/spaceui/github-activity/c-github-activity-01/index.tsx",
+    "type": "registry:component",
+    "target": "components/spaceui/github-activity-demo-01.tsx"
+  }
+],
+    keywords: [],
+    component: (() => {
+      const LazyComp = React.lazy(async () => {
+        const mod = await import("@/registry/demo/components/spaceui/github-activity/c-github-activity-01/index.tsx");
+        const exportName = Object.keys(mod).find(
+          key => typeof mod[key] === 'function' || typeof mod[key] === 'object'
+        ) || "demo-c-github-activity-01";
+        const Comp = mod.default || mod[exportName];
+        if (mod.animations) {
+          (LazyComp as any).animations = mod.animations;
+        }
+        return { default: Comp };
+      });
+      LazyComp.demoProps = {"username":{"value":"adrielzimbril"},"shape":{"value":"rounded","options":{"Rounded":"rounded","Square":"square","Circle":"circle"}},"showHeader":{"value":true},"showLegend":{"value":true}};
+      return LazyComp;
+    })(),
+    command: '@spaceui/demo-c-github-activity-01',
+  },
+  "demo-c-github-activity-02": {
+    name: "demo-c-github-activity-02",
+    description: "Layout configuration displaying KPI stat metric cards positioned above the contribution activity graph.",
+    type: "registry:component",
+    dependencies: undefined,
+    devDependencies: undefined,
+    registryDependencies: ["https://www.spaceui.one/r/components-spaceui-github-activity.json","https://www.spaceui.one/r/primitives-frame.json","https://www.spaceui.one/r/primitives-card.json","https://www.spaceui.one/r/components-spaceui-button-squircle.json"],
+    files: [
+  {
+    "path": "src/registry/demo/components/spaceui/github-activity/c-github-activity-02/index.tsx",
+    "type": "registry:component",
+    "target": "components/spaceui/github-activity-demo-02.tsx"
+  }
+],
+    keywords: [],
+    component: (() => {
+      const LazyComp = React.lazy(async () => {
+        const mod = await import("@/registry/demo/components/spaceui/github-activity/c-github-activity-02/index.tsx");
+        const exportName = Object.keys(mod).find(
+          key => typeof mod[key] === 'function' || typeof mod[key] === 'object'
+        ) || "demo-c-github-activity-02";
+        const Comp = mod.default || mod[exportName];
+        if (mod.animations) {
+          (LazyComp as any).animations = mod.animations;
+        }
+        return { default: Comp };
+      });
+      LazyComp.demoProps = {};
+      return LazyComp;
+    })(),
+    command: '@spaceui/demo-c-github-activity-02',
+  },
+  "demo-c-github-activity-03": {
+    name: "demo-c-github-activity-03",
+    description: "Layout configuration displaying the contribution activity graph on top with KPI stat cards positioned below.",
+    type: "registry:component",
+    dependencies: undefined,
+    devDependencies: undefined,
+    registryDependencies: ["https://www.spaceui.one/r/components-spaceui-github-activity.json","https://www.spaceui.one/r/primitives-frame.json","https://www.spaceui.one/r/primitives-card.json","https://www.spaceui.one/r/components-spaceui-button-squircle.json"],
+    files: [
+  {
+    "path": "src/registry/demo/components/spaceui/github-activity/c-github-activity-03/index.tsx",
+    "type": "registry:component",
+    "target": "components/spaceui/github-activity-demo-03.tsx"
+  }
+],
+    keywords: [],
+    component: (() => {
+      const LazyComp = React.lazy(async () => {
+        const mod = await import("@/registry/demo/components/spaceui/github-activity/c-github-activity-03/index.tsx");
+        const exportName = Object.keys(mod).find(
+          key => typeof mod[key] === 'function' || typeof mod[key] === 'object'
+        ) || "demo-c-github-activity-03";
+        const Comp = mod.default || mod[exportName];
+        if (mod.animations) {
+          (LazyComp as any).animations = mod.animations;
+        }
+        return { default: Comp };
+      });
+      LazyComp.demoProps = {};
+      return LazyComp;
+    })(),
+    command: '@spaceui/demo-c-github-activity-03',
+  },
   "demo-c-icon-stack-01": {
     name: "demo-c-icon-stack-01",
     description: "Layered isometric icon",
@@ -7421,7 +8072,7 @@ export const index: Record<string, any> = {
   },
   "demo-c-status-badge-02": {
     name: "demo-c-status-badge-02",
-    description: "Standard sizing scale from extra-small to extra-large.",
+    description: "Standard sizing scale from extra-small to large.",
     type: "registry:component",
     dependencies: undefined,
     devDependencies: undefined,
@@ -7453,7 +8104,7 @@ export const index: Record<string, any> = {
   },
   "demo-c-status-badge-03": {
     name: "demo-c-status-badge-03",
-    description: "Animated ping wave and pulsing indicators for live system states.",
+    description: "Visual style variants for the badge container: default, inverted, and outline.",
     type: "registry:component",
     dependencies: undefined,
     devDependencies: undefined,
@@ -7485,7 +8136,7 @@ export const index: Record<string, any> = {
   },
   "demo-c-status-badge-04": {
     name: "demo-c-status-badge-04",
-    description: "Multi-line badge with title and description subtitle.",
+    description: "Animated ping wave and pulsing indicators for live system states.",
     type: "registry:component",
     dependencies: undefined,
     devDependencies: undefined,
@@ -7517,9 +8168,9 @@ export const index: Record<string, any> = {
   },
   "demo-c-status-badge-05": {
     name: "demo-c-status-badge-05",
-    description: "Interactive availability status badge with direct booking link.",
+    description: "Multi-line badge with standard indicator and enclosed badge indicator variants.",
     type: "registry:component",
-    dependencies: ["@tabler/icons-react"],
+    dependencies: undefined,
     devDependencies: undefined,
     registryDependencies: ["https://www.spaceui.one/r/components-spaceui-status-badge.json"],
     files: [
@@ -7549,7 +8200,7 @@ export const index: Record<string, any> = {
   },
   "demo-c-status-badge-06": {
     name: "demo-c-status-badge-06",
-    description: "Unavailable status badge displaying upcoming resumption date.",
+    description: "Interactive availability status badge with direct booking link.",
     type: "registry:component",
     dependencies: ["@tabler/icons-react"],
     devDependencies: undefined,
@@ -7581,7 +8232,7 @@ export const index: Record<string, any> = {
   },
   "demo-c-status-badge-07": {
     name: "demo-c-status-badge-07",
-    description: "Availability status badge with mission quota and booking details.",
+    description: "Unavailable status badge displaying upcoming resumption date.",
     type: "registry:component",
     dependencies: ["@tabler/icons-react"],
     devDependencies: undefined,
@@ -7613,7 +8264,7 @@ export const index: Record<string, any> = {
   },
   "demo-c-status-badge-08": {
     name: "demo-c-status-badge-08",
-    description: "Friendly freelance presence badge with direct project contact callout.",
+    description: "Availability status badge with mission quota and booking details.",
     type: "registry:component",
     dependencies: ["@tabler/icons-react"],
     devDependencies: undefined,
@@ -7642,6 +8293,38 @@ export const index: Record<string, any> = {
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-status-badge-08',
+  },
+  "demo-c-status-badge-09": {
+    name: "demo-c-status-badge-09",
+    description: "Friendly freelance presence badge with direct project contact callout.",
+    type: "registry:component",
+    dependencies: ["@tabler/icons-react"],
+    devDependencies: undefined,
+    registryDependencies: ["https://www.spaceui.one/r/components-spaceui-status-badge.json"],
+    files: [
+  {
+    "path": "src/registry/demo/components/spaceui/status-badge/c-status-badge-09/index.tsx",
+    "type": "registry:component",
+    "target": "components/spaceui/status-badge.tsx"
+  }
+],
+    keywords: [],
+    component: (() => {
+      const LazyComp = React.lazy(async () => {
+        const mod = await import("@/registry/demo/components/spaceui/status-badge/c-status-badge-09/index.tsx");
+        const exportName = Object.keys(mod).find(
+          key => typeof mod[key] === 'function' || typeof mod[key] === 'object'
+        ) || "demo-c-status-badge-09";
+        const Comp = mod.default || mod[exportName];
+        if (mod.animations) {
+          (LazyComp as any).animations = mod.animations;
+        }
+        return { default: Comp };
+      });
+      LazyComp.demoProps = {};
+      return LazyComp;
+    })(),
+    command: '@spaceui/demo-c-status-badge-09',
   },
   "demo-c-theme-toggle-01": {
     name: "demo-c-theme-toggle-01",
@@ -31340,6 +32023,43 @@ export const index: Record<string, any> = {
       return LazyComp;
     })(),
     command: '@spaceui/template-immersive-lens',
+  },
+  "template-stats": {
+    name: "template-stats",
+    description: "Comprehensive portfolio statistics dashboard template featuring general metrics, audience engagement, content analytics, GitHub heatmap, and Lighthouse scores.",
+    type: "registry:block",
+    dependencies: ["motion","@tabler/icons-react"],
+    devDependencies: undefined,
+    registryDependencies: ["https://www.spaceui.one/r/block-stats-general.json","https://www.spaceui.one/r/block-stats-github.json","https://www.spaceui.one/r/block-stats-blog.json","https://www.spaceui.one/r/block-stats-performance.json","https://www.spaceui.one/r/block-stats-engagement.json"],
+    files: [
+  {
+    "path": "src/registry/templates/stats/index.tsx",
+    "type": "registry:page",
+    "target": "pages/stats.tsx"
+  },
+  {
+    "path": "src/registry/blocks/stats/shared/header-section.tsx",
+    "type": "registry:component",
+    "target": "components/blocks/stats/header-section.tsx"
+  }
+],
+    keywords: [],
+    component: (() => {
+      const LazyComp = React.lazy(async () => {
+        const mod = await import("@/registry/templates/stats/index.tsx");
+        const exportName = Object.keys(mod).find(
+          key => typeof mod[key] === 'function' || typeof mod[key] === 'object'
+        ) || "template-stats";
+        const Comp = mod.default || mod[exportName];
+        if (mod.animations) {
+          (LazyComp as any).animations = mod.animations;
+        }
+        return { default: Comp };
+      });
+      LazyComp.demoProps = {};
+      return LazyComp;
+    })(),
+    command: '@spaceui/template-stats',
   },
   "hooks-utils-cache": {
     name: "hooks-utils-cache",

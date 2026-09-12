@@ -14,15 +14,7 @@ preview: demo-c-orb-thinking-01
 import { ThinkingOrb } from '@/components/orb/thinking'
 
 export default function App() {
-  return (
-    <ThinkingOrb
-      variant="working"
-      surface="auto"
-      size={240}
-      speed={1}
-      scale={0.72}
-    />
-  )
+  return <ThinkingOrb variant="working" surface="auto" size={240} speed={1} scale={0.72} />
 }
 ```
 
@@ -50,59 +42,68 @@ export function SolvingState() {
 
 ### ThinkingOrb
 
-| Prop | Type | Default | Description |
-| --- | --- | --- | --- |
-| `variant` | `'working' \| 'searching' \| 'solving' \| 'listening' \| 'connecting' \| 'weaving' \| 'composing' \| 'breathing' \| 'shaping'` | `'working'` | Active AI thinking animation state |
-| `surface` | `'auto' \| 'ink' \| 'paper'` | `'auto'` | Color tone. `'ink'` renders for dark mode; `'paper'` renders for light mode; `'auto'` tracks the document theme |
-| `size` | `number \| string` | `240` | Canvas container size in pixels or CSS units |
-| `scale` | `number` | `0.72` | Inner particle sphere scale factor (`0.2` to `0.95`) |
-| `speed` | `number` | `1` | Animation speed multiplier (`0.25` to `2.0`) |
-| `playback` | `'play' \| 'pause'` | `'play'` | Playback state |
-| `className` | `string` | — | Additional CSS classes |
+| Prop        | Type                                                                                                                           | Default     | Description                                                                                                     |
+| ----------- | ------------------------------------------------------------------------------------------------------------------------------ | ----------- | --------------------------------------------------------------------------------------------------------------- |
+| `variant`   | `'working' \| 'searching' \| 'solving' \| 'listening' \| 'connecting' \| 'weaving' \| 'composing' \| 'breathing' \| 'shaping'` | `'working'` | Active AI thinking animation state                                                                              |
+| `surface`   | `'auto' \| 'ink' \| 'paper'`                                                                                                   | `'auto'`    | Color tone. `'ink'` renders for dark mode; `'paper'` renders for light mode; `'auto'` tracks the document theme |
+| `size`      | `number \| string`                                                                                                             | `240`       | Canvas container size in pixels or CSS units                                                                    |
+| `scale`     | `number`                                                                                                                       | `0.72`      | Inner particle sphere scale factor (`0.2` to `0.95`)                                                            |
+| `speed`     | `number`                                                                                                                       | `1`         | Animation speed multiplier (`0.25` to `2.0`)                                                                    |
+| `playback`  | `'play' \| 'pause'`                                                                                                            | `'play'`    | Playback state                                                                                                  |
+| `className` | `string`                                                                                                                       | —           | Additional CSS classes                                                                                          |
 
 ## Cognitive States
 
 ### Working Orb
+
 Particles tracing tilted orbital rings around a ghosted sphere.
 
 <ComponentPreview name="demo-c-orb-thinking-01" />
 
 ### Searching Orb
+
 A dotted globe swept by a rotating scan band.
 
 <ComponentPreview name="demo-c-orb-thinking-02" />
 
 ### Solving Orb
+
 A point-cloud sphere permuted by successive quarter-turn slice rotations.
 
 <ComponentPreview name="demo-c-orb-thinking-03" />
 
 ### Listening Orb
+
 Latitude rings breathing in and out on two detuned sine waves.
 
 <ComponentPreview name="demo-c-orb-thinking-04" />
 
 ### Connecting Orb
+
 A drifting node graph with proximity links and travelling signals.
 
 <ComponentPreview name="demo-c-orb-thinking-05" />
 
 ### Weaving Orb
+
 Three helical strands braiding around a ghosted sphere.
 
 <ComponentPreview name="demo-c-orb-thinking-06" />
 
 ### Composing Orb
+
 A rippling multi-lane ribbon wrapped over a sphere.
 
 <ComponentPreview name="demo-c-orb-thinking-07" />
 
 ### Breathing Orb
+
 A face-on ring pulsing with a slow radial ripple.
 
 <ComponentPreview name="demo-c-orb-thinking-08" />
 
 ### Shaping Orb
+
 A dotted outline morphing between circle, triangle and square.
 
 <ComponentPreview name="demo-c-orb-thinking-09" />

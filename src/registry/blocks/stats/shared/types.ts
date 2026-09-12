@@ -25,6 +25,7 @@ export interface ThoughtItem {
   slug: string
   coverImage?: string
   count: number
+  description?: string
 }
 
 export interface CategoryItem {
@@ -33,8 +34,10 @@ export interface CategoryItem {
 }
 
 export interface ChangelogItem {
+  id?: string
   version: string
-  title: string
+  title?: string
+  type?: 'milestone' | 'feature' | 'fix' | 'improvement'
   date: string
   description?: string
 }

@@ -8,8 +8,7 @@
     "class-variance-authority"
   ],
   "registryDependencies": [
-    "https://www.spaceui.one/r/lib-utils.json",
-    "https://www.spaceui.one/r/primitives-badge.json"
+    "https://www.spaceui.one/r/lib-utils.json"
   ],
   "categories": [
     "component",
@@ -23,5 +22,5 @@
     }
   ],
   "createdAt": "2026-08-21",
-  "updatedAt": "2026-08-21"
+  "updatedAt": "2026-09-12"
 }

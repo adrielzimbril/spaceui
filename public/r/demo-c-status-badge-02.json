@@ -2,14 +2,14 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "demo-c-status-badge-02",
   "title": "Status Badge Sizes",
-  "description": "Standard sizing scale from extra-small to extra-large.",
+  "description": "Standard sizing scale from extra-small to large.",
   "registryDependencies": [
     "https://www.spaceui.one/r/components-spaceui-status-badge.json"
   ],
   "files": [
     {
       "path": "src/registry/demo/components/spaceui/status-badge/c-status-badge-02/index.tsx",
-      "content": "import { StatusBadge } from '@/components/spaceui/status-badge'\n\nexport default function Demo() {\n  return (\n    <div className=\"flex flex-wrap items-center justify-center gap-3 p-4\">\n      <StatusBadge size=\"sm\" status=\"online\" primaryText=\"Small\">\n        v1.0.0\n      </StatusBadge>\n      <StatusBadge size=\"default\" status=\"online\" primaryText=\"Default\">\n        v2.4.1\n      </StatusBadge>\n      <StatusBadge size=\"lg\" status=\"online\" primaryText=\"Large\">\n        v3.0.0-beta\n      </StatusBadge>\n    </div>\n  )\n}\n",
+      "content": "import { StatusBadge } from '@/components/spaceui/status-badge'\n\nexport default function Demo() {\n  return (\n    <div className=\"flex flex-col items-center justify-center gap-3.5 p-6\">\n      <StatusBadge size=\"xs\" status=\"online\" primaryText=\"XS\">\n        v1.0.0\n      </StatusBadge>\n      <StatusBadge size=\"sm\" status=\"online\" primaryText=\"Small\">\n        v1.2.0\n      </StatusBadge>\n      <StatusBadge size=\"default\" status=\"online\" primaryText=\"Default\">\n        v2.0.0\n      </StatusBadge>\n      <StatusBadge size=\"md\" status=\"online\" primaryText=\"Medium\">\n        v2.4.0\n      </StatusBadge>\n      <StatusBadge size=\"lg\" status=\"online\" primaryText=\"Large\">\n        v3.0.0\n      </StatusBadge>\n    </div>\n  )\n}\n",
       "type": "registry:component",
       "target": "components/spaceui/status-badge.tsx"
     }

@@ -1,45 +1,51 @@
 'use client'
 
 import * as React from 'react'
-import {
-  BuildingLoader,
-  type BuildingLoaderProps,
-  type LoaderPattern,
-} from '@/registry/components/orb/loading'
+import { BuildingLoader } from '@/registry/components/orb/loading'
 
-const STATE_DETAILS: Record<string, { detail: string; pattern: LoaderPattern }> = {
-  Building: { detail: 'Composing response from context', pattern: 'diamond' },
-  Thinking: { detail: 'Synthesizing reasoning graph', pattern: 'bands' },
-  Searching: { detail: 'Scanning semantic vector index', pattern: 'scatter' },
-  Generating: { detail: 'Streaming token generation pipeline', pattern: 'glyph' },
-  Connecting: { detail: 'Establishing agent mesh network', pattern: 'corners' },
-}
+const LOADING_STEPS = [
+  {
+    state: 'Thinking',
+    detail: 'Synthesizing reasoning graph',
+    color: 'text-indigo-500',
+  },
+  {
+    state: 'Searching',
+    detail: 'Scanning semantic vector index',
+    color: 'text-amber-500',
+  },
+  {
+    state: 'Building',
+    detail: 'Composing response from context',
+    color: 'text-primary',
+  },
+  {
+    state: 'Generating',
+    detail: 'Streaming token generation pipeline',
+    color: 'text-emerald-500',
+  },
+  {
+    state: 'Connecting',
+    detail: 'Establishing agent mesh network',
+    color: 'text-cyan-500',
+  },
+]
 
-export interface BuildingLoaderDemoProps extends BuildingLoaderProps {
-  state?: string
-  detail?: string
-  showShimmer?: boolean
-  color?: string
-}
+export default function Demo() {
+  const [index, setIndex] = React.useState(0)
 
-export default function Demo({
-  state = 'Building',
-  detail,
-  showShimmer = true,
-  color = 'text-foreground',
-}: BuildingLoaderDemoProps) {
-  const currentConfig = STATE_DETAILS[state] ?? STATE_DETAILS.Building
-  const effectiveDetail = detail || currentConfig.detail
+  React.useEffect(() => {
+    const timer = setInterval(() => {
+      setIndex((prev) => (prev + 1) % LOADING_STEPS.length)
+    }, 2800)
+    return () => clearInterval(timer)
+  }, [])
+
+  const current = LOADING_STEPS[index]
 
   return (
     <div className="flex size-full min-h-[260px] flex-col items-center justify-center p-6">
-      <BuildingLoader
-        state={state}
-        detail={effectiveDetail}
-        pattern={currentConfig.pattern}
-        showShimmer={showShimmer}
-        className={color}
-      />
+      <BuildingLoader state={current.state} detail={current.detail} orbClassName={current.color} speed={600} />
     </div>
   )
 }

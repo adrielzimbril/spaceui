@@ -2,8 +2,8 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "demo-c-status-badge-07",
   "type": "registry:component",
-  "title": "Status Badge Mission Quota",
-  "description": "Availability status badge with mission quota and booking details.",
+  "title": "Status Badge Unavailable",
+  "description": "Unavailable status badge displaying upcoming resumption date.",
   "dependencies": [
     "@tabler/icons-react"
   ],

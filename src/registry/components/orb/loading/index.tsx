@@ -1,18 +1,12 @@
 'use client'
 
-import { motion } from 'motion/react'
+import { AnimatePresence, motion } from 'motion/react'
 import * as React from 'react'
 import { cn } from '@/registry/lib/utils'
 
 export type SquareTone = 't100' | 't200' | 't300' | 't400' | 't500'
 
-export type LoaderPattern =
-  | 'diamond'
-  | 'corners'
-  | 'bands'
-  | 'scatter'
-  | 'diagonal'
-  | 'glyph'
+export type LoaderPattern = 'diamond' | 'corners' | 'bands' | 'scatter' | 'diagonal' | 'glyph'
 
 export type LoaderMotion = 'morph' | 'fade' | 'scale' | 'blur' | 'flip'
 
@@ -201,7 +195,7 @@ export function LoadingOrb({
     return () => clearInterval(interval)
   }, [speed, resolvedIndex])
 
-  const activePattern = LOADING_PATTERNS[resolvedIndex ?? (current % LOADING_PATTERNS.length)]
+  const activePattern = LOADING_PATTERNS[resolvedIndex ?? current % LOADING_PATTERNS.length]
   const preset = MOTION_PRESETS[motionPreset] ?? MOTION_PRESETS.morph
   const opacities = { ...DEFAULT_TONE_OPACITIES, ...toneOpacities }
   const cell = (size - gap * 3) / 4
@@ -262,6 +256,7 @@ export interface BuildingLoaderProps extends Omit<LoadingOrbProps, 'pattern'> {
   detail?: string
   showShimmer?: boolean
   pattern?: LoaderPattern | number
+  orbClassName?: string
 }
 
 export function BuildingLoader({
@@ -271,27 +266,27 @@ export function BuildingLoader({
   showShimmer = true,
   size = 38,
   pattern,
+  orbClassName,
   ...loaderProps
 }: BuildingLoaderProps) {
   return (
     <div
-      className={cn(
-        'flex w-full max-w-sm items-center gap-4 rounded-xl bg-card/60 p-4 backdrop-blur-md',
-        className
-      )}
+      className={cn('flex w-full max-w-sm items-center gap-4 rounded-xl bg-card/60 p-4 backdrop-blur-md', className)}
     >
-      <LoadingOrb size={size} pattern={pattern} {...loaderProps} />
+      <LoadingOrb size={size} pattern={pattern} className={orbClassName} {...loaderProps} />
       <div className="min-w-0 flex-1">
-        {state && (
-          <p className="text-xs font-medium tracking-wide text-foreground">
-            {state}...
-          </p>
-        )}
-        {detail && (
-          <p className="mt-1 truncate text-[11px] text-muted-foreground">
-            {detail}
-          </p>
-        )}
+        <AnimatePresence mode="wait" initial={false}>
+          <motion.div
+            key={state}
+            initial={{ opacity: 0, y: 2 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -2 }}
+            transition={{ duration: 0.18, ease: [0.16, 1, 0.3, 1] }}
+          >
+            {state && <p className="text-xs font-medium tracking-wide text-foreground">{state}...</p>}
+            {detail && <p className="mt-1 truncate text-[11px] text-muted-foreground">{detail}</p>}
+          </motion.div>
+        </AnimatePresence>
         {showShimmer && (
           <div className="relative mt-2.5 h-[3px] w-full overflow-hidden rounded-full bg-muted">
             <div className="absolute inset-y-0 w-1/3 animate-[shimmer_1.5s_ease-in-out_infinite] rounded-full bg-primary/80" />

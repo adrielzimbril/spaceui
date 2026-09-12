@@ -12,22 +12,10 @@ export interface DemoProps {
   playback?: 'play' | 'pause'
 }
 
-export default function Demo({
-  surface = 'auto',
-  size = 240,
-  speed = 1,
-  scale = 0.72,
-  playback = 'play',
-}: DemoProps) {
+export default function Demo({ surface = 'auto', size = 240, speed = 1, scale = 0.72, playback = 'play' }: DemoProps) {
   return (
     <div className="flex size-full min-h-[300px] flex-col items-center justify-center p-6">
-      <OrbWeaving
-        surface={surface}
-        size={size}
-        speed={speed}
-        scale={scale}
-        playback={playback}
-      />
+      <OrbWeaving surface={surface} size={size} speed={speed} scale={scale} playback={playback} />
     </div>
   )
 }

@@ -3,14 +3,14 @@ import { StatusBadge } from '@/registry/components/spaceui/status-badge'
 export default function Demo() {
   return (
     <div className="flex flex-wrap items-center justify-center gap-4 p-4">
-      <StatusBadge mode="stack" status="online" primaryText="Production API" animated>
-        Operational • 99.99% uptime
+      <StatusBadge status="online" primaryText="Live" animated>
+        Production Active
       </StatusBadge>
-      <StatusBadge mode="stack" status="away" primaryText="Database Backup">
-        Maintenance in progress
+      <StatusBadge status="busy" primaryText="Recording" animated>
+        Audio stream
       </StatusBadge>
-      <StatusBadge mode="stack" status="error" primaryText="Auth Cluster" animated>
-        Incident reported
+      <StatusBadge status="error" primaryText="Alert" animated>
+        CPU Spike
       </StatusBadge>
     </div>
   )

@@ -1,29 +1,65 @@
 'use client'
 
+import { type VariantProps, cva } from 'class-variance-authority'
 import * as React from 'react'
-import { cva, type VariantProps } from 'class-variance-authority'
 import { cn } from '@/registry/lib/utils'
-import { Badge, badgeVariants } from '@/registry/primitives/badge'
 
-export const statusIndicatorVariants = cva('rounded-full', {
+export const badgeVariants = cva('rounded-xl flex h-auto md:h-full items-center font-semibold transition-colors', {
   variants: {
-    status: {
-      online: 'bg-emerald-500',
-      available: 'bg-emerald-500',
-      offline: 'bg-zinc-400',
-      busy: 'bg-rose-500',
-      away: 'bg-amber-500',
-      error: 'bg-rose-600',
-      warning: 'bg-amber-500',
-      info: 'bg-sky-500',
+    variant: {
+      default: 'border-transparent bg-muted text-foreground',
+      inverted: 'border-transparent bg-foreground text-background',
+      outline: 'border border-border bg-transparent text-foreground',
     },
     size: {
-      default: 'size-2',
-      xs: 'size-1.5',
-      sm: 'size-2.5',
-      md: 'size-3',
-      lg: 'size-3.5',
-      xl: 'size-4',
+      xs: 'text-[11px] px-2 py-0.5 gap-1.5',
+      sm: 'text-xs px-2.5 py-1 gap-1.5',
+      default: 'text-xs px-2.5 py-1.5 gap-2',
+      md: 'text-sm px-3 py-1.5 gap-2.5',
+      lg: 'text-base px-3.5 py-2 gap-3',
+    },
+    circle: {
+      true: 'aspect-square p-1.5',
+      false: '',
+    },
+  },
+  defaultVariants: {
+    variant: 'default',
+    size: 'default',
+    circle: false,
+  },
+})
+
+export interface BadgeProps extends React.HTMLAttributes<HTMLDivElement>, VariantProps<typeof badgeVariants> {
+  contentClassName?: string
+}
+
+export function Badge({ className, variant, size, circle, contentClassName, ...props }: BadgeProps) {
+  return (
+    <div className={cn(badgeVariants({ variant, size, circle }), 'rounded-md', className)} {...props}>
+      <span className={cn('font-medium whitespace-pre-line leading-none', contentClassName)}>{props.children}</span>
+    </div>
+  )
+}
+
+export const statusIndicatorVariants = cva('rounded-md', {
+  variants: {
+    status: {
+      online: 'bg-green-500',
+      offline: 'bg-gray-400',
+      busy: 'bg-red-500',
+      away: 'bg-yellow-500',
+      available: 'bg-green-500',
+      error: 'bg-red-600',
+      warning: 'bg-orange-500',
+      info: 'bg-blue-500',
+    },
+    size: {
+      xs: 'h-1.5 w-1.5',
+      sm: 'h-2 w-2',
+      default: 'h-2.5 w-2.5',
+      md: 'h-3 w-3',
+      lg: 'h-3.5 w-3.5',
     },
     animated: {
       true: 'animate-pulse',
@@ -37,14 +73,13 @@ export const statusIndicatorVariants = cva('rounded-full', {
   },
 })
 
-export type StatusType = 'online' | 'offline' | 'busy' | 'away' | 'available' | 'error' | 'warning' | 'info'
-
 export interface StatusBadgeProps extends React.HTMLAttributes<HTMLDivElement>, VariantProps<typeof badgeVariants> {
-  status?: StatusType
+  status?: 'online' | 'offline' | 'busy' | 'away' | 'available' | 'error' | 'warning' | 'info'
   primaryText?: string
   showIndicator?: boolean
   animated?: boolean
   mode?: 'stack' | 'inline'
+  indicatorBadge?: boolean
   indicatorClassName?: string
   primaryTextClassName?: string
   secondaryTextClassName?: string
@@ -59,45 +94,79 @@ export function StatusBadge({
   primaryText,
   showIndicator = true,
   animated = true,
+  indicatorBadge = false,
   indicatorClassName,
   primaryTextClassName,
   secondaryTextClassName,
-  children,
   ...props
 }: StatusBadgeProps) {
-  const IndicatorComponent = showIndicator && (
-    <span className="relative flex justify-center items-center size-fit shrink-0">
-      <span
-        className={cn('absolute inline-flex h-full w-full rounded-full opacity-75', animated ? 'animate-ping' : '', {
-          'bg-emerald-400': status === 'online' || status === 'available',
-          'bg-sky-400': status === 'info',
-          'bg-rose-400': status === 'busy' || status === 'error',
-          'bg-zinc-300 dark:bg-zinc-600': status === 'offline',
-          'bg-amber-400': status === 'away' || status === 'warning',
-        })}
-      />
-      <span
-        className={cn(
-          'relative inline-flex rounded-full',
-          statusIndicatorVariants({ status, size: size as any, animated: false }),
-          indicatorClassName,
-        )}
-      />
-    </span>
-  )
+  const IndicatorComponent = ({ className }: { className?: string }) =>
+    showIndicator && (
+      <span className={cn('relative flex justify-center items-center size-fit', className)}>
+        <span
+          className={cn(
+            'absolute inline-flex h-full w-full rounded-full opacity-75',
+            animated && 'animate-ping animation-duration-[2.25s]',
+            {
+              'bg-green-300': status === 'online' || status === 'available',
+              'bg-purple-300': status === 'info',
+              'bg-red-300': status === 'busy' || status === 'error',
+              'bg-gray-300': status === 'offline',
+              'bg-yellow-300': status === 'away',
+              'bg-orange-300': status === 'warning',
+            },
+          )}
+        />
+        <span
+          className={cn(
+            'relative inline-flex rounded-full',
+            statusIndicatorVariants({ status, size, animated: false }),
+            indicatorClassName,
+          )}
+        />
+      </span>
+    )
+
+  const innerBadgeStyle =
+    variant === 'inverted'
+      ? 'bg-background/20 text-background'
+      : variant === 'outline'
+        ? 'bg-muted text-foreground'
+        : 'bg-background text-foreground'
 
   if (mode === 'stack') {
     return (
       <div
-        className={cn('flex items-center gap-2', badgeVariants({ variant, size }), className)}
-        role="status"
+        className={cn(
+          'flex items-center rounded-xl transition-colors',
+          badgeVariants({ variant, size }),
+          indicatorBadge ? 'gap-2.5 py-2 px-3' : 'gap-2',
+          className,
+        )}
         {...props}
       >
-        {IndicatorComponent}
+        {indicatorBadge ? (
+          <Badge
+            size={size}
+            circle
+            className={cn(
+              'shrink-0 flex items-center justify-center rounded-lg',
+              size === 'xs' ? 'p-1' : size === 'sm' ? 'p-1.5' : size === 'lg' ? 'p-2.5' : 'p-2',
+              innerBadgeStyle,
+            )}
+            contentClassName="flex items-center justify-center"
+          >
+            <IndicatorComponent />
+          </Badge>
+        ) : (
+          <IndicatorComponent className="items-start" />
+        )}
         <div className="flex flex-col items-start gap-0.5">
           {primaryText && <span className={cn('font-semibold leading-none', primaryTextClassName)}>{primaryText}</span>}
-          {children && (
-            <span className={cn('text-[0.7em] opacity-70 leading-none', secondaryTextClassName)}>{children}</span>
+          {props.children && (
+            <span className={cn('text-[0.75em] opacity-70 leading-none mt-0.5', secondaryTextClassName)}>
+              {props.children}
+            </span>
           )}
         </div>
       </div>
@@ -107,20 +176,19 @@ export function StatusBadge({
   return (
     <div
       className={cn(
-        'flex flex-wrap items-center gap-2 inline-flex',
-        primaryText && badgeVariants({ variant, size }),
+        'inline-flex flex-wrap items-center gap-2 rounded-xl transition-colors',
+        badgeVariants({ variant, size }),
         className,
       )}
-      role="status"
       {...props}
     >
-      <Badge size={size} variant={variant}>
+      <Badge size={size} circle={!primaryText} className={innerBadgeStyle}>
         <div className="flex items-center gap-2">
-          {IndicatorComponent}
+          <IndicatorComponent />
           {primaryText && <span className={cn('font-semibold', primaryTextClassName)}>{primaryText}</span>}
         </div>
       </Badge>
-      {children && <span className={cn('font-normal opacity-90', secondaryTextClassName)}>{children}</span>}
+      {props.children && <span className={cn('font-normal opacity-90', secondaryTextClassName)}>{props.children}</span>}
     </div>
   )
 }

@@ -1,0 +1,38 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-stats-github",
+  "type": "registry:block",
+  "title": "GitHub & Open-Source Activity Block",
+  "description": "Interactive GitHub contribution activity heatmap graph with metrics for stars, forks, and commits.",
+  "registryDependencies": [
+    "https://www.spaceui.one/r/lib-utils.json"
+  ],
+  "dependencies": ["motion", "@tabler/icons-react"],
+  "categories": [
+    "stats"
+  ],
+  "files": [
+    {
+      "path": "src/registry/blocks/stats/stats-github/index.tsx",
+      "type": "registry:block",
+      "target": "components/blocks/stats/stats-github.tsx"
+    },
+    {
+      "path": "src/registry/blocks/stats/shared/section-layout.tsx",
+      "type": "registry:component",
+      "target": "components/blocks/stats/section-layout.tsx"
+    },
+    {
+      "path": "src/registry/blocks/stats/shared/github-stats-card.tsx",
+      "type": "registry:component",
+      "target": "components/blocks/stats/github-stats-card.tsx"
+    },
+    {
+      "path": "src/registry/blocks/stats/shared/contribution-graph-card.tsx",
+      "type": "registry:component",
+      "target": "components/blocks/stats/contribution-graph-card.tsx"
+    }
+  ],
+  "createdAt": "2026-09-12",
+  "updatedAt": "2026-09-12"
+}

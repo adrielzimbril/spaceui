@@ -78,11 +78,7 @@ export function BaseThinkingOrb({
     const mediaReducedMotion = window.matchMedia?.('(prefers-reduced-motion: reduce)')
 
     const shouldAnimate = () =>
-      !isDestroyed &&
-      isIntersecting &&
-      !document.hidden &&
-      playback === 'play' &&
-      mediaReducedMotion?.matches !== true
+      !isDestroyed && isIntersecting && !document.hidden && playback === 'play' && mediaReducedMotion?.matches !== true
 
     const render = (now: number) => {
       animationFrameId = 0
@@ -126,8 +122,7 @@ export function BaseThinkingOrb({
       render(performance.now())
     }
 
-    const resizeObserver =
-      typeof ResizeObserver !== 'undefined' ? new ResizeObserver(() => triggerRender()) : null
+    const resizeObserver = typeof ResizeObserver !== 'undefined' ? new ResizeObserver(() => triggerRender()) : null
     resizeObserver?.observe(container)
 
     const intersectionObserver =

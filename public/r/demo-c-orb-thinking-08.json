@@ -10,7 +10,7 @@
   "files": [
     {
       "path": "src/registry/demo/components/orb/thinking/c-orb-thinking-08/index.tsx",
-      "content": "'use client'\n\nimport * as React from 'react'\nimport { OrbBreathing } from '@/components/orb/thinking/index'\nimport type { ThinkingOrbSurface } from '@/components/orb/thinking/index'\n\nexport interface DemoProps {\n  surface?: ThinkingOrbSurface\n  size?: number\n  speed?: number\n  scale?: number\n  playback?: 'play' | 'pause'\n}\n\nexport default function Demo({\n  surface = 'auto',\n  size = 240,\n  speed = 1,\n  scale = 0.72,\n  playback = 'play',\n}: DemoProps) {\n  return (\n    <div className=\"flex size-full min-h-[300px] flex-col items-center justify-center p-6\">\n      <OrbBreathing\n        surface={surface}\n        size={size}\n        speed={speed}\n        scale={scale}\n        playback={playback}\n      />\n    </div>\n  )\n}\n",
+      "content": "'use client'\n\nimport * as React from 'react'\nimport { OrbBreathing } from '@/components/orb/thinking/index'\nimport type { ThinkingOrbSurface } from '@/components/orb/thinking/index'\n\nexport interface DemoProps {\n  surface?: ThinkingOrbSurface\n  size?: number\n  speed?: number\n  scale?: number\n  playback?: 'play' | 'pause'\n}\n\nexport default function Demo({ surface = 'auto', size = 240, speed = 1, scale = 0.72, playback = 'play' }: DemoProps) {\n  return (\n    <div className=\"flex size-full min-h-[300px] flex-col items-center justify-center p-6\">\n      <OrbBreathing surface={surface} size={size} speed={speed} scale={scale} playback={playback} />\n    </div>\n  )\n}\n",
       "type": "registry:component",
       "target": "components/orb/thinking.tsx"
     }

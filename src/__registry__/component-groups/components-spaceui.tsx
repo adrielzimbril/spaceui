@@ -44,8 +44,16 @@ export const registryComponents: Record<string, RegistryComponent> = {
     () => import("@/registry/components/spaceui/avatar-group/index.tsx"),
     {},
   ),
+  "components-spaceui-badge-squircle": lazyRegistryComponent(
+    () => import("@/registry/components/spaceui/badge-squircle/index.tsx"),
+    {},
+  ),
   "components-spaceui-bouncy-accordion": lazyRegistryComponent(
     () => import("@/registry/components/spaceui/bouncy-accordion/index.tsx"),
+    {},
+  ),
+  "components-spaceui-button-squircle": lazyRegistryComponent(
+    () => import("@/registry/components/spaceui/button-squircle/index.tsx"),
     {},
   ),
   "components-spaceui-copy": lazyRegistryComponent(
@@ -62,6 +70,10 @@ export const registryComponents: Record<string, RegistryComponent> = {
   ),
   "components-spaceui-filters": lazyRegistryComponent(
     () => import("@/registry/components/spaceui/filters/index.tsx"),
+    {},
+  ),
+  "components-spaceui-github-activity": lazyRegistryComponent(
+    () => import("@/registry/components/spaceui/github-activity/index.tsx"),
     {},
   ),
   "components-spaceui-icon-stack": lazyRegistryComponent(

@@ -166,13 +166,7 @@ export function GeneratingOrbCss({
         }
       `}</style>
 
-      <div
-        className="og-loader"
-        role="status"
-        aria-live="polite"
-        aria-label={text}
-        data-playback={playback}
-      >
+      <div className="og-loader" role="status" aria-live="polite" aria-label={text} data-playback={playback}>
         {showText && text && (
           <span className="og-word">
             {characters.map((char, index) => (

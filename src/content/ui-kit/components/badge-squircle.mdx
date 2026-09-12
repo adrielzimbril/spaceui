@@ -1,0 +1,46 @@
+---
+title: Badge Squircle
+description: Tactile squircle badge components featuring dynamic curvature morphing on hover with polymorphic Base UI render support.
+---
+
+<ComponentPreview name="demo-c-badge-squircle-01" />
+
+## Installation
+
+<ComponentInstallation name="components-spaceui-badge-squircle" />
+
+## Anatomy
+
+```tsx
+import { Badge } from '@/components/spaceui/badge-squircle'
+
+export default function Example() {
+  return (
+    <Badge variant="default">
+      <span>Badge label</span>
+    </Badge>
+  )
+}
+```
+
+## Features
+
+### Sizes
+
+<ComponentPreview name="demo-c-badge-squircle-02" />
+
+### Icons & Polymorphic Links
+
+<ComponentPreview name="demo-c-badge-squircle-03" />
+
+## Props
+
+### BadgeSquircle
+
+| Prop | Type | Default | Description |
+| --- | --- | --- | --- |
+| `variant` | `'default' \| 'primary' \| 'secondary' \| 'outline' \| 'destructive' \| 'inverted' \| 'accent'` | `'default'` | Visual styling variant |
+| `size` | `'xs' \| 'sm' \| 'default' \| 'md' \| 'lg'` | `'default'` | Dimensions and font scaling scale |
+| `squircle` | `boolean` | `true` | Enables continuous curvature corner squircle mask |
+| `circle` | `boolean` | `false` | Aspect ratio square modifier |
+| `render` | `React.ReactElement \| ((props: any) => React.ReactNode)` | - | Polymorphic Base UI render element (e.g. Next.js Link or `<button>`) |

@@ -1,15 +1,15 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "demo-c-status-badge-04",
-  "title": "Status Badge Stacked Mode",
-  "description": "Multi-line badge with title and description subtitle.",
+  "title": "Status Badge Radar Ping",
+  "description": "Animated ping wave and pulsing indicators for live system states.",
   "registryDependencies": [
     "https://www.spaceui.one/r/components-spaceui-status-badge.json"
   ],
   "files": [
     {
       "path": "src/registry/demo/components/spaceui/status-badge/c-status-badge-04/index.tsx",
-      "content": "import { StatusBadge } from '@/components/spaceui/status-badge'\n\nexport default function Demo() {\n  return (\n    <div className=\"flex flex-wrap items-center justify-center gap-4 p-4\">\n      <StatusBadge mode=\"stack\" status=\"online\" primaryText=\"Production API\" animated>\n        Operational • 99.99% uptime\n      </StatusBadge>\n      <StatusBadge mode=\"stack\" status=\"away\" primaryText=\"Database Backup\">\n        Maintenance in progress\n      </StatusBadge>\n      <StatusBadge mode=\"stack\" status=\"error\" primaryText=\"Auth Cluster\" animated>\n        Incident reported\n      </StatusBadge>\n    </div>\n  )\n}\n",
+      "content": "import { StatusBadge } from '@/components/spaceui/status-badge'\n\nexport default function Demo() {\n  return (\n    <div className=\"flex flex-wrap items-center justify-center gap-4 p-4\">\n      <StatusBadge status=\"online\" primaryText=\"Live\" animated>\n        Production Active\n      </StatusBadge>\n      <StatusBadge status=\"busy\" primaryText=\"Recording\" animated>\n        Audio stream\n      </StatusBadge>\n      <StatusBadge status=\"error\" primaryText=\"Alert\" animated>\n        CPU Spike\n      </StatusBadge>\n    </div>\n  )\n}\n",
       "type": "registry:component",
       "target": "components/spaceui/status-badge.tsx"
     }

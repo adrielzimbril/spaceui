@@ -5,9 +5,9 @@ import { StatusBadge } from '@/registry/components/spaceui/status-badge'
 export default function Demo() {
   return (
     <div className="flex flex-wrap items-center justify-center gap-4 p-4">
-      <StatusBadge mode="inline" status="offline" primaryText="Complet" size="default">
-        <Link href="#planning" className="inline-flex items-center gap-1 hover:text-foreground transition-colors">
-          <span>Prochaines disponibilités : 15 Septembre</span>
+      <StatusBadge mode="inline" status="available" primaryText="Available" size="default">
+        <Link href="#contact" className="inline-flex items-center gap-1 hover:text-foreground transition-colors">
+          <span>1 slot remaining this month</span>
           <IconArrowUpRight className="size-3.5" />
         </Link>
       </StatusBadge>

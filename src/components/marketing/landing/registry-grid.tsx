@@ -2,16 +2,27 @@
 
 import * as React from 'react'
 import Link from 'next/link'
-import { ArrowUpRight, Check, Copy, RotateCcw, Terminal } from 'lucide-react'
+import { ArrowUpRight, RotateCcw } from 'lucide-react'
 import { AnimatePresence, motion } from 'motion/react'
 import { MorphIcon } from '@/registry/components/spaceui/morph-icon'
 import { OrbBloop } from '@/registry/components/orb/bloop'
 import { BloopState } from '@/registry/components/orb/bloop/types'
 import { BLOOP_PALETTES, BloopPaletteName } from '@/registry/components/orb/bloop/palettes'
 import { OrbSmooth } from '@/registry/components/orb/smooth'
+import { LoadingOrb } from '@/registry/components/orb/loading'
 import { BouncyAccordion } from '@/registry/components/spaceui/bouncy-accordion'
 import { WordsPreloader } from '@/registry/components/spaceui/words-preloader'
-import { IconCheck, IconCircle, IconChevronRight } from '@tabler/icons-react'
+import { PinList } from '@/registry/components/spaceui/pin-list'
+import {
+  IconCheck,
+  IconCircle,
+  IconChevronRight,
+  IconGitCommit,
+  IconBug,
+  IconBrandNpm,
+  IconLock,
+  IconSparkles,
+} from '@tabler/icons-react'
 import { Badge } from '@/registry/primitives/badge'
 import {
   Timeline,
@@ -25,13 +36,11 @@ import {
 import { Avatar as PrimitiveAvatar, AvatarFallback, AvatarImage } from '@/registry/primitives/avatar'
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from '@/registry/primitives/collapsible'
 import { Spinner } from '@/registry/primitives/spinner'
-import { Avatar } from '@usespaceui/avatars/react'
-import type { AvatarVariant } from '@usespaceui/avatars'
 import { Frame, FrameHeader, FrameTitle, FramePanel } from '@/registry/primitives/frame'
 import { Card, CardPanel } from '@/registry/primitives/card'
 import { Button } from '@/registry/primitives/button'
 import { registryStats } from '@/__registry__/stats'
-import { sparkle } from '@usespaceui/sounds'
+import { GitHubActivity } from '@/registry/components/spaceui/github-activity'
 import { tickSound } from '@/components/providers/sound-provider'
 import { BENTO_CYCLE_INTERVAL } from '@/config/space-config'
 import { cn } from '@/registry/lib/utils'
@@ -47,285 +56,39 @@ const SMOOTH_STATES = [
 
 const SMOOTH_LUMINA_SEEDS = ['luna', 'atlas', 'aurora', 'orion', 'nova', 'sol', 'echo', 'iris'] as const
 
-const ZERO_LOCKIN_ITEMS = [
+const TAILWIND_COLORS = [
+  { label: 'Foreground', className: 'text-foreground' },
+  { label: 'Primary', className: 'text-primary' },
+  { label: 'Emerald', className: 'text-emerald-500' },
+  { label: 'Indigo', className: 'text-indigo-500' },
+  { label: 'Amber', className: 'text-amber-500' },
+  { label: 'Rose', className: 'text-rose-500' },
+  { label: 'Cyan', className: 'text-cyan-500' },
+]
+
+const PIN_LIST_ITEMS = [
   {
-    id: 'bloop',
-    name: 'orb-bloop.tsx',
-    pkg: '@spaceui/bloop',
-    title: 'OrbBloop',
-    desc: 'Fluid GLSL shader primitive',
-    codeLines: [
-      { type: 'comment', text: '// src/components/spaceui/orb-bloop.tsx' },
-      { type: 'import', kw1: 'import', what: '{ BloopState }', kw2: 'from', from: "'./types'" },
-      { type: 'export', kw: 'export function', name: 'OrbBloop', args: "({ palette = 'nebula' })" },
-      { type: 'return', kw: 'return', tag: '<canvas', attr: 'className', val: '"size-full"', close: '/>' },
-    ],
+    id: 1,
+    name: 'Commit Zone',
+    info: 'Code updates · Closes 9:00 PM',
+    icon: IconGitCommit,
+    pinned: true,
   },
   {
-    id: 'accordion',
-    name: 'bouncy-accordion.tsx',
-    pkg: '@spaceui/bouncy-accordion',
-    title: 'Accordion',
-    desc: 'Headless spring accordion',
-    codeLines: [
-      { type: 'comment', text: '// src/components/spaceui/bouncy-accordion.tsx' },
-      { type: 'import', kw1: 'import', what: '{ Accordion }', kw2: 'from', from: "'@base-ui/react'" },
-      { type: 'export', kw: 'export function', name: 'BouncyAccordion', args: '({ items, ...props })' },
-      { type: 'return', kw: 'return', tag: '<Accordion.Root', attr: 'className', val: '"w-full"', close: '/>' },
-    ],
+    id: 2,
+    name: '404 Room',
+    info: 'Fixing errors · Open 24 hours',
+    icon: IconBug,
+    pinned: true,
   },
   {
-    id: 'timeline',
-    name: 'timeline.tsx',
-    pkg: '@spaceui/timeline',
-    title: 'Timeline',
-    desc: 'Deterministic sequence primitive',
-    codeLines: [
-      { type: 'comment', text: '// src/components/spaceui/timeline.tsx' },
-      { type: 'import', kw1: 'import', what: '{ useRender }', kw2: 'from', from: "'@base-ui/react'" },
-      { type: 'export', kw: 'export function', name: 'Timeline', args: "({ orientation = 'vertical' })" },
-      { type: 'return', kw: 'return', tag: '<div', attr: 'data-slot', val: '"timeline"', close: '/>' },
-    ],
+    id: 3,
+    name: 'AI Studio',
+    info: 'Generative models · Active now',
+    icon: IconSparkles,
+    pinned: false,
   },
-  {
-    id: 'preloader',
-    name: 'words-preloader.tsx',
-    pkg: '@spaceui/words-preloader',
-    title: 'Preloader',
-    desc: 'Dynamic typography reveal',
-    codeLines: [
-      { type: 'comment', text: '// src/components/spaceui/words-preloader.tsx' },
-      { type: 'import', kw1: 'import', what: '{ AnimatePresence, motion }', kw2: 'from', from: "'motion/react'" },
-      { type: 'export', kw: 'export function', name: 'WordsPreloader', args: '({ words, duration = 1800 })' },
-      { type: 'return', kw: 'return', tag: '<motion.div', attr: 'animate', val: '{{ opacity: 1 }}', close: '/>' },
-    ],
-  },
-] as const
-
-type PackageManagerType = 'pnpm' | 'npm' | 'bun'
-
-function CodeSnippet({ lines }: { lines: (typeof ZERO_LOCKIN_ITEMS)[number]['codeLines'] }) {
-  return (
-    <div className="font-mono text-[11px] leading-[1.55] select-text space-y-0.5">
-      {lines.map((line, i) => {
-        if (line.type === 'comment') {
-          return (
-            <div key={i} className="text-muted-foreground/60 italic truncate">
-              {line.text}
-            </div>
-          )
-        }
-        if (line.type === 'import') {
-          return (
-            <div key={i} className="truncate">
-              <span className="text-purple-400 font-medium">{line.kw1}</span>{' '}
-              <span className="text-foreground">{line.what}</span>{' '}
-              <span className="text-purple-400 font-medium">{line.kw2}</span>{' '}
-              <span className="text-emerald-500/90 dark:text-emerald-400">{line.from}</span>
-            </div>
-          )
-        }
-        if (line.type === 'export') {
-          return (
-            <div key={i} className="truncate">
-              <span className="text-purple-400 font-medium">{line.kw}</span>{' '}
-              <span className="text-sky-500 dark:text-sky-400 font-semibold">{line.name}</span>
-              <span className="text-muted-foreground">{line.args} &#123;</span>
-            </div>
-          )
-        }
-        if (line.type === 'return') {
-          return (
-            <div key={i} className="pl-3 truncate text-muted-foreground/90">
-              <span className="text-purple-400 font-medium">{line.kw}</span>{' '}
-              <span className="text-sky-500 dark:text-sky-400">{line.tag}</span>{' '}
-              <span className="text-amber-500/90 dark:text-amber-300">{line.attr}</span>=
-              <span className="text-emerald-500/90 dark:text-emerald-400">{line.val}</span>{' '}
-              <span className="text-sky-500 dark:text-sky-400">{line.close}</span>
-              <div className="text-muted-foreground -ml-3">&#125;</div>
-            </div>
-          )
-        }
-        return null
-      })}
-    </div>
-  )
-}
-
-function ZeroLockinPreview() {
-  const [selectedPm, setSelectedPm] = React.useState<PackageManagerType>('pnpm')
-  const [itemIndex, setItemIndex] = React.useState(0)
-  const [copied, setCopied] = React.useState(false)
-  const [isHovered, setIsHovered] = React.useState(false)
-
-  // Auto-cycle through showcased files unless hovered
-  React.useEffect(() => {
-    if (isHovered) return
-
-    const timer = setInterval(() => {
-      setItemIndex((prev) => (prev + 1) % ZERO_LOCKIN_ITEMS.length)
-    }, 4000)
-    return () => clearInterval(timer)
-  }, [isHovered])
-
-  const current = ZERO_LOCKIN_ITEMS[itemIndex]
-
-  const getCommand = (pm: PackageManagerType, pkg: string) => {
-    switch (pm) {
-      case 'pnpm':
-        return `pnpm dlx shadcn@latest add ${pkg}`
-      case 'bun':
-        return `bunx --bun shadcn@latest add ${pkg}`
-      case 'npm':
-      default:
-        return `npx shadcn@latest add ${pkg}`
-    }
-  }
-
-  const fullCommand = getCommand(selectedPm, current.pkg)
-
-  const handleCopy = () => {
-    tickSound()
-    navigator.clipboard.writeText(fullCommand)
-    setCopied(true)
-    setTimeout(() => setCopied(false), 2000)
-  }
-
-  return (
-    <div
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
-      className="flex flex-col gap-2.5 w-full select-none"
-    >
-      {/* ── 1. CLI Installation Box with Package Manager Tabs ── */}
-      <div className="flex flex-col gap-2 rounded-xl bg-muted/40 p-2.5 border border-border/40">
-        <div className="flex items-center justify-between">
-          <div className="flex items-center gap-1">
-            {(['pnpm', 'npm', 'bun'] as const).map((pm) => (
-              <Button
-                key={pm}
-                variant={selectedPm === pm ? 'default' : 'ghost'}
-                size="xs"
-                onClick={() => {
-                  tickSound()
-                  setSelectedPm(pm)
-                }}
-                className={cn(
-                  'cursor-pointer h-6 px-2 text-[11px] font-mono transition-all',
-                  selectedPm === pm
-                    ? 'bg-foreground text-background font-semibold shadow-xs'
-                    : 'text-muted-foreground hover:text-foreground',
-                )}
-              >
-                {pm}
-              </Button>
-            ))}
-          </div>
-
-          <div className="flex items-center gap-1.5">
-            <Badge variant="outline" size="sm" className="font-mono text-[10px] text-muted-foreground">
-              shadcn CLI
-            </Badge>
-            <Button
-              variant="ghost"
-              size="icon-xs"
-              onClick={handleCopy}
-              title="Copy command"
-              className="cursor-pointer text-muted-foreground hover:text-foreground size-6"
-            >
-              <MorphIcon activeKey={copied ? 'copied' : 'copy'} variant="blur-scale" duration={0.2}>
-                {copied ? <Check className="size-3.5 text-emerald-500" /> : <Copy className="size-3.5" />}
-              </MorphIcon>
-            </Button>
-          </div>
-        </div>
-
-        <div className="flex items-center gap-2 rounded-lg bg-background px-3 py-1.5 border border-border/40 font-mono text-xs">
-          <Terminal className="size-3.5 text-emerald-500 shrink-0" />
-          <code className="text-foreground truncate flex-1">{fullCommand}</code>
-        </div>
-      </div>
-
-      {/* ── 2. Component Selector Chips ── */}
-      <div className="flex items-center justify-between gap-1 overflow-x-auto [&::-webkit-scrollbar]:hidden">
-        {ZERO_LOCKIN_ITEMS.map((item, idx) => (
-          <button
-            key={item.id}
-            onClick={() => {
-              tickSound()
-              setItemIndex(idx)
-            }}
-            className={cn(
-              'px-2 py-0.5 rounded-md text-[11px] font-medium transition-all cursor-pointer truncate',
-              itemIndex === idx
-                ? 'bg-primary/15 text-foreground font-semibold border border-primary/25'
-                : 'text-muted-foreground hover:text-foreground hover:bg-muted/50 border border-transparent',
-            )}
-          >
-            {item.title}
-          </button>
-        ))}
-      </div>
-
-      {/* ── 3. Injected Local File Inspector (Frame + Collapsible) ── */}
-      <Frame className="overflow-hidden border border-border/40">
-        <Collapsible defaultOpen className="group/collapsible">
-          <CollapsibleTrigger
-            onClick={() => tickSound()}
-            className="flex w-full cursor-pointer transition-colors hover:bg-muted/30"
-          >
-            <FrameHeader className="flex grow flex-row items-center justify-between gap-2 p-2">
-              <div className="flex items-center gap-2 min-w-0">
-                <span className="flex items-center justify-center size-5 rounded bg-blue-500/10 text-blue-500 font-mono text-[10px] font-bold shrink-0">
-                  TS
-                </span>
-                <span className="text-xs font-semibold text-foreground font-mono truncate">
-                  src/components/spaceui/{current.name}
-                </span>
-              </div>
-              <div className="flex items-center gap-1.5 shrink-0">
-                <Badge variant="success" size="sm">
-                  Yours to edit
-                </Badge>
-                <IconChevronRight className="text-muted-foreground size-4 transition-transform duration-200 group-data-open/collapsible:rotate-90" />
-              </div>
-            </FrameHeader>
-          </CollapsibleTrigger>
-          <CollapsibleContent>
-            <FramePanel className="p-2.5 bg-background/80 border-t border-border/40">
-              <AnimatePresence mode="wait">
-                <motion.div
-                  key={current.id}
-                  initial={{ opacity: 0, y: 2 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -2 }}
-                  transition={{ duration: 0.18, ease: [0.16, 1, 0.3, 1] }}
-                >
-                  <CodeSnippet lines={current.codeLines} />
-                </motion.div>
-              </AnimatePresence>
-            </FramePanel>
-          </CollapsibleContent>
-        </Collapsible>
-      </Frame>
-
-      {/* ── 4. Architecture Tenets ── */}
-      <div className="flex items-center justify-between px-1 text-[11px] text-muted-foreground pt-1 border-t border-border/30">
-        <span className="flex items-center gap-1 font-medium">
-          <IconCheck className="size-3 text-emerald-500" /> 0 runtime lock-in
-        </span>
-        <span>•</span>
-        <span className="flex items-center gap-1 font-medium">
-          <IconCheck className="size-3 text-emerald-500" /> Base UI core
-        </span>
-        <span>•</span>
-        <span className="flex items-center gap-1 font-medium">
-          <IconCheck className="size-3 text-emerald-500" /> Tailwind v4 tokens
-        </span>
-      </div>
-    </div>
-  )
-}
+]
 
 const pipelineSteps = [
   {
@@ -560,7 +323,8 @@ function AnimatedTimelinePreview() {
                   className={cn(
                     'flex size-6 items-center justify-center border-none group-data-[orientation=vertical]/timeline:-left-7 transition-all duration-300',
                     stepState.status === 'completed' && '[&&]:bg-primary [&&]:text-primary-foreground [&&]:ring-0',
-                    stepState.status === 'active' && '[&&]:bg-primary [&&]:text-primary-foreground ring-primary/20 ring-2',
+                    stepState.status === 'active' &&
+                      '[&&]:bg-primary [&&]:text-primary-foreground ring-primary/20 ring-2',
                     stepState.status === 'pending' && '[&&]:bg-muted [&&]:text-muted-foreground [&&]:ring-0',
                   )}
                 >
@@ -630,9 +394,6 @@ export function RegistryGrid() {
     return () => clearInterval(timer)
   }, [])
 
-  const [avatarInput, setAvatarInput] = React.useState('spaceui')
-  const [metalHover, setMetalHover] = React.useState(false)
-
   // Words Preloader continuous loop: runs words animation, pauses briefly on blur morph preview, then repeats
   const [preloaderKey, setPreloaderKey] = React.useState(0)
   React.useEffect(() => {
@@ -641,8 +402,6 @@ export function RegistryGrid() {
     }, BENTO_CYCLE_INTERVAL)
     return () => clearInterval(timer)
   }, [])
-
-  const AVATAR_VARIANTS: AvatarVariant[] = ['pebble', 'lumina', 'splash', 'critter', 'invader', 'animals']
 
   return (
     <section id="registry" data-page-section className="mx-auto max-w-[1280px] scroll-mt-16 px-5 sm:px-6 py-20">
@@ -722,59 +481,6 @@ export function RegistryGrid() {
             </CardPanel>
           </Card>
         </Frame>
-
-        {/* ── Card 3: Deterministic Avatars ── */}
-        <Frame className="flex flex-col h-full">
-          <FrameHeader className="flex flex-row items-center justify-between p-2">
-            <FrameTitle>Generative Avatars</FrameTitle>
-            <div className="flex items-center gap-1.5">
-              <Button
-                variant="secondary"
-                size="icon-xs"
-                onClick={() => {
-                  tickSound()
-                  setAvatarInput(Math.random().toString(36).slice(2, 8))
-                }}
-                data-space-hover
-                title="Randomize avatars"
-                className="rounded-full cursor-pointer"
-              >
-                <RotateCcw className="size-3.5" />
-              </Button>
-              <Link
-                href="/tools/avatars"
-                data-space-hover
-                className="p-1 text-muted-foreground hover:text-foreground transition-colors"
-              >
-                <ArrowUpRight className="size-4" />
-              </Link>
-            </div>
-          </FrameHeader>
-          <Card className="flex-1 flex flex-col h-full rounded-lg before:rounded-lg overflow-hidden">
-            <CardPanel className="flex-1 flex min-h-72 flex-col justify-center gap-3 rounded-lg">
-              <div className="grid grid-cols-3 gap-y-6 gap-x-2 w-full items-center justify-items-center">
-                {AVATAR_VARIANTS.map((variant) => (
-                  <div
-                    key={variant}
-                    onClick={() => {
-                      tickSound()
-                      setAvatarInput(Math.random().toString(36).slice(2, 8))
-                    }}
-                    className="group flex cursor-pointer flex-col items-center gap-2 p-1.5 select-none transition-transform duration-200 hover:-translate-y-1 hover:scale-110"
-                  >
-                    <div className="relative size-12 overflow-hidden rounded-full transition-transform duration-200 group-hover:scale-105">
-                      <Avatar name={`${avatarInput}-${variant}`} variant={variant} size={48} circle />
-                    </div>
-                    <span className="text-xs font-medium text-muted-foreground/80 group-hover:text-foreground capitalize transition-colors">
-                      {variant}
-                    </span>
-                  </div>
-                ))}
-              </div>
-            </CardPanel>
-          </Card>
-        </Frame>
-
         {/* ── Card 4: Bouncy Accordion ── */}
         <Frame className="flex flex-col h-full">
           <FrameHeader className="flex flex-row items-center justify-between p-2">
@@ -811,12 +517,12 @@ export function RegistryGrid() {
           </Card>
         </Frame>
 
-        {/* ── Card 5: Zero Lock-in ── */}
+        {/* ── Card 5: Pin List ── */}
         <Frame className="flex flex-col h-full">
           <FrameHeader className="flex flex-row items-center justify-between p-2">
-            <FrameTitle>Zero Lock-in</FrameTitle>
+            <FrameTitle>Pin List</FrameTitle>
             <Link
-              href="/docs/getting-started/installation"
+              href="/components/pin-list"
               data-space-hover
               className="p-1 text-muted-foreground hover:text-foreground transition-colors"
             >
@@ -824,8 +530,36 @@ export function RegistryGrid() {
             </Link>
           </FrameHeader>
           <Card className="flex-1 flex flex-col h-full rounded-lg before:rounded-lg overflow-hidden">
-            <CardPanel className="flex-1 flex min-h-72 flex-col justify-center p-2.5 sm:p-3 rounded-lg">
-              <ZeroLockinPreview />
+            <CardPanel className="flex-1 flex min-h-72 flex-col justify-center p-3 sm:p-4 rounded-lg">
+              <div className="w-full max-w-sm mx-auto">
+                <PinList items={PIN_LIST_ITEMS} className="gap-3.5" />
+              </div>
+            </CardPanel>
+          </Card>
+        </Frame>
+
+        {/* ── Card 3: Demo C Orb Loading 03 ── */}
+        <Frame className="flex flex-col h-full">
+          <FrameHeader className="flex flex-row items-center justify-between p-2">
+            <FrameTitle>Demo C Orb Loading 03</FrameTitle>
+            <Link
+              href="/components/loading"
+              data-space-hover
+              className="p-1 text-muted-foreground hover:text-foreground transition-colors"
+            >
+              <ArrowUpRight className="size-4" />
+            </Link>
+          </FrameHeader>
+          <Card className="flex-1 flex flex-col h-full rounded-lg before:rounded-lg overflow-hidden">
+            <CardPanel className="flex-1 flex min-h-72 flex-wrap items-center justify-center gap-5 sm:gap-6 p-4 rounded-lg">
+              {TAILWIND_COLORS.map(({ label, className }) => (
+                <div key={label} className="flex flex-col items-center gap-2 select-none">
+                  <div className="flex items-center justify-center">
+                    <LoadingOrb className={className} size={44} speed={750} />
+                  </div>
+                  <span className="text-xs font-medium tracking-tight text-muted-foreground">{label}</span>
+                </div>
+              ))}
             </CardPanel>
           </Card>
         </Frame>
@@ -905,43 +639,27 @@ export function RegistryGrid() {
             </Link>
           </FrameHeader>
           <Card className="flex-1 flex flex-col h-full rounded-lg before:rounded-lg overflow-hidden">
-            <CardPanel className="flex-1 flex min-h-72 max-h-[390px] overflow-y-auto p-2 sm:p-3 rounded-lg [&::-webkit-scrollbar]:hidden">
+            <CardPanel className="flex-1 flex min-h-72 max-h-72 overflow-y-auto p-2 sm:p-3 rounded-lg [&::-webkit-scrollbar]:hidden">
               <AnimatedTimelinePreview />
             </CardPanel>
           </Card>
         </Frame>
 
-        {/* ── Card 7: COL-2 CARD AT THE END ── */}
+        {/* ── Card 7: GitHub Activity ── */}
         <Frame className="flex flex-col h-full sm:col-span-2 lg:col-span-2">
           <FrameHeader className="flex flex-row items-center justify-between p-2">
-            <FrameTitle>Composed Blocks &amp; Micro-Interactions</FrameTitle>
-            <Link href="/blocks" data-space-hover className="text-muted-foreground hover:text-foreground">
+            <FrameTitle>GitHub Activity</FrameTitle>
+            <Link
+              href="/components/github-activity"
+              data-space-hover
+              className="p-1 text-muted-foreground hover:text-foreground transition-colors"
+            >
               <ArrowUpRight className="size-4" />
             </Link>
           </FrameHeader>
           <Card className="flex-1 flex flex-col h-full rounded-lg before:rounded-lg overflow-hidden">
-            <CardPanel className="flex-1 flex min-h-60 flex-col justify-center rounded-lg">
-              <div className="flex flex-col sm:flex-row items-center justify-between gap-4 rounded-xl bg-muted/40 p-5">
-                <div className="flex flex-col gap-1">
-                  <span className="text-sm font-semibold text-foreground">Interactive Surfaces</span>
-                  <span className="text-xs text-muted-foreground">
-                    Tactile feedback with spring dynamics and Web Audio
-                  </span>
-                </div>
-                <Button
-                  onMouseEnter={() => {
-                    sparkle()
-                    setMetalHover(true)
-                  }}
-                  onMouseLeave={() => setMetalHover(false)}
-                  className={cn(
-                    'rounded-xl px-5 py-2.5 font-medium text-xs transition-all duration-300 cursor-pointer',
-                    metalHover ? 'bg-foreground text-background scale-105' : 'bg-primary text-primary-foreground',
-                  )}
-                >
-                  Liquid Metal Trigger
-                </Button>
-              </div>
+            <CardPanel className="flex-1 flex min-h-60 flex-col justify-center p-4 sm:p-6 rounded-lg">
+              <GitHubActivity user="usespaceui" shape="rounded" />
             </CardPanel>
           </Card>
         </Frame>
