@@ -3,13 +3,7 @@
 import * as React from 'react'
 import Image from 'next/image'
 import { IconBrandX } from '@tabler/icons-react'
-import {
-  Frame,
-  FrameHeader,
-  FrameTitle,
-  FrameDescription,
-  FrameFooter,
-} from '@/registry/primitives/frame'
+import { Frame, FrameHeader, FrameTitle, FrameDescription, FrameFooter } from '@/registry/primitives/frame'
 import { Card, CardPanel } from '@/registry/primitives/card'
 
 interface Testimonial {
@@ -74,11 +68,7 @@ const TESTIMONIALS: Testimonial[] = [
 
 export function TestimonialsSection() {
   return (
-    <section
-      id="testimonials"
-      data-page-section
-      className="mx-auto max-w-[1280px] scroll-mt-16 px-5 sm:px-6 py-20"
-    >
+    <section id="testimonials" data-page-section className="mx-auto max-w-[1280px] scroll-mt-16 px-5 sm:px-6 py-20">
       {/* ── Section Header ── */}
       <div className="flex flex-col items-center text-center">
         <div className="inline-flex items-center gap-2 rounded-full bg-secondary px-3 py-1 text-xs font-medium text-muted-foreground">
@@ -117,9 +107,7 @@ export function TestimonialsSection() {
             </FrameHeader>
             <Card className="flex-1">
               <CardPanel>
-                <p className="text-sm leading-relaxed text-muted-foreground">
-                  &ldquo;{t.text}&rdquo;
-                </p>
+                <p className="text-sm leading-relaxed text-muted-foreground">&ldquo;{t.text}&rdquo;</p>
               </CardPanel>
             </Card>
             <FrameFooter className="flex items-center justify-between text-xs text-muted-foreground">

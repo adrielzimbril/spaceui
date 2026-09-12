@@ -21,11 +21,7 @@ export function HowItWorks() {
   }
 
   return (
-    <section
-      id="how-it-works"
-      data-page-section
-      className="mx-auto max-w-[1280px] scroll-mt-16 px-5 sm:px-6 py-20"
-    >
+    <section id="how-it-works" data-page-section className="mx-auto max-w-[1280px] scroll-mt-16 px-5 sm:px-6 py-20">
       {/* ── Section Header ── */}
       <div className="flex flex-col items-start justify-between gap-4 md:flex-row md:items-end">
         <div className="max-w-2xl">
@@ -39,8 +35,8 @@ export function HowItWorks() {
             <span className="text-muted-foreground">The source is yours.</span>
           </h2>
           <p className="mt-4 text-base leading-relaxed text-muted-foreground">
-            Most UI libraries lock you behind bloated node_modules and breaking version bumps.
-            Space UI places accessible, unstyled TypeScript code directly inside your repository.
+            Most UI libraries lock you behind bloated node_modules and breaking version bumps. Space UI places
+            accessible, unstyled TypeScript code directly inside your repository.
           </p>
         </div>
 
@@ -63,13 +59,12 @@ export function HowItWorks() {
               <span className="flex size-6 items-center justify-center rounded-md bg-secondary text-xs font-semibold text-foreground">
                 01
               </span>
-              <span className="text-[11px] uppercase tracking-wider text-muted-foreground/70">
-                Discovery
-              </span>
+              <span className="text-[11px] uppercase tracking-wider text-muted-foreground/70">Discovery</span>
             </div>
             <FrameTitle>Browse &amp; Select</FrameTitle>
             <FrameDescription>
-              Choose from {registryStats.total} registry items — including {registryStats.primitives} primitives, {registryStats.components} components, and {registryStats.hooks} production hooks.
+              Choose from {registryStats.total} registry items — including {registryStats.primitives} primitives,{' '}
+              {registryStats.components} components, and {registryStats.hooks} production hooks.
             </FrameDescription>
           </FrameHeader>
           <Card>
@@ -93,9 +88,7 @@ export function HowItWorks() {
             </CardPanel>
           </Card>
           <FrameFooter>
-            <p className="text-xs text-muted-foreground/70">
-              WAI-ARIA accessible foundation
-            </p>
+            <p className="text-xs text-muted-foreground/70">WAI-ARIA accessible foundation</p>
           </FrameFooter>
         </Frame>
 
@@ -106,13 +99,12 @@ export function HowItWorks() {
               <span className="flex size-6 items-center justify-center rounded-md bg-secondary text-xs font-semibold text-foreground">
                 02
               </span>
-              <span className="text-[11px] uppercase tracking-wider text-muted-foreground/70">
-                CLI Registry
-              </span>
+              <span className="text-[11px] uppercase tracking-wider text-muted-foreground/70">CLI Registry</span>
             </div>
             <FrameTitle>Install in One Command</FrameTitle>
             <FrameDescription>
-              Run the shadcn CLI or instruct your AI agent via MCP. Code is resolved directly from the Space UI registry.
+              Run the shadcn CLI or instruct your AI agent via MCP. Code is resolved directly from the Space UI
+              registry.
             </FrameDescription>
           </FrameHeader>
           <Card>
@@ -157,9 +149,7 @@ export function HowItWorks() {
               <span className="flex size-6 items-center justify-center rounded-md bg-secondary text-xs font-semibold text-foreground">
                 03
               </span>
-              <span className="text-[11px] uppercase tracking-wider text-muted-foreground/70">
-                Full Ownership
-              </span>
+              <span className="text-[11px] uppercase tracking-wider text-muted-foreground/70">Full Ownership</span>
             </div>
             <FrameTitle>Customize Forever</FrameTitle>
             <FrameDescription>
@@ -187,9 +177,7 @@ export function HowItWorks() {
             </CardPanel>
           </Card>
           <FrameFooter>
-            <p className="text-xs text-muted-foreground/70">
-              Tailwind CSS v4 tokens
-            </p>
+            <p className="text-xs text-muted-foreground/70">Tailwind CSS v4 tokens</p>
           </FrameFooter>
         </Frame>
       </div>

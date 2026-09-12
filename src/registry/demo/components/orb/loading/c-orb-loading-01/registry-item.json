@@ -1,0 +1,65 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-c-orb-loading-01",
+  "type": "registry:component",
+  "title": "Loading Orb All States Line Demo",
+  "description": "All matrix states displayed simultaneously on a single line with motion presets.",
+  "registryDependencies": [
+    "https://www.spaceui.one/r/components-orb-loading.json"
+  ],
+  "categories": [
+    "orb",
+    "loading"
+  ],
+  "meta": {
+    "demoProps": {
+      "motionPreset": {
+        "value": "morph",
+        "options": {
+          "Morph": "morph",
+          "Fade": "fade",
+          "Scale": "scale",
+          "Blur": "blur",
+          "Flip": "flip"
+        }
+      },
+      "size": {
+        "value": 48,
+        "min": 32,
+        "max": 96,
+        "step": 4
+      },
+      "speed": {
+        "value": 750,
+        "min": 300,
+        "max": 2000,
+        "step": 50
+      },
+      "radius": {
+        "value": 3,
+        "min": 0,
+        "max": 10,
+        "step": 1
+      },
+      "gap": {
+        "value": 3,
+        "min": 1,
+        "max": 8,
+        "step": 1
+      },
+      "showGhost": {
+        "value": false
+      }
+    }
+  },
+  "files": [
+    {
+      "path": "src/registry/demo/components/orb/loading/c-orb-loading-01/index.tsx",
+      "type": "registry:component",
+      "target": "components/orb/loading.tsx"
+    }
+  ],
+  "createdAt": "2026-09-12",
+  "updatedAt": "2026-09-12",
+  "dependencies": []
+}

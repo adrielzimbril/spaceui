@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "components-orb-loading",
+  "type": "registry:component",
+  "title": "Loading Orb",
+  "description": "Procedural matrix pixel grid loader with Tailwind styling, motion presets, and companion status banner.",
+  "dependencies": [
+    "motion"
+  ],
+  "categories": [
+    "orb",
+    "loader",
+    "ai"
+  ],
+  "files": [
+    {
+      "path": "src/registry/components/orb/loading/index.tsx",
+      "type": "registry:component",
+      "target": "components/orb/loading/index.tsx"
+    }
+  ],
+  "createdAt": "2026-09-12",
+  "updatedAt": "2026-09-12",
+  "registryDependencies": []
+}

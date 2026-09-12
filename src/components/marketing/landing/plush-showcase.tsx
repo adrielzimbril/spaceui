@@ -7,12 +7,7 @@ import { ArrowUpRight, RotateCcw, Sparkles, Hand, Sliders } from 'lucide-react'
 import { Frame, FrameHeader, FrameTitle } from '@/registry/primitives/frame'
 import { Card, CardPanel } from '@/registry/primitives/card'
 import { Button } from '@/registry/primitives/button'
-import {
-  bloomSound,
-  dropletSound,
-  tapSound,
-  tickSound,
-} from '@/components/providers/sound-provider'
+import { bloomSound, dropletSound, tapSound, tickSound } from '@/components/providers/sound-provider'
 import { cn } from '@/registry/lib/utils'
 import { PlushEngine, loadPlushArtwork } from '@/tools/plush/engine'
 import { DEFAULT_CONFIG, PLUSH_PRESETS } from '@/tools/plush/presets'
@@ -48,12 +43,7 @@ export function PlushShowcase() {
       })
       engineRef.current = engine
 
-      loadPlushArtwork(
-        INITIAL_PRESET.preview,
-        INITIAL_PRESET.id,
-        INITIAL_PRESET.label,
-        INITIAL_PRESET.sideColor,
-      )
+      loadPlushArtwork(INITIAL_PRESET.preview, INITIAL_PRESET.id, INITIAL_PRESET.label, INITIAL_PRESET.sideColor)
         .then((art) => {
           if (isMounted && engine) {
             engine.setArtwork(art)
@@ -85,12 +75,7 @@ export function PlushShowcase() {
     setLoading(true)
 
     try {
-      const art = await loadPlushArtwork(
-        preset.preview,
-        preset.id,
-        preset.label,
-        preset.sideColor,
-      )
+      const art = await loadPlushArtwork(preset.preview, preset.id, preset.label, preset.sideColor)
       if (engineRef.current) {
         engineRef.current.setArtwork(art)
         if (preset.sideColor) {
@@ -136,11 +121,7 @@ export function PlushShowcase() {
   }
 
   return (
-    <section
-      id="plush"
-      data-page-section
-      className="mx-auto max-w-[1280px] scroll-mt-16 px-5 sm:px-6 py-20"
-    >
+    <section id="plush" data-page-section className="mx-auto max-w-[1280px] scroll-mt-16 px-5 sm:px-6 py-20">
       {/* ── Section Header ── */}
       <div className="flex flex-col items-start justify-between gap-4 md:flex-row md:items-end">
         <div className="max-w-2xl">
@@ -154,8 +135,8 @@ export function PlushShowcase() {
             <span className="text-muted-foreground">Procedural 3D Fur in the browser.</span>
           </h2>
           <p className="mt-4 text-base leading-relaxed text-muted-foreground">
-            Transform any vector badge or illustration into an interactive 3D cushion with 140,000+ procedural
-            fur strands, realistic grooming physics, and tactile Web Audio feedback.
+            Transform any vector badge or illustration into an interactive 3D cushion with 140,000+ procedural fur
+            strands, realistic grooming physics, and tactile Web Audio feedback.
           </p>
         </div>
 
@@ -185,11 +166,7 @@ export function PlushShowcase() {
               >
                 <RotateCcw className="size-3.5" />
               </Button>
-              <Link
-                href="/tools/plush"
-                data-space-hover
-                className="text-muted-foreground hover:text-foreground"
-              >
+              <Link href="/tools/plush" data-space-hover className="text-muted-foreground hover:text-foreground">
                 <ArrowUpRight className="size-4" />
               </Link>
             </div>
@@ -234,9 +211,7 @@ export function PlushShowcase() {
                       onClick={() => handleSelectPreset(preset)}
                       className={cn(
                         'flex h-auto! w-full items-center justify-between rounded-xl p-2.5 text-left transition-all duration-200 cursor-pointer',
-                        isSelected
-                          ? 'bg-secondary text-foreground'
-                          : 'text-muted-foreground hover:text-foreground',
+                        isSelected ? 'bg-secondary text-foreground' : 'text-muted-foreground hover:text-foreground',
                       )}
                     >
                       <div className="flex items-center gap-3">
@@ -251,12 +226,8 @@ export function PlushShowcase() {
                           />
                         </div>
                         <div className="flex flex-col">
-                          <span className="text-sm font-semibold text-foreground">
-                            {preset.label}
-                          </span>
-                          <span className="text-[11px] text-muted-foreground">
-                            {preset.description}
-                          </span>
+                          <span className="text-sm font-semibold text-foreground">{preset.label}</span>
+                          <span className="text-[11px] text-muted-foreground">{preset.description}</span>
                         </div>
                       </div>
                       {isSelected && (
@@ -295,9 +266,7 @@ export function PlushShowcase() {
                       <Button
                         key={style.id}
                         variant={isSelected ? 'default' : 'secondary'}
-                        onClick={() =>
-                          handleSelectFurStyle(style.id as 'velvet' | 'fluffy' | 'sherpa')
-                        }
+                        onClick={() => handleSelectFurStyle(style.id as 'velvet' | 'fluffy' | 'sherpa')}
                         className={cn(
                           'flex h-auto! flex-col items-center rounded-xl p-2.5 text-center transition-all duration-200 cursor-pointer',
                           isSelected
@@ -321,9 +290,7 @@ export function PlushShowcase() {
 
                 <div className="mt-2 pt-3 border-t border-border flex items-center justify-between">
                   <div className="flex flex-col">
-                    <span className="text-xs font-medium text-foreground">
-                      Full Studio Capabilities
-                    </span>
+                    <span className="text-xs font-medium text-foreground">Full Studio Capabilities</span>
                     <span className="text-[11px] text-muted-foreground">
                       Upload custom SVG, APNG export &amp; color detection
                     </span>

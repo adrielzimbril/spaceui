@@ -1,0 +1,39 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "components-orb-generating",
+  "type": "registry:component",
+  "title": "Generating Orb",
+  "description": "Interactive dual-engine generating loader orb with revolving chromatic depth in CSS keyframes and HTML5 Canvas.",
+  "dependencies": [],
+  "categories": [
+    "orb",
+    "loader",
+    "css",
+    "canvas"
+  ],
+  "files": [
+    {
+      "path": "src/registry/components/orb/generating/index.tsx",
+      "type": "registry:component",
+      "target": "components/orb/generating/index.tsx"
+    },
+    {
+      "path": "src/registry/components/orb/generating/generating-orb-css.tsx",
+      "type": "registry:component",
+      "target": "components/orb/generating/generating-orb-css.tsx"
+    },
+    {
+      "path": "src/registry/components/orb/generating/generating-orb-canvas.tsx",
+      "type": "registry:component",
+      "target": "components/orb/generating/generating-orb-canvas.tsx"
+    },
+    {
+      "path": "src/registry/components/orb/generating/types.ts",
+      "type": "registry:lib",
+      "target": "components/orb/generating/types.ts"
+    }
+  ],
+  "createdAt": "2026-09-11",
+  "updatedAt": "2026-09-11",
+  "registryDependencies": []
+}

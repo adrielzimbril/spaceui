@@ -1,0 +1,99 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "components-orb-thinking",
+  "type": "registry:component",
+  "title": "Thinking Orb",
+  "description": "Interactive Canvas 3D particle loader orbs featuring 9 procedural cognitive states.",
+  "dependencies": [],
+  "categories": [
+    "orb",
+    "canvas",
+    "thinking",
+    "loader"
+  ],
+  "files": [
+    {
+      "path": "src/registry/components/orb/thinking/index.tsx",
+      "type": "registry:component",
+      "target": "components/orb/thinking/index.tsx"
+    },
+    {
+      "path": "src/registry/components/orb/thinking/base-orb.tsx",
+      "type": "registry:component",
+      "target": "components/orb/thinking/base-orb.tsx"
+    },
+    {
+      "path": "src/registry/components/orb/thinking/orb-working.tsx",
+      "type": "registry:component",
+      "target": "components/orb/thinking/orb-working.tsx"
+    },
+    {
+      "path": "src/registry/components/orb/thinking/orb-searching.tsx",
+      "type": "registry:component",
+      "target": "components/orb/thinking/orb-searching.tsx"
+    },
+    {
+      "path": "src/registry/components/orb/thinking/orb-solving.tsx",
+      "type": "registry:component",
+      "target": "components/orb/thinking/orb-solving.tsx"
+    },
+    {
+      "path": "src/registry/components/orb/thinking/orb-listening.tsx",
+      "type": "registry:component",
+      "target": "components/orb/thinking/orb-listening.tsx"
+    },
+    {
+      "path": "src/registry/components/orb/thinking/orb-connecting.tsx",
+      "type": "registry:component",
+      "target": "components/orb/thinking/orb-connecting.tsx"
+    },
+    {
+      "path": "src/registry/components/orb/thinking/orb-weaving.tsx",
+      "type": "registry:component",
+      "target": "components/orb/thinking/orb-weaving.tsx"
+    },
+    {
+      "path": "src/registry/components/orb/thinking/orb-composing.tsx",
+      "type": "registry:component",
+      "target": "components/orb/thinking/orb-composing.tsx"
+    },
+    {
+      "path": "src/registry/components/orb/thinking/orb-breathing.tsx",
+      "type": "registry:component",
+      "target": "components/orb/thinking/orb-breathing.tsx"
+    },
+    {
+      "path": "src/registry/components/orb/thinking/orb-shaping.tsx",
+      "type": "registry:component",
+      "target": "components/orb/thinking/orb-shaping.tsx"
+    },
+    {
+      "path": "src/registry/components/orb/thinking/renderers.ts",
+      "type": "registry:lib",
+      "target": "components/orb/thinking/renderers.ts"
+    },
+    {
+      "path": "src/registry/components/orb/thinking/presets.ts",
+      "type": "registry:lib",
+      "target": "components/orb/thinking/presets.ts"
+    },
+    {
+      "path": "src/registry/components/orb/thinking/math.ts",
+      "type": "registry:lib",
+      "target": "components/orb/thinking/math.ts"
+    },
+    {
+      "path": "src/registry/components/orb/thinking/canvas-utils.ts",
+      "type": "registry:lib",
+      "target": "components/orb/thinking/canvas-utils.ts"
+    },
+    {
+      "path": "src/registry/components/orb/thinking/types.ts",
+      "type": "registry:lib",
+      "target": "components/orb/thinking/types.ts"
+    }
+  ],
+  "createdAt": "2026-09-11",
+  "updatedAt": "2026-09-12",
+  "registryDependencies": []
+}

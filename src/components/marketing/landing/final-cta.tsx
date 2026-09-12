@@ -24,11 +24,7 @@ export function FinalCta() {
   }
 
   return (
-    <section
-      id="join"
-      data-page-section
-      className="mx-auto max-w-[1280px] scroll-mt-16 px-5 sm:px-6 pb-24 md:pb-32"
-    >
+    <section id="join" data-page-section className="mx-auto max-w-[1280px] scroll-mt-16 px-5 sm:px-6 pb-24 md:pb-32">
       <div className="relative overflow-hidden rounded-3xl bg-secondary/40 p-8 sm:p-12 md:p-16">
         {/* Ambient radial gradient light */}
         <div
@@ -51,8 +47,8 @@ export function FinalCta() {
             </h2>
 
             <p className="mt-5 max-w-lg text-base leading-relaxed text-muted-foreground">
-              Install a single primitive, drop in an audio-reactive WebGL shader, or connect your AI agent in under two minutes.
-              No complex setup, zero runtime lock-in.
+              Install a single primitive, drop in an audio-reactive WebGL shader, or connect your AI agent in under two
+              minutes. No complex setup, zero runtime lock-in.
             </p>
 
             <div className="mt-10 flex flex-wrap items-center gap-4">
@@ -107,12 +103,8 @@ export function FinalCta() {
                     { n: '0', l: 'Lock-in' },
                   ].map((s) => (
                     <div key={s.l} className="rounded-lg bg-muted/50 p-3 text-center">
-                      <p className="text-lg font-semibold tracking-tight text-foreground">
-                        {s.n}
-                      </p>
-                      <p className="mt-0.5 text-xs text-muted-foreground">
-                        {s.l}
-                      </p>
+                      <p className="text-lg font-semibold tracking-tight text-foreground">{s.n}</p>
+                      <p className="mt-0.5 text-xs text-muted-foreground">{s.l}</p>
                     </div>
                   ))}
                 </div>
@@ -132,11 +124,7 @@ export function FinalCta() {
                       title="Copy install command"
                       className="shrink-0 text-muted-foreground hover:text-foreground cursor-pointer"
                     >
-                      {copied ? (
-                        <Check className="size-3.5 text-emerald-500" />
-                      ) : (
-                        <Copy className="size-3.5" />
-                      )}
+                      {copied ? <Check className="size-3.5 text-emerald-500" /> : <Copy className="size-3.5" />}
                     </Button>
                   </div>
                 </div>
@@ -144,9 +132,7 @@ export function FinalCta() {
             </Card>
 
             <FrameFooter>
-              <p className="text-xs text-muted-foreground">
-                Next.js 15+ · Base UI · Tailwind CSS v4 · TypeScript
-              </p>
+              <p className="text-xs text-muted-foreground">Next.js 15+ · Base UI · Tailwind CSS v4 · TypeScript</p>
             </FrameFooter>
           </Frame>
         </div>

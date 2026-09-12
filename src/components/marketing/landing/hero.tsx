@@ -9,18 +9,10 @@ import { siteConfig } from '@/config/space-config'
 import { registryStats } from '@/__registry__/stats'
 
 export function Hero() {
-
   return (
-    <section
-      id="hero"
-      data-page-section
-      className="relative overflow-hidden pt-12 pb-16 md:pt-20 md:pb-24"
-    >
+    <section id="hero" data-page-section className="relative overflow-hidden pt-12 pb-16 md:pt-20 md:pb-24">
       {/* ── Background Ambient Glow & Grid ── */}
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute inset-0 -z-10 select-none"
-      >
+      <div aria-hidden="true" className="pointer-events-none absolute inset-0 -z-10 select-none">
         <div className="absolute left-1/2 -top-40 h-[640px] w-[900px] -translate-x-1/2 rounded-full bg-gradient-to-b from-primary/10 via-primary/5 to-transparent blur-[140px]" />
         <div
           className="absolute inset-0 opacity-[0.02] dark:opacity-[0.035]"
@@ -41,13 +33,9 @@ export function Hero() {
               <span className="absolute inline-flex size-full animate-ping rounded-full bg-emerald-400 opacity-75" />
               <span className="relative inline-flex size-2 rounded-full bg-emerald-500" />
             </span>
-            <span className="text-xs font-medium tracking-tight text-foreground">
-              Space UI Registry 1.0
-            </span>
+            <span className="text-xs font-medium tracking-tight text-foreground">Space UI Registry 1.0</span>
             <span className="h-3 w-px bg-muted-foreground/20" />
-            <span className="text-xs text-muted-foreground">
-              Built for Next.js &amp; Base UI
-            </span>
+            <span className="text-xs text-muted-foreground">Built for Next.js &amp; Base UI</span>
             <ArrowUpRight className="size-3 text-muted-foreground/70" />
           </div>
 
@@ -95,15 +83,9 @@ export function Hero() {
 
           {/* ── Official Inline Install Bar ── */}
           <div className="mt-8 flex w-full max-w-xl justify-center">
-            <InlineInstallBar
-              packageName="orb-bloop"
-              isShadcn
-              className="w-full"
-            />
+            <InlineInstallBar packageName="orb-bloop" isShadcn className="w-full" />
           </div>
         </div>
-
-
       </div>
     </section>
   )

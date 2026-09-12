@@ -1,0 +1,24 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-c-orb-loading-03",
+  "type": "registry:component",
+  "title": "Loading Orb Tailwind Colors Showcase",
+  "description": "Tailwind color class styling with automatic tonal opacity gradations.",
+  "registryDependencies": [
+    "https://www.spaceui.one/r/components-orb-loading.json"
+  ],
+  "categories": [
+    "orb",
+    "loading"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/components/orb/loading/c-orb-loading-03/index.tsx",
+      "type": "registry:component",
+      "target": "components/orb/loading.tsx"
+    }
+  ],
+  "createdAt": "2026-09-12",
+  "updatedAt": "2026-09-12",
+  "dependencies": []
+}

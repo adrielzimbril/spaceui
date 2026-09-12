@@ -382,6 +382,85 @@ export const index: Record<string, any> = {
     })(),
     command: '@spaceui/components-orb-bloop',
   },
+  "components-orb-generating": {
+    name: "components-orb-generating",
+    description: "Interactive dual-engine generating loader orb with revolving chromatic depth in CSS keyframes and HTML5 Canvas.",
+    type: "registry:component",
+    dependencies: [],
+    devDependencies: undefined,
+    registryDependencies: [],
+    files: [
+  {
+    "path": "src/registry/components/orb/generating/index.tsx",
+    "type": "registry:component",
+    "target": "components/orb/generating/index.tsx"
+  },
+  {
+    "path": "src/registry/components/orb/generating/generating-orb-css.tsx",
+    "type": "registry:component",
+    "target": "components/orb/generating/generating-orb-css.tsx"
+  },
+  {
+    "path": "src/registry/components/orb/generating/generating-orb-canvas.tsx",
+    "type": "registry:component",
+    "target": "components/orb/generating/generating-orb-canvas.tsx"
+  },
+  {
+    "path": "src/registry/components/orb/generating/types.ts",
+    "type": "registry:lib",
+    "target": "components/orb/generating/types.ts"
+  }
+],
+    keywords: [],
+    component: (() => {
+      const LazyComp = React.lazy(async () => {
+        const mod = await import("@/registry/components/orb/generating/index.tsx");
+        const exportName = Object.keys(mod).find(
+          key => typeof mod[key] === 'function' || typeof mod[key] === 'object'
+        ) || "components-orb-generating";
+        const Comp = mod.default || mod[exportName];
+        if (mod.animations) {
+          (LazyComp as any).animations = mod.animations;
+        }
+        return { default: Comp };
+      });
+      LazyComp.demoProps = {};
+      return LazyComp;
+    })(),
+    command: '@spaceui/components-orb-generating',
+  },
+  "components-orb-loading": {
+    name: "components-orb-loading",
+    description: "Procedural matrix pixel grid loader with Tailwind styling, motion presets, and companion status banner.",
+    type: "registry:component",
+    dependencies: ["motion"],
+    devDependencies: undefined,
+    registryDependencies: [],
+    files: [
+  {
+    "path": "src/registry/components/orb/loading/index.tsx",
+    "type": "registry:component",
+    "target": "components/orb/loading/index.tsx"
+  }
+],
+    keywords: [],
+    component: (() => {
+      const LazyComp = React.lazy(async () => {
+        const mod = await import("@/registry/components/orb/loading/index.tsx");
+        const exportName = Object.keys(mod).find(
+          key => typeof mod[key] === 'function' || typeof mod[key] === 'object'
+        ) || "components-orb-loading";
+        const Comp = mod.default || mod[exportName];
+        if (mod.animations) {
+          (LazyComp as any).animations = mod.animations;
+        }
+        return { default: Comp };
+      });
+      LazyComp.demoProps = {};
+      return LazyComp;
+    })(),
+    command: '@spaceui/components-orb-loading',
+  },
   "components-orb-smooth": {
     name: "components-orb-smooth",
     description: "Audio-reactive smooth orb with a WebGPU fluid simulation.",
@@ -438,6 +517,113 @@ export const index: Record<string, any> = {
       return LazyComp;
     })(),
     command: '@spaceui/components-orb-smooth',
+  },
+  "components-orb-thinking": {
+    name: "components-orb-thinking",
+    description: "Interactive Canvas 3D particle loader orbs featuring 9 procedural cognitive states.",
+    type: "registry:component",
+    dependencies: [],
+    devDependencies: undefined,
+    registryDependencies: [],
+    files: [
+  {
+    "path": "src/registry/components/orb/thinking/index.tsx",
+    "type": "registry:component",
+    "target": "components/orb/thinking/index.tsx"
+  },
+  {
+    "path": "src/registry/components/orb/thinking/base-orb.tsx",
+    "type": "registry:component",
+    "target": "components/orb/thinking/base-orb.tsx"
+  },
+  {
+    "path": "src/registry/components/orb/thinking/orb-working.tsx",
+    "type": "registry:component",
+    "target": "components/orb/thinking/orb-working.tsx"
+  },
+  {
+    "path": "src/registry/components/orb/thinking/orb-searching.tsx",
+    "type": "registry:component",
+    "target": "components/orb/thinking/orb-searching.tsx"
+  },
+  {
+    "path": "src/registry/components/orb/thinking/orb-solving.tsx",
+    "type": "registry:component",
+    "target": "components/orb/thinking/orb-solving.tsx"
+  },
+  {
+    "path": "src/registry/components/orb/thinking/orb-listening.tsx",
+    "type": "registry:component",
+    "target": "components/orb/thinking/orb-listening.tsx"
+  },
+  {
+    "path": "src/registry/components/orb/thinking/orb-connecting.tsx",
+    "type": "registry:component",
+    "target": "components/orb/thinking/orb-connecting.tsx"
+  },
+  {
+    "path": "src/registry/components/orb/thinking/orb-weaving.tsx",
+    "type": "registry:component",
+    "target": "components/orb/thinking/orb-weaving.tsx"
+  },
+  {
+    "path": "src/registry/components/orb/thinking/orb-composing.tsx",
+    "type": "registry:component",
+    "target": "components/orb/thinking/orb-composing.tsx"
+  },
+  {
+    "path": "src/registry/components/orb/thinking/orb-breathing.tsx",
+    "type": "registry:component",
+    "target": "components/orb/thinking/orb-breathing.tsx"
+  },
+  {
+    "path": "src/registry/components/orb/thinking/orb-shaping.tsx",
+    "type": "registry:component",
+    "target": "components/orb/thinking/orb-shaping.tsx"
+  },
+  {
+    "path": "src/registry/components/orb/thinking/renderers.ts",
+    "type": "registry:lib",
+    "target": "components/orb/thinking/renderers.ts"
+  },
+  {
+    "path": "src/registry/components/orb/thinking/presets.ts",
+    "type": "registry:lib",
+    "target": "components/orb/thinking/presets.ts"
+  },
+  {
+    "path": "src/registry/components/orb/thinking/math.ts",
+    "type": "registry:lib",
+    "target": "components/orb/thinking/math.ts"
+  },
+  {
+    "path": "src/registry/components/orb/thinking/canvas-utils.ts",
+    "type": "registry:lib",
+    "target": "components/orb/thinking/canvas-utils.ts"
+  },
+  {
+    "path": "src/registry/components/orb/thinking/types.ts",
+    "type": "registry:lib",
+    "target": "components/orb/thinking/types.ts"
+  }
+],
+    keywords: [],
+    component: (() => {
+      const LazyComp = React.lazy(async () => {
+        const mod = await import("@/registry/components/orb/thinking/index.tsx");
+        const exportName = Object.keys(mod).find(
+          key => typeof mod[key] === 'function' || typeof mod[key] === 'object'
+        ) || "components-orb-thinking";
+        const Comp = mod.default || mod[exportName];
+        if (mod.animations) {
+          (LazyComp as any).animations = mod.animations;
+        }
+        return { default: Comp };
+      });
+      LazyComp.demoProps = {};
+      return LazyComp;
+    })(),
+    command: '@spaceui/components-orb-thinking',
   },
   "components-shader-cloud": {
     name: "components-shader-cloud",
@@ -2268,6 +2454,134 @@ export const index: Record<string, any> = {
     })(),
     command: '@spaceui/demo-c-orb-bloop-01',
   },
+  "demo-c-orb-generating-01": {
+    name: "demo-c-orb-generating-01",
+    description: "Revolving chromatic loader orb available in CSS and Canvas engines.",
+    type: "registry:component",
+    dependencies: [],
+    devDependencies: undefined,
+    registryDependencies: ["https://www.spaceui.one/r/components-orb-generating.json"],
+    files: [
+  {
+    "path": "src/registry/demo/components/orb/generating/c-orb-generating-01/index.tsx",
+    "type": "registry:component",
+    "target": "components/orb/generating.tsx"
+  }
+],
+    keywords: [],
+    component: (() => {
+      const LazyComp = React.lazy(async () => {
+        const mod = await import("@/registry/demo/components/orb/generating/c-orb-generating-01/index.tsx");
+        const exportName = Object.keys(mod).find(
+          key => typeof mod[key] === 'function' || typeof mod[key] === 'object'
+        ) || "demo-c-orb-generating-01";
+        const Comp = mod.default || mod[exportName];
+        if (mod.animations) {
+          (LazyComp as any).animations = mod.animations;
+        }
+        return { default: Comp };
+      });
+      LazyComp.demoProps = {"renderer":{"value":"css","options":{"CSS Keyframes":"css","Canvas 2D":"canvas"}},"size":{"value":240,"min":80,"max":420,"step":4},"depth":{"value":1,"min":0.4,"max":1.8,"step":0.05},"duration":{"value":2000,"min":600,"max":5000,"step":50},"stagger":{"value":100,"min":0,"max":300,"step":5},"pop":{"value":1.15,"min":1,"max":1.6,"step":0.01},"restOpacity":{"value":0.4,"min":0.1,"max":1,"step":0.05},"textSize":{"value":1.2,"min":0.7,"max":2.4,"step":0.05},"tracking":{"value":0,"min":-2,"max":8,"step":0.25},"text":{"value":"Generating"},"showText":{"value":true},"highlightColor":{"value":"#ffffff"},"haloColor":{"value":"#ad5fff"},"coreColor":{"value":"#471eec"},"haloColorAlt":{"value":"#d60a47"},"coreColorAlt":{"value":"#311e80"},"playback":{"value":"play","options":{"Play":"play","Pause":"pause"}}};
+      return LazyComp;
+    })(),
+    command: '@spaceui/demo-c-orb-generating-01',
+  },
+  "demo-c-orb-loading-01": {
+    name: "demo-c-orb-loading-01",
+    description: "All matrix states displayed simultaneously on a single line with motion presets.",
+    type: "registry:component",
+    dependencies: [],
+    devDependencies: undefined,
+    registryDependencies: ["https://www.spaceui.one/r/components-orb-loading.json"],
+    files: [
+  {
+    "path": "src/registry/demo/components/orb/loading/c-orb-loading-01/index.tsx",
+    "type": "registry:component",
+    "target": "components/orb/loading.tsx"
+  }
+],
+    keywords: [],
+    component: (() => {
+      const LazyComp = React.lazy(async () => {
+        const mod = await import("@/registry/demo/components/orb/loading/c-orb-loading-01/index.tsx");
+        const exportName = Object.keys(mod).find(
+          key => typeof mod[key] === 'function' || typeof mod[key] === 'object'
+        ) || "demo-c-orb-loading-01";
+        const Comp = mod.default || mod[exportName];
+        if (mod.animations) {
+          (LazyComp as any).animations = mod.animations;
+        }
+        return { default: Comp };
+      });
+      LazyComp.demoProps = {"motionPreset":{"value":"morph","options":{"Morph":"morph","Fade":"fade","Scale":"scale","Blur":"blur","Flip":"flip"}},"size":{"value":48,"min":32,"max":96,"step":4},"speed":{"value":750,"min":300,"max":2000,"step":50},"radius":{"value":3,"min":0,"max":10,"step":1},"gap":{"value":3,"min":1,"max":8,"step":1},"showGhost":{"value":false}};
+      return LazyComp;
+    })(),
+    command: '@spaceui/demo-c-orb-loading-01',
+  },
+  "demo-c-orb-loading-02": {
+    name: "demo-c-orb-loading-02",
+    description: "Assistant loading status card with live shimmer bar and state details.",
+    type: "registry:component",
+    dependencies: [],
+    devDependencies: undefined,
+    registryDependencies: ["https://www.spaceui.one/r/components-orb-loading.json"],
+    files: [
+  {
+    "path": "src/registry/demo/components/orb/loading/c-orb-loading-02/index.tsx",
+    "type": "registry:component",
+    "target": "components/orb/loading.tsx"
+  }
+],
+    keywords: [],
+    component: (() => {
+      const LazyComp = React.lazy(async () => {
+        const mod = await import("@/registry/demo/components/orb/loading/c-orb-loading-02/index.tsx");
+        const exportName = Object.keys(mod).find(
+          key => typeof mod[key] === 'function' || typeof mod[key] === 'object'
+        ) || "demo-c-orb-loading-02";
+        const Comp = mod.default || mod[exportName];
+        if (mod.animations) {
+          (LazyComp as any).animations = mod.animations;
+        }
+        return { default: Comp };
+      });
+      LazyComp.demoProps = {"state":{"value":"Building","options":{"Building":"Building","Thinking":"Thinking","Generating":"Generating","Searching":"Searching","Connecting":"Connecting"}},"detail":{"value":"Composing response from context"},"color":{"value":"text-foreground","options":{"Default":"text-foreground","Emerald":"text-emerald-500","Indigo":"text-indigo-500","Amber":"text-amber-500","Rose":"text-rose-500"}},"showShimmer":{"value":true}};
+      return LazyComp;
+    })(),
+    command: '@spaceui/demo-c-orb-loading-02',
+  },
+  "demo-c-orb-loading-03": {
+    name: "demo-c-orb-loading-03",
+    description: "Tailwind color class styling with automatic tonal opacity gradations.",
+    type: "registry:component",
+    dependencies: [],
+    devDependencies: undefined,
+    registryDependencies: ["https://www.spaceui.one/r/components-orb-loading.json"],
+    files: [
+  {
+    "path": "src/registry/demo/components/orb/loading/c-orb-loading-03/index.tsx",
+    "type": "registry:component",
+    "target": "components/orb/loading.tsx"
+  }
+],
+    keywords: [],
+    component: (() => {
+      const LazyComp = React.lazy(async () => {
+        const mod = await import("@/registry/demo/components/orb/loading/c-orb-loading-03/index.tsx");
+        const exportName = Object.keys(mod).find(
+          key => typeof mod[key] === 'function' || typeof mod[key] === 'object'
+        ) || "demo-c-orb-loading-03";
+        const Comp = mod.default || mod[exportName];
+        if (mod.animations) {
+          (LazyComp as any).animations = mod.animations;
+        }
+        return { default: Comp };
+      });
+      LazyComp.demoProps = {};
+      return LazyComp;
+    })(),
+    command: '@spaceui/demo-c-orb-loading-03',
+  },
   "demo-c-orb-smooth-01": {
     name: "demo-c-orb-smooth-01",
     description: "Audio-reactive smooth orb.",
@@ -2299,6 +2613,294 @@ export const index: Record<string, any> = {
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-orb-smooth-01',
+  },
+  "demo-c-orb-thinking-01": {
+    name: "demo-c-orb-thinking-01",
+    description: "Particles tracing tilted orbital rings around a ghosted sphere.",
+    type: "registry:component",
+    dependencies: [],
+    devDependencies: undefined,
+    registryDependencies: ["https://www.spaceui.one/r/components-orb-thinking.json"],
+    files: [
+  {
+    "path": "src/registry/demo/components/orb/thinking/c-orb-thinking-01/index.tsx",
+    "type": "registry:component",
+    "target": "components/orb/thinking.tsx"
+  }
+],
+    keywords: [],
+    component: (() => {
+      const LazyComp = React.lazy(async () => {
+        const mod = await import("@/registry/demo/components/orb/thinking/c-orb-thinking-01/index.tsx");
+        const exportName = Object.keys(mod).find(
+          key => typeof mod[key] === 'function' || typeof mod[key] === 'object'
+        ) || "demo-c-orb-thinking-01";
+        const Comp = mod.default || mod[exportName];
+        if (mod.animations) {
+          (LazyComp as any).animations = mod.animations;
+        }
+        return { default: Comp };
+      });
+      LazyComp.demoProps = {"surface":{"value":"auto","options":{"Auto Theme":"auto","Ink (Dark)":"ink","Paper (Light)":"paper"}},"size":{"value":240,"min":120,"max":420,"step":10},"speed":{"value":1,"min":0.2,"max":2.5,"step":0.1},"scale":{"value":0.72,"min":0.3,"max":0.95,"step":0.02},"playback":{"value":"play","options":{"Play":"play","Pause":"pause"}}};
+      return LazyComp;
+    })(),
+    command: '@spaceui/demo-c-orb-thinking-01',
+  },
+  "demo-c-orb-thinking-02": {
+    name: "demo-c-orb-thinking-02",
+    description: "A dotted globe swept by a rotating scan band.",
+    type: "registry:component",
+    dependencies: [],
+    devDependencies: undefined,
+    registryDependencies: ["https://www.spaceui.one/r/components-orb-thinking.json"],
+    files: [
+  {
+    "path": "src/registry/demo/components/orb/thinking/c-orb-thinking-02/index.tsx",
+    "type": "registry:component",
+    "target": "components/orb/thinking.tsx"
+  }
+],
+    keywords: [],
+    component: (() => {
+      const LazyComp = React.lazy(async () => {
+        const mod = await import("@/registry/demo/components/orb/thinking/c-orb-thinking-02/index.tsx");
+        const exportName = Object.keys(mod).find(
+          key => typeof mod[key] === 'function' || typeof mod[key] === 'object'
+        ) || "demo-c-orb-thinking-02";
+        const Comp = mod.default || mod[exportName];
+        if (mod.animations) {
+          (LazyComp as any).animations = mod.animations;
+        }
+        return { default: Comp };
+      });
+      LazyComp.demoProps = {"surface":{"value":"auto","options":{"Auto Theme":"auto","Ink (Dark)":"ink","Paper (Light)":"paper"}},"size":{"value":240,"min":120,"max":420,"step":10},"speed":{"value":1,"min":0.2,"max":2.5,"step":0.1},"scale":{"value":0.72,"min":0.3,"max":0.95,"step":0.02},"playback":{"value":"play","options":{"Play":"play","Pause":"pause"}}};
+      return LazyComp;
+    })(),
+    command: '@spaceui/demo-c-orb-thinking-02',
+  },
+  "demo-c-orb-thinking-03": {
+    name: "demo-c-orb-thinking-03",
+    description: "A point-cloud sphere permuted by successive quarter-turn slice rotations.",
+    type: "registry:component",
+    dependencies: [],
+    devDependencies: undefined,
+    registryDependencies: ["https://www.spaceui.one/r/components-orb-thinking.json"],
+    files: [
+  {
+    "path": "src/registry/demo/components/orb/thinking/c-orb-thinking-03/index.tsx",
+    "type": "registry:component",
+    "target": "components/orb/thinking.tsx"
+  }
+],
+    keywords: [],
+    component: (() => {
+      const LazyComp = React.lazy(async () => {
+        const mod = await import("@/registry/demo/components/orb/thinking/c-orb-thinking-03/index.tsx");
+        const exportName = Object.keys(mod).find(
+          key => typeof mod[key] === 'function' || typeof mod[key] === 'object'
+        ) || "demo-c-orb-thinking-03";
+        const Comp = mod.default || mod[exportName];
+        if (mod.animations) {
+          (LazyComp as any).animations = mod.animations;
+        }
+        return { default: Comp };
+      });
+      LazyComp.demoProps = {"surface":{"value":"auto","options":{"Auto Theme":"auto","Ink (Dark)":"ink","Paper (Light)":"paper"}},"size":{"value":240,"min":120,"max":420,"step":10},"speed":{"value":1,"min":0.2,"max":2.5,"step":0.1},"scale":{"value":0.72,"min":0.3,"max":0.95,"step":0.02},"playback":{"value":"play","options":{"Play":"play","Pause":"pause"}}};
+      return LazyComp;
+    })(),
+    command: '@spaceui/demo-c-orb-thinking-03',
+  },
+  "demo-c-orb-thinking-04": {
+    name: "demo-c-orb-thinking-04",
+    description: "Latitude rings breathing in and out on two detuned sine waves.",
+    type: "registry:component",
+    dependencies: [],
+    devDependencies: undefined,
+    registryDependencies: ["https://www.spaceui.one/r/components-orb-thinking.json"],
+    files: [
+  {
+    "path": "src/registry/demo/components/orb/thinking/c-orb-thinking-04/index.tsx",
+    "type": "registry:component",
+    "target": "components/orb/thinking.tsx"
+  }
+],
+    keywords: [],
+    component: (() => {
+      const LazyComp = React.lazy(async () => {
+        const mod = await import("@/registry/demo/components/orb/thinking/c-orb-thinking-04/index.tsx");
+        const exportName = Object.keys(mod).find(
+          key => typeof mod[key] === 'function' || typeof mod[key] === 'object'
+        ) || "demo-c-orb-thinking-04";
+        const Comp = mod.default || mod[exportName];
+        if (mod.animations) {
+          (LazyComp as any).animations = mod.animations;
+        }
+        return { default: Comp };
+      });
+      LazyComp.demoProps = {"surface":{"value":"auto","options":{"Auto Theme":"auto","Ink (Dark)":"ink","Paper (Light)":"paper"}},"size":{"value":240,"min":120,"max":420,"step":10},"speed":{"value":1,"min":0.2,"max":2.5,"step":0.1},"scale":{"value":0.72,"min":0.3,"max":0.95,"step":0.02},"playback":{"value":"play","options":{"Play":"play","Pause":"pause"}}};
+      return LazyComp;
+    })(),
+    command: '@spaceui/demo-c-orb-thinking-04',
+  },
+  "demo-c-orb-thinking-05": {
+    name: "demo-c-orb-thinking-05",
+    description: "A drifting node graph with proximity links and travelling signals.",
+    type: "registry:component",
+    dependencies: [],
+    devDependencies: undefined,
+    registryDependencies: ["https://www.spaceui.one/r/components-orb-thinking.json"],
+    files: [
+  {
+    "path": "src/registry/demo/components/orb/thinking/c-orb-thinking-05/index.tsx",
+    "type": "registry:component",
+    "target": "components/orb/thinking.tsx"
+  }
+],
+    keywords: [],
+    component: (() => {
+      const LazyComp = React.lazy(async () => {
+        const mod = await import("@/registry/demo/components/orb/thinking/c-orb-thinking-05/index.tsx");
+        const exportName = Object.keys(mod).find(
+          key => typeof mod[key] === 'function' || typeof mod[key] === 'object'
+        ) || "demo-c-orb-thinking-05";
+        const Comp = mod.default || mod[exportName];
+        if (mod.animations) {
+          (LazyComp as any).animations = mod.animations;
+        }
+        return { default: Comp };
+      });
+      LazyComp.demoProps = {"surface":{"value":"auto","options":{"Auto Theme":"auto","Ink (Dark)":"ink","Paper (Light)":"paper"}},"size":{"value":240,"min":120,"max":420,"step":10},"speed":{"value":1,"min":0.2,"max":2.5,"step":0.1},"scale":{"value":0.72,"min":0.3,"max":0.95,"step":0.02},"playback":{"value":"play","options":{"Play":"play","Pause":"pause"}}};
+      return LazyComp;
+    })(),
+    command: '@spaceui/demo-c-orb-thinking-05',
+  },
+  "demo-c-orb-thinking-06": {
+    name: "demo-c-orb-thinking-06",
+    description: "Three helical strands braiding around a ghosted sphere.",
+    type: "registry:component",
+    dependencies: [],
+    devDependencies: undefined,
+    registryDependencies: ["https://www.spaceui.one/r/components-orb-thinking.json"],
+    files: [
+  {
+    "path": "src/registry/demo/components/orb/thinking/c-orb-thinking-06/index.tsx",
+    "type": "registry:component",
+    "target": "components/orb/thinking.tsx"
+  }
+],
+    keywords: [],
+    component: (() => {
+      const LazyComp = React.lazy(async () => {
+        const mod = await import("@/registry/demo/components/orb/thinking/c-orb-thinking-06/index.tsx");
+        const exportName = Object.keys(mod).find(
+          key => typeof mod[key] === 'function' || typeof mod[key] === 'object'
+        ) || "demo-c-orb-thinking-06";
+        const Comp = mod.default || mod[exportName];
+        if (mod.animations) {
+          (LazyComp as any).animations = mod.animations;
+        }
+        return { default: Comp };
+      });
+      LazyComp.demoProps = {"surface":{"value":"auto","options":{"Auto Theme":"auto","Ink (Dark)":"ink","Paper (Light)":"paper"}},"size":{"value":240,"min":120,"max":420,"step":10},"speed":{"value":1,"min":0.2,"max":2.5,"step":0.1},"scale":{"value":0.72,"min":0.3,"max":0.95,"step":0.02},"playback":{"value":"play","options":{"Play":"play","Pause":"pause"}}};
+      return LazyComp;
+    })(),
+    command: '@spaceui/demo-c-orb-thinking-06',
+  },
+  "demo-c-orb-thinking-07": {
+    name: "demo-c-orb-thinking-07",
+    description: "A rippling multi-lane ribbon wrapped over a sphere.",
+    type: "registry:component",
+    dependencies: [],
+    devDependencies: undefined,
+    registryDependencies: ["https://www.spaceui.one/r/components-orb-thinking.json"],
+    files: [
+  {
+    "path": "src/registry/demo/components/orb/thinking/c-orb-thinking-07/index.tsx",
+    "type": "registry:component",
+    "target": "components/orb/thinking.tsx"
+  }
+],
+    keywords: [],
+    component: (() => {
+      const LazyComp = React.lazy(async () => {
+        const mod = await import("@/registry/demo/components/orb/thinking/c-orb-thinking-07/index.tsx");
+        const exportName = Object.keys(mod).find(
+          key => typeof mod[key] === 'function' || typeof mod[key] === 'object'
+        ) || "demo-c-orb-thinking-07";
+        const Comp = mod.default || mod[exportName];
+        if (mod.animations) {
+          (LazyComp as any).animations = mod.animations;
+        }
+        return { default: Comp };
+      });
+      LazyComp.demoProps = {"surface":{"value":"auto","options":{"Auto Theme":"auto","Ink (Dark)":"ink","Paper (Light)":"paper"}},"size":{"value":240,"min":120,"max":420,"step":10},"speed":{"value":1,"min":0.2,"max":2.5,"step":0.1},"scale":{"value":0.72,"min":0.3,"max":0.95,"step":0.02},"playback":{"value":"play","options":{"Play":"play","Pause":"pause"}}};
+      return LazyComp;
+    })(),
+    command: '@spaceui/demo-c-orb-thinking-07',
+  },
+  "demo-c-orb-thinking-08": {
+    name: "demo-c-orb-thinking-08",
+    description: "A face-on ring pulsing with a slow radial ripple.",
+    type: "registry:component",
+    dependencies: [],
+    devDependencies: undefined,
+    registryDependencies: ["https://www.spaceui.one/r/components-orb-thinking.json"],
+    files: [
+  {
+    "path": "src/registry/demo/components/orb/thinking/c-orb-thinking-08/index.tsx",
+    "type": "registry:component",
+    "target": "components/orb/thinking.tsx"
+  }
+],
+    keywords: [],
+    component: (() => {
+      const LazyComp = React.lazy(async () => {
+        const mod = await import("@/registry/demo/components/orb/thinking/c-orb-thinking-08/index.tsx");
+        const exportName = Object.keys(mod).find(
+          key => typeof mod[key] === 'function' || typeof mod[key] === 'object'
+        ) || "demo-c-orb-thinking-08";
+        const Comp = mod.default || mod[exportName];
+        if (mod.animations) {
+          (LazyComp as any).animations = mod.animations;
+        }
+        return { default: Comp };
+      });
+      LazyComp.demoProps = {"surface":{"value":"auto","options":{"Auto Theme":"auto","Ink (Dark)":"ink","Paper (Light)":"paper"}},"size":{"value":240,"min":120,"max":420,"step":10},"speed":{"value":1,"min":0.2,"max":2.5,"step":0.1},"scale":{"value":0.72,"min":0.3,"max":0.95,"step":0.02},"playback":{"value":"play","options":{"Play":"play","Pause":"pause"}}};
+      return LazyComp;
+    })(),
+    command: '@spaceui/demo-c-orb-thinking-08',
+  },
+  "demo-c-orb-thinking-09": {
+    name: "demo-c-orb-thinking-09",
+    description: "A dotted outline morphing between circle, triangle and square.",
+    type: "registry:component",
+    dependencies: [],
+    devDependencies: undefined,
+    registryDependencies: ["https://www.spaceui.one/r/components-orb-thinking.json"],
+    files: [
+  {
+    "path": "src/registry/demo/components/orb/thinking/c-orb-thinking-09/index.tsx",
+    "type": "registry:component",
+    "target": "components/orb/thinking.tsx"
+  }
+],
+    keywords: [],
+    component: (() => {
+      const LazyComp = React.lazy(async () => {
+        const mod = await import("@/registry/demo/components/orb/thinking/c-orb-thinking-09/index.tsx");
+        const exportName = Object.keys(mod).find(
+          key => typeof mod[key] === 'function' || typeof mod[key] === 'object'
+        ) || "demo-c-orb-thinking-09";
+        const Comp = mod.default || mod[exportName];
+        if (mod.animations) {
+          (LazyComp as any).animations = mod.animations;
+        }
+        return { default: Comp };
+      });
+      LazyComp.demoProps = {"surface":{"value":"auto","options":{"Auto Theme":"auto","Ink (Dark)":"ink","Paper (Light)":"paper"}},"size":{"value":240,"min":120,"max":420,"step":10},"speed":{"value":1,"min":0.2,"max":2.5,"step":0.1},"scale":{"value":0.72,"min":0.3,"max":0.95,"step":0.02},"playback":{"value":"play","options":{"Play":"play","Pause":"pause"}}};
+      return LazyComp;
+    })(),
+    command: '@spaceui/demo-c-orb-thinking-09',
   },
   "demo-c-cloud-01": {
     name: "demo-c-cloud-01",

@@ -1,0 +1,53 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-c-orb-loading-02",
+  "title": "Building Loader Status Card Demo",
+  "description": "Assistant loading status card with live shimmer bar and state details.",
+  "dependencies": [],
+  "registryDependencies": [
+    "https://www.spaceui.one/r/components-orb-loading.json"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/components/orb/loading/c-orb-loading-02/index.tsx",
+      "content": "'use client'\n\nimport * as React from 'react'\nimport {\n  BuildingLoader,\n  type BuildingLoaderProps,\n} from '@/components/orb/loading/index'\n\nexport interface BuildingLoaderDemoProps extends BuildingLoaderProps {\n  state?: string\n  detail?: string\n  showShimmer?: boolean\n  color?: string\n}\n\nexport default function Demo({\n  state = 'Building',\n  detail = 'Composing response from context',\n  showShimmer = true,\n  color = 'text-foreground',\n}: BuildingLoaderDemoProps) {\n  return (\n    <div className=\"flex size-full min-h-[260px] flex-col items-center justify-center p-6\">\n      <BuildingLoader\n        state={state}\n        detail={detail}\n        showShimmer={showShimmer}\n        className={color}\n      />\n    </div>\n  )\n}\n",
+      "type": "registry:component",
+      "target": "components/orb/loading.tsx"
+    }
+  ],
+  "meta": {
+    "demoProps": {
+      "state": {
+        "value": "Building",
+        "options": {
+          "Building": "Building",
+          "Thinking": "Thinking",
+          "Generating": "Generating",
+          "Searching": "Searching",
+          "Connecting": "Connecting"
+        }
+      },
+      "detail": {
+        "value": "Composing response from context"
+      },
+      "color": {
+        "value": "text-foreground",
+        "options": {
+          "Default": "text-foreground",
+          "Emerald": "text-emerald-500",
+          "Indigo": "text-indigo-500",
+          "Amber": "text-amber-500",
+          "Rose": "text-rose-500"
+        }
+      },
+      "showShimmer": {
+        "value": true
+      }
+    }
+  },
+  "categories": [
+    "orb",
+    "loading"
+  ],
+  "type": "registry:component"
+}

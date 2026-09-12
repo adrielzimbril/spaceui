@@ -1,0 +1,73 @@
+---
+title: Generating Orb
+description: Dynamic rotating chromatic loader orb with dual rendering engines (CSS Keyframes and HTML5 Canvas 2D) and wave-staggered typography.
+preview: demo-c-orb-generating-01
+---
+
+## Installation
+
+<ComponentInstallation name="components-orb-generating" />
+
+## Usage
+
+```tsx
+import { GeneratingOrb } from '@/components/orb/generating'
+
+export default function App() {
+  return <GeneratingOrb renderer="css" size={240} speed={8} depth={40} text="Generating…" />
+}
+```
+
+You can also use the specialized subcomponents directly:
+
+```tsx
+import { GeneratingOrbCss, GeneratingOrbCanvas } from '@/components/orb/generating'
+
+// Pure CSS keyframes & multi-layer inset box-shadow
+export function CssLoader() {
+  return <GeneratingOrbCss size={200} speed={6} />
+}
+
+// Pure HTML5 Canvas 2D engine with real-time rotational shading
+export function CanvasLoader() {
+  return <GeneratingOrbCanvas size={200} speed={6} />
+}
+```
+
+## Rendering Engines
+
+| Engine                               | Characteristics                                                                                                                  | Best Used For                                                                                              |
+| ------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
+| **CSS Keyframes** (`renderer="css"`) | Uses native hardware-accelerated CSS keyframes and 6-layer `inset box-shadow` interpolation. Zero JS runtime animation overhead. | Static and reactive web layouts, hero sections, and standalone UI indicators.                              |
+| **Canvas 2D** (`renderer="canvas"`)  | Uses HTML5 Canvas with real-time cosine color blending, rotational geometry, and inverted circular shadow projection.            | Dynamic canvases, games, video export pipelines, or environments where CSS pseudo-elements are restricted. |
+
+## Files
+
+| File                                   | Role                                                            |
+| -------------------------------------- | --------------------------------------------------------------- |
+| `generating/index.tsx`                 | Main unified component switching between CSS and Canvas engines |
+| `generating/generating-orb-css.tsx`    | GPU-accelerated CSS keyframes implementation                    |
+| `generating/generating-orb-canvas.tsx` | HTML5 Canvas 2D implementation                                  |
+| `generating/types.ts`                  | TypeScript definitions and props interface                      |
+
+## API Reference
+
+### GeneratingOrb
+
+| Prop             | Type                | Default         | Description                                         |
+| ---------------- | ------------------- | --------------- | --------------------------------------------------- |
+| `renderer`       | `'css' \| 'canvas'` | `'css'`         | Engine used to render the rotating orb              |
+| `size`           | `number`            | `240`           | Orb diameter in pixels                              |
+| `depth`          | `number`            | `40`            | Inset glow depth and blur radius                    |
+| `speed`          | `number`            | `8`             | Duration in seconds for a full 360° chromatic cycle |
+| `text`           | `string`            | `'Generating…'` | Text displayed in the center                        |
+| `showText`       | `boolean`           | `true`          | Whether to display the center text                  |
+| `pop`            | `number`            | `0.9`           | Duration of each letter's scale/opacity wave        |
+| `stagger`        | `number`            | `0.08`          | Delay in seconds between successive letters         |
+| `highlightColor` | `string`            | `'#ffffff'`     | Primary rim and highlight glow color                |
+| `haloColor`      | `string`            | `'#ad5fff'`     | Halo color at initial orientation (0° / 360°)       |
+| `coreColor`      | `string`            | `'#471eec'`     | Core color at initial orientation (0° / 360°)       |
+| `haloAltColor`   | `string`            | `'#d60a47'`     | Alternate halo color at half-cycle (180°)           |
+| `coreAltColor`   | `string`            | `'#311e80'`     | Alternate core color at half-cycle (180°)           |
+| `textColor`      | `string`            | `'#ffffff'`     | Center animated text color                          |
+| `className`      | `string`            | —               | Additional CSS classes                              |

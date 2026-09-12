@@ -1,0 +1,64 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-c-orb-loading-01",
+  "title": "Loading Orb All States Line Demo",
+  "description": "All matrix states displayed simultaneously on a single line with motion presets.",
+  "dependencies": [],
+  "registryDependencies": [
+    "https://www.spaceui.one/r/components-orb-loading.json"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/components/orb/loading/c-orb-loading-01/index.tsx",
+      "content": "'use client'\n\nimport * as React from 'react'\nimport {\n  LoadingOrb,\n  LOADING_PATTERNS,\n  type LoaderMotion,\n  type LoadingOrbProps,\n} from '@/components/orb/loading/index'\n\nexport interface LoadingOrbDemoProps extends LoadingOrbProps {\n  motionPreset?: LoaderMotion\n  size?: number\n  speed?: number\n  radius?: number\n  gap?: number\n  showGhost?: boolean\n}\n\nexport default function Demo({\n  motionPreset = 'morph',\n  size = 48,\n  speed = 750,\n  radius = 3,\n  gap = 3,\n  showGhost = false,\n}: LoadingOrbDemoProps) {\n  return (\n    <div className=\"flex size-full min-h-[260px] flex-col items-center justify-center p-6\">\n      <div className=\"flex w-full items-center justify-center gap-5 sm:gap-7 flex-wrap\">\n        {LOADING_PATTERNS.map((p) => (\n          <div key={p.name} className=\"flex flex-col items-center gap-2.5\">\n            <div className=\"flex items-center justify-center rounded-xl border border-border/40 bg-card/40 p-3.5 shadow-sm backdrop-blur-sm transition-colors hover:border-border\">\n              <LoadingOrb\n                pattern={p.name}\n                motionPreset={motionPreset}\n                size={size}\n                speed={speed}\n                radius={radius}\n                gap={gap}\n                showGhost={showGhost}\n              />\n            </div>\n            <span className=\"font-mono text-[11px] font-medium capitalize tracking-wide text-muted-foreground\">\n              {p.name}\n            </span>\n          </div>\n        ))}\n        <div className=\"flex flex-col items-center gap-2.5\">\n          <div className=\"flex items-center justify-center rounded-xl border border-primary/30 bg-primary/5 p-3.5 shadow-sm backdrop-blur-sm\">\n            <LoadingOrb\n              motionPreset={motionPreset}\n              size={size}\n              speed={speed}\n              radius={radius}\n              gap={gap}\n              showGhost={showGhost}\n            />\n          </div>\n          <span className=\"font-mono text-[11px] font-medium tracking-wide text-primary\">\n            Live\n          </span>\n        </div>\n      </div>\n    </div>\n  )\n}\n",
+      "type": "registry:component",
+      "target": "components/orb/loading.tsx"
+    }
+  ],
+  "meta": {
+    "demoProps": {
+      "motionPreset": {
+        "value": "morph",
+        "options": {
+          "Morph": "morph",
+          "Fade": "fade",
+          "Scale": "scale",
+          "Blur": "blur",
+          "Flip": "flip"
+        }
+      },
+      "size": {
+        "value": 48,
+        "min": 32,
+        "max": 96,
+        "step": 4
+      },
+      "speed": {
+        "value": 750,
+        "min": 300,
+        "max": 2000,
+        "step": 50
+      },
+      "radius": {
+        "value": 3,
+        "min": 0,
+        "max": 10,
+        "step": 1
+      },
+      "gap": {
+        "value": 3,
+        "min": 1,
+        "max": 8,
+        "step": 1
+      },
+      "showGhost": {
+        "value": false
+      }
+    }
+  },
+  "categories": [
+    "orb",
+    "loading"
+  ],
+  "type": "registry:component"
+}

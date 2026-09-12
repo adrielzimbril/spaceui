@@ -1,37 +1,39 @@
-'use client'
+'use client';
 
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { index } from '@/__registry__/index'
-import { notFound } from 'next/navigation'
-import { Suspense } from 'react'
+import { index } from '@/__registry__/index';
+import { notFound } from 'next/navigation';
+import { Suspense } from 'react';
 
 function unwrapValues(value: any): any {
-  if (!value || typeof value !== 'object' || Array.isArray(value)) return value
-  if ('value' in value) return value.value
-  return Object.fromEntries(Object.entries(value).map(([key, nested]) => [key, unwrapValues(nested)]))
+  if (!value || typeof value !== 'object' || Array.isArray(value)) return value;
+  if ('value' in value) return value.value;
+  return Object.fromEntries(
+    Object.entries(value).map(([key, nested]) => [key, unwrapValues(nested)]),
+  );
 }
 
 export default async function RegistryViewPage({
   params,
   searchParams,
 }: {
-  params: Promise<{ name: string }>
-  searchParams: Promise<{ props?: string }>
+  params: Promise<{ name: string }>;
+  searchParams: Promise<{ props?: string }>;
 }) {
-  const { name } = await params
-  const item = index[name]
-  if (!item || !item.component) notFound()
+  const { name } = await params;
+  const item = index[name];
+  if (!item || !item.component) notFound();
 
-  const Component = item.component
-  const defaults = unwrapValues(Component.demoProps ?? item.meta?.demoProps ?? {})
-  let sharedProps = {}
+  const Component = item.component;
+  const defaults = unwrapValues(Component.demoProps ?? item.meta?.demoProps ?? {});
+  let sharedProps = {};
   try {
-    const encodedProps = (await searchParams).props
-    if (encodedProps) sharedProps = JSON.parse(encodedProps)
+    const encodedProps = (await searchParams).props;
+    if (encodedProps) sharedProps = JSON.parse(encodedProps);
   } catch {
     // Invalid shared props fall back to the original demo defaults.
   }
-  const props = { ...defaults, ...sharedProps }
+  const props = { ...defaults, ...sharedProps };
 
   const isUncontained =
     item.type === 'registry:block' ||
@@ -39,7 +41,7 @@ export default async function RegistryViewPage({
     name.startsWith('block-') ||
     name.startsWith('template-') ||
     name.includes('shader') ||
-    name.includes('gradient')
+    name.includes('gradient');
 
   return (
     <main
@@ -51,5 +53,5 @@ export default async function RegistryViewPage({
         <Component {...props} />
       </Suspense>
     </main>
-  )
+  );
 }

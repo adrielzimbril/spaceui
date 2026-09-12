@@ -36,8 +36,20 @@ export const registryComponents: Record<string, RegistryComponent> = {
     () => import("@/registry/components/orb/bloop/index.tsx"),
     {},
   ),
+  "components-orb-generating": lazyRegistryComponent(
+    () => import("@/registry/components/orb/generating/index.tsx"),
+    {},
+  ),
+  "components-orb-loading": lazyRegistryComponent(
+    () => import("@/registry/components/orb/loading/index.tsx"),
+    {},
+  ),
   "components-orb-smooth": lazyRegistryComponent(
     () => import("@/registry/components/orb/smooth/index.tsx"),
+    {},
+  ),
+  "components-orb-thinking": lazyRegistryComponent(
+    () => import("@/registry/components/orb/thinking/index.tsx"),
     {},
   ),
 };

@@ -1,0 +1,78 @@
+---
+title: Loading Orb
+description: Matrix pixel grid loader with Tailwind color support, spring motion presets, and assistant status cards.
+preview: demo-c-orb-loading-01
+---
+
+## Installation
+
+<ComponentInstallation name="components-orb-loading" />
+
+## Usage
+
+```tsx
+import { LoadingOrb, BuildingLoader } from '@/components/orb/loading'
+
+export default function App() {
+  return (
+    <div className="flex flex-col items-center gap-6">
+      {/* Standard loader cycling states with Tailwind color */}
+      <LoadingOrb className="text-primary" size={56} />
+
+      {/* Specific pattern locked */}
+      <LoadingOrb pattern="diamond" className="text-emerald-500" size={48} />
+
+      {/* Companion assistant status card */}
+      <BuildingLoader
+        state="Building"
+        detail="Composing response from context"
+        className="text-foreground"
+      />
+    </div>
+  )
+}
+```
+
+## All States Overview
+
+All 6 geometric matrix patterns (`diamond`, `corners`, `bands`, `scatter`, `diagonal`, `glyph`) displayed simultaneously on a single line alongside the dynamic live cycle:
+
+<ComponentPreview name="demo-c-orb-loading-01" />
+
+## Tailwind Colors
+
+Style with standard Tailwind text or background utilities (`text-primary`, `text-emerald-500`, `text-indigo-500`, etc.). Tonal depth is automatically calculated across opacities:
+
+<ComponentPreview name="demo-c-orb-loading-03" />
+
+## Assistant Status Banner
+
+Agentic workflow status card with real-time shimmer progress:
+
+<ComponentPreview name="demo-c-orb-loading-02" />
+
+## API Reference
+
+### LoadingOrb
+
+| Prop | Type | Default | Description |
+| --- | --- | --- | --- |
+| `size` | `number` | `56` | Pixel size of the 4x4 matrix container |
+| `speed` | `number` | `750` | Interval in milliseconds between pattern steps |
+| `pattern` | `'diamond' \| 'corners' \| 'bands' \| 'scatter' \| 'diagonal' \| 'glyph' \| number` | `undefined` | Specific pattern to display, or omitted to auto-cycle |
+| `motionPreset` | `'morph' \| 'fade' \| 'scale' \| 'blur' \| 'flip'` | `'morph'` | Spring animation curve applied on cell transitions |
+| `className` | `string` | — | Tailwind classes (e.g. `text-foreground`, `text-primary`, `text-emerald-500`) |
+| `dotClassName` | `string` | `'bg-current'` | Custom Tailwind utility applied to every cell |
+| `radius` | `number` | `3` | Border radius in pixels for each matrix dot |
+| `gap` | `number` | `3` | Spacing between dots in pixels |
+| `showGhost` | `boolean` | `false` | When true, renders inactive dots with subtle ghost opacity |
+
+### BuildingLoader
+
+| Prop | Type | Default | Description |
+| --- | --- | --- | --- |
+| `state` | `string` | `'Building'` | Primary state label (e.g. "Building", "Thinking", "Searching") |
+| `detail` | `string` | `'Composing response from context'` | Secondary explanatory caption |
+| `showShimmer` | `boolean` | `true` | Whether to display the bottom shimmer progress bar |
+| `size` | `number` | `38` | Size of the embedded `LoadingOrb` |
+| `className` | `string` | — | Classes for the container card |

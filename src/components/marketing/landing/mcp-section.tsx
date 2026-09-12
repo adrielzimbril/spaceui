@@ -55,8 +55,7 @@ export function McpSection() {
   const [activeTab, setActiveTab] = React.useState('claude')
   const [copied, setCopied] = React.useState(false)
 
-  const currentConfig =
-    MCP_CONFIGS.find((c) => c.id === activeTab) ?? MCP_CONFIGS[0]
+  const currentConfig = MCP_CONFIGS.find((c) => c.id === activeTab) ?? MCP_CONFIGS[0]
 
   const handleCopy = async () => {
     await navigator.clipboard.writeText(currentConfig.code)
@@ -66,11 +65,7 @@ export function McpSection() {
   }
 
   return (
-    <section
-      id="mcp"
-      data-page-section
-      className="mx-auto max-w-[1280px] scroll-mt-16 px-5 sm:px-6 py-20"
-    >
+    <section id="mcp" data-page-section className="mx-auto max-w-[1280px] scroll-mt-16 px-5 sm:px-6 py-20">
       <div className="rounded-3xl bg-secondary/40 p-8 sm:p-12 md:p-16">
         <div className="grid gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
           {/* Left Column: Value Prop */}
@@ -87,8 +82,8 @@ export function McpSection() {
             </h2>
 
             <p className="mt-4 max-w-[48ch] text-base leading-relaxed text-muted-foreground">
-              Coding with AI shouldn&apos;t mean dealing with invented props and broken styles.
-              Space UI publishes strict component schemas, AST registries, and an official MCP server.
+              Coding with AI shouldn&apos;t mean dealing with invented props and broken styles. Space UI publishes
+              strict component schemas, AST registries, and an official MCP server.
             </p>
 
             <ul className="mt-8 space-y-3">
@@ -124,13 +119,7 @@ export function McpSection() {
                 <FrameTitle>Configuration</FrameTitle>
                 <FrameDescription>// {currentConfig.filename}</FrameDescription>
               </div>
-              <Button
-                variant="secondary"
-                size="xs"
-                onClick={handleCopy}
-                data-space-hover
-                className="cursor-pointer"
-              >
+              <Button variant="secondary" size="xs" onClick={handleCopy} data-space-hover className="cursor-pointer">
                 {copied ? (
                   <>
                     <Check className="size-3 text-emerald-500" />

@@ -2,44 +2,18 @@
 
 import * as React from 'react'
 import Link from 'next/link'
-import {
-  ArrowUpRight,
-  RotateCcw,
-  Shuffle,
-  Hand,
-  Play,
-} from 'lucide-react'
+import { ArrowUpRight, RotateCcw, Shuffle, Hand, Play } from 'lucide-react'
 import { AnimatePresence, motion } from 'motion/react'
 import { Squishmoji } from '@usespaceui/squishmoji/react'
-import type {
-  SquishBackgroundStyle,
-  SquishExpression,
-} from '@usespaceui/squishmoji'
+import type { SquishBackgroundStyle, SquishExpression } from '@usespaceui/squishmoji'
 import { Avatar } from '@usespaceui/avatars/react'
 import type { AvatarVariant } from '@usespaceui/avatars'
 import Image from 'next/image'
-import {
-  Frame,
-  FrameHeader,
-  FrameTitle,
-} from '@/registry/primitives/frame'
+import { Frame, FrameHeader, FrameTitle } from '@/registry/primitives/frame'
 import { Card, CardPanel } from '@/registry/primitives/card'
 import { Button } from '@/registry/primitives/button'
-import {
-  bloom,
-  chime,
-  droplet,
-  sparkle,
-  tap,
-  tick,
-} from '@usespaceui/sounds'
-import {
-  bloomSound,
-  dropletSound,
-  sparkleSound,
-  tapSound,
-  tickSound,
-} from '@/components/providers/sound-provider'
+import { bloom, chime, droplet, sparkle, tap, tick } from '@usespaceui/sounds'
+import { bloomSound, dropletSound, sparkleSound, tapSound, tickSound } from '@/components/providers/sound-provider'
 import { AssetFlag } from '@/tools/flags/asset-flag'
 import { MorphIcon } from '@/registry/components/spaceui/morph-icon'
 import { resolveEmojiUrl, EmojiFormat, EmojiSource, EmojiType } from '@usespaceui/emoji'
@@ -56,14 +30,7 @@ const SHOWCASE_PLUSH_PRESETS = PLUSH_PRESETS.filter((p) =>
 )
 
 // ── Avatars & Squishmoji Showcase Data ──
-const ALL_AVATAR_VARIANTS: AvatarVariant[] = [
-  'pebble',
-  'lumina',
-  'splash',
-  'critter',
-  'invader',
-  'animals',
-]
+const ALL_AVATAR_VARIANTS: AvatarVariant[] = ['pebble', 'lumina', 'splash', 'critter', 'invader', 'animals']
 
 const ALL_SQUISH_EXPRS: Array<{
   expr: SquishExpression
@@ -118,7 +85,6 @@ const SPLIT_SAMPLES: Array<{
   title: sample.name,
   defaultCols: DEFAULT_COLS_SEQUENCE[idx % DEFAULT_COLS_SEQUENCE.length],
 }))
-
 
 // ── Curated Flag Sets for Auto-Cycle ──
 const FLAG_SETS = [
@@ -213,10 +179,7 @@ function SquircleSwatchItem({ className, ...props }: React.ComponentProps<'div'>
     <div
       onClick={() => tickSound()}
       onMouseEnter={() => tickSound()}
-      className={cn(
-        'size-11 cursor-pointer select-none transition-all duration-300',
-        className,
-      )}
+      className={cn('size-11 cursor-pointer select-none transition-all duration-300', className)}
       {...props}
     />
   )
@@ -419,12 +382,7 @@ export function PackagesSection() {
       const startTime = Date.now()
 
       try {
-        const art = await loadPlushArtwork(
-          nextPreset.preview,
-          nextPreset.id,
-          nextPreset.label,
-          nextPreset.sideColor,
-        )
+        const art = await loadPlushArtwork(nextPreset.preview, nextPreset.id, nextPreset.label, nextPreset.sideColor)
         if (plushEngineRef.current) {
           plushEngineRef.current.setArtwork(art)
           if (nextPreset.sideColor) {
@@ -485,29 +443,19 @@ export function PackagesSection() {
     plushEngineRef.current?.resetZoom()
   }
 
-
-
   return (
-    <section
-      id="packages"
-      data-page-section
-      className="mx-auto max-w-[1280px] scroll-mt-16 px-5 sm:px-6 py-20"
-    >
+    <section id="packages" data-page-section className="mx-auto max-w-[1280px] scroll-mt-16 px-5 sm:px-6 py-20">
       {/* ── Centered Section Header with Link to /tools ── */}
       <div className="flex flex-col items-center justify-center text-center">
         <div className="max-w-2xl">
-          <Link
-            href="/tools"
-            data-space-hover
-            className="group inline-block focus-visible:outline-none cursor-pointer"
-          >
+          <Link href="/tools" data-space-hover className="group inline-block focus-visible:outline-none cursor-pointer">
             <h2 className="text-[34px] font-semibold tracking-tight text-foreground sm:text-[46px] md:text-[54px] transition-colors group-hover:text-foreground/80">
               Creative Tools
             </h2>
           </Link>
           <p className="mt-3 text-base text-muted-foreground">
-            Modular creative tools and lightweight runtime packages published on npm. Install
-            independently into any React project with zero friction.
+            Modular creative tools and lightweight runtime packages published on npm. Install independently into any
+            React project with zero friction.
           </p>
         </div>
       </div>
@@ -548,8 +496,8 @@ export function PackagesSection() {
               </Link>
             </div>
           </FrameHeader>
-          <Card className="flex-1 flex flex-col h-full">
-            <CardPanel className="flex-1 relative flex min-h-[380px] p-0 overflow-hidden items-center justify-center bg-muted/20">
+          <Card className="flex-1 flex flex-col h-full rounded-lg before:rounded-lg overflow-hidden">
+            <CardPanel className="flex-1 relative flex min-h-[380px] p-0 overflow-hidden items-center justify-center bg-muted/20 rounded-lg">
               {/* WebGL Canvas with smooth blur morph transition while loading */}
               <div
                 ref={plushCanvasRef}
@@ -600,8 +548,8 @@ export function PackagesSection() {
               <ArrowUpRight className="size-4" />
             </Link>
           </FrameHeader>
-          <Card className="flex-1 flex flex-col h-full">
-            <CardPanel className="flex-1 flex flex-col justify-center gap-3 p-4 min-h-48">
+          <Card className="flex-1 flex flex-col h-full rounded-lg before:rounded-lg overflow-hidden">
+            <CardPanel className="flex-1 flex flex-col justify-center gap-3 p-4 min-h-48 rounded-lg">
               <div className="grid grid-cols-6 gap-2 w-full items-center justify-items-center">
                 {characters.map((item, idx) => (
                   <div
@@ -614,13 +562,7 @@ export function PackagesSection() {
                   >
                     {item.type === 'avatar' ? (
                       <div className="relative size-11 overflow-hidden rounded-full">
-                        <Avatar
-                          name={`${charSeed}-${item.variant}`}
-                          variant={item.variant}
-                          size={44}
-                          circle
-                          animate
-                        />
+                        <Avatar name={`${charSeed}-${item.variant}`} variant={item.variant} size={44} circle animate />
                       </div>
                     ) : (
                       <div className="relative size-11 flex items-center justify-center">
@@ -637,9 +579,7 @@ export function PackagesSection() {
                         />
                       </div>
                     )}
-                    <span className="text-[10px] font-medium text-muted-foreground capitalize">
-                      {item.label}
-                    </span>
+                    <span className="text-[10px] font-medium text-muted-foreground capitalize">{item.label}</span>
                   </div>
                 ))}
               </div>
@@ -659,8 +599,8 @@ export function PackagesSection() {
               <ArrowUpRight className="size-4" />
             </Link>
           </FrameHeader>
-          <Card className="flex-1 flex flex-col h-full">
-            <CardPanel className="flex-1 flex flex-col justify-center gap-3 p-3.5 min-h-44">
+          <Card className="flex-1 flex flex-col h-full rounded-lg before:rounded-lg overflow-hidden">
+            <CardPanel className="flex-1 flex flex-col justify-center gap-3 p-3.5 min-h-44 rounded-lg">
               <div className="grid grid-cols-3 gap-2.5 items-center justify-items-center">
                 {FLAG_SETS[flagSetIndex].map((f, slotIdx) => (
                   <div
@@ -673,18 +613,10 @@ export function PackagesSection() {
                   >
                     <div className="rounded-full overflow-hidden p-0.5">
                       <MorphIcon activeKey={f.code} variant="blur-scale" duration={0.32}>
-                        <AssetFlag
-                          code={f.code}
-                          shape="circle"
-                          size={28}
-                          alt={f.name}
-                          className="ring-0"
-                        />
+                        <AssetFlag code={f.code} shape="circle" size={28} alt={f.name} className="ring-0" />
                       </MorphIcon>
                     </div>
-                    <span className="text-[10px] font-medium text-muted-foreground uppercase">
-                      {f.code}
-                    </span>
+                    <span className="text-[10px] font-medium text-muted-foreground uppercase">{f.code}</span>
                   </div>
                 ))}
               </div>
@@ -704,8 +636,8 @@ export function PackagesSection() {
               <ArrowUpRight className="size-4" />
             </Link>
           </FrameHeader>
-          <Card className="flex-1 flex flex-col h-full">
-            <CardPanel className="flex-1 flex items-center justify-center gap-3 p-3 min-h-44">
+          <Card className="flex-1 flex flex-col h-full rounded-lg before:rounded-lg overflow-hidden">
+            <CardPanel className="flex-1 flex items-center justify-center gap-3 p-3 min-h-44 rounded-lg">
               <SquircleSwatchItem className="squircle-2xl hover:squircle-xl bg-primary" />
               <SquircleSwatchItem className="squircle-lg hover:squircle-md bg-muted" />
               <SquircleSwatchItem className="squircle-full hover:squircle-2xl bg-foreground" />
@@ -737,8 +669,8 @@ export function PackagesSection() {
               </Link>
             </div>
           </FrameHeader>
-          <Card className="flex-1 flex flex-col h-full">
-            <CardPanel className="flex-1 flex flex-col items-center justify-center gap-3 p-4 min-h-48">
+          <Card className="flex-1 flex flex-col h-full rounded-lg before:rounded-lg overflow-hidden">
+            <CardPanel className="flex-1 flex flex-col items-center justify-center gap-3 p-4 min-h-48 rounded-lg">
               {/* Visual slice preview with real demo image and blur transition */}
               <div
                 onClick={cycleSplitSample}
@@ -901,9 +833,7 @@ export function PackagesSection() {
                     className="h-auto! justify-start gap-1.5 rounded-lg bg-muted/60 p-2 text-left transition-colors hover:bg-muted active:scale-95 cursor-pointer"
                   >
                     <Play className="size-2.5 fill-foreground text-foreground shrink-0" />
-                    <span className="text-xs font-semibold text-foreground truncate">
-                      {s.label}
-                    </span>
+                    <span className="text-xs font-semibold text-foreground truncate">{s.label}</span>
                   </Button>
                 ))}
               </div>
