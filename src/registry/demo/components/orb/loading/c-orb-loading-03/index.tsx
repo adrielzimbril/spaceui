@@ -15,15 +15,13 @@ const TAILWIND_COLORS = [
 
 export default function Demo() {
   return (
-    <div className="flex size-full min-h-[260px] flex-wrap items-center justify-center gap-8 p-6">
+    <div className="flex size-full min-h-[260px] flex-wrap items-center justify-center gap-7 p-6">
       {TAILWIND_COLORS.map(({ label, className }) => (
         <div key={label} className="flex flex-col items-center gap-2.5">
-          <div className="flex items-center justify-center rounded-xl border border-border/40 bg-card/40 p-3.5 shadow-sm backdrop-blur-sm">
+          <div className="flex items-center justify-center">
             <LoadingOrb className={className} size={48} speed={750} />
           </div>
-          <span className="font-mono text-[11px] font-medium tracking-tight text-muted-foreground">
-            {label}
-          </span>
+          <span className="text-xs font-medium tracking-tight text-muted-foreground">{label}</span>
         </div>
       ))}
     </div>

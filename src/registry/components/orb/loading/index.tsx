@@ -270,19 +270,20 @@ export function BuildingLoader({
   detail = 'Composing response from context',
   showShimmer = true,
   size = 38,
+  pattern,
   ...loaderProps
 }: BuildingLoaderProps) {
   return (
     <div
       className={cn(
-        'flex w-full max-w-sm items-center gap-4 rounded-xl border border-border/60 bg-card/80 p-4 shadow-sm backdrop-blur-md',
+        'flex w-full max-w-sm items-center gap-4 rounded-xl bg-card/60 p-4 backdrop-blur-md',
         className
       )}
     >
-      <LoadingOrb size={size} {...loaderProps} />
+      <LoadingOrb size={size} pattern={pattern} {...loaderProps} />
       <div className="min-w-0 flex-1">
         {state && (
-          <p className="font-mono text-xs font-medium tracking-wide text-foreground">
+          <p className="text-xs font-medium tracking-wide text-foreground">
             {state}...
           </p>
         )}

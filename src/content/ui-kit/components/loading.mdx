@@ -33,11 +33,17 @@ export default function App() {
 }
 ```
 
-## All States Overview
+## Live Interactive Loader
 
-All 6 geometric matrix patterns (`diamond`, `corners`, `bands`, `scatter`, `diagonal`, `glyph`) displayed simultaneously on a single line alongside the dynamic live cycle:
+Live cycling loader with configurable animation speed, motion transitions, dot radius, matrix gap, ghost dots, and Tailwind color utilities:
 
 <ComponentPreview name="demo-c-orb-loading-01" />
+
+## All States Overview
+
+All 6 geometric matrix patterns (`diamond`, `corners`, `bands`, `scatter`, `diagonal`, `glyph`) displayed simultaneously on a single line:
+
+<ComponentPreview name="demo-c-orb-loading-02" />
 
 ## Tailwind Colors
 
@@ -47,9 +53,9 @@ Style with standard Tailwind text or background utilities (`text-primary`, `text
 
 ## Assistant Status Banner
 
-Agentic workflow status card with real-time shimmer progress:
+Agentic workflow status card with reactive states and real-time shimmer progress:
 
-<ComponentPreview name="demo-c-orb-loading-02" />
+<ComponentPreview name="demo-c-orb-loading-04" />
 
 ## API Reference
 
@@ -75,4 +81,5 @@ Agentic workflow status card with real-time shimmer progress:
 | `detail` | `string` | `'Composing response from context'` | Secondary explanatory caption |
 | `showShimmer` | `boolean` | `true` | Whether to display the bottom shimmer progress bar |
 | `size` | `number` | `38` | Size of the embedded `LoadingOrb` |
+| `pattern` | `'diamond' \| 'corners' \| 'bands' \| 'scatter' \| 'diagonal' \| 'glyph' \| number` | `undefined` | Specific pattern for the embedded orb |
 | `className` | `string` | — | Classes for the container card |

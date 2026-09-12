@@ -34,14 +34,18 @@ function lazyRegistryComponent(
 export const registryComponents: Record<string, RegistryComponent> = {
   "demo-c-orb-loading-01": lazyRegistryComponent(
     () => import("@/registry/demo/components/orb/loading/c-orb-loading-01/index.tsx"),
-    {"motionPreset":{"value":"morph","options":{"Morph":"morph","Fade":"fade","Scale":"scale","Blur":"blur","Flip":"flip"}},"size":{"value":48,"min":32,"max":96,"step":4},"speed":{"value":750,"min":300,"max":2000,"step":50},"radius":{"value":3,"min":0,"max":10,"step":1},"gap":{"value":3,"min":1,"max":8,"step":1},"showGhost":{"value":false}},
+    {"speed":{"value":750,"min":250,"max":2000,"step":50},"motionPreset":{"value":"morph","options":{"Morph":"morph","Fade":"fade","Scale":"scale","Blur":"blur","Flip":"flip"}},"radius":{"value":3,"min":0,"max":12,"step":1},"gap":{"value":3,"min":1,"max":8,"step":1},"showGhost":{"value":false},"size":{"value":64,"min":32,"max":140,"step":4},"className":{"value":"text-foreground","options":{"Foreground":"text-foreground","Primary":"text-primary","Emerald":"text-emerald-500","Indigo":"text-indigo-500","Amber":"text-amber-500","Rose":"text-rose-500","Cyan":"text-cyan-500"}}},
   ),
   "demo-c-orb-loading-02": lazyRegistryComponent(
     () => import("@/registry/demo/components/orb/loading/c-orb-loading-02/index.tsx"),
-    {"state":{"value":"Building","options":{"Building":"Building","Thinking":"Thinking","Generating":"Generating","Searching":"Searching","Connecting":"Connecting"}},"detail":{"value":"Composing response from context"},"color":{"value":"text-foreground","options":{"Default":"text-foreground","Emerald":"text-emerald-500","Indigo":"text-indigo-500","Amber":"text-amber-500","Rose":"text-rose-500"}},"showShimmer":{"value":true}},
+    {},
   ),
   "demo-c-orb-loading-03": lazyRegistryComponent(
     () => import("@/registry/demo/components/orb/loading/c-orb-loading-03/index.tsx"),
     {},
+  ),
+  "demo-c-orb-loading-04": lazyRegistryComponent(
+    () => import("@/registry/demo/components/orb/loading/c-orb-loading-04/index.tsx"),
+    {"state":{"value":"Building","options":{"Building":"Building","Thinking":"Thinking","Searching":"Searching","Generating":"Generating","Connecting":"Connecting"}},"color":{"value":"text-foreground","options":{"Default":"text-foreground","Primary":"text-primary","Emerald":"text-emerald-500","Indigo":"text-indigo-500","Amber":"text-amber-500","Rose":"text-rose-500"}},"showShimmer":{"value":true}},
   ),
 };

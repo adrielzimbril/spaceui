@@ -450,7 +450,7 @@
       "name": "components-orb-loading",
       "type": "registry:component",
       "title": "Loading Orb",
-      "description": "Procedural matrix pixel grid loader with OKLCH palettes, morphing transitions, and companion status banner.",
+      "description": "Procedural matrix pixel grid loader with Tailwind styling, motion presets, and companion status banner.",
       "dependencies": [
         "motion"
       ],
@@ -464,31 +464,6 @@
           "path": "src/registry/components/orb/loading/index.tsx",
           "type": "registry:component",
           "target": "components/orb/loading/index.tsx"
-        },
-        {
-          "path": "src/registry/components/orb/loading/loading-orb.tsx",
-          "type": "registry:component",
-          "target": "components/orb/loading/loading-orb.tsx"
-        },
-        {
-          "path": "src/registry/components/orb/loading/building-loader.tsx",
-          "type": "registry:component",
-          "target": "components/orb/loading/building-loader.tsx"
-        },
-        {
-          "path": "src/registry/components/orb/loading/patterns.ts",
-          "type": "registry:lib",
-          "target": "components/orb/loading/patterns.ts"
-        },
-        {
-          "path": "src/registry/components/orb/loading/palettes.ts",
-          "type": "registry:lib",
-          "target": "components/orb/loading/palettes.ts"
-        },
-        {
-          "path": "src/registry/components/orb/loading/types.ts",
-          "type": "registry:lib",
-          "target": "components/orb/loading/types.ts"
         }
       ],
       "createdAt": "2026-09-12",
@@ -2415,8 +2390,8 @@
     {
       "name": "demo-c-orb-loading-01",
       "type": "registry:component",
-      "title": "Loading Orb Matrix Demo",
-      "description": "Procedural matrix pixel grid loader with OKLCH palettes and morphing transitions.",
+      "title": "Loading Orb Live Interactive Demo",
+      "description": "Live matrix loader with customizable speed, motion presets, radius, gap, ghost dots, and Tailwind colors.",
       "registryDependencies": [
         "https://www.spaceui.one/r/components-orb-loading.json"
       ],
@@ -2426,14 +2401,11 @@
       ],
       "meta": {
         "demoProps": {
-          "palette": {
-            "value": "graphite",
-            "options": {
-              "Graphite": "graphite",
-              "Acid": "acid",
-              "Ember": "ember",
-              "Tide": "tide"
-            }
+          "speed": {
+            "value": 750,
+            "min": 250,
+            "max": 2000,
+            "step": 50
           },
           "motionPreset": {
             "value": "morph",
@@ -2445,22 +2417,10 @@
               "Flip": "flip"
             }
           },
-          "size": {
-            "value": 64,
-            "min": 32,
-            "max": 140,
-            "step": 4
-          },
-          "speed": {
-            "value": 800,
-            "min": 300,
-            "max": 2000,
-            "step": 50
-          },
           "radius": {
             "value": 3,
             "min": 0,
-            "max": 10,
+            "max": 12,
             "step": 1
           },
           "gap": {
@@ -2468,6 +2428,27 @@
             "min": 1,
             "max": 8,
             "step": 1
+          },
+          "showGhost": {
+            "value": false
+          },
+          "size": {
+            "value": 64,
+            "min": 32,
+            "max": 140,
+            "step": 4
+          },
+          "className": {
+            "value": "text-foreground",
+            "options": {
+              "Foreground": "text-foreground",
+              "Primary": "text-primary",
+              "Emerald": "text-emerald-500",
+              "Indigo": "text-indigo-500",
+              "Amber": "text-amber-500",
+              "Rose": "text-rose-500",
+              "Cyan": "text-cyan-500"
+            }
           }
         }
       },
@@ -2485,8 +2466,8 @@
     {
       "name": "demo-c-orb-loading-02",
       "type": "registry:component",
-      "title": "Building Loader Status Card Demo",
-      "description": "Assistant loading status card with live shimmer bar and state details.",
+      "title": "Loading Orb All States Line Demo",
+      "description": "All 6 matrix geometric states and live loop displayed simultaneously on a single row.",
       "registryDependencies": [
         "https://www.spaceui.one/r/components-orb-loading.json"
       ],
@@ -2494,35 +2475,6 @@
         "orb",
         "loading"
       ],
-      "meta": {
-        "demoProps": {
-          "state": {
-            "value": "Building",
-            "options": {
-              "Building": "Building",
-              "Thinking": "Thinking",
-              "Generating": "Generating",
-              "Searching": "Searching",
-              "Connecting": "Connecting"
-            }
-          },
-          "detail": {
-            "value": "Composing response from context"
-          },
-          "palette": {
-            "value": "graphite",
-            "options": {
-              "Graphite": "graphite",
-              "Acid": "acid",
-              "Ember": "ember",
-              "Tide": "tide"
-            }
-          },
-          "showShimmer": {
-            "value": true
-          }
-        }
-      },
       "files": [
         {
           "path": "src/registry/demo/components/orb/loading/c-orb-loading-02/index.tsx",
@@ -2537,8 +2489,8 @@
     {
       "name": "demo-c-orb-loading-03",
       "type": "registry:component",
-      "title": "Loading Orb Palettes Showcase",
-      "description": "Comparison of curated OKLCH color palettes (Graphite, Acid, Ember, Tide).",
+      "title": "Loading Orb Tailwind Colors Showcase",
+      "description": "Tailwind color class styling with automatic tonal opacity gradations.",
       "registryDependencies": [
         "https://www.spaceui.one/r/components-orb-loading.json"
       ],
@@ -2549,6 +2501,57 @@
       "files": [
         {
           "path": "src/registry/demo/components/orb/loading/c-orb-loading-03/index.tsx",
+          "type": "registry:component",
+          "target": "components/orb/loading.tsx"
+        }
+      ],
+      "createdAt": "2026-09-12",
+      "updatedAt": "2026-09-12",
+      "dependencies": []
+    },
+    {
+      "name": "demo-c-orb-loading-04",
+      "type": "registry:component",
+      "title": "Building Loader Status Card Demo",
+      "description": "Assistant loading card with state switching, contextual details, and shimmer progress.",
+      "registryDependencies": [
+        "https://www.spaceui.one/r/components-orb-loading.json"
+      ],
+      "categories": [
+        "orb",
+        "loading"
+      ],
+      "meta": {
+        "demoProps": {
+          "state": {
+            "value": "Building",
+            "options": {
+              "Building": "Building",
+              "Thinking": "Thinking",
+              "Searching": "Searching",
+              "Generating": "Generating",
+              "Connecting": "Connecting"
+            }
+          },
+          "color": {
+            "value": "text-foreground",
+            "options": {
+              "Default": "text-foreground",
+              "Primary": "text-primary",
+              "Emerald": "text-emerald-500",
+              "Indigo": "text-indigo-500",
+              "Amber": "text-amber-500",
+              "Rose": "text-rose-500"
+            }
+          },
+          "showShimmer": {
+            "value": true
+          }
+        }
+      },
+      "files": [
+        {
+          "path": "src/registry/demo/components/orb/loading/c-orb-loading-04/index.tsx",
           "type": "registry:component",
           "target": "components/orb/loading.tsx"
         }

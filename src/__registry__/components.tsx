@@ -75,6 +75,7 @@ export const componentGroups: Record<string, string> = {
   "demo-c-orb-loading-01": "demo-components-orb-loading",
   "demo-c-orb-loading-02": "demo-components-orb-loading",
   "demo-c-orb-loading-03": "demo-components-orb-loading",
+  "demo-c-orb-loading-04": "demo-components-orb-loading",
   "demo-c-orb-smooth-01": "demo-components-orb-smooth",
   "demo-c-orb-thinking-01": "demo-components-orb-thinking",
   "demo-c-orb-thinking-02": "demo-components-orb-thinking",

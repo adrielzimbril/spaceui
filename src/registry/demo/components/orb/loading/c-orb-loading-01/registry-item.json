@@ -2,8 +2,8 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "demo-c-orb-loading-01",
   "type": "registry:component",
-  "title": "Loading Orb All States Line Demo",
-  "description": "All matrix states displayed simultaneously on a single line with motion presets.",
+  "title": "Loading Orb Live Interactive Demo",
+  "description": "Live matrix loader with customizable speed, motion presets, radius, gap, ghost dots, and Tailwind colors.",
   "registryDependencies": [
     "https://www.spaceui.one/r/components-orb-loading.json"
   ],
@@ -13,6 +13,12 @@
   ],
   "meta": {
     "demoProps": {
+      "speed": {
+        "value": 750,
+        "min": 250,
+        "max": 2000,
+        "step": 50
+      },
       "motionPreset": {
         "value": "morph",
         "options": {
@@ -23,22 +29,10 @@
           "Flip": "flip"
         }
       },
-      "size": {
-        "value": 48,
-        "min": 32,
-        "max": 96,
-        "step": 4
-      },
-      "speed": {
-        "value": 750,
-        "min": 300,
-        "max": 2000,
-        "step": 50
-      },
       "radius": {
         "value": 3,
         "min": 0,
-        "max": 10,
+        "max": 12,
         "step": 1
       },
       "gap": {
@@ -49,6 +43,24 @@
       },
       "showGhost": {
         "value": false
+      },
+      "size": {
+        "value": 64,
+        "min": 32,
+        "max": 140,
+        "step": 4
+      },
+      "className": {
+        "value": "text-foreground",
+        "options": {
+          "Foreground": "text-foreground",
+          "Primary": "text-primary",
+          "Emerald": "text-emerald-500",
+          "Indigo": "text-indigo-500",
+          "Amber": "text-amber-500",
+          "Rose": "text-rose-500",
+          "Cyan": "text-cyan-500"
+        }
       }
     }
   },

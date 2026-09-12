@@ -3,7 +3,7 @@
 import * as React from 'react'
 import Link from 'next/link'
 import { ArrowUpRight, Check, Copy, RotateCcw, Terminal } from 'lucide-react'
-import { motion } from 'motion/react'
+import { AnimatePresence, motion } from 'motion/react'
 import { MorphIcon } from '@/registry/components/spaceui/morph-icon'
 import { OrbBloop } from '@/registry/components/orb/bloop'
 import { BloopState } from '@/registry/components/orb/bloop/types'
@@ -49,41 +49,124 @@ const SMOOTH_LUMINA_SEEDS = ['luna', 'atlas', 'aurora', 'orion', 'nova', 'sol', 
 
 const ZERO_LOCKIN_ITEMS = [
   {
+    id: 'bloop',
     name: 'orb-bloop.tsx',
     pkg: '@spaceui/bloop',
+    title: 'OrbBloop',
     desc: 'Fluid GLSL shader primitive',
+    codeLines: [
+      { type: 'comment', text: '// src/components/spaceui/orb-bloop.tsx' },
+      { type: 'import', kw1: 'import', what: '{ BloopState }', kw2: 'from', from: "'./types'" },
+      { type: 'export', kw: 'export function', name: 'OrbBloop', args: "({ palette = 'nebula' })" },
+      { type: 'return', kw: 'return', tag: '<canvas', attr: 'className', val: '"size-full"', close: '/>' },
+    ],
   },
   {
+    id: 'accordion',
     name: 'bouncy-accordion.tsx',
     pkg: '@spaceui/bouncy-accordion',
+    title: 'Accordion',
     desc: 'Headless spring accordion',
+    codeLines: [
+      { type: 'comment', text: '// src/components/spaceui/bouncy-accordion.tsx' },
+      { type: 'import', kw1: 'import', what: '{ Accordion }', kw2: 'from', from: "'@base-ui/react'" },
+      { type: 'export', kw: 'export function', name: 'BouncyAccordion', args: '({ items, ...props })' },
+      { type: 'return', kw: 'return', tag: '<Accordion.Root', attr: 'className', val: '"w-full"', close: '/>' },
+    ],
   },
   {
+    id: 'timeline',
+    name: 'timeline.tsx',
+    pkg: '@spaceui/timeline',
+    title: 'Timeline',
+    desc: 'Deterministic sequence primitive',
+    codeLines: [
+      { type: 'comment', text: '// src/components/spaceui/timeline.tsx' },
+      { type: 'import', kw1: 'import', what: '{ useRender }', kw2: 'from', from: "'@base-ui/react'" },
+      { type: 'export', kw: 'export function', name: 'Timeline', args: "({ orientation = 'vertical' })" },
+      { type: 'return', kw: 'return', tag: '<div', attr: 'data-slot', val: '"timeline"', close: '/>' },
+    ],
+  },
+  {
+    id: 'preloader',
     name: 'words-preloader.tsx',
     pkg: '@spaceui/words-preloader',
+    title: 'Preloader',
     desc: 'Dynamic typography reveal',
-  },
-  {
-    name: 'squircle.tsx',
-    pkg: '@spaceui/squircle',
-    desc: 'Continuous curvature component',
+    codeLines: [
+      { type: 'comment', text: '// src/components/spaceui/words-preloader.tsx' },
+      { type: 'import', kw1: 'import', what: '{ AnimatePresence, motion }', kw2: 'from', from: "'motion/react'" },
+      { type: 'export', kw: 'export function', name: 'WordsPreloader', args: '({ words, duration = 1800 })' },
+      { type: 'return', kw: 'return', tag: '<motion.div', attr: 'animate', val: '{{ opacity: 1 }}', close: '/>' },
+    ],
   },
 ] as const
 
 type PackageManagerType = 'pnpm' | 'npm' | 'bun'
 
+function CodeSnippet({ lines }: { lines: (typeof ZERO_LOCKIN_ITEMS)[number]['codeLines'] }) {
+  return (
+    <div className="font-mono text-[11px] leading-[1.55] select-text space-y-0.5">
+      {lines.map((line, i) => {
+        if (line.type === 'comment') {
+          return (
+            <div key={i} className="text-muted-foreground/60 italic truncate">
+              {line.text}
+            </div>
+          )
+        }
+        if (line.type === 'import') {
+          return (
+            <div key={i} className="truncate">
+              <span className="text-purple-400 font-medium">{line.kw1}</span>{' '}
+              <span className="text-foreground">{line.what}</span>{' '}
+              <span className="text-purple-400 font-medium">{line.kw2}</span>{' '}
+              <span className="text-emerald-500/90 dark:text-emerald-400">{line.from}</span>
+            </div>
+          )
+        }
+        if (line.type === 'export') {
+          return (
+            <div key={i} className="truncate">
+              <span className="text-purple-400 font-medium">{line.kw}</span>{' '}
+              <span className="text-sky-500 dark:text-sky-400 font-semibold">{line.name}</span>
+              <span className="text-muted-foreground">{line.args} &#123;</span>
+            </div>
+          )
+        }
+        if (line.type === 'return') {
+          return (
+            <div key={i} className="pl-3 truncate text-muted-foreground/90">
+              <span className="text-purple-400 font-medium">{line.kw}</span>{' '}
+              <span className="text-sky-500 dark:text-sky-400">{line.tag}</span>{' '}
+              <span className="text-amber-500/90 dark:text-amber-300">{line.attr}</span>=
+              <span className="text-emerald-500/90 dark:text-emerald-400">{line.val}</span>{' '}
+              <span className="text-sky-500 dark:text-sky-400">{line.close}</span>
+              <div className="text-muted-foreground -ml-3">&#125;</div>
+            </div>
+          )
+        }
+        return null
+      })}
+    </div>
+  )
+}
+
 function ZeroLockinPreview() {
   const [selectedPm, setSelectedPm] = React.useState<PackageManagerType>('pnpm')
   const [itemIndex, setItemIndex] = React.useState(0)
   const [copied, setCopied] = React.useState(false)
+  const [isHovered, setIsHovered] = React.useState(false)
 
-  // Auto-cycle through showcased files every BENTO_CYCLE_INTERVAL
+  // Auto-cycle through showcased files unless hovered
   React.useEffect(() => {
+    if (isHovered) return
+
     const timer = setInterval(() => {
       setItemIndex((prev) => (prev + 1) % ZERO_LOCKIN_ITEMS.length)
-    }, BENTO_CYCLE_INTERVAL)
+    }, 4000)
     return () => clearInterval(timer)
-  }, [])
+  }, [isHovered])
 
   const current = ZERO_LOCKIN_ITEMS[itemIndex]
 
@@ -109,9 +192,13 @@ function ZeroLockinPreview() {
   }
 
   return (
-    <div className="flex flex-col gap-3.5 w-full select-none">
-      {/* CLI Installation Box */}
-      <div className="flex flex-col gap-2 rounded-xl bg-muted/40 p-3">
+    <div
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+      className="flex flex-col gap-2.5 w-full select-none"
+    >
+      {/* ── 1. CLI Installation Box with Package Manager Tabs ── */}
+      <div className="flex flex-col gap-2 rounded-xl bg-muted/40 p-2.5 border border-border/40">
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-1">
             {(['pnpm', 'npm', 'bun'] as const).map((pm) => (
@@ -124,9 +211,9 @@ function ZeroLockinPreview() {
                   setSelectedPm(pm)
                 }}
                 className={cn(
-                  'cursor-pointer',
+                  'cursor-pointer h-6 px-2 text-[11px] font-mono transition-all',
                   selectedPm === pm
-                    ? 'bg-foreground text-background font-semibold'
+                    ? 'bg-foreground text-background font-semibold shadow-xs'
                     : 'text-muted-foreground hover:text-foreground',
                 )}
               >
@@ -135,43 +222,106 @@ function ZeroLockinPreview() {
             ))}
           </div>
 
-          <Button
-            variant="ghost"
-            size="icon-xs"
-            onClick={handleCopy}
-            title="Copy command"
-            className="cursor-pointer text-muted-foreground hover:text-foreground"
+          <div className="flex items-center gap-1.5">
+            <Badge variant="outline" size="sm" className="font-mono text-[10px] text-muted-foreground">
+              shadcn CLI
+            </Badge>
+            <Button
+              variant="ghost"
+              size="icon-xs"
+              onClick={handleCopy}
+              title="Copy command"
+              className="cursor-pointer text-muted-foreground hover:text-foreground size-6"
+            >
+              <MorphIcon activeKey={copied ? 'copied' : 'copy'} variant="blur-scale" duration={0.2}>
+                {copied ? <Check className="size-3.5 text-emerald-500" /> : <Copy className="size-3.5" />}
+              </MorphIcon>
+            </Button>
+          </div>
+        </div>
+
+        <div className="flex items-center gap-2 rounded-lg bg-background px-3 py-1.5 border border-border/40 font-mono text-xs">
+          <Terminal className="size-3.5 text-emerald-500 shrink-0" />
+          <code className="text-foreground truncate flex-1">{fullCommand}</code>
+        </div>
+      </div>
+
+      {/* ── 2. Component Selector Chips ── */}
+      <div className="flex items-center justify-between gap-1 overflow-x-auto [&::-webkit-scrollbar]:hidden">
+        {ZERO_LOCKIN_ITEMS.map((item, idx) => (
+          <button
+            key={item.id}
+            onClick={() => {
+              tickSound()
+              setItemIndex(idx)
+            }}
+            className={cn(
+              'px-2 py-0.5 rounded-md text-[11px] font-medium transition-all cursor-pointer truncate',
+              itemIndex === idx
+                ? 'bg-primary/15 text-foreground font-semibold border border-primary/25'
+                : 'text-muted-foreground hover:text-foreground hover:bg-muted/50 border border-transparent',
+            )}
           >
-            <MorphIcon activeKey={copied ? 'copied' : 'copy'} variant="blur-scale" duration={0.2}>
-              {copied ? <Check className="size-3.5 text-emerald-500" /> : <Copy className="size-3.5" />}
-            </MorphIcon>
-          </Button>
-        </div>
-
-        <div className="flex items-center gap-2 rounded-lg bg-background px-3 py-2 border border-border/40">
-          <Terminal className="size-3.5 text-muted-foreground shrink-0" />
-          <code className="text-xs text-foreground font-mono truncate">{fullCommand}</code>
-        </div>
+            {item.title}
+          </button>
+        ))}
       </div>
 
-      {/* Target File in Repository */}
-      <div className="flex items-center justify-between rounded-xl bg-secondary/50 p-3">
-        <div className="flex flex-col gap-0.5 min-w-0">
-          <span className="text-xs font-semibold text-foreground truncate">src/components/spaceui/{current.name}</span>
-          <span className="text-[11px] text-muted-foreground">{current.desc}</span>
-        </div>
-        <span className="rounded-md bg-emerald-500/10 px-2 py-0.5 text-[10px] font-medium text-emerald-500 shrink-0">
-          Yours to edit
+      {/* ── 3. Injected Local File Inspector (Frame + Collapsible) ── */}
+      <Frame className="overflow-hidden border border-border/40">
+        <Collapsible defaultOpen className="group/collapsible">
+          <CollapsibleTrigger
+            onClick={() => tickSound()}
+            className="flex w-full cursor-pointer transition-colors hover:bg-muted/30"
+          >
+            <FrameHeader className="flex grow flex-row items-center justify-between gap-2 p-2">
+              <div className="flex items-center gap-2 min-w-0">
+                <span className="flex items-center justify-center size-5 rounded bg-blue-500/10 text-blue-500 font-mono text-[10px] font-bold shrink-0">
+                  TS
+                </span>
+                <span className="text-xs font-semibold text-foreground font-mono truncate">
+                  src/components/spaceui/{current.name}
+                </span>
+              </div>
+              <div className="flex items-center gap-1.5 shrink-0">
+                <Badge variant="success" size="sm">
+                  Yours to edit
+                </Badge>
+                <IconChevronRight className="text-muted-foreground size-4 transition-transform duration-200 group-data-open/collapsible:rotate-90" />
+              </div>
+            </FrameHeader>
+          </CollapsibleTrigger>
+          <CollapsibleContent>
+            <FramePanel className="p-2.5 bg-background/80 border-t border-border/40">
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={current.id}
+                  initial={{ opacity: 0, y: 2 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -2 }}
+                  transition={{ duration: 0.18, ease: [0.16, 1, 0.3, 1] }}
+                >
+                  <CodeSnippet lines={current.codeLines} />
+                </motion.div>
+              </AnimatePresence>
+            </FramePanel>
+          </CollapsibleContent>
+        </Collapsible>
+      </Frame>
+
+      {/* ── 4. Architecture Tenets ── */}
+      <div className="flex items-center justify-between px-1 text-[11px] text-muted-foreground pt-1 border-t border-border/30">
+        <span className="flex items-center gap-1 font-medium">
+          <IconCheck className="size-3 text-emerald-500" /> 0 runtime lock-in
         </span>
-      </div>
-
-      {/* Tenets */}
-      <div className="flex items-center justify-between px-1 text-[11px] text-muted-foreground">
-        <span>0 locked runtime</span>
         <span>•</span>
-        <span>Base UI core</span>
+        <span className="flex items-center gap-1 font-medium">
+          <IconCheck className="size-3 text-emerald-500" /> Base UI core
+        </span>
         <span>•</span>
-        <span>Tailwind CSS tokens</span>
+        <span className="flex items-center gap-1 font-medium">
+          <IconCheck className="size-3 text-emerald-500" /> Tailwind v4 tokens
+        </span>
       </div>
     </div>
   )
@@ -224,20 +374,34 @@ type StepState = {
 const PIPELINE_CYCLE: Array<{
   activeStep: number
   steps: StepState[]
+  lines: [boolean, boolean, boolean]
   durationMs: number
 }> = [
-  // State 0: Canonical Demo 06 state (Step 1,2 completed, Step 3 active, Step 4 PENDING)
+  // ── 0: Step 3 running (Canonical Demo 06 view) ──
   {
     activeStep: 3,
-    durationMs: 3200,
+    durationMs: 3000,
     steps: [
       { status: 'completed', duration: '12s' },
       { status: 'completed', duration: '1m 45s' },
       { status: 'active', duration: 'Running' },
       { status: 'pending', duration: 'Pending' },
     ],
+    lines: [true, true, false],
   },
-  // State 1: Step 3 completes, Step 4 becomes active
+  // ── 1: Step 3 finishes, Line 2 fills DOWN towards Step 4 (Step 4 stays strictly PENDING) ──
+  {
+    activeStep: 3,
+    durationMs: 800,
+    steps: [
+      { status: 'completed', duration: '12s' },
+      { status: 'completed', duration: '1m 45s' },
+      { status: 'completed', duration: '38s' },
+      { status: 'pending', duration: 'Pending' },
+    ],
+    lines: [true, true, true],
+  },
+  // ── 2: Line 2 reached Step 4! Step 4 now activates & runs ──
   {
     activeStep: 4,
     durationMs: 2800,
@@ -247,30 +411,45 @@ const PIPELINE_CYCLE: Array<{
       { status: 'completed', duration: '38s' },
       { status: 'active', duration: 'Running' },
     ],
+    lines: [true, true, true],
   },
-  // State 2: Production Build completes! All 4 green
+  // ── 3: Step 4 completes! All 4 green and verified ──
   {
     activeStep: 4,
-    durationMs: 3400,
+    durationMs: 3500,
     steps: [
       { status: 'completed', duration: '12s' },
       { status: 'completed', duration: '1m 45s' },
       { status: 'completed', duration: '38s' },
       { status: 'completed', duration: '2m 45s' },
     ],
+    lines: [true, true, true],
   },
-  // State 3: New build queued! Step 1 runs, Steps 2, 3, 4 are PENDING
+  // ── 4: Reset & new pipeline run! Step 1 runs ──
   {
     activeStep: 1,
-    durationMs: 2600,
+    durationMs: 2400,
     steps: [
       { status: 'active', duration: 'Running' },
       { status: 'pending', duration: 'Pending' },
       { status: 'pending', duration: 'Pending' },
       { status: 'pending', duration: 'Pending' },
     ],
+    lines: [false, false, false],
   },
-  // State 4: Step 1 completes, Step 2 runs, Steps 3, 4 are PENDING
+  // ── 5: Step 1 finishes, Line 0 fills DOWN towards Step 2 (Step 2 stays strictly PENDING) ──
+  {
+    activeStep: 1,
+    durationMs: 800,
+    steps: [
+      { status: 'completed', duration: '12s' },
+      { status: 'pending', duration: 'Pending' },
+      { status: 'pending', duration: 'Pending' },
+      { status: 'pending', duration: 'Pending' },
+    ],
+    lines: [true, false, false],
+  },
+  // ── 6: Line 0 reached Step 2! Step 2 now activates & runs ──
   {
     activeStep: 2,
     durationMs: 2600,
@@ -280,13 +459,34 @@ const PIPELINE_CYCLE: Array<{
       { status: 'pending', duration: 'Pending' },
       { status: 'pending', duration: 'Pending' },
     ],
+    lines: [true, false, false],
+  },
+  // ── 7: Step 2 finishes, Line 1 fills DOWN towards Step 3 (Step 3 stays strictly PENDING) ──
+  {
+    activeStep: 2,
+    durationMs: 800,
+    steps: [
+      { status: 'completed', duration: '12s' },
+      { status: 'completed', duration: '1m 45s' },
+      { status: 'pending', duration: 'Pending' },
+      { status: 'pending', duration: 'Pending' },
+    ],
+    lines: [true, true, false],
   },
 ]
 
 function StatusIcon({ status }: { status: string }) {
-  if (status === 'completed') return <IconCheck className="size-3.5" />
-  if (status === 'active') return <Spinner className="size-3.5" />
-  return <IconCircle className="size-3.5" />
+  return (
+    <MorphIcon activeKey={status} variant="blur-scale" duration={0.25}>
+      {status === 'completed' ? (
+        <IconCheck className="size-3.5" />
+      ) : status === 'active' ? (
+        <Spinner className="size-3.5" />
+      ) : (
+        <IconCircle className="size-3.5" />
+      )}
+    </MorphIcon>
+  )
 }
 
 function StatusBadge({ status, duration }: { status: string; duration: string }) {
@@ -324,18 +524,44 @@ function AnimatedTimelinePreview() {
       <Timeline value={current.activeStep}>
         {pipelineSteps.map((step, idx) => {
           const stepState = current.steps[idx]
+          const isLineFilled = current.lines[idx] ?? false
+
           return (
             <TimelineItem key={step.id} step={step.id} className="ms-10 pb-5">
               <TimelineHeader>
-                <TimelineSeparator className="group-data-[orientation=vertical]/timeline:-left-7 group-data-[orientation=vertical]/timeline:h-[calc(100%-1.5rem-0.25rem)] group-data-[orientation=vertical]/timeline:translate-y-7" />
+                <TimelineSeparator className="group-data-[orientation=vertical]/timeline:-left-7 group-data-[orientation=vertical]/timeline:h-[calc(100%-1.5rem-0.25rem)] group-data-[orientation=vertical]/timeline:translate-y-7 [&&]:!bg-primary/15 overflow-hidden rounded-full">
+                  <motion.div
+                    className="w-full bg-primary rounded-full origin-top"
+                    initial={false}
+                    animate={{
+                      scaleY: isLineFilled ? 1 : 0,
+                      opacity: isLineFilled ? 1 : 0,
+                    }}
+                    transition={{
+                      scaleY: {
+                        duration: isLineFilled ? 0.7 : 0.15,
+                        ease: [0.16, 1, 0.3, 1],
+                      },
+                      opacity: {
+                        duration: isLineFilled ? 0.05 : 0.15,
+                      },
+                    }}
+                    style={{
+                      height: '100%',
+                      transformOrigin: 'top',
+                    }}
+                  />
+                </TimelineSeparator>
                 <div className="flex items-center gap-2">
                   <TimelineTitle className="text-sm font-semibold">{step.title}</TimelineTitle>
                   <StatusBadge status={stepState.status} duration={stepState.duration} />
                 </div>
                 <TimelineIndicator
                   className={cn(
-                    'bg-muted text-muted-foreground group-data-completed/timeline-item:bg-primary group-data-completed/timeline-item:text-primary-foreground flex size-6 items-center justify-center border-none group-data-[orientation=vertical]/timeline:-left-7',
-                    stepState.status === 'active' && 'ring-primary/20 ring-2',
+                    'flex size-6 items-center justify-center border-none group-data-[orientation=vertical]/timeline:-left-7 transition-all duration-300',
+                    stepState.status === 'completed' && '[&&]:bg-primary [&&]:text-primary-foreground [&&]:ring-0',
+                    stepState.status === 'active' && '[&&]:bg-primary [&&]:text-primary-foreground ring-primary/20 ring-2',
+                    stepState.status === 'pending' && '[&&]:bg-muted [&&]:text-muted-foreground [&&]:ring-0',
                   )}
                 >
                   <StatusIcon status={stepState.status} />
@@ -598,7 +824,7 @@ export function RegistryGrid() {
             </Link>
           </FrameHeader>
           <Card className="flex-1 flex flex-col h-full rounded-lg before:rounded-lg overflow-hidden">
-            <CardPanel className="flex-1 flex min-h-72 flex-col justify-center p-4 rounded-lg">
+            <CardPanel className="flex-1 flex min-h-72 flex-col justify-center p-2.5 sm:p-3 rounded-lg">
               <ZeroLockinPreview />
             </CardPanel>
           </Card>

@@ -1,0 +1,52 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-c-orb-loading-04",
+  "type": "registry:component",
+  "title": "Building Loader Status Card Demo",
+  "description": "Assistant loading card with state switching, contextual details, and shimmer progress.",
+  "registryDependencies": [
+    "https://www.spaceui.one/r/components-orb-loading.json"
+  ],
+  "categories": [
+    "orb",
+    "loading"
+  ],
+  "meta": {
+    "demoProps": {
+      "state": {
+        "value": "Building",
+        "options": {
+          "Building": "Building",
+          "Thinking": "Thinking",
+          "Searching": "Searching",
+          "Generating": "Generating",
+          "Connecting": "Connecting"
+        }
+      },
+      "color": {
+        "value": "text-foreground",
+        "options": {
+          "Default": "text-foreground",
+          "Primary": "text-primary",
+          "Emerald": "text-emerald-500",
+          "Indigo": "text-indigo-500",
+          "Amber": "text-amber-500",
+          "Rose": "text-rose-500"
+        }
+      },
+      "showShimmer": {
+        "value": true
+      }
+    }
+  },
+  "files": [
+    {
+      "path": "src/registry/demo/components/orb/loading/c-orb-loading-04/index.tsx",
+      "type": "registry:component",
+      "target": "components/orb/loading.tsx"
+    }
+  ],
+  "createdAt": "2026-09-12",
+  "updatedAt": "2026-09-12",
+  "dependencies": []
+}

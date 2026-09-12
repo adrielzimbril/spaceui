@@ -2488,7 +2488,7 @@ export const index: Record<string, any> = {
   },
   "demo-c-orb-loading-01": {
     name: "demo-c-orb-loading-01",
-    description: "All matrix states displayed simultaneously on a single line with motion presets.",
+    description: "Live matrix loader with customizable speed, motion presets, radius, gap, ghost dots, and Tailwind colors.",
     type: "registry:component",
     dependencies: [],
     devDependencies: undefined,
@@ -2513,14 +2513,14 @@ export const index: Record<string, any> = {
         }
         return { default: Comp };
       });
-      LazyComp.demoProps = {"motionPreset":{"value":"morph","options":{"Morph":"morph","Fade":"fade","Scale":"scale","Blur":"blur","Flip":"flip"}},"size":{"value":48,"min":32,"max":96,"step":4},"speed":{"value":750,"min":300,"max":2000,"step":50},"radius":{"value":3,"min":0,"max":10,"step":1},"gap":{"value":3,"min":1,"max":8,"step":1},"showGhost":{"value":false}};
+      LazyComp.demoProps = {"speed":{"value":750,"min":250,"max":2000,"step":50},"motionPreset":{"value":"morph","options":{"Morph":"morph","Fade":"fade","Scale":"scale","Blur":"blur","Flip":"flip"}},"radius":{"value":3,"min":0,"max":12,"step":1},"gap":{"value":3,"min":1,"max":8,"step":1},"showGhost":{"value":false},"size":{"value":64,"min":32,"max":140,"step":4},"className":{"value":"text-foreground","options":{"Foreground":"text-foreground","Primary":"text-primary","Emerald":"text-emerald-500","Indigo":"text-indigo-500","Amber":"text-amber-500","Rose":"text-rose-500","Cyan":"text-cyan-500"}}};
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-orb-loading-01',
   },
   "demo-c-orb-loading-02": {
     name: "demo-c-orb-loading-02",
-    description: "Assistant loading status card with live shimmer bar and state details.",
+    description: "All 6 matrix geometric states and live loop displayed simultaneously on a single row.",
     type: "registry:component",
     dependencies: [],
     devDependencies: undefined,
@@ -2545,7 +2545,7 @@ export const index: Record<string, any> = {
         }
         return { default: Comp };
       });
-      LazyComp.demoProps = {"state":{"value":"Building","options":{"Building":"Building","Thinking":"Thinking","Generating":"Generating","Searching":"Searching","Connecting":"Connecting"}},"detail":{"value":"Composing response from context"},"color":{"value":"text-foreground","options":{"Default":"text-foreground","Emerald":"text-emerald-500","Indigo":"text-indigo-500","Amber":"text-amber-500","Rose":"text-rose-500"}},"showShimmer":{"value":true}};
+      LazyComp.demoProps = {};
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-orb-loading-02',
@@ -2581,6 +2581,38 @@ export const index: Record<string, any> = {
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-orb-loading-03',
+  },
+  "demo-c-orb-loading-04": {
+    name: "demo-c-orb-loading-04",
+    description: "Assistant loading card with state switching, contextual details, and shimmer progress.",
+    type: "registry:component",
+    dependencies: [],
+    devDependencies: undefined,
+    registryDependencies: ["https://www.spaceui.one/r/components-orb-loading.json"],
+    files: [
+  {
+    "path": "src/registry/demo/components/orb/loading/c-orb-loading-04/index.tsx",
+    "type": "registry:component",
+    "target": "components/orb/loading.tsx"
+  }
+],
+    keywords: [],
+    component: (() => {
+      const LazyComp = React.lazy(async () => {
+        const mod = await import("@/registry/demo/components/orb/loading/c-orb-loading-04/index.tsx");
+        const exportName = Object.keys(mod).find(
+          key => typeof mod[key] === 'function' || typeof mod[key] === 'object'
+        ) || "demo-c-orb-loading-04";
+        const Comp = mod.default || mod[exportName];
+        if (mod.animations) {
+          (LazyComp as any).animations = mod.animations;
+        }
+        return { default: Comp };
+      });
+      LazyComp.demoProps = {"state":{"value":"Building","options":{"Building":"Building","Thinking":"Thinking","Searching":"Searching","Generating":"Generating","Connecting":"Connecting"}},"color":{"value":"text-foreground","options":{"Default":"text-foreground","Primary":"text-primary","Emerald":"text-emerald-500","Indigo":"text-indigo-500","Amber":"text-amber-500","Rose":"text-rose-500"}},"showShimmer":{"value":true}};
+      return LazyComp;
+    })(),
+    command: '@spaceui/demo-c-orb-loading-04',
   },
   "demo-c-orb-smooth-01": {
     name: "demo-c-orb-smooth-01",
