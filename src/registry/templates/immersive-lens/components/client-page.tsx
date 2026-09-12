@@ -104,7 +104,7 @@ export function ClientPage() {
 
   return (
     <div
-      className={`fixed inset-0 z-[60] isolate overflow-hidden bg-white text-black [font-family:var(--font-work-sans)] ${
+      className={`fixed inset-0 z-[60] isolate overflow-hidden bg-white text-black font-sans ${
         cursorActive || lightboxIndex !== null ? 'cursor-none' : ''
       }`}
     >

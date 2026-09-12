@@ -32,8 +32,16 @@ function lazyRegistryComponent(
 }
 
 export const registryComponents: Record<string, RegistryComponent> = {
-  "block-footer-tactile": lazyRegistryComponent(
-    () => import("@/registry/blocks/footer/footer-tactile/index.tsx"),
+  "block-dither-carousel": lazyRegistryComponent(
+    () => import("@/registry/blocks/dither-carousel/index.tsx"),
+    {},
+  ),
+  "block-liquid-gooey-carousel": lazyRegistryComponent(
+    () => import("@/registry/blocks/liquid-gooey-carousel/index.tsx"),
+    {},
+  ),
+  "block-prism-carousel": lazyRegistryComponent(
+    () => import("@/registry/blocks/prism-carousel/index.tsx"),
     {},
   ),
 };

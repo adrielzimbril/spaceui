@@ -3,6 +3,7 @@
 import { Hero } from '@/components/marketing/landing/hero'
 import { RegistryGrid } from '@/components/marketing/landing/registry-grid'
 import { PackagesSection } from '@/components/marketing/landing/packages-section'
+import { ShowcaseSection } from '@/components/marketing/landing/showcase-section'
 import { TestimonialsSection } from '@/components/marketing/landing/testimonials'
 import { SectionScrollspy } from '@/registry/components/spaceui/section-scrollspy'
 
@@ -18,7 +19,10 @@ export default function HomePage() {
       {/* 3. Packages — Independent @usespaceui/* packages & Creative Studio */}
       <PackagesSection />
 
-      {/* 4. Social Proof — Loved by builders who ship */}
+      {/* 4. Showcase — Production Starters & Landings */}
+      <ShowcaseSection />
+
+      {/* 5. Social Proof — Loved by builders who ship */}
       <TestimonialsSection />
 
       {/* Section Scrollspy */}

@@ -57,12 +57,13 @@ export function HorizontalGallery({
               animate={{ opacity: lightboxIndex === index ? 0 : 1, x: 0 }}
               transition={{ duration: 0.8, ease }}
               className="group relative mr-[clamp(24px,4vw,60px)] block shrink-0 cursor-zoom-in bg-transparent"
+              data-horizontal-lens-index={index}
               style={{
                 width: 'clamp(280px, 38vw, 560px)',
                 aspectRatio: '16 / 10',
               }}
             >
-              <span className="sr-only">{`Work ${String(index + 1).padStart(2, '0')}`}</span>
+              <span className="sr-only">{`Lens ${String(index + 1).padStart(2, '0')}`}</span>
               <span className="pointer-events-none absolute inset-0 bg-white/0 transition-colors duration-500 group-hover:bg-white/[.025]" />
             </motion.button>
           )

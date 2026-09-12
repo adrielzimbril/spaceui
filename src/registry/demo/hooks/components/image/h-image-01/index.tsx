@@ -24,7 +24,7 @@ export default function Demo() {
         <div className="overflow-hidden rounded-lg bg-muted">
           <span className="block px-2.5 pt-2 text-[.6875rem] font-semibold text-muted-foreground">Valid</span>
           <Image
-            src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=400&auto=format&fit=crop"
+            src="https://cdn.spaceui.one/atom/samples/image-1.png"
             fallback="https://placehold.co/400x120/1a1a2e/ffffff?text=Fallback+Image"
             alt="Space UI Banner"
             className="mt-1.5 h-24 w-full object-cover"

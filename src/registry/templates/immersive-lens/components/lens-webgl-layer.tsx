@@ -20,7 +20,7 @@ import {
   WebGLRenderer,
 } from 'three'
 
-const workImageData = [
+const lensImageData = [
   { colors: ['#F0E6EB', '#B05A49', '#E9C88F', '#30334A'], size: [2560, 1791] },
   { colors: ['#8FAAD7', '#B0CDF2', '#D4ECFC', '#7089B6'], size: [2560, 1707] },
   { colors: ['#D0AE93', '#FAEDCE', '#D5CDCA', '#8C7874'], size: [2560, 1708] },
@@ -53,7 +53,7 @@ const workImageData = [
   { colors: ['#B4B4B1', '#95918C', '#EDE6D5', '#4F362A'], size: [2560, 1707] },
 ] as const
 
-export const workImageSizes = workImageData.map(({ size }) => size)
+export const galleryImageSizes = lensImageData.map(({ size }) => size)
 
 const vertexShader = /* glsl */ `
 precision highp float;
@@ -290,7 +290,7 @@ void main() {
 
 type UniformValue<T> = { value: T }
 
-type WorkMaterialUniforms = {
+type LensMaterialUniforms = {
   iResolution: UniformValue<Vector2>
   tDiffuse: UniformValue<Texture | null>
   uEffectsAberration: UniformValue<number>
@@ -327,9 +327,9 @@ type WorkMaterialUniforms = {
   uVelocity: UniformValue<number>
 }
 
-type WorkMesh = {
+type LensMesh = {
   mesh: Mesh<PlaneGeometry, ShaderMaterial>
-  material: ShaderMaterial & { uniforms: WorkMaterialUniforms }
+  material: ShaderMaterial & { uniforms: LensMaterialUniforms }
   geometry: PlaneGeometry
   width: number
   height: number
@@ -349,7 +349,7 @@ function calculateUvScale(sourceWidth: number, sourceHeight: number, width: numb
   return new Vector2(Math.min(targetRatio / sourceRatio, 1), Math.min(sourceRatio / targetRatio, 1))
 }
 
-export function WorkWebGLLayer({
+export function LensWebGLLayer({
   active,
   hiddenIndex,
   images,
@@ -397,7 +397,7 @@ export function WorkWebGLLayer({
     const camera = new PerspectiveCamera(45, 1, 1, 10000)
     const loader = new TextureLoader()
     loader.setCrossOrigin('anonymous')
-    const meshes: WorkMesh[] = []
+    const meshes: LensMesh[] = []
     let width = 1
     let height = 1
     let frame = 0
@@ -427,7 +427,7 @@ export function WorkWebGLLayer({
     }
 
     images.forEach((_, index) => {
-      const data = workImageData[index] ?? workImageData[0]
+      const data = lensImageData[index] ?? lensImageData[0]
       const geometry = new PlaneGeometry(1, 1, 24, 48)
       const material = new ShaderMaterial({
         defines: {
@@ -469,13 +469,13 @@ export function WorkWebGLLayer({
           uSize: { value: new Vector2(1, 1) },
           uEffectsStrength: { value: 0.03 },
           uVelocity: { value: 0 },
-        } satisfies WorkMaterialUniforms,
+        } satisfies LensMaterialUniforms,
         vertexShader,
         fragmentShader,
         transparent: true,
         depthTest: false,
         depthWrite: false,
-      }) as ShaderMaterial & { uniforms: WorkMaterialUniforms }
+      }) as ShaderMaterial & { uniforms: LensMaterialUniforms }
       const mesh = new Mesh(geometry, material)
       mesh.frustumCulled = false
       scene.add(mesh)
@@ -557,7 +557,7 @@ export function WorkWebGLLayer({
           item.width = itemWidth
           item.height = itemHeight
           item.material.uniforms.uSize.value.set(itemWidth, itemHeight)
-          const sourceSize = workImageData[index]?.size ?? [itemWidth, itemHeight]
+          const sourceSize = lensImageData[index]?.size ?? [itemWidth, itemHeight]
           item.material.uniforms.uUvScale.value.copy(
             calculateUvScale(sourceSize[0], sourceSize[1], itemWidth, itemHeight),
           )
@@ -605,5 +605,3 @@ export function WorkWebGLLayer({
   )
 }
 
-export const LensWebGLLayer = WorkWebGLLayer
-export const galleryImageSizes = workImageSizes

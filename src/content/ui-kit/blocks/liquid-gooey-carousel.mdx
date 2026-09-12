@@ -1,0 +1,23 @@
+---
+title: Liquid Gooey Carousel
+description: A WebGL2 signed distance field carousel where cards behave like drops of liquid held on glass, fusing together and stretching organic strands.
+preview:
+  name: block-liquid-gooey-carousel
+  contained: false
+---
+
+Each card is a rounded-box distance field. A fullscreen pass evaluates a smooth minimum (smin) across all cards, allowing them to fuse seamlessly like drops of liquid metal.
+
+## Installation
+
+<ComponentInstallation name="block-liquid-gooey-carousel" />
+
+## Usage
+
+```tsx
+import BlockLiquidGooeyCarousel from '@/components/blocks/liquid-gooey-carousel'
+
+export default function Showcase() {
+  return <BlockLiquidGooeyCarousel />
+}
+```

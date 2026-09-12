@@ -147,6 +147,150 @@
       }
     ]
   },
+  "block-dither-carousel": {
+    "name": "block-dither-carousel",
+    "shortName": "block-dither-carousel",
+    "title": "Dither Carousel Block",
+    "description": "3D cylindrical spiral carousel in WebGL2 with curved cards, axial directional blur, and matrix dither pattern.",
+    "type": "registry:block",
+    "url": "/ui-kit/blocks/block",
+    "category": "Block",
+    "categories": [
+      "block",
+      "dither-carousel"
+    ],
+    "createdAt": "2026-09-12",
+    "updatedAt": "2026-09-12",
+    "size": "44.2 KB",
+    "rawSize": 45231,
+    "directSize": "44.2 KB",
+    "fileCount": 1,
+    "dependencies": [],
+    "registryDependencies": [
+      "https://www.spaceui.one/r/lib-utils.json"
+    ],
+    "dependents": [],
+    "related": [
+      {
+        "name": "block-liquid-gooey-carousel",
+        "title": "Liquid Gooey Carousel Block",
+        "description": "Smooth-minimum signed distance field WebGL2 carousel with liquid fusing cards that pull organic metaball strands when separated.",
+        "url": "/ui-kit/blocks/block",
+        "category": "Block",
+        "categories": [
+          "block",
+          "liquid-gooey-carousel"
+        ]
+      },
+      {
+        "name": "block-prism-carousel",
+        "title": "Prism Carousel Block",
+        "description": "Continuous image strip rendered to an offscreen texture and sampled through a thick optical glass lens shader with radial refraction and chromatic aberration.",
+        "url": "/ui-kit/blocks/block",
+        "category": "Block",
+        "categories": [
+          "block",
+          "prism-carousel"
+        ]
+      }
+    ]
+  },
+  "block": {
+    "name": "block-dither-carousel",
+    "shortName": "block-dither-carousel",
+    "title": "Dither Carousel Block",
+    "description": "3D cylindrical spiral carousel in WebGL2 with curved cards, axial directional blur, and matrix dither pattern.",
+    "type": "registry:block",
+    "url": "/ui-kit/blocks/block",
+    "category": "Block",
+    "categories": [
+      "block",
+      "dither-carousel"
+    ],
+    "createdAt": "2026-09-12",
+    "updatedAt": "2026-09-12",
+    "size": "44.2 KB",
+    "rawSize": 45231,
+    "directSize": "44.2 KB",
+    "fileCount": 1,
+    "dependencies": [],
+    "registryDependencies": [
+      "https://www.spaceui.one/r/lib-utils.json"
+    ],
+    "dependents": [],
+    "related": [
+      {
+        "name": "block-liquid-gooey-carousel",
+        "title": "Liquid Gooey Carousel Block",
+        "description": "Smooth-minimum signed distance field WebGL2 carousel with liquid fusing cards that pull organic metaball strands when separated.",
+        "url": "/ui-kit/blocks/block",
+        "category": "Block",
+        "categories": [
+          "block",
+          "liquid-gooey-carousel"
+        ]
+      },
+      {
+        "name": "block-prism-carousel",
+        "title": "Prism Carousel Block",
+        "description": "Continuous image strip rendered to an offscreen texture and sampled through a thick optical glass lens shader with radial refraction and chromatic aberration.",
+        "url": "/ui-kit/blocks/block",
+        "category": "Block",
+        "categories": [
+          "block",
+          "prism-carousel"
+        ]
+      }
+    ]
+  },
+  "blocks-block": {
+    "name": "block-dither-carousel",
+    "shortName": "block-dither-carousel",
+    "title": "Dither Carousel Block",
+    "description": "3D cylindrical spiral carousel in WebGL2 with curved cards, axial directional blur, and matrix dither pattern.",
+    "type": "registry:block",
+    "url": "/ui-kit/blocks/block",
+    "category": "Block",
+    "categories": [
+      "block",
+      "dither-carousel"
+    ],
+    "createdAt": "2026-09-12",
+    "updatedAt": "2026-09-12",
+    "size": "44.2 KB",
+    "rawSize": 45231,
+    "directSize": "44.2 KB",
+    "fileCount": 1,
+    "dependencies": [],
+    "registryDependencies": [
+      "https://www.spaceui.one/r/lib-utils.json"
+    ],
+    "dependents": [],
+    "related": [
+      {
+        "name": "block-liquid-gooey-carousel",
+        "title": "Liquid Gooey Carousel Block",
+        "description": "Smooth-minimum signed distance field WebGL2 carousel with liquid fusing cards that pull organic metaball strands when separated.",
+        "url": "/ui-kit/blocks/block",
+        "category": "Block",
+        "categories": [
+          "block",
+          "liquid-gooey-carousel"
+        ]
+      },
+      {
+        "name": "block-prism-carousel",
+        "title": "Prism Carousel Block",
+        "description": "Continuous image strip rendered to an offscreen texture and sampled through a thick optical glass lens shader with radial refraction and chromatic aberration.",
+        "url": "/ui-kit/blocks/block",
+        "category": "Block",
+        "categories": [
+          "block",
+          "prism-carousel"
+        ]
+      }
+    ]
+  },
   "block-eleven-labs": {
     "name": "block-eleven-labs",
     "shortName": "block-eleven-labs",
@@ -229,117 +373,6 @@
     ],
     "registryDependencies": [
       "https://www.spaceui.one/r/components-orb-smooth.json",
-      "https://www.spaceui.one/r/lib-utils.json"
-    ],
-    "dependents": [],
-    "related": []
-  },
-  "block-footer-tactile": {
-    "name": "block-footer-tactile",
-    "shortName": "block-footer-tactile",
-    "title": "Footer Tactile",
-    "description": "An expressive, tactile portfolio and product footer crafted with squircle curvature, live status indicator, local clock, and multi-column navigation.",
-    "type": "registry:block",
-    "url": "/ui-kit/blocks/block",
-    "category": "Block",
-    "categories": [
-      "block",
-      "footer",
-      "tactile",
-      "portfolio"
-    ],
-    "createdAt": "2026-09-12",
-    "updatedAt": "2026-09-12",
-    "size": "9.5 KB",
-    "rawSize": 9759,
-    "directSize": "9.5 KB",
-    "fileCount": 1,
-    "dependencies": [
-      "motion",
-      "@tabler/icons-react",
-      "@usespaceui/squircle",
-      "@base-ui/react",
-      "class-variance-authority"
-    ],
-    "registryDependencies": [
-      "https://www.spaceui.one/r/primitives-frame.json",
-      "https://www.spaceui.one/r/primitives-card.json",
-      "https://www.spaceui.one/r/primitives-select.json",
-      "https://www.spaceui.one/r/components-spaceui-button-squircle.json",
-      "https://www.spaceui.one/r/lib-utils.json"
-    ],
-    "dependents": [],
-    "related": []
-  },
-  "block": {
-    "name": "block-footer-tactile",
-    "shortName": "block-footer-tactile",
-    "title": "Footer Tactile",
-    "description": "An expressive, tactile portfolio and product footer crafted with squircle curvature, live status indicator, local clock, and multi-column navigation.",
-    "type": "registry:block",
-    "url": "/ui-kit/blocks/block",
-    "category": "Block",
-    "categories": [
-      "block",
-      "footer",
-      "tactile",
-      "portfolio"
-    ],
-    "createdAt": "2026-09-12",
-    "updatedAt": "2026-09-12",
-    "size": "9.5 KB",
-    "rawSize": 9759,
-    "directSize": "9.5 KB",
-    "fileCount": 1,
-    "dependencies": [
-      "motion",
-      "@tabler/icons-react",
-      "@usespaceui/squircle",
-      "@base-ui/react",
-      "class-variance-authority"
-    ],
-    "registryDependencies": [
-      "https://www.spaceui.one/r/primitives-frame.json",
-      "https://www.spaceui.one/r/primitives-card.json",
-      "https://www.spaceui.one/r/primitives-select.json",
-      "https://www.spaceui.one/r/components-spaceui-button-squircle.json",
-      "https://www.spaceui.one/r/lib-utils.json"
-    ],
-    "dependents": [],
-    "related": []
-  },
-  "blocks-block": {
-    "name": "block-footer-tactile",
-    "shortName": "block-footer-tactile",
-    "title": "Footer Tactile",
-    "description": "An expressive, tactile portfolio and product footer crafted with squircle curvature, live status indicator, local clock, and multi-column navigation.",
-    "type": "registry:block",
-    "url": "/ui-kit/blocks/block",
-    "category": "Block",
-    "categories": [
-      "block",
-      "footer",
-      "tactile",
-      "portfolio"
-    ],
-    "createdAt": "2026-09-12",
-    "updatedAt": "2026-09-12",
-    "size": "9.5 KB",
-    "rawSize": 9759,
-    "directSize": "9.5 KB",
-    "fileCount": 1,
-    "dependencies": [
-      "motion",
-      "@tabler/icons-react",
-      "@usespaceui/squircle",
-      "@base-ui/react",
-      "class-variance-authority"
-    ],
-    "registryDependencies": [
-      "https://www.spaceui.one/r/primitives-frame.json",
-      "https://www.spaceui.one/r/primitives-card.json",
-      "https://www.spaceui.one/r/primitives-select.json",
-      "https://www.spaceui.one/r/components-spaceui-button-squircle.json",
       "https://www.spaceui.one/r/lib-utils.json"
     ],
     "dependents": [],
@@ -437,6 +470,102 @@
     ],
     "dependents": [],
     "related": []
+  },
+  "block-liquid-gooey-carousel": {
+    "name": "block-liquid-gooey-carousel",
+    "shortName": "block-liquid-gooey-carousel",
+    "title": "Liquid Gooey Carousel Block",
+    "description": "Smooth-minimum signed distance field WebGL2 carousel with liquid fusing cards that pull organic metaball strands when separated.",
+    "type": "registry:block",
+    "url": "/ui-kit/blocks/block",
+    "category": "Block",
+    "categories": [
+      "block",
+      "liquid-gooey-carousel"
+    ],
+    "createdAt": "2026-09-12",
+    "updatedAt": "2026-09-12",
+    "size": "39.3 KB",
+    "rawSize": 40219,
+    "directSize": "39.3 KB",
+    "fileCount": 1,
+    "dependencies": [],
+    "registryDependencies": [
+      "https://www.spaceui.one/r/lib-utils.json"
+    ],
+    "dependents": [],
+    "related": [
+      {
+        "name": "block-dither-carousel",
+        "title": "Dither Carousel Block",
+        "description": "3D cylindrical spiral carousel in WebGL2 with curved cards, axial directional blur, and matrix dither pattern.",
+        "url": "/ui-kit/blocks/block",
+        "category": "Block",
+        "categories": [
+          "block",
+          "dither-carousel"
+        ]
+      },
+      {
+        "name": "block-prism-carousel",
+        "title": "Prism Carousel Block",
+        "description": "Continuous image strip rendered to an offscreen texture and sampled through a thick optical glass lens shader with radial refraction and chromatic aberration.",
+        "url": "/ui-kit/blocks/block",
+        "category": "Block",
+        "categories": [
+          "block",
+          "prism-carousel"
+        ]
+      }
+    ]
+  },
+  "block-prism-carousel": {
+    "name": "block-prism-carousel",
+    "shortName": "block-prism-carousel",
+    "title": "Prism Carousel Block",
+    "description": "Continuous image strip rendered to an offscreen texture and sampled through a thick optical glass lens shader with radial refraction and chromatic aberration.",
+    "type": "registry:block",
+    "url": "/ui-kit/blocks/block",
+    "category": "Block",
+    "categories": [
+      "block",
+      "prism-carousel"
+    ],
+    "createdAt": "2026-09-12",
+    "updatedAt": "2026-09-12",
+    "size": "32.7 KB",
+    "rawSize": 33468,
+    "directSize": "32.7 KB",
+    "fileCount": 1,
+    "dependencies": [],
+    "registryDependencies": [
+      "https://www.spaceui.one/r/lib-utils.json"
+    ],
+    "dependents": [],
+    "related": [
+      {
+        "name": "block-dither-carousel",
+        "title": "Dither Carousel Block",
+        "description": "3D cylindrical spiral carousel in WebGL2 with curved cards, axial directional blur, and matrix dither pattern.",
+        "url": "/ui-kit/blocks/block",
+        "category": "Block",
+        "categories": [
+          "block",
+          "dither-carousel"
+        ]
+      },
+      {
+        "name": "block-liquid-gooey-carousel",
+        "title": "Liquid Gooey Carousel Block",
+        "description": "Smooth-minimum signed distance field WebGL2 carousel with liquid fusing cards that pull organic metaball strands when separated.",
+        "url": "/ui-kit/blocks/block",
+        "category": "Block",
+        "categories": [
+          "block",
+          "liquid-gooey-carousel"
+        ]
+      }
+    ]
   },
   "block-sign-in": {
     "name": "block-sign-in",
@@ -5632,6 +5761,62 @@
     "dependents": [],
     "related": []
   },
+  "fluid-countdown": {
+    "name": "components-spaceui-fluid-countdown",
+    "shortName": "fluid-countdown",
+    "title": "Fluid Countdown",
+    "description": "Full-screen countdown timer with fluid rolling digits, play/pause and reset controls, and auto-loop.",
+    "type": "registry:component",
+    "url": "/ui-kit/components/spaceui/fluid-countdown",
+    "category": "Fluid-countdown",
+    "categories": [
+      "fluid-countdown"
+    ],
+    "createdAt": "2026-09-12",
+    "updatedAt": "2026-09-12",
+    "size": "10.1 KB",
+    "rawSize": 10304,
+    "directSize": "10.1 KB",
+    "fileCount": 1,
+    "dependencies": [
+      "@number-flow/react",
+      "motion",
+      "@tabler/icons-react"
+    ],
+    "registryDependencies": [
+      "https://www.spaceui.one/r/lib-utils.json"
+    ],
+    "dependents": [],
+    "related": []
+  },
+  "components-spaceui-fluid-countdown": {
+    "name": "components-spaceui-fluid-countdown",
+    "shortName": "fluid-countdown",
+    "title": "Fluid Countdown",
+    "description": "Full-screen countdown timer with fluid rolling digits, play/pause and reset controls, and auto-loop.",
+    "type": "registry:component",
+    "url": "/ui-kit/components/spaceui/fluid-countdown",
+    "category": "Fluid-countdown",
+    "categories": [
+      "fluid-countdown"
+    ],
+    "createdAt": "2026-09-12",
+    "updatedAt": "2026-09-12",
+    "size": "10.1 KB",
+    "rawSize": 10304,
+    "directSize": "10.1 KB",
+    "fileCount": 1,
+    "dependencies": [
+      "@number-flow/react",
+      "motion",
+      "@tabler/icons-react"
+    ],
+    "registryDependencies": [
+      "https://www.spaceui.one/r/lib-utils.json"
+    ],
+    "dependents": [],
+    "related": []
+  },
   "github-activity": {
     "name": "components-spaceui-github-activity",
     "shortName": "github-activity",
@@ -5713,12 +5898,13 @@
     ],
     "createdAt": "2026-09-12",
     "updatedAt": "2026-09-12",
-    "size": "7.3 KB",
-    "rawSize": 7479,
-    "directSize": "7.3 KB",
+    "size": "9.5 KB",
+    "rawSize": 9717,
+    "directSize": "9.5 KB",
     "fileCount": 1,
     "dependencies": [
-      "motion"
+      "motion",
+      "@tabler/icons-react"
     ],
     "registryDependencies": [
       "https://www.spaceui.one/r/lib-utils.json"
@@ -5739,12 +5925,13 @@
     ],
     "createdAt": "2026-09-12",
     "updatedAt": "2026-09-12",
-    "size": "7.3 KB",
-    "rawSize": 7479,
-    "directSize": "7.3 KB",
+    "size": "9.5 KB",
+    "rawSize": 9717,
+    "directSize": "9.5 KB",
     "fileCount": 1,
     "dependencies": [
-      "motion"
+      "motion",
+      "@tabler/icons-react"
     ],
     "registryDependencies": [
       "https://www.spaceui.one/r/lib-utils.json"
@@ -22304,9 +22491,9 @@
     ],
     "createdAt": "2026-09-04",
     "updatedAt": "2026-09-04",
-    "size": "63.6 KB",
-    "rawSize": 65152,
-    "directSize": "63.6 KB",
+    "size": "63.1 KB",
+    "rawSize": 64570,
+    "directSize": "63.1 KB",
     "fileCount": 15,
     "dependencies": [
       "motion",
@@ -22344,9 +22531,9 @@
     ],
     "createdAt": "2026-09-04",
     "updatedAt": "2026-09-04",
-    "size": "63.6 KB",
-    "rawSize": 65152,
-    "directSize": "63.6 KB",
+    "size": "63.1 KB",
+    "rawSize": 64570,
+    "directSize": "63.1 KB",
     "fileCount": 15,
     "dependencies": [
       "motion",
@@ -22384,9 +22571,9 @@
     ],
     "createdAt": "2026-09-04",
     "updatedAt": "2026-09-04",
-    "size": "63.6 KB",
-    "rawSize": 65152,
-    "directSize": "63.6 KB",
+    "size": "63.1 KB",
+    "rawSize": 64570,
+    "directSize": "63.1 KB",
     "fileCount": 15,
     "dependencies": [
       "motion",
@@ -22425,9 +22612,9 @@
     ],
     "createdAt": "2026-09-12",
     "updatedAt": "2026-09-12",
-    "size": "2.6 KB",
-    "rawSize": 2625,
-    "directSize": "2.6 KB",
+    "size": "2.4 KB",
+    "rawSize": 2503,
+    "directSize": "2.4 KB",
     "fileCount": 2,
     "dependencies": [
       "motion",

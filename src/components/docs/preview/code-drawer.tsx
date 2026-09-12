@@ -222,7 +222,7 @@ export function CodeDrawer({ open, onOpenChange, name, title, code, previewName 
               {/* Section 2: Source Code rendered with DynamicCodeBlock */}
               <div className="px-2 pt-1">
                 <DynamicCodeBlock
-                  code={code}
+                  code={code ?? ''}
                   lang="tsx"
                   title={`${name}.tsx`}
                   icon={<IconFileCode className="size-4" />}

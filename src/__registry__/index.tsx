@@ -80,6 +80,38 @@ export const index: Record<string, any> = {
     })(),
     command: '@spaceui/block-card-info-2',
   },
+  "block-dither-carousel": {
+    name: "block-dither-carousel",
+    description: "3D cylindrical spiral carousel in WebGL2 with curved cards, axial directional blur, and matrix dither pattern.",
+    type: "registry:block",
+    dependencies: undefined,
+    devDependencies: undefined,
+    registryDependencies: ["https://www.spaceui.one/r/lib-utils.json"],
+    files: [
+  {
+    "path": "src/registry/blocks/dither-carousel/index.tsx",
+    "type": "registry:block",
+    "target": "components/blocks/dither-carousel/index.tsx"
+  }
+],
+    keywords: [],
+    component: (() => {
+      const LazyComp = React.lazy(async () => {
+        const mod = await import("@/registry/blocks/dither-carousel/index.tsx");
+        const exportName = Object.keys(mod).find(
+          key => typeof mod[key] === 'function' || typeof mod[key] === 'object'
+        ) || "block-dither-carousel";
+        const Comp = mod.default || mod[exportName];
+        if (mod.animations) {
+          (LazyComp as any).animations = mod.animations;
+        }
+        return { default: Comp };
+      });
+      LazyComp.demoProps = {};
+      return LazyComp;
+    })(),
+    command: '@spaceui/block-dither-carousel',
+  },
   "block-eleven-labs": {
     name: "block-eleven-labs",
     description: "ElevenLabs-inspired landing page block with a live audio-reactive orb hero.",
@@ -182,38 +214,6 @@ export const index: Record<string, any> = {
     })(),
     command: '@spaceui/block-eleven-labs',
   },
-  "block-footer-tactile": {
-    name: "block-footer-tactile",
-    description: "An expressive, tactile portfolio and product footer crafted with squircle curvature, live status indicator, local clock, and multi-column navigation.",
-    type: "registry:block",
-    dependencies: ["motion","@tabler/icons-react","@usespaceui/squircle","@base-ui/react","class-variance-authority"],
-    devDependencies: undefined,
-    registryDependencies: ["https://www.spaceui.one/r/primitives-frame.json","https://www.spaceui.one/r/primitives-card.json","https://www.spaceui.one/r/primitives-select.json","https://www.spaceui.one/r/components-spaceui-button-squircle.json","https://www.spaceui.one/r/lib-utils.json"],
-    files: [
-  {
-    "path": "src/registry/blocks/footer/footer-tactile/index.tsx",
-    "type": "registry:block",
-    "target": "components/blocks/footer/footer-tactile.tsx"
-  }
-],
-    keywords: [],
-    component: (() => {
-      const LazyComp = React.lazy(async () => {
-        const mod = await import("@/registry/blocks/footer/footer-tactile/index.tsx");
-        const exportName = Object.keys(mod).find(
-          key => typeof mod[key] === 'function' || typeof mod[key] === 'object'
-        ) || "block-footer-tactile";
-        const Comp = mod.default || mod[exportName];
-        if (mod.animations) {
-          (LazyComp as any).animations = mod.animations;
-        }
-        return { default: Comp };
-      });
-      LazyComp.demoProps = {};
-      return LazyComp;
-    })(),
-    command: '@spaceui/block-footer-tactile',
-  },
   "block-interactive-fun-facts": {
     name: "block-interactive-fun-facts",
     description: "Interactive 3D stacked deck quiz game block with True/False feedback, live score and dialog summary.",
@@ -260,6 +260,70 @@ export const index: Record<string, any> = {
       return LazyComp;
     })(),
     command: '@spaceui/block-interactive-fun-facts',
+  },
+  "block-liquid-gooey-carousel": {
+    name: "block-liquid-gooey-carousel",
+    description: "Smooth-minimum signed distance field WebGL2 carousel with liquid fusing cards that pull organic metaball strands when separated.",
+    type: "registry:block",
+    dependencies: undefined,
+    devDependencies: undefined,
+    registryDependencies: ["https://www.spaceui.one/r/lib-utils.json"],
+    files: [
+  {
+    "path": "src/registry/blocks/liquid-gooey-carousel/index.tsx",
+    "type": "registry:block",
+    "target": "components/blocks/liquid-gooey-carousel/index.tsx"
+  }
+],
+    keywords: [],
+    component: (() => {
+      const LazyComp = React.lazy(async () => {
+        const mod = await import("@/registry/blocks/liquid-gooey-carousel/index.tsx");
+        const exportName = Object.keys(mod).find(
+          key => typeof mod[key] === 'function' || typeof mod[key] === 'object'
+        ) || "block-liquid-gooey-carousel";
+        const Comp = mod.default || mod[exportName];
+        if (mod.animations) {
+          (LazyComp as any).animations = mod.animations;
+        }
+        return { default: Comp };
+      });
+      LazyComp.demoProps = {};
+      return LazyComp;
+    })(),
+    command: '@spaceui/block-liquid-gooey-carousel',
+  },
+  "block-prism-carousel": {
+    name: "block-prism-carousel",
+    description: "Continuous image strip rendered to an offscreen texture and sampled through a thick optical glass lens shader with radial refraction and chromatic aberration.",
+    type: "registry:block",
+    dependencies: undefined,
+    devDependencies: undefined,
+    registryDependencies: ["https://www.spaceui.one/r/lib-utils.json"],
+    files: [
+  {
+    "path": "src/registry/blocks/prism-carousel/index.tsx",
+    "type": "registry:block",
+    "target": "components/blocks/prism-carousel/index.tsx"
+  }
+],
+    keywords: [],
+    component: (() => {
+      const LazyComp = React.lazy(async () => {
+        const mod = await import("@/registry/blocks/prism-carousel/index.tsx");
+        const exportName = Object.keys(mod).find(
+          key => typeof mod[key] === 'function' || typeof mod[key] === 'object'
+        ) || "block-prism-carousel";
+        const Comp = mod.default || mod[exportName];
+        if (mod.animations) {
+          (LazyComp as any).animations = mod.animations;
+        }
+        return { default: Comp };
+      });
+      LazyComp.demoProps = {};
+      return LazyComp;
+    })(),
+    command: '@spaceui/block-prism-carousel',
   },
   "block-sign-in": {
     name: "block-sign-in",
@@ -2017,6 +2081,38 @@ export const index: Record<string, any> = {
     })(),
     command: '@spaceui/components-spaceui-filters',
   },
+  "components-spaceui-fluid-countdown": {
+    name: "components-spaceui-fluid-countdown",
+    description: "Full-screen countdown timer with fluid rolling digits, play/pause and reset controls, and auto-loop.",
+    type: "registry:component",
+    dependencies: ["@number-flow/react","motion","@tabler/icons-react"],
+    devDependencies: undefined,
+    registryDependencies: ["https://www.spaceui.one/r/lib-utils.json"],
+    files: [
+  {
+    "path": "src/registry/components/spaceui/fluid-countdown/index.tsx",
+    "type": "registry:component",
+    "target": "components/spaceui/fluid-countdown.tsx"
+  }
+],
+    keywords: [],
+    component: (() => {
+      const LazyComp = React.lazy(async () => {
+        const mod = await import("@/registry/components/spaceui/fluid-countdown/index.tsx");
+        const exportName = Object.keys(mod).find(
+          key => typeof mod[key] === 'function' || typeof mod[key] === 'object'
+        ) || "components-spaceui-fluid-countdown";
+        const Comp = mod.default || mod[exportName];
+        if (mod.animations) {
+          (LazyComp as any).animations = mod.animations;
+        }
+        return { default: Comp };
+      });
+      LazyComp.demoProps = {};
+      return LazyComp;
+    })(),
+    command: '@spaceui/components-spaceui-fluid-countdown',
+  },
   "components-spaceui-github-activity": {
     name: "components-spaceui-github-activity",
     description: "An interactive GitHub ecosystem showcase featuring stars, forks, and commits KPI cards with floating particles and a 52-week contribution heatmap matrix.",
@@ -2053,7 +2149,7 @@ export const index: Record<string, any> = {
     name: "components-spaceui-handle-reel",
     description: "Kinetic tumbler reel of usernames, handles, or subdomains past a prefix that decelerates and settles with momentum.",
     type: "registry:component",
-    dependencies: ["motion"],
+    dependencies: ["motion","@tabler/icons-react"],
     devDependencies: undefined,
     registryDependencies: ["https://www.spaceui.one/r/lib-utils.json"],
     files: [
@@ -5957,6 +6053,38 @@ export const index: Record<string, any> = {
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-filters-12',
+  },
+  "demo-c-fluid-countdown-01": {
+    name: "demo-c-fluid-countdown-01",
+    description: "Interactive fluid rolling digits countdown timer.",
+    type: "registry:component",
+    dependencies: undefined,
+    devDependencies: undefined,
+    registryDependencies: ["https://www.spaceui.one/r/components-spaceui-fluid-countdown.json"],
+    files: [
+  {
+    "path": "src/registry/demo/components/spaceui/fluid-countdown/c-fluid-countdown-01/index.tsx",
+    "type": "registry:component",
+    "target": "components/spaceui/fluid-countdown-demo.tsx"
+  }
+],
+    keywords: [],
+    component: (() => {
+      const LazyComp = React.lazy(async () => {
+        const mod = await import("@/registry/demo/components/spaceui/fluid-countdown/c-fluid-countdown-01/index.tsx");
+        const exportName = Object.keys(mod).find(
+          key => typeof mod[key] === 'function' || typeof mod[key] === 'object'
+        ) || "demo-c-fluid-countdown-01";
+        const Comp = mod.default || mod[exportName];
+        if (mod.animations) {
+          (LazyComp as any).animations = mod.animations;
+        }
+        return { default: Comp };
+      });
+      LazyComp.demoProps = {};
+      return LazyComp;
+    })(),
+    command: '@spaceui/demo-c-fluid-countdown-01',
   },
   "demo-c-github-activity-01": {
     name: "demo-c-github-activity-01",

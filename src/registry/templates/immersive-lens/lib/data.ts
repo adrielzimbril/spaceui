@@ -23,31 +23,31 @@ export const glass =
 
 export const categories: readonly CategoryItem[] = [
   {
-    label: 'Work',
-    image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=2560&q=85',
-    thumb: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=400&q=80',
+    label: 'Lens',
+    image: 'https://cdn.spaceui.one/atom/samples/image-1.png',
+    thumb: 'https://cdn.spaceui.one/atom/samples/image-1.png',
     colors: ['#F3ECF3', '#D9C6DB', '#D694AD', '#AD7092'],
   },
   {
     label: 'Fashion',
-    image: 'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=2560&q=85',
-    thumb: 'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=400&q=80',
+    image: 'https://cdn.spaceui.one/atom/samples/image-2.png',
+    thumb: 'https://cdn.spaceui.one/atom/samples/image-2.png',
     colors: ['#DBD1D0', '#282824', '#E9C797', '#D0A975'],
   },
   {
     label: 'Journey',
-    image: 'https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&w=2560&q=85',
-    thumb: 'https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&w=400&q=80',
+    image: 'https://cdn.spaceui.one/atom/samples/image-3.png',
+    thumb: 'https://cdn.spaceui.one/atom/samples/image-3.png',
     colors: ['#D7F3FD', '#B4D0E8', '#8DB5D9', '#6B99C5'],
   },
 ] as const
 
 export const galleryImages = [
-  'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=2560&q=85',
-  'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=2560&q=85',
-  'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=2560&q=85',
-  'https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&w=2560&q=85',
-  'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=2560&q=85',
-  'https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=2560&q=85',
-  'https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=2560&q=85',
+  'https://cdn.spaceui.one/atom/samples/image-1.png',
+  'https://cdn.spaceui.one/atom/samples/image-2.png',
+  'https://cdn.spaceui.one/atom/samples/image-3.png',
+  'https://cdn.spaceui.one/atom/samples/image-4.png',
+  'https://cdn.spaceui.one/atom/samples/image-5.png',
+  'https://cdn.spaceui.one/atom/samples/image-6.png',
+  'https://cdn.spaceui.one/atom/samples/image-7.png',
 ] as const

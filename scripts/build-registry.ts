@@ -826,13 +826,13 @@ export default function Layout({ children }: { children: React.ReactNode }) {
   )
 
   await writeFileWithRetry(
-    path.join(viewRouteDirectory, 'page.tsx'),
+    path.join(viewRouteDirectory, 'client.tsx'),
     `'use client';
 
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { index } from '@/__registry__/index';
 import { notFound } from 'next/navigation';
-import { Suspense, use } from 'react';
+import { Suspense } from 'react';
 
 function unwrapValues(value: any): any {
   if (!value || typeof value !== 'object' || Array.isArray(value)) return value;
@@ -842,15 +842,13 @@ function unwrapValues(value: any): any {
   );
 }
 
-export default function RegistryViewPage({
-  params,
-  searchParams,
+export function RegistryViewClient({
+  name,
+  encodedProps,
 }: {
-  params: Promise<{ name: string }>;
-  searchParams: Promise<{ props?: string }>;
+  name: string;
+  encodedProps?: string;
 }) {
-  const resolvedParams = params ? use(params) : { name: '' };
-  const name = resolvedParams.name;
   const item = index[name];
   if (!item || !item.component) notFound();
 
@@ -858,8 +856,6 @@ export default function RegistryViewPage({
   const defaults = unwrapValues(Component.demoProps ?? item.meta?.demoProps ?? {});
   let sharedProps = {};
   try {
-    const resolvedSearchParams = searchParams ? use(searchParams) : {};
-    const encodedProps = resolvedSearchParams?.props;
     if (encodedProps) sharedProps = JSON.parse(encodedProps);
   } catch {
     // Invalid shared props fall back to the original demo defaults.
@@ -884,6 +880,30 @@ export default function RegistryViewPage({
         <Component {...props} />
       </Suspense>
     </main>
+  );
+}
+`,
+  )
+
+  await writeFileWithRetry(
+    path.join(viewRouteDirectory, 'page.tsx'),
+    `import { RegistryViewClient } from './client';
+
+export default async function RegistryViewPage({
+  params,
+  searchParams,
+}: {
+  params: Promise<{ name: string }>;
+  searchParams: Promise<{ props?: string }>;
+}) {
+  const resolvedParams = await params;
+  const resolvedSearchParams = await searchParams;
+
+  return (
+    <RegistryViewClient
+      name={resolvedParams?.name || ''}
+      encodedProps={resolvedSearchParams?.props}
+    />
   );
 }
 `,

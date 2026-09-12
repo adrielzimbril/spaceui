@@ -15,9 +15,21 @@ function GlobalLayoutContent({ children }: { children: React.ReactNode }) {
   const pathname = usePathname()
   const { isStandard, isImmersive } = useLayoutMode()
   const isResourceStudio = pathname.startsWith('/tools/')
+  const isMarketing =
+    pathname === '/' || pathname === '/showcase' || pathname.startsWith('/showcase/') || pathname === '/customize'
 
   if (isImmersive || isResourceStudio) {
     return <>{children}</>
+  }
+
+  if (isMarketing) {
+    return (
+      <>
+        <SiteHeader />
+        {children}
+        <FloatNav />
+      </>
+    )
   }
 
   if (!isStandard) {

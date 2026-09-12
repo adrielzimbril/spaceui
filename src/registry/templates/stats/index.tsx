@@ -7,7 +7,6 @@ import StatsEngagement from '@/registry/blocks/stats/stats-engagement'
 import StatsBlog from '@/registry/blocks/stats/stats-blog'
 import StatsGitHub from '@/registry/blocks/stats/stats-github'
 import StatsPerformance from '@/registry/blocks/stats/stats-performance'
-import FooterTactile from '@/registry/blocks/footer/footer-tactile'
 
 export default function StatsTemplate() {
   return (
@@ -18,7 +17,6 @@ export default function StatsTemplate() {
       <StatsBlog />
       <StatsGitHub />
       <StatsPerformance />
-      <FooterTactile className="px-0! pt-12 pb-0!" />
     </div>
   )
 }

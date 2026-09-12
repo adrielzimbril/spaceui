@@ -1,0 +1,23 @@
+---
+title: Dither Carousel
+description: A 3D cylindrical spiral column of cards in WebGL2 with curved perspective, directional blur, and matrix dither grain.
+preview:
+  name: block-dither-carousel
+  contained: false
+---
+
+Cards mapped onto the surface of an orbital cylinder. As cards travel away, they pass through an axial blur and dissolve into an ordered threshold dither pattern.
+
+## Installation
+
+<ComponentInstallation name="block-dither-carousel" />
+
+## Usage
+
+```tsx
+import BlockDitherCarousel from '@/components/blocks/dither-carousel'
+
+export default function Showcase() {
+  return <BlockDitherCarousel />
+}
+```

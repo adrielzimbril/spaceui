@@ -76,8 +76,8 @@ export function useHorizontalDrag({ active, onOpenImage }: UseHorizontalDragOpti
 
   const beginDrag = (event: ReactPointerEvent<HTMLDivElement>) => {
     const target =
-      event.target instanceof Element ? event.target.closest<HTMLElement>('[data-horizontal-work-index]') : null
-    const pressedIndex = Number(target?.dataset.horizontalWorkIndex)
+      event.target instanceof Element ? event.target.closest<HTMLElement>('[data-horizontal-lens-index]') : null
+    const pressedIndex = Number(target?.dataset.horizontalLensIndex)
 
     dragState.current = {
       active: true,

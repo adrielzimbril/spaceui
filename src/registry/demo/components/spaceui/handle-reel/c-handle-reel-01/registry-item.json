@@ -5,7 +5,8 @@
   "title": "Handle Reel Demo",
   "description": "Hero handle tumbler reel with ryna.me prefix.",
   "registryDependencies": [
-    "https://www.spaceui.one/r/components-spaceui-handle-reel.json"
+    "https://www.spaceui.one/r/components-spaceui-handle-reel.json",
+    "https://www.spaceui.one/r/primitives-tabs.json"
   ],
   "categories": [
     "component",

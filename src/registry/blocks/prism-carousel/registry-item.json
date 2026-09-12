@@ -1,0 +1,38 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-prism-carousel",
+  "type": "registry:block",
+  "title": "Prism Carousel Block",
+  "description": "Continuous image strip rendered to an offscreen texture and sampled through a thick optical glass lens shader with radial refraction and chromatic aberration.",
+  "registryDependencies": [
+    "https://www.spaceui.one/r/lib-utils.json"
+  ],
+  "categories": [
+    "block",
+    "prism-carousel"
+  ],
+  "files": [
+    {
+      "path": "src/registry/blocks/prism-carousel/index.tsx",
+      "type": "registry:block",
+      "target": "components/blocks/prism-carousel/index.tsx"
+    },
+    {
+      "path": "src/registry/blocks/prism-carousel/prism-carousel.tsx",
+      "type": "registry:block",
+      "target": "components/blocks/prism-carousel/prism-carousel.tsx"
+    },
+    {
+      "path": "src/registry/blocks/prism-carousel/shaders.ts",
+      "type": "registry:block",
+      "target": "components/blocks/prism-carousel/shaders.ts"
+    },
+    {
+      "path": "src/registry/blocks/prism-carousel/types.ts",
+      "type": "registry:block",
+      "target": "components/blocks/prism-carousel/types.ts"
+    }
+  ],
+  "createdAt": "2026-09-12",
+  "updatedAt": "2026-09-12"
+}

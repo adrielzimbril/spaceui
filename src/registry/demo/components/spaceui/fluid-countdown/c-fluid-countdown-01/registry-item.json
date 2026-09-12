@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-c-fluid-countdown-01",
+  "type": "registry:component",
+  "title": "Fluid Countdown Demo",
+  "description": "Interactive fluid rolling digits countdown timer.",
+  "registryDependencies": [
+    "https://www.spaceui.one/r/components-spaceui-fluid-countdown.json",
+    "https://www.spaceui.one/r/primitives-tabs.json",
+    "https://www.spaceui.one/r/primitives-button.json"
+  ],
+  "categories": [
+    "component",
+    "fluid-countdown"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/components/spaceui/fluid-countdown/c-fluid-countdown-01/index.tsx",
+      "type": "registry:component",
+      "target": "components/spaceui/fluid-countdown-demo.tsx"
+    }
+  ],
+  "createdAt": "2026-09-12",
+  "updatedAt": "2026-09-12"
+}

@@ -1,0 +1,29 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "components-spaceui-fluid-countdown",
+  "type": "registry:component",
+  "title": "Fluid Countdown",
+  "description": "Full-screen countdown timer with fluid rolling digits, play/pause and reset controls, and auto-loop.",
+  "dependencies": [
+    "@number-flow/react",
+    "motion",
+    "@tabler/icons-react"
+  ],
+  "registryDependencies": [
+    "https://www.spaceui.one/r/lib-utils.json",
+    "https://www.spaceui.one/r/primitives-button.json"
+  ],
+  "categories": [
+    "component",
+    "fluid-countdown"
+  ],
+  "files": [
+    {
+      "path": "src/registry/components/spaceui/fluid-countdown/index.tsx",
+      "type": "registry:component",
+      "target": "components/spaceui/fluid-countdown.tsx"
+    }
+  ],
+  "createdAt": "2026-09-12",
+  "updatedAt": "2026-09-12"
+}

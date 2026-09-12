@@ -4,248 +4,308 @@ import * as React from 'react'
 import { animate, motion, useMotionValue } from 'motion/react'
 import { cn } from '@/registry/lib/utils'
 
-const DEFAULT_HANDLES = [
-  'adriel',
-  'soren',
-  'elena',
-  'julian',
-  'maya',
-  'clara',
-  'tito',
-  'silvan',
-  'noor',
-  'ravi',
-  'yuki',
-  'mateo',
-  'chloe',
-  'lucas',
-]
-
-export type HandleReelPhase = 'idle' | 'spinning' | 'landed' | 'done'
+export type ReelState = 'scrolling' | 'locked' | 'settled'
 
 export interface HandleReelProps {
-  /** Handles/names that scroll past in the reel. @default DEFAULT_HANDLES */
+  /** Array of handles or strings streamed through the roller. */
   names?: string[]
-  /** The final handle the reel lands on. @default "ryna" */
+  /** The final target handle to land on. @default "username" */
   finalName?: string
-  /** Static prefix shown before the reel. @default "ryna.me/" */
+  /** Fixed domain, handle prefix, or symbol rendered before the slot. @default "ryna.me/" */
   prefix?: React.ReactNode
-  /** Optional suffix shown after the reel (e.g. ".design", "@mail.com"). */
-  suffix?: React.ReactNode
-  /** Number of visible rows in the viewport (odd numbers center cleanly). @default 7 */
+  /** Number of visible text slots in the viewport window. @default 7 */
   rows?: number
-  /** Number of full list repetitions before stopping on final handle. @default 3 */
+  /** Number of full list cycles traversed before settling on the target. @default 3 */
   cycles?: number
-  /** Total spin duration in seconds before landing. @default 4 */
+  /** Total deceleration and roll animation time in seconds. @default 4.5 */
   spinDuration?: number
-  /** Color the final handle transitions to upon landing. @default "var(--primary, #6366f1)" */
+  /** Color accent emitted on lock landing. @default "#6366f1" */
   highlightColor?: string
-  /** Color of the names while spinning. @default "var(--muted-foreground)" */
+  /** Muted color for ambient scrolling items. @default "var(--muted-foreground)" */
   placeholderColor?: string
-  /** Replay the animation continuously on a loop. @default false */
+  /** Continuously restart the tumbler roll. @default false */
   loop?: boolean
-  /** Delay in milliseconds before replaying when loop is true. @default 2200 */
+  /** Idle duration in milliseconds before loop restart. @default 2000 */
   loopDelay?: number
-  /** External trigger count to restart the roll programmatically. */
+  /** Numeric trigger value to manually invoke a new spin sequence. */
   trigger?: number
-  /** Callback fired when the reel lands on the final handle. */
+  /** Transforms the landed handle into a seamless inline ghost input for instant editing. @default true */
+  editable?: boolean
+  /** Callback fired immediately when the target locks into view. */
   onLand?: (name: string) => void
-  /** Class name for the outer container. */
+  /** Callback fired whenever the user modifies the editable handle value. */
+  onNameChange?: (name: string) => void
+  /** Outer container styles. */
   className?: string
-  /** Class name for the text and viewport sizing. */
+  /** Typography and viewport sizing styles. */
   textClassName?: string
 }
 
-function shuffle<T>(input: T[]): T[] {
-  const arr = [...input]
-  for (let i = arr.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1))
-    ;[arr[i], arr[j]] = [arr[j], arr[i]]
+/**
+ * Deterministically constructs a continuous vertical drum track containing
+ * preamble buffer items, cyclic tumbling sequences, and the target lock entry.
+ */
+function buildDrumSequence(
+  candidates: string[],
+  target: string,
+  bufferSize: number,
+  rounds: number,
+): { sequence: string[]; lockIndex: number; startOffsetIndex: number } {
+  const pool = candidates.length > 0 ? candidates : [target]
+  const randomized = [...pool]
+  for (let i = randomized.length - 1; i > 0; i--) {
+    const swap = Math.floor(Math.random() * (i + 1))
+    ;[randomized[i], randomized[swap]] = [randomized[swap], randomized[i]]
   }
-  return arr
+
+  // Prepend lead-in buffer to center cleanly when stationary
+  const leadBuffer = randomized.slice(0, bufferSize)
+  while (leadBuffer.length < bufferSize) {
+    leadBuffer.push(target)
+  }
+  const track: string[] = [...leadBuffer, target]
+
+  // Append full cycles for kinetic deceleration
+  for (let round = 0; round < Math.max(1, rounds); round++) {
+    const cycle = [...pool]
+    for (let c = cycle.length - 1; c > 0; c--) {
+      const idx = Math.floor(Math.random() * (c + 1))
+      ;[cycle[c], cycle[idx]] = [cycle[idx], cycle[c]]
+    }
+    track.push(...cycle)
+  }
+
+  const lockIndex = bufferSize
+  const startOffsetIndex = Math.max(lockIndex + 1, track.length - 1 - bufferSize)
+
+  return { sequence: track, lockIndex, startOffsetIndex }
 }
 
 export function HandleReel({
-  names = DEFAULT_HANDLES,
-  finalName = 'ryna',
+  names = [],
+  finalName = 'username',
   prefix = 'ryna.me/',
-  suffix,
   rows = 7,
   cycles = 3,
-  spinDuration = 4,
-  highlightColor = 'var(--primary, #6366f1)',
+  spinDuration = 4.5,
+  highlightColor = '#6366f1',
   placeholderColor = 'var(--muted-foreground)',
   loop = false,
-  loopDelay = 2200,
+  loopDelay = 2000,
   trigger = 0,
+  editable = true,
   onLand,
+  onNameChange,
   className,
   textClassName,
 }: HandleReelProps) {
-  const [internalRunId, setInternalRunId] = React.useState(0)
-  const [rowH, setRowH] = React.useState(0)
-  const [phase, setPhase] = React.useState<HandleReelPhase>('spinning')
+  const [spinId, setSpinId] = React.useState(0)
+  const [rowHeight, setRowHeight] = React.useState(0)
+  const [reelStatus, setReelStatus] = React.useState<ReelState>('scrolling')
+  const [inputValue, setInputValue] = React.useState(finalName)
+  const [inputActive, setInputActive] = React.useState(false)
 
-  const y = useMotionValue(0)
-  const measureRef = React.useRef<HTMLDivElement>(null)
+  const translateY = useMotionValue(0)
+  const probeRef = React.useRef<HTMLDivElement>(null)
+  const inputRef = React.useRef<HTMLInputElement>(null)
 
-  const half = Math.floor(rows / 2)
-  const reel = React.useMemo(() => {
-    const filler = shuffle(names).slice(0, half)
-    const list: string[] = [...filler, finalName]
-    for (let c = 0; c < Math.max(1, cycles); c++) {
-      list.push(...shuffle(names))
-    }
-    return list
+  // Re-synchronize target value & reset state
+  React.useEffect(() => {
+    setInputValue(finalName)
+    setSpinId((s) => s + 1)
+  }, [finalName, prefix, trigger])
+
+  const centerSlot = Math.floor(rows / 2)
+  const { sequence, lockIndex, startOffsetIndex } = React.useMemo(() => {
+    return buildDrumSequence(names, finalName, centerSlot, cycles)
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [names, finalName, cycles, half, internalRunId, trigger])
+  }, [names, finalName, cycles, centerSlot, spinId])
 
-  const finalIndex = half
-  const lastIndex = reel.length - 1
-  const startIndex = Math.max(finalIndex + 1, lastIndex - half)
-  const viewportH = rowH * rows
+  const viewportHeight = rowHeight * rows
 
-  const offsetFor = React.useCallback(
-    (i: number) => viewportH / 2 - (i * rowH + rowH / 2),
-    [viewportH, rowH],
+  // Calculate pixel translation needed to align slot item at vertical optical center
+  const getSlotPosition = React.useCallback(
+    (slotIdx: number) => {
+      const slotCenterY = slotIdx * rowHeight + rowHeight / 2
+      return viewportHeight / 2 - slotCenterY
+    },
+    [viewportHeight, rowHeight],
   )
 
-  // Measure row height dynamically for accurate geometry
+  // Measure text baseline height directly from DOM probe
   React.useLayoutEffect(() => {
-    const h = measureRef.current?.offsetHeight ?? 0
-    if (h && h !== rowH) {
-      setRowH(h)
+    const measured = probeRef.current?.offsetHeight ?? 0
+    if (measured && measured !== rowHeight) {
+      setRowHeight(measured)
     }
-  }, [rowH])
+  }, [rowHeight])
 
-  // Execute deceleration roll
+  // Kinetic scroll lifecycle
   React.useEffect(() => {
-    if (!rowH) return
-    setPhase('spinning')
+    if (!rowHeight) return
+    setReelStatus('scrolling')
 
-    const prefersReduced =
+    const motionQuery =
       typeof window !== 'undefined' &&
-      Boolean(window.matchMedia?.('(prefers-reduced-motion: reduce)')?.matches)
+      window.matchMedia?.('(prefers-reduced-motion: reduce)')
 
-    let landTimer: number | undefined
-    let loopTimer: number | undefined
-
-    if (prefersReduced) {
-      y.set(offsetFor(finalIndex))
-      setPhase('done')
+    if (motionQuery?.matches) {
+      translateY.set(getSlotPosition(lockIndex))
+      setReelStatus('settled')
       onLand?.(finalName)
       return
     }
 
-    y.set(offsetFor(startIndex))
-    const controls = animate(y, offsetFor(finalIndex), {
+    translateY.set(getSlotPosition(startOffsetIndex))
+
+    let settleTimer: ReturnType<typeof setTimeout> | undefined
+    let loopTimer: ReturnType<typeof setTimeout> | undefined
+
+    const animation = animate(translateY, getSlotPosition(lockIndex), {
       duration: spinDuration,
-      // Quintic smooth out curve for tactile friction deceleration
       ease: [0.65, 0, 0.35, 1],
       onComplete: () => {
-        setPhase('landed')
+        setReelStatus('locked')
         onLand?.(finalName)
-        landTimer = window.setTimeout(() => {
-          setPhase('done')
-          if (loop) {
-            loopTimer = window.setTimeout(() => {
-              setInternalRunId((r) => r + 1)
-            }, loopDelay)
+
+        settleTimer = setTimeout(() => {
+          setReelStatus('settled')
+          if (loop && !inputActive) {
+            loopTimer = setTimeout(() => setSpinId((s) => s + 1), loopDelay)
           }
-        }, 900)
+        }, 850)
       },
     })
 
     return () => {
-      controls.stop()
-      window.clearTimeout(landTimer)
-      window.clearTimeout(loopTimer)
+      animation.stop()
+      if (settleTimer) clearTimeout(settleTimer)
+      if (loopTimer) clearTimeout(loopTimer)
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [rowH, internalRunId, trigger])
+  }, [rowHeight, spinId, inputActive])
 
-  const finalColor =
-    phase === 'landed'
+  const activeColor =
+    reelStatus === 'locked'
       ? highlightColor
-      : phase === 'done'
+      : reelStatus === 'settled'
         ? 'var(--foreground)'
         : placeholderColor
 
+  const isAtRest = reelStatus === 'locked' || reelStatus === 'settled'
+
   return (
     <div
+      role="status"
+      aria-live="polite"
       className={cn(
-        'relative flex h-full w-full items-center justify-center overflow-hidden bg-background px-4 py-8 text-foreground select-none',
+        'relative flex h-full w-full items-center justify-center overflow-hidden px-6 text-foreground',
         className,
       )}
     >
       <div
         className={cn(
-          'flex items-center text-4xl font-medium tracking-tight sm:text-6xl md:text-7xl font-sans',
+          'flex items-center text-4xl font-medium tracking-tight sm:text-6xl',
           textClassName,
         )}
       >
-        {prefix && (
-          <span className="shrink-0 whitespace-nowrap text-muted-foreground/80 transition-colors">
+        {prefix ? (
+          <span className="shrink-0 whitespace-nowrap text-muted-foreground select-none">
             {prefix}
           </span>
-        )}
+        ) : null}
 
-        <div className="relative overflow-hidden" style={{ height: viewportH }}>
-          {/* Measure probe for row height */}
+        <div className="relative overflow-hidden" style={{ height: viewportHeight }}>
+          {/* Invisible sizing probe to calculate unit line metrics */}
           <div
-            ref={measureRef}
-            aria-hidden
+            ref={probeRef}
+            aria-hidden="true"
             className="pointer-events-none invisible absolute whitespace-nowrap leading-[1.2]"
           >
             {finalName}
           </div>
 
           <motion.div
-            style={{ y }}
-            className={cn('transform-gpu will-change-transform', rowH ? '' : 'opacity-0')}
+            style={{ y: translateY }}
+            className={cn(
+              'transform-gpu will-change-transform',
+              rowHeight ? '' : 'opacity-0',
+            )}
           >
-            {reel.map((name, i) => {
-              const isFinal = i === finalIndex
+            {sequence.map((entry, idx) => {
+              const isTargetSlot = idx === lockIndex
+
+              if (isTargetSlot && editable && isAtRest) {
+                return (
+                  <div
+                    key={idx}
+                    className="relative inline-flex items-center whitespace-nowrap leading-[1.2]"
+                  >
+                    {/* Shadow span ensuring perfect inline bounding box */}
+                    <span
+                      aria-hidden="true"
+                      className="invisible pointer-events-none whitespace-pre select-none"
+                    >
+                      {inputValue || ' '}
+                    </span>
+
+                    {/* Integrated ghost input for editing directly on the reel */}
+                    <input
+                      ref={inputRef}
+                      type="text"
+                      value={inputValue}
+                      onChange={(e) => {
+                        setInputValue(e.target.value)
+                        onNameChange?.(e.target.value)
+                      }}
+                      onFocus={() => setInputActive(true)}
+                      onBlur={() => setInputActive(false)}
+                      spellCheck={false}
+                      autoComplete="off"
+                      className="absolute inset-0 h-full w-full border-0 bg-transparent p-0 text-inherit font-inherit tracking-inherit outline-none focus:outline-none"
+                      style={{ color: activeColor }}
+                    />
+                  </div>
+                )
+              }
+
               return (
                 <div
-                  key={i}
-                  className="whitespace-nowrap leading-[1.2] transition-[color,opacity] duration-500 ease-out font-medium"
+                  key={idx}
+                  className="whitespace-nowrap leading-[1.2] transition-[color,opacity] duration-500 ease-out"
                   style={{
-                    color: isFinal ? finalColor : placeholderColor,
-                    opacity: !isFinal && phase !== 'spinning' ? 0 : 1,
+                    color: isTargetSlot ? activeColor : placeholderColor,
+                    opacity: !isTargetSlot && reelStatus !== 'scrolling' ? 0 : 1,
                   }}
                 >
-                  {name}
+                  {isTargetSlot ? inputValue : entry}
                 </div>
               )
             })}
           </motion.div>
 
-          {/* Top & Bottom edge gradient fades */}
+          {/* Upper optical gradient falloff */}
           <div
-            aria-hidden
-            className="pointer-events-none absolute inset-x-0 top-0 z-10"
+            aria-hidden="true"
+            className="pointer-events-none absolute inset-x-0 top-0"
             style={{
-              height: rowH * 1.6,
+              height: rowHeight * 1.5,
               background: 'linear-gradient(to bottom, var(--background), transparent)',
             }}
           />
+
+          {/* Lower optical gradient falloff */}
           <div
-            aria-hidden
-            className="pointer-events-none absolute inset-x-0 bottom-0 z-10"
+            aria-hidden="true"
+            className="pointer-events-none absolute inset-x-0 bottom-0"
             style={{
-              height: rowH * 1.6,
+              height: rowHeight * 1.5,
               background: 'linear-gradient(to top, var(--background), transparent)',
             }}
           />
         </div>
-
-        {suffix && (
-          <span className="shrink-0 whitespace-nowrap text-muted-foreground/80 transition-colors">
-            {suffix}
-          </span>
-        )}
       </div>
     </div>
   )
 }
+

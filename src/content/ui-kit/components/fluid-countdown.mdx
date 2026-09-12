@@ -1,0 +1,31 @@
+---
+title: Fluid Countdown
+description: A countdown timer with fluid rolling digits, play/pause and reset controls, and auto-loop built with NumberFlow and Motion.
+preview:
+  name: demo-c-fluid-countdown-01
+  contained: false
+---
+
+Full-screen countdown with fluid rolling numerals, interactive controls, and accessible motion.
+
+## Installation
+
+<ComponentInstallation name="components-spaceui-fluid-countdown" />
+
+## Usage
+
+```tsx
+import { FluidCountdown } from '@/components/spaceui/fluid-countdown'
+
+export default function Timer() {
+  return (
+    <FluidCountdown
+      duration={60}
+      autoStart
+      loop
+      label="Launch in"
+      accentColor="#6366f1"
+    />
+  )
+}
+```

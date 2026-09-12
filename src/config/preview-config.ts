@@ -112,7 +112,7 @@ export function isCatalogRoute(pathname?: string | null): boolean {
   if (clean === '/ui-kit') return true
   if (clean.endsWith('/index')) return true
 
-  const catalogExactRoutes = ['/primitives', '/components', '/blocks', '/templates', '/hooks']
+  const catalogExactRoutes = ['/primitives', '/components', '/blocks', '/templates', '/hooks', '/showcase']
 
   return catalogExactRoutes.includes(clean)
 }

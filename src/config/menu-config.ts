@@ -287,6 +287,10 @@ export const mobileNavGroups: NavGroup[] = [
       isDrillable: false,
     })),
   },
+  {
+    label: 'Showcase',
+    items: [{ title: 'All Starters & Projects', href: '/showcase', group: 'Showcase', isDrillable: false }],
+  },
 ]
 
 // -----------------------------------------------------------------------------
@@ -303,6 +307,11 @@ export const searchNavShortcuts: SearchShortcutItem[] = [
     label: 'Tools',
     href: '/tools',
     keywords: ['tools', 'avatars', 'icons', 'sounds', 'gradients', 'flags', 'emoji'],
+  },
+  {
+    label: 'Showcase',
+    href: '/showcase',
+    keywords: ['showcase', 'templates', 'starters', 'landings', 'sites', 'projects'],
   },
 ]
 

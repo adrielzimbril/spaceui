@@ -1,0 +1,38 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-dither-carousel",
+  "type": "registry:block",
+  "title": "Dither Carousel Block",
+  "description": "3D cylindrical spiral carousel in WebGL2 with curved cards, axial directional blur, and matrix dither pattern.",
+  "registryDependencies": [
+    "https://www.spaceui.one/r/lib-utils.json"
+  ],
+  "categories": [
+    "block",
+    "dither-carousel"
+  ],
+  "files": [
+    {
+      "path": "src/registry/blocks/dither-carousel/index.tsx",
+      "type": "registry:block",
+      "target": "components/blocks/dither-carousel/index.tsx"
+    },
+    {
+      "path": "src/registry/blocks/dither-carousel/dither-carousel.tsx",
+      "type": "registry:block",
+      "target": "components/blocks/dither-carousel/dither-carousel.tsx"
+    },
+    {
+      "path": "src/registry/blocks/dither-carousel/shaders.ts",
+      "type": "registry:block",
+      "target": "components/blocks/dither-carousel/shaders.ts"
+    },
+    {
+      "path": "src/registry/blocks/dither-carousel/types.ts",
+      "type": "registry:block",
+      "target": "components/blocks/dither-carousel/types.ts"
+    }
+  ],
+  "createdAt": "2026-09-12",
+  "updatedAt": "2026-09-12"
+}

@@ -1,0 +1,23 @@
+---
+title: Prism Carousel
+description: A looping image strip viewed through a thick optical glass element with radial zoom, refraction, and chromatic RGB aberration.
+preview:
+  name: block-prism-carousel
+  contained: false
+---
+
+The image strip renders to an offscreen texture, then a fullscreen WebGL pass samples it through an optical lens shader with dispersion and refraction.
+
+## Installation
+
+<ComponentInstallation name="block-prism-carousel" />
+
+## Usage
+
+```tsx
+import BlockPrismCarousel from '@/components/blocks/prism-carousel'
+
+export default function Showcase() {
+  return <BlockPrismCarousel />
+}
+```

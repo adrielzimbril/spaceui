@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-c-fluid-countdown-01",
+  "title": "Fluid Countdown Demo",
+  "description": "Interactive fluid rolling digits countdown timer.",
+  "registryDependencies": [
+    "https://www.spaceui.one/r/components-spaceui-fluid-countdown.json"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/components/spaceui/fluid-countdown/c-fluid-countdown-01/index.tsx",
+      "content": "'use client'\n\nimport * as React from 'react'\nimport { FluidCountdown } from '@/components/spaceui/fluid-countdown'\n\nconst PRESETS = [\n  { label: 'Sprint', duration: 30 },\n  { label: 'Focus', duration: 300 },\n  { label: 'Pomodoro', duration: 1500 },\n]\n\nexport default function Demo() {\n  const [selectedPreset, setSelectedPreset] = React.useState(PRESETS[0])\n\n  return (\n    <div className=\"flex min-h-[480px] w-full flex-col items-center justify-center gap-6 p-6 bg-background text-foreground\">\n      {/* Preset Switcher Pills */}\n      <div className=\"flex items-center gap-2 rounded-2xl border border-border/60 bg-muted/40 p-1.5 backdrop-blur-md\">\n        {PRESETS.map((preset) => {\n          const active = selectedPreset.label === preset.label\n          return (\n            <button\n              key={preset.label}\n              type=\"button\"\n              onClick={() => setSelectedPreset(preset)}\n              className={`rounded-xl px-3.5 py-1.5 text-xs font-semibold transition-all cursor-pointer ${\n                active\n                  ? 'bg-primary text-primary-foreground shadow-xs'\n                  : 'text-muted-foreground hover:text-foreground hover:bg-muted/70'\n              }`}\n            >\n              {preset.label}\n            </button>\n          )\n        })}\n      </div>\n\n      <FluidCountdown\n        key={selectedPreset.duration}\n        duration={selectedPreset.duration}\n        autoStart\n        loop\n        label={`Space UI ${selectedPreset.label}`}\n        accentColor=\"oklch(0.65 0.24 265)\"\n      />\n    </div>\n  )\n}\n",
+      "type": "registry:component",
+      "target": "components/spaceui/fluid-countdown-demo.tsx"
+    }
+  ],
+  "categories": [
+    "component",
+    "fluid-countdown"
+  ],
+  "type": "registry:component"
+}

@@ -36,7 +36,7 @@ export function GalleryImage({ index, scrollRef, onOpen, onHover, registerRef, i
       style={{ aspectRatio: `${sourceSize[0]} / ${sourceSize[1]}` }}
       className="group relative block w-full cursor-zoom-in bg-transparent"
     >
-      <span className="sr-only">{`Work ${String(index + 1).padStart(2, '0')}`}</span>
+      <span className="sr-only">{`Lens ${String(index + 1).padStart(2, '0')}`}</span>
       <span className="pointer-events-none absolute inset-0 bg-white/0 transition-colors duration-500 group-hover:bg-white/[.025]" />
     </motion.button>
   )
@@ -70,7 +70,7 @@ export function VerticalGallery({
       <main className="px-5 pb-40 pt-[clamp(60px,10svh,120px)] md:px-[60px]">
         <div
           aria-hidden="true"
-          className="my-[100px] text-center [font-family:var(--font-work-serif)] text-[clamp(64px,13.1184vw,190px)] opacity-0"
+          className="my-[100px] text-center font-serif text-[clamp(64px,13.1184vw,190px)] opacity-0"
         >
           Category
         </div>

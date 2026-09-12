@@ -295,6 +295,19 @@ export function MegaMenu({ className }: { className?: string }) {
               </div>
             </NavigationMenuContent>
           </NavigationMenuItem>
+
+          {/* Showcase Link */}
+          <NavigationMenuItem value="showcase">
+            <Link
+              href="/showcase"
+              className={cn(
+                navigationMenuTriggerStyle(),
+                'bg-transparent hover:bg-muted/50 focus:bg-muted/50 no-underline',
+              )}
+            >
+              Showcase
+            </Link>
+          </NavigationMenuItem>
         </NavigationMenuList>
 
         {/* Base UI Animated Viewport & Positioner Portal */}
