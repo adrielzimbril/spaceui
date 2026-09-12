@@ -2049,6 +2049,38 @@ export const index: Record<string, any> = {
     })(),
     command: '@spaceui/components-spaceui-github-activity',
   },
+  "components-spaceui-handle-reel": {
+    name: "components-spaceui-handle-reel",
+    description: "Kinetic tumbler reel of usernames, handles, or subdomains past a prefix that decelerates and settles with momentum.",
+    type: "registry:component",
+    dependencies: ["motion"],
+    devDependencies: undefined,
+    registryDependencies: ["https://www.spaceui.one/r/lib-utils.json"],
+    files: [
+  {
+    "path": "src/registry/components/spaceui/handle-reel/index.tsx",
+    "type": "registry:component",
+    "target": "components/spaceui/handle-reel.tsx"
+  }
+],
+    keywords: [],
+    component: (() => {
+      const LazyComp = React.lazy(async () => {
+        const mod = await import("@/registry/components/spaceui/handle-reel/index.tsx");
+        const exportName = Object.keys(mod).find(
+          key => typeof mod[key] === 'function' || typeof mod[key] === 'object'
+        ) || "components-spaceui-handle-reel";
+        const Comp = mod.default || mod[exportName];
+        if (mod.animations) {
+          (LazyComp as any).animations = mod.animations;
+        }
+        return { default: Comp };
+      });
+      LazyComp.demoProps = {};
+      return LazyComp;
+    })(),
+    command: '@spaceui/components-spaceui-handle-reel',
+  },
   "components-spaceui-icon-stack": {
     name: "components-spaceui-icon-stack",
     description: "Icon Stack component for Space UI.",
@@ -6021,6 +6053,70 @@ export const index: Record<string, any> = {
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-github-activity-03',
+  },
+  "demo-c-handle-reel-01": {
+    name: "demo-c-handle-reel-01",
+    description: "Hero handle tumbler reel with ryna.me prefix.",
+    type: "registry:component",
+    dependencies: undefined,
+    devDependencies: undefined,
+    registryDependencies: ["https://www.spaceui.one/r/components-spaceui-handle-reel.json"],
+    files: [
+  {
+    "path": "src/registry/demo/components/spaceui/handle-reel/c-handle-reel-01/index.tsx",
+    "type": "registry:component",
+    "target": "components/spaceui/handle-reel-demo.tsx"
+  }
+],
+    keywords: [],
+    component: (() => {
+      const LazyComp = React.lazy(async () => {
+        const mod = await import("@/registry/demo/components/spaceui/handle-reel/c-handle-reel-01/index.tsx");
+        const exportName = Object.keys(mod).find(
+          key => typeof mod[key] === 'function' || typeof mod[key] === 'object'
+        ) || "demo-c-handle-reel-01";
+        const Comp = mod.default || mod[exportName];
+        if (mod.animations) {
+          (LazyComp as any).animations = mod.animations;
+        }
+        return { default: Comp };
+      });
+      LazyComp.demoProps = {};
+      return LazyComp;
+    })(),
+    command: '@spaceui/demo-c-handle-reel-01',
+  },
+  "demo-c-handle-reel-02": {
+    name: "demo-c-handle-reel-02",
+    description: "Interactive trigger handle reel with custom role names and a tactile roll button.",
+    type: "registry:component",
+    dependencies: undefined,
+    devDependencies: undefined,
+    registryDependencies: ["https://www.spaceui.one/r/components-spaceui-handle-reel.json","https://www.spaceui.one/r/components-spaceui-button-squircle.json"],
+    files: [
+  {
+    "path": "src/registry/demo/components/spaceui/handle-reel/c-handle-reel-02/index.tsx",
+    "type": "registry:component",
+    "target": "components/spaceui/handle-reel-interactive-demo.tsx"
+  }
+],
+    keywords: [],
+    component: (() => {
+      const LazyComp = React.lazy(async () => {
+        const mod = await import("@/registry/demo/components/spaceui/handle-reel/c-handle-reel-02/index.tsx");
+        const exportName = Object.keys(mod).find(
+          key => typeof mod[key] === 'function' || typeof mod[key] === 'object'
+        ) || "demo-c-handle-reel-02";
+        const Comp = mod.default || mod[exportName];
+        if (mod.animations) {
+          (LazyComp as any).animations = mod.animations;
+        }
+        return { default: Comp };
+      });
+      LazyComp.demoProps = {};
+      return LazyComp;
+    })(),
+    command: '@spaceui/demo-c-handle-reel-02',
   },
   "demo-c-icon-stack-01": {
     name: "demo-c-icon-stack-01",

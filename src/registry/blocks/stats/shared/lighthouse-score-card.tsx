@@ -198,11 +198,7 @@ export function LighthouseScoreCard({ scores, strategy, className }: LighthouseS
             </Badge>
           </div>
 
-          <Badge
-            className="capitalize bg-[#ffd3ad] text-stone-900 font-bold tabular-nums"
-            variant="default"
-            size="md"
-          >
+          <Badge className="capitalize bg-[#ffd3ad] text-stone-900 font-bold tabular-nums" variant="default" size="md">
             {overallScore}
           </Badge>
         </div>

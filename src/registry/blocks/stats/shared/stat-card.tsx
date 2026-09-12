@@ -2,9 +2,11 @@
 
 import { motion } from 'motion/react'
 import * as React from 'react'
+import Image from 'next/image'
 import { Frame } from '@/registry/primitives/frame'
 import { Card } from '@/registry/primitives/card'
 import { Badge } from '@/registry/components/spaceui/badge-squircle'
+import { resolveEmojiUrl, EmojiSource, EmojiType, EmojiFormat } from '@usespaceui/emoji'
 import { cn } from '@/registry/lib/utils'
 
 export interface StatCardProps {
@@ -39,6 +41,19 @@ export function StatCard({
 }: StatCardProps) {
   const [isHovered, setIsHovered] = React.useState(false)
 
+  const emojiUrl = React.useMemo(() => {
+    if (!decoration) return ''
+    try {
+      return resolveEmojiUrl(decoration, {
+        source: EmojiSource.Fluent,
+        type: EmojiType.Anim,
+        format: EmojiFormat.Webp,
+      })
+    } catch {
+      return ''
+    }
+  }, [decoration])
+
   return (
     <Frame
       onMouseEnter={() => setIsHovered(true)}
@@ -50,13 +65,23 @@ export function StatCard({
           <motion.div
             animate={{
               rotate: isHovered ? -20 : -32,
-              scale: isHovered ? 1.1 : 1,
+              scale: isHovered ? 1.15 : 1,
               y: isHovered ? -10 : 0,
             }}
             transition={{ type: 'spring', stiffness: 200, damping: 15 }}
-            className="pointer-events-none absolute -bottom-6 -right-6 text-[6rem] leading-none opacity-20 select-none"
+            className="pointer-events-none absolute -bottom-6 -right-6 select-none opacity-20"
           >
-            {decoration}
+            {emojiUrl ? (
+              <Image
+                src={emojiUrl}
+                alt={label}
+                width={96}
+                height={96}
+                className="size-24 object-contain pointer-events-none select-none"
+              />
+            ) : (
+              <span className="text-[6rem] leading-none">{decoration}</span>
+            )}
           </motion.div>
         )}
         {decorationPattern && (

@@ -48,8 +48,8 @@ function RelatedCard({ item }: { item: RelatedComponent }) {
 function RelatedGrid({ items }: { items: RelatedComponent[] }) {
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3.5 [html[data-layout-mode=split]_&]:grid-cols-1! [html[data-layout-mode=canvas]_&]:grid-cols-1!">
-      {items.map((item) => (
-        <RelatedCard key={item.url} item={item} />
+      {items.map((item, index) => (
+        <RelatedCard key={item.name ? `${item.url}-${item.name}` : `${item.url}-${item.title}-${index}`} item={item} />
       ))}
     </div>
   )

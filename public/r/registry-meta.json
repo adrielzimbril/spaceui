@@ -250,9 +250,9 @@
     ],
     "createdAt": "2026-09-12",
     "updatedAt": "2026-09-12",
-    "size": "9 KB",
-    "rawSize": 9208,
-    "directSize": "9 KB",
+    "size": "9.5 KB",
+    "rawSize": 9759,
+    "directSize": "9.5 KB",
     "fileCount": 1,
     "dependencies": [
       "motion",
@@ -287,9 +287,9 @@
     ],
     "createdAt": "2026-09-12",
     "updatedAt": "2026-09-12",
-    "size": "9 KB",
-    "rawSize": 9208,
-    "directSize": "9 KB",
+    "size": "9.5 KB",
+    "rawSize": 9759,
+    "directSize": "9.5 KB",
     "fileCount": 1,
     "dependencies": [
       "motion",
@@ -324,9 +324,9 @@
     ],
     "createdAt": "2026-09-12",
     "updatedAt": "2026-09-12",
-    "size": "9 KB",
-    "rawSize": 9208,
-    "directSize": "9 KB",
+    "size": "9.5 KB",
+    "rawSize": 9759,
+    "directSize": "9.5 KB",
     "fileCount": 1,
     "dependencies": [
       "motion",
@@ -544,9 +544,9 @@
     ],
     "createdAt": "2026-09-12",
     "updatedAt": "2026-09-12",
-    "size": "8.5 KB",
-    "rawSize": 8694,
-    "directSize": "8.5 KB",
+    "size": "9.2 KB",
+    "rawSize": 9426,
+    "directSize": "9.2 KB",
     "fileCount": 3,
     "dependencies": [
       "motion",
@@ -602,9 +602,9 @@
     ],
     "createdAt": "2026-09-12",
     "updatedAt": "2026-09-12",
-    "size": "8.5 KB",
-    "rawSize": 8694,
-    "directSize": "8.5 KB",
+    "size": "9.2 KB",
+    "rawSize": 9426,
+    "directSize": "9.2 KB",
     "fileCount": 3,
     "dependencies": [
       "motion",
@@ -660,9 +660,9 @@
     ],
     "createdAt": "2026-09-12",
     "updatedAt": "2026-09-12",
-    "size": "8.5 KB",
-    "rawSize": 8694,
-    "directSize": "8.5 KB",
+    "size": "9.2 KB",
+    "rawSize": 9426,
+    "directSize": "9.2 KB",
     "fileCount": 3,
     "dependencies": [
       "motion",
@@ -718,9 +718,9 @@
     ],
     "createdAt": "2026-09-12",
     "updatedAt": "2026-09-12",
-    "size": "30.8 KB",
-    "rawSize": 31555,
-    "directSize": "30.8 KB",
+    "size": "33.1 KB",
+    "rawSize": 33872,
+    "directSize": "33.1 KB",
     "fileCount": 7,
     "dependencies": [
       "motion",
@@ -776,9 +776,9 @@
     ],
     "createdAt": "2026-09-12",
     "updatedAt": "2026-09-12",
-    "size": "8.2 KB",
-    "rawSize": 8432,
-    "directSize": "8.2 KB",
+    "size": "8.9 KB",
+    "rawSize": 9164,
+    "directSize": "8.9 KB",
     "fileCount": 3,
     "dependencies": [
       "motion",
@@ -834,9 +834,9 @@
     ],
     "createdAt": "2026-09-12",
     "updatedAt": "2026-09-12",
-    "size": "27.3 KB",
-    "rawSize": 27932,
-    "directSize": "27.3 KB",
+    "size": "26.9 KB",
+    "rawSize": 27560,
+    "directSize": "26.9 KB",
     "fileCount": 4,
     "dependencies": [
       "motion",
@@ -892,9 +892,9 @@
     ],
     "createdAt": "2026-09-12",
     "updatedAt": "2026-09-12",
-    "size": "10.7 KB",
-    "rawSize": 10939,
-    "directSize": "10.7 KB",
+    "size": "10.6 KB",
+    "rawSize": 10892,
+    "directSize": "10.6 KB",
     "fileCount": 3,
     "dependencies": [
       "@tabler/icons-react"
@@ -2164,7 +2164,7 @@
     "createdAt": "2026-09-12",
     "updatedAt": "2026-09-12",
     "size": "2.4 KB",
-    "rawSize": 2413,
+    "rawSize": 2484,
     "directSize": "2.4 KB",
     "fileCount": 1,
     "dependencies": [
@@ -2205,7 +2205,7 @@
     "createdAt": "2026-09-12",
     "updatedAt": "2026-09-12",
     "size": "2.4 KB",
-    "rawSize": 2413,
+    "rawSize": 2484,
     "directSize": "2.4 KB",
     "fileCount": 1,
     "dependencies": [
@@ -2302,9 +2302,9 @@
     ],
     "createdAt": "2026-09-12",
     "updatedAt": "2026-09-12",
-    "size": "3.3 KB",
-    "rawSize": 3363,
-    "directSize": "3.3 KB",
+    "size": "3.6 KB",
+    "rawSize": 3683,
+    "directSize": "3.6 KB",
     "fileCount": 1,
     "dependencies": [
       "@usespaceui/squircle",
@@ -2344,9 +2344,9 @@
     ],
     "createdAt": "2026-09-12",
     "updatedAt": "2026-09-12",
-    "size": "3.3 KB",
-    "rawSize": 3363,
-    "directSize": "3.3 KB",
+    "size": "3.6 KB",
+    "rawSize": 3683,
+    "directSize": "3.6 KB",
     "fileCount": 1,
     "dependencies": [
       "@usespaceui/squircle",
@@ -5695,6 +5695,58 @@
       "https://www.spaceui.one/r/primitives-button.json",
       "https://www.spaceui.one/r/primitives-tooltip.json",
       "https://www.spaceui.one/r/components-spaceui-status-badge.json",
+      "https://www.spaceui.one/r/lib-utils.json"
+    ],
+    "dependents": [],
+    "related": []
+  },
+  "handle-reel": {
+    "name": "components-spaceui-handle-reel",
+    "shortName": "handle-reel",
+    "title": "Handle Reel",
+    "description": "Kinetic tumbler reel of usernames, handles, or subdomains past a prefix that decelerates and settles with momentum.",
+    "type": "registry:component",
+    "url": "/ui-kit/components/spaceui/handle-reel",
+    "category": "Handle-reel",
+    "categories": [
+      "handle-reel"
+    ],
+    "createdAt": "2026-09-12",
+    "updatedAt": "2026-09-12",
+    "size": "7.3 KB",
+    "rawSize": 7479,
+    "directSize": "7.3 KB",
+    "fileCount": 1,
+    "dependencies": [
+      "motion"
+    ],
+    "registryDependencies": [
+      "https://www.spaceui.one/r/lib-utils.json"
+    ],
+    "dependents": [],
+    "related": []
+  },
+  "components-spaceui-handle-reel": {
+    "name": "components-spaceui-handle-reel",
+    "shortName": "handle-reel",
+    "title": "Handle Reel",
+    "description": "Kinetic tumbler reel of usernames, handles, or subdomains past a prefix that decelerates and settles with momentum.",
+    "type": "registry:component",
+    "url": "/ui-kit/components/spaceui/handle-reel",
+    "category": "Handle-reel",
+    "categories": [
+      "handle-reel"
+    ],
+    "createdAt": "2026-09-12",
+    "updatedAt": "2026-09-12",
+    "size": "7.3 KB",
+    "rawSize": 7479,
+    "directSize": "7.3 KB",
+    "fileCount": 1,
+    "dependencies": [
+      "motion"
+    ],
+    "registryDependencies": [
       "https://www.spaceui.one/r/lib-utils.json"
     ],
     "dependents": [],

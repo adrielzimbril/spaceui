@@ -2,10 +2,12 @@
 
 import { motion } from 'motion/react'
 import * as React from 'react'
+import Image from 'next/image'
 import { IconSparklesFilled, IconStarFilled, IconBugFilled, IconSettingsFilled } from '@tabler/icons-react'
 import { Frame } from '@/registry/primitives/frame'
 import { Card } from '@/registry/primitives/card'
 import { Badge } from '@/registry/components/spaceui/badge-squircle'
+import { resolveEmojiUrl, EmojiSource, EmojiType, EmojiFormat } from '@usespaceui/emoji'
 import { cn } from '@/registry/lib/utils'
 import type { ChangelogItem } from './types'
 
@@ -17,6 +19,18 @@ export interface ChangelogUpdatesCardProps {
 
 export function ChangelogUpdatesCard({ count, changelog, className }: ChangelogUpdatesCardProps) {
   const [isHovered, setIsHovered] = React.useState(false)
+
+  const emojiUrl = React.useMemo(() => {
+    try {
+      return resolveEmojiUrl('✨', {
+        source: EmojiSource.Fluent,
+        type: EmojiType.Anim,
+        format: EmojiFormat.Webp,
+      })
+    } catch {
+      return ''
+    }
+  }, [])
 
   const typeIcons = {
     milestone: IconSparklesFilled,
@@ -54,13 +68,23 @@ export function ChangelogUpdatesCard({ count, changelog, className }: ChangelogU
         <motion.div
           animate={{
             rotate: isHovered ? -20 : -32,
-            scale: isHovered ? 1.1 : 1,
+            scale: isHovered ? 1.15 : 1,
             y: isHovered ? -10 : 0,
           }}
           transition={{ type: 'spring', stiffness: 200, damping: 15 }}
-          className="pointer-events-none absolute -bottom-6 -right-6 text-[6rem] leading-none opacity-20 select-none"
+          className="pointer-events-none absolute -bottom-6 -right-6 select-none opacity-20"
         >
-          ✨
+          {emojiUrl ? (
+            <Image
+              src={emojiUrl}
+              alt="Changelog"
+              width={96}
+              height={96}
+              className="size-24 object-contain pointer-events-none select-none"
+            />
+          ) : (
+            <span className="text-[6rem] leading-none">✨</span>
+          )}
         </motion.div>
 
         <div className="border-px absolute z-20 left-1/2 top-0 h-full w-2 -translate-x-1/2 transform border-x border-border/10 bg-border/35" />

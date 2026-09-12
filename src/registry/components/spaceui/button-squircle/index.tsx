@@ -11,10 +11,13 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
+        default: 'border-2 border-primary bg-primary text-primary-foreground hover:bg-primary/90',
         primary: 'border-2 border-primary bg-primary text-primary-foreground hover:bg-primary/90',
+        base: 'border-0 border-transparent bg-muted/70 text-foreground hover:bg-muted/90',
         secondary: 'border-2 border-secondary bg-secondary text-secondary-foreground hover:bg-secondary/90',
         destructive: 'border-2 border-destructive bg-destructive text-white hover:bg-destructive/90',
         outline: 'border-2 border-input bg-transparent text-foreground hover:bg-accent hover:text-accent-foreground',
+        colored: 'bg-inherit text-foreground',
         ghost: 'hover:bg-accent hover:text-accent-foreground',
         icon: 'hover:bg-accent hover:text-accent-foreground',
         link: 'text-foreground underline-offset-4 hover:underline',
@@ -24,6 +27,7 @@ const buttonVariants = cva(
         sm: 'px-3 py-4 h-auto',
         default: 'px-6 py-3',
         lg: 'px-6 py-3 text-lg',
+        iconSmall: 'px-1 py-1',
         'icon-xs': 'size-7 p-0',
         'icon-sm': 'size-8 p-0',
         icon: 'size-9 p-0',
@@ -31,15 +35,16 @@ const buttonVariants = cva(
       },
     },
     defaultVariants: {
-      variant: 'primary',
+      variant: 'default',
       size: 'default',
     },
   },
 )
 
 export interface ButtonProps extends useRender.ComponentProps<'button'>, VariantProps<typeof buttonVariants> {
-  variant?: 'primary' | 'secondary' | 'destructive' | 'outline' | 'ghost' | 'icon' | 'link'
-  size?: 'xs' | 'sm' | 'default' | 'lg' | 'icon-xs' | 'icon-sm' | 'icon' | 'icon-lg'
+  variant?:
+    'default' | 'primary' | 'base' | 'secondary' | 'destructive' | 'outline' | 'colored' | 'ghost' | 'icon' | 'link'
+  size?: 'xs' | 'sm' | 'default' | 'lg' | 'iconSmall' | 'icon-xs' | 'icon-sm' | 'icon' | 'icon-lg'
   full?: boolean
   asFull?: boolean
   icon?: boolean

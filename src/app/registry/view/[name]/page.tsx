@@ -3,7 +3,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { index } from '@/__registry__/index';
 import { notFound } from 'next/navigation';
-import { Suspense } from 'react';
+import { Suspense, use } from 'react';
 
 function unwrapValues(value: any): any {
   if (!value || typeof value !== 'object' || Array.isArray(value)) return value;
@@ -13,14 +13,15 @@ function unwrapValues(value: any): any {
   );
 }
 
-export default async function RegistryViewPage({
+export default function RegistryViewPage({
   params,
   searchParams,
 }: {
   params: Promise<{ name: string }>;
   searchParams: Promise<{ props?: string }>;
 }) {
-  const { name } = await params;
+  const resolvedParams = params ? use(params) : { name: '' };
+  const name = resolvedParams.name;
   const item = index[name];
   if (!item || !item.component) notFound();
 
@@ -28,7 +29,8 @@ export default async function RegistryViewPage({
   const defaults = unwrapValues(Component.demoProps ?? item.meta?.demoProps ?? {});
   let sharedProps = {};
   try {
-    const encodedProps = (await searchParams).props;
+    const resolvedSearchParams = searchParams ? use(searchParams) : {};
+    const encodedProps = resolvedSearchParams?.props;
     if (encodedProps) sharedProps = JSON.parse(encodedProps);
   } catch {
     // Invalid shared props fall back to the original demo defaults.

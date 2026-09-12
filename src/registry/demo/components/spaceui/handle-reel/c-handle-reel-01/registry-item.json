@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-c-handle-reel-01",
+  "type": "registry:component",
+  "title": "Handle Reel Demo",
+  "description": "Hero handle tumbler reel with ryna.me prefix.",
+  "registryDependencies": [
+    "https://www.spaceui.one/r/components-spaceui-handle-reel.json"
+  ],
+  "categories": [
+    "component",
+    "handle-reel"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/components/spaceui/handle-reel/c-handle-reel-01/index.tsx",
+      "type": "registry:component",
+      "target": "components/spaceui/handle-reel-demo.tsx"
+    }
+  ],
+  "createdAt": "2026-09-12",
+  "updatedAt": "2026-09-12"
+}

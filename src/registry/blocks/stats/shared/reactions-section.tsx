@@ -73,7 +73,6 @@ export function ReactionCard({ char = '👍', label, count, className }: Reactio
               alt={label}
               width={96}
               height={96}
-              unoptimized
               className="size-24 object-contain pointer-events-none select-none"
             />
           </motion.div>
@@ -92,7 +91,6 @@ export function ReactionCard({ char = '👍', label, count, className }: Reactio
                   alt={label}
                   width={32}
                   height={32}
-                  unoptimized
                   className="size-8 object-contain pointer-events-none select-none"
                 />
               ) : (

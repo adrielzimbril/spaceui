@@ -164,7 +164,7 @@ export function DocsSidebar() {
                   const Icon = item.icon
 
                   return (
-                    <li key={item.url} ref={isActive ? activeItemRef : null} className="relative">
+                    <li key={`${item.url}-${item.name}`} ref={isActive ? activeItemRef : null} className="relative">
                       <Link
                         href={item.url}
                         prefetch={false}

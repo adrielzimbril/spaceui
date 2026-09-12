@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-c-handle-reel-01",
+  "title": "Handle Reel Demo",
+  "description": "Hero handle tumbler reel with ryna.me prefix.",
+  "registryDependencies": [
+    "https://www.spaceui.one/r/components-spaceui-handle-reel.json"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/components/spaceui/handle-reel/c-handle-reel-01/index.tsx",
+      "content": "'use client'\n\nimport * as React from 'react'\nimport { HandleReel } from '@/components/spaceui/handle-reel'\n\nexport default function Demo() {\n  return (\n    <div className=\"flex h-full min-h-[460px] w-full items-center justify-center bg-background\">\n      <HandleReel\n        prefix=\"ryna.me/\"\n        finalName=\"ryna\"\n        loop\n        highlightColor=\"oklch(0.65 0.24 265)\"\n      />\n    </div>\n  )\n}\n",
+      "type": "registry:component",
+      "target": "components/spaceui/handle-reel-demo.tsx"
+    }
+  ],
+  "categories": [
+    "component",
+    "handle-reel"
+  ],
+  "type": "registry:component"
+}

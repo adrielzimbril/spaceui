@@ -25,6 +25,7 @@ export const badgeVariants = cva(
         default: 'text-xs px-3.5 py-1.5 gap-1.5',
         md: 'text-sm px-4 py-2 gap-2',
         lg: 'text-base px-4.5 py-2 gap-2.5',
+        xl: 'text-xl px-4.5 py-2 gap-2.5',
       },
     },
     defaultVariants: {
@@ -42,11 +43,11 @@ export interface BadgeProps extends useRender.ComponentProps<'span'>, VariantPro
 }
 
 export const Badge = React.forwardRef<HTMLSpanElement, BadgeProps>(
-  ({ className, variant, size, square = false, squircle = true, render, children, ...props }, ref) => {
+  ({ className, variant, size, squircle = true, square = false, render, children, ...props }, ref) => {
     const defaultProps = {
       className: cn(
         badgeVariants({ variant, size }),
-        squircle && 'squircle-2xl/80 md:squircle-3xl/80 hover:squircle-xl/80',
+        squircle && 'squircle-2xl/80 md:squircle-3xl/80 hover:squircle-xl/80 transition-all duration-300',
         square && 'aspect-square',
         className,
       ),

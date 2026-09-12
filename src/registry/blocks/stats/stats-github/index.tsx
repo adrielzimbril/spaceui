@@ -57,13 +57,8 @@ export default function StatsGitHub({
           {/* Bottom Action Button */}
           {showCta && (
             <div className="flex flex-col sm:flex-row items-center gap-3 mt-2">
-              <Button
-                variant="default"
-                size="default"
-                className="squircle-7xl/100 hover:squircle-3xl/100 px-6 py-3 cursor-pointer transition-all duration-300 font-bold text-base"
-                render={<a href={repoUrl} target="_blank" rel="noopener noreferrer" />}
-              >
-                <span>{ctaLabel}</span>
+              <Button whileTap asPointer render={<a href={repoUrl} target="_blank" rel="noopener noreferrer" />}>
+                <span className="font-bold text-base">{ctaLabel}</span>
               </Button>
             </div>
           )}
@@ -82,13 +77,8 @@ export default function StatsGitHub({
 
           {showCta && (
             <div className="flex flex-col sm:flex-row items-center gap-3 mt-2 lg:col-span-12 justify-center">
-              <Button
-                variant="default"
-                size="default"
-                className="squircle-7xl/100 hover:squircle-3xl/100 px-6 py-3 cursor-pointer transition-all duration-300 font-bold text-base"
-                render={<a href={repoUrl} target="_blank" rel="noopener noreferrer" />}
-              >
-                <span>{ctaLabel}</span>
+              <Button whileTap asPointer render={<a href={repoUrl} target="_blank" rel="noopener noreferrer" />}>
+                <span className="font-bold text-base">{ctaLabel}</span>
               </Button>
             </div>
           )}

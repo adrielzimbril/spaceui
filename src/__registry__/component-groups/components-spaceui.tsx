@@ -76,6 +76,10 @@ export const registryComponents: Record<string, RegistryComponent> = {
     () => import("@/registry/components/spaceui/github-activity/index.tsx"),
     {},
   ),
+  "components-spaceui-handle-reel": lazyRegistryComponent(
+    () => import("@/registry/components/spaceui/handle-reel/index.tsx"),
+    {},
+  ),
   "components-spaceui-icon-stack": lazyRegistryComponent(
     () => import("@/registry/components/spaceui/icon-stack/index.tsx"),
     {},

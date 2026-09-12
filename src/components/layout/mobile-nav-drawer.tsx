@@ -378,7 +378,7 @@ export function MobileNavDrawer({ open, onOpenChange, trees = [], trigger, trigg
                           const Icon = item.icon || IconBook
                           return (
                             <Link
-                              key={item.url}
+                              key={`${item.url}-${item.name}`}
                               href={item.url}
                               onClick={handleLinkClick}
                               className="flex w-full items-center gap-2.5 rounded-lg px-3 py-2 transition-colors text-foreground hover:bg-muted"
@@ -431,7 +431,7 @@ export function MobileNavDrawer({ open, onOpenChange, trees = [], trigger, trigg
                           const Icon = item.icon || IconBox
                           return (
                             <Link
-                              key={item.url}
+                              key={`${item.url}-${item.name}`}
                               ref={isActive ? (activeItemRef as any) : undefined}
                               href={item.url}
                               onClick={handleLinkClick}

@@ -2,9 +2,12 @@
 
 import { motion } from 'motion/react'
 import * as React from 'react'
+import Image from 'next/image'
 import { Frame } from '@/registry/primitives/frame'
 import { Card } from '@/registry/primitives/card'
 import { Badge } from '@/registry/components/spaceui/badge-squircle'
+import { Button } from '@/registry/components/spaceui/button-squircle'
+import { resolveEmojiUrl, EmojiSource, EmojiType, EmojiFormat } from '@usespaceui/emoji'
 import { cn } from '@/registry/lib/utils'
 import type { ThoughtItem } from './types'
 
@@ -32,6 +35,19 @@ export function ThoughtsTopList({
   const displayThoughts = thoughts.slice(0, maxItems)
   const isViewed = type === 'viewed'
 
+  const emojiUrl = React.useMemo(() => {
+    if (!decoration) return ''
+    try {
+      return resolveEmojiUrl(decoration, {
+        source: EmojiSource.Fluent,
+        type: EmojiType.Anim,
+        format: EmojiFormat.Webp,
+      })
+    } catch {
+      return ''
+    }
+  }, [decoration])
+
   return (
     <Frame
       onMouseEnter={() => setIsHovered(true)}
@@ -42,13 +58,23 @@ export function ThoughtsTopList({
         <motion.div
           animate={{
             rotate: isHovered ? -20 : -32,
-            scale: isHovered ? 1.1 : 1,
+            scale: isHovered ? 1.15 : 1,
             y: isHovered ? -10 : 0,
           }}
           transition={{ type: 'spring', stiffness: 200, damping: 15 }}
-          className="absolute -bottom-6 -right-6 text-[6rem] leading-none opacity-10 pointer-events-none select-none"
+          className="absolute -bottom-6 -right-6 select-none opacity-10 pointer-events-none"
         >
-          {decoration}
+          {emojiUrl ? (
+            <Image
+              src={emojiUrl}
+              alt={title}
+              width={96}
+              height={96}
+              className="size-24 object-contain pointer-events-none select-none"
+            />
+          ) : (
+            <span className="text-[6rem] leading-none">{decoration}</span>
+          )}
         </motion.div>
 
         <div className="relative w-full flex flex-col gap-2 z-10">
@@ -97,11 +123,9 @@ export function ThoughtsTopList({
 
           {thoughts.length > maxItems && (
             <div className="relative flex mt-2">
-              <a href="#more" className="py-1.5 inline-flex items-center">
-                <span className="capitalize text-xs text-muted-foreground hover:text-foreground">
-                  +{thoughts.length - maxItems} see more
-                </span>
-              </a>
+              <Button variant="base" size="xs" className="py-1.5" asPointer render={<a href="#more" />}>
+                <span className="capitalize text-xs">+{thoughts.length - maxItems} see more</span>
+              </Button>
             </div>
           )}
         </div>

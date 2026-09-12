@@ -73,6 +73,7 @@
     "@floating-ui/react": "^0.27.20",
     "@hookform/resolvers": "^5.9.1",
     "@microlink/mql": "^0.17.1",
+    "@number-flow/react": "^0.6.2",
     "@paper-design/shaders-react": "0.0.78",
     "@phosphor-icons/react": "^2.1.10",
     "@remixicon/react": "^4.9.0",

@@ -8,6 +8,7 @@ import { Frame } from '@/registry/primitives/frame'
 import { Card } from '@/registry/primitives/card'
 import { Badge } from '@/registry/components/spaceui/badge-squircle'
 import { Button } from '@/registry/components/spaceui/button-squircle'
+import { resolveEmojiUrl, EmojiSource, EmojiType, EmojiFormat } from '@usespaceui/emoji'
 import { imagelib } from '@/lib/imagelib'
 import { cn } from '@/registry/lib/utils'
 
@@ -32,6 +33,18 @@ export function ThoughtMostViewedCard({
   const [isHovered, setIsHovered] = React.useState(false)
   const effectiveImage = coverImage || imagelib.tools.imagesplit[0]?.url || '/samples/image-1.png'
 
+  const emojiUrl = React.useMemo(() => {
+    try {
+      return resolveEmojiUrl('📋', {
+        source: EmojiSource.Fluent,
+        type: EmojiType.Anim,
+        format: EmojiFormat.Webp,
+      })
+    } catch {
+      return ''
+    }
+  }, [])
+
   return (
     <Frame
       onMouseEnter={() => setIsHovered(true)}
@@ -42,13 +55,23 @@ export function ThoughtMostViewedCard({
         <motion.div
           animate={{
             rotate: isHovered ? -8 : -18,
-            scale: isHovered ? 1.1 : 1,
+            scale: isHovered ? 1.15 : 1,
             y: isHovered ? -10 : 0,
           }}
           transition={{ type: 'spring', stiffness: 200, damping: 15 }}
-          className="pointer-events-none absolute -bottom-4 -right-14 text-[12rem] leading-none opacity-10 select-none"
+          className="pointer-events-none absolute -bottom-4 -right-14 select-none opacity-10"
         >
-          📋
+          {emojiUrl ? (
+            <Image
+              src={emojiUrl}
+              alt="Most viewed"
+              width={140}
+              height={140}
+              className="size-36 object-contain pointer-events-none select-none"
+            />
+          ) : (
+            <span className="text-[12rem] leading-none">📋</span>
+          )}
         </motion.div>
 
         {/* Browser Mockup Illustration */}
@@ -129,10 +152,7 @@ export function ThoughtMostViewedCard({
         {/* Content info */}
         <div className="relative z-20 flex flex-col items-start justify-between gap-4 md:gap-6 size-full">
           <div className="flex flex-col items-start justify-center gap-3">
-            <Badge
-              className="relative font-medium bg-muted text-foreground squircle-2xl/80 md:squircle-3xl/80 px-3 py-1.5 border-none text-xs md:text-sm"
-              size="md"
-            >
+            <Badge className="relative font-medium bg-muted text-foreground border-none" size="xl">
               Most viewed article
             </Badge>
             <a href={`#${slug}`} className="flex flex-col items-start justify-center gap-1.5 group/link">
@@ -160,15 +180,10 @@ export function ThoughtMostViewedCard({
                 </span>
               </Badge>
             </div>
-            <Button
-              variant="primary"
-              size="xs"
-              className="squircle-7xl/100 hover:squircle-3xl/100 px-4 py-2 cursor-pointer font-semibold text-xs transition-all duration-300"
-              render={<a href={`#${slug}`} />}
-            >
+            <Button whileTap size="xs" asIcon asPointer render={<a href={`#${slug}`} />}>
               <span className="flex items-center gap-1">
                 <span>Read</span>
-                <IconArrowUpRight className="size-4" />
+                <IconArrowUpRight size={16} />
               </span>
             </Button>
           </div>

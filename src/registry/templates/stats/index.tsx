@@ -11,7 +11,7 @@ import FooterTactile from '@/registry/blocks/footer/footer-tactile'
 
 export default function StatsTemplate() {
   return (
-    <div className="w-full max-w-xl mx-auto flex flex-col gap-0 py-8 px-4 md:px-8">
+    <div className="w-full max-w-7xl mx-auto flex flex-col gap-0 py-8 px-4 md:px-8">
       <HeaderSection />
       <StatsGeneral />
       <StatsEngagement />
