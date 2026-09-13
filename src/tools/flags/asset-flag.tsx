@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useMemo, useState } from 'react'
+import Image from 'next/image'
 import { resolveFlagUrl } from './cdn'
 import type { FlagMode, FlagShape } from './types'
 import { cn } from '@/registry/lib/utils'
@@ -34,26 +35,26 @@ export function AssetFlag({
     setHasError(false)
   }, [code, resolvedShape, mode])
 
+  const defaultSize = size ?? 24
   const isRect = resolvedShape === '4x3'
-  const width = size ? (isRect ? Math.round((size * 4) / 3) : size) : undefined
-  const height = size ? size : undefined
+  const width = isRect ? Math.round((defaultSize * 4) / 3) : defaultSize
+  const height = defaultSize
 
   return (
-    <img
+    <Image
       src={src}
       alt={alt ?? `${code.toUpperCase()} flag`}
       width={width}
       height={height}
       loading={lazy ? 'lazy' : 'eager'}
-      decoding="async"
       onError={() => {
         if (!hasError) setHasError(true)
       }}
       className={cn(
         'shrink-0 object-cover ring-1 ring-border/15 transition-transform select-none',
         resolvedShape === 'circle' && 'rounded-full aspect-square',
-        resolvedShape === 'square' && 'rounded-[0.25rem] aspect-square',
-        resolvedShape === '4x3' && 'rounded-[0.25rem] aspect-[4/3]',
+        resolvedShape === 'square' && 'rounded-sm aspect-square',
+        resolvedShape === '4x3' && 'rounded-sm aspect-4/3',
         className,
       )}
     />

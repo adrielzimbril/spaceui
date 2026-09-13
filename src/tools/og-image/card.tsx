@@ -1,6 +1,7 @@
 'use client'
 
 import React, { useEffect, useState } from 'react'
+import Image from 'next/image'
 import type { OgState, Chip, ChipKey, AnimType } from './types'
 import { easeOut, easeSmooth, clamp01 } from './presets'
 import { SpaceLogo } from './brand/space-logo'
@@ -265,8 +266,14 @@ function CardContent({
       >
         {s.showLogo &&
           (s.logoUrl ? (
-            // eslint-disable-next-line @next/next/no-img-element
-            <img src={s.logoUrl} alt="Logo" style={{ width: s.logoSize, height: s.logoSize, objectFit: 'contain' }} />
+            <Image
+              src={s.logoUrl}
+              alt="Logo"
+              width={s.logoSize}
+              height={s.logoSize}
+              style={{ objectFit: 'contain' }}
+              unoptimized={s.logoUrl.startsWith('data:') || s.logoUrl.startsWith('blob:')}
+            />
           ) : (
             <SpaceLogo size={s.logoSize} />
           ))}

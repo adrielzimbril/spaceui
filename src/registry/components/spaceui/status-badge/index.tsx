@@ -12,11 +12,18 @@ export const badgeVariants = cva('rounded-xl flex h-auto md:h-full items-center 
       outline: 'border border-border bg-transparent text-foreground',
     },
     size: {
-      xs: 'text-[11px] px-2 py-0.5 gap-1.5',
-      sm: 'text-xs px-2.5 py-1 gap-1.5',
-      default: 'text-xs px-2.5 py-1.5 gap-2',
-      md: 'text-sm px-3 py-1.5 gap-2.5',
-      lg: 'text-base px-3.5 py-2 gap-3',
+      xs: 'text-xs px-1.5 py-0.5 gap-1.5',
+      sm: 'text-xs px-1.5 py-1 gap-1.5',
+      default: 'text-xs px-1.5 py-1 gap-1.5',
+      md: 'text-sm px-1.5 py-1 gap-2',
+      lg: 'text-base px-1.5 py-1 gap-2',
+    },
+    badgeSize: {
+      xs: 'text-[.725rem] leading-1 px-1.5 py-0.5 gap-0.5',
+      sm: 'text-xs px-1.5 py-1 gap-1',
+      default: 'text-xs px-2 py-1.5 gap-1.5',
+      md: 'text-sm px-2 py-1.5 gap-1.5',
+      lg: 'text-base px-2.5 py-2 gap-1.5',
     },
     circle: {
       true: 'aspect-square p-1.5',
@@ -36,7 +43,7 @@ export interface BadgeProps extends React.HTMLAttributes<HTMLDivElement>, Varian
 
 export function Badge({ className, variant, size, circle, contentClassName, ...props }: BadgeProps) {
   return (
-    <div className={cn(badgeVariants({ variant, size, circle }), 'rounded-md', className)} {...props}>
+    <div className={cn(badgeVariants({ variant, badgeSize: size, circle }), 'rounded-lg', className)} {...props}>
       <span className={cn('font-medium whitespace-pre-line leading-none', contentClassName)}>{props.children}</span>
     </div>
   )
@@ -188,7 +195,7 @@ export function StatusBadge({
           {primaryText && <span className={cn('font-semibold', primaryTextClassName)}>{primaryText}</span>}
         </div>
       </Badge>
-      {props.children && <span className={cn('font-normal opacity-90', secondaryTextClassName)}>{props.children}</span>}
+      {props.children && <span className={cn('font-normal', secondaryTextClassName)}>{props.children}</span>}
     </div>
   )
 }

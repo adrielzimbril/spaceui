@@ -3,27 +3,8 @@
 import * as React from 'react'
 import { cn } from '@/registry/lib/utils'
 import { Link } from '@/registry/primitives/link'
-import {
-  IconBox,
-  IconFolderHeart,
-  IconRocket,
-  IconFlag,
-  IconLayoutGrid,
-  IconSparkles,
-  IconArrowRight,
-  IconBook,
-  IconNetwork,
-  IconChevronRight,
-  IconCpu,
-  IconAtom,
-  IconUserCircle,
-  IconMoodSmile,
-  IconFileTypeDoc,
-  IconIcons,
-  IconPalette,
-  IconPhoto,
-  IconCrown,
-} from '@tabler/icons-react'
+import { Avatar } from '@usespaceui/avatars/react'
+import { IconArrowRight, IconChevronRight } from '@tabler/icons-react'
 import { Badge } from '@/registry/primitives/badge'
 import {
   NavigationMenu,
@@ -38,37 +19,311 @@ import {
   NavigationMenuLink,
   navigationMenuTriggerStyle,
 } from '@/registry/primitives/navigation-menu'
-import { DEFAULT_COLOR_CODE, getColorForegroundClass } from '@/lib/theme-colors'
+import { megaMenuDocs, megaMenuTools } from '@/config/menu-config'
+import { Squishmoji } from '@usespaceui/squishmoji/react'
+import { AssetFlag } from '@/tools/flags/asset-flag'
+import { AssetEmoji } from '@/tools/emoji/asset-emoji'
+import { EmojiSource, EmojiType } from '@usespaceui/emoji'
 
-interface MenuIconProps {
-  children: React.ReactNode
-  className?: string
-  color?: string
-  iconColor?: string
+const docs = megaMenuDocs
+const designTools = megaMenuTools
+
+function clampRadius(radius: number, width: number, height: number): number {
+  return Math.max(0, Math.min(radius, width / 2, height / 2))
 }
 
-const MenuIcon = ({ children, className, color = DEFAULT_COLOR_CODE.BLUE, iconColor }: MenuIconProps) => {
+function createInverseTopPath(
+  width: number,
+  height: number,
+  topRadius: number,
+  yOffset: number = 0,
+  bottomRadius?: number,
+): string {
+  const topR = clampRadius(topRadius, width, height)
+  const botR = clampRadius(bottomRadius ?? topR, width, height)
+  const l = yOffset + topR
+  return `M ${-topR} ${yOffset} H ${width + topR} Q ${width} ${yOffset} ${width} ${l} V ${height - botR} A ${botR} ${botR} 0 0 1 ${width - botR} ${height} H ${botR} A ${botR} ${botR} 0 0 1 0 ${height - botR} V ${l} Q 0 ${yOffset} ${-topR} ${yOffset} Z`
+}
+
+function createInverseTopStrokePath(width: number, height: number, topRadius: number, bottomRadius?: number): string {
+  const topR = clampRadius(topRadius, width, height)
+  const botR = clampRadius(bottomRadius ?? topR, width, height)
+  return `M ${width + topR} 0 Q ${width} 0 ${width} ${topR} V ${height - botR} A ${botR} ${botR} 0 0 1 ${width - botR} ${height} H ${botR} A ${botR} ${botR} 0 0 1 0 ${height - botR} V ${topR} Q 0 0 ${-topR} 0`
+}
+
+function SpaceMenuShell() {
+  const svgRef = React.useRef<SVGSVGElement>(null)
+  const fillPathRef = React.useRef<SVGPathElement>(null)
+  const strokePathRef = React.useRef<SVGPathElement>(null)
+
+  React.useLayoutEffect(() => {
+    const svg = svgRef.current
+    const popupEl = svg?.parentElement
+    if (!svg || !popupEl) return
+
+    const topRadius = 24
+    const bottomRadius = 24
+
+    const updatePaths = () => {
+      const w = Math.round(popupEl.offsetWidth)
+      const h = Math.round(popupEl.offsetHeight)
+      if (w <= 0 || h <= 0) return
+
+      const fill = createInverseTopPath(w, h + 1, topRadius, -1, bottomRadius)
+      const stroke = createInverseTopStrokePath(w, h, topRadius, bottomRadius)
+
+      svg.setAttribute('width', `${w}`)
+      svg.setAttribute('height', `${h}`)
+      svg.setAttribute('viewBox', `0 0 ${w} ${h}`)
+
+      if (fillPathRef.current) fillPathRef.current.setAttribute('d', fill)
+      if (strokePathRef.current) strokePathRef.current.setAttribute('d', stroke)
+    }
+
+    // Initial sync
+    updatePaths()
+
+    // Observe layout changes
+    const ro = new ResizeObserver(() => {
+      updatePaths()
+    })
+    ro.observe(popupEl)
+
+    // Smoothly track CSS width/height transition during slide on every frame
+    let activeTransitions = 0
+    let rafId: number | null = null
+    const trackTransition = () => {
+      updatePaths()
+      if (activeTransitions > 0) {
+        rafId = requestAnimationFrame(trackTransition)
+      } else {
+        rafId = null
+      }
+    }
+
+    const onTransitionStart = (e: TransitionEvent) => {
+      if (e.target === popupEl && (e.propertyName === 'width' || e.propertyName === 'height')) {
+        activeTransitions++
+        if (!rafId) {
+          rafId = requestAnimationFrame(trackTransition)
+        }
+      }
+    }
+
+    const onTransitionEnd = (e: TransitionEvent) => {
+      if (e.target === popupEl && (e.propertyName === 'width' || e.propertyName === 'height')) {
+        activeTransitions = Math.max(0, activeTransitions - 1)
+        if (activeTransitions === 0 && rafId) {
+          cancelAnimationFrame(rafId)
+          rafId = null
+        }
+        updatePaths()
+      }
+    }
+
+    popupEl.addEventListener('transitionrun', onTransitionStart)
+    popupEl.addEventListener('transitionend', onTransitionEnd)
+    popupEl.addEventListener('transitioncancel', onTransitionEnd)
+
+    return () => {
+      ro.disconnect()
+      if (rafId) cancelAnimationFrame(rafId)
+      popupEl.removeEventListener('transitionrun', onTransitionStart)
+      popupEl.removeEventListener('transitionend', onTransitionEnd)
+      popupEl.removeEventListener('transitioncancel', onTransitionEnd)
+    }
+  }, [])
+
+  return (
+    <svg ref={svgRef} aria-hidden="true" className="pointer-events-none absolute top-0 left-0 overflow-visible z-0">
+      <path ref={fillPathRef} className="fill-background" />
+      <path ref={strokePathRef} className="fill-none stroke-border" strokeWidth="1" vectorEffect="non-scaling-stroke" />
+    </svg>
+  )
+}
+
+interface MenuAvatarIconProps {
+  seed: string
+  className?: string
+}
+
+export function MenuAvatarIcon({ seed, className }: MenuAvatarIconProps) {
   return (
     <div
       className={cn(
-        'flex shrink-0 items-center justify-center size-8 rounded-sm relative overflow-hidden bg-primary/5',
+        'flex shrink-0 items-center justify-center size-8 rounded-full relative overflow-hidden border border-muted',
         className,
       )}
     >
-      <div className={cn('flex items-center justify-center [&>svg]:size-4 text-foreground')}>{children}</div>
+      <Avatar name={seed} variant="shaula" size={32} circle={false} />
     </div>
   )
 }
 
-import { megaMenuDocs, megaMenuUiKit, megaMenuTools } from '@/config/menu-config'
+function ToolMenuIcon({ tool }: { tool: (typeof designTools)[number] }) {
+  if (tool.label === 'squishmoji') {
+    return (
+      <div className="flex shrink-0 items-center justify-center size-8 rounded-full relative overflow-hidden border border-muted bg-muted">
+        <Squishmoji seed="squishmoji" size={26} shape="all" expression="all" backgroundStyle="all" />
+      </div>
+    )
+  }
 
-const docs = megaMenuDocs
-const uiKitComponents = megaMenuUiKit
-const designTools = megaMenuTools
+  if (tool.label === 'avatars') {
+    return (
+      <div className="flex shrink-0 items-center justify-center size-8 rounded-full relative overflow-hidden border border-muted bg-muted">
+        <Avatar name="avatars" variant="pebble" size={32} circle={false} />
+      </div>
+    )
+  }
+
+  if (tool.label === 'flags') {
+    return (
+      <div className="flex shrink-0 items-center justify-center size-8 rounded-full relative overflow-hidden border border-muted bg-muted">
+        <AssetFlag code="ci" shape="circle" size={20} alt="Flag" className="ring-0" />
+      </div>
+    )
+  }
+
+  if (tool.label === 'emoji') {
+    return (
+      <div className="flex shrink-0 items-center justify-center size-8 rounded-full relative overflow-hidden border border-muted bg-muted">
+        <AssetEmoji codepoint="1f60e" source={EmojiSource.Fluent} type={EmojiType.Anim} size={22} lazy={false} />
+      </div>
+    )
+  }
+
+  if (tool.label === 'plush') {
+    return (
+      <div className="flex shrink-0 items-center justify-center size-8 rounded-full relative overflow-hidden border border-muted bg-muted">
+        <Avatar name="plush" variant="glitch" size={32} circle={false} />
+      </div>
+    )
+  }
+
+  if (tool.label === 'sounds') {
+    return (
+      <div className="flex shrink-0 items-center justify-center size-8 rounded-full relative overflow-hidden border border-muted bg-muted">
+        <Avatar name="sounds" variant="doodle" size={32} circle={false} />
+      </div>
+    )
+  }
+
+  if (tool.label === 'imagesplit' || tool.title.toLowerCase().includes('split')) {
+    return (
+      <div className="flex shrink-0 items-center justify-center size-8 rounded-full relative overflow-hidden border border-muted bg-muted">
+        <Avatar name="imagesplit" variant="invader" size={32} circle={false} />
+      </div>
+    )
+  }
+
+  if (tool.label === 'shaders' || tool.title.toLowerCase().includes('shader')) {
+    return (
+      <div className="flex shrink-0 items-center justify-center size-8 rounded-full relative overflow-hidden border border-muted bg-muted">
+        <Avatar name="shaders" variant="singularity" size={32} circle={false} />
+      </div>
+    )
+  }
+
+  if (tool.label === 'icons' || tool.title.toLowerCase() === 'icons') {
+    return (
+      <div className="flex shrink-0 items-center justify-center size-8 rounded-full relative overflow-hidden border border-muted bg-muted">
+        <Avatar name="icons" variant="bored" size={32} circle={false} />
+      </div>
+    )
+  }
+
+  if (tool.label === 'gradients' || tool.title.toLowerCase().includes('gradient')) {
+    return (
+      <div className="flex shrink-0 items-center justify-center size-8 rounded-full relative overflow-hidden border border-muted bg-muted">
+        <Avatar name="gradients" variant="titan" size={32} circle={false} />
+      </div>
+    )
+  }
+
+  if (tool.label === 'all-tools' || tool.title.toLowerCase().includes('all tools')) {
+    return (
+      <div className="flex shrink-0 items-center justify-center size-8 rounded-full relative overflow-hidden border border-muted bg-background">
+        <Avatar name="all-tools" variant="lumina" size={32} circle={false} />
+      </div>
+    )
+  }
+
+  return <MenuAvatarIcon seed={tool.label || tool.title.toLowerCase().replace(/[^a-z0-9]+/g, '-')} />
+}
+
+const DEFAULT_MENU_SIZES: Record<string, { width: number; height: number }> = {
+  docs: { width: 420, height: 382 },
+  'ui-kit': { width: 560, height: 209 },
+  tools: { width: 760, height: 526 },
+}
+
+function MenuContentMeasurer({
+  id,
+  onMeasured,
+  children,
+}: {
+  id: string
+  onMeasured: (id: string, width: number, height: number) => void
+  children: React.ReactNode
+}) {
+  const ref = React.useRef<HTMLDivElement>(null)
+
+  React.useLayoutEffect(() => {
+    const el = ref.current
+    if (!el) return
+
+    const measure = () => {
+      const parent = el.parentElement
+      if (!parent) return
+      const w = Math.round(parent.offsetWidth)
+      const h = Math.round(parent.offsetHeight)
+      if (w > 0 && h > 0) {
+        onMeasured(id, w, h)
+      }
+    }
+
+    measure()
+    const ro = new ResizeObserver(measure)
+    ro.observe(el)
+    if (el.parentElement) {
+      ro.observe(el.parentElement)
+    }
+
+    return () => ro.disconnect()
+  }, [id, onMeasured])
+
+  return (
+    <div ref={ref} className="contents">
+      {children}
+    </div>
+  )
+}
 
 export function MegaMenu({ className }: { className?: string }) {
   const [value, setValue] = React.useState<string | null>(null)
   const isClickTriggered = React.useRef<boolean>(false)
+  const [menuSizes, setMenuSizes] = React.useState(DEFAULT_MENU_SIZES)
+  const lastValueRef = React.useRef<string>('ui-kit')
+
+  if (value && menuSizes[value]) {
+    lastValueRef.current = value
+  }
+
+  const activeSize = value && menuSizes[value] ? menuSizes[value] : menuSizes[lastValueRef.current]
+
+  const handleMeasured = React.useCallback((id: string, width: number, height: number) => {
+    setMenuSizes((prev) => {
+      const existing = prev[id]
+      if (existing && existing.width === width && Math.abs(existing.height - height) <= 1) {
+        return prev
+      }
+      return {
+        ...prev,
+        [id]: { width, height },
+      }
+    })
+  }, [])
 
   const handleClose = () => {
     setValue(null)
@@ -93,7 +348,6 @@ export function MegaMenu({ className }: { className?: string }) {
     }
 
     if (reason === 'outside-press') {
-      // Si ouvert par clic, on ne ferme pas au clic extérieur (permet d'inspecter dans les DevTools tranquillement)
       if (isClickTriggered.current) {
         return
       }
@@ -102,7 +356,6 @@ export function MegaMenu({ className }: { className?: string }) {
     }
 
     if (reason === 'trigger-hover') {
-      // Si le menu a été verrouillé par un clic, le pointeur qui sort ne le ferme pas
       if (nextValue === null && isClickTriggered.current) {
         return
       }
@@ -123,176 +376,191 @@ export function MegaMenu({ className }: { className?: string }) {
         className={className}
       >
         <NavigationMenuList className="flex items-center gap-1 text-sm font-medium">
+          {/* Components Link - Placé au tout début */}
+          <NavigationMenuItem value="components">
+            <Link
+              href="/components"
+              className={cn(
+                navigationMenuTriggerStyle(),
+                'bg-transparent hover:bg-muted focus:bg-muted no-underline gap-1.5',
+              )}
+            >
+              <span
+                aria-hidden="true"
+                className="size-1.5 rounded-full bg-current opacity-40 transition-all duration-300 group-hover:opacity-100 group-focus-visible:opacity-100 shrink-0"
+              />
+              Components
+            </Link>
+          </NavigationMenuItem>
+
           {/* Docs Menu */}
           <NavigationMenuItem value="docs">
-            <NavigationMenuTrigger className="bg-transparent hover:bg-muted/50 focus:bg-muted/50" showDot>
+            <NavigationMenuTrigger className="bg-transparent hover:bg-muted focus:bg-muted gap-1.5">
+              <span
+                aria-hidden="true"
+                className="size-1.5 rounded-full bg-current opacity-40 transition-all duration-300 group-hover:opacity-100 group-data-[state=open]:opacity-100 group-data-popup-open:opacity-100 group-data-[state=open]:scale-125 group-data-popup-open:scale-125 shrink-0"
+              />
               Docs
             </NavigationMenuTrigger>
-            <NavigationMenuContent className="w-100 p-2">
-              <div className="grid gap-1">
-                {docs.map((doc) => (
-                  <Link
-                    key={doc.title}
-                    className="group/row rounded-xl flex flex-row items-center gap-3 p-2.5 outline-none transition-colors hover:bg-muted focus-visible:bg-muted data-[active=true]:bg-muted dark:hover:bg-muted/50 dark:focus-visible:bg-muted/50 dark:data-[active=true]:bg-muted/50"
-                    href={doc.href}
-                    onClick={handleClose}
-                  >
-                    <MenuIcon color={doc.color}>
-                      <doc.icon className="size-5" />
-                    </MenuIcon>
-                    <span className="flex min-w-0 flex-1 flex-col gap-0.5">
-                      <span className="text-foreground flex items-center gap-2 text-sm leading-none font-medium">
-                        {doc.title}
-                        {doc.badge && (
-                          <Badge className="rounded-sm px-1.5" variant="info">
-                            <span aria-hidden="true">{doc.badge}</span>
-                            <span className="sr-only">New feature</span>
-                          </Badge>
-                        )}
+            <NavigationMenuContent keepMounted className="w-105 shrink-0 max-w-none p-5 pt-3.5">
+              <MenuContentMeasurer id="docs" onMeasured={handleMeasured}>
+                <div className="hidden text-[11px] font-semibold tracking-wider text-muted-foreground uppercase px-2.5 mb-2">
+                  Documentation
+                </div>
+                <div className="grid gap-1">
+                  {docs.map((doc) => (
+                    <Link
+                      key={doc.title}
+                      className="group/row rounded-xl flex flex-row items-center gap-3 p-2.5 outline-none transition-colors hover:bg-muted focus-visible:bg-muted data-[active=true]:bg-muted dark:hover:bg-muted dark:focus-visible:bg-muted dark:data-[active=true]:bg-muted"
+                      href={doc.href}
+                      onClick={handleClose}
+                    >
+                      <MenuAvatarIcon seed={doc.title.toLowerCase().replace(/[^a-z0-9]+/g, '-')} />
+                      <span className="flex min-w-0 flex-1 flex-col gap-0.5">
+                        <span className="text-foreground flex items-center gap-2 text-sm leading-none font-medium">
+                          {doc.title}
+                          {doc.badge && (
+                            <Badge className="rounded-sm px-1.5" variant="info">
+                              <span aria-hidden="true">{doc.badge}</span>
+                              <span className="sr-only">New feature</span>
+                            </Badge>
+                          )}
+                        </span>
+                        <span className="text-muted-foreground truncate text-xs leading-snug">{doc.description}</span>
                       </span>
-                      <span className="text-muted-foreground truncate text-xs leading-snug">{doc.description}</span>
-                    </span>
-                    <IconChevronRight className="size-4 text-muted-foreground/0 group-hover/row:text-muted-foreground/60 group-focus-visible/row:text-muted-foreground/60 ml-2 shrink-0 -translate-x-1 transition-all duration-200 group-hover/row:translate-x-0 group-focus-visible/row:translate-x-0" />
-                  </Link>
-                ))}
-                <div className="bg-border/70 -mx-2 my-1.5 h-px" aria-hidden="true" />
-                <Link
-                  href="#"
-                  onClick={handleClose}
-                  className="group/cta relative overflow-hidden rounded-xl border border-amber-500/25 bg-linear-to-r from-amber-100/10 via-amber-300/5 to-orange-500/10 p-2.5 flex items-center gap-3 transition-all duration-200 hover:border-amber-500/45 cursor-pointer outline-none select-none"
-                >
-                  <Badge
-                    square
-                    variant="warning"
-                    size="lg"
-                    className="flex shrink-0 items-center justify-center size-auto! rounded-lg group-hover/cta:scale-105 transition-transform duration-200"
+                      <IconChevronRight className="size-4 text-muted-foreground/0 group-hover/row:text-muted-foreground/60 group-focus-visible/row:text-muted-foreground/60 ml-2 shrink-0 -translate-x-1 transition-all duration-200 group-hover/row:translate-x-0 group-focus-visible/row:translate-x-0" />
+                    </Link>
+                  ))}
+                  <div className="bg-border -mx-1 my-2 h-px" aria-hidden="true" />
+                  <Link
+                    href="#"
+                    onClick={handleClose}
+                    className="group/cta relative overflow-hidden rounded-xl border border-muted bg-muted hover:bg-accent p-2.5 flex items-center gap-3 transition-colors cursor-pointer outline-none select-none"
                   >
-                    <IconCrown className="size-4.5" />
-                  </Badge>
-                  <span className="flex min-w-0 flex-1 flex-col gap-0.5">
-                    <span className="flex items-center gap-2">
-                      <span className="text-foreground text-sm leading-none font-semibold">Get All-Access</span>
-                      <Badge variant="warning" size="sm">
-                        Coming Soon
-                      </Badge>
+                    <MenuAvatarIcon
+                      seed="vip"
+                      className="border-amber-500 group-hover/cta:scale-105 transition-transform duration-200"
+                    />
+                    <span className="flex min-w-0 flex-1 flex-col gap-0.5">
+                      <span className="flex items-center gap-2">
+                        <span className="text-foreground text-sm leading-none font-semibold">Get All-Access</span>
+                        <Badge variant="warning" size="sm">
+                          Coming Soon
+                        </Badge>
+                      </span>
+                      <span className="text-muted-foreground truncate text-xs leading-snug">
+                        Every Pro block, template, and update.
+                      </span>
                     </span>
-                    <span className="text-muted-foreground truncate text-xs leading-snug">
-                      Every Pro block, template, and update.
+                    <span className="text-muted-foreground group-hover/cta:text-foreground group-hover/cta:translate-x-0.5 transition-all duration-200 ml-1 shrink-0">
+                      <IconArrowRight className="size-4" />
                     </span>
-                  </span>
-                  <span className="text-muted-foreground group-hover/cta:text-foreground group-hover/cta:translate-x-0.5 transition-all duration-200 ml-1 shrink-0">
-                    <IconArrowRight className="size-4" />
-                  </span>
-                </Link>
-              </div>
+                  </Link>
+                </div>
+              </MenuContentMeasurer>
             </NavigationMenuContent>
           </NavigationMenuItem>
 
           {/* UI Kit Menu */}
           <NavigationMenuItem value="ui-kit">
-            <NavigationMenuTrigger className="bg-transparent hover:bg-muted/50 focus:bg-muted/50" showDot>
+            <NavigationMenuTrigger className="bg-transparent hover:bg-muted focus:bg-muted gap-1.5">
+              <span
+                aria-hidden="true"
+                className="size-1.5 rounded-full bg-current opacity-40 transition-all duration-300 group-hover:opacity-100 group-data-[state=open]:opacity-100 group-data-popup-open:opacity-100 group-data-[state=open]:scale-125 group-data-popup-open:scale-125 shrink-0"
+              />
               UI Kit
             </NavigationMenuTrigger>
-            <NavigationMenuContent>
-              <ul className="grid w-100 gap-3 p-4 md:w-125 md:grid-cols-2 lg:w-150">
-                <li className="row-span-4 flex flex-col justify-between gap-2.5">
-                  <Link
-                    className="flex flex-1 w-full select-none flex-col items-start justify-end rounded-xl bg-linear-to-b from-muted/50 to-muted p-6 outline-none group/card"
-                    href="/ui-kit"
-                    onClick={handleClose}
-                  >
-                    <IconRocket className="size-7 text-primary group-hover/card:scale-110 transition-transform" />
-                    <div className="mb-2 mt-4 text-lg font-medium">Space UI</div>
-                    <span className="text-sm leading-tight text-muted-foreground">
-                      Beautifully designed components built with Tailwind CSS and Framer Motion.
-                    </span>
-                  </Link>
-                  <ListItem
-                    key="Templates"
-                    title="Templates"
-                    href="/templates"
-                    icon={IconLayoutGrid}
-                    color={DEFAULT_COLOR_CODE.ORANGE}
-                    className="bg-muted"
-                    onClick={handleClose}
-                  >
-                    Full-page starter templates
+            <NavigationMenuContent keepMounted className="w-140 shrink-0 max-w-none p-5 pt-3.5">
+              <MenuContentMeasurer id="ui-kit" onMeasured={handleMeasured}>
+                <div className="hidden text-[11px] font-semibold tracking-wider text-muted-foreground uppercase px-2.5 mb-2">
+                  UI Kit & Primitives
+                </div>
+                <div className="grid grid-cols-2 gap-2">
+                  <ListItem title="Primitives" href="/primitives" seed="primitives" onClick={handleClose}>
+                    Basic accessible UI elements like Buttons, Inputs, Dialogs.
                   </ListItem>
-                </li>
-                {uiKitComponents.map((component) => (
-                  <li key={component.title}>
-                    <ListItem
-                      title={component.title}
-                      href={component.href}
-                      icon={component.icon}
-                      color={component.color}
-                      onClick={handleClose}
-                    >
-                      {component.description}
-                    </ListItem>
-                  </li>
-                ))}
-              </ul>
+                  <ListItem title="Blocks" href="/blocks" seed="blocks" onClick={handleClose}>
+                    Ready-to-use section blocks and page sections.
+                  </ListItem>
+                  <ListItem title="Hooks & Utils" href="/hooks" seed="hooks" onClick={handleClose}>
+                    Sensory React hooks, flow-control and pure DX utilities.
+                  </ListItem>
+                  <ListItem title="Templates" href="/templates" seed="templates" onClick={handleClose}>
+                    Full-page starter templates for your next app.
+                  </ListItem>
+                </div>
+              </MenuContentMeasurer>
             </NavigationMenuContent>
           </NavigationMenuItem>
 
           {/* Tools Menu */}
           <NavigationMenuItem value="tools">
-            <NavigationMenuTrigger className="bg-transparent hover:bg-muted/50 focus:bg-muted/50" showDot>
+            <NavigationMenuTrigger className="bg-transparent hover:bg-muted focus:bg-muted gap-1.5">
+              <span
+                aria-hidden="true"
+                className="size-1.5 rounded-full bg-current opacity-40 transition-all duration-300 group-hover:opacity-100 group-data-[state=open]:opacity-100 group-data-popup-open:opacity-100 group-data-[state=open]:scale-125 group-data-popup-open:scale-125 shrink-0"
+              />
               Tools
             </NavigationMenuTrigger>
-            <NavigationMenuContent className="w-175 p-3">
-              <div className="flex flex-col gap-1">
-                <span className="text-muted-foreground p-2 text-xs font-medium uppercase">Design Tools</span>
-                <div className="grid grid-cols-2 gap-2">
-                  {designTools.map((tool) => {
-                    const ToolIcon = tool.icon
-                    const isExternal = tool.href?.startsWith('http')
-                    const isInactive = tool.upcoming && (tool.href === '#' || !tool.href)
-                    const isComingSoon = tool.upcoming || tool.release === 'coming-soon'
+            <NavigationMenuContent keepMounted className="w-190 shrink-0 max-w-none p-5 pt-3.5">
+              <MenuContentMeasurer id="tools" onMeasured={handleMeasured}>
+                <div className="flex flex-col gap-1">
+                  <div className="hidden text-[11px] font-semibold tracking-wider text-muted-foreground uppercase px-2.5 mb-2">
+                    Design Tools
+                  </div>
+                  <div className="grid grid-cols-2 gap-2.5">
+                    {designTools.map((tool) => {
+                      const isExternal = tool.href?.startsWith('http')
+                      const isInactive = tool.upcoming && (tool.href === '#' || !tool.href)
+                      const isComingSoon = tool.upcoming || tool.release === 'coming-soon'
+                      const isAllTools = tool.label === 'all-tools' || tool.title.toLowerCase().includes('all tools')
 
-                    return (
-                      <Link
-                        key={tool.title}
-                        href={tool.href ?? '#'}
-                        target={isExternal ? '_blank' : undefined}
-                        rel={isExternal ? 'noopener noreferrer' : undefined}
-                        onClick={isInactive ? (e) => e.preventDefault() : handleClose}
-                        className={cn(
-                          'flex min-h-16 flex-row gap-3 rounded-xl p-3 hover:bg-muted transition-colors',
-                          isInactive && 'cursor-default opacity-85 hover:bg-transparent',
-                        )}
-                      >
-                        <MenuIcon color={tool.color}>
-                          <ToolIcon className="size-5" />
-                        </MenuIcon>
-                        <div className="flex flex-col">
-                          <div className="flex items-center gap-1.5">
-                            <span
-                              className={cn(
-                                'text-sm font-medium',
-                                isComingSoon ? 'text-muted-foreground' : 'text-foreground',
-                              )}
-                            >
-                              {tool.title}
+                      return (
+                        <Link
+                          key={tool.title}
+                          href={tool.href ?? '#'}
+                          target={isExternal ? '_blank' : undefined}
+                          rel={isExternal ? 'noopener noreferrer' : undefined}
+                          onClick={isInactive ? (e) => e.preventDefault() : handleClose}
+                          className={cn(
+                            'flex flex-row items-start gap-3 rounded-xl p-2.5 transition-colors select-none min-w-0',
+                            isAllTools
+                              ? 'bg-muted hover:bg-accent border border-muted'
+                              : 'hover:bg-muted border border-transparent',
+                            isInactive && 'cursor-default opacity-75 hover:bg-transparent',
+                          )}
+                        >
+                          <ToolMenuIcon tool={tool} />
+                          <div className="flex flex-col min-w-0 flex-1 gap-0.5">
+                            <div className="flex items-center gap-1.5 min-w-0">
+                              <span
+                                className={cn(
+                                  'text-sm font-medium leading-none truncate',
+                                  isComingSoon ? 'text-muted-foreground' : 'text-foreground',
+                                )}
+                              >
+                                {tool.title}
+                              </span>
+                              {isComingSoon ? (
+                                <Badge variant="warning" size="sm" className="rounded-sm shrink-0">
+                                  <span aria-hidden="true">Coming Soon</span>
+                                </Badge>
+                              ) : tool.release === 'beta' ? (
+                                <Badge variant="secondary" size="sm" className="rounded-sm shrink-0">
+                                  <span aria-hidden="true">Beta</span>
+                                </Badge>
+                              ) : null}
+                            </div>
+                            <span className="text-muted-foreground line-clamp-2 text-xs leading-snug mt-0.5">
+                              {tool.description}
                             </span>
-                            {isComingSoon ? (
-                              <Badge variant="warning" size="sm" className="rounded-sm">
-                                <span aria-hidden="true">Coming Soon</span>
-                              </Badge>
-                            ) : tool.release === 'beta' ? (
-                              <Badge variant="secondary" size="sm" className="rounded-sm">
-                                <span aria-hidden="true">Beta</span>
-                              </Badge>
-                            ) : null}
                           </div>
-                          <span className="text-muted-foreground text-sm font-normal">{tool.description}</span>
-                        </div>
-                      </Link>
-                    )
-                  })}
+                        </Link>
+                      )
+                    })}
+                  </div>
                 </div>
-              </div>
+              </MenuContentMeasurer>
             </NavigationMenuContent>
           </NavigationMenuItem>
 
@@ -302,7 +570,7 @@ export function MegaMenu({ className }: { className?: string }) {
               href="/showcase"
               className={cn(
                 navigationMenuTriggerStyle(),
-                'bg-transparent hover:bg-muted/50 focus:bg-muted/50 no-underline gap-1.5',
+                'bg-transparent hover:bg-muted focus:bg-muted no-underline gap-1.5',
               )}
             >
               <span
@@ -316,9 +584,20 @@ export function MegaMenu({ className }: { className?: string }) {
 
         {/* Base UI Animated Viewport & Positioner Portal */}
         <NavigationMenuPortal>
-          <NavigationMenuPositioner sideOffset={8}>
-            <NavigationMenuPopup>
-              <NavigationMenuViewport />
+          <NavigationMenuPositioner sideOffset={14}>
+            <NavigationMenuPopup
+              style={{
+                ...(activeSize
+                  ? {
+                      width: `${activeSize.width}px`,
+                      height: `${activeSize.height}px`,
+                    }
+                  : {}),
+              }}
+              className="border-0! bg-transparent! shadow-none! rounded-none! backdrop-blur-none! overflow-visible! data-[starting-style]:scale-100! data-[ending-style]:scale-100!"
+            >
+              <SpaceMenuShell />
+              <NavigationMenuViewport className="relative z-10 h-full w-full overflow-hidden rounded-b-3xl" />
             </NavigationMenuPopup>
           </NavigationMenuPositioner>
         </NavigationMenuPortal>
@@ -330,29 +609,23 @@ export function MegaMenu({ className }: { className?: string }) {
 const ListItem = React.forwardRef<
   React.ComponentRef<'a'>,
   React.ComponentPropsWithoutRef<'a'> & {
-    icon?: React.ElementType
-    color?: string
-    iconColor?: string
+    seed: string
   }
->(({ className, title, children, icon: Icon, color, iconColor, ...props }, ref) => {
+>(({ className, title, children, seed, ...props }, ref) => {
   return (
     <Link
       ref={ref}
       className={cn(
-        'block select-none space-y-1 rounded-xl p-3 leading-none no-underline outline-none transition-colors hover:bg-muted',
+        'group/item flex flex-row items-start gap-3 rounded-xl p-2.5 outline-none transition-colors hover:bg-muted focus-visible:bg-muted select-none',
         className,
       )}
       {...props}
     >
-      <div className="flex items-center gap-2">
-        {Icon && (
-          <MenuIcon color={color} iconColor={iconColor} className="size-6">
-            <Icon />
-          </MenuIcon>
-        )}
-        <span className="text-sm font-medium leading-none">{title}</span>
-      </div>
-      <span className="line-clamp-2 text-sm leading-snug text-muted-foreground mt-1">{children}</span>
+      <MenuAvatarIcon seed={seed} />
+      <span className="flex min-w-0 flex-1 flex-col gap-0.5">
+        <span className="text-foreground text-sm leading-none font-medium">{title}</span>
+        <span className="text-muted-foreground line-clamp-2 text-xs leading-snug mt-0.5">{children}</span>
+      </span>
     </Link>
   )
 })

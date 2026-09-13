@@ -6,7 +6,7 @@ import { type VariantProps, cva } from 'class-variance-authority'
 import * as React from 'react'
 import { cn } from '@/registry/lib/utils'
 
-const buttonVariants = cva(
+export const buttonVariants = cva(
   'inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium transition-all duration-300 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0',
   {
     variants: {
@@ -56,7 +56,7 @@ export interface ButtonProps extends useRender.ComponentProps<'button'>, Variant
   squircle?: boolean
 }
 
-const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
+export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
   (
     {
       className,
@@ -90,8 +90,6 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
         isPointer && 'cursor-pointer',
         isHover && 'hover:scale-105',
       ),
-      'data-space-click': variant === 'destructive' ? 'deny' : 'tap',
-      'data-space-hover': 'tick',
       ref,
       children: props.children,
     }
@@ -104,6 +102,3 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
   },
 )
 Button.displayName = 'Button'
-
-export { Button, buttonVariants }
-export type { ButtonProps }

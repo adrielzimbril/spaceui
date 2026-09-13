@@ -9,7 +9,7 @@ import { IconChevronDown, IconCheck } from '@tabler/icons-react'
 import { slideSound } from '@/components/providers/sound-provider'
 import { Menu, MenuItem, MenuPopup, MenuTrigger } from '@/registry/primitives/menu'
 import { ScrollArea } from '@/registry/primitives/scroll-area'
-import { getColorForegroundClass } from '@/lib/theme-colors'
+import { MenuAvatarIcon } from '@/components/layout/mega-menu'
 import { HUBS, resolvePathSections, getActiveHub, NavBadge, type SectionItem, type HubItem } from '@/lib/nav-registry'
 
 function HubItemContent({
@@ -21,21 +21,9 @@ function HubItemContent({
   isSelected?: boolean
   isTrigger?: boolean
 }) {
-  const HubIcon = hub.icon
-
   return (
     <>
-      <div
-        className={cn(
-          'aspect-square h-full! flex items-center justify-center shrink-0 p-0 overflow-hidden relative bg-muted!',
-          isTrigger ? 'rounded-md size-8' : 'rounded-sm size-7',
-        )}
-        style={{ backgroundColor: hub.color }}
-      >
-        <div className={cn('flex items-center justify-center [&>svg]:size-4')}>
-          <HubIcon className={isTrigger ? 'size-4' : 'size-3.5'} />
-        </div>
-      </div>
+      <MenuAvatarIcon seed={hub.id} />
       <div className="flex flex-col min-w-0 flex-1">
         <span
           className={cn(
@@ -54,7 +42,7 @@ function HubItemContent({
           {hub.description}
         </span>
       </div>
-      {isSelected && <IconCheck className="size-3.5 text-primary shrink-0 ml-1" />}
+      {/* {isSelected && <IconCheck className="size-3.5 text-primary shrink-0 ml-1" />} */}
       {isTrigger && (
         <IconChevronDown className="size-3.5 text-muted-foreground shrink-0 ml-1 group-hover:text-foreground transition-colors" />
       )}

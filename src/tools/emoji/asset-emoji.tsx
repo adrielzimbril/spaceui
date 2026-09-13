@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useMemo, useState } from 'react'
+import Image from 'next/image'
 import {
   EmojiFormat,
   resolveEmojiUrl,
@@ -41,14 +42,13 @@ export function AssetEmoji({
     return <LottieEmoji src={src} size={size} alt="" />
   }
   return (
-    <img
+    <Image
       src={src}
       alt=""
       width={size}
       height={size}
       className={lazy ? 'size-full object-contain' : 'object-contain'}
       loading={lazy ? 'lazy' : 'eager'}
-      decoding="async"
       onError={() => setOk(false)}
     />
   )

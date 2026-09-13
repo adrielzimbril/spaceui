@@ -11,21 +11,56 @@ preview: demo-h-format-text-01
 ## Usage
 
 ```tsx
-import { truncateText, randomWord } from '@/utils/format-text'
+import { truncateText, randomWord, capitalizeText } from '@/utils/format-text'
 
-truncateText('Hello World!', { maxLength: 8 }) // => "Hello..."
+// Sentence case (capitalizes the first letter of each sentence)
+capitalizeText('SPACE UI IS THE BEST UI LIBRAY. TRY IT TODAY!')
+// => "Space ui is the best ui libray. Try it today!"
+
+// Words case (capitalizes the first letter of every word)
+capitalizeText('SPACE UI IS THE BEST UI LIBRAY', 'words')
+// => "Space Ui Is The Best Ui Libray"
+
+// Truncate text
+truncateText('Space UI is the best UI library!', { maxLength: 8 }) // => "Space..."
 ```
 
 ## API Reference
 
-### Parameters / Props
+### `capitalizeText(text, options?)`
 
-| Parameter | Type     | Default    | Description    |
-| :-------- | :------- | :--------- | :------------- |
-| `text`    | `string` | _required_ | Target string. |
+Capitalizes text by sentence, words, or first letter while optionally lowercasing the rest.
 
-### Return Value
+| Parameter | Type | Default | Description |
+| :--- | :--- | :--- | :--- |
+| `text` | `string` | _required_ | The input string to capitalize. |
+| `options.mode` | `'sentence' \| 'words' \| 'first'` | `'sentence'` | Capitalization strategy. Can also be passed directly as a string (e.g. `'words'`). |
+| `options.lowerRest` | `boolean` | `true` | When `true`, lowercases all non-capitalized characters to ensure only the target letters are uppercase. |
 
-| Return Type | Description         |
-| :---------- | :------------------ |
-| `string`    | Transformed string. |
+**Shorthand helpers:**
+- `capitalizeWords(text, options?)` - Shorthand for `capitalizeText(text, { mode: 'words' })`.
+- `capitalizeFirst(text, options?)` - Shorthand for `capitalizeText(text, { mode: 'first' })`.
+- `capitalize(text, options?)` - Alias for `capitalizeText`.
+
+### `truncateText(text, options?)`
+
+Truncates a string by character or word count and adds an ellipsis.
+
+| Parameter | Type | Default | Description |
+| :--- | :--- | :--- | :--- |
+| `text` | `string` | _required_ | The input string to truncate. |
+| `options.type` | `'char' \| 'word'` | `'char'` | Truncation mode. |
+| `options.maxLength` | `number` | `40` | Maximum length before truncation. |
+
+### `randomWord(options?)`
+
+Generates pseudo-Latin random words without external dictionaries.
+
+| Parameter | Type | Default | Description |
+| :--- | :--- | :--- | :--- |
+| `options.count` | `number` | `1` | Number of words to generate. |
+| `options.length` | `number` | `random (3-8)` | Length of each word. |
+| `options.casing` | `'lowercase' \| 'uppercase' \| 'capitalize'` | `'lowercase'` | Output casing style. |
+| `options.separator` | `string` | `' '` | Separator between words. |
+| `options.alphanumeric` | `boolean` | `false` | Includes numeric digits in words. |
+

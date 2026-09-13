@@ -112,3 +112,100 @@ export function randomWord(options: RandomWordOptions = {}): string {
 
   return words.join(separator)
 }
+
+export type CapitalizeMode = 'sentence' | 'words' | 'first'
+
+export interface CapitalizeOptions {
+  /**
+   * Capitalization mode:
+   * - `'sentence'`: Capitalizes the first letter of each sentence (after `.`, `!`, `?` or newline).
+   * - `'words'`: Capitalizes the first letter of each word (title case).
+   * - `'first'`: Capitalizes only the very first letter of the entire string.
+   *
+   * @default 'sentence'
+   */
+  mode?: CapitalizeMode
+  /**
+   * Whether to lowercase all other characters in the text.
+   * When `true`, ensures that *only* the targeted first letters are uppercase.
+   *
+   * @default true
+   */
+  lowerRest?: boolean
+}
+
+/**
+ * Capitalizes text according to the specified mode.
+ * By default, only capitalizes the first letter of sentences and converts the rest to lowercase.
+ *
+ * @param text - The text string to format
+ * @param options - Capitalization mode ('sentence' | 'words' | 'first') or configuration options
+ * @returns The formatted string
+ *
+ * @example
+ * // Sentence case (default):
+ * capitalizeText("welcome to space ui. build faster interfaces!")
+ * // => "Welcome to space ui. Build faster interfaces!"
+ *
+ * // Words case (first letter of each word):
+ * capitalizeText("space ui component library", 'words')
+ * // => "Space Ui Component Library"
+ *
+ * // Only the very first letter of the string:
+ * capitalizeText("beautiful web designs. highly accessible.", 'first')
+ * // => "Beautiful web designs. highly accessible."
+ *
+ * // Preserve existing uppercase letters in the rest of the text:
+ * capitalizeText("space UI is the best UI library", { mode: 'sentence', lowerRest: false })
+ * // => "Space UI is the best UI library"
+ */
+export function capitalizeText(
+  text: string,
+  options: CapitalizeMode | CapitalizeOptions = {},
+): string {
+  if (!text || typeof text !== 'string') return text ?? ''
+
+  const opts: CapitalizeOptions = typeof options === 'string' ? { mode: options } : options
+  const { mode = 'sentence', lowerRest = true } = opts
+
+  const str = lowerRest ? text.toLowerCase() : text
+
+  if (mode === 'words') {
+    return str.replace(/(^|[^\p{L}\p{N}])(\p{L})/gu, (match, prefix, char) => prefix + char.toUpperCase())
+  }
+
+  if (mode === 'first') {
+    return str.replace(/^(\s*)(\p{L})/u, (match, space, char) => space + char.toUpperCase())
+  }
+
+  // Default: 'sentence'
+  return str.replace(/(^|[.!?\n]\s*)(\p{L})/gu, (match, prefix, char) => prefix + char.toUpperCase())
+}
+
+/**
+ * Alias for `capitalizeText`.
+ */
+export const capitalize = capitalizeText
+
+/**
+ * Shorthand to capitalize the first letter of every word in the text.
+ *
+ * @example
+ * capitalizeWords("crafting modern web interfaces")
+ * // => "Crafting Modern Web Interfaces"
+ */
+export function capitalizeWords(text: string, options: Omit<CapitalizeOptions, 'mode'> = {}): string {
+  return capitalizeText(text, { ...options, mode: 'words' })
+}
+
+/**
+ * Shorthand to capitalize only the very first letter of the entire text.
+ *
+ * @example
+ * capitalizeFirst("explore our collection of components. get started today.")
+ * // => "Explore our collection of components. get started today."
+ */
+export function capitalizeFirst(text: string, options: Omit<CapitalizeOptions, 'mode'> = {}): string {
+  return capitalizeText(text, { ...options, mode: 'first' })
+}
+

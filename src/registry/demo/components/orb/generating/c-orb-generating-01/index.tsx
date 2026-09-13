@@ -39,7 +39,7 @@ export default function Demo({
   }, [renderer])
 
   return (
-    <div className="flex size-full min-h-[380px] flex-col items-center justify-center gap-6 p-6">
+    <div className="flex size-full min-h-95 flex-col items-center justify-center gap-6 p-6">
       {/* Renderer Switcher Pill */}
       <div className="flex items-center rounded-full bg-muted/70 p-1 text-xs backdrop-blur-sm border border-border/40 shadow-sm">
         <button

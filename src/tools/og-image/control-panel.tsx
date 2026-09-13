@@ -1,6 +1,7 @@
 'use client'
 
 import React, { useRef, useState } from 'react'
+import Image from 'next/image'
 import {
   IconArrowsShuffle,
   IconCheck,
@@ -279,8 +280,14 @@ export function OgControlPanel({
                   {s.bgImage ? (
                     <div className="flex items-center gap-2.5 rounded-lg bg-background p-2">
                       <div className="relative size-12 shrink-0 overflow-hidden rounded-md border border-border">
-                        {/* eslint-disable-next-line @next/next/no-img-element */}
-                        <img src={s.bgImage} alt="Background" className="size-full object-cover" />
+                        <Image
+                          src={s.bgImage}
+                          alt="Background"
+                          width={48}
+                          height={48}
+                          className="size-full object-cover"
+                          unoptimized={s.bgImage.startsWith('data:') || s.bgImage.startsWith('blob:')}
+                        />
                       </div>
                       <div className="min-w-0 flex-1">
                         <p className="truncate text-xs font-medium">Custom Image</p>
@@ -1049,8 +1056,14 @@ export function OgControlPanel({
                       {s.logoUrl ? (
                         <div className="flex items-center gap-2.5 rounded-lg bg-background p-2">
                           <div className="relative size-10 shrink-0 overflow-hidden rounded-md border border-border bg-muted/40 p-1 flex items-center justify-center">
-                            {/* eslint-disable-next-line @next/next/no-img-element */}
-                            <img src={s.logoUrl} alt="Logo" className="size-full object-contain" />
+                            <Image
+                              src={s.logoUrl}
+                              alt="Logo"
+                              width={40}
+                              height={40}
+                              className="size-full object-contain"
+                              unoptimized={s.logoUrl.startsWith('data:') || s.logoUrl.startsWith('blob:')}
+                            />
                           </div>
                           <div className="min-w-0 flex-1">
                             <p className="truncate text-xs font-medium">Custom Logo</p>

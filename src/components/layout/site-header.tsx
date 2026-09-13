@@ -21,7 +21,7 @@ export function SiteHeader() {
   const isOffline = useOffline()
 
   return (
-    <header className="sticky top-0 z-50 border-b border-border bg-background">
+    <header className="sticky top-0 z-50 border-b border-border bg-background backdrop-blur-md">
       <div className="mx-auto flex sm:grid h-16 grid-cols-[auto_1fr_auto] justify-between items-center gap-3 px-3 md:px-4 lg:px-8 xl:grid-cols-[1fr_auto_1fr]">
         <div className="flex min-w-0 items-center gap-2">
           <Link href="/" aria-label="Space UI home" className="inline-flex items-center text-foreground gap-2.5 group">

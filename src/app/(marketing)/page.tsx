@@ -19,7 +19,7 @@ export default function HomePage() {
       <PackagesSection />
 
       {/* 4. Showcase — Production Starters & Landings */}
-      <ShowcaseSection />
+      {/* <ShowcaseSection /> */}
 
       {/* 5. Social Proof — Loved by builders who ship */}
       <TestimonialsSection />

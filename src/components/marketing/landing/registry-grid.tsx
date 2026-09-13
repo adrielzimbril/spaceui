@@ -444,7 +444,7 @@ export function RegistryGrid() {
               <ArrowUpRight className="size-4" />
             </Link>
           </FrameHeader>
-          <Card className="flex-1 flex flex-col h-full rounded-lg before:rounded-lg overflow-hidden">
+          <Card className="flex-1 flex flex-col h-full rounded-xl before:rounded-xl overflow-hidden">
             <CardPanel className="flex-1 flex min-h-72 flex-col items-center justify-center p-4 rounded-lg">
               <OrbBloop
                 size={190}
@@ -471,7 +471,7 @@ export function RegistryGrid() {
               <ArrowUpRight className="size-4" />
             </Link>
           </FrameHeader>
-          <Card className="flex-1 flex flex-col h-full rounded-lg before:rounded-lg overflow-hidden">
+          <Card className="flex-1 flex flex-col h-full rounded-xl before:rounded-xl overflow-hidden">
             <CardPanel className="flex-1 flex min-h-72 flex-col items-center justify-center p-4 rounded-lg">
               <OrbSmooth
                 key={SMOOTH_LUMINA_SEEDS[smoothSeedIndex]}
@@ -499,7 +499,7 @@ export function RegistryGrid() {
               <ArrowUpRight className="size-4" />
             </Link>
           </FrameHeader>
-          <Card className="flex-1 flex flex-col h-full rounded-lg before:rounded-lg overflow-hidden">
+          <Card className="flex-1 flex flex-col h-full rounded-xl before:rounded-xl overflow-hidden">
             <CardPanel className="flex-1 flex min-h-72 items-center justify-center rounded-lg">
               <div className="w-full">
                 <BouncyAccordion
@@ -534,7 +534,7 @@ export function RegistryGrid() {
               <ArrowUpRight className="size-4" />
             </Link>
           </FrameHeader>
-          <Card className="flex-1 flex flex-col h-full rounded-lg before:rounded-lg overflow-hidden">
+          <Card className="flex-1 flex flex-col h-full rounded-xl before:rounded-xl overflow-hidden">
             <CardPanel className="flex-1 flex min-h-72 flex-col justify-center p-3 sm:p-4 rounded-lg">
               <div className="w-full max-w-sm mx-auto">
                 <BentoHandleReel />
@@ -554,7 +554,7 @@ export function RegistryGrid() {
               <ArrowUpRight className="size-4" />
             </Link>
           </FrameHeader>
-          <Card className="flex-1 flex flex-col h-full rounded-lg before:rounded-lg overflow-hidden">
+          <Card className="flex-1 flex flex-col h-full rounded-xl before:rounded-xl overflow-hidden">
             <CardPanel className="flex-1 flex min-h-72 flex-wrap items-center justify-center gap-5 sm:gap-6 p-4 rounded-lg">
               {TAILWIND_COLORS.map(({ label, className }) => (
                 <div key={label} className="flex flex-col items-center gap-2 select-none">
@@ -594,7 +594,7 @@ export function RegistryGrid() {
               </Link>
             </div>
           </FrameHeader>
-          <Card className="flex-1 flex flex-col h-full rounded-lg before:rounded-lg overflow-hidden">
+          <Card className="flex-1 flex flex-col h-full rounded-xl before:rounded-xl overflow-hidden">
             <CardPanel className="flex-1 flex min-h-72 p-0 overflow-hidden relative rounded-lg">
               <div className="relative w-full h-full min-h-72 flex flex-col items-center justify-center overflow-hidden rounded-xl bg-muted/10">
                 <WordsPreloader
@@ -640,7 +640,7 @@ export function RegistryGrid() {
               <ArrowUpRight className="size-4" />
             </Link>
           </FrameHeader>
-          <Card className="flex-1 flex flex-col h-full rounded-lg before:rounded-lg overflow-hidden">
+          <Card className="flex-1 flex flex-col h-full rounded-xl before:rounded-xl overflow-hidden">
             <CardPanel className="flex-1 flex min-h-72 max-h-72 overflow-y-auto p-2 sm:p-3 rounded-lg [&::-webkit-scrollbar]:hidden">
               <AnimatedTimelinePreview />
             </CardPanel>
@@ -658,7 +658,7 @@ export function RegistryGrid() {
               <ArrowUpRight className="size-4" />
             </Link>
           </FrameHeader>
-          <Card className="flex-1 flex flex-col h-full rounded-lg before:rounded-lg overflow-hidden">
+          <Card className="flex-1 flex flex-col h-full rounded-xl before:rounded-xl overflow-hidden">
             <CardPanel className="flex-1 flex min-h-60 flex-col justify-center p-4 sm:p-6 rounded-lg">
               <GitHubActivity user="usespaceui" shape="rounded" />
             </CardPanel>

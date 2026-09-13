@@ -3,10 +3,6 @@ import * as React from 'react'
 import { initSquircle } from '@usespaceui/squircle'
 
 export default function Demo() {
-  React.useEffect(() => {
-    initSquircle()
-  }, [])
-
   return (
     <div className="flex flex-col items-center justify-center gap-8 w-full">
       <div className="flex w-full items-center justify-center gap-6 py-10">

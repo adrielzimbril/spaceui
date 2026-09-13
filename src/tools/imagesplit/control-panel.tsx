@@ -1,6 +1,7 @@
 'use client'
 
 import React from 'react'
+import Image from 'next/image'
 import { IconCut, IconPhoto, IconUpload } from '@tabler/icons-react'
 import { Button } from '@/registry/primitives/button'
 import { ScrollArea } from '@/registry/primitives/scroll-area'
@@ -165,8 +166,14 @@ export function ImageSplitControlPanel({
           <div className="flex items-center gap-3 rounded-xl bg-muted p-2.5">
             <div className="grid size-11 shrink-0 place-items-center overflow-hidden rounded-[0.625rem] bg-background">
               {img ? (
-                // eslint-disable-next-line @next/next/no-img-element
-                <img src={img.src} alt={file?.name ?? 'Preview'} className="size-full object-cover" />
+                <Image
+                  src={img.src}
+                  alt={file?.name ?? 'Preview'}
+                  width={44}
+                  height={44}
+                  className="size-full object-cover"
+                  unoptimized={img.src.startsWith('blob:') || img.src.startsWith('data:')}
+                />
               ) : (
                 <IconCut className="size-5 text-muted-foreground" />
               )}

@@ -495,8 +495,8 @@ export function PackagesSection() {
               </Link>
             </div>
           </FrameHeader>
-          <Card className="flex-1 flex flex-col h-full rounded-lg before:rounded-lg overflow-hidden">
-            <CardPanel className="flex-1 relative flex min-h-[380px] p-0 overflow-hidden items-center justify-center bg-muted/20 rounded-lg">
+          <Card className="flex-1 flex flex-col h-full rounded-xl before:rounded-xl overflow-hidden">
+            <CardPanel className="flex-1 relative flex min-h-95 p-0 overflow-hidden items-center justify-center bg-muted/20 rounded-lg">
               {/* WebGL Canvas with smooth blur morph transition while loading */}
               <div
                 ref={plushCanvasRef}
@@ -546,7 +546,7 @@ export function PackagesSection() {
               <ArrowUpRight className="size-4" />
             </Link>
           </FrameHeader>
-          <Card className="flex-1 flex flex-col h-full rounded-lg before:rounded-lg overflow-hidden">
+          <Card className="flex-1 flex flex-col h-full rounded-xl before:rounded-xl overflow-hidden">
             <CardPanel className="flex-1 flex flex-col justify-center gap-3 p-4 min-h-48 rounded-lg">
               <div className="grid grid-cols-6 gap-2 w-full items-center justify-items-center">
                 {characters.map((item, idx) => (
@@ -596,7 +596,7 @@ export function PackagesSection() {
               <ArrowUpRight className="size-4" />
             </Link>
           </FrameHeader>
-          <Card className="flex-1 flex flex-col h-full rounded-lg before:rounded-lg overflow-hidden">
+          <Card className="flex-1 flex flex-col h-full rounded-xl before:rounded-xl overflow-hidden">
             <CardPanel className="flex-1 flex flex-col justify-center gap-3 p-3.5 min-h-44 rounded-lg">
               <div className="grid grid-cols-3 gap-2.5 items-center justify-items-center">
                 {FLAG_SETS[flagSetIndex].map((f, slotIdx) => (
@@ -632,7 +632,7 @@ export function PackagesSection() {
               <ArrowUpRight className="size-4" />
             </Link>
           </FrameHeader>
-          <Card className="flex-1 flex flex-col h-full rounded-lg before:rounded-lg overflow-hidden">
+          <Card className="flex-1 flex flex-col h-full rounded-xl before:rounded-xl overflow-hidden">
             <CardPanel className="flex-1 flex items-center justify-center gap-3 p-3 min-h-44 rounded-lg">
               <SquircleSwatchItem className="squircle-2xl hover:squircle-xl bg-primary" />
               <SquircleSwatchItem className="squircle-lg hover:squircle-md bg-muted" />
@@ -664,7 +664,7 @@ export function PackagesSection() {
               </Link>
             </div>
           </FrameHeader>
-          <Card className="flex-1 flex flex-col h-full rounded-lg before:rounded-lg overflow-hidden">
+          <Card className="flex-1 flex flex-col h-full rounded-xl before:rounded-xl overflow-hidden">
             <CardPanel className="flex-1 flex flex-col items-center justify-center gap-3 p-4 min-h-48 rounded-lg">
               {/* Visual slice preview with real demo image and blur transition */}
               <div
