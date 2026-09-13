@@ -125,7 +125,7 @@ export function MegaMenu({ className }: { className?: string }) {
         <NavigationMenuList className="flex items-center gap-1 text-sm font-medium">
           {/* Docs Menu */}
           <NavigationMenuItem value="docs">
-            <NavigationMenuTrigger className="bg-transparent hover:bg-muted/50 focus:bg-muted/50">
+            <NavigationMenuTrigger className="bg-transparent hover:bg-muted/50 focus:bg-muted/50" showDot>
               Docs
             </NavigationMenuTrigger>
             <NavigationMenuContent className="w-100 p-2">
@@ -190,7 +190,7 @@ export function MegaMenu({ className }: { className?: string }) {
 
           {/* UI Kit Menu */}
           <NavigationMenuItem value="ui-kit">
-            <NavigationMenuTrigger className="bg-transparent hover:bg-muted/50 focus:bg-muted/50">
+            <NavigationMenuTrigger className="bg-transparent hover:bg-muted/50 focus:bg-muted/50" showDot>
               UI Kit
             </NavigationMenuTrigger>
             <NavigationMenuContent>
@@ -238,7 +238,7 @@ export function MegaMenu({ className }: { className?: string }) {
 
           {/* Tools Menu */}
           <NavigationMenuItem value="tools">
-            <NavigationMenuTrigger className="bg-transparent hover:bg-muted/50 focus:bg-muted/50">
+            <NavigationMenuTrigger className="bg-transparent hover:bg-muted/50 focus:bg-muted/50" showDot>
               Tools
             </NavigationMenuTrigger>
             <NavigationMenuContent className="w-175 p-3">
@@ -302,9 +302,13 @@ export function MegaMenu({ className }: { className?: string }) {
               href="/showcase"
               className={cn(
                 navigationMenuTriggerStyle(),
-                'bg-transparent hover:bg-muted/50 focus:bg-muted/50 no-underline',
+                'bg-transparent hover:bg-muted/50 focus:bg-muted/50 no-underline gap-1.5',
               )}
             >
+              <span
+                aria-hidden="true"
+                className="size-1.5 rounded-full bg-current opacity-40 transition-all duration-300 group-hover:opacity-100 group-focus-visible:opacity-100 shrink-0"
+              />
               Showcase
             </Link>
           </NavigationMenuItem>

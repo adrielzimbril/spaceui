@@ -3,7 +3,7 @@
 import * as React from 'react'
 import { IconLayoutDashboard, IconLogin } from '@tabler/icons-react'
 
-import { IconLogo } from '@/components/layout/icon-logo'
+import { Squishmoji } from '@usespaceui/squishmoji/react'
 import { CommandMenu } from '@/components/layout/command-menu'
 import { ModeSwitcher } from '@/registry/components/spaceui/mode-switcher'
 import { MegaMenu } from '@/components/layout/mega-menu'
@@ -24,8 +24,21 @@ export function SiteHeader() {
     <header className="sticky top-0 z-50 border-b border-border bg-background">
       <div className="mx-auto flex sm:grid h-16 grid-cols-[auto_1fr_auto] justify-between items-center gap-3 px-3 md:px-4 lg:px-8 xl:grid-cols-[1fr_auto_1fr]">
         <div className="flex min-w-0 items-center gap-2">
-          <Link href="/" aria-label="Space UI home" className="inline-flex items-center text-foreground gap-2">
-            <IconLogo size="lg" />
+          <Link href="/" aria-label="Space UI home" className="inline-flex items-center text-foreground gap-2.5 group">
+            <div className="relative flex items-center justify-center size-8 shrink-0 overflow-visible">
+              <Squishmoji
+                seed="o"
+                shape="lion"
+                expression="loving"
+                backgroundStyle="all"
+                animate
+                animOnClick
+                animOnHover
+                // animWobble
+                size={48}
+                className="scale-150 origin-center transition-transform"
+              />
+            </div>
             <span className="text-sm font-semibold inline">Space UI</span>
             {isOffline && (
               <Badge size="sm" variant="destructive" className="ml-2">

@@ -21,7 +21,7 @@ import { Input } from '@/registry/primitives/input'
 import { ScrollArea } from '@/registry/primitives/scroll-area'
 import { ModeSwitcher } from '@/registry/components/spaceui/mode-switcher'
 import { useMediaQuery } from '@/registry/hooks/browser/use-media-query'
-import { IconLogo } from '@/components/layout/icon-logo'
+import { Squishmoji } from '@usespaceui/squishmoji/react'
 import { Kbd } from '@/registry/primitives/kbd'
 import {
   IconArrowRight,
@@ -311,8 +311,21 @@ export function MobileNavDrawer({ open, onOpenChange, trees = [], trigger, trigg
         <DrawerHeader className={cn('flex flex-col p-0!')}>
           {/* Header */}
           <div className="shrink-0 flex flex-row gap-2 items-center justify-between px-3.5 py-2! bg-background rounded-xl">
-            <Link href="/" onClick={handleLinkClick} className="inline-flex items-center gap-2">
-              <IconLogo size="sm" />
+            <Link href="/" onClick={handleLinkClick} className="inline-flex items-center gap-2.5">
+              <div className="relative flex items-center justify-center size-7 shrink-0 overflow-visible">
+                <Squishmoji
+                  seed="o"
+                  shape="lion"
+                  expression="loving"
+                  backgroundStyle="all"
+                  animate
+                  animOnClick
+                  animOnHover
+                  // animWobble
+                  size={42}
+                  className="scale-125 origin-center"
+                />
+              </div>
               <span className="text-sm font-semibold">Space UI</span>
             </Link>
 

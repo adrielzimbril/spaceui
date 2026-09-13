@@ -47,18 +47,25 @@ export function NavigationMenuItem({ className, ...props }: NavigationMenuPrimit
 export function NavigationMenuTrigger({
   className,
   children,
+  showDot = false,
   ...props
-}: NavigationMenuPrimitive.Trigger.Props): React.ReactElement {
+}: NavigationMenuPrimitive.Trigger.Props & { showDot?: boolean }): React.ReactElement {
   return (
     <NavigationMenuPrimitive.Trigger
-      className={cn(navigationMenuTriggerStyle(), 'gap-1', className)}
+      className={cn(navigationMenuTriggerStyle(), 'gap-1.5', className)}
       data-slot="navigation-menu-trigger"
       {...props}
     >
+      {showDot && (
+        <span
+          aria-hidden="true"
+          className="size-1.5 rounded-full bg-current opacity-40 transition-all duration-300 group-hover:opacity-100 group-data-[state=open]:opacity-100 group-data-popup-open:opacity-100 group-data-[state=open]:scale-125 group-data-popup-open:scale-125 shrink-0"
+        />
+      )}
       {children}
       <ChevronDownIcon
         aria-hidden="true"
-        className="size-3.5 transition-transform duration-200 group-data-popup-open:rotate-180 group-data-[state=open]:rotate-180 opacity-70"
+        className="size-3.5 transition-transform duration-300 ease-[cubic-bezier(0.32,0.72,0,1)] group-data-popup-open:rotate-180 group-data-[state=open]:rotate-180 opacity-70"
       />
     </NavigationMenuPrimitive.Trigger>
   )
@@ -70,7 +77,14 @@ export function NavigationMenuContent({
 }: NavigationMenuPrimitive.Content.Props): React.ReactElement {
   return (
     <NavigationMenuPrimitive.Content
-      className={cn('w-full outline-none p-1', className)}
+      className={cn(
+        'w-full outline-none p-1',
+        'transition-[opacity,transform] duration-[320ms] ease-[cubic-bezier(0.32,0.72,0,1)]',
+        'data-[starting-style]:opacity-0 data-[ending-style]:opacity-0',
+        'data-[starting-style]:data-[activation-direction=left]:-translate-x-5 data-[starting-style]:data-[activation-direction=right]:translate-x-5',
+        'data-[ending-style]:data-[activation-direction=left]:translate-x-5 data-[ending-style]:data-[activation-direction=right]:-translate-x-5',
+        className,
+      )}
       data-slot="navigation-menu-content"
       {...props}
     />
@@ -91,7 +105,11 @@ export function NavigationMenuPositioner({
     <NavigationMenuPrimitive.Positioner
       sideOffset={sideOffset}
       align={align}
-      className={cn('z-50', className)}
+      className={cn(
+        'z-50 transition-[top,left,right,bottom] duration-[360ms] ease-[cubic-bezier(0.32,0.72,0,1)] data-instant:transition-none',
+        'before:absolute before:content-[""] data-[side=bottom]:before:top-[-10px] data-[side=bottom]:before:right-0 data-[side=bottom]:before:left-0 data-[side=bottom]:before:h-2.5',
+        className,
+      )}
       data-slot="navigation-menu-positioner"
       {...props}
     />
@@ -102,8 +120,9 @@ export function NavigationMenuPopup({ className, ...props }: NavigationMenuPrimi
   return (
     <NavigationMenuPrimitive.Popup
       className={cn(
-        'relative origin-(--transform-origin) overflow-hidden rounded-xl border border-border bg-popover text-popover-foreground transition-[width,height] duration-200 outline-none ease-out',
-        'data-[ending-style]:scale-95 data-[ending-style]:opacity-0 data-[starting-style]:scale-95 data-[starting-style]:opacity-0',
+        'relative h-(--popup-height,auto) w-(--popup-width,auto) origin-(--transform-origin) overflow-hidden rounded-2xl border border-border/80 bg-popover/95 text-popover-foreground shadow-2xl shadow-black/10 dark:shadow-black/50 backdrop-blur-xl transition-[width,height,opacity,transform] duration-[360ms] ease-[cubic-bezier(0.32,0.72,0,1)] outline-none',
+        'data-[starting-style]:scale-95 data-[starting-style]:opacity-0',
+        'data-[ending-style]:scale-95 data-[ending-style]:opacity-0 data-[ending-style]:duration-150',
         className,
       )}
       data-slot="navigation-menu-popup"
@@ -118,10 +137,7 @@ export function NavigationMenuViewport({
 }: NavigationMenuPrimitive.Viewport.Props): React.ReactElement {
   return (
     <NavigationMenuPrimitive.Viewport
-      className={cn(
-        'relative h-[var(--navigation-menu-viewport-height)] w-[var(--navigation-menu-viewport-width)] transition-[width,height] duration-200',
-        className,
-      )}
+      className={cn('relative h-full w-full overflow-hidden', className)}
       data-slot="navigation-menu-viewport"
       {...props}
     />
