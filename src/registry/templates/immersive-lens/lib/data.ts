@@ -50,4 +50,9 @@ export const galleryImages = [
   'https://cdn.spaceui.one/atom/samples/image-5.png',
   'https://cdn.spaceui.one/atom/samples/image-6.png',
   'https://cdn.spaceui.one/atom/samples/image-7.png',
+  'https://cdn.spaceui.one/atom/samples/image-8.png',
+  'https://cdn.spaceui.one/atom/samples/image-9.png',
+  'https://cdn.spaceui.one/atom/samples/image-10.png',
+  'https://cdn.spaceui.one/atom/samples/image-11.png',
+  'https://cdn.spaceui.one/atom/samples/image-13.png',
 ] as const

@@ -12,6 +12,7 @@
     "footer",
     "dither-carousel",
     "liquid-gooey-carousel",
-    "prism-carousel"
+    "prism-carousel",
+    "lens-carousel"
   ]
 }

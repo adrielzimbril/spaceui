@@ -18,14 +18,6 @@ Full-screen countdown with fluid rolling numerals, interactive controls, and acc
 import { FluidCountdown } from '@/components/spaceui/fluid-countdown'
 
 export default function Timer() {
-  return (
-    <FluidCountdown
-      duration={60}
-      autoStart
-      loop
-      label="Launch in"
-      accentColor="#6366f1"
-    />
-  )
+  return <FluidCountdown duration={60} autoStart loop label="Launch in" accentColor="#6366f1" />
 }
 ```

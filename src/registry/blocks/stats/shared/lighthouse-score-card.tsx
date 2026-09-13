@@ -186,16 +186,14 @@ export function LighthouseScoreCard({ scores, strategy, className }: LighthouseS
             >
               <DeviceIcon size={32} />
             </Badge>
-            <Badge className="capitalize" variant="inverted" size="md">
-              <div className="flex items-center gap-3">
-                <div>
-                  <h6 className="text-sm font-semibold text-foreground">
-                    {strategy === 'mobile' ? 'Mobile' : 'Desktop'}
-                  </h6>
-                  <p className="text-xs text-muted-foreground">Score</p>
-                </div>
+            <div className="flex items-center gap-3">
+              <div>
+                <h6 className="text-sm font-semibold text-foreground">
+                  {strategy === 'mobile' ? 'Mobile' : 'Desktop'}
+                </h6>
+                <p className="text-xs text-muted-foreground">Score</p>
               </div>
-            </Badge>
+            </div>
           </div>
 
           <Badge className="capitalize bg-[#ffd3ad] text-stone-900 font-bold tabular-nums" variant="default" size="md">

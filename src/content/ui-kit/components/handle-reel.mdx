@@ -24,30 +24,23 @@ A slot-machine handle reel inspired by tactile momentum wheels. It spins past a 
 import { HandleReel } from '@/components/spaceui/handle-reel'
 
 export default function HeroSection() {
-  return (
-    <HandleReel
-      prefix="ryna.me/"
-      finalName="ryna"
-      loop
-      highlightColor="#6366f1"
-    />
-  )
+  return <HandleReel prefix="ryna.me/" finalName="ryna" loop highlightColor="#6366f1" />
 }
 ```
 
 ## Props
 
-| Prop | Type | Default | Description |
-| --- | --- | --- | --- |
-| `prefix` | `ReactNode` | `"ryna.me/"` | Static prefix displayed before the rolling handles. |
-| `suffix` | `ReactNode` | `undefined` | Optional suffix displayed after the rolling handles. |
-| `names` | `string[]` | Default names | Array of candidate names or handles to cycle through. |
-| `finalName` | `string` | `"ryna"` | The final handle the reel lands on. |
-| `rows` | `number` | `7` | Number of visible rows in the viewport. |
-| `cycles` | `number` | `3` | Number of scroll cycles before settling. |
-| `spinDuration` | `number` | `4` | Duration of the spin animation in seconds. |
-| `highlightColor` | `string` | `"var(--primary, #6366f1)"` | Accent color pulsed when landed. |
-| `loop` | `boolean` | `false` | Replay the reel automatically. |
-| `loopDelay` | `number` | `2200` | Pause duration before replaying when `loop` is true. |
-| `trigger` | `number` | `0` | Increment to restart the roll programmatically. |
-| `onLand` | `function` | `undefined` | Callback fired when the reel settles on the final handle. |
+| Prop             | Type        | Default                     | Description                                               |
+| ---------------- | ----------- | --------------------------- | --------------------------------------------------------- |
+| `prefix`         | `ReactNode` | `"ryna.me/"`                | Static prefix displayed before the rolling handles.       |
+| `suffix`         | `ReactNode` | `undefined`                 | Optional suffix displayed after the rolling handles.      |
+| `names`          | `string[]`  | Default names               | Array of candidate names or handles to cycle through.     |
+| `finalName`      | `string`    | `"ryna"`                    | The final handle the reel lands on.                       |
+| `rows`           | `number`    | `7`                         | Number of visible rows in the viewport.                   |
+| `cycles`         | `number`    | `3`                         | Number of scroll cycles before settling.                  |
+| `spinDuration`   | `number`    | `4`                         | Duration of the spin animation in seconds.                |
+| `highlightColor` | `string`    | `"var(--primary, #6366f1)"` | Accent color pulsed when landed.                          |
+| `loop`           | `boolean`   | `false`                     | Replay the reel automatically.                            |
+| `loopDelay`      | `number`    | `2200`                      | Pause duration before replaying when `loop` is true.      |
+| `trigger`        | `number`    | `0`                         | Increment to restart the roll programmatically.           |
+| `onLand`         | `function`  | `undefined`                 | Callback fired when the reel settles on the final handle. |

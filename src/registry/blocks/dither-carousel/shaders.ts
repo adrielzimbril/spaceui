@@ -11,6 +11,26 @@ export const BAYER = /* glsl */ `
 float bayer2(vec2 a) { a = floor(a); return fract(a.x / 2.0 + a.y * a.y * 0.75); }
 #define bayer4(a) (bayer2(0.5 * (a)) * 0.25 + bayer2(a))
 #define bayer8(a) (bayer4(0.5 * (a)) * 0.25 + bayer2(a))
+
+float sampleDitherPattern(vec2 p, int mode, float time) {
+  if (mode == 1) { // dots / halftone screen print
+    vec2 f = fract(p) - 0.5;
+    return clamp(1.0 - length(f) * 1.414, 0.0, 1.0);
+  } else if (mode == 2) { // diamond matrix
+    vec2 f = abs(fract(p) - 0.5);
+    return clamp(1.0 - (f.x + f.y), 0.0, 1.0);
+  } else if (mode == 3) { // crosshatch etching
+    vec2 f = abs(fract(p) - 0.5);
+    return clamp(1.0 - min(f.x, f.y) * 2.6, 0.0, 1.0);
+  } else if (mode == 4) { // organic fluid cells
+    vec2 i = floor(p);
+    vec2 f = fract(p);
+    float n = sin(i.x * 12.9898 + i.y * 78.233 + time * 1.2) * 43758.5453;
+    float dist = length(f - 0.5);
+    return clamp(fract(n) * 0.35 + (1.0 - dist * 1.35) * 0.65, 0.0, 1.0);
+  }
+  return bayer8(p);
+}
 `
 
 export const CARD_VERT = /* glsl */ `#version 300 es
@@ -155,6 +175,9 @@ uniform vec3  uAccent;
 uniform float uFocusSize;
 uniform float uDitherScale;
 uniform float uEntryScale;
+uniform float uGooey;
+uniform float uTime;
+uniform int   uDitherPattern;
 
 out vec4 fragColor;
 
@@ -216,17 +239,32 @@ vec3 quantise(vec3 c, float threshold, float levels, float gamma) {
 }
 
 void main() {
-  float d = abs(vUv.y - 0.5) * 2.0;
+  vec2 uvCoord = vUv;
+
+  float d = abs(uvCoord.y - 0.5) * 2.0;
   float edge = pow(smoothstep(uFocusSize, 1.0, d), EDGE_POWER);
 
-  vec4 scene = texture(uScene, vUv);
-  vec4 meta = texture(uMeta, vUv);
+  vec4 scene = texture(uScene, uvCoord);
+  vec4 meta = texture(uMeta, uvCoord);
   float dim = meta.g;
   float entry = 1.0 - meta.a;
 
   float keep = 1.0 - meta.b;
 
-  float distance = 1.0 - scene.a;
+  // Sharp silhouette from scene
+  float sharpAlpha = scene.a;
+  float activeAlpha = sharpAlpha;
+
+  // True metaball gooey fusion across adjacent cards
+  if (uGooey > 0.001) {
+    float blurField = mix(texture(uBlur1, uvCoord).a, texture(uBlur2, uvCoord).a, 0.6);
+    float threshold = mix(0.50, 0.32, uGooey);
+    float span = 0.045;
+    float gooeyField = smoothstep(threshold - span, threshold + span, blurField);
+    activeAlpha = mix(sharpAlpha, max(sharpAlpha, gooeyField), uGooey);
+  }
+
+  float distance = 1.0 - activeAlpha;
   float dissolve = max(edge, distance);
 
   float grainFree = pow(smoothstep(DITHER_START, 1.0, max(d, distance)), DITHER_POWER);
@@ -240,20 +278,26 @@ void main() {
   float lvl = softness * BLUR_STRENGTH * 4.0;
   float fade = edge * FADE_STRENGTH * keep;
 
-  vec3 c = towardPage(blurStack(vUv, lvl), fade);
+  // Sample scene or smooth blurStack inside the gooey bridge
+  vec3 baseSceneColor = scene.rgb;
+  if (uGooey > 0.001 && sharpAlpha < 0.5 && activeAlpha > 0.01) {
+    baseSceneColor = blurStack(uvCoord, 1.6);
+  }
 
-  float threshold = bayer8(gl_FragCoord.xy / uDitherScale);
+  vec3 c = towardPage(mix(baseSceneColor, blurStack(uvCoord, lvl), min(lvl, 1.0)), fade);
+
+  float threshold = sampleDitherPattern(gl_FragCoord.xy / uDitherScale, uDitherPattern, uTime);
   vec3 source = uDitherScale > 1.0
     ? towardPage(blurStack(latticeUv(uDitherScale), lvl), fade)
     : c;
   vec3 result = mix(c, quantise(source, threshold, LEVELS, GAMMA), DITHER_AMOUNT * ditherDrive * keep);
 
   float hoverRamp = smoothstep(HOVER_CUTOFF, 1.0, pow(dim, HOVER_CURVE)) * HOVER_DITHER;
-  float hoverThreshold = bayer8(gl_FragCoord.xy / (uDitherScale * 1.35));
+  float hoverThreshold = sampleDitherPattern(gl_FragCoord.xy / (uDitherScale * 1.35), uDitherPattern, uTime);
   vec3 hoverSource = towardPage(blurStack(latticeUv(uDitherScale * 1.35), lvl), fade);
   result = mix(result, quantise(hoverSource, hoverThreshold, HOVER_LEVELS, HOVER_GAMMA), hoverRamp);
 
-  float entryThreshold = bayer8(gl_FragCoord.xy / uEntryScale);
+  float entryThreshold = sampleDitherPattern(gl_FragCoord.xy / uEntryScale, uDitherPattern, uTime);
   vec3 entrySource = towardPage(blurStack(latticeUv(uEntryScale), lvl), fade);
   result = mix(
     result,

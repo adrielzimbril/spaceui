@@ -145,9 +145,7 @@ export function HandleReel({
     if (!rowHeight) return
     setReelStatus('scrolling')
 
-    const motionQuery =
-      typeof window !== 'undefined' &&
-      window.matchMedia?.('(prefers-reduced-motion: reduce)')
+    const motionQuery = typeof window !== 'undefined' && window.matchMedia?.('(prefers-reduced-motion: reduce)')
 
     if (motionQuery?.matches) {
       translateY.set(getSlotPosition(lockIndex))
@@ -186,11 +184,7 @@ export function HandleReel({
   }, [rowHeight, spinId, inputActive])
 
   const activeColor =
-    reelStatus === 'locked'
-      ? highlightColor
-      : reelStatus === 'settled'
-        ? 'var(--foreground)'
-        : placeholderColor
+    reelStatus === 'locked' ? highlightColor : reelStatus === 'settled' ? 'var(--foreground)' : placeholderColor
 
   const isAtRest = reelStatus === 'locked' || reelStatus === 'settled'
 
@@ -203,17 +197,8 @@ export function HandleReel({
         className,
       )}
     >
-      <div
-        className={cn(
-          'flex items-center text-4xl font-medium tracking-tight sm:text-6xl',
-          textClassName,
-        )}
-      >
-        {prefix ? (
-          <span className="shrink-0 whitespace-nowrap text-muted-foreground select-none">
-            {prefix}
-          </span>
-        ) : null}
+      <div className={cn('flex items-center text-4xl font-medium tracking-tight sm:text-6xl', textClassName)}>
+        {prefix ? <span className="shrink-0 whitespace-nowrap text-muted-foreground select-none">{prefix}</span> : null}
 
         <div className="relative overflow-hidden" style={{ height: viewportHeight }}>
           {/* Invisible sizing probe to calculate unit line metrics */}
@@ -227,25 +212,16 @@ export function HandleReel({
 
           <motion.div
             style={{ y: translateY }}
-            className={cn(
-              'transform-gpu will-change-transform',
-              rowHeight ? '' : 'opacity-0',
-            )}
+            className={cn('transform-gpu will-change-transform', rowHeight ? '' : 'opacity-0')}
           >
             {sequence.map((entry, idx) => {
               const isTargetSlot = idx === lockIndex
 
               if (isTargetSlot && editable && isAtRest) {
                 return (
-                  <div
-                    key={idx}
-                    className="relative inline-flex items-center whitespace-nowrap leading-[1.2]"
-                  >
+                  <div key={idx} className="relative inline-flex items-center whitespace-nowrap leading-[1.2]">
                     {/* Shadow span ensuring perfect inline bounding box */}
-                    <span
-                      aria-hidden="true"
-                      className="invisible pointer-events-none whitespace-pre select-none"
-                    >
+                    <span aria-hidden="true" className="invisible pointer-events-none whitespace-pre select-none">
                       {inputValue || ' '}
                     </span>
 
@@ -308,4 +284,3 @@ export function HandleReel({
     </div>
   )
 }
-

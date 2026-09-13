@@ -9,8 +9,7 @@ export interface LiquidGooeyItem {
   meta?: string
 }
 
-export interface LiquidGooeyCarouselProps
-  extends Omit<React.ComponentPropsWithoutRef<'section'>, 'children'> {
+export interface LiquidGooeyCarouselProps extends Omit<React.ComponentPropsWithoutRef<'section'>, 'children'> {
   /** Array of items presented in the continuous circular field. */
   items: LiquidGooeyItem[]
   /** Brand watermark displayed in the header area. @default undefined */

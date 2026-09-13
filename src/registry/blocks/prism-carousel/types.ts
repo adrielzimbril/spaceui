@@ -1,4 +1,4 @@
-﻿import type * as React from 'react'
+import type * as React from 'react'
 
 export interface PrismCarouselItem {
   /** Cover art. Cross-origin sources must send CORS headers. */
@@ -21,6 +21,8 @@ export interface PrismCarouselProps extends Omit<React.ComponentPropsWithoutRef<
   radius?: number
   /** The lens ring and aura colour. @default "oklch(0.70 0.12 250)" */
   tint?: string
+  /** Gooey fluid refraction and edge blending. @default 0.35 */
+  gooey?: boolean | number
   /** Click a panel to centre and enlarge it. @default false */
   focusable?: boolean
   /** Label on the focused panel's dismiss control. @default "Close" */

@@ -25,6 +25,10 @@ export interface DitherCarouselProps extends Omit<React.ComponentPropsWithoutRef
   cardHeight?: number
   /** Card width / height. Art is cover-fitted into it, so match your own. @default 0.82 */
   cardRatio?: number
+  /** Gooey fluid melting intensity, 0-1. @default 0.35 */
+  gooey?: boolean | number
+  /** Dither pattern geometry shape. @default 'dots' */
+  ditherShape?: 'bayer' | 'dots' | 'diamond' | 'cross' | 'fluid'
   /** Play the arrival - cards materialize out of the grain. @default true */
   entry?: boolean
   /** Extra classes on the root surface. @default undefined */

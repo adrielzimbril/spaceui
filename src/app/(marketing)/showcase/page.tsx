@@ -5,8 +5,7 @@ import { ShowcaseGallery } from '@/components/showcase/showcase-gallery'
 
 export const metadata: Metadata = {
   title: 'Showcase — Space UI',
-  description:
-    'Explore production-ready templates and landing pages built with Space UI.',
+  description: 'Explore production-ready templates and landing pages built with Space UI.',
 }
 
 export default function ShowcasePage() {

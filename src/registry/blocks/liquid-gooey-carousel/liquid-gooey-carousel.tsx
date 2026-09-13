@@ -141,7 +141,7 @@ function drawAtmosphericPlaceholder(
   y: number,
   w: number,
   h: number,
-  index: number
+  index: number,
 ) {
   const palette = ATMOSPHERIC_PALETTES[index % ATMOSPHERIC_PALETTES.length]
   const grad = ctx.createLinearGradient(x, y, x + w, y + h)

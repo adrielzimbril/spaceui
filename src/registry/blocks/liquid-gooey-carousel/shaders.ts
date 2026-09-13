@@ -21,11 +21,16 @@ void main() {
  * Evaluates smooth-minimum (smin) metaball card surfaces, dynamic strand bridges,
  * pointer wake perturbation, and chromatic boundary refraction in a single fullscreen pass.
  */
-export const LIQUID_GOOEY_FRAGMENT_SHADER = /* glsl */ `#version 300 es
+export const LIQUID_GOOEY_FRAGMENT_SHADER =
+  /* glsl */ `#version 300 es
 precision highp float;
 
-#define MAX_CARDS ` + MAX_CARDS + `
-#define MAX_STRANDS ` + MAX_STRANDS + `
+#define MAX_CARDS ` +
+  MAX_CARDS +
+  `
+#define MAX_STRANDS ` +
+  MAX_STRANDS +
+  `
 
 in vec2 vUv;
 out vec4 fragColor;

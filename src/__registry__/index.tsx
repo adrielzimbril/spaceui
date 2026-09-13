@@ -92,6 +92,21 @@ export const index: Record<string, any> = {
     "path": "src/registry/blocks/dither-carousel/index.tsx",
     "type": "registry:block",
     "target": "components/blocks/dither-carousel/index.tsx"
+  },
+  {
+    "path": "src/registry/blocks/dither-carousel/dither-carousel.tsx",
+    "type": "registry:block",
+    "target": "components/blocks/dither-carousel/dither-carousel.tsx"
+  },
+  {
+    "path": "src/registry/blocks/dither-carousel/shaders.ts",
+    "type": "registry:block",
+    "target": "components/blocks/dither-carousel/shaders.ts"
+  },
+  {
+    "path": "src/registry/blocks/dither-carousel/types.ts",
+    "type": "registry:block",
+    "target": "components/blocks/dither-carousel/types.ts"
   }
 ],
     keywords: [],
@@ -273,6 +288,21 @@ export const index: Record<string, any> = {
     "path": "src/registry/blocks/liquid-gooey-carousel/index.tsx",
     "type": "registry:block",
     "target": "components/blocks/liquid-gooey-carousel/index.tsx"
+  },
+  {
+    "path": "src/registry/blocks/liquid-gooey-carousel/liquid-gooey-carousel.tsx",
+    "type": "registry:block",
+    "target": "components/blocks/liquid-gooey-carousel/liquid-gooey-carousel.tsx"
+  },
+  {
+    "path": "src/registry/blocks/liquid-gooey-carousel/shaders.ts",
+    "type": "registry:block",
+    "target": "components/blocks/liquid-gooey-carousel/shaders.ts"
+  },
+  {
+    "path": "src/registry/blocks/liquid-gooey-carousel/types.ts",
+    "type": "registry:block",
+    "target": "components/blocks/liquid-gooey-carousel/types.ts"
   }
 ],
     keywords: [],
@@ -305,6 +335,21 @@ export const index: Record<string, any> = {
     "path": "src/registry/blocks/prism-carousel/index.tsx",
     "type": "registry:block",
     "target": "components/blocks/prism-carousel/index.tsx"
+  },
+  {
+    "path": "src/registry/blocks/prism-carousel/prism-carousel.tsx",
+    "type": "registry:block",
+    "target": "components/blocks/prism-carousel/prism-carousel.tsx"
+  },
+  {
+    "path": "src/registry/blocks/prism-carousel/shaders.ts",
+    "type": "registry:block",
+    "target": "components/blocks/prism-carousel/shaders.ts"
+  },
+  {
+    "path": "src/registry/blocks/prism-carousel/types.ts",
+    "type": "registry:block",
+    "target": "components/blocks/prism-carousel/types.ts"
   }
 ],
     keywords: [],
@@ -2087,7 +2132,7 @@ export const index: Record<string, any> = {
     type: "registry:component",
     dependencies: ["@number-flow/react","motion","@tabler/icons-react"],
     devDependencies: undefined,
-    registryDependencies: ["https://www.spaceui.one/r/lib-utils.json"],
+    registryDependencies: ["https://www.spaceui.one/r/lib-utils.json","https://www.spaceui.one/r/primitives-button.json"],
     files: [
   {
     "path": "src/registry/components/spaceui/fluid-countdown/index.tsx",
@@ -2149,7 +2194,7 @@ export const index: Record<string, any> = {
     name: "components-spaceui-handle-reel",
     description: "Kinetic tumbler reel of usernames, handles, or subdomains past a prefix that decelerates and settles with momentum.",
     type: "registry:component",
-    dependencies: ["motion","@tabler/icons-react"],
+    dependencies: ["motion"],
     devDependencies: undefined,
     registryDependencies: ["https://www.spaceui.one/r/lib-utils.json"],
     files: [
@@ -6060,7 +6105,7 @@ export const index: Record<string, any> = {
     type: "registry:component",
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ["https://www.spaceui.one/r/components-spaceui-fluid-countdown.json"],
+    registryDependencies: ["https://www.spaceui.one/r/components-spaceui-fluid-countdown.json","https://www.spaceui.one/r/primitives-tabs.json","https://www.spaceui.one/r/primitives-button.json"],
     files: [
   {
     "path": "src/registry/demo/components/spaceui/fluid-countdown/c-fluid-countdown-01/index.tsx",
@@ -6188,7 +6233,7 @@ export const index: Record<string, any> = {
     type: "registry:component",
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ["https://www.spaceui.one/r/components-spaceui-handle-reel.json"],
+    registryDependencies: ["https://www.spaceui.one/r/components-spaceui-handle-reel.json","https://www.spaceui.one/r/primitives-tabs.json"],
     files: [
   {
     "path": "src/registry/demo/components/spaceui/handle-reel/c-handle-reel-01/index.tsx",

@@ -604,4 +604,3 @@ export function LensWebGLLayer({
     />
   )
 }
-

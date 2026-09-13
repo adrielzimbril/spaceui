@@ -76,6 +76,7 @@ export default function BlockPrismCarousel() {
         gap={14}
         radius={8}
         tint="oklch(0.70 0.12 250)"
+        gooey={0.35}
         focusable={false}
       />
     </div>

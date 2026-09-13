@@ -103,12 +103,7 @@ const ATMOSPHERIC_PALETTES: [string, string, string, string][] = [
   ['#D3E5F0', '#AFC8DC', '#7193B0', '#B4CFE6'],
 ]
 
-function drawAtmosphericPlaceholder(
-  ctx: CanvasRenderingContext2D,
-  w: number,
-  h: number,
-  index: number
-) {
+function drawAtmosphericPlaceholder(ctx: CanvasRenderingContext2D, w: number, h: number, index: number) {
   const palette = ATMOSPHERIC_PALETTES[index % ATMOSPHERIC_PALETTES.length]
   const grad = ctx.createLinearGradient(0, 0, w, h)
   grad.addColorStop(0, palette[0])
@@ -138,6 +133,7 @@ export function PrismCarousel({
   gap = 12,
   radius = 6,
   tint = 'oklch(0.70 0.12 250)',
+  gooey = 0.35,
   focusable = false,
   closeLabel = 'Close',
   className,
@@ -149,8 +145,8 @@ export function PrismCarousel({
   const [reduced, setReduced] = React.useState(false)
   const [supported, setSupported] = React.useState(true)
 
-  const settings = React.useRef({ panelHeight, gap, radius, tint, focusable })
-  settings.current = { panelHeight, gap, radius, tint, focusable }
+  const settings = React.useRef({ panelHeight, gap, radius, tint, focusable, gooey })
+  settings.current = { panelHeight, gap, radius, tint, focusable, gooey }
   const focusRef = React.useRef<number | null>(null)
   focusRef.current = focused
   const step = React.useRef<(by: number) => void>(() => {})
@@ -442,6 +438,10 @@ export function PrismCarousel({
       gl.uniform3fv(panelU('uBg'), background)
       gl.uniform1i(panelU('uTex'), 0)
       gl.uniform1f(panelU('uRadius'), settings.current.radius)
+      const currentGooey = settings.current.gooey
+      const gooeyVal = typeof currentGooey === 'number' ? currentGooey : currentGooey ? 0.35 : 0.0
+      gl.uniform1f(panelU('uGooey'), gooeyVal)
+      gl.uniform1f(panelU('uGap'), settings.current.gap)
       gl.activeTexture(gl.TEXTURE0)
 
       const shrink = 1 - 0.25 * energy
@@ -463,7 +463,7 @@ export function PrismCarousel({
         const drop = (1 - panelFocus) * height * FOCUS_DROP
         const scale = isFocused ? 1 + FOCUS_GROW * panelFocus : 1
 
-        const centerDistance = Math.abs(centers[i] - ((scroll % total) + total) % total)
+        const centerDistance = Math.abs(centers[i] - (((scroll % total) + total) % total))
         const entryDelay = (centerDistance / total) * ENTRY_STAGGER * count
         const panelEntry = outQuint(clamp((entry - entryDelay) / (1 - ENTRY_STAGGER), 0, 1))
         const entryScale = lerp(ENTRY_START, 1, panelEntry)
@@ -482,7 +482,10 @@ export function PrismCarousel({
           if (cx + w / 2 < -half || cx - w / 2 > half) continue
 
           const cy = isFocused ? 0 : -drop - entryLift
-          gl.uniform4f(panelU('uRect'), cx, cy, w, h)
+          const bridgeExt = gooeyVal > 0.001 ? settings.current.gap * 1.4 : 0.0
+          const quadW = w + bridgeExt
+          gl.uniform4f(panelU('uRect'), cx, cy, quadW, h)
+          gl.uniform2f(panelU('uCardSize'), w, h)
           gl.drawArrays(gl.TRIANGLES, 0, 6)
         }
       }
@@ -548,9 +551,7 @@ export function PrismCarousel({
                 />
               </div>
               <div className="mt-2 text-sm font-medium">{entryItem.title}</div>
-              {entryItem.caption ? (
-                <div className="text-muted-foreground text-xs">{entryItem.caption}</div>
-              ) : null}
+              {entryItem.caption ? <div className="text-muted-foreground text-xs">{entryItem.caption}</div> : null}
             </li>
           ))}
         </ul>
@@ -587,13 +588,7 @@ export function PrismCarousel({
       <ul className="sr-only">
         {items.map((fallbackItem, i) => (
           <li key={fallbackItem.image} id={`prism-carousel-${i}`} role="option" aria-selected={i === active}>
-            <NextImage
-              src={fallbackItem.image}
-              alt={fallbackItem.title}
-              width={512}
-              height={768}
-              unoptimized
-            />
+            <NextImage src={fallbackItem.image} alt={fallbackItem.title} width={512} height={768} unoptimized />
             <h3>{fallbackItem.title}</h3>
             {fallbackItem.caption ? <p>{fallbackItem.caption}</p> : null}
           </li>

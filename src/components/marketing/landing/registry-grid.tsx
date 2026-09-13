@@ -12,7 +12,7 @@ import { OrbSmooth } from '@/registry/components/orb/smooth'
 import { LoadingOrb } from '@/registry/components/orb/loading'
 import { BouncyAccordion } from '@/registry/components/spaceui/bouncy-accordion'
 import { WordsPreloader } from '@/registry/components/spaceui/words-preloader'
-import { PinList } from '@/registry/components/spaceui/pin-list'
+import { HandleReel } from '@/registry/components/spaceui/handle-reel'
 import {
   IconCheck,
   IconCircle,
@@ -66,29 +66,36 @@ const TAILWIND_COLORS = [
   { label: 'Cyan', className: 'text-cyan-500' },
 ]
 
-const PIN_LIST_ITEMS = [
-  {
-    id: 1,
-    name: 'Commit Zone',
-    info: 'Code updates · Closes 9:00 PM',
-    icon: IconGitCommit,
-    pinned: true,
-  },
-  {
-    id: 2,
-    name: '404 Room',
-    info: 'Fixing errors · Open 24 hours',
-    icon: IconBug,
-    pinned: true,
-  },
-  {
-    id: 3,
-    name: 'AI Studio',
-    info: 'Generative models · Active now',
-    icon: IconSparkles,
-    pinned: false,
-  },
+const BENTO_HANDLE_REEL_NAMES = [
+  'showcase',
+  'primitives',
+  'blocks',
+  'templates',
+  'animations',
+  'canvas',
+  'shaders',
+  'craft',
 ]
+
+function BentoHandleReel() {
+  return (
+    <div className="flex h-full w-full items-center justify-center overflow-hidden py-4 text-foreground select-none">
+      <HandleReel
+        prefix="spaceui.one/"
+        finalName="components"
+        names={BENTO_HANDLE_REEL_NAMES}
+        highlightColor="#f43f5e"
+        spinDuration={4.2}
+        loop
+        loopDelay={2500}
+        editable
+        rows={5}
+        className="px-2"
+        textClassName="text-xl sm:text-2xl font-medium tracking-tight"
+      />
+    </div>
+  )
+}
 
 const pipelineSteps = [
   {
@@ -518,9 +525,9 @@ export function RegistryGrid() {
 
         <Frame className="flex flex-col h-full">
           <FrameHeader className="flex flex-row items-center justify-between p-2">
-            <FrameTitle>Pin List</FrameTitle>
+            <FrameTitle>Handle Reel</FrameTitle>
             <Link
-              href="/components/pin-list"
+              href="/components/handle-reel"
               data-space-hover
               className="p-1 text-muted-foreground hover:text-foreground transition-colors"
             >
@@ -530,7 +537,7 @@ export function RegistryGrid() {
           <Card className="flex-1 flex flex-col h-full rounded-lg before:rounded-lg overflow-hidden">
             <CardPanel className="flex-1 flex min-h-72 flex-col justify-center p-3 sm:p-4 rounded-lg">
               <div className="w-full max-w-sm mx-auto">
-                <PinList items={PIN_LIST_ITEMS} className="gap-3.5" />
+                <BentoHandleReel />
               </div>
             </CardPanel>
           </Card>

@@ -58,13 +58,7 @@ export const WORK_LIQUID_ITEMS: LiquidGooeyItem[] = [
 export default function BlockLiquidGooeyCarousel() {
   return (
     <div className="relative h-dvh w-full overflow-hidden rounded-3xl bg-background">
-      <LiquidGooeyCarousel
-        items={WORK_LIQUID_ITEMS}
-        arc={1.0}
-        cardSize={0.38}
-        cardRatio={1.15}
-        fuse={0.095}
-      />
+      <LiquidGooeyCarousel items={WORK_LIQUID_ITEMS} arc={1.0} cardSize={0.38} cardRatio={1.15} fuse={0.095} />
     </div>
   )
 }

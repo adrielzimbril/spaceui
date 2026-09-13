@@ -15,10 +15,13 @@ precision highp float;
 in vec2 vUv;
 in vec2 vLocal;
 uniform sampler2D uTex;
-uniform vec4 uRect;
+uniform vec4 uRect;        // cx, cy, quadW, quadH
+uniform vec2 uCardSize;    // actual card w, h
 uniform vec3 uBg;
-uniform float uFade;    // still loading -> the panel is only its own shadow
+uniform float uFade;       // still loading -> the panel is only its own shadow
 uniform float uRadius;
+uniform float uGooey;
+uniform float uGap;
 out vec4 fragColor;
 
 float sdRoundBox(vec2 p, vec2 b, float r) {
@@ -26,10 +29,43 @@ float sdRoundBox(vec2 p, vec2 b, float r) {
   return min(max(q.x, q.y), 0.0) + length(max(q, 0.0)) - r;
 }
 
+float smoothUnionSDF(float d1, float d2, float blend) {
+  if (blend <= 0.0001) return min(d1, d2);
+  float h = clamp(0.5 + 0.5 * (d2 - d1) / blend, 0.0, 1.0);
+  return mix(d2, d1, h) - blend * h * (1.0 - h);
+}
+
 void main() {
-  float d = sdRoundBox(vLocal, uRect.zw * 0.5, min(uRadius, min(uRect.z, uRect.w) * 0.5));
-  if (d > 0.0) discard;
-  fragColor = vec4(mix(uBg, texture(uTex, vUv).rgb, uFade), 1.0);
+  vec2 halfCard = uCardSize * 0.5;
+  float corner = min(uRadius, min(halfCard.x, halfCard.y));
+  float dCard = sdRoundBox(vLocal, halfCard, corner);
+
+  float dFinal = dCard;
+
+  if (uGooey > 0.001) {
+    float bridgeSpan = uGap * 0.7;
+    float bridgeReach = halfCard.x + bridgeSpan;
+    if (abs(vLocal.x) > halfCard.x && abs(vLocal.x) <= bridgeReach) {
+      float t = (abs(vLocal.x) - halfCard.x) / bridgeSpan;
+      float waistProfile = cos(clamp(t, 0.0, 1.0) * 1.5707963);
+      float waistHalfH = halfCard.y * mix(0.38, 0.88, waistProfile);
+      float dBridge = max(abs(vLocal.x) - bridgeReach, abs(vLocal.y) - waistHalfH);
+      dFinal = smoothUnionSDF(dCard, dBridge, uGooey * 16.0);
+    }
+  }
+
+  if (dFinal > 0.0) discard;
+
+  vec2 cardUv = (vLocal / (2.0 * halfCard)) + 0.5;
+  vec2 clampedUv = clamp(vec2(cardUv.x, 1.0 - cardUv.y), vec2(0.001), vec2(0.999));
+  vec3 texColor = texture(uTex, clampedUv).rgb;
+
+  if (uGooey > 0.001) {
+    float meniscusSheen = exp(-pow(dFinal / 2.2, 2.0)) * 0.22 * uGooey;
+    texColor += vec3(meniscusSheen);
+  }
+
+  fragColor = vec4(mix(uBg, texColor, uFade), 1.0);
 }`
 
 export const LENS_VERT = /* glsl */ `#version 300 es
@@ -50,6 +86,7 @@ uniform float uAspect;
 uniform float uTime;
 uniform float uStrength;
 uniform vec3 uTint;
+uniform float uGooey;
 out vec4 fragColor;
 
 const float SIZE_X = 0.565;     // half-width, in screen-height units

@@ -37,7 +37,10 @@ export function ShowcaseSection() {
 
           <Link
             href="/showcase"
-            className={cn(buttonVariants({ variant: 'default', size: 'default' }), 'group gap-2 self-start sm:self-end')}
+            className={cn(
+              buttonVariants({ variant: 'default', size: 'default' }),
+              'group gap-2 self-start sm:self-end',
+            )}
           >
             <span>Explore all {allProjects.length} templates</span>
             <IconArrowRight className="size-4 transition-transform group-hover:translate-x-1" />

@@ -123,12 +123,7 @@ const ATMOSPHERIC_PALETTES: [string, string, string, string][] = [
   ['#D3E5F0', '#AFC8DC', '#7193B0', '#B4CFE6'],
 ]
 
-function drawAtmosphericPlaceholder(
-  ctx: CanvasRenderingContext2D,
-  w: number,
-  h: number,
-  index: number
-) {
+function drawAtmosphericPlaceholder(ctx: CanvasRenderingContext2D, w: number, h: number, index: number) {
   const palette = ATMOSPHERIC_PALETTES[index % ATMOSPHERIC_PALETTES.length]
   const grad = ctx.createLinearGradient(0, 0, w, h)
   grad.addColorStop(0, palette[0])
@@ -160,6 +155,8 @@ export function DitherCarousel({
   cardHeight = CARD_H,
   cardRatio = 0.82,
   entry: playEntry = true,
+  gooey = 0.4,
+  ditherShape = 'dots',
   className,
   ...props
 }: DitherCarouselProps) {
@@ -168,8 +165,8 @@ export function DitherCarousel({
   const [reduced, setReduced] = React.useState(false)
   const [supported, setSupported] = React.useState(true)
 
-  const settings = React.useRef({ accent, cell, focusBand, twist, rise, cardHeight, cardRatio })
-  settings.current = { accent, cell, focusBand, twist, rise, cardHeight, cardRatio }
+  const settings = React.useRef({ accent, cell, focusBand, twist, rise, cardHeight, cardRatio, gooey, ditherShape })
+  settings.current = { accent, cell, focusBand, twist, rise, cardHeight, cardRatio, gooey, ditherShape }
   const step = React.useRef<(by: number) => void>(() => {})
 
   const count = items.length
@@ -444,7 +441,14 @@ export function DitherCarousel({
     const draw = (now: number) => {
       frame = requestAnimationFrame(draw)
       if (!width || !height) return
-      const { cell: cellPx, focusBand: band, twist: turn, rise: pitch, cardRatio: ratio, cardHeight: cH } = settings.current
+      const {
+        cell: cellPx,
+        focusBand: band,
+        twist: turn,
+        rise: pitch,
+        cardRatio: ratio,
+        cardHeight: cH,
+      } = settings.current
       const cardW = cH * ratio
 
       if (ticks++ % THEME_EVERY === 0) {
@@ -575,6 +579,22 @@ export function DitherCarousel({
       gl.uniform1f(compositeU('uFocusSize'), band)
       gl.uniform1f(compositeU('uDitherScale'), cellPx)
       gl.uniform1f(compositeU('uEntryScale'), 9.5)
+      const currentGooey = settings.current.gooey
+      const gooeyVal = typeof currentGooey === 'number' ? currentGooey : currentGooey ? 0.4 : 0.0
+      const currentShape = settings.current.ditherShape ?? 'dots'
+      const patternCode =
+        currentShape === 'bayer'
+          ? 0
+          : currentShape === 'diamond'
+            ? 2
+            : currentShape === 'cross'
+              ? 3
+              : currentShape === 'fluid'
+                ? 4
+                : 1
+      gl.uniform1f(compositeU('uGooey'), gooeyVal)
+      gl.uniform1f(compositeU('uTime'), now * 0.001)
+      gl.uniform1i(compositeU('uDitherPattern'), patternCode)
       drawQuad()
       gl.activeTexture(gl.TEXTURE0)
     }
@@ -661,13 +681,7 @@ export function DitherCarousel({
       <ul className="sr-only">
         {items.map((item, i) => (
           <li key={item.image} id={`dither-carousel-${i}`} role="option" aria-selected={i === active}>
-            <NextImage
-              src={item.image}
-              alt={item.title}
-              width={512}
-              height={768}
-              unoptimized
-            />
+            <NextImage src={item.image} alt={item.title} width={512} height={768} unoptimized />
             <h3>{item.title}</h3>
           </li>
         ))}

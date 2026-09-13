@@ -66,6 +66,8 @@ export default function BlockDitherCarousel() {
         rise={0.79}
         cardHeight={2.2}
         cardRatio={0.82}
+        gooey={0.4}
+        ditherShape="dots"
       />
     </div>
   )

@@ -161,10 +161,10 @@
     ],
     "createdAt": "2026-09-12",
     "updatedAt": "2026-09-12",
-    "size": "44.2 KB",
-    "rawSize": 45231,
-    "directSize": "44.2 KB",
-    "fileCount": 1,
+    "size": "37.1 KB",
+    "rawSize": 37946,
+    "directSize": "37.1 KB",
+    "fileCount": 4,
     "dependencies": [],
     "registryDependencies": [
       "https://www.spaceui.one/r/lib-utils.json"
@@ -209,10 +209,10 @@
     ],
     "createdAt": "2026-09-12",
     "updatedAt": "2026-09-12",
-    "size": "44.2 KB",
-    "rawSize": 45231,
-    "directSize": "44.2 KB",
-    "fileCount": 1,
+    "size": "37.1 KB",
+    "rawSize": 37946,
+    "directSize": "37.1 KB",
+    "fileCount": 4,
     "dependencies": [],
     "registryDependencies": [
       "https://www.spaceui.one/r/lib-utils.json"
@@ -257,10 +257,10 @@
     ],
     "createdAt": "2026-09-12",
     "updatedAt": "2026-09-12",
-    "size": "44.2 KB",
-    "rawSize": 45231,
-    "directSize": "44.2 KB",
-    "fileCount": 1,
+    "size": "37.1 KB",
+    "rawSize": 37946,
+    "directSize": "37.1 KB",
+    "fileCount": 4,
     "dependencies": [],
     "registryDependencies": [
       "https://www.spaceui.one/r/lib-utils.json"
@@ -485,10 +485,10 @@
     ],
     "createdAt": "2026-09-12",
     "updatedAt": "2026-09-12",
-    "size": "39.3 KB",
-    "rawSize": 40219,
-    "directSize": "39.3 KB",
-    "fileCount": 1,
+    "size": "37.9 KB",
+    "rawSize": 38772,
+    "directSize": "37.9 KB",
+    "fileCount": 4,
     "dependencies": [],
     "registryDependencies": [
       "https://www.spaceui.one/r/lib-utils.json"
@@ -533,10 +533,10 @@
     ],
     "createdAt": "2026-09-12",
     "updatedAt": "2026-09-12",
-    "size": "32.7 KB",
-    "rawSize": 33468,
-    "directSize": "32.7 KB",
-    "fileCount": 1,
+    "size": "30.8 KB",
+    "rawSize": 31558,
+    "directSize": "30.8 KB",
+    "fileCount": 4,
     "dependencies": [],
     "registryDependencies": [
       "https://www.spaceui.one/r/lib-utils.json"
@@ -1021,9 +1021,9 @@
     ],
     "createdAt": "2026-09-12",
     "updatedAt": "2026-09-12",
-    "size": "10.6 KB",
-    "rawSize": 10892,
-    "directSize": "10.6 KB",
+    "size": "10.5 KB",
+    "rawSize": 10783,
+    "directSize": "10.5 KB",
     "fileCount": 3,
     "dependencies": [
       "@tabler/icons-react"
@@ -5774,9 +5774,9 @@
     ],
     "createdAt": "2026-09-12",
     "updatedAt": "2026-09-12",
-    "size": "10.1 KB",
-    "rawSize": 10304,
-    "directSize": "10.1 KB",
+    "size": "7 KB",
+    "rawSize": 7181,
+    "directSize": "7 KB",
     "fileCount": 1,
     "dependencies": [
       "@number-flow/react",
@@ -5784,7 +5784,8 @@
       "@tabler/icons-react"
     ],
     "registryDependencies": [
-      "https://www.spaceui.one/r/lib-utils.json"
+      "https://www.spaceui.one/r/lib-utils.json",
+      "https://www.spaceui.one/r/primitives-button.json"
     ],
     "dependents": [],
     "related": []
@@ -5802,9 +5803,9 @@
     ],
     "createdAt": "2026-09-12",
     "updatedAt": "2026-09-12",
-    "size": "10.1 KB",
-    "rawSize": 10304,
-    "directSize": "10.1 KB",
+    "size": "7 KB",
+    "rawSize": 7181,
+    "directSize": "7 KB",
     "fileCount": 1,
     "dependencies": [
       "@number-flow/react",
@@ -5812,7 +5813,8 @@
       "@tabler/icons-react"
     ],
     "registryDependencies": [
-      "https://www.spaceui.one/r/lib-utils.json"
+      "https://www.spaceui.one/r/lib-utils.json",
+      "https://www.spaceui.one/r/primitives-button.json"
     ],
     "dependents": [],
     "related": []
@@ -5898,13 +5900,12 @@
     ],
     "createdAt": "2026-09-12",
     "updatedAt": "2026-09-12",
-    "size": "9.5 KB",
-    "rawSize": 9717,
-    "directSize": "9.5 KB",
+    "size": "10 KB",
+    "rawSize": 10245,
+    "directSize": "10 KB",
     "fileCount": 1,
     "dependencies": [
-      "motion",
-      "@tabler/icons-react"
+      "motion"
     ],
     "registryDependencies": [
       "https://www.spaceui.one/r/lib-utils.json"
@@ -5925,13 +5926,12 @@
     ],
     "createdAt": "2026-09-12",
     "updatedAt": "2026-09-12",
-    "size": "9.5 KB",
-    "rawSize": 9717,
-    "directSize": "9.5 KB",
+    "size": "10 KB",
+    "rawSize": 10245,
+    "directSize": "10 KB",
     "fileCount": 1,
     "dependencies": [
-      "motion",
-      "@tabler/icons-react"
+      "motion"
     ],
     "registryDependencies": [
       "https://www.spaceui.one/r/lib-utils.json"
@@ -22491,9 +22491,9 @@
     ],
     "createdAt": "2026-09-04",
     "updatedAt": "2026-09-04",
-    "size": "63.1 KB",
-    "rawSize": 64570,
-    "directSize": "63.1 KB",
+    "size": "63.6 KB",
+    "rawSize": 65081,
+    "directSize": "63.6 KB",
     "fileCount": 15,
     "dependencies": [
       "motion",
@@ -22531,9 +22531,9 @@
     ],
     "createdAt": "2026-09-04",
     "updatedAt": "2026-09-04",
-    "size": "63.1 KB",
-    "rawSize": 64570,
-    "directSize": "63.1 KB",
+    "size": "63.6 KB",
+    "rawSize": 65081,
+    "directSize": "63.6 KB",
     "fileCount": 15,
     "dependencies": [
       "motion",
@@ -22571,9 +22571,9 @@
     ],
     "createdAt": "2026-09-04",
     "updatedAt": "2026-09-04",
-    "size": "63.1 KB",
-    "rawSize": 64570,
-    "directSize": "63.1 KB",
+    "size": "63.6 KB",
+    "rawSize": 65081,
+    "directSize": "63.6 KB",
     "fileCount": 15,
     "dependencies": [
       "motion",

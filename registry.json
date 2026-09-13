@@ -76,6 +76,21 @@
           "path": "src/registry/blocks/dither-carousel/index.tsx",
           "type": "registry:block",
           "target": "components/blocks/dither-carousel/index.tsx"
+        },
+        {
+          "path": "src/registry/blocks/dither-carousel/dither-carousel.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/dither-carousel/dither-carousel.tsx"
+        },
+        {
+          "path": "src/registry/blocks/dither-carousel/shaders.ts",
+          "type": "registry:block",
+          "target": "components/blocks/dither-carousel/shaders.ts"
+        },
+        {
+          "path": "src/registry/blocks/dither-carousel/types.ts",
+          "type": "registry:block",
+          "target": "components/blocks/dither-carousel/types.ts"
         }
       ],
       "createdAt": "2026-09-12",
@@ -239,6 +254,21 @@
           "path": "src/registry/blocks/liquid-gooey-carousel/index.tsx",
           "type": "registry:block",
           "target": "components/blocks/liquid-gooey-carousel/index.tsx"
+        },
+        {
+          "path": "src/registry/blocks/liquid-gooey-carousel/liquid-gooey-carousel.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/liquid-gooey-carousel/liquid-gooey-carousel.tsx"
+        },
+        {
+          "path": "src/registry/blocks/liquid-gooey-carousel/shaders.ts",
+          "type": "registry:block",
+          "target": "components/blocks/liquid-gooey-carousel/shaders.ts"
+        },
+        {
+          "path": "src/registry/blocks/liquid-gooey-carousel/types.ts",
+          "type": "registry:block",
+          "target": "components/blocks/liquid-gooey-carousel/types.ts"
         }
       ],
       "createdAt": "2026-09-12",
@@ -261,6 +291,21 @@
           "path": "src/registry/blocks/prism-carousel/index.tsx",
           "type": "registry:block",
           "target": "components/blocks/prism-carousel/index.tsx"
+        },
+        {
+          "path": "src/registry/blocks/prism-carousel/prism-carousel.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/prism-carousel/prism-carousel.tsx"
+        },
+        {
+          "path": "src/registry/blocks/prism-carousel/shaders.ts",
+          "type": "registry:block",
+          "target": "components/blocks/prism-carousel/shaders.ts"
+        },
+        {
+          "path": "src/registry/blocks/prism-carousel/types.ts",
+          "type": "registry:block",
+          "target": "components/blocks/prism-carousel/types.ts"
         }
       ],
       "createdAt": "2026-09-12",
@@ -1922,7 +1967,8 @@
         "@tabler/icons-react"
       ],
       "registryDependencies": [
-        "https://www.spaceui.one/r/lib-utils.json"
+        "https://www.spaceui.one/r/lib-utils.json",
+        "https://www.spaceui.one/r/primitives-button.json"
       ],
       "categories": [
         "component",
@@ -1977,8 +2023,7 @@
       "title": "Handle Reel",
       "description": "Kinetic tumbler reel of usernames, handles, or subdomains past a prefix that decelerates and settles with momentum.",
       "dependencies": [
-        "motion",
-        "@tabler/icons-react"
+        "motion"
       ],
       "registryDependencies": [
         "https://www.spaceui.one/r/lib-utils.json"
@@ -6058,7 +6103,9 @@
       "title": "Fluid Countdown Demo",
       "description": "Interactive fluid rolling digits countdown timer.",
       "registryDependencies": [
-        "https://www.spaceui.one/r/components-spaceui-fluid-countdown.json"
+        "https://www.spaceui.one/r/components-spaceui-fluid-countdown.json",
+        "https://www.spaceui.one/r/primitives-tabs.json",
+        "https://www.spaceui.one/r/primitives-button.json"
       ],
       "categories": [
         "component",
@@ -6178,7 +6225,8 @@
       "title": "Handle Reel Demo",
       "description": "Hero handle tumbler reel with ryna.me prefix.",
       "registryDependencies": [
-        "https://www.spaceui.one/r/components-spaceui-handle-reel.json"
+        "https://www.spaceui.one/r/components-spaceui-handle-reel.json",
+        "https://www.spaceui.one/r/primitives-tabs.json"
       ],
       "categories": [
         "component",
