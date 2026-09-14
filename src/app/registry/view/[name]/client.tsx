@@ -2,6 +2,7 @@
 
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { index } from '@/__registry__/index'
+import { cn } from '@/registry/lib/utils'
 import { notFound } from 'next/navigation'
 import { Suspense } from 'react'
 
@@ -35,9 +36,10 @@ export function RegistryViewClient({ name, encodedProps }: { name: string; encod
 
   return (
     <main
-      className={`flex min-h-screen items-center justify-center ${
-        isUncontained ? 'w-full p-0 overflow-x-hidden' : 'p-8'
-      }`}
+      className={cn(
+        'flex min-h-screen',
+        isUncontained ? 'w-full p-0 overflow-x-hidden items-start justify-center' : 'items-center justify-center p-8',
+      )}
     >
       <Suspense fallback={<div className="text-sm text-muted-foreground">Loading preview...</div>}>
         <Component {...props} />

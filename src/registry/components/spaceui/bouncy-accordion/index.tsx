@@ -39,8 +39,7 @@ export function BouncyAccordion({ items, defaultValue = 0, value, onValueChange,
           const isOpen = active === index
           const contentId = `${baseId}-${index}`
           const isTopRounded = index === 0 || isOpen || (active !== null && index === active + 1)
-          const isBottomRounded =
-            index === items.length - 1 || isOpen || (active !== null && index === active - 1)
+          const isBottomRounded = index === items.length - 1 || isOpen || (active !== null && index === active - 1)
 
           return (
             <motion.li

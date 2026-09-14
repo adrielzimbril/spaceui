@@ -4,6 +4,7 @@
   "root": true,
   "pages": [
     "---Components---",
+    "adaptive-density-grid",
     "avatar-extended",
     "avatar-group",
     "bouncy-accordion",
@@ -35,9 +36,12 @@
     "autoscale-input",
     "tournament-bracket",
     "theme-toggle",
-    "words-preloader",
     "dirt-carousel",
     "section-scrollspy",
+    "---Text---",
+    "handle-reel",
+    "fluid-countdown",
+    "words-preloader",
     "---Backgrounds---",
     "bubble",
     "gradient",
@@ -48,8 +52,6 @@
     "bloop",
     "---Shader---",
     "cloud",
-    "paper-shader",
-    "handle-reel",
-    "fluid-countdown"
+    "paper-shader"
   ]
 }

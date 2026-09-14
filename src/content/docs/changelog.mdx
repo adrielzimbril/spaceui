@@ -8,6 +8,64 @@ import { Changelog, ChangelogItem, ChangelogChange } from '@/components/docs/mdx
 <Changelog>
 
 <ChangelogItem
+  date="2026-09-14"
+  version="0.0.12"
+  title="Floating Multi-Pill Layout, New Components & Design Tools"
+  summary="Modular floating island navigation dock, sticky sidebars overhaul, new UI components, interactive design tools suite, and bug fixes."
+>
+
+<ChangelogChange kind="Components">
+
+- Added `GitHubActivity`: interactive GitHub contribution heatmap supporting live user and repository commit activity.
+- Added `FluidCountdown`: fluid countdown timer with smooth slot-machine roll transitions powered by `@number-flow/react`.
+- Added `Thinking`: AI reasoning/thinking status bubble indicator with subtle pulsating animations.
+- Added `HandleReel`: animated handle ticker and reel ticker component.
+- Added `BadgeSquircle` and `ButtonSquircle`: squircle-shaped badges and buttons with tailored curvature.
+- Added new carousel blocks: Dither Carousel, Lens Carousel, Liquid Gooey Carousel, and Prism Carousel.
+- Added `Stats` block template featuring GitHub stats, commit graphs, and analytics cards.
+
+</ChangelogChange>
+
+<ChangelogChange kind="new">
+
+- Added Interactive Design Tools Suite:
+  - **Flags Explorer**: vector flag asset catalog, playground, and multi-format export.
+  - **Image Split**: multi-row and grid image splitting utility.
+  - **Plush Studio**: interactive 3D plush cushion design playground with real-time settings.
+  - **OG Image Generator**: dynamic OpenGraph preview generator and showcase dashboard.
+
+</ChangelogChange>
+
+<ChangelogChange kind="improved">
+
+- Overhauled site header into a modular floating island layout with separate brand, navigation, and tools capsules.
+- Enhanced mega menu geometry with circular arc fillets for seamless ear transitions.
+- Enhanced `GitHubActivity` with horizontal `ScrollArea`, edge fades, and auto-scroll on mobile while preserving the 100% full-width grid on desktop.
+- Integrated `NumberFlow` into `GitHubLink` for animated rolling star counts with compact notation.
+- Refactored squircle borders and visual consistency across UI kit components and marketing views.
+
+</ChangelogChange>
+
+<ChangelogChange kind="fixed">
+
+- Fixed initial SSR/hydration border-radius flash (FOUC) and spring physics in `BouncyAccordion`.
+- Fixed sticky positioning and scroll pinning on `DocsSidebar` and `DocsTocSidebar`, preventing sidebars from unsticking on long pages.
+- Fixed 56px top gap above documentation sidebar in standard layout mode.
+- Fixed SVG path stroke crossing artifact on mega menu inverse radius ears.
+- Fixed layout blowout and container width overflow on mobile for `GitHubActivity`.
+
+</ChangelogChange>
+
+<ChangelogChange kind="Docs">
+
+- Reorganized UI kit documentation structure under `src/content/ui-kit/`.
+- Added comprehensive MDX documentation and interactive demos for all new components, blocks, and templates.
+
+</ChangelogChange>
+
+</ChangelogItem>
+
+<ChangelogItem
   date="2026-08-31"
   version="0.0.11"
   title="Application UI Layout Design"

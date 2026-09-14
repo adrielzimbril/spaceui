@@ -103,7 +103,7 @@ export function RoadmapItem({
         {config.icon}
         <span className="truncate text-sm">{title}</span>
       </div>
-      <span className="flex items-center gap-1.5 text-[10px] uppercase font-mono tracking-wider text-muted-foreground/80 shrink-0 ml-2">
+      <span className="flex items-center gap-1.5 text-[10px] text-muted-foreground/80 shrink-0 ml-2">
         <span className="text-xs leading-none">{config.emoji}</span>
         <span className="hidden sm:inline">{config.label}</span>
       </span>

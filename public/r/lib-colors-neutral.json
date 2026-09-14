@@ -38,7 +38,7 @@
     "dark": {
       "background": "var(--color-zinc-950)",
       "foreground": "var(--color-white)",
-      "muted": "--alpha(var(--color-white) / 10%)",
+      "muted": "--alpha(var(--color-zinc-800) / 70%)",
       "muted-foreground": "var(--color-zinc-400)",
       "card": "var(--color-zinc-950)",
       "card-foreground": "var(--color-zinc-50)",

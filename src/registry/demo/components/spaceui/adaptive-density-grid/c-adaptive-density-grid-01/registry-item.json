@@ -1,0 +1,29 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-c-adaptive-density-grid-01",
+  "type": "registry:component",
+  "title": "Media Gallery Density Reflow",
+  "description": "Image gallery with fluid spring velocity pill indicator and adaptive columns reflow.",
+  "dependencies": [
+    "motion",
+    "@tabler/icons-react"
+  ],
+  "registryDependencies": [
+    "https://www.spaceui.one/r/components-spaceui-adaptive-density-grid.json",
+    "https://www.spaceui.one/r/components-spaceui-badge-squircle.json"
+  ],
+  "categories": [
+    "component",
+    "grid",
+    "gallery"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/components/spaceui/adaptive-density-grid/c-adaptive-density-grid-01/index.tsx",
+      "type": "registry:component",
+      "target": "components/spaceui/adaptive-density-grid-demo.tsx"
+    }
+  ],
+  "createdAt": "2026-09-14",
+  "updatedAt": "2026-09-14"
+}

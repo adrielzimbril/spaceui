@@ -23,7 +23,7 @@ function HubItemContent({
 }) {
   return (
     <>
-      <MenuAvatarIcon seed={hub.id} />
+      <MenuAvatarIcon seed={hub.title || hub.id} />
       <div className="flex flex-col min-w-0 flex-1">
         <span
           className={cn(

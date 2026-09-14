@@ -30,9 +30,9 @@ export async function ResourcesMdx({ slug }: { slug?: string[] }) {
               href={prevNav?.url ?? page.url}
               aria-disabled={!prevNav}
               className={!prevNav ? 'pointer-events-none opacity-50' : undefined}
-              aria-label={prevNav ? `Aller à ${prevNav.name}` : 'Pas de page précédente'}
+              aria-label={prevNav ? `Go to ${prevNav.name}` : 'Pas de page précédente'}
             >
-              <Button variant="accent" size="icon-sm">
+              <Button variant="secondary" size="icon-sm">
                 <IconArrowLeft />
               </Button>
             </Link>
@@ -40,9 +40,9 @@ export async function ResourcesMdx({ slug }: { slug?: string[] }) {
               href={nextNav?.url ?? page.url}
               aria-disabled={!nextNav}
               className={!nextNav ? 'pointer-events-none opacity-50' : undefined}
-              aria-label={nextNav ? `Aller à ${nextNav.name}` : 'Pas de page suivante'}
+              aria-label={nextNav ? `Go to ${nextNav.name}` : 'Pas de page suivante'}
             >
-              <Button variant="accent" size="icon-sm">
+              <Button variant="secondary" size="icon-sm">
                 <IconArrowRight />
               </Button>
             </Link>

@@ -17,6 +17,7 @@ export interface UseLoadMoreOptions<T = any> {
 export interface UseLoadMoreReturn<T = any> {
   data: T[]
   loading: boolean
+  error: Error | null
   hasMore: boolean
   loadMore: () => Promise<void>
   totalItems: number
@@ -57,6 +58,7 @@ export function useLoadMore<T = any>(optionsOrFetcher?: UseLoadMoreOptions<T> | 
   const [loadedItems, setLoadedItems] = useState<number>(initialCount)
   const [page, setPage] = useState<number>(initialPage)
   const [loading, setLoading] = useState<boolean>(false)
+  const [error, setError] = useState<Error | null>(null)
   const [hasMoreState, setHasMoreState] = useState<boolean>(true)
 
   const fetcherRef = useRef(fetcher)
@@ -88,6 +90,7 @@ export function useLoadMore<T = any>(optionsOrFetcher?: UseLoadMoreOptions<T> | 
     if (loading) return
 
     setLoading(true)
+    setError(null)
 
     try {
       if (fetcherRef.current) {
@@ -101,8 +104,11 @@ export function useLoadMore<T = any>(optionsOrFetcher?: UseLoadMoreOptions<T> | 
         await sleep(500)
         setLoadedItems((prev) => Math.min(prev + incrementCount, dataSource.length))
       }
-    } catch (error) {
-      logger.error('Error in useLoadMore:', error)
+    } catch (err) {
+      const errorObj = err instanceof Error ? err : new Error(String(err))
+      setError(errorObj)
+      logger.error('Error in useLoadMore:', errorObj)
+      throw errorObj
     } finally {
       setLoading(false)
     }
@@ -112,12 +118,14 @@ export function useLoadMore<T = any>(optionsOrFetcher?: UseLoadMoreOptions<T> | 
     setLoadedItems(initialCount)
     setPage(initialPage)
     setHasMoreState(true)
+    setError(null)
   }, [initialCount, initialPage])
 
   return {
     data,
     loadMore,
     loading,
+    error,
     hasMore,
     loadedItems,
     totalItems,

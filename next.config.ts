@@ -34,6 +34,9 @@ const config: NextConfig = {
         hostname: 'img.spaceui.one',
       },
       {
+        hostname: 'avatars.spaceui.one',
+      },
+      {
         hostname: 'images.pexels.com',
       },
       {

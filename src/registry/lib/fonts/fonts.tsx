@@ -1,147 +1,99 @@
-import localFont from 'next/font/local'
-import {
-  Inter,
-  Roboto,
-  Open_Sans,
-  Manrope,
-  Geist,
-  Rubik,
-  DM_Sans,
-  Lato,
-  Raleway,
-  Work_Sans,
-  IBM_Plex_Sans,
-  Figtree,
-  Bricolage_Grotesque,
-  Hanken_Grotesk,
-  Libre_Baskerville,
-  Crimson_Pro,
-} from 'next/font/google'
+import { OpenRunde } from './open-runde'
 
-export const OpenRunde = localFont({
-  src: [
-    {
-      path: './font-open-runde/open-runde-regular.woff2',
-      weight: '400',
-      style: 'normal',
-    },
-    {
-      path: './font-open-runde/open-runde-medium.woff2',
-      weight: '500',
-      style: 'normal',
-    },
-    {
-      path: './font-open-runde/open-runde-semibold.woff2',
-      weight: '600',
-      style: 'normal',
-    },
-    {
-      path: './font-open-runde/open-runde-bold.woff2',
-      weight: '700',
-      style: 'normal',
-    },
-  ],
-  variable: '--font-open-runde',
-  display: 'swap',
-  fallback: ['system-ui', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
-})
+export { OpenRunde }
 
-export const fontInter = Inter({
-  subsets: ['latin'],
+export const fontInter = {
+  className: '',
   variable: '--font-inter',
-  display: 'swap',
-})
+  style: { fontFamily: 'Inter, system-ui, -apple-system, sans-serif' },
+}
 
-export const fontRoboto = Roboto({
-  subsets: ['latin'],
-  weight: ['400', '500', '700'],
+export const fontRoboto = {
+  className: '',
   variable: '--font-roboto',
-  display: 'swap',
-})
+  style: { fontFamily: 'Roboto, system-ui, -apple-system, sans-serif' },
+}
 
-export const fontOpenSans = Open_Sans({
-  subsets: ['latin'],
+export const fontOpenSans = {
+  className: '',
   variable: '--font-open-sans',
-  display: 'swap',
-})
+  style: { fontFamily: '"Open Sans", system-ui, -apple-system, sans-serif' },
+}
 
-export const fontManrope = Manrope({
-  subsets: ['latin'],
+export const fontManrope = {
+  className: '',
   variable: '--font-manrope',
-  display: 'swap',
-})
+  style: { fontFamily: 'Manrope, system-ui, -apple-system, sans-serif' },
+}
 
-export const fontGeist = Geist({
-  subsets: ['latin'],
+export const fontGeist = {
+  className: '',
   variable: '--font-geist',
-  display: 'swap',
-})
+  style: { fontFamily: 'Geist, system-ui, -apple-system, sans-serif' },
+}
 
-export const fontRubik = Rubik({
-  subsets: ['latin'],
+export const fontRubik = {
+  className: '',
   variable: '--font-rubik',
-  display: 'swap',
-})
+  style: { fontFamily: 'Rubik, system-ui, -apple-system, sans-serif' },
+}
 
-export const fontDMSans = DM_Sans({
-  subsets: ['latin'],
+export const fontDMSans = {
+  className: '',
   variable: '--font-dm-sans',
-  display: 'swap',
-})
+  style: { fontFamily: '"DM Sans", system-ui, -apple-system, sans-serif' },
+}
 
-export const fontLato = Lato({
-  subsets: ['latin'],
-  weight: ['400', '700'],
+export const fontLato = {
+  className: '',
   variable: '--font-lato',
-  display: 'swap',
-})
+  style: { fontFamily: 'Lato, system-ui, -apple-system, sans-serif' },
+}
 
-export const fontRaleway = Raleway({
-  subsets: ['latin'],
+export const fontRaleway = {
+  className: '',
   variable: '--font-raleway',
-  display: 'swap',
-})
+  style: { fontFamily: 'Raleway, system-ui, -apple-system, sans-serif' },
+}
 
-export const fontWorkSans = Work_Sans({
-  subsets: ['latin'],
+export const fontWorkSans = {
+  className: '',
   variable: '--font-work-sans',
-  display: 'swap',
-})
+  style: { fontFamily: '"Work Sans", system-ui, -apple-system, sans-serif' },
+}
 
-export const fontIBMPlexSans = IBM_Plex_Sans({
-  subsets: ['latin'],
-  weight: ['400', '500', '600', '700'],
+export const fontIBMPlexSans = {
+  className: '',
   variable: '--font-ibm-plex-sans',
-  display: 'swap',
-})
+  style: { fontFamily: '"IBM Plex Sans", system-ui, -apple-system, sans-serif' },
+}
 
-export const fontFigtree = Figtree({
-  subsets: ['latin'],
+export const fontFigtree = {
+  className: '',
   variable: '--font-figtree',
-  display: 'swap',
-})
+  style: { fontFamily: 'Figtree, system-ui, -apple-system, sans-serif' },
+}
 
-export const fontBricolage = Bricolage_Grotesque({
-  subsets: ['latin'],
+export const fontBricolage = {
+  className: '',
   variable: '--font-bricolage',
-  display: 'swap',
-})
+  style: { fontFamily: '"Bricolage Grotesque", system-ui, -apple-system, sans-serif' },
+}
 
-export const fontHanken = Hanken_Grotesk({
-  subsets: ['latin'],
+export const fontHanken = {
+  className: '',
   variable: '--font-hanken',
-  display: 'swap',
-})
+  style: { fontFamily: '"Hanken Grotesk", system-ui, -apple-system, sans-serif' },
+}
 
-export const fontLibreBaskerville = Libre_Baskerville({
-  subsets: ['latin'],
-  weight: ['400', '700'],
+export const fontLibreBaskerville = {
+  className: '',
   variable: '--font-libre-baskerville',
-  display: 'swap',
-})
+  style: { fontFamily: '"Libre Baskerville", Georgia, serif' },
+}
 
-export const fontCrimsonPro = Crimson_Pro({
-  subsets: ['latin'],
+export const fontCrimsonPro = {
+  className: '',
   variable: '--font-crimson-pro',
-  display: 'swap',
-})
+  style: { fontFamily: '"Crimson Pro", Georgia, serif' },
+}

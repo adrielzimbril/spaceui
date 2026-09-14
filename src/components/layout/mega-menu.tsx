@@ -20,10 +20,7 @@ import {
   navigationMenuTriggerStyle,
 } from '@/registry/primitives/navigation-menu'
 import { megaMenuDocs, megaMenuTools } from '@/config/menu-config'
-import { Squishmoji } from '@usespaceui/squishmoji/react'
-import { AssetFlag } from '@/tools/flags/asset-flag'
-import { AssetEmoji } from '@/tools/emoji/asset-emoji'
-import { EmojiSource, EmojiType } from '@usespaceui/emoji'
+import { ToolAssetIcon } from '@/components/marketing/tools/tool-asset-icon'
 
 const docs = megaMenuDocs
 const designTools = megaMenuTools
@@ -152,111 +149,34 @@ function SpaceMenuShell() {
 interface MenuAvatarIconProps {
   seed: string
   className?: string
+  variant?: string
 }
 
-export function MenuAvatarIcon({ seed, className }: MenuAvatarIconProps) {
+export function MenuAvatarIcon({ seed, className, variant }: MenuAvatarIconProps) {
   return (
     <div
       className={cn(
-        'flex shrink-0 items-center justify-center size-8 rounded-full relative overflow-hidden border border-muted',
+        'flex shrink-0 items-center justify-center size-8 squircle rounded-full relative overflow-hidden border border-muted',
         className,
       )}
     >
-      <Avatar name={seed} variant="shaula" size={32} circle={false} />
+      <Avatar name={seed} variant={variant || 'shaula'} size={32} circle={false} />
     </div>
   )
 }
 
 function ToolMenuIcon({ tool }: { tool: (typeof designTools)[number] }) {
-  if (tool.label === 'squishmoji') {
-    return (
-      <div className="flex shrink-0 items-center justify-center size-8 rounded-full relative overflow-hidden border border-muted bg-muted">
-        <Squishmoji seed="squishmoji" size={26} shape="all" expression="all" backgroundStyle="all" />
-      </div>
-    )
-  }
-
-  if (tool.label === 'avatars') {
-    return (
-      <div className="flex shrink-0 items-center justify-center size-8 rounded-full relative overflow-hidden border border-muted bg-muted">
-        <Avatar name="avatars" variant="pebble" size={32} circle={false} />
-      </div>
-    )
-  }
-
-  if (tool.label === 'flags') {
-    return (
-      <div className="flex shrink-0 items-center justify-center size-8 rounded-full relative overflow-hidden border border-muted bg-muted">
-        <AssetFlag code="ci" shape="circle" size={20} alt="Flag" className="ring-0" />
-      </div>
-    )
-  }
-
-  if (tool.label === 'emoji') {
-    return (
-      <div className="flex shrink-0 items-center justify-center size-8 rounded-full relative overflow-hidden border border-muted bg-muted">
-        <AssetEmoji codepoint="1f60e" source={EmojiSource.Fluent} type={EmojiType.Anim} size={22} lazy={false} />
-      </div>
-    )
-  }
-
-  if (tool.label === 'plush') {
-    return (
-      <div className="flex shrink-0 items-center justify-center size-8 rounded-full relative overflow-hidden border border-muted bg-muted">
-        <Avatar name="plush" variant="glitch" size={32} circle={false} />
-      </div>
-    )
-  }
-
-  if (tool.label === 'sounds') {
-    return (
-      <div className="flex shrink-0 items-center justify-center size-8 rounded-full relative overflow-hidden border border-muted bg-muted">
-        <Avatar name="sounds" variant="doodle" size={32} circle={false} />
-      </div>
-    )
-  }
-
-  if (tool.label === 'imagesplit' || tool.title.toLowerCase().includes('split')) {
-    return (
-      <div className="flex shrink-0 items-center justify-center size-8 rounded-full relative overflow-hidden border border-muted bg-muted">
-        <Avatar name="imagesplit" variant="invader" size={32} circle={false} />
-      </div>
-    )
-  }
-
-  if (tool.label === 'shaders' || tool.title.toLowerCase().includes('shader')) {
-    return (
-      <div className="flex shrink-0 items-center justify-center size-8 rounded-full relative overflow-hidden border border-muted bg-muted">
-        <Avatar name="shaders" variant="singularity" size={32} circle={false} />
-      </div>
-    )
-  }
-
-  if (tool.label === 'icons' || tool.title.toLowerCase() === 'icons') {
-    return (
-      <div className="flex shrink-0 items-center justify-center size-8 rounded-full relative overflow-hidden border border-muted bg-muted">
-        <Avatar name="icons" variant="bored" size={32} circle={false} />
-      </div>
-    )
-  }
-
-  if (tool.label === 'gradients' || tool.title.toLowerCase().includes('gradient')) {
-    return (
-      <div className="flex shrink-0 items-center justify-center size-8 rounded-full relative overflow-hidden border border-muted bg-muted">
-        <Avatar name="gradients" variant="titan" size={32} circle={false} />
-      </div>
-    )
-  }
-
-  if (tool.label === 'all-tools' || tool.title.toLowerCase().includes('all tools')) {
-    return (
-      <div className="flex shrink-0 items-center justify-center size-8 rounded-full relative overflow-hidden border border-muted bg-background">
-        <Avatar name="all-tools" variant="lumina" size={32} circle={false} />
-      </div>
-    )
-  }
-
-  return <MenuAvatarIcon seed={tool.label || tool.title.toLowerCase().replace(/[^a-z0-9]+/g, '-')} />
+  const isAllTools = tool.label === 'all-tools' || tool.title.toLowerCase().includes('all tools')
+  return (
+    <div
+      className={cn(
+        'flex shrink-0 items-center justify-center size-8 squircle rounded-full relative overflow-hidden border border-muted',
+        isAllTools ? 'bg-background' : 'bg-muted',
+      )}
+    >
+      <ToolAssetIcon label={tool.title || tool.label} size={32} />
+    </div>
+  )
 }
 
 const DEFAULT_MENU_SIZES: Record<string, { width: number; height: number }> = {
@@ -438,7 +358,7 @@ export function MegaMenu({ className }: { className?: string }) {
                       href={doc.href}
                       onClick={handleClose}
                     >
-                      <MenuAvatarIcon seed={doc.title.toLowerCase().replace(/[^a-z0-9]+/g, '-')} />
+                      <MenuAvatarIcon seed={doc.title.toLowerCase()} />
                       <span className="flex min-w-0 flex-1 flex-col gap-0.5">
                         <span className="text-foreground flex items-center gap-2 text-sm leading-none font-medium">
                           {doc.title}
@@ -461,8 +381,9 @@ export function MegaMenu({ className }: { className?: string }) {
                     className="group/cta relative overflow-hidden rounded-xl border border-muted bg-muted hover:bg-accent p-2.5 flex items-center gap-3 transition-colors cursor-pointer outline-none select-none"
                   >
                     <MenuAvatarIcon
-                      seed="vip"
-                      className="border-amber-500 group-hover/cta:scale-105 transition-transform duration-200"
+                      seed="Space Pro"
+                      variant="lumina"
+                      className="border-blue-400 group-hover/cta:scale-105 transition-transform duration-200"
                     />
                     <span className="flex min-w-0 flex-1 flex-col gap-0.5">
                       <span className="flex items-center gap-2">
@@ -499,16 +420,16 @@ export function MegaMenu({ className }: { className?: string }) {
                   UI Kit & Primitives
                 </div>
                 <div className="grid grid-cols-2 gap-2">
-                  <ListItem title="Primitives" href="/primitives" seed="primitives" onClick={handleClose}>
+                  <ListItem title="Primitives" href="/primitives" seed="Primitives" onClick={handleClose}>
                     Basic accessible UI elements like Buttons, Inputs, Dialogs.
                   </ListItem>
-                  <ListItem title="Blocks" href="/blocks" seed="blocks" onClick={handleClose}>
+                  <ListItem title="Blocks" href="/blocks" seed="Blocks" onClick={handleClose}>
                     Ready-to-use section blocks and page sections.
                   </ListItem>
-                  <ListItem title="Hooks & Utils" href="/hooks" seed="hooks" onClick={handleClose}>
+                  <ListItem title="Hooks & Utils" href="/hooks" seed="Hooks & Utils" onClick={handleClose}>
                     Sensory React hooks, flow-control and pure DX utilities.
                   </ListItem>
-                  <ListItem title="Templates" href="/templates" seed="templates" onClick={handleClose}>
+                  <ListItem title="Templates" href="/templates" seed="Templates" onClick={handleClose}>
                     Full-page starter templates for your next app.
                   </ListItem>
                 </div>
@@ -600,7 +521,7 @@ export function MegaMenu({ className }: { className?: string }) {
                 aria-hidden="true"
                 className="hidden size-1.5 rounded-full bg-current opacity-40 transition-all duration-300 group-hover:opacity-100 group-focus-visible:opacity-100 shrink-0"
               />
-              Showcase
+              AI Showcase
             </Link>
           </NavigationMenuItem>
         </NavigationMenuList>

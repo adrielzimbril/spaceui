@@ -182,13 +182,13 @@ export function DocsTableOfContents({
               <a
                 key={item.url}
                 href={item.url}
-                className="group relative py-1.5 text-[13px] text-muted-foreground no-underline transition-colors hover:text-foreground data-[active=true]:font-medium data-[active=true]:text-foreground data-[depth=3]:pl-4 data-[depth=4]:pl-6 outline-none"
+                className="group relative py-1.5 text-[.6875rem] text-muted-foreground no-underline transition-colors hover:text-foreground data-[active=true]:font-medium data-[active=true]:text-foreground data-[depth=3]:pl-4 data-[depth=4]:pl-6 outline-none"
                 data-active={item.url === `#${activeHeading}`}
                 data-depth={item.depth}
               >
                 {/* Active Indicator Line */}
                 {item.url === `#${activeHeading}` && (
-                  <div className="absolute inset-y-0 -left-[13px] w-[2px] bg-primary rounded-full" />
+                  <div className="absolute inset-y-0 -left-3.25 w-0.5 bg-primary rounded-full" />
                 )}
                 <span className="opacity-80 group-hover:opacity-100 transition-opacity">{item.title}</span>
               </a>
@@ -223,7 +223,7 @@ export function DocsTableOfContents({
                   rel="noopener noreferrer"
                   className="group flex items-center gap-1.5 text-[12px] text-muted-foreground hover:text-foreground transition-colors outline-none"
                 >
-                  <span className="font-mono underline underline-offset-2 decoration-transparent group-hover:decoration-muted-foreground/50 transition-colors">
+                  <span className="decoration-transparent">
                     {/* {dep.label} */}
                     {dep.name}
                   </span>

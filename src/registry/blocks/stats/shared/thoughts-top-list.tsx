@@ -100,10 +100,7 @@ export function ThoughtsTopList({
                   <Badge className="capitalize text-xs font-medium shrink-0" size="sm" variant="primary">
                     {index + 1}
                   </Badge>
-                  <a
-                    href={`#${thought.slug}`}
-                    className="flex-1 text-sm leading-relaxed text-foreground hover:underline truncate"
-                  >
+                  <a href={`#${thought.slug}`} className="flex-1 text-sm leading-relaxed text-foreground truncate">
                     {thought.title}
                   </a>
                   <Badge

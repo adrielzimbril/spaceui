@@ -50,6 +50,7 @@ import {
   IconX,
   IconSearch,
   IconFolderOpen,
+  IconDelta,
 } from '@tabler/icons-react'
 import {
   extractSectionsFromNode,
@@ -87,11 +88,12 @@ function getGroupIcon(group: string, title?: string) {
     case 'Tools':
       return IconTool
     default:
-      return IconSparkles
+      return IconDelta
   }
 }
 
 import { mobileNavGroups, type NavItem } from '@/config/menu-config'
+import { GitHubLink } from '@/registry/components/spaceui/github-link'
 
 const NAV_GROUPS = mobileNavGroups
 
@@ -381,9 +383,7 @@ export function MobileNavDrawer({ open, onOpenChange, trees = [], trigger, trigg
                       <div className="flex items-center justify-between px-4 py-1.5 text-xs font-medium uppercase tracking-wider text-muted-foreground">
                         <span>{section.title}</span>
                         {section.items.length > 0 && (
-                          <span className="text-[.6875rem] font-mono text-muted-foreground">
-                            {section.items.length}
-                          </span>
+                          <span className="text-[.6875rem] text-muted-foreground">{section.items.length}</span>
                         )}
                       </div>
                       <div className="px-2">
@@ -433,9 +433,7 @@ export function MobileNavDrawer({ open, onOpenChange, trees = [], trigger, trigg
                       <div className="flex items-center justify-between px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-muted-foreground">
                         <span>{section.title}</span>
                         {section.items.length > 0 && (
-                          <span className="text-[.6875rem] font-mono text-muted-foreground">
-                            {section.items.length}
-                          </span>
+                          <span className="text-[.6875rem] text-muted-foreground">{section.items.length}</span>
                         )}
                       </div>
                       <div className="flex flex-col gap-0.5 px-2">
@@ -491,14 +489,12 @@ export function MobileNavDrawer({ open, onOpenChange, trees = [], trigger, trigg
                             </div>
                             <div className="flex items-center gap-1.5 shrink-0 ml-2">
                               {typeof count === 'number' && count > 0 && (
-                                <span className="text-[.6875rem] font-mono text-muted-foreground">{count}</span>
+                                <span className="text-[.6875rem] text-muted-foreground">{count}</span>
                               )}
                               {item.isDrillable ? (
                                 <IconChevronRight className="size-4 text-muted-foreground/60 shrink-0" />
                               ) : (
-                                <span className="text-[10px] uppercase font-mono tracking-wider text-muted-foreground/80 shrink-0">
-                                  {item.group}
-                                </span>
+                                <span className="text-[10px] text-muted-foreground/80 shrink-0">{item.group}</span>
                               )}
                             </div>
                           </>
@@ -579,20 +575,12 @@ export function MobileNavDrawer({ open, onOpenChange, trees = [], trigger, trigg
           </DrawerPanel>
         </DrawerContent>
         {/* Footer — mirrors CommandFooter + site-header right side actions */}
-        {/* <DrawerFooter className="shrink-0 flex-row items-center justify-between! border-none px-0.5 pb-2 pt-0">
-          <ModeSwitcher className="bg-background" />
+        <DrawerFooter className="shrink-0 flex-row items-center justify-between! border-none px-0.5 pb-2 pt-0">
+          <ModeSwitcher className="bg-background!" />
           <div className="flex items-center gap-1.5">
-            <Link
-              href="/dashboard"
-              onClick={handleLinkClick}
-              variant="secondary"
-              asButton
-              className="inline-flex size-8 items-center justify-center bg-background rounded-md"
-              aria-label="Dashboard"
-            >
-              <IconLayoutDashboard className="size-4" />
-            </Link>
-            <Link
+            <GitHubLink className="bg-background!" />
+
+            {/* <Link
               href="/login"
               variant="secondary"
               onClick={handleLinkClick}
@@ -600,9 +588,9 @@ export function MobileNavDrawer({ open, onOpenChange, trees = [], trigger, trigg
             >
               <IconLogin className="size-3.5" />
               <span>Sign in</span>
-            </Link>
+            </Link> */}
           </div>
-        </DrawerFooter> */}
+        </DrawerFooter>
       </DrawerPopup>
     </Drawer>
   )

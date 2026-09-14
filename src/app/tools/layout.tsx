@@ -1,5 +1,5 @@
 import type { ReactNode } from 'react'
-import { OpenRunde } from '@/registry/lib/fonts/fonts'
+import { OpenRunde } from '@/registry/lib/fonts/open-runde'
 import { cn } from '@/registry/lib/utils'
 
 export default function ToolsLayout({ children }: { children: ReactNode }) {

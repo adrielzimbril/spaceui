@@ -18,6 +18,9 @@ export const badgeVariants = cva(
         destructive: 'border-transparent bg-destructive text-white hover:bg-destructive/80',
         inverted: 'border-transparent bg-foreground text-background',
         accent: 'border-transparent bg-accent text-accent-foreground hover:bg-accent/90',
+        warning: 'border-transparent bg-warning text-warning-foreground',
+        success: 'border-transparent bg-success text-success-foreground',
+        info: 'border-transparent bg-info text-info-foreground',
       },
       size: {
         xs: 'text-[11px] px-2.5 py-1 gap-1',
@@ -36,7 +39,17 @@ export const badgeVariants = cva(
 )
 
 export interface BadgeProps extends useRender.ComponentProps<'span'>, VariantProps<typeof badgeVariants> {
-  variant?: 'default' | 'primary' | 'secondary' | 'outline' | 'destructive' | 'inverted' | 'accent'
+  variant?:
+    | 'default'
+    | 'primary'
+    | 'secondary'
+    | 'outline'
+    | 'destructive'
+    | 'inverted'
+    | 'accent'
+    | 'warning'
+    | 'success'
+    | 'info'
   size?: 'xs' | 'sm' | 'default' | 'md' | 'lg'
   square?: boolean
   squircle?: boolean
@@ -47,7 +60,7 @@ export const Badge = React.forwardRef<HTMLSpanElement, BadgeProps>(
     const defaultProps = {
       className: cn(
         badgeVariants({ variant, size }),
-        squircle && 'squircle/80 rounded-2xl md:rounded-3xl hover:rounded-xl transition-all duration-300',
+        squircle && 'squircle rounded-2xl md:rounded-3xl hover:rounded-xl transition-all duration-300',
         square && 'aspect-square',
         className,
       ),

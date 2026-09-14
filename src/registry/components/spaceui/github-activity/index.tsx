@@ -505,7 +505,7 @@ export function GitHubActivity({
                   href={profileUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="font-medium text-foreground hover:underline focus-visible:underline outline-none"
+                  className="font-medium text-foreground outline-none"
                 >
                   <h6>{displayName}</h6>
                 </a>

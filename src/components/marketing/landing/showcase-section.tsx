@@ -2,8 +2,8 @@ import Link from 'next/link'
 import { IconArrowRight, IconSparkles } from '@tabler/icons-react'
 import projectsData from '@/data/projects.json'
 import type { ProjectItem } from '@/types/project'
-import { ProjectCard } from '@/components/showcase/project-card'
 import { buttonVariants } from '@/registry/primitives/button'
+import { ProjectCard } from '@/components/marketing/showcase/project-card'
 import { cn } from '@/registry/lib/utils'
 
 export function ShowcaseSection() {

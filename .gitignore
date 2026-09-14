@@ -29,8 +29,11 @@ yalc.lock
 # lockfile
 pnpm-lock.yaml
 
-# others
+# env
+.env
 .env*.local
+
+# others
 .vercel
 next-env.d.ts
 .turbo

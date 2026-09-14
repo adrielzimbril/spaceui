@@ -1070,6 +1070,38 @@ export const index: Record<string, any> = {
     })(),
     command: '@spaceui/components-shader-paper-shader',
   },
+  "components-spaceui-adaptive-density-grid": {
+    name: "components-spaceui-adaptive-density-grid",
+    description: "A fluid polymorphic grid with physics-based velocity spring pill tabs, cinematic staggered reflow transitions, and memory-optimized layout shifts.",
+    type: "registry:component",
+    dependencies: ["motion"],
+    devDependencies: undefined,
+    registryDependencies: ["https://www.spaceui.one/r/lib-utils.json"],
+    files: [
+  {
+    "path": "src/registry/components/spaceui/adaptive-density-grid/index.tsx",
+    "type": "registry:component",
+    "target": "components/spaceui/adaptive-density-grid.tsx"
+  }
+],
+    keywords: [],
+    component: (() => {
+      const LazyComp = React.lazy(async () => {
+        const mod = await import("@/registry/components/spaceui/adaptive-density-grid/index.tsx");
+        const exportName = Object.keys(mod).find(
+          key => typeof mod[key] === 'function' || typeof mod[key] === 'object'
+        ) || "components-spaceui-adaptive-density-grid";
+        const Comp = mod.default || mod[exportName];
+        if (mod.animations) {
+          (LazyComp as any).animations = mod.animations;
+        }
+        return { default: Comp };
+      });
+      LazyComp.demoProps = {};
+      return LazyComp;
+    })(),
+    command: '@spaceui/components-spaceui-adaptive-density-grid',
+  },
   "components-spaceui-autoscale-input": {
     name: "components-spaceui-autoscale-input",
     description: "Input that grows and shrinks its type to fit the available width, with locale number formatting.",
@@ -3538,6 +3570,70 @@ export const index: Record<string, any> = {
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-paper-shader-01',
+  },
+  "demo-c-adaptive-density-grid-01": {
+    name: "demo-c-adaptive-density-grid-01",
+    description: "Image gallery with fluid spring velocity pill indicator and adaptive columns reflow.",
+    type: "registry:component",
+    dependencies: ["motion","@tabler/icons-react"],
+    devDependencies: undefined,
+    registryDependencies: ["https://www.spaceui.one/r/components-spaceui-adaptive-density-grid.json","https://www.spaceui.one/r/components-spaceui-badge-squircle.json"],
+    files: [
+  {
+    "path": "src/registry/demo/components/spaceui/adaptive-density-grid/c-adaptive-density-grid-01/index.tsx",
+    "type": "registry:component",
+    "target": "components/spaceui/adaptive-density-grid-demo.tsx"
+  }
+],
+    keywords: [],
+    component: (() => {
+      const LazyComp = React.lazy(async () => {
+        const mod = await import("@/registry/demo/components/spaceui/adaptive-density-grid/c-adaptive-density-grid-01/index.tsx");
+        const exportName = Object.keys(mod).find(
+          key => typeof mod[key] === 'function' || typeof mod[key] === 'object'
+        ) || "demo-c-adaptive-density-grid-01";
+        const Comp = mod.default || mod[exportName];
+        if (mod.animations) {
+          (LazyComp as any).animations = mod.animations;
+        }
+        return { default: Comp };
+      });
+      LazyComp.demoProps = {};
+      return LazyComp;
+    })(),
+    command: '@spaceui/demo-c-adaptive-density-grid-01',
+  },
+  "demo-c-adaptive-density-grid-02": {
+    name: "demo-c-adaptive-density-grid-02",
+    description: "Adaptive density grid acting as category reflow tabs with fluid physics spring pill and card rendering.",
+    type: "registry:component",
+    dependencies: ["motion","@tabler/icons-react"],
+    devDependencies: undefined,
+    registryDependencies: ["https://www.spaceui.one/r/components-spaceui-adaptive-density-grid.json","https://www.spaceui.one/r/components-spaceui-badge-squircle.json","https://www.spaceui.one/r/components-spaceui-button-squircle.json","https://www.spaceui.one/r/primitives-card.json","https://www.spaceui.one/r/primitives-frame.json","https://www.spaceui.one/r/primitives-input-group.json"],
+    files: [
+  {
+    "path": "src/registry/demo/components/spaceui/adaptive-density-grid/c-adaptive-density-grid-02/index.tsx",
+    "type": "registry:component",
+    "target": "components/spaceui/adaptive-density-grid-demo.tsx"
+  }
+],
+    keywords: [],
+    component: (() => {
+      const LazyComp = React.lazy(async () => {
+        const mod = await import("@/registry/demo/components/spaceui/adaptive-density-grid/c-adaptive-density-grid-02/index.tsx");
+        const exportName = Object.keys(mod).find(
+          key => typeof mod[key] === 'function' || typeof mod[key] === 'object'
+        ) || "demo-c-adaptive-density-grid-02";
+        const Comp = mod.default || mod[exportName];
+        if (mod.animations) {
+          (LazyComp as any).animations = mod.animations;
+        }
+        return { default: Comp };
+      });
+      LazyComp.demoProps = {};
+      return LazyComp;
+    })(),
+    command: '@spaceui/demo-c-adaptive-density-grid-02',
   },
   "demo-c-autoscale-input-01": {
     name: "demo-c-autoscale-input-01",

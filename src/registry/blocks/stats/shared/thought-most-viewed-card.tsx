@@ -155,13 +155,11 @@ export function ThoughtMostViewedCard({
         {/* Content info */}
         <div className="relative z-20 flex flex-col items-start justify-between gap-4 md:gap-6 size-full">
           <div className="flex flex-col items-start justify-center gap-3">
-            <Badge className="relative font-medium bg-muted text-foreground border-none" size="xl">
+            <Badge className="relative font-medium bg-muted text-foreground border-none" size="md">
               Most viewed article
             </Badge>
             <a href={`#${slug}`} className="flex flex-col items-start justify-center gap-1.5 group/link">
-              <p className="w-full relative text-xl line-clamp-2 leading-[120%] font-medium text-foreground group-hover/link:underline">
-                {title}
-              </p>
+              <p className="w-full relative text-xl line-clamp-2 leading-[120%] font-medium text-foreground">{title}</p>
               {description && (
                 <p className="w-full relative text-sm line-clamp-2 leading-relaxed text-muted-foreground font-normal">
                   {description}
@@ -173,7 +171,7 @@ export function ThoughtMostViewedCard({
           <div className="flex w-full items-center justify-between gap-2">
             <div className="flex items-center justify-between gap-3">
               <Badge
-                className="capitalize text-xs font-medium bg-[#8e8eff] text-white size-max squircle/80 rounded-2xl md:rounded-3xl px-3 py-1.5 border-none"
+                className="capitalize text-xs font-medium bg-[#8e8eff] text-white size-max border-none"
                 variant="default"
                 size="md"
               >

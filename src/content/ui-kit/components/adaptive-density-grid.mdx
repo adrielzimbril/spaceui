@@ -1,0 +1,56 @@
+---
+title: Adaptive Density Grid
+description: A fluid polymorphic grid featuring velocity-driven spring pill tabs, staggered layout reflow animations, and built-in memory optimization.
+preview:
+  name: demo-c-adaptive-density-grid-01
+  contained: false
+---
+
+## Installation
+
+<ComponentInstallation name="components-spaceui-adaptive-density-grid" />
+
+## Usage
+
+```tsx
+import { AdaptiveDensityGrid } from '@/components/spaceui/adaptive-density-grid'
+```
+
+```tsx
+<AdaptiveDensityGrid
+  items={items}
+  options={[
+    { id: 'spacious', label: 'Spacious', columns: { desktop: 2, tablet: 2, mobile: 1 } },
+    { id: 'normal', label: 'Normal', columns: { desktop: 3, tablet: 2, mobile: 1 } },
+    { id: 'compact', label: 'Compact', columns: { desktop: 4, tablet: 3, mobile: 2 } },
+  ]}
+  renderItem={(item) => <div className="rounded-xl border p-4 bg-muted">{item.title}</div>}
+/>
+```
+
+## API Reference
+
+### AdaptiveDensityGrid Props
+
+| Prop              | Type                                                                       | Default           | Description                                                        |
+| ----------------- | -------------------------------------------------------------------------- | ----------------- | ------------------------------------------------------------------ |
+| `items`           | `T[]`                                                                      | `undefined`       | Array of data items to render                                      |
+| `renderItem`      | `(item: T, index: number, state: { isRearranging: boolean }) => ReactNode` | `undefined`       | Custom item render function                                        |
+| `children`        | `ReactNode`                                                                | `undefined`       | Direct children components (alternative to `items`)                |
+| `options`         | `DensityOption[]`                                                          | `DEFAULT_OPTIONS` | Array of layout density or category filter options                 |
+| `activeId`        | `string \| number`                                                         | `undefined`       | Controlled active option id                                        |
+| `defaultActiveId` | `string \| number`                                                         | `options[0]?.id`  | Default active option id                                           |
+| `onOptionChange`  | `(id: string \| number) => void`                                           | `undefined`       | Callback fired when option selection changes                       |
+| `showControls`    | `boolean`                                                                  | `true`            | Show or hide the top selector bar                                  |
+| `controlsExtra`   | `ReactNode`                                                                | `undefined`       | Extra elements rendered alongside the controls (e.g. search input) |
+| `staggerDelay`    | `number`                                                                   | `0.012`           | Stagger delay in seconds between tile animations                   |
+| `duration`        | `number`                                                                   | `0.55`            | Layout reflow transition duration in seconds                       |
+| `memoryOptimized` | `boolean`                                                                  | `true`            | Enables `content-visibility: auto` to prevent memory saturation    |
+
+---
+
+### Category Filter & Cards Reflow
+
+Use the adaptive density grid as an animated tab reflow system with search integration and interactive cards.
+
+<ComponentPreview name="demo-c-adaptive-density-grid-02" contained={false} />

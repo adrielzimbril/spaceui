@@ -23,11 +23,10 @@ export const buttonVariants = cva(
         link: 'text-foreground underline-offset-4 hover:underline',
       },
       size: {
-        xs: 'px-3 py-2',
-        sm: 'px-3 py-4 h-auto',
-        default: 'px-6 py-3',
-        lg: 'px-6 py-3 text-lg',
-        iconSmall: 'px-1 py-1',
+        xs: 'px-2 py-1',
+        sm: 'px-2 py-2 h-auto',
+        default: 'px-4 py-2',
+        lg: 'px-4 py-2 text-lg',
         'icon-xs': 'size-7 p-0',
         'icon-sm': 'size-8 p-0',
         icon: 'size-9 p-0',
@@ -44,7 +43,7 @@ export const buttonVariants = cva(
 export interface ButtonProps extends useRender.ComponentProps<'button'>, VariantProps<typeof buttonVariants> {
   variant?:
     'default' | 'primary' | 'base' | 'secondary' | 'destructive' | 'outline' | 'colored' | 'ghost' | 'icon' | 'link'
-  size?: 'xs' | 'sm' | 'default' | 'lg' | 'iconSmall' | 'icon-xs' | 'icon-sm' | 'icon' | 'icon-lg'
+  size?: 'xs' | 'sm' | 'default' | 'lg' | 'icon-xs' | 'icon-sm' | 'icon' | 'icon-lg'
   full?: boolean
   asFull?: boolean
   icon?: boolean

@@ -22,7 +22,7 @@ export default function HomePage() {
       {/* <ShowcaseSection /> */}
 
       {/* 5. Social Proof — Loved by builders who ship */}
-      <TestimonialsSection />
+      {/* <TestimonialsSection /> */}
     </main>
   )
 }

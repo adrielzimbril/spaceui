@@ -37,9 +37,9 @@ import {
   Strong,
 } from '@/components/docs/mdx/typography'
 import { HeadingSpecs, BodySpecs } from '@/components/docs/mdx/typography-interactive'
-import { TypographyPlayground } from '@/components/docs/mdx/typography-playground'
 import { ColorToken, ColorSwatch } from '@/components/docs/mdx/color-swatch'
 import { IconPreview } from '@/components/docs/mdx/icon-preview'
+import { TypographyPlayground } from '@/components/docs/mdx/typography-playground'
 
 // use this function to get MDX components, you will need it for rendering MDX
 export function getMDXComponents(components?: MDXComponents): MDXComponents {

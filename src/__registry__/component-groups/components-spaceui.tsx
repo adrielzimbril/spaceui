@@ -32,6 +32,10 @@ function lazyRegistryComponent(
 }
 
 export const registryComponents: Record<string, RegistryComponent> = {
+  "components-spaceui-adaptive-density-grid": lazyRegistryComponent(
+    () => import("@/registry/components/spaceui/adaptive-density-grid/index.tsx"),
+    {},
+  ),
   "components-spaceui-autoscale-input": lazyRegistryComponent(
     () => import("@/registry/components/spaceui/autoscale-input/index.tsx"),
     {},

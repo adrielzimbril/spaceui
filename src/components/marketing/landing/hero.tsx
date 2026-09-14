@@ -1,6 +1,6 @@
 'use client'
 
-import { ArrowUpRight } from 'lucide-react'
+import { IconArrowUpRight } from '@tabler/icons-react'
 import { InlineInstallBar } from '@/components/docs/installation/inline-install-bar'
 import { siteConfig } from '@/config/space-config'
 import { Button } from '@/registry/components/spaceui/button-squircle'
@@ -91,7 +91,7 @@ export function Hero() {
               className="inline-flex items-center gap-2 px-6 py-3.5 font-medium active:scale-[0.98] transition-all duration-300"
             >
               <span>Browse components</span>
-              <ArrowUpRight className="size-4" />
+              <IconArrowUpRight className="size-4" />
             </Button>
 
             {/* <span className="relative inline-flex group">
@@ -109,7 +109,7 @@ export function Hero() {
                 className="pointer-events-none inline-flex items-center gap-2 px-6 py-3.5 font-medium group-group-active:scale-[0.98] transition-all duration-300"
               >
                 <span>Explore</span>
-                <ArrowUpRight className="size-4" />
+                <IconArrowUpRight className="size-4" />
               </Button>
             </span> */}
           </div>

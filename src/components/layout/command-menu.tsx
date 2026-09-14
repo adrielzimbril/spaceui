@@ -440,9 +440,7 @@ export function CommandMenu({
                               {item.shortcut}
                             </CommandShortcut>
                           )} */}
-                          <span className="text-[10px] uppercase font-mono tracking-wider text-muted-foreground/80 shrink-0 ml-2">
-                            {item.group}
-                          </span>
+                          <span className="text-[10px] text-muted-foreground/80 shrink-0 ml-2">{item.group}</span>
                         </CommandItem>
                       )
                     }}

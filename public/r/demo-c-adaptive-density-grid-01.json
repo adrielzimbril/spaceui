@@ -1,0 +1,28 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-c-adaptive-density-grid-01",
+  "title": "Media Gallery Density Reflow",
+  "description": "Image gallery with fluid spring velocity pill indicator and adaptive columns reflow.",
+  "dependencies": [
+    "motion",
+    "@tabler/icons-react"
+  ],
+  "registryDependencies": [
+    "https://www.spaceui.one/r/components-spaceui-adaptive-density-grid.json",
+    "https://www.spaceui.one/r/components-spaceui-badge-squircle.json"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/components/spaceui/adaptive-density-grid/c-adaptive-density-grid-01/index.tsx",
+      "content": "'use client'\n\nimport Image from 'next/image'\nimport { AdaptiveDensityGrid, type DensityOption } from '@/components/spaceui/adaptive-density-grid'\nimport { Badge } from '@/components/spaceui/badge-squircle'\nimport { IconLayoutGrid, IconGridDots, IconColumns, IconList } from '@tabler/icons-react'\n\nconst GALLERY_IMAGES = [\n  {\n    id: 'img-1',\n    title: 'Aura Gradient 01',\n    tag: 'Palette',\n    url: 'https://avatars.spaceui.one/v1?name=aurora&variant=gradients',\n  },\n  {\n    id: 'img-2',\n    title: 'Solar Pulse 02',\n    tag: 'Neon',\n    url: 'https://avatars.spaceui.one/v1?name=solarpulse&variant=gradients',\n  },\n  {\n    id: 'img-3',\n    title: 'Cyber Mist 03',\n    tag: 'Abstract',\n    url: 'https://avatars.spaceui.one/v1?name=cybermist&variant=gradients',\n  },\n  {\n    id: 'img-4',\n    title: 'Hyperion Glow 04',\n    tag: 'Vector',\n    url: 'https://avatars.spaceui.one/v1?name=hyperion&variant=gradients',\n  },\n  {\n    id: 'img-5',\n    title: 'Deep Chroma 05',\n    tag: 'Vibrant',\n    url: 'https://avatars.spaceui.one/v1?name=chroma&variant=gradients',\n  },\n  {\n    id: 'img-6',\n    title: 'Prismatic Void 06',\n    tag: 'Modern',\n    url: 'https://avatars.spaceui.one/v1?name=prismatic&variant=gradients',\n  },\n  {\n    id: 'img-7',\n    title: 'Cosmic Drift 07',\n    tag: 'Fluid',\n    url: 'https://avatars.spaceui.one/v1?name=cosmic&variant=gradients',\n  },\n  {\n    id: 'img-8',\n    title: 'Velvet Horizon 08',\n    tag: 'Editorial',\n    url: 'https://avatars.spaceui.one/v1?name=velvet&variant=gradients',\n  },\n]\n\nconst DENSITY_OPTIONS: DensityOption[] = [\n  {\n    id: 'spacious',\n    label: 'Spacious',\n    icon: <IconList className=\"size-3.5\" />,\n    columns: { desktop: 1, tablet: 1, mobile: 1 },\n    gap: 'clamp(1rem, 2vw, 1.5rem)',\n  },\n  {\n    id: 'normal',\n    label: 'Normal',\n    icon: <IconLayoutGrid className=\"size-3.5\" />,\n    columns: { desktop: 3, tablet: 2, mobile: 1 },\n    gap: 'clamp(0.75rem, 1.5vw, 1.25rem)',\n  },\n  {\n    id: 'compact',\n    label: 'Compact',\n    icon: <IconGridDots className=\"size-3.5\" />,\n    columns: { desktop: 4, tablet: 3, mobile: 2 },\n    gap: 'clamp(0.5rem, 1vw, 0.875rem)',\n  },\n]\n\nexport default function AdaptiveDensityGridDemo01() {\n  return (\n    <div className=\"w-full max-w-5xl mx-auto p-4 sm:p-6 space-y-6\">\n      <AdaptiveDensityGrid\n        items={GALLERY_IMAGES}\n        options={DENSITY_OPTIONS}\n        defaultActiveId=\"normal\"\n        renderItem={(item, idx, { isRearranging }) => (\n          <div className=\"group relative overflow-hidden rounded-xl border border-border/80 bg-muted aspect-4/3 shadow-xs\">\n            <Image\n              src={item.url}\n              alt={item.title}\n              fill\n              sizes=\"(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw\"\n              className=\"object-cover transition-transform duration-500 group-hover:scale-105\"\n            />\n            <div className=\"absolute inset-0 bg-linear-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-3\">\n              <div className=\"flex items-center justify-between w-full\">\n                <span className=\"text-xs font-semibold text-white truncate\">{item.title}</span>\n                <Badge size=\"xs\" variant=\"secondary\" className=\"bg-white/20 text-white backdrop-blur-xs border-0\">\n                  {item.tag}\n                </Badge>\n              </div>\n            </div>\n          </div>\n        )}\n      />\n    </div>\n  )\n}\n",
+      "type": "registry:component",
+      "target": "components/spaceui/adaptive-density-grid-demo.tsx"
+    }
+  ],
+  "categories": [
+    "component",
+    "grid",
+    "gallery"
+  ],
+  "type": "registry:component"
+}

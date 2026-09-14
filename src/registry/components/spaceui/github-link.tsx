@@ -136,6 +136,6 @@ export function StarsCount() {
   )
 }
 
-export function GitHubLink() {
-  return <GitHubLinkClient stars={<StarsCount />} />
+export function GitHubLink({ className }: { className?: string }) {
+  return <GitHubLinkClient stars={<StarsCount />} className={className} />
 }

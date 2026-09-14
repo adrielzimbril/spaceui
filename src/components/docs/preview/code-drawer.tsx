@@ -131,11 +131,7 @@ export function CodeDrawer({ open, onOpenChange, name, title, code, previewName 
             <div className="inline-flex items-center gap-2 min-w-0">
               <IconLogo size="sm" />
               <span className="text-sm font-semibold truncate">{displayTitle}</span>
-              <Badge
-                variant="outline"
-                size="sm"
-                className="rounded-sm text-[10px] uppercase font-mono tracking-wider text-muted-foreground ml-1"
-              >
+              <Badge variant="outline" size="sm" className="rounded-sm text-[10px] text-muted-foreground ml-1">
                 Code
               </Badge>
             </div>
