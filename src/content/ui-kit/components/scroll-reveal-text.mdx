@@ -1,0 +1,40 @@
+---
+title: Scroll Reveal Text
+description: Sticky scroll narrative where multiline typography progressively illuminates with buttery spring interpolation.
+preview:
+  name: demo-c-scroll-reveal-text-01
+  contained: false
+---
+
+A high-impact editorial scrolling section where muted text progressively illuminates line by line with precision clip-path transforms tied to scroll progress.
+
+## Installation
+
+<ComponentInstallation name="components-spaceui-scroll-reveal-text" />
+
+## Usage
+
+```tsx
+import { ScrollRevealText } from '@/components/spaceui/scroll-reveal-text'
+
+const lines = [
+  'We believe software should feel weightless.',
+  'Every curve, transition, and micro-gesture',
+  'Crafted to inspire and elevate human craft.',
+]
+
+export default function EditorialScroll() {
+  return <ScrollRevealText lines={lines} scrollLength="180svh" />
+}
+```
+
+## Props
+
+| Prop | Type | Default | Description |
+| --- | --- | --- | --- |
+| `lines` | `readonly string[]` | *default list* | Array of text strings revealed sequentially during the scroll. |
+| `scrollLength` | `string` | `'180svh'` | Total height of the scrollable track. |
+| `physics` | `ScrollRevealSpringPhysics` | `{ stiffness: 220, damping: 30, mass: 0.8 }` | Spring configuration for scroll smoothing. |
+| `showProgress` | `boolean` | `false` | Displays a minimal scroll progress line along the bottom edge. |
+| `revealedColor` | `string` | `undefined` | Custom hex or CSS variable color applied to revealed text. |
+| `scrollContainerRef` | `React.RefObject<HTMLElement>` | `undefined` | Target scroll parent if not using the window scroll. |

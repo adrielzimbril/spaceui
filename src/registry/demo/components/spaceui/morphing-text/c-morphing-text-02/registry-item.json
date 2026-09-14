@@ -1,0 +1,47 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-c-morphing-text-02",
+  "type": "registry:component",
+  "title": "Morphing Text Phrases",
+  "description": "Interactive demo for Morphing Text featuring full-sentence transitions with custom speeds, blur depths, and hover pause behavior.",
+  "registryDependencies": [
+    "https://www.spaceui.one/r/components-spaceui-morphing-text.json"
+  ],
+  "categories": [
+    "component",
+    "typography",
+    "demo"
+  ],
+  "meta": {
+    "demoProps": {
+      "interval": {
+        "value": 2800,
+        "options": {
+          "Fast (2000ms)": 2000,
+          "Standard (2800ms)": 2800,
+          "Relaxed (3800ms)": 3800
+        }
+      },
+      "blurAmount": {
+        "value": "10px",
+        "options": {
+          "Subtle (6px)": "6px",
+          "Balanced (10px)": "10px",
+          "Deep (16px)": "16px"
+        }
+      },
+      "pauseOnHover": {
+        "value": true
+      }
+    }
+  },
+  "files": [
+    {
+      "path": "src/registry/demo/components/spaceui/morphing-text/c-morphing-text-02/index.tsx",
+      "type": "registry:component",
+      "target": "components/spaceui/morphing-text-demo-02.tsx"
+    }
+  ],
+  "createdAt": "2026-09-14",
+  "updatedAt": "2026-09-14"
+}

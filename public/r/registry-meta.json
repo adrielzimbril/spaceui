@@ -471,6 +471,90 @@
     "dependents": [],
     "related": []
   },
+  "block-interactive-grid-hero-1": {
+    "name": "block-interactive-grid-hero-1",
+    "shortName": "block-interactive-grid-hero-1",
+    "title": "Interactive Grid Hero",
+    "description": "Interactive proximity-reactive grid canvas that dynamically rounds and insets cells on cursor movement with custom shape controls.",
+    "type": "registry:block",
+    "url": "/ui-kit/blocks/interactive-grid-hero",
+    "category": "Interactive-grid-hero",
+    "categories": [
+      "interactive-grid-hero",
+      "hero",
+      "block"
+    ],
+    "createdAt": "2026-09-14",
+    "updatedAt": "2026-09-14",
+    "size": "6.4 KB",
+    "rawSize": 6518,
+    "directSize": "6.4 KB",
+    "fileCount": 2,
+    "dependencies": [
+      "motion"
+    ],
+    "registryDependencies": [
+      "https://www.spaceui.one/r/lib-utils.json"
+    ],
+    "dependents": [],
+    "related": []
+  },
+  "interactive-grid-hero": {
+    "name": "block-interactive-grid-hero-1",
+    "shortName": "block-interactive-grid-hero-1",
+    "title": "Interactive Grid Hero",
+    "description": "Interactive proximity-reactive grid canvas that dynamically rounds and insets cells on cursor movement with custom shape controls.",
+    "type": "registry:block",
+    "url": "/ui-kit/blocks/interactive-grid-hero",
+    "category": "Interactive-grid-hero",
+    "categories": [
+      "interactive-grid-hero",
+      "hero",
+      "block"
+    ],
+    "createdAt": "2026-09-14",
+    "updatedAt": "2026-09-14",
+    "size": "6.4 KB",
+    "rawSize": 6518,
+    "directSize": "6.4 KB",
+    "fileCount": 2,
+    "dependencies": [
+      "motion"
+    ],
+    "registryDependencies": [
+      "https://www.spaceui.one/r/lib-utils.json"
+    ],
+    "dependents": [],
+    "related": []
+  },
+  "blocks-interactive-grid-hero": {
+    "name": "block-interactive-grid-hero-1",
+    "shortName": "block-interactive-grid-hero-1",
+    "title": "Interactive Grid Hero",
+    "description": "Interactive proximity-reactive grid canvas that dynamically rounds and insets cells on cursor movement with custom shape controls.",
+    "type": "registry:block",
+    "url": "/ui-kit/blocks/interactive-grid-hero",
+    "category": "Interactive-grid-hero",
+    "categories": [
+      "interactive-grid-hero",
+      "hero",
+      "block"
+    ],
+    "createdAt": "2026-09-14",
+    "updatedAt": "2026-09-14",
+    "size": "6.4 KB",
+    "rawSize": 6518,
+    "directSize": "6.4 KB",
+    "fileCount": 2,
+    "dependencies": [
+      "motion"
+    ],
+    "registryDependencies": [
+      "https://www.spaceui.one/r/lib-utils.json"
+    ],
+    "dependents": [],
+    "related": []
+  },
   "block-liquid-gooey-carousel": {
     "name": "block-liquid-gooey-carousel",
     "shortName": "block-liquid-gooey-carousel",
@@ -2409,6 +2493,114 @@
         "category": "Badge",
         "categories": [
           "badge"
+        ]
+      }
+    ]
+  },
+  "blur-reveal-text": {
+    "name": "components-spaceui-blur-reveal-text",
+    "shortName": "blur-reveal-text",
+    "title": "Blur Reveal Text",
+    "description": "Progressive, buttery smooth word, character, or line-by-line blur reveal animation with viewport triggers.",
+    "type": "registry:component",
+    "url": "/ui-kit/components/spaceui/blur-reveal-text",
+    "category": "Typography",
+    "categories": [
+      "typography",
+      "animation",
+      "text"
+    ],
+    "createdAt": "2026-09-14",
+    "updatedAt": "2026-09-14",
+    "size": "3.9 KB",
+    "rawSize": 4020,
+    "directSize": "3.9 KB",
+    "fileCount": 1,
+    "dependencies": [
+      "motion"
+    ],
+    "registryDependencies": [
+      "https://www.spaceui.one/r/lib-utils.json"
+    ],
+    "dependents": [],
+    "related": [
+      {
+        "name": "morphing-text",
+        "title": "Morphing Text",
+        "description": "Dynamic character-level FLIP morphing animation between words or phrases with accessible screen-reader support.",
+        "url": "/ui-kit/components/spaceui/morphing-text",
+        "category": "Typography",
+        "categories": [
+          "typography",
+          "animation",
+          "text"
+        ]
+      },
+      {
+        "name": "scroll-reveal-text",
+        "title": "Scroll Reveal Text",
+        "description": "Sticky scroll narrative where multiline typography progressively illuminates with buttery spring interpolation.",
+        "url": "/ui-kit/components/spaceui/scroll-reveal-text",
+        "category": "Typography",
+        "categories": [
+          "typography",
+          "animation",
+          "scroll",
+          "text"
+        ]
+      }
+    ]
+  },
+  "components-spaceui-blur-reveal-text": {
+    "name": "components-spaceui-blur-reveal-text",
+    "shortName": "blur-reveal-text",
+    "title": "Blur Reveal Text",
+    "description": "Progressive, buttery smooth word, character, or line-by-line blur reveal animation with viewport triggers.",
+    "type": "registry:component",
+    "url": "/ui-kit/components/spaceui/blur-reveal-text",
+    "category": "Typography",
+    "categories": [
+      "typography",
+      "animation",
+      "text"
+    ],
+    "createdAt": "2026-09-14",
+    "updatedAt": "2026-09-14",
+    "size": "3.9 KB",
+    "rawSize": 4020,
+    "directSize": "3.9 KB",
+    "fileCount": 1,
+    "dependencies": [
+      "motion"
+    ],
+    "registryDependencies": [
+      "https://www.spaceui.one/r/lib-utils.json"
+    ],
+    "dependents": [],
+    "related": [
+      {
+        "name": "morphing-text",
+        "title": "Morphing Text",
+        "description": "Dynamic character-level FLIP morphing animation between words or phrases with accessible screen-reader support.",
+        "url": "/ui-kit/components/spaceui/morphing-text",
+        "category": "Typography",
+        "categories": [
+          "typography",
+          "animation",
+          "text"
+        ]
+      },
+      {
+        "name": "scroll-reveal-text",
+        "title": "Scroll Reveal Text",
+        "description": "Sticky scroll narrative where multiline typography progressively illuminates with buttery spring interpolation.",
+        "url": "/ui-kit/components/spaceui/scroll-reveal-text",
+        "category": "Typography",
+        "categories": [
+          "typography",
+          "animation",
+          "scroll",
+          "text"
         ]
       }
     ]
@@ -6365,6 +6557,114 @@
     "dependents": [],
     "related": []
   },
+  "morphing-text": {
+    "name": "components-spaceui-morphing-text",
+    "shortName": "morphing-text",
+    "title": "Morphing Text",
+    "description": "Dynamic character-level FLIP morphing animation between words or phrases with accessible screen-reader support.",
+    "type": "registry:component",
+    "url": "/ui-kit/components/spaceui/morphing-text",
+    "category": "Typography",
+    "categories": [
+      "typography",
+      "animation",
+      "text"
+    ],
+    "createdAt": "2026-09-14",
+    "updatedAt": "2026-09-14",
+    "size": "4.8 KB",
+    "rawSize": 4960,
+    "directSize": "4.8 KB",
+    "fileCount": 1,
+    "dependencies": [
+      "motion"
+    ],
+    "registryDependencies": [
+      "https://www.spaceui.one/r/lib-utils.json"
+    ],
+    "dependents": [],
+    "related": [
+      {
+        "name": "blur-reveal-text",
+        "title": "Blur Reveal Text",
+        "description": "Progressive, buttery smooth word, character, or line-by-line blur reveal animation with viewport triggers.",
+        "url": "/ui-kit/components/spaceui/blur-reveal-text",
+        "category": "Typography",
+        "categories": [
+          "typography",
+          "animation",
+          "text"
+        ]
+      },
+      {
+        "name": "scroll-reveal-text",
+        "title": "Scroll Reveal Text",
+        "description": "Sticky scroll narrative where multiline typography progressively illuminates with buttery spring interpolation.",
+        "url": "/ui-kit/components/spaceui/scroll-reveal-text",
+        "category": "Typography",
+        "categories": [
+          "typography",
+          "animation",
+          "scroll",
+          "text"
+        ]
+      }
+    ]
+  },
+  "components-spaceui-morphing-text": {
+    "name": "components-spaceui-morphing-text",
+    "shortName": "morphing-text",
+    "title": "Morphing Text",
+    "description": "Dynamic character-level FLIP morphing animation between words or phrases with accessible screen-reader support.",
+    "type": "registry:component",
+    "url": "/ui-kit/components/spaceui/morphing-text",
+    "category": "Typography",
+    "categories": [
+      "typography",
+      "animation",
+      "text"
+    ],
+    "createdAt": "2026-09-14",
+    "updatedAt": "2026-09-14",
+    "size": "4.8 KB",
+    "rawSize": 4960,
+    "directSize": "4.8 KB",
+    "fileCount": 1,
+    "dependencies": [
+      "motion"
+    ],
+    "registryDependencies": [
+      "https://www.spaceui.one/r/lib-utils.json"
+    ],
+    "dependents": [],
+    "related": [
+      {
+        "name": "blur-reveal-text",
+        "title": "Blur Reveal Text",
+        "description": "Progressive, buttery smooth word, character, or line-by-line blur reveal animation with viewport triggers.",
+        "url": "/ui-kit/components/spaceui/blur-reveal-text",
+        "category": "Typography",
+        "categories": [
+          "typography",
+          "animation",
+          "text"
+        ]
+      },
+      {
+        "name": "scroll-reveal-text",
+        "title": "Scroll Reveal Text",
+        "description": "Sticky scroll narrative where multiline typography progressively illuminates with buttery spring interpolation.",
+        "url": "/ui-kit/components/spaceui/scroll-reveal-text",
+        "category": "Typography",
+        "categories": [
+          "typography",
+          "animation",
+          "scroll",
+          "text"
+        ]
+      }
+    ]
+  },
   "notification-list": {
     "name": "components-spaceui-notification-list",
     "shortName": "notification-list",
@@ -6638,6 +6938,114 @@
     ],
     "dependents": [],
     "related": []
+  },
+  "scroll-reveal-text": {
+    "name": "components-spaceui-scroll-reveal-text",
+    "shortName": "scroll-reveal-text",
+    "title": "Scroll Reveal Text",
+    "description": "Sticky scroll narrative where multiline typography progressively illuminates with buttery spring interpolation.",
+    "type": "registry:component",
+    "url": "/ui-kit/components/spaceui/scroll-reveal-text",
+    "category": "Typography",
+    "categories": [
+      "typography",
+      "animation",
+      "scroll",
+      "text"
+    ],
+    "createdAt": "2026-09-14",
+    "updatedAt": "2026-09-14",
+    "size": "5.2 KB",
+    "rawSize": 5375,
+    "directSize": "5.2 KB",
+    "fileCount": 1,
+    "dependencies": [
+      "motion"
+    ],
+    "registryDependencies": [
+      "https://www.spaceui.one/r/lib-utils.json"
+    ],
+    "dependents": [],
+    "related": [
+      {
+        "name": "blur-reveal-text",
+        "title": "Blur Reveal Text",
+        "description": "Progressive, buttery smooth word, character, or line-by-line blur reveal animation with viewport triggers.",
+        "url": "/ui-kit/components/spaceui/blur-reveal-text",
+        "category": "Typography",
+        "categories": [
+          "typography",
+          "animation",
+          "text"
+        ]
+      },
+      {
+        "name": "morphing-text",
+        "title": "Morphing Text",
+        "description": "Dynamic character-level FLIP morphing animation between words or phrases with accessible screen-reader support.",
+        "url": "/ui-kit/components/spaceui/morphing-text",
+        "category": "Typography",
+        "categories": [
+          "typography",
+          "animation",
+          "text"
+        ]
+      }
+    ]
+  },
+  "components-spaceui-scroll-reveal-text": {
+    "name": "components-spaceui-scroll-reveal-text",
+    "shortName": "scroll-reveal-text",
+    "title": "Scroll Reveal Text",
+    "description": "Sticky scroll narrative where multiline typography progressively illuminates with buttery spring interpolation.",
+    "type": "registry:component",
+    "url": "/ui-kit/components/spaceui/scroll-reveal-text",
+    "category": "Typography",
+    "categories": [
+      "typography",
+      "animation",
+      "scroll",
+      "text"
+    ],
+    "createdAt": "2026-09-14",
+    "updatedAt": "2026-09-14",
+    "size": "5.2 KB",
+    "rawSize": 5375,
+    "directSize": "5.2 KB",
+    "fileCount": 1,
+    "dependencies": [
+      "motion"
+    ],
+    "registryDependencies": [
+      "https://www.spaceui.one/r/lib-utils.json"
+    ],
+    "dependents": [],
+    "related": [
+      {
+        "name": "blur-reveal-text",
+        "title": "Blur Reveal Text",
+        "description": "Progressive, buttery smooth word, character, or line-by-line blur reveal animation with viewport triggers.",
+        "url": "/ui-kit/components/spaceui/blur-reveal-text",
+        "category": "Typography",
+        "categories": [
+          "typography",
+          "animation",
+          "text"
+        ]
+      },
+      {
+        "name": "morphing-text",
+        "title": "Morphing Text",
+        "description": "Dynamic character-level FLIP morphing animation between words or phrases with accessible screen-reader support.",
+        "url": "/ui-kit/components/spaceui/morphing-text",
+        "category": "Typography",
+        "categories": [
+          "typography",
+          "animation",
+          "text"
+        ]
+      }
+    ]
   },
   "scrollspy": {
     "name": "components-spaceui-scrollspy",

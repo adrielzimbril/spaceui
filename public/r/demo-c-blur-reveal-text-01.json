@@ -1,0 +1,61 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-c-blur-reveal-text-01",
+  "title": "Blur Reveal Text Playground",
+  "description": "Interactive demo for Blur Reveal Text featuring customizable token splitting, blur depth, stagger delays, and directions with automatic 5s loop replay.",
+  "registryDependencies": [
+    "https://www.spaceui.one/r/components-spaceui-blur-reveal-text.json"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/components/spaceui/blur-reveal-text/c-blur-reveal-text-01/index.tsx",
+      "content": "'use client'\n\nimport * as React from 'react'\nimport {\n  BlurRevealText,\n  type SplitMode,\n  type RevealDirection,\n} from '@/components/spaceui/blur-reveal-text'\n\nexport interface BlurRevealTextDemoProps {\n  text?: string\n  splitBy?: SplitMode\n  direction?: RevealDirection\n  blurAmount?: string\n  stagger?: number\n}\n\nexport default function Demo({\n  text = 'Great design is not just what looks good. It is how every detail feels alive.',\n  splitBy = 'words',\n  direction = 'up',\n  blurAmount = '12px',\n  stagger = 0.05,\n}: BlurRevealTextDemoProps) {\n  const [replayKey, setReplayKey] = React.useState(0)\n\n  // Automatically restart animation every 5 seconds\n  React.useEffect(() => {\n    const timer = setInterval(() => {\n      setReplayKey((k) => k + 1)\n    }, 5000)\n\n    return () => clearInterval(timer)\n  }, [])\n\n  return (\n    <div className=\"w-full max-w-4xl mx-auto p-8 flex flex-col items-center justify-center min-h-[320px]\">\n      <div className=\"w-full text-center\">\n        <BlurRevealText\n          key={replayKey}\n          replayKey={replayKey}\n          text={text}\n          splitBy={splitBy}\n          direction={direction}\n          blurAmount={blurAmount}\n          stagger={Number(stagger)}\n          className=\"text-2xl sm:text-3xl md:text-5xl font-semibold tracking-tight leading-snug justify-center text-foreground\"\n        />\n      </div>\n    </div>\n  )\n}\n",
+      "type": "registry:component",
+      "target": "components/spaceui/blur-reveal-text-demo-01.tsx"
+    }
+  ],
+  "meta": {
+    "demoProps": {
+      "text": {
+        "value": "Great design is not just what looks good. It is how every detail feels alive."
+      },
+      "splitBy": {
+        "value": "words",
+        "options": {
+          "Words": "words",
+          "Characters": "characters"
+        }
+      },
+      "direction": {
+        "value": "up",
+        "options": {
+          "Upward": "up",
+          "Downward": "down",
+          "Stationary": "none"
+        }
+      },
+      "blurAmount": {
+        "value": "12px",
+        "options": {
+          "Subtle (6px)": "6px",
+          "Balanced (12px)": "12px",
+          "Deep (20px)": "20px"
+        }
+      },
+      "stagger": {
+        "value": 0.05,
+        "options": {
+          "Fast (0.03s)": 0.03,
+          "Normal (0.05s)": 0.05,
+          "Deliberate (0.09s)": 0.09
+        }
+      }
+    }
+  },
+  "categories": [
+    "component",
+    "typography",
+    "demo"
+  ],
+  "type": "registry:component"
+}

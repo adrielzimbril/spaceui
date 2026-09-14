@@ -28,11 +28,19 @@ export function HeroAvatar({ name = 'space', variant = 'lumina', animate = false
   return (
     <span
       className={cn(
-        'relative inline-flex items-center justify-center size-12 sm:size-16 md:size-20 lg:size-24 shrink-0 overflow-visible',
+        'relative inline-flex items-center justify-center px-2 size-12.5 sm:size-16.5 md:size-20 lg:size-22 shrink-0 overflow-visible',
         className,
       )}
     >
-      <Avatar name={name} variant={variant} size={resolvedSize} circle animate={animate} />
+      <Avatar
+        name={name}
+        variant={variant}
+        // size={resolvedSize}
+        size={resolvedSize}
+        circle
+        animate={animate}
+        className="relative flex size-full aspect-square overflow-hidden -bottom-2.5 [&_svg]:size-full! [&_svg]:absolute [&_svg]:object-cover pointer-events-none"
+      />
     </span>
   )
 }
@@ -87,7 +95,7 @@ export function MarketingHero({
     <section className={cn('relative overflow-hidden pt-24 pb-8 md:pb-12', className)}>
       <div
         className={cn(
-          'bg-muted rounded-5xl pt-12 pb-16 md:pt-20 md:pb-24 mx-auto max-w-310 px-5 sm:px-6',
+          'bg-muted rounded-5xl mx-2 md:mx-auto pt-12 pb-16 md:pt-20 md:pb-24 max-w-310 px-5 sm:px-6',
           containerClassName,
         )}
       >

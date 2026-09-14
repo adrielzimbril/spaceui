@@ -1,0 +1,62 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-c-blur-reveal-text-01",
+  "type": "registry:component",
+  "title": "Blur Reveal Text Playground",
+  "description": "Interactive demo for Blur Reveal Text featuring customizable token splitting, blur depth, stagger delays, and directions with automatic 5s loop replay.",
+  "registryDependencies": [
+    "https://www.spaceui.one/r/components-spaceui-blur-reveal-text.json"
+  ],
+  "categories": [
+    "component",
+    "typography",
+    "demo"
+  ],
+  "meta": {
+    "demoProps": {
+      "text": {
+        "value": "Great design is not just what looks good. It is how every detail feels alive."
+      },
+      "splitBy": {
+        "value": "words",
+        "options": {
+          "Words": "words",
+          "Characters": "characters"
+        }
+      },
+      "direction": {
+        "value": "up",
+        "options": {
+          "Upward": "up",
+          "Downward": "down",
+          "Stationary": "none"
+        }
+      },
+      "blurAmount": {
+        "value": "12px",
+        "options": {
+          "Subtle (6px)": "6px",
+          "Balanced (12px)": "12px",
+          "Deep (20px)": "20px"
+        }
+      },
+      "stagger": {
+        "value": 0.05,
+        "options": {
+          "Fast (0.03s)": 0.03,
+          "Normal (0.05s)": 0.05,
+          "Deliberate (0.09s)": 0.09
+        }
+      }
+    }
+  },
+  "files": [
+    {
+      "path": "src/registry/demo/components/spaceui/blur-reveal-text/c-blur-reveal-text-01/index.tsx",
+      "type": "registry:component",
+      "target": "components/spaceui/blur-reveal-text-demo-01.tsx"
+    }
+  ],
+  "createdAt": "2026-09-14",
+  "updatedAt": "2026-09-14"
+}

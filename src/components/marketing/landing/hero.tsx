@@ -8,6 +8,7 @@ import { StatusBadge } from '@/registry/components/spaceui/status-badge'
 import { Link } from '@/registry/primitives/link'
 import { AssetEmoji } from '@/tools/emoji/asset-emoji'
 import { EmojiSource, EmojiType } from '@usespaceui/emoji'
+import { HeroAvatar } from '@/components/marketing/shared/hero'
 import { Squishmoji } from '@usespaceui/squishmoji/react'
 import { Avatar } from '@usespaceui/avatars/react'
 import { useMediaQuery } from '@/registry/hooks/browser/use-media-query'
@@ -21,7 +22,7 @@ export function Hero() {
 
   return (
     <section id="hero" data-page-section className="relative overflow-hidden pt-24 pb-8 md:pb-12">
-      <div className="bg-muted rounded-5xl pt-12 pb-16 md:pt-20 md:pb-24 mx-auto max-w-310 px-5 sm:px-6">
+      <div className="bg-muted rounded-5xl mx-2 md:mx-auto pt-12 pb-16 md:pt-20 md:pb-24 max-w-310 px-5 sm:px-6">
         <div className="flex flex-col items-center justify-center text-center">
           <Link href="/docs" className="inline-flex items-center group outline-none">
             <StatusBadge
@@ -45,6 +46,9 @@ export function Hero() {
               <Avatar name="c" variant="lumina" size={avatarSize} circle />              <Avatar name="c" variant="pebble"variant="lumina" size={avatarSize} circle />
               <Avatar name="c" variant="pebble" size={avatarSize} circle />
             </div> */}{' '}
+            {/* <HeroAvatar name="p" variant="ghost" />
+             <HeroAvatar name="c" variant="lumina" />
+             <HeroAvatar name="c" variant="pebble" /> */}
             faster
             <br />
             with
@@ -62,13 +66,15 @@ export function Hero() {
                 className="scale-175 origin-center transition-transform"
               />
             </div>{' '} */}
-            <div className="relative inline-flex items-center justify-center size-12 sm:size-16 md:size-20 lg:size-24 shrink-0 overflow-visible">
+            {/* <div className="relative inline-flex items-center justify-center size-12 sm:size-16 md:size-20 lg:size-24 shrink-0 overflow-visible">
               <Avatar name="c" variant="doodle" size={avatarSize} circle />
-            </div>
+            </div> */}
+            <HeroAvatar name="c" variant="doodle" />
             better UI
-            <div className="relative inline-flex items-center justify-center size-12 sm:size-16 md:size-20 lg:size-24 shrink-0 overflow-visible">
+            {/* <div className="relative inline-flex items-center justify-center size-12 sm:size-16 md:size-20 lg:size-24 shrink-0 overflow-visible">
               <Avatar name="c" variant="lumina" size={avatarSize} circle />
-            </div>
+            </div> */}
+            <HeroAvatar name="c" variant="lumina" />
             {/* <span className="inline-flex leading-1">😍</span> */}
           </h1>
 

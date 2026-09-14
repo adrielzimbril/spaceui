@@ -52,6 +52,10 @@ export const registryComponents: Record<string, RegistryComponent> = {
     () => import("@/registry/components/spaceui/badge-squircle/index.tsx"),
     {},
   ),
+  "components-spaceui-blur-reveal-text": lazyRegistryComponent(
+    () => import("@/registry/components/spaceui/blur-reveal-text/index.tsx"),
+    {},
+  ),
   "components-spaceui-bouncy-accordion": lazyRegistryComponent(
     () => import("@/registry/components/spaceui/bouncy-accordion/index.tsx"),
     {},
@@ -116,6 +120,10 @@ export const registryComponents: Record<string, RegistryComponent> = {
     () => import("@/registry/components/spaceui/morph-icon/index.tsx"),
     {},
   ),
+  "components-spaceui-morphing-text": lazyRegistryComponent(
+    () => import("@/registry/components/spaceui/morphing-text/index.tsx"),
+    {},
+  ),
   "components-spaceui-notification-list": lazyRegistryComponent(
     () => import("@/registry/components/spaceui/notification-list/index.tsx"),
     {},
@@ -134,6 +142,10 @@ export const registryComponents: Record<string, RegistryComponent> = {
   ),
   "components-spaceui-resizable": lazyRegistryComponent(
     () => import("@/registry/components/spaceui/resizable/index.tsx"),
+    {},
+  ),
+  "components-spaceui-scroll-reveal-text": lazyRegistryComponent(
+    () => import("@/registry/components/spaceui/scroll-reveal-text/index.tsx"),
     {},
   ),
   "components-spaceui-scrollspy": lazyRegistryComponent(

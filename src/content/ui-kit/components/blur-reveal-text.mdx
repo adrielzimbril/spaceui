@@ -1,0 +1,48 @@
+---
+title: Blur Reveal Text
+description: A progressive word, character, or line-by-line blur reveal animation with customizable motion vectors and viewport triggers.
+preview:
+  name: demo-c-blur-reveal-text-01
+  contained: false
+---
+
+A soft, cinematic text entrance effect where words or characters smoothly emerge from a gentle blur into sharp focus as they enter the viewport.
+
+## Installation
+
+<ComponentInstallation name="components-spaceui-blur-reveal-text" />
+
+## Usage
+
+```tsx
+import { BlurRevealText } from '@/components/spaceui/blur-reveal-text'
+
+export default function HeroStatement() {
+  return (
+    <BlurRevealText
+      text="Great design is not just what looks good. It is how every detail feels alive."
+      splitBy="words"
+      stagger={0.05}
+      blurAmount="12px"
+      direction="up"
+      className="text-3xl font-semibold tracking-tight"
+    />
+  )
+}
+```
+
+## Props
+
+| Prop         | Type                                 | Default      | Description                                                            |
+| ------------ | ------------------------------------ | ------------ | ---------------------------------------------------------------------- |
+| `text`       | `string`                             | **required** | The sentence or paragraph to animate.                                  |
+| `splitBy`    | `'words' \| 'characters' \| 'lines'` | `'words'`    | Splitting strategy for the animation tokens.                           |
+| `stagger`    | `number`                             | `0.05`       | Delay in seconds between consecutive tokens.                           |
+| `delay`      | `number`                             | `0.1`        | Initial delay in seconds before animation begins.                      |
+| `blurAmount` | `string`                             | `'12px'`     | Starting CSS blur radius for obscured tokens.                          |
+| `duration`   | `number`                             | `0.35`       | Duration of the transition for each individual token.                  |
+| `direction`  | `'up' \| 'down' \| 'none'`           | `'up'`       | Direction along the vertical axis from which tokens slide.             |
+| `yOffset`    | `number`                             | `8`          | Travel distance in pixels for the slide transition.                    |
+| `inView`     | `boolean`                            | `true`       | When true, animation triggers only once the element scrolls into view. |
+| `once`       | `boolean`                            | `true`       | Whether viewport triggering fires only on first view.                  |
+| `replayKey`  | `string \| number`                   | `undefined`  | Change this value to programmatically re-trigger the animation.        |

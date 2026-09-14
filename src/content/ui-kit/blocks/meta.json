@@ -5,6 +5,7 @@
   "root": true,
   "pages": [
     "---Blocks---",
+    "interactive-grid-hero",
     "sign-in",
     "card-info",
     "interactive-fun-facts",

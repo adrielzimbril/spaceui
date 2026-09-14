@@ -1,0 +1,60 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-interactive-grid-hero-1",
+  "type": "registry:block",
+  "title": "Interactive Grid Hero",
+  "description": "Interactive proximity-reactive grid canvas that dynamically rounds and insets cells on cursor movement with custom shape controls.",
+  "dependencies": [
+    "motion"
+  ],
+  "registryDependencies": [
+    "https://www.spaceui.one/r/lib-utils.json"
+  ],
+  "categories": [
+    "interactive-grid-hero",
+    "hero",
+    "block"
+  ],
+  "meta": {
+    "demoProps": {
+      "cellSize": {
+        "value": 64,
+        "options": {
+          "Compact (48px)": 48,
+          "Standard (64px)": 64,
+          "Expanded (80px)": 80
+        }
+      },
+      "radius": {
+        "value": "rounded",
+        "options": {
+          "Square": "square",
+          "Rounded": "rounded",
+          "Full (Circle)": "full"
+        }
+      },
+      "proximity": {
+        "value": 4,
+        "options": {
+          "Focused (3)": 3,
+          "Standard (4)": 4,
+          "Wide (5.5)": 5.5
+        }
+      }
+    }
+  },
+  "files": [
+    {
+      "path": "src/registry/blocks/interactive-grid-hero/interactive-grid-hero-1/index.tsx",
+      "type": "registry:block",
+      "target": "components/blocks/interactive-grid-hero/index.tsx"
+    },
+    {
+      "path": "src/registry/blocks/interactive-grid-hero/interactive-grid-hero-1/proximity-grid.tsx",
+      "type": "registry:block",
+      "target": "components/blocks/interactive-grid-hero/proximity-grid.tsx"
+    }
+  ],
+  "createdAt": "2026-09-14",
+  "updatedAt": "2026-09-14"
+}

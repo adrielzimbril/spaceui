@@ -1,0 +1,39 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-c-scroll-reveal-text-01",
+  "type": "registry:component",
+  "title": "Scroll Reveal Text Playground",
+  "description": "Interactive demo for Scroll Reveal Text featuring sticky scroll narrative revealing typography as you scroll.",
+  "registryDependencies": [
+    "https://www.spaceui.one/r/components-spaceui-scroll-reveal-text.json"
+  ],
+  "categories": [
+    "component",
+    "typography",
+    "demo"
+  ],
+  "meta": {
+    "demoProps": {
+      "scrollLength": {
+        "value": "180svh",
+        "options": {
+          "Compact (140svh)": "140svh",
+          "Balanced (180svh)": "180svh",
+          "Cinematic (240svh)": "240svh"
+        }
+      },
+      "showProgress": {
+        "value": false
+      }
+    }
+  },
+  "files": [
+    {
+      "path": "src/registry/demo/components/spaceui/scroll-reveal-text/c-scroll-reveal-text-01/index.tsx",
+      "type": "registry:component",
+      "target": "components/spaceui/scroll-reveal-text-demo-01.tsx"
+    }
+  ],
+  "createdAt": "2026-09-14",
+  "updatedAt": "2026-09-14"
+}

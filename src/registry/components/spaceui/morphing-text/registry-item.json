@@ -1,0 +1,28 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "components-spaceui-morphing-text",
+  "type": "registry:component",
+  "title": "Morphing Text",
+  "description": "Dynamic character-level FLIP morphing animation between words or phrases with accessible screen-reader support.",
+  "dependencies": [
+    "motion"
+  ],
+  "registryDependencies": [
+    "https://www.spaceui.one/r/lib-utils.json"
+  ],
+  "categories": [
+    "component",
+    "typography",
+    "animation",
+    "text"
+  ],
+  "files": [
+    {
+      "path": "src/registry/components/spaceui/morphing-text/index.tsx",
+      "type": "registry:component",
+      "target": "components/spaceui/morphing-text.tsx"
+    }
+  ],
+  "createdAt": "2026-09-14",
+  "updatedAt": "2026-09-14"
+}

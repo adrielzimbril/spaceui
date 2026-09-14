@@ -61,6 +61,18 @@ export function GlobalLayoutWrapper({
   const pathname = usePathname()
   const isPreview = pathname.startsWith('/registry/view') || pathname.startsWith('/examples')
 
+  if (isPreview) {
+    return (
+      <SquircleProvider>
+        <ToastProvider>
+          <AnchoredToastProvider>
+            <SoundProvider>{children}</SoundProvider>
+          </AnchoredToastProvider>
+        </ToastProvider>
+      </SquircleProvider>
+    )
+  }
+
   return (
     <SquircleProvider>
       <ToastProvider>
@@ -70,7 +82,7 @@ export function GlobalLayoutWrapper({
               <BrandColorProvider>
                 <BundleProvider>
                   <LayoutModeProvider initialMode={initialLayoutMode}>
-                    {isPreview ? <>{children}</> : <GlobalLayoutContent>{children}</GlobalLayoutContent>}
+                    <GlobalLayoutContent>{children}</GlobalLayoutContent>
                   </LayoutModeProvider>
                 </BundleProvider>
               </BrandColorProvider>

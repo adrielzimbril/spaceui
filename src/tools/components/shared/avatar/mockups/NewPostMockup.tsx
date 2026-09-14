@@ -2,7 +2,6 @@ import { Button } from '@/registry/primitives/button'
 import { IconHeart, IconMessageCircle } from '@tabler/icons-react'
 import { cn } from '@/registry/lib/utils'
 import { Persona as Avatar } from '@/tools/components/shared/avatar/persona'
-import Image from 'next/image'
 import type { MockupAvatarOptions } from './MockupPrimitives'
 
 export default function NewPostMockup({
@@ -10,7 +9,7 @@ export default function NewPostMockup({
   likes,
   name,
   ...avatar
-}: MockupAvatarOptions & { img: string; likes: string[]; name: string }): React.ReactElement {
+}: MockupAvatarOptions & { img?: string; likes: string[]; name: string }): React.ReactElement {
   const { seed, ...restAvatar } = avatar
   return (
     <div className="flex h-full flex-col">
@@ -24,7 +23,16 @@ export default function NewPostMockup({
         </p>
       </div>
       <div className="relative mt-4 aspect-video w-full overflow-hidden rounded-2xl bg-muted">
-        <Image alt="Abstract upload preview" src={img} fill sizes="22rem" className="object-cover" />
+        <Avatar
+          name={(name || 'post') + '-lumina' + (seed || '')}
+          variant="lumina"
+          size={320}
+          circle={false}
+          colors={restAvatar.colors}
+          animate={restAvatar.animate}
+          effect={restAvatar.effect}
+          className="flex size-full items-center justify-center [&_svg]:size-full [&_svg]:object-cover"
+        />
       </div>
       <div className="mt-4 flex items-center gap-3">
         <div className="flex -space-x-2">

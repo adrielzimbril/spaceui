@@ -1,0 +1,28 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "components-spaceui-blur-reveal-text",
+  "type": "registry:component",
+  "title": "Blur Reveal Text",
+  "description": "Progressive, buttery smooth word, character, or line-by-line blur reveal animation with viewport triggers.",
+  "dependencies": [
+    "motion"
+  ],
+  "registryDependencies": [
+    "https://www.spaceui.one/r/lib-utils.json"
+  ],
+  "categories": [
+    "component",
+    "typography",
+    "animation",
+    "text"
+  ],
+  "files": [
+    {
+      "path": "src/registry/components/spaceui/blur-reveal-text/index.tsx",
+      "type": "registry:component",
+      "target": "components/spaceui/blur-reveal-text.tsx"
+    }
+  ],
+  "createdAt": "2026-09-14",
+  "updatedAt": "2026-09-14"
+}

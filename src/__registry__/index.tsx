@@ -276,6 +276,43 @@ export const index: Record<string, any> = {
     })(),
     command: '@spaceui/block-interactive-fun-facts',
   },
+  "block-interactive-grid-hero-1": {
+    name: "block-interactive-grid-hero-1",
+    description: "Interactive proximity-reactive grid canvas that dynamically rounds and insets cells on cursor movement with custom shape controls.",
+    type: "registry:block",
+    dependencies: ["motion"],
+    devDependencies: undefined,
+    registryDependencies: ["https://www.spaceui.one/r/lib-utils.json"],
+    files: [
+  {
+    "path": "src/registry/blocks/interactive-grid-hero/interactive-grid-hero-1/index.tsx",
+    "type": "registry:block",
+    "target": "components/blocks/interactive-grid-hero/index.tsx"
+  },
+  {
+    "path": "src/registry/blocks/interactive-grid-hero/interactive-grid-hero-1/proximity-grid.tsx",
+    "type": "registry:block",
+    "target": "components/blocks/interactive-grid-hero/proximity-grid.tsx"
+  }
+],
+    keywords: [],
+    component: (() => {
+      const LazyComp = React.lazy(async () => {
+        const mod = await import("@/registry/blocks/interactive-grid-hero/interactive-grid-hero-1/index.tsx");
+        const exportName = Object.keys(mod).find(
+          key => typeof mod[key] === 'function' || typeof mod[key] === 'object'
+        ) || "block-interactive-grid-hero-1";
+        const Comp = mod.default || mod[exportName];
+        if (mod.animations) {
+          (LazyComp as any).animations = mod.animations;
+        }
+        return { default: Comp };
+      });
+      LazyComp.demoProps = {"cellSize":{"value":64,"options":{"Compact (48px)":48,"Standard (64px)":64,"Expanded (80px)":80}},"radius":{"value":"rounded","options":{"Square":"square","Rounded":"rounded","Full (Circle)":"full"}},"proximity":{"value":4,"options":{"Focused (3)":3,"Standard (4)":4,"Wide (5.5)":5.5}}};
+      return LazyComp;
+    })(),
+    command: '@spaceui/block-interactive-grid-hero-1',
+  },
   "block-liquid-gooey-carousel": {
     name: "block-liquid-gooey-carousel",
     description: "Smooth-minimum signed distance field WebGL2 carousel with liquid fusing cards that pull organic metaball strands when separated.",
@@ -1229,6 +1266,38 @@ export const index: Record<string, any> = {
       return LazyComp;
     })(),
     command: '@spaceui/components-spaceui-badge-squircle',
+  },
+  "components-spaceui-blur-reveal-text": {
+    name: "components-spaceui-blur-reveal-text",
+    description: "Progressive, buttery smooth word, character, or line-by-line blur reveal animation with viewport triggers.",
+    type: "registry:component",
+    dependencies: ["motion"],
+    devDependencies: undefined,
+    registryDependencies: ["https://www.spaceui.one/r/lib-utils.json"],
+    files: [
+  {
+    "path": "src/registry/components/spaceui/blur-reveal-text/index.tsx",
+    "type": "registry:component",
+    "target": "components/spaceui/blur-reveal-text.tsx"
+  }
+],
+    keywords: [],
+    component: (() => {
+      const LazyComp = React.lazy(async () => {
+        const mod = await import("@/registry/components/spaceui/blur-reveal-text/index.tsx");
+        const exportName = Object.keys(mod).find(
+          key => typeof mod[key] === 'function' || typeof mod[key] === 'object'
+        ) || "components-spaceui-blur-reveal-text";
+        const Comp = mod.default || mod[exportName];
+        if (mod.animations) {
+          (LazyComp as any).animations = mod.animations;
+        }
+        return { default: Comp };
+      });
+      LazyComp.demoProps = {};
+      return LazyComp;
+    })(),
+    command: '@spaceui/components-spaceui-blur-reveal-text',
   },
   "components-spaceui-bouncy-accordion": {
     name: "components-spaceui-bouncy-accordion",
@@ -2478,6 +2547,38 @@ export const index: Record<string, any> = {
     })(),
     command: '@spaceui/components-spaceui-morph-icon',
   },
+  "components-spaceui-morphing-text": {
+    name: "components-spaceui-morphing-text",
+    description: "Dynamic character-level FLIP morphing animation between words or phrases with accessible screen-reader support.",
+    type: "registry:component",
+    dependencies: ["motion"],
+    devDependencies: undefined,
+    registryDependencies: ["https://www.spaceui.one/r/lib-utils.json"],
+    files: [
+  {
+    "path": "src/registry/components/spaceui/morphing-text/index.tsx",
+    "type": "registry:component",
+    "target": "components/spaceui/morphing-text.tsx"
+  }
+],
+    keywords: [],
+    component: (() => {
+      const LazyComp = React.lazy(async () => {
+        const mod = await import("@/registry/components/spaceui/morphing-text/index.tsx");
+        const exportName = Object.keys(mod).find(
+          key => typeof mod[key] === 'function' || typeof mod[key] === 'object'
+        ) || "components-spaceui-morphing-text";
+        const Comp = mod.default || mod[exportName];
+        if (mod.animations) {
+          (LazyComp as any).animations = mod.animations;
+        }
+        return { default: Comp };
+      });
+      LazyComp.demoProps = {};
+      return LazyComp;
+    })(),
+    command: '@spaceui/components-spaceui-morphing-text',
+  },
   "components-spaceui-notification-list": {
     name: "components-spaceui-notification-list",
     description: "A fun notification list with animated stacking and cards that expand as you interact.",
@@ -2637,6 +2738,38 @@ export const index: Record<string, any> = {
       return LazyComp;
     })(),
     command: '@spaceui/components-spaceui-resizable',
+  },
+  "components-spaceui-scroll-reveal-text": {
+    name: "components-spaceui-scroll-reveal-text",
+    description: "Sticky scroll narrative where multiline typography progressively illuminates with buttery spring interpolation.",
+    type: "registry:component",
+    dependencies: ["motion"],
+    devDependencies: undefined,
+    registryDependencies: ["https://www.spaceui.one/r/lib-utils.json"],
+    files: [
+  {
+    "path": "src/registry/components/spaceui/scroll-reveal-text/index.tsx",
+    "type": "registry:component",
+    "target": "components/spaceui/scroll-reveal-text.tsx"
+  }
+],
+    keywords: [],
+    component: (() => {
+      const LazyComp = React.lazy(async () => {
+        const mod = await import("@/registry/components/spaceui/scroll-reveal-text/index.tsx");
+        const exportName = Object.keys(mod).find(
+          key => typeof mod[key] === 'function' || typeof mod[key] === 'object'
+        ) || "components-spaceui-scroll-reveal-text";
+        const Comp = mod.default || mod[exportName];
+        if (mod.animations) {
+          (LazyComp as any).animations = mod.animations;
+        }
+        return { default: Comp };
+      });
+      LazyComp.demoProps = {};
+      return LazyComp;
+    })(),
+    command: '@spaceui/components-spaceui-scroll-reveal-text',
   },
   "components-spaceui-scrollspy": {
     name: "components-spaceui-scrollspy",
@@ -3762,6 +3895,38 @@ export const index: Record<string, any> = {
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-badge-squircle-03',
+  },
+  "demo-c-blur-reveal-text-01": {
+    name: "demo-c-blur-reveal-text-01",
+    description: "Interactive demo for Blur Reveal Text featuring customizable token splitting, blur depth, stagger delays, and directions with automatic 5s loop replay.",
+    type: "registry:component",
+    dependencies: undefined,
+    devDependencies: undefined,
+    registryDependencies: ["https://www.spaceui.one/r/components-spaceui-blur-reveal-text.json"],
+    files: [
+  {
+    "path": "src/registry/demo/components/spaceui/blur-reveal-text/c-blur-reveal-text-01/index.tsx",
+    "type": "registry:component",
+    "target": "components/spaceui/blur-reveal-text-demo-01.tsx"
+  }
+],
+    keywords: [],
+    component: (() => {
+      const LazyComp = React.lazy(async () => {
+        const mod = await import("@/registry/demo/components/spaceui/blur-reveal-text/c-blur-reveal-text-01/index.tsx");
+        const exportName = Object.keys(mod).find(
+          key => typeof mod[key] === 'function' || typeof mod[key] === 'object'
+        ) || "demo-c-blur-reveal-text-01";
+        const Comp = mod.default || mod[exportName];
+        if (mod.animations) {
+          (LazyComp as any).animations = mod.animations;
+        }
+        return { default: Comp };
+      });
+      LazyComp.demoProps = {"text":{"value":"Great design is not just what looks good. It is how every detail feels alive."},"splitBy":{"value":"words","options":{"Words":"words","Characters":"characters"}},"direction":{"value":"up","options":{"Upward":"up","Downward":"down","Stationary":"none"}},"blurAmount":{"value":"12px","options":{"Subtle (6px)":"6px","Balanced (12px)":"12px","Deep (20px)":"20px"}},"stagger":{"value":0.05,"options":{"Fast (0.03s)":0.03,"Normal (0.05s)":0.05,"Deliberate (0.09s)":0.09}}};
+      return LazyComp;
+    })(),
+    command: '@spaceui/demo-c-blur-reveal-text-01',
   },
   "demo-c-bouncy-accordion-01": {
     name: "demo-c-bouncy-accordion-01",
@@ -7027,6 +7192,70 @@ export const index: Record<string, any> = {
     })(),
     command: '@spaceui/demo-c-morph-icon-06',
   },
+  "demo-c-morphing-text-01": {
+    name: "demo-c-morphing-text-01",
+    description: "Interactive demo for Morphing Text featuring single-word morphing transitions with adjustable speeds, blur dynamics, and hover pause.",
+    type: "registry:component",
+    dependencies: undefined,
+    devDependencies: undefined,
+    registryDependencies: ["https://www.spaceui.one/r/components-spaceui-morphing-text.json"],
+    files: [
+  {
+    "path": "src/registry/demo/components/spaceui/morphing-text/c-morphing-text-01/index.tsx",
+    "type": "registry:component",
+    "target": "components/spaceui/morphing-text-demo-01.tsx"
+  }
+],
+    keywords: [],
+    component: (() => {
+      const LazyComp = React.lazy(async () => {
+        const mod = await import("@/registry/demo/components/spaceui/morphing-text/c-morphing-text-01/index.tsx");
+        const exportName = Object.keys(mod).find(
+          key => typeof mod[key] === 'function' || typeof mod[key] === 'object'
+        ) || "demo-c-morphing-text-01";
+        const Comp = mod.default || mod[exportName];
+        if (mod.animations) {
+          (LazyComp as any).animations = mod.animations;
+        }
+        return { default: Comp };
+      });
+      LazyComp.demoProps = {"interval":{"value":2400,"options":{"Fast (1600ms)":1600,"Standard (2400ms)":2400,"Slow (3400ms)":3400}},"blurAmount":{"value":"10px","options":{"Subtle (6px)":"6px","Balanced (10px)":"10px","Deep (16px)":"16px"}},"springBounce":{"value":0.14,"options":{"Tight (0.08)":0.08,"Balanced (0.14)":0.14,"Playful (0.24)":0.24}},"pauseOnHover":{"value":true}};
+      return LazyComp;
+    })(),
+    command: '@spaceui/demo-c-morphing-text-01',
+  },
+  "demo-c-morphing-text-02": {
+    name: "demo-c-morphing-text-02",
+    description: "Interactive demo for Morphing Text featuring full-sentence transitions with custom speeds, blur depths, and hover pause behavior.",
+    type: "registry:component",
+    dependencies: undefined,
+    devDependencies: undefined,
+    registryDependencies: ["https://www.spaceui.one/r/components-spaceui-morphing-text.json"],
+    files: [
+  {
+    "path": "src/registry/demo/components/spaceui/morphing-text/c-morphing-text-02/index.tsx",
+    "type": "registry:component",
+    "target": "components/spaceui/morphing-text-demo-02.tsx"
+  }
+],
+    keywords: [],
+    component: (() => {
+      const LazyComp = React.lazy(async () => {
+        const mod = await import("@/registry/demo/components/spaceui/morphing-text/c-morphing-text-02/index.tsx");
+        const exportName = Object.keys(mod).find(
+          key => typeof mod[key] === 'function' || typeof mod[key] === 'object'
+        ) || "demo-c-morphing-text-02";
+        const Comp = mod.default || mod[exportName];
+        if (mod.animations) {
+          (LazyComp as any).animations = mod.animations;
+        }
+        return { default: Comp };
+      });
+      LazyComp.demoProps = {"interval":{"value":2800,"options":{"Fast (2000ms)":2000,"Standard (2800ms)":2800,"Relaxed (3800ms)":3800}},"blurAmount":{"value":"10px","options":{"Subtle (6px)":"6px","Balanced (10px)":"10px","Deep (16px)":"16px"}},"pauseOnHover":{"value":true}};
+      return LazyComp;
+    })(),
+    command: '@spaceui/demo-c-morphing-text-02',
+  },
   "demo-c-notification-list-01": {
     name: "demo-c-notification-list-01",
     description: "Demo showing a notification list.",
@@ -8018,6 +8247,38 @@ export const index: Record<string, any> = {
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-resizable-10',
+  },
+  "demo-c-scroll-reveal-text-01": {
+    name: "demo-c-scroll-reveal-text-01",
+    description: "Interactive demo for Scroll Reveal Text featuring sticky scroll narrative revealing typography as you scroll.",
+    type: "registry:component",
+    dependencies: undefined,
+    devDependencies: undefined,
+    registryDependencies: ["https://www.spaceui.one/r/components-spaceui-scroll-reveal-text.json"],
+    files: [
+  {
+    "path": "src/registry/demo/components/spaceui/scroll-reveal-text/c-scroll-reveal-text-01/index.tsx",
+    "type": "registry:component",
+    "target": "components/spaceui/scroll-reveal-text-demo-01.tsx"
+  }
+],
+    keywords: [],
+    component: (() => {
+      const LazyComp = React.lazy(async () => {
+        const mod = await import("@/registry/demo/components/spaceui/scroll-reveal-text/c-scroll-reveal-text-01/index.tsx");
+        const exportName = Object.keys(mod).find(
+          key => typeof mod[key] === 'function' || typeof mod[key] === 'object'
+        ) || "demo-c-scroll-reveal-text-01";
+        const Comp = mod.default || mod[exportName];
+        if (mod.animations) {
+          (LazyComp as any).animations = mod.animations;
+        }
+        return { default: Comp };
+      });
+      LazyComp.demoProps = {"scrollLength":{"value":"180svh","options":{"Compact (140svh)":"140svh","Balanced (180svh)":"180svh","Cinematic (240svh)":"240svh"}},"showProgress":{"value":false}};
+      return LazyComp;
+    })(),
+    command: '@spaceui/demo-c-scroll-reveal-text-01',
   },
   "demo-c-scrollspy-01": {
     name: "demo-c-scrollspy-01",

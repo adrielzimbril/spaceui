@@ -86,8 +86,8 @@ export function PreviewContent({
       key={reloadKey}
       data-slot="preview-viewport"
       className={cn(
-        'flex size-full items-center justify-center min-h-[inherit]',
-        isContained ? 'p-4 sm:p-8' : 'p-0',
+        'flex size-full min-h-[inherit] items-center justify-center',
+        isContained ? 'p-4 sm:p-8' : 'p-0 overflow-y-auto overflow-x-hidden',
         themeOverride === 'dark'
           ? 'force-dark dark bg-background text-foreground'
           : themeOverride === 'light'
@@ -98,7 +98,7 @@ export function PreviewContent({
     >
       <div
         data-slot="preview"
-        className={cn('preview flex items-center justify-center', isContained ? 'w-full max-w-72' : 'size-full')}
+        className={cn('preview flex justify-center items-center', isContained ? 'w-full max-w-72' : 'size-full')}
       >
         {Component ? (
           <Suspense fallback={<PreviewLoading />}>

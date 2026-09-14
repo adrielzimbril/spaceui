@@ -57,6 +57,7 @@ export default function Iframe({
       <iframe
         ref={iframeRef}
         title={name}
+        loading="eager"
         onLoad={() => {
           setLoaded(true)
           syncIframeTheme()

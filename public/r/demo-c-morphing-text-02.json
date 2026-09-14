@@ -1,0 +1,46 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-c-morphing-text-02",
+  "title": "Morphing Text Phrases",
+  "description": "Interactive demo for Morphing Text featuring full-sentence transitions with custom speeds, blur depths, and hover pause behavior.",
+  "registryDependencies": [
+    "https://www.spaceui.one/r/components-spaceui-morphing-text.json"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/components/spaceui/morphing-text/c-morphing-text-02/index.tsx",
+      "content": "'use client'\n\nimport * as React from 'react'\nimport { MorphingText } from '@/components/spaceui/morphing-text'\n\nexport interface MorphingTextPhrasesDemoProps {\n  interval?: number\n  blurAmount?: string\n  pauseOnHover?: boolean\n}\n\nconst DEFAULT_PHRASES = [\n  'Build fluid interfaces',\n  'Craft delightful moments',\n  'Design with intention',\n  'Ship with confidence',\n  'Explore creative motion',\n]\n\nexport default function Demo({\n  interval = 2800,\n  blurAmount = '10px',\n  pauseOnHover = true,\n}: MorphingTextPhrasesDemoProps) {\n  return (\n    <div className=\"w-full max-w-4xl mx-auto p-12 flex items-center justify-center min-h-[320px]\">\n      <MorphingText\n        texts={DEFAULT_PHRASES}\n        interval={Number(interval)}\n        blurAmount={blurAmount}\n        pauseOnHover={Boolean(pauseOnHover)}\n        textClassName=\"text-2xl sm:text-4xl md:text-5xl font-bold tracking-tight text-foreground text-center\"\n      />\n    </div>\n  )\n}\n",
+      "type": "registry:component",
+      "target": "components/spaceui/morphing-text-demo-02.tsx"
+    }
+  ],
+  "meta": {
+    "demoProps": {
+      "interval": {
+        "value": 2800,
+        "options": {
+          "Fast (2000ms)": 2000,
+          "Standard (2800ms)": 2800,
+          "Relaxed (3800ms)": 3800
+        }
+      },
+      "blurAmount": {
+        "value": "10px",
+        "options": {
+          "Subtle (6px)": "6px",
+          "Balanced (10px)": "10px",
+          "Deep (16px)": "16px"
+        }
+      },
+      "pauseOnHover": {
+        "value": true
+      }
+    }
+  },
+  "categories": [
+    "component",
+    "typography",
+    "demo"
+  ],
+  "type": "registry:component"
+}
