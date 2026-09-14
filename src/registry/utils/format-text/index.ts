@@ -159,10 +159,7 @@ export interface CapitalizeOptions {
  * capitalizeText("space UI is the best UI library", { mode: 'sentence', lowerRest: false })
  * // => "Space UI is the best UI library"
  */
-export function capitalizeText(
-  text: string,
-  options: CapitalizeMode | CapitalizeOptions = {},
-): string {
+export function capitalizeText(text: string, options: CapitalizeMode | CapitalizeOptions = {}): string {
   if (!text || typeof text !== 'string') return text ?? ''
 
   const opts: CapitalizeOptions = typeof options === 'string' ? { mode: options } : options
@@ -208,4 +205,3 @@ export function capitalizeWords(text: string, options: Omit<CapitalizeOptions, '
 export function capitalizeFirst(text: string, options: Omit<CapitalizeOptions, 'mode'> = {}): string {
   return capitalizeText(text, { ...options, mode: 'first' })
 }
-

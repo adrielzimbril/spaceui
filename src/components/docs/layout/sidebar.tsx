@@ -101,11 +101,11 @@ export function DocsSidebar() {
   }, [pathname, sections])
 
   return (
-    <aside className="border-none w-64 not-lg:hidden sticky top-[calc(var(--header-height,56px)+1px)] z-30 h-[calc(100vh-var(--header-height,56px)-1px)] overflow-hidden bg-background text-sm flex flex-col">
+    <aside className="border-none w-64 not-lg:hidden sticky top-0 z-30 h-screen pt-2 overflow-hidden bg-background text-sm flex flex-col">
       <ScrollArea scrollFade scrollbarGutter className="w-full flex-1">
         {/* Hub Selector */}
         <Menu>
-          <div className="p-3 relative">
+          <div className="p-2 relative">
             <MenuTrigger className="w-full flex items-center gap-2.5 p-2 rounded-xl bg-background border-2 border-muted transition-all duration-300 outline-none text-left cursor-pointer">
               <HubItemContent hub={activeHub} isTrigger />
             </MenuTrigger>
@@ -138,7 +138,7 @@ export function DocsSidebar() {
         {/* Sections List */}
         <div className="flex flex-col gap-4 w-full py-2">
           {sections.map((section) => (
-            <div key={section.title} className="flex flex-col gap-1 px-3 py-2 text-sm font-medium">
+            <div key={section.title} className="flex flex-col gap-1 p-2 text-sm font-medium">
               <div className="flex items-center justify-between px-2 py-1 text-[.6875rem] font-semibold uppercase tracking-wider text-muted-foreground">
                 <span>{section.title}</span>
                 {section.items.length > 0 && (

@@ -107,7 +107,6 @@ export function PlushControlPanel({
                   alt={activeArtwork.label}
                   width={44}
                   height={44}
-                  unoptimized
                   className="size-full object-cover rounded-lg"
                 />
               ) : (
@@ -177,7 +176,6 @@ export function PlushControlPanel({
                         alt={p.label}
                         width={64}
                         height={64}
-                        unoptimized
                         className="size-full object-cover rounded-lg transition-transform group-hover:scale-105"
                       />
                     </div>

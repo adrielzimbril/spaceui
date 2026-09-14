@@ -58,11 +58,11 @@ export function ChangelogUpdatesCard({ count, changelog, className }: ChangelogU
     <Frame
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
-      className={cn('size-full min-h-54 bg-muted squircle-6xl/100 border-0 overflow-hidden p-4', className)}
+      className={cn('size-full min-h-54 bg-muted squircle/100 rounded-6xl border-0 overflow-hidden p-4', className)}
     >
       <Card
         className={cn(
-          'flex relative flex-col size-full items-center justify-center gap-4 md:gap-8 p-4 squircle-2xl/100 md:squircle-4xl/100 bg-background border-0 overflow-hidden before:hidden shadow-none',
+          'flex relative flex-col size-full items-center justify-center gap-4 md:gap-8 p-4 squircle/100 rounded-2xl md:rounded-4xl bg-background border-0 overflow-hidden before:hidden shadow-none',
         )}
       >
         <motion.div
@@ -123,7 +123,7 @@ export function ChangelogUpdatesCard({ count, changelog, className }: ChangelogU
                       index % 2 === 1 ? 'left-[-6px]' : 'right-[-6px]',
                     )}
                   />
-                  <div className="z-20 inline-block w-[100px] space-y-px squircle-2xl/100 bg-background border-2 border-muted px-2 py-1.5 text-xs overflow-hidden">
+                  <div className="z-20 inline-block w-[100px] space-y-px squircle/100 rounded-2xl bg-background border-2 border-muted px-2 py-1.5 text-xs overflow-hidden">
                     <div className="flex items-center gap-1">
                       <Badge className="p-[0.075rem] relative" size="sm" square>
                         <Icon className={cn(typeColors[itemType])} size={12} />

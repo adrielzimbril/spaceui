@@ -84,7 +84,7 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     const defaultProps = {
       className: cn(
         buttonVariants({ variant, size, className }),
-        squircle && 'squircle-7xl/100 hover:squircle-3xl/100',
+        squircle && 'squircle rounded-7xl',
         isFull && 'w-full flex text-center items-center justify-center',
         isIcon && '[&_svg]:size-auto',
         isPointer && 'cursor-pointer',

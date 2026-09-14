@@ -588,7 +588,7 @@ export function PrismCarousel({
       <ul className="sr-only">
         {items.map((fallbackItem, i) => (
           <li key={fallbackItem.image} id={`prism-carousel-${i}`} role="option" aria-selected={i === active}>
-            <NextImage src={fallbackItem.image} alt={fallbackItem.title} width={512} height={768} unoptimized />
+            <NextImage src={fallbackItem.image} alt={fallbackItem.title} width={512} height={768} />
             <h3>{fallbackItem.title}</h3>
             {fallbackItem.caption ? <p>{fallbackItem.caption}</p> : null}
           </li>

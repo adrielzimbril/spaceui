@@ -9,7 +9,7 @@ import type { SquishBackgroundStyle, SquishExpression } from '@usespaceui/squish
 import { Avatar } from '@usespaceui/avatars/react'
 import type { AvatarVariant } from '@usespaceui/avatars'
 import Image from 'next/image'
-import { Frame, FrameHeader, FrameTitle } from '@/registry/primitives/frame'
+import { Frame, FrameFooter, FrameTitle } from '@/registry/primitives/frame'
 import { Card, CardPanel } from '@/registry/primitives/card'
 import { Button } from '@/registry/primitives/button'
 import { bloom, chime, droplet, sparkle, tap, tick } from '@usespaceui/sounds'
@@ -90,10 +90,10 @@ const SPLIT_SAMPLES: Array<{
 const FLAG_SETS = [
   [
     { code: 'us', name: 'United States' },
-    { code: 'gb', name: 'United Kingdom' },
-    { code: 'fr', name: 'France' },
-    { code: 'de', name: 'Germany' },
     { code: 'jp', name: 'Japan' },
+    { code: 'fr', name: 'France' },
+    { code: 'ci', name: "Cote D'Ivoire" },
+    { code: 'cn', name: 'China' },
     { code: 'br', name: 'Brazil' },
   ],
   [
@@ -143,23 +143,18 @@ const ALL_ANIMATED_EMOJIS = [
   { char: '🤯', name: 'Mind Blown' },
   { char: '⚡', name: 'Zap' },
   { char: '🍕', name: 'Pizza' },
-  { char: '🥑', name: 'Avocado' },
   { char: '🦄', name: 'Unicorn' },
   { char: '👾', name: 'Alien Monster' },
   { char: '🤖', name: 'Robot' },
   { char: '👻', name: 'Ghost' },
   { char: '🐱', name: 'Cat' },
-  { char: '🐶', name: 'Dog' },
   { char: '🦊', name: 'Fox' },
   { char: '🦁', name: 'Lion' },
   { char: '🐼', name: 'Panda' },
-  { char: '🐨', name: 'Koala' },
   { char: '🦋', name: 'Butterfly' },
   { char: '🌺', name: 'Flower' },
   { char: '🌈', name: 'Rainbow' },
   { char: '⚽', name: 'Soccer' },
-  { char: '🎮', name: 'Gaming' },
-  { char: '🎨', name: 'Palette' },
   { char: '☕', name: 'Coffee' },
 ]
 
@@ -186,6 +181,27 @@ function SquircleSwatchItem({ className, ...props }: React.ComponentProps<'div'>
 }
 
 export function PackagesSection() {
+  const sectionRef = React.useRef<HTMLElement>(null)
+  const [isVisible, setIsVisible] = React.useState(false)
+  const [hasBeenVisible, setHasBeenVisible] = React.useState(false)
+
+  // IntersectionObserver to avoid heavy 3D WebGL and timers offscreen
+  React.useEffect(() => {
+    const el = sectionRef.current
+    if (!el) return
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsVisible(entry.isIntersecting)
+        if (entry.isIntersecting) {
+          setHasBeenVisible(true)
+        }
+      },
+      { threshold: 0.05, rootMargin: '150px' },
+    )
+    observer.observe(el)
+    return () => observer.disconnect()
+  }, [])
+
   // ── Plush State ──
   const plushCanvasRef = React.useRef<HTMLDivElement>(null)
   const plushEngineRef = React.useRef<PlushEngine | null>(null)
@@ -246,33 +262,36 @@ export function PackagesSection() {
     ])
   }, [])
 
-  // ── Auto-cycle Characters every BENTO_CYCLE_INTERVAL ──
+  // ── Auto-cycle Characters every BENTO_CYCLE_INTERVAL only when visible ──
   React.useEffect(() => {
+    if (!isVisible) return
     const timer = setInterval(() => {
       randomizeCharacters(false)
     }, BENTO_CYCLE_INTERVAL)
     return () => clearInterval(timer)
-  }, [randomizeCharacters])
+  }, [isVisible, randomizeCharacters])
 
-  // ── Auto-cycle Flags every BENTO_CYCLE_INTERVAL ──
+  // ── Auto-cycle Flags every BENTO_CYCLE_INTERVAL only when visible ──
   const [flagSetIndex, setFlagSetIndex] = React.useState(0)
   React.useEffect(() => {
+    if (!isVisible) return
     const timer = setInterval(() => {
       setFlagSetIndex((prev) => (prev + 1) % FLAG_SETS.length)
     }, BENTO_CYCLE_INTERVAL)
     return () => clearInterval(timer)
-  }, [])
+  }, [isVisible])
 
   // ── Auto-cycle Emoji Hub every BENTO_CYCLE_INTERVAL (cycles style: Fluent, Noto, Telegram & picks 6 new emojis) ──
   const [emojiStyleIdx, setEmojiStyleIdx] = React.useState(0)
   const [emojiOffset, setEmojiOffset] = React.useState(0)
   React.useEffect(() => {
+    if (!isVisible) return
     const timer = setInterval(() => {
       setEmojiStyleIdx((prev) => (prev + 1) % EMOJI_ANIM_STYLES.length)
       setEmojiOffset((prev) => (prev + 6) % ALL_ANIMATED_EMOJIS.length)
     }, BENTO_CYCLE_INTERVAL)
     return () => clearInterval(timer)
-  }, [])
+  }, [isVisible])
 
   const activeEmojiStyle = EMOJI_ANIM_STYLES[emojiStyleIdx]
   const currentEmojis = React.useMemo(() => {
@@ -303,8 +322,9 @@ export function PackagesSection() {
     })
   }, [])
 
-  // ── Auto-cycle Image Split (only if not modified for at least USER_INTERACTION_DEBOUNCE) ──
+  // ── Auto-cycle Image Split (only if not modified for at least USER_INTERACTION_DEBOUNCE and visible) ──
   React.useEffect(() => {
+    if (!isVisible) return
     const timer = setInterval(() => {
       if (Date.now() - lastSplitInteractionRef.current < USER_INTERACTION_DEBOUNCE) {
         return
@@ -316,11 +336,11 @@ export function PackagesSection() {
       })
     }, BENTO_CYCLE_INTERVAL)
     return () => clearInterval(timer)
-  }, [])
+  }, [isVisible])
 
-  // ── Initialize Plush Engine ──
+  // ── Initialize Plush Engine (only deferred when section has been visible) ──
   React.useEffect(() => {
-    if (!plushCanvasRef.current) return
+    if (!hasBeenVisible || !plushCanvasRef.current) return
 
     let isMounted = true
     let engine: PlushEngine | null = null
@@ -371,7 +391,13 @@ export function PackagesSection() {
       }
       plushEngineRef.current = null
     }
-  }, [])
+  }, [
+    hasBeenVisible,
+    activePlushPreset.id,
+    activePlushPreset.label,
+    activePlushPreset.preview,
+    activePlushPreset.sideColor,
+  ])
 
   // ── Apply Plush Preset (manual or auto) ──
   const applyPlushPreset = React.useCallback(
@@ -418,8 +444,9 @@ export function PackagesSection() {
     applyPlushPreset(nextPreset, true)
   }, [applyPlushPreset])
 
-  // ── Auto-cycle Plush every BENTO_CYCLE_INTERVAL (only if not interacted/dragged in USER_INTERACTION_DEBOUNCE) ──
+  // ── Auto-cycle Plush every BENTO_CYCLE_INTERVAL (only if not interacted/dragged in USER_INTERACTION_DEBOUNCE and visible) ──
   React.useEffect(() => {
+    if (!isVisible) return
     const timer = setInterval(() => {
       if (
         plushLoadingRef.current ||
@@ -433,7 +460,7 @@ export function PackagesSection() {
       applyPlushPreset(nextPreset, false)
     }, BENTO_CYCLE_INTERVAL)
     return () => clearInterval(timer)
-  }, [applyPlushPreset])
+  }, [isVisible, applyPlushPreset])
 
   // ── Reset Plush Orientation ──
   const resetPlushOrientation = () => {
@@ -444,7 +471,12 @@ export function PackagesSection() {
   }
 
   return (
-    <section id="packages" data-page-section className="mx-auto max-w-[1280px] scroll-mt-16 px-5 sm:px-6 py-20">
+    <section
+      ref={sectionRef}
+      id="packages"
+      data-page-section
+      className="mx-auto max-w-7xl scroll-mt-16 px-5 sm:px-6 py-20"
+    >
       {/* ── Centered Section Header with Link to /tools ── */}
       <div className="flex flex-col items-center justify-center text-center">
         <div className="max-w-2xl">
@@ -463,38 +495,6 @@ export function PackagesSection() {
       {/* ── Bento Grid: Plush (2x2), Avatars & Squishmoji (2x1), Split (2x1), Flags, Emoji, Audio, Squircle ── */}
       <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
         <Frame className="flex flex-col h-full sm:col-span-2 sm:row-span-2 lg:col-span-2 lg:row-span-2">
-          <FrameHeader className="flex flex-row items-center justify-between p-2">
-            <FrameTitle>Plush 3D Fur</FrameTitle>
-            <div className="flex items-center gap-1.5">
-              <Button
-                variant="secondary"
-                size="icon-xs"
-                onClick={randomizePlushPreset}
-                data-space-hover
-                title="Randomize plush preset"
-                className="rounded-full cursor-pointer"
-              >
-                <Shuffle className="size-3.5" />
-              </Button>
-              <Button
-                variant="ghost"
-                size="icon-xs"
-                onClick={resetPlushOrientation}
-                data-space-hover
-                title="Reset orientation"
-                className="rounded-full cursor-pointer text-muted-foreground hover:text-foreground"
-              >
-                <RotateCcw className="size-3.5" />
-              </Button>
-              <Link
-                href="/tools/plush"
-                data-space-hover
-                className="p-1 text-muted-foreground hover:text-foreground transition-colors"
-              >
-                <ArrowUpRight className="size-4" />
-              </Link>
-            </div>
-          </FrameHeader>
           <Card className="flex-1 flex flex-col h-full rounded-xl before:rounded-xl overflow-hidden">
             <CardPanel className="flex-1 relative flex min-h-95 p-0 overflow-hidden items-center justify-center bg-muted/20 rounded-lg">
               {/* WebGL Canvas with smooth blur morph transition while loading */}
@@ -533,19 +533,41 @@ export function PackagesSection() {
               </div>
             </CardPanel>
           </Card>
+          <FrameFooter className="flex flex-row items-center justify-between p-2">
+            <FrameTitle>Plush 3D Fur</FrameTitle>
+            <div className="flex items-center gap-1.5">
+              <Button
+                variant="secondary"
+                size="icon-xs"
+                onClick={randomizePlushPreset}
+                data-space-hover
+                title="Randomize plush preset"
+                className="rounded-full cursor-pointer"
+              >
+                <Shuffle className="size-3.5" />
+              </Button>
+              <Button
+                variant="ghost"
+                size="icon-xs"
+                onClick={resetPlushOrientation}
+                data-space-hover
+                title="Reset orientation"
+                className="rounded-full cursor-pointer text-muted-foreground hover:text-foreground"
+              >
+                <RotateCcw className="size-3.5" />
+              </Button>
+              <Link
+                href="/tools/plush"
+                data-space-hover
+                className="p-1 text-muted-foreground hover:text-foreground transition-colors"
+              >
+                <ArrowUpRight className="size-4" />
+              </Link>
+            </div>
+          </FrameFooter>
         </Frame>
 
         <Frame className="flex flex-col h-full sm:col-span-2 lg:col-span-2">
-          <FrameHeader className="flex flex-row items-center justify-between p-2">
-            <FrameTitle>Generative Avatars &amp; Squishmoji</FrameTitle>
-            <Link
-              href="/tools/avatars"
-              data-space-hover
-              className="p-1 text-muted-foreground hover:text-foreground transition-colors"
-            >
-              <ArrowUpRight className="size-4" />
-            </Link>
-          </FrameHeader>
           <Card className="flex-1 flex flex-col h-full rounded-xl before:rounded-xl overflow-hidden">
             <CardPanel className="flex-1 flex flex-col justify-center gap-3 p-4 min-h-48 rounded-lg">
               <div className="grid grid-cols-6 gap-2 w-full items-center justify-items-center">
@@ -583,19 +605,19 @@ export function PackagesSection() {
               </div>
             </CardPanel>
           </Card>
-        </Frame>
-
-        <Frame className="flex flex-col h-full">
-          <FrameHeader className="flex flex-row items-center justify-between p-2">
-            <FrameTitle>SVG Flags</FrameTitle>
+          <FrameFooter className="flex flex-row items-center justify-between p-2">
+            <FrameTitle>Generative Avatars &amp; Squishmoji</FrameTitle>
             <Link
-              href="/tools/flags"
+              href="/tools/avatars"
               data-space-hover
               className="p-1 text-muted-foreground hover:text-foreground transition-colors"
             >
               <ArrowUpRight className="size-4" />
             </Link>
-          </FrameHeader>
+          </FrameFooter>
+        </Frame>
+
+        <Frame className="flex flex-col h-full">
           <Card className="flex-1 flex flex-col h-full rounded-xl before:rounded-xl overflow-hidden">
             <CardPanel className="flex-1 flex flex-col justify-center gap-3 p-3.5 min-h-44 rounded-lg">
               <div className="grid grid-cols-3 gap-2.5 items-center justify-items-center">
@@ -619,10 +641,27 @@ export function PackagesSection() {
               </div>
             </CardPanel>
           </Card>
+          <FrameFooter className="flex flex-row items-center justify-between p-2">
+            <FrameTitle>SVG Flags</FrameTitle>
+            <Link
+              href="/tools/flags"
+              data-space-hover
+              className="p-1 text-muted-foreground hover:text-foreground transition-colors"
+            >
+              <ArrowUpRight className="size-4" />
+            </Link>
+          </FrameFooter>
         </Frame>
 
         <Frame className="flex flex-col h-full">
-          <FrameHeader className="flex flex-row items-center justify-between p-2">
+          <Card className="flex-1 flex flex-col h-full rounded-xl before:rounded-xl overflow-hidden">
+            <CardPanel className="flex-1 flex items-center justify-center gap-3 p-3 min-h-44 rounded-lg">
+              <SquircleSwatchItem className="squircle rounded-2xl hover:rounded-xl bg-primary" />
+              <SquircleSwatchItem className="squircle rounded-lg hover:rounded-md bg-muted" />
+              <SquircleSwatchItem className="squircle rounded-full hover:rounded-2xl bg-foreground" />
+            </CardPanel>
+          </Card>
+          <FrameFooter className="flex flex-row items-center justify-between p-2">
             <FrameTitle>Squircle Smoothing</FrameTitle>
             <Link
               href="/docs/squircle"
@@ -631,46 +670,16 @@ export function PackagesSection() {
             >
               <ArrowUpRight className="size-4" />
             </Link>
-          </FrameHeader>
-          <Card className="flex-1 flex flex-col h-full rounded-xl before:rounded-xl overflow-hidden">
-            <CardPanel className="flex-1 flex items-center justify-center gap-3 p-3 min-h-44 rounded-lg">
-              <SquircleSwatchItem className="squircle-2xl hover:squircle-xl bg-primary" />
-              <SquircleSwatchItem className="squircle-lg hover:squircle-md bg-muted" />
-              <SquircleSwatchItem className="squircle-full hover:squircle-2xl bg-foreground" />
-            </CardPanel>
-          </Card>
+          </FrameFooter>
         </Frame>
 
         <Frame className="flex flex-col h-full sm:col-span-2 lg:col-span-2">
-          <FrameHeader className="flex flex-row items-center justify-between p-2">
-            <FrameTitle>Image Split</FrameTitle>
-            <div className="flex items-center gap-1.5">
-              <Button
-                variant="secondary"
-                size="icon-xs"
-                onClick={cycleSplitSample}
-                data-space-hover
-                title="Randomize split image"
-                className="rounded-full cursor-pointer"
-              >
-                <Shuffle className="size-3.5" />
-              </Button>
-              <Link
-                href="/tools/imagesplit"
-                data-space-hover
-                className="p-1 text-muted-foreground hover:text-foreground transition-colors"
-              >
-                <ArrowUpRight className="size-4" />
-              </Link>
-            </div>
-          </FrameHeader>
           <Card className="flex-1 flex flex-col h-full rounded-xl before:rounded-xl overflow-hidden">
             <CardPanel className="flex-1 flex flex-col items-center justify-center gap-3 p-4 min-h-48 rounded-lg">
-              {/* Visual slice preview with real demo image and blur transition */}
               <div
                 onClick={cycleSplitSample}
                 title="Click to switch image"
-                className="relative w-full max-w-[240px] aspect-[16/10] overflow-hidden rounded-xl border-2 border-muted bg-muted/20 cursor-pointer"
+                className="relative w-full max-w-60 aspect-16/10 overflow-hidden rounded-xl border-2 border-muted bg-muted/20 cursor-pointer"
               >
                 <AnimatePresence initial={false}>
                   <motion.div
@@ -690,9 +699,8 @@ export function PackagesSection() {
                         <Image
                           src={SPLIT_SAMPLES[splitSampleIdx].url}
                           alt={`Slice ${i + 1}`}
-                          width={800}
-                          height={500}
-                          unoptimized
+                          width={480}
+                          height={300}
                           className="absolute top-0 h-full max-w-none object-cover pointer-events-none select-none transition-all duration-300"
                           style={{
                             width: `${splitCols * 100}%`,
@@ -726,10 +734,8 @@ export function PackagesSection() {
                         setSplitCols(cols)
                       }}
                       className={cn(
-                        'cursor-pointer transition-all duration-200',
-                        isSelected
-                          ? 'bg-foreground text-background font-medium'
-                          : 'text-muted-foreground hover:text-foreground',
+                        'border-none cursor-pointer transition-all duration-300',
+                        isSelected && 'font-medium',
                       )}
                     >
                       {cols} Columns
@@ -739,19 +745,31 @@ export function PackagesSection() {
               </div>
             </CardPanel>
           </Card>
+          <FrameFooter className="flex flex-row items-center justify-between p-2">
+            <FrameTitle>Image Split</FrameTitle>
+            <div className="flex items-center gap-1.5">
+              <Button
+                variant="secondary"
+                size="icon-xs"
+                onClick={cycleSplitSample}
+                data-space-hover
+                title="Randomize split image"
+                className="rounded-full cursor-pointer"
+              >
+                <Shuffle className="size-3.5" />
+              </Button>
+              <Link
+                href="/tools/imagesplit"
+                data-space-hover
+                className="p-1 text-muted-foreground hover:text-foreground transition-colors"
+              >
+                <ArrowUpRight className="size-4" />
+              </Link>
+            </div>
+          </FrameFooter>
         </Frame>
 
         <Frame className="flex flex-col h-full">
-          <FrameHeader className="flex flex-row items-center justify-between p-2">
-            <FrameTitle>Emoji Hub</FrameTitle>
-            <Link
-              href="/tools/emoji"
-              data-space-hover
-              className="p-1 text-muted-foreground hover:text-foreground transition-colors"
-            >
-              <ArrowUpRight className="size-4" />
-            </Link>
-          </FrameHeader>
           <Card className="flex-1 flex flex-col h-full">
             <CardPanel className="flex-1 flex flex-col justify-center gap-2 p-3.5 min-h-44">
               <div className="grid grid-cols-3 gap-2.5 items-center justify-items-center">
@@ -782,7 +800,6 @@ export function PackagesSection() {
                               alt={em.name}
                               width={28}
                               height={28}
-                              unoptimized
                               className="size-7 object-contain pointer-events-none"
                             />
                           ) : (
@@ -799,21 +816,19 @@ export function PackagesSection() {
               </div>
             </CardPanel>
           </Card>
-        </Frame>
-
-        <Frame className="flex flex-col h-full">
-          <FrameHeader className="flex flex-row items-center justify-between p-2">
-            <FrameTitle>Procedural Audio</FrameTitle>
-            <a
-              href="https://sounds.spaceui.one"
-              target="_blank"
-              rel="noreferrer"
+          <FrameFooter className="flex flex-row items-center justify-between p-2">
+            <FrameTitle>Emoji Hub</FrameTitle>
+            <Link
+              href="/tools/emoji"
               data-space-hover
               className="p-1 text-muted-foreground hover:text-foreground transition-colors"
             >
               <ArrowUpRight className="size-4" />
-            </a>
-          </FrameHeader>
+            </Link>
+          </FrameFooter>
+        </Frame>
+
+        <Frame className="flex flex-col h-full">
           <Card className="flex-1 flex flex-col h-full">
             <CardPanel className="flex-1 flex flex-col justify-center p-3 min-h-44">
               <div className="grid grid-cols-2 gap-1.5">
@@ -832,6 +847,18 @@ export function PackagesSection() {
               </div>
             </CardPanel>
           </Card>
+          <FrameFooter className="flex flex-row items-center justify-between p-2">
+            <FrameTitle>Procedural Audio</FrameTitle>
+            <a
+              href="https://sounds.spaceui.one"
+              target="_blank"
+              rel="noreferrer"
+              data-space-hover
+              className="p-1 text-muted-foreground hover:text-foreground transition-colors"
+            >
+              <ArrowUpRight className="size-4" />
+            </a>
+          </FrameFooter>
         </Frame>
       </div>
     </section>

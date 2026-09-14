@@ -55,9 +55,9 @@ export function ReactionCard({ char = '👍', label, count, className }: Reactio
     <Frame
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
-      className={cn('size-full bg-muted squircle-6xl/100 border-0 overflow-hidden p-4', className)}
+      className={cn('size-full bg-muted squircle/100 rounded-6xl border-0 overflow-hidden p-4', className)}
     >
-      <Card className="relative flex flex-col size-full items-center justify-center gap-4 md:gap-8 p-4 squircle-2xl/100 md:squircle-4xl/100 bg-background border-0 overflow-hidden before:hidden shadow-none">
+      <Card className="relative flex flex-col size-full items-center justify-center gap-4 md:gap-8 p-4 squircle/100 rounded-2xl md:rounded-4xl bg-background border-0 overflow-hidden before:hidden shadow-none">
         {emojiUrl && (
           <motion.div
             animate={{
@@ -81,7 +81,7 @@ export function ReactionCard({ char = '👍', label, count, className }: Reactio
         <div className="relative w-full flex flex-col gap-2 z-10">
           <div className="relative flex flex-row items-center gap-2 md:gap-4">
             <Badge
-              className="capitalize text-xs font-medium size-max bg-muted text-foreground p-2 squircle-2xl/80 md:squircle-3xl/80 border-0 flex items-center justify-center"
+              className="capitalize text-xs font-medium size-max bg-muted text-foreground p-2 squircle/80 rounded-2xl md:rounded-3xl border-0 flex items-center justify-center"
               size="sm"
               square
             >

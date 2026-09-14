@@ -24,7 +24,7 @@ export default function NewPostMockup({
         </p>
       </div>
       <div className="relative mt-4 aspect-video w-full overflow-hidden rounded-2xl bg-muted">
-        <Image alt="Abstract upload preview" src={img} fill sizes="22rem" unoptimized className="object-cover" />
+        <Image alt="Abstract upload preview" src={img} fill sizes="22rem" className="object-cover" />
       </div>
       <div className="mt-4 flex items-center gap-3">
         <div className="flex -space-x-2">

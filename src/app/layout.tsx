@@ -11,6 +11,8 @@ import { jsonLd } from '@/lib/json-ld'
 import { GlobalLayoutWrapper } from '@/components/layout/global-layout-wrapper'
 import { cn } from '@/registry/lib/utils'
 import { siteConfig } from '@/config/space-config'
+import { cookies } from 'next/headers'
+import { Mode, type LayoutMode } from '@/components/providers/layout-mode-provider'
 
 // TODO: Cache Components adoption. Refactor this route so this opt-out can be removed.
 // See: https://nextjs.org/docs/app/guides/migrating-to-cache-components
@@ -104,9 +106,6 @@ const geistMono = Geist_Mono({
   variable: '--font-geist-mono',
   subsets: ['latin'],
 })
-
-import { cookies } from 'next/headers'
-import { Mode, type LayoutMode } from '@/components/providers/layout-mode-provider'
 
 export default async function Layout({ children }: { children: ReactNode }) {
   const cookieStore = await cookies()

@@ -221,7 +221,6 @@ export function PlushShowcase() {
                             alt={preset.label}
                             width={32}
                             height={32}
-                            unoptimized
                             className="size-full object-contain pointer-events-none"
                           />
                         </div>

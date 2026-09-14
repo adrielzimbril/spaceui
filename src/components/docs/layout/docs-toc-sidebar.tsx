@@ -24,7 +24,7 @@ export function DocsTocSidebar({ toc, dependencies, hasRelated = false, classNam
   return (
     <div
       className={cn(
-        'sticky top-[calc(var(--header-height,56px)+1px)] z-30 ml-auto hidden h-[calc(100svh-var(--header-height,56px)-1px)] w-64 flex-col gap-4 overflow-hidden overscroll-none pb-8 [html[data-layout-mode=split]_&]:hidden! [html[data-layout-mode=canvas]_&]:hidden! xl:flex',
+        'sticky top-20 z-30 ml-auto hidden h-[calc(100svh-5rem)] w-64 flex-col gap-4 overflow-hidden overscroll-none pb-8 [html[data-layout-mode=split]_&]:hidden! [html[data-layout-mode=canvas]_&]:hidden! xl:flex',
         className,
       )}
     >

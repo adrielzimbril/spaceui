@@ -49,9 +49,12 @@ export function ThoughtMostViewedCard({
     <Frame
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
-      className={cn('size-full md:col-span-8 bg-muted squircle-6xl/100 border-0 overflow-hidden p-4 md:p-6', className)}
+      className={cn(
+        'size-full md:col-span-8 bg-muted squircle/100 rounded-6xl border-0 overflow-hidden p-4 md:p-6',
+        className,
+      )}
     >
-      <Card className="flex relative flex-col size-full items-center justify-start p-4 squircle-2xl/100 md:squircle-4xl/100 bg-background border-0 overflow-hidden before:hidden shadow-none">
+      <Card className="flex relative flex-col size-full items-center justify-start p-4 squircle/100 rounded-2xl md:rounded-4xl bg-background border-0 overflow-hidden before:hidden shadow-none">
         <motion.div
           animate={{
             rotate: isHovered ? -8 : -18,
@@ -170,7 +173,7 @@ export function ThoughtMostViewedCard({
           <div className="flex w-full items-center justify-between gap-2">
             <div className="flex items-center justify-between gap-3">
               <Badge
-                className="capitalize text-xs font-medium bg-[#8e8eff] text-white size-max squircle-2xl/80 md:squircle-3xl/80 px-3 py-1.5 border-none"
+                className="capitalize text-xs font-medium bg-[#8e8eff] text-white size-max squircle/80 rounded-2xl md:rounded-3xl px-3 py-1.5 border-none"
                 variant="default"
                 size="md"
               >

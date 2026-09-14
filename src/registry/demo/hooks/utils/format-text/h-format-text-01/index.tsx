@@ -92,9 +92,7 @@ export default function Demo() {
           <div className="rounded-lg bg-muted p-2.5 flex items-center justify-between">
             <div className="min-w-0 flex-1">
               <span className="block text-[.6875rem] font-semibold text-muted-foreground">Random word</span>
-              <span className="mt-0.5 block font-mono text-sm font-semibold text-foreground">
-                {random}
-              </span>
+              <span className="mt-0.5 block font-mono text-sm font-semibold text-foreground">{random}</span>
             </div>
             <button
               type="button"

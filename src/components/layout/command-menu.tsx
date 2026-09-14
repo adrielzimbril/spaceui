@@ -370,7 +370,7 @@ export function CommandMenu({
 
   return (
     <CommandDialog onOpenChange={setOpen} open={open} {...props}>
-      <CommandDialogTrigger render={<Button variant="outline" />} className="px-1 border-muted w-full">
+      <CommandDialogTrigger render={<Button variant="outline" size="lg" />} className="px-1 border-muted w-full">
         <span className="bg-muted aspect-square rounded-md px-1.5 py-0.5 inline-flex items-center justify-center">
           <IconSearch className="size-4 text-muted-foreground shrink-0" />
         </span>

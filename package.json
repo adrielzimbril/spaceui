@@ -1,6 +1,6 @@
 {
   "name": "@adrielzimbril/spaceui",
-  "version": "0.0.11",
+  "version": "0.0.12",
   "private": true,
   "description": "The official Space UI website, documentation, and component registry.",
   "author": {
@@ -84,7 +84,7 @@
     "@usespaceui/emoji": "^0.1.0",
     "@usespaceui/gradients": "^0.1.4",
     "@usespaceui/sounds": "^0.1.2",
-    "@usespaceui/squircle": "^0.1.1",
+    "@usespaceui/squircle": "^0.1.2",
     "@usespaceui/squishmoji": "^0.1.0",
     "@vercel/analytics": "^2.0.1",
     "@vercel/speed-insights": "^2.0.0",

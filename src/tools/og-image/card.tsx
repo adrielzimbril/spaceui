@@ -122,7 +122,7 @@ export function OgCard({
   return (
     <div
       ref={cardRef}
-      className={s.radius > 0 ? 'squircle-[var(--og-r)]' : undefined}
+      className={s.radius > 0 ? 'squircle rounded-(--og-r)' : undefined}
       style={{
         // @ts-expect-error custom property
         '--og-r': `${s.radius}px`,
@@ -302,7 +302,7 @@ function CardContent({
         editing={editing}
         value={s.badge}
         on={(v) => set('badge', v)}
-        className={s.badgeStyle === 'squircle' && badgeChip.on ? 'squircle-[var(--badge-r)]' : undefined}
+        className={s.badgeStyle === 'squircle' && badgeChip.on ? 'squircle rounded-[var(--badge-r)]' : undefined}
         style={{
           // @ts-expect-error custom property
           '--badge-r': `${badgeChip.radius}px`,

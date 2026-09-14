@@ -9,7 +9,7 @@ import { Link } from '@/registry/primitives/link'
 export function GitHubLinkClient({ stars }: { stars: React.ReactNode }) {
   return (
     <Link
-      className="relative h-8 shadow-none max-sm:w-8"
+      className="relative h-10 px-[calc(--spacing(3.5)-1px)] sm:h-9 shadow-none max-sm:w-9"
       href={siteConfig.links.github}
       rel="noreferrer"
       target="_blank"

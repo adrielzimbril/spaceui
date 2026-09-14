@@ -20,16 +20,14 @@ export function Hero() {
   const avatarSize = isLg ? 75 : isMd ? 68 : isSm ? 56 : 38
 
   return (
-    // <section id="hero" data-page-section className="relative overflow-hidden pt-12 pb-16 md:pt-20 md:pb-24">
-    <section id="hero" data-page-section className="relative overflow-hidden pt-6 pb-8 md:pt-10 md:pb-12">
+    <section id="hero" data-page-section className="relative overflow-hidden pt-24 pb-8 md:pb-12">
       <div className="bg-muted rounded-5xl pt-12 pb-16 md:pt-20 md:pb-24 mx-auto max-w-310 px-5 sm:px-6">
-        {/* ── Announcement Pill ── */}
         <div className="flex flex-col items-center justify-center text-center">
           <Link href="/docs" className="inline-flex items-center group outline-none">
             <StatusBadge
               variant="outline"
               status="online"
-              size="md"
+              size="lg"
               primaryText="Space UI"
               className="select-none bg-background border-none cursor-pointer transition-colors"
               secondaryTextClassName="inline-flex items-center gap-1.5 pr-1"
@@ -42,10 +40,11 @@ export function Hero() {
           {/* ── Main Headline ── */}
           <h1 className="mt-7 max-w-5xl text-balance text-[42px] font-semibold tracking-tight leading-[1.05] text-foreground sm:text-[64px] md:text-[76px] lg:text-[84px]">
             Ship your ideas
-            <div className="relative inline-flex items-center justify-center size-12 sm:size-16 md:size-20 lg:size-24 shrink-0 overflow-visible">
-              {/* <Avatar name="p" variant="ghost" size={avatarSize} circle /> */}
-              <Avatar name="c" variant="lumina" size={avatarSize} circle />
-            </div>
+            {/* <div className="relative inline-flex items-center justify-center size-12 sm:size-16 md:size-20 lg:size-24 shrink-0 overflow-visible">
+              <Avatar name="p" variant="ghost" size={avatarSize} circle />
+              <Avatar name="c" variant="lumina" size={avatarSize} circle />              <Avatar name="c" variant="pebble"variant="lumina" size={avatarSize} circle />
+              <Avatar name="c" variant="pebble" size={avatarSize} circle />
+            </div> */}{' '}
             faster
             <br />
             with
@@ -68,7 +67,7 @@ export function Hero() {
             </div>
             better UI
             <div className="relative inline-flex items-center justify-center size-12 sm:size-16 md:size-20 lg:size-24 shrink-0 overflow-visible">
-              <Avatar name="c" variant="pebble" size={avatarSize} circle />
+              <Avatar name="c" variant="lumina" size={avatarSize} circle />
             </div>
             {/* <span className="inline-flex leading-1">😍</span> */}
           </h1>
@@ -85,16 +84,17 @@ export function Hero() {
 
           {/* ── Primary Actions ── */}
           <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row sm:flex-wrap">
-            {/* <Button
-              render={<Link href="/components" />}
+            <Button
+              render={<Link href="/primitives" />}
               data-space-hover
               data-space-click="confirm"
               className="inline-flex items-center gap-2 px-6 py-3.5 font-medium active:scale-[0.98] transition-all duration-300"
             >
-              <span>Explore registry items</span>
+              <span>Browse components</span>
               <ArrowUpRight className="size-4" />
-            </Button> */}
-            <span className="relative inline-flex group">
+            </Button>
+
+            {/* <span className="relative inline-flex group">
               <Link
                 href="/components"
                 className="absolute inset-0 z-10 rounded-xl outline-none focus-visible:ring-2 focus-visible:ring-ring"
@@ -108,10 +108,10 @@ export function Hero() {
                 data-space-click="confirm"
                 className="pointer-events-none inline-flex items-center gap-2 px-6 py-3.5 font-medium group-group-active:scale-[0.98] transition-all duration-300"
               >
-                <span>Explore registry items</span>
+                <span>Explore</span>
                 <ArrowUpRight className="size-4" />
               </Button>
-            </span>
+            </span> */}
           </div>
         </div>
       </div>

@@ -13,9 +13,7 @@ export default function CreatorProfileMockup({
   return (
     <div className="flex h-full flex-col items-center text-center">
       <div className="relative h-24 w-full overflow-hidden rounded-2xl bg-muted">
-        {img && (
-          <Image src={img} alt="" fill sizes="22rem" unoptimized className="object-cover opacity-35 saturate-50" />
-        )}
+        {img && <Image src={img} alt="" fill sizes="22rem" className="object-cover opacity-35 saturate-50" />}
       </div>
       <span className={cn('-mt-8 grid place-items-center bg-background p-1 z-10', avatar.circle && 'rounded-full')}>
         <Avatar name={name + (seed || '')} size={58} {...restAvatar} />

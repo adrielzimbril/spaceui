@@ -42,13 +42,20 @@ function createInverseTopPath(
   const topR = clampRadius(topRadius, width, height)
   const botR = clampRadius(bottomRadius ?? topR, width, height)
   const l = yOffset + topR
-  return `M ${-topR} ${yOffset} H ${width + topR} Q ${width} ${yOffset} ${width} ${l} V ${height - botR} A ${botR} ${botR} 0 0 1 ${width - botR} ${height} H ${botR} A ${botR} ${botR} 0 0 1 0 ${height - botR} V ${l} Q 0 ${yOffset} ${-topR} ${yOffset} Z`
+  return `M ${-topR} ${yOffset} H ${width + topR} A ${topR} ${topR} 0 0 0 ${width} ${l} V ${height - botR} A ${botR} ${botR} 0 0 1 ${width - botR} ${height} H ${botR} A ${botR} ${botR} 0 0 1 0 ${height - botR} V ${l} A ${topR} ${topR} 0 0 0 ${-topR} ${yOffset} Z`
 }
 
-function createInverseTopStrokePath(width: number, height: number, topRadius: number, bottomRadius?: number): string {
+function createInverseTopStrokePath(
+  width: number,
+  height: number,
+  topRadius: number,
+  yOffset: number = 0,
+  bottomRadius?: number,
+): string {
   const topR = clampRadius(topRadius, width, height)
   const botR = clampRadius(bottomRadius ?? topR, width, height)
-  return `M ${width + topR} 0 Q ${width} 0 ${width} ${topR} V ${height - botR} A ${botR} ${botR} 0 0 1 ${width - botR} ${height} H ${botR} A ${botR} ${botR} 0 0 1 0 ${height - botR} V ${topR} Q 0 0 ${-topR} 0`
+  const l = yOffset + topR
+  return `M ${width + topR} ${yOffset} A ${topR} ${topR} 0 0 0 ${width} ${l} V ${height - botR} A ${botR} ${botR} 0 0 1 ${width - botR} ${height} H ${botR} A ${botR} ${botR} 0 0 1 0 ${height - botR} V ${l} A ${topR} ${topR} 0 0 0 ${-topR} ${yOffset}`
 }
 
 function SpaceMenuShell() {
@@ -61,7 +68,7 @@ function SpaceMenuShell() {
     const popupEl = svg?.parentElement
     if (!svg || !popupEl) return
 
-    const topRadius = 24
+    const topRadius = 16
     const bottomRadius = 24
 
     const updatePaths = () => {
@@ -70,7 +77,7 @@ function SpaceMenuShell() {
       if (w <= 0 || h <= 0) return
 
       const fill = createInverseTopPath(w, h + 1, topRadius, -1, bottomRadius)
-      const stroke = createInverseTopStrokePath(w, h, topRadius, bottomRadius)
+      const stroke = createInverseTopStrokePath(w, h, topRadius, -1, bottomRadius)
 
       svg.setAttribute('width', `${w}`)
       svg.setAttribute('height', `${h}`)
@@ -376,7 +383,7 @@ export function MegaMenu({ className }: { className?: string }) {
         className={className}
       >
         <NavigationMenuList className="flex items-center gap-1 text-sm font-medium">
-          {/* Components Link - Placé au tout début */}
+          {/* Components Link */}
           <NavigationMenuItem value="components">
             <Link
               href="/components"
@@ -387,18 +394,34 @@ export function MegaMenu({ className }: { className?: string }) {
             >
               <span
                 aria-hidden="true"
-                className="size-1.5 rounded-full bg-current opacity-40 transition-all duration-300 group-hover:opacity-100 group-focus-visible:opacity-100 shrink-0"
+                className="hidden size-1.5 rounded-full bg-current opacity-40 transition-all duration-300 group-hover:opacity-100 group-focus-visible:opacity-100 shrink-0"
               />
               Components
             </Link>
           </NavigationMenuItem>
+          {/* Primitives Link */}
+          {/* <NavigationMenuItem value="components">
+            <Link
+              href="/Primitives"
+              className={cn(
+                navigationMenuTriggerStyle(),
+                'bg-transparent hover:bg-muted focus:bg-muted no-underline gap-1.5',
+              )}
+            >
+              <span
+                aria-hidden="true"
+                className="hidden size-1.5 rounded-full bg-current opacity-40 transition-all duration-300 group-hover:opacity-100 group-focus-visible:opacity-100 shrink-0"
+              />
+              Primitives
+            </Link>
+          </NavigationMenuItem> */}
 
           {/* Docs Menu */}
           <NavigationMenuItem value="docs">
             <NavigationMenuTrigger className="bg-transparent hover:bg-muted focus:bg-muted gap-1.5">
               <span
                 aria-hidden="true"
-                className="size-1.5 rounded-full bg-current opacity-40 transition-all duration-300 group-hover:opacity-100 group-data-[state=open]:opacity-100 group-data-popup-open:opacity-100 group-data-[state=open]:scale-125 group-data-popup-open:scale-125 shrink-0"
+                className="hidden size-1.5 rounded-full bg-current opacity-40 transition-all duration-300 group-hover:opacity-100 group-data-[state=open]:opacity-100 group-data-popup-open:opacity-100 group-data-[state=open]:scale-125 group-data-popup-open:scale-125 shrink-0"
               />
               Docs
             </NavigationMenuTrigger>
@@ -466,9 +489,9 @@ export function MegaMenu({ className }: { className?: string }) {
             <NavigationMenuTrigger className="bg-transparent hover:bg-muted focus:bg-muted gap-1.5">
               <span
                 aria-hidden="true"
-                className="size-1.5 rounded-full bg-current opacity-40 transition-all duration-300 group-hover:opacity-100 group-data-[state=open]:opacity-100 group-data-popup-open:opacity-100 group-data-[state=open]:scale-125 group-data-popup-open:scale-125 shrink-0"
+                className="hidden size-1.5 rounded-full bg-current opacity-40 transition-all duration-300 group-hover:opacity-100 group-data-[state=open]:opacity-100 group-data-popup-open:opacity-100 group-data-[state=open]:scale-125 group-data-popup-open:scale-125 shrink-0"
               />
-              UI Kit
+              Products
             </NavigationMenuTrigger>
             <NavigationMenuContent keepMounted className="w-140 shrink-0 max-w-none p-5 pt-3.5">
               <MenuContentMeasurer id="ui-kit" onMeasured={handleMeasured}>
@@ -498,7 +521,7 @@ export function MegaMenu({ className }: { className?: string }) {
             <NavigationMenuTrigger className="bg-transparent hover:bg-muted focus:bg-muted gap-1.5">
               <span
                 aria-hidden="true"
-                className="size-1.5 rounded-full bg-current opacity-40 transition-all duration-300 group-hover:opacity-100 group-data-[state=open]:opacity-100 group-data-popup-open:opacity-100 group-data-[state=open]:scale-125 group-data-popup-open:scale-125 shrink-0"
+                className="hidden size-1.5 rounded-full bg-current opacity-40 transition-all duration-300 group-hover:opacity-100 group-data-[state=open]:opacity-100 group-data-popup-open:opacity-100 group-data-[state=open]:scale-125 group-data-popup-open:scale-125 shrink-0"
               />
               Tools
             </NavigationMenuTrigger>
@@ -575,7 +598,7 @@ export function MegaMenu({ className }: { className?: string }) {
             >
               <span
                 aria-hidden="true"
-                className="size-1.5 rounded-full bg-current opacity-40 transition-all duration-300 group-hover:opacity-100 group-focus-visible:opacity-100 shrink-0"
+                className="hidden size-1.5 rounded-full bg-current opacity-40 transition-all duration-300 group-hover:opacity-100 group-focus-visible:opacity-100 shrink-0"
               />
               Showcase
             </Link>
@@ -584,7 +607,7 @@ export function MegaMenu({ className }: { className?: string }) {
 
         {/* Base UI Animated Viewport & Positioner Portal */}
         <NavigationMenuPortal>
-          <NavigationMenuPositioner sideOffset={14}>
+          <NavigationMenuPositioner sideOffset={9}>
             <NavigationMenuPopup
               style={{
                 ...(activeSize
@@ -594,7 +617,7 @@ export function MegaMenu({ className }: { className?: string }) {
                     }
                   : {}),
               }}
-              className="border-0! bg-transparent! shadow-none! rounded-none! backdrop-blur-none! overflow-visible! data-[starting-style]:scale-100! data-[ending-style]:scale-100!"
+              className="border-0! bg-transparent! shadow-none! rounded-none! backdrop-blur-none! overflow-visible! data-starting-style:scale-100! data-ending-style:scale-100!"
             >
               <SpaceMenuShell />
               <NavigationMenuViewport className="relative z-10 h-full w-full overflow-hidden rounded-b-3xl" />

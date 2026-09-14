@@ -644,7 +644,6 @@ export function DitherCarousel({
                 fill
                 sizes="(max-width: 768px) 80vw, 50vw"
                 className="bg-muted rounded-xl object-cover"
-                unoptimized
               />
             </li>
           ))}
@@ -681,7 +680,7 @@ export function DitherCarousel({
       <ul className="sr-only">
         {items.map((item, i) => (
           <li key={item.image} id={`dither-carousel-${i}`} role="option" aria-selected={i === active}>
-            <NextImage src={item.image} alt={item.title} width={512} height={768} unoptimized />
+            <NextImage src={item.image} alt={item.title} width={512} height={768} />
             <h3>{item.title}</h3>
           </li>
         ))}

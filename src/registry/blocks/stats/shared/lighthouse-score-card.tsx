@@ -165,13 +165,13 @@ export function LighthouseScoreCard({ scores, strategy, className }: LighthouseS
   return (
     <Frame
       className={cn(
-        'size-full max-w-[95%] bg-muted squircle-4xl/80 md:squircle-6xl/80 border-0 overflow-hidden mx-auto p-4 gap-2',
+        'size-full max-w-[95%] bg-muted squircle/80 rounded-4xl md:rounded-6xl border-0 overflow-hidden mx-auto p-4 gap-2',
         className,
       )}
     >
       <Card
         className={cn(
-          'flex relative flex-col gap-4 md:gap-6 items-start justify-between px-4 py-6 md:px-6 md:py-8 squircle-2xl/60 md:squircle-4xl/60 bg-background border-0 overflow-hidden',
+          'flex relative flex-col gap-4 md:gap-6 items-start justify-between px-4 py-6 md:px-6 md:py-8 squircle/60 rounded-2xl md:rounded-4xl bg-background border-0 overflow-hidden',
         )}
       >
         <RadarBackground scores={scoreValues} />

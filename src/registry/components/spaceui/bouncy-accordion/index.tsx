@@ -38,17 +38,27 @@ export function BouncyAccordion({ items, defaultValue = 0, value, onValueChange,
         {items.map((item, index) => {
           const isOpen = active === index
           const contentId = `${baseId}-${index}`
+          const isTopRounded = index === 0 || isOpen || (active !== null && index === active + 1)
+          const isBottomRounded =
+            index === items.length - 1 || isOpen || (active !== null && index === active - 1)
+
           return (
             <motion.li
               key={item.title}
+              layout
+              initial={false}
+              style={{
+                borderTopLeftRadius: isTopRounded ? `${radius}px` : '0px',
+                borderTopRightRadius: isTopRounded ? `${radius}px` : '0px',
+                borderBottomRightRadius: isBottomRounded ? `${radius}px` : '0px',
+                borderBottomLeftRadius: isBottomRounded ? `${radius}px` : '0px',
+              }}
               animate={{
                 marginBlock: isOpen ? '10px' : '0px',
-                borderTopLeftRadius: index === 0 || isOpen || active === index - 1 ? `${radius}px` : '0px',
-                borderTopRightRadius: index === 0 || isOpen || active === index - 1 ? `${radius}px` : '0px',
-                borderBottomRightRadius:
-                  index === items.length - 1 || isOpen || active === index + 1 ? `${radius}px` : '0px',
-                borderBottomLeftRadius:
-                  index === items.length - 1 || isOpen || active === index + 1 ? `${radius}px` : '0px',
+                borderTopLeftRadius: isTopRounded ? `${radius}px` : '0px',
+                borderTopRightRadius: isTopRounded ? `${radius}px` : '0px',
+                borderBottomRightRadius: isBottomRounded ? `${radius}px` : '0px',
+                borderBottomLeftRadius: isBottomRounded ? `${radius}px` : '0px',
               }}
               transition={reduced ? { duration: 0 } : { type: 'spring', stiffness: 300, damping: 20 }}
               className={cn(
@@ -88,7 +98,6 @@ export function BouncyAccordion({ items, defaultValue = 0, value, onValueChange,
                     initial={reduced ? false : { opacity: 0, filter: 'blur(2px)', height: 0 }}
                     animate={{ opacity: 1, filter: 'blur(0px)', height: 'auto' }}
                     exit={reduced ? { opacity: 0 } : { opacity: 0, filter: 'blur(2px)', height: 0 }}
-                    transition={reduced ? { duration: 0 } : { type: 'spring', stiffness: 300, damping: 24 }}
                     className="mt-2 overflow-hidden rounded-lg bg-background px-4 pb-4 pt-3 text-sm leading-relaxed text-muted-foreground"
                   >
                     {item.description}

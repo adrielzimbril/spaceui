@@ -47,7 +47,7 @@ export const Badge = React.forwardRef<HTMLSpanElement, BadgeProps>(
     const defaultProps = {
       className: cn(
         badgeVariants({ variant, size }),
-        squircle && 'squircle-2xl/80 md:squircle-3xl/80 hover:squircle-xl/80 transition-all duration-300',
+        squircle && 'squircle/80 rounded-2xl md:rounded-3xl hover:rounded-xl transition-all duration-300',
         square && 'aspect-square',
         className,
       ),

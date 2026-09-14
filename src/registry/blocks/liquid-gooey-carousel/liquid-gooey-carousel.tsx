@@ -680,7 +680,6 @@ export function LiquidGooeyCarousel({
                 fill
                 sizes="(max-width: 768px) 80vw, 50vw"
                 className="bg-muted rounded-2xl object-cover"
-                unoptimized
               />
             </li>
           ))}

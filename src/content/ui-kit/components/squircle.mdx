@@ -97,16 +97,16 @@ export default function SpaceUI() {
   return (
     <>
       {/* Matches rounded-md */}
-      <div className="squircle-md p-4 bg-primary text-primary-foreground">Squircle!</div>
+      <div className="squircle rounded-md p-4 bg-primary text-primary-foreground">Squircle!</div>
 
       {/* Matches rounded-2xl */}
-      <div className="squircle-2xl bg-muted" />
+      <div className="squircle rounded-2xl bg-muted" />
 
       {/* Perfectly circular/pill shape */}
-      <div className="squircle-full" />
+      <div className="squircle rounded-full" />
 
       {/* Arbitrary values are fully supported */}
-      <div className="squircle-[40px]" />
+      <div className="squircle rounded-[40px]" />
     </>
   )
 }
@@ -123,13 +123,13 @@ export default function SpaceUI() {
   return (
     <>
       {/* Maximum smoothing */}
-      <div className="squircle-2xl/100 bg-primary" />
+      <div className="squircle/100 rounded-2xl bg-primary" />
 
       {/* Minimal smoothing (closer to a plain rounded rectangle) */}
-      <div className="squircle-2xl/20 bg-primary" />
+      <div className="squircle/20 rounded-2xl bg-primary" />
 
       {/* Arbitrary smoothing */}
-      <div className="squircle-2xl/[25] bg-primary" />
+      <div className="squircle/[0.25] rounded-2xl bg-primary" />
     </>
   )
 }
@@ -144,9 +144,9 @@ export default function SpaceUI() {
   return (
     <div>
       {/* 8px red border perfectly drawn onto the squircle shape */}
-      <div className="squircle-2xl border-8 border-red-500 bg-black" />
+      <div className="squircle rounded-2xl border-8 border-red-500 bg-black" />
       {/* 1px semi-transparent blue border */}
-      <div className="squircle-[30px] border border-blue-500/50 bg-white" />
+      <div className="squircle rounded-[30px] border border-blue-500/50 bg-white" />
     </div>
   )
 }
@@ -154,4 +154,4 @@ export default function SpaceUI() {
 
 > **Note on border placement:**
 > By default, the plugin draws the border **outside** the element (like an outline or a ring) to preserve the interior space for your content. If you want the border drawn inward (standard CSS border-box behavior), you can override the custom CSS variable:
-> `<div className="squircle-2xl border-4 border-red-500 [--tw-squircle-outset:0]">...</div>`
+> `<div className="squircle rounded-2xl border-4 border-red-500">...</div>`

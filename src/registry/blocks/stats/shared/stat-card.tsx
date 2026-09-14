@@ -58,9 +58,9 @@ export function StatCard({
     <Frame
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
-      className={cn('size-full bg-muted squircle-6xl/100 border-0 overflow-hidden p-4', className)}
+      className={cn('size-full bg-muted squircle/100 rounded-6xl border-0 overflow-hidden p-4', className)}
     >
-      <Card className="relative flex flex-col size-full items-center justify-center gap-4 md:gap-8 p-4 squircle-2xl/100 md:squircle-4xl/100 bg-background border-0 overflow-hidden">
+      <Card className="relative flex flex-col size-full items-center justify-center gap-4 md:gap-8 p-4 squircle/100 rounded-2xl md:rounded-4xl bg-background border-0 overflow-hidden">
         {decoration && (
           <motion.div
             animate={{

@@ -4,19 +4,26 @@ import { Skeleton } from '@/registry/primitives/skeleton'
 import { GitHubLinkClient } from '@/registry/components/spaceui/github-link-client'
 import { siteConfig } from '@/config/space-config'
 import { logger } from '@/registry/utils/logger'
+import NumberFlow from '@number-flow/react'
 import * as React from 'react'
 
 let cachedStarsCount: number | null = null
 let rateLimitedUntil = 0
 const DELAY_MS = 2 * 60 * 1000 // 2 minutes
 
-function formatStars(count: number): string {
-  return count >= 1000 ? `${(count / 1000).toFixed(1)}k` : count.toLocaleString()
-}
-
 export function StarsCount() {
   const [stars, setStars] = React.useState<number | null>(cachedStarsCount)
   const [loading, setLoading] = React.useState(cachedStarsCount === null)
+  const [displayValue, setDisplayValue] = React.useState<number>(0)
+
+  React.useEffect(() => {
+    if (stars !== null) {
+      const timer = setTimeout(() => {
+        setDisplayValue(stars)
+      }, 50)
+      return () => clearTimeout(timer)
+    }
+  }, [stars])
 
   React.useEffect(() => {
     if (cachedStarsCount !== null) {
@@ -120,7 +127,13 @@ export function StarsCount() {
     return null
   }
 
-  return <span className="w-8 text-muted-foreground text-xs tabular-nums">{formatStars(stars)}</span>
+  return (
+    <NumberFlow
+      value={displayValue}
+      format={{ notation: 'compact', maximumFractionDigits: 1 }}
+      className="text-muted-foreground text-xs tabular-nums font-medium inline-flex items-center"
+    />
+  )
 }
 
 export function GitHubLink() {

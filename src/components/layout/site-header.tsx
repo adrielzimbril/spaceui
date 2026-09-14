@@ -1,30 +1,29 @@
 'use client'
 
-import * as React from 'react'
-import { IconLayoutDashboard, IconLogin } from '@tabler/icons-react'
-
+import { turn as turnSound } from '@usespaceui/sounds'
 import { Squishmoji } from '@usespaceui/squishmoji/react'
 import { CommandMenu } from '@/components/layout/command-menu'
 import { ModeSwitcher } from '@/registry/components/spaceui/mode-switcher'
 import { MegaMenu } from '@/components/layout/mega-menu'
 import { MobileNavDrawer } from '@/components/layout/mobile-nav-drawer'
 import { source, uiKitSource, resourcesSource } from '@/lib/source'
-import { useOffline } from '@/registry/hooks/browser/use-network'
 import { Link } from '@/registry/primitives/link'
-import { Badge } from '@/registry/primitives/badge'
 import { GitHubLink } from '@/registry/components/spaceui/github-link'
 import { searchNavShortcuts } from '@/config/menu-config'
 
 export const SITE_NAV_ITEMS = searchNavShortcuts
 
 export function SiteHeader() {
-  const isOffline = useOffline()
-
   return (
-    <header className="sticky top-0 z-50 border-b border-border bg-background backdrop-blur-md">
-      <div className="mx-auto flex sm:grid h-16 grid-cols-[auto_1fr_auto] justify-between items-center gap-3 px-3 md:px-4 lg:px-8 xl:grid-cols-[1fr_auto_1fr]">
+    <header className="sticky top-3 z-50 mx-auto w-full max-w-6xl px-3 sm:px-4 md:px-6 pointer-events-none -mb-[68px]">
+      <div className="relative mx-auto flex sm:grid h-14 grid-cols-[auto_1fr_auto] justify-between items-center gap-3 px-3 md:px-4 lg:px-6 xl:grid-cols-[1fr_auto_1fr] rounded-2xl border border-border bg-background backdrop-blur-lg transition-colors duration-300 pointer-events-auto">
         <div className="flex min-w-0 items-center gap-2">
-          <Link href="/" aria-label="Space UI home" className="inline-flex items-center text-foreground gap-2.5 group">
+          <Link
+            href="/"
+            aria-label="Space UI home"
+            onClick={() => turnSound('back')}
+            className="inline-flex items-center text-foreground gap-2.5 group motion-safe:active:scale-[0.97] transition-transform"
+          >
             <div className="relative flex items-center justify-center size-8 shrink-0 overflow-visible">
               <Squishmoji
                 seed="o"
@@ -36,15 +35,10 @@ export function SiteHeader() {
                 animOnHover
                 // animWobble
                 size={48}
-                className="scale-150 origin-center transition-transform"
+                className="relative scale-150 origin-center transition-transform"
               />
             </div>
-            <span className="text-sm font-semibold inline">Space UI</span>
-            {isOffline && (
-              <Badge size="sm" variant="destructive" className="ml-2">
-                Offline
-              </Badge>
-            )}
+            <span className="text-xs md:text-md font-bold inline ml-1">Space UI</span>
           </Link>
         </div>
 
@@ -64,8 +58,12 @@ export function SiteHeader() {
           </div>
 
           <div className="hidden sm:flex items-center gap-1">
-            <GitHubLink />
-            <ModeSwitcher />
+            <div className="motion-safe:active:scale-[0.96] transition-transform">
+              <GitHubLink />
+            </div>
+            <div className="motion-safe:active:scale-[0.96] transition-transform">
+              <ModeSwitcher size="lg" />
+            </div>
             {/* <Link
               href="/dashboard"
               className="inline-flex size-8 items-center justify-center rounded-md"

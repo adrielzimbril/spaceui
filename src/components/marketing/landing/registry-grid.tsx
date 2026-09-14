@@ -3,7 +3,7 @@
 import * as React from 'react'
 import Link from 'next/link'
 import { ArrowUpRight, RotateCcw } from 'lucide-react'
-import { AnimatePresence, motion } from 'motion/react'
+import { motion } from 'motion/react'
 import { MorphIcon } from '@/registry/components/spaceui/morph-icon'
 import { OrbBloop } from '@/registry/components/orb/bloop'
 import { BloopState } from '@/registry/components/orb/bloop/types'
@@ -13,16 +13,7 @@ import { LoadingOrb } from '@/registry/components/orb/loading'
 import { BouncyAccordion } from '@/registry/components/spaceui/bouncy-accordion'
 import { WordsPreloader } from '@/registry/components/spaceui/words-preloader'
 import { HandleReel } from '@/registry/components/spaceui/handle-reel'
-import {
-  IconCheck,
-  IconCircle,
-  IconChevronRight,
-  IconGitCommit,
-  IconBug,
-  IconBrandNpm,
-  IconLock,
-  IconSparkles,
-} from '@tabler/icons-react'
+import { IconCheck, IconCircle, IconChevronRight } from '@tabler/icons-react'
 import { Badge } from '@/registry/primitives/badge'
 import {
   Timeline,
@@ -36,7 +27,7 @@ import {
 import { Avatar as PrimitiveAvatar, AvatarFallback, AvatarImage } from '@/registry/primitives/avatar'
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from '@/registry/primitives/collapsible'
 import { Spinner } from '@/registry/primitives/spinner'
-import { Frame, FrameHeader, FrameTitle, FramePanel } from '@/registry/primitives/frame'
+import { Frame, FrameHeader, FrameFooter, FrameTitle, FramePanel } from '@/registry/primitives/frame'
 import { Card, CardPanel } from '@/registry/primitives/card'
 import { Button } from '@/registry/primitives/button'
 import { registryStats } from '@/__registry__/stats'
@@ -50,7 +41,7 @@ const SMOOTH_STATES = [
   { id: 'watercolor-wash', label: 'Watercolor Wash', speed: 4.8, watercolor: 0.8, timeScale: 1.5, grain: 0 },
   { id: 'drift-grain', label: 'Soft Grain & Drift', speed: 2.8, watercolor: 0.25, timeScale: 1.0, grain: 0.45 },
   { id: 'glass', label: 'Glass Clear · No Grain', speed: 5.2, watercolor: 0.1, timeScale: 1.6, grain: 0 },
-  { id: 'surge-pigment', label: 'Film Grain & Surge', speed: 6.5, watercolor: 0.85, timeScale: 2.0, grain: 0.75 },
+  { id: 'surge-pigment', label: 'Surge & Pigment', speed: 6.5, watercolor: 0.85, timeScale: 2.0, grain: 0.75 },
   { id: 'watercolor-pure', label: 'Watercolor Silk · No Grain', speed: 3.6, watercolor: 0.5, timeScale: 1.2, grain: 0 },
 ] as const
 
@@ -370,11 +361,29 @@ function AnimatedTimelinePreview() {
 }
 
 export function RegistryGrid() {
+  const sectionRef = React.useRef<HTMLElement>(null)
+  const [isVisible, setIsVisible] = React.useState(false)
+
+  // IntersectionObserver to avoid running background timers when section is off-screen
+  React.useEffect(() => {
+    const el = sectionRef.current
+    if (!el) return
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsVisible(entry.isIntersecting)
+      },
+      { threshold: 0.05, rootMargin: '120px' },
+    )
+    observer.observe(el)
+    return () => observer.disconnect()
+  }, [])
+
   // Interactive states
   const [bloopState, setBloopState] = React.useState<BloopState>(BloopState.idle)
 
-  // Auto-cycle bloop mode every BENTO_CYCLE_INTERVAL without buttons
+  // Auto-cycle bloop mode every BENTO_CYCLE_INTERVAL only when visible
   React.useEffect(() => {
+    if (!isVisible) return
     const modes: BloopState[] = [BloopState.idle, BloopState.listen, BloopState.think, BloopState.speak]
     const timer = setInterval(() => {
       setBloopState((prev) => {
@@ -383,12 +392,13 @@ export function RegistryGrid() {
       })
     }, BENTO_CYCLE_INTERVAL)
     return () => clearInterval(timer)
-  }, [])
+  }, [isVisible])
 
-  // Auto-cycle OrbSmooth states every BENTO_CYCLE_INTERVAL; after all states complete, change background avatar seed (only lumina)
+  // Auto-cycle OrbSmooth states every BENTO_CYCLE_INTERVAL only when visible
   const [smoothStateIndex, setSmoothStateIndex] = React.useState(0)
   const [smoothSeedIndex, setSmoothSeedIndex] = React.useState(0)
   React.useEffect(() => {
+    if (!isVisible) return
     const timer = setInterval(() => {
       setSmoothStateIndex((prev) => {
         const next = (prev + 1) % SMOOTH_STATES.length
@@ -399,19 +409,25 @@ export function RegistryGrid() {
       })
     }, BENTO_CYCLE_INTERVAL)
     return () => clearInterval(timer)
-  }, [])
+  }, [isVisible])
 
-  // Words Preloader continuous loop: runs words animation, pauses briefly on blur morph preview, then repeats
+  // Words Preloader continuous loop only when visible
   const [preloaderKey, setPreloaderKey] = React.useState(0)
   React.useEffect(() => {
+    if (!isVisible) return
     const timer = setInterval(() => {
       setPreloaderKey((prev) => prev + 1)
     }, BENTO_CYCLE_INTERVAL)
     return () => clearInterval(timer)
-  }, [])
+  }, [isVisible])
 
   return (
-    <section id="registry" data-page-section className="mx-auto max-w-[1280px] scroll-mt-16 px-5 sm:px-6 py-20">
+    <section
+      ref={sectionRef}
+      id="registry"
+      data-page-section
+      className="mx-auto max-w-7xl scroll-mt-16 px-5 sm:px-6 py-20"
+    >
       {/* ── Centered Section Header with Hidden Link to /components ── */}
       <div className="flex flex-col items-center justify-center text-center">
         <div className="max-w-2xl">
@@ -434,16 +450,6 @@ export function RegistryGrid() {
       <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {/* ── Card 1: WebGL OrbBloop ── */}
         <Frame className="flex flex-col h-full">
-          <FrameHeader className="flex flex-row items-center justify-between p-2">
-            <FrameTitle>Orb Bloop</FrameTitle>
-            <Link
-              href="/components/orb/bloop"
-              data-space-hover
-              className="p-1 text-muted-foreground hover:text-foreground transition-colors"
-            >
-              <ArrowUpRight className="size-4" />
-            </Link>
-          </FrameHeader>
           <Card className="flex-1 flex flex-col h-full rounded-xl before:rounded-xl overflow-hidden">
             <CardPanel className="flex-1 flex min-h-72 flex-col items-center justify-center p-4 rounded-lg">
               <OrbBloop
@@ -458,25 +464,25 @@ export function RegistryGrid() {
               />
             </CardPanel>
           </Card>
-        </Frame>
-
-        <Frame className="flex flex-col h-full">
-          <FrameHeader className="flex flex-row items-center justify-between p-2">
-            <FrameTitle>Orb Smooth</FrameTitle>
+          <FrameFooter className="flex flex-row items-center justify-between p-2">
+            <FrameTitle>Orb Bloop</FrameTitle>
             <Link
-              href="/components/orb/smooth"
+              href="/components/orb/bloop"
               data-space-hover
               className="p-1 text-muted-foreground hover:text-foreground transition-colors"
             >
               <ArrowUpRight className="size-4" />
             </Link>
-          </FrameHeader>
+          </FrameFooter>
+        </Frame>
+
+        <Frame className="flex flex-col h-full">
           <Card className="flex-1 flex flex-col h-full rounded-xl before:rounded-xl overflow-hidden">
             <CardPanel className="flex-1 flex min-h-72 flex-col items-center justify-center p-4 rounded-lg">
               <OrbSmooth
                 key={SMOOTH_LUMINA_SEEDS[smoothSeedIndex]}
                 size={190}
-                textureUrl={`https://avatars.spaceui.one/v1?name=${SMOOTH_LUMINA_SEEDS[smoothSeedIndex]}&variant=lumina&size=2000&format=png`}
+                textureUrl={`https://avatars.spaceui.one/v1?name=${SMOOTH_LUMINA_SEEDS[smoothSeedIndex]}&variant=lumina&format=svg`}
                 audioMode="ambient"
                 fbmSpeed={SMOOTH_STATES[smoothStateIndex].speed}
                 watercolorStrength={SMOOTH_STATES[smoothStateIndex].watercolor}
@@ -486,19 +492,19 @@ export function RegistryGrid() {
               />
             </CardPanel>
           </Card>
-        </Frame>
-
-        <Frame className="flex flex-col h-full">
-          <FrameHeader className="flex flex-row items-center justify-between p-2">
-            <FrameTitle>Bouncy Accordion</FrameTitle>
+          <FrameFooter className="flex flex-row items-center justify-between p-2">
+            <FrameTitle>Orb Smooth</FrameTitle>
             <Link
-              href="/components/bouncy-accordion"
+              href="/components/orb/smooth"
               data-space-hover
               className="p-1 text-muted-foreground hover:text-foreground transition-colors"
             >
               <ArrowUpRight className="size-4" />
             </Link>
-          </FrameHeader>
+          </FrameFooter>
+        </Frame>
+
+        <Frame className="flex flex-col h-full">
           <Card className="flex-1 flex flex-col h-full rounded-xl before:rounded-xl overflow-hidden">
             <CardPanel className="flex-1 flex min-h-72 items-center justify-center rounded-lg">
               <div className="w-full">
@@ -521,10 +527,27 @@ export function RegistryGrid() {
               </div>
             </CardPanel>
           </Card>
+          <FrameFooter className="flex flex-row items-center justify-between p-2">
+            <FrameTitle>Bouncy Accordion</FrameTitle>
+            <Link
+              href="/components/bouncy-accordion"
+              data-space-hover
+              className="p-1 text-muted-foreground hover:text-foreground transition-colors"
+            >
+              <ArrowUpRight className="size-4" />
+            </Link>
+          </FrameFooter>
         </Frame>
 
         <Frame className="flex flex-col h-full">
-          <FrameHeader className="flex flex-row items-center justify-between p-2">
+          <Card className="flex-1 flex flex-col h-full rounded-xl before:rounded-xl overflow-hidden">
+            <CardPanel className="flex-1 flex min-h-72 flex-col justify-center p-3 sm:p-4 rounded-lg">
+              <div className="w-full max-w-sm mx-auto">
+                <BentoHandleReel />
+              </div>
+            </CardPanel>
+          </Card>
+          <FrameFooter className="flex flex-row items-center justify-between p-2">
             <FrameTitle>Handle Reel</FrameTitle>
             <Link
               href="/components/handle-reel"
@@ -533,27 +556,10 @@ export function RegistryGrid() {
             >
               <ArrowUpRight className="size-4" />
             </Link>
-          </FrameHeader>
-          <Card className="flex-1 flex flex-col h-full rounded-xl before:rounded-xl overflow-hidden">
-            <CardPanel className="flex-1 flex min-h-72 flex-col justify-center p-3 sm:p-4 rounded-lg">
-              <div className="w-full max-w-sm mx-auto">
-                <BentoHandleReel />
-              </div>
-            </CardPanel>
-          </Card>
+          </FrameFooter>
         </Frame>
 
         <Frame className="flex flex-col h-full">
-          <FrameHeader className="flex flex-row items-center justify-between p-2">
-            <FrameTitle>Loading Orb</FrameTitle>
-            <Link
-              href="/components/loading"
-              data-space-hover
-              className="p-1 text-muted-foreground hover:text-foreground transition-colors"
-            >
-              <ArrowUpRight className="size-4" />
-            </Link>
-          </FrameHeader>
           <Card className="flex-1 flex flex-col h-full rounded-xl before:rounded-xl overflow-hidden">
             <CardPanel className="flex-1 flex min-h-72 flex-wrap items-center justify-center gap-5 sm:gap-6 p-4 rounded-lg">
               {TAILWIND_COLORS.map(({ label, className }) => (
@@ -566,34 +572,19 @@ export function RegistryGrid() {
               ))}
             </CardPanel>
           </Card>
+          <FrameFooter className="flex flex-row items-center justify-between p-2">
+            <FrameTitle>Loading Orb</FrameTitle>
+            <Link
+              href="/components/loading"
+              data-space-hover
+              className="p-1 text-muted-foreground hover:text-foreground transition-colors"
+            >
+              <ArrowUpRight className="size-4" />
+            </Link>
+          </FrameFooter>
         </Frame>
 
         <Frame className="flex flex-col h-full">
-          <FrameHeader className="flex flex-row items-center justify-between p-2">
-            <FrameTitle>Words Preloader</FrameTitle>
-            <div className="flex items-center gap-1.5">
-              <Button
-                variant="secondary"
-                size="icon-xs"
-                onClick={() => {
-                  tickSound()
-                  setPreloaderKey((prev) => prev + 1)
-                }}
-                data-space-hover
-                title="Replay animation"
-                className="rounded-full cursor-pointer"
-              >
-                <RotateCcw className="size-3.5" />
-              </Button>
-              <Link
-                href="/components/spaceui/words-preloader"
-                data-space-hover
-                className="p-1 text-muted-foreground hover:text-foreground transition-colors"
-              >
-                <ArrowUpRight className="size-4" />
-              </Link>
-            </div>
-          </FrameHeader>
           <Card className="flex-1 flex flex-col h-full rounded-xl before:rounded-xl overflow-hidden">
             <CardPanel className="flex-1 flex min-h-72 p-0 overflow-hidden relative rounded-lg">
               <div className="relative w-full h-full min-h-72 flex flex-col items-center justify-center overflow-hidden rounded-xl bg-muted/10">
@@ -627,10 +618,40 @@ export function RegistryGrid() {
               </div>
             </CardPanel>
           </Card>
+          <FrameFooter className="flex flex-row items-center justify-between p-2">
+            <FrameTitle>Words Preloader</FrameTitle>
+            <div className="flex items-center gap-1.5">
+              <Button
+                variant="secondary"
+                size="icon-xs"
+                onClick={() => {
+                  tickSound()
+                  setPreloaderKey((prev) => prev + 1)
+                }}
+                data-space-hover
+                title="Replay animation"
+                className="rounded-full cursor-pointer"
+              >
+                <RotateCcw className="size-3.5" />
+              </Button>
+              <Link
+                href="/components/spaceui/words-preloader"
+                data-space-hover
+                className="p-1 text-muted-foreground hover:text-foreground transition-colors"
+              >
+                <ArrowUpRight className="size-4" />
+              </Link>
+            </div>
+          </FrameFooter>
         </Frame>
 
         <Frame className="flex flex-col h-full">
-          <FrameHeader className="flex flex-row items-center justify-between p-2">
+          <Card className="flex-1 flex flex-col h-full rounded-xl before:rounded-xl overflow-hidden">
+            <CardPanel className="flex-1 flex min-h-72 max-h-72 overflow-y-auto p-2 sm:p-3 rounded-lg [&::-webkit-scrollbar]:hidden">
+              <AnimatedTimelinePreview />
+            </CardPanel>
+          </Card>
+          <FrameFooter className="flex flex-row items-center justify-between p-2">
             <FrameTitle>Timeline</FrameTitle>
             <Link
               href="/components/timeline"
@@ -639,16 +660,16 @@ export function RegistryGrid() {
             >
               <ArrowUpRight className="size-4" />
             </Link>
-          </FrameHeader>
-          <Card className="flex-1 flex flex-col h-full rounded-xl before:rounded-xl overflow-hidden">
-            <CardPanel className="flex-1 flex min-h-72 max-h-72 overflow-y-auto p-2 sm:p-3 rounded-lg [&::-webkit-scrollbar]:hidden">
-              <AnimatedTimelinePreview />
-            </CardPanel>
-          </Card>
+          </FrameFooter>
         </Frame>
 
-        <Frame className="flex flex-col h-full sm:col-span-2 lg:col-span-2">
-          <FrameHeader className="flex flex-row items-center justify-between p-2">
+        <Frame className="flex flex-col h-full sm:col-span-2 lg:col-span-2 min-w-0">
+          <Card className="flex-1 flex flex-col h-full rounded-xl before:rounded-xl overflow-hidden min-w-0">
+            <CardPanel className="flex-1 flex min-h-60 flex-col justify-center p-4 sm:p-6 rounded-lg min-w-0 w-full overflow-hidden">
+              <GitHubActivity user="adrielzimbril" shape="rounded" />
+            </CardPanel>
+          </Card>
+          <FrameFooter className="flex flex-row items-center justify-between p-2">
             <FrameTitle>GitHub Activity</FrameTitle>
             <Link
               href="/components/github-activity"
@@ -657,12 +678,7 @@ export function RegistryGrid() {
             >
               <ArrowUpRight className="size-4" />
             </Link>
-          </FrameHeader>
-          <Card className="flex-1 flex flex-col h-full rounded-xl before:rounded-xl overflow-hidden">
-            <CardPanel className="flex-1 flex min-h-60 flex-col justify-center p-4 sm:p-6 rounded-lg">
-              <GitHubActivity user="usespaceui" shape="rounded" />
-            </CardPanel>
-          </Card>
+          </FrameFooter>
         </Frame>
       </div>
 

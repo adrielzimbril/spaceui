@@ -24,7 +24,7 @@ export function SectionHeader({ title, description, link, badge, layoutStart, is
       {badge && (
         <Badge
           size="md"
-          className="squircle-2xl/80 md:squircle-3xl/80 px-3 py-1.5 border-none bg-muted text-foreground font-semibold text-base"
+          className="squircle/80 rounded-2xl md:rounded-3xl px-3 py-1.5 border-none bg-muted text-foreground font-semibold text-base"
         >
           {badge}
         </Badge>

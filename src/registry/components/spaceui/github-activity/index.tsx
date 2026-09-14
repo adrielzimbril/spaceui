@@ -4,6 +4,7 @@ import { motion } from 'motion/react'
 import * as React from 'react'
 import { Tooltip, TooltipTrigger, TooltipContent } from '@/registry/primitives/tooltip'
 import { Badge } from '@/registry/components/spaceui/badge-squircle'
+import { ScrollArea } from '@/registry/primitives/scroll-area'
 import { cn } from '@/registry/lib/utils'
 
 export type GitHubActivityShape = 'square' | 'rounded' | 'circle'
@@ -459,6 +460,17 @@ export function GitHubActivity({
     return months
   }, [finalContributions.weeks])
 
+  const scrollAreaRef = React.useRef<HTMLDivElement>(null)
+
+  React.useEffect(() => {
+    if (scrollAreaRef.current) {
+      const viewport = scrollAreaRef.current.querySelector<HTMLElement>('[data-slot="scroll-area-viewport"]')
+      if (viewport) {
+        viewport.scrollLeft = viewport.scrollWidth
+      }
+    }
+  }, [finalContributions])
+
   const isRepo = resolvedTarget?.type === 'repo'
   const displayName = resolvedTarget ? (isRepo ? resolvedTarget.full : `@${resolvedTarget.username}`) : title
 
@@ -517,89 +529,97 @@ export function GitHubActivity({
       )}
 
       {/* Heatmap Matrix */}
-      <div className="relative z-20 mt-2 flex-1 w-full">
-        {/* Mobile view with horizontal overflow scroll */}
-        <div className="overflow-x-auto md:hidden">
-          <div className="w-fit">
-            <div className="mb-1 flex text-[10px] text-muted-foreground" style={{ paddingLeft: '28px' }}>
-              <div className="flex" style={{ gap: '2px' }}>
-                {finalContributions.weeks.map((week, weekIndex) => {
-                  const showMonth = monthLabels.some((m) => m.index === weekIndex)
-                  const monthLabel = showMonth ? monthLabels.find((m) => m.index === weekIndex)?.label : ''
-                  return (
-                    <div key={weekIndex} className="w-[10px] text-center">
-                      {monthLabel && <span className="whitespace-nowrap">{monthLabel}</span>}
-                    </div>
-                  )
-                })}
+      <div className="relative z-20 mt-2 flex-1 w-full min-w-0">
+        {/* Mobile view with horizontal ScrollArea */}
+        <div className="md:hidden w-full min-w-0">
+          <ScrollArea
+            ref={scrollAreaRef}
+            scrollFade
+            scrollbarGutter
+            clampContentMinWidth={false}
+            className="w-full min-w-0"
+          >
+            <div className="w-fit pb-1">
+              <div className="mb-1 flex text-[10px] text-muted-foreground" style={{ paddingLeft: '28px' }}>
+                <div className="flex" style={{ gap: '2px' }}>
+                  {finalContributions.weeks.map((week, weekIndex) => {
+                    const showMonth = monthLabels.some((m) => m.index === weekIndex)
+                    const monthLabel = showMonth ? monthLabels.find((m) => m.index === weekIndex)?.label : ''
+                    return (
+                      <div key={weekIndex} className="w-[10px] text-center">
+                        {monthLabel && <span className="whitespace-nowrap">{monthLabel}</span>}
+                      </div>
+                    )
+                  })}
+                </div>
               </div>
-            </div>
 
-            <div className="flex gap-[2px]">
-              <div className="flex w-6 shrink-0 flex-col text-[9px] text-muted-foreground" style={{ gap: '2px' }}>
-                <div className="h-[10px]" />
-                <div className="flex h-[10px] items-center">Mon</div>
-                <div className="h-[10px]" />
-                <div className="flex h-[10px] items-center">Wed</div>
-                <div className="h-[10px]" />
-                <div className="flex h-[10px] items-center">Fri</div>
-                <div className="h-[10px]" />
-              </div>
-              <div className="flex" style={{ gap: '2px' }}>
-                {finalContributions.weeks.map((week, weekIndex) => (
-                  <motion.div
-                    key={weekIndex}
-                    initial={{ opacity: 0, scale: 0.5 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    transition={{
-                      duration: 0.25,
-                      delay: 0.1 + weekIndex * 0.004,
-                      ease: 'easeOut',
-                    }}
-                    className="flex flex-col"
-                    style={{ gap: '2px' }}
-                  >
-                    {week.contributionDays.map((day, dayIndex) => (
-                      <Tooltip key={dayIndex}>
-                        <TooltipTrigger>
-                          <div className="group/cell relative aspect-square">
-                            <div
-                              className={cn(
-                                'h-[10px] w-[10px] aspect-square transition-colors duration-150',
-                                loading
-                                  ? 'bg-muted/60 animate-pulse'
-                                  : cn(
-                                      CONTRIBUTION_LEVEL_COLORS[day.contributionLevel],
-                                      levelColorsHover[day.contributionLevel],
-                                    ),
-                                shapeClasses.cell,
-                              )}
-                            />
-                          </div>
-                        </TooltipTrigger>
-                        <TooltipContent className="bg-popover text-popover-foreground text-xs p-2 rounded-md shadow-md border">
-                          <div className="font-medium">
-                            {day.contributionCount}{' '}
-                            {isRepo
-                              ? day.contributionCount !== 1
-                                ? 'commits'
-                                : 'commit'
-                              : day.contributionCount !== 1
-                                ? 'contributions'
-                                : 'contribution'}
-                          </div>
-                          <div className="text-muted-foreground">{formatDate(day.date)}</div>
-                        </TooltipContent>
-                      </Tooltip>
-                    ))}
-                  </motion.div>
-                ))}
+              <div className="flex gap-[2px]">
+                <div className="flex w-6 shrink-0 flex-col text-[9px] text-muted-foreground" style={{ gap: '2px' }}>
+                  <div className="h-[10px]" />
+                  <div className="flex h-[10px] items-center">Mon</div>
+                  <div className="h-[10px]" />
+                  <div className="flex h-[10px] items-center">Wed</div>
+                  <div className="h-[10px]" />
+                  <div className="flex h-[10px] items-center">Fri</div>
+                  <div className="h-[10px]" />
+                </div>
+                <div className="flex" style={{ gap: '2px' }}>
+                  {finalContributions.weeks.map((week, weekIndex) => (
+                    <motion.div
+                      key={weekIndex}
+                      initial={{ opacity: 0, scale: 0.5 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      transition={{
+                        duration: 0.25,
+                        delay: 0.1 + weekIndex * 0.004,
+                        ease: 'easeOut',
+                      }}
+                      className="flex flex-col"
+                      style={{ gap: '2px' }}
+                    >
+                      {week.contributionDays.map((day, dayIndex) => (
+                        <Tooltip key={dayIndex}>
+                          <TooltipTrigger>
+                            <div className="group/cell relative aspect-square">
+                              <div
+                                className={cn(
+                                  'h-[10px] w-[10px] aspect-square transition-colors duration-150',
+                                  loading
+                                    ? 'bg-muted/60 animate-pulse'
+                                    : cn(
+                                        CONTRIBUTION_LEVEL_COLORS[day.contributionLevel],
+                                        levelColorsHover[day.contributionLevel],
+                                      ),
+                                  shapeClasses.cell,
+                                )}
+                              />
+                            </div>
+                          </TooltipTrigger>
+                          <TooltipContent className="bg-popover text-popover-foreground text-xs p-2 rounded-md shadow-md border">
+                            <div className="font-medium">
+                              {day.contributionCount}{' '}
+                              {isRepo
+                                ? day.contributionCount !== 1
+                                  ? 'commits'
+                                  : 'commit'
+                                : day.contributionCount !== 1
+                                  ? 'contributions'
+                                  : 'contribution'}
+                            </div>
+                            <div className="text-muted-foreground">{formatDate(day.date)}</div>
+                          </TooltipContent>
+                        </Tooltip>
+                      ))}
+                    </motion.div>
+                  ))}
+                </div>
               </div>
             </div>
-          </div>
+          </ScrollArea>
         </div>
 
-        {/* Desktop view */}
+        {/* Desktop view (md and up): No scrollbar, full proportional responsive width */}
         <div className="hidden md:block w-full">
           <div className="mb-1 flex text-[10px] text-muted-foreground" style={{ paddingLeft: '28px' }}>
             <div className="flex flex-1 justify-between">

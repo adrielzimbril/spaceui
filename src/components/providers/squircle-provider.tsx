@@ -3,7 +3,9 @@
 import * as React from 'react'
 import { initSquircle } from '@usespaceui/squircle'
 
-initSquircle()
+if (typeof window !== 'undefined') {
+  initSquircle()
+}
 
 export function SquircleProvider({ children }: { children: React.ReactNode }) {
   return <>{children}</>

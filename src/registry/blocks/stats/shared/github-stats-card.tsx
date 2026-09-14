@@ -123,9 +123,9 @@ export function GitHubStatsCard({ type, label, value, period, className }: GitHu
     <Frame
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
-      className={cn('flex-1 size-full bg-muted squircle-3xl/60 border-0 overflow-hidden p-2', className)}
+      className={cn('flex-1 size-full bg-muted squircle/60 rounded-3xl border-0 overflow-hidden p-2', className)}
     >
-      <Card className="relative squircle-4xl/100 bg-background border-0 overflow-hidden size-full p-0 flex flex-row items-center before:hidden shadow-none">
+      <Card className="relative squircle/100 rounded-4xl bg-background border-0 overflow-hidden size-full p-0 flex flex-row items-center before:hidden shadow-none">
         <div className="pointer-events-none absolute inset-0 overflow-hidden select-none">
           {type === 'stars' &&
             starDecorations.map((star, i) => (
@@ -200,7 +200,10 @@ export function GitHubStatsCard({ type, label, value, period, className }: GitHu
 
         <div className="relative size-full flex flex-row z-20 overflow-hidden items-center gap-2 md:gap-4 px-2 py-2 m-auto">
           <Badge
-            className={cn('capitalize whitespace-pre-line size-auto squircle-2xl/80 md:squircle-3xl/80', theme.badgeBg)}
+            className={cn(
+              'capitalize whitespace-pre-line size-auto squircle/80 rounded-2xl md:rounded-3xl',
+              theme.badgeBg,
+            )}
             variant="default"
             size="sm"
             square

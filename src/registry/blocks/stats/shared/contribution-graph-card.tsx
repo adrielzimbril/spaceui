@@ -86,16 +86,16 @@ export function ContributionGraphCard({ contributions, className, delay = 0 }: C
   return (
     <Frame
       className={cn(
-        'h-full md:col-span-10 size-full max-w-[95%] bg-muted squircle-4xl/80 md:squircle-6xl/80 border-0 overflow-hidden mx-auto p-4 gap-2',
+        'h-full md:col-span-10 size-full max-w-[95%] bg-muted squircle/80 rounded-4xl md:rounded-6xl border-0 overflow-hidden mx-auto p-4 gap-2',
         className,
       )}
     >
-      <Card className="relative flex flex-col justify-between size-full px-4 py-6 md:px-6 md:py-8 squircle-2xl/60 md:squircle-4xl/60 bg-background border-0 overflow-hidden before:hidden shadow-none">
+      <Card className="relative flex flex-col justify-between size-full px-4 py-6 md:px-6 md:py-8 squircle/60 rounded-2xl md:rounded-4xl bg-background border-0 overflow-hidden before:hidden shadow-none">
         {/* Header */}
         <div className="relative z-20 mb-4 flex items-center justify-between">
           <div className="flex items-center gap-3">
             <Badge
-              className="capitalize text-xs font-medium bg-[#8e8eff] text-white size-max squircle-2xl/80 md:squircle-3xl/80 text-primary-foreground!"
+              className="capitalize text-xs font-medium bg-[#8e8eff] text-white size-max squircle/80 rounded-2xl md:rounded-3xl text-primary-foreground!"
               size="sm"
               square
               variant="default"
