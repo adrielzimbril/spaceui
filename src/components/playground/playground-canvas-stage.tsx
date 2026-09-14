@@ -34,8 +34,8 @@ export interface PlaygroundCanvasStageProps {
 
 const VIEWPORT_WIDTH_CLASSES: Record<ViewportMode, string> = {
   desktop: 'w-full max-w-full',
-  tablet: 'w-[768px] max-w-full',
-  mobile: 'w-[375px] max-w-full',
+  tablet: 'w-[768px] max-w-full mx-auto',
+  mobile: 'w-[375px] max-w-full mx-auto',
 }
 
 function unwrapValues(obj: Record<string, any>): Record<string, any> {
