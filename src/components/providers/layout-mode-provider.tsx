@@ -46,6 +46,8 @@ type LayoutModeContextValue = {
   isImmersive: boolean
   setIsImmersive: (immersive: boolean) => void
   toggleImmersive: () => void
+  activeTweakName: string | null
+  setActiveTweakName: React.Dispatch<React.SetStateAction<string | null>>
 }
 
 const LayoutModeContext = createContext<LayoutModeContextValue>({
@@ -65,6 +67,8 @@ const LayoutModeContext = createContext<LayoutModeContextValue>({
   isImmersive: false,
   setIsImmersive: () => {},
   toggleImmersive: () => {},
+  activeTweakName: null,
+  setActiveTweakName: () => {},
 })
 
 export const STORAGE_KEY = 'space-ui-layout-mode'
@@ -84,6 +88,7 @@ export function LayoutModeProvider({
   const [, , removeMobileSplitInfo] = useLocalStorage<boolean>(SPLIT_MOBILE_INFO_STORAGE_KEY, false)
   const [, setCookie] = useCookie<string>(STORAGE_KEY)
   const [activePreview, setActivePreview] = useState<ActivePreviewInfo | null>(null)
+  const [activeTweakName, setActiveTweakName] = useState<string | null>(null)
 
   // Page-level layout constraint registered by MDX frontmatter
   const [pageConstraint, setPageConstraint] = useState<PageLayoutConstraint | null>(null)
@@ -109,11 +114,16 @@ export function LayoutModeProvider({
     }, []),
   )
 
-  // Reset active preview, page-specific override, and immersive mode on route transition
+  const prevPathnameRef = useRef(pathname)
+  // Reset active preview, page-specific override, immersive mode, and active tweakpane on route transition
   useEffect(() => {
-    setActivePreview(null)
-    setPageOverride(null)
-    setIsImmersive(false)
+    if (prevPathnameRef.current !== pathname) {
+      prevPathnameRef.current = pathname
+      setActivePreview(null)
+      setPageOverride(null)
+      setIsImmersive(false)
+      setActiveTweakName(null)
+    }
   }, [pathname])
 
   const toggleImmersive = useCallback(() => {
@@ -220,26 +230,23 @@ export function LayoutModeProvider({
 
   const registerDefaultPreview = useCallback((info: ActivePreviewInfo) => {
     setActivePreview((current) => {
-      if (!current) {
+      if (!current || current.name !== info.name) {
         return info
       }
-      if (current.name === info.name) {
-        return {
-          ...current,
-          ...info,
-          code: info.code ?? current.code,
-          component: info.component ?? current.component,
-          componentProps: info.componentProps ?? current.componentProps,
-          binds: info.binds ?? current.binds,
-          themeOverride: info.themeOverride ?? current.themeOverride,
-          restart: info.restart ?? current.restart,
-          open: info.open ?? current.open,
-          contained: info.contained ?? current.contained,
-          componentGroup: info.componentGroup ?? current.componentGroup,
-          bigScreen: info.bigScreen ?? current.bigScreen,
-        }
+      return {
+        ...current,
+        ...info,
+        code: info.code ?? current.code,
+        component: info.component ?? current.component,
+        componentProps: info.componentProps ?? current.componentProps,
+        binds: info.binds ?? current.binds,
+        themeOverride: info.themeOverride ?? current.themeOverride,
+        restart: info.restart ?? current.restart,
+        open: info.open ?? current.open,
+        contained: info.contained ?? current.contained,
+        componentGroup: info.componentGroup ?? current.componentGroup,
+        bigScreen: info.bigScreen ?? current.bigScreen,
       }
-      return current
     })
   }, [])
 
@@ -261,6 +268,8 @@ export function LayoutModeProvider({
       isImmersive,
       setIsImmersive,
       toggleImmersive,
+      activeTweakName,
+      setActiveTweakName,
     }),
     [
       mode,
@@ -274,6 +283,8 @@ export function LayoutModeProvider({
       isModeLocked,
       isImmersive,
       toggleImmersive,
+      activeTweakName,
+      setActiveTweakName,
     ],
   )
 

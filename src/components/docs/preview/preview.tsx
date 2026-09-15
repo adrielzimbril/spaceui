@@ -115,7 +115,14 @@ export function ComponentPreview({
     )
   }
 
-  const { isSplit, setActivePreview, activePreview, registerDefaultPreview } = useLayoutMode()
+  const {
+    isSplit,
+    setActivePreview,
+    activePreview,
+    registerDefaultPreview,
+    activeTweakName,
+    setActiveTweakName,
+  } = useLayoutMode()
   const { has, toggle } = useBundle()
   const isBundled = has(name)
   const isSelected = activePreview?.name === name
@@ -123,15 +130,14 @@ export function ComponentPreview({
   const isMobile = useIsMobile()
   const [binds, setBinds] = useState<Binds | null>(null)
   const [componentProps, setComponentProps] = useState<Record<string, unknown> | null>(null)
-  const [tweakMode, setTweakMode] = useState(false)
   const hasAutoOpenedRef = useRef(false)
 
   useEffect(() => {
-    if (!hasAutoOpenedRef.current && !isMobile) {
+    if (isSelected && !hasAutoOpenedRef.current && !isMobile && binds && activeTweakName === null) {
       hasAutoOpenedRef.current = true
-      setTweakMode(true)
+      setActiveTweakName(name)
     }
-  }, [isMobile])
+  }, [isSelected, isMobile, binds, activeTweakName, name, setActiveTweakName])
 
   const [key, setKey] = useState(0)
   const { themeOverride, setThemeOverride } = usePreviewTheme(name)
@@ -200,6 +206,53 @@ export function ComponentPreview({
     }
   }
 
+  const handleActivate = React.useCallback(() => {
+    if (activePreview?.name !== name) {
+      setActivePreview({
+        name,
+        title: title ?? name,
+        component: Component,
+        componentProps,
+        useIframe,
+        previewName,
+        code,
+        binds,
+        themeOverride,
+        restart: effectiveRestart,
+        open: effectiveOpen,
+        contained: effectiveContained,
+        componentGroup,
+        bigScreen,
+      })
+      if (activeTweakName !== null) {
+        if (binds) {
+          setActiveTweakName(name)
+        } else {
+          setActiveTweakName(null)
+        }
+      }
+    }
+  }, [
+    activePreview?.name,
+    activeTweakName,
+    name,
+    title,
+    Component,
+    componentProps,
+    useIframe,
+    previewName,
+    code,
+    binds,
+    themeOverride,
+    effectiveRestart,
+    effectiveOpen,
+    effectiveContained,
+    componentGroup,
+    bigScreen,
+    setActivePreview,
+    setActiveTweakName,
+  ])
+
   useEffect(() => {
     if (!activePreview && (Component || useIframe)) {
       registerDefaultPreview({
@@ -241,7 +294,11 @@ export function ComponentPreview({
   const showToolbar = effectiveRestart || effectiveOpen || Boolean(binds)
 
   return (
-    <div className={cn('rounded-2xl bg-muted w-full p-2 mt-5.5 not-prose', className)} {...props}>
+    <div
+      onClickCapture={handleActivate}
+      className={cn('rounded-2xl bg-muted w-full p-2 mt-5.5 not-prose', className)}
+      {...props}
+    >
       <Tabs value={tab} onValueChange={(v) => setTab(v as 'preview' | 'code')} className="gap-0">
         <div className="flex flex-wrap items-center justify-between gap-3 px-3 pb-1 pt-1">
           <div className="flex items-center gap-2">
@@ -388,10 +445,18 @@ export function ComponentPreview({
                     <Button
                       size="icon-xs"
                       variant="ghost"
-                      onClick={() => setTweakMode((prev) => !prev)}
+                      onClick={(e) => {
+                        e.stopPropagation()
+                        handleActivate()
+                        if (activeTweakName === name) {
+                          setActiveTweakName(null)
+                        } else {
+                          setActiveTweakName(name)
+                        }
+                      }}
                       className={cn(
                         'rounded-sm text-muted-foreground hover:bg-background hover:text-foreground transition-colors cursor-pointer',
-                        tweakMode && 'bg-background text-muted-foreground',
+                        activeTweakName === name && 'bg-background text-muted-foreground',
                       )}
                       title="Configure props"
                       aria-label="Toggle tweakpane"
@@ -427,7 +492,12 @@ export function ComponentPreview({
       </Tabs>
 
       {binds && (
-        <Tweakpane binds={binds} onBindsChange={setBinds} show={tweakMode} onClose={() => setTweakMode(false)} />
+        <Tweakpane
+          binds={binds}
+          onBindsChange={setBinds}
+          show={activeTweakName === name}
+          onClose={() => setActiveTweakName(null)}
+        />
       )}
     </div>
   )

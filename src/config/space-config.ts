@@ -28,6 +28,8 @@ export {
   type SearchShortcutItem,
 }
 
+export { REGISTRY_COMMAND_STYLE, REGISTRY_NAMESPACE, REGISTRY_BASE_URL } from '@/lib/install-command'
+
 const appInfo = {
   site: 'https://www.spaceui.one',
   appName: 'Space UI',

@@ -2739,38 +2739,6 @@ export const index: Record<string, any> = {
     })(),
     command: '@spaceui/components-spaceui-resizable',
   },
-  "components-spaceui-scroll-reveal-text": {
-    name: "components-spaceui-scroll-reveal-text",
-    description: "Sticky scroll narrative where multiline typography progressively illuminates with buttery spring interpolation.",
-    type: "registry:component",
-    dependencies: ["motion"],
-    devDependencies: undefined,
-    registryDependencies: ["https://www.spaceui.one/r/lib-utils.json"],
-    files: [
-  {
-    "path": "src/registry/components/spaceui/scroll-reveal-text/index.tsx",
-    "type": "registry:component",
-    "target": "components/spaceui/scroll-reveal-text.tsx"
-  }
-],
-    keywords: [],
-    component: (() => {
-      const LazyComp = React.lazy(async () => {
-        const mod = await import("@/registry/components/spaceui/scroll-reveal-text/index.tsx");
-        const exportName = Object.keys(mod).find(
-          key => typeof mod[key] === 'function' || typeof mod[key] === 'object'
-        ) || "components-spaceui-scroll-reveal-text";
-        const Comp = mod.default || mod[exportName];
-        if (mod.animations) {
-          (LazyComp as any).animations = mod.animations;
-        }
-        return { default: Comp };
-      });
-      LazyComp.demoProps = {};
-      return LazyComp;
-    })(),
-    command: '@spaceui/components-spaceui-scroll-reveal-text',
-  },
   "components-spaceui-scrollspy": {
     name: "components-spaceui-scrollspy",
     description: "Scrollspy component for Space UI.",
@@ -8247,38 +8215,6 @@ export const index: Record<string, any> = {
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-resizable-10',
-  },
-  "demo-c-scroll-reveal-text-01": {
-    name: "demo-c-scroll-reveal-text-01",
-    description: "Interactive demo for Scroll Reveal Text featuring sticky scroll narrative revealing typography as you scroll.",
-    type: "registry:component",
-    dependencies: undefined,
-    devDependencies: undefined,
-    registryDependencies: ["https://www.spaceui.one/r/components-spaceui-scroll-reveal-text.json"],
-    files: [
-  {
-    "path": "src/registry/demo/components/spaceui/scroll-reveal-text/c-scroll-reveal-text-01/index.tsx",
-    "type": "registry:component",
-    "target": "components/spaceui/scroll-reveal-text-demo-01.tsx"
-  }
-],
-    keywords: [],
-    component: (() => {
-      const LazyComp = React.lazy(async () => {
-        const mod = await import("@/registry/demo/components/spaceui/scroll-reveal-text/c-scroll-reveal-text-01/index.tsx");
-        const exportName = Object.keys(mod).find(
-          key => typeof mod[key] === 'function' || typeof mod[key] === 'object'
-        ) || "demo-c-scroll-reveal-text-01";
-        const Comp = mod.default || mod[exportName];
-        if (mod.animations) {
-          (LazyComp as any).animations = mod.animations;
-        }
-        return { default: Comp };
-      });
-      LazyComp.demoProps = {"scrollLength":{"value":"180svh","options":{"Compact (140svh)":"140svh","Balanced (180svh)":"180svh","Cinematic (240svh)":"240svh"}},"showProgress":{"value":false}};
-      return LazyComp;
-    })(),
-    command: '@spaceui/demo-c-scroll-reveal-text-01',
   },
   "demo-c-scrollspy-01": {
     name: "demo-c-scrollspy-01",

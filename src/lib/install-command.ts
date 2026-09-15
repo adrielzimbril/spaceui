@@ -11,6 +11,17 @@ export const REGISTRY_NAMESPACE = '@spaceui'
 export const REGISTRY_BASE_URL = 'https://www.spaceui.one/r'
 
 /**
+ * Registry installation command style:
+ * - 'scoped': Uses the official validated registry namespace `@spaceui/<name>`
+ *             Example: `pnpm dlx shadcn@latest add @spaceui/components-spaceui-morphing-text`
+ * - 'url':    Uses direct registry JSON URLs
+ *             Example: `pnpm dlx shadcn@latest add https://www.spaceui.one/r/components-spaceui-morphing-text.json`
+ *
+ * Switch to 'scoped' or 'url' whenever you want to toggle the command format across the entire site!
+ */
+export const REGISTRY_COMMAND_STYLE: 'scoped' | 'url' = 'scoped'
+
+/**
  * Known short name mappings to exact registry item names
  */
 const KNOWN_SHORT_MAPPINGS: Record<string, string> = {
@@ -78,16 +89,13 @@ const KNOWN_SHORT_MAPPINGS: Record<string, string> = {
 }
 
 /**
- * Resolve an exact registry item URL
+ * Resolve an exact registry item identifier name (e.g. "components-spaceui-morphing-text", "primitives-button")
  */
-export function resolveRegistryItemUrl(raw: string): string {
+export function resolveRegistryItemName(raw: string): string {
   if (!raw) return ''
   const trimmed = raw.trim()
-  if (trimmed.startsWith('http://') || trimmed.startsWith('https://')) {
-    return trimmed.endsWith('.json') ? trimmed : `${trimmed}.json`
-  }
 
-  // Strip scopes and trailing .json
+  // Strip scopes, full URLs, and trailing .json
   const clean = trimmed
     .replace(/^https?:\/\/[^/]+\/r\//, '')
     .replace(/\.json$/, '')
@@ -97,7 +105,7 @@ export function resolveRegistryItemUrl(raw: string): string {
 
   // 1. Direct short name mapping
   if (KNOWN_SHORT_MAPPINGS[clean]) {
-    return `${REGISTRY_BASE_URL}/${KNOWN_SHORT_MAPPINGS[clean]}.json`
+    return KNOWN_SHORT_MAPPINGS[clean]
   }
 
   // 2. Already prefixed or exact (primitives-, components-, block-, template-, hooks-, lib-)
@@ -109,24 +117,54 @@ export function resolveRegistryItemUrl(raw: string): string {
     clean.startsWith('hooks-') ||
     clean.startsWith('lib-')
   ) {
-    return `${REGISTRY_BASE_URL}/${clean}.json`
+    return clean
   }
 
   // 3. Fallback to spaceui component prefix if not matched
-  return `${REGISTRY_BASE_URL}/components-spaceui-${clean}.json`
+  return `components-spaceui-${clean}`
 }
 
 /**
- * Format component or primitive names as direct registry URLs for shadcn CLI
+ * Resolve an exact registry item URL
  */
-export function formatRegistryItem(name: string): string {
+export function resolveRegistryItemUrl(raw: string): string {
+  if (!raw) return ''
+  const trimmed = raw.trim()
+  if (trimmed.startsWith('http://') || trimmed.startsWith('https://')) {
+    if (!trimmed.includes('spaceui.one')) {
+      return trimmed.endsWith('.json') ? trimmed : `${trimmed}.json`
+    }
+  }
+
+  const name = resolveRegistryItemName(trimmed)
+  return `${REGISTRY_BASE_URL}/${name}.json`
+}
+
+/**
+ * Format component or primitive names for shadcn CLI
+ * Supports both scoped format (@spaceui/...) and direct URL format (https://www.spaceui.one/r/...)
+ */
+export function formatRegistryItem(
+  name: string,
+  style: 'scoped' | 'url' = REGISTRY_COMMAND_STYLE,
+): string {
   if (!name) return ''
   if (name.includes(' ')) {
     return name
       .split(/\s+/)
       .filter(Boolean)
-      .map((item) => resolveRegistryItemUrl(item))
+      .map((item) => formatRegistryItem(item, style))
       .join(' ')
+  }
+
+  // If already a third-party external URL, keep as-is
+  if ((name.startsWith('http://') || name.startsWith('https://')) && !name.includes('spaceui.one')) {
+    return name.endsWith('.json') ? name : `${name}.json`
+  }
+
+  if (style === 'scoped') {
+    const itemName = resolveRegistryItemName(name)
+    return `${REGISTRY_NAMESPACE}/${itemName}`
   }
 
   return resolveRegistryItemUrl(name)
@@ -171,8 +209,11 @@ export function formatCodeForDisplay(inputCode?: string | null): string {
 /**
  * Generate shadcn CLI add commands for all package managers
  */
-export function getShadcnAddCommands(name: string): InstallCommands {
-  const item = formatRegistryItem(name)
+export function getShadcnAddCommands(
+  name: string,
+  style: 'scoped' | 'url' = REGISTRY_COMMAND_STYLE,
+): InstallCommands {
+  const item = formatRegistryItem(name, style)
   return {
     npm: `npx shadcn@latest add ${item}`,
     pnpm: `pnpm dlx shadcn@latest add ${item}`,

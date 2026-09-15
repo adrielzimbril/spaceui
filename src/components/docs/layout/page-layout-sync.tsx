@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect } from 'react'
+import { usePathname } from 'next/navigation'
 import {
   useLayoutMode,
   Mode,
@@ -25,6 +26,7 @@ export interface PageLayoutSyncProps {
 }
 
 export function PageLayoutSync({ mode = Mode.both, defaultMode, path = '', preview, title }: PageLayoutSyncProps) {
+  const pathname = usePathname()
   const { setPageConstraint, registerDefaultPreview } = useLayoutMode()
 
   useEffect(() => {
@@ -70,7 +72,7 @@ export function PageLayoutSync({ mode = Mode.both, defaultMode, path = '', previ
       bigScreen: config.bigScreen,
       componentGroup,
     })
-  }, [preview, title, path, registerDefaultPreview])
+  }, [preview, title, path, pathname, registerDefaultPreview])
 
   return null
 }
