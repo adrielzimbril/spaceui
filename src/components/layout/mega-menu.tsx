@@ -139,7 +139,11 @@ function SpaceMenuShell() {
   }, [])
 
   return (
-    <svg ref={svgRef} aria-hidden="true" className="pointer-events-none absolute top-0 left-0 overflow-visible z-0">
+    <svg
+      ref={svgRef}
+      aria-hidden="true"
+      className="pointer-events-none absolute  top-[.0875rem] left-0 overflow-visible z-0"
+    >
       <path ref={fillPathRef} className="fill-background" />
       <path ref={strokePathRef} className="fill-none stroke-border" strokeWidth="1" vectorEffect="non-scaling-stroke" />
     </svg>

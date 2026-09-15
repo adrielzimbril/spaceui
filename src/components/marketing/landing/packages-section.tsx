@@ -57,7 +57,7 @@ export function PackagesSection() {
         {/* <ImageSplitCard isVisible={isVisible} /> */}
         <EmojiCard isVisible={isVisible} />
       </div>
-      <div className="flex mt-4 justify-center self-center align-center">
+      <div className="flex mt-6 justify-center self-center align-center">
         <Button
           render={<Link href="/tools" />}
           size="sm"

@@ -78,7 +78,7 @@ export function RegistryGrid() {
           <p className="mt-2 text-sm font-medium text-muted-foreground">Production Hooks</p>
         </div>
       </div>
-      <div className="flex mt-4 justify-center self-center align-center">
+      <div className="flex mt-6 justify-center self-center align-center">
         <Button
           render={<Link href="/components" />}
           size="sm"

@@ -2,6 +2,7 @@
 
 import * as React from 'react'
 import Link from 'next/link'
+import { cn } from '@/registry/lib/utils'
 import { tickSound } from '@/components/providers/sound-provider'
 import { Badge } from '@/registry/components/spaceui/badge-squircle'
 
@@ -9,6 +10,7 @@ interface FooterLinkItem {
   label: string
   href: string
   isExternal?: boolean
+  highlight?: boolean
 }
 
 interface FooterGroup {
@@ -41,7 +43,7 @@ const FOOTER_GROUPS: FooterGroup[] = [
       { label: 'Emoji', href: '/tools/emoji' },
       { label: 'Image Split', href: '/tools/imagesplit' },
       { label: 'Flags', href: '/tools/flags' },
-      { label: 'View all tools', href: '/tools' },
+      { label: 'View all tools', href: '/tools', highlight: true },
     ],
   },
   {
@@ -67,86 +69,55 @@ const FOOTER_GROUPS: FooterGroup[] = [
   },
 ]
 
-function clampRadius(radius: number, width: number, height: number): number {
-  return Math.max(0, Math.min(radius, width / 2, height / 2))
-}
-
-function createInverseBottomPath(width: number, height: number, radius: number): string {
-  const r = clampRadius(radius, width, height)
-  const i = height - r
-  return `M ${r} 0 H ${width - r} A ${r} ${r} 0 0 1 ${width} ${r} V ${i} Q ${width} ${height} ${width + r} ${height} H ${-r} Q 0 ${height} 0 ${i} V ${r} A ${r} ${r} 0 0 1 ${r} 0 Z`
-}
-
-function createInverseBottomStrokePath(width: number, height: number, radius: number): string {
-  const r = clampRadius(radius, width, height)
-  const i = height - r
-  return `M ${-r} ${height} Q 0 ${height} 0 ${i} V ${r} A ${r} ${r} 0 0 1 ${r} 0 H ${width - r} A ${r} ${r} 0 0 1 ${width} ${r} V ${i} Q ${width} ${height} ${width + r} ${height}`
-}
-
 export function SiteFooter() {
-  const containerRef = React.useRef<HTMLDivElement>(null)
-  const svgRef = React.useRef<SVGSVGElement>(null)
-  const fillPathRef = React.useRef<SVGPathElement>(null)
-  const strokePathRef = React.useRef<SVGPathElement>(null)
-
-  React.useLayoutEffect(() => {
-    const container = containerRef.current
-    const svg = svgRef.current
-    if (!container || !svg) return
-
-    const updatePaths = () => {
-      const w = Math.round(container.offsetWidth)
-      const h = Math.round(container.offsetHeight)
-      if (w <= 0 || h <= 0) return
-
-      const radius = w >= 640 ? 40 : 26
-      const fill = createInverseBottomPath(w, h + 1, radius)
-      const stroke = createInverseBottomStrokePath(w, h, radius)
-
-      svg.setAttribute('width', `${w}`)
-      svg.setAttribute('height', `${h}`)
-      svg.setAttribute('viewBox', `0 0 ${w} ${h}`)
-
-      if (fillPathRef.current) fillPathRef.current.setAttribute('d', fill)
-      if (strokePathRef.current) strokePathRef.current.setAttribute('d', stroke)
-    }
-
-    updatePaths()
-    const ro = new ResizeObserver(() => {
-      updatePaths()
-    })
-    ro.observe(container)
-    window.addEventListener('resize', updatePaths)
-
-    return () => {
-      ro.disconnect()
-      window.removeEventListener('resize', updatePaths)
-    }
-  }, [])
-
+  const isDark = false
   return (
     <footer className="relative isolate z-10 w-full overflow-hidden pt-12" data-global-footer>
-      <div className="relative z-30 mx-auto w-[calc(100%-2rem)] sm:w-[calc(100%-3rem)] max-w-7xl">
+      <div className="relative z-30 mx-auto w-[calc(100%-2rem)] sm:w-[calc(100%-3rem)] -bottom-0.75 max-w-7xl">
         <div
-          ref={containerRef}
-          className="relative z-10 dark squircle bg-zinc-950 rounded-t-3xl sm:rounded-t-7xl border-4 border-muted text-foreground"
+          className={cn(
+            'relative z-10 squircle rounded-t-3xl sm:rounded-t-7xl p-4 md-p-6 text-foreground',
+            isDark ? 'dark bg-zinc-950' : 'bg-muted',
+          )}
         >
           <svg
-            ref={svgRef}
             aria-hidden="true"
-            className="pointer-events-none absolute inset-0 h-full w-full overflow-visible z-0"
+            className="pointer-events-none absolute bottom-0 -left-6.5 w-7.5 h-6.5 overflow-visible z-10 sm:hidden"
+            viewBox="0 0 30 26"
           >
-            <path ref={fillPathRef} className="fill-zinc-950" />
-            <path
-              ref={strokePathRef}
-              fill="none"
-              className="stroke-white/15 dark:stroke-white/15"
-              strokeWidth="1.2"
-              vectorEffect="non-scaling-stroke"
-            />
+            <path d="M 26 0 Q 26 26 0 26 H 30 V 0 Z" className={cn(isDark ? 'fill-zinc-950' : 'fill-muted')} />
           </svg>
 
-          <div className="relative z-10 p-6 sm:p-10 lg:p-12">
+          <svg
+            aria-hidden="true"
+            className="pointer-events-none absolute bottom-1 -left-9.75 w-11 h-10 overflow-visible z-10 hidden sm:block"
+            viewBox="0 0 44 40"
+          >
+            <path d="M 40 0 Q 40 40 0 40 H 44 V 0 Z" className={cn(isDark ? 'fill-zinc-950' : 'fill-muted')} />
+          </svg>
+
+          <svg
+            aria-hidden="true"
+            className="pointer-events-none absolute bottom-0 -right-6.5 w-7.5 h-6.5 overflow-visible z-10 sm:hidden"
+            viewBox="0 0 30 26"
+          >
+            <path d="M 4 0 Q 4 26 30 26 H 0 V 0 Z" className={cn(isDark ? 'fill-zinc-950' : 'fill-muted')} />
+          </svg>
+
+          <svg
+            aria-hidden="true"
+            className="pointer-events-none absolute bottom-1 -right-9.75 w-11 h-10 overflow-visible z-10 hidden sm:block"
+            viewBox="0 0 44 40"
+          >
+            <path d="M 4 0 Q 4 40 44 40 H 0 V 0 Z" className={cn(isDark ? 'fill-zinc-950' : 'fill-muted')} />
+          </svg>
+
+          <div
+            className={cn(
+              'relative border-4  squircle rounded-5xl z-10 p-6 sm:p-10 lg:p-12',
+              isDark ? 'border-zinc-900' : 'border-background',
+            )}
+          >
             <div className="grid grid-cols-2 gap-8 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-4">
               {FOOTER_GROUPS.map((group) => (
                 <div key={group.title} className="space-y-3">
@@ -163,7 +134,11 @@ export function SiteFooter() {
                             rel={isExt ? 'noreferrer noopener' : undefined}
                             data-space-hover
                             onClick={() => tickSound()}
-                            className="group inline-flex items-center text-xs sm:text-sm text-muted-foreground transition-all duration-200 hover:text-foreground hover:translate-x-0.5 outline-none"
+                            className={cn(
+                              'group inline-flex items-center text-xs sm:text-sm text-muted-foreground transition-all duration-200 hover:text-foreground hover:translate-x-0.5 outline-none',
+
+                              link.highlight && 'text-foreground/90',
+                            )}
                           >
                             <span>{link.label}</span>
                           </Link>
@@ -175,7 +150,7 @@ export function SiteFooter() {
               ))}
             </div>
 
-            <div className="mt-12 pt-6 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-muted-foreground">
+            <div className="mt-12 pt-6 border-t border-background/80 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-muted-foreground">
               <div className="text-center sm:text-left">
                 <span>
                   <span>© {new Date().getFullYear()} Space UI</span> <span>·</span>{' '}
@@ -206,7 +181,11 @@ export function SiteFooter() {
       </div>
 
       {/* Docked bottom band - anchors footer to page bottom and accommodates floating nav */}
-      <div className="relative z-20 -mt-px h-10 sm:h-14 w-full bg-zinc-950" aria-hidden="true" data-footer-band />
+      <div
+        className={cn('relative -mt-px h-10 sm:h-14 w-full', isDark ? 'dark bg-zinc-950' : 'bg-muted')}
+        aria-hidden="true"
+        data-footer-band
+      />
     </footer>
   )
 }
