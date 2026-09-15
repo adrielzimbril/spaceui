@@ -88,20 +88,11 @@ export function LeaveNoteDialog({
     setPatternIndex((prev) => (prev + 1) % patterns.length)
   }
 
-  const handleOAuthSignIn = async (provider: 'github' | 'google') => {
-    try {
-      const supabase = createClient()
-      if (supabase) {
-        await supabase.auth.signInWithOAuth({
-          provider,
-          options: {
-            redirectTo: typeof window !== 'undefined' ? window.location.href : undefined,
-          },
-        })
-      }
-    } catch (err) {
-      console.error('Sign in error:', err)
-    }
+  const handleOAuthSignIn = (provider: 'github' | 'google') => {
+    const url = new URL(`${window.location.origin}/api/auth/login`)
+    url.searchParams.set('provider', provider)
+    url.searchParams.set('next', window.location.pathname)
+    window.location.href = url.toString()
   }
 
   const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {

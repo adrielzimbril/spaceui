@@ -3,16 +3,69 @@
 import * as React from 'react'
 import { CommunityWall, type CommunityMessage } from '@/registry/blocks/community-wall'
 import { StatsSection } from './stats-section'
+import { createClient } from '@/integrations/supabase/client'
 
 interface CommunityViewProps {
   initialMessages?: CommunityMessage[]
+  initialUser?: any
 }
 
-export function CommunityView({ initialMessages = [] }: CommunityViewProps) {
+export function CommunityView({ initialMessages = [], initialUser = null }: CommunityViewProps) {
   const [messages, setMessages] = React.useState<CommunityMessage[]>(initialMessages)
   const [isLoading, setIsLoading] = React.useState(initialMessages.length === 0)
+  const [user, setUser] = React.useState<any>(initialUser)
+  const [isLeaveNoteOpen, setIsLeaveNoteOpen] = React.useState(false)
 
-  // Fetch messages from API on client mount
+  React.useEffect(() => {
+    if (initialUser) {
+      setUser(initialUser)
+    }
+  }, [initialUser])
+
+  React.useEffect(() => {
+    const supabase = createClient()
+
+    fetch('/api/auth/user')
+      .then((res) => res.json())
+      .then((data) => {
+        if (data?.user) {
+          setUser(data.user)
+        }
+      })
+      .catch(() => {})
+
+    if (!supabase) return
+
+    if (typeof window !== 'undefined') {
+      const url = new URL(window.location.href)
+      const code = url.searchParams.get('code')
+      if (code) {
+        supabase.auth
+          .exchangeCodeForSession(code)
+          .then(({ data, error }) => {
+            if (!error && data?.user) {
+              setUser(data.user)
+            }
+            url.searchParams.delete('code')
+            window.history.replaceState({}, '', url.pathname + (url.search ? url.search : ''))
+          })
+          .catch((err) => {
+            console.error('Failed to exchange auth code:', err)
+          })
+      }
+    }
+
+    const {
+      data: { subscription },
+    } = supabase.auth.onAuthStateChange((_event, session) => {
+      setUser(session?.user ?? null)
+    })
+
+    return () => {
+      subscription.unsubscribe()
+    }
+  }, [])
+
   React.useEffect(() => {
     let isMounted = true
 
@@ -89,28 +142,27 @@ export function CommunityView({ initialMessages = [] }: CommunityViewProps) {
     }
   }
 
-  const [isLeaveNoteOpen, setIsLeaveNoteOpen] = React.useState(false)
-
   return (
     <div className="w-full flex flex-col gap-6">
-      {/* Stats Section at the top on real community page with centered Leave a Note button */}
       <StatsSection
         totalMessages={stats.totalMessages}
         uniqueMembers={stats.uniqueMembers}
         weekMessages={stats.weekMessages}
         isLoading={isLoading}
+        user={user}
         onLeaveNote={() => setIsLeaveNoteOpen(true)}
       />
 
-      {/* Community Wall Infinite Canvas */}
       <CommunityWall
         messages={messages}
         onAddNote={handleAddNote}
+        user={user}
         open={isLeaveNoteOpen}
         onOpenChange={setIsLeaveNoteOpen}
         showFloatingButton={false}
         height="48rem"
         className="h-160 sm:h-180 lg:h-195"
+        avatarSource="spaceui"
       />
     </div>
   )

@@ -1,11 +1,12 @@
 'use client'
 
-import React, { useState, useRef, useMemo, type MouseEvent, type ReactNode } from 'react'
+import React, { useState, useRef, useMemo, useEffect, type ReactNode } from 'react'
 import { cn } from '@/registry/lib/utils'
 import { Card, CardContent } from '@/registry/primitives/card'
 import { CommunityWallCard, type CommunityMessage } from './community-wall-card'
 import { Button } from '@/registry/components/spaceui/button-squircle'
-import { IconCurrentLocation, IconCurrentLocationFilled } from '@tabler/icons-react'
+import { IconCurrentLocationFilled } from '@tabler/icons-react'
+import { ProximityGrid } from '@/registry/blocks/interactive-grid-hero/interactive-grid-hero-1/proximity-grid'
 
 interface Position {
   x: number
@@ -53,7 +54,6 @@ function checkCollision(box1: BoundingBox, box2: BoundingBox): boolean {
 }
 
 // Generate consistent random position for a message using radial distribution
-// Cards are placed in a true 360-degree bloom from center with collision detection
 function generatePosition(
   messageId: string,
   totalMessages: number,
@@ -61,7 +61,6 @@ function generatePosition(
   existingPositions: Position[],
 ): Position {
   const maxAttempts = 100
-
   const baseRadius = 250
   const cardsPerLayer = 8
   const layerSpacing = 380
@@ -116,12 +115,22 @@ function generatePosition(
 export function InfiniteCanvas({ messages, children, className, avatarSource }: InfiniteCanvasProps) {
   const [offset, setOffset] = useState<Position>({ x: 0, y: 0 })
   const [isDragging, setIsDragging] = useState(false)
-  const [dragStart, setDragStart] = useState<Position>({ x: 0, y: 0 })
   const [isTransitioning, setIsTransitioning] = useState(false)
-  const containerRef = useRef<HTMLDivElement>(null)
+
+  const offsetRef = useRef<Position>({ x: 0, y: 0 })
+  const rafRef = useRef<number | null>(null)
+
+  offsetRef.current = offset
+
+  useEffect(() => {
+    return () => {
+      if (rafRef.current) {
+        cancelAnimationFrame(rafRef.current)
+      }
+    }
+  }, [])
 
   // Memoized message positions with collision detection
-  // The last card in array (first chronologically) is centered
   const messagePositions = useMemo(() => {
     const positions: Position[] = []
     return messages.map((message, index) => {
@@ -141,26 +150,89 @@ export function InfiniteCanvas({ messages, children, className, avatarSource }: 
     })
   }, [messages])
 
-  const handleMouseDown = (e: MouseEvent<HTMLDivElement>) => {
+  // Mouse drag with global window listeners to never lose drag on leave or over cards
+  const handleMouseDown = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (e.button !== 0) return
     e.preventDefault()
+
+    const startX = e.clientX
+    const startY = e.clientY
+    const startOffsetX = offsetRef.current.x
+    const startOffsetY = offsetRef.current.y
+
     setIsDragging(true)
-    setDragStart({ x: e.clientX - offset.x, y: e.clientY - offset.y })
+
+    const onMouseMove = (moveEvent: MouseEvent) => {
+      moveEvent.preventDefault()
+      const dx = moveEvent.clientX - startX
+      const dy = moveEvent.clientY - startY
+
+      if (rafRef.current) cancelAnimationFrame(rafRef.current)
+      rafRef.current = requestAnimationFrame(() => {
+        setOffset({
+          x: Math.round(startOffsetX + dx),
+          y: Math.round(startOffsetY + dy),
+        })
+        rafRef.current = null
+      })
+    }
+
+    const onMouseUp = () => {
+      if (rafRef.current) {
+        cancelAnimationFrame(rafRef.current)
+        rafRef.current = null
+      }
+      setIsDragging(false)
+      window.removeEventListener('mousemove', onMouseMove)
+      window.removeEventListener('mouseup', onMouseUp)
+    }
+
+    window.addEventListener('mousemove', onMouseMove, { passive: false })
+    window.addEventListener('mouseup', onMouseUp)
   }
 
-  const handleMouseMove = (e: MouseEvent<HTMLDivElement>) => {
-    if (!isDragging) return
-    setOffset({
-      x: e.clientX - dragStart.x,
-      y: e.clientY - dragStart.y,
-    })
-  }
+  // Touch drag with global listeners
+  const handleTouchStart = (e: React.TouchEvent<HTMLDivElement>) => {
+    if (e.touches.length !== 1) return
+    const touch = e.touches[0]
+    const startX = touch.clientX
+    const startY = touch.clientY
+    const startOffsetX = offsetRef.current.x
+    const startOffsetY = offsetRef.current.y
 
-  const handleMouseUp = () => {
-    if (isDragging) setIsDragging(false)
-  }
+    setIsDragging(true)
 
-  const handleMouseLeave = () => {
-    if (isDragging) setIsDragging(false)
+    const onTouchMove = (moveEvent: TouchEvent) => {
+      if (moveEvent.touches.length !== 1) return
+      moveEvent.preventDefault()
+      const t = moveEvent.touches[0]
+      const dx = t.clientX - startX
+      const dy = t.clientY - startY
+
+      if (rafRef.current) cancelAnimationFrame(rafRef.current)
+      rafRef.current = requestAnimationFrame(() => {
+        setOffset({
+          x: Math.round(startOffsetX + dx),
+          y: Math.round(startOffsetY + dy),
+        })
+        rafRef.current = null
+      })
+    }
+
+    const onTouchEnd = () => {
+      if (rafRef.current) {
+        cancelAnimationFrame(rafRef.current)
+        rafRef.current = null
+      }
+      setIsDragging(false)
+      window.removeEventListener('touchmove', onTouchMove)
+      window.removeEventListener('touchend', onTouchEnd)
+      window.removeEventListener('touchcancel', onTouchEnd)
+    }
+
+    window.addEventListener('touchmove', onTouchMove, { passive: false })
+    window.addEventListener('touchend', onTouchEnd)
+    window.addEventListener('touchcancel', onTouchEnd)
   }
 
   const handleRecenter = () => {
@@ -174,73 +246,72 @@ export function InfiniteCanvas({ messages, children, className, avatarSource }: 
   const hasMoved = offset.x !== 0 || offset.y !== 0
 
   return (
-    <div className={cn('relative w-full h-full min-h-125', className)}>
-      <Card className="size-full bg-muted rounded-3xl border border-border flex-1 transition-all duration-300 overflow-hidden">
+    <div className={cn('relative w-full h-full min-h-125 select-none touch-none', className)}>
+      <Card className="size-full bg-muted rounded-3xl border border-border flex-1 overflow-hidden">
         <CardContent className="size-full p-0">
-          <div
-            ref={containerRef}
-            className="absolute inset-0 overflow-hidden bg-muted"
-            style={{
-              cursor: isDragging ? 'grabbing' : 'grab',
-            }}
-            onMouseDown={handleMouseDown}
-            onMouseMove={handleMouseMove}
-            onMouseUp={handleMouseUp}
-            onMouseLeave={handleMouseLeave}
+          <ProximityGrid
+            cellSize={56}
+            gap={4}
+            radius="rounded"
+            proximity={4}
+            inset={6}
+            className="absolute inset-0 size-full min-h-0 bg-background overflow-hidden select-none"
           >
-            {/* Background grid pattern */}
-            <div className="absolute inset-0 bg-[radial-gradient(currentColor_0.0625rem,transparent_0.125rem)] opacity-10 bg-size-[1rem_1rem]" />
-
-            {/* Canvas container that gets transformed */}
             <div
-              className="absolute inset-0"
-              style={{
-                transform: `translate3d(${offset.x}px, ${offset.y}px, 0)`,
-                willChange: isDragging ? 'transform' : 'auto',
-                transition: isTransitioning ? 'transform 0.5s ease-in-out' : 'none',
-              }}
-            >
-              {messagePositions.map((message) => (
-                <div
-                  key={message.id}
-                  className="absolute"
-                  style={{
-                    left: '50%',
-                    top: '50%',
-                    transform: `translate(calc(-50% + ${message.position.x}px), calc(-50% + ${message.position.y}px))`,
-                    pointerEvents: 'auto',
-                  }}
-                >
-                  <CommunityWallCard
-                    message={message.message}
-                    patternIndex={message.patternIndex ?? message.pattern_index ?? 0}
-                    author={message.creator_name || message.author}
-                    profilePicture={message.creator_avatar_url || message.profilePicture}
-                    rotation={message.rotation}
-                    avatarSource={avatarSource}
-                    className="h-75 w-63"
-                  />
-                </div>
-              ))}
-            </div>
-
-            {/* Recenter button - floating in top right, fades in when canvas moves */}
-            <Button
-              variant="default"
-              size="icon-lg"
-              onClick={handleRecenter}
               className={cn(
-                'absolute right-4 top-4 z-10 bg-[#8e8eff]! text-white border-0 transition-opacity cursor-pointer',
-                hasMoved ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none',
+                'absolute inset-0 overflow-hidden select-none touch-none',
+                isDragging ? 'cursor-grabbing' : 'cursor-grab',
               )}
-              aria-label="Recenter canvas"
-              title="Recenter canvas"
-              whileTap
-              square
+              onMouseDown={handleMouseDown}
+              onTouchStart={handleTouchStart}
             >
-              <IconCurrentLocationFilled className="size-5" />
-            </Button>
-          </div>
+              <div
+                className="absolute inset-0 transform-gpu will-change-transform"
+                style={{
+                  transform: `translate3d(${offset.x}px, ${offset.y}px, 0)`,
+                  transition: isTransitioning ? 'transform 0.5s cubic-bezier(0.16, 1, 0.3, 1)' : 'none',
+                }}
+              >
+                {messagePositions.map((message) => (
+                  <div
+                    key={message.id}
+                    className="absolute pointer-events-none select-none"
+                    style={{
+                      left: '50%',
+                      top: '50%',
+                      transform: `translate(calc(-50% + ${message.position.x}px), calc(-50% + ${message.position.y}px))`,
+                    }}
+                  >
+                    <CommunityWallCard
+                      message={message.message}
+                      patternIndex={message.patternIndex ?? message.pattern_index ?? 0}
+                      author={message.creator_name || message.author}
+                      profilePicture={message.creator_avatar_url || message.profilePicture}
+                      rotation={message.rotation}
+                      avatarSource={avatarSource}
+                      className="h-75 w-63 select-none pointer-events-none"
+                    />
+                  </div>
+                ))}
+              </div>
+
+              <Button
+                variant="default"
+                size="icon-lg"
+                onClick={handleRecenter}
+                className={cn(
+                  'absolute right-4 top-4 z-10 bg-[#8e8eff]! text-white border-0 transition-opacity cursor-pointer',
+                  hasMoved ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none',
+                )}
+                aria-label="Recenter canvas"
+                title="Recenter canvas"
+                whileTap
+                square
+              >
+                <IconCurrentLocationFilled className="size-5" />
+              </Button>
+            </div>
+          </ProximityGrid>
 
           {children && children}
         </CardContent>

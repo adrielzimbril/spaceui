@@ -78,7 +78,7 @@ export function StatsSection({
       </div>
 
       {onLeaveNote && (
-        <div className="flex justify-center mt-8">
+        <div className="flex justify-center mt-8 gap-4">
           <Button
             variant="default"
             size="lg"
@@ -99,6 +99,19 @@ export function StatsSection({
             </div>
             <span className="text-sm font-medium">Leave a Note</span>
           </Button>
+          {user && (
+            <Button
+              variant="default"
+              size="lg"
+              hover
+              whileTap
+              onClick={onLeaveNote}
+              pointer
+              className="flex items-center px-6 py-4"
+            >
+              <span className="text-sm font-medium">Logout</span>
+            </Button>
+          )}
         </div>
       )}
     </div>

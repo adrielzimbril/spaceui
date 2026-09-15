@@ -42,7 +42,7 @@ function smoothstep(t: number): number {
   return t * t * (3 - 2 * t)
 }
 
-function GridCell({
+const GridCell = React.memo(function GridCell({
   centerX,
   centerY,
   radius,
@@ -63,14 +63,72 @@ function GridCell({
     return smoothstep(proximity) * active
   })
 
-  const clipPath = useTransform(influence, (val) => `inset(${val * inset}% round ${val * maxCornerRadius}px)`)
+  const clipPath = useTransform(influence, (val) =>
+    val > 0.001 ? `inset(${val * inset}% round ${val * maxCornerRadius}px)` : 'none',
+  )
 
   const opacity = useTransform(influence, [0, 1], [0.45, 1])
 
-  return <motion.div className="bg-muted transition-colors" style={{ clipPath, opacity }} />
+  return (
+    <motion.div
+      className="bg-muted transform-gpu will-change-[clip-path,opacity]"
+      style={{ clipPath, opacity }}
+    />
+  )
+})
+
+interface GridBoardProps {
+  cells: Array<{ id: string; centerX: number; centerY: number }>
+  gap: number
+  metrics: GridMetrics
+  responseRadius: number
+  pointerX: MotionValue<number>
+  pointerY: MotionValue<number>
+  activeMotionValue: MotionValue<number>
+  maxCornerRadius: number
+  inset: number
 }
 
+const GridBoard = React.memo(function GridBoard({
+  cells,
+  gap,
+  metrics,
+  responseRadius,
+  pointerX,
+  pointerY,
+  activeMotionValue,
+  maxCornerRadius,
+  inset,
+}: GridBoardProps) {
+  return (
+    <div
+      className="absolute inset-0 grid content-start pointer-events-none"
+      style={{
+        gap: `${gap}px`,
+        gridAutoRows: `${metrics.cellSize}px`,
+        gridTemplateColumns: `repeat(${metrics.columns}, ${metrics.cellSize}px)`,
+      }}
+      aria-hidden="true"
+    >
+      {cells.map((cell) => (
+        <GridCell
+          key={cell.id}
+          centerX={cell.centerX}
+          centerY={cell.centerY}
+          radius={responseRadius}
+          pointerX={pointerX}
+          pointerY={pointerY}
+          pointerActive={activeMotionValue}
+          maxCornerRadius={maxCornerRadius}
+          inset={inset}
+        />
+      ))}
+    </div>
+  )
+})
+
 export const ProximityGrid: React.FC<ProximityGridProps> = ({
+  children,
   cellSize: targetCellSize = 64,
   gap = 4,
   radius = 'rounded',
@@ -83,8 +141,8 @@ export const ProximityGrid: React.FC<ProximityGridProps> = ({
   const containerRef = React.useRef<HTMLDivElement>(null)
   const isReducedMotion = Boolean(useReducedMotion())
 
-  const pointerX = useMotionValue(0)
-  const pointerY = useMotionValue(0)
+  const pointerX = useMotionValue(-1000)
+  const pointerY = useMotionValue(-1000)
   const rawActive = useMotionValue(0)
 
   const smoothActive = useSpring(rawActive, {
@@ -169,29 +227,18 @@ export const ProximityGrid: React.FC<ProximityGridProps> = ({
       className={cn('relative w-full h-full min-h-125 overflow-hidden bg-background select-none', className)}
       {...props}
     >
-      <div
-        className="absolute inset-0 grid content-start pointer-events-none"
-        style={{
-          gap: `${gap}px`,
-          gridAutoRows: `${metrics.cellSize}px`,
-          gridTemplateColumns: `repeat(${metrics.columns}, ${metrics.cellSize}px)`,
-        }}
-        aria-hidden="true"
-      >
-        {cells.map((cell) => (
-          <GridCell
-            key={cell.id}
-            centerX={cell.centerX}
-            centerY={cell.centerY}
-            radius={responseRadius}
-            pointerX={pointerX}
-            pointerY={pointerY}
-            pointerActive={activeMotionValue}
-            maxCornerRadius={maxCornerRadius}
-            inset={inset}
-          />
-        ))}
-      </div>
+      <GridBoard
+        cells={cells}
+        gap={gap}
+        metrics={metrics}
+        responseRadius={responseRadius}
+        pointerX={pointerX}
+        pointerY={pointerY}
+        activeMotionValue={activeMotionValue}
+        maxCornerRadius={maxCornerRadius}
+        inset={inset}
+      />
+      {children}
     </div>
   )
 }
