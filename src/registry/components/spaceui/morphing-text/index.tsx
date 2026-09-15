@@ -1,13 +1,7 @@
 'use client'
 
 import * as React from 'react'
-import {
-  AnimatePresence,
-  LayoutGroup,
-  motion,
-  type Transition,
-  type Variants,
-} from 'motion/react'
+import { AnimatePresence, LayoutGroup, motion, type Transition, type Variants } from 'motion/react'
 import { cn } from '@/registry/lib/utils'
 
 export interface TextMorphProps extends React.HTMLAttributes<HTMLElement> {
@@ -105,7 +99,10 @@ export const TextMorph: React.FC<TextMorphProps> = ({
   return (
     <Component
       aria-label={children}
-      className={cn('relative isolate inline-flex flex-wrap items-center justify-center overflow-hidden whitespace-pre leading-none font-inherit', className)}
+      className={cn(
+        'relative isolate inline-flex flex-wrap items-center justify-center overflow-hidden whitespace-pre leading-none font-inherit',
+        className,
+      )}
       style={style}
       {...(props as any)}
     >
@@ -178,7 +175,10 @@ export const MorphingText: React.FC<MorphingTextProps> = ({
       <TextMorph
         blurAmount={blurAmount}
         springBounce={springBounce}
-        className={cn('text-3xl sm:text-5xl md:text-6xl font-bold tracking-tight text-foreground text-center', textClassName)}
+        className={cn(
+          'text-3xl sm:text-5xl md:text-6xl font-bold tracking-tight text-foreground text-center',
+          textClassName,
+        )}
       >
         {currentText}
       </TextMorph>

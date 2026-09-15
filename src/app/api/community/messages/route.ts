@@ -22,10 +22,7 @@ export async function GET() {
 
     if (error) {
       console.error('[Community Messages GET Error]', error)
-      return NextResponse.json(
-        { success: false, error: error.message, messages: [] },
-        { status: 500 },
-      )
+      return NextResponse.json({ success: false, error: error.message, messages: [] }, { status: 500 })
     }
 
     return NextResponse.json({
@@ -47,24 +44,15 @@ export async function POST(req: Request) {
     const { creator_name, message, pattern_index, rotation, creator_avatar_url } = body
 
     if (!creator_name || typeof creator_name !== 'string' || !creator_name.trim()) {
-      return NextResponse.json(
-        { success: false, error: 'Name is required' },
-        { status: 400 },
-      )
+      return NextResponse.json({ success: false, error: 'Name is required' }, { status: 400 })
     }
 
     if (!message || typeof message !== 'string' || !message.trim()) {
-      return NextResponse.json(
-        { success: false, error: 'Message is required' },
-        { status: 400 },
-      )
+      return NextResponse.json({ success: false, error: 'Message is required' }, { status: 400 })
     }
 
     if (message.trim().length > 140) {
-      return NextResponse.json(
-        { success: false, error: 'Message exceeds 140 characters limit' },
-        { status: 400 },
-      )
+      return NextResponse.json({ success: false, error: 'Message exceeds 140 characters limit' }, { status: 400 })
     }
 
     const cookieStore = await cookies()
@@ -73,10 +61,7 @@ export async function POST(req: Request) {
     const dbClient = admin || supabase
 
     if (!dbClient) {
-      return NextResponse.json(
-        { success: false, error: 'Database service unavailable' },
-        { status: 503 },
-      )
+      return NextResponse.json({ success: false, error: 'Database service unavailable' }, { status: 503 })
     }
 
     // Check optional authenticated user session
@@ -86,7 +71,9 @@ export async function POST(req: Request) {
 
     if (supabase) {
       try {
-        const { data: { user } } = await supabase.auth.getUser()
+        const {
+          data: { user },
+        } = await supabase.auth.getUser()
         if (user) {
           userId = user.id
           isVerified = true
@@ -117,10 +104,7 @@ export async function POST(req: Request) {
 
     if (error) {
       console.error('[Community Messages POST Error]', error)
-      return NextResponse.json(
-        { success: false, error: error.message },
-        { status: 500 },
-      )
+      return NextResponse.json({ success: false, error: error.message }, { status: 500 })
     }
 
     return NextResponse.json({
@@ -129,9 +113,6 @@ export async function POST(req: Request) {
     })
   } catch (err: any) {
     console.error('[Community Messages POST Exception]', err)
-    return NextResponse.json(
-      { success: false, error: err?.message || 'Failed to submit message' },
-      { status: 500 },
-    )
+    return NextResponse.json({ success: false, error: err?.message || 'Failed to submit message' }, { status: 500 })
   }
 }

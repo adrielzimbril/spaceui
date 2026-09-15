@@ -144,10 +144,7 @@ export function resolveRegistryItemUrl(raw: string): string {
  * Format component or primitive names for shadcn CLI
  * Supports both scoped format (@spaceui/...) and direct URL format (https://www.spaceui.one/r/...)
  */
-export function formatRegistryItem(
-  name: string,
-  style: 'scoped' | 'url' = REGISTRY_COMMAND_STYLE,
-): string {
+export function formatRegistryItem(name: string, style: 'scoped' | 'url' = REGISTRY_COMMAND_STYLE): string {
   if (!name) return ''
   if (name.includes(' ')) {
     return name
@@ -209,10 +206,7 @@ export function formatCodeForDisplay(inputCode?: string | null): string {
 /**
  * Generate shadcn CLI add commands for all package managers
  */
-export function getShadcnAddCommands(
-  name: string,
-  style: 'scoped' | 'url' = REGISTRY_COMMAND_STYLE,
-): InstallCommands {
+export function getShadcnAddCommands(name: string, style: 'scoped' | 'url' = REGISTRY_COMMAND_STYLE): InstallCommands {
   const item = formatRegistryItem(name, style)
   return {
     npm: `npx shadcn@latest add ${item}`,

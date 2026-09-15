@@ -10,14 +10,7 @@ export interface MorphingTextDemoProps {
   pauseOnHover?: boolean
 }
 
-const DEFAULT_WORDS = [
-  'Morphing',
-  'Motion',
-  'Animation',
-  'Dimension',
-  'Precision',
-  'Creation',
-]
+const DEFAULT_WORDS = ['Morphing', 'Motion', 'Animation', 'Dimension', 'Precision', 'Creation']
 
 export default function Demo({
   interval = 2400,

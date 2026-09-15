@@ -20,13 +20,7 @@ import { RadioGroup, Radio } from '@/registry/primitives/radio-group'
 import { ScrollArea } from '@/registry/primitives/scroll-area'
 import { CommunityWallCard } from './community-wall-card'
 import { patterns } from './patterns'
-import {
-  IconChevronLeft,
-  IconChevronRight,
-  IconX,
-  IconUser,
-  IconUserFilled,
-} from '@tabler/icons-react'
+import { IconChevronLeft, IconChevronRight, IconX, IconUser, IconUserFilled } from '@tabler/icons-react'
 import { Github, Google } from './social-icons'
 import { loading, confirm, deny } from '@usespaceui/sounds'
 import { createClient } from '@/integrations/supabase/client'
@@ -332,7 +326,11 @@ export function LeaveNoteDialog({
                             className="flex gap-2 flex-1 flex-row flex-wrap"
                           >
                             {patterns.map((p, index) => (
-                              <Radio key={index} value={index.toString()} aria-label={`Pattern ${p.name || index + 1}`} />
+                              <Radio
+                                key={index}
+                                value={index.toString()}
+                                aria-label={`Pattern ${p.name || index + 1}`}
+                              />
                             ))}
                           </RadioGroup>
                         </div>

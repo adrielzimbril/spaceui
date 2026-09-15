@@ -6,14 +6,7 @@ export interface SocialIconProps extends React.SVGProps<SVGSVGElement> {
 
 export function Github({ size = 20, className, ...props }: SocialIconProps) {
   return (
-    <svg
-      width={size}
-      height={size}
-      viewBox="0 0 24 24"
-      fill="currentColor"
-      className={className}
-      {...props}
-    >
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor" className={className} {...props}>
       <path
         fillRule="evenodd"
         clipRule="evenodd"
@@ -25,14 +18,7 @@ export function Github({ size = 20, className, ...props }: SocialIconProps) {
 
 export function Google({ size = 20, className, ...props }: SocialIconProps) {
   return (
-    <svg
-      width={size}
-      height={size}
-      viewBox="0 0 24 24"
-      fill="currentColor"
-      className={className}
-      {...props}
-    >
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor" className={className} {...props}>
       <path
         d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"
         fill="#4285F4"

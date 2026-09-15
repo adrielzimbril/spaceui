@@ -391,14 +391,17 @@ export function ImageSplitPlayground() {
     )
   }, [prepared, cfg, apngData])
 
-  const captureExport = useCallback((exportMethod: 'single' | 'zip' | 'batch', fileCount: number) => {
-    posthog.capture('image_split_exported', {
-      export_method: exportMethod,
-      file_count: fileCount,
-      output_format: cfg.format,
-      column_count: cfg.cols,
-    })
-  }, [cfg.cols, cfg.format])
+  const captureExport = useCallback(
+    (exportMethod: 'single' | 'zip' | 'batch', fileCount: number) => {
+      posthog.capture('image_split_exported', {
+        export_method: exportMethod,
+        file_count: fileCount,
+        output_format: cfg.format,
+        column_count: cfg.cols,
+      })
+    },
+    [cfg.cols, cfg.format],
+  )
 
   const downloadOne = useCallback(
     async (i: number) => {

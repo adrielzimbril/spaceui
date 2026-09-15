@@ -1,11 +1,7 @@
 'use client'
 
 import * as React from 'react'
-import {
-  BlurRevealText,
-  type SplitMode,
-  type RevealDirection,
-} from '@/registry/components/spaceui/blur-reveal-text'
+import { BlurRevealText, type SplitMode, type RevealDirection } from '@/registry/components/spaceui/blur-reveal-text'
 
 export interface BlurRevealTextDemoProps {
   text?: string

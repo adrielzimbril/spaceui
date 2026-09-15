@@ -18,20 +18,14 @@ A fluid character-morphing typography component that rearranges matching letters
 
 Morph seamlessly across full multi-word sentences and headlines with fluid character travel.
 
-<ComponentPreview name="demo-c-morphing-text-02" contained={false}/>
+<ComponentPreview name="demo-c-morphing-text-02" contained={false} />
 
 ## Usage
 
 ```tsx
 import { MorphingText } from '@/components/spaceui/morphing-text'
 
-const words = [
-  'Morphing',
-  'Motion',
-  'Animation',
-  'Dimension',
-  'Precision',
-]
+const words = ['Morphing', 'Motion', 'Animation', 'Dimension', 'Precision']
 
 export default function RotatingHeadline() {
   return (
@@ -50,15 +44,15 @@ export default function RotatingHeadline() {
 
 ### MorphingText
 
-| Prop | Type | Default | Description |
-| --- | --- | --- | --- |
-| `texts` | `string[]` | **required** | The list of words or phrases to cycle through sequentially. |
-| `interval` | `number` | `2400` | Time in milliseconds before advancing to the next phrase. |
-| `pauseOnHover` | `boolean` | `true` | When true, pauses timer when cursor is hovered over the text. |
-| `blurAmount` | `string` | `'10px'` | Blur radius applied to entering and exiting characters. |
-| `springBounce` | `number` | `0.14` | Spring bounce factor (0 to 1) for layout transitions. |
-| `className` | `string` | `undefined` | Custom styling for the wrapper container. |
-| `textClassName` | `string` | `undefined` | Custom styling for the text component. |
+| Prop            | Type       | Default      | Description                                                   |
+| --------------- | ---------- | ------------ | ------------------------------------------------------------- |
+| `texts`         | `string[]` | **required** | The list of words or phrases to cycle through sequentially.   |
+| `interval`      | `number`   | `2400`       | Time in milliseconds before advancing to the next phrase.     |
+| `pauseOnHover`  | `boolean`  | `true`       | When true, pauses timer when cursor is hovered over the text. |
+| `blurAmount`    | `string`   | `'10px'`     | Blur radius applied to entering and exiting characters.       |
+| `springBounce`  | `number`   | `0.14`       | Spring bounce factor (0 to 1) for layout transitions.         |
+| `className`     | `string`   | `undefined`  | Custom styling for the wrapper container.                     |
+| `textClassName` | `string`   | `undefined`  | Custom styling for the text component.                        |
 
 ### TextMorph (Single Morph)
 

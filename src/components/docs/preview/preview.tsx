@@ -115,14 +115,8 @@ export function ComponentPreview({
     )
   }
 
-  const {
-    isSplit,
-    setActivePreview,
-    activePreview,
-    registerDefaultPreview,
-    activeTweakName,
-    setActiveTweakName,
-  } = useLayoutMode()
+  const { isSplit, setActivePreview, activePreview, registerDefaultPreview, activeTweakName, setActiveTweakName } =
+    useLayoutMode()
   const { has, toggle } = useBundle()
   const isBundled = has(name)
   const isSelected = activePreview?.name === name

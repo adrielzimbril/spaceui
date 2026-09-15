@@ -72,19 +72,11 @@ const GridCell = React.memo(function GridCell({
   })
 
   // Always output valid inset(...) to avoid GPU compositing layer caching bugs
-  const clipPath = useTransform(
-    influence,
-    (val) => `inset(${val * inset}% round ${val * maxCornerRadius}px)`,
-  )
+  const clipPath = useTransform(influence, (val) => `inset(${val * inset}% round ${val * maxCornerRadius}px)`)
 
   const opacity = useTransform(influence, [0, 1], [0.45, 1])
 
-  return (
-    <motion.div
-      className="bg-muted transform-gpu will-change-[clip-path,opacity]"
-      style={{ clipPath, opacity }}
-    />
-  )
+  return <motion.div className="bg-muted transform-gpu will-change-[clip-path,opacity]" style={{ clipPath, opacity }} />
 })
 
 interface GridBoardProps {
@@ -166,8 +158,7 @@ export const ProximityGrid: React.FC<ProximityGridProps> = ({
 
   const pointerX = externalPointerX ?? internalPointerX
   const pointerY = externalPointerY ?? internalPointerY
-  const activeMotionValue =
-    externalPointerActive ?? (isReducedMotion ? internalRawActive : internalSmoothActive)
+  const activeMotionValue = externalPointerActive ?? (isReducedMotion ? internalRawActive : internalSmoothActive)
 
   const [metrics, setMetrics] = React.useState<GridMetrics>({
     columns: 12,

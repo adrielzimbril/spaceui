@@ -36,8 +36,8 @@ export default async function CommunityPage() {
         }}
         title={
           <>
-            Leave your <HeroAvatar name="heart" variant="lumina" animate /> mark on{' '}
-            Space UI <HeroAvatar name="space" variant="invader" />
+            Leave your <HeroAvatar name="heart" variant="lumina" animate /> mark on Space UI{' '}
+            <HeroAvatar name="space" variant="invader" />
           </>
         }
         description="Explore messages from creators worldwide on our draggable infinite canvas. Add your note, customize your card pattern, and join the constellation."
