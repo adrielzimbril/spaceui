@@ -4,6 +4,7 @@
 export const componentGroups: Record<string, string> = {
   "block-card-info-1": "blocks-card-info",
   "block-card-info-2": "blocks-card-info",
+  "block-community-wall-1": "blocks-community-wall",
   "block-dither-carousel": "blocks",
   "block-liquid-gooey-carousel": "blocks",
   "block-prism-carousel": "blocks",

@@ -108,7 +108,7 @@ export default async function Page(props: { params: Promise<{ slug?: string[] }>
       <div className="flex items-stretch text-[1.05rem] sm:text-[15px] xl:w-full">
         {/* Main Content Column */}
         <div className="flex min-w-0 flex-1 flex-col">
-          <div className="mx-auto flex w-full xl:max-w-3xl 2xl:max-w-4xl min-w-0 flex-1 flex-col gap-8 px-4 py-8 md:px-8 lg:py-10 text-foreground">
+          <div className="mx-auto flex w-full xl:max-w-3xl 2xl:max-w-4xl min-w-0 flex-1 flex-col gap-8 px-4 pt-8 pb-32 md:px-8 md:pt-8 md:pb-32 lg:pt-10 lg:pb-36 text-foreground">
             {/* Page Header */}
             <DocsPageHeader
               title={pageData.title}

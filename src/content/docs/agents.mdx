@@ -4,6 +4,9 @@ description: Build faster and cleaner interfaces with autonomous AI coding agent
 ---
 
 import { IconArrowRight } from '@tabler/icons-react'
+import { Frame, FrameHeader } from '@/registry/primitives/frame'
+import { Card as CardPrimitives, CardPanel } from '@/registry/primitives/card'
+import { Badge } from '@/registry/components/spaceui/badge-squircle'
 
 Space UI is engineered from the ground up for both human developers and **autonomous AI coding agents** (Claude Code, Cursor, Windsurf, GitHub Copilot, Codex, and Antigravity).
 
@@ -15,85 +18,38 @@ Thanks to standard shadcn registry schemas, headless Base UI primitives, and typ
 
 Space UI's agent ecosystem is structured into three dedicated layers:
 
-<div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3.5 not-prose my-6">
-  <Link
+<Cards className="sm:grid-cols-3">
+  <Card
     href="/docs/mcp"
-    className="group relative flex flex-col justify-between rounded-2xl p-1 gap-1 bg-muted hover:bg-muted/80 transition-all duration-300 no-underline"
-  >
-    <div className="flex w-full px-2.5 pt-2 pb-1 items-center justify-between gap-2">
-      <span className="font-semibold text-sm text-foreground group-hover:text-primary transition-colors truncate">
-        MCP Server
-      </span>
-      <Badge variant="outline" className="bg-background">
-        Tools · 01
-      </Badge>
-    </div>
-
-    <div className="flex w-full p-3 flex-col justify-between gap-3 bg-background rounded-lg flex-1">
-      <p className="text-xs text-muted-foreground line-clamp-3 leading-relaxed">
-        Direct IDE tool integration exposing component search, TypeScript signatures, and autonomous installation.
-      </p>
-
-      <Badge variant="secondary" className="place-self-end">
-        Setup
-        <IconArrowRight className="size-3.5 transition-transform duration-200 group-hover:translate-x-0.5" />
-      </Badge>
-    </div>
-
-  </Link>
-
-  <Link
+    title="MCP Server"
+     description="Direct IDE tool integration exposing component search, TypeScript signatures, and autonomous installation."
+     category="Tools · 01"
+    badge="MCP Protocol"
+    dotColor="bg-blue-400"
+    ringColor="bg-blue-300"
+    actionLabel="Setup guide"
+    />
+  <Card
     href="/docs/skills"
-    className="group relative flex flex-col justify-between rounded-2xl p-1 gap-1 bg-muted hover:bg-muted/80 transition-all duration-300 no-underline"
-  >
-    <div className="flex w-full px-2.5 pt-2 pb-1 items-center justify-between gap-2">
-      <span className="font-semibold text-sm text-foreground group-hover:text-primary transition-colors truncate">
-        Agent Skills
-      </span>
-      <Badge variant="outline" className="bg-background">
-        Guides · 02
-      </Badge>
-    </div>
-
-    <div className="flex w-full p-3 flex-col justify-between gap-3 bg-background rounded-lg flex-1">
-      <p className="text-xs text-muted-foreground line-clamp-3 leading-relaxed">
-        7 specialized engineering skills in `.agents/skills/` covering accessibility, design polish, typography, and layout.
-      </p>
-
-      <Badge variant="secondary" className="place-self-end">
-        Explore
-        <IconArrowRight className="size-3.5 transition-transform duration-200 group-hover:translate-x-0.5" />
-      </Badge>
-    </div>
-
-  </Link>
-
-  <Link
+    title="Agent Skills"
+     description="7 specialized engineering skills in .agents/skills/ covering accessibility, design polish, typography, and layout."
+    category="Guides · 02"
+    badge="Skill Rules"
+    dotColor="bg-green-400"
+    ringColor="bg-green-300"
+    actionLabel="Explore skills"
+    />
+  <Card
     href="/docs/llms"
-    className="group relative flex flex-col justify-between rounded-2xl p-1 gap-1 bg-muted hover:bg-muted/80 transition-all duration-300 no-underline"
-  >
-    <div className="flex w-full px-2.5 pt-2 pb-1 items-center justify-between gap-2">
-      <span className="font-semibold text-sm text-foreground group-hover:text-primary transition-colors truncate">
-        LLM Context
-      </span>
-      <Badge variant="outline" className="bg-background">
-        Endpoints · 03
-      </Badge>
-    </div>
-
-    <div className="flex w-full p-3 flex-col justify-between gap-3 bg-background rounded-lg flex-1">
-      <p className="text-xs text-muted-foreground line-clamp-3 leading-relaxed">
-        Machine-readable endpoints (`/llms.txt`, `/llms-full.txt`, and raw per-component markdown).
-      </p>
-
-      <Badge variant="secondary" className="place-self-end">
-        View
-        <IconArrowRight className="size-3.5 transition-transform duration-200 group-hover:translate-x-0.5" />
-      </Badge>
-    </div>
-
-  </Link>
-</div>
+    title="LLM Context"
+     description=" Machine-readable endpoints (/llms.txt, /llms-full.txt, and raw per-component markdown)."
+    category="Endpoints · 03"
+    badge="Context Dumps"
+    dotColor="bg-purple-400"
+    ringColor="bg-purple-300"
+    actionLabel="View endpoints"
+    />
+</Cards>
 
 ---
 
@@ -101,26 +57,112 @@ Space UI's agent ecosystem is structured into three dedicated layers:
 
 When an AI agent operates in your workspace with Space UI:
 
-```
-┌─────────────────────────────────────────────────────────────┐
-│                      Your AI Agent                          │
-│          (Claude Code / Cursor / Windsurf / Copilot)         │
-└──────────────┬──────────────────────────────┬───────────────┘
-               │                              │
-               ▼                              ▼
-     [ 1. Query & Install ]        [ 2. Guide & Refactor ]
-               │                              │
-   MCP Server (`@spaceui`)     Agent Skills (`.agents/skills/`)
-   - search_components            - better-accessibility (WCAG/ARIA)
-   - get_component (props)        - better-ui (micro-interactions)
-   - add_component                - better-layout (RTL/containers)
-               │                              │
-               └──────────────┬───────────────┘
-                              │
-                              ▼
-                 Your React 19 Workspace
-                 `src/components/ui/*`
-```
+<div className="not-prose my-6 flex flex-col gap-3">
+  {/* Top: AI Agent */}
+  <Frame>
+    <FrameHeader className="flex flex-row items-center justify-between px-3 py-1.5">
+      <span className="text-xs font-semibold text-muted-foreground tracking-wider">AI Agent</span>
+      <Badge size="xs" variant="secondary" className="bg-background! text-foreground">
+        <span className="relative flex justify-center items-center size-fit">
+          <span className="absolute inline-flex h-full w-full rounded-full opacity-75 animate-ping animation-duration-[2.25s] bg-purple-300" />
+          <span className="relative inline-flex rounded-full size-2.5 animate-pulse bg-purple-400" />
+        </span>
+        <span className="relative">Workspace Engine</span>
+      </Badge>
+    </FrameHeader>
+    <CardPrimitives className="rounded-xl overflow-hidden bg-background">
+      <CardPanel className="p-4">
+        <h4 className="text-sm font-semibold text-foreground">Your AI Assistant</h4>
+        <p className="text-xs text-muted-foreground mt-1">
+          Claude Code, Cursor, Windsurf, GitHub Copilot, Antigravity
+        </p>
+      </CardPanel>
+    </CardPrimitives>
+  </Frame>
+
+  {/* Middle: MCP & Skills */}
+  <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
+    <Frame className="flex flex-col h-full">
+      <FrameHeader className="flex flex-row items-center justify-between px-3 py-1.5">
+        <span className="text-xs font-semibold text-muted-foreground tracking-wider">1. Query &amp; Install</span>
+        <Badge size="xs" variant="secondary" className="bg-background! text-foreground">
+          <span className="relative flex justify-center items-center size-fit">
+            <span className="absolute inline-flex h-full w-full rounded-full opacity-75 animate-ping animation-duration-[2.25s] bg-blue-300" />
+            <span className="relative inline-flex rounded-full size-2.5 animate-pulse bg-blue-400" />
+          </span>
+        <span className="relative">MCP Server</span>
+        </Badge>
+      </FrameHeader>
+      <CardPrimitives className="flex-1 rounded-xl overflow-hidden bg-background">
+        <CardPanel className="p-4 flex flex-col justify-between gap-3 h-full">
+          <div>
+            <h4 className="text-sm font-semibold text-foreground">@spaceui MCP Protocol</h4>
+            <p className="text-xs text-muted-foreground mt-1 [&_p]:text-xs [&_p]:sm:text-sm [&_p]:leading-relaxed [&_p]:my-0">
+              Autonomous component discovery, typed prop inspection, and CLI installation.
+            </p>
+          </div>
+          <div className="flex flex-wrap gap-1.5">
+                       <Badge size="xs" variant="secondary">search_components</Badge>
+            <Badge size="xs" variant="secondary">get_component</Badge>
+            <Badge size="xs" variant="secondary">add_component</Badge>
+
+          </div>
+        </CardPanel>
+      </CardPrimitives>
+    </Frame>
+
+    <Frame className="flex flex-col h-full">
+      <FrameHeader className="flex flex-row items-center justify-between px-3 py-1.5">
+        <span className="text-xs font-semibold text-muted-foreground tracking-wider">2. Guide &amp; Refactor</span>
+        <Badge size="xs" variant="secondary" className="bg-background! text-foreground">
+          <span className="relative flex justify-center items-center size-fit">
+            <span className="absolute inline-flex h-full w-full rounded-full opacity-75 animate-ping animation-duration-[2.25s] bg-green-300" />
+            <span className="relative inline-flex rounded-full size-2.5 animate-pulse bg-green-400" />
+          </span>
+        <span className="relative">Agent Skills</span>
+        </Badge>
+      </FrameHeader>
+      <CardPrimitives className="flex-1 rounded-xl overflow-hidden bg-background">
+        <CardPanel className="p-4 flex flex-col justify-between gap-3 h-full">
+          <div>
+            <h4 className="text-sm font-semibold text-foreground">.agents/skills/ Rules</h4>
+            <p className="text-xs text-muted-foreground mt-1 [&_p]:text-xs [&_p]:sm:text-sm [&_p]:leading-relaxed [&_p]:my-0">
+              Specialized interface engineering constraints and design tokens.
+            </p>
+          </div>
+          <div className="flex flex-wrap gap-1.5">
+                       <Badge size="xs" variant="secondary">better-accessibility</Badge>
+            <Badge size="xs" variant="secondary">better-ui</Badge>
+            <Badge size="xs" variant="secondary">better-layout</Badge>
+
+          </div>
+        </CardPanel>
+      </CardPrimitives>
+    </Frame>
+  </div>
+
+  {/* Bottom: Destination */}
+  <Frame>
+    <FrameHeader className="flex flex-row items-center justify-between px-3 py-1.5">
+      <span className="text-xs font-semibold text-muted-foreground tracking-wider">Output</span>
+      <Badge size="xs" variant="secondary" className="bg-background! text-foreground">
+        <span className="relative flex justify-center items-center size-fit">
+          <span className="absolute inline-flex h-full w-full rounded-full opacity-75 animate-ping animation-duration-[2.25s] bg-orange-300" />
+          <span className="relative inline-flex rounded-full size-2.5 animate-pulse bg-orange-400" />
+        </span>
+        <span className="relative">React 19</span>
+      </Badge>
+    </FrameHeader>
+    <CardPrimitives className="rounded-xl overflow-hidden bg-background">
+      <CardPanel className="p-4">
+        <h4 className="text-sm font-semibold text-foreground">Your React Workspace</h4>
+        <p className="text-xs text-muted-foreground mt-1 [&_p]:text-xs [&_p]:sm:text-sm [&_p]:leading-relaxed [&_p]:my-0">
+          Base UI primitives, Tailwind CSS v4, and tactile motion in src/components/ui
+        </p>
+      </CardPanel>
+    </CardPrimitives>
+  </Frame>
+</div>
 
 ---
 

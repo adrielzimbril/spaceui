@@ -7,11 +7,40 @@ description: Responsive type scale, font variables, heading hierarchy, optical l
 
 Space UI typography is built on the principles of **restraint, precision, and responsive scalability**. Rather than arbitrary one-off font sizes, the system uses a mathematically grounded type scale with descending heading levels, optical line-heights, and dedicated tokens for body and interface controls.
 
-The design system is powered by three primary font CSS variables:
+The design system is powered by three primary font families:
 
-- `--font-sans`: Default body text, menus, inputs, tables, and dialogs.
-- `--font-heading`: Display titles, page headers, modal titles, and section headlines.
-- `--font-mono`: Codeblocks, keyboard shortcuts (`<Kbd />`), status badges, and tabular values.
+<Cards className="sm:grid-cols-3">
+  <Card
+    title="Sans Serif"
+    description="Default body copy, navigation menus, inputs, tables, dialogs, and general interface controls."
+    category="Body & UI"
+    badge="--font-sans"
+    dotColor="bg-blue-400"
+    ringColor="bg-blue-300"
+    actionLabel="Body Specs"
+    href="#body--ui-font-specs"
+  />
+  <Card
+    title="Heading Display"
+    description="Display hero titles, section headlines, modal titles, and prominent editorial headers."
+    category="Display Titles"
+    badge="--font-heading"
+    dotColor="bg-purple-400"
+    ringColor="bg-purple-300"
+    actionLabel="Heading Specs"
+    href="#heading-font-specs"
+  />
+  <Card
+    title="Monospace"
+    description="Dedicated to codeblocks, terminal snippets, keyboard shortcuts, and dynamic tabular numbers."
+    category="Technical"
+    badge="--font-mono"
+    dotColor="bg-amber-400"
+    ringColor="bg-amber-300"
+    actionLabel="Type Scale"
+    href="#type-scale-reference"
+  />
+</Cards>
 
 ---
 

@@ -131,11 +131,38 @@ If you prefer adding the MCP server manually, save the corresponding JSON snippe
 
 When the MCP server is active, your AI agent has access to these capabilities:
 
-| Tool                    | Purpose                                              | Example Interaction                                            |
-| :---------------------- | :--------------------------------------------------- | :------------------------------------------------------------- |
-| **`search_components`** | Finds matching primitives and blocks                 | _"Find dialog and drawer components in Space UI"_              |
-| **`get_component`**     | Inspects TypeScript props, imports, and CSS tokens   | _"Show me the props and sub-components for `@spaceui/dialog`"_ |
-| **`add_component`**     | Directly executes `shadcn add` inside your workspace | _"Install `@spaceui/dialog` and create a confirmation modal"_  |
+<Cards className="sm:grid-cols-3">
+  <Card
+    title="search_components"
+    description="Finds matching primitives, interactive blocks, and sensory hooks directly inside your prompt."
+    category="Discovery"
+    badge="Instant Search"
+    dotColor="bg-blue-400"
+    ringColor="bg-blue-300"
+    actionLabel="Agent Guide"
+    href="/docs/agents"
+  />
+  <Card
+    title="get_component"
+    description="Inspects TypeScript props, imports, sub-components, and design tokens without context pollution."
+    category="Inspection"
+    badge="Props & API"
+    dotColor="bg-purple-400"
+    ringColor="bg-purple-300"
+    actionLabel="Agent Guide"
+    href="/docs/agents"
+  />
+  <Card
+    title="add_component"
+    description="Directly executes shadcn CLI commands to scaffold and customize primitives in your workspace."
+    category="Installation"
+    badge="Auto Install"
+    dotColor="bg-emerald-400"
+    ringColor="bg-emerald-300"
+    actionLabel="Agent Guide"
+    href="/docs/agents"
+  />
+</Cards>
 
 ---
 

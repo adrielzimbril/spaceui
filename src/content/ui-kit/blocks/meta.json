@@ -6,6 +6,7 @@
   "pages": [
     "---Blocks---",
     "interactive-grid-hero",
+    "community-wall",
     "sign-in",
     "card-info",
     "interactive-fun-facts",

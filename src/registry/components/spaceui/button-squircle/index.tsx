@@ -53,6 +53,7 @@ export interface ButtonProps extends useRender.ComponentProps<'button'>, Variant
   hover?: boolean
   whileTap?: boolean
   squircle?: boolean
+  square?: boolean
 }
 
 export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
@@ -71,6 +72,7 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       hover = false,
       whileTap,
       squircle = true,
+      square = false,
       ...props
     },
     ref,
@@ -84,6 +86,7 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       className: cn(
         buttonVariants({ variant, size, className }),
         squircle && 'squircle rounded-7xl',
+        square && 'aspect-square',
         isFull && 'w-full flex text-center items-center justify-center',
         isIcon && '[&_svg]:size-auto',
         isPointer && 'cursor-pointer',

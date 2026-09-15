@@ -1,0 +1,58 @@
+---
+title: Community Wall
+description: An interactive 2D draggable infinite canvas community board featuring radial bloom distribution, tilt controls, card pattern styles, and real-time note pinning.
+preview: 
+  name: block-community-wall-1
+  contained: false
+---
+
+## Installation
+
+<ComponentInstallation name="block-community-wall-1" />
+
+## Features
+
+- **Draggable Infinite Canvas**: Smooth 2D drag-to-pan physics with boundary clamping and recenter GPS trigger.
+- **Radial Bloom Distribution**: Newly added notes automatically find empty coordinates via logarithmic spiral placement, avoiding overlapping cards.
+- **Geometric Card Patterns**: Choose between 6 bespoke SVGs (waves, dots, circuit, isometric grid, rings, radial bursts) styled with subtle OKLCH accents.
+- **Micro-Interactions & Audio**: Hover elevations, card tilt angles (-12° to +12°), and audio feedback powered by `@usespaceui/sounds`.
+- **Responsive Layout**: Infinite canvas on desktop and seamless vertical list/masonry on mobile devices.
+- **Flexible Backend**: Ready to connect to Supabase, PostgreSQL, or any REST/GraphQL backend with support for verified creator badges and guest postings.
+
+## Structure
+
+The block includes:
+
+- `CommunityWall`: Main wrapper combining the canvas, floating action bar, stats counter, and submission dialog.
+- `InfiniteCanvas`: Draggable 2D viewport handling panning, collision avoidance, and card rendering.
+- `CommunityWallCard`: The memo note card with rotation, background patterns, and author avatar.
+- `LeaveNoteDialog`: Modal form with live real-time card preview, angle slider, and pattern picker.
+- `WALL_PATTERNS`: Array of 6 decorative SVGs for card backgrounds.
+
+## Supabase Schema
+
+If you want to persist notes to Supabase with mixed guest and authenticated postings, use the following SQL schema:
+
+```sql
+create table if not exists public.community_wall (
+  id uuid primary key default gen_random_uuid(),
+  user_id uuid references auth.users(id) on delete set null,
+  creator_name text not null,
+  creator_avatar_url text,
+  message text not null check (char_length(message) <= 140),
+  pattern_index int default 0,
+  rotation int default 0,
+  is_verified boolean default false,
+  created_at timestamptz default now()
+);
+
+alter table public.community_wall enable row level security;
+
+create policy "Anyone can read community notes"
+  on public.community_wall for select
+  using (true);
+
+create policy "Anyone can insert community notes"
+  on public.community_wall for insert
+  with check (char_length(message) <= 140);
+```

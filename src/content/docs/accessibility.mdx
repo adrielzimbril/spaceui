@@ -7,7 +7,30 @@ Animations can greatly enhance user experience, but they can also create accessi
 
 To address this, operating systems and browsers expose a setting called **Reduced Motion** (`prefers-reduced-motion`). When enabled, it communicates that the user prefers simpler or fewer animations.
 
-As developers, it’s our responsibility to make sure our components adapt to this preference.
+## Core Principles
+
+<Cards className="sm:grid-cols-2">
+  <Card
+    title="Prefers Reduced Motion"
+    description="Automatically honors user OS preferences by neutralizing large translations, scaling, and aggressive physics."
+    category="Comfort"
+    badge="System Setting"
+    dotColor="bg-blue-400"
+    ringColor="bg-blue-300"
+    actionLabel="Learn More"
+    href="#prefers-reduced-motion"
+  />
+  <Card
+    title="MotionConfig Provider"
+    description="A single root-level wrapper delivers seamless WCAG 2.2 AA compliant motion safety across all Space UI primitives."
+    category="Engineering"
+    badge="Zero Config"
+    dotColor="bg-emerald-400"
+    ringColor="bg-emerald-300"
+    actionLabel="Setup Guide"
+    href="#space-ui--motion"
+  />
+</Cards>
 
 ## Prefers Reduced Motion
 

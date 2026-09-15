@@ -11,10 +11,48 @@ Like [shadcn/ui](https://ui.shadcn.com/), **Space UI is not a typical install‑
 
 ## What’s included
 
-1. **Primitives (animated)**: Core building blocks with physics & animation baked in, ported and extended from Base UI.
-2. **Components & Blocks**: Complex components, sensory avatars, charts, grids, and ready-to-use section blocks.
-3. **Sensory Hooks & DX**: Sensory UI feedback, sound system, direction, and flow controllers.
-4. **Iconography**: Clean vector icons utilizing Tabler Icons for components and Lucide for primitives.
+<Cards className="sm:grid-cols-2">
+  <Card
+    title="Animated Primitives"
+    description="Core building blocks with physics and fluid animation baked in, ported and extended from Base UI."
+    href="/ui-kit/primitives/dialog"
+    category="Foundations"
+    badge="Base UI"
+    dotColor="bg-emerald-400"
+    ringColor="bg-emerald-300"
+    actionLabel="Explore Primitives"
+  />
+  <Card
+    title="Components & Blocks"
+    description="Sensory avatars, charts, counters, carousels, tickers, and ready-to-use application blocks."
+    href="/showcase"
+    category="Compound"
+    badge="Interactive"
+    dotColor="bg-blue-400"
+    ringColor="bg-blue-300"
+    actionLabel="View Showcase"
+  />
+  <Card
+    title="Sensory Hooks & DX"
+    description="Sensory UI feedback, tactile sound system, direction controllers, and squircle tokens."
+    href="/tools"
+    category="Experience"
+    badge="Sensory"
+    dotColor="bg-purple-400"
+    ringColor="bg-purple-300"
+    actionLabel="Try Tools"
+  />
+  <Card
+    title="Dual Iconography"
+    description="Clean vector icons harmonized with Tabler Icons for components and Lucide for headless primitives."
+    href="/docs/fundamentals/iconography"
+    category="Visuals"
+    badge="Tabler & Lucide"
+    dotColor="bg-amber-400"
+    ringColor="bg-amber-300"
+    actionLabel="Icon Standards"
+  />
+</Cards>
 
 ## Why Space UI?
 
@@ -27,5 +65,25 @@ Like [shadcn/ui](https://ui.shadcn.com/), **Space UI is not a typical install‑
 
 Space UI is designed from the ground up to be **AI-friendly**, making it easier for language models to understand and modify your UI.
 
-- **llms.txt**: Access our [llms.txt](/llms.txt) file for a structured map of our documentation and architecture optimized for AI agents.
-- **Copy Markdown**: Every page includes a **Copy Markdown** feature, allowing you to instantly feed documentation or code into your AI-driven development workflows.
+<Cards className="sm:grid-cols-2">
+  <Card
+    title="Global llms.txt Standard"
+    description="Access our structured index of documentation, primitives, and architecture optimized for AI agents and RAG."
+    href="/llms.txt"
+    category="AI Standard"
+    badge="llms.txt"
+    dotColor="bg-emerald-400"
+    ringColor="bg-emerald-300"
+    actionLabel="Open Index"
+  />
+  <Card
+    title="Agent Integration & Skills"
+    description="Equip Claude Code, Cursor, Windsurf, or Antigravity with specialized skills for a11y, layout, and polish."
+    href="/docs/agents"
+    category="AI Agents"
+    badge="Full Workflow"
+    dotColor="bg-indigo-400"
+    ringColor="bg-indigo-300"
+    actionLabel="Read Guide"
+  />
+</Cards>

@@ -9,19 +9,40 @@ Space UI is engineered to be **machine-readable and AI-friendly**. We provide de
 
 ## Endpoints
 
-### 1. Global LLMs Index (`/llms.txt`)
+<Cards className="sm:grid-cols-3">
+  <Card
+    title="Global Index"
+    description="A structured index of all available components, utilities, and doc pages formatted to llms.txt standard."
+    href="/llms.txt"
+    category="AI Standard"
+    badge="llms.txt"
+    dotColor="bg-emerald-400"
+    ringColor="bg-emerald-300"
+    actionLabel="Open llms.txt"
+  />
+  <Card
+    title="Full Doc Corpus"
+    description="The entire documentation corpus concatenated into a single plain-text stream, perfect for RAG and prompts."
+    href="/llms-full.txt"
+    category="Full Corpus"
+    badge="llms-full.txt"
+    dotColor="bg-blue-400"
+    ringColor="bg-blue-300"
+    actionLabel="Open llms-full.txt"
+  />
+  <Card
+    title="Per-Component Stream"
+    description="Every documentation page and primitive can be fetched directly as clean Markdown with the /llms.mdx/ prefix."
+    href="/docs/agents"
+    category="Live Feed"
+    badge="/llms.mdx/*"
+    dotColor="bg-purple-400"
+    ringColor="bg-purple-300"
+    actionLabel="Agent Guide"
+  />
+</Cards>
 
-A structured index of all available components, utilities, and documentation pages formatted according to the [llms.txt standard](https://llmstxt.org).
-
-- URL: [`/llms.txt`](/llms.txt)
-
-### 2. Full Documentation Dump (`/llms-full.txt`)
-
-The entire documentation corpus concatenated into a single plain-text stream, perfect for feeding into prompt context or creating local RAG embeddings.
-
-- URL: [`/llms-full.txt`](/llms-full.txt)
-
-### 3. Per-Component Markdown Endpoints (`/llms.mdx/...`)
+### How Per-Component Markdown Works
 
 Every documentation page and primitive can be fetched directly as clean Markdown by prefixing the route with `/llms.mdx/`:
 

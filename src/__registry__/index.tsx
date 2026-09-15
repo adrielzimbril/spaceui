@@ -80,6 +80,63 @@ export const index: Record<string, any> = {
     })(),
     command: '@spaceui/block-card-info-2',
   },
+  "block-community-wall-1": {
+    name: "block-community-wall-1",
+    description: "Interactive draggable infinite canvas community wall with radial bloom distribution, card patterns, collision avoidance, tilt controls, and note submission modal.",
+    type: "registry:block",
+    dependencies: ["@usespaceui/avatars","@usespaceui/sounds","@tabler/icons-react"],
+    devDependencies: undefined,
+    registryDependencies: ["https://www.spaceui.one/r/lib-utils.json","https://www.spaceui.one/r/dialog.json","https://www.spaceui.one/r/button.json","https://www.spaceui.one/r/input.json","https://www.spaceui.one/r/textarea.json","https://www.spaceui.one/r/slider.json"],
+    files: [
+  {
+    "path": "src/registry/blocks/community-wall/community-wall-1/index.tsx",
+    "type": "registry:block",
+    "target": "components/blocks/community-wall/community-wall-1/index.tsx"
+  },
+  {
+    "path": "src/registry/blocks/community-wall/index.tsx",
+    "type": "registry:block",
+    "target": "components/blocks/community-wall/index.tsx"
+  },
+  {
+    "path": "src/registry/blocks/community-wall/community-wall-card.tsx",
+    "type": "registry:block",
+    "target": "components/blocks/community-wall/community-wall-card.tsx"
+  },
+  {
+    "path": "src/registry/blocks/community-wall/infinite-canvas.tsx",
+    "type": "registry:block",
+    "target": "components/blocks/community-wall/infinite-canvas.tsx"
+  },
+  {
+    "path": "src/registry/blocks/community-wall/leave-note-dialog.tsx",
+    "type": "registry:block",
+    "target": "components/blocks/community-wall/leave-note-dialog.tsx"
+  },
+  {
+    "path": "src/registry/blocks/community-wall/patterns.tsx",
+    "type": "registry:block",
+    "target": "components/blocks/community-wall/patterns.tsx"
+  }
+],
+    keywords: [],
+    component: (() => {
+      const LazyComp = React.lazy(async () => {
+        const mod = await import("@/registry/blocks/community-wall/community-wall-1/index.tsx");
+        const exportName = Object.keys(mod).find(
+          key => typeof mod[key] === 'function' || typeof mod[key] === 'object'
+        ) || "block-community-wall-1";
+        const Comp = mod.default || mod[exportName];
+        if (mod.animations) {
+          (LazyComp as any).animations = mod.animations;
+        }
+        return { default: Comp };
+      });
+      LazyComp.demoProps = {};
+      return LazyComp;
+    })(),
+    command: '@spaceui/block-community-wall-1',
+  },
   "block-dither-carousel": {
     name: "block-dither-carousel",
     description: "3D cylindrical spiral carousel in WebGL2 with curved cards, axial directional blur, and matrix dither pattern.",

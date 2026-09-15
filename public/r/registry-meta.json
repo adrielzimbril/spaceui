@@ -147,6 +147,114 @@
       }
     ]
   },
+  "block-community-wall-1": {
+    "name": "block-community-wall-1",
+    "shortName": "block-community-wall-1",
+    "title": "Community Wall",
+    "description": "Interactive draggable infinite canvas community wall with radial bloom distribution, card patterns, collision avoidance, tilt controls, and note submission modal.",
+    "type": "registry:block",
+    "url": "/ui-kit/blocks/community-wall",
+    "category": "Community-wall",
+    "categories": [
+      "community-wall",
+      "canvas",
+      "community",
+      "block"
+    ],
+    "createdAt": "2026-09-15",
+    "updatedAt": "2026-09-15",
+    "size": "37.9 KB",
+    "rawSize": 38780,
+    "directSize": "37.9 KB",
+    "fileCount": 6,
+    "dependencies": [
+      "@usespaceui/avatars",
+      "@usespaceui/sounds",
+      "@tabler/icons-react"
+    ],
+    "registryDependencies": [
+      "https://www.spaceui.one/r/lib-utils.json",
+      "https://www.spaceui.one/r/dialog.json",
+      "https://www.spaceui.one/r/button.json",
+      "https://www.spaceui.one/r/input.json",
+      "https://www.spaceui.one/r/textarea.json",
+      "https://www.spaceui.one/r/slider.json"
+    ],
+    "dependents": [],
+    "related": []
+  },
+  "community-wall": {
+    "name": "block-community-wall-1",
+    "shortName": "block-community-wall-1",
+    "title": "Community Wall",
+    "description": "Interactive draggable infinite canvas community wall with radial bloom distribution, card patterns, collision avoidance, tilt controls, and note submission modal.",
+    "type": "registry:block",
+    "url": "/ui-kit/blocks/community-wall",
+    "category": "Community-wall",
+    "categories": [
+      "community-wall",
+      "canvas",
+      "community",
+      "block"
+    ],
+    "createdAt": "2026-09-15",
+    "updatedAt": "2026-09-15",
+    "size": "37.9 KB",
+    "rawSize": 38780,
+    "directSize": "37.9 KB",
+    "fileCount": 6,
+    "dependencies": [
+      "@usespaceui/avatars",
+      "@usespaceui/sounds",
+      "@tabler/icons-react"
+    ],
+    "registryDependencies": [
+      "https://www.spaceui.one/r/lib-utils.json",
+      "https://www.spaceui.one/r/dialog.json",
+      "https://www.spaceui.one/r/button.json",
+      "https://www.spaceui.one/r/input.json",
+      "https://www.spaceui.one/r/textarea.json",
+      "https://www.spaceui.one/r/slider.json"
+    ],
+    "dependents": [],
+    "related": []
+  },
+  "blocks-community-wall": {
+    "name": "block-community-wall-1",
+    "shortName": "block-community-wall-1",
+    "title": "Community Wall",
+    "description": "Interactive draggable infinite canvas community wall with radial bloom distribution, card patterns, collision avoidance, tilt controls, and note submission modal.",
+    "type": "registry:block",
+    "url": "/ui-kit/blocks/community-wall",
+    "category": "Community-wall",
+    "categories": [
+      "community-wall",
+      "canvas",
+      "community",
+      "block"
+    ],
+    "createdAt": "2026-09-15",
+    "updatedAt": "2026-09-15",
+    "size": "37.9 KB",
+    "rawSize": 38780,
+    "directSize": "37.9 KB",
+    "fileCount": 6,
+    "dependencies": [
+      "@usespaceui/avatars",
+      "@usespaceui/sounds",
+      "@tabler/icons-react"
+    ],
+    "registryDependencies": [
+      "https://www.spaceui.one/r/lib-utils.json",
+      "https://www.spaceui.one/r/dialog.json",
+      "https://www.spaceui.one/r/button.json",
+      "https://www.spaceui.one/r/input.json",
+      "https://www.spaceui.one/r/textarea.json",
+      "https://www.spaceui.one/r/slider.json"
+    ],
+    "dependents": [],
+    "related": []
+  },
   "block-dither-carousel": {
     "name": "block-dither-carousel",
     "shortName": "block-dither-carousel",
