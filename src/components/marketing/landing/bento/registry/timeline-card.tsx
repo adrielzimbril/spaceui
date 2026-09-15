@@ -291,7 +291,7 @@ export function TimelineCard() {
         </CardPanel>
       </Card>
       <FrameFooter className="flex flex-row items-center justify-between p-2">
-        <FrameTitle>Timeline</FrameTitle>
+        <FrameTitle className="text-muted-foreground">Timeline</FrameTitle>
         <Link
           href="/components/timeline"
           data-space-hover

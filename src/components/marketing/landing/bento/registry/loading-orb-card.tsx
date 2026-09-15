@@ -33,7 +33,7 @@ export function LoadingOrbCard() {
         </CardPanel>
       </Card>
       <FrameFooter className="flex flex-row items-center justify-between p-2">
-        <FrameTitle>Loading Orb</FrameTitle>
+        <FrameTitle className="text-muted-foreground">Loading Orb</FrameTitle>
         <Link
           href="/components/loading"
           data-space-hover

@@ -156,7 +156,7 @@ export function AvatarsSquishmojiCard({ isVisible = true }: AvatarsSquishmojiCar
         </CardPanel>
       </Card>
       <FrameFooter className="flex flex-row items-center justify-between p-2">
-        <FrameTitle>Generative Avatars &amp; Squishmoji</FrameTitle>
+        <FrameTitle className="text-muted-foreground">Generative Avatars &amp; Squishmoji</FrameTitle>
         <Link
           href="/tools/avatars"
           data-space-hover

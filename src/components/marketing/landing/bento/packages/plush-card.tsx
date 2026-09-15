@@ -200,7 +200,7 @@ export function PlushCard({ isVisible = true, hasBeenVisible = true }: PlushCard
         </CardPanel>
       </Card>
       <FrameFooter className="flex flex-row items-center justify-between p-2">
-        <FrameTitle>Plush 3D Fur</FrameTitle>
+        <FrameTitle className="text-muted-foreground">Plush 3D Fur</FrameTitle>
         <div className="flex items-center gap-1.5">
           <Button
             variant="secondary"

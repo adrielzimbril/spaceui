@@ -38,7 +38,7 @@ export function AudioCard() {
         </CardPanel>
       </Card>
       <FrameFooter className="flex flex-row items-center justify-between p-2">
-        <FrameTitle>Procedural Audio</FrameTitle>
+        <FrameTitle className="text-muted-foreground">Procedural Audio</FrameTitle>
         <a
           href="https://sounds.spaceui.one"
           target="_blank"

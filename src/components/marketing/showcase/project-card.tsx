@@ -66,7 +66,7 @@ export function ProjectCard({ project, priority = false }: ProjectCardProps) {
 
         <FrameFooter className="flex flex-row items-center justify-between p-2 gap-2">
           <div className="flex flex-col min-w-0 pr-2">
-            <FrameTitle className="truncate text-sm font-semibold">{project.title}</FrameTitle>
+            <FrameTitle className="truncate text-sm text-muted-foreground font-semibold">{project.title}</FrameTitle>
             <p className="text-xs text-muted-foreground truncate">{project.headline}</p>
           </div>
 

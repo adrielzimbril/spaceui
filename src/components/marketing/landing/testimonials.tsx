@@ -108,7 +108,7 @@ export function TestimonialsSection() {
                   <Avatar name={t.avatarSeed} variant={t.avatarVariant} size={36} circle />
                 </div>
                 <div>
-                  <FrameTitle className="text-sm font-semibold">{t.name}</FrameTitle>
+                  <FrameTitle className="text-sm text-muted-foreground font-semibold">{t.name}</FrameTitle>
                   <FrameDescription className="text-xs">{t.handle}</FrameDescription>
                 </div>
               </div>

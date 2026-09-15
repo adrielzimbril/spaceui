@@ -131,7 +131,7 @@ export function ImageSplitCard({ isVisible = true }: ImageSplitCardProps) {
         </CardPanel>
       </Card>
       <FrameFooter className="flex flex-row items-center justify-between p-2">
-        <FrameTitle>Image Split</FrameTitle>
+        <FrameTitle className="text-muted-foreground">Image Split</FrameTitle>
         <div className="flex items-center gap-1.5">
           <Button
             variant="secondary"

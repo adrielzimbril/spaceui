@@ -43,7 +43,7 @@ export function OrbBloopCard({ isVisible = true }: { isVisible?: boolean }) {
         </CardPanel>
       </Card>
       <FrameFooter className="flex flex-row items-center justify-between p-2">
-        <FrameTitle>Orb Bloop</FrameTitle>
+        <FrameTitle className="text-muted-foreground">Orb Bloop</FrameTitle>
         <Link
           href="/components/orb/bloop"
           data-space-hover

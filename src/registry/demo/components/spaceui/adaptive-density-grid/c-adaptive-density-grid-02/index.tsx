@@ -159,7 +159,7 @@ export default function AdaptiveDensityGridDemo02() {
             </Card>
 
             <FrameFooter className="flex flex-row items-center justify-between p-2 gap-2">
-              <FrameTitle className="truncate text-sm font-semibold">{item.title}</FrameTitle>
+              <FrameTitle className="truncate text-sm text-muted-foreground font-semibold">{item.title}</FrameTitle>
               <Button variant="default" size="xs" pointer hover>
                 View
               </Button>

@@ -30,7 +30,7 @@ export function SquircleCard() {
         </CardPanel>
       </Card>
       <FrameFooter className="flex flex-row items-center justify-between p-2">
-        <FrameTitle>Squircle Smoothing</FrameTitle>
+        <FrameTitle className="text-muted-foreground">Squircle Smoothing</FrameTitle>
         <Link
           href="/docs/squircle"
           data-space-hover

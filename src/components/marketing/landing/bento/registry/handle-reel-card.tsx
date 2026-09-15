@@ -49,7 +49,7 @@ export function HandleReelCard() {
         </CardPanel>
       </Card>
       <FrameFooter className="flex flex-row items-center justify-between p-2">
-        <FrameTitle>Handle Reel</FrameTitle>
+        <FrameTitle className="text-muted-foreground">Handle Reel</FrameTitle>
         <Link
           href="/components/handle-reel"
           data-space-hover

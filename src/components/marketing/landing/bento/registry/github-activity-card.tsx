@@ -15,7 +15,7 @@ export function GitHubActivityCard() {
         </CardPanel>
       </Card>
       <FrameFooter className="flex flex-row items-center justify-between p-2">
-        <FrameTitle>GitHub Activity</FrameTitle>
+        <FrameTitle className="text-muted-foreground">GitHub Activity</FrameTitle>
         <Link
           href="/components/github-activity"
           data-space-hover

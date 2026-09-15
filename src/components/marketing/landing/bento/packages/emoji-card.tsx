@@ -118,7 +118,7 @@ export function EmojiCard({ isVisible = true }: EmojiCardProps) {
         </CardPanel>
       </Card>
       <FrameFooter className="flex flex-row items-center justify-between p-2">
-        <FrameTitle>Emoji Hub</FrameTitle>
+        <FrameTitle className="text-muted-foreground">Emoji Hub</FrameTitle>
         <Link
           href="/tools/emoji"
           data-space-hover

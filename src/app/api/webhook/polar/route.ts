@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { validateEvent, WebhookVerificationError } from '@polar-sh/sdk/webhooks'
+import { createAdminClient } from '@/integrations/supabase/server'
 
 export async function POST(request: NextRequest) {
   const secret = process.env.POLAR_WEBHOOK_SECRET
@@ -28,35 +29,136 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ received: false, error: 'Webhook processing error' }, { status: 500 })
   }
 
-  switch (event.type) {
-    case 'order.paid':
-      // TODO: Fulfill order in database / grant access / trigger order confirmation
-      // const order = event.data
-      break
+  const supabase = createAdminClient()
 
-    case 'order.created':
-      // Initial order created
-      break
+  try {
+    switch (event.type) {
+      case 'order.paid': {
+        const order = event.data as any
+        const customer = order.customer
+        const externalId = customer?.externalId || order.metadata?.userId
+        const productId = order.productId
 
-    case 'customer.state_changed':
-      // TODO: Update customer state, sync user entitlements & permissions
-      // const customerState = event.data
-      break
+        if (supabase && (externalId || customer?.email)) {
+          let targetUserId = externalId
+          let userMetadata: any = {}
 
-    case 'checkout.created':
-      // Checkout initiated
-      break
+          if (!targetUserId && customer?.email) {
+            const { data } = await supabase.auth.admin.listUsers()
+            const match = data?.users.find((u) => u.email?.toLowerCase() === customer.email.toLowerCase())
+            if (match) {
+              targetUserId = match.id
+              userMetadata = match.app_metadata || {}
+            }
+          } else if (targetUserId) {
+            const { data } = await supabase.auth.admin.getUserById(targetUserId)
+            if (data?.user) {
+              userMetadata = data.user.app_metadata || {}
+            }
+          }
 
-    case 'subscription.created':
-    case 'subscription.updated':
-    case 'subscription.canceled':
-      // TODO: Synchronize user subscription status in database
-      // const subscription = event.data
-      break
+          if (targetUserId) {
+            const existingUnlocked: string[] = Array.isArray(userMetadata.unlocked_products)
+              ? userMetadata.unlocked_products
+              : []
 
-    default:
-      // Other unhandled events
-      break
+            const updatedUnlocked = productId && !existingUnlocked.includes(productId)
+              ? [...existingUnlocked, productId]
+              : existingUnlocked
+
+            // Check if this order grants full lifetime access
+            const isLifetime =
+              order.metadata?.plan === 'lifetime' ||
+              order.product?.name?.toLowerCase().includes('lifetime') ||
+              order.product?.name?.toLowerCase().includes('all-access')
+
+            // Update Supabase auth user app_metadata
+            await supabase.auth.admin.updateUserById(targetUserId, {
+              app_metadata: {
+                ...userMetadata,
+                has_paid: true,
+                ...(isLifetime ? { plan: 'lifetime' } : {}),
+                polar_customer_id: customer?.id || order.customerId,
+                last_order_id: order.id,
+                unlocked_products: updatedUnlocked,
+              },
+            })
+
+            // Attempt writing to orders table if configured
+            try {
+              await (supabase as any).from('orders').upsert({
+                id: order.id,
+                user_id: targetUserId,
+                amount: order.amount,
+                currency: order.currency,
+                status: 'paid',
+                product_id: productId,
+                created_at: new Date().toISOString(),
+              })
+            } catch (tableErr) {
+              console.warn('[Polar Webhook] Note: orders table not available or insert failed:', tableErr)
+            }
+          }
+        }
+        break
+      }
+
+      case 'subscription.created':
+      case 'subscription.updated':
+      case 'subscription.canceled': {
+        const sub = event.data as any
+        const customer = sub.customer
+        const externalId = customer?.externalId || sub.metadata?.userId
+        const isActive = sub.status === 'active' || sub.status === 'trialing'
+
+        if (supabase && (externalId || customer?.email)) {
+          let targetUserId = externalId
+
+          if (!targetUserId && customer?.email) {
+            const { data } = await supabase.auth.admin.listUsers()
+            const match = data?.users.find((u) => u.email?.toLowerCase() === customer.email.toLowerCase())
+            if (match) targetUserId = match.id
+          }
+
+          if (targetUserId) {
+            // Update Supabase auth user app_metadata
+            await supabase.auth.admin.updateUserById(targetUserId, {
+              app_metadata: {
+                plan: isActive ? 'pro' : 'free',
+                subscription_status: sub.status,
+                polar_customer_id: customer?.id || sub.customerId,
+                polar_subscription_id: sub.id,
+                current_period_end: sub.currentPeriodEnd,
+              },
+            })
+
+            // Attempt writing to subscriptions table if configured
+            try {
+              await (supabase as any).from('subscriptions').upsert({
+                id: sub.id,
+                user_id: targetUserId,
+                polar_customer_id: customer?.id || sub.customerId,
+                status: sub.status,
+                product_id: sub.productId,
+                price_id: sub.priceId,
+                current_period_end: sub.currentPeriodEnd,
+                cancel_at_period_end: sub.cancelAtPeriodEnd ?? false,
+                updated_at: new Date().toISOString(),
+              })
+            } catch (tableErr) {
+              console.warn('[Polar Webhook] Note: subscriptions table not available or insert failed:', tableErr)
+            }
+          }
+        }
+        break
+      }
+
+      default:
+        break
+    }
+  } catch (syncError) {
+    console.error('[Polar Webhook] Sync error:', syncError)
+    return NextResponse.json({ received: true, syncError: String(syncError) })
   }
 
   return NextResponse.json({ received: true })

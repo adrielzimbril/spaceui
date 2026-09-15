@@ -86,7 +86,7 @@ export function FlagsCard({ isVisible = true }: FlagsCardProps) {
         </CardPanel>
       </Card>
       <FrameFooter className="flex flex-row items-center justify-between p-2">
-        <FrameTitle>SVG Flags</FrameTitle>
+        <FrameTitle className="text-muted-foreground">SVG Flags</FrameTitle>
         <Link
           href="/tools/flags"
           data-space-hover

@@ -55,7 +55,7 @@ export function OrbSmoothCard({ isVisible = true }: { isVisible?: boolean }) {
         </CardPanel>
       </Card>
       <FrameFooter className="flex flex-row items-center justify-between p-2">
-        <FrameTitle>Orb Smooth</FrameTitle>
+        <FrameTitle className="text-muted-foreground">Orb Smooth</FrameTitle>
         <Link
           href="/components/orb/smooth"
           data-space-hover

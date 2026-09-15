@@ -33,7 +33,7 @@ export function BouncyAccordionCard() {
         </CardPanel>
       </Card>
       <FrameFooter className="flex flex-row items-center justify-between p-2">
-        <FrameTitle>Bouncy Accordion</FrameTitle>
+        <FrameTitle className="text-muted-foreground">Bouncy Accordion</FrameTitle>
         <Link
           href="/components/bouncy-accordion"
           data-space-hover
