@@ -19,6 +19,12 @@ export interface ProximityGridProps extends React.HTMLAttributes<HTMLDivElement>
   inset?: number
   /** Whether the grid responds to cursor interaction. @default true */
   interactive?: boolean
+  /** External MotionValue for pointer X coordinate */
+  pointerX?: MotionValue<number>
+  /** External MotionValue for pointer Y coordinate */
+  pointerY?: MotionValue<number>
+  /** External MotionValue for active interaction */
+  pointerActive?: MotionValue<number>
 }
 
 interface GridMetrics {
@@ -53,18 +59,22 @@ const GridCell = React.memo(function GridCell({
   inset,
 }: GridCellProps) {
   const influence = useTransform(() => {
+    const px = pointerX.get()
+    const py = pointerY.get()
     const active = pointerActive.get()
     if (active <= 0) return 0
 
-    const dist = Math.hypot(pointerX.get() - centerX, pointerY.get() - centerY)
+    const dist = Math.hypot(px - centerX, py - centerY)
     if (dist >= radius) return 0
 
     const proximity = 1 - dist / radius
     return smoothstep(proximity) * active
   })
 
-  const clipPath = useTransform(influence, (val) =>
-    val > 0.001 ? `inset(${val * inset}% round ${val * maxCornerRadius}px)` : 'none',
+  // Always output valid inset(...) to avoid GPU compositing layer caching bugs
+  const clipPath = useTransform(
+    influence,
+    (val) => `inset(${val * inset}% round ${val * maxCornerRadius}px)`,
   )
 
   const opacity = useTransform(influence, [0, 1], [0.45, 1])
@@ -135,23 +145,29 @@ export const ProximityGrid: React.FC<ProximityGridProps> = ({
   proximity = 4,
   inset = 6,
   interactive = true,
+  pointerX: externalPointerX,
+  pointerY: externalPointerY,
+  pointerActive: externalPointerActive,
   className,
   ...props
 }) => {
   const containerRef = React.useRef<HTMLDivElement>(null)
   const isReducedMotion = Boolean(useReducedMotion())
 
-  const pointerX = useMotionValue(-1000)
-  const pointerY = useMotionValue(-1000)
-  const rawActive = useMotionValue(0)
+  const internalPointerX = useMotionValue(-1000)
+  const internalPointerY = useMotionValue(-1000)
+  const internalRawActive = useMotionValue(0)
 
-  const smoothActive = useSpring(rawActive, {
+  const internalSmoothActive = useSpring(internalRawActive, {
     stiffness: 480,
     damping: 36,
     mass: 0.8,
   })
 
-  const activeMotionValue = isReducedMotion ? rawActive : smoothActive
+  const pointerX = externalPointerX ?? internalPointerX
+  const pointerY = externalPointerY ?? internalPointerY
+  const activeMotionValue =
+    externalPointerActive ?? (isReducedMotion ? internalRawActive : internalSmoothActive)
 
   const [metrics, setMetrics] = React.useState<GridMetrics>({
     columns: 12,
@@ -195,14 +211,22 @@ export const ProximityGrid: React.FC<ProximityGridProps> = ({
       const rect = e.currentTarget.getBoundingClientRect()
       pointerX.set(e.clientX - rect.left)
       pointerY.set(e.clientY - rect.top)
-      rawActive.set(1)
+      if (externalPointerActive) {
+        externalPointerActive.set(1)
+      } else {
+        internalRawActive.set(1)
+      }
     },
-    [interactive, isReducedMotion, pointerX, pointerY, rawActive],
+    [interactive, isReducedMotion, pointerX, pointerY, externalPointerActive, internalRawActive],
   )
 
   const handlePointerLeave = React.useCallback(() => {
-    rawActive.set(0)
-  }, [rawActive])
+    if (externalPointerActive) {
+      externalPointerActive.set(0)
+    } else {
+      internalRawActive.set(0)
+    }
+  }, [externalPointerActive, internalRawActive])
 
   const totalCells = metrics.columns * metrics.rows
   const responseRadius = metrics.cellSize * Math.max(1, proximity)

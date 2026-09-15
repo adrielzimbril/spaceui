@@ -69,7 +69,7 @@ export function SiteFooter() {
   return (
     <footer className="relative w-full overflow-hidden pt-12 pb-32 md:pb-28">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="rounded-5xl bg-muted p-6 sm:p-10 lg:p-12 transition-colors">
+        <div className="dark squircle rounded-5xl bg-zinc-950 border-4 border-muted text-foreground p-6 sm:p-10 lg:p-12 transition-colors">
           <div className="grid grid-cols-2 gap-8 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-4">
             {FOOTER_GROUPS.map((group) => (
               <div key={group.title} className="space-y-3">

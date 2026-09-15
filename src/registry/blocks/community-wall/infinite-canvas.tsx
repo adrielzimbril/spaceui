@@ -1,6 +1,7 @@
 'use client'
 
 import React, { useState, useRef, useMemo, useEffect, type ReactNode } from 'react'
+import { useMotionValue } from 'motion/react'
 import { cn } from '@/registry/lib/utils'
 import { Card, CardContent } from '@/registry/primitives/card'
 import { CommunityWallCard, type CommunityMessage } from './community-wall-card'
@@ -119,6 +120,11 @@ export function InfiniteCanvas({ messages, children, className, avatarSource }: 
 
   const offsetRef = useRef<Position>({ x: 0, y: 0 })
   const rafRef = useRef<number | null>(null)
+  const canvasAreaRef = useRef<HTMLDivElement>(null)
+
+  const pointerX = useMotionValue(-1000)
+  const pointerY = useMotionValue(-1000)
+  const pointerActive = useMotionValue(0)
 
   offsetRef.current = offset
 
@@ -153,7 +159,6 @@ export function InfiniteCanvas({ messages, children, className, avatarSource }: 
   // Mouse drag with global window listeners to never lose drag on leave or over cards
   const handleMouseDown = (e: React.MouseEvent<HTMLDivElement>) => {
     if (e.button !== 0) return
-    e.preventDefault()
 
     const startX = e.clientX
     const startY = e.clientY
@@ -163,7 +168,6 @@ export function InfiniteCanvas({ messages, children, className, avatarSource }: 
     setIsDragging(true)
 
     const onMouseMove = (moveEvent: MouseEvent) => {
-      moveEvent.preventDefault()
       const dx = moveEvent.clientX - startX
       const dy = moveEvent.clientY - startY
 
@@ -175,9 +179,17 @@ export function InfiniteCanvas({ messages, children, className, avatarSource }: 
         })
         rafRef.current = null
       })
+
+      // Continuous proximity tracking even during drag
+      const rect = canvasAreaRef.current?.getBoundingClientRect()
+      if (rect) {
+        pointerX.set(moveEvent.clientX - rect.left)
+        pointerY.set(moveEvent.clientY - rect.top)
+        pointerActive.set(1)
+      }
     }
 
-    const onMouseUp = () => {
+    const onMouseUp = (upEvent: MouseEvent) => {
       if (rafRef.current) {
         cancelAnimationFrame(rafRef.current)
         rafRef.current = null
@@ -185,9 +197,21 @@ export function InfiniteCanvas({ messages, children, className, avatarSource }: 
       setIsDragging(false)
       window.removeEventListener('mousemove', onMouseMove)
       window.removeEventListener('mouseup', onMouseUp)
+
+      const rect = canvasAreaRef.current?.getBoundingClientRect()
+      if (rect) {
+        const isInside =
+          upEvent.clientX >= rect.left &&
+          upEvent.clientX <= rect.right &&
+          upEvent.clientY >= rect.top &&
+          upEvent.clientY <= rect.bottom
+        if (!isInside) {
+          pointerActive.set(0)
+        }
+      }
     }
 
-    window.addEventListener('mousemove', onMouseMove, { passive: false })
+    window.addEventListener('mousemove', onMouseMove)
     window.addEventListener('mouseup', onMouseUp)
   }
 
@@ -204,7 +228,6 @@ export function InfiniteCanvas({ messages, children, className, avatarSource }: 
 
     const onTouchMove = (moveEvent: TouchEvent) => {
       if (moveEvent.touches.length !== 1) return
-      moveEvent.preventDefault()
       const t = moveEvent.touches[0]
       const dx = t.clientX - startX
       const dy = t.clientY - startY
@@ -217,6 +240,13 @@ export function InfiniteCanvas({ messages, children, className, avatarSource }: 
         })
         rafRef.current = null
       })
+
+      const rect = canvasAreaRef.current?.getBoundingClientRect()
+      if (rect) {
+        pointerX.set(t.clientX - rect.left)
+        pointerY.set(t.clientY - rect.top)
+        pointerActive.set(1)
+      }
     }
 
     const onTouchEnd = () => {
@@ -225,6 +255,7 @@ export function InfiniteCanvas({ messages, children, className, avatarSource }: 
         rafRef.current = null
       }
       setIsDragging(false)
+      pointerActive.set(0)
       window.removeEventListener('touchmove', onTouchMove)
       window.removeEventListener('touchend', onTouchEnd)
       window.removeEventListener('touchcancel', onTouchEnd)
@@ -247,7 +278,7 @@ export function InfiniteCanvas({ messages, children, className, avatarSource }: 
 
   return (
     <div className={cn('relative w-full h-full min-h-125 select-none touch-none', className)}>
-      <Card className="size-full bg-muted rounded-3xl border border-border flex-1 overflow-hidden">
+      <Card className="size-full bg-muted rounded-3xl border-2 border-muted flex-1 overflow-hidden">
         <CardContent className="size-full p-0">
           <ProximityGrid
             cellSize={56}
@@ -255,13 +286,30 @@ export function InfiniteCanvas({ messages, children, className, avatarSource }: 
             radius="rounded"
             proximity={4}
             inset={6}
+            pointerX={pointerX}
+            pointerY={pointerY}
+            pointerActive={pointerActive}
             className="absolute inset-0 size-full min-h-0 bg-background overflow-hidden select-none"
           >
             <div
+              ref={canvasAreaRef}
               className={cn(
                 'absolute inset-0 overflow-hidden select-none touch-none',
                 isDragging ? 'cursor-grabbing' : 'cursor-grab',
               )}
+              onPointerMove={(e) => {
+                const rect = canvasAreaRef.current?.getBoundingClientRect()
+                if (rect) {
+                  pointerX.set(e.clientX - rect.left)
+                  pointerY.set(e.clientY - rect.top)
+                  pointerActive.set(1)
+                }
+              }}
+              onPointerLeave={() => {
+                if (!isDragging) {
+                  pointerActive.set(0)
+                }
+              }}
               onMouseDown={handleMouseDown}
               onTouchStart={handleTouchStart}
             >

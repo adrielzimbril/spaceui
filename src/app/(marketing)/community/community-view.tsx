@@ -142,6 +142,21 @@ export function CommunityView({ initialMessages = [], initialUser = null }: Comm
     }
   }
 
+  const handleLogout = async () => {
+    try {
+      await fetch('/api/auth/logout', { method: 'POST' })
+      const supabase = createClient()
+      if (supabase) {
+        await supabase.auth.signOut()
+      }
+      setUser(null)
+      window.location.href = '/community'
+    } catch (err) {
+      console.error('Logout error:', err)
+      window.location.href = '/community'
+    }
+  }
+
   return (
     <div className="w-full flex flex-col gap-6">
       <StatsSection
@@ -151,6 +166,7 @@ export function CommunityView({ initialMessages = [], initialUser = null }: Comm
         isLoading={isLoading}
         user={user}
         onLeaveNote={() => setIsLeaveNoteOpen(true)}
+        onLogout={handleLogout}
       />
 
       <CommunityWall

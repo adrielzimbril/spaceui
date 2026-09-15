@@ -55,6 +55,7 @@ export interface StatsSectionProps {
   isLoading?: boolean
   user?: any
   onLeaveNote?: () => void
+  onLogout?: () => void | Promise<void>
 }
 
 export function StatsSection({
@@ -64,7 +65,27 @@ export function StatsSection({
   isLoading = false,
   user,
   onLeaveNote,
+  onLogout,
 }: StatsSectionProps) {
+  const [isLoggingOut, setIsLoggingOut] = React.useState(false)
+
+  const handleLogoutClick = async () => {
+    setIsLoggingOut(true)
+    try {
+      if (onLogout) {
+        await onLogout()
+      } else {
+        await fetch('/api/auth/logout', { method: 'POST' })
+        window.location.href = '/community'
+      }
+    } catch (err) {
+      console.error('Logout failed:', err)
+      window.location.href = '/community'
+    } finally {
+      setIsLoggingOut(false)
+    }
+  }
+
   return (
     <div className="relative px-6">
       <div className="flex flex-row flex-wrap justify-center gap-6 max-w-4xl mx-auto">
@@ -101,15 +122,16 @@ export function StatsSection({
           </Button>
           {user && (
             <Button
-              variant="default"
+              variant="secondary"
               size="lg"
               hover
               whileTap
-              onClick={onLeaveNote}
+              onClick={handleLogoutClick}
+              disabled={isLoggingOut}
               pointer
               className="flex items-center px-6 py-4"
             >
-              <span className="text-sm font-medium">Logout</span>
+              <span className="text-sm font-medium">{isLoggingOut ? 'Logging out' : 'Logout'}</span>
             </Button>
           )}
         </div>
