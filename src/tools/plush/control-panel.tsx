@@ -404,7 +404,7 @@ export function PlushControlPanel({
             </div>
           </div>
 
-          <div className="hidden flex flex-col gap-2 pt-1 pb-6">
+          <div className="flex flex-col gap-2 pt-1 pb-6">
             <span className="text-[0.6875rem] font-semibold text-muted-foreground">Export Asset</span>
             <div className="grid grid-cols-2 gap-2">
               <Button

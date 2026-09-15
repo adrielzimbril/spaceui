@@ -49,6 +49,7 @@ import {
   type Tile,
 } from './split'
 import { DEFAULT_SEEDS } from '@/tools/shared/seeds'
+import posthog from 'posthog-js'
 
 const DEFAULTS: SplitConfig = {
   cols: 3,
@@ -390,6 +391,15 @@ export function ImageSplitPlayground() {
     )
   }, [prepared, cfg, apngData])
 
+  const captureExport = useCallback((exportMethod: 'single' | 'zip' | 'batch', fileCount: number) => {
+    posthog.capture('image_split_exported', {
+      export_method: exportMethod,
+      file_count: fileCount,
+      output_format: cfg.format,
+      column_count: cfg.cols,
+    })
+  }, [cfg.cols, cfg.format])
+
   const downloadOne = useCallback(
     async (i: number) => {
       sparkleSound()
@@ -397,8 +407,9 @@ export function ImageSplitPlayground() {
       const f = files[i]
       if (!f) return
       saveBlob(f.blob, f.name)
+      captureExport('single', 1)
     },
-    [buildExport],
+    [buildExport, captureExport],
   )
 
   const downloadZip = useCallback(async () => {
@@ -408,11 +419,12 @@ export function ImageSplitPlayground() {
       const files = await buildExport()
       const blob = await createZipArchive(files)
       saveBlob(blob, `${cfg.prefix || 'slice'}-${files.length}-parts.zip`)
+      captureExport('zip', files.length)
       confirmSound()
     } finally {
       setBusy(false)
     }
-  }, [buildExport, cfg.prefix])
+  }, [buildExport, cfg.prefix, captureExport])
 
   const downloadBatch = useCallback(async () => {
     setBusy(true)
@@ -428,11 +440,12 @@ export function ImageSplitPlayground() {
           await new Promise((resolve) => setTimeout(resolve, 500))
         }
       }
+      captureExport('batch', sorted.length)
       confirmSound()
     } finally {
       setBusy(false)
     }
-  }, [buildExport])
+  }, [buildExport, captureExport])
 
   const reset = useCallback(() => {
     removeSound()

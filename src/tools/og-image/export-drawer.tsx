@@ -43,6 +43,7 @@ import { useResourceDesktop } from '@/tools/components/shared/layout/viewport'
 import { cn } from '@/registry/lib/utils'
 import type { AnimType, OgState } from './types'
 import { ANIMS, DEFAULT_OG_STATE } from './presets'
+import posthog from 'posthog-js'
 
 const sleep = (ms: number) => new Promise((r) => setTimeout(r, ms))
 const even = (n: number) => {
@@ -107,6 +108,10 @@ export function OgExportDrawer({ open, onClose, s, cardRef, presetName, onImport
       a.href = url
       a.download = `spaceui-og-${presetName}-${s.layout}@${scale}x.png`
       a.click()
+      posthog.capture('og_image_exported', {
+        export_format: 'png',
+        scale,
+      })
       confirmSound()
     } catch (err) {
       console.error(err)
@@ -356,6 +361,12 @@ export function OgExportDrawer({ open, onClose, s, cardRef, presetName, onImport
           setBusy(prefix + label)
         })
         saveBlob(blob, `spaceui-og-${presetName}-${s.layout}-${type}-${seconds.toFixed(1)}s@${scale}x.${ext}`)
+        posthog.capture('og_image_exported', {
+          export_format: ext,
+          scale,
+          animation_type: type,
+          batch_export: batch,
+        })
         confirmSound()
         await sleep(300)
       }
@@ -374,6 +385,9 @@ export function OgExportDrawer({ open, onClose, s, cardRef, presetName, onImport
     bloomSound()
     const blob = new Blob([JSON.stringify(s, null, 2)], { type: 'application/json' })
     saveBlob(blob, `spaceui-og-${presetName}-${s.layout}-config.json`)
+    posthog.capture('og_image_exported', {
+      export_format: 'json',
+    })
   }
 
   // Generate code snippets

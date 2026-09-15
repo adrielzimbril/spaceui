@@ -25,6 +25,7 @@ import { PlushControlPanel } from './control-panel'
 import { PlushEngine, loadPlushArtwork } from './engine'
 import { DEFAULT_CONFIG, DEFAULT_PRESET, PLUSH_PRESETS } from './presets'
 import type { PlushConfig, PlushPreset, ArtworkData } from './types'
+import posthog from 'posthog-js'
 
 export function PlushPlayground() {
   const [config, setConfig] = useState<PlushConfig>(DEFAULT_CONFIG)
@@ -222,6 +223,10 @@ export function PlushPlayground() {
       a.href = dataUrl
       a.download = `plush-${activePreset?.id ?? 'custom'}-${frontView ? 'front' : '3d'}-${Date.now()}.png`
       a.click()
+      posthog.capture('plush_snapshot_exported', {
+        snapshot_view: frontView ? 'front' : '3d',
+        artwork_source: activePreset ? 'preset' : 'custom',
+      })
       sparkleSound()
     },
     [activePreset],

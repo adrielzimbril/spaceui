@@ -4,6 +4,7 @@ import * as React from 'react'
 import { CommunityWall, type CommunityMessage } from '@/registry/blocks/community-wall'
 import { StatsSection } from './stats-section'
 import { createClient } from '@/integrations/supabase/client'
+import posthog from 'posthog-js'
 
 interface CommunityViewProps {
   initialMessages?: CommunityMessage[]
@@ -15,14 +16,30 @@ export function CommunityView({ initialMessages = [], initialUser = null }: Comm
   const [isLoading, setIsLoading] = React.useState(initialMessages.length === 0)
   const [user, setUser] = React.useState<any>(initialUser)
   const [isLeaveNoteOpen, setIsLeaveNoteOpen] = React.useState(false)
+  const identifiedUserId = React.useRef<string | null>(null)
 
   React.useEffect(() => {
+    const identifyUser = (authenticatedUser: any) => {
+      if (!authenticatedUser?.id || identifiedUserId.current === authenticatedUser.id) return
+
+      if (identifiedUserId.current) {
+        posthog.reset()
+      }
+
+      const personProperties: Record<string, string> = {}
+      if (authenticatedUser.email) personProperties.email = authenticatedUser.email
+      const name = authenticatedUser.user_metadata?.full_name || authenticatedUser.user_metadata?.name
+      if (name) personProperties.name = name
+
+      posthog.identify(authenticatedUser.id, personProperties)
+      identifiedUserId.current = authenticatedUser.id
+    }
+
     if (initialUser) {
       setUser(initialUser)
+      identifyUser(initialUser)
     }
-  }, [initialUser])
 
-  React.useEffect(() => {
     const supabase = createClient()
 
     fetch('/api/auth/user')
@@ -30,6 +47,7 @@ export function CommunityView({ initialMessages = [], initialUser = null }: Comm
       .then((data) => {
         if (data?.user) {
           setUser(data.user)
+          identifyUser(data.user)
         }
       })
       .catch(() => {})
@@ -45,6 +63,7 @@ export function CommunityView({ initialMessages = [], initialUser = null }: Comm
           .then(({ data, error }) => {
             if (!error && data?.user) {
               setUser(data.user)
+              identifyUser(data.user)
             }
             url.searchParams.delete('code')
             window.history.replaceState({}, '', url.pathname + (url.search ? url.search : ''))
@@ -57,7 +76,13 @@ export function CommunityView({ initialMessages = [], initialUser = null }: Comm
 
     const {
       data: { subscription },
-    } = supabase.auth.onAuthStateChange((_event, session) => {
+    } = supabase.auth.onAuthStateChange((event, session) => {
+      if (event === 'SIGNED_OUT') {
+        posthog.reset()
+        identifiedUserId.current = null
+      } else if (session?.user) {
+        identifyUser(session.user)
+      }
       setUser(session?.user ?? null)
     })
 
@@ -135,6 +160,9 @@ export function CommunityView({ initialMessages = [], initialUser = null }: Comm
       if (json.message) {
         setMessages((prev) => [json.message, ...prev])
       }
+      posthog.capture('community_note_published', {
+        is_authenticated: Boolean(user?.id),
+      })
       return true
     } catch (err: any) {
       console.error('Submit error:', err)
@@ -143,6 +171,9 @@ export function CommunityView({ initialMessages = [], initialUser = null }: Comm
   }
 
   const handleLogout = async () => {
+    posthog.reset()
+    identifiedUserId.current = null
+
     try {
       await fetch('/api/auth/logout', { method: 'POST' })
       const supabase = createClient()
