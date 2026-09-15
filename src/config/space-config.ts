@@ -33,6 +33,7 @@ export { REGISTRY_COMMAND_STYLE, REGISTRY_NAMESPACE, REGISTRY_BASE_URL } from '@
 const appInfo = {
   site: 'https://www.spaceui.one',
   appName: 'Space UI',
+  email: 'hello@spaceui.one',
   namespace: 'usespaceui',
   // repoPath: 'usespaceui/ui',
   repoPath: 'adrielzimbril/spaceui',
@@ -42,6 +43,7 @@ const appInfo = {
 export const siteConfig = {
   name: 'spaceui.one',
   appName: appInfo.appName,
+  email: appInfo.email,
   title: 'Space UI - Open-source design library for humans and AI',
   headline: 'Ship your ideas faster with better UI',
   description:
@@ -55,6 +57,7 @@ export const siteConfig = {
     // twitter: `https://x.com/${appInfo.twitterHandle}`,
     x: 'https://x.com/adrielzimbril',
     authorTwitter: 'https://x.com/adrielzimbril',
+    email: `mailto:${appInfo.email}`,
   },
   author: {
     name: 'adrielzimbril',

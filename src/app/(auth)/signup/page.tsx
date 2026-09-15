@@ -56,7 +56,15 @@ export default function SignupPage() {
             </form>
           </CardContent>
           <CardFooter className="justify-center text-xs text-muted-foreground">
-            By continuing, you agree to the Terms and Privacy Policy.
+            By continuing, you agree to the{' '}
+            <Link href="/terms" className="underline underline-offset-4 hover:text-foreground transition-colors">
+              Terms
+            </Link>{' '}
+            and{' '}
+            <Link href="/privacy" className="underline underline-offset-4 hover:text-foreground transition-colors">
+              Privacy Policy
+            </Link>
+            .
           </CardFooter>
         </Card>
         <p className="mt-5 text-center text-sm text-muted-foreground">

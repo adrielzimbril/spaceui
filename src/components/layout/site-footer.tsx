@@ -61,7 +61,7 @@ const FOOTER_GROUPS: FooterGroup[] = [
       { label: 'Community Wall', href: '/community' },
       { label: 'GitHub', href: 'https://github.com/adrielzimbril/space-ui', isExternal: true },
       { label: 'X (Twitter)', href: 'https://x.com/adrielzimbril', isExternal: true },
-      { label: 'LinkedIn', href: 'https://linkedin.com/c/spaceui', isExternal: true },
+      { label: 'LinkedIn', href: 'https://linkedin.com/in/adrielzimbril', isExternal: true },
       { label: 'Roadmap', href: '/docs/roadmap' },
     ],
   },
@@ -129,7 +129,7 @@ export function SiteFooter() {
       <div className="relative z-30 mx-auto w-[calc(100%-2rem)] sm:w-[calc(100%-3rem)] max-w-7xl">
         <div
           ref={containerRef}
-          className="relative z-10 dark squircle bg-zinc-950 rounded-t-3xl sm:rounded-t-7xl text-foreground"
+          className="relative z-10 dark squircle bg-zinc-950 rounded-t-3xl sm:rounded-t-7xl border-4 border-muted text-foreground"
         >
           <svg
             ref={svgRef}

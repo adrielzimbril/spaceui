@@ -60,6 +60,18 @@
       "sourceType": "github",
       "skillPath": ".agent/skills/no-ai-slop/SKILL.md",
       "computedHash": "1c3273e39af9b4bddae66a3f07f2dde1d0d3732e482965cfdd372beac7cf09ac"
+    },
+    "transitions-dev": {
+      "source": "Jakubantalik/transitions.dev",
+      "sourceType": "github",
+      "skillPath": "skills/transitions-dev/SKILL.md",
+      "computedHash": "17b82c492f4c08394388ab3d92a428e57e10ba30b8e72cffdca2e5399fe928c3"
+    },
+    "transitions-polish": {
+      "source": "Jakubantalik/transitions.dev",
+      "sourceType": "github",
+      "skillPath": "skills/transitions-polish/SKILL.md",
+      "computedHash": "f1dd8e76b5fb275447b5dcd2e24dcd8f9bcda7b93361163754ccdff957e30509"
     }
   }
 }
