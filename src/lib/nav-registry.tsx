@@ -256,6 +256,15 @@ export function extractSectionsFromNode(nodes: any[]): SectionItem[] {
           title: item.name || 'Items',
           items: [],
         }
+        if (item.index?.url) {
+          const indexName = typeof item.index.name === 'string' ? item.index.name : item.index.title || item.name
+          currentSection.items.push({
+            name: indexName || 'Overview',
+            url: item.index.url,
+            icon: resolveNavIcon(item.index.url, indexName, item.index),
+            badge: resolveNavBadge(item.index.url, indexName, item.index) ?? undefined,
+          })
+        }
         process(item.children || [])
       } else if (item.type === 'page' || item.url) {
         const pageName = typeof item.name === 'string' ? item.name : item.title || 'Page'

@@ -48,7 +48,8 @@ export default async function CheckoutSuccessPage({ searchParams }: SuccessPageP
             Merci pour votre confiance !
           </h1>
           <p className="text-sm sm:text-base text-muted-foreground max-w-md mx-auto">
-            Votre commande a été confirmée avec succès. Vous bénéficiez désormais de l'accès complet à vos composants Space UI.
+            Votre commande a été confirmée avec succès. Vous bénéficiez désormais de l'accès complet à vos composants
+            Space UI.
           </p>
         </div>
 

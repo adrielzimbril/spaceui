@@ -138,18 +138,22 @@ export function PlushCard({ isVisible = true, hasBeenVisible = true }: PlushCard
     applyPlushPreset(nextPreset, true)
   }, [applyPlushPreset])
 
-  useStaggeredInterval(() => {
-    if (
-      plushLoadingRef.current ||
-      isPlushInteractingRef.current ||
-      Date.now() - lastPlushInteractionRef.current < USER_INTERACTION_DEBOUNCE
-    ) {
-      return
-    }
-    const available = SHOWCASE_PLUSH_PRESETS.filter((p) => p.id !== activePlushPresetRef.current.id)
-    const nextPreset = available[Math.floor(Math.random() * available.length)] ?? SHOWCASE_PLUSH_PRESETS[0]
-    applyPlushPreset(nextPreset, false)
-  }, BENTO_CYCLE_INTERVAL, isVisible)
+  useStaggeredInterval(
+    () => {
+      if (
+        plushLoadingRef.current ||
+        isPlushInteractingRef.current ||
+        Date.now() - lastPlushInteractionRef.current < USER_INTERACTION_DEBOUNCE
+      ) {
+        return
+      }
+      const available = SHOWCASE_PLUSH_PRESETS.filter((p) => p.id !== activePlushPresetRef.current.id)
+      const nextPreset = available[Math.floor(Math.random() * available.length)] ?? SHOWCASE_PLUSH_PRESETS[0]
+      applyPlushPreset(nextPreset, false)
+    },
+    BENTO_CYCLE_INTERVAL,
+    isVisible,
+  )
 
   const resetPlushOrientation = () => {
     lastPlushInteractionRef.current = Date.now()

@@ -3,6 +3,7 @@
 import * as React from 'react'
 import NextImage from 'next/image'
 import { cn } from '@/registry/lib/utils'
+import { getOptimizedImageUrl } from '@/registry/lib/next-image-url'
 import { LENS_FRAG, LENS_VERT, PANEL_FRAG, PANEL_VERT } from './shaders'
 import type { PrismCarouselItem, PrismCarouselProps } from './types'
 
@@ -229,7 +230,7 @@ export function PrismCarousel({
         }
         bindTex(placeholderCanvas, 512 / 768)
       }
-      image.src = item.image
+      image.src = getOptimizedImageUrl(item.image, { width: 1200 })
       return image
     })
 

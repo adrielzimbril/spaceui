@@ -31,9 +31,7 @@ export async function getCurrentUserSubscription(): Promise<UserSubscriptionStat
     const appMeta = (user.app_metadata || {}) as any
     const plan = appMeta.plan ?? (appMeta.has_paid ? 'pro' : 'free')
     const isPro = plan === 'pro' || plan === 'lifetime' || appMeta.subscription_status === 'active'
-    const unlockedProducts: string[] = Array.isArray(appMeta.unlocked_products)
-      ? appMeta.unlocked_products
-      : []
+    const unlockedProducts: string[] = Array.isArray(appMeta.unlocked_products) ? appMeta.unlocked_products : []
 
     return {
       isPro,
@@ -60,4 +58,3 @@ export async function hasProductAccess(productId: string): Promise<boolean> {
   if (subscription.isPro) return true
   return subscription.unlockedProducts.includes(productId)
 }
-

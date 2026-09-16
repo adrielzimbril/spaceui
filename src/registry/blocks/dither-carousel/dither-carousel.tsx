@@ -3,6 +3,7 @@
 import * as React from 'react'
 import NextImage from 'next/image'
 import { cn } from '@/registry/lib/utils'
+import { getOptimizedImageUrl } from '@/registry/lib/next-image-url'
 import {
   BLUR_FRAG,
   CARD_FRAG,
@@ -289,7 +290,7 @@ export function DitherCarousel({
         }
         bindTex(placeholderCanvas, 512 / 768)
       }
-      image.src = item.image
+      image.src = getOptimizedImageUrl(item.image, { width: 1200 })
       return image
     })
 

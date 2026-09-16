@@ -125,7 +125,13 @@ export function PricingCalculator() {
             </CardDescription>
           </CardHeader>
           <CardPanel className="flex flex-col items-center gap-8 p-0">
-            <Stepper value={items} onChange={setItems} min={1} max={20} suffix={items === 1 ? 'template' : 'templates'} />
+            <Stepper
+              value={items}
+              onChange={setItems}
+              min={1}
+              max={20}
+              suffix={items === 1 ? 'template' : 'templates'}
+            />
             <div className="grid w-full grid-cols-2 gap-4 sm:gap-8">
               <PriceStat label="Buying individually" value={individualCost} />
               <PriceStat label="Pro Yearly (unlimited)" value={PRO_YEARLY_PRICE} highlight />

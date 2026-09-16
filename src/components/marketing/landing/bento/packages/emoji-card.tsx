@@ -56,10 +56,14 @@ export function EmojiCard({ isVisible = true }: EmojiCardProps) {
   const [emojiStyleIdx, setEmojiStyleIdx] = React.useState(0)
   const [emojiOffset, setEmojiOffset] = React.useState(0)
 
-  useStaggeredInterval(() => {
-    setEmojiStyleIdx((prev) => (prev + 1) % EMOJI_ANIM_STYLES.length)
-    setEmojiOffset((prev) => (prev + 6) % ALL_ANIMATED_EMOJIS.length)
-  }, BENTO_CYCLE_INTERVAL, isVisible)
+  useStaggeredInterval(
+    () => {
+      setEmojiStyleIdx((prev) => (prev + 1) % EMOJI_ANIM_STYLES.length)
+      setEmojiOffset((prev) => (prev + 6) % ALL_ANIMATED_EMOJIS.length)
+    },
+    BENTO_CYCLE_INTERVAL,
+    isVisible,
+  )
 
   const activeEmojiStyle = EMOJI_ANIM_STYLES[emojiStyleIdx]
   const currentEmojis = React.useMemo(() => {

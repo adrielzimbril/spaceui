@@ -24,15 +24,19 @@ export function OrbSmoothCard({ isVisible = true }: { isVisible?: boolean }) {
   const [smoothStateIndex, setSmoothStateIndex] = React.useState(0)
   const [smoothSeedIndex, setSmoothSeedIndex] = React.useState(0)
 
-  useStaggeredInterval(() => {
-    setSmoothStateIndex((prev) => {
-      const next = (prev + 1) % SMOOTH_STATES.length
-      if (next === 0) {
-        setSmoothSeedIndex((s) => (s + 1) % SMOOTH_LUMINA_SEEDS.length)
-      }
-      return next
-    })
-  }, BENTO_CYCLE_INTERVAL, isVisible)
+  useStaggeredInterval(
+    () => {
+      setSmoothStateIndex((prev) => {
+        const next = (prev + 1) % SMOOTH_STATES.length
+        if (next === 0) {
+          setSmoothSeedIndex((s) => (s + 1) % SMOOTH_LUMINA_SEEDS.length)
+        }
+        return next
+      })
+    },
+    BENTO_CYCLE_INTERVAL,
+    isVisible,
+  )
 
   return (
     <Frame className="flex flex-col h-full">

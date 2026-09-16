@@ -62,9 +62,8 @@ export async function POST(request: NextRequest) {
               ? userMetadata.unlocked_products
               : []
 
-            const updatedUnlocked = productId && !existingUnlocked.includes(productId)
-              ? [...existingUnlocked, productId]
-              : existingUnlocked
+            const updatedUnlocked =
+              productId && !existingUnlocked.includes(productId) ? [...existingUnlocked, productId] : existingUnlocked
 
             // Check if this order grants full lifetime access
             const isLifetime =

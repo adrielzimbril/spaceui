@@ -15,12 +15,16 @@ const BLOOP_MODES: BloopState[] = [BloopState.idle, BloopState.listen, BloopStat
 export function OrbBloopCard({ isVisible = true }: { isVisible?: boolean }) {
   const [bloopState, setBloopState] = React.useState<BloopState>(BloopState.idle)
 
-  useStaggeredInterval(() => {
-    setBloopState((prev) => {
-      const nextIdx = (BLOOP_MODES.indexOf(prev) + 1) % BLOOP_MODES.length
-      return BLOOP_MODES[nextIdx]
-    })
-  }, BENTO_CYCLE_INTERVAL, isVisible)
+  useStaggeredInterval(
+    () => {
+      setBloopState((prev) => {
+        const nextIdx = (BLOOP_MODES.indexOf(prev) + 1) % BLOOP_MODES.length
+        return BLOOP_MODES[nextIdx]
+      })
+    },
+    BENTO_CYCLE_INTERVAL,
+    isVisible,
+  )
 
   return (
     <Frame className="flex flex-col h-full">

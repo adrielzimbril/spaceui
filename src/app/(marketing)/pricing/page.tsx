@@ -1,23 +1,20 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
-import {
-  ArrowRight,
-  Check,
-  Crown,
-  Laptop,
-  Mail,
-  Rocket,
-  ShieldCheck,
-  Sparkles,
-  Terminal,
-  Zap,
-} from 'lucide-react'
+import { ArrowRight, Check, Crown, Laptop, Mail, Rocket, ShieldCheck, Sparkles, Terminal, Zap } from 'lucide-react'
 import { Badge } from '@/registry/components/spaceui/badge-squircle'
 import { Button } from '@/registry/components/spaceui/button-squircle'
 import { BuyButton } from '@/components/pricing/buy-button'
 import { PricingCalculator } from '@/components/pricing/pricing-calculator'
 import { Accordion, AccordionItem, AccordionPanel, AccordionTrigger } from '@/registry/primitives/accordion'
-import { Card, CardDescription, CardFooter, CardFrame, CardHeader, CardPanel, CardTitle } from '@/registry/primitives/card'
+import {
+  Card,
+  CardDescription,
+  CardFooter,
+  CardFrame,
+  CardHeader,
+  CardPanel,
+  CardTitle,
+} from '@/registry/primitives/card'
 import { siteConfig } from '@/config/space-config'
 import { LIFETIME_PRICE, PRO_YEARLY_NEXT_PRICE, PRO_YEARLY_PRICE, REGISTRY_STATS } from '@/lib/pricing-config'
 
@@ -167,14 +164,13 @@ const faqs = [
   {
     question: 'Can I upgrade from Pro Yearly to Lifetime later?',
     answer:
-      "Yes. Reach out at " +
+      'Yes. Reach out at ' +
       siteConfig.email +
       ' and we will credit your current subscription toward a Lifetime license.',
   },
   {
     question: 'Will the price go up over time?',
-    answer:
-      `Pro Yearly is priced at an early-adopter rate of $${PRO_YEARLY_PRICE}/year. As we hit growth milestones, the price for new subscribers increases toward $${PRO_YEARLY_NEXT_PRICE}/year — your existing subscription price stays locked in.`,
+    answer: `Pro Yearly is priced at an early-adopter rate of $${PRO_YEARLY_PRICE}/year. As we hit growth milestones, the price for new subscribers increases toward $${PRO_YEARLY_NEXT_PRICE}/year — your existing subscription price stays locked in.`,
   },
   {
     question: 'Can I use Space UI in commercial and client projects?',

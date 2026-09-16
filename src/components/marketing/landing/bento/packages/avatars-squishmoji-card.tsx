@@ -109,9 +109,13 @@ export function AvatarsSquishmojiCard({ isVisible = true }: AvatarsSquishmojiCar
     ])
   }, [])
 
-  useStaggeredInterval(() => {
-    randomizeCharacters(false)
-  }, BENTO_CYCLE_INTERVAL, isVisible)
+  useStaggeredInterval(
+    () => {
+      randomizeCharacters(false)
+    },
+    BENTO_CYCLE_INTERVAL,
+    isVisible,
+  )
 
   return (
     <Frame className="flex flex-col h-full sm:col-span-2 lg:col-span-2">

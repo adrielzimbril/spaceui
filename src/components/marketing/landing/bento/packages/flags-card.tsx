@@ -53,9 +53,13 @@ interface FlagsCardProps {
 export function FlagsCard({ isVisible = true }: FlagsCardProps) {
   const [flagSetIndex, setFlagSetIndex] = React.useState(0)
 
-  useStaggeredInterval(() => {
-    setFlagSetIndex((prev) => (prev + 1) % FLAG_SETS.length)
-  }, BENTO_CYCLE_INTERVAL, isVisible)
+  useStaggeredInterval(
+    () => {
+      setFlagSetIndex((prev) => (prev + 1) % FLAG_SETS.length)
+    },
+    BENTO_CYCLE_INTERVAL,
+    isVisible,
+  )
 
   return (
     <Frame className="flex flex-col h-full">

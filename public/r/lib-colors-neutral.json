@@ -50,7 +50,7 @@
       "primary-foreground": "var(--color-zinc-950)",
       "secondary": "var(--color-zinc-800)",
       "secondary-foreground": "var(--color-zinc-50)",
-      "accent": "var(--color-zinc-800)",
+      "accent": "hsl(0deg 2.2% 8.47%)",
       "accent-foreground": "var(--color-zinc-50)",
       "input": "--alpha(var(--color-white) / 10%)",
       "ring": "transparent",

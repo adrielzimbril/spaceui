@@ -3,6 +3,7 @@
 import * as React from 'react'
 import NextImage from 'next/image'
 import { cn } from '@/registry/lib/utils'
+import { getOptimizedImageUrl } from '@/registry/lib/next-image-url'
 import { FULLSCREEN_VERTEX_SHADER, LIQUID_GOOEY_FRAGMENT_SHADER, MAX_CARDS, MAX_STRANDS } from './shaders'
 import type { GooeyCardTransform, LiquidGooeyCarouselProps } from './types'
 
@@ -265,6 +266,7 @@ export function LiquidGooeyCarousel({
     // Artwork texture atlas synthesis
     const COLS = Math.min(4, totalCount)
     const CELL_RESOLUTION = 1024 // High resolution for crisp cards
+    const TEXTURE_SOURCE_WIDTH = 1200 // Next.js deviceSizes bucket just above CELL_RESOLUTION
     let textureAtlas: WebGLTexture | null = null
     let loadedImages = 0
 
@@ -296,7 +298,7 @@ export function LiquidGooeyCarousel({
         console.warn('liquid-gooey-carousel: failed to load image', item.image)
         onImageSettle()
       }
-      img.src = item.image
+      img.src = getOptimizedImageUrl(item.image, { width: TEXTURE_SOURCE_WIDTH })
       return img
     })
 
@@ -693,7 +695,7 @@ export function LiquidGooeyCarousel({
       aria-roledescription="carousel"
       aria-label={brand ?? 'Liquid Gooey Carousel'}
       className={cn(
-        'bg-background text-foreground relative h-full min-h-[24rem] w-full overflow-hidden select-none',
+        'bg-background text-foreground relative h-full min-h-96 w-full overflow-hidden select-none',
         className,
       )}
       {...props}

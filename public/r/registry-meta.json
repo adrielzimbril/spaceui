@@ -163,9 +163,9 @@
     ],
     "createdAt": "2026-09-15",
     "updatedAt": "2026-09-15",
-    "size": "42.8 KB",
-    "rawSize": 43802,
-    "directSize": "42.8 KB",
+    "size": "43.1 KB",
+    "rawSize": 44117,
+    "directSize": "43.1 KB",
     "fileCount": 6,
     "dependencies": [
       "@usespaceui/avatars",
@@ -199,9 +199,9 @@
     ],
     "createdAt": "2026-09-15",
     "updatedAt": "2026-09-15",
-    "size": "42.8 KB",
-    "rawSize": 43802,
-    "directSize": "42.8 KB",
+    "size": "43.1 KB",
+    "rawSize": 44117,
+    "directSize": "43.1 KB",
     "fileCount": 6,
     "dependencies": [
       "@usespaceui/avatars",
@@ -235,9 +235,9 @@
     ],
     "createdAt": "2026-09-15",
     "updatedAt": "2026-09-15",
-    "size": "42.8 KB",
-    "rawSize": 43802,
-    "directSize": "42.8 KB",
+    "size": "43.1 KB",
+    "rawSize": 44117,
+    "directSize": "43.1 KB",
     "fileCount": 6,
     "dependencies": [
       "@usespaceui/avatars",
@@ -1040,7 +1040,7 @@
     "createdAt": "2026-09-12",
     "updatedAt": "2026-09-12",
     "size": "33 KB",
-    "rawSize": 33787,
+    "rawSize": 33819,
     "directSize": "33 KB",
     "fileCount": 7,
     "dependencies": [
@@ -2701,7 +2701,7 @@
     "createdAt": "2026-09-04",
     "updatedAt": "2026-09-04",
     "size": "4.6 KB",
-    "rawSize": 4729,
+    "rawSize": 4684,
     "directSize": "4.6 KB",
     "fileCount": 1,
     "dependencies": [
@@ -2729,7 +2729,7 @@
     "createdAt": "2026-09-04",
     "updatedAt": "2026-09-04",
     "size": "4.6 KB",
-    "rawSize": 4729,
+    "rawSize": 4684,
     "directSize": "4.6 KB",
     "fileCount": 1,
     "dependencies": [
@@ -21533,7 +21533,7 @@
     "createdAt": "2026-08-25",
     "updatedAt": "2026-08-25",
     "size": "6.6 KB",
-    "rawSize": 6758,
+    "rawSize": 6746,
     "directSize": "6.6 KB",
     "fileCount": 1,
     "dependencies": [
@@ -21561,7 +21561,7 @@
     "createdAt": "2026-08-25",
     "updatedAt": "2026-08-25",
     "size": "6.6 KB",
-    "rawSize": 6758,
+    "rawSize": 6746,
     "directSize": "6.6 KB",
     "fileCount": 1,
     "dependencies": [

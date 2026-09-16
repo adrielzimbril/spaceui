@@ -15,9 +15,13 @@ import { useStaggeredInterval } from '@/hooks/use-staggered-interval'
 export function WordsPreloaderCard({ isVisible = true }: { isVisible?: boolean }) {
   const [preloaderKey, setPreloaderKey] = React.useState(0)
 
-  useStaggeredInterval(() => {
-    setPreloaderKey((prev) => prev + 1)
-  }, BENTO_CYCLE_INTERVAL, isVisible)
+  useStaggeredInterval(
+    () => {
+      setPreloaderKey((prev) => prev + 1)
+    },
+    BENTO_CYCLE_INTERVAL,
+    isVisible,
+  )
 
   return (
     <Frame className="flex flex-col h-full">

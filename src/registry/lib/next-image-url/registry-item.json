@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "lib-next-image-url",
+  "type": "registry:lib",
+  "title": "Next Image URL",
+  "description": "Builds Next.js's own /_next/image optimized URL for raw Image()/canvas/WebGL texture loads.",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/registry/lib/next-image-url/index.ts",
+      "type": "registry:lib",
+      "target": "lib/next-image-url.ts"
+    }
+  ]
+}

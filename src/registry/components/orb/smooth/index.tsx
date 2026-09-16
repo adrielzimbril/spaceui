@@ -3,6 +3,7 @@
 import React, { useRef, useEffect } from 'react'
 import { cn } from '@/registry/lib/utils'
 import { attachGpuGate, deferUntilVisible } from '@/registry/lib/gpu-runtime'
+import { getOptimizedImageUrl } from '@/registry/lib/next-image-url'
 import type { OrbSmoothProps } from './types'
 import { useOrbAudio } from './use-orb-audio'
 import {
@@ -195,7 +196,7 @@ export function OrbSmooth({
           texSize = [img.width, img.height]
           onTextureReadyRef.current?.(url)
         }
-        img.src = url
+        img.src = url ? getOptimizedImageUrl(url, { width: 512 }) : url
       }
       loadImage(currentUrl || '')
 

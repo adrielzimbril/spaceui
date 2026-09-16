@@ -36,8 +36,7 @@ export async function GET(request: NextRequest) {
   const customerId = searchParams.get('customerId') ?? undefined
 
   const origin = request.nextUrl.origin
-  const successUrl =
-    searchParams.get('successUrl') ?? `${origin}/checkout/success?checkout_id={CHECKOUT_ID}`
+  const successUrl = searchParams.get('successUrl') ?? `${origin}/checkout/success?checkout_id={CHECKOUT_ID}`
 
   try {
     const checkout = await polar.checkouts.create({
@@ -51,10 +50,6 @@ export async function GET(request: NextRequest) {
     return NextResponse.redirect(checkout.url)
   } catch (error: any) {
     console.error('Error creating Polar checkout session:', error)
-    return NextResponse.json(
-      { error: error?.message || 'Failed to create checkout session' },
-      { status: 500 }
-    )
+    return NextResponse.json({ error: error?.message || 'Failed to create checkout session' }, { status: 500 })
   }
 }
-

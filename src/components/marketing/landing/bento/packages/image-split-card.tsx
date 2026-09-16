@@ -47,16 +47,20 @@ export function ImageSplitCard({ isVisible = true }: ImageSplitCardProps) {
     })
   }, [])
 
-  useStaggeredInterval(() => {
-    if (Date.now() - lastSplitInteractionRef.current < USER_INTERACTION_DEBOUNCE) {
-      return
-    }
-    setSplitSampleIdx((prev) => {
-      const next = (prev + 1) % SPLIT_SAMPLES.length
-      setSplitCols(SPLIT_SAMPLES[next].defaultCols)
-      return next
-    })
-  }, BENTO_CYCLE_INTERVAL, isVisible)
+  useStaggeredInterval(
+    () => {
+      if (Date.now() - lastSplitInteractionRef.current < USER_INTERACTION_DEBOUNCE) {
+        return
+      }
+      setSplitSampleIdx((prev) => {
+        const next = (prev + 1) % SPLIT_SAMPLES.length
+        setSplitCols(SPLIT_SAMPLES[next].defaultCols)
+        return next
+      })
+    },
+    BENTO_CYCLE_INTERVAL,
+    isVisible,
+  )
 
   return (
     <Frame className="flex flex-col h-full sm:col-span-2 lg:col-span-2">
