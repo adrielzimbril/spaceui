@@ -4,7 +4,15 @@
   "type": "registry:block",
   "title": "GitHub & Open-Source Activity Block",
   "description": "Interactive GitHub contribution activity heatmap graph with metrics for stars, forks, and commits.",
-  "registryDependencies": ["https://www.spaceui.one/r/lib-utils.json"],
+  "registryDependencies": [
+    "https://www.spaceui.one/r/lib-utils.json",
+    "https://www.spaceui.one/r/primitives-frame.json",
+    "https://www.spaceui.one/r/primitives-card.json",
+    "https://www.spaceui.one/r/primitives-tooltip.json",
+    "https://www.spaceui.one/r/components-spaceui-badge-squircle.json",
+    "https://www.spaceui.one/r/components-spaceui-button-squircle.json",
+    "https://www.spaceui.one/r/components-spaceui-github-activity.json"
+  ],
   "dependencies": ["motion", "@tabler/icons-react"],
   "categories": ["stats"],
   "files": [
@@ -27,6 +35,16 @@
       "path": "src/registry/blocks/stats/shared/contribution-graph-card.tsx",
       "type": "registry:component",
       "target": "components/blocks/stats/contribution-graph-card.tsx"
+    },
+    {
+      "path": "src/registry/blocks/stats/shared/mock-data.ts",
+      "type": "registry:lib",
+      "target": "components/blocks/stats/mock-data.ts"
+    },
+    {
+      "path": "src/registry/blocks/stats/shared/types.ts",
+      "type": "registry:lib",
+      "target": "components/blocks/stats/types.ts"
     }
   ],
   "createdAt": "2026-09-12",

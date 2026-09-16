@@ -7,11 +7,18 @@
   "dependencies": ["@usespaceui/avatars", "@usespaceui/sounds", "@tabler/icons-react"],
   "registryDependencies": [
     "https://www.spaceui.one/r/lib-utils.json",
-    "https://www.spaceui.one/r/dialog.json",
-    "https://www.spaceui.one/r/button.json",
-    "https://www.spaceui.one/r/input.json",
-    "https://www.spaceui.one/r/textarea.json",
-    "https://www.spaceui.one/r/slider.json"
+    "https://www.spaceui.one/r/primitives-dialog.json",
+    "https://www.spaceui.one/r/primitives-input.json",
+    "https://www.spaceui.one/r/primitives-textarea.json",
+    "https://www.spaceui.one/r/primitives-slider.json",
+    "https://www.spaceui.one/r/primitives-radio-group.json",
+    "https://www.spaceui.one/r/primitives-scroll-area.json",
+    "https://www.spaceui.one/r/primitives-card.json",
+    "https://www.spaceui.one/r/components-spaceui-button-squircle.json",
+    "https://www.spaceui.one/r/components-spaceui-badge-squircle.json",
+    "https://www.spaceui.one/r/components-spaceui-status-badge.json",
+    "https://www.spaceui.one/r/hooks-lifecycle-use-confirm-exit.json",
+    "https://www.spaceui.one/r/block-interactive-grid-hero-1.json"
   ],
   "categories": ["community-wall", "canvas", "community", "block"],
   "files": [
@@ -44,6 +51,11 @@
       "path": "src/registry/blocks/community-wall/patterns.tsx",
       "type": "registry:block",
       "target": "components/blocks/community-wall/patterns.tsx"
+    },
+    {
+      "path": "src/registry/blocks/community-wall/social-icons.tsx",
+      "type": "registry:block",
+      "target": "components/blocks/community-wall/social-icons.tsx"
     }
   ],
   "createdAt": "2026-09-15",

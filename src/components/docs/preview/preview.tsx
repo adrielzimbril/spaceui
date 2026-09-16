@@ -473,12 +473,7 @@ export function ComponentPreview({
       </Tabs>
 
       {binds && activeTweakName === name ? (
-        <Tweakpane
-          binds={binds}
-          onBindsChange={setBinds}
-          show
-          onClose={() => setActiveTweakName(null)}
-        />
+        <Tweakpane binds={binds} onBindsChange={setBinds} show onClose={() => setActiveTweakName(null)} />
       ) : null}
     </div>
   )

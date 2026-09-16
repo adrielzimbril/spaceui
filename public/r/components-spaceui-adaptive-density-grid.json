@@ -7,7 +7,8 @@
     "motion"
   ],
   "registryDependencies": [
-    "https://www.spaceui.one/r/lib-utils.json"
+    "https://www.spaceui.one/r/lib-utils.json",
+    "https://www.spaceui.one/r/primitives-tabs.json"
   ],
   "files": [
     {

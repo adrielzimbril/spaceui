@@ -4,7 +4,13 @@
   "type": "registry:block",
   "title": "Engagement & Community Activity Block",
   "description": "Comprehensive reader engagement showcase with top articles, interactive emoji reaction counters, category tags, and changelog updates.",
-  "registryDependencies": ["https://www.spaceui.one/r/lib-utils.json"],
+  "registryDependencies": [
+    "https://www.spaceui.one/r/lib-utils.json",
+    "https://www.spaceui.one/r/primitives-frame.json",
+    "https://www.spaceui.one/r/primitives-card.json",
+    "https://www.spaceui.one/r/components-spaceui-badge-squircle.json",
+    "https://www.spaceui.one/r/components-spaceui-button-squircle.json"
+  ],
   "dependencies": ["motion", "@tabler/icons-react"],
   "categories": ["stats"],
   "files": [
@@ -42,6 +48,16 @@
       "path": "src/registry/blocks/stats/shared/changelog-updates-card.tsx",
       "type": "registry:component",
       "target": "components/blocks/stats/changelog-updates-card.tsx"
+    },
+    {
+      "path": "src/registry/blocks/stats/shared/mock-data.ts",
+      "type": "registry:lib",
+      "target": "components/blocks/stats/mock-data.ts"
+    },
+    {
+      "path": "src/registry/blocks/stats/shared/types.ts",
+      "type": "registry:lib",
+      "target": "components/blocks/stats/types.ts"
     }
   ],
   "createdAt": "2026-09-12",

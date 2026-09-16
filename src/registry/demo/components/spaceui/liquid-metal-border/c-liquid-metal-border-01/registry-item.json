@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-c-liquid-metal-border-01",
+  "type": "registry:component",
+  "title": "Liquid Metal Border Avatar",
+  "description": "Avatar Extended wrapped in a liquid metal border.",
+  "registryDependencies": [
+    "https://www.spaceui.one/r/components-spaceui-liquid-metal-border.json",
+    "https://www.spaceui.one/r/components-spaceui-avatar-extended.json",
+    "https://www.spaceui.one/r/primitives-avatar.json"
+  ],
+  "categories": ["liquid"],
+  "files": [
+    {
+      "path": "src/registry/demo/components/spaceui/liquid-metal-border/c-liquid-metal-border-01/index.tsx",
+      "type": "registry:component",
+      "target": "components/spaceui/liquid-metal-border-avatar.tsx"
+    }
+  ],
+  "createdAt": "2026-09-16",
+  "updatedAt": "2026-09-16"
+}

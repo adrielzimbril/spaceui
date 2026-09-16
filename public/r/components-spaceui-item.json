@@ -1,0 +1,26 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "components-spaceui-item",
+  "title": "Item",
+  "description": "Composable Item primitive with media, content, title, and description slots for lists and rows.",
+  "dependencies": [
+    "class-variance-authority"
+  ],
+  "registryDependencies": [
+    "https://www.spaceui.one/r/lib-utils.json"
+  ],
+  "files": [
+    {
+      "path": "src/registry/components/spaceui/item/index.tsx",
+      "content": "import * as React from 'react'\nimport { cn } from '@/lib/utils'\nimport { cva, type VariantProps } from 'class-variance-authority'\n\nconst itemVariants = cva('flex items-center gap-4 rounded-[0.875rem] p-4 text-left transition-colors', {\n  variants: {\n    variant: {\n      default: 'bg-background hover:bg-muted/50',\n      outline: 'border border-soft bg-background hover:bg-muted/50',\n      ghost: 'hover:bg-muted',\n    },\n  },\n  defaultVariants: {\n    variant: 'default',\n  },\n})\n\nexport interface ItemProps extends React.HTMLAttributes<HTMLDivElement>, VariantProps<typeof itemVariants> {}\n\nexport function Item({ className, variant, ...props }: ItemProps) {\n  return <div className={cn(itemVariants({ variant }), className)} {...props} />\n}\n\nexport function ItemMedia({ className, ...props }: React.HTMLAttributes<HTMLDivElement>) {\n  return <div className={cn('flex shrink-0 items-center justify-center', className)} {...props} />\n}\n\nexport function ItemContent({ className, ...props }: React.HTMLAttributes<HTMLDivElement>) {\n  return <div className={cn('flex flex-col gap-1', className)} {...props} />\n}\n\nexport function ItemTitle({ className, ...props }: React.HTMLAttributes<HTMLHeadingElement>) {\n  return (\n    <h3 className={cn('text-sm font-semibold text-foreground leading-none tracking-tight', className)} {...props} />\n  )\n}\n\nexport function ItemDescription({ className, ...props }: React.HTMLAttributes<HTMLParagraphElement>) {\n  return <p className={cn('text-sm text-muted-foreground', className)} {...props} />\n}\n",
+      "type": "registry:component",
+      "target": "components/spaceui/item.tsx"
+    }
+  ],
+  "categories": [
+    "component",
+    "item",
+    "list"
+  ],
+  "type": "registry:component"
+}

@@ -1,0 +1,26 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "components-spaceui-liquid-metal-border",
+  "title": "Liquid Metal Border",
+  "description": "Liquid metal shader as a border wrap around any registry component.",
+  "dependencies": [
+    "@paper-design/shaders-react"
+  ],
+  "registryDependencies": [
+    "https://www.spaceui.one/r/lib-utils.json"
+  ],
+  "files": [
+    {
+      "path": "src/registry/components/spaceui/liquid-metal-border/index.tsx",
+      "content": "'use client'\n\nimport * as React from 'react'\nimport { LiquidMetal, type LiquidMetalProps } from '@paper-design/shaders-react'\nimport { cn } from '@/lib/utils'\n\ntype ShaderProps = Omit<LiquidMetalProps, 'className' | 'style' | 'shape' | 'children'>\n\nexport type LiquidBorderProps = React.ComponentProps<'div'> & Partial<ShaderProps>\n\nexport function LiquidBorder({\n  children,\n  className,\n  speed = 0.6,\n  repetition = 4,\n  softness = 0.5,\n  shiftRed = 0.3,\n  shiftBlue = 0.3,\n  distortion = 0,\n  contour = 0,\n  angle = 45,\n  scale = 8,\n  offsetX = 0.1,\n  offsetY = -0.1,\n  ...props\n}: LiquidBorderProps) {\n  return (\n    <div data-slot=\"liquid-border\" className={cn('relative isolate overflow-hidden', className)} {...props}>\n      <LiquidMetal\n        className=\"pointer-events-none absolute inset-0 size-full\"\n        shape=\"none\"\n        speed={speed}\n        repetition={repetition}\n        softness={softness}\n        shiftRed={shiftRed}\n        shiftBlue={shiftBlue}\n        distortion={distortion}\n        contour={contour}\n        angle={angle}\n        scale={scale}\n        offsetX={offsetX}\n        offsetY={offsetY}\n      />\n      <div className=\"relative z-10 size-full\">{children}</div>\n    </div>\n  )\n}\n",
+      "type": "registry:component",
+      "target": "components/spaceui/liquid-metal-border.tsx"
+    }
+  ],
+  "categories": [
+    "component",
+    "shader",
+    "liquid"
+  ],
+  "type": "registry:component"
+}

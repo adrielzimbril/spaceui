@@ -13,9 +13,9 @@
       "target": "components/shader/paper-shader.tsx"
     },
     {
-      "path": "src/registry/demo/components/shader/paper-shader/c-paper-shader-01/index.tsx",
+      "path": "src/registry/demo/components/shader/paper-shader/c-paper-shader-01/shader-source.tsx",
       "type": "registry:component",
-      "target": "components/shader/paper-shader.tsx"
+      "target": "components/shader/paper-shader-source.tsx"
     }
   ],
   "createdAt": "2026-09-03",

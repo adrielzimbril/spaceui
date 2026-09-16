@@ -15,5 +15,5 @@
   ],
   "createdAt": "2026-09-12",
   "updatedAt": "2026-09-12",
-  "registryDependencies": []
+  "registryDependencies": ["https://www.spaceui.one/r/lib-utils.json"]
 }

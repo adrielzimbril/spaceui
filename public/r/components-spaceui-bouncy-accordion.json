@@ -9,7 +9,8 @@
   ],
   "registryDependencies": [
     "https://www.spaceui.one/r/lib-utils.json",
-    "https://www.spaceui.one/r/primitives-button.json"
+    "https://www.spaceui.one/r/primitives-button.json",
+    "https://www.spaceui.one/r/hooks-animation-use-auto-height.json"
   ],
   "files": [
     {

@@ -1,5 +1,9 @@
 import type React from 'react'
 
+// Re-exported so the shared use-orb-audio.ts (borrowed from the smooth orb) still
+// resolves `./types` correctly once the CLI copies it next to this file.
+export type AudioMode = 'ambient' | 'mic' | 'file'
+
 export const BloopState = {
   idle: 'idle',
   listen: 'listen',

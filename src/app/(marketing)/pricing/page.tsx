@@ -14,6 +14,7 @@ import {
   IconSparkles,
   IconTerminal2,
 } from '@tabler/icons-react'
+import { EmojiSource } from '@usespaceui/emoji'
 import { Badge } from '@/registry/components/spaceui/badge-squircle'
 import { Button } from '@/registry/components/spaceui/button-squircle'
 import { HeroAvatar, MarketingHero } from '@/components/marketing/shared/hero'
@@ -33,6 +34,8 @@ import {
   PRO_YEARLY_PRICE,
   REGISTRY_STATS,
 } from '@/lib/pricing-config'
+import { LiquidBorder } from '@/registry/components/spaceui/liquid-metal-border'
+import { cn } from '@/registry/lib/utils'
 
 export const metadata: Metadata = {
   title: `Pricing - ${siteConfig.appName}`,
@@ -62,7 +65,7 @@ const plans = [
     ],
     recommended: false,
     cta: (
-      <Button variant="base" full asPointer render={<Link href="/primitives" />}>
+      <Button variant="outline" full hover whileTap asPointer render={<Link href="/primitives" />}>
         Start for free
       </Button>
     ),
@@ -87,10 +90,12 @@ const plans = [
     cta: POLAR_PRODUCTS.proYearly ? (
       <BuyButton productId={POLAR_PRODUCTS.proYearly} label="Get Pro" variant="primary" full size="lg" />
     ) : (
-      <Button variant="primary" full size="lg" asPointer render={<Link href="/checkout?products=pro_yearly" />}>
-        <IconBolt className="size-4" />
-        <span>Get Pro</span>
-      </Button>
+      <LiquidBorder className="flex w-full squircle rounded-full p-0.75 hover:scale-105 transition-all duration-300">
+        <Button variant="primary" full size="lg" asPointer render={<Link href="/checkout?products=pro_yearly" />}>
+          <IconBolt className="size-4" />
+          <span>Get Pro</span>
+        </Button>
+      </LiquidBorder>
     ),
   },
   {
@@ -117,9 +122,21 @@ const plans = [
         size="lg"
       />
     ) : (
-      <Button variant="secondary" full size="lg" asPointer render={<Link href="/checkout?products=lifetime" />}>
-        Get lifetime access
-      </Button>
+      <>
+        {/* <LiquidBorder className="flex w-full squircle rounded-full p-0.75"> */}
+        <Button
+          variant="primary"
+          full
+          hover
+          whileTap
+          size="lg"
+          asPointer
+          render={<Link href="/checkout?products=lifetime" />}
+        >
+          Get lifetime access
+        </Button>
+        {/* </LiquidBorder> */}
+      </>
     ),
   },
 ]
@@ -253,26 +270,18 @@ export default function PricingPage() {
           primaryText: 'Pricing',
           secondaryText: 'Simple, transparent',
           emojiCodepoint: '💎',
+          emojiSource: EmojiSource.Telegram,
           href: '#plans',
         }}
         title={
           <>
-            Ship better interfaces <HeroAvatar name="pricing" variant="lumina" /> at full speed
+            Ship better interfaces <HeroAvatar name="pricing-space" variant="invader" animate /> at full speed{' '}
+            <HeroAvatar name="space" variant="pebble" />
           </>
         }
         description="Subscribe for unlimited access to the entire library, or buy the templates you need one at a time."
       >
         <Button
-          render={<Link href="#plans" />}
-          data-space-hover
-          data-space-click="confirm"
-          className="inline-flex items-center gap-2 px-6 py-3.5 font-medium active:scale-[0.98] transition-all duration-300"
-        >
-          <span>View plans</span>
-          <IconArrowUpRight className="size-4" />
-        </Button>
-        <Button
-          variant="outline"
           render={<Link href="/components" />}
           data-space-hover
           className="inline-flex items-center gap-2 px-6 py-3.5 font-medium transition-all duration-300"
@@ -281,29 +290,34 @@ export default function PricingPage() {
         </Button>
       </MarketingHero>
 
-      {/* Pricing plans */}
       <section id="plans" data-page-section className="mx-auto max-w-7xl scroll-mt-24 px-5 sm:px-6 py-10">
         <div className="grid grid-cols-1 items-stretch gap-6 md:grid-cols-3 lg:gap-8">
           {plans.map((plan) => (
             <Frame
               key={plan.key}
-              className={`flex h-full flex-col rounded-3xl p-1.5 ${plan.recommended ? 'bg-primary/10' : ''}`}
+              className={cn('flex h-full flex-col rounded-3xl p-1.5', plan.recommended && 'bg-primary/10')}
             >
-              {plan.recommended && (
+              {/* {plan.recommended && (
                 <FrameHeader className="flex flex-row items-center justify-center px-3 py-2">
                   <Badge variant="primary" size="sm" className="font-semibold text-xs">
                     {plan.badgeLabel}
                   </Badge>
                 </FrameHeader>
-              )}
+              )} */}
               <Card className="flex h-full flex-col justify-between gap-6 rounded-2xl bg-background p-6 before:rounded-2xl">
                 <div className="flex flex-col gap-4">
                   <div className="flex items-center justify-between gap-2">
                     <h3 className="text-lg font-semibold tracking-tight text-foreground">{plan.name}</h3>
-                    {!plan.recommended && (
+                    {!plan.recommended ? (
                       <Badge size="sm" className="text-xs">
                         {plan.badgeLabel}
                       </Badge>
+                    ) : (
+                      <LiquidBorder className="inline-flex squircle rounded-full p-0.75">
+                        <Badge size="sm" className="text-xs">
+                          {plan.badgeLabel}
+                        </Badge>
+                      </LiquidBorder>
                     )}
                   </div>
                   <p className="text-xs text-muted-foreground sm:text-sm">{plan.description}</p>

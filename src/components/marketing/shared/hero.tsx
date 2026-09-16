@@ -49,6 +49,7 @@ export interface MarketingHeroStatusBadge {
   primaryText: string
   secondaryText?: string
   emojiCodepoint?: string
+  emojiSource?: EmojiSource
   href?: string
 }
 
@@ -82,7 +83,7 @@ export function MarketingHero({
       {statusBadge.emojiCodepoint && (
         <AssetEmoji
           codepoint={statusBadge.emojiCodepoint}
-          source={EmojiSource.Fluent}
+          source={statusBadge.emojiSource ?? EmojiSource.Fluent}
           type={EmojiType.Anim}
           size={22}
           lazy={false}

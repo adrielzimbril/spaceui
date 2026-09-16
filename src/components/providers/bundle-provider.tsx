@@ -72,9 +72,7 @@ export function BundleProvider({ children }: { children: React.ReactNode }) {
     const channel = new BroadcastChannel(STORAGE_KEY)
     const onMessage = (event: MessageEvent<BundleItem[]>) => {
       if (!Array.isArray(event.data)) return
-      setItems((current) =>
-        JSON.stringify(current) === JSON.stringify(event.data) ? current : event.data,
-      )
+      setItems((current) => (JSON.stringify(current) === JSON.stringify(event.data) ? current : event.data))
     }
     channel.addEventListener('message', onMessage)
     return () => {

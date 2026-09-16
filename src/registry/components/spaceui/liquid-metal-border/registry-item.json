@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "components-spaceui-liquid-metal-border",
+  "type": "registry:component",
+  "title": "Liquid Metal Border",
+  "description": "Liquid metal shader as a border wrap around any registry component.",
+  "dependencies": ["@paper-design/shaders-react"],
+  "registryDependencies": ["https://www.spaceui.one/r/lib-utils.json"],
+  "categories": ["component", "shader", "liquid"],
+  "files": [
+    {
+      "path": "src/registry/components/spaceui/liquid-metal-border/index.tsx",
+      "type": "registry:component",
+      "target": "components/spaceui/liquid-metal-border.tsx"
+    }
+  ],
+  "createdAt": "2026-09-16",
+  "updatedAt": "2026-09-16"
+}

@@ -104,20 +104,16 @@ export const registryComponents: Record<string, RegistryComponent> = {
     () => import("@/registry/components/spaceui/image-dark/index.tsx"),
     {},
   ),
+  "components-spaceui-item": lazyRegistryComponent(
+    () => import("@/registry/components/spaceui/item/index.tsx"),
+    {},
+  ),
   "components-spaceui-kanban": lazyRegistryComponent(
     () => import("@/registry/components/spaceui/kanban/index.tsx"),
     {},
   ),
-  "components-spaceui-liquid-metal-avatar": lazyRegistryComponent(
-    () => import("@/registry/components/spaceui/liquid-metal-avatar/index.tsx"),
-    {},
-  ),
-  "components-spaceui-liquid-metal-button": lazyRegistryComponent(
-    () => import("@/registry/components/spaceui/liquid-metal-button/index.tsx"),
-    {},
-  ),
-  "components-spaceui-liquid-metal-card": lazyRegistryComponent(
-    () => import("@/registry/components/spaceui/liquid-metal-card/index.tsx"),
+  "components-spaceui-liquid-metal-border": lazyRegistryComponent(
+    () => import("@/registry/components/spaceui/liquid-metal-border/index.tsx"),
     {},
   ),
   "components-spaceui-morph-icon": lazyRegistryComponent(

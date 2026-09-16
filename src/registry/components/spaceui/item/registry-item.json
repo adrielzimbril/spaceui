@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "components-spaceui-item",
+  "type": "registry:component",
+  "title": "Item",
+  "description": "Composable Item primitive with media, content, title, and description slots for lists and rows.",
+  "dependencies": ["class-variance-authority"],
+  "registryDependencies": ["https://www.spaceui.one/r/lib-utils.json"],
+  "categories": ["component", "item", "list"],
+  "files": [
+    {
+      "path": "src/registry/components/spaceui/item/index.tsx",
+      "type": "registry:component",
+      "target": "components/spaceui/item.tsx"
+    }
+  ],
+  "createdAt": "2026-09-16",
+  "updatedAt": "2026-09-16"
+}

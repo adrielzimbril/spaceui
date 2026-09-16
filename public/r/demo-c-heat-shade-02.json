@@ -3,26 +3,43 @@
   "name": "demo-c-heat-shade-02",
   "title": "Heat Shade Field",
   "description": "Drifting heat field with origin and color controls.",
-  "registryDependencies": ["https://www.spaceui.one/r/components-shader-heat-shade.json"],
+  "registryDependencies": [
+    "https://www.spaceui.one/r/components-shader-heat-shade.json"
+  ],
   "files": [
     {
       "path": "src/registry/demo/components/shader/heat-shade/c-heat-shade-02/index.tsx",
       "content": "'use client'\n\nimport * as React from 'react'\nimport { HeatShade, type HeatShadeFrom } from '@/components/shader/heat-shade'\n\nexport interface HeatShadeFieldDemoProps {\n  base?: string\n  hot?: string\n  speed?: number\n  from?: HeatShadeFrom\n}\n\nexport default function Demo({\n  base = '#2a7bba',\n  hot = '#43c8ff',\n  speed = 1,\n  from = 'bottom',\n}: HeatShadeFieldDemoProps) {\n  return (\n    <div className=\"relative size-full min-h-96 overflow-hidden bg-background\">\n      <HeatShade className=\"absolute inset-0\" variant=\"field\" from={from} base={base} hot={hot} speed={speed} />\n    </div>\n  )\n}\n",
       "type": "registry:component",
-      "target": "components/shader/heat-shade-field.tsx"
+      "target": "components/shader/heat-shade-licks.tsx"
     }
   ],
   "meta": {
     "demoProps": {
-      "base": { "value": "#2a7bba" },
-      "hot": { "value": "#43c8ff" },
-      "speed": { "value": 1, "min": 0, "max": 3, "step": 0.1 },
+      "base": {
+        "value": "#2a7bba"
+      },
+      "hot": {
+        "value": "#43c8ff"
+      },
+      "speed": {
+        "value": 1,
+        "min": 0,
+        "max": 3,
+        "step": 0.1
+      },
       "from": {
         "value": "bottom",
-        "options": { "Bottom": "bottom", "Top": "top" }
+        "options": {
+          "Top": "top",
+          "Bottom": "bottom"
+        }
       }
     }
   },
-  "categories": ["shader", "heat"],
+  "categories": [
+    "shader",
+    "heat"
+  ],
   "type": "registry:component"
 }

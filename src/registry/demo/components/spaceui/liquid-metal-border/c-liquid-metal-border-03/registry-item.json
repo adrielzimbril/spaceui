@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-c-liquid-metal-border-03",
+  "type": "registry:component",
+  "title": "Liquid Metal Border Card",
+  "description": "Card primitive wrapped in a liquid metal border.",
+  "registryDependencies": [
+    "https://www.spaceui.one/r/components-spaceui-liquid-metal-border.json",
+    "https://www.spaceui.one/r/components-spaceui-button-squircle.json",
+    "https://www.spaceui.one/r/primitives-card.json"
+  ],
+  "categories": ["liquid"],
+  "files": [
+    {
+      "path": "src/registry/demo/components/spaceui/liquid-metal-border/c-liquid-metal-border-03/index.tsx",
+      "type": "registry:component",
+      "target": "components/spaceui/liquid-metal-border-card.tsx"
+    }
+  ],
+  "createdAt": "2026-09-16",
+  "updatedAt": "2026-09-16"
+}

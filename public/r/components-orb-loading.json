@@ -6,7 +6,9 @@
   "dependencies": [
     "motion"
   ],
-  "registryDependencies": [],
+  "registryDependencies": [
+    "https://www.spaceui.one/r/lib-utils.json"
+  ],
   "files": [
     {
       "path": "src/registry/components/orb/loading/index.tsx",

@@ -1,15 +1,15 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "demo-c-heat-shade-01",
-  "title": "Heat Shade Demo",
-  "description": "Animated heat field with ember and hot color controls.",
+  "title": "Heat Shade Licks",
+  "description": "Climbing heat tongues with origin and color controls.",
   "registryDependencies": [
     "https://www.spaceui.one/r/components-shader-heat-shade.json"
   ],
   "files": [
     {
       "path": "src/registry/demo/components/shader/heat-shade/c-heat-shade-01/index.tsx",
-      "content": "'use client'\n\nimport * as React from 'react'\nimport { HeatShade } from '@/components/shader/heat-shade'\n\nexport interface HeatShadeDemoProps {\n  base?: string\n  hot?: string\n  speed?: number\n}\n\nexport default function Demo({ base = '#2a7bba', hot = '#43c8ff', speed = 1 }: HeatShadeDemoProps) {\n  return (\n    <div className=\"relative size-full min-h-96 overflow-hidden bg-background\">\n      <HeatShade className=\"absolute inset-0\" variant=\"field\" base={base} hot={hot} speed={speed} />\n    </div>\n  )\n}\n",
+      "content": "'use client'\n\nimport * as React from 'react'\nimport { HeatShade, type HeatShadeFrom } from '@/components/shader/heat-shade'\n\nexport interface HeatShadeDemoProps {\n  base?: string\n  hot?: string\n  speed?: number\n  from?: HeatShadeFrom\n}\n\nexport default function Demo({ base = '#2a7bba', hot = '#43c8ff', speed = 1, from = 'bottom' }: HeatShadeDemoProps) {\n  return (\n    <div className=\"relative size-full min-h-96 overflow-hidden bg-background\">\n      <HeatShade className=\"absolute inset-0\" variant=\"licks\" from={from} base={base} hot={hot} speed={speed} />\n    </div>\n  )\n}\n",
       "type": "registry:component",
       "target": "components/shader/heat-shade.tsx"
     }
@@ -31,8 +31,8 @@
       "from": {
         "value": "bottom",
         "options": {
-          "Bottom": "bottom",
-          "Top": "top"
+          "Top": "top",
+          "Bottom": "bottom"
         }
       }
     }

@@ -4,7 +4,12 @@
   "type": "registry:block",
   "title": "Blog & Content Stats Block",
   "description": "Content publication metrics including total articles, words written, reader messages, and reading time.",
-  "registryDependencies": ["https://www.spaceui.one/r/lib-utils.json"],
+  "registryDependencies": [
+    "https://www.spaceui.one/r/lib-utils.json",
+    "https://www.spaceui.one/r/primitives-frame.json",
+    "https://www.spaceui.one/r/primitives-card.json",
+    "https://www.spaceui.one/r/components-spaceui-badge-squircle.json"
+  ],
   "dependencies": ["motion", "@tabler/icons-react"],
   "categories": ["stats"],
   "files": [
@@ -22,6 +27,16 @@
       "path": "src/registry/blocks/stats/shared/stat-card.tsx",
       "type": "registry:component",
       "target": "components/blocks/stats/stat-card.tsx"
+    },
+    {
+      "path": "src/registry/blocks/stats/shared/mock-data.ts",
+      "type": "registry:lib",
+      "target": "components/blocks/stats/mock-data.ts"
+    },
+    {
+      "path": "src/registry/blocks/stats/shared/types.ts",
+      "type": "registry:lib",
+      "target": "components/blocks/stats/types.ts"
     }
   ],
   "createdAt": "2026-09-12",

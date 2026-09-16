@@ -163,10 +163,10 @@
     ],
     "createdAt": "2026-09-15",
     "updatedAt": "2026-09-15",
-    "size": "43.1 KB",
-    "rawSize": 44117,
-    "directSize": "43.1 KB",
-    "fileCount": 6,
+    "size": "45.1 KB",
+    "rawSize": 46220,
+    "directSize": "45.1 KB",
+    "fileCount": 7,
     "dependencies": [
       "@usespaceui/avatars",
       "@usespaceui/sounds",
@@ -174,11 +174,18 @@
     ],
     "registryDependencies": [
       "https://www.spaceui.one/r/lib-utils.json",
-      "https://www.spaceui.one/r/dialog.json",
-      "https://www.spaceui.one/r/button.json",
-      "https://www.spaceui.one/r/input.json",
-      "https://www.spaceui.one/r/textarea.json",
-      "https://www.spaceui.one/r/slider.json"
+      "https://www.spaceui.one/r/primitives-dialog.json",
+      "https://www.spaceui.one/r/primitives-input.json",
+      "https://www.spaceui.one/r/primitives-textarea.json",
+      "https://www.spaceui.one/r/primitives-slider.json",
+      "https://www.spaceui.one/r/primitives-radio-group.json",
+      "https://www.spaceui.one/r/primitives-scroll-area.json",
+      "https://www.spaceui.one/r/primitives-card.json",
+      "https://www.spaceui.one/r/components-spaceui-button-squircle.json",
+      "https://www.spaceui.one/r/components-spaceui-badge-squircle.json",
+      "https://www.spaceui.one/r/components-spaceui-status-badge.json",
+      "https://www.spaceui.one/r/hooks-lifecycle-use-confirm-exit.json",
+      "https://www.spaceui.one/r/block-interactive-grid-hero-1.json"
     ],
     "dependents": [],
     "related": []
@@ -199,10 +206,10 @@
     ],
     "createdAt": "2026-09-15",
     "updatedAt": "2026-09-15",
-    "size": "43.1 KB",
-    "rawSize": 44117,
-    "directSize": "43.1 KB",
-    "fileCount": 6,
+    "size": "45.1 KB",
+    "rawSize": 46220,
+    "directSize": "45.1 KB",
+    "fileCount": 7,
     "dependencies": [
       "@usespaceui/avatars",
       "@usespaceui/sounds",
@@ -210,11 +217,18 @@
     ],
     "registryDependencies": [
       "https://www.spaceui.one/r/lib-utils.json",
-      "https://www.spaceui.one/r/dialog.json",
-      "https://www.spaceui.one/r/button.json",
-      "https://www.spaceui.one/r/input.json",
-      "https://www.spaceui.one/r/textarea.json",
-      "https://www.spaceui.one/r/slider.json"
+      "https://www.spaceui.one/r/primitives-dialog.json",
+      "https://www.spaceui.one/r/primitives-input.json",
+      "https://www.spaceui.one/r/primitives-textarea.json",
+      "https://www.spaceui.one/r/primitives-slider.json",
+      "https://www.spaceui.one/r/primitives-radio-group.json",
+      "https://www.spaceui.one/r/primitives-scroll-area.json",
+      "https://www.spaceui.one/r/primitives-card.json",
+      "https://www.spaceui.one/r/components-spaceui-button-squircle.json",
+      "https://www.spaceui.one/r/components-spaceui-badge-squircle.json",
+      "https://www.spaceui.one/r/components-spaceui-status-badge.json",
+      "https://www.spaceui.one/r/hooks-lifecycle-use-confirm-exit.json",
+      "https://www.spaceui.one/r/block-interactive-grid-hero-1.json"
     ],
     "dependents": [],
     "related": []
@@ -235,10 +249,10 @@
     ],
     "createdAt": "2026-09-15",
     "updatedAt": "2026-09-15",
-    "size": "43.1 KB",
-    "rawSize": 44117,
-    "directSize": "43.1 KB",
-    "fileCount": 6,
+    "size": "45.1 KB",
+    "rawSize": 46220,
+    "directSize": "45.1 KB",
+    "fileCount": 7,
     "dependencies": [
       "@usespaceui/avatars",
       "@usespaceui/sounds",
@@ -246,11 +260,18 @@
     ],
     "registryDependencies": [
       "https://www.spaceui.one/r/lib-utils.json",
-      "https://www.spaceui.one/r/dialog.json",
-      "https://www.spaceui.one/r/button.json",
-      "https://www.spaceui.one/r/input.json",
-      "https://www.spaceui.one/r/textarea.json",
-      "https://www.spaceui.one/r/slider.json"
+      "https://www.spaceui.one/r/primitives-dialog.json",
+      "https://www.spaceui.one/r/primitives-input.json",
+      "https://www.spaceui.one/r/primitives-textarea.json",
+      "https://www.spaceui.one/r/primitives-slider.json",
+      "https://www.spaceui.one/r/primitives-radio-group.json",
+      "https://www.spaceui.one/r/primitives-scroll-area.json",
+      "https://www.spaceui.one/r/primitives-card.json",
+      "https://www.spaceui.one/r/components-spaceui-button-squircle.json",
+      "https://www.spaceui.one/r/components-spaceui-badge-squircle.json",
+      "https://www.spaceui.one/r/components-spaceui-status-badge.json",
+      "https://www.spaceui.one/r/hooks-lifecycle-use-confirm-exit.json",
+      "https://www.spaceui.one/r/block-interactive-grid-hero-1.json"
     ],
     "dependents": [],
     "related": []
@@ -984,16 +1005,19 @@
     ],
     "createdAt": "2026-09-12",
     "updatedAt": "2026-09-12",
-    "size": "9.2 KB",
-    "rawSize": 9441,
-    "directSize": "9.2 KB",
-    "fileCount": 3,
+    "size": "14.7 KB",
+    "rawSize": 15037,
+    "directSize": "14.7 KB",
+    "fileCount": 5,
     "dependencies": [
       "motion",
       "@tabler/icons-react"
     ],
     "registryDependencies": [
-      "https://www.spaceui.one/r/lib-utils.json"
+      "https://www.spaceui.one/r/lib-utils.json",
+      "https://www.spaceui.one/r/primitives-frame.json",
+      "https://www.spaceui.one/r/primitives-card.json",
+      "https://www.spaceui.one/r/components-spaceui-badge-squircle.json"
     ],
     "dependents": [],
     "related": [
@@ -1042,16 +1066,19 @@
     ],
     "createdAt": "2026-09-12",
     "updatedAt": "2026-09-12",
-    "size": "9.2 KB",
-    "rawSize": 9441,
-    "directSize": "9.2 KB",
-    "fileCount": 3,
+    "size": "14.7 KB",
+    "rawSize": 15037,
+    "directSize": "14.7 KB",
+    "fileCount": 5,
     "dependencies": [
       "motion",
       "@tabler/icons-react"
     ],
     "registryDependencies": [
-      "https://www.spaceui.one/r/lib-utils.json"
+      "https://www.spaceui.one/r/lib-utils.json",
+      "https://www.spaceui.one/r/primitives-frame.json",
+      "https://www.spaceui.one/r/primitives-card.json",
+      "https://www.spaceui.one/r/components-spaceui-badge-squircle.json"
     ],
     "dependents": [],
     "related": [
@@ -1100,16 +1127,19 @@
     ],
     "createdAt": "2026-09-12",
     "updatedAt": "2026-09-12",
-    "size": "9.2 KB",
-    "rawSize": 9441,
-    "directSize": "9.2 KB",
-    "fileCount": 3,
+    "size": "14.7 KB",
+    "rawSize": 15037,
+    "directSize": "14.7 KB",
+    "fileCount": 5,
     "dependencies": [
       "motion",
       "@tabler/icons-react"
     ],
     "registryDependencies": [
-      "https://www.spaceui.one/r/lib-utils.json"
+      "https://www.spaceui.one/r/lib-utils.json",
+      "https://www.spaceui.one/r/primitives-frame.json",
+      "https://www.spaceui.one/r/primitives-card.json",
+      "https://www.spaceui.one/r/components-spaceui-badge-squircle.json"
     ],
     "dependents": [],
     "related": [
@@ -1158,16 +1188,20 @@
     ],
     "createdAt": "2026-09-12",
     "updatedAt": "2026-09-12",
-    "size": "33 KB",
-    "rawSize": 33819,
-    "directSize": "33 KB",
-    "fileCount": 7,
+    "size": "38.5 KB",
+    "rawSize": 39415,
+    "directSize": "38.5 KB",
+    "fileCount": 9,
     "dependencies": [
       "motion",
       "@tabler/icons-react"
     ],
     "registryDependencies": [
-      "https://www.spaceui.one/r/lib-utils.json"
+      "https://www.spaceui.one/r/lib-utils.json",
+      "https://www.spaceui.one/r/primitives-frame.json",
+      "https://www.spaceui.one/r/primitives-card.json",
+      "https://www.spaceui.one/r/components-spaceui-badge-squircle.json",
+      "https://www.spaceui.one/r/components-spaceui-button-squircle.json"
     ],
     "dependents": [],
     "related": [
@@ -1216,16 +1250,19 @@
     ],
     "createdAt": "2026-09-12",
     "updatedAt": "2026-09-12",
-    "size": "9 KB",
-    "rawSize": 9179,
-    "directSize": "9 KB",
-    "fileCount": 3,
+    "size": "14.4 KB",
+    "rawSize": 14775,
+    "directSize": "14.4 KB",
+    "fileCount": 5,
     "dependencies": [
       "motion",
       "@tabler/icons-react"
     ],
     "registryDependencies": [
-      "https://www.spaceui.one/r/lib-utils.json"
+      "https://www.spaceui.one/r/lib-utils.json",
+      "https://www.spaceui.one/r/primitives-frame.json",
+      "https://www.spaceui.one/r/primitives-card.json",
+      "https://www.spaceui.one/r/components-spaceui-badge-squircle.json"
     ],
     "dependents": [],
     "related": [
@@ -1274,16 +1311,22 @@
     ],
     "createdAt": "2026-09-12",
     "updatedAt": "2026-09-12",
-    "size": "27 KB",
-    "rawSize": 27639,
-    "directSize": "27 KB",
-    "fileCount": 4,
+    "size": "32.5 KB",
+    "rawSize": 33233,
+    "directSize": "32.5 KB",
+    "fileCount": 6,
     "dependencies": [
       "motion",
       "@tabler/icons-react"
     ],
     "registryDependencies": [
-      "https://www.spaceui.one/r/lib-utils.json"
+      "https://www.spaceui.one/r/lib-utils.json",
+      "https://www.spaceui.one/r/primitives-frame.json",
+      "https://www.spaceui.one/r/primitives-card.json",
+      "https://www.spaceui.one/r/primitives-tooltip.json",
+      "https://www.spaceui.one/r/components-spaceui-badge-squircle.json",
+      "https://www.spaceui.one/r/components-spaceui-button-squircle.json",
+      "https://www.spaceui.one/r/components-spaceui-github-activity.json"
     ],
     "dependents": [],
     "related": [
@@ -1332,15 +1375,18 @@
     ],
     "createdAt": "2026-09-12",
     "updatedAt": "2026-09-12",
-    "size": "10.5 KB",
-    "rawSize": 10795,
-    "directSize": "10.5 KB",
-    "fileCount": 3,
+    "size": "16 KB",
+    "rawSize": 16391,
+    "directSize": "16 KB",
+    "fileCount": 5,
     "dependencies": [
       "@tabler/icons-react"
     ],
     "registryDependencies": [
-      "https://www.spaceui.one/r/lib-utils.json"
+      "https://www.spaceui.one/r/lib-utils.json",
+      "https://www.spaceui.one/r/primitives-frame.json",
+      "https://www.spaceui.one/r/primitives-card.json",
+      "https://www.spaceui.one/r/components-spaceui-badge-squircle.json"
     ],
     "dependents": [],
     "related": [
@@ -1565,9 +1611,9 @@
     ],
     "createdAt": "2026-09-03",
     "updatedAt": "2026-09-03",
-    "size": "28.3 KB",
-    "rawSize": 28981,
-    "directSize": "28.3 KB",
+    "size": "28.5 KB",
+    "rawSize": 29190,
+    "directSize": "28.5 KB",
     "fileCount": 6,
     "dependencies": [
       "vgpu"
@@ -1633,9 +1679,9 @@
     ],
     "createdAt": "2026-09-03",
     "updatedAt": "2026-09-03",
-    "size": "28.3 KB",
-    "rawSize": 28981,
-    "directSize": "28.3 KB",
+    "size": "28.5 KB",
+    "rawSize": 29190,
+    "directSize": "28.5 KB",
     "fileCount": 6,
     "dependencies": [
       "vgpu"
@@ -1832,7 +1878,9 @@
     "dependencies": [
       "motion"
     ],
-    "registryDependencies": [],
+    "registryDependencies": [
+      "https://www.spaceui.one/r/lib-utils.json"
+    ],
     "dependents": [],
     "related": [
       {
@@ -1896,7 +1944,9 @@
     "dependencies": [
       "motion"
     ],
-    "registryDependencies": [],
+    "registryDependencies": [
+      "https://www.spaceui.one/r/lib-utils.json"
+    ],
     "dependents": [],
     "related": [
       {
@@ -2252,6 +2302,17 @@
           "shader",
           "webgl"
         ]
+      },
+      {
+        "name": "liquid-metal-border",
+        "title": "Liquid Metal Border",
+        "description": "Liquid metal shader as a border wrap around any registry component.",
+        "url": "/ui-kit/components/spaceui/liquid-metal-border",
+        "category": "Shader",
+        "categories": [
+          "shader",
+          "liquid"
+        ]
       }
     ]
   },
@@ -2305,6 +2366,17 @@
           "shader",
           "webgl"
         ]
+      },
+      {
+        "name": "liquid-metal-border",
+        "title": "Liquid Metal Border",
+        "description": "Liquid metal shader as a border wrap around any registry component.",
+        "url": "/ui-kit/components/spaceui/liquid-metal-border",
+        "category": "Shader",
+        "categories": [
+          "shader",
+          "liquid"
+        ]
       }
     ]
   },
@@ -2323,9 +2395,9 @@
     ],
     "createdAt": "2026-09-16",
     "updatedAt": "2026-09-16",
-    "size": "8.1 KB",
-    "rawSize": 8290,
-    "directSize": "8.1 KB",
+    "size": "9.1 KB",
+    "rawSize": 9308,
+    "directSize": "9.1 KB",
     "fileCount": 3,
     "dependencies": [
       "vgpu"
@@ -2357,6 +2429,17 @@
         "categories": [
           "shader",
           "webgl"
+        ]
+      },
+      {
+        "name": "liquid-metal-border",
+        "title": "Liquid Metal Border",
+        "description": "Liquid metal shader as a border wrap around any registry component.",
+        "url": "/ui-kit/components/spaceui/liquid-metal-border",
+        "category": "Shader",
+        "categories": [
+          "shader",
+          "liquid"
         ]
       }
     ]
@@ -2376,9 +2459,9 @@
     ],
     "createdAt": "2026-09-16",
     "updatedAt": "2026-09-16",
-    "size": "8.1 KB",
-    "rawSize": 8290,
-    "directSize": "8.1 KB",
+    "size": "9.1 KB",
+    "rawSize": 9308,
+    "directSize": "9.1 KB",
     "fileCount": 3,
     "dependencies": [
       "vgpu"
@@ -2410,6 +2493,17 @@
         "categories": [
           "shader",
           "webgl"
+        ]
+      },
+      {
+        "name": "liquid-metal-border",
+        "title": "Liquid Metal Border",
+        "description": "Liquid metal shader as a border wrap around any registry component.",
+        "url": "/ui-kit/components/spaceui/liquid-metal-border",
+        "category": "Shader",
+        "categories": [
+          "shader",
+          "liquid"
         ]
       }
     ]
@@ -2459,6 +2553,17 @@
           "background",
           "heat"
         ]
+      },
+      {
+        "name": "liquid-metal-border",
+        "title": "Liquid Metal Border",
+        "description": "Liquid metal shader as a border wrap around any registry component.",
+        "url": "/ui-kit/components/spaceui/liquid-metal-border",
+        "category": "Shader",
+        "categories": [
+          "shader",
+          "liquid"
+        ]
       }
     ]
   },
@@ -2507,6 +2612,17 @@
           "background",
           "heat"
         ]
+      },
+      {
+        "name": "liquid-metal-border",
+        "title": "Liquid Metal Border",
+        "description": "Liquid metal shader as a border wrap around any registry component.",
+        "url": "/ui-kit/components/spaceui/liquid-metal-border",
+        "category": "Shader",
+        "categories": [
+          "shader",
+          "liquid"
+        ]
       }
     ]
   },
@@ -2532,7 +2648,8 @@
       "motion"
     ],
     "registryDependencies": [
-      "https://www.spaceui.one/r/lib-utils.json"
+      "https://www.spaceui.one/r/lib-utils.json",
+      "https://www.spaceui.one/r/primitives-tabs.json"
     ],
     "dependents": [],
     "related": []
@@ -2559,7 +2676,8 @@
       "motion"
     ],
     "registryDependencies": [
-      "https://www.spaceui.one/r/lib-utils.json"
+      "https://www.spaceui.one/r/lib-utils.json",
+      "https://www.spaceui.one/r/primitives-tabs.json"
     ],
     "dependents": [],
     "related": []
@@ -2985,7 +3103,8 @@
     ],
     "registryDependencies": [
       "https://www.spaceui.one/r/lib-utils.json",
-      "https://www.spaceui.one/r/primitives-button.json"
+      "https://www.spaceui.one/r/primitives-button.json",
+      "https://www.spaceui.one/r/hooks-animation-use-auto-height.json"
     ],
     "dependents": [],
     "related": []
@@ -3013,7 +3132,8 @@
     ],
     "registryDependencies": [
       "https://www.spaceui.one/r/lib-utils.json",
-      "https://www.spaceui.one/r/primitives-button.json"
+      "https://www.spaceui.one/r/primitives-button.json",
+      "https://www.spaceui.one/r/hooks-animation-use-auto-height.json"
     ],
     "dependents": [],
     "related": []
@@ -3034,9 +3154,9 @@
     ],
     "createdAt": "2026-09-12",
     "updatedAt": "2026-09-12",
-    "size": "3.5 KB",
-    "rawSize": 3541,
-    "directSize": "3.5 KB",
+    "size": "3.4 KB",
+    "rawSize": 3496,
+    "directSize": "3.4 KB",
     "fileCount": 1,
     "dependencies": [
       "@usespaceui/squircle",
@@ -3076,9 +3196,9 @@
     ],
     "createdAt": "2026-09-12",
     "updatedAt": "2026-09-12",
-    "size": "3.5 KB",
-    "rawSize": 3541,
-    "directSize": "3.5 KB",
+    "size": "3.4 KB",
+    "rawSize": 3496,
+    "directSize": "3.4 KB",
     "fileCount": 1,
     "dependencies": [
       "@usespaceui/squircle",
@@ -6488,7 +6608,7 @@
     "createdAt": "2026-09-12",
     "updatedAt": "2026-09-12",
     "size": "24.7 KB",
-    "rawSize": 25265,
+    "rawSize": 25263,
     "directSize": "24.7 KB",
     "fileCount": 1,
     "dependencies": [
@@ -6500,7 +6620,9 @@
       "https://www.spaceui.one/r/primitives-card.json",
       "https://www.spaceui.one/r/primitives-button.json",
       "https://www.spaceui.one/r/primitives-tooltip.json",
+      "https://www.spaceui.one/r/primitives-scroll-area.json",
       "https://www.spaceui.one/r/components-spaceui-status-badge.json",
+      "https://www.spaceui.one/r/components-spaceui-badge-squircle.json",
       "https://www.spaceui.one/r/lib-utils.json"
     ],
     "dependents": [],
@@ -6522,7 +6644,7 @@
     "createdAt": "2026-09-12",
     "updatedAt": "2026-09-12",
     "size": "24.7 KB",
-    "rawSize": 25265,
+    "rawSize": 25263,
     "directSize": "24.7 KB",
     "fileCount": 1,
     "dependencies": [
@@ -6534,7 +6656,9 @@
       "https://www.spaceui.one/r/primitives-card.json",
       "https://www.spaceui.one/r/primitives-button.json",
       "https://www.spaceui.one/r/primitives-tooltip.json",
+      "https://www.spaceui.one/r/primitives-scroll-area.json",
       "https://www.spaceui.one/r/components-spaceui-status-badge.json",
+      "https://www.spaceui.one/r/components-spaceui-badge-squircle.json",
       "https://www.spaceui.one/r/lib-utils.json"
     ],
     "dependents": [],
@@ -6688,6 +6812,60 @@
     "dependents": [],
     "related": []
   },
+  "item": {
+    "name": "components-spaceui-item",
+    "shortName": "item",
+    "title": "Item",
+    "description": "Composable Item primitive with media, content, title, and description slots for lists and rows.",
+    "type": "registry:component",
+    "url": "/ui-kit/components/spaceui/item",
+    "category": "Item",
+    "categories": [
+      "item",
+      "list"
+    ],
+    "createdAt": "2026-09-16",
+    "updatedAt": "2026-09-16",
+    "size": "1.5 KB",
+    "rawSize": 1539,
+    "directSize": "1.5 KB",
+    "fileCount": 1,
+    "dependencies": [
+      "class-variance-authority"
+    ],
+    "registryDependencies": [
+      "https://www.spaceui.one/r/lib-utils.json"
+    ],
+    "dependents": [],
+    "related": []
+  },
+  "components-spaceui-item": {
+    "name": "components-spaceui-item",
+    "shortName": "item",
+    "title": "Item",
+    "description": "Composable Item primitive with media, content, title, and description slots for lists and rows.",
+    "type": "registry:component",
+    "url": "/ui-kit/components/spaceui/item",
+    "category": "Item",
+    "categories": [
+      "item",
+      "list"
+    ],
+    "createdAt": "2026-09-16",
+    "updatedAt": "2026-09-16",
+    "size": "1.5 KB",
+    "rawSize": 1539,
+    "directSize": "1.5 KB",
+    "fileCount": 1,
+    "dependencies": [
+      "class-variance-authority"
+    ],
+    "registryDependencies": [
+      "https://www.spaceui.one/r/lib-utils.json"
+    ],
+    "dependents": [],
+    "related": []
+  },
   "kanban": {
     "name": "components-spaceui-kanban",
     "shortName": "kanban",
@@ -6746,171 +6924,131 @@
     "dependents": [],
     "related": []
   },
-  "liquid-metal-avatar": {
-    "name": "components-spaceui-liquid-metal-avatar",
-    "shortName": "liquid-metal-avatar",
-    "title": "Liquid Metal Avatar",
-    "description": "Liquid Metal Avatar component for Space UI.",
+  "liquid-metal-border": {
+    "name": "components-spaceui-liquid-metal-border",
+    "shortName": "liquid-metal-border",
+    "title": "Liquid Metal Border",
+    "description": "Liquid metal shader as a border wrap around any registry component.",
     "type": "registry:component",
-    "url": "/ui-kit/components/spaceui/liquid-metal-avatar",
-    "category": "Liquid-metal-avatar",
+    "url": "/ui-kit/components/spaceui/liquid-metal-border",
+    "category": "Shader",
     "categories": [
-      "liquid-metal-avatar"
+      "shader",
+      "liquid"
     ],
-    "createdAt": "2026-08-21",
-    "updatedAt": "2026-08-21",
-    "size": "1.9 KB",
-    "rawSize": 1952,
-    "directSize": "1.9 KB",
-    "fileCount": 1,
-    "dependencies": [
-      "@paper-design/shaders-react",
-      "class-variance-authority"
-    ],
-    "registryDependencies": [
-      "https://www.spaceui.one/r/lib-utils.json",
-      "https://www.spaceui.one/r/primitives-avatar.json"
-    ],
-    "dependents": [],
-    "related": []
-  },
-  "components-spaceui-liquid-metal-avatar": {
-    "name": "components-spaceui-liquid-metal-avatar",
-    "shortName": "liquid-metal-avatar",
-    "title": "Liquid Metal Avatar",
-    "description": "Liquid Metal Avatar component for Space UI.",
-    "type": "registry:component",
-    "url": "/ui-kit/components/spaceui/liquid-metal-avatar",
-    "category": "Liquid-metal-avatar",
-    "categories": [
-      "liquid-metal-avatar"
-    ],
-    "createdAt": "2026-08-21",
-    "updatedAt": "2026-08-21",
-    "size": "1.9 KB",
-    "rawSize": 1952,
-    "directSize": "1.9 KB",
-    "fileCount": 1,
-    "dependencies": [
-      "@paper-design/shaders-react",
-      "class-variance-authority"
-    ],
-    "registryDependencies": [
-      "https://www.spaceui.one/r/lib-utils.json",
-      "https://www.spaceui.one/r/primitives-avatar.json"
-    ],
-    "dependents": [],
-    "related": []
-  },
-  "liquid-metal-button": {
-    "name": "components-spaceui-liquid-metal-button",
-    "shortName": "liquid-metal-button",
-    "title": "Liquid Metal Button",
-    "description": "Liquid Metal Button component for Space UI.",
-    "type": "registry:component",
-    "url": "/ui-kit/components/spaceui/liquid-metal-button",
-    "category": "Liquid-metal-button",
-    "categories": [
-      "liquid-metal-button"
-    ],
-    "createdAt": "2026-08-21",
-    "updatedAt": "2026-08-21",
-    "size": "1.9 KB",
-    "rawSize": 1928,
-    "directSize": "1.9 KB",
-    "fileCount": 1,
-    "dependencies": [
-      "@paper-design/shaders-react",
-      "class-variance-authority"
-    ],
-    "registryDependencies": [
-      "https://www.spaceui.one/r/lib-utils.json",
-      "https://www.spaceui.one/r/primitives-button.json"
-    ],
-    "dependents": [],
-    "related": []
-  },
-  "components-spaceui-liquid-metal-button": {
-    "name": "components-spaceui-liquid-metal-button",
-    "shortName": "liquid-metal-button",
-    "title": "Liquid Metal Button",
-    "description": "Liquid Metal Button component for Space UI.",
-    "type": "registry:component",
-    "url": "/ui-kit/components/spaceui/liquid-metal-button",
-    "category": "Liquid-metal-button",
-    "categories": [
-      "liquid-metal-button"
-    ],
-    "createdAt": "2026-08-21",
-    "updatedAt": "2026-08-21",
-    "size": "1.9 KB",
-    "rawSize": 1928,
-    "directSize": "1.9 KB",
-    "fileCount": 1,
-    "dependencies": [
-      "@paper-design/shaders-react",
-      "class-variance-authority"
-    ],
-    "registryDependencies": [
-      "https://www.spaceui.one/r/lib-utils.json",
-      "https://www.spaceui.one/r/primitives-button.json"
-    ],
-    "dependents": [],
-    "related": []
-  },
-  "liquid-metal-card": {
-    "name": "components-spaceui-liquid-metal-card",
-    "shortName": "liquid-metal-card",
-    "title": "Liquid Metal Card",
-    "description": "Liquid Metal Card component for Space UI.",
-    "type": "registry:component",
-    "url": "/ui-kit/components/spaceui/liquid-metal-card",
-    "category": "Liquid-metal-card",
-    "categories": [
-      "liquid-metal-card"
-    ],
-    "createdAt": "2026-08-21",
-    "updatedAt": "2026-08-21",
-    "size": "1.5 KB",
-    "rawSize": 1584,
-    "directSize": "1.5 KB",
+    "createdAt": "2026-09-16",
+    "updatedAt": "2026-09-16",
+    "size": "1.2 KB",
+    "rawSize": 1227,
+    "directSize": "1.2 KB",
     "fileCount": 1,
     "dependencies": [
       "@paper-design/shaders-react"
     ],
     "registryDependencies": [
-      "https://www.spaceui.one/r/lib-utils.json",
-      "https://www.spaceui.one/r/primitives-card.json"
+      "https://www.spaceui.one/r/lib-utils.json"
     ],
     "dependents": [],
-    "related": []
+    "related": [
+      {
+        "name": "cloud",
+        "title": "Cloud",
+        "description": "Interactive volumetric cloud material rendered as a full-bleed shader surface.",
+        "url": "/ui-kit/components/shader/cloud",
+        "category": "Shader",
+        "categories": [
+          "shader",
+          "cloud",
+          "background"
+        ]
+      },
+      {
+        "name": "heat-shade",
+        "title": "Heat Shade",
+        "description": "WebGPU fbm heat field with ember and hot tints along a moving boundary.",
+        "url": "/ui-kit/components/shader/heat-shade",
+        "category": "Shader",
+        "categories": [
+          "shader",
+          "background",
+          "heat"
+        ]
+      },
+      {
+        "name": "paper-shader",
+        "title": "Paper Shader",
+        "description": "Paper Shaders WebGL2 canvas driven by a fragment shader and live uniforms.",
+        "url": "/ui-kit/components/shader/paper-shader",
+        "category": "Shader",
+        "categories": [
+          "shader",
+          "webgl"
+        ]
+      }
+    ]
   },
-  "components-spaceui-liquid-metal-card": {
-    "name": "components-spaceui-liquid-metal-card",
-    "shortName": "liquid-metal-card",
-    "title": "Liquid Metal Card",
-    "description": "Liquid Metal Card component for Space UI.",
+  "components-spaceui-liquid-metal-border": {
+    "name": "components-spaceui-liquid-metal-border",
+    "shortName": "liquid-metal-border",
+    "title": "Liquid Metal Border",
+    "description": "Liquid metal shader as a border wrap around any registry component.",
     "type": "registry:component",
-    "url": "/ui-kit/components/spaceui/liquid-metal-card",
-    "category": "Liquid-metal-card",
+    "url": "/ui-kit/components/spaceui/liquid-metal-border",
+    "category": "Shader",
     "categories": [
-      "liquid-metal-card"
+      "shader",
+      "liquid"
     ],
-    "createdAt": "2026-08-21",
-    "updatedAt": "2026-08-21",
-    "size": "1.5 KB",
-    "rawSize": 1584,
-    "directSize": "1.5 KB",
+    "createdAt": "2026-09-16",
+    "updatedAt": "2026-09-16",
+    "size": "1.2 KB",
+    "rawSize": 1227,
+    "directSize": "1.2 KB",
     "fileCount": 1,
     "dependencies": [
       "@paper-design/shaders-react"
     ],
     "registryDependencies": [
-      "https://www.spaceui.one/r/lib-utils.json",
-      "https://www.spaceui.one/r/primitives-card.json"
+      "https://www.spaceui.one/r/lib-utils.json"
     ],
     "dependents": [],
-    "related": []
+    "related": [
+      {
+        "name": "cloud",
+        "title": "Cloud",
+        "description": "Interactive volumetric cloud material rendered as a full-bleed shader surface.",
+        "url": "/ui-kit/components/shader/cloud",
+        "category": "Shader",
+        "categories": [
+          "shader",
+          "cloud",
+          "background"
+        ]
+      },
+      {
+        "name": "heat-shade",
+        "title": "Heat Shade",
+        "description": "WebGPU fbm heat field with ember and hot tints along a moving boundary.",
+        "url": "/ui-kit/components/shader/heat-shade",
+        "category": "Shader",
+        "categories": [
+          "shader",
+          "background",
+          "heat"
+        ]
+      },
+      {
+        "name": "paper-shader",
+        "title": "Paper Shader",
+        "description": "Paper Shaders WebGL2 canvas driven by a fragment shader and live uniforms.",
+        "url": "/ui-kit/components/shader/paper-shader",
+        "category": "Shader",
+        "categories": [
+          "shader",
+          "webgl"
+        ]
+      }
+    ]
   },
   "morph-icon": {
     "name": "components-spaceui-morph-icon",
@@ -10209,7 +10347,7 @@
     "createdAt": "2026-09-03",
     "updatedAt": "2026-09-03",
     "size": "2.3 KB",
-    "rawSize": 2322,
+    "rawSize": 2374,
     "directSize": "2.3 KB",
     "fileCount": 1,
     "dependencies": [],
@@ -10272,7 +10410,7 @@
     "createdAt": "2026-09-03",
     "updatedAt": "2026-09-03",
     "size": "2.3 KB",
-    "rawSize": 2322,
+    "rawSize": 2374,
     "directSize": "2.3 KB",
     "fileCount": 1,
     "dependencies": [],
@@ -10335,7 +10473,7 @@
     "createdAt": "2026-09-03",
     "updatedAt": "2026-09-03",
     "size": "2.3 KB",
-    "rawSize": 2322,
+    "rawSize": 2374,
     "directSize": "2.3 KB",
     "fileCount": 1,
     "dependencies": [],

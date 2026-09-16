@@ -86,7 +86,7 @@ export const index: Record<string, any> = {
     type: "registry:block",
     dependencies: ["@usespaceui/avatars","@usespaceui/sounds","@tabler/icons-react"],
     devDependencies: undefined,
-    registryDependencies: ["https://www.spaceui.one/r/lib-utils.json","https://www.spaceui.one/r/dialog.json","https://www.spaceui.one/r/button.json","https://www.spaceui.one/r/input.json","https://www.spaceui.one/r/textarea.json","https://www.spaceui.one/r/slider.json"],
+    registryDependencies: ["https://www.spaceui.one/r/lib-utils.json","https://www.spaceui.one/r/primitives-dialog.json","https://www.spaceui.one/r/primitives-input.json","https://www.spaceui.one/r/primitives-textarea.json","https://www.spaceui.one/r/primitives-slider.json","https://www.spaceui.one/r/primitives-radio-group.json","https://www.spaceui.one/r/primitives-scroll-area.json","https://www.spaceui.one/r/primitives-card.json","https://www.spaceui.one/r/components-spaceui-button-squircle.json","https://www.spaceui.one/r/components-spaceui-badge-squircle.json","https://www.spaceui.one/r/components-spaceui-status-badge.json","https://www.spaceui.one/r/hooks-lifecycle-use-confirm-exit.json","https://www.spaceui.one/r/block-interactive-grid-hero-1.json"],
     files: [
   {
     "path": "src/registry/blocks/community-wall/community-wall-1/index.tsx",
@@ -117,6 +117,11 @@ export const index: Record<string, any> = {
     "path": "src/registry/blocks/community-wall/patterns.tsx",
     "type": "registry:block",
     "target": "components/blocks/community-wall/patterns.tsx"
+  },
+  {
+    "path": "src/registry/blocks/community-wall/social-icons.tsx",
+    "type": "registry:block",
+    "target": "components/blocks/community-wall/social-icons.tsx"
   }
 ],
     keywords: [],
@@ -544,7 +549,7 @@ export const index: Record<string, any> = {
     type: "registry:block",
     dependencies: ["motion","@tabler/icons-react"],
     devDependencies: undefined,
-    registryDependencies: ["https://www.spaceui.one/r/lib-utils.json"],
+    registryDependencies: ["https://www.spaceui.one/r/lib-utils.json","https://www.spaceui.one/r/primitives-frame.json","https://www.spaceui.one/r/primitives-card.json","https://www.spaceui.one/r/components-spaceui-badge-squircle.json"],
     files: [
   {
     "path": "src/registry/blocks/stats/stats-blog/index.tsx",
@@ -560,6 +565,16 @@ export const index: Record<string, any> = {
     "path": "src/registry/blocks/stats/shared/stat-card.tsx",
     "type": "registry:component",
     "target": "components/blocks/stats/stat-card.tsx"
+  },
+  {
+    "path": "src/registry/blocks/stats/shared/mock-data.ts",
+    "type": "registry:lib",
+    "target": "components/blocks/stats/mock-data.ts"
+  },
+  {
+    "path": "src/registry/blocks/stats/shared/types.ts",
+    "type": "registry:lib",
+    "target": "components/blocks/stats/types.ts"
   }
 ],
     keywords: [],
@@ -586,7 +601,7 @@ export const index: Record<string, any> = {
     type: "registry:block",
     dependencies: ["motion","@tabler/icons-react"],
     devDependencies: undefined,
-    registryDependencies: ["https://www.spaceui.one/r/lib-utils.json"],
+    registryDependencies: ["https://www.spaceui.one/r/lib-utils.json","https://www.spaceui.one/r/primitives-frame.json","https://www.spaceui.one/r/primitives-card.json","https://www.spaceui.one/r/components-spaceui-badge-squircle.json","https://www.spaceui.one/r/components-spaceui-button-squircle.json"],
     files: [
   {
     "path": "src/registry/blocks/stats/stats-engagement/index.tsx",
@@ -622,6 +637,16 @@ export const index: Record<string, any> = {
     "path": "src/registry/blocks/stats/shared/changelog-updates-card.tsx",
     "type": "registry:component",
     "target": "components/blocks/stats/changelog-updates-card.tsx"
+  },
+  {
+    "path": "src/registry/blocks/stats/shared/mock-data.ts",
+    "type": "registry:lib",
+    "target": "components/blocks/stats/mock-data.ts"
+  },
+  {
+    "path": "src/registry/blocks/stats/shared/types.ts",
+    "type": "registry:lib",
+    "target": "components/blocks/stats/types.ts"
   }
 ],
     keywords: [],
@@ -648,7 +673,7 @@ export const index: Record<string, any> = {
     type: "registry:block",
     dependencies: ["motion","@tabler/icons-react"],
     devDependencies: undefined,
-    registryDependencies: ["https://www.spaceui.one/r/lib-utils.json"],
+    registryDependencies: ["https://www.spaceui.one/r/lib-utils.json","https://www.spaceui.one/r/primitives-frame.json","https://www.spaceui.one/r/primitives-card.json","https://www.spaceui.one/r/components-spaceui-badge-squircle.json"],
     files: [
   {
     "path": "src/registry/blocks/stats/stats-general/index.tsx",
@@ -664,6 +689,16 @@ export const index: Record<string, any> = {
     "path": "src/registry/blocks/stats/shared/stat-card.tsx",
     "type": "registry:component",
     "target": "components/blocks/stats/stat-card.tsx"
+  },
+  {
+    "path": "src/registry/blocks/stats/shared/mock-data.ts",
+    "type": "registry:lib",
+    "target": "components/blocks/stats/mock-data.ts"
+  },
+  {
+    "path": "src/registry/blocks/stats/shared/types.ts",
+    "type": "registry:lib",
+    "target": "components/blocks/stats/types.ts"
   }
 ],
     keywords: [],
@@ -690,7 +725,7 @@ export const index: Record<string, any> = {
     type: "registry:block",
     dependencies: ["motion","@tabler/icons-react"],
     devDependencies: undefined,
-    registryDependencies: ["https://www.spaceui.one/r/lib-utils.json"],
+    registryDependencies: ["https://www.spaceui.one/r/lib-utils.json","https://www.spaceui.one/r/primitives-frame.json","https://www.spaceui.one/r/primitives-card.json","https://www.spaceui.one/r/primitives-tooltip.json","https://www.spaceui.one/r/components-spaceui-badge-squircle.json","https://www.spaceui.one/r/components-spaceui-button-squircle.json","https://www.spaceui.one/r/components-spaceui-github-activity.json"],
     files: [
   {
     "path": "src/registry/blocks/stats/stats-github/index.tsx",
@@ -711,6 +746,16 @@ export const index: Record<string, any> = {
     "path": "src/registry/blocks/stats/shared/contribution-graph-card.tsx",
     "type": "registry:component",
     "target": "components/blocks/stats/contribution-graph-card.tsx"
+  },
+  {
+    "path": "src/registry/blocks/stats/shared/mock-data.ts",
+    "type": "registry:lib",
+    "target": "components/blocks/stats/mock-data.ts"
+  },
+  {
+    "path": "src/registry/blocks/stats/shared/types.ts",
+    "type": "registry:lib",
+    "target": "components/blocks/stats/types.ts"
   }
 ],
     keywords: [],
@@ -737,7 +782,7 @@ export const index: Record<string, any> = {
     type: "registry:block",
     dependencies: ["@tabler/icons-react"],
     devDependencies: undefined,
-    registryDependencies: ["https://www.spaceui.one/r/lib-utils.json"],
+    registryDependencies: ["https://www.spaceui.one/r/lib-utils.json","https://www.spaceui.one/r/primitives-frame.json","https://www.spaceui.one/r/primitives-card.json","https://www.spaceui.one/r/components-spaceui-badge-squircle.json"],
     files: [
   {
     "path": "src/registry/blocks/stats/stats-performance/index.tsx",
@@ -753,6 +798,16 @@ export const index: Record<string, any> = {
     "path": "src/registry/blocks/stats/shared/lighthouse-score-card.tsx",
     "type": "registry:component",
     "target": "components/blocks/stats/lighthouse-score-card.tsx"
+  },
+  {
+    "path": "src/registry/blocks/stats/shared/mock-data.ts",
+    "type": "registry:lib",
+    "target": "components/blocks/stats/mock-data.ts"
+  },
+  {
+    "path": "src/registry/blocks/stats/shared/types.ts",
+    "type": "registry:lib",
+    "target": "components/blocks/stats/types.ts"
   }
 ],
     keywords: [],
@@ -947,7 +1002,7 @@ export const index: Record<string, any> = {
     type: "registry:component",
     dependencies: ["motion"],
     devDependencies: undefined,
-    registryDependencies: [],
+    registryDependencies: ["https://www.spaceui.one/r/lib-utils.json"],
     files: [
   {
     "path": "src/registry/components/orb/loading/index.tsx",
@@ -1254,7 +1309,7 @@ export const index: Record<string, any> = {
     type: "registry:component",
     dependencies: ["motion"],
     devDependencies: undefined,
-    registryDependencies: ["https://www.spaceui.one/r/lib-utils.json"],
+    registryDependencies: ["https://www.spaceui.one/r/lib-utils.json","https://www.spaceui.one/r/primitives-tabs.json"],
     files: [
   {
     "path": "src/registry/components/spaceui/adaptive-density-grid/index.tsx",
@@ -1446,7 +1501,7 @@ export const index: Record<string, any> = {
     type: "registry:component",
     dependencies: ["@tabler/icons-react","motion"],
     devDependencies: undefined,
-    registryDependencies: ["https://www.spaceui.one/r/lib-utils.json","https://www.spaceui.one/r/primitives-button.json"],
+    registryDependencies: ["https://www.spaceui.one/r/lib-utils.json","https://www.spaceui.one/r/primitives-button.json","https://www.spaceui.one/r/hooks-animation-use-auto-height.json"],
     files: [
   {
     "path": "src/registry/components/spaceui/bouncy-accordion/index.tsx",
@@ -2438,7 +2493,7 @@ export const index: Record<string, any> = {
     type: "registry:component",
     dependencies: ["motion","@tabler/icons-react"],
     devDependencies: undefined,
-    registryDependencies: ["https://www.spaceui.one/r/primitives-frame.json","https://www.spaceui.one/r/primitives-card.json","https://www.spaceui.one/r/primitives-button.json","https://www.spaceui.one/r/primitives-tooltip.json","https://www.spaceui.one/r/components-spaceui-status-badge.json","https://www.spaceui.one/r/lib-utils.json"],
+    registryDependencies: ["https://www.spaceui.one/r/primitives-frame.json","https://www.spaceui.one/r/primitives-card.json","https://www.spaceui.one/r/primitives-button.json","https://www.spaceui.one/r/primitives-tooltip.json","https://www.spaceui.one/r/primitives-scroll-area.json","https://www.spaceui.one/r/components-spaceui-status-badge.json","https://www.spaceui.one/r/components-spaceui-badge-squircle.json","https://www.spaceui.one/r/lib-utils.json"],
     files: [
   {
     "path": "src/registry/components/spaceui/github-activity/index.tsx",
@@ -2560,6 +2615,38 @@ export const index: Record<string, any> = {
     })(),
     command: '@spaceui/components-spaceui-image-dark',
   },
+  "components-spaceui-item": {
+    name: "components-spaceui-item",
+    description: "Composable Item primitive with media, content, title, and description slots for lists and rows.",
+    type: "registry:component",
+    dependencies: ["class-variance-authority"],
+    devDependencies: undefined,
+    registryDependencies: ["https://www.spaceui.one/r/lib-utils.json"],
+    files: [
+  {
+    "path": "src/registry/components/spaceui/item/index.tsx",
+    "type": "registry:component",
+    "target": "components/spaceui/item.tsx"
+  }
+],
+    keywords: [],
+    component: (() => {
+      const LazyComp = React.lazy(async () => {
+        const mod = await import("@/registry/components/spaceui/item/index.tsx");
+        const exportName = Object.keys(mod).find(
+          key => typeof mod[key] === 'function' || typeof mod[key] === 'object'
+        ) || "components-spaceui-item";
+        const Comp = mod.default || mod[exportName];
+        if (mod.animations) {
+          (LazyComp as any).animations = mod.animations;
+        }
+        return { default: Comp };
+      });
+      LazyComp.demoProps = {};
+      return LazyComp;
+    })(),
+    command: '@spaceui/components-spaceui-item',
+  },
   "components-spaceui-kanban": {
     name: "components-spaceui-kanban",
     description: "Kanban component for Space UI.",
@@ -2592,91 +2679,27 @@ export const index: Record<string, any> = {
     })(),
     command: '@spaceui/components-spaceui-kanban',
   },
-  "components-spaceui-liquid-metal-avatar": {
-    name: "components-spaceui-liquid-metal-avatar",
-    description: "Liquid Metal Avatar component for Space UI.",
-    type: "registry:component",
-    dependencies: ["@paper-design/shaders-react","class-variance-authority"],
-    devDependencies: undefined,
-    registryDependencies: ["https://www.spaceui.one/r/lib-utils.json","https://www.spaceui.one/r/primitives-avatar.json"],
-    files: [
-  {
-    "path": "src/registry/components/spaceui/liquid-metal-avatar/index.tsx",
-    "type": "registry:component",
-    "target": "components/spaceui/liquid-metal-avatar.tsx"
-  }
-],
-    keywords: [],
-    component: (() => {
-      const LazyComp = React.lazy(async () => {
-        const mod = await import("@/registry/components/spaceui/liquid-metal-avatar/index.tsx");
-        const exportName = Object.keys(mod).find(
-          key => typeof mod[key] === 'function' || typeof mod[key] === 'object'
-        ) || "components-spaceui-liquid-metal-avatar";
-        const Comp = mod.default || mod[exportName];
-        if (mod.animations) {
-          (LazyComp as any).animations = mod.animations;
-        }
-        return { default: Comp };
-      });
-      LazyComp.demoProps = {};
-      return LazyComp;
-    })(),
-    command: '@spaceui/components-spaceui-liquid-metal-avatar',
-  },
-  "components-spaceui-liquid-metal-button": {
-    name: "components-spaceui-liquid-metal-button",
-    description: "Liquid Metal Button component for Space UI.",
-    type: "registry:component",
-    dependencies: ["@paper-design/shaders-react","class-variance-authority"],
-    devDependencies: undefined,
-    registryDependencies: ["https://www.spaceui.one/r/lib-utils.json","https://www.spaceui.one/r/primitives-button.json"],
-    files: [
-  {
-    "path": "src/registry/components/spaceui/liquid-metal-button/index.tsx",
-    "type": "registry:component",
-    "target": "components/spaceui/liquid-metal-button.tsx"
-  }
-],
-    keywords: [],
-    component: (() => {
-      const LazyComp = React.lazy(async () => {
-        const mod = await import("@/registry/components/spaceui/liquid-metal-button/index.tsx");
-        const exportName = Object.keys(mod).find(
-          key => typeof mod[key] === 'function' || typeof mod[key] === 'object'
-        ) || "components-spaceui-liquid-metal-button";
-        const Comp = mod.default || mod[exportName];
-        if (mod.animations) {
-          (LazyComp as any).animations = mod.animations;
-        }
-        return { default: Comp };
-      });
-      LazyComp.demoProps = {};
-      return LazyComp;
-    })(),
-    command: '@spaceui/components-spaceui-liquid-metal-button',
-  },
-  "components-spaceui-liquid-metal-card": {
-    name: "components-spaceui-liquid-metal-card",
-    description: "Liquid Metal Card component for Space UI.",
+  "components-spaceui-liquid-metal-border": {
+    name: "components-spaceui-liquid-metal-border",
+    description: "Liquid metal shader as a border wrap around any registry component.",
     type: "registry:component",
     dependencies: ["@paper-design/shaders-react"],
     devDependencies: undefined,
-    registryDependencies: ["https://www.spaceui.one/r/lib-utils.json","https://www.spaceui.one/r/primitives-card.json"],
+    registryDependencies: ["https://www.spaceui.one/r/lib-utils.json"],
     files: [
   {
-    "path": "src/registry/components/spaceui/liquid-metal-card/index.tsx",
+    "path": "src/registry/components/spaceui/liquid-metal-border/index.tsx",
     "type": "registry:component",
-    "target": "components/spaceui/liquid-metal-card.tsx"
+    "target": "components/spaceui/liquid-metal-border.tsx"
   }
 ],
     keywords: [],
     component: (() => {
       const LazyComp = React.lazy(async () => {
-        const mod = await import("@/registry/components/spaceui/liquid-metal-card/index.tsx");
+        const mod = await import("@/registry/components/spaceui/liquid-metal-border/index.tsx");
         const exportName = Object.keys(mod).find(
           key => typeof mod[key] === 'function' || typeof mod[key] === 'object'
-        ) || "components-spaceui-liquid-metal-card";
+        ) || "components-spaceui-liquid-metal-border";
         const Comp = mod.default || mod[exportName];
         if (mod.animations) {
           (LazyComp as any).animations = mod.animations;
@@ -2686,7 +2709,7 @@ export const index: Record<string, any> = {
       LazyComp.demoProps = {};
       return LazyComp;
     })(),
-    command: '@spaceui/components-spaceui-liquid-metal-card',
+    command: '@spaceui/components-spaceui-liquid-metal-border',
   },
   "components-spaceui-morph-icon": {
     name: "components-spaceui-morph-icon",
@@ -3810,7 +3833,7 @@ export const index: Record<string, any> = {
   },
   "demo-c-heat-shade-01": {
     name: "demo-c-heat-shade-01",
-    description: "Animated heat field with ember and hot color controls.",
+    description: "Climbing heat tongues with origin and color controls.",
     type: "registry:component",
     dependencies: undefined,
     devDependencies: undefined,
@@ -3835,14 +3858,14 @@ export const index: Record<string, any> = {
         }
         return { default: Comp };
       });
-      LazyComp.demoProps = {"base":{"value":"#2a7bba"},"hot":{"value":"#43c8ff"},"speed":{"value":1,"min":0,"max":3,"step":0.1},"from":{"value":"bottom","options":{"Bottom":"bottom","Top":"top"}}};
+      LazyComp.demoProps = {"base":{"value":"#2a7bba"},"hot":{"value":"#43c8ff"},"speed":{"value":1,"min":0,"max":3,"step":0.1},"from":{"value":"bottom","options":{"Top":"top","Bottom":"bottom"}}};
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-heat-shade-01',
   },
   "demo-c-heat-shade-02": {
     name: "demo-c-heat-shade-02",
-    description: "Climbing heat tongues for footer and edge washes.",
+    description: "Drifting heat field with origin and color controls.",
     type: "registry:component",
     dependencies: undefined,
     devDependencies: undefined,
@@ -3867,7 +3890,7 @@ export const index: Record<string, any> = {
         }
         return { default: Comp };
       });
-      LazyComp.demoProps = {"base":{"value":"#2a7bba"},"hot":{"value":"#43c8ff"},"speed":{"value":1,"min":0,"max":3,"step":0.1},"from":{"value":"bottom","options":{"Bottom":"bottom","Top":"top"}}};
+      LazyComp.demoProps = {"base":{"value":"#2a7bba"},"hot":{"value":"#43c8ff"},"speed":{"value":1,"min":0,"max":3,"step":0.1},"from":{"value":"bottom","options":{"Top":"top","Bottom":"bottom"}}};
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-heat-shade-02',
@@ -3886,9 +3909,9 @@ export const index: Record<string, any> = {
     "target": "components/shader/paper-shader.tsx"
   },
   {
-    "path": "src/registry/demo/components/shader/paper-shader/c-paper-shader-01/index.tsx",
+    "path": "src/registry/demo/components/shader/paper-shader/c-paper-shader-01/shader-source.tsx",
     "type": "registry:component",
-    "target": "components/shader/paper-shader.tsx"
+    "target": "components/shader/paper-shader-source.tsx"
   }
 ],
     keywords: [],
@@ -4260,358 +4283,6 @@ export const index: Record<string, any> = {
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-button-squircle-03',
-  },
-  "demo-c-liquid-metal-avatar-custom-01": {
-    name: "demo-c-liquid-metal-avatar-custom-01",
-    description: "Interactive demo showcasing the Liquid Metal Avatar Custom component.",
-    type: "registry:component",
-    dependencies: undefined,
-    devDependencies: undefined,
-    registryDependencies: ["https://www.spaceui.one/r/components-spaceui-liquid-metal-avatar.json"],
-    files: [
-  {
-    "path": "src/registry/demo/components/spaceui/c-liquid-metal-avatar-custom-01/index.tsx",
-    "type": "registry:component",
-    "target": "components/spaceui/liquid-metal-avatar-custom.tsx"
-  }
-],
-    keywords: [],
-    component: (() => {
-      const LazyComp = React.lazy(async () => {
-        const mod = await import("@/registry/demo/components/spaceui/c-liquid-metal-avatar-custom-01/index.tsx");
-        const exportName = Object.keys(mod).find(
-          key => typeof mod[key] === 'function' || typeof mod[key] === 'object'
-        ) || "demo-c-liquid-metal-avatar-custom-01";
-        const Comp = mod.default || mod[exportName];
-        if (mod.animations) {
-          (LazyComp as any).animations = mod.animations;
-        }
-        return { default: Comp };
-      });
-      LazyComp.demoProps = {};
-      return LazyComp;
-    })(),
-    command: '@spaceui/demo-c-liquid-metal-avatar-custom-01',
-  },
-  "demo-c-liquid-metal-avatar-default-01": {
-    name: "demo-c-liquid-metal-avatar-default-01",
-    description: "Interactive demo showcasing the Liquid Metal Avatar Default component.",
-    type: "registry:component",
-    dependencies: undefined,
-    devDependencies: undefined,
-    registryDependencies: ["https://www.spaceui.one/r/components-spaceui-liquid-metal-avatar.json"],
-    files: [
-  {
-    "path": "src/registry/demo/components/spaceui/c-liquid-metal-avatar-default-01/index.tsx",
-    "type": "registry:component",
-    "target": "components/spaceui/liquid-metal-avatar-default.tsx"
-  }
-],
-    keywords: [],
-    component: (() => {
-      const LazyComp = React.lazy(async () => {
-        const mod = await import("@/registry/demo/components/spaceui/c-liquid-metal-avatar-default-01/index.tsx");
-        const exportName = Object.keys(mod).find(
-          key => typeof mod[key] === 'function' || typeof mod[key] === 'object'
-        ) || "demo-c-liquid-metal-avatar-default-01";
-        const Comp = mod.default || mod[exportName];
-        if (mod.animations) {
-          (LazyComp as any).animations = mod.animations;
-        }
-        return { default: Comp };
-      });
-      LazyComp.demoProps = {};
-      return LazyComp;
-    })(),
-    command: '@spaceui/demo-c-liquid-metal-avatar-default-01',
-  },
-  "demo-c-liquid-metal-avatar-fallback-01": {
-    name: "demo-c-liquid-metal-avatar-fallback-01",
-    description: "Interactive demo showcasing the Liquid Metal Avatar Fallback component.",
-    type: "registry:component",
-    dependencies: undefined,
-    devDependencies: undefined,
-    registryDependencies: ["https://www.spaceui.one/r/components-spaceui-liquid-metal-avatar.json"],
-    files: [
-  {
-    "path": "src/registry/demo/components/spaceui/c-liquid-metal-avatar-fallback-01/index.tsx",
-    "type": "registry:component",
-    "target": "components/spaceui/liquid-metal-avatar-fallback.tsx"
-  }
-],
-    keywords: [],
-    component: (() => {
-      const LazyComp = React.lazy(async () => {
-        const mod = await import("@/registry/demo/components/spaceui/c-liquid-metal-avatar-fallback-01/index.tsx");
-        const exportName = Object.keys(mod).find(
-          key => typeof mod[key] === 'function' || typeof mod[key] === 'object'
-        ) || "demo-c-liquid-metal-avatar-fallback-01";
-        const Comp = mod.default || mod[exportName];
-        if (mod.animations) {
-          (LazyComp as any).animations = mod.animations;
-        }
-        return { default: Comp };
-      });
-      LazyComp.demoProps = {};
-      return LazyComp;
-    })(),
-    command: '@spaceui/demo-c-liquid-metal-avatar-fallback-01',
-  },
-  "demo-c-liquid-metal-avatar-sizes-01": {
-    name: "demo-c-liquid-metal-avatar-sizes-01",
-    description: "Interactive demo showcasing the Liquid Metal Avatar Sizes component.",
-    type: "registry:component",
-    dependencies: undefined,
-    devDependencies: undefined,
-    registryDependencies: ["https://www.spaceui.one/r/components-spaceui-liquid-metal-avatar.json"],
-    files: [
-  {
-    "path": "src/registry/demo/components/spaceui/c-liquid-metal-avatar-sizes-01/index.tsx",
-    "type": "registry:component",
-    "target": "components/spaceui/liquid-metal-avatar-sizes.tsx"
-  }
-],
-    keywords: [],
-    component: (() => {
-      const LazyComp = React.lazy(async () => {
-        const mod = await import("@/registry/demo/components/spaceui/c-liquid-metal-avatar-sizes-01/index.tsx");
-        const exportName = Object.keys(mod).find(
-          key => typeof mod[key] === 'function' || typeof mod[key] === 'object'
-        ) || "demo-c-liquid-metal-avatar-sizes-01";
-        const Comp = mod.default || mod[exportName];
-        if (mod.animations) {
-          (LazyComp as any).animations = mod.animations;
-        }
-        return { default: Comp };
-      });
-      LazyComp.demoProps = {};
-      return LazyComp;
-    })(),
-    command: '@spaceui/demo-c-liquid-metal-avatar-sizes-01',
-  },
-  "demo-c-liquid-metal-button-custom-01": {
-    name: "demo-c-liquid-metal-button-custom-01",
-    description: "Interactive demo showcasing the Liquid Metal Button Custom component.",
-    type: "registry:component",
-    dependencies: undefined,
-    devDependencies: undefined,
-    registryDependencies: ["https://www.spaceui.one/r/components-spaceui-liquid-metal-button.json"],
-    files: [
-  {
-    "path": "src/registry/demo/components/spaceui/c-liquid-metal-button-custom-01/index.tsx",
-    "type": "registry:component",
-    "target": "components/spaceui/liquid-metal-button-custom.tsx"
-  }
-],
-    keywords: [],
-    component: (() => {
-      const LazyComp = React.lazy(async () => {
-        const mod = await import("@/registry/demo/components/spaceui/c-liquid-metal-button-custom-01/index.tsx");
-        const exportName = Object.keys(mod).find(
-          key => typeof mod[key] === 'function' || typeof mod[key] === 'object'
-        ) || "demo-c-liquid-metal-button-custom-01";
-        const Comp = mod.default || mod[exportName];
-        if (mod.animations) {
-          (LazyComp as any).animations = mod.animations;
-        }
-        return { default: Comp };
-      });
-      LazyComp.demoProps = {};
-      return LazyComp;
-    })(),
-    command: '@spaceui/demo-c-liquid-metal-button-custom-01',
-  },
-  "demo-c-liquid-metal-button-default-01": {
-    name: "demo-c-liquid-metal-button-default-01",
-    description: "Interactive demo showcasing the Liquid Metal Button Default component.",
-    type: "registry:component",
-    dependencies: undefined,
-    devDependencies: undefined,
-    registryDependencies: ["https://www.spaceui.one/r/components-spaceui-liquid-metal-button.json"],
-    files: [
-  {
-    "path": "src/registry/demo/components/spaceui/c-liquid-metal-button-default-01/index.tsx",
-    "type": "registry:component",
-    "target": "components/spaceui/liquid-metal-button-default.tsx"
-  }
-],
-    keywords: [],
-    component: (() => {
-      const LazyComp = React.lazy(async () => {
-        const mod = await import("@/registry/demo/components/spaceui/c-liquid-metal-button-default-01/index.tsx");
-        const exportName = Object.keys(mod).find(
-          key => typeof mod[key] === 'function' || typeof mod[key] === 'object'
-        ) || "demo-c-liquid-metal-button-default-01";
-        const Comp = mod.default || mod[exportName];
-        if (mod.animations) {
-          (LazyComp as any).animations = mod.animations;
-        }
-        return { default: Comp };
-      });
-      LazyComp.demoProps = {};
-      return LazyComp;
-    })(),
-    command: '@spaceui/demo-c-liquid-metal-button-default-01',
-  },
-  "demo-c-liquid-metal-button-sizes-01": {
-    name: "demo-c-liquid-metal-button-sizes-01",
-    description: "Interactive demo showcasing the Liquid Metal Button Sizes component.",
-    type: "registry:component",
-    dependencies: undefined,
-    devDependencies: undefined,
-    registryDependencies: ["https://www.spaceui.one/r/components-spaceui-liquid-metal-button.json"],
-    files: [
-  {
-    "path": "src/registry/demo/components/spaceui/c-liquid-metal-button-sizes-01/index.tsx",
-    "type": "registry:component",
-    "target": "components/spaceui/liquid-metal-button-sizes.tsx"
-  }
-],
-    keywords: [],
-    component: (() => {
-      const LazyComp = React.lazy(async () => {
-        const mod = await import("@/registry/demo/components/spaceui/c-liquid-metal-button-sizes-01/index.tsx");
-        const exportName = Object.keys(mod).find(
-          key => typeof mod[key] === 'function' || typeof mod[key] === 'object'
-        ) || "demo-c-liquid-metal-button-sizes-01";
-        const Comp = mod.default || mod[exportName];
-        if (mod.animations) {
-          (LazyComp as any).animations = mod.animations;
-        }
-        return { default: Comp };
-      });
-      LazyComp.demoProps = {};
-      return LazyComp;
-    })(),
-    command: '@spaceui/demo-c-liquid-metal-button-sizes-01',
-  },
-  "demo-c-liquid-metal-card-custom-01": {
-    name: "demo-c-liquid-metal-card-custom-01",
-    description: "Interactive demo showcasing the Liquid Metal Card Custom component.",
-    type: "registry:component",
-    dependencies: undefined,
-    devDependencies: undefined,
-    registryDependencies: ["https://www.spaceui.one/r/components-spaceui-liquid-metal-card.json","https://www.spaceui.one/r/primitives-badge.json","https://www.spaceui.one/r/primitives-button.json"],
-    files: [
-  {
-    "path": "src/registry/demo/components/spaceui/c-liquid-metal-card-custom-01/index.tsx",
-    "type": "registry:component",
-    "target": "components/spaceui/liquid-metal-card-custom.tsx"
-  }
-],
-    keywords: [],
-    component: (() => {
-      const LazyComp = React.lazy(async () => {
-        const mod = await import("@/registry/demo/components/spaceui/c-liquid-metal-card-custom-01/index.tsx");
-        const exportName = Object.keys(mod).find(
-          key => typeof mod[key] === 'function' || typeof mod[key] === 'object'
-        ) || "demo-c-liquid-metal-card-custom-01";
-        const Comp = mod.default || mod[exportName];
-        if (mod.animations) {
-          (LazyComp as any).animations = mod.animations;
-        }
-        return { default: Comp };
-      });
-      LazyComp.demoProps = {};
-      return LazyComp;
-    })(),
-    command: '@spaceui/demo-c-liquid-metal-card-custom-01',
-  },
-  "demo-c-liquid-metal-card-default-01": {
-    name: "demo-c-liquid-metal-card-default-01",
-    description: "Interactive demo showcasing the Liquid Metal Card Default component.",
-    type: "registry:component",
-    dependencies: undefined,
-    devDependencies: undefined,
-    registryDependencies: ["https://www.spaceui.one/r/components-spaceui-liquid-metal-card.json","https://www.spaceui.one/r/primitives-button.json"],
-    files: [
-  {
-    "path": "src/registry/demo/components/spaceui/c-liquid-metal-card-default-01/index.tsx",
-    "type": "registry:component",
-    "target": "components/spaceui/liquid-metal-card-default.tsx"
-  }
-],
-    keywords: [],
-    component: (() => {
-      const LazyComp = React.lazy(async () => {
-        const mod = await import("@/registry/demo/components/spaceui/c-liquid-metal-card-default-01/index.tsx");
-        const exportName = Object.keys(mod).find(
-          key => typeof mod[key] === 'function' || typeof mod[key] === 'object'
-        ) || "demo-c-liquid-metal-card-default-01";
-        const Comp = mod.default || mod[exportName];
-        if (mod.animations) {
-          (LazyComp as any).animations = mod.animations;
-        }
-        return { default: Comp };
-      });
-      LazyComp.demoProps = {};
-      return LazyComp;
-    })(),
-    command: '@spaceui/demo-c-liquid-metal-card-default-01',
-  },
-  "demo-c-liquid-metal-card-login-01": {
-    name: "demo-c-liquid-metal-card-login-01",
-    description: "Interactive demo showcasing the Liquid Metal Card Login component.",
-    type: "registry:component",
-    dependencies: ["@tabler/icons-react"],
-    devDependencies: undefined,
-    registryDependencies: ["https://www.spaceui.one/r/components-spaceui-liquid-metal-card.json","https://www.spaceui.one/r/primitives-button.json","https://www.spaceui.one/r/primitives-input.json"],
-    files: [
-  {
-    "path": "src/registry/demo/components/spaceui/c-liquid-metal-card-login-01/index.tsx",
-    "type": "registry:component",
-    "target": "components/spaceui/liquid-metal-card-login.tsx"
-  }
-],
-    keywords: [],
-    component: (() => {
-      const LazyComp = React.lazy(async () => {
-        const mod = await import("@/registry/demo/components/spaceui/c-liquid-metal-card-login-01/index.tsx");
-        const exportName = Object.keys(mod).find(
-          key => typeof mod[key] === 'function' || typeof mod[key] === 'object'
-        ) || "demo-c-liquid-metal-card-login-01";
-        const Comp = mod.default || mod[exportName];
-        if (mod.animations) {
-          (LazyComp as any).animations = mod.animations;
-        }
-        return { default: Comp };
-      });
-      LazyComp.demoProps = {};
-      return LazyComp;
-    })(),
-    command: '@spaceui/demo-c-liquid-metal-card-login-01',
-  },
-  "demo-c-liquid-metal-card-player-01": {
-    name: "demo-c-liquid-metal-card-player-01",
-    description: "Interactive demo showcasing the Liquid Metal Card Player component.",
-    type: "registry:component",
-    dependencies: ["@tabler/icons-react"],
-    devDependencies: undefined,
-    registryDependencies: ["https://www.spaceui.one/r/components-spaceui-liquid-metal-card.json","https://www.spaceui.one/r/primitives-button.json"],
-    files: [
-  {
-    "path": "src/registry/demo/components/spaceui/c-liquid-metal-card-player-01/index.tsx",
-    "type": "registry:component",
-    "target": "components/spaceui/liquid-metal-card-player.tsx"
-  }
-],
-    keywords: [],
-    component: (() => {
-      const LazyComp = React.lazy(async () => {
-        const mod = await import("@/registry/demo/components/spaceui/c-liquid-metal-card-player-01/index.tsx");
-        const exportName = Object.keys(mod).find(
-          key => typeof mod[key] === 'function' || typeof mod[key] === 'object'
-        ) || "demo-c-liquid-metal-card-player-01";
-        const Comp = mod.default || mod[exportName];
-        if (mod.animations) {
-          (LazyComp as any).animations = mod.animations;
-        }
-        return { default: Comp };
-      });
-      LazyComp.demoProps = {};
-      return LazyComp;
-    })(),
-    command: '@spaceui/demo-c-liquid-metal-card-player-01',
   },
   "demo-c-data-grid-01": {
     name: "demo-c-data-grid-01",
@@ -6667,12 +6338,27 @@ export const index: Record<string, any> = {
     type: "registry:component",
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ["https://www.spaceui.one/r/components-spaceui-github-activity.json","https://www.spaceui.one/r/primitives-frame.json","https://www.spaceui.one/r/primitives-card.json","https://www.spaceui.one/r/components-spaceui-button-squircle.json"],
+    registryDependencies: ["https://www.spaceui.one/r/components-spaceui-github-activity.json","https://www.spaceui.one/r/primitives-frame.json","https://www.spaceui.one/r/primitives-card.json","https://www.spaceui.one/r/components-spaceui-badge-squircle.json","https://www.spaceui.one/r/components-spaceui-button-squircle.json"],
     files: [
   {
     "path": "src/registry/demo/components/spaceui/github-activity/c-github-activity-02/index.tsx",
     "type": "registry:component",
     "target": "components/spaceui/github-activity-demo-02.tsx"
+  },
+  {
+    "path": "src/registry/blocks/stats/shared/github-stats-card.tsx",
+    "type": "registry:component",
+    "target": "components/blocks/stats/github-stats-card.tsx"
+  },
+  {
+    "path": "src/registry/blocks/stats/shared/mock-data.ts",
+    "type": "registry:lib",
+    "target": "components/blocks/stats/mock-data.ts"
+  },
+  {
+    "path": "src/registry/blocks/stats/shared/types.ts",
+    "type": "registry:lib",
+    "target": "components/blocks/stats/types.ts"
   }
 ],
     keywords: [],
@@ -6699,12 +6385,27 @@ export const index: Record<string, any> = {
     type: "registry:component",
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ["https://www.spaceui.one/r/components-spaceui-github-activity.json","https://www.spaceui.one/r/primitives-frame.json","https://www.spaceui.one/r/primitives-card.json","https://www.spaceui.one/r/components-spaceui-button-squircle.json"],
+    registryDependencies: ["https://www.spaceui.one/r/components-spaceui-github-activity.json","https://www.spaceui.one/r/primitives-frame.json","https://www.spaceui.one/r/primitives-card.json","https://www.spaceui.one/r/components-spaceui-badge-squircle.json","https://www.spaceui.one/r/components-spaceui-button-squircle.json"],
     files: [
   {
     "path": "src/registry/demo/components/spaceui/github-activity/c-github-activity-03/index.tsx",
     "type": "registry:component",
     "target": "components/spaceui/github-activity-demo-03.tsx"
+  },
+  {
+    "path": "src/registry/blocks/stats/shared/github-stats-card.tsx",
+    "type": "registry:component",
+    "target": "components/blocks/stats/github-stats-card.tsx"
+  },
+  {
+    "path": "src/registry/blocks/stats/shared/mock-data.ts",
+    "type": "registry:lib",
+    "target": "components/blocks/stats/mock-data.ts"
+  },
+  {
+    "path": "src/registry/blocks/stats/shared/types.ts",
+    "type": "registry:lib",
+    "target": "components/blocks/stats/types.ts"
   }
 ],
     keywords: [],
@@ -7236,6 +6937,102 @@ export const index: Record<string, any> = {
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-kanban-06',
+  },
+  "demo-c-liquid-metal-border-01": {
+    name: "demo-c-liquid-metal-border-01",
+    description: "Avatar Extended wrapped in a liquid metal border.",
+    type: "registry:component",
+    dependencies: undefined,
+    devDependencies: undefined,
+    registryDependencies: ["https://www.spaceui.one/r/components-spaceui-liquid-metal-border.json","https://www.spaceui.one/r/components-spaceui-avatar-extended.json","https://www.spaceui.one/r/primitives-avatar.json"],
+    files: [
+  {
+    "path": "src/registry/demo/components/spaceui/liquid-metal-border/c-liquid-metal-border-01/index.tsx",
+    "type": "registry:component",
+    "target": "components/spaceui/liquid-metal-border-avatar.tsx"
+  }
+],
+    keywords: [],
+    component: (() => {
+      const LazyComp = React.lazy(async () => {
+        const mod = await import("@/registry/demo/components/spaceui/liquid-metal-border/c-liquid-metal-border-01/index.tsx");
+        const exportName = Object.keys(mod).find(
+          key => typeof mod[key] === 'function' || typeof mod[key] === 'object'
+        ) || "demo-c-liquid-metal-border-01";
+        const Comp = mod.default || mod[exportName];
+        if (mod.animations) {
+          (LazyComp as any).animations = mod.animations;
+        }
+        return { default: Comp };
+      });
+      LazyComp.demoProps = {};
+      return LazyComp;
+    })(),
+    command: '@spaceui/demo-c-liquid-metal-border-01',
+  },
+  "demo-c-liquid-metal-border-02": {
+    name: "demo-c-liquid-metal-border-02",
+    description: "Button squircle wrapped in a liquid metal border.",
+    type: "registry:component",
+    dependencies: undefined,
+    devDependencies: undefined,
+    registryDependencies: ["https://www.spaceui.one/r/components-spaceui-liquid-metal-border.json","https://www.spaceui.one/r/components-spaceui-button-squircle.json"],
+    files: [
+  {
+    "path": "src/registry/demo/components/spaceui/liquid-metal-border/c-liquid-metal-border-02/index.tsx",
+    "type": "registry:component",
+    "target": "components/spaceui/liquid-metal-border-button.tsx"
+  }
+],
+    keywords: [],
+    component: (() => {
+      const LazyComp = React.lazy(async () => {
+        const mod = await import("@/registry/demo/components/spaceui/liquid-metal-border/c-liquid-metal-border-02/index.tsx");
+        const exportName = Object.keys(mod).find(
+          key => typeof mod[key] === 'function' || typeof mod[key] === 'object'
+        ) || "demo-c-liquid-metal-border-02";
+        const Comp = mod.default || mod[exportName];
+        if (mod.animations) {
+          (LazyComp as any).animations = mod.animations;
+        }
+        return { default: Comp };
+      });
+      LazyComp.demoProps = {};
+      return LazyComp;
+    })(),
+    command: '@spaceui/demo-c-liquid-metal-border-02',
+  },
+  "demo-c-liquid-metal-border-03": {
+    name: "demo-c-liquid-metal-border-03",
+    description: "Card primitive wrapped in a liquid metal border.",
+    type: "registry:component",
+    dependencies: undefined,
+    devDependencies: undefined,
+    registryDependencies: ["https://www.spaceui.one/r/components-spaceui-liquid-metal-border.json","https://www.spaceui.one/r/components-spaceui-button-squircle.json","https://www.spaceui.one/r/primitives-card.json"],
+    files: [
+  {
+    "path": "src/registry/demo/components/spaceui/liquid-metal-border/c-liquid-metal-border-03/index.tsx",
+    "type": "registry:component",
+    "target": "components/spaceui/liquid-metal-border-card.tsx"
+  }
+],
+    keywords: [],
+    component: (() => {
+      const LazyComp = React.lazy(async () => {
+        const mod = await import("@/registry/demo/components/spaceui/liquid-metal-border/c-liquid-metal-border-03/index.tsx");
+        const exportName = Object.keys(mod).find(
+          key => typeof mod[key] === 'function' || typeof mod[key] === 'object'
+        ) || "demo-c-liquid-metal-border-03";
+        const Comp = mod.default || mod[exportName];
+        if (mod.animations) {
+          (LazyComp as any).animations = mod.animations;
+        }
+        return { default: Comp };
+      });
+      LazyComp.demoProps = {};
+      return LazyComp;
+    })(),
+    command: '@spaceui/demo-c-liquid-metal-border-03',
   },
   "demo-c-morph-icon-01": {
     name: "demo-c-morph-icon-01",

@@ -629,7 +629,7 @@ export function GitHubActivity({
             </div>
           </div>
 
-          <div className="flex gap-[3px]">
+          <div className="flex gap-0.75">
             <div className="flex w-6 shrink-0 flex-col justify-between py-[2px] text-[9px] text-muted-foreground">
               <span></span>
               <span>Mon</span>
@@ -656,7 +656,7 @@ export function GitHubActivity({
                     delay: 0.1 + weekIndex * 0.004,
                     ease: 'easeOut',
                   }}
-                  className="flex flex-col gap-[3px]"
+                  className="flex flex-col gap-0.75"
                 >
                   {week.contributionDays.map((day, dayIndex) => (
                     <Tooltip key={dayIndex}>
