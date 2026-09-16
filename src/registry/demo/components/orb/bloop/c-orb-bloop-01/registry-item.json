@@ -8,10 +8,7 @@
     "https://www.spaceui.one/r/components-orb-bloop.json",
     "https://www.spaceui.one/r/components-orb-smooth.json"
   ],
-  "categories": [
-    "orb",
-    "bloop"
-  ],
+  "categories": ["orb", "bloop"],
   "meta": {
     "demoProps": {
       "palette": {

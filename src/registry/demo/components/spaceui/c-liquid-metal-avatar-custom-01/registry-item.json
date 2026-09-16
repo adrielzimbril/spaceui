@@ -4,12 +4,8 @@
   "type": "registry:component",
   "title": "Liquid Metal Avatar Custom",
   "description": "Interactive demo showcasing the Liquid Metal Avatar Custom component.",
-  "registryDependencies": [
-    "https://www.spaceui.one/r/components-spaceui-liquid-metal-avatar.json"
-  ],
-  "categories": [
-    "liquid-metal-avatar-custom"
-  ],
+  "registryDependencies": ["https://www.spaceui.one/r/components-spaceui-liquid-metal-avatar.json"],
+  "categories": ["liquid-metal-avatar-custom"],
   "files": [
     {
       "path": "src/registry/demo/components/spaceui/c-liquid-metal-avatar-custom-01/index.tsx",

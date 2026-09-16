@@ -4,11 +4,7 @@
   "type": "registry:hook",
   "title": "useSessionStorage",
   "description": "useSessionStorage hook.",
-  "categories": [
-    "hooks",
-    "browser",
-    "session-storage"
-  ],
+  "categories": ["hooks", "browser", "session-storage"],
   "files": [
     {
       "path": "src/registry/hooks/browser/use-session-storage/index.ts",

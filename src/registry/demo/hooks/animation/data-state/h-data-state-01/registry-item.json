@@ -4,20 +4,14 @@
   "type": "registry:hook",
   "title": "useDataState",
   "description": "Data attributes state mapper for styling",
-  "dependencies": [
-    "@tabler/icons-react"
-  ],
+  "dependencies": ["@tabler/icons-react"],
   "registryDependencies": [
     "https://www.spaceui.one/r/hooks-animation-use-data-state.json",
     "https://www.spaceui.one/r/primitives-badge.json",
     "https://www.spaceui.one/r/primitives-button.json",
     "https://www.spaceui.one/r/primitives-card.json"
   ],
-  "categories": [
-    "hooks",
-    "animation",
-    "data-state"
-  ],
+  "categories": ["hooks", "animation", "data-state"],
   "files": [
     {
       "path": "src/registry/demo/hooks/animation/data-state/h-data-state-01/index.tsx",

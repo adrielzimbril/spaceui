@@ -4,10 +4,7 @@
   "type": "registry:ui",
   "title": "Card 7",
   "description": "Framed card with no rounded bottom",
-  "dependencies": [
-    "@tabler/icons-react",
-    "lucide-react"
-  ],
+  "dependencies": ["@tabler/icons-react", "lucide-react"],
   "registryDependencies": [
     "https://www.spaceui.one/r/primitives-button.json",
     "https://www.spaceui.one/r/primitives-card.json",
@@ -16,10 +13,7 @@
     "https://www.spaceui.one/r/primitives-input.json",
     "https://www.spaceui.one/r/primitives-select.json"
   ],
-  "categories": [
-    "card",
-    "form"
-  ],
+  "categories": ["card", "form"],
   "files": [
     {
       "path": "src/registry/demo/primitives/card/p-card-07/index.tsx",

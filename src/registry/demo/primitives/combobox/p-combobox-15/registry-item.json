@@ -4,14 +4,8 @@
   "type": "registry:ui",
   "title": "Combobox 15",
   "description": "Timezone combobox",
-  "registryDependencies": [
-    "https://www.spaceui.one/r/primitives-combobox.json"
-  ],
-  "categories": [
-    "combobox",
-    "input",
-    "timezone"
-  ],
+  "registryDependencies": ["https://www.spaceui.one/r/primitives-combobox.json"],
+  "categories": ["combobox", "input", "timezone"],
   "files": [
     {
       "path": "src/registry/demo/primitives/combobox/p-combobox-15/index.tsx",

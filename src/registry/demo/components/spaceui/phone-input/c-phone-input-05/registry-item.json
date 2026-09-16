@@ -4,13 +4,8 @@
   "type": "registry:component",
   "title": "Phone input with preset value",
   "description": "Phone input with preset value",
-  "registryDependencies": [
-    "https://www.spaceui.one/r/components-spaceui-phone-input.json"
-  ],
-  "categories": [
-    "component",
-    "phone-input"
-  ],
+  "registryDependencies": ["https://www.spaceui.one/r/components-spaceui-phone-input.json"],
+  "categories": ["component", "phone-input"],
   "files": [
     {
       "path": "src/registry/demo/components/spaceui/phone-input/c-phone-input-05/index.tsx",

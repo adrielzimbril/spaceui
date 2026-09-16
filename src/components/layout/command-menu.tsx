@@ -176,7 +176,7 @@ export function CommandMenu({
 
         const BACKGROUND_SLUGS = new Set(['bubble', 'gradient'])
         const ORB_SLUGS = new Set(['smooth', 'bloop'])
-        const SHADER_SLUGS = new Set(['cloud', 'paper-shader'])
+        const SHADER_SLUGS = new Set(['cloud', 'paper-shader', 'heat-shade'])
 
         if (url.startsWith('/primitives')) {
           group = 'Primitives'

@@ -4,22 +4,13 @@
   "type": "registry:ui",
   "title": "Date Picker 6",
   "description": "Date picker that closes on select",
-  "dependencies": [
-    "@tabler/icons-react",
-    "date-fns",
-    "lucide-react"
-  ],
+  "dependencies": ["@tabler/icons-react", "date-fns", "lucide-react"],
   "registryDependencies": [
     "https://www.spaceui.one/r/primitives-button.json",
     "https://www.spaceui.one/r/primitives-calendar.json",
     "https://www.spaceui.one/r/primitives-popover.json"
   ],
-  "categories": [
-    "date picker",
-    "calendar",
-    "popover",
-    "button"
-  ],
+  "categories": ["date picker", "calendar", "popover", "button"],
   "files": [
     {
       "path": "src/registry/demo/primitives/date-picker/p-date-picker-06/index.tsx",

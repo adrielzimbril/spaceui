@@ -4,24 +4,14 @@
   "type": "registry:ui",
   "title": "Date Picker 7",
   "description": "Multiple dates picker",
-  "dependencies": [
-    "@tabler/icons-react",
-    "date-fns",
-    "lucide-react"
-  ],
+  "dependencies": ["@tabler/icons-react", "date-fns", "lucide-react"],
   "registryDependencies": [
     "https://www.spaceui.one/r/primitives-badge.json",
     "https://www.spaceui.one/r/primitives-button.json",
     "https://www.spaceui.one/r/primitives-calendar.json",
     "https://www.spaceui.one/r/primitives-popover.json"
   ],
-  "categories": [
-    "date picker",
-    "calendar",
-    "popover",
-    "button",
-    "badge"
-  ],
+  "categories": ["date picker", "calendar", "popover", "button", "badge"],
   "files": [
     {
       "path": "src/registry/demo/primitives/date-picker/p-date-picker-07/index.tsx",

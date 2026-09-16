@@ -4,9 +4,7 @@
   "type": "registry:component",
   "title": "Data grid with striped rows",
   "description": "Data grid with striped rows",
-  "dependencies": [
-    "@tanstack/react-table"
-  ],
+  "dependencies": ["@tanstack/react-table"],
   "registryDependencies": [
     "https://www.spaceui.one/r/components-spaceui-data-grid.json",
     "https://www.spaceui.one/r/components-spaceui-data-grid-pagination.json",
@@ -14,10 +12,7 @@
     "https://www.spaceui.one/r/components-spaceui-data-grid-table.json",
     "https://www.spaceui.one/r/primitives-avatar.json"
   ],
-  "categories": [
-    "component",
-    "data-grid"
-  ],
+  "categories": ["component", "data-grid"],
   "files": [
     {
       "path": "src/registry/demo/components/spaceui/data-grid/c-data-grid-05/index.tsx",

@@ -4,17 +4,12 @@
   "type": "registry:ui",
   "title": "Group",
   "description": "Accessible Group primitive component for Space UI.",
-  "dependencies": [
-    "@base-ui/react",
-    "class-variance-authority"
-  ],
+  "dependencies": ["@base-ui/react", "class-variance-authority"],
   "registryDependencies": [
     "https://www.spaceui.one/r/lib-utils.json",
     "https://www.spaceui.one/r/primitives-separator.json"
   ],
-  "categories": [
-    "group"
-  ],
+  "categories": ["group"],
   "files": [
     {
       "path": "src/registry/primitives/group/index.tsx",

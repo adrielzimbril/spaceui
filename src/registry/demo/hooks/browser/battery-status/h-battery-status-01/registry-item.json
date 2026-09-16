@@ -4,20 +4,14 @@
   "type": "registry:hook",
   "title": "useBatteryStatus",
   "description": "Battery percentage and charging state",
-  "dependencies": [
-    "@tabler/icons-react"
-  ],
+  "dependencies": ["@tabler/icons-react"],
   "registryDependencies": [
     "https://www.spaceui.one/r/hooks-browser-use-battery-status.json",
     "https://www.spaceui.one/r/primitives-badge.json",
     "https://www.spaceui.one/r/primitives-card.json",
     "https://www.spaceui.one/r/primitives-progress.json"
   ],
-  "categories": [
-    "hooks",
-    "browser",
-    "battery-status"
-  ],
+  "categories": ["hooks", "browser", "battery-status"],
   "files": [
     {
       "path": "src/registry/demo/hooks/browser/battery-status/h-battery-status-01/index.tsx",

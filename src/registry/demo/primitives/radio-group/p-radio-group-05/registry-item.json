@@ -4,18 +4,13 @@
   "type": "registry:ui",
   "title": "Radio Group 5",
   "description": "Theme selector with image cards",
-  "dependencies": [
-    "lucide-react"
-  ],
+  "dependencies": ["lucide-react"],
   "registryDependencies": [
     "https://www.spaceui.one/r/primitives-field.json",
     "https://www.spaceui.one/r/primitives-fieldset.json",
     "https://www.spaceui.one/r/primitives-radio-group.json"
   ],
-  "categories": [
-    "radio group",
-    "form"
-  ],
+  "categories": ["radio group", "form"],
   "files": [
     {
       "path": "src/registry/demo/primitives/radio-group/p-radio-group-05/index.tsx",

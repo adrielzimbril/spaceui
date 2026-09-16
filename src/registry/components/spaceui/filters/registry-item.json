@@ -4,11 +4,7 @@
   "type": "registry:component",
   "title": "Filters",
   "description": "Filters component for Space UI.",
-  "dependencies": [
-    "@base-ui/react",
-    "@tabler/icons-react",
-    "class-variance-authority"
-  ],
+  "dependencies": ["@base-ui/react", "@tabler/icons-react", "class-variance-authority"],
   "registryDependencies": [
     "https://www.spaceui.one/r/hooks-dom-use-event-listener.json",
     "https://www.spaceui.one/r/lib-utils.json",
@@ -21,10 +17,7 @@
     "https://www.spaceui.one/r/primitives-scroll-area.json",
     "https://www.spaceui.one/r/primitives-tooltip.json"
   ],
-  "categories": [
-    "component",
-    "filters"
-  ],
+  "categories": ["component", "filters"],
   "files": [
     {
       "path": "src/registry/components/spaceui/filters/index.tsx",

@@ -4,18 +4,12 @@
   "type": "registry:ui",
   "title": "Toast 5",
   "description": "Long-running promise toast with cancel",
-  "dependencies": [
-    "@tabler/icons-react",
-    "lucide-react"
-  ],
+  "dependencies": ["@tabler/icons-react", "lucide-react"],
   "registryDependencies": [
     "https://www.spaceui.one/r/primitives-button.json",
     "https://www.spaceui.one/r/primitives-toast.json"
   ],
-  "categories": [
-    "toast",
-    "button"
-  ],
+  "categories": ["toast", "button"],
   "files": [
     {
       "path": "src/registry/demo/primitives/toast/p-toast-05/index.tsx",

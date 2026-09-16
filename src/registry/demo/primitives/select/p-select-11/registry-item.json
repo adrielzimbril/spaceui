@@ -4,13 +4,8 @@
   "type": "registry:ui",
   "title": "Select 11",
   "description": "Select with disabled items",
-  "registryDependencies": [
-    "https://www.spaceui.one/r/primitives-select.json"
-  ],
-  "categories": [
-    "select",
-    "disabled"
-  ],
+  "registryDependencies": ["https://www.spaceui.one/r/primitives-select.json"],
+  "categories": ["select", "disabled"],
   "files": [
     {
       "path": "src/registry/demo/primitives/select/p-select-11/index.tsx",

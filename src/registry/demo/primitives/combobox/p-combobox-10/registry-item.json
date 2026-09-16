@@ -10,11 +10,7 @@
     "https://www.spaceui.one/r/primitives-field.json",
     "https://www.spaceui.one/r/primitives-form.json"
   ],
-  "categories": [
-    "combobox",
-    "form",
-    "input"
-  ],
+  "categories": ["combobox", "form", "input"],
   "files": [
     {
       "path": "src/registry/demo/primitives/combobox/p-combobox-10/index.tsx",

@@ -4,12 +4,8 @@
   "type": "registry:lib",
   "title": "Direction Provider",
   "description": "Utility and configuration helper for Direction Provider.",
-  "dependencies": [
-    "@base-ui/react"
-  ],
-  "categories": [
-    "base-ui"
-  ],
+  "dependencies": ["@base-ui/react"],
+  "categories": ["base-ui"],
   "files": [
     {
       "path": "src/registry/lib/base-ui/direction-provider/index.ts",

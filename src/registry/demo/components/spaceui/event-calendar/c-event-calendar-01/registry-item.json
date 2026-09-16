@@ -4,10 +4,7 @@
   "type": "registry:component",
   "title": "Event calendar with all views and live settings",
   "description": "Event calendar with all views and live settings",
-  "dependencies": [
-    "@tabler/icons-react",
-    "date-fns"
-  ],
+  "dependencies": ["@tabler/icons-react", "date-fns"],
   "registryDependencies": [
     "https://www.spaceui.one/r/components-spaceui-event-calendar.json",
     "https://www.spaceui.one/r/components-spaceui-event-calendar-content.json",
@@ -23,11 +20,7 @@
     "https://www.spaceui.one/r/primitives-switch.json",
     "https://www.spaceui.one/r/primitives-tabs.json"
   ],
-  "categories": [
-    "component",
-    "event-calendar",
-    "calendar"
-  ],
+  "categories": ["component", "event-calendar", "calendar"],
   "files": [
     {
       "path": "src/registry/demo/components/spaceui/event-calendar/c-event-calendar-01/index.tsx",

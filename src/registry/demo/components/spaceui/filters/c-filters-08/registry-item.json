@@ -4,11 +4,7 @@
   "type": "registry:component",
   "title": "Filters with data grid and async mode",
   "description": "Filters with data grid and async mode",
-  "dependencies": [
-    "@tabler/icons-react",
-    "@tanstack/react-table",
-    "nuqs"
-  ],
+  "dependencies": ["@tabler/icons-react", "@tanstack/react-table", "nuqs"],
   "registryDependencies": [
     "https://www.spaceui.one/r/components-spaceui-data-grid.json",
     "https://www.spaceui.one/r/components-spaceui-data-grid-column-header.json",
@@ -22,10 +18,7 @@
     "https://www.spaceui.one/r/primitives-scroll-area.json",
     "https://www.spaceui.one/r/primitives-skeleton.json"
   ],
-  "categories": [
-    "component",
-    "filters"
-  ],
+  "categories": ["component", "filters"],
   "files": [
     {
       "path": "src/registry/demo/components/spaceui/filters/c-filters-08/index.tsx",

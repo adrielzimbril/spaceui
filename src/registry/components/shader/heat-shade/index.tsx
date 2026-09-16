@@ -17,7 +17,7 @@ function hexToRgba(hex: string): [number, number, number, number] {
   return [parseInt(h.slice(0, 2), 16) / 255, parseInt(h.slice(2, 4), 16) / 255, parseInt(h.slice(4, 6), 16) / 255, 1]
 }
 
-export function HeatShade({ base = '#304dff', hot = '#8298ff', speed = 1, className }: HeatShadeProps) {
+export function HeatShade({ base = '#27272a', hot = '#e4e4e7', speed = 1, className }: HeatShadeProps) {
   const canvasRef = React.useRef<HTMLCanvasElement>(null)
   const propsRef = React.useRef({ base, hot, speed })
   propsRef.current = { base, hot, speed }

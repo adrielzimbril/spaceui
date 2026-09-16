@@ -4,20 +4,14 @@
   "type": "registry:hook",
   "title": "Show",
   "description": "Truthy conditional renderer with unwrapped data",
-  "dependencies": [
-    "@tabler/icons-react"
-  ],
+  "dependencies": ["@tabler/icons-react"],
   "registryDependencies": [
     "https://www.spaceui.one/r/hooks-components-show.json",
     "https://www.spaceui.one/r/primitives-badge.json",
     "https://www.spaceui.one/r/primitives-button.json",
     "https://www.spaceui.one/r/primitives-card.json"
   ],
-  "categories": [
-    "hooks",
-    "components",
-    "show"
-  ],
+  "categories": ["hooks", "components", "show"],
   "files": [
     {
       "path": "src/registry/demo/hooks/components/show/h-show-01/index.tsx",

@@ -4,13 +4,8 @@
   "type": "registry:component",
   "title": "Smooth Orb Demo",
   "description": "Audio-reactive smooth orb.",
-  "registryDependencies": [
-    "https://www.spaceui.one/r/components-orb-smooth.json"
-  ],
-  "categories": [
-    "orb",
-    "smooth"
-  ],
+  "registryDependencies": ["https://www.spaceui.one/r/components-orb-smooth.json"],
+  "categories": ["orb", "smooth"],
   "meta": {
     "demoProps": {
       "textureSource": {

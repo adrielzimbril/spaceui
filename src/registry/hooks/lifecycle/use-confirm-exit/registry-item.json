@@ -4,14 +4,8 @@
   "type": "registry:hook",
   "title": "useConfirmExit",
   "description": "useConfirmExit hook.",
-  "registryDependencies": [
-    "https://www.spaceui.one/r/hooks-utils-event.json"
-  ],
-  "categories": [
-    "hooks",
-    "lifecycle",
-    "confirm-exit"
-  ],
+  "registryDependencies": ["https://www.spaceui.one/r/hooks-utils-event.json"],
+  "categories": ["hooks", "lifecycle", "confirm-exit"],
   "files": [
     {
       "path": "src/registry/hooks/lifecycle/use-confirm-exit/index.ts",

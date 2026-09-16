@@ -4,10 +4,7 @@
   "type": "registry:lib",
   "title": "event",
   "description": "event utility.",
-  "categories": [
-    "utils",
-    "event"
-  ],
+  "categories": ["utils", "event"],
   "files": [
     {
       "path": "src/registry/utils/event/index.ts",

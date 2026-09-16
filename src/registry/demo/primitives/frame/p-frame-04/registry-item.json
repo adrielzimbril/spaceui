@@ -8,9 +8,7 @@
     "https://www.spaceui.one/r/primitives-frame.json",
     "https://www.spaceui.one/r/primitives-separator.json"
   ],
-  "categories": [
-    "frame"
-  ],
+  "categories": ["frame"],
   "files": [
     {
       "path": "src/registry/demo/primitives/frame/p-frame-04/index.tsx",

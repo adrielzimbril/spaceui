@@ -4,12 +4,8 @@
   "type": "registry:ui",
   "title": "Link 1",
   "description": "Text link variants",
-  "registryDependencies": [
-    "https://www.spaceui.one/r/primitives-link.json"
-  ],
-  "categories": [
-    "link"
-  ],
+  "registryDependencies": ["https://www.spaceui.one/r/primitives-link.json"],
+  "categories": ["link"],
   "files": [
     {
       "path": "src/registry/demo/primitives/link/p-link-01/index.tsx",

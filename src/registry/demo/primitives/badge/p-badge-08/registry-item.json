@@ -4,12 +4,8 @@
   "type": "registry:ui",
   "title": "Badge 8",
   "description": "Badge with number after text",
-  "registryDependencies": [
-    "https://www.spaceui.one/r/primitives-badge.json"
-  ],
-  "categories": [
-    "badge"
-  ],
+  "registryDependencies": ["https://www.spaceui.one/r/primitives-badge.json"],
+  "categories": ["badge"],
   "files": [
     {
       "path": "src/registry/demo/primitives/badge/p-badge-08/index.tsx",

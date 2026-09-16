@@ -8,12 +8,7 @@
     "https://www.spaceui.one/r/primitives-field.json",
     "https://www.spaceui.one/r/primitives-input.json"
   ],
-  "categories": [
-    "disabled",
-    "field",
-    "input",
-    "label"
-  ],
+  "categories": ["disabled", "field", "input", "label"],
   "files": [
     {
       "path": "src/registry/demo/primitives/field/p-field-03/index.tsx",

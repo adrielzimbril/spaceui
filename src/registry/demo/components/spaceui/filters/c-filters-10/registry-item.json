@@ -4,17 +4,9 @@
   "type": "registry:component",
   "title": "Filters with virtualized large lists",
   "description": "Filters with virtualized large lists",
-  "dependencies": [
-    "@tabler/icons-react",
-    "@tanstack/react-virtual"
-  ],
-  "registryDependencies": [
-    "https://www.spaceui.one/r/components-spaceui-filters.json"
-  ],
-  "categories": [
-    "component",
-    "filters"
-  ],
+  "dependencies": ["@tabler/icons-react", "@tanstack/react-virtual"],
+  "registryDependencies": ["https://www.spaceui.one/r/components-spaceui-filters.json"],
+  "categories": ["component", "filters"],
   "files": [
     {
       "path": "src/registry/demo/components/spaceui/filters/c-filters-10/index.tsx",

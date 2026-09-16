@@ -4,19 +4,13 @@
   "type": "registry:hook",
   "title": "useScript",
   "description": "Dynamic external script loader",
-  "dependencies": [
-    "@tabler/icons-react"
-  ],
+  "dependencies": ["@tabler/icons-react"],
   "registryDependencies": [
     "https://www.spaceui.one/r/hooks-browser-use-script.json",
     "https://www.spaceui.one/r/primitives-badge.json",
     "https://www.spaceui.one/r/primitives-card.json"
   ],
-  "categories": [
-    "hooks",
-    "browser",
-    "script"
-  ],
+  "categories": ["hooks", "browser", "script"],
   "files": [
     {
       "path": "src/registry/demo/hooks/browser/script/h-script-01/index.tsx",

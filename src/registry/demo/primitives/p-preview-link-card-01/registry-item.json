@@ -4,12 +4,8 @@
   "type": "registry:ui",
   "title": "Base Preview Link Card Demo",
   "description": "Demo showing an animated base preview link card.",
-  "registryDependencies": [
-    "https://www.spaceui.one/r/primitives-preview-link-card.json"
-  ],
-  "categories": [
-    "preview-link-card"
-  ],
+  "registryDependencies": ["https://www.spaceui.one/r/primitives-preview-link-card.json"],
+  "categories": ["preview-link-card"],
   "files": [
     {
       "path": "src/registry/demo/primitives/p-preview-link-card-01/index.tsx",

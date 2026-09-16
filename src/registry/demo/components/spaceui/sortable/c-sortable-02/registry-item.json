@@ -4,19 +4,13 @@
   "type": "registry:component",
   "title": "Sortable list of items with grid layout",
   "description": "Sortable list of items with grid layout",
-  "dependencies": [
-    "@tabler/icons-react",
-    "sonner"
-  ],
+  "dependencies": ["@tabler/icons-react", "sonner"],
   "registryDependencies": [
     "https://www.spaceui.one/r/components-spaceui-sortable.json",
     "https://www.spaceui.one/r/lib-utils.json",
     "https://www.spaceui.one/r/primitives-badge.json"
   ],
-  "categories": [
-    "component",
-    "sortable"
-  ],
+  "categories": ["component", "sortable"],
   "files": [
     {
       "path": "src/registry/demo/components/spaceui/sortable/c-sortable-02/index.tsx",

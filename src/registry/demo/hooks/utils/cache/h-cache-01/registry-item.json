@@ -4,20 +4,14 @@
   "type": "registry:hook",
   "title": "cache",
   "description": "Memory memoization cache map",
-  "dependencies": [
-    "@tabler/icons-react"
-  ],
+  "dependencies": ["@tabler/icons-react"],
   "registryDependencies": [
     "https://www.spaceui.one/r/hooks-utils-cache.json",
     "https://www.spaceui.one/r/primitives-badge.json",
     "https://www.spaceui.one/r/primitives-button.json",
     "https://www.spaceui.one/r/primitives-card.json"
   ],
-  "categories": [
-    "hooks",
-    "utils",
-    "cache"
-  ],
+  "categories": ["hooks", "utils", "cache"],
   "files": [
     {
       "path": "src/registry/demo/hooks/utils/cache/h-cache-01/index.tsx",

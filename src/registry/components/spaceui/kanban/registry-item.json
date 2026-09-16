@@ -4,19 +4,9 @@
   "type": "registry:component",
   "title": "Kanban",
   "description": "Kanban component for Space UI.",
-  "dependencies": [
-    "@base-ui/react",
-    "@dnd-kit/core",
-    "@dnd-kit/sortable",
-    "@dnd-kit/utilities"
-  ],
-  "registryDependencies": [
-    "https://www.spaceui.one/r/lib-utils.json"
-  ],
-  "categories": [
-    "component",
-    "kanban"
-  ],
+  "dependencies": ["@base-ui/react", "@dnd-kit/core", "@dnd-kit/sortable", "@dnd-kit/utilities"],
+  "registryDependencies": ["https://www.spaceui.one/r/lib-utils.json"],
+  "categories": ["component", "kanban"],
   "files": [
     {
       "path": "src/registry/components/spaceui/kanban/index.tsx",

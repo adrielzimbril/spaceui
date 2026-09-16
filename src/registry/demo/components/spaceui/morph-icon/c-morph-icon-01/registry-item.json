@@ -4,17 +4,12 @@
   "type": "registry:component",
   "title": "Morph Icon Interactive Playground",
   "description": "Interactive MorphIcon demo with real-time tweakable animation variants and durations.",
-  "dependencies": [
-    "@tabler/icons-react"
-  ],
+  "dependencies": ["@tabler/icons-react"],
   "registryDependencies": [
     "https://www.spaceui.one/r/components-spaceui-morph-icon.json",
     "https://www.spaceui.one/r/primitives-button.json"
   ],
-  "categories": [
-    "component",
-    "morph-icon"
-  ],
+  "categories": ["component", "morph-icon"],
   "files": [
     {
       "path": "src/registry/demo/components/spaceui/morph-icon/c-morph-icon-01/index.tsx",

@@ -9,11 +9,7 @@
     "https://www.spaceui.one/r/primitives-label.json",
     "https://www.spaceui.one/r/primitives-number-field.json"
   ],
-  "categories": [
-    "group",
-    "label",
-    "number field"
-  ],
+  "categories": ["group", "label", "number field"],
   "files": [
     {
       "path": "src/registry/demo/primitives/group/p-group-21/index.tsx",

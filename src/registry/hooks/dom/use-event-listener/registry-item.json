@@ -4,14 +4,8 @@
   "type": "registry:hook",
   "title": "useEventListener",
   "description": "useEventListener hook.",
-  "registryDependencies": [
-    "https://www.spaceui.one/r/hooks-lifecycle-use-isomorphic-layout-effect.json"
-  ],
-  "categories": [
-    "hooks",
-    "dom",
-    "event-listener"
-  ],
+  "registryDependencies": ["https://www.spaceui.one/r/hooks-lifecycle-use-isomorphic-layout-effect.json"],
+  "categories": ["hooks", "dom", "event-listener"],
   "files": [
     {
       "path": "src/registry/hooks/dom/use-event-listener/index.ts",

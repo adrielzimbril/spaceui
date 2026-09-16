@@ -8,9 +8,7 @@
     "https://www.spaceui.one/r/primitives-button.json",
     "https://www.spaceui.one/r/primitives-pagination.json"
   ],
-  "categories": [
-    "pagination"
-  ],
+  "categories": ["pagination"],
   "files": [
     {
       "path": "src/registry/demo/primitives/pagination/p-pagination-02/index.tsx",

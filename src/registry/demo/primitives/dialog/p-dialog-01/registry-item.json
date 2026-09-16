@@ -11,9 +11,7 @@
     "https://www.spaceui.one/r/primitives-form.json",
     "https://www.spaceui.one/r/primitives-input.json"
   ],
-  "categories": [
-    "dialog"
-  ],
+  "categories": ["dialog"],
   "files": [
     {
       "path": "src/registry/demo/primitives/dialog/p-dialog-01/index.tsx",

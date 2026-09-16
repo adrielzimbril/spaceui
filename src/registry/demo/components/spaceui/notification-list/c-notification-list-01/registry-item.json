@@ -4,13 +4,8 @@
   "type": "registry:component",
   "title": "Notification List",
   "description": "Demo showing a notification list.",
-  "registryDependencies": [
-    "https://www.spaceui.one/r/components-spaceui-notification-list.json"
-  ],
-  "categories": [
-    "component",
-    "notification-list"
-  ],
+  "registryDependencies": ["https://www.spaceui.one/r/components-spaceui-notification-list.json"],
+  "categories": ["component", "notification-list"],
   "files": [
     {
       "path": "src/registry/demo/components/spaceui/notification-list/c-notification-list-01/index.tsx",

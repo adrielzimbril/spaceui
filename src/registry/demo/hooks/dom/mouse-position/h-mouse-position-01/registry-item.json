@@ -4,19 +4,13 @@
   "type": "registry:hook",
   "title": "useMousePosition",
   "description": "Real-time mouse coordinate tracker",
-  "dependencies": [
-    "@tabler/icons-react"
-  ],
+  "dependencies": ["@tabler/icons-react"],
   "registryDependencies": [
     "https://www.spaceui.one/r/hooks-dom-use-mouse-position.json",
     "https://www.spaceui.one/r/primitives-badge.json",
     "https://www.spaceui.one/r/primitives-card.json"
   ],
-  "categories": [
-    "hooks",
-    "dom",
-    "mouse-position"
-  ],
+  "categories": ["hooks", "dom", "mouse-position"],
   "files": [
     {
       "path": "src/registry/demo/hooks/dom/mouse-position/h-mouse-position-01/index.tsx",

@@ -4,17 +4,12 @@
   "type": "registry:ui",
   "title": "Toggle Group 7",
   "description": "Toggle group with tooltips",
-  "dependencies": [
-    "@tabler/icons-react"
-  ],
+  "dependencies": ["@tabler/icons-react"],
   "registryDependencies": [
     "https://www.spaceui.one/r/primitives-toggle-group.json",
     "https://www.spaceui.one/r/primitives-tooltip.json"
   ],
-  "categories": [
-    "toggle",
-    "toggle group"
-  ],
+  "categories": ["toggle", "toggle group"],
   "files": [
     {
       "path": "src/registry/demo/primitives/toggle-group/p-toggle-group-07/index.tsx",

@@ -4,17 +4,12 @@
   "type": "registry:ui",
   "title": "Base Preview Link Card",
   "description": "Displays a preview image of a link when hovered.",
-  "dependencies": [
-    "@space-ui-components/react",
-    "motion"
-  ],
+  "dependencies": ["@space-ui-components/react", "motion"],
   "registryDependencies": [
     "https://www.spaceui.one/r/lib-get-strict-context.json",
     "https://www.spaceui.one/r/primitives-preview-card.json"
   ],
-  "categories": [
-    "preview-link-card"
-  ],
+  "categories": ["preview-link-card"],
   "files": [
     {
       "path": "src/registry/primitives/preview-link-card/index.tsx",

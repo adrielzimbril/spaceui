@@ -4,18 +4,9 @@
   "type": "registry:ui",
   "title": "Input Group 20",
   "description": "Input group with search icon",
-  "dependencies": [
-    "@tabler/icons-react",
-    "lucide-react"
-  ],
-  "registryDependencies": [
-    "https://www.spaceui.one/r/primitives-input-group.json"
-  ],
-  "categories": [
-    "input",
-    "input group",
-    "search"
-  ],
+  "dependencies": ["@tabler/icons-react", "lucide-react"],
+  "registryDependencies": ["https://www.spaceui.one/r/primitives-input-group.json"],
+  "categories": ["input", "input group", "search"],
   "files": [
     {
       "path": "src/registry/demo/primitives/input-group/p-input-group-20/index.tsx",

@@ -4,13 +4,8 @@
   "type": "registry:component",
   "title": "Connecting Orb Demo",
   "description": "A drifting node graph with proximity links and travelling signals.",
-  "registryDependencies": [
-    "https://www.spaceui.one/r/components-orb-thinking.json"
-  ],
-  "categories": [
-    "orb",
-    "thinking"
-  ],
+  "registryDependencies": ["https://www.spaceui.one/r/components-orb-thinking.json"],
+  "categories": ["orb", "thinking"],
   "meta": {
     "demoProps": {
       "surface": {

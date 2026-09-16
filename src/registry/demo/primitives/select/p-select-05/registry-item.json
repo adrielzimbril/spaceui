@@ -4,12 +4,8 @@
   "type": "registry:ui",
   "title": "Select 5",
   "description": "Select with groups",
-  "registryDependencies": [
-    "https://www.spaceui.one/r/primitives-select.json"
-  ],
-  "categories": [
-    "select"
-  ],
+  "registryDependencies": ["https://www.spaceui.one/r/primitives-select.json"],
+  "categories": ["select"],
   "files": [
     {
       "path": "src/registry/demo/primitives/select/p-select-05/index.tsx",

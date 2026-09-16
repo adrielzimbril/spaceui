@@ -4,17 +4,12 @@
   "type": "registry:ui",
   "title": "Pagination",
   "description": "Accessible Pagination primitive component for Space UI.",
-  "dependencies": [
-    "@base-ui/react",
-    "lucide-react"
-  ],
+  "dependencies": ["@base-ui/react", "lucide-react"],
   "registryDependencies": [
     "https://www.spaceui.one/r/lib-utils.json",
     "https://www.spaceui.one/r/primitives-button.json"
   ],
-  "categories": [
-    "pagination"
-  ],
+  "categories": ["pagination"],
   "files": [
     {
       "path": "src/registry/primitives/pagination/index.tsx",

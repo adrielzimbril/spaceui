@@ -4,17 +4,13 @@
   "type": "registry:component",
   "title": "Liquid Metal Card Login",
   "description": "Interactive demo showcasing the Liquid Metal Card Login component.",
-  "dependencies": [
-    "@tabler/icons-react"
-  ],
+  "dependencies": ["@tabler/icons-react"],
   "registryDependencies": [
     "https://www.spaceui.one/r/components-spaceui-liquid-metal-card.json",
     "https://www.spaceui.one/r/primitives-button.json",
     "https://www.spaceui.one/r/primitives-input.json"
   ],
-  "categories": [
-    "liquid-metal-card-login"
-  ],
+  "categories": ["liquid-metal-card-login"],
   "files": [
     {
       "path": "src/registry/demo/components/spaceui/c-liquid-metal-card-login-01/index.tsx",

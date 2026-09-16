@@ -4,19 +4,13 @@
   "type": "registry:hook",
   "title": "useCookieListener",
   "description": "Real-time cookie change observer",
-  "dependencies": [
-    "@tabler/icons-react"
-  ],
+  "dependencies": ["@tabler/icons-react"],
   "registryDependencies": [
     "https://www.spaceui.one/r/hooks-browser-use-cookie-listener.json",
     "https://www.spaceui.one/r/primitives-badge.json",
     "https://www.spaceui.one/r/primitives-card.json"
   ],
-  "categories": [
-    "hooks",
-    "browser",
-    "cookie-listener"
-  ],
+  "categories": ["hooks", "browser", "cookie-listener"],
   "files": [
     {
       "path": "src/registry/demo/hooks/browser/cookie-listener/h-cookie-listener-01/index.tsx",

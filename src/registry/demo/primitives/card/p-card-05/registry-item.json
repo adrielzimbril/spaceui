@@ -12,10 +12,7 @@
     "https://www.spaceui.one/r/primitives-input.json",
     "https://www.spaceui.one/r/primitives-select.json"
   ],
-  "categories": [
-    "card",
-    "form"
-  ],
+  "categories": ["card", "form"],
   "files": [
     {
       "path": "src/registry/demo/primitives/card/p-card-05/index.tsx",

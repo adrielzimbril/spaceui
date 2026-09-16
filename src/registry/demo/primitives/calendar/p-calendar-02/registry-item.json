@@ -4,12 +4,8 @@
   "type": "registry:ui",
   "title": "Calendar 2",
   "description": "Calendar with custom cell size",
-  "registryDependencies": [
-    "https://www.spaceui.one/r/primitives-calendar.json"
-  ],
-  "categories": [
-    "calendar"
-  ],
+  "registryDependencies": ["https://www.spaceui.one/r/primitives-calendar.json"],
+  "categories": ["calendar"],
   "files": [
     {
       "path": "src/registry/demo/primitives/calendar/p-calendar-02/index.tsx",

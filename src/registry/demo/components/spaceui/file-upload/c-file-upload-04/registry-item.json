@@ -4,9 +4,7 @@
   "type": "registry:component",
   "title": "Gallery file upload",
   "description": "Gallery file upload",
-  "dependencies": [
-    "@tabler/icons-react"
-  ],
+  "dependencies": ["@tabler/icons-react"],
   "registryDependencies": [
     "https://www.spaceui.one/r/hooks-form-use-file-upload.json",
     "https://www.spaceui.one/r/hooks-utils-format-bytes.json",
@@ -16,10 +14,7 @@
     "https://www.spaceui.one/r/primitives-dialog.json",
     "https://www.spaceui.one/r/primitives-spinner.json"
   ],
-  "categories": [
-    "component",
-    "file-upload"
-  ],
+  "categories": ["component", "file-upload"],
   "files": [
     {
       "path": "src/registry/demo/components/spaceui/file-upload/c-file-upload-04/index.tsx",

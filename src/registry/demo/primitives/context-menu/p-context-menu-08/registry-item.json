@@ -4,14 +4,8 @@
   "type": "registry:ui",
   "title": "Context Menu 8",
   "description": "Context menu with switch checkbox items",
-  "registryDependencies": [
-    "https://www.spaceui.one/r/primitives-context-menu.json"
-  ],
-  "categories": [
-    "context menu",
-    "menu",
-    "switch"
-  ],
+  "registryDependencies": ["https://www.spaceui.one/r/primitives-context-menu.json"],
+  "categories": ["context menu", "menu", "switch"],
   "files": [
     {
       "path": "src/registry/demo/primitives/context-menu/p-context-menu-08/index.tsx",

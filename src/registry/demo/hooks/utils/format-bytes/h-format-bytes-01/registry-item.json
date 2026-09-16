@@ -4,20 +4,14 @@
   "type": "registry:hook",
   "title": "formatBytes",
   "description": "File size formatter and byte parser",
-  "dependencies": [
-    "@tabler/icons-react"
-  ],
+  "dependencies": ["@tabler/icons-react"],
   "registryDependencies": [
     "https://www.spaceui.one/r/hooks-utils-format-bytes.json",
     "https://www.spaceui.one/r/primitives-badge.json",
     "https://www.spaceui.one/r/primitives-card.json",
     "https://www.spaceui.one/r/primitives-input.json"
   ],
-  "categories": [
-    "hooks",
-    "utils",
-    "format-bytes"
-  ],
+  "categories": ["hooks", "utils", "format-bytes"],
   "files": [
     {
       "path": "src/registry/demo/hooks/utils/format-bytes/h-format-bytes-01/index.tsx",

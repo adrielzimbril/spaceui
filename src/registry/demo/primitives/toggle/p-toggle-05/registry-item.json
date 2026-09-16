@@ -4,16 +4,9 @@
   "type": "registry:ui",
   "title": "Toggle 5",
   "description": "Toggle icon group",
-  "dependencies": [
-    "@tabler/icons-react",
-    "lucide-react"
-  ],
-  "registryDependencies": [
-    "https://www.spaceui.one/r/primitives-toggle.json"
-  ],
-  "categories": [
-    "toggle"
-  ],
+  "dependencies": ["@tabler/icons-react", "lucide-react"],
+  "registryDependencies": ["https://www.spaceui.one/r/primitives-toggle.json"],
+  "categories": ["toggle"],
   "files": [
     {
       "path": "src/registry/demo/primitives/toggle/p-toggle-05/index.tsx",

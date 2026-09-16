@@ -8,10 +8,7 @@
     "https://www.spaceui.one/r/primitives-button.json",
     "https://www.spaceui.one/r/primitives-textarea.json"
   ],
-  "categories": [
-    "button",
-    "textarea"
-  ],
+  "categories": ["button", "textarea"],
   "files": [
     {
       "path": "src/registry/demo/primitives/textarea/p-textarea-14/index.tsx",

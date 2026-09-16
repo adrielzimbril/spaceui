@@ -34,6 +34,6 @@ function lazyRegistryComponent(
 export const registryComponents: Record<string, RegistryComponent> = {
   "demo-c-frost-blurred-01": lazyRegistryComponent(
     () => import("@/registry/demo/components/spaceui/frost-blurred/c-frost-blurred-01/index.tsx"),
-    {"text":{"value":"Space UI"},"layers":{"value":8,"min":3,"max":10,"step":1},"strength":{"value":1,"min":0.25,"max":2,"step":0.25},"height":{"value":"62%","options":{"Half":"50%","Default":"62%","Deep":"80%"}},"side":{"value":"bottom","options":{"Bottom":"bottom","Top":"top"}}},
+    {"text":{"value":"Space UI"},"layers":{"value":8,"min":3,"max":10,"step":1},"strength":{"value":1,"min":0.25,"max":2,"step":0.25},"height":{"value":"62%","options":{"Half":"50%","Default":"62%","Deep":"80%"}},"side":{"value":"bottom","options":{"Bottom":"bottom","Top":"top"}},"tint":{"value":0.22,"min":0,"max":0.6,"step":0.02}},
   ),
 };

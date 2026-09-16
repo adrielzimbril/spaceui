@@ -4,11 +4,7 @@
   "type": "registry:component",
   "title": "Date Selector",
   "description": "Date Selector component for Space UI.",
-  "dependencies": [
-    "@tabler/icons-react",
-    "date-fns",
-    "react-day-picker"
-  ],
+  "dependencies": ["@tabler/icons-react", "date-fns", "react-day-picker"],
   "registryDependencies": [
     "https://www.spaceui.one/r/hooks-browser-use-media-query.json",
     "https://www.spaceui.one/r/lib-utils.json",
@@ -18,11 +14,7 @@
     "https://www.spaceui.one/r/primitives-scroll-area.json",
     "https://www.spaceui.one/r/primitives-tabs.json"
   ],
-  "categories": [
-    "component",
-    "date-selector",
-    "calendar"
-  ],
+  "categories": ["component", "date-selector", "calendar"],
   "files": [
     {
       "path": "src/registry/components/spaceui/date-selector/index.tsx",

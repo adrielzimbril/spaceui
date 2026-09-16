@@ -9,9 +9,7 @@
     "https://www.spaceui.one/r/primitives-badge.json",
     "https://www.spaceui.one/r/primitives-button.json"
   ],
-  "categories": [
-    "liquid-metal-card-custom"
-  ],
+  "categories": ["liquid-metal-card-custom"],
   "files": [
     {
       "path": "src/registry/demo/components/spaceui/c-liquid-metal-card-custom-01/index.tsx",

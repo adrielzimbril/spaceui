@@ -4,16 +4,9 @@
   "type": "registry:ui",
   "title": "Collapsible 1",
   "description": "Basic collapsible",
-  "dependencies": [
-    "@tabler/icons-react",
-    "lucide-react"
-  ],
-  "registryDependencies": [
-    "https://www.spaceui.one/r/primitives-collapsible.json"
-  ],
-  "categories": [
-    "collapsible"
-  ],
+  "dependencies": ["@tabler/icons-react", "lucide-react"],
+  "registryDependencies": ["https://www.spaceui.one/r/primitives-collapsible.json"],
+  "categories": ["collapsible"],
   "files": [
     {
       "path": "src/registry/demo/primitives/collapsible/p-collapsible-01/index.tsx",

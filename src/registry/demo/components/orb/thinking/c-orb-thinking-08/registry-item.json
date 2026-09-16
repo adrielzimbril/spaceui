@@ -4,13 +4,8 @@
   "type": "registry:component",
   "title": "Breathing Orb Demo",
   "description": "A face-on ring pulsing with a slow radial ripple.",
-  "registryDependencies": [
-    "https://www.spaceui.one/r/components-orb-thinking.json"
-  ],
-  "categories": [
-    "orb",
-    "thinking"
-  ],
+  "registryDependencies": ["https://www.spaceui.one/r/components-orb-thinking.json"],
+  "categories": ["orb", "thinking"],
   "meta": {
     "demoProps": {
       "surface": {

@@ -4,19 +4,13 @@
   "type": "registry:hook",
   "title": "useScrollDevice",
   "description": "Wheel and touchpad gesture detection",
-  "dependencies": [
-    "@tabler/icons-react"
-  ],
+  "dependencies": ["@tabler/icons-react"],
   "registryDependencies": [
     "https://www.spaceui.one/r/hooks-dom-use-scroll-device.json",
     "https://www.spaceui.one/r/primitives-badge.json",
     "https://www.spaceui.one/r/primitives-card.json"
   ],
-  "categories": [
-    "hooks",
-    "dom",
-    "scroll-device"
-  ],
+  "categories": ["hooks", "dom", "scroll-device"],
   "files": [
     {
       "path": "src/registry/demo/hooks/dom/scroll-device/h-scroll-device-01/index.tsx",

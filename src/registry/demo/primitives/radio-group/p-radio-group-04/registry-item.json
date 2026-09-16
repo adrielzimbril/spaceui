@@ -11,10 +11,7 @@
     "https://www.spaceui.one/r/primitives-form.json",
     "https://www.spaceui.one/r/primitives-radio-group.json"
   ],
-  "categories": [
-    "radio group",
-    "form"
-  ],
+  "categories": ["radio group", "form"],
   "files": [
     {
       "path": "src/registry/demo/primitives/radio-group/p-radio-group-04/index.tsx",

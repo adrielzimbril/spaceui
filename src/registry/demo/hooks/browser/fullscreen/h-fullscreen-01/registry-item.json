@@ -4,20 +4,14 @@
   "type": "registry:hook",
   "title": "useFullscreen",
   "description": "Element fullscreen toggler",
-  "dependencies": [
-    "@tabler/icons-react"
-  ],
+  "dependencies": ["@tabler/icons-react"],
   "registryDependencies": [
     "https://www.spaceui.one/r/hooks-browser-use-fullscreen.json",
     "https://www.spaceui.one/r/primitives-badge.json",
     "https://www.spaceui.one/r/primitives-button.json",
     "https://www.spaceui.one/r/primitives-card.json"
   ],
-  "categories": [
-    "hooks",
-    "browser",
-    "fullscreen"
-  ],
+  "categories": ["hooks", "browser", "fullscreen"],
   "files": [
     {
       "path": "src/registry/demo/hooks/browser/fullscreen/h-fullscreen-01/index.tsx",

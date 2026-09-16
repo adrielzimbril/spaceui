@@ -4,20 +4,14 @@
   "type": "registry:hook",
   "title": "useKeyPress",
   "description": "Detect active pressed keyboard keys",
-  "dependencies": [
-    "@tabler/icons-react"
-  ],
+  "dependencies": ["@tabler/icons-react"],
   "registryDependencies": [
     "https://www.spaceui.one/r/hooks-dom-use-key-press.json",
     "https://www.spaceui.one/r/primitives-badge.json",
     "https://www.spaceui.one/r/primitives-card.json",
     "https://www.spaceui.one/r/primitives-kbd.json"
   ],
-  "categories": [
-    "hooks",
-    "dom",
-    "key-press"
-  ],
+  "categories": ["hooks", "dom", "key-press"],
   "files": [
     {
       "path": "src/registry/demo/hooks/dom/key-press/h-key-press-01/index.tsx",

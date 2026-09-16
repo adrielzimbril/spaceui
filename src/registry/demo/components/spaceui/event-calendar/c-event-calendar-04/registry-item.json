@@ -4,10 +4,7 @@
   "type": "registry:component",
   "title": "Event calendar with custom event chips",
   "description": "Event calendar with custom event chips",
-  "dependencies": [
-    "@tabler/icons-react",
-    "date-fns"
-  ],
+  "dependencies": ["@tabler/icons-react", "date-fns"],
   "registryDependencies": [
     "https://www.spaceui.one/r/components-spaceui-event-calendar.json",
     "https://www.spaceui.one/r/components-spaceui-event-calendar-content.json",
@@ -16,11 +13,7 @@
     "https://www.spaceui.one/r/primitives-button.json",
     "https://www.spaceui.one/r/primitives-card.json"
   ],
-  "categories": [
-    "component",
-    "event-calendar",
-    "calendar"
-  ],
+  "categories": ["component", "event-calendar", "calendar"],
   "files": [
     {
       "path": "src/registry/demo/components/spaceui/event-calendar/c-event-calendar-04/index.tsx",

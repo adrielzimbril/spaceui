@@ -4,17 +4,13 @@
   "type": "registry:ui",
   "title": "Skeleton 1",
   "description": "Basic skeleton",
-  "dependencies": [
-    "@tabler/icons-react"
-  ],
+  "dependencies": ["@tabler/icons-react"],
   "registryDependencies": [
     "https://www.spaceui.one/r/primitives-avatar.json",
     "https://www.spaceui.one/r/primitives-button.json",
     "https://www.spaceui.one/r/primitives-skeleton.json"
   ],
-  "categories": [
-    "skeleton"
-  ],
+  "categories": ["skeleton"],
   "files": [
     {
       "path": "src/registry/demo/primitives/skeleton/p-skeleton-01/index.tsx",

@@ -4,12 +4,8 @@
   "type": "registry:component",
   "title": "Liquid Metal Avatar Sizes",
   "description": "Interactive demo showcasing the Liquid Metal Avatar Sizes component.",
-  "registryDependencies": [
-    "https://www.spaceui.one/r/components-spaceui-liquid-metal-avatar.json"
-  ],
-  "categories": [
-    "liquid-metal-avatar-sizes"
-  ],
+  "registryDependencies": ["https://www.spaceui.one/r/components-spaceui-liquid-metal-avatar.json"],
+  "categories": ["liquid-metal-avatar-sizes"],
   "files": [
     {
       "path": "src/registry/demo/components/spaceui/c-liquid-metal-avatar-sizes-01/index.tsx",

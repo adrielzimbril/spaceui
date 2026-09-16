@@ -5,6 +5,7 @@ import Link from 'next/link'
 import { cn } from '@/registry/lib/utils'
 import { tickSound } from '@/components/providers/sound-provider'
 import { Badge } from '@/registry/components/spaceui/badge-squircle'
+import { HeatShade } from '@/registry/components/shader/heat-shade'
 
 interface FooterLinkItem {
   label: string
@@ -73,6 +74,12 @@ export function SiteFooter() {
   const isDark = false
   return (
     <footer className="relative isolate z-10 w-full overflow-hidden pt-12" data-global-footer>
+      <HeatShade
+        className="pointer-events-none absolute inset-x-0 bottom-0 z-0 h-[min(28rem,70%)] opacity-35 mix-blend-multiply dark:opacity-50 dark:mix-blend-screen"
+        base="#4DAAE9"
+        hot="#5FC4FF"
+        speed={0.45}
+      />
       <div className="relative z-30 mx-auto w-[calc(100%-2rem)] sm:w-[calc(100%-3rem)] -bottom-0.75 max-w-7xl">
         <div
           className={cn(
@@ -80,38 +87,6 @@ export function SiteFooter() {
             isDark ? 'dark bg-zinc-950' : 'bg-muted',
           )}
         >
-          <svg
-            aria-hidden="true"
-            className="pointer-events-none absolute bottom-0 -left-6.5 w-7.5 h-6.5 overflow-visible z-10 sm:hidden"
-            viewBox="0 0 30 26"
-          >
-            <path d="M 26 0 Q 26 26 0 26 H 30 V 0 Z" className={cn(isDark ? 'fill-zinc-950' : 'fill-muted')} />
-          </svg>
-
-          <svg
-            aria-hidden="true"
-            className="pointer-events-none absolute bottom-1 -left-9.75 w-11 h-10 overflow-visible z-10 hidden sm:block"
-            viewBox="0 0 44 40"
-          >
-            <path d="M 40 0 Q 40 40 0 40 H 44 V 0 Z" className={cn(isDark ? 'fill-zinc-950' : 'fill-muted')} />
-          </svg>
-
-          <svg
-            aria-hidden="true"
-            className="pointer-events-none absolute bottom-0 -right-6.5 w-7.5 h-6.5 overflow-visible z-10 sm:hidden"
-            viewBox="0 0 30 26"
-          >
-            <path d="M 4 0 Q 4 26 30 26 H 0 V 0 Z" className={cn(isDark ? 'fill-zinc-950' : 'fill-muted')} />
-          </svg>
-
-          <svg
-            aria-hidden="true"
-            className="pointer-events-none absolute bottom-1 -right-9.75 w-11 h-10 overflow-visible z-10 hidden sm:block"
-            viewBox="0 0 44 40"
-          >
-            <path d="M 4 0 Q 4 40 44 40 H 0 V 0 Z" className={cn(isDark ? 'fill-zinc-950' : 'fill-muted')} />
-          </svg>
-
           <div
             className={cn(
               'relative border-4 bg-background/50 squircle rounded-5xl z-10 p-6 sm:p-10 lg:p-12',
@@ -177,10 +152,42 @@ export function SiteFooter() {
               </div>
             </div>
           </div>
+          <div className="pointer-events-none">
+            <svg
+              aria-hidden="true"
+              className="pointer-events-none absolute bottom-0 -left-6.5 w-7.5 h-6.5 overflow-visible z-10 sm:hidden"
+              viewBox="0 0 30 26"
+            >
+              <path d="M 26 0 Q 26 26 0 26 H 30 V 0 Z" className={cn(isDark ? 'fill-zinc-950' : 'fill-muted')} />
+            </svg>
+
+            <svg
+              aria-hidden="true"
+              className="pointer-events-none absolute bottom-1 -left-9.75 w-11 h-10 overflow-visible z-10 hidden sm:block"
+              viewBox="0 0 44 40"
+            >
+              <path d="M 40 0 Q 40 40 0 40 H 44 V 0 Z" className={cn(isDark ? 'fill-zinc-950' : 'fill-muted')} />
+            </svg>
+
+            <svg
+              aria-hidden="true"
+              className="pointer-events-none absolute bottom-0 -right-6.5 w-7.5 h-6.5 overflow-visible z-10 sm:hidden"
+              viewBox="0 0 30 26"
+            >
+              <path d="M 4 0 Q 4 26 30 26 H 0 V 0 Z" className={cn(isDark ? 'fill-zinc-950' : 'fill-muted')} />
+            </svg>
+
+            <svg
+              aria-hidden="true"
+              className="pointer-events-none absolute bottom-1 -right-9.75 w-11 h-10 overflow-visible z-10 hidden sm:block"
+              viewBox="0 0 44 40"
+            >
+              <path d="M 4 0 Q 4 40 44 40 H 0 V 0 Z" className={cn(isDark ? 'fill-zinc-950' : 'fill-muted')} />
+            </svg>
+          </div>
         </div>
       </div>
 
-      {/* Docked bottom band - anchors footer to page bottom and accommodates floating nav */}
       <div
         className={cn('relative -mt-px h-10 sm:h-14 w-full', isDark ? 'dark bg-zinc-950' : 'bg-muted')}
         aria-hidden="true"

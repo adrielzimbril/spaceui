@@ -11,13 +11,7 @@
     "https://www.spaceui.one/r/primitives-popover.json",
     "https://www.spaceui.one/r/primitives-textarea.json"
   ],
-  "categories": [
-    "button",
-    "field",
-    "form",
-    "popover",
-    "textarea"
-  ],
+  "categories": ["button", "field", "form", "popover", "textarea"],
   "files": [
     {
       "path": "src/registry/demo/primitives/popover/p-popover-01/index.tsx",

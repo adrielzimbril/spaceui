@@ -4,19 +4,13 @@
   "type": "registry:hook",
   "title": "useMediaQuery",
   "description": "Responsive breakpoint evaluator",
-  "dependencies": [
-    "@tabler/icons-react"
-  ],
+  "dependencies": ["@tabler/icons-react"],
   "registryDependencies": [
     "https://www.spaceui.one/r/hooks-browser-use-media-query.json",
     "https://www.spaceui.one/r/primitives-badge.json",
     "https://www.spaceui.one/r/primitives-card.json"
   ],
-  "categories": [
-    "hooks",
-    "browser",
-    "media-query"
-  ],
+  "categories": ["hooks", "browser", "media-query"],
   "files": [
     {
       "path": "src/registry/demo/hooks/browser/media-query/h-media-query-01/index.tsx",

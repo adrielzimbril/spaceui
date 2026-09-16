@@ -4,18 +4,13 @@
   "type": "registry:ui",
   "title": "Sheet",
   "description": "Accessible Sheet primitive component for Space UI.",
-  "dependencies": [
-    "@base-ui/react",
-    "lucide-react"
-  ],
+  "dependencies": ["@base-ui/react", "lucide-react"],
   "registryDependencies": [
     "https://www.spaceui.one/r/lib-utils.json",
     "https://www.spaceui.one/r/primitives-button.json",
     "https://www.spaceui.one/r/primitives-scroll-area.json"
   ],
-  "categories": [
-    "sheet"
-  ],
+  "categories": ["sheet"],
   "files": [
     {
       "path": "src/registry/primitives/sheet/index.tsx",

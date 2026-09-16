@@ -4,18 +4,13 @@
   "type": "registry:component",
   "title": "Kanban board with frame columns",
   "description": "Kanban board with frame columns",
-  "dependencies": [
-    "@tabler/icons-react"
-  ],
+  "dependencies": ["@tabler/icons-react"],
   "registryDependencies": [
     "https://www.spaceui.one/r/components-spaceui-kanban.json",
     "https://www.spaceui.one/r/primitives-badge.json",
     "https://www.spaceui.one/r/primitives-frame.json"
   ],
-  "categories": [
-    "component",
-    "kanban"
-  ],
+  "categories": ["component", "kanban"],
   "files": [
     {
       "path": "src/registry/demo/components/spaceui/kanban/c-kanban-03/index.tsx",

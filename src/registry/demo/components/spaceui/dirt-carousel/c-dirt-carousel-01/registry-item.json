@@ -4,13 +4,8 @@
   "type": "registry:component",
   "title": "Dirt Carousel Demo",
   "description": "3D carousel with official Tweakpane controls.",
-  "registryDependencies": [
-    "https://www.spaceui.one/r/components-spaceui-dirt-carousel.json"
-  ],
-  "categories": [
-    "component",
-    "dirt-carousel"
-  ],
+  "registryDependencies": ["https://www.spaceui.one/r/components-spaceui-dirt-carousel.json"],
+  "categories": ["component", "dirt-carousel"],
   "meta": {
     "demoProps": {
       "direction": {

@@ -4,15 +4,9 @@
   "type": "registry:ui",
   "title": "Avatar",
   "description": "Accessible Avatar primitive component for Space UI.",
-  "dependencies": [
-    "@base-ui/react"
-  ],
-  "registryDependencies": [
-    "https://www.spaceui.one/r/lib-utils.json"
-  ],
-  "categories": [
-    "avatar"
-  ],
+  "dependencies": ["@base-ui/react"],
+  "registryDependencies": ["https://www.spaceui.one/r/lib-utils.json"],
+  "categories": ["avatar"],
   "files": [
     {
       "path": "src/registry/primitives/avatar/index.tsx",

@@ -4,12 +4,8 @@
   "type": "registry:ui",
   "title": "Scroll Area 4",
   "description": "Scroll area with fading edges",
-  "registryDependencies": [
-    "https://www.spaceui.one/r/primitives-scroll-area.json"
-  ],
-  "categories": [
-    "scroll area"
-  ],
+  "registryDependencies": ["https://www.spaceui.one/r/primitives-scroll-area.json"],
+  "categories": ["scroll area"],
   "files": [
     {
       "path": "src/registry/demo/primitives/scroll-area/p-scroll-area-04/index.tsx",

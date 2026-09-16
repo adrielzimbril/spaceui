@@ -4,9 +4,7 @@
   "type": "registry:component",
   "title": "Event Calendar Content",
   "description": "Event Calendar Content component for Space UI.",
-  "dependencies": [
-    "@base-ui/react"
-  ],
+  "dependencies": ["@base-ui/react"],
   "registryDependencies": [
     "https://www.spaceui.one/r/components-spaceui-event-calendar.json",
     "https://www.spaceui.one/r/components-spaceui-event-calendar-agenda-view.json",
@@ -16,11 +14,7 @@
     "https://www.spaceui.one/r/components-spaceui-event-calendar-types.json",
     "https://www.spaceui.one/r/lib-utils.json"
   ],
-  "categories": [
-    "component",
-    "event-calendar",
-    "calendar"
-  ],
+  "categories": ["component", "event-calendar", "calendar"],
   "files": [
     {
       "path": "src/registry/components/spaceui/event-calendar/event-calendar-content/index.tsx",

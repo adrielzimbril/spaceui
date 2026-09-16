@@ -4,13 +4,8 @@
   "type": "registry:component",
   "title": "Dirt Carousel",
   "description": "3D ring carousel with drag, snap, auto-rotate, and a live control panel.",
-  "dependencies": [
-    "motion"
-  ],
-  "categories": [
-    "component",
-    "dirt-carousel"
-  ],
+  "dependencies": ["motion"],
+  "categories": ["component", "dirt-carousel"],
   "files": [
     {
       "path": "src/registry/components/spaceui/dirt-carousel/index.tsx",
@@ -20,7 +15,5 @@
   ],
   "createdAt": "2026-09-03",
   "updatedAt": "2026-09-03",
-  "registryDependencies": [
-    "https://www.spaceui.one/r/lib-utils.json"
-  ]
+  "registryDependencies": ["https://www.spaceui.one/r/lib-utils.json"]
 }

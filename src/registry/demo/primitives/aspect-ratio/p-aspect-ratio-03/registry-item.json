@@ -4,12 +4,8 @@
   "type": "registry:ui",
   "title": "1:1 square aspect ratio",
   "description": "1:1 square aspect ratio",
-  "registryDependencies": [
-    "https://www.spaceui.one/r/primitives-aspect-ratio.json"
-  ],
-  "categories": [
-    "aspect-ratio"
-  ],
+  "registryDependencies": ["https://www.spaceui.one/r/primitives-aspect-ratio.json"],
+  "categories": ["aspect-ratio"],
   "files": [
     {
       "path": "src/registry/demo/primitives/aspect-ratio/p-aspect-ratio-03/index.tsx",

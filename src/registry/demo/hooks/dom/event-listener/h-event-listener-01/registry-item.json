@@ -4,20 +4,14 @@
   "type": "registry:hook",
   "title": "useEventListener",
   "description": "Declarative window/element event binding",
-  "dependencies": [
-    "@tabler/icons-react"
-  ],
+  "dependencies": ["@tabler/icons-react"],
   "registryDependencies": [
     "https://www.spaceui.one/r/hooks-dom-use-event-listener.json",
     "https://www.spaceui.one/r/primitives-badge.json",
     "https://www.spaceui.one/r/primitives-card.json",
     "https://www.spaceui.one/r/primitives-kbd.json"
   ],
-  "categories": [
-    "hooks",
-    "dom",
-    "event-listener"
-  ],
+  "categories": ["hooks", "dom", "event-listener"],
   "files": [
     {
       "path": "src/registry/demo/hooks/dom/event-listener/h-event-listener-01/index.tsx",

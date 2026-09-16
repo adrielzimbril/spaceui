@@ -4,11 +4,7 @@
   "type": "registry:ui",
   "title": "Sidebar",
   "description": "Accessible Sidebar primitive component for Space UI.",
-  "dependencies": [
-    "@base-ui/react",
-    "class-variance-authority",
-    "lucide-react"
-  ],
+  "dependencies": ["@base-ui/react", "class-variance-authority", "lucide-react"],
   "registryDependencies": [
     "https://www.spaceui.one/r/hooks-browser-use-media-query.json",
     "https://www.spaceui.one/r/hooks-dom-use-event-listener.json",
@@ -21,9 +17,7 @@
     "https://www.spaceui.one/r/primitives-skeleton.json",
     "https://www.spaceui.one/r/primitives-tooltip.json"
   ],
-  "categories": [
-    "sidebar"
-  ],
+  "categories": ["sidebar"],
   "files": [
     {
       "path": "src/registry/primitives/sidebar/index.tsx",

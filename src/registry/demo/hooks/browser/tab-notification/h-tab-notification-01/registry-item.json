@@ -4,20 +4,14 @@
   "type": "registry:hook",
   "title": "useTabNotification",
   "description": "Document title badge notification",
-  "dependencies": [
-    "@tabler/icons-react"
-  ],
+  "dependencies": ["@tabler/icons-react"],
   "registryDependencies": [
     "https://www.spaceui.one/r/hooks-browser-use-tab-notification.json",
     "https://www.spaceui.one/r/primitives-badge.json",
     "https://www.spaceui.one/r/primitives-button.json",
     "https://www.spaceui.one/r/primitives-card.json"
   ],
-  "categories": [
-    "hooks",
-    "browser",
-    "tab-notification"
-  ],
+  "categories": ["hooks", "browser", "tab-notification"],
   "files": [
     {
       "path": "src/registry/demo/hooks/browser/tab-notification/h-tab-notification-01/index.tsx",

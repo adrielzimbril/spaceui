@@ -4,12 +4,8 @@
   "type": "registry:ui",
   "title": "Tabs Sizes",
   "description": "Tabs list in sm, default, and lg sizes",
-  "registryDependencies": [
-    "https://www.spaceui.one/r/primitives-tabs.json"
-  ],
-  "categories": [
-    "tabs"
-  ],
+  "registryDependencies": ["https://www.spaceui.one/r/primitives-tabs.json"],
+  "categories": ["tabs"],
   "files": [
     {
       "path": "src/registry/demo/primitives/tabs/p-tabs-02/index.tsx",

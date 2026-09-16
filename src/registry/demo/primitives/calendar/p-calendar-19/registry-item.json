@@ -4,21 +4,14 @@
   "type": "registry:ui",
   "title": "Calendar 19",
   "description": "Calendar with time slots (appointment picker)",
-  "dependencies": [
-    "date-fns"
-  ],
+  "dependencies": ["date-fns"],
   "registryDependencies": [
     "https://www.spaceui.one/r/primitives-calendar.json",
     "https://www.spaceui.one/r/primitives-scroll-area.json",
     "https://www.spaceui.one/r/primitives-toggle.json",
     "https://www.spaceui.one/r/primitives-toggle-group.json"
   ],
-  "categories": [
-    "calendar",
-    "toggle",
-    "toggle group",
-    "scroll area"
-  ],
+  "categories": ["calendar", "toggle", "toggle group", "scroll area"],
   "files": [
     {
       "path": "src/registry/demo/primitives/calendar/p-calendar-19/index.tsx",

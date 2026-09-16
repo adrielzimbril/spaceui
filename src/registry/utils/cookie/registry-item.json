@@ -4,10 +4,7 @@
   "type": "registry:lib",
   "title": "cookie",
   "description": "cookie utility.",
-  "categories": [
-    "utils",
-    "cookie"
-  ],
+  "categories": ["utils", "cookie"],
   "files": [
     {
       "path": "src/registry/utils/cookie/index.ts",

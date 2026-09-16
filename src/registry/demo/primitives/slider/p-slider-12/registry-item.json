@@ -8,10 +8,7 @@
     "https://www.spaceui.one/r/primitives-number-field.json",
     "https://www.spaceui.one/r/primitives-slider.json"
   ],
-  "categories": [
-    "slider",
-    "number field"
-  ],
+  "categories": ["slider", "number field"],
   "files": [
     {
       "path": "src/registry/demo/primitives/slider/p-slider-12/index.tsx",

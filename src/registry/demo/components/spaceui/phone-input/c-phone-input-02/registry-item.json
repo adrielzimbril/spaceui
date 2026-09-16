@@ -4,13 +4,8 @@
   "type": "registry:component",
   "title": "Small phone input",
   "description": "Small phone input",
-  "registryDependencies": [
-    "https://www.spaceui.one/r/components-spaceui-phone-input.json"
-  ],
-  "categories": [
-    "component",
-    "phone-input"
-  ],
+  "registryDependencies": ["https://www.spaceui.one/r/components-spaceui-phone-input.json"],
+  "categories": ["component", "phone-input"],
   "files": [
     {
       "path": "src/registry/demo/components/spaceui/phone-input/c-phone-input-02/index.tsx",

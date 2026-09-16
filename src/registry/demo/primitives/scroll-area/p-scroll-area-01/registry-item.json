@@ -4,12 +4,8 @@
   "type": "registry:ui",
   "title": "Scroll Area 1",
   "description": "Basic scroll area",
-  "registryDependencies": [
-    "https://www.spaceui.one/r/primitives-scroll-area.json"
-  ],
-  "categories": [
-    "scroll area"
-  ],
+  "registryDependencies": ["https://www.spaceui.one/r/primitives-scroll-area.json"],
+  "categories": ["scroll area"],
   "files": [
     {
       "path": "src/registry/demo/primitives/scroll-area/p-scroll-area-01/index.tsx",

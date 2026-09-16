@@ -4,17 +4,9 @@
   "type": "registry:ui",
   "title": "Context Menu 6",
   "description": "Context menu with icons",
-  "dependencies": [
-    "@tabler/icons-react",
-    "lucide-react"
-  ],
-  "registryDependencies": [
-    "https://www.spaceui.one/r/primitives-context-menu.json"
-  ],
-  "categories": [
-    "context menu",
-    "menu"
-  ],
+  "dependencies": ["@tabler/icons-react", "lucide-react"],
+  "registryDependencies": ["https://www.spaceui.one/r/primitives-context-menu.json"],
+  "categories": ["context menu", "menu"],
   "files": [
     {
       "path": "src/registry/demo/primitives/context-menu/p-context-menu-06/index.tsx",

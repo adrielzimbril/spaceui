@@ -4,11 +4,7 @@
   "type": "registry:hook",
   "title": "useInputValue",
   "description": "useInputValue hook.",
-  "categories": [
-    "hooks",
-    "form",
-    "input-value"
-  ],
+  "categories": ["hooks", "form", "input-value"],
   "files": [
     {
       "path": "src/registry/hooks/form/use-input-value/index.ts",

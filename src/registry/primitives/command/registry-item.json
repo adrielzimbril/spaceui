@@ -4,18 +4,13 @@
   "type": "registry:ui",
   "title": "Command",
   "description": "Accessible Command primitive component for Space UI.",
-  "dependencies": [
-    "@base-ui/react",
-    "lucide-react"
-  ],
+  "dependencies": ["@base-ui/react", "lucide-react"],
   "registryDependencies": [
     "https://www.spaceui.one/r/lib-utils.json",
     "https://www.spaceui.one/r/primitives-autocomplete.json",
     "https://www.spaceui.one/r/primitives-kbd.json"
   ],
-  "categories": [
-    "command"
-  ],
+  "categories": ["command"],
   "files": [
     {
       "path": "src/registry/primitives/command/index.tsx",

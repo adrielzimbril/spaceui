@@ -4,16 +4,12 @@
   "type": "registry:component",
   "title": "Avatar Extended",
   "description": "Extended avatar components with badges, indicators, and logos.",
-  "dependencies": [
-    "@base-ui/react"
-  ],
+  "dependencies": ["@base-ui/react"],
   "registryDependencies": [
     "https://www.spaceui.one/r/lib-utils.json",
     "https://www.spaceui.one/r/primitives-badge.json"
   ],
-  "categories": [
-    "avatar"
-  ],
+  "categories": ["avatar"],
   "files": [
     {
       "path": "src/registry/components/spaceui/avatar-extended/index.tsx",

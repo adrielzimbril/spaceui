@@ -4,12 +4,8 @@
   "type": "registry:ui",
   "title": "Input Group 4",
   "description": "Input group with end text",
-  "registryDependencies": [
-    "https://www.spaceui.one/r/primitives-input-group.json"
-  ],
-  "categories": [
-    "input group"
-  ],
+  "registryDependencies": ["https://www.spaceui.one/r/primitives-input-group.json"],
+  "categories": ["input group"],
   "files": [
     {
       "path": "src/registry/demo/primitives/input-group/p-input-group-04/index.tsx",

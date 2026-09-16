@@ -4,20 +4,14 @@
   "type": "registry:hook",
   "title": "useSanitizeContent",
   "description": "SSR-safe HTML XSS Sanitizer",
-  "dependencies": [
-    "@tabler/icons-react"
-  ],
+  "dependencies": ["@tabler/icons-react"],
   "registryDependencies": [
     "https://www.spaceui.one/r/hooks-form-use-sanitize-content.json",
     "https://www.spaceui.one/r/primitives-badge.json",
     "https://www.spaceui.one/r/primitives-card.json",
     "https://www.spaceui.one/r/primitives-textarea.json"
   ],
-  "categories": [
-    "hooks",
-    "form",
-    "sanitize-content"
-  ],
+  "categories": ["hooks", "form", "sanitize-content"],
   "files": [
     {
       "path": "src/registry/demo/hooks/form/sanitize-content/h-sanitize-content-01/index.tsx",

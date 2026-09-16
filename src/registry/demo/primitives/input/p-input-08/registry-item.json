@@ -4,20 +4,13 @@
   "type": "registry:ui",
   "title": "Input 9",
   "description": "Password input with toggle visibility",
-  "dependencies": [
-    "@tabler/icons-react"
-  ],
+  "dependencies": ["@tabler/icons-react"],
   "registryDependencies": [
     "https://www.spaceui.one/r/primitives-button.json",
     "https://www.spaceui.one/r/primitives-input-group.json",
     "https://www.spaceui.one/r/primitives-tooltip.json"
   ],
-  "categories": [
-    "button",
-    "input",
-    "input group",
-    "tooltip"
-  ],
+  "categories": ["button", "input", "input group", "tooltip"],
   "files": [
     {
       "path": "src/registry/demo/primitives/input/p-input-08/index.tsx",

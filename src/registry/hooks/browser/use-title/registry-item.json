@@ -4,14 +4,8 @@
   "type": "registry:hook",
   "title": "useTitle",
   "description": "useTitle hook.",
-  "registryDependencies": [
-    "https://www.spaceui.one/r/hooks-lifecycle-use-isomorphic-layout-effect.json"
-  ],
-  "categories": [
-    "hooks",
-    "browser",
-    "title"
-  ],
+  "registryDependencies": ["https://www.spaceui.one/r/hooks-lifecycle-use-isomorphic-layout-effect.json"],
+  "categories": ["hooks", "browser", "title"],
   "files": [
     {
       "path": "src/registry/hooks/browser/use-title/index.ts",

@@ -4,10 +4,7 @@
   "type": "registry:component",
   "title": "Scrollspy",
   "description": "Scrollspy component for Space UI.",
-  "categories": [
-    "component",
-    "scrollspy"
-  ],
+  "categories": ["component", "scrollspy"],
   "files": [
     {
       "path": "src/registry/components/spaceui/scrollspy/index.tsx",

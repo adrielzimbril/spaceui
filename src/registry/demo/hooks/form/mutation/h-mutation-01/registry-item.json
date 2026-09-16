@@ -4,9 +4,7 @@
   "type": "registry:hook",
   "title": "useMutation",
   "description": "Async action runner with loading and error state",
-  "dependencies": [
-    "@tabler/icons-react"
-  ],
+  "dependencies": ["@tabler/icons-react"],
   "registryDependencies": [
     "https://www.spaceui.one/r/hooks-form-use-mutation.json",
     "https://www.spaceui.one/r/hooks-utils-sleep.json",
@@ -14,11 +12,7 @@
     "https://www.spaceui.one/r/primitives-button.json",
     "https://www.spaceui.one/r/primitives-card.json"
   ],
-  "categories": [
-    "hooks",
-    "form",
-    "mutation"
-  ],
+  "categories": ["hooks", "form", "mutation"],
   "files": [
     {
       "path": "src/registry/demo/hooks/form/mutation/h-mutation-01/index.tsx",

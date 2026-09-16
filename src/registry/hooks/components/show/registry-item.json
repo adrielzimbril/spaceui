@@ -4,11 +4,7 @@
   "type": "registry:hook",
   "title": "Show",
   "description": "Show component.",
-  "categories": [
-    "hooks",
-    "components",
-    "show"
-  ],
+  "categories": ["hooks", "components", "show"],
   "files": [
     {
       "path": "src/registry/hooks/components/show/index.tsx",

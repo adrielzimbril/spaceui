@@ -4,10 +4,7 @@
   "type": "registry:ui",
   "title": "Toolbar 1",
   "description": "Toolbar with toggles, buttons, and select",
-  "dependencies": [
-    "@tabler/icons-react",
-    "lucide-react"
-  ],
+  "dependencies": ["@tabler/icons-react", "lucide-react"],
   "registryDependencies": [
     "https://www.spaceui.one/r/primitives-button.json",
     "https://www.spaceui.one/r/primitives-select.json",
@@ -15,9 +12,7 @@
     "https://www.spaceui.one/r/primitives-toolbar.json",
     "https://www.spaceui.one/r/primitives-tooltip.json"
   ],
-  "categories": [
-    "toolbar"
-  ],
+  "categories": ["toolbar"],
   "files": [
     {
       "path": "src/registry/demo/primitives/toolbar/p-toolbar-01/index.tsx",

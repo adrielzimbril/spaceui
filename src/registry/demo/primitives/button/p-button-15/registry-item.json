@@ -4,18 +4,12 @@
   "type": "registry:ui",
   "title": "Button 15",
   "description": "Button group with QR code icon and sign in",
-  "dependencies": [
-    "@tabler/icons-react",
-    "lucide-react"
-  ],
+  "dependencies": ["@tabler/icons-react", "lucide-react"],
   "registryDependencies": [
     "https://www.spaceui.one/r/primitives-button.json",
     "https://www.spaceui.one/r/primitives-group.json"
   ],
-  "categories": [
-    "button",
-    "group"
-  ],
+  "categories": ["button", "group"],
   "files": [
     {
       "path": "src/registry/demo/primitives/button/p-button-15/index.tsx",

@@ -4,12 +4,8 @@
   "type": "registry:ui",
   "title": "Progress 1",
   "description": "Basic progress bar",
-  "registryDependencies": [
-    "https://www.spaceui.one/r/primitives-progress.json"
-  ],
-  "categories": [
-    "progress"
-  ],
+  "registryDependencies": ["https://www.spaceui.one/r/primitives-progress.json"],
+  "categories": ["progress"],
   "files": [
     {
       "path": "src/registry/demo/primitives/progress/p-progress-01/index.tsx",

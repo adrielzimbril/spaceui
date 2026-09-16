@@ -4,19 +4,14 @@
   "type": "registry:component",
   "title": "User Presence Avatar",
   "description": "A compact avatar group for showing online and offline users, with smooth animated transitions when presence changes.",
-  "dependencies": [
-    "motion"
-  ],
+  "dependencies": ["motion"],
   "registryDependencies": [
     "https://www.spaceui.one/r/components-spaceui-avatar-extended.json",
     "https://www.spaceui.one/r/lib-utils.json",
     "https://www.spaceui.one/r/primitives-avatar.json",
     "https://www.spaceui.one/r/primitives-tooltip.json"
   ],
-  "categories": [
-    "component",
-    "user-presence-avatar"
-  ],
+  "categories": ["component", "user-presence-avatar"],
   "files": [
     {
       "path": "src/registry/components/spaceui/user-presence-avatar/index.tsx",

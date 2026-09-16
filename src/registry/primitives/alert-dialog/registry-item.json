@@ -4,15 +4,9 @@
   "type": "registry:ui",
   "title": "Alert Dialog",
   "description": "Accessible Alert Dialog primitive component for Space UI.",
-  "dependencies": [
-    "@base-ui/react"
-  ],
-  "registryDependencies": [
-    "https://www.spaceui.one/r/lib-utils.json"
-  ],
-  "categories": [
-    "alert-dialog"
-  ],
+  "dependencies": ["@base-ui/react"],
+  "registryDependencies": ["https://www.spaceui.one/r/lib-utils.json"],
+  "categories": ["alert-dialog"],
   "files": [
     {
       "path": "src/registry/primitives/alert-dialog/index.tsx",

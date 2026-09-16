@@ -8,10 +8,7 @@
     "https://www.spaceui.one/r/components-spaceui-bouncy-accordion.json",
     "https://www.spaceui.one/r/primitives-badge.json"
   ],
-  "categories": [
-    "component",
-    "bouncy-accordion"
-  ],
+  "categories": ["component", "bouncy-accordion"],
   "files": [
     {
       "path": "src/registry/demo/components/spaceui/bouncy-accordion/c-bouncy-accordion-01/index.tsx",
@@ -21,7 +18,5 @@
   ],
   "createdAt": "2026-09-04",
   "updatedAt": "2026-09-04",
-  "dependencies": [
-    "@tabler/icons-react"
-  ]
+  "dependencies": ["@tabler/icons-react"]
 }

@@ -4,12 +4,8 @@
   "type": "registry:ui",
   "title": "Select 16",
   "description": "Select with country flags",
-  "registryDependencies": [
-    "https://www.spaceui.one/r/primitives-select.json"
-  ],
-  "categories": [
-    "select"
-  ],
+  "registryDependencies": ["https://www.spaceui.one/r/primitives-select.json"],
+  "categories": ["select"],
   "files": [
     {
       "path": "src/registry/demo/primitives/select/p-select-16/index.tsx",

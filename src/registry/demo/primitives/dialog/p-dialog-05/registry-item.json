@@ -8,9 +8,7 @@
     "https://www.spaceui.one/r/primitives-button.json",
     "https://www.spaceui.one/r/primitives-dialog.json"
   ],
-  "categories": [
-    "dialog"
-  ],
+  "categories": ["dialog"],
   "files": [
     {
       "path": "src/registry/demo/primitives/dialog/p-dialog-05/index.tsx",

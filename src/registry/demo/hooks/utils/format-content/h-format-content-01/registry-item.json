@@ -4,20 +4,14 @@
   "type": "registry:hook",
   "title": "formatContent",
   "description": "Text truncate and cleaner",
-  "dependencies": [
-    "@tabler/icons-react"
-  ],
+  "dependencies": ["@tabler/icons-react"],
   "registryDependencies": [
     "https://www.spaceui.one/r/hooks-utils-format-content.json",
     "https://www.spaceui.one/r/primitives-badge.json",
     "https://www.spaceui.one/r/primitives-card.json",
     "https://www.spaceui.one/r/primitives-input.json"
   ],
-  "categories": [
-    "hooks",
-    "utils",
-    "format-content"
-  ],
+  "categories": ["hooks", "utils", "format-content"],
   "files": [
     {
       "path": "src/registry/demo/hooks/utils/format-content/h-format-content-01/index.tsx",

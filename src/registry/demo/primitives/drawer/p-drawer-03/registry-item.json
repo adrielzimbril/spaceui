@@ -8,9 +8,7 @@
     "https://www.spaceui.one/r/primitives-button.json",
     "https://www.spaceui.one/r/primitives-drawer.json"
   ],
-  "categories": [
-    "drawer"
-  ],
+  "categories": ["drawer"],
   "files": [
     {
       "path": "src/registry/demo/primitives/drawer/p-drawer-03/index.tsx",

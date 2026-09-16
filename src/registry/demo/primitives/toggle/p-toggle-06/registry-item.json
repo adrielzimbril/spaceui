@@ -4,20 +4,13 @@
   "type": "registry:ui",
   "title": "Toggle 6",
   "description": "Bookmark toggle with tooltip and success toast",
-  "dependencies": [
-    "@tabler/icons-react",
-    "lucide-react"
-  ],
+  "dependencies": ["@tabler/icons-react", "lucide-react"],
   "registryDependencies": [
     "https://www.spaceui.one/r/primitives-toast.json",
     "https://www.spaceui.one/r/primitives-toggle.json",
     "https://www.spaceui.one/r/primitives-tooltip.json"
   ],
-  "categories": [
-    "toggle",
-    "tooltip",
-    "toast"
-  ],
+  "categories": ["toggle", "tooltip", "toast"],
   "files": [
     {
       "path": "src/registry/demo/primitives/toggle/p-toggle-06/index.tsx",

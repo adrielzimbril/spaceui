@@ -4,12 +4,8 @@
   "type": "registry:lib",
   "title": "Use Render",
   "description": "Utility and configuration helper for Use Render.",
-  "dependencies": [
-    "@base-ui/react"
-  ],
-  "categories": [
-    "base-ui"
-  ],
+  "dependencies": ["@base-ui/react"],
+  "categories": ["base-ui"],
   "files": [
     {
       "path": "src/registry/lib/base-ui/use-render/index.ts",

@@ -4,20 +4,12 @@
   "type": "registry:ui",
   "title": "Autocomplete 15",
   "description": "Address autocomplete with Google Maps Places API",
-  "dependencies": [
-    "@tabler/icons-react",
-    "lucide-react"
-  ],
+  "dependencies": ["@tabler/icons-react", "lucide-react"],
   "registryDependencies": [
     "https://www.spaceui.one/r/primitives-autocomplete.json",
     "https://www.spaceui.one/r/primitives-spinner.json"
   ],
-  "categories": [
-    "autocomplete",
-    "input",
-    "async",
-    "search"
-  ],
+  "categories": ["autocomplete", "input", "async", "search"],
   "files": [
     {
       "path": "src/registry/demo/primitives/autocomplete/p-autocomplete-15/index.tsx",

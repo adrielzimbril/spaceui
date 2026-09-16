@@ -4,9 +4,7 @@
   "type": "registry:ui",
   "title": "Card 8",
   "description": "Card within a frame and footer",
-  "dependencies": [
-    "@tabler/icons-react"
-  ],
+  "dependencies": ["@tabler/icons-react"],
   "registryDependencies": [
     "https://www.spaceui.one/r/primitives-button.json",
     "https://www.spaceui.one/r/primitives-card.json",
@@ -16,11 +14,7 @@
     "https://www.spaceui.one/r/primitives-input.json",
     "https://www.spaceui.one/r/primitives-select.json"
   ],
-  "categories": [
-    "card",
-    "form",
-    "frame"
-  ],
+  "categories": ["card", "form", "frame"],
   "files": [
     {
       "path": "src/registry/demo/primitives/card/p-card-08/index.tsx",

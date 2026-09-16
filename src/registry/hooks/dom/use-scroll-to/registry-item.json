@@ -4,11 +4,7 @@
   "type": "registry:hook",
   "title": "useScrollTo",
   "description": "useScrollTo hook.",
-  "categories": [
-    "hooks",
-    "dom",
-    "scroll-to"
-  ],
+  "categories": ["hooks", "dom", "scroll-to"],
   "files": [
     {
       "path": "src/registry/hooks/dom/use-scroll-to/index.ts",

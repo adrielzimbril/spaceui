@@ -4,12 +4,8 @@
   "type": "registry:ui",
   "title": "Combobox Sizes",
   "description": "Combobox inputs in sm, default, and lg sizes",
-  "registryDependencies": [
-    "https://www.spaceui.one/r/primitives-combobox.json"
-  ],
-  "categories": [
-    "combobox"
-  ],
+  "registryDependencies": ["https://www.spaceui.one/r/primitives-combobox.json"],
+  "categories": ["combobox"],
   "files": [
     {
       "path": "src/registry/demo/primitives/combobox/p-combobox-02/index.tsx",

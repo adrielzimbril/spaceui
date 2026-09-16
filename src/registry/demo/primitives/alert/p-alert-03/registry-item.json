@@ -4,17 +4,12 @@
   "type": "registry:ui",
   "title": "Alert 3",
   "description": "Alert with icon and action buttons",
-  "dependencies": [
-    "@tabler/icons-react",
-    "lucide-react"
-  ],
+  "dependencies": ["@tabler/icons-react", "lucide-react"],
   "registryDependencies": [
     "https://www.spaceui.one/r/primitives-alert.json",
     "https://www.spaceui.one/r/primitives-button.json"
   ],
-  "categories": [
-    "alert"
-  ],
+  "categories": ["alert"],
   "files": [
     {
       "path": "src/registry/demo/primitives/alert/p-alert-03/index.tsx",

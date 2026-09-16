@@ -4,13 +4,8 @@
   "type": "registry:ui",
   "title": "Slider 3",
   "description": "Disabled slider",
-  "registryDependencies": [
-    "https://www.spaceui.one/r/primitives-slider.json"
-  ],
-  "categories": [
-    "slider",
-    "disabled"
-  ],
+  "registryDependencies": ["https://www.spaceui.one/r/primitives-slider.json"],
+  "categories": ["slider", "disabled"],
   "files": [
     {
       "path": "src/registry/demo/primitives/slider/p-slider-03/index.tsx",

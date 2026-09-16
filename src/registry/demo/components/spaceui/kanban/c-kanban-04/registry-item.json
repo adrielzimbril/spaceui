@@ -11,10 +11,7 @@
     "https://www.spaceui.one/r/primitives-frame.json",
     "https://www.spaceui.one/r/primitives-progress.json"
   ],
-  "categories": [
-    "component",
-    "kanban"
-  ],
+  "categories": ["component", "kanban"],
   "files": [
     {
       "path": "src/registry/demo/components/spaceui/kanban/c-kanban-04/index.tsx",

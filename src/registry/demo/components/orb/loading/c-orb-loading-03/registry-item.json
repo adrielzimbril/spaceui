@@ -4,13 +4,8 @@
   "type": "registry:component",
   "title": "Loading Orb Tailwind Colors Showcase",
   "description": "Tailwind color class styling with automatic tonal opacity gradations.",
-  "registryDependencies": [
-    "https://www.spaceui.one/r/components-orb-loading.json"
-  ],
-  "categories": [
-    "orb",
-    "loading"
-  ],
+  "registryDependencies": ["https://www.spaceui.one/r/components-orb-loading.json"],
+  "categories": ["orb", "loading"],
   "files": [
     {
       "path": "src/registry/demo/components/orb/loading/c-orb-loading-03/index.tsx",

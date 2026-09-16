@@ -66,9 +66,7 @@
       "destructive-foreground": "var(--color-red-500)"
     }
   },
-  "categories": [
-    "colors-neutral"
-  ],
+  "categories": ["colors-neutral"],
   "files": [],
   "createdAt": "2026-08-21",
   "updatedAt": "2026-08-21"

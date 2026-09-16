@@ -4,17 +4,12 @@
   "type": "registry:ui",
   "title": "Calendar 24",
   "description": "Pricing calendar with custom day buttons",
-  "dependencies": [
-    "@daypicker/react",
-    "date-fns"
-  ],
+  "dependencies": ["@daypicker/react", "date-fns"],
   "registryDependencies": [
     "https://www.spaceui.one/r/lib-utils.json",
     "https://www.spaceui.one/r/primitives-calendar.json"
   ],
-  "categories": [
-    "calendar"
-  ],
+  "categories": ["calendar"],
   "files": [
     {
       "path": "src/registry/demo/primitives/calendar/p-calendar-24/index.tsx",

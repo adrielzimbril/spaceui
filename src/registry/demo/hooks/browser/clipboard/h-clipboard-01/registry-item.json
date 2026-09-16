@@ -4,9 +4,7 @@
   "type": "registry:hook",
   "title": "useClipboard",
   "description": "Copy to clipboard with state feedback",
-  "dependencies": [
-    "@tabler/icons-react"
-  ],
+  "dependencies": ["@tabler/icons-react"],
   "registryDependencies": [
     "https://www.spaceui.one/r/hooks-browser-use-clipboard.json",
     "https://www.spaceui.one/r/primitives-badge.json",
@@ -14,11 +12,7 @@
     "https://www.spaceui.one/r/primitives-card.json",
     "https://www.spaceui.one/r/primitives-input.json"
   ],
-  "categories": [
-    "hooks",
-    "browser",
-    "clipboard"
-  ],
+  "categories": ["hooks", "browser", "clipboard"],
   "files": [
     {
       "path": "src/registry/demo/hooks/browser/clipboard/h-clipboard-01/index.tsx",

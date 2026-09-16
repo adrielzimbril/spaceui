@@ -8,11 +8,7 @@
     "https://www.spaceui.one/r/components-spaceui-theme-toggle.json",
     "https://www.spaceui.one/r/primitives-button.json"
   ],
-  "categories": [
-    "component",
-    "theme",
-    "theme-toggle"
-  ],
+  "categories": ["component", "theme", "theme-toggle"],
   "meta": {
     "demoProps": {
       "variant": {
@@ -37,10 +33,7 @@
           "Bottom Center": "bottom-center"
         },
         "dependsOn": {
-          "variant": [
-            "circle",
-            "circle-blur"
-          ]
+          "variant": ["circle", "circle-blur"]
         }
       },
       "startRectangle": {
@@ -74,11 +67,7 @@
       "blur": {
         "value": false,
         "dependsOn": {
-          "variant": [
-            "circle",
-            "rectangle",
-            "polygon"
-          ]
+          "variant": ["circle", "rectangle", "polygon"]
         }
       },
       "buttonVariant": {

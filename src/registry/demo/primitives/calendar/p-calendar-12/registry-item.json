@@ -4,15 +4,9 @@
   "type": "registry:ui",
   "title": "Calendar 12",
   "description": "Calendar with week numbers",
-  "dependencies": [
-    "@daypicker/react"
-  ],
-  "registryDependencies": [
-    "https://www.spaceui.one/r/primitives-calendar.json"
-  ],
-  "categories": [
-    "calendar"
-  ],
+  "dependencies": ["@daypicker/react"],
+  "registryDependencies": ["https://www.spaceui.one/r/primitives-calendar.json"],
+  "categories": ["calendar"],
   "files": [
     {
       "path": "src/registry/demo/primitives/calendar/p-calendar-12/index.tsx",

@@ -4,18 +4,12 @@
   "type": "registry:ui",
   "title": "Popover 2",
   "description": "Popover with close button",
-  "dependencies": [
-    "@tabler/icons-react",
-    "lucide-react"
-  ],
+  "dependencies": ["@tabler/icons-react", "lucide-react"],
   "registryDependencies": [
     "https://www.spaceui.one/r/primitives-button.json",
     "https://www.spaceui.one/r/primitives-popover.json"
   ],
-  "categories": [
-    "button",
-    "popover"
-  ],
+  "categories": ["button", "popover"],
   "files": [
     {
       "path": "src/registry/demo/primitives/popover/p-popover-02/index.tsx",

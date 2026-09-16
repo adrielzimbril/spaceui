@@ -9,10 +9,7 @@
     "https://www.spaceui.one/r/primitives-progress.json",
     "https://www.spaceui.one/r/primitives-separator.json"
   ],
-  "categories": [
-    "component",
-    "rating"
-  ],
+  "categories": ["component", "rating"],
   "files": [
     {
       "path": "src/registry/demo/components/spaceui/rating/c-rating-06/index.tsx",

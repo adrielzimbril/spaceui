@@ -4,19 +4,14 @@
   "type": "registry:ui",
   "title": "Input Group 12",
   "description": "Input group with inner label",
-  "dependencies": [
-    "@tabler/icons-react"
-  ],
+  "dependencies": ["@tabler/icons-react"],
   "registryDependencies": [
     "https://www.spaceui.one/r/primitives-button.json",
     "https://www.spaceui.one/r/primitives-input-group.json",
     "https://www.spaceui.one/r/primitives-label.json",
     "https://www.spaceui.one/r/primitives-popover.json"
   ],
-  "categories": [
-    "input group",
-    "label"
-  ],
+  "categories": ["input group", "label"],
   "files": [
     {
       "path": "src/registry/demo/primitives/input-group/p-input-group-12/index.tsx",

@@ -12,11 +12,7 @@
     "https://www.spaceui.one/r/primitives-fieldset.json",
     "https://www.spaceui.one/r/primitives-form.json"
   ],
-  "categories": [
-    "checkbox",
-    "checkbox group",
-    "form"
-  ],
+  "categories": ["checkbox", "checkbox group", "form"],
   "files": [
     {
       "path": "src/registry/demo/primitives/checkbox-group/p-checkbox-group-05/index.tsx",

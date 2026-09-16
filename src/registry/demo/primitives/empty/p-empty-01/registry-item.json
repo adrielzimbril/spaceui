@@ -4,17 +4,12 @@
   "type": "registry:ui",
   "title": "Empty 1",
   "description": "Empty state with icon and actions",
-  "dependencies": [
-    "@tabler/icons-react",
-    "lucide-react"
-  ],
+  "dependencies": ["@tabler/icons-react", "lucide-react"],
   "registryDependencies": [
     "https://www.spaceui.one/r/primitives-button.json",
     "https://www.spaceui.one/r/primitives-empty.json"
   ],
-  "categories": [
-    "empty state"
-  ],
+  "categories": ["empty state"],
   "files": [
     {
       "path": "src/registry/demo/primitives/empty/p-empty-01/index.tsx",

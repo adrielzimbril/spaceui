@@ -4,18 +4,12 @@
   "type": "registry:ui",
   "title": "Calendar 21",
   "description": "Range calendar with date presets",
-  "dependencies": [
-    "@daypicker/react",
-    "date-fns"
-  ],
+  "dependencies": ["@daypicker/react", "date-fns"],
   "registryDependencies": [
     "https://www.spaceui.one/r/primitives-button.json",
     "https://www.spaceui.one/r/primitives-calendar.json"
   ],
-  "categories": [
-    "calendar",
-    "button"
-  ],
+  "categories": ["calendar", "button"],
   "files": [
     {
       "path": "src/registry/demo/primitives/calendar/p-calendar-21/index.tsx",

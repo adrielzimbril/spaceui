@@ -5,11 +5,7 @@
   "title": "Portfolio Statistics & Analytics Template",
   "description": "Comprehensive portfolio statistics dashboard template featuring general metrics, audience engagement, content analytics, GitHub heatmap, and Lighthouse scores.",
   "dependencies": ["motion", "@tabler/icons-react"],
-  "categories": [
-    "templates",
-    "portfolios",
-    "stats"
-  ],
+  "categories": ["templates", "portfolios", "stats"],
   "registryDependencies": [
     "https://www.spaceui.one/r/block-stats-general.json",
     "https://www.spaceui.one/r/block-stats-github.json",

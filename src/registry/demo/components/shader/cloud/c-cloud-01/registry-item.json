@@ -4,13 +4,8 @@
   "type": "registry:component",
   "title": "Cloud Demo",
   "description": "Interactive cloud material surface.",
-  "registryDependencies": [
-    "https://www.spaceui.one/r/components-shader-cloud.json"
-  ],
-  "categories": [
-    "shader",
-    "cloud"
-  ],
+  "registryDependencies": ["https://www.spaceui.one/r/components-shader-cloud.json"],
+  "categories": ["shader", "cloud"],
   "meta": {
     "demoProps": {
       "speed": {

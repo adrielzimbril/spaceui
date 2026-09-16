@@ -9,11 +9,7 @@
     "https://www.spaceui.one/r/primitives-dialog.json",
     "https://www.spaceui.one/r/primitives-menu.json"
   ],
-  "categories": [
-    "dialog",
-    "dropdown",
-    "menu"
-  ],
+  "categories": ["dialog", "dropdown", "menu"],
   "files": [
     {
       "path": "src/registry/demo/primitives/dialog/p-dialog-02/index.tsx",

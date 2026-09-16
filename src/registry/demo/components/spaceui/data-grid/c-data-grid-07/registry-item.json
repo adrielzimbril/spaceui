@@ -4,9 +4,7 @@
   "type": "registry:component",
   "title": "Data grid with row selection",
   "description": "Data grid with row selection",
-  "dependencies": [
-    "@tanstack/react-table"
-  ],
+  "dependencies": ["@tanstack/react-table"],
   "registryDependencies": [
     "https://www.spaceui.one/r/components-spaceui-avatar-extended.json",
     "https://www.spaceui.one/r/components-spaceui-data-grid.json",
@@ -16,10 +14,7 @@
     "https://www.spaceui.one/r/lib-utils.json",
     "https://www.spaceui.one/r/primitives-avatar.json"
   ],
-  "categories": [
-    "component",
-    "data-grid"
-  ],
+  "categories": ["component", "data-grid"],
   "files": [
     {
       "path": "src/registry/demo/components/spaceui/data-grid/c-data-grid-07/index.tsx",

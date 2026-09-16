@@ -4,15 +4,9 @@
   "type": "registry:ui",
   "title": "Input Group 13",
   "description": "Small input group",
-  "dependencies": [
-    "@tabler/icons-react"
-  ],
-  "registryDependencies": [
-    "https://www.spaceui.one/r/primitives-input-group.json"
-  ],
-  "categories": [
-    "input group"
-  ],
+  "dependencies": ["@tabler/icons-react"],
+  "registryDependencies": ["https://www.spaceui.one/r/primitives-input-group.json"],
+  "categories": ["input group"],
   "files": [
     {
       "path": "src/registry/demo/primitives/input-group/p-input-group-13/index.tsx",

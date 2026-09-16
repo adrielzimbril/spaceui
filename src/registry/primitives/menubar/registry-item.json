@@ -4,17 +4,12 @@
   "type": "registry:ui",
   "title": "Menubar",
   "description": "Accessible Menubar primitive component for Space UI.",
-  "dependencies": [
-    "@base-ui/react",
-    "lucide-react"
-  ],
+  "dependencies": ["@base-ui/react", "lucide-react"],
   "registryDependencies": [
     "https://www.spaceui.one/r/lib-utils.json",
     "https://www.spaceui.one/r/primitives-menu.json"
   ],
-  "categories": [
-    "menubar"
-  ],
+  "categories": ["menubar"],
   "files": [
     {
       "path": "src/registry/primitives/menubar/index.tsx",

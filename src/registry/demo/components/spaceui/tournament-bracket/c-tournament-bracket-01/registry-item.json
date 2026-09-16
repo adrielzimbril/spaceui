@@ -4,13 +4,8 @@
   "type": "registry:component",
   "title": "Tournament Bracket Demo",
   "description": "Knockout bracket with round navigation.",
-  "registryDependencies": [
-    "https://www.spaceui.one/r/components-spaceui-tournament-bracket.json"
-  ],
-  "categories": [
-    "component",
-    "tournament-bracket"
-  ],
+  "registryDependencies": ["https://www.spaceui.one/r/components-spaceui-tournament-bracket.json"],
+  "categories": ["component", "tournament-bracket"],
   "files": [
     {
       "path": "src/registry/demo/components/spaceui/tournament-bracket/c-tournament-bracket-01/index.tsx",

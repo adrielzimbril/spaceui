@@ -4,20 +4,13 @@
   "type": "registry:ui",
   "title": "Input 8",
   "description": "Input with start text and end tooltip",
-  "dependencies": [
-    "@tabler/icons-react"
-  ],
+  "dependencies": ["@tabler/icons-react"],
   "registryDependencies": [
     "https://www.spaceui.one/r/primitives-button.json",
     "https://www.spaceui.one/r/primitives-input-group.json",
     "https://www.spaceui.one/r/primitives-popover.json"
   ],
-  "categories": [
-    "button",
-    "input",
-    "input group",
-    "popover"
-  ],
+  "categories": ["button", "input", "input group", "popover"],
   "files": [
     {
       "path": "src/registry/demo/primitives/input/p-input-07/index.tsx",

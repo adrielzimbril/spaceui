@@ -4,19 +4,12 @@
   "type": "registry:component",
   "title": "Bubble Background",
   "description": "An interactive background featuring smoothly animated gradient bubbles, creating a playful, dynamic, and visually engaging backdrop.",
-  "dependencies": [
-    "motion"
-  ],
+  "dependencies": ["motion"],
   "registryDependencies": [
     "https://www.spaceui.one/r/hooks-dom-use-event-listener.json",
     "https://www.spaceui.one/r/lib-utils.json"
   ],
-  "categories": [
-    "background",
-    "canvas",
-    "effects",
-    "bubble"
-  ],
+  "categories": ["background", "canvas", "effects", "bubble"],
   "files": [
     {
       "path": "src/registry/components/backgrounds/bubble/index.tsx",

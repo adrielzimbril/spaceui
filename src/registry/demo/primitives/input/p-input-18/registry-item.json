@@ -4,12 +4,8 @@
   "type": "registry:ui",
   "title": "Input 18",
   "description": "Pill-shaped input",
-  "registryDependencies": [
-    "https://www.spaceui.one/r/primitives-input.json"
-  ],
-  "categories": [
-    "input"
-  ],
+  "registryDependencies": ["https://www.spaceui.one/r/primitives-input.json"],
+  "categories": ["input"],
   "files": [
     {
       "path": "src/registry/demo/primitives/input/p-input-18/index.tsx",

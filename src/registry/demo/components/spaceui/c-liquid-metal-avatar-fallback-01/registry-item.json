@@ -4,12 +4,8 @@
   "type": "registry:component",
   "title": "Liquid Metal Avatar Fallback",
   "description": "Interactive demo showcasing the Liquid Metal Avatar Fallback component.",
-  "registryDependencies": [
-    "https://www.spaceui.one/r/components-spaceui-liquid-metal-avatar.json"
-  ],
-  "categories": [
-    "liquid-metal-avatar-fallback"
-  ],
+  "registryDependencies": ["https://www.spaceui.one/r/components-spaceui-liquid-metal-avatar.json"],
+  "categories": ["liquid-metal-avatar-fallback"],
   "files": [
     {
       "path": "src/registry/demo/components/spaceui/c-liquid-metal-avatar-fallback-01/index.tsx",

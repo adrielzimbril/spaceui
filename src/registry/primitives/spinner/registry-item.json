@@ -4,15 +4,9 @@
   "type": "registry:ui",
   "title": "Spinner",
   "description": "Accessible Spinner primitive component for Space UI.",
-  "dependencies": [
-    "lucide-react"
-  ],
-  "registryDependencies": [
-    "https://www.spaceui.one/r/lib-utils.json"
-  ],
-  "categories": [
-    "spinner"
-  ],
+  "dependencies": ["lucide-react"],
+  "registryDependencies": ["https://www.spaceui.one/r/lib-utils.json"],
+  "categories": ["spinner"],
   "files": [
     {
       "path": "src/registry/primitives/spinner/index.tsx",

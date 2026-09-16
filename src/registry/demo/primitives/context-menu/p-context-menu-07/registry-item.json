@@ -4,13 +4,8 @@
   "type": "registry:ui",
   "title": "Context Menu 7",
   "description": "Context menu with radio group",
-  "registryDependencies": [
-    "https://www.spaceui.one/r/primitives-context-menu.json"
-  ],
-  "categories": [
-    "context menu",
-    "menu"
-  ],
+  "registryDependencies": ["https://www.spaceui.one/r/primitives-context-menu.json"],
+  "categories": ["context menu", "menu"],
   "files": [
     {
       "path": "src/registry/demo/primitives/context-menu/p-context-menu-07/index.tsx",

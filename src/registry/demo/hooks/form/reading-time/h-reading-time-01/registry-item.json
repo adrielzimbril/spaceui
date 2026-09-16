@@ -4,20 +4,14 @@
   "type": "registry:hook",
   "title": "useReadingTime",
   "description": "Article word counter and reading estimate",
-  "dependencies": [
-    "@tabler/icons-react"
-  ],
+  "dependencies": ["@tabler/icons-react"],
   "registryDependencies": [
     "https://www.spaceui.one/r/hooks-form-use-reading-time.json",
     "https://www.spaceui.one/r/primitives-badge.json",
     "https://www.spaceui.one/r/primitives-card.json",
     "https://www.spaceui.one/r/primitives-textarea.json"
   ],
-  "categories": [
-    "hooks",
-    "form",
-    "reading-time"
-  ],
+  "categories": ["hooks", "form", "reading-time"],
   "files": [
     {
       "path": "src/registry/demo/hooks/form/reading-time/h-reading-time-01/index.tsx",

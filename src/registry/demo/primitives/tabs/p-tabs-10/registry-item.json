@@ -4,18 +4,12 @@
   "type": "registry:ui",
   "title": "Tabs 10",
   "description": "Tabs with icon only and count badge",
-  "dependencies": [
-    "@tabler/icons-react",
-    "lucide-react"
-  ],
+  "dependencies": ["@tabler/icons-react", "lucide-react"],
   "registryDependencies": [
     "https://www.spaceui.one/r/primitives-badge.json",
     "https://www.spaceui.one/r/primitives-tabs.json"
   ],
-  "categories": [
-    "tabs",
-    "badge"
-  ],
+  "categories": ["tabs", "badge"],
   "files": [
     {
       "path": "src/registry/demo/primitives/tabs/p-tabs-10/index.tsx",

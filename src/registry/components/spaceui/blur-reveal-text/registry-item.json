@@ -4,18 +4,9 @@
   "type": "registry:component",
   "title": "Blur Reveal Text",
   "description": "Progressive, buttery smooth word, character, or line-by-line blur reveal animation with viewport triggers.",
-  "dependencies": [
-    "motion"
-  ],
-  "registryDependencies": [
-    "https://www.spaceui.one/r/lib-utils.json"
-  ],
-  "categories": [
-    "component",
-    "typography",
-    "animation",
-    "text"
-  ],
+  "dependencies": ["motion"],
+  "registryDependencies": ["https://www.spaceui.one/r/lib-utils.json"],
+  "categories": ["component", "typography", "animation", "text"],
   "files": [
     {
       "path": "src/registry/components/spaceui/blur-reveal-text/index.tsx",

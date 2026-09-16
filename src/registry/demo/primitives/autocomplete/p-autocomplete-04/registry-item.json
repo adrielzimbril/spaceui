@@ -8,10 +8,7 @@
     "https://www.spaceui.one/r/primitives-autocomplete.json",
     "https://www.spaceui.one/r/primitives-label.json"
   ],
-  "categories": [
-    "autocomplete",
-    "input"
-  ],
+  "categories": ["autocomplete", "input"],
   "files": [
     {
       "path": "src/registry/demo/primitives/autocomplete/p-autocomplete-04/index.tsx",

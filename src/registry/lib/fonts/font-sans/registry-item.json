@@ -4,9 +4,7 @@
   "type": "registry:file",
   "title": "Font Sans",
   "description": "Utility and configuration helper for Font Sans.",
-  "categories": [
-    "font-sans"
-  ],
+  "categories": ["font-sans"],
   "files": [],
   "createdAt": "2026-08-21",
   "updatedAt": "2026-08-21"

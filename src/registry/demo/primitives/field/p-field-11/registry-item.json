@@ -8,11 +8,7 @@
     "https://www.spaceui.one/r/primitives-field.json",
     "https://www.spaceui.one/r/primitives-select.json"
   ],
-  "categories": [
-    "field",
-    "label",
-    "select"
-  ],
+  "categories": ["field", "label", "select"],
   "files": [
     {
       "path": "src/registry/demo/primitives/field/p-field-11/index.tsx",

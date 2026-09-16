@@ -4,11 +4,7 @@
   "type": "registry:hook",
   "title": "useMutation",
   "description": "useMutation hook.",
-  "categories": [
-    "hooks",
-    "form",
-    "mutation"
-  ],
+  "categories": ["hooks", "form", "mutation"],
   "files": [
     {
       "path": "src/registry/hooks/form/use-mutation/index.ts",

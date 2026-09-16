@@ -4,11 +4,7 @@
   "type": "registry:hook",
   "title": "usePrefersTheme",
   "description": "usePrefersTheme hook.",
-  "categories": [
-    "hooks",
-    "browser",
-    "prefers-theme"
-  ],
+  "categories": ["hooks", "browser", "prefers-theme"],
   "files": [
     {
       "path": "src/registry/hooks/browser/use-prefers-theme/index.ts",
@@ -19,7 +15,5 @@
   "createdAt": "2026-09-03",
   "updatedAt": "2026-09-03",
   "dependencies": [],
-  "registryDependencies": [
-    "https://www.spaceui.one/r/hooks-browser-use-media-query.json"
-  ]
+  "registryDependencies": ["https://www.spaceui.one/r/hooks-browser-use-media-query.json"]
 }

@@ -9,12 +9,7 @@
     "https://www.spaceui.one/r/primitives-fieldset.json",
     "https://www.spaceui.one/r/primitives-radio-group.json"
   ],
-  "categories": [
-    "field",
-    "fieldset",
-    "label",
-    "radio group"
-  ],
+  "categories": ["field", "fieldset", "label", "radio group"],
   "files": [
     {
       "path": "src/registry/demo/primitives/field/p-field-14/index.tsx",

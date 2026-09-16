@@ -8,11 +8,7 @@
     "https://www.spaceui.one/r/primitives-field.json",
     "https://www.spaceui.one/r/primitives-slider.json"
   ],
-  "categories": [
-    "field",
-    "label",
-    "slider"
-  ],
+  "categories": ["field", "label", "slider"],
   "files": [
     {
       "path": "src/registry/demo/primitives/field/p-field-16/index.tsx",

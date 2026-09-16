@@ -4,10 +4,7 @@
   "type": "registry:lib",
   "title": "cache",
   "description": "cache utility.",
-  "categories": [
-    "utils",
-    "cache"
-  ],
+  "categories": ["utils", "cache"],
   "files": [
     {
       "path": "src/registry/utils/cache/index.ts",

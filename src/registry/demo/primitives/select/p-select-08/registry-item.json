@@ -4,16 +4,9 @@
   "type": "registry:ui",
   "title": "Select 8",
   "description": "Select options with icon",
-  "dependencies": [
-    "@tabler/icons-react",
-    "lucide-react"
-  ],
-  "registryDependencies": [
-    "https://www.spaceui.one/r/primitives-select.json"
-  ],
-  "categories": [
-    "select"
-  ],
+  "dependencies": ["@tabler/icons-react", "lucide-react"],
+  "registryDependencies": ["https://www.spaceui.one/r/primitives-select.json"],
+  "categories": ["select"],
   "files": [
     {
       "path": "src/registry/demo/primitives/select/p-select-08/index.tsx",

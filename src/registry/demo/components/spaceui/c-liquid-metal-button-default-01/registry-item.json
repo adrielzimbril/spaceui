@@ -4,12 +4,8 @@
   "type": "registry:component",
   "title": "Liquid Metal Button Default",
   "description": "Interactive demo showcasing the Liquid Metal Button Default component.",
-  "registryDependencies": [
-    "https://www.spaceui.one/r/components-spaceui-liquid-metal-button.json"
-  ],
-  "categories": [
-    "liquid-metal-button-default"
-  ],
+  "registryDependencies": ["https://www.spaceui.one/r/components-spaceui-liquid-metal-button.json"],
+  "categories": ["liquid-metal-button-default"],
   "files": [
     {
       "path": "src/registry/demo/components/spaceui/c-liquid-metal-button-default-01/index.tsx",

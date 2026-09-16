@@ -4,18 +4,12 @@
   "type": "registry:component",
   "title": "Filters with input validation",
   "description": "Filters with input validation",
-  "dependencies": [
-    "@tabler/icons-react",
-    "zod-v4"
-  ],
+  "dependencies": ["@tabler/icons-react", "zod-v4"],
   "registryDependencies": [
     "https://www.spaceui.one/r/components-spaceui-filters.json",
     "https://www.spaceui.one/r/primitives-button.json"
   ],
-  "categories": [
-    "component",
-    "filters"
-  ],
+  "categories": ["component", "filters"],
   "files": [
     {
       "path": "src/registry/demo/components/spaceui/filters/c-filters-02/index.tsx",

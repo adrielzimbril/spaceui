@@ -4,9 +4,7 @@
   "type": "registry:ui",
   "title": "Team activity and collaboration group",
   "description": "Team activity and collaboration group",
-  "dependencies": [
-    "@tabler/icons-react"
-  ],
+  "dependencies": ["@tabler/icons-react"],
   "registryDependencies": [
     "https://www.spaceui.one/r/components-spaceui-avatar-group.json",
     "https://www.spaceui.one/r/primitives-avatar.json",
@@ -14,9 +12,7 @@
     "https://www.spaceui.one/r/primitives-group.json",
     "https://www.spaceui.one/r/primitives-menu.json"
   ],
-  "categories": [
-    "button-group"
-  ],
+  "categories": ["button-group"],
   "files": [
     {
       "path": "src/registry/demo/primitives/group/p-group-28/index.tsx",

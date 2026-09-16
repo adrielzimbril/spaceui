@@ -5,12 +5,7 @@
   "title": "Generating Orb",
   "description": "Interactive dual-engine generating loader orb with revolving chromatic depth in CSS keyframes and HTML5 Canvas.",
   "dependencies": [],
-  "categories": [
-    "orb",
-    "loader",
-    "css",
-    "canvas"
-  ],
+  "categories": ["orb", "loader", "css", "canvas"],
   "files": [
     {
       "path": "src/registry/components/orb/generating/index.tsx",

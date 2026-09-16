@@ -4,19 +4,13 @@
   "type": "registry:ui",
   "title": "Frame 2",
   "description": "Frame with collapsible content and delete button",
-  "dependencies": [
-    "@tabler/icons-react",
-    "lucide-react"
-  ],
+  "dependencies": ["@tabler/icons-react", "lucide-react"],
   "registryDependencies": [
     "https://www.spaceui.one/r/primitives-button.json",
     "https://www.spaceui.one/r/primitives-collapsible.json",
     "https://www.spaceui.one/r/primitives-frame.json"
   ],
-  "categories": [
-    "collapsible",
-    "frame"
-  ],
+  "categories": ["collapsible", "frame"],
   "files": [
     {
       "path": "src/registry/demo/primitives/frame/p-frame-02/index.tsx",

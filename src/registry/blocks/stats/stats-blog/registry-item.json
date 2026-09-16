@@ -4,13 +4,9 @@
   "type": "registry:block",
   "title": "Blog & Content Stats Block",
   "description": "Content publication metrics including total articles, words written, reader messages, and reading time.",
-  "registryDependencies": [
-    "https://www.spaceui.one/r/lib-utils.json"
-  ],
+  "registryDependencies": ["https://www.spaceui.one/r/lib-utils.json"],
   "dependencies": ["motion", "@tabler/icons-react"],
-  "categories": [
-    "stats"
-  ],
+  "categories": ["stats"],
   "files": [
     {
       "path": "src/registry/blocks/stats/stats-blog/index.tsx",

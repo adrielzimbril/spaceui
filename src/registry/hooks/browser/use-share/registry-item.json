@@ -4,11 +4,7 @@
   "type": "registry:hook",
   "title": "useShare",
   "description": "useShare hook.",
-  "categories": [
-    "hooks",
-    "browser",
-    "share"
-  ],
+  "categories": ["hooks", "browser", "share"],
   "files": [
     {
       "path": "src/registry/hooks/browser/use-share/index.ts",

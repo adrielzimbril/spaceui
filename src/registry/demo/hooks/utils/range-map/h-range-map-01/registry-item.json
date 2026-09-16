@@ -4,19 +4,13 @@
   "type": "registry:hook",
   "title": "rangeMap",
   "description": "Array mapping and generation helper",
-  "dependencies": [
-    "@tabler/icons-react"
-  ],
+  "dependencies": ["@tabler/icons-react"],
   "registryDependencies": [
     "https://www.spaceui.one/r/hooks-utils-range-map.json",
     "https://www.spaceui.one/r/primitives-badge.json",
     "https://www.spaceui.one/r/primitives-card.json"
   ],
-  "categories": [
-    "hooks",
-    "utils",
-    "range-map"
-  ],
+  "categories": ["hooks", "utils", "range-map"],
   "files": [
     {
       "path": "src/registry/demo/hooks/utils/range-map/h-range-map-01/index.tsx",

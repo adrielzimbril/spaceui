@@ -4,20 +4,14 @@
   "type": "registry:hook",
   "title": "If",
   "description": "Declarative boolean conditional renderer",
-  "dependencies": [
-    "@tabler/icons-react"
-  ],
+  "dependencies": ["@tabler/icons-react"],
   "registryDependencies": [
     "https://www.spaceui.one/r/hooks-components-if.json",
     "https://www.spaceui.one/r/primitives-badge.json",
     "https://www.spaceui.one/r/primitives-button.json",
     "https://www.spaceui.one/r/primitives-card.json"
   ],
-  "categories": [
-    "hooks",
-    "components",
-    "if"
-  ],
+  "categories": ["hooks", "components", "if"],
   "files": [
     {
       "path": "src/registry/demo/hooks/components/if/h-if-01/index.tsx",

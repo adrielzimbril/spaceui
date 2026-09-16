@@ -8,11 +8,7 @@
     "https://www.spaceui.one/r/primitives-field.json",
     "https://www.spaceui.one/r/primitives-otp-field.json"
   ],
-  "categories": [
-    "otp field",
-    "input",
-    "field"
-  ],
+  "categories": ["otp field", "input", "field"],
   "files": [
     {
       "path": "src/registry/demo/primitives/otp-field/p-otp-field-07/index.tsx",

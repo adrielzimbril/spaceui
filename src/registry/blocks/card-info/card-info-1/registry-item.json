@@ -9,9 +9,7 @@
     "https://www.spaceui.one/r/primitives-badge.json",
     "https://www.spaceui.one/r/primitives-card.json"
   ],
-  "categories": [
-    "card-info"
-  ],
+  "categories": ["card-info"],
   "files": [
     {
       "path": "src/registry/blocks/card-info/card-info-1/index.tsx",

@@ -4,11 +4,7 @@
   "type": "registry:hook",
   "title": "useOrientation",
   "description": "useOrientation hook.",
-  "categories": [
-    "hooks",
-    "browser",
-    "orientation"
-  ],
+  "categories": ["hooks", "browser", "orientation"],
   "files": [
     {
       "path": "src/registry/hooks/browser/use-orientation/index.ts",

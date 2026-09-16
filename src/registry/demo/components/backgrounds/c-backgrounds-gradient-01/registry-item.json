@@ -4,15 +4,8 @@
   "type": "registry:component",
   "title": "Gradient Background Demo",
   "description": "Demo showing a gradient background.",
-  "registryDependencies": [
-    "https://www.spaceui.one/r/components-backgrounds-gradient.json"
-  ],
-  "categories": [
-    "background",
-    "canvas",
-    "effects",
-    "gradient"
-  ],
+  "registryDependencies": ["https://www.spaceui.one/r/components-backgrounds-gradient.json"],
+  "categories": ["background", "canvas", "effects", "gradient"],
   "files": [
     {
       "path": "src/registry/demo/components/backgrounds/c-backgrounds-gradient-01/index.tsx",

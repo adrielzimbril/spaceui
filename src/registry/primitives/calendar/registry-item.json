@@ -4,17 +4,9 @@
   "type": "registry:ui",
   "title": "Calendar",
   "description": "Accessible Calendar primitive component for Space UI.",
-  "dependencies": [
-    "@daypicker/react",
-    "lucide-react",
-    "react-day-picker"
-  ],
-  "registryDependencies": [
-    "https://www.spaceui.one/r/lib-utils.json"
-  ],
-  "categories": [
-    "calendar"
-  ],
+  "dependencies": ["@daypicker/react", "lucide-react", "react-day-picker"],
+  "registryDependencies": ["https://www.spaceui.one/r/lib-utils.json"],
+  "categories": ["calendar"],
   "files": [
     {
       "path": "src/registry/primitives/calendar/index.tsx",

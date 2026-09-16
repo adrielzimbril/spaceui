@@ -4,12 +4,8 @@
   "type": "registry:ui",
   "title": "Calendar 4",
   "description": "Calendar with month/year dropdown navigation",
-  "registryDependencies": [
-    "https://www.spaceui.one/r/primitives-calendar.json"
-  ],
-  "categories": [
-    "calendar"
-  ],
+  "registryDependencies": ["https://www.spaceui.one/r/primitives-calendar.json"],
+  "categories": ["calendar"],
   "files": [
     {
       "path": "src/registry/demo/primitives/calendar/p-calendar-04/index.tsx",

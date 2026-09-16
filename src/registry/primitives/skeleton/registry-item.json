@@ -4,12 +4,8 @@
   "type": "registry:ui",
   "title": "Skeleton",
   "description": "Accessible Skeleton primitive component for Space UI.",
-  "registryDependencies": [
-    "https://www.spaceui.one/r/lib-utils.json"
-  ],
-  "categories": [
-    "skeleton"
-  ],
+  "registryDependencies": ["https://www.spaceui.one/r/lib-utils.json"],
+  "categories": ["skeleton"],
   "files": [
     {
       "path": "src/registry/primitives/skeleton/index.tsx",

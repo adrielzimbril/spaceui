@@ -4,19 +4,13 @@
   "type": "registry:hook",
   "title": "useIsMounted",
   "description": "Check component mount state",
-  "dependencies": [
-    "@tabler/icons-react"
-  ],
+  "dependencies": ["@tabler/icons-react"],
   "registryDependencies": [
     "https://www.spaceui.one/r/hooks-lifecycle-use-is-mounted.json",
     "https://www.spaceui.one/r/primitives-badge.json",
     "https://www.spaceui.one/r/primitives-card.json"
   ],
-  "categories": [
-    "hooks",
-    "lifecycle",
-    "is-mounted"
-  ],
+  "categories": ["hooks", "lifecycle", "is-mounted"],
   "files": [
     {
       "path": "src/registry/demo/hooks/lifecycle/is-mounted/h-is-mounted-01/index.tsx",

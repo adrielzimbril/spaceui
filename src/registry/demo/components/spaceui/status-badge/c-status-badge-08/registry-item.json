@@ -4,16 +4,9 @@
   "type": "registry:component",
   "title": "Status Badge Mission Quota",
   "description": "Availability status badge with mission quota and booking details.",
-  "dependencies": [
-    "@tabler/icons-react"
-  ],
-  "registryDependencies": [
-    "https://www.spaceui.one/r/components-spaceui-status-badge.json"
-  ],
-  "categories": [
-    "component",
-    "status-badge"
-  ],
+  "dependencies": ["@tabler/icons-react"],
+  "registryDependencies": ["https://www.spaceui.one/r/components-spaceui-status-badge.json"],
+  "categories": ["component", "status-badge"],
   "files": [
     {
       "path": "src/registry/demo/components/spaceui/status-badge/c-status-badge-08/index.tsx",

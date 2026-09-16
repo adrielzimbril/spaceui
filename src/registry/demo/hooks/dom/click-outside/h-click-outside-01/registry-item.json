@@ -4,20 +4,14 @@
   "type": "registry:hook",
   "title": "useClickOutside",
   "description": "Trigger callback when clicking outside",
-  "dependencies": [
-    "@tabler/icons-react"
-  ],
+  "dependencies": ["@tabler/icons-react"],
   "registryDependencies": [
     "https://www.spaceui.one/r/hooks-dom-use-click-outside.json",
     "https://www.spaceui.one/r/primitives-badge.json",
     "https://www.spaceui.one/r/primitives-button.json",
     "https://www.spaceui.one/r/primitives-card.json"
   ],
-  "categories": [
-    "hooks",
-    "dom",
-    "click-outside"
-  ],
+  "categories": ["hooks", "dom", "click-outside"],
   "files": [
     {
       "path": "src/registry/demo/hooks/dom/click-outside/h-click-outside-01/index.tsx",

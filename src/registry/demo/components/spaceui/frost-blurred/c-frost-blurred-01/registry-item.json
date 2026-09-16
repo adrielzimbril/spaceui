@@ -37,6 +37,12 @@
           "Bottom": "bottom",
           "Top": "top"
         }
+      },
+      "tint": {
+        "value": 0.22,
+        "min": 0,
+        "max": 0.6,
+        "step": 0.02
       }
     }
   },

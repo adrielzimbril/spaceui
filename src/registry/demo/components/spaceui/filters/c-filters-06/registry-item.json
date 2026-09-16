@@ -4,11 +4,7 @@
   "type": "registry:component",
   "title": "Filters with custom controls",
   "description": "Filters with custom controls",
-  "dependencies": [
-    "@tabler/icons-react",
-    "date-fns",
-    "react-day-picker"
-  ],
+  "dependencies": ["@tabler/icons-react", "date-fns", "react-day-picker"],
   "registryDependencies": [
     "https://www.spaceui.one/r/components-spaceui-date-selector.json",
     "https://www.spaceui.one/r/components-spaceui-filters.json",
@@ -20,10 +16,7 @@
     "https://www.spaceui.one/r/primitives-scroll-area.json",
     "https://www.spaceui.one/r/primitives-slider.json"
   ],
-  "categories": [
-    "component",
-    "filters"
-  ],
+  "categories": ["component", "filters"],
   "files": [
     {
       "path": "src/registry/demo/components/spaceui/filters/c-filters-06/index.tsx",

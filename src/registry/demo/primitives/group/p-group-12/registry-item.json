@@ -4,19 +4,14 @@
   "type": "registry:ui",
   "title": "Group 12",
   "description": "Group with input group",
-  "dependencies": [
-    "@tabler/icons-react"
-  ],
+  "dependencies": ["@tabler/icons-react"],
   "registryDependencies": [
     "https://www.spaceui.one/r/primitives-button.json",
     "https://www.spaceui.one/r/primitives-group.json",
     "https://www.spaceui.one/r/primitives-input-group.json",
     "https://www.spaceui.one/r/primitives-tooltip.json"
   ],
-  "categories": [
-    "group",
-    "input group"
-  ],
+  "categories": ["group", "input group"],
   "files": [
     {
       "path": "src/registry/demo/primitives/group/p-group-12/index.tsx",

@@ -4,9 +4,7 @@
   "type": "registry:hook",
   "title": "useLocalStorage (Persistent Todos)",
   "description": "Todo list saved in storage",
-  "dependencies": [
-    "@tabler/icons-react"
-  ],
+  "dependencies": ["@tabler/icons-react"],
   "registryDependencies": [
     "https://www.spaceui.one/r/hooks-browser-use-local-storage.json",
     "https://www.spaceui.one/r/primitives-badge.json",
@@ -15,11 +13,7 @@
     "https://www.spaceui.one/r/primitives-checkbox.json",
     "https://www.spaceui.one/r/primitives-input.json"
   ],
-  "categories": [
-    "hooks",
-    "browser",
-    "local-storage"
-  ],
+  "categories": ["hooks", "browser", "local-storage"],
   "files": [
     {
       "path": "src/registry/demo/hooks/browser/local-storage/h-local-storage-03/index.tsx",

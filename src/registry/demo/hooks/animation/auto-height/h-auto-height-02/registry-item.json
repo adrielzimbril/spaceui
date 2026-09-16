@@ -4,19 +4,13 @@
   "type": "registry:hook",
   "title": "useAutoHeight (FAQ Accordion)",
   "description": "Animated FAQ collapsible with smooth transitions",
-  "dependencies": [
-    "@tabler/icons-react"
-  ],
+  "dependencies": ["@tabler/icons-react"],
   "registryDependencies": [
     "https://www.spaceui.one/r/hooks-animation-use-auto-height.json",
     "https://www.spaceui.one/r/primitives-badge.json",
     "https://www.spaceui.one/r/primitives-card.json"
   ],
-  "categories": [
-    "hooks",
-    "animation",
-    "auto-height"
-  ],
+  "categories": ["hooks", "animation", "auto-height"],
   "files": [
     {
       "path": "src/registry/demo/hooks/animation/auto-height/h-auto-height-02/index.tsx",

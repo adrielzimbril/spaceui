@@ -4,16 +4,9 @@
   "type": "registry:component",
   "title": "Status Badge Freelance & Direct Hire",
   "description": "Friendly freelance presence badge with direct project contact callout.",
-  "dependencies": [
-    "@tabler/icons-react"
-  ],
-  "registryDependencies": [
-    "https://www.spaceui.one/r/components-spaceui-status-badge.json"
-  ],
-  "categories": [
-    "component",
-    "status-badge"
-  ],
+  "dependencies": ["@tabler/icons-react"],
+  "registryDependencies": ["https://www.spaceui.one/r/components-spaceui-status-badge.json"],
+  "categories": ["component", "status-badge"],
   "files": [
     {
       "path": "src/registry/demo/components/spaceui/status-badge/c-status-badge-09/index.tsx",

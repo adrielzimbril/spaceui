@@ -4,15 +4,8 @@
   "type": "registry:component",
   "title": "Bubble Background Demo",
   "description": "Demo showing a bubble background.",
-  "registryDependencies": [
-    "https://www.spaceui.one/r/components-backgrounds-bubble.json"
-  ],
-  "categories": [
-    "background",
-    "canvas",
-    "effects",
-    "bubble"
-  ],
+  "registryDependencies": ["https://www.spaceui.one/r/components-backgrounds-bubble.json"],
+  "categories": ["background", "canvas", "effects", "bubble"],
   "files": [
     {
       "path": "src/registry/demo/components/backgrounds/c-backgrounds-bubble-01/index.tsx",

@@ -11,10 +11,7 @@
     "https://www.spaceui.one/r/primitives-label.json",
     "https://www.spaceui.one/r/primitives-textarea.json"
   ],
-  "categories": [
-    "component",
-    "rating"
-  ],
+  "categories": ["component", "rating"],
   "files": [
     {
       "path": "src/registry/demo/components/spaceui/rating/c-rating-09/index.tsx",

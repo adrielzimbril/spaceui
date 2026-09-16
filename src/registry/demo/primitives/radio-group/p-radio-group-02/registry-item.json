@@ -4,12 +4,8 @@
   "type": "registry:ui",
   "title": "Radio Sizes",
   "description": "Radio controls in sm, default, and lg sizes",
-  "registryDependencies": [
-    "https://www.spaceui.one/r/primitives-radio-group.json"
-  ],
-  "categories": [
-    "radio-group"
-  ],
+  "registryDependencies": ["https://www.spaceui.one/r/primitives-radio-group.json"],
+  "categories": ["radio-group"],
   "files": [
     {
       "path": "src/registry/demo/primitives/radio-group/p-radio-group-02/index.tsx",

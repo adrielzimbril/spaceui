@@ -4,20 +4,14 @@
   "type": "registry:hook",
   "title": "sleep",
   "description": "Promise-based delay timer",
-  "dependencies": [
-    "@tabler/icons-react"
-  ],
+  "dependencies": ["@tabler/icons-react"],
   "registryDependencies": [
     "https://www.spaceui.one/r/hooks-utils-sleep.json",
     "https://www.spaceui.one/r/primitives-badge.json",
     "https://www.spaceui.one/r/primitives-button.json",
     "https://www.spaceui.one/r/primitives-card.json"
   ],
-  "categories": [
-    "hooks",
-    "utils",
-    "sleep"
-  ],
+  "categories": ["hooks", "utils", "sleep"],
   "files": [
     {
       "path": "src/registry/demo/hooks/utils/sleep/h-sleep-01/index.tsx",

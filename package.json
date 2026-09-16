@@ -46,19 +46,16 @@
     "build": "next build",
     "dev": "next dev --turbo",
     "start": "next start",
-    "build:local": "node --no-experimental-webstorage ./node_modules/next/dist/bin/next build",
-    "dev:local": "node --no-experimental-webstorage ./node_modules/next/dist/bin/next dev --turbo",
-    "start:local": "node --no-experimental-webstorage ./node_modules/next/dist/bin/next start",
     "postinstall": "fumadocs-mdx",
-    "sync:styles": "tsx ./scripts/sync-globals-css.ts",
     "clean": "pnpm registry:clean && pnpm registry:build",
     "registry:build": "pnpm registry:color && tsx ./scripts/build-registry.ts && pnpm format:write",
-    "registry:color": "tsx ./scripts/sync-globals-css.ts && pnpm format:write",
+    "registry:color": "pnpm sync:styles && pnpm format:write",
     "registry:clean": "tsx ./scripts/clean-registry-items.ts",
+    "sync:styles": "tsx ./scripts/sync-globals-css.ts",
     "lint": "next lint",
     "lint:fix": "next lint --fix",
-    "format:write": "prettier --write \"**/*.{ts,tsx,mdx}\" --cache",
-    "format:check": "prettier --check \"**/*.{ts,tsx,mdx}\" --cache"
+    "format:write": "prettier --write \"{src,public,scripts,supabase}/**/*.{ts,tsx,json,css,mdx}\" --cache",
+    "format:check": "prettier --check \"{src,public,scripts,supabase}/**/*.{ts,tsx,json,css,mdx}\" --cache"
   },
   "dependencies": {
     "@ai-sdk/openai": "^4.0.60",

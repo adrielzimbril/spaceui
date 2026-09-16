@@ -4,13 +4,8 @@
   "type": "registry:component",
   "title": "Paper Shader Demo",
   "description": "Paper WebGL fragment shader canvas.",
-  "registryDependencies": [
-    "https://www.spaceui.one/r/components-shader-paper-shader.json"
-  ],
-  "categories": [
-    "shader",
-    "webgl"
-  ],
+  "registryDependencies": ["https://www.spaceui.one/r/components-shader-paper-shader.json"],
+  "categories": ["shader", "webgl"],
   "files": [
     {
       "path": "src/registry/demo/components/shader/paper-shader/c-paper-shader-01/index.tsx",

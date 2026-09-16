@@ -4,12 +4,8 @@
   "type": "registry:ui",
   "title": "Button 27",
   "description": "Hamburger menu button with animated icon",
-  "registryDependencies": [
-    "https://www.spaceui.one/r/primitives-button.json"
-  ],
-  "categories": [
-    "button"
-  ],
+  "registryDependencies": ["https://www.spaceui.one/r/primitives-button.json"],
+  "categories": ["button"],
   "files": [
     {
       "path": "src/registry/demo/primitives/button/p-button-27/index.tsx",

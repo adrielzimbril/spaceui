@@ -4,18 +4,12 @@
   "type": "registry:component",
   "title": "Data Grid Scroll Area",
   "description": "Data Grid Scroll Area component for Space UI.",
-  "dependencies": [
-    "@base-ui/react"
-  ],
+  "dependencies": ["@base-ui/react"],
   "registryDependencies": [
     "https://www.spaceui.one/r/components-spaceui-data-grid.json",
     "https://www.spaceui.one/r/lib-utils.json"
   ],
-  "categories": [
-    "component",
-    "data-grid",
-    "data-grid-data-grid-scroll-area"
-  ],
+  "categories": ["component", "data-grid", "data-grid-data-grid-scroll-area"],
   "files": [
     {
       "path": "src/registry/components/spaceui/data-grid/data-grid-scroll-area/index.tsx",

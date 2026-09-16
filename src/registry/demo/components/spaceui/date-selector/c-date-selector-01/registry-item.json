@@ -4,18 +4,12 @@
   "type": "registry:component",
   "title": "Basic date selector",
   "description": "Basic date selector",
-  "dependencies": [
-    "date-fns"
-  ],
+  "dependencies": ["date-fns"],
   "registryDependencies": [
     "https://www.spaceui.one/r/components-spaceui-date-selector.json",
     "https://www.spaceui.one/r/primitives-card.json"
   ],
-  "categories": [
-    "component",
-    "date-selector",
-    "calendar"
-  ],
+  "categories": ["component", "date-selector", "calendar"],
   "files": [
     {
       "path": "src/registry/demo/components/spaceui/date-selector/c-date-selector-01/index.tsx",

@@ -4,11 +4,7 @@
   "type": "registry:hook",
   "title": "useReadingTime",
   "description": "useReadingTime hook.",
-  "categories": [
-    "hooks",
-    "form",
-    "reading-time"
-  ],
+  "categories": ["hooks", "form", "reading-time"],
   "files": [
     {
       "path": "src/registry/hooks/form/use-reading-time/index.ts",

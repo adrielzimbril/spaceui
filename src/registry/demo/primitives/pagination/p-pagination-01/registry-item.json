@@ -4,12 +4,8 @@
   "type": "registry:ui",
   "title": "Pagination 1",
   "description": "Pagination example",
-  "registryDependencies": [
-    "https://www.spaceui.one/r/primitives-pagination.json"
-  ],
-  "categories": [
-    "pagination"
-  ],
+  "registryDependencies": ["https://www.spaceui.one/r/primitives-pagination.json"],
+  "categories": ["pagination"],
   "files": [
     {
       "path": "src/registry/demo/primitives/pagination/p-pagination-01/index.tsx",

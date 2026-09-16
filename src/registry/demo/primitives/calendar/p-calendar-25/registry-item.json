@@ -4,22 +4,13 @@
   "type": "registry:ui",
   "title": "Calendar 25",
   "description": "Calendar with 24-hour autocomplete time input",
-  "dependencies": [
-    "@tabler/icons-react",
-    "date-fns",
-    "lucide-react"
-  ],
+  "dependencies": ["@tabler/icons-react", "date-fns", "lucide-react"],
   "registryDependencies": [
     "https://www.spaceui.one/r/primitives-autocomplete.json",
     "https://www.spaceui.one/r/primitives-calendar.json",
     "https://www.spaceui.one/r/primitives-field.json"
   ],
-  "categories": [
-    "calendar",
-    "autocomplete",
-    "field",
-    "time"
-  ],
+  "categories": ["calendar", "autocomplete", "field", "time"],
   "files": [
     {
       "path": "src/registry/demo/primitives/calendar/p-calendar-25/index.tsx",

@@ -4,9 +4,7 @@
   "type": "registry:component",
   "title": "Data grid with loading skeleton",
   "description": "Data grid with loading skeleton",
-  "dependencies": [
-    "@tanstack/react-table"
-  ],
+  "dependencies": ["@tanstack/react-table"],
   "registryDependencies": [
     "https://www.spaceui.one/r/components-spaceui-data-grid.json",
     "https://www.spaceui.one/r/components-spaceui-data-grid-column-header.json",
@@ -19,10 +17,7 @@
     "https://www.spaceui.one/r/primitives-card.json",
     "https://www.spaceui.one/r/primitives-skeleton.json"
   ],
-  "categories": [
-    "component",
-    "data-grid"
-  ],
+  "categories": ["component", "data-grid"],
   "files": [
     {
       "path": "src/registry/demo/components/spaceui/data-grid/c-data-grid-21/index.tsx",

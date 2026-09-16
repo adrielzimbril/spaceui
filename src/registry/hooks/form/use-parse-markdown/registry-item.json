@@ -4,11 +4,7 @@
   "type": "registry:hook",
   "title": "useParseMarkdown",
   "description": "useParseMarkdown hook.",
-  "categories": [
-    "hooks",
-    "form",
-    "parse-markdown"
-  ],
+  "categories": ["hooks", "form", "parse-markdown"],
   "files": [
     {
       "path": "src/registry/hooks/form/use-parse-markdown/index.ts",

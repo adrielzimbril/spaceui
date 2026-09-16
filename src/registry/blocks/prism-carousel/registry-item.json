@@ -8,10 +8,7 @@
     "https://www.spaceui.one/r/lib-utils.json",
     "https://www.spaceui.one/r/lib-next-image-url.json"
   ],
-  "categories": [
-    "block",
-    "prism-carousel"
-  ],
+  "categories": ["block", "prism-carousel"],
   "files": [
     {
       "path": "src/registry/blocks/prism-carousel/index.tsx",

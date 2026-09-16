@@ -8,9 +8,7 @@
     "https://www.spaceui.one/r/components-spaceui-avatar-extended.json",
     "https://www.spaceui.one/r/primitives-avatar.json"
   ],
-  "categories": [
-    "avatar"
-  ],
+  "categories": ["avatar"],
   "files": [
     {
       "path": "src/registry/demo/primitives/avatar/p-avatar-08/index.tsx",

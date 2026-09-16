@@ -4,17 +4,9 @@
   "type": "registry:component",
   "title": "Rating",
   "description": "Rating component for Space UI.",
-  "dependencies": [
-    "@tabler/icons-react",
-    "class-variance-authority"
-  ],
-  "registryDependencies": [
-    "https://www.spaceui.one/r/lib-utils.json"
-  ],
-  "categories": [
-    "component",
-    "rating"
-  ],
+  "dependencies": ["@tabler/icons-react", "class-variance-authority"],
+  "registryDependencies": ["https://www.spaceui.one/r/lib-utils.json"],
+  "categories": ["component", "rating"],
   "files": [
     {
       "path": "src/registry/components/spaceui/rating/index.tsx",

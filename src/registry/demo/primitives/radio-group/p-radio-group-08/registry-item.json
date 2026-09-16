@@ -8,10 +8,7 @@
     "https://www.spaceui.one/r/lib-segmented-control.json",
     "https://www.spaceui.one/r/primitives-radio-group.json"
   ],
-  "categories": [
-    "radio-group",
-    "segmented-control"
-  ],
+  "categories": ["radio-group", "segmented-control"],
   "files": [
     {
       "path": "src/registry/demo/primitives/radio-group/p-radio-group-08/index.tsx",

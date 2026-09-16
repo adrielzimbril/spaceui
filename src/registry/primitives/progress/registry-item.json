@@ -4,15 +4,9 @@
   "type": "registry:ui",
   "title": "Progress",
   "description": "Accessible Progress primitive component for Space UI.",
-  "dependencies": [
-    "@base-ui/react"
-  ],
-  "registryDependencies": [
-    "https://www.spaceui.one/r/lib-utils.json"
-  ],
-  "categories": [
-    "progress"
-  ],
+  "dependencies": ["@base-ui/react"],
+  "registryDependencies": ["https://www.spaceui.one/r/lib-utils.json"],
+  "categories": ["progress"],
   "files": [
     {
       "path": "src/registry/primitives/progress/index.tsx",

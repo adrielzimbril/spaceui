@@ -4,9 +4,7 @@
   "type": "registry:hook",
   "title": "useEventCallback",
   "description": "Stable guaranteed callback reference",
-  "dependencies": [
-    "@tabler/icons-react"
-  ],
+  "dependencies": ["@tabler/icons-react"],
   "registryDependencies": [
     "https://www.spaceui.one/r/hooks-lifecycle-use-event-callback.json",
     "https://www.spaceui.one/r/primitives-badge.json",
@@ -14,11 +12,7 @@
     "https://www.spaceui.one/r/primitives-card.json",
     "https://www.spaceui.one/r/primitives-input.json"
   ],
-  "categories": [
-    "hooks",
-    "lifecycle",
-    "event-callback"
-  ],
+  "categories": ["hooks", "lifecycle", "event-callback"],
   "files": [
     {
       "path": "src/registry/demo/hooks/lifecycle/event-callback/h-event-callback-01/index.tsx",

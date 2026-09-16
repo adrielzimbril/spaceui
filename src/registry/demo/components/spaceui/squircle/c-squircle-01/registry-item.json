@@ -4,9 +4,7 @@
   "type": "registry:ui",
   "title": "Squircle Base Demo",
   "description": "A basic showcase of squircle utility classes versus standard rounded borders.",
-  "dependencies": [
-    "@usespaceui/squircle"
-  ],
+  "dependencies": ["@usespaceui/squircle"],
   "files": [
     {
       "path": "src/registry/demo/components/spaceui/squircle/c-squircle-01/index.tsx",

@@ -4,16 +4,9 @@
   "type": "registry:component",
   "title": "Timeline",
   "description": "Timeline component for Space UI.",
-  "dependencies": [
-    "@base-ui/react"
-  ],
-  "registryDependencies": [
-    "https://www.spaceui.one/r/lib-utils.json"
-  ],
-  "categories": [
-    "component",
-    "timeline"
-  ],
+  "dependencies": ["@base-ui/react"],
+  "registryDependencies": ["https://www.spaceui.one/r/lib-utils.json"],
+  "categories": ["component", "timeline"],
   "files": [
     {
       "path": "src/registry/components/spaceui/timeline/index.tsx",

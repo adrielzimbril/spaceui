@@ -4,9 +4,7 @@
   "type": "registry:component",
   "title": "Data Grid Pagination",
   "description": "Data Grid Pagination component for Space UI.",
-  "dependencies": [
-    "@tabler/icons-react"
-  ],
+  "dependencies": ["@tabler/icons-react"],
   "registryDependencies": [
     "https://www.spaceui.one/r/components-spaceui-data-grid.json",
     "https://www.spaceui.one/r/lib-utils.json",
@@ -14,11 +12,7 @@
     "https://www.spaceui.one/r/primitives-select.json",
     "https://www.spaceui.one/r/primitives-skeleton.json"
   ],
-  "categories": [
-    "component",
-    "data-grid",
-    "data-grid-data-grid-pagination"
-  ],
+  "categories": ["component", "data-grid", "data-grid-data-grid-pagination"],
   "files": [
     {
       "path": "src/registry/components/spaceui/data-grid/data-grid-pagination/index.tsx",

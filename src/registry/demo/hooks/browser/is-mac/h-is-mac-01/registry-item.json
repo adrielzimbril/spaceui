@@ -4,20 +4,14 @@
   "type": "registry:hook",
   "title": "useIsMac",
   "description": "macOS platform detector",
-  "dependencies": [
-    "@tabler/icons-react"
-  ],
+  "dependencies": ["@tabler/icons-react"],
   "registryDependencies": [
     "https://www.spaceui.one/r/hooks-browser-use-is-mac.json",
     "https://www.spaceui.one/r/primitives-badge.json",
     "https://www.spaceui.one/r/primitives-card.json",
     "https://www.spaceui.one/r/primitives-kbd.json"
   ],
-  "categories": [
-    "hooks",
-    "browser",
-    "is-mac"
-  ],
+  "categories": ["hooks", "browser", "is-mac"],
   "files": [
     {
       "path": "src/registry/demo/hooks/browser/is-mac/h-is-mac-01/index.tsx",

@@ -8,10 +8,7 @@
     "https://www.spaceui.one/r/components-spaceui-phone-input.json",
     "https://www.spaceui.one/r/primitives-field.json"
   ],
-  "categories": [
-    "component",
-    "phone-input"
-  ],
+  "categories": ["component", "phone-input"],
   "files": [
     {
       "path": "src/registry/demo/components/spaceui/phone-input/c-phone-input-10/index.tsx",

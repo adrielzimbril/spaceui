@@ -4,20 +4,13 @@
   "type": "registry:component",
   "title": "Theme Toggle",
   "description": "View-transition theme toggle with circle, rectangle, polygon, and blur reveals.",
-  "dependencies": [
-    "motion",
-    "next-themes",
-    "@tabler/icons-react"
-  ],
+  "dependencies": ["motion", "next-themes", "@tabler/icons-react"],
   "registryDependencies": [
     "https://www.spaceui.one/r/lib-utils.json",
     "https://www.spaceui.one/r/primitives-button.json",
     "https://www.spaceui.one/r/components-spaceui-morph-icon.json"
   ],
-  "categories": [
-    "component",
-    "theme-toggle"
-  ],
+  "categories": ["component", "theme-toggle"],
   "files": [
     {
       "path": "src/registry/components/spaceui/theme-toggle/index.tsx",

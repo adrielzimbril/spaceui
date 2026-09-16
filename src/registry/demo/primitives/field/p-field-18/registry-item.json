@@ -12,15 +12,7 @@
     "https://www.spaceui.one/r/primitives-input.json",
     "https://www.spaceui.one/r/primitives-select.json"
   ],
-  "categories": [
-    "button",
-    "checkbox",
-    "field",
-    "form",
-    "input",
-    "label",
-    "select"
-  ],
+  "categories": ["button", "checkbox", "field", "form", "input", "label", "select"],
   "files": [
     {
       "path": "src/registry/demo/primitives/field/p-field-18/index.tsx",

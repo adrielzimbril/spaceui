@@ -4,17 +4,12 @@
   "type": "registry:component",
   "title": "Sortable image gallery grid with frame",
   "description": "Sortable image gallery grid with frame",
-  "dependencies": [
-    "@tabler/icons-react"
-  ],
+  "dependencies": ["@tabler/icons-react"],
   "registryDependencies": [
     "https://www.spaceui.one/r/components-spaceui-sortable.json",
     "https://www.spaceui.one/r/primitives-frame.json"
   ],
-  "categories": [
-    "component",
-    "sortable"
-  ],
+  "categories": ["component", "sortable"],
   "files": [
     {
       "path": "src/registry/demo/components/spaceui/sortable/c-sortable-07/index.tsx",

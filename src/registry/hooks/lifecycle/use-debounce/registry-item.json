@@ -4,11 +4,7 @@
   "type": "registry:hook",
   "title": "useDebounce",
   "description": "useDebounce hook.",
-  "categories": [
-    "hooks",
-    "lifecycle",
-    "debounce"
-  ],
+  "categories": ["hooks", "lifecycle", "debounce"],
   "files": [
     {
       "path": "src/registry/hooks/lifecycle/use-debounce/index.ts",

@@ -18,11 +18,7 @@
     "https://www.spaceui.one/r/lib-utils.json",
     "https://www.spaceui.one/r/primitives-button.json"
   ],
-  "categories": [
-    "component",
-    "data-grid",
-    "data-grid-data-grid-table-dnd-rows"
-  ],
+  "categories": ["component", "data-grid", "data-grid-data-grid-table-dnd-rows"],
   "files": [
     {
       "path": "src/registry/components/spaceui/data-grid/data-grid-table-dnd-rows/index.tsx",

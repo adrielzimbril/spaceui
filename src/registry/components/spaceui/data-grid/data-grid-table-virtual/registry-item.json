@@ -4,21 +4,14 @@
   "type": "registry:component",
   "title": "Data Grid Table Virtual",
   "description": "Data Grid Table Virtual component for Space UI.",
-  "dependencies": [
-    "@tanstack/react-table",
-    "@tanstack/react-virtual"
-  ],
+  "dependencies": ["@tanstack/react-table", "@tanstack/react-virtual"],
   "registryDependencies": [
     "https://www.spaceui.one/r/components-spaceui-data-grid.json",
     "https://www.spaceui.one/r/components-spaceui-data-grid-table.json",
     "https://www.spaceui.one/r/lib-utils.json",
     "https://www.spaceui.one/r/primitives-spinner.json"
   ],
-  "categories": [
-    "component",
-    "data-grid",
-    "data-grid-data-grid-table-virtual"
-  ],
+  "categories": ["component", "data-grid", "data-grid-data-grid-table-virtual"],
   "files": [
     {
       "path": "src/registry/components/spaceui/data-grid/data-grid-table-virtual/index.tsx",

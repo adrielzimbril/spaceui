@@ -4,21 +4,13 @@
   "type": "registry:ui",
   "title": "Input Group 27",
   "description": "Message composer with attachment buttons",
-  "dependencies": [
-    "@tabler/icons-react",
-    "lucide-react"
-  ],
+  "dependencies": ["@tabler/icons-react", "lucide-react"],
   "registryDependencies": [
     "https://www.spaceui.one/r/primitives-button.json",
     "https://www.spaceui.one/r/primitives-input-group.json",
     "https://www.spaceui.one/r/primitives-tooltip.json"
   ],
-  "categories": [
-    "button",
-    "input group",
-    "textarea",
-    "tooltip"
-  ],
+  "categories": ["button", "input group", "textarea", "tooltip"],
   "files": [
     {
       "path": "src/registry/demo/primitives/input-group/p-input-group-27/index.tsx",

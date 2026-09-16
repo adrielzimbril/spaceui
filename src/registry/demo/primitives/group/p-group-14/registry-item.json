@@ -4,20 +4,14 @@
   "type": "registry:ui",
   "title": "Group 14",
   "description": "Group with select",
-  "dependencies": [
-    "@tabler/icons-react"
-  ],
+  "dependencies": ["@tabler/icons-react"],
   "registryDependencies": [
     "https://www.spaceui.one/r/primitives-button.json",
     "https://www.spaceui.one/r/primitives-group.json",
     "https://www.spaceui.one/r/primitives-number-field.json",
     "https://www.spaceui.one/r/primitives-select.json"
   ],
-  "categories": [
-    "group",
-    "select",
-    "number field"
-  ],
+  "categories": ["group", "select", "number field"],
   "files": [
     {
       "path": "src/registry/demo/primitives/group/p-group-14/index.tsx",

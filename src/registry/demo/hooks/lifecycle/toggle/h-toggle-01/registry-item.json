@@ -4,20 +4,14 @@
   "type": "registry:hook",
   "title": "useToggle",
   "description": "Boolean state toggle switch",
-  "dependencies": [
-    "@tabler/icons-react"
-  ],
+  "dependencies": ["@tabler/icons-react"],
   "registryDependencies": [
     "https://www.spaceui.one/r/hooks-lifecycle-use-toggle.json",
     "https://www.spaceui.one/r/primitives-badge.json",
     "https://www.spaceui.one/r/primitives-card.json",
     "https://www.spaceui.one/r/primitives-switch.json"
   ],
-  "categories": [
-    "hooks",
-    "lifecycle",
-    "toggle"
-  ],
+  "categories": ["hooks", "lifecycle", "toggle"],
   "files": [
     {
       "path": "src/registry/demo/hooks/lifecycle/toggle/h-toggle-01/index.tsx",

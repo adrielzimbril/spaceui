@@ -8,10 +8,7 @@
     "https://www.spaceui.one/r/primitives-button.json",
     "https://www.spaceui.one/r/primitives-menu.json"
   ],
-  "categories": [
-    "dropdown",
-    "menu"
-  ],
+  "categories": ["dropdown", "menu"],
   "files": [
     {
       "path": "src/registry/demo/primitives/menu/p-menu-03/index.tsx",

@@ -4,12 +4,8 @@
   "type": "registry:ui",
   "title": "Skeleton 2",
   "description": "Skeleton only",
-  "registryDependencies": [
-    "https://www.spaceui.one/r/primitives-skeleton.json"
-  ],
-  "categories": [
-    "skeleton"
-  ],
+  "registryDependencies": ["https://www.spaceui.one/r/primitives-skeleton.json"],
+  "categories": ["skeleton"],
   "files": [
     {
       "path": "src/registry/demo/primitives/skeleton/p-skeleton-02/index.tsx",

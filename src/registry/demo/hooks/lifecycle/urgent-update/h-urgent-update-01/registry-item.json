@@ -4,21 +4,14 @@
   "type": "registry:hook",
   "title": "useUrgentUpdate",
   "description": "React 18 transition priority switcher",
-  "dependencies": [
-    "@tabler/icons-react"
-  ],
+  "dependencies": ["@tabler/icons-react"],
   "registryDependencies": [
     "https://www.spaceui.one/r/hooks-lifecycle-use-urgent-update.json",
     "https://www.spaceui.one/r/primitives-badge.json",
     "https://www.spaceui.one/r/primitives-button.json",
     "https://www.spaceui.one/r/primitives-card.json"
   ],
-  "categories": [
-    "hooks",
-    "lifecycle",
-    "urgent-update",
-    "calendar"
-  ],
+  "categories": ["hooks", "lifecycle", "urgent-update", "calendar"],
   "files": [
     {
       "path": "src/registry/demo/hooks/lifecycle/urgent-update/h-urgent-update-01/index.tsx",

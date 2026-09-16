@@ -8,10 +8,7 @@
     "https://www.spaceui.one/r/primitives-badge.json",
     "https://www.spaceui.one/r/primitives-input-group.json"
   ],
-  "categories": [
-    "badge",
-    "input group"
-  ],
+  "categories": ["badge", "input group"],
   "files": [
     {
       "path": "src/registry/demo/primitives/input-group/p-input-group-10/index.tsx",

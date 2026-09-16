@@ -4,20 +4,14 @@
   "type": "registry:ui",
   "title": "Input Group 8",
   "description": "Input group with icon button",
-  "dependencies": [
-    "@tabler/icons-react",
-    "lucide-react"
-  ],
+  "dependencies": ["@tabler/icons-react", "lucide-react"],
   "registryDependencies": [
     "https://www.spaceui.one/r/hooks-browser-use-clipboard.json",
     "https://www.spaceui.one/r/primitives-button.json",
     "https://www.spaceui.one/r/primitives-input-group.json",
     "https://www.spaceui.one/r/primitives-tooltip.json"
   ],
-  "categories": [
-    "button",
-    "input group"
-  ],
+  "categories": ["button", "input group"],
   "files": [
     {
       "path": "src/registry/demo/primitives/input-group/p-input-group-08/index.tsx",

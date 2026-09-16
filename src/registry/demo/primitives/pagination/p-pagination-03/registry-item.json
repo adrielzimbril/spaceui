@@ -9,10 +9,7 @@
     "https://www.spaceui.one/r/primitives-pagination.json",
     "https://www.spaceui.one/r/primitives-select.json"
   ],
-  "categories": [
-    "pagination",
-    "select"
-  ],
+  "categories": ["pagination", "select"],
   "files": [
     {
       "path": "src/registry/demo/primitives/pagination/p-pagination-03/index.tsx",

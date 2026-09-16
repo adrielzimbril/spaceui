@@ -4,12 +4,8 @@
   "type": "registry:ui",
   "title": "Kbd",
   "description": "Accessible Kbd primitive component for Space UI.",
-  "registryDependencies": [
-    "https://www.spaceui.one/r/lib-utils.json"
-  ],
-  "categories": [
-    "kbd"
-  ],
+  "registryDependencies": ["https://www.spaceui.one/r/lib-utils.json"],
+  "categories": ["kbd"],
   "files": [
     {
       "path": "src/registry/primitives/kbd/index.tsx",

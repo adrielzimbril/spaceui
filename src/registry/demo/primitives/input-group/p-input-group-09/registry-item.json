@@ -8,10 +8,7 @@
     "https://www.spaceui.one/r/primitives-button.json",
     "https://www.spaceui.one/r/primitives-input-group.json"
   ],
-  "categories": [
-    "button",
-    "input group"
-  ],
+  "categories": ["button", "input group"],
   "files": [
     {
       "path": "src/registry/demo/primitives/input-group/p-input-group-09/index.tsx",

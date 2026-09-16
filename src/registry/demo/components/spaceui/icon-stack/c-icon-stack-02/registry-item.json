@@ -4,16 +4,9 @@
   "type": "registry:component",
   "title": "Icon stack sizes",
   "description": "Responsive icon stack sizes",
-  "dependencies": [
-    "@tabler/icons-react"
-  ],
-  "registryDependencies": [
-    "https://www.spaceui.one/r/components-spaceui-icon-stack.json"
-  ],
-  "categories": [
-    "component",
-    "icon-stack"
-  ],
+  "dependencies": ["@tabler/icons-react"],
+  "registryDependencies": ["https://www.spaceui.one/r/components-spaceui-icon-stack.json"],
+  "categories": ["component", "icon-stack"],
   "files": [
     {
       "path": "src/registry/demo/components/spaceui/icon-stack/c-icon-stack-02/index.tsx",

@@ -4,11 +4,7 @@
   "type": "registry:lib",
   "title": "format-date",
   "description": "format-date utility.",
-  "categories": [
-    "utils",
-    "format-date",
-    "calendar"
-  ],
+  "categories": ["utils", "format-date", "calendar"],
   "files": [
     {
       "path": "src/registry/utils/format-date/index.ts",

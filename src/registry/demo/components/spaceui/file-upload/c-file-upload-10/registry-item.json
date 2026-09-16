@@ -4,19 +4,14 @@
   "type": "registry:component",
   "title": "Cover image upload.",
   "description": "Cover image upload.",
-  "dependencies": [
-    "@tabler/icons-react"
-  ],
+  "dependencies": ["@tabler/icons-react"],
   "registryDependencies": [
     "https://www.spaceui.one/r/hooks-form-use-file-upload.json",
     "https://www.spaceui.one/r/lib-utils.json",
     "https://www.spaceui.one/r/primitives-alert.json",
     "https://www.spaceui.one/r/primitives-button.json"
   ],
-  "categories": [
-    "component",
-    "file-upload"
-  ],
+  "categories": ["component", "file-upload"],
   "files": [
     {
       "path": "src/registry/demo/components/spaceui/file-upload/c-file-upload-10/index.tsx",

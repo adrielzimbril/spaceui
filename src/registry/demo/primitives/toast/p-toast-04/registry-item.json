@@ -9,9 +9,7 @@
     "https://www.spaceui.one/r/primitives-spinner.json",
     "https://www.spaceui.one/r/primitives-toast.json"
   ],
-  "categories": [
-    "toast"
-  ],
+  "categories": ["toast"],
   "files": [
     {
       "path": "src/registry/demo/primitives/toast/p-toast-04/index.tsx",

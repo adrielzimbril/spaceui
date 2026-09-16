@@ -3,8 +3,5 @@
   "description": "Full-page immersive starter templates",
   "icon": "Layout",
   "root": true,
-  "pages": [
-    "immersive-lens",
-    "stats"
-  ]
+  "pages": ["immersive-lens", "stats"]
 }

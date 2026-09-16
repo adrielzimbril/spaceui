@@ -8,10 +8,7 @@
     "https://www.spaceui.one/r/primitives-label.json",
     "https://www.spaceui.one/r/primitives-number-field.json"
   ],
-  "categories": [
-    "number field",
-    "input"
-  ],
+  "categories": ["number field", "input"],
   "files": [
     {
       "path": "src/registry/demo/primitives/number-field/p-number-field-05/index.tsx",

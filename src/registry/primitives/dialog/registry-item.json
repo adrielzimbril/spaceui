@@ -4,18 +4,13 @@
   "type": "registry:ui",
   "title": "Dialog",
   "description": "Accessible Dialog primitive component for Space UI.",
-  "dependencies": [
-    "@base-ui/react",
-    "lucide-react"
-  ],
+  "dependencies": ["@base-ui/react", "lucide-react"],
   "registryDependencies": [
     "https://www.spaceui.one/r/lib-utils.json",
     "https://www.spaceui.one/r/primitives-button.json",
     "https://www.spaceui.one/r/primitives-scroll-area.json"
   ],
-  "categories": [
-    "dialog"
-  ],
+  "categories": ["dialog"],
   "files": [
     {
       "path": "src/registry/primitives/dialog/index.tsx",

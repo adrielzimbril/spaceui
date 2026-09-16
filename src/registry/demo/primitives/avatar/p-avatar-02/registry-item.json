@@ -4,12 +4,8 @@
   "type": "registry:ui",
   "title": "Avatar Sizes",
   "description": "Avatar in various size options",
-  "registryDependencies": [
-    "https://www.spaceui.one/r/primitives-avatar.json"
-  ],
-  "categories": [
-    "avatar"
-  ],
+  "registryDependencies": ["https://www.spaceui.one/r/primitives-avatar.json"],
+  "categories": ["avatar"],
   "files": [
     {
       "path": "src/registry/demo/primitives/avatar/p-avatar-02/index.tsx",

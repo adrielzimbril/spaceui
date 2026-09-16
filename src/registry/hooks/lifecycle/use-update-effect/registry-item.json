@@ -4,12 +4,7 @@
   "type": "registry:hook",
   "title": "useUpdateEffect",
   "description": "useUpdateEffect hook.",
-  "categories": [
-    "hooks",
-    "lifecycle",
-    "update-effect",
-    "calendar"
-  ],
+  "categories": ["hooks", "lifecycle", "update-effect", "calendar"],
   "files": [
     {
       "path": "src/registry/hooks/lifecycle/use-update-effect/index.ts",

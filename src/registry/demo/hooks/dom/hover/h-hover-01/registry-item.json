@@ -4,19 +4,13 @@
   "type": "registry:hook",
   "title": "useHover",
   "description": "Mouse hover state detector",
-  "dependencies": [
-    "@tabler/icons-react"
-  ],
+  "dependencies": ["@tabler/icons-react"],
   "registryDependencies": [
     "https://www.spaceui.one/r/hooks-dom-use-hover.json",
     "https://www.spaceui.one/r/primitives-badge.json",
     "https://www.spaceui.one/r/primitives-card.json"
   ],
-  "categories": [
-    "hooks",
-    "dom",
-    "hover"
-  ],
+  "categories": ["hooks", "dom", "hover"],
   "files": [
     {
       "path": "src/registry/demo/hooks/dom/hover/h-hover-01/index.tsx",

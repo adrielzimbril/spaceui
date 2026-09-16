@@ -4,12 +4,8 @@
   "type": "registry:ui",
   "title": "9:16 portrait aspect ratio",
   "description": "9:16 portrait aspect ratio",
-  "registryDependencies": [
-    "https://www.spaceui.one/r/primitives-aspect-ratio.json"
-  ],
-  "categories": [
-    "aspect-ratio"
-  ],
+  "registryDependencies": ["https://www.spaceui.one/r/primitives-aspect-ratio.json"],
+  "categories": ["aspect-ratio"],
   "files": [
     {
       "path": "src/registry/demo/primitives/aspect-ratio/p-aspect-ratio-05/index.tsx",

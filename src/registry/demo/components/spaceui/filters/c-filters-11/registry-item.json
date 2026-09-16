@@ -4,16 +4,9 @@
   "type": "registry:component",
   "title": "Filters with prefetched async options",
   "description": "Filters with prefetched async options",
-  "dependencies": [
-    "@tabler/icons-react"
-  ],
-  "registryDependencies": [
-    "https://www.spaceui.one/r/components-spaceui-filters.json"
-  ],
-  "categories": [
-    "component",
-    "filters"
-  ],
+  "dependencies": ["@tabler/icons-react"],
+  "registryDependencies": ["https://www.spaceui.one/r/components-spaceui-filters.json"],
+  "categories": ["component", "filters"],
   "files": [
     {
       "path": "src/registry/demo/components/spaceui/filters/c-filters-11/index.tsx",

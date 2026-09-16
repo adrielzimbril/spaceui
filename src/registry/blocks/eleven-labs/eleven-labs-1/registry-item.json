@@ -4,18 +4,12 @@
   "type": "registry:block",
   "title": "Eleven Labs Landing",
   "description": "ElevenLabs-inspired landing page block with a live audio-reactive orb hero.",
-  "dependencies": [
-    "@elevenlabs/elevenlabs-js",
-    "@tabler/icons-react"
-  ],
+  "dependencies": ["@elevenlabs/elevenlabs-js", "@tabler/icons-react"],
   "registryDependencies": [
     "https://www.spaceui.one/r/components-orb-smooth.json",
     "https://www.spaceui.one/r/lib-utils.json"
   ],
-  "categories": [
-    "eleven-labs",
-    "block"
-  ],
+  "categories": ["eleven-labs", "block"],
   "files": [
     {
       "path": "src/registry/blocks/eleven-labs/eleven-labs-1/index.tsx",

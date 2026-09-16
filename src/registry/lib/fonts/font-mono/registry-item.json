@@ -4,9 +4,7 @@
   "type": "registry:file",
   "title": "Font Mono",
   "description": "Utility and configuration helper for Font Mono.",
-  "categories": [
-    "font-mono"
-  ],
+  "categories": ["font-mono"],
   "files": [],
   "createdAt": "2026-08-21",
   "updatedAt": "2026-08-21"

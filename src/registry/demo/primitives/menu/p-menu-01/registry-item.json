@@ -4,17 +4,12 @@
   "type": "registry:ui",
   "title": "Menu 1",
   "description": "Basic menu",
-  "dependencies": [
-    "@tabler/icons-react"
-  ],
+  "dependencies": ["@tabler/icons-react"],
   "registryDependencies": [
     "https://www.spaceui.one/r/primitives-button.json",
     "https://www.spaceui.one/r/primitives-menu.json"
   ],
-  "categories": [
-    "dropdown",
-    "menu"
-  ],
+  "categories": ["dropdown", "menu"],
   "files": [
     {
       "path": "src/registry/demo/primitives/menu/p-menu-01/index.tsx",

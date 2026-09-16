@@ -4,12 +4,8 @@
   "type": "registry:ui",
   "title": "Tabs 3",
   "description": "Tabs with full rounded triggers",
-  "registryDependencies": [
-    "https://www.spaceui.one/r/primitives-tabs.json"
-  ],
-  "categories": [
-    "tabs"
-  ],
+  "registryDependencies": ["https://www.spaceui.one/r/primitives-tabs.json"],
+  "categories": ["tabs"],
   "files": [
     {
       "path": "src/registry/demo/primitives/tabs/p-tabs-03/index.tsx",

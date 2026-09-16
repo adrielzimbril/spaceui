@@ -4,17 +4,12 @@
   "type": "registry:ui",
   "title": "Slider 11",
   "description": "Slider with icons",
-  "dependencies": [
-    "@tabler/icons-react",
-    "lucide-react"
-  ],
+  "dependencies": ["@tabler/icons-react", "lucide-react"],
   "registryDependencies": [
     "https://www.spaceui.one/r/primitives-field.json",
     "https://www.spaceui.one/r/primitives-slider.json"
   ],
-  "categories": [
-    "slider"
-  ],
+  "categories": ["slider"],
   "files": [
     {
       "path": "src/registry/demo/primitives/slider/p-slider-11/index.tsx",

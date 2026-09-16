@@ -4,11 +4,7 @@
   "type": "registry:component",
   "title": "Data grid with row pinning support",
   "description": "Data grid with row pinning support",
-  "dependencies": [
-    "@tabler/icons-react",
-    "@tanstack/react-table",
-    "sonner"
-  ],
+  "dependencies": ["@tabler/icons-react", "@tanstack/react-table", "sonner"],
   "registryDependencies": [
     "https://www.spaceui.one/r/components-spaceui-data-grid.json",
     "https://www.spaceui.one/r/components-spaceui-data-grid-column-header.json",
@@ -22,10 +18,7 @@
     "https://www.spaceui.one/r/primitives-card.json",
     "https://www.spaceui.one/r/primitives-menu.json"
   ],
-  "categories": [
-    "component",
-    "data-grid"
-  ],
+  "categories": ["component", "data-grid"],
   "files": [
     {
       "path": "src/registry/demo/components/spaceui/data-grid/c-data-grid-29/index.tsx",

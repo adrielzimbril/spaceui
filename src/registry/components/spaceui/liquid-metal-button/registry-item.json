@@ -4,17 +4,12 @@
   "type": "registry:component",
   "title": "Liquid Metal Button",
   "description": "Liquid Metal Button component for Space UI.",
-  "dependencies": [
-    "@paper-design/shaders-react",
-    "class-variance-authority"
-  ],
+  "dependencies": ["@paper-design/shaders-react", "class-variance-authority"],
   "registryDependencies": [
     "https://www.spaceui.one/r/lib-utils.json",
     "https://www.spaceui.one/r/primitives-button.json"
   ],
-  "categories": [
-    "liquid-metal-button"
-  ],
+  "categories": ["liquid-metal-button"],
   "files": [
     {
       "path": "src/registry/components/spaceui/liquid-metal-button/index.tsx",

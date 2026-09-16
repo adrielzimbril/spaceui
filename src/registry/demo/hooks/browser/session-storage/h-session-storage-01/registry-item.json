@@ -4,20 +4,14 @@
   "type": "registry:hook",
   "title": "useSessionStorage",
   "description": "Session-scoped storage state",
-  "dependencies": [
-    "@tabler/icons-react"
-  ],
+  "dependencies": ["@tabler/icons-react"],
   "registryDependencies": [
     "https://www.spaceui.one/r/hooks-browser-use-session-storage.json",
     "https://www.spaceui.one/r/primitives-badge.json",
     "https://www.spaceui.one/r/primitives-button.json",
     "https://www.spaceui.one/r/primitives-card.json"
   ],
-  "categories": [
-    "hooks",
-    "browser",
-    "session-storage"
-  ],
+  "categories": ["hooks", "browser", "session-storage"],
   "files": [
     {
       "path": "src/registry/demo/hooks/browser/session-storage/h-session-storage-01/index.tsx",

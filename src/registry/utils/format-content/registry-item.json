@@ -4,10 +4,7 @@
   "type": "registry:lib",
   "title": "format-content",
   "description": "format-content utility.",
-  "categories": [
-    "utils",
-    "format-content"
-  ],
+  "categories": ["utils", "format-content"],
   "files": [
     {
       "path": "src/registry/utils/format-content/index.ts",

@@ -4,19 +4,13 @@
   "type": "registry:hook",
   "title": "useSingleEffect",
   "description": "Guaranteed exactly-once execution effect",
-  "dependencies": [
-    "@tabler/icons-react"
-  ],
+  "dependencies": ["@tabler/icons-react"],
   "registryDependencies": [
     "https://www.spaceui.one/r/hooks-lifecycle-use-single-effect.json",
     "https://www.spaceui.one/r/primitives-badge.json",
     "https://www.spaceui.one/r/primitives-card.json"
   ],
-  "categories": [
-    "hooks",
-    "lifecycle",
-    "single-effect"
-  ],
+  "categories": ["hooks", "lifecycle", "single-effect"],
   "files": [
     {
       "path": "src/registry/demo/hooks/lifecycle/single-effect/h-single-effect-01/index.tsx",

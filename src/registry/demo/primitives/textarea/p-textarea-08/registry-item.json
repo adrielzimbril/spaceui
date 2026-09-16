@@ -4,12 +4,8 @@
   "type": "registry:ui",
   "title": "Textarea 8",
   "description": "Textarea with custom border and background",
-  "registryDependencies": [
-    "https://www.spaceui.one/r/primitives-textarea.json"
-  ],
-  "categories": [
-    "textarea"
-  ],
+  "registryDependencies": ["https://www.spaceui.one/r/primitives-textarea.json"],
+  "categories": ["textarea"],
   "files": [
     {
       "path": "src/registry/demo/primitives/textarea/p-textarea-08/index.tsx",

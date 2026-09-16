@@ -10,11 +10,7 @@
     "https://www.spaceui.one/r/primitives-field.json",
     "https://www.spaceui.one/r/primitives-form.json"
   ],
-  "categories": [
-    "autocomplete",
-    "form",
-    "input"
-  ],
+  "categories": ["autocomplete", "form", "input"],
   "files": [
     {
       "path": "src/registry/demo/primitives/autocomplete/p-autocomplete-12/index.tsx",

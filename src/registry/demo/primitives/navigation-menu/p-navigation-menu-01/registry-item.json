@@ -4,18 +4,9 @@
   "type": "registry:ui",
   "title": "Navigation Menu Basic",
   "description": "Interactive demo showcasing the Navigation Menu Basic component.",
-  "dependencies": [
-    "@base-ui/react",
-    "@tabler/icons-react",
-    "lucide-react",
-    "motion"
-  ],
-  "registryDependencies": [
-    "https://www.spaceui.one/r/primitives-navigation-menu.json"
-  ],
-  "categories": [
-    "navigation-menu"
-  ],
+  "dependencies": ["@base-ui/react", "@tabler/icons-react", "lucide-react", "motion"],
+  "registryDependencies": ["https://www.spaceui.one/r/primitives-navigation-menu.json"],
+  "categories": ["navigation-menu"],
   "files": [
     {
       "path": "src/registry/demo/primitives/navigation-menu/p-navigation-menu-01/index.tsx",

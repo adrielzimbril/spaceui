@@ -4,19 +4,13 @@
   "type": "registry:hook",
   "title": "useFirstVisit",
   "description": "First user session identifier",
-  "dependencies": [
-    "@tabler/icons-react"
-  ],
+  "dependencies": ["@tabler/icons-react"],
   "registryDependencies": [
     "https://www.spaceui.one/r/hooks-lifecycle-use-first-visit.json",
     "https://www.spaceui.one/r/primitives-badge.json",
     "https://www.spaceui.one/r/primitives-card.json"
   ],
-  "categories": [
-    "hooks",
-    "lifecycle",
-    "first-visit"
-  ],
+  "categories": ["hooks", "lifecycle", "first-visit"],
   "files": [
     {
       "path": "src/registry/demo/hooks/lifecycle/first-visit/h-first-visit-01/index.tsx",

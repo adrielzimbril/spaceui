@@ -4,13 +4,8 @@
   "type": "registry:ui",
   "title": "Context Menu",
   "description": "Accessible Context Menu primitive component for Space UI.",
-  "dependencies": [
-    "@base-ui/react",
-    "lucide-react"
-  ],
-  "registryDependencies": [
-    "https://www.spaceui.one/r/lib-utils.json"
-  ],
+  "dependencies": ["@base-ui/react", "lucide-react"],
+  "registryDependencies": ["https://www.spaceui.one/r/lib-utils.json"],
   "cssVars": {
     "dark": {
       "destructive-foreground": "var(--color-red-400)"
@@ -19,9 +14,7 @@
       "destructive-foreground": "var(--color-red-500)"
     }
   },
-  "categories": [
-    "context-menu"
-  ],
+  "categories": ["context-menu"],
   "files": [
     {
       "path": "src/registry/primitives/context-menu/index.tsx",

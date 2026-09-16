@@ -4,12 +4,8 @@
   "type": "registry:ui",
   "title": "Link 5",
   "description": "External links with icon",
-  "registryDependencies": [
-    "https://www.spaceui.one/r/primitives-link.json"
-  ],
-  "categories": [
-    "link"
-  ],
+  "registryDependencies": ["https://www.spaceui.one/r/primitives-link.json"],
+  "categories": ["link"],
   "files": [
     {
       "path": "src/registry/demo/primitives/link/p-link-05/index.tsx",

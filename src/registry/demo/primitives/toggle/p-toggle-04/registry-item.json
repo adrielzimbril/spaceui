@@ -4,12 +4,8 @@
   "type": "registry:ui",
   "title": "Toggle 4",
   "description": "Disabled toggle",
-  "registryDependencies": [
-    "https://www.spaceui.one/r/primitives-toggle.json"
-  ],
-  "categories": [
-    "toggle"
-  ],
+  "registryDependencies": ["https://www.spaceui.one/r/primitives-toggle.json"],
+  "categories": ["toggle"],
   "files": [
     {
       "path": "src/registry/demo/primitives/toggle/p-toggle-04/index.tsx",

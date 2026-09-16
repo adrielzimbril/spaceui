@@ -4,16 +4,12 @@
   "type": "registry:ui",
   "title": "Tabs",
   "description": "Accessible Tabs primitive component for Space UI.",
-  "dependencies": [
-    "@base-ui/react"
-  ],
+  "dependencies": ["@base-ui/react"],
   "registryDependencies": [
     "https://www.spaceui.one/r/lib-segmented-control.json",
     "https://www.spaceui.one/r/lib-utils.json"
   ],
-  "categories": [
-    "tabs"
-  ],
+  "categories": ["tabs"],
   "files": [
     {
       "path": "src/registry/primitives/tabs/index.tsx",

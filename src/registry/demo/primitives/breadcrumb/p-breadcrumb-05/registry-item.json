@@ -4,16 +4,9 @@
   "type": "registry:ui",
   "title": "Breadcrumb 5",
   "description": "Breadcrumb with icons before text",
-  "dependencies": [
-    "@tabler/icons-react",
-    "lucide-react"
-  ],
-  "registryDependencies": [
-    "https://www.spaceui.one/r/primitives-breadcrumb.json"
-  ],
-  "categories": [
-    "breadcrumb"
-  ],
+  "dependencies": ["@tabler/icons-react", "lucide-react"],
+  "registryDependencies": ["https://www.spaceui.one/r/primitives-breadcrumb.json"],
+  "categories": ["breadcrumb"],
   "files": [
     {
       "path": "src/registry/demo/primitives/breadcrumb/p-breadcrumb-05/index.tsx",

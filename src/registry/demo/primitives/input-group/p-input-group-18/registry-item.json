@@ -4,22 +4,14 @@
   "type": "registry:ui",
   "title": "Input Group 18",
   "description": "Input group with badge and menu",
-  "dependencies": [
-    "@tabler/icons-react",
-    "lucide-react"
-  ],
+  "dependencies": ["@tabler/icons-react", "lucide-react"],
   "registryDependencies": [
     "https://www.spaceui.one/r/primitives-badge.json",
     "https://www.spaceui.one/r/primitives-button.json",
     "https://www.spaceui.one/r/primitives-input-group.json",
     "https://www.spaceui.one/r/primitives-menu.json"
   ],
-  "categories": [
-    "badge",
-    "dropdown",
-    "input group",
-    "menu"
-  ],
+  "categories": ["badge", "dropdown", "input group", "menu"],
   "files": [
     {
       "path": "src/registry/demo/primitives/input-group/p-input-group-18/index.tsx",

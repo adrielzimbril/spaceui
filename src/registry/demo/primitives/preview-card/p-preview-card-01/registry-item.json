@@ -4,17 +4,12 @@
   "type": "registry:ui",
   "title": "Preview Card 1",
   "description": "Preview card with popup",
-  "dependencies": [
-    "@tabler/icons-react",
-    "lucide-react"
-  ],
+  "dependencies": ["@tabler/icons-react", "lucide-react"],
   "registryDependencies": [
     "https://www.spaceui.one/r/primitives-button.json",
     "https://www.spaceui.one/r/primitives-preview-card.json"
   ],
-  "categories": [
-    "preview card"
-  ],
+  "categories": ["preview card"],
   "files": [
     {
       "path": "src/registry/demo/primitives/preview-card/p-preview-card-01/index.tsx",

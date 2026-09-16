@@ -4,20 +4,14 @@
   "type": "registry:hook",
   "title": "isNegative",
   "description": "Negative numeric check",
-  "dependencies": [
-    "@tabler/icons-react"
-  ],
+  "dependencies": ["@tabler/icons-react"],
   "registryDependencies": [
     "https://www.spaceui.one/r/hooks-utils-is-negative.json",
     "https://www.spaceui.one/r/primitives-badge.json",
     "https://www.spaceui.one/r/primitives-card.json",
     "https://www.spaceui.one/r/primitives-input.json"
   ],
-  "categories": [
-    "hooks",
-    "utils",
-    "is-negative"
-  ],
+  "categories": ["hooks", "utils", "is-negative"],
   "files": [
     {
       "path": "src/registry/demo/hooks/utils/is-negative/h-is-negative-01/index.tsx",

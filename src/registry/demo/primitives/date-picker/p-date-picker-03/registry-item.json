@@ -4,12 +4,7 @@
   "type": "registry:ui",
   "title": "Date Picker 3",
   "description": "Date picker with field and dropdown navigation",
-  "dependencies": [
-    "@daypicker/react",
-    "@tabler/icons-react",
-    "date-fns",
-    "lucide-react"
-  ],
+  "dependencies": ["@daypicker/react", "@tabler/icons-react", "date-fns", "lucide-react"],
   "registryDependencies": [
     "https://www.spaceui.one/r/primitives-button.json",
     "https://www.spaceui.one/r/primitives-calendar.json",
@@ -17,14 +12,7 @@
     "https://www.spaceui.one/r/primitives-field.json",
     "https://www.spaceui.one/r/primitives-popover.json"
   ],
-  "categories": [
-    "date picker",
-    "calendar",
-    "popover",
-    "button",
-    "field",
-    "combobox"
-  ],
+  "categories": ["date picker", "calendar", "popover", "button", "field", "combobox"],
   "files": [
     {
       "path": "src/registry/demo/primitives/date-picker/p-date-picker-03/index.tsx",

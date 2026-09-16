@@ -4,10 +4,7 @@
   "type": "registry:component",
   "title": "Event calendar with create and edit dialog",
   "description": "Month calendar with event CRUD in one dialog: open from an empty day, an event, or Add event, commit via apiRef. Title, color, start, duration, all-day fields. Space UI EventCalendar, Nav, Toolbar; Dialog, Field, Select, Switch. Scheduling apps.",
-  "dependencies": [
-    "@tabler/icons-react",
-    "date-fns"
-  ],
+  "dependencies": ["@tabler/icons-react", "date-fns"],
   "registryDependencies": [
     "https://www.spaceui.one/r/components-spaceui-event-calendar.json",
     "https://www.spaceui.one/r/components-spaceui-event-calendar-content.json",
@@ -22,11 +19,7 @@
     "https://www.spaceui.one/r/primitives-select.json",
     "https://www.spaceui.one/r/primitives-switch.json"
   ],
-  "categories": [
-    "component",
-    "event-calendar",
-    "calendar"
-  ],
+  "categories": ["component", "event-calendar", "calendar"],
   "files": [
     {
       "path": "src/registry/demo/components/spaceui/event-calendar/c-event-calendar-03/index.tsx",

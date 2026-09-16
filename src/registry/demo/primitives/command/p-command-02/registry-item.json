@@ -4,10 +4,7 @@
   "type": "registry:ui",
   "title": "Command 2",
   "description": "Command palette with AI assistant",
-  "dependencies": [
-    "@tabler/icons-react",
-    "lucide-react"
-  ],
+  "dependencies": ["@tabler/icons-react", "lucide-react"],
   "registryDependencies": [
     "https://www.spaceui.one/r/primitives-autocomplete.json",
     "https://www.spaceui.one/r/primitives-button.json",
@@ -19,10 +16,7 @@
     "https://www.spaceui.one/r/primitives-skeleton.json",
     "https://www.spaceui.one/r/primitives-spinner.json"
   ],
-  "categories": [
-    "command",
-    "dialog"
-  ],
+  "categories": ["command", "dialog"],
   "files": [
     {
       "path": "src/registry/demo/primitives/command/p-command-02/index.tsx",

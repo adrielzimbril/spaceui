@@ -4,13 +4,8 @@
   "type": "registry:ui",
   "title": "Combobox 8",
   "description": "Combobox with multiple selection",
-  "registryDependencies": [
-    "https://www.spaceui.one/r/primitives-combobox.json"
-  ],
-  "categories": [
-    "combobox",
-    "input"
-  ],
+  "registryDependencies": ["https://www.spaceui.one/r/primitives-combobox.json"],
+  "categories": ["combobox", "input"],
   "files": [
     {
       "path": "src/registry/demo/primitives/combobox/p-combobox-08/index.tsx",

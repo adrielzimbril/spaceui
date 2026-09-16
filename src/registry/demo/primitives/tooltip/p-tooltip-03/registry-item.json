@@ -4,16 +4,12 @@
   "type": "registry:ui",
   "title": "Tooltip 3",
   "description": "Toggle group animated tooltip",
-  "dependencies": [
-    "@tabler/icons-react"
-  ],
+  "dependencies": ["@tabler/icons-react"],
   "registryDependencies": [
     "https://www.spaceui.one/r/primitives-toggle-group.json",
     "https://www.spaceui.one/r/primitives-tooltip.json"
   ],
-  "categories": [
-    "tooltip"
-  ],
+  "categories": ["tooltip"],
   "files": [
     {
       "path": "src/registry/demo/primitives/tooltip/p-tooltip-03/index.tsx",

@@ -4,15 +4,9 @@
   "type": "registry:ui",
   "title": "Separator",
   "description": "Accessible Separator primitive component for Space UI.",
-  "dependencies": [
-    "@base-ui/react"
-  ],
-  "registryDependencies": [
-    "https://www.spaceui.one/r/lib-utils.json"
-  ],
-  "categories": [
-    "separator"
-  ],
+  "dependencies": ["@base-ui/react"],
+  "registryDependencies": ["https://www.spaceui.one/r/lib-utils.json"],
+  "categories": ["separator"],
   "files": [
     {
       "path": "src/registry/primitives/separator/index.tsx",

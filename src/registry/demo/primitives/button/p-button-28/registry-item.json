@@ -4,10 +4,7 @@
   "type": "registry:ui",
   "title": "Button 28",
   "description": "Download button with progress and cancel action",
-  "dependencies": [
-    "@tabler/icons-react",
-    "lucide-react"
-  ],
+  "dependencies": ["@tabler/icons-react", "lucide-react"],
   "registryDependencies": [
     "https://www.spaceui.one/r/primitives-button.json",
     "https://www.spaceui.one/r/primitives-group.json",
@@ -15,12 +12,7 @@
     "https://www.spaceui.one/r/primitives-toast.json",
     "https://www.spaceui.one/r/primitives-tooltip.json"
   ],
-  "categories": [
-    "button",
-    "group",
-    "tooltip",
-    "toast"
-  ],
+  "categories": ["button", "group", "tooltip", "toast"],
   "files": [
     {
       "path": "src/registry/demo/primitives/button/p-button-28/index.tsx",

@@ -4,14 +4,8 @@
   "type": "registry:style",
   "title": "Style",
   "description": "Complete Space UI theme: colors, sidebar, fonts, and base styles. Use with `npx shadcn init @spaceui/lib-style` for full project setup.",
-  "dependencies": [
-    "@base-ui/react",
-    "class-variance-authority",
-    "lucide-react"
-  ],
-  "devDependencies": [
-    "tw-animate-css"
-  ],
+  "dependencies": ["@base-ui/react", "class-variance-authority", "lucide-react"],
+  "devDependencies": ["tw-animate-css"],
   "cssVars": {
     "dark": {
       "background": "var(--color-zinc-950)",
@@ -89,9 +83,7 @@
       "font-heading": "var(--font-sans, ui-sans-serif, system-ui, sans-serif)"
     }
   },
-  "categories": [
-    "style"
-  ],
+  "categories": ["style"],
   "files": [],
   "createdAt": "2026-08-21",
   "updatedAt": "2026-08-21"

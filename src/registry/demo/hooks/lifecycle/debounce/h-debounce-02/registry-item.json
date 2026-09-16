@@ -4,20 +4,14 @@
   "type": "registry:hook",
   "title": "useDebounce (Live Search Filter)",
   "description": "Filter mock items with debounced query",
-  "dependencies": [
-    "@tabler/icons-react"
-  ],
+  "dependencies": ["@tabler/icons-react"],
   "registryDependencies": [
     "https://www.spaceui.one/r/hooks-lifecycle-use-debounce.json",
     "https://www.spaceui.one/r/primitives-badge.json",
     "https://www.spaceui.one/r/primitives-card.json",
     "https://www.spaceui.one/r/primitives-input.json"
   ],
-  "categories": [
-    "hooks",
-    "lifecycle",
-    "debounce"
-  ],
+  "categories": ["hooks", "lifecycle", "debounce"],
   "files": [
     {
       "path": "src/registry/demo/hooks/lifecycle/debounce/h-debounce-02/index.tsx",

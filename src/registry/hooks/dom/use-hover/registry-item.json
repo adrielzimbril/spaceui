@@ -4,11 +4,7 @@
   "type": "registry:hook",
   "title": "useHover",
   "description": "useHover hook.",
-  "categories": [
-    "hooks",
-    "dom",
-    "hover"
-  ],
+  "categories": ["hooks", "dom", "hover"],
   "files": [
     {
       "path": "src/registry/hooks/dom/use-hover/index.ts",
@@ -19,7 +15,5 @@
   "createdAt": "2026-09-03",
   "updatedAt": "2026-09-03",
   "dependencies": [],
-  "registryDependencies": [
-    "https://www.spaceui.one/r/hooks-dom-use-event-listener.json"
-  ]
+  "registryDependencies": ["https://www.spaceui.one/r/hooks-dom-use-event-listener.json"]
 }

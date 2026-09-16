@@ -4,13 +4,8 @@
   "type": "registry:component",
   "title": "Interactive half-star rating",
   "description": "Interactive half-star rating",
-  "registryDependencies": [
-    "https://www.spaceui.one/r/components-spaceui-rating.json"
-  ],
-  "categories": [
-    "component",
-    "rating"
-  ],
+  "registryDependencies": ["https://www.spaceui.one/r/components-spaceui-rating.json"],
+  "categories": ["component", "rating"],
   "files": [
     {
       "path": "src/registry/demo/components/spaceui/rating/c-rating-07/index.tsx",

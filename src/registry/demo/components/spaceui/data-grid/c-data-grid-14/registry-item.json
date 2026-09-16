@@ -4,11 +4,7 @@
   "type": "registry:component",
   "title": "Data grid with draggable rows",
   "description": "Data grid with draggable rows",
-  "dependencies": [
-    "@dnd-kit/core",
-    "@dnd-kit/sortable",
-    "@tanstack/react-table"
-  ],
+  "dependencies": ["@dnd-kit/core", "@dnd-kit/sortable", "@tanstack/react-table"],
   "registryDependencies": [
     "https://www.spaceui.one/r/components-spaceui-data-grid.json",
     "https://www.spaceui.one/r/components-spaceui-data-grid-pagination.json",
@@ -16,10 +12,7 @@
     "https://www.spaceui.one/r/components-spaceui-data-grid-table-dnd-rows.json",
     "https://www.spaceui.one/r/primitives-avatar.json"
   ],
-  "categories": [
-    "component",
-    "data-grid"
-  ],
+  "categories": ["component", "data-grid"],
   "files": [
     {
       "path": "src/registry/demo/components/spaceui/data-grid/c-data-grid-14/index.tsx",

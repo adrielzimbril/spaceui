@@ -4,12 +4,8 @@
   "type": "registry:ui",
   "title": "Textarea 3",
   "description": "Disabled textarea",
-  "registryDependencies": [
-    "https://www.spaceui.one/r/primitives-textarea.json"
-  ],
-  "categories": [
-    "textarea"
-  ],
+  "registryDependencies": ["https://www.spaceui.one/r/primitives-textarea.json"],
+  "categories": ["textarea"],
   "files": [
     {
       "path": "src/registry/demo/primitives/textarea/p-textarea-03/index.tsx",

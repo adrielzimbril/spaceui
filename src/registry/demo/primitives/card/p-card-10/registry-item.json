@@ -4,10 +4,7 @@
   "type": "registry:ui",
   "title": "Card 10",
   "description": "Card within a frame with header and footer",
-  "dependencies": [
-    "@tabler/icons-react",
-    "lucide-react"
-  ],
+  "dependencies": ["@tabler/icons-react", "lucide-react"],
   "registryDependencies": [
     "https://www.spaceui.one/r/primitives-button.json",
     "https://www.spaceui.one/r/primitives-card.json",
@@ -17,11 +14,7 @@
     "https://www.spaceui.one/r/primitives-input.json",
     "https://www.spaceui.one/r/primitives-select.json"
   ],
-  "categories": [
-    "card",
-    "form",
-    "frame"
-  ],
+  "categories": ["card", "form", "frame"],
   "files": [
     {
       "path": "src/registry/demo/primitives/card/p-card-10/index.tsx",

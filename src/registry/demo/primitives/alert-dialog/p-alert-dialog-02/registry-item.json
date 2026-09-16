@@ -8,10 +8,7 @@
     "https://www.spaceui.one/r/primitives-alert-dialog.json",
     "https://www.spaceui.one/r/primitives-button.json"
   ],
-  "categories": [
-    "alert dialog",
-    "dialog"
-  ],
+  "categories": ["alert dialog", "dialog"],
   "files": [
     {
       "path": "src/registry/demo/primitives/alert-dialog/p-alert-dialog-02/index.tsx",

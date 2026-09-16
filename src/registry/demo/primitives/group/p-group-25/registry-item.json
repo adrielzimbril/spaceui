@@ -4,9 +4,7 @@
   "type": "registry:ui",
   "title": "Model selector with tier badges",
   "description": "Model selector with tier badges",
-  "dependencies": [
-    "@tabler/icons-react"
-  ],
+  "dependencies": ["@tabler/icons-react"],
   "registryDependencies": [
     "https://www.spaceui.one/r/lib-utils.json",
     "https://www.spaceui.one/r/primitives-badge.json",
@@ -14,9 +12,7 @@
     "https://www.spaceui.one/r/primitives-group.json",
     "https://www.spaceui.one/r/primitives-tooltip.json"
   ],
-  "categories": [
-    "button-group"
-  ],
+  "categories": ["button-group"],
   "files": [
     {
       "path": "src/registry/demo/primitives/group/p-group-25/index.tsx",

@@ -4,9 +4,7 @@
   "type": "registry:ui",
   "title": "Group 22",
   "description": "Group with filter label, combobox multi-select, and remove button",
-  "dependencies": [
-    "@tabler/icons-react"
-  ],
+  "dependencies": ["@tabler/icons-react"],
   "registryDependencies": [
     "https://www.spaceui.one/r/lib-utils.json",
     "https://www.spaceui.one/r/primitives-avatar.json",
@@ -15,13 +13,7 @@
     "https://www.spaceui.one/r/primitives-combobox.json",
     "https://www.spaceui.one/r/primitives-group.json"
   ],
-  "categories": [
-    "avatar",
-    "badge",
-    "button",
-    "combobox",
-    "group"
-  ],
+  "categories": ["avatar", "badge", "button", "combobox", "group"],
   "files": [
     {
       "path": "src/registry/demo/primitives/group/p-group-22/index.tsx",

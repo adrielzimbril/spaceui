@@ -4,14 +4,8 @@
   "type": "registry:hook",
   "title": "useFileUpload",
   "description": "useFileUpload hook.",
-  "registryDependencies": [
-    "https://www.spaceui.one/r/hooks-utils-format-bytes.json"
-  ],
-  "categories": [
-    "hooks",
-    "form",
-    "file-upload"
-  ],
+  "registryDependencies": ["https://www.spaceui.one/r/hooks-utils-format-bytes.json"],
+  "categories": ["hooks", "form", "file-upload"],
   "files": [
     {
       "path": "src/registry/hooks/form/use-file-upload/index.ts",

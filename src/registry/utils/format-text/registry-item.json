@@ -4,10 +4,7 @@
   "type": "registry:lib",
   "title": "format-text",
   "description": "format-text utility.",
-  "categories": [
-    "utils",
-    "format-text"
-  ],
+  "categories": ["utils", "format-text"],
   "files": [
     {
       "path": "src/registry/utils/format-text/index.ts",

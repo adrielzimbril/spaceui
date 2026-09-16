@@ -4,13 +4,8 @@
   "type": "registry:ui",
   "title": "Autocomplete 5",
   "description": "Autocomplete autofilling the input with the highlighted item",
-  "registryDependencies": [
-    "https://www.spaceui.one/r/primitives-autocomplete.json"
-  ],
-  "categories": [
-    "autocomplete",
-    "input"
-  ],
+  "registryDependencies": ["https://www.spaceui.one/r/primitives-autocomplete.json"],
+  "categories": ["autocomplete", "input"],
   "files": [
     {
       "path": "src/registry/demo/primitives/autocomplete/p-autocomplete-05/index.tsx",

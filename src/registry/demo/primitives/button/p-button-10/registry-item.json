@@ -4,16 +4,9 @@
   "type": "registry:ui",
   "title": "Button 10",
   "description": "Card-style button with heading and description",
-  "dependencies": [
-    "@tabler/icons-react",
-    "lucide-react"
-  ],
-  "registryDependencies": [
-    "https://www.spaceui.one/r/primitives-button.json"
-  ],
-  "categories": [
-    "button"
-  ],
+  "dependencies": ["@tabler/icons-react", "lucide-react"],
+  "registryDependencies": ["https://www.spaceui.one/r/primitives-button.json"],
+  "categories": ["button"],
   "files": [
     {
       "path": "src/registry/demo/primitives/button/p-button-10/index.tsx",

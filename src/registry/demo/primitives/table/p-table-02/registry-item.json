@@ -9,10 +9,7 @@
     "https://www.spaceui.one/r/primitives-frame.json",
     "https://www.spaceui.one/r/primitives-table.json"
   ],
-  "categories": [
-    "frame",
-    "table"
-  ],
+  "categories": ["frame", "table"],
   "files": [
     {
       "path": "src/registry/demo/primitives/table/p-table-02/index.tsx",

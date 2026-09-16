@@ -9,11 +9,7 @@
     "https://www.spaceui.one/r/primitives-button.json",
     "https://www.spaceui.one/r/primitives-menu.json"
   ],
-  "categories": [
-    "breadcrumb",
-    "dropdown",
-    "menu"
-  ],
+  "categories": ["breadcrumb", "dropdown", "menu"],
   "files": [
     {
       "path": "src/registry/demo/primitives/breadcrumb/p-breadcrumb-01/index.tsx",

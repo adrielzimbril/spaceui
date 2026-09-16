@@ -4,12 +4,8 @@
   "type": "registry:ui",
   "title": "21:9 ultrawide aspect ratio",
   "description": "21:9 ultrawide aspect ratio",
-  "registryDependencies": [
-    "https://www.spaceui.one/r/primitives-aspect-ratio.json"
-  ],
-  "categories": [
-    "aspect-ratio"
-  ],
+  "registryDependencies": ["https://www.spaceui.one/r/primitives-aspect-ratio.json"],
+  "categories": ["aspect-ratio"],
   "files": [
     {
       "path": "src/registry/demo/primitives/aspect-ratio/p-aspect-ratio-04/index.tsx",

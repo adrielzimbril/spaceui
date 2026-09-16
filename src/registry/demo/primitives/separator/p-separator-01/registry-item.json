@@ -4,12 +4,8 @@
   "type": "registry:ui",
   "title": "Separator 1",
   "description": "Separator with horizontal and vertical orientations",
-  "registryDependencies": [
-    "https://www.spaceui.one/r/primitives-separator.json"
-  ],
-  "categories": [
-    "separator"
-  ],
+  "registryDependencies": ["https://www.spaceui.one/r/primitives-separator.json"],
+  "categories": ["separator"],
   "files": [
     {
       "path": "src/registry/demo/primitives/separator/p-separator-01/index.tsx",

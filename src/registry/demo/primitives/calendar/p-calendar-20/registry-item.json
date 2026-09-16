@@ -4,17 +4,12 @@
   "type": "registry:ui",
   "title": "Calendar 20",
   "description": "Calendar with date presets",
-  "dependencies": [
-    "date-fns"
-  ],
+  "dependencies": ["date-fns"],
   "registryDependencies": [
     "https://www.spaceui.one/r/primitives-button.json",
     "https://www.spaceui.one/r/primitives-calendar.json"
   ],
-  "categories": [
-    "calendar",
-    "button"
-  ],
+  "categories": ["calendar", "button"],
   "files": [
     {
       "path": "src/registry/demo/primitives/calendar/p-calendar-20/index.tsx",

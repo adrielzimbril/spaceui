@@ -4,24 +4,14 @@
   "type": "registry:ui",
   "title": "Date Picker 5",
   "description": "Date picker with input",
-  "dependencies": [
-    "@tabler/icons-react",
-    "date-fns",
-    "lucide-react"
-  ],
+  "dependencies": ["@tabler/icons-react", "date-fns", "lucide-react"],
   "registryDependencies": [
     "https://www.spaceui.one/r/primitives-button.json",
     "https://www.spaceui.one/r/primitives-calendar.json",
     "https://www.spaceui.one/r/primitives-input-group.json",
     "https://www.spaceui.one/r/primitives-popover.json"
   ],
-  "categories": [
-    "date picker",
-    "calendar",
-    "popover",
-    "button",
-    "input"
-  ],
+  "categories": ["date picker", "calendar", "popover", "button", "input"],
   "files": [
     {
       "path": "src/registry/demo/primitives/date-picker/p-date-picker-05/index.tsx",

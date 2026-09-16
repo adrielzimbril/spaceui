@@ -4,19 +4,12 @@
   "type": "registry:ui",
   "title": "Combobox 16",
   "description": "Timezone combobox with search input",
-  "dependencies": [
-    "@tabler/icons-react",
-    "lucide-react"
-  ],
+  "dependencies": ["@tabler/icons-react", "lucide-react"],
   "registryDependencies": [
     "https://www.spaceui.one/r/primitives-combobox.json",
     "https://www.spaceui.one/r/primitives-select.json"
   ],
-  "categories": [
-    "combobox",
-    "input",
-    "timezone"
-  ],
+  "categories": ["combobox", "input", "timezone"],
   "files": [
     {
       "path": "src/registry/demo/primitives/combobox/p-combobox-16/index.tsx",

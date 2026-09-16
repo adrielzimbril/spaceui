@@ -4,12 +4,8 @@
   "type": "registry:ui",
   "title": "Slider 7",
   "description": "Range slider",
-  "registryDependencies": [
-    "https://www.spaceui.one/r/primitives-slider.json"
-  ],
-  "categories": [
-    "slider"
-  ],
+  "registryDependencies": ["https://www.spaceui.one/r/primitives-slider.json"],
+  "categories": ["slider"],
   "files": [
     {
       "path": "src/registry/demo/primitives/slider/p-slider-07/index.tsx",

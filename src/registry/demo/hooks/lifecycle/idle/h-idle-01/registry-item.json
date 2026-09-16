@@ -4,19 +4,13 @@
   "type": "registry:hook",
   "title": "useIdle",
   "description": "User inactivity timeout monitor",
-  "dependencies": [
-    "@tabler/icons-react"
-  ],
+  "dependencies": ["@tabler/icons-react"],
   "registryDependencies": [
     "https://www.spaceui.one/r/hooks-lifecycle-use-idle.json",
     "https://www.spaceui.one/r/primitives-badge.json",
     "https://www.spaceui.one/r/primitives-card.json"
   ],
-  "categories": [
-    "hooks",
-    "lifecycle",
-    "idle"
-  ],
+  "categories": ["hooks", "lifecycle", "idle"],
   "files": [
     {
       "path": "src/registry/demo/hooks/lifecycle/idle/h-idle-01/index.tsx",

@@ -4,20 +4,14 @@
   "type": "registry:component",
   "title": "Data Grid Table",
   "description": "Data Grid Table component for Space UI.",
-  "dependencies": [
-    "@tanstack/react-table"
-  ],
+  "dependencies": ["@tanstack/react-table"],
   "registryDependencies": [
     "https://www.spaceui.one/r/components-spaceui-data-grid.json",
     "https://www.spaceui.one/r/lib-utils.json",
     "https://www.spaceui.one/r/primitives-checkbox.json",
     "https://www.spaceui.one/r/primitives-spinner.json"
   ],
-  "categories": [
-    "component",
-    "data-grid",
-    "data-grid-data-grid-table"
-  ],
+  "categories": ["component", "data-grid", "data-grid-data-grid-table"],
   "files": [
     {
       "path": "src/registry/components/spaceui/data-grid/data-grid-table/index.tsx",

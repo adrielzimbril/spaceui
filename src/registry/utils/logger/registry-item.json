@@ -4,10 +4,7 @@
   "type": "registry:lib",
   "title": "logger",
   "description": "logger utility.",
-  "categories": [
-    "utils",
-    "logger"
-  ],
+  "categories": ["utils", "logger"],
   "files": [
     {
       "path": "src/registry/utils/logger/index.ts",

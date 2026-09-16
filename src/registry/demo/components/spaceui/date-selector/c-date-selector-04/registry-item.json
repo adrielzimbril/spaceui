@@ -4,20 +4,14 @@
   "type": "registry:component",
   "title": "Date selector with dropdown menu",
   "description": "Date selector with dropdown menu",
-  "dependencies": [
-    "@tabler/icons-react"
-  ],
+  "dependencies": ["@tabler/icons-react"],
   "registryDependencies": [
     "https://www.spaceui.one/r/components-spaceui-date-selector.json",
     "https://www.spaceui.one/r/primitives-button.json",
     "https://www.spaceui.one/r/primitives-dialog.json",
     "https://www.spaceui.one/r/primitives-menu.json"
   ],
-  "categories": [
-    "component",
-    "date-selector",
-    "calendar"
-  ],
+  "categories": ["component", "date-selector", "calendar"],
   "files": [
     {
       "path": "src/registry/demo/components/spaceui/date-selector/c-date-selector-04/index.tsx",

@@ -4,16 +4,9 @@
   "type": "registry:component",
   "title": "Status Badge",
   "description": "An interactive status badge with animated indicator, status color mapping, and inline or stacked layout modes.",
-  "dependencies": [
-    "class-variance-authority"
-  ],
-  "registryDependencies": [
-    "https://www.spaceui.one/r/lib-utils.json"
-  ],
-  "categories": [
-    "component",
-    "status-badge"
-  ],
+  "dependencies": ["class-variance-authority"],
+  "registryDependencies": ["https://www.spaceui.one/r/lib-utils.json"],
+  "categories": ["component", "status-badge"],
   "files": [
     {
       "path": "src/registry/components/spaceui/status-badge/index.tsx",

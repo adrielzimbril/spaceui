@@ -4,16 +4,12 @@
   "type": "registry:component",
   "title": "Liquid Metal Card Player",
   "description": "Interactive demo showcasing the Liquid Metal Card Player component.",
-  "dependencies": [
-    "@tabler/icons-react"
-  ],
+  "dependencies": ["@tabler/icons-react"],
   "registryDependencies": [
     "https://www.spaceui.one/r/components-spaceui-liquid-metal-card.json",
     "https://www.spaceui.one/r/primitives-button.json"
   ],
-  "categories": [
-    "liquid-metal-card-player"
-  ],
+  "categories": ["liquid-metal-card-player"],
   "files": [
     {
       "path": "src/registry/demo/components/spaceui/c-liquid-metal-card-player-01/index.tsx",

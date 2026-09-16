@@ -4,15 +4,9 @@
   "type": "registry:ui",
   "title": "Input",
   "description": "Accessible Input primitive component for Space UI.",
-  "dependencies": [
-    "@base-ui/react"
-  ],
-  "registryDependencies": [
-    "https://www.spaceui.one/r/lib-utils.json"
-  ],
-  "categories": [
-    "input"
-  ],
+  "dependencies": ["@base-ui/react"],
+  "registryDependencies": ["https://www.spaceui.one/r/lib-utils.json"],
+  "categories": ["input"],
   "files": [
     {
       "path": "src/registry/primitives/input/index.tsx",

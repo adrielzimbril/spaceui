@@ -8,9 +8,7 @@
     "https://www.spaceui.one/r/primitives-button.json",
     "https://www.spaceui.one/r/primitives-tooltip.json"
   ],
-  "categories": [
-    "tooltip"
-  ],
+  "categories": ["tooltip"],
   "files": [
     {
       "path": "src/registry/demo/primitives/tooltip/p-tooltip-01/index.tsx",

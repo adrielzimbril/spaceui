@@ -8,10 +8,7 @@
     "https://www.spaceui.one/r/primitives-avatar.json",
     "https://www.spaceui.one/r/primitives-button.json"
   ],
-  "categories": [
-    "button",
-    "avatar"
-  ],
+  "categories": ["button", "avatar"],
   "files": [
     {
       "path": "src/registry/demo/primitives/button/p-button-16/index.tsx",

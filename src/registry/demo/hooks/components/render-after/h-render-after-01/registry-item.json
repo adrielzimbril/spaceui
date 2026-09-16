@@ -4,19 +4,13 @@
   "type": "registry:hook",
   "title": "RenderAfter",
   "description": "Delayed lazy component mounting",
-  "dependencies": [
-    "@tabler/icons-react"
-  ],
+  "dependencies": ["@tabler/icons-react"],
   "registryDependencies": [
     "https://www.spaceui.one/r/hooks-components-render-after.json",
     "https://www.spaceui.one/r/primitives-badge.json",
     "https://www.spaceui.one/r/primitives-card.json"
   ],
-  "categories": [
-    "hooks",
-    "components",
-    "render-after"
-  ],
+  "categories": ["hooks", "components", "render-after"],
   "files": [
     {
       "path": "src/registry/demo/hooks/components/render-after/h-render-after-01/index.tsx",

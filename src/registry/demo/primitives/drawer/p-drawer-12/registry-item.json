@@ -13,10 +13,7 @@
     "https://www.spaceui.one/r/primitives-form.json",
     "https://www.spaceui.one/r/primitives-input.json"
   ],
-  "categories": [
-    "drawer",
-    "dialog"
-  ],
+  "categories": ["drawer", "dialog"],
   "files": [
     {
       "path": "src/registry/demo/primitives/drawer/p-drawer-12/index.tsx",

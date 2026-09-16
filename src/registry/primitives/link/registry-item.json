@@ -4,17 +4,12 @@
   "type": "registry:ui",
   "title": "Link",
   "description": "Accessible Link primitive component for Space UI.",
-  "dependencies": [
-    "@base-ui/react",
-    "class-variance-authority"
-  ],
+  "dependencies": ["@base-ui/react", "class-variance-authority"],
   "registryDependencies": [
     "https://www.spaceui.one/r/lib-utils.json",
     "https://www.spaceui.one/r/primitives-button.json"
   ],
-  "categories": [
-    "link"
-  ],
+  "categories": ["link"],
   "files": [
     {
       "path": "src/registry/primitives/link/index.tsx",

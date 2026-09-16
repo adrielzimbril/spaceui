@@ -8,10 +8,7 @@
     "https://www.spaceui.one/r/hooks-utils-sleep.json",
     "https://www.spaceui.one/r/primitives-button.json"
   ],
-  "categories": [
-    "button",
-    "loading"
-  ],
+  "categories": ["button", "loading"],
   "files": [
     {
       "path": "src/registry/demo/primitives/button/p-button-29/index.tsx",

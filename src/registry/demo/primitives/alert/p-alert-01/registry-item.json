@@ -4,15 +4,9 @@
   "type": "registry:ui",
   "title": "Alert 1",
   "description": "Basic alert",
-  "dependencies": [
-    "@tabler/icons-react"
-  ],
-  "registryDependencies": [
-    "https://www.spaceui.one/r/primitives-alert.json"
-  ],
-  "categories": [
-    "alert"
-  ],
+  "dependencies": ["@tabler/icons-react"],
+  "registryDependencies": ["https://www.spaceui.one/r/primitives-alert.json"],
+  "categories": ["alert"],
   "files": [
     {
       "path": "src/registry/demo/primitives/alert/p-alert-01/index.tsx",

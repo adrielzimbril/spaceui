@@ -4,19 +4,13 @@
   "type": "registry:hook",
   "title": "usePerformanceMode",
   "description": "Battery/CPU low-power mode optimizer",
-  "dependencies": [
-    "@tabler/icons-react"
-  ],
+  "dependencies": ["@tabler/icons-react"],
   "registryDependencies": [
     "https://www.spaceui.one/r/hooks-lifecycle-use-performance-mode.json",
     "https://www.spaceui.one/r/primitives-badge.json",
     "https://www.spaceui.one/r/primitives-card.json"
   ],
-  "categories": [
-    "hooks",
-    "lifecycle",
-    "performance-mode"
-  ],
+  "categories": ["hooks", "lifecycle", "performance-mode"],
   "files": [
     {
       "path": "src/registry/demo/hooks/lifecycle/performance-mode/h-performance-mode-01/index.tsx",

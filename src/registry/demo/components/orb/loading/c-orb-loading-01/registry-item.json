@@ -4,13 +4,8 @@
   "type": "registry:component",
   "title": "Loading Orb Live Interactive Demo",
   "description": "Live matrix loader with customizable speed, motion presets, radius, gap, ghost dots, and Tailwind colors.",
-  "registryDependencies": [
-    "https://www.spaceui.one/r/components-orb-loading.json"
-  ],
-  "categories": [
-    "orb",
-    "loading"
-  ],
+  "registryDependencies": ["https://www.spaceui.one/r/components-orb-loading.json"],
+  "categories": ["orb", "loading"],
   "meta": {
     "demoProps": {
       "speed": {

@@ -4,17 +4,9 @@
   "type": "registry:block",
   "title": "Interactive Grid Hero",
   "description": "Interactive proximity-reactive grid canvas that dynamically rounds and insets cells on cursor movement with custom shape controls.",
-  "dependencies": [
-    "motion"
-  ],
-  "registryDependencies": [
-    "https://www.spaceui.one/r/lib-utils.json"
-  ],
-  "categories": [
-    "interactive-grid-hero",
-    "hero",
-    "block"
-  ],
+  "dependencies": ["motion"],
+  "registryDependencies": ["https://www.spaceui.one/r/lib-utils.json"],
+  "categories": ["interactive-grid-hero", "hero", "block"],
   "meta": {
     "demoProps": {
       "cellSize": {

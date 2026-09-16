@@ -4,15 +4,9 @@
   "type": "registry:ui",
   "title": "Fieldset",
   "description": "Accessible Fieldset primitive component for Space UI.",
-  "dependencies": [
-    "@base-ui/react"
-  ],
-  "registryDependencies": [
-    "https://www.spaceui.one/r/lib-utils.json"
-  ],
-  "categories": [
-    "fieldset"
-  ],
+  "dependencies": ["@base-ui/react"],
+  "registryDependencies": ["https://www.spaceui.one/r/lib-utils.json"],
+  "categories": ["fieldset"],
   "files": [
     {
       "path": "src/registry/primitives/fieldset/index.tsx",

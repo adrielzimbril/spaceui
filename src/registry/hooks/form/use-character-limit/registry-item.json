@@ -4,11 +4,7 @@
   "type": "registry:hook",
   "title": "useCharacterLimit",
   "description": "useCharacterLimit hook.",
-  "categories": [
-    "hooks",
-    "form",
-    "character-limit"
-  ],
+  "categories": ["hooks", "form", "character-limit"],
   "files": [
     {
       "path": "src/registry/hooks/form/use-character-limit/index.ts",

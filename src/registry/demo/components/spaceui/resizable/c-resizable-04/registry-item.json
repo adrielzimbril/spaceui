@@ -4,13 +4,8 @@
   "type": "registry:component",
   "title": "Nested resizable",
   "description": "Nested resizable",
-  "registryDependencies": [
-    "https://www.spaceui.one/r/components-spaceui-resizable.json"
-  ],
-  "categories": [
-    "component",
-    "resizable"
-  ],
+  "registryDependencies": ["https://www.spaceui.one/r/components-spaceui-resizable.json"],
+  "categories": ["component", "resizable"],
   "files": [
     {
       "path": "src/registry/demo/components/spaceui/resizable/c-resizable-04/index.tsx",

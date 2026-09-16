@@ -8,9 +8,7 @@
     "https://www.spaceui.one/r/primitives-checkbox.json",
     "https://www.spaceui.one/r/primitives-label.json"
   ],
-  "categories": [
-    "checkbox"
-  ],
+  "categories": ["checkbox"],
   "files": [
     {
       "path": "src/registry/demo/primitives/checkbox/p-checkbox-01/index.tsx",

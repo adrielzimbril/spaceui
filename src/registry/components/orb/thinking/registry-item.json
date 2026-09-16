@@ -5,12 +5,7 @@
   "title": "Thinking Orb",
   "description": "Interactive Canvas 3D particle loader orbs featuring 9 procedural cognitive states.",
   "dependencies": [],
-  "categories": [
-    "orb",
-    "canvas",
-    "thinking",
-    "loader"
-  ],
+  "categories": ["orb", "canvas", "thinking", "loader"],
   "files": [
     {
       "path": "src/registry/components/orb/thinking/index.tsx",

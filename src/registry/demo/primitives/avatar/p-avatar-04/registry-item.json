@@ -4,16 +4,9 @@
   "type": "registry:ui",
   "title": "Avatar 4",
   "description": "Avatar with user icon fallback",
-  "dependencies": [
-    "@tabler/icons-react",
-    "lucide-react"
-  ],
-  "registryDependencies": [
-    "https://www.spaceui.one/r/primitives-avatar.json"
-  ],
-  "categories": [
-    "avatar"
-  ],
+  "dependencies": ["@tabler/icons-react", "lucide-react"],
+  "registryDependencies": ["https://www.spaceui.one/r/primitives-avatar.json"],
+  "categories": ["avatar"],
   "files": [
     {
       "path": "src/registry/demo/primitives/avatar/p-avatar-04/index.tsx",

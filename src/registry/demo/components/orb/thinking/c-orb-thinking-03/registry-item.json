@@ -4,13 +4,8 @@
   "type": "registry:component",
   "title": "Solving Orb Demo",
   "description": "A point-cloud sphere permuted by successive quarter-turn slice rotations.",
-  "registryDependencies": [
-    "https://www.spaceui.one/r/components-orb-thinking.json"
-  ],
-  "categories": [
-    "orb",
-    "thinking"
-  ],
+  "registryDependencies": ["https://www.spaceui.one/r/components-orb-thinking.json"],
+  "categories": ["orb", "thinking"],
   "meta": {
     "demoProps": {
       "surface": {

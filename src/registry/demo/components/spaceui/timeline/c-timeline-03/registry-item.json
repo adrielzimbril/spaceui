@@ -4,16 +4,9 @@
   "type": "registry:component",
   "title": "Timeline with order status.",
   "description": "Timeline with order status.",
-  "dependencies": [
-    "@tabler/icons-react"
-  ],
-  "registryDependencies": [
-    "https://www.spaceui.one/r/components-spaceui-timeline.json"
-  ],
-  "categories": [
-    "component",
-    "timeline"
-  ],
+  "dependencies": ["@tabler/icons-react"],
+  "registryDependencies": ["https://www.spaceui.one/r/components-spaceui-timeline.json"],
+  "categories": ["component", "timeline"],
   "files": [
     {
       "path": "src/registry/demo/components/spaceui/timeline/c-timeline-03/index.tsx",

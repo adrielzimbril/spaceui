@@ -4,11 +4,7 @@
   "type": "registry:ui",
   "title": "Table 4",
   "description": "Table with TanStack Table, sorting, and pagination",
-  "dependencies": [
-    "@tabler/icons-react",
-    "@tanstack/react-table",
-    "lucide-react"
-  ],
+  "dependencies": ["@tabler/icons-react", "@tanstack/react-table", "lucide-react"],
   "registryDependencies": [
     "https://www.spaceui.one/r/lib-utils.json",
     "https://www.spaceui.one/r/primitives-badge.json",
@@ -19,13 +15,7 @@
     "https://www.spaceui.one/r/primitives-select.json",
     "https://www.spaceui.one/r/primitives-table.json"
   ],
-  "categories": [
-    "checkbox",
-    "pagination",
-    "select",
-    "table",
-    "tanstack"
-  ],
+  "categories": ["checkbox", "pagination", "select", "table", "tanstack"],
   "files": [
     {
       "path": "src/registry/demo/primitives/table/p-table-04/index.tsx",

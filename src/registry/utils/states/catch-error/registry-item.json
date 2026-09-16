@@ -4,10 +4,7 @@
   "type": "registry:lib",
   "title": "catch-error",
   "description": "catch-error state utility.",
-  "categories": [
-    "utils",
-    "catch-error"
-  ],
+  "categories": ["utils", "catch-error"],
   "files": [
     {
       "path": "src/registry/utils/states/catch-error/index.ts",

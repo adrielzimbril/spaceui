@@ -4,9 +4,7 @@
   "type": "registry:hook",
   "title": "useLoadMore",
   "description": "Infinite scroll and load more trigger",
-  "dependencies": [
-    "@tabler/icons-react"
-  ],
+  "dependencies": ["@tabler/icons-react"],
   "registryDependencies": [
     "https://www.spaceui.one/r/hooks-form-use-load-more.json",
     "https://www.spaceui.one/r/hooks-utils-sleep.json",
@@ -14,11 +12,7 @@
     "https://www.spaceui.one/r/primitives-button.json",
     "https://www.spaceui.one/r/primitives-card.json"
   ],
-  "categories": [
-    "hooks",
-    "form",
-    "load-more"
-  ],
+  "categories": ["hooks", "form", "load-more"],
   "files": [
     {
       "path": "src/registry/demo/hooks/form/load-more/h-load-more-01/index.tsx",

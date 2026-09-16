@@ -4,15 +4,9 @@
   "type": "registry:ui",
   "title": "Slider",
   "description": "Accessible Slider primitive component for Space UI.",
-  "dependencies": [
-    "@base-ui/react"
-  ],
-  "registryDependencies": [
-    "https://www.spaceui.one/r/lib-utils.json"
-  ],
-  "categories": [
-    "slider"
-  ],
+  "dependencies": ["@base-ui/react"],
+  "registryDependencies": ["https://www.spaceui.one/r/lib-utils.json"],
+  "categories": ["slider"],
   "files": [
     {
       "path": "src/registry/primitives/slider/index.tsx",

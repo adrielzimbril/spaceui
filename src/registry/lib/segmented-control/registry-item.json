@@ -4,13 +4,8 @@
   "type": "registry:lib",
   "title": "Segmented Control",
   "description": "Shared layout and sizing styles for segmented controls and tabs.",
-  "dependencies": [
-    "class-variance-authority"
-  ],
-  "categories": [
-    "layout",
-    "utils"
-  ],
+  "dependencies": ["class-variance-authority"],
+  "categories": ["layout", "utils"],
   "files": [
     {
       "path": "src/registry/lib/segmented-control/index.ts",

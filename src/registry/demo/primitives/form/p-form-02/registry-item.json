@@ -4,24 +4,14 @@
   "type": "registry:ui",
   "title": "Form 2",
   "description": "Form with zod validation",
-  "dependencies": [
-    "zod",
-    "zod-v4"
-  ],
+  "dependencies": ["zod", "zod-v4"],
   "registryDependencies": [
     "https://www.spaceui.one/r/primitives-button.json",
     "https://www.spaceui.one/r/primitives-field.json",
     "https://www.spaceui.one/r/primitives-form.json",
     "https://www.spaceui.one/r/primitives-input.json"
   ],
-  "categories": [
-    "button",
-    "field",
-    "form",
-    "label",
-    "validation",
-    "zod"
-  ],
+  "categories": ["button", "field", "form", "label", "validation", "zod"],
   "files": [
     {
       "path": "src/registry/demo/primitives/form/p-form-02/index.tsx",

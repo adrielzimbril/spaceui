@@ -4,13 +4,8 @@
   "type": "registry:component",
   "title": "Building Loader Status Card Demo",
   "description": "Assistant loading card with state switching, contextual details, and shimmer progress.",
-  "registryDependencies": [
-    "https://www.spaceui.one/r/components-orb-loading.json"
-  ],
-  "categories": [
-    "orb",
-    "loading"
-  ],
+  "registryDependencies": ["https://www.spaceui.one/r/components-orb-loading.json"],
+  "categories": ["orb", "loading"],
   "files": [
     {
       "path": "src/registry/demo/components/orb/loading/c-orb-loading-04/index.tsx",

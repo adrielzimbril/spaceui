@@ -4,15 +4,9 @@
   "type": "registry:ui",
   "title": "Input Group 1",
   "description": "Basic input group",
-  "dependencies": [
-    "@tabler/icons-react"
-  ],
-  "registryDependencies": [
-    "https://www.spaceui.one/r/primitives-input-group.json"
-  ],
-  "categories": [
-    "input group"
-  ],
+  "dependencies": ["@tabler/icons-react"],
+  "registryDependencies": ["https://www.spaceui.one/r/primitives-input-group.json"],
+  "categories": ["input group"],
   "files": [
     {
       "path": "src/registry/demo/primitives/input-group/p-input-group-01/index.tsx",

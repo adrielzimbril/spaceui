@@ -8,11 +8,7 @@
     "https://www.spaceui.one/r/primitives-autocomplete.json",
     "https://www.spaceui.one/r/primitives-spinner.json"
   ],
-  "categories": [
-    "autocomplete",
-    "input",
-    "async"
-  ],
+  "categories": ["autocomplete", "input", "async"],
   "files": [
     {
       "path": "src/registry/demo/primitives/autocomplete/p-autocomplete-11/index.tsx",

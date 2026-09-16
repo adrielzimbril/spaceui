@@ -4,9 +4,7 @@
   "type": "registry:component",
   "title": "Data grid without table borders",
   "description": "Data grid without table borders",
-  "dependencies": [
-    "@tanstack/react-table"
-  ],
+  "dependencies": ["@tanstack/react-table"],
   "registryDependencies": [
     "https://www.spaceui.one/r/components-spaceui-avatar-extended.json",
     "https://www.spaceui.one/r/components-spaceui-data-grid.json",
@@ -17,10 +15,7 @@
     "https://www.spaceui.one/r/primitives-avatar.json",
     "https://www.spaceui.one/r/primitives-badge.json"
   ],
-  "categories": [
-    "component",
-    "data-grid"
-  ],
+  "categories": ["component", "data-grid"],
   "files": [
     {
       "path": "src/registry/demo/components/spaceui/data-grid/c-data-grid-04/index.tsx",

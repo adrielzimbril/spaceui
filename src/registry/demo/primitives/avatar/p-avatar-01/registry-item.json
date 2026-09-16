@@ -4,12 +4,8 @@
   "type": "registry:ui",
   "title": "Avatar 1",
   "description": "Avatar with image and fallback",
-  "registryDependencies": [
-    "https://www.spaceui.one/r/primitives-avatar.json"
-  ],
-  "categories": [
-    "avatar"
-  ],
+  "registryDependencies": ["https://www.spaceui.one/r/primitives-avatar.json"],
+  "categories": ["avatar"],
   "files": [
     {
       "path": "src/registry/demo/primitives/avatar/p-avatar-01/index.tsx",

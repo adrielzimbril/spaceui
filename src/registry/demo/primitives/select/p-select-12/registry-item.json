@@ -4,14 +4,8 @@
   "type": "registry:ui",
   "title": "Select 12",
   "description": "Timezone select",
-  "registryDependencies": [
-    "https://www.spaceui.one/r/primitives-select.json"
-  ],
-  "categories": [
-    "select",
-    "time",
-    "timezone"
-  ],
+  "registryDependencies": ["https://www.spaceui.one/r/primitives-select.json"],
+  "categories": ["select", "time", "timezone"],
   "files": [
     {
       "path": "src/registry/demo/primitives/select/p-select-12/index.tsx",

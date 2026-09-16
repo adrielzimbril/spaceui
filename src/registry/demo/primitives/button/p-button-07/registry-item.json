@@ -8,10 +8,7 @@
     "https://www.spaceui.one/r/primitives-button.json",
     "https://www.spaceui.one/r/primitives-spinner.json"
   ],
-  "categories": [
-    "button",
-    "loading"
-  ],
+  "categories": ["button", "loading"],
   "files": [
     {
       "path": "src/registry/demo/primitives/button/p-button-07/index.tsx",

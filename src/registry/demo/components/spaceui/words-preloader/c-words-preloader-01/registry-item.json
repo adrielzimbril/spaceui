@@ -8,10 +8,7 @@
     "https://www.spaceui.one/r/components-spaceui-words-preloader.json",
     "https://www.spaceui.one/r/primitives-button.json"
   ],
-  "categories": [
-    "component",
-    "words-preloader"
-  ],
+  "categories": ["component", "words-preloader"],
   "files": [
     {
       "path": "src/registry/demo/components/spaceui/words-preloader/c-words-preloader-01/index.tsx",

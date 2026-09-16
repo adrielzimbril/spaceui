@@ -4,18 +4,12 @@
   "type": "registry:ui",
   "title": "Breadcrumb 7",
   "description": "Breadcrumb with select dropdown",
-  "dependencies": [
-    "@tabler/icons-react",
-    "lucide-react"
-  ],
+  "dependencies": ["@tabler/icons-react", "lucide-react"],
   "registryDependencies": [
     "https://www.spaceui.one/r/primitives-breadcrumb.json",
     "https://www.spaceui.one/r/primitives-select.json"
   ],
-  "categories": [
-    "breadcrumb",
-    "select"
-  ],
+  "categories": ["breadcrumb", "select"],
   "files": [
     {
       "path": "src/registry/demo/primitives/breadcrumb/p-breadcrumb-07/index.tsx",

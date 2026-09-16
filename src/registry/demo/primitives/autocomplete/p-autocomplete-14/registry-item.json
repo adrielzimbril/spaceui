@@ -4,13 +4,8 @@
   "type": "registry:ui",
   "title": "Autocomplete 14",
   "description": "Pill-shaped autocomplete",
-  "registryDependencies": [
-    "https://www.spaceui.one/r/primitives-autocomplete.json"
-  ],
-  "categories": [
-    "autocomplete",
-    "input"
-  ],
+  "registryDependencies": ["https://www.spaceui.one/r/primitives-autocomplete.json"],
+  "categories": ["autocomplete", "input"],
   "files": [
     {
       "path": "src/registry/demo/primitives/autocomplete/p-autocomplete-14/index.tsx",

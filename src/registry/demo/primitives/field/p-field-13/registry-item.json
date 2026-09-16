@@ -10,13 +10,7 @@
     "https://www.spaceui.one/r/primitives-field.json",
     "https://www.spaceui.one/r/primitives-fieldset.json"
   ],
-  "categories": [
-    "checkbox",
-    "checkbox group",
-    "field",
-    "fieldset",
-    "label"
-  ],
+  "categories": ["checkbox", "checkbox group", "field", "fieldset", "label"],
   "files": [
     {
       "path": "src/registry/demo/primitives/field/p-field-13/index.tsx",

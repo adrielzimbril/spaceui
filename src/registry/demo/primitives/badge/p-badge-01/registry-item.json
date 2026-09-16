@@ -4,12 +4,8 @@
   "type": "registry:ui",
   "title": "Badge 1",
   "description": "Basic badge",
-  "registryDependencies": [
-    "https://www.spaceui.one/r/primitives-badge.json"
-  ],
-  "categories": [
-    "badge"
-  ],
+  "registryDependencies": ["https://www.spaceui.one/r/primitives-badge.json"],
+  "categories": ["badge"],
   "files": [
     {
       "path": "src/registry/demo/primitives/badge/p-badge-01/index.tsx",

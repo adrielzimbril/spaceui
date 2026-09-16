@@ -4,13 +4,8 @@
   "type": "registry:component",
   "title": "Image Dark",
   "description": "An adaptive image component that dynamically switches between light and dark mode sources using standard img elements.",
-  "registryDependencies": [
-    "https://www.spaceui.one/r/lib-utils.json"
-  ],
-  "categories": [
-    "component",
-    "image-dark"
-  ],
+  "registryDependencies": ["https://www.spaceui.one/r/lib-utils.json"],
+  "categories": ["component", "image-dark"],
   "files": [
     {
       "path": "src/registry/components/spaceui/image-dark/index.tsx",

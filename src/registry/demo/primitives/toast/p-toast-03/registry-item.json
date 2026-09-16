@@ -4,18 +4,14 @@
   "type": "registry:ui",
   "title": "Toast 3",
   "description": "Anchored tooltip-style toast after copy",
-  "dependencies": [
-    "@tabler/icons-react"
-  ],
+  "dependencies": ["@tabler/icons-react"],
   "registryDependencies": [
     "https://www.spaceui.one/r/hooks-browser-use-clipboard.json",
     "https://www.spaceui.one/r/primitives-button.json",
     "https://www.spaceui.one/r/primitives-toast.json",
     "https://www.spaceui.one/r/primitives-tooltip.json"
   ],
-  "categories": [
-    "toast"
-  ],
+  "categories": ["toast"],
   "files": [
     {
       "path": "src/registry/demo/primitives/toast/p-toast-03/index.tsx",

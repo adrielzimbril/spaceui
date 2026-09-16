@@ -4,12 +4,8 @@
   "type": "registry:ui",
   "title": "Direction",
   "description": "Accessible Direction primitive component for Space UI.",
-  "dependencies": [
-    "@base-ui/react"
-  ],
-  "categories": [
-    "direction"
-  ],
+  "dependencies": ["@base-ui/react"],
+  "categories": ["direction"],
   "files": [
     {
       "path": "src/registry/primitives/direction/index.tsx",

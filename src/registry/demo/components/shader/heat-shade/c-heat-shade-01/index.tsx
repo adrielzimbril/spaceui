@@ -9,7 +9,7 @@ export interface HeatShadeDemoProps {
   speed?: number
 }
 
-export default function Demo({ base = '#304dff', hot = '#8298ff', speed = 1 }: HeatShadeDemoProps) {
+export default function Demo({ base = '#27272a', hot = '#e4e4e7', speed = 1 }: HeatShadeDemoProps) {
   return (
     <div className="relative size-full min-h-96 overflow-hidden bg-background">
       <HeatShade className="absolute inset-0" base={base} hot={hot} speed={speed} />

@@ -4,13 +4,8 @@
   "type": "registry:component",
   "title": "Status Badge Variants",
   "description": "Visual style variants for the badge container: default, inverted, and outline.",
-  "registryDependencies": [
-    "https://www.spaceui.one/r/components-spaceui-status-badge.json"
-  ],
-  "categories": [
-    "component",
-    "status-badge"
-  ],
+  "registryDependencies": ["https://www.spaceui.one/r/components-spaceui-status-badge.json"],
+  "categories": ["component", "status-badge"],
   "files": [
     {
       "path": "src/registry/demo/components/spaceui/status-badge/c-status-badge-03/index.tsx",

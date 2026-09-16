@@ -4,18 +4,13 @@
   "type": "registry:ui",
   "title": "Toggle Group",
   "description": "Accessible Toggle Group primitive component for Space UI.",
-  "dependencies": [
-    "@base-ui/react",
-    "class-variance-authority"
-  ],
+  "dependencies": ["@base-ui/react", "class-variance-authority"],
   "registryDependencies": [
     "https://www.spaceui.one/r/lib-utils.json",
     "https://www.spaceui.one/r/primitives-separator.json",
     "https://www.spaceui.one/r/primitives-toggle.json"
   ],
-  "categories": [
-    "toggle"
-  ],
+  "categories": ["toggle"],
   "files": [
     {
       "path": "src/registry/primitives/toggle-group/index.tsx",

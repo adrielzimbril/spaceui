@@ -4,11 +4,7 @@
   "type": "registry:hook",
   "title": "useIdle",
   "description": "useIdle hook.",
-  "categories": [
-    "hooks",
-    "lifecycle",
-    "idle"
-  ],
+  "categories": ["hooks", "lifecycle", "idle"],
   "files": [
     {
       "path": "src/registry/hooks/lifecycle/use-idle/index.ts",

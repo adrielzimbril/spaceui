@@ -10,9 +10,7 @@
     "https://www.spaceui.one/r/primitives-input.json",
     "https://www.spaceui.one/r/primitives-select.json"
   ],
-  "categories": [
-    "button-group"
-  ],
+  "categories": ["button-group"],
   "files": [
     {
       "path": "src/registry/demo/primitives/group/p-group-26/index.tsx",

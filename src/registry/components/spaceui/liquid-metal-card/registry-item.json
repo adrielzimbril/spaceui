@@ -4,16 +4,12 @@
   "type": "registry:component",
   "title": "Liquid Metal Card",
   "description": "Liquid Metal Card component for Space UI.",
-  "dependencies": [
-    "@paper-design/shaders-react"
-  ],
+  "dependencies": ["@paper-design/shaders-react"],
   "registryDependencies": [
     "https://www.spaceui.one/r/lib-utils.json",
     "https://www.spaceui.one/r/primitives-card.json"
   ],
-  "categories": [
-    "liquid-metal-card"
-  ],
+  "categories": ["liquid-metal-card"],
   "files": [
     {
       "path": "src/registry/components/spaceui/liquid-metal-card/index.tsx",

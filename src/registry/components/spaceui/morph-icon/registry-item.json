@@ -4,16 +4,9 @@
   "type": "registry:component",
   "title": "Morph Icon",
   "description": "An animated morphing icon transition wrapper supporting motion presets like blur-scale, rotate-scale, flip, and spring.",
-  "dependencies": [
-    "motion"
-  ],
-  "registryDependencies": [
-    "https://www.spaceui.one/r/lib-utils.json"
-  ],
-  "categories": [
-    "component",
-    "morph-icon"
-  ],
+  "dependencies": ["motion"],
+  "registryDependencies": ["https://www.spaceui.one/r/lib-utils.json"],
+  "categories": ["component", "morph-icon"],
   "files": [
     {
       "path": "src/registry/components/spaceui/morph-icon/index.tsx",

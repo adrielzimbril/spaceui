@@ -4,15 +4,9 @@
   "type": "registry:ui",
   "title": "Tooltip",
   "description": "Accessible Tooltip primitive component for Space UI.",
-  "dependencies": [
-    "@base-ui/react"
-  ],
-  "registryDependencies": [
-    "https://www.spaceui.one/r/lib-utils.json"
-  ],
-  "categories": [
-    "tooltip"
-  ],
+  "dependencies": ["@base-ui/react"],
+  "registryDependencies": ["https://www.spaceui.one/r/lib-utils.json"],
+  "categories": ["tooltip"],
   "files": [
     {
       "path": "src/registry/primitives/tooltip/index.tsx",

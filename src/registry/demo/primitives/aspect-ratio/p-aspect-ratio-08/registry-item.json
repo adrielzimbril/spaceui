@@ -4,12 +4,8 @@
   "type": "registry:ui",
   "title": "16:10 computer monitor aspect ratio",
   "description": "16:10 computer monitor aspect ratio",
-  "registryDependencies": [
-    "https://www.spaceui.one/r/primitives-aspect-ratio.json"
-  ],
-  "categories": [
-    "aspect-ratio"
-  ],
+  "registryDependencies": ["https://www.spaceui.one/r/primitives-aspect-ratio.json"],
+  "categories": ["aspect-ratio"],
   "files": [
     {
       "path": "src/registry/demo/primitives/aspect-ratio/p-aspect-ratio-08/index.tsx",

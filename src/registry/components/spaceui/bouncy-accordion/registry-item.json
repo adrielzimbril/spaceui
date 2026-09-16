@@ -4,18 +4,12 @@
   "type": "registry:component",
   "title": "Bouncy Accordion",
   "description": "Spring accordion that splits rounded rows when a panel opens.",
-  "dependencies": [
-    "@tabler/icons-react",
-    "motion"
-  ],
+  "dependencies": ["@tabler/icons-react", "motion"],
   "registryDependencies": [
     "https://www.spaceui.one/r/lib-utils.json",
     "https://www.spaceui.one/r/primitives-button.json"
   ],
-  "categories": [
-    "component",
-    "bouncy-accordion"
-  ],
+  "categories": ["component", "bouncy-accordion"],
   "files": [
     {
       "path": "src/registry/components/spaceui/bouncy-accordion/index.tsx",

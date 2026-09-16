@@ -4,14 +4,8 @@
   "type": "registry:component",
   "title": "Morphing Text Words",
   "description": "Interactive demo for Morphing Text featuring single-word morphing transitions with adjustable speeds, blur dynamics, and hover pause.",
-  "registryDependencies": [
-    "https://www.spaceui.one/r/components-spaceui-morphing-text.json"
-  ],
-  "categories": [
-    "component",
-    "typography",
-    "demo"
-  ],
+  "registryDependencies": ["https://www.spaceui.one/r/components-spaceui-morphing-text.json"],
+  "categories": ["component", "typography", "demo"],
   "meta": {
     "demoProps": {
       "interval": {

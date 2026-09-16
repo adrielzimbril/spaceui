@@ -4,17 +4,13 @@
   "type": "registry:ui",
   "title": "Button group with buttons and badge",
   "description": "Button group with buttons and badge",
-  "dependencies": [
-    "@tabler/icons-react"
-  ],
+  "dependencies": ["@tabler/icons-react"],
   "registryDependencies": [
     "https://www.spaceui.one/r/primitives-badge.json",
     "https://www.spaceui.one/r/primitives-button.json",
     "https://www.spaceui.one/r/primitives-group.json"
   ],
-  "categories": [
-    "button-group"
-  ],
+  "categories": ["button-group"],
   "files": [
     {
       "path": "src/registry/demo/primitives/group/p-group-29/index.tsx",

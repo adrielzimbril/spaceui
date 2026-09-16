@@ -4,14 +4,8 @@
   "type": "registry:component",
   "title": "Morphing Text Phrases",
   "description": "Interactive demo for Morphing Text featuring full-sentence transitions with custom speeds, blur depths, and hover pause behavior.",
-  "registryDependencies": [
-    "https://www.spaceui.one/r/components-spaceui-morphing-text.json"
-  ],
-  "categories": [
-    "component",
-    "typography",
-    "demo"
-  ],
+  "registryDependencies": ["https://www.spaceui.one/r/components-spaceui-morphing-text.json"],
+  "categories": ["component", "typography", "demo"],
   "meta": {
     "demoProps": {
       "interval": {

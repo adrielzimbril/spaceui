@@ -4,16 +4,9 @@
   "type": "registry:ui",
   "title": "Badge 4",
   "description": "Badge with icon",
-  "dependencies": [
-    "@tabler/icons-react",
-    "lucide-react"
-  ],
-  "registryDependencies": [
-    "https://www.spaceui.one/r/primitives-badge.json"
-  ],
-  "categories": [
-    "badge"
-  ],
+  "dependencies": ["@tabler/icons-react", "lucide-react"],
+  "registryDependencies": ["https://www.spaceui.one/r/primitives-badge.json"],
+  "categories": ["badge"],
   "files": [
     {
       "path": "src/registry/demo/primitives/badge/p-badge-04/index.tsx",

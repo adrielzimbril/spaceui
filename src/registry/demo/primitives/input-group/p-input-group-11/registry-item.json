@@ -8,10 +8,7 @@
     "https://www.spaceui.one/r/primitives-input-group.json",
     "https://www.spaceui.one/r/primitives-kbd.json"
   ],
-  "categories": [
-    "input group",
-    "kbd"
-  ],
+  "categories": ["input group", "kbd"],
   "files": [
     {
       "path": "src/registry/demo/primitives/input-group/p-input-group-11/index.tsx",

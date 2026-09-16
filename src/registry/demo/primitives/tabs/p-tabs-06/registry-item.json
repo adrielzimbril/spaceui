@@ -4,16 +4,9 @@
   "type": "registry:ui",
   "title": "Tabs 6",
   "description": "Tabs with icon only",
-  "dependencies": [
-    "@tabler/icons-react",
-    "lucide-react"
-  ],
-  "registryDependencies": [
-    "https://www.spaceui.one/r/primitives-tabs.json"
-  ],
-  "categories": [
-    "tabs"
-  ],
+  "dependencies": ["@tabler/icons-react", "lucide-react"],
+  "registryDependencies": ["https://www.spaceui.one/r/primitives-tabs.json"],
+  "categories": ["tabs"],
   "files": [
     {
       "path": "src/registry/demo/primitives/tabs/p-tabs-06/index.tsx",

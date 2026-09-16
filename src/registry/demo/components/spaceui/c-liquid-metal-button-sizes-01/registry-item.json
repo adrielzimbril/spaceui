@@ -4,12 +4,8 @@
   "type": "registry:component",
   "title": "Liquid Metal Button Sizes",
   "description": "Interactive demo showcasing the Liquid Metal Button Sizes component.",
-  "registryDependencies": [
-    "https://www.spaceui.one/r/components-spaceui-liquid-metal-button.json"
-  ],
-  "categories": [
-    "liquid-metal-button-sizes"
-  ],
+  "registryDependencies": ["https://www.spaceui.one/r/components-spaceui-liquid-metal-button.json"],
+  "categories": ["liquid-metal-button-sizes"],
   "files": [
     {
       "path": "src/registry/demo/components/spaceui/c-liquid-metal-button-sizes-01/index.tsx",

@@ -4,12 +4,8 @@
   "type": "registry:lib",
   "title": "Merge Props",
   "description": "Utility and configuration helper for Merge Props.",
-  "dependencies": [
-    "@base-ui/react"
-  ],
-  "categories": [
-    "base-ui"
-  ],
+  "dependencies": ["@base-ui/react"],
+  "categories": ["base-ui"],
   "files": [
     {
       "path": "src/registry/lib/base-ui/merge-props/index.ts",

@@ -4,10 +4,7 @@
   "type": "registry:lib",
   "title": "create-error",
   "description": "create-error state utility.",
-  "categories": [
-    "utils",
-    "create-error"
-  ],
+  "categories": ["utils", "create-error"],
   "files": [
     {
       "path": "src/registry/utils/states/create-error/index.ts",

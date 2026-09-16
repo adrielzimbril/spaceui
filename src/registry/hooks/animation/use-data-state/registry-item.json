@@ -4,11 +4,7 @@
   "type": "registry:hook",
   "title": "useDataState",
   "description": "useDataState hook.",
-  "categories": [
-    "hooks",
-    "animation",
-    "data-state"
-  ],
+  "categories": ["hooks", "animation", "data-state"],
   "files": [
     {
       "path": "src/registry/hooks/animation/use-data-state/index.ts",

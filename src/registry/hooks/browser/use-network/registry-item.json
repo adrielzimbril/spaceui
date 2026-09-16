@@ -4,14 +4,8 @@
   "type": "registry:hook",
   "title": "useNetwork",
   "description": "useNetwork hook.",
-  "registryDependencies": [
-    "https://www.spaceui.one/r/hooks-dom-use-event-listener.json"
-  ],
-  "categories": [
-    "hooks",
-    "browser",
-    "network"
-  ],
+  "registryDependencies": ["https://www.spaceui.one/r/hooks-dom-use-event-listener.json"],
+  "categories": ["hooks", "browser", "network"],
   "files": [
     {
       "path": "src/registry/hooks/browser/use-network/index.ts",

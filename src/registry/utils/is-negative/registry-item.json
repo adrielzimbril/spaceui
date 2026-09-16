@@ -4,10 +4,7 @@
   "type": "registry:lib",
   "title": "is-negative",
   "description": "is-negative utility.",
-  "categories": [
-    "utils",
-    "is-negative"
-  ],
+  "categories": ["utils", "is-negative"],
   "files": [
     {
       "path": "src/registry/utils/is-negative/index.ts",

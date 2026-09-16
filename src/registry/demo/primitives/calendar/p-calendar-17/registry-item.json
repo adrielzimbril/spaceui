@@ -4,21 +4,13 @@
   "type": "registry:ui",
   "title": "Calendar 17",
   "description": "Calendar with date input",
-  "dependencies": [
-    "@tabler/icons-react",
-    "date-fns",
-    "lucide-react"
-  ],
+  "dependencies": ["@tabler/icons-react", "date-fns", "lucide-react"],
   "registryDependencies": [
     "https://www.spaceui.one/r/primitives-calendar.json",
     "https://www.spaceui.one/r/primitives-field.json",
     "https://www.spaceui.one/r/primitives-input-group.json"
   ],
-  "categories": [
-    "calendar",
-    "input",
-    "field"
-  ],
+  "categories": ["calendar", "input", "field"],
   "files": [
     {
       "path": "src/registry/demo/primitives/calendar/p-calendar-17/index.tsx",

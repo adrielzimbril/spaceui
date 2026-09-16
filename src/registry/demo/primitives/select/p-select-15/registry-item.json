@@ -4,12 +4,8 @@
   "type": "registry:ui",
   "title": "Select 15",
   "description": "Select with left text label",
-  "registryDependencies": [
-    "https://www.spaceui.one/r/primitives-select.json"
-  ],
-  "categories": [
-    "select"
-  ],
+  "registryDependencies": ["https://www.spaceui.one/r/primitives-select.json"],
+  "categories": ["select"],
   "files": [
     {
       "path": "src/registry/demo/primitives/select/p-select-15/index.tsx",

@@ -4,14 +4,8 @@
   "type": "registry:component",
   "title": "Notification List",
   "description": "A fun notification list with animated stacking and cards that expand as you interact.",
-  "dependencies": [
-    "lucide-react",
-    "motion"
-  ],
-  "categories": [
-    "component",
-    "notification-list"
-  ],
+  "dependencies": ["lucide-react", "motion"],
+  "categories": ["component", "notification-list"],
   "files": [
     {
       "path": "src/registry/components/spaceui/notification-list/index.tsx",

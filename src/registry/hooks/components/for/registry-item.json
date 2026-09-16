@@ -4,11 +4,7 @@
   "type": "registry:hook",
   "title": "For",
   "description": "For component.",
-  "categories": [
-    "hooks",
-    "components",
-    "for"
-  ],
+  "categories": ["hooks", "components", "for"],
   "files": [
     {
       "path": "src/registry/hooks/components/for/index.tsx",

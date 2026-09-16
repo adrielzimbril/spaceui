@@ -4,19 +4,13 @@
   "type": "registry:hook",
   "title": "useScrollPosition",
   "description": "Window scroll offset tracker",
-  "dependencies": [
-    "@tabler/icons-react"
-  ],
+  "dependencies": ["@tabler/icons-react"],
   "registryDependencies": [
     "https://www.spaceui.one/r/hooks-dom-use-scroll-position.json",
     "https://www.spaceui.one/r/primitives-badge.json",
     "https://www.spaceui.one/r/primitives-card.json"
   ],
-  "categories": [
-    "hooks",
-    "dom",
-    "scroll-position"
-  ],
+  "categories": ["hooks", "dom", "scroll-position"],
   "files": [
     {
       "path": "src/registry/demo/hooks/dom/scroll-position/h-scroll-position-01/index.tsx",

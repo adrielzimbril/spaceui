@@ -9,10 +9,7 @@
     "https://www.spaceui.one/r/primitives-badge.json",
     "https://www.spaceui.one/r/primitives-separator.json"
   ],
-  "categories": [
-    "component",
-    "image-dark"
-  ],
+  "categories": ["component", "image-dark"],
   "files": [
     {
       "path": "src/registry/demo/components/spaceui/image-dark/c-image-dark-01/index.tsx",

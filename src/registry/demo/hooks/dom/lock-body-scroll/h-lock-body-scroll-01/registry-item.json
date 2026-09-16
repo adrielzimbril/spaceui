@@ -4,20 +4,14 @@
   "type": "registry:hook",
   "title": "useLockBodyScroll",
   "description": "Lock page scrolling without layout shift",
-  "dependencies": [
-    "@tabler/icons-react"
-  ],
+  "dependencies": ["@tabler/icons-react"],
   "registryDependencies": [
     "https://www.spaceui.one/r/hooks-dom-use-lock-body-scroll.json",
     "https://www.spaceui.one/r/primitives-badge.json",
     "https://www.spaceui.one/r/primitives-card.json",
     "https://www.spaceui.one/r/primitives-switch.json"
   ],
-  "categories": [
-    "hooks",
-    "dom",
-    "lock-body-scroll"
-  ],
+  "categories": ["hooks", "dom", "lock-body-scroll"],
   "files": [
     {
       "path": "src/registry/demo/hooks/dom/lock-body-scroll/h-lock-body-scroll-01/index.tsx",

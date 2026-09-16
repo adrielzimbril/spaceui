@@ -4,14 +4,8 @@
   "type": "registry:hook",
   "title": "InView",
   "description": "InView component.",
-  "registryDependencies": [
-    "https://www.spaceui.one/r/hooks-animation-use-in-view.json"
-  ],
-  "categories": [
-    "hooks",
-    "components",
-    "in-view"
-  ],
+  "registryDependencies": ["https://www.spaceui.one/r/hooks-animation-use-in-view.json"],
+  "categories": ["hooks", "components", "in-view"],
   "files": [
     {
       "path": "src/registry/hooks/components/in-view/index.tsx",

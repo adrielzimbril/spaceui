@@ -8,11 +8,7 @@
     "https://www.spaceui.one/r/hooks-utils-logger.json",
     "https://www.spaceui.one/r/hooks-utils-sleep.json"
   ],
-  "categories": [
-    "hooks",
-    "form",
-    "load-more"
-  ],
+  "categories": ["hooks", "form", "load-more"],
   "files": [
     {
       "path": "src/registry/hooks/form/use-load-more/index.ts",

@@ -4,11 +4,7 @@
   "type": "registry:component",
   "title": "Event Calendar Types",
   "description": "Event Calendar Types component for Space UI.",
-  "categories": [
-    "component",
-    "event-calendar",
-    "calendar"
-  ],
+  "categories": ["component", "event-calendar", "calendar"],
   "files": [
     {
       "path": "src/registry/components/spaceui/event-calendar/event-calendar-types/index.tsx",

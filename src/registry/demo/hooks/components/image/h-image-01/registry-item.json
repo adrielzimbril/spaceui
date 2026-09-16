@@ -4,19 +4,13 @@
   "type": "registry:hook",
   "title": "Image",
   "description": "Progressive loading responsive image",
-  "dependencies": [
-    "@tabler/icons-react"
-  ],
+  "dependencies": ["@tabler/icons-react"],
   "registryDependencies": [
     "https://www.spaceui.one/r/hooks-components-image.json",
     "https://www.spaceui.one/r/primitives-badge.json",
     "https://www.spaceui.one/r/primitives-card.json"
   ],
-  "categories": [
-    "hooks",
-    "components",
-    "image"
-  ],
+  "categories": ["hooks", "components", "image"],
   "files": [
     {
       "path": "src/registry/demo/hooks/components/image/h-image-01/index.tsx",

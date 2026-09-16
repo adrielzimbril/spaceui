@@ -4,19 +4,13 @@
   "type": "registry:ui",
   "title": "Slider 14",
   "description": "Slider with increment and decrement buttons",
-  "dependencies": [
-    "@tabler/icons-react",
-    "lucide-react"
-  ],
+  "dependencies": ["@tabler/icons-react", "lucide-react"],
   "registryDependencies": [
     "https://www.spaceui.one/r/primitives-button.json",
     "https://www.spaceui.one/r/primitives-field.json",
     "https://www.spaceui.one/r/primitives-slider.json"
   ],
-  "categories": [
-    "slider",
-    "button"
-  ],
+  "categories": ["slider", "button"],
   "files": [
     {
       "path": "src/registry/demo/primitives/slider/p-slider-14/index.tsx",

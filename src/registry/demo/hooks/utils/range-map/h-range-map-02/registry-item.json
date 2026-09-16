@@ -9,11 +9,7 @@
     "https://www.spaceui.one/r/primitives-badge.json",
     "https://www.spaceui.one/r/primitives-card.json"
   ],
-  "categories": [
-    "hooks",
-    "utils",
-    "range-map"
-  ],
+  "categories": ["hooks", "utils", "range-map"],
   "files": [
     {
       "path": "src/registry/demo/hooks/utils/range-map/h-range-map-02/index.tsx",
@@ -23,7 +19,5 @@
   ],
   "createdAt": "2026-08-24",
   "updatedAt": "2026-08-24",
-  "dependencies": [
-    "@tabler/icons-react"
-  ]
+  "dependencies": ["@tabler/icons-react"]
 }

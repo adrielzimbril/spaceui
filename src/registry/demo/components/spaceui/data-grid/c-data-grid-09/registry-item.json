@@ -4,11 +4,7 @@
   "type": "registry:component",
   "title": "Data grid with sub table",
   "description": "Data grid with sub table",
-  "dependencies": [
-    "@tabler/icons-react",
-    "@tanstack/react-table",
-    "class-variance-authority"
-  ],
+  "dependencies": ["@tabler/icons-react", "@tanstack/react-table", "class-variance-authority"],
   "registryDependencies": [
     "https://www.spaceui.one/r/components-spaceui-data-grid.json",
     "https://www.spaceui.one/r/components-spaceui-data-grid-column-header.json",
@@ -20,10 +16,7 @@
     "https://www.spaceui.one/r/primitives-button.json",
     "https://www.spaceui.one/r/primitives-card.json"
   ],
-  "categories": [
-    "component",
-    "data-grid"
-  ],
+  "categories": ["component", "data-grid"],
   "files": [
     {
       "path": "src/registry/demo/components/spaceui/data-grid/c-data-grid-09/index.tsx",

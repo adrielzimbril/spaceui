@@ -4,20 +4,14 @@
   "type": "registry:hook",
   "title": "formatText",
   "description": "Slugify, capitalize and case converter",
-  "dependencies": [
-    "@tabler/icons-react"
-  ],
+  "dependencies": ["@tabler/icons-react"],
   "registryDependencies": [
     "https://www.spaceui.one/r/hooks-utils-format-text.json",
     "https://www.spaceui.one/r/primitives-badge.json",
     "https://www.spaceui.one/r/primitives-card.json",
     "https://www.spaceui.one/r/primitives-input.json"
   ],
-  "categories": [
-    "hooks",
-    "utils",
-    "format-text"
-  ],
+  "categories": ["hooks", "utils", "format-text"],
   "files": [
     {
       "path": "src/registry/demo/hooks/utils/format-text/h-format-text-01/index.tsx",

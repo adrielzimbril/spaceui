@@ -4,19 +4,13 @@
   "type": "registry:hook",
   "title": "useIsomorphicLayoutEffect",
   "description": "SSR-safe layout effect",
-  "dependencies": [
-    "@tabler/icons-react"
-  ],
+  "dependencies": ["@tabler/icons-react"],
   "registryDependencies": [
     "https://www.spaceui.one/r/hooks-lifecycle-use-isomorphic-layout-effect.json",
     "https://www.spaceui.one/r/primitives-badge.json",
     "https://www.spaceui.one/r/primitives-card.json"
   ],
-  "categories": [
-    "hooks",
-    "lifecycle",
-    "isomorphic-layout-effect"
-  ],
+  "categories": ["hooks", "lifecycle", "isomorphic-layout-effect"],
   "files": [
     {
       "path": "src/registry/demo/hooks/lifecycle/isomorphic-layout-effect/h-isomorphic-layout-effect-01/index.tsx",

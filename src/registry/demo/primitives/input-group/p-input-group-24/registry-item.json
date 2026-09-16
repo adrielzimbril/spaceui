@@ -4,13 +4,8 @@
   "type": "registry:ui",
   "title": "Input Group 24",
   "description": "Input group with character counter",
-  "registryDependencies": [
-    "https://www.spaceui.one/r/primitives-input-group.json"
-  ],
-  "categories": [
-    "input",
-    "input group"
-  ],
+  "registryDependencies": ["https://www.spaceui.one/r/primitives-input-group.json"],
+  "categories": ["input", "input group"],
   "files": [
     {
       "path": "src/registry/demo/primitives/input-group/p-input-group-24/index.tsx",

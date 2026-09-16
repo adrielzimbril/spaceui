@@ -4,16 +4,12 @@
   "type": "registry:ui",
   "title": "Table",
   "description": "Accessible Table primitive component for Space UI.",
-  "dependencies": [
-    "@base-ui/react"
-  ],
+  "dependencies": ["@base-ui/react"],
   "registryDependencies": [
     "https://www.spaceui.one/r/lib-utils.json",
     "https://www.spaceui.one/r/primitives-scroll-area.json"
   ],
-  "categories": [
-    "table"
-  ],
+  "categories": ["table"],
   "files": [
     {
       "path": "src/registry/primitives/table/index.tsx",

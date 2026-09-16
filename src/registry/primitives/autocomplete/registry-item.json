@@ -4,18 +4,13 @@
   "type": "registry:ui",
   "title": "Autocomplete",
   "description": "Accessible Autocomplete primitive component for Space UI.",
-  "dependencies": [
-    "@base-ui/react",
-    "lucide-react"
-  ],
+  "dependencies": ["@base-ui/react", "lucide-react"],
   "registryDependencies": [
     "https://www.spaceui.one/r/lib-utils.json",
     "https://www.spaceui.one/r/primitives-input.json",
     "https://www.spaceui.one/r/primitives-scroll-area.json"
   ],
-  "categories": [
-    "autocomplete"
-  ],
+  "categories": ["autocomplete"],
   "files": [
     {
       "path": "src/registry/primitives/autocomplete/index.tsx",

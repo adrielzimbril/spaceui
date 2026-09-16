@@ -70,19 +70,19 @@ fn fs_main(@location(0) uv: vec2f) -> @location(0) vec4f {
   let verticalHeat = smoothstep(boundary - 0.02, 1.0, uv.y);
   let grain = noise(uv * params.resolution * 0.18 + motion * 1.1) - 0.5;
 
-  let black = vec3f(0.002, 0.001, 0.0);
-  let ember = params.baseColor.xyz * vec3f(0.48, 0.22, 0.08);
-  var color = mix(black, ember, flame);
+  let ember = params.baseColor.xyz;
+  var color = mix(vec3f(0.0), ember, flame);
   color = mix(
     color,
     params.baseColor.xyz,
-    flame * (0.48 + verticalHeat * 0.38)
+    flame * (0.42 + verticalHeat * 0.4)
   );
-  color += params.hotColor.xyz * softEdge * 0.3;
-  color += mix(params.baseColor.xyz, params.hotColor.xyz, 0.7)
-    * secondaryEdge * 0.2;
-  color += params.baseColor.xyz * grain * flame * 0.012;
+  color += params.hotColor.xyz * softEdge * 0.38;
+  color += mix(params.baseColor.xyz, params.hotColor.xyz, 0.65)
+    * secondaryEdge * 0.22;
+  color += params.hotColor.xyz * grain * flame * 0.016;
 
-  return vec4f(color, clamp(flame + softEdge * 0.18, 0.0, 1.0));
+  let alpha = clamp(flame * 0.82 + softEdge * 0.22, 0.0, 1.0);
+  return vec4f(color * alpha, alpha);
 }
 `

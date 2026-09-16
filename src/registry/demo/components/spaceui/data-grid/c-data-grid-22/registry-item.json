@@ -4,11 +4,7 @@
   "type": "registry:component",
   "title": "Data grid with CRUD features",
   "description": "Data grid with CRUD features",
-  "dependencies": [
-    "@tabler/icons-react",
-    "@tanstack/react-table",
-    "sonner"
-  ],
+  "dependencies": ["@tabler/icons-react", "@tanstack/react-table", "sonner"],
   "registryDependencies": [
     "https://www.spaceui.one/r/components-spaceui-data-grid.json",
     "https://www.spaceui.one/r/components-spaceui-data-grid-column-header.json",
@@ -26,10 +22,7 @@
     "https://www.spaceui.one/r/primitives-menu.json",
     "https://www.spaceui.one/r/primitives-popover.json"
   ],
-  "categories": [
-    "component",
-    "data-grid"
-  ],
+  "categories": ["component", "data-grid"],
   "files": [
     {
       "path": "src/registry/demo/components/spaceui/data-grid/c-data-grid-22/index.tsx",

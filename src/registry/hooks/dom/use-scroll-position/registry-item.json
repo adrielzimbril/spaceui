@@ -8,11 +8,7 @@
     "https://www.spaceui.one/r/hooks-dom-use-event-listener.json",
     "https://www.spaceui.one/r/hooks-lifecycle-use-isomorphic-layout-effect.json"
   ],
-  "categories": [
-    "hooks",
-    "dom",
-    "scroll-position"
-  ],
+  "categories": ["hooks", "dom", "scroll-position"],
   "files": [
     {
       "path": "src/registry/hooks/dom/use-scroll-position/index.ts",

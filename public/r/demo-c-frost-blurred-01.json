@@ -9,7 +9,7 @@
   "files": [
     {
       "path": "src/registry/demo/components/spaceui/frost-blurred/c-frost-blurred-01/index.tsx",
-      "content": "'use client'\n\nimport * as React from 'react'\nimport { FrostBlurred, type FrostBlurredSide } from '@/components/spaceui/frost-blurred'\n\nexport interface FrostBlurredDemoProps {\n  layers?: number\n  strength?: number\n  height?: string\n  side?: FrostBlurredSide\n  text?: string\n}\n\nexport default function Demo({\n  layers = 8,\n  strength = 1,\n  height = '62%',\n  side = 'bottom',\n  text = 'Space UI',\n}: FrostBlurredDemoProps) {\n  return (\n    <div className=\"flex size-full min-h-96 items-end justify-center overflow-hidden px-4 pt-10 sm:px-6\">\n      <FrostBlurred layers={Number(layers)} strength={Number(strength)} height={height} side={side} className=\"w-full\">\n        <span className=\"text-foreground block select-none text-center text-[clamp(2.5rem,15vw,12rem)] leading-[0.78] font-medium tracking-[-0.045em]\">\n          {text}\n        </span>\n      </FrostBlurred>\n    </div>\n  )\n}\n",
+      "content": "'use client'\n\nimport * as React from 'react'\nimport { FrostBlurred, type FrostBlurredSide } from '@/components/spaceui/frost-blurred'\n\nexport interface FrostBlurredDemoProps {\n  layers?: number\n  strength?: number\n  height?: string\n  side?: FrostBlurredSide\n  tint?: number\n  text?: string\n}\n\nexport default function Demo({\n  layers = 8,\n  strength = 1,\n  height = '62%',\n  side = 'bottom',\n  tint = 0.22,\n  text = 'Space UI',\n}: FrostBlurredDemoProps) {\n  return (\n    <div className=\"flex justify-center px-4 sm:px-6\">\n      <FrostBlurred\n        layers={Number(layers)}\n        strength={Number(strength)}\n        height={height}\n        side={side}\n        tint={Number(tint)}\n        className=\"w-full\"\n      >\n        <span className=\"text-foreground block select-none text-center text-[clamp(2.5rem,15vw,12rem)] leading-normal font-medium tracking-[-0.045em]\">\n          {text}\n        </span>\n      </FrostBlurred>\n    </div>\n  )\n}\n",
       "type": "registry:component",
       "target": "components/spaceui/frost-blurred-demo-01.tsx"
     }
@@ -45,6 +45,12 @@
           "Bottom": "bottom",
           "Top": "top"
         }
+      },
+      "tint": {
+        "value": 0.22,
+        "min": 0,
+        "max": 0.6,
+        "step": 0.02
       }
     }
   },

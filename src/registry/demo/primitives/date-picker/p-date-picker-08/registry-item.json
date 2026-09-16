@@ -4,21 +4,13 @@
   "type": "registry:ui",
   "title": "Date Picker 8",
   "description": "Date picker with select-like trigger",
-  "dependencies": [
-    "date-fns",
-    "lucide-react"
-  ],
+  "dependencies": ["date-fns", "lucide-react"],
   "registryDependencies": [
     "https://www.spaceui.one/r/primitives-calendar.json",
     "https://www.spaceui.one/r/primitives-popover.json",
     "https://www.spaceui.one/r/primitives-select.json"
   ],
-  "categories": [
-    "date picker",
-    "calendar",
-    "popover",
-    "button"
-  ],
+  "categories": ["date picker", "calendar", "popover", "button"],
   "files": [
     {
       "path": "src/registry/demo/primitives/date-picker/p-date-picker-08/index.tsx",

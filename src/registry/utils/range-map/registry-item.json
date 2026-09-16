@@ -4,10 +4,7 @@
   "type": "registry:lib",
   "title": "range-map",
   "description": "range-map utility.",
-  "categories": [
-    "utils",
-    "range-map"
-  ],
+  "categories": ["utils", "range-map"],
   "files": [
     {
       "path": "src/registry/utils/range-map/index.ts",

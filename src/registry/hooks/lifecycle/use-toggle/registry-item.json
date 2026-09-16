@@ -4,11 +4,7 @@
   "type": "registry:hook",
   "title": "useToggle",
   "description": "useToggle hook.",
-  "categories": [
-    "hooks",
-    "lifecycle",
-    "toggle"
-  ],
+  "categories": ["hooks", "lifecycle", "toggle"],
   "files": [
     {
       "path": "src/registry/hooks/lifecycle/use-toggle/index.ts",

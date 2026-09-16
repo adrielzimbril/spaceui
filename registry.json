@@ -4001,10 +4001,10 @@
       "meta": {
         "demoProps": {
           "base": {
-            "value": "#304dff"
+            "value": "#27272a"
           },
           "hot": {
-            "value": "#8298ff"
+            "value": "#e4e4e7"
           },
           "speed": {
             "value": 1,
@@ -6615,6 +6615,12 @@
               "Bottom": "bottom",
               "Top": "top"
             }
+          },
+          "tint": {
+            "value": 0.22,
+            "min": 0,
+            "max": 0.6,
+            "step": 0.02
           }
         }
       },

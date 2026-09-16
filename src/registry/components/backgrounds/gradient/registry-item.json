@@ -4,18 +4,9 @@
   "type": "registry:component",
   "title": "Gradient Background",
   "description": "A background component featuring a subtle yet engaging animated gradient effect, smoothly transitioning colors to enhance visual depth.",
-  "dependencies": [
-    "motion"
-  ],
-  "registryDependencies": [
-    "https://www.spaceui.one/r/lib-utils.json"
-  ],
-  "categories": [
-    "background",
-    "canvas",
-    "effects",
-    "gradient"
-  ],
+  "dependencies": ["motion"],
+  "registryDependencies": ["https://www.spaceui.one/r/lib-utils.json"],
+  "categories": ["background", "canvas", "effects", "gradient"],
   "files": [
     {
       "path": "src/registry/components/backgrounds/gradient/index.tsx",

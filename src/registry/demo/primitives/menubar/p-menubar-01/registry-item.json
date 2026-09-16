@@ -4,15 +4,9 @@
   "type": "registry:ui",
   "title": "Menubar Basic",
   "description": "Interactive demo showcasing the Menubar Basic component.",
-  "dependencies": [
-    "@base-ui/react"
-  ],
-  "registryDependencies": [
-    "https://www.spaceui.one/r/primitives-menubar.json"
-  ],
-  "categories": [
-    "menubar"
-  ],
+  "dependencies": ["@base-ui/react"],
+  "registryDependencies": ["https://www.spaceui.one/r/primitives-menubar.json"],
+  "categories": ["menubar"],
   "files": [
     {
       "path": "src/registry/demo/primitives/menubar/p-menubar-01/index.tsx",

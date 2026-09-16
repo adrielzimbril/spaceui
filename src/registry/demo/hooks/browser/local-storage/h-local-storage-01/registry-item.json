@@ -4,20 +4,14 @@
   "type": "registry:hook",
   "title": "useLocalStorage",
   "description": "Synchronized persistent storage",
-  "dependencies": [
-    "@tabler/icons-react"
-  ],
+  "dependencies": ["@tabler/icons-react"],
   "registryDependencies": [
     "https://www.spaceui.one/r/hooks-browser-use-local-storage.json",
     "https://www.spaceui.one/r/primitives-badge.json",
     "https://www.spaceui.one/r/primitives-button.json",
     "https://www.spaceui.one/r/primitives-card.json"
   ],
-  "categories": [
-    "hooks",
-    "browser",
-    "local-storage"
-  ],
+  "categories": ["hooks", "browser", "local-storage"],
   "files": [
     {
       "path": "src/registry/demo/hooks/browser/local-storage/h-local-storage-01/index.tsx",

@@ -8,9 +8,7 @@
     "https://www.spaceui.one/r/primitives-label.json",
     "https://www.spaceui.one/r/primitives-switch.json"
   ],
-  "categories": [
-    "switch"
-  ],
+  "categories": ["switch"],
   "files": [
     {
       "path": "src/registry/demo/primitives/switch/p-switch-01/index.tsx",

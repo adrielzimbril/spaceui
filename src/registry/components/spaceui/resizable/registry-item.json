@@ -4,17 +4,9 @@
   "type": "registry:component",
   "title": "Resizable",
   "description": "Resizable component for Space UI.",
-  "dependencies": [
-    "react-resizable-panels"
-  ],
-  "registryDependencies": [
-    "https://www.spaceui.one/r/lib-utils.json"
-  ],
-  "categories": [
-    "component",
-    "resizable",
-    "base-resizable"
-  ],
+  "dependencies": ["react-resizable-panels"],
+  "registryDependencies": ["https://www.spaceui.one/r/lib-utils.json"],
+  "categories": ["component", "resizable", "base-resizable"],
   "files": [
     {
       "path": "src/registry/components/spaceui/resizable/index.tsx",

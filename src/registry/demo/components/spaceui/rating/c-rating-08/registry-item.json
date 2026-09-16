@@ -4,13 +4,8 @@
   "type": "registry:component",
   "title": "Emoji reaction rating",
   "description": "Emoji reaction rating",
-  "registryDependencies": [
-    "https://www.spaceui.one/r/lib-utils.json"
-  ],
-  "categories": [
-    "component",
-    "rating"
-  ],
+  "registryDependencies": ["https://www.spaceui.one/r/lib-utils.json"],
+  "categories": ["component", "rating"],
   "files": [
     {
       "path": "src/registry/demo/components/spaceui/rating/c-rating-08/index.tsx",

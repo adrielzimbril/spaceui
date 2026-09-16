@@ -4,12 +4,8 @@
   "type": "registry:ui",
   "title": "16:9 widescreen aspect ratio",
   "description": "16:9 widescreen aspect ratio",
-  "registryDependencies": [
-    "https://www.spaceui.one/r/primitives-aspect-ratio.json"
-  ],
-  "categories": [
-    "aspect-ratio"
-  ],
+  "registryDependencies": ["https://www.spaceui.one/r/primitives-aspect-ratio.json"],
+  "categories": ["aspect-ratio"],
   "files": [
     {
       "path": "src/registry/demo/primitives/aspect-ratio/p-aspect-ratio-01/index.tsx",

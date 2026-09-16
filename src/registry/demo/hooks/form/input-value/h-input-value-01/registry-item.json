@@ -4,9 +4,7 @@
   "type": "registry:hook",
   "title": "useInputValue",
   "description": "Unified input change binder",
-  "dependencies": [
-    "@tabler/icons-react"
-  ],
+  "dependencies": ["@tabler/icons-react"],
   "registryDependencies": [
     "https://www.spaceui.one/r/hooks-form-use-input-value.json",
     "https://www.spaceui.one/r/primitives-badge.json",
@@ -14,11 +12,7 @@
     "https://www.spaceui.one/r/primitives-card.json",
     "https://www.spaceui.one/r/primitives-input.json"
   ],
-  "categories": [
-    "hooks",
-    "form",
-    "input-value"
-  ],
+  "categories": ["hooks", "form", "input-value"],
   "files": [
     {
       "path": "src/registry/demo/hooks/form/input-value/h-input-value-01/index.tsx",

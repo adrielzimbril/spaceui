@@ -4,9 +4,7 @@
   "type": "registry:block",
   "title": "Interactive 3D Fun Facts Game",
   "description": "Interactive 3D stacked deck quiz game block with True/False feedback, live score and dialog summary.",
-  "dependencies": [
-    "@tabler/icons-react"
-  ],
+  "dependencies": ["@tabler/icons-react"],
   "registryDependencies": [
     "https://www.spaceui.one/r/lib-utils.json",
     "https://www.spaceui.one/r/primitives-badge.json",
@@ -15,9 +13,7 @@
     "https://www.spaceui.one/r/primitives-dialog.json",
     "https://www.spaceui.one/r/primitives-toast.json"
   ],
-  "categories": [
-    "interactive-fun-facts"
-  ],
+  "categories": ["interactive-fun-facts"],
   "files": [
     {
       "path": "src/registry/blocks/interactive-fun-facts/interactive-fun-facts-1/index.tsx",

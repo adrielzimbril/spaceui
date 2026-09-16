@@ -4,21 +4,13 @@
   "type": "registry:ui",
   "title": "Input Group 21",
   "description": "Input group with start tooltip",
-  "dependencies": [
-    "@tabler/icons-react",
-    "lucide-react"
-  ],
+  "dependencies": ["@tabler/icons-react", "lucide-react"],
   "registryDependencies": [
     "https://www.spaceui.one/r/primitives-button.json",
     "https://www.spaceui.one/r/primitives-input-group.json",
     "https://www.spaceui.one/r/primitives-tooltip.json"
   ],
-  "categories": [
-    "button",
-    "input",
-    "input group",
-    "tooltip"
-  ],
+  "categories": ["button", "input", "input group", "tooltip"],
   "files": [
     {
       "path": "src/registry/demo/primitives/input-group/p-input-group-21/index.tsx",

@@ -4,12 +4,8 @@
   "type": "registry:ui",
   "title": "Textarea 9",
   "description": "Read-only textarea",
-  "registryDependencies": [
-    "https://www.spaceui.one/r/primitives-textarea.json"
-  ],
-  "categories": [
-    "textarea"
-  ],
+  "registryDependencies": ["https://www.spaceui.one/r/primitives-textarea.json"],
+  "categories": ["textarea"],
   "files": [
     {
       "path": "src/registry/demo/primitives/textarea/p-textarea-09/index.tsx",

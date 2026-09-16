@@ -8,11 +8,7 @@
     "https://www.spaceui.one/r/primitives-field.json",
     "https://www.spaceui.one/r/primitives-textarea.json"
   ],
-  "categories": [
-    "field",
-    "label",
-    "textarea"
-  ],
+  "categories": ["field", "label", "textarea"],
   "files": [
     {
       "path": "src/registry/demo/primitives/field/p-field-10/index.tsx",

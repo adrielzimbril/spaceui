@@ -4,9 +4,7 @@
   "type": "registry:ui",
   "title": "Avatar Group Actions",
   "description": "Avatar group with count and icon actions.",
-  "dependencies": [
-    "@tabler/icons-react"
-  ],
+  "dependencies": ["@tabler/icons-react"],
   "registryDependencies": [
     "https://www.spaceui.one/r/components-spaceui-avatar-group.json",
     "https://www.spaceui.one/r/primitives-avatar.json"

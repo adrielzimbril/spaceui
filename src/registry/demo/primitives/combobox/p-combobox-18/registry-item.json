@@ -4,20 +4,14 @@
   "type": "registry:ui",
   "title": "Combobox 18",
   "description": "Combobox multiple with stacked chips",
-  "dependencies": [
-    "@tabler/icons-react",
-    "lucide-react"
-  ],
+  "dependencies": ["@tabler/icons-react", "lucide-react"],
   "registryDependencies": [
     "https://www.spaceui.one/r/primitives-avatar.json",
     "https://www.spaceui.one/r/primitives-badge.json",
     "https://www.spaceui.one/r/primitives-button.json",
     "https://www.spaceui.one/r/primitives-combobox.json"
   ],
-  "categories": [
-    "combobox",
-    "input"
-  ],
+  "categories": ["combobox", "input"],
   "files": [
     {
       "path": "src/registry/demo/primitives/combobox/p-combobox-18/index.tsx",

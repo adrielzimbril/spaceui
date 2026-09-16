@@ -9,10 +9,7 @@
     "https://www.spaceui.one/r/primitives-tabs.json",
     "https://www.spaceui.one/r/primitives-button.json"
   ],
-  "categories": [
-    "component",
-    "fluid-countdown"
-  ],
+  "categories": ["component", "fluid-countdown"],
   "files": [
     {
       "path": "src/registry/demo/components/spaceui/fluid-countdown/c-fluid-countdown-01/index.tsx",

@@ -4,11 +4,7 @@
   "type": "registry:hook",
   "title": "Switch",
   "description": "Switch component.",
-  "categories": [
-    "hooks",
-    "components",
-    "switch"
-  ],
+  "categories": ["hooks", "components", "switch"],
   "files": [
     {
       "path": "src/registry/hooks/components/switch/index.tsx",

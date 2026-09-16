@@ -4,19 +4,12 @@
   "type": "registry:component",
   "title": "Fluid Countdown",
   "description": "Full-screen countdown timer with fluid rolling digits, play/pause and reset controls, and auto-loop.",
-  "dependencies": [
-    "@number-flow/react",
-    "motion",
-    "@tabler/icons-react"
-  ],
+  "dependencies": ["@number-flow/react", "motion", "@tabler/icons-react"],
   "registryDependencies": [
     "https://www.spaceui.one/r/lib-utils.json",
     "https://www.spaceui.one/r/primitives-button.json"
   ],
-  "categories": [
-    "component",
-    "fluid-countdown"
-  ],
+  "categories": ["component", "fluid-countdown"],
   "files": [
     {
       "path": "src/registry/components/spaceui/fluid-countdown/index.tsx",

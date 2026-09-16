@@ -4,9 +4,7 @@
   "type": "registry:component",
   "title": "Kanban board with dynamic overlay",
   "description": "Kanban board with dynamic overlay",
-  "dependencies": [
-    "@tabler/icons-react"
-  ],
+  "dependencies": ["@tabler/icons-react"],
   "registryDependencies": [
     "https://www.spaceui.one/r/components-spaceui-kanban.json",
     "https://www.spaceui.one/r/primitives-avatar.json",
@@ -14,10 +12,7 @@
     "https://www.spaceui.one/r/primitives-button.json",
     "https://www.spaceui.one/r/primitives-card.json"
   ],
-  "categories": [
-    "component",
-    "kanban"
-  ],
+  "categories": ["component", "kanban"],
   "files": [
     {
       "path": "src/registry/demo/components/spaceui/kanban/c-kanban-02/index.tsx",

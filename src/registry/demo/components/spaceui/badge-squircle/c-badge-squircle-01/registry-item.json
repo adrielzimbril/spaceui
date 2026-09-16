@@ -4,15 +4,8 @@
   "type": "registry:component",
   "title": "Badge Squircle Variants",
   "description": "Visual style variants for the squircle badge component.",
-  "registryDependencies": [
-    "https://www.spaceui.one/r/components-spaceui-badge-squircle.json"
-  ],
-  "categories": [
-    "component",
-    "badge",
-    "squircle",
-    "variants"
-  ],
+  "registryDependencies": ["https://www.spaceui.one/r/components-spaceui-badge-squircle.json"],
+  "categories": ["component", "badge", "squircle", "variants"],
   "files": [
     {
       "path": "src/registry/demo/components/spaceui/badge-squircle/c-badge-squircle-01/index.tsx",

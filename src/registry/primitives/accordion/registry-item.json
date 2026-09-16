@@ -4,16 +4,9 @@
   "type": "registry:ui",
   "title": "Accordion",
   "description": "Accessible Accordion primitive component for Space UI.",
-  "dependencies": [
-    "@base-ui/react",
-    "lucide-react"
-  ],
-  "registryDependencies": [
-    "https://www.spaceui.one/r/lib-utils.json"
-  ],
-  "categories": [
-    "accordion"
-  ],
+  "dependencies": ["@base-ui/react", "lucide-react"],
+  "registryDependencies": ["https://www.spaceui.one/r/lib-utils.json"],
+  "categories": ["accordion"],
   "files": [
     {
       "path": "src/registry/primitives/accordion/index.tsx",

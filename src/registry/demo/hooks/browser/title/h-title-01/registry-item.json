@@ -4,20 +4,14 @@
   "type": "registry:hook",
   "title": "useTitle",
   "description": "Document head title modifier",
-  "dependencies": [
-    "@tabler/icons-react"
-  ],
+  "dependencies": ["@tabler/icons-react"],
   "registryDependencies": [
     "https://www.spaceui.one/r/hooks-browser-use-title.json",
     "https://www.spaceui.one/r/primitives-badge.json",
     "https://www.spaceui.one/r/primitives-card.json",
     "https://www.spaceui.one/r/primitives-input.json"
   ],
-  "categories": [
-    "hooks",
-    "browser",
-    "title"
-  ],
+  "categories": ["hooks", "browser", "title"],
   "files": [
     {
       "path": "src/registry/demo/hooks/browser/title/h-title-01/index.tsx",

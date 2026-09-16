@@ -4,12 +4,8 @@
   "type": "registry:lib",
   "title": "Csp Provider",
   "description": "Utility and configuration helper for Csp Provider.",
-  "dependencies": [
-    "@base-ui/react"
-  ],
-  "categories": [
-    "base-ui"
-  ],
+  "dependencies": ["@base-ui/react"],
+  "categories": ["base-ui"],
   "files": [
     {
       "path": "src/registry/lib/base-ui/csp-provider/index.ts",

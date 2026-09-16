@@ -4,11 +4,7 @@
   "type": "registry:hook",
   "title": "useLockBodyScroll",
   "description": "useLockBodyScroll hook.",
-  "categories": [
-    "hooks",
-    "dom",
-    "lock-body-scroll"
-  ],
+  "categories": ["hooks", "dom", "lock-body-scroll"],
   "files": [
     {
       "path": "src/registry/hooks/dom/use-lock-body-scroll/index.ts",

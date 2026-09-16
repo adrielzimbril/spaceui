@@ -4,20 +4,14 @@
   "type": "registry:ui",
   "title": "Command 1",
   "description": "Command palette with dialog",
-  "dependencies": [
-    "@tabler/icons-react",
-    "lucide-react"
-  ],
+  "dependencies": ["@tabler/icons-react", "lucide-react"],
   "registryDependencies": [
     "https://www.spaceui.one/r/hooks-dom-use-event-listener.json",
     "https://www.spaceui.one/r/primitives-button.json",
     "https://www.spaceui.one/r/primitives-command.json",
     "https://www.spaceui.one/r/primitives-kbd.json"
   ],
-  "categories": [
-    "command",
-    "dialog"
-  ],
+  "categories": ["command", "dialog"],
   "files": [
     {
       "path": "src/registry/demo/primitives/command/p-command-01/index.tsx",

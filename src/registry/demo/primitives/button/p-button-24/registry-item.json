@@ -4,17 +4,12 @@
   "type": "registry:ui",
   "title": "Button 24",
   "description": "Copy button with feedback",
-  "dependencies": [
-    "@tabler/icons-react",
-    "lucide-react"
-  ],
+  "dependencies": ["@tabler/icons-react", "lucide-react"],
   "registryDependencies": [
     "https://www.spaceui.one/r/hooks-browser-use-clipboard.json",
     "https://www.spaceui.one/r/primitives-button.json"
   ],
-  "categories": [
-    "button"
-  ],
+  "categories": ["button"],
   "files": [
     {
       "path": "src/registry/demo/primitives/button/p-button-24/index.tsx",

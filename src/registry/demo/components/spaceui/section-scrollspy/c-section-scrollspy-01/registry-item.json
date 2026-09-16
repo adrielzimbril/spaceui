@@ -8,10 +8,7 @@
     "https://www.spaceui.one/r/components-spaceui-section-scrollspy.json",
     "https://www.spaceui.one/r/primitives-badge.json"
   ],
-  "categories": [
-    "component",
-    "section-scrollspy"
-  ],
+  "categories": ["component", "section-scrollspy"],
   "files": [
     {
       "path": "src/registry/demo/components/spaceui/section-scrollspy/c-section-scrollspy-01/index.tsx",

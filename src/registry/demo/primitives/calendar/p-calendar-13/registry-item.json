@@ -4,17 +4,12 @@
   "type": "registry:ui",
   "title": "Calendar 13",
   "description": "Calendar with year-only combobox dropdown",
-  "dependencies": [
-    "@daypicker/react"
-  ],
+  "dependencies": ["@daypicker/react"],
   "registryDependencies": [
     "https://www.spaceui.one/r/primitives-calendar.json",
     "https://www.spaceui.one/r/primitives-combobox.json"
   ],
-  "categories": [
-    "calendar",
-    "combobox"
-  ],
+  "categories": ["calendar", "combobox"],
   "files": [
     {
       "path": "src/registry/demo/primitives/calendar/p-calendar-13/index.tsx",

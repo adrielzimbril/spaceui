@@ -4,16 +4,9 @@
   "type": "registry:ui",
   "title": "Autocomplete 13",
   "description": "Autocomplete form",
-  "dependencies": [
-    "@tabler/icons-react"
-  ],
-  "registryDependencies": [
-    "https://www.spaceui.one/r/primitives-autocomplete.json"
-  ],
-  "categories": [
-    "autocomplete",
-    "input"
-  ],
+  "dependencies": ["@tabler/icons-react"],
+  "registryDependencies": ["https://www.spaceui.one/r/primitives-autocomplete.json"],
+  "categories": ["autocomplete", "input"],
   "files": [
     {
       "path": "src/registry/demo/primitives/autocomplete/p-autocomplete-13/index.tsx",

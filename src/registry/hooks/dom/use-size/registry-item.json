@@ -4,14 +4,8 @@
   "type": "registry:hook",
   "title": "useSize",
   "description": "useSize hook.",
-  "registryDependencies": [
-    "https://www.spaceui.one/r/hooks-lifecycle-use-isomorphic-layout-effect.json"
-  ],
-  "categories": [
-    "hooks",
-    "dom",
-    "size"
-  ],
+  "registryDependencies": ["https://www.spaceui.one/r/hooks-lifecycle-use-isomorphic-layout-effect.json"],
+  "categories": ["hooks", "dom", "size"],
   "files": [
     {
       "path": "src/registry/hooks/dom/use-size/index.ts",

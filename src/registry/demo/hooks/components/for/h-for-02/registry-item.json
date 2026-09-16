@@ -4,20 +4,14 @@
   "type": "registry:hook",
   "title": "For (Interactive Product Catalog)",
   "description": "Rich list mapping with search filter",
-  "dependencies": [
-    "@tabler/icons-react"
-  ],
+  "dependencies": ["@tabler/icons-react"],
   "registryDependencies": [
     "https://www.spaceui.one/r/hooks-components-for.json",
     "https://www.spaceui.one/r/primitives-badge.json",
     "https://www.spaceui.one/r/primitives-card.json",
     "https://www.spaceui.one/r/primitives-input.json"
   ],
-  "categories": [
-    "hooks",
-    "components",
-    "for"
-  ],
+  "categories": ["hooks", "components", "for"],
   "files": [
     {
       "path": "src/registry/demo/hooks/components/for/h-for-02/index.tsx",

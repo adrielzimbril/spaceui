@@ -4,12 +4,7 @@
   "type": "registry:hook",
   "title": "useUrgentUpdate",
   "description": "useUrgentUpdate hook.",
-  "categories": [
-    "hooks",
-    "lifecycle",
-    "urgent-update",
-    "calendar"
-  ],
+  "categories": ["hooks", "lifecycle", "urgent-update", "calendar"],
   "files": [
     {
       "path": "src/registry/hooks/lifecycle/use-urgent-update/index.ts",

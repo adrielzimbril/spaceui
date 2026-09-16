@@ -4,12 +4,8 @@
   "type": "registry:ui",
   "title": "Autocomplete Sizes",
   "description": "Autocomplete inputs in sm, default, and lg sizes",
-  "registryDependencies": [
-    "https://www.spaceui.one/r/primitives-autocomplete.json"
-  ],
-  "categories": [
-    "autocomplete"
-  ],
+  "registryDependencies": ["https://www.spaceui.one/r/primitives-autocomplete.json"],
+  "categories": ["autocomplete"],
   "files": [
     {
       "path": "src/registry/demo/primitives/autocomplete/p-autocomplete-02/index.tsx",

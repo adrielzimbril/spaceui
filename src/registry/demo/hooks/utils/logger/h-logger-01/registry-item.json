@@ -4,20 +4,14 @@
   "type": "registry:hook",
   "title": "logger",
   "description": "Scoped development logger",
-  "dependencies": [
-    "@tabler/icons-react"
-  ],
+  "dependencies": ["@tabler/icons-react"],
   "registryDependencies": [
     "https://www.spaceui.one/r/hooks-utils-logger.json",
     "https://www.spaceui.one/r/primitives-badge.json",
     "https://www.spaceui.one/r/primitives-button.json",
     "https://www.spaceui.one/r/primitives-card.json"
   ],
-  "categories": [
-    "hooks",
-    "utils",
-    "logger"
-  ],
+  "categories": ["hooks", "utils", "logger"],
   "files": [
     {
       "path": "src/registry/demo/hooks/utils/logger/h-logger-01/index.tsx",

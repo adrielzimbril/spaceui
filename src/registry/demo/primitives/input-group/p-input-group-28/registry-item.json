@@ -4,21 +4,13 @@
   "type": "registry:ui",
   "title": "Input Group 28",
   "description": "Chat input with voice and send buttons",
-  "dependencies": [
-    "@tabler/icons-react",
-    "lucide-react"
-  ],
+  "dependencies": ["@tabler/icons-react", "lucide-react"],
   "registryDependencies": [
     "https://www.spaceui.one/r/primitives-button.json",
     "https://www.spaceui.one/r/primitives-input-group.json",
     "https://www.spaceui.one/r/primitives-tooltip.json"
   ],
-  "categories": [
-    "button",
-    "input group",
-    "textarea",
-    "tooltip"
-  ],
+  "categories": ["button", "input group", "textarea", "tooltip"],
   "files": [
     {
       "path": "src/registry/demo/primitives/input-group/p-input-group-28/index.tsx",

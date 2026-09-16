@@ -4,13 +4,8 @@
   "type": "registry:component",
   "title": "Generating Orb Demo",
   "description": "Revolving chromatic loader orb available in CSS and Canvas engines.",
-  "registryDependencies": [
-    "https://www.spaceui.one/r/components-orb-generating.json"
-  ],
-  "categories": [
-    "orb",
-    "generating"
-  ],
+  "registryDependencies": ["https://www.spaceui.one/r/components-orb-generating.json"],
+  "categories": ["orb", "generating"],
   "meta": {
     "demoProps": {
       "renderer": {

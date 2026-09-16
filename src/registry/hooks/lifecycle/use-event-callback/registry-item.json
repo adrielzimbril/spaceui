@@ -4,11 +4,7 @@
   "type": "registry:hook",
   "title": "useEventCallback",
   "description": "useEventCallback hook.",
-  "categories": [
-    "hooks",
-    "lifecycle",
-    "event-callback"
-  ],
+  "categories": ["hooks", "lifecycle", "event-callback"],
   "files": [
     {
       "path": "src/registry/hooks/lifecycle/use-event-callback/index.ts",
@@ -19,7 +15,5 @@
   "createdAt": "2026-09-03",
   "updatedAt": "2026-09-03",
   "dependencies": [],
-  "registryDependencies": [
-    "https://www.spaceui.one/r/hooks-lifecycle-use-isomorphic-layout-effect.json"
-  ]
+  "registryDependencies": ["https://www.spaceui.one/r/hooks-lifecycle-use-isomorphic-layout-effect.json"]
 }

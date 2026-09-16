@@ -8,9 +8,7 @@
     "https://www.spaceui.one/r/primitives-badge.json",
     "https://www.spaceui.one/r/primitives-table.json"
   ],
-  "categories": [
-    "table"
-  ],
+  "categories": ["table"],
   "files": [
     {
       "path": "src/registry/demo/primitives/table/p-table-05/index.tsx",

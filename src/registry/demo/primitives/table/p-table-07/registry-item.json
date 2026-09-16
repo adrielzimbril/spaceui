@@ -9,10 +9,7 @@
     "https://www.spaceui.one/r/primitives-card.json",
     "https://www.spaceui.one/r/primitives-table.json"
   ],
-  "categories": [
-    "card",
-    "table"
-  ],
+  "categories": ["card", "table"],
   "files": [
     {
       "path": "src/registry/demo/primitives/table/p-table-07/index.tsx",

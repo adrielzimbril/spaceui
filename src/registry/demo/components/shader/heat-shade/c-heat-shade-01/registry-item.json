@@ -9,10 +9,10 @@
   "meta": {
     "demoProps": {
       "base": {
-        "value": "#304dff"
+        "value": "#27272a"
       },
       "hot": {
-        "value": "#8298ff"
+        "value": "#e4e4e7"
       },
       "speed": {
         "value": 1,

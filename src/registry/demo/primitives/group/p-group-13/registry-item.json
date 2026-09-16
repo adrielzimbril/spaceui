@@ -4,19 +4,13 @@
   "type": "registry:ui",
   "title": "Group 13",
   "description": "Group with menu",
-  "dependencies": [
-    "@tabler/icons-react"
-  ],
+  "dependencies": ["@tabler/icons-react"],
   "registryDependencies": [
     "https://www.spaceui.one/r/primitives-button.json",
     "https://www.spaceui.one/r/primitives-group.json",
     "https://www.spaceui.one/r/primitives-menu.json"
   ],
-  "categories": [
-    "dropdown",
-    "group",
-    "menu"
-  ],
+  "categories": ["dropdown", "group", "menu"],
   "files": [
     {
       "path": "src/registry/demo/primitives/group/p-group-13/index.tsx",

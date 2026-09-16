@@ -4,12 +4,8 @@
   "type": "registry:component",
   "title": "Avatar Group",
   "description": "Avatar group stacking and overlapping system.",
-  "registryDependencies": [
-    "https://www.spaceui.one/r/lib-utils.json"
-  ],
-  "categories": [
-    "avatar"
-  ],
+  "registryDependencies": ["https://www.spaceui.one/r/lib-utils.json"],
+  "categories": ["avatar"],
   "files": [
     {
       "path": "src/registry/components/spaceui/avatar-group/index.tsx",

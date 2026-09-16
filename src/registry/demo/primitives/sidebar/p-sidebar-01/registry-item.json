@@ -4,17 +4,13 @@
   "type": "registry:ui",
   "title": "Sidebar 1",
   "description": "Basic collapsible sidebar layout with navigation and header",
-  "dependencies": [
-    "@tabler/icons-react"
-  ],
+  "dependencies": ["@tabler/icons-react"],
   "registryDependencies": [
     "https://www.spaceui.one/r/primitives-breadcrumb.json",
     "https://www.spaceui.one/r/primitives-separator.json",
     "https://www.spaceui.one/r/primitives-sidebar.json"
   ],
-  "categories": [
-    "sidebar"
-  ],
+  "categories": ["sidebar"],
   "files": [
     {
       "path": "src/registry/demo/primitives/sidebar/p-sidebar-01/index.tsx",

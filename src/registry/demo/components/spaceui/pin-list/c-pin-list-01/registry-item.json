@@ -4,16 +4,9 @@
   "type": "registry:component",
   "title": "Pin List",
   "description": "Demo showing a pin list.",
-  "dependencies": [
-    "@tabler/icons-react"
-  ],
-  "registryDependencies": [
-    "https://www.spaceui.one/r/components-spaceui-pin-list.json"
-  ],
-  "categories": [
-    "component",
-    "pin-list"
-  ],
+  "dependencies": ["@tabler/icons-react"],
+  "registryDependencies": ["https://www.spaceui.one/r/components-spaceui-pin-list.json"],
+  "categories": ["component", "pin-list"],
   "files": [
     {
       "path": "src/registry/demo/components/spaceui/pin-list/c-pin-list-01/index.tsx",

@@ -10,10 +10,7 @@
     "https://www.spaceui.one/r/primitives-field.json",
     "https://www.spaceui.one/r/primitives-form.json"
   ],
-  "categories": [
-    "checkbox",
-    "form"
-  ],
+  "categories": ["checkbox", "form"],
   "files": [
     {
       "path": "src/registry/demo/primitives/checkbox/p-checkbox-04/index.tsx",

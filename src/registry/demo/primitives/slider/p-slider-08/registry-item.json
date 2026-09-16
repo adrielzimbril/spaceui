@@ -4,12 +4,8 @@
   "type": "registry:ui",
   "title": "Slider 8",
   "description": "Slider with 3 thumbs",
-  "registryDependencies": [
-    "https://www.spaceui.one/r/primitives-slider.json"
-  ],
-  "categories": [
-    "slider"
-  ],
+  "registryDependencies": ["https://www.spaceui.one/r/primitives-slider.json"],
+  "categories": ["slider"],
   "files": [
     {
       "path": "src/registry/demo/primitives/slider/p-slider-08/index.tsx",

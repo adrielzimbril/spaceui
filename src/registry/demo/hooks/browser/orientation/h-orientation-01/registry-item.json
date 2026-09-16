@@ -4,19 +4,13 @@
   "type": "registry:hook",
   "title": "useOrientation",
   "description": "Device screen orientation listener",
-  "dependencies": [
-    "@tabler/icons-react"
-  ],
+  "dependencies": ["@tabler/icons-react"],
   "registryDependencies": [
     "https://www.spaceui.one/r/hooks-browser-use-orientation.json",
     "https://www.spaceui.one/r/primitives-badge.json",
     "https://www.spaceui.one/r/primitives-card.json"
   ],
-  "categories": [
-    "hooks",
-    "browser",
-    "orientation"
-  ],
+  "categories": ["hooks", "browser", "orientation"],
   "files": [
     {
       "path": "src/registry/demo/hooks/browser/orientation/h-orientation-01/index.tsx",

@@ -4,15 +4,9 @@
   "type": "registry:ui",
   "title": "Card",
   "description": "Accessible Card primitive component for Space UI.",
-  "dependencies": [
-    "@base-ui/react"
-  ],
-  "registryDependencies": [
-    "https://www.spaceui.one/r/lib-utils.json"
-  ],
-  "categories": [
-    "card"
-  ],
+  "dependencies": ["@base-ui/react"],
+  "registryDependencies": ["https://www.spaceui.one/r/lib-utils.json"],
+  "categories": ["card"],
   "files": [
     {
       "path": "src/registry/primitives/card/index.tsx",

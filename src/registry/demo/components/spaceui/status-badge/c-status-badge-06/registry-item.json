@@ -4,16 +4,9 @@
   "type": "registry:component",
   "title": "Status Badge with Link",
   "description": "Interactive availability status badge with direct booking link.",
-  "dependencies": [
-    "@tabler/icons-react"
-  ],
-  "registryDependencies": [
-    "https://www.spaceui.one/r/components-spaceui-status-badge.json"
-  ],
-  "categories": [
-    "component",
-    "status-badge"
-  ],
+  "dependencies": ["@tabler/icons-react"],
+  "registryDependencies": ["https://www.spaceui.one/r/components-spaceui-status-badge.json"],
+  "categories": ["component", "status-badge"],
   "files": [
     {
       "path": "src/registry/demo/components/spaceui/status-badge/c-status-badge-06/index.tsx",

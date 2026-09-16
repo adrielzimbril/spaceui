@@ -9,10 +9,7 @@
     "https://www.spaceui.one/r/primitives-input.json",
     "https://www.spaceui.one/r/primitives-label.json"
   ],
-  "categories": [
-    "group",
-    "input"
-  ],
+  "categories": ["group", "input"],
   "files": [
     {
       "path": "src/registry/demo/primitives/group/p-group-17/index.tsx",

@@ -4,17 +4,9 @@
   "type": "registry:component",
   "title": "Event Calendar I18n",
   "description": "Event Calendar I18n component for Space UI.",
-  "dependencies": [
-    "date-fns"
-  ],
-  "registryDependencies": [
-    "https://www.spaceui.one/r/components-spaceui-event-calendar-types.json"
-  ],
-  "categories": [
-    "component",
-    "event-calendar",
-    "calendar"
-  ],
+  "dependencies": ["date-fns"],
+  "registryDependencies": ["https://www.spaceui.one/r/components-spaceui-event-calendar-types.json"],
+  "categories": ["component", "event-calendar", "calendar"],
   "files": [
     {
       "path": "src/registry/components/spaceui/event-calendar/event-calendar-i18n/index.tsx",

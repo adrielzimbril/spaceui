@@ -4,13 +4,8 @@
   "type": "registry:component",
   "title": "User Presence Avatar",
   "description": "Animated avatar group showing online and offline users with status toggling.",
-  "registryDependencies": [
-    "https://www.spaceui.one/r/components-spaceui-user-presence-avatar.json"
-  ],
-  "categories": [
-    "component",
-    "user-presence-avatar"
-  ],
+  "registryDependencies": ["https://www.spaceui.one/r/components-spaceui-user-presence-avatar.json"],
+  "categories": ["component", "user-presence-avatar"],
   "files": [
     {
       "path": "src/registry/demo/components/spaceui/user-presence-avatar/c-user-presence-avatar-01/index.tsx",

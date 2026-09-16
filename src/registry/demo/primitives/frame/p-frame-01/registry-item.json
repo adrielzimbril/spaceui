@@ -4,12 +4,8 @@
   "type": "registry:ui",
   "title": "Frame 1",
   "description": "Basic frame",
-  "registryDependencies": [
-    "https://www.spaceui.one/r/primitives-frame.json"
-  ],
-  "categories": [
-    "frame"
-  ],
+  "registryDependencies": ["https://www.spaceui.one/r/primitives-frame.json"],
+  "categories": ["frame"],
   "files": [
     {
       "path": "src/registry/demo/primitives/frame/p-frame-01/index.tsx",

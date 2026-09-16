@@ -4,13 +4,8 @@
   "type": "registry:ui",
   "title": "Number Field 1",
   "description": "Basic number field",
-  "registryDependencies": [
-    "https://www.spaceui.one/r/primitives-number-field.json"
-  ],
-  "categories": [
-    "number field",
-    "input"
-  ],
+  "registryDependencies": ["https://www.spaceui.one/r/primitives-number-field.json"],
+  "categories": ["number field", "input"],
   "files": [
     {
       "path": "src/registry/demo/primitives/number-field/p-number-field-01/index.tsx",

@@ -4,12 +4,8 @@
   "type": "registry:ui",
   "title": "Meter 1",
   "description": "Basic meter",
-  "registryDependencies": [
-    "https://www.spaceui.one/r/primitives-meter.json"
-  ],
-  "categories": [
-    "meter"
-  ],
+  "registryDependencies": ["https://www.spaceui.one/r/primitives-meter.json"],
+  "categories": ["meter"],
   "files": [
     {
       "path": "src/registry/demo/primitives/meter/p-meter-01/index.tsx",

@@ -4,14 +4,8 @@
   "type": "registry:component",
   "title": "Blur Reveal Text Playground",
   "description": "Interactive demo for Blur Reveal Text featuring customizable token splitting, blur depth, stagger delays, and directions with automatic 5s loop replay.",
-  "registryDependencies": [
-    "https://www.spaceui.one/r/components-spaceui-blur-reveal-text.json"
-  ],
-  "categories": [
-    "component",
-    "typography",
-    "demo"
-  ],
+  "registryDependencies": ["https://www.spaceui.one/r/components-spaceui-blur-reveal-text.json"],
+  "categories": ["component", "typography", "demo"],
   "meta": {
     "demoProps": {
       "text": {

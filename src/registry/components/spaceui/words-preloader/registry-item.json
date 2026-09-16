@@ -4,16 +4,9 @@
   "type": "registry:component",
   "title": "Words Preloader",
   "description": "Typography preloader that cycles greetings then wipes away with a curved SVG mask.",
-  "dependencies": [
-    "motion"
-  ],
-  "registryDependencies": [
-    "https://www.spaceui.one/r/lib-utils.json"
-  ],
-  "categories": [
-    "component",
-    "words-preloader"
-  ],
+  "dependencies": ["motion"],
+  "registryDependencies": ["https://www.spaceui.one/r/lib-utils.json"],
+  "categories": ["component", "words-preloader"],
   "files": [
     {
       "path": "src/registry/components/spaceui/words-preloader/index.tsx",

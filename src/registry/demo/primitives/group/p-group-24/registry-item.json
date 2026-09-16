@@ -4,9 +4,7 @@
   "type": "registry:ui",
   "title": "Publish controls with split button and overflow",
   "description": "Publish controls with split button and overflow",
-  "dependencies": [
-    "@tabler/icons-react"
-  ],
+  "dependencies": ["@tabler/icons-react"],
   "registryDependencies": [
     "https://www.spaceui.one/r/components-spaceui-avatar-group.json",
     "https://www.spaceui.one/r/primitives-avatar.json",
@@ -15,9 +13,7 @@
     "https://www.spaceui.one/r/primitives-menu.json",
     "https://www.spaceui.one/r/primitives-separator.json"
   ],
-  "categories": [
-    "button-group"
-  ],
+  "categories": ["button-group"],
   "files": [
     {
       "path": "src/registry/demo/primitives/group/p-group-24/index.tsx",

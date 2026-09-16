@@ -4,15 +4,9 @@
   "type": "registry:ui",
   "title": "Textarea",
   "description": "Accessible Textarea primitive component for Space UI.",
-  "dependencies": [
-    "@base-ui/react"
-  ],
-  "registryDependencies": [
-    "https://www.spaceui.one/r/lib-utils.json"
-  ],
-  "categories": [
-    "textarea"
-  ],
+  "dependencies": ["@base-ui/react"],
+  "registryDependencies": ["https://www.spaceui.one/r/lib-utils.json"],
+  "categories": ["textarea"],
   "files": [
     {
       "path": "src/registry/primitives/textarea/index.tsx",

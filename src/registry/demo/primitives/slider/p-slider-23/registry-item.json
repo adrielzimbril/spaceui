@@ -11,10 +11,7 @@
     "https://www.spaceui.one/r/primitives-form.json",
     "https://www.spaceui.one/r/primitives-slider.json"
   ],
-  "categories": [
-    "slider",
-    "form"
-  ],
+  "categories": ["slider", "form"],
   "files": [
     {
       "path": "src/registry/demo/primitives/slider/p-slider-23/index.tsx",

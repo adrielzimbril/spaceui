@@ -4,11 +4,7 @@
   "type": "registry:component",
   "title": "Event Calendar Nav",
   "description": "Event Calendar Nav component for Space UI.",
-  "dependencies": [
-    "@base-ui/react",
-    "@tabler/icons-react",
-    "date-fns"
-  ],
+  "dependencies": ["@base-ui/react", "@tabler/icons-react", "date-fns"],
   "registryDependencies": [
     "https://www.spaceui.one/r/components-spaceui-event-calendar.json",
     "https://www.spaceui.one/r/components-spaceui-event-calendar-lib.json",
@@ -20,11 +16,7 @@
     "https://www.spaceui.one/r/primitives-popover.json",
     "https://www.spaceui.one/r/primitives-tooltip.json"
   ],
-  "categories": [
-    "component",
-    "event-calendar",
-    "calendar"
-  ],
+  "categories": ["component", "event-calendar", "calendar"],
   "files": [
     {
       "path": "src/registry/components/spaceui/event-calendar/event-calendar-nav/index.tsx",

@@ -4,11 +4,7 @@
   "type": "registry:hook",
   "title": "useIsMounted",
   "description": "useIsMounted hook.",
-  "categories": [
-    "hooks",
-    "lifecycle",
-    "is-mounted"
-  ],
+  "categories": ["hooks", "lifecycle", "is-mounted"],
   "files": [
     {
       "path": "src/registry/hooks/lifecycle/use-is-mounted/index.ts",

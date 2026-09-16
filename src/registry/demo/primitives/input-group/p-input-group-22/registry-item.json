@@ -4,19 +4,12 @@
   "type": "registry:ui",
   "title": "Input Group 22",
   "description": "Input group with clear button",
-  "dependencies": [
-    "@tabler/icons-react",
-    "lucide-react"
-  ],
+  "dependencies": ["@tabler/icons-react", "lucide-react"],
   "registryDependencies": [
     "https://www.spaceui.one/r/primitives-button.json",
     "https://www.spaceui.one/r/primitives-input-group.json"
   ],
-  "categories": [
-    "button",
-    "input",
-    "input group"
-  ],
+  "categories": ["button", "input", "input group"],
   "files": [
     {
       "path": "src/registry/demo/primitives/input-group/p-input-group-22/index.tsx",

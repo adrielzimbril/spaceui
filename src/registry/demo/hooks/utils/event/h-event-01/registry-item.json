@@ -4,19 +4,13 @@
   "type": "registry:hook",
   "title": "event & bindEvent",
   "description": "Safe cross-browser event listener binder",
-  "dependencies": [
-    "@tabler/icons-react"
-  ],
+  "dependencies": ["@tabler/icons-react"],
   "registryDependencies": [
     "https://www.spaceui.one/r/hooks-utils-event.json",
     "https://www.spaceui.one/r/primitives-badge.json",
     "https://www.spaceui.one/r/primitives-card.json"
   ],
-  "categories": [
-    "hooks",
-    "utils",
-    "event"
-  ],
+  "categories": ["hooks", "utils", "event"],
   "files": [
     {
       "path": "src/registry/demo/hooks/utils/event/h-event-01/index.tsx",

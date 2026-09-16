@@ -4,10 +4,7 @@
   "type": "registry:ui",
   "title": "Input Group 26",
   "description": "Code snippet input with language selector",
-  "dependencies": [
-    "@tabler/icons-react",
-    "lucide-react"
-  ],
+  "dependencies": ["@tabler/icons-react", "lucide-react"],
   "registryDependencies": [
     "https://www.spaceui.one/r/hooks-browser-use-clipboard.json",
     "https://www.spaceui.one/r/primitives-button.json",
@@ -15,13 +12,7 @@
     "https://www.spaceui.one/r/primitives-select.json",
     "https://www.spaceui.one/r/primitives-tooltip.json"
   ],
-  "categories": [
-    "button",
-    "input group",
-    "select",
-    "textarea",
-    "tooltip"
-  ],
+  "categories": ["button", "input group", "select", "textarea", "tooltip"],
   "files": [
     {
       "path": "src/registry/demo/primitives/input-group/p-input-group-26/index.tsx",

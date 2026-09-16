@@ -4,15 +4,9 @@
   "type": "registry:ui",
   "title": "Meter",
   "description": "Accessible Meter primitive component for Space UI.",
-  "dependencies": [
-    "@base-ui/react"
-  ],
-  "registryDependencies": [
-    "https://www.spaceui.one/r/lib-utils.json"
-  ],
-  "categories": [
-    "meter"
-  ],
+  "dependencies": ["@base-ui/react"],
+  "registryDependencies": ["https://www.spaceui.one/r/lib-utils.json"],
+  "categories": ["meter"],
   "files": [
     {
       "path": "src/registry/primitives/meter/index.tsx",

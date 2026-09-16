@@ -4,12 +4,8 @@
   "type": "registry:ui",
   "title": "Input 14",
   "description": "Input with custom border and background",
-  "registryDependencies": [
-    "https://www.spaceui.one/r/primitives-input.json"
-  ],
-  "categories": [
-    "input"
-  ],
+  "registryDependencies": ["https://www.spaceui.one/r/primitives-input.json"],
+  "categories": ["input"],
   "files": [
     {
       "path": "src/registry/demo/primitives/input/p-input-14/index.tsx",

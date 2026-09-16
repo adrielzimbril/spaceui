@@ -4,12 +4,8 @@
   "type": "registry:ui",
   "title": "Aspect Ratio",
   "description": "Accessible Aspect Ratio primitive component for Space UI.",
-  "registryDependencies": [
-    "https://www.spaceui.one/r/lib-utils.json"
-  ],
-  "categories": [
-    "aspect-ratio"
-  ],
+  "registryDependencies": ["https://www.spaceui.one/r/lib-utils.json"],
+  "categories": ["aspect-ratio"],
   "files": [
     {
       "path": "src/registry/primitives/aspect-ratio/index.tsx",

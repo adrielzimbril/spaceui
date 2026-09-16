@@ -4,17 +4,9 @@
   "type": "registry:component",
   "title": "Pin List",
   "description": "A playful list for pinning and unpinning items, with smooth animated transitions as items move between groups.",
-  "dependencies": [
-    "motion",
-    "@tabler/icons-react"
-  ],
-  "registryDependencies": [
-    "https://www.spaceui.one/r/lib-utils.json"
-  ],
-  "categories": [
-    "component",
-    "pin-list"
-  ],
+  "dependencies": ["motion", "@tabler/icons-react"],
+  "registryDependencies": ["https://www.spaceui.one/r/lib-utils.json"],
+  "categories": ["component", "pin-list"],
   "files": [
     {
       "path": "src/registry/components/spaceui/pin-list/index.tsx",

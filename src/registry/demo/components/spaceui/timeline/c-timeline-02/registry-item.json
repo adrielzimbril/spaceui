@@ -4,13 +4,8 @@
   "type": "registry:component",
   "title": "Timeline with roadmap.",
   "description": "Timeline with roadmap.",
-  "registryDependencies": [
-    "https://www.spaceui.one/r/components-spaceui-timeline.json"
-  ],
-  "categories": [
-    "component",
-    "timeline"
-  ],
+  "registryDependencies": ["https://www.spaceui.one/r/components-spaceui-timeline.json"],
+  "categories": ["component", "timeline"],
   "files": [
     {
       "path": "src/registry/demo/components/spaceui/timeline/c-timeline-02/index.tsx",

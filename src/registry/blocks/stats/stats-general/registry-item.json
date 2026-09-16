@@ -4,13 +4,9 @@
   "type": "registry:block",
   "title": "General Stats Metrics Block",
   "description": "Interactive metric overview cards with floating spring emoji decorations and semantic color accents.",
-  "registryDependencies": [
-    "https://www.spaceui.one/r/lib-utils.json"
-  ],
+  "registryDependencies": ["https://www.spaceui.one/r/lib-utils.json"],
   "dependencies": ["motion", "@tabler/icons-react"],
-  "categories": [
-    "stats"
-  ],
+  "categories": ["stats"],
   "files": [
     {
       "path": "src/registry/blocks/stats/stats-general/index.tsx",

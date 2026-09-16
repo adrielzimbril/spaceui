@@ -4,21 +4,13 @@
   "type": "registry:ui",
   "title": "Input Group 25",
   "description": "Password input with strength indicator",
-  "dependencies": [
-    "@tabler/icons-react",
-    "lucide-react"
-  ],
+  "dependencies": ["@tabler/icons-react", "lucide-react"],
   "registryDependencies": [
     "https://www.spaceui.one/r/primitives-button.json",
     "https://www.spaceui.one/r/primitives-input-group.json",
     "https://www.spaceui.one/r/primitives-label.json"
   ],
-  "categories": [
-    "button",
-    "input",
-    "input group",
-    "label"
-  ],
+  "categories": ["button", "input", "input group", "label"],
   "files": [
     {
       "path": "src/registry/demo/primitives/input-group/p-input-group-25/index.tsx",

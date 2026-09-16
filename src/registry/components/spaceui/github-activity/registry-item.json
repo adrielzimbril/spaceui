@@ -4,10 +4,7 @@
   "type": "registry:component",
   "title": "GitHub Activity",
   "description": "An interactive GitHub ecosystem showcase featuring stars, forks, and commits KPI cards with floating particles and a 52-week contribution heatmap matrix.",
-  "dependencies": [
-    "motion",
-    "@tabler/icons-react"
-  ],
+  "dependencies": ["motion", "@tabler/icons-react"],
   "registryDependencies": [
     "https://www.spaceui.one/r/primitives-frame.json",
     "https://www.spaceui.one/r/primitives-card.json",
@@ -16,12 +13,7 @@
     "https://www.spaceui.one/r/components-spaceui-status-badge.json",
     "https://www.spaceui.one/r/lib-utils.json"
   ],
-  "categories": [
-    "component",
-    "github",
-    "activity",
-    "stats"
-  ],
+  "categories": ["component", "github", "activity", "stats"],
   "files": [
     {
       "path": "src/registry/components/spaceui/github-activity/index.tsx",

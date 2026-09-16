@@ -4,15 +4,9 @@
   "type": "registry:ui",
   "title": "Empty",
   "description": "Accessible Empty primitive component for Space UI.",
-  "dependencies": [
-    "class-variance-authority"
-  ],
-  "registryDependencies": [
-    "https://www.spaceui.one/r/lib-utils.json"
-  ],
-  "categories": [
-    "empty"
-  ],
+  "dependencies": ["class-variance-authority"],
+  "registryDependencies": ["https://www.spaceui.one/r/lib-utils.json"],
+  "categories": ["empty"],
   "files": [
     {
       "path": "src/registry/primitives/empty/index.tsx",

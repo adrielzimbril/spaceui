@@ -4,18 +4,12 @@
   "type": "registry:ui",
   "title": "Calendar 6",
   "description": "Calendar with Combobox dropdown for month/year",
-  "dependencies": [
-    "@daypicker/react",
-    "lucide-react"
-  ],
+  "dependencies": ["@daypicker/react", "lucide-react"],
   "registryDependencies": [
     "https://www.spaceui.one/r/primitives-calendar.json",
     "https://www.spaceui.one/r/primitives-combobox.json"
   ],
-  "categories": [
-    "calendar",
-    "combobox"
-  ],
+  "categories": ["calendar", "combobox"],
   "files": [
     {
       "path": "src/registry/demo/primitives/calendar/p-calendar-06/index.tsx",

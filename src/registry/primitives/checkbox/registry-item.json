@@ -4,15 +4,9 @@
   "type": "registry:ui",
   "title": "Checkbox",
   "description": "Accessible Checkbox primitive component for Space UI.",
-  "dependencies": [
-    "@base-ui/react"
-  ],
-  "registryDependencies": [
-    "https://www.spaceui.one/r/lib-utils.json"
-  ],
-  "categories": [
-    "checkbox"
-  ],
+  "dependencies": ["@base-ui/react"],
+  "registryDependencies": ["https://www.spaceui.one/r/lib-utils.json"],
+  "categories": ["checkbox"],
   "files": [
     {
       "path": "src/registry/primitives/checkbox/index.tsx",

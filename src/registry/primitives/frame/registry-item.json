@@ -4,12 +4,8 @@
   "type": "registry:ui",
   "title": "Frame",
   "description": "Accessible Frame primitive component for Space UI.",
-  "registryDependencies": [
-    "https://www.spaceui.one/r/lib-utils.json"
-  ],
-  "categories": [
-    "frame"
-  ],
+  "registryDependencies": ["https://www.spaceui.one/r/lib-utils.json"],
+  "categories": ["frame"],
   "files": [
     {
       "path": "src/registry/primitives/frame/index.tsx",

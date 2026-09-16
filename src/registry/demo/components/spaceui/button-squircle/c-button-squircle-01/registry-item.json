@@ -4,14 +4,8 @@
   "type": "registry:component",
   "title": "Button Squircle Variants",
   "description": "Showcase of tactile squircle buttons with curvature morphing across default, secondary, outline, accent, glass, and ghost variants.",
-  "registryDependencies": [
-    "https://www.spaceui.one/r/components-spaceui-button-squircle.json"
-  ],
-  "categories": [
-    "component",
-    "button",
-    "squircle"
-  ],
+  "registryDependencies": ["https://www.spaceui.one/r/components-spaceui-button-squircle.json"],
+  "categories": ["component", "button", "squircle"],
   "files": [
     {
       "path": "src/registry/demo/components/spaceui/button-squircle/c-button-squircle-01/index.tsx",

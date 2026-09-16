@@ -8,9 +8,7 @@
     "https://www.spaceui.one/r/lib-utils.json",
     "https://www.spaceui.one/r/primitives-slider.json"
   ],
-  "categories": [
-    "slider"
-  ],
+  "categories": ["slider"],
   "files": [
     {
       "path": "src/registry/demo/primitives/slider/p-slider-05/index.tsx",

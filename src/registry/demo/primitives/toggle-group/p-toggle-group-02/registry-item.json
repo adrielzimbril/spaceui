@@ -4,15 +4,9 @@
   "type": "registry:ui",
   "title": "Toggle Group Sizes",
   "description": "Toggle groups in sm, default, and lg sizes",
-  "dependencies": [
-    "@tabler/icons-react"
-  ],
-  "registryDependencies": [
-    "https://www.spaceui.one/r/primitives-toggle-group.json"
-  ],
-  "categories": [
-    "toggle"
-  ],
+  "dependencies": ["@tabler/icons-react"],
+  "registryDependencies": ["https://www.spaceui.one/r/primitives-toggle-group.json"],
+  "categories": ["toggle"],
   "files": [
     {
       "path": "src/registry/demo/primitives/toggle-group/p-toggle-group-02/index.tsx",

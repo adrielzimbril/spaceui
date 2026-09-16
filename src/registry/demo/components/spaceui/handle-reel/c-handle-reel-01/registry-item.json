@@ -8,10 +8,7 @@
     "https://www.spaceui.one/r/components-spaceui-handle-reel.json",
     "https://www.spaceui.one/r/primitives-tabs.json"
   ],
-  "categories": [
-    "component",
-    "handle-reel"
-  ],
+  "categories": ["component", "handle-reel"],
   "files": [
     {
       "path": "src/registry/demo/components/spaceui/handle-reel/c-handle-reel-01/index.tsx",

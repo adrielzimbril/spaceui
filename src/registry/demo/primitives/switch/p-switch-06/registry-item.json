@@ -4,10 +4,7 @@
   "type": "registry:ui",
   "title": "Switch 6",
   "description": "Weekly availability editor with time range combobox pickers",
-  "dependencies": [
-    "@tabler/icons-react",
-    "lucide-react"
-  ],
+  "dependencies": ["@tabler/icons-react", "lucide-react"],
   "registryDependencies": [
     "https://www.spaceui.one/r/primitives-button.json",
     "https://www.spaceui.one/r/primitives-checkbox.json",
@@ -19,12 +16,7 @@
     "https://www.spaceui.one/r/primitives-switch.json",
     "https://www.spaceui.one/r/primitives-tooltip.json"
   ],
-  "categories": [
-    "switch",
-    "combobox",
-    "popover",
-    "time"
-  ],
+  "categories": ["switch", "combobox", "popover", "time"],
   "files": [
     {
       "path": "src/registry/demo/primitives/switch/p-switch-06/index.tsx",

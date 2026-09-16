@@ -12,10 +12,7 @@
     "https://www.spaceui.one/r/primitives-form.json",
     "https://www.spaceui.one/r/primitives-textarea.json"
   ],
-  "categories": [
-    "alert dialog",
-    "dialog"
-  ],
+  "categories": ["alert dialog", "dialog"],
   "files": [
     {
       "path": "src/registry/demo/primitives/dialog/p-dialog-04/index.tsx",

@@ -4,16 +4,9 @@
   "type": "registry:ui",
   "title": "Calendar 23",
   "description": "Three months calendar",
-  "dependencies": [
-    "@daypicker/react",
-    "date-fns"
-  ],
-  "registryDependencies": [
-    "https://www.spaceui.one/r/primitives-calendar.json"
-  ],
-  "categories": [
-    "calendar"
-  ],
+  "dependencies": ["@daypicker/react", "date-fns"],
+  "registryDependencies": ["https://www.spaceui.one/r/primitives-calendar.json"],
+  "categories": ["calendar"],
   "files": [
     {
       "path": "src/registry/demo/primitives/calendar/p-calendar-23/index.tsx",

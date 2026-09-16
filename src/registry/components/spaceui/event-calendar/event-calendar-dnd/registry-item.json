@@ -4,19 +4,13 @@
   "type": "registry:component",
   "title": "Event Calendar Dnd",
   "description": "Event Calendar Dnd component for Space UI.",
-  "dependencies": [
-    "date-fns"
-  ],
+  "dependencies": ["date-fns"],
   "registryDependencies": [
     "https://www.spaceui.one/r/components-spaceui-event-calendar.json",
     "https://www.spaceui.one/r/components-spaceui-event-calendar-lib.json",
     "https://www.spaceui.one/r/components-spaceui-event-calendar-types.json"
   ],
-  "categories": [
-    "component",
-    "event-calendar",
-    "calendar"
-  ],
+  "categories": ["component", "event-calendar", "calendar"],
   "files": [
     {
       "path": "src/registry/components/spaceui/event-calendar/event-calendar-dnd/index.tsx",

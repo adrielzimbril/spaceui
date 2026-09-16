@@ -4,18 +4,13 @@
   "type": "registry:component",
   "title": "Deployment log timeline",
   "description": "Deployment log timeline",
-  "dependencies": [
-    "@tabler/icons-react"
-  ],
+  "dependencies": ["@tabler/icons-react"],
   "registryDependencies": [
     "https://www.spaceui.one/r/components-spaceui-timeline.json",
     "https://www.spaceui.one/r/lib-utils.json",
     "https://www.spaceui.one/r/primitives-badge.json"
   ],
-  "categories": [
-    "component",
-    "timeline"
-  ],
+  "categories": ["component", "timeline"],
   "files": [
     {
       "path": "src/registry/demo/components/spaceui/timeline/c-timeline-10/index.tsx",

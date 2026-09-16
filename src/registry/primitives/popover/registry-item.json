@@ -4,15 +4,9 @@
   "type": "registry:ui",
   "title": "Popover",
   "description": "Accessible Popover primitive component for Space UI.",
-  "dependencies": [
-    "@base-ui/react"
-  ],
-  "registryDependencies": [
-    "https://www.spaceui.one/r/lib-utils.json"
-  ],
-  "categories": [
-    "popover"
-  ],
+  "dependencies": ["@base-ui/react"],
+  "registryDependencies": ["https://www.spaceui.one/r/lib-utils.json"],
+  "categories": ["popover"],
   "files": [
     {
       "path": "src/registry/primitives/popover/index.tsx",

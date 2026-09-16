@@ -3830,7 +3830,7 @@ export const index: Record<string, any> = {
         }
         return { default: Comp };
       });
-      LazyComp.demoProps = {"base":{"value":"#304dff"},"hot":{"value":"#8298ff"},"speed":{"value":1,"min":0,"max":3,"step":0.1}};
+      LazyComp.demoProps = {"base":{"value":"#27272a"},"hot":{"value":"#e4e4e7"},"speed":{"value":1,"min":0,"max":3,"step":0.1}};
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-heat-shade-01',
@@ -6587,7 +6587,7 @@ export const index: Record<string, any> = {
         }
         return { default: Comp };
       });
-      LazyComp.demoProps = {"text":{"value":"Space UI"},"layers":{"value":8,"min":3,"max":10,"step":1},"strength":{"value":1,"min":0.25,"max":2,"step":0.25},"height":{"value":"62%","options":{"Half":"50%","Default":"62%","Deep":"80%"}},"side":{"value":"bottom","options":{"Bottom":"bottom","Top":"top"}}};
+      LazyComp.demoProps = {"text":{"value":"Space UI"},"layers":{"value":8,"min":3,"max":10,"step":1},"strength":{"value":1,"min":0.25,"max":2,"step":0.25},"height":{"value":"62%","options":{"Half":"50%","Default":"62%","Deep":"80%"}},"side":{"value":"bottom","options":{"Bottom":"bottom","Top":"top"}},"tint":{"value":0.22,"min":0,"max":0.6,"step":0.02}};
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-frost-blurred-01',

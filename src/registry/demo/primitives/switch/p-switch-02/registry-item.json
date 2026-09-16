@@ -4,12 +4,8 @@
   "type": "registry:ui",
   "title": "Switch Sizes",
   "description": "Switch controls in sm, default, and lg sizes",
-  "registryDependencies": [
-    "https://www.spaceui.one/r/primitives-switch.json"
-  ],
-  "categories": [
-    "switch"
-  ],
+  "registryDependencies": ["https://www.spaceui.one/r/primitives-switch.json"],
+  "categories": ["switch"],
   "files": [
     {
       "path": "src/registry/demo/primitives/switch/p-switch-02/index.tsx",

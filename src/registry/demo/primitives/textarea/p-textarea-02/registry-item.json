@@ -4,12 +4,8 @@
   "type": "registry:ui",
   "title": "Textarea Sizes",
   "description": "Textarea in sm, default, and lg sizes",
-  "registryDependencies": [
-    "https://www.spaceui.one/r/primitives-textarea.json"
-  ],
-  "categories": [
-    "textarea"
-  ],
+  "registryDependencies": ["https://www.spaceui.one/r/primitives-textarea.json"],
+  "categories": ["textarea"],
   "files": [
     {
       "path": "src/registry/demo/primitives/textarea/p-textarea-02/index.tsx",

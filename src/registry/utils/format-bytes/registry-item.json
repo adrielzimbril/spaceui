@@ -4,10 +4,7 @@
   "type": "registry:lib",
   "title": "format-bytes",
   "description": "format-bytes utility.",
-  "categories": [
-    "utils",
-    "format-bytes"
-  ],
+  "categories": ["utils", "format-bytes"],
   "files": [
     {
       "path": "src/registry/utils/format-bytes/index.ts",

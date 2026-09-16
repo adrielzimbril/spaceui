@@ -8,10 +8,7 @@
     "https://www.spaceui.one/r/components-spaceui-timeline.json",
     "https://www.spaceui.one/r/lib-utils.json"
   ],
-  "categories": [
-    "component",
-    "timeline"
-  ],
+  "categories": ["component", "timeline"],
   "files": [
     {
       "path": "src/registry/demo/components/spaceui/timeline/c-timeline-05/index.tsx",

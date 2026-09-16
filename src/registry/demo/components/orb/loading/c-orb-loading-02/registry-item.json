@@ -4,13 +4,8 @@
   "type": "registry:component",
   "title": "Loading Orb All States Line Demo",
   "description": "All 6 matrix geometric states and live loop displayed simultaneously on a single row.",
-  "registryDependencies": [
-    "https://www.spaceui.one/r/components-orb-loading.json"
-  ],
-  "categories": [
-    "orb",
-    "loading"
-  ],
+  "registryDependencies": ["https://www.spaceui.one/r/components-orb-loading.json"],
+  "categories": ["orb", "loading"],
   "files": [
     {
       "path": "src/registry/demo/components/orb/loading/c-orb-loading-02/index.tsx",

@@ -4,19 +4,13 @@
   "type": "registry:ui",
   "title": "Toast 8",
   "description": "Anchored deduplicated success toast",
-  "dependencies": [
-    "@tabler/icons-react",
-    "lucide-react"
-  ],
+  "dependencies": ["@tabler/icons-react", "lucide-react"],
   "registryDependencies": [
     "https://www.spaceui.one/r/primitives-button.json",
     "https://www.spaceui.one/r/primitives-toast.json",
     "https://www.spaceui.one/r/primitives-tooltip.json"
   ],
-  "categories": [
-    "toast",
-    "button"
-  ],
+  "categories": ["toast", "button"],
   "files": [
     {
       "path": "src/registry/demo/primitives/toast/p-toast-08/index.tsx",

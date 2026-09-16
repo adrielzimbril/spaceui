@@ -4,11 +4,7 @@
   "type": "registry:hook",
   "title": "useBatteryStatus",
   "description": "useBatteryStatus hook.",
-  "categories": [
-    "hooks",
-    "browser",
-    "battery-status"
-  ],
+  "categories": ["hooks", "browser", "battery-status"],
   "files": [
     {
       "path": "src/registry/hooks/browser/use-battery-status/index.ts",

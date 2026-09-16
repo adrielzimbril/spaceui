@@ -4,12 +4,8 @@
   "type": "registry:ui",
   "title": "Checkbox Sizes",
   "description": "Checkboxes in sm, default, and lg sizes",
-  "registryDependencies": [
-    "https://www.spaceui.one/r/primitives-checkbox.json"
-  ],
-  "categories": [
-    "checkbox"
-  ],
+  "registryDependencies": ["https://www.spaceui.one/r/primitives-checkbox.json"],
+  "categories": ["checkbox"],
   "files": [
     {
       "path": "src/registry/demo/primitives/checkbox/p-checkbox-02/index.tsx",

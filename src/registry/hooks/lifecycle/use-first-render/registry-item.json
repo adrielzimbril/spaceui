@@ -4,11 +4,7 @@
   "type": "registry:hook",
   "title": "useFirstRender",
   "description": "useFirstRender hook.",
-  "categories": [
-    "hooks",
-    "lifecycle",
-    "first-render"
-  ],
+  "categories": ["hooks", "lifecycle", "first-render"],
   "files": [
     {
       "path": "src/registry/hooks/lifecycle/use-first-render/index.ts",

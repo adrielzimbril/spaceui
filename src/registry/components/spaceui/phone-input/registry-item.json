@@ -4,10 +4,7 @@
   "type": "registry:component",
   "title": "Phone Input",
   "description": "Phone Input component for Space UI.",
-  "dependencies": [
-    "@tabler/icons-react",
-    "react-phone-number-input"
-  ],
+  "dependencies": ["@tabler/icons-react", "react-phone-number-input"],
   "registryDependencies": [
     "https://www.spaceui.one/r/lib-utils.json",
     "https://www.spaceui.one/r/primitives-button.json",
@@ -15,10 +12,7 @@
     "https://www.spaceui.one/r/primitives-input.json",
     "https://www.spaceui.one/r/primitives-scroll-area.json"
   ],
-  "categories": [
-    "component",
-    "phone-input"
-  ],
+  "categories": ["component", "phone-input"],
   "files": [
     {
       "path": "src/registry/components/spaceui/phone-input/index.tsx",

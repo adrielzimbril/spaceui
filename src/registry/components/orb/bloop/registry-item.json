@@ -4,14 +4,8 @@
   "type": "registry:component",
   "title": "Bloop Orb",
   "description": "Compact audio-reactive bloop orb shader.",
-  "dependencies": [
-    "vgpu"
-  ],
-  "categories": [
-    "orb",
-    "webgpu",
-    "bloop"
-  ],
+  "dependencies": ["vgpu"],
+  "categories": ["orb", "webgpu", "bloop"],
   "files": [
     {
       "path": "src/registry/components/orb/bloop/index.tsx",

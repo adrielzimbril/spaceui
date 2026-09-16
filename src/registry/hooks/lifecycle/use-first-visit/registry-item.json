@@ -4,14 +4,8 @@
   "type": "registry:hook",
   "title": "useFirstVisit",
   "description": "useFirstVisit hook.",
-  "registryDependencies": [
-    "https://www.spaceui.one/r/hooks-browser-use-local-storage.json"
-  ],
-  "categories": [
-    "hooks",
-    "lifecycle",
-    "first-visit"
-  ],
+  "registryDependencies": ["https://www.spaceui.one/r/hooks-browser-use-local-storage.json"],
+  "categories": ["hooks", "lifecycle", "first-visit"],
   "files": [
     {
       "path": "src/registry/hooks/lifecycle/use-first-visit/index.ts",

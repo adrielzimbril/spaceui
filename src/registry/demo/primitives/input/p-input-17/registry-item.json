@@ -8,10 +8,7 @@
     "https://www.spaceui.one/r/primitives-field.json",
     "https://www.spaceui.one/r/primitives-input.json"
   ],
-  "categories": [
-    "field",
-    "input"
-  ],
+  "categories": ["field", "input"],
   "files": [
     {
       "path": "src/registry/demo/primitives/input/p-input-17/index.tsx",

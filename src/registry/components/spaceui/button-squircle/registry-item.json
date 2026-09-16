@@ -4,21 +4,9 @@
   "type": "registry:component",
   "title": "Button Squircle",
   "description": "Tactile squircle button and badge components featuring dynamic curvature morphing on hover from the original portfolio design.",
-  "dependencies": [
-    "@usespaceui/squircle",
-    "@base-ui/react",
-    "class-variance-authority"
-  ],
-  "registryDependencies": [
-    "https://www.spaceui.one/r/lib-utils.json"
-  ],
-  "categories": [
-    "component",
-    "button",
-    "badge",
-    "squircle",
-    "tactile"
-  ],
+  "dependencies": ["@usespaceui/squircle", "@base-ui/react", "class-variance-authority"],
+  "registryDependencies": ["https://www.spaceui.one/r/lib-utils.json"],
+  "categories": ["component", "button", "badge", "squircle", "tactile"],
   "files": [
     {
       "path": "src/registry/components/spaceui/button-squircle/index.tsx",

@@ -4,9 +4,7 @@
   "type": "registry:hook",
   "title": "useCookie",
   "description": "Cookie read and write manager",
-  "dependencies": [
-    "@tabler/icons-react"
-  ],
+  "dependencies": ["@tabler/icons-react"],
   "registryDependencies": [
     "https://www.spaceui.one/r/hooks-browser-use-cookie.json",
     "https://www.spaceui.one/r/primitives-badge.json",
@@ -14,11 +12,7 @@
     "https://www.spaceui.one/r/primitives-card.json",
     "https://www.spaceui.one/r/primitives-input.json"
   ],
-  "categories": [
-    "hooks",
-    "browser",
-    "cookie"
-  ],
+  "categories": ["hooks", "browser", "cookie"],
   "files": [
     {
       "path": "src/registry/demo/hooks/browser/cookie/h-use-cookie-01/index.tsx",

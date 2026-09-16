@@ -4,20 +4,14 @@
   "type": "registry:ui",
   "title": "Drawer 13",
   "description": "Responsive actions menu: menu on desktop, drawer on mobile",
-  "dependencies": [
-    "@tabler/icons-react",
-    "lucide-react"
-  ],
+  "dependencies": ["@tabler/icons-react", "lucide-react"],
   "registryDependencies": [
     "https://www.spaceui.one/r/hooks-browser-use-media-query.json",
     "https://www.spaceui.one/r/primitives-button.json",
     "https://www.spaceui.one/r/primitives-drawer.json",
     "https://www.spaceui.one/r/primitives-menu.json"
   ],
-  "categories": [
-    "drawer",
-    "menu"
-  ],
+  "categories": ["drawer", "menu"],
   "files": [
     {
       "path": "src/registry/demo/primitives/drawer/p-drawer-13/index.tsx",

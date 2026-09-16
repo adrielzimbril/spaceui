@@ -4,12 +4,8 @@
   "type": "registry:ui",
   "title": "Button 17",
   "description": "Pill-shaped button with rounded-full styling",
-  "registryDependencies": [
-    "https://www.spaceui.one/r/primitives-button.json"
-  ],
-  "categories": [
-    "button"
-  ],
+  "registryDependencies": ["https://www.spaceui.one/r/primitives-button.json"],
+  "categories": ["button"],
   "files": [
     {
       "path": "src/registry/demo/primitives/button/p-button-17/index.tsx",

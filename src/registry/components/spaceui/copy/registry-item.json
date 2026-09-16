@@ -4,11 +4,7 @@
   "type": "registry:component",
   "title": "Copy Button",
   "description": "A copy-to-clipboard button with animated icon transition.",
-  "dependencies": [
-    "class-variance-authority",
-    "lucide-react",
-    "motion"
-  ],
+  "dependencies": ["class-variance-authority", "lucide-react", "motion"],
   "registryDependencies": [
     "https://www.spaceui.one/r/components-spaceui-morph-icon.json",
     "https://www.spaceui.one/r/hooks-animation-use-controlled-state.json",
@@ -16,10 +12,7 @@
     "https://www.spaceui.one/r/lib-utils.json",
     "https://www.spaceui.one/r/primitives-button.json"
   ],
-  "categories": [
-    "component",
-    "copy"
-  ],
+  "categories": ["component", "copy"],
   "files": [
     {
       "path": "src/registry/components/spaceui/copy/index.tsx",

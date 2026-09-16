@@ -4,13 +4,8 @@
   "type": "registry:ui",
   "title": "Otp Field 3",
   "description": "OTP field with separator",
-  "registryDependencies": [
-    "https://www.spaceui.one/r/primitives-otp-field.json"
-  ],
-  "categories": [
-    "otp field",
-    "input"
-  ],
+  "registryDependencies": ["https://www.spaceui.one/r/primitives-otp-field.json"],
+  "categories": ["otp field", "input"],
   "files": [
     {
       "path": "src/registry/demo/primitives/otp-field/p-otp-field-03/index.tsx",

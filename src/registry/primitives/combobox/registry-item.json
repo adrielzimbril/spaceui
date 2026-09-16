@@ -4,18 +4,13 @@
   "type": "registry:ui",
   "title": "Combobox",
   "description": "Accessible Combobox primitive component for Space UI.",
-  "dependencies": [
-    "@base-ui/react",
-    "lucide-react"
-  ],
+  "dependencies": ["@base-ui/react", "lucide-react"],
   "registryDependencies": [
     "https://www.spaceui.one/r/lib-utils.json",
     "https://www.spaceui.one/r/primitives-input.json",
     "https://www.spaceui.one/r/primitives-scroll-area.json"
   ],
-  "categories": [
-    "combobox"
-  ],
+  "categories": ["combobox"],
   "files": [
     {
       "path": "src/registry/primitives/combobox/index.tsx",

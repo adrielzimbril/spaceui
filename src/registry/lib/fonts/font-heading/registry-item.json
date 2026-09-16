@@ -4,9 +4,7 @@
   "type": "registry:file",
   "title": "Font Heading",
   "description": "Utility and configuration helper for Font Heading.",
-  "categories": [
-    "font-heading"
-  ],
+  "categories": ["font-heading"],
   "files": [],
   "createdAt": "2026-08-21",
   "updatedAt": "2026-08-21"

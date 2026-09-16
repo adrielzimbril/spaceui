@@ -4,20 +4,14 @@
   "type": "registry:hook",
   "title": "useMap",
   "description": "Reactive Map collection state manager",
-  "dependencies": [
-    "@tabler/icons-react"
-  ],
+  "dependencies": ["@tabler/icons-react"],
   "registryDependencies": [
     "https://www.spaceui.one/r/hooks-form-use-map.json",
     "https://www.spaceui.one/r/primitives-badge.json",
     "https://www.spaceui.one/r/primitives-button.json",
     "https://www.spaceui.one/r/primitives-card.json"
   ],
-  "categories": [
-    "hooks",
-    "form",
-    "map"
-  ],
+  "categories": ["hooks", "form", "map"],
   "files": [
     {
       "path": "src/registry/demo/hooks/form/map/h-map-01/index.tsx",

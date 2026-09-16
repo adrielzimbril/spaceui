@@ -4,14 +4,8 @@
   "type": "registry:hook",
   "title": "useHold",
   "description": "useHold hook.",
-  "registryDependencies": [
-    "https://www.spaceui.one/r/hooks-utils-event.json"
-  ],
-  "categories": [
-    "hooks",
-    "lifecycle",
-    "hold"
-  ],
+  "registryDependencies": ["https://www.spaceui.one/r/hooks-utils-event.json"],
+  "categories": ["hooks", "lifecycle", "hold"],
   "files": [
     {
       "path": "src/registry/hooks/lifecycle/use-hold/index.ts",

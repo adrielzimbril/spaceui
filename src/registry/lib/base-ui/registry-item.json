@@ -4,12 +4,8 @@
   "type": "registry:lib",
   "title": "Base UI Utilities",
   "description": "Base UI core utilities and providers.",
-  "dependencies": [
-    "@base-ui/react"
-  ],
-  "categories": [
-    "base-ui"
-  ],
+  "dependencies": ["@base-ui/react"],
+  "categories": ["base-ui"],
   "files": [
     {
       "path": "src/registry/lib/base-ui/csp-provider/index.ts",

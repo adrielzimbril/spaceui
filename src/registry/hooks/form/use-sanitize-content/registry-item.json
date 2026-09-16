@@ -4,11 +4,7 @@
   "type": "registry:hook",
   "title": "useSanitizeContent",
   "description": "useSanitizeContent hook.",
-  "categories": [
-    "hooks",
-    "form",
-    "sanitize-content"
-  ],
+  "categories": ["hooks", "form", "sanitize-content"],
   "files": [
     {
       "path": "src/registry/hooks/form/use-sanitize-content/index.ts",

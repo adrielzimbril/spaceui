@@ -9,7 +9,7 @@
   "files": [
     {
       "path": "src/registry/demo/components/shader/heat-shade/c-heat-shade-01/index.tsx",
-      "content": "'use client'\n\nimport * as React from 'react'\nimport { HeatShade } from '@/components/shader/heat-shade'\n\nexport interface HeatShadeDemoProps {\n  base?: string\n  hot?: string\n  speed?: number\n}\n\nexport default function Demo({ base = '#304dff', hot = '#8298ff', speed = 1 }: HeatShadeDemoProps) {\n  return (\n    <div className=\"relative size-full min-h-96 overflow-hidden bg-black\">\n      <HeatShade className=\"absolute inset-0 opacity-70\" base={base} hot={hot} speed={speed} />\n    </div>\n  )\n}\n",
+      "content": "'use client'\n\nimport * as React from 'react'\nimport { HeatShade } from '@/components/shader/heat-shade'\n\nexport interface HeatShadeDemoProps {\n  base?: string\n  hot?: string\n  speed?: number\n}\n\nexport default function Demo({ base = '#27272a', hot = '#e4e4e7', speed = 1 }: HeatShadeDemoProps) {\n  return (\n    <div className=\"relative size-full min-h-96 overflow-hidden bg-background\">\n      <HeatShade className=\"absolute inset-0\" base={base} hot={hot} speed={speed} />\n    </div>\n  )\n}\n",
       "type": "registry:component",
       "target": "components/shader/heat-shade.tsx"
     }
@@ -17,10 +17,10 @@
   "meta": {
     "demoProps": {
       "base": {
-        "value": "#304dff"
+        "value": "#27272a"
       },
       "hot": {
-        "value": "#8298ff"
+        "value": "#e4e4e7"
       },
       "speed": {
         "value": 1,

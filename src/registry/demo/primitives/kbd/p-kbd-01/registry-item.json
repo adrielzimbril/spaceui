@@ -4,12 +4,8 @@
   "type": "registry:ui",
   "title": "Kbd 1",
   "description": "Keyboard shortcuts display",
-  "registryDependencies": [
-    "https://www.spaceui.one/r/primitives-kbd.json"
-  ],
-  "categories": [
-    "kbd"
-  ],
+  "registryDependencies": ["https://www.spaceui.one/r/primitives-kbd.json"],
+  "categories": ["kbd"],
   "files": [
     {
       "path": "src/registry/demo/primitives/kbd/p-kbd-01/index.tsx",

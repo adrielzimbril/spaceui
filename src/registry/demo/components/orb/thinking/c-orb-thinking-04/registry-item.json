@@ -4,13 +4,8 @@
   "type": "registry:component",
   "title": "Listening Orb Demo",
   "description": "Latitude rings breathing in and out on two detuned sine waves.",
-  "registryDependencies": [
-    "https://www.spaceui.one/r/components-orb-thinking.json"
-  ],
-  "categories": [
-    "orb",
-    "thinking"
-  ],
+  "registryDependencies": ["https://www.spaceui.one/r/components-orb-thinking.json"],
+  "categories": ["orb", "thinking"],
   "meta": {
     "demoProps": {
       "surface": {

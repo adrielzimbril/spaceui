@@ -4,10 +4,7 @@
   "type": "registry:file",
   "title": "Font Open Runde",
   "description": "Open Runde font family files and configuration.",
-  "categories": [
-    "font-open-runde",
-    "fonts"
-  ],
+  "categories": ["font-open-runde", "fonts"],
   "files": [
     {
       "path": "src/registry/lib/fonts/font-open-runde/open-runde-regular.woff2",

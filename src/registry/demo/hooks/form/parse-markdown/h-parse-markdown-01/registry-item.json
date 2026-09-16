@@ -4,20 +4,14 @@
   "type": "registry:hook",
   "title": "useParseMarkdown",
   "description": "Fast client-side markdown compiler",
-  "dependencies": [
-    "@tabler/icons-react"
-  ],
+  "dependencies": ["@tabler/icons-react"],
   "registryDependencies": [
     "https://www.spaceui.one/r/hooks-form-use-parse-markdown.json",
     "https://www.spaceui.one/r/primitives-badge.json",
     "https://www.spaceui.one/r/primitives-card.json",
     "https://www.spaceui.one/r/primitives-textarea.json"
   ],
-  "categories": [
-    "hooks",
-    "form",
-    "parse-markdown"
-  ],
+  "categories": ["hooks", "form", "parse-markdown"],
   "files": [
     {
       "path": "src/registry/demo/hooks/form/parse-markdown/h-parse-markdown-01/index.tsx",

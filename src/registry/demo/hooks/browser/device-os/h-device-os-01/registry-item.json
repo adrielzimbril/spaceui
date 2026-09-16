@@ -4,19 +4,13 @@
   "type": "registry:hook",
   "title": "useDeviceOS",
   "description": "Operating system detection",
-  "dependencies": [
-    "@tabler/icons-react"
-  ],
+  "dependencies": ["@tabler/icons-react"],
   "registryDependencies": [
     "https://www.spaceui.one/r/hooks-browser-use-device-os.json",
     "https://www.spaceui.one/r/primitives-badge.json",
     "https://www.spaceui.one/r/primitives-card.json"
   ],
-  "categories": [
-    "hooks",
-    "browser",
-    "device-os"
-  ],
+  "categories": ["hooks", "browser", "device-os"],
   "files": [
     {
       "path": "src/registry/demo/hooks/browser/device-os/h-device-os-01/index.tsx",

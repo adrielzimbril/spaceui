@@ -4,20 +4,9 @@
   "type": "registry:component",
   "title": "Badge Squircle",
   "description": "Tactile squircle badge component with Base UI polymorphic rendering and dynamic curvature morphing.",
-  "dependencies": [
-    "@usespaceui/squircle",
-    "@base-ui/react",
-    "class-variance-authority"
-  ],
-  "registryDependencies": [
-    "https://www.spaceui.one/r/lib-utils.json"
-  ],
-  "categories": [
-    "component",
-    "badge",
-    "squircle",
-    "tactile"
-  ],
+  "dependencies": ["@usespaceui/squircle", "@base-ui/react", "class-variance-authority"],
+  "registryDependencies": ["https://www.spaceui.one/r/lib-utils.json"],
+  "categories": ["component", "badge", "squircle", "tactile"],
   "files": [
     {
       "path": "src/registry/components/spaceui/badge-squircle/index.tsx",

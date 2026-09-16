@@ -8,11 +8,7 @@
     "https://www.spaceui.one/r/hooks-dom-use-event-listener.json",
     "https://www.spaceui.one/r/hooks-lifecycle-use-isomorphic-layout-effect.json"
   ],
-  "categories": [
-    "hooks",
-    "dom",
-    "window-size"
-  ],
+  "categories": ["hooks", "dom", "window-size"],
   "files": [
     {
       "path": "src/registry/hooks/dom/use-window-size/index.ts",

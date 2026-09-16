@@ -4,9 +4,7 @@
   "type": "registry:hook",
   "title": "useCharacterLimit",
   "description": "Character limit counter and progress",
-  "dependencies": [
-    "@tabler/icons-react"
-  ],
+  "dependencies": ["@tabler/icons-react"],
   "registryDependencies": [
     "https://www.spaceui.one/r/hooks-form-use-character-limit.json",
     "https://www.spaceui.one/r/primitives-badge.json",
@@ -14,11 +12,7 @@
     "https://www.spaceui.one/r/primitives-progress.json",
     "https://www.spaceui.one/r/primitives-textarea.json"
   ],
-  "categories": [
-    "hooks",
-    "form",
-    "character-limit"
-  ],
+  "categories": ["hooks", "form", "character-limit"],
   "files": [
     {
       "path": "src/registry/demo/hooks/form/character-limit/h-character-limit-01/index.tsx",

@@ -4,17 +4,12 @@
   "type": "registry:ui",
   "title": "Calendar 14",
   "description": "Calendar without arrow navigation (dropdown only)",
-  "dependencies": [
-    "@daypicker/react"
-  ],
+  "dependencies": ["@daypicker/react"],
   "registryDependencies": [
     "https://www.spaceui.one/r/primitives-calendar.json",
     "https://www.spaceui.one/r/primitives-select.json"
   ],
-  "categories": [
-    "calendar",
-    "select"
-  ],
+  "categories": ["calendar", "select"],
   "files": [
     {
       "path": "src/registry/demo/primitives/calendar/p-calendar-14/index.tsx",

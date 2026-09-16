@@ -4,17 +4,12 @@
   "type": "registry:component",
   "title": "Liquid Metal Avatar",
   "description": "Liquid Metal Avatar component for Space UI.",
-  "dependencies": [
-    "@paper-design/shaders-react",
-    "class-variance-authority"
-  ],
+  "dependencies": ["@paper-design/shaders-react", "class-variance-authority"],
   "registryDependencies": [
     "https://www.spaceui.one/r/lib-utils.json",
     "https://www.spaceui.one/r/primitives-avatar.json"
   ],
-  "categories": [
-    "liquid-metal-avatar"
-  ],
+  "categories": ["liquid-metal-avatar"],
   "files": [
     {
       "path": "src/registry/components/spaceui/liquid-metal-avatar/index.tsx",

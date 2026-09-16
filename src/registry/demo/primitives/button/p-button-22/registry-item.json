@@ -4,12 +4,8 @@
   "type": "registry:ui",
   "title": "Button 22",
   "description": "Button with animated status dot",
-  "registryDependencies": [
-    "https://www.spaceui.one/r/primitives-button.json"
-  ],
-  "categories": [
-    "button"
-  ],
+  "registryDependencies": ["https://www.spaceui.one/r/primitives-button.json"],
+  "categories": ["button"],
   "files": [
     {
       "path": "src/registry/demo/primitives/button/p-button-22/index.tsx",

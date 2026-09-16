@@ -4,20 +4,13 @@
   "type": "registry:hook",
   "title": "formatDate",
   "description": "Localized date formatting",
-  "dependencies": [
-    "@tabler/icons-react"
-  ],
+  "dependencies": ["@tabler/icons-react"],
   "registryDependencies": [
     "https://www.spaceui.one/r/hooks-utils-format-date.json",
     "https://www.spaceui.one/r/primitives-badge.json",
     "https://www.spaceui.one/r/primitives-card.json"
   ],
-  "categories": [
-    "hooks",
-    "utils",
-    "format-date",
-    "calendar"
-  ],
+  "categories": ["hooks", "utils", "format-date", "calendar"],
   "files": [
     {
       "path": "src/registry/demo/hooks/utils/format-date/h-format-date-01/index.tsx",

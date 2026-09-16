@@ -8,10 +8,7 @@
     "https://www.spaceui.one/r/primitives-avatar.json",
     "https://www.spaceui.one/r/primitives-select.json"
   ],
-  "categories": [
-    "select",
-    "avatar"
-  ],
+  "categories": ["select", "avatar"],
   "files": [
     {
       "path": "src/registry/demo/primitives/select/p-select-18/index.tsx",

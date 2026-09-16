@@ -4,19 +4,13 @@
   "type": "registry:hook",
   "title": "useWindowSize",
   "description": "Viewport dimensions tracker",
-  "dependencies": [
-    "@tabler/icons-react"
-  ],
+  "dependencies": ["@tabler/icons-react"],
   "registryDependencies": [
     "https://www.spaceui.one/r/hooks-dom-use-window-size.json",
     "https://www.spaceui.one/r/primitives-badge.json",
     "https://www.spaceui.one/r/primitives-card.json"
   ],
-  "categories": [
-    "hooks",
-    "dom",
-    "window-size"
-  ],
+  "categories": ["hooks", "dom", "window-size"],
   "files": [
     {
       "path": "src/registry/demo/hooks/dom/window-size/h-window-size-01/index.tsx",

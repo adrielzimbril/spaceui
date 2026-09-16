@@ -4,17 +4,12 @@
   "type": "registry:ui",
   "title": "Calendar 5",
   "description": "Calendar with custom Select dropdown for month/year",
-  "dependencies": [
-    "@daypicker/react"
-  ],
+  "dependencies": ["@daypicker/react"],
   "registryDependencies": [
     "https://www.spaceui.one/r/primitives-calendar.json",
     "https://www.spaceui.one/r/primitives-select.json"
   ],
-  "categories": [
-    "calendar",
-    "select"
-  ],
+  "categories": ["calendar", "select"],
   "files": [
     {
       "path": "src/registry/demo/primitives/calendar/p-calendar-05/index.tsx",

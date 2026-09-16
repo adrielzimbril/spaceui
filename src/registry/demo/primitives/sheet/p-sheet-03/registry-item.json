@@ -8,9 +8,7 @@
     "https://www.spaceui.one/r/primitives-button.json",
     "https://www.spaceui.one/r/primitives-sheet.json"
   ],
-  "categories": [
-    "sheet"
-  ],
+  "categories": ["sheet"],
   "files": [
     {
       "path": "src/registry/demo/primitives/sheet/p-sheet-03/index.tsx",

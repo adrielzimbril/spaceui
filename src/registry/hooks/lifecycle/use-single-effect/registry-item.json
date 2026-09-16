@@ -4,11 +4,7 @@
   "type": "registry:hook",
   "title": "useSingleEffect",
   "description": "useSingleEffect hook.",
-  "categories": [
-    "hooks",
-    "lifecycle",
-    "single-effect"
-  ],
+  "categories": ["hooks", "lifecycle", "single-effect"],
   "files": [
     {
       "path": "src/registry/hooks/lifecycle/use-single-effect/index.ts",

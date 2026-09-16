@@ -9,11 +9,7 @@
     "https://www.spaceui.one/r/primitives-frame.json",
     "https://www.spaceui.one/r/primitives-card.json"
   ],
-  "categories": [
-    "component",
-    "github",
-    "activity"
-  ],
+  "categories": ["component", "github", "activity"],
   "meta": {
     "demoProps": {
       "username": {

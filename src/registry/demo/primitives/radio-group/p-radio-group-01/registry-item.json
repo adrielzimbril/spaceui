@@ -8,9 +8,7 @@
     "https://www.spaceui.one/r/primitives-label.json",
     "https://www.spaceui.one/r/primitives-radio-group.json"
   ],
-  "categories": [
-    "radio group"
-  ],
+  "categories": ["radio group"],
   "files": [
     {
       "path": "src/registry/demo/primitives/radio-group/p-radio-group-01/index.tsx",

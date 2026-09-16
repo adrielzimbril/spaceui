@@ -4,18 +4,9 @@
   "type": "registry:component",
   "title": "Morphing Text",
   "description": "Dynamic character-level FLIP morphing animation between words or phrases with accessible screen-reader support.",
-  "dependencies": [
-    "motion"
-  ],
-  "registryDependencies": [
-    "https://www.spaceui.one/r/lib-utils.json"
-  ],
-  "categories": [
-    "component",
-    "typography",
-    "animation",
-    "text"
-  ],
+  "dependencies": ["motion"],
+  "registryDependencies": ["https://www.spaceui.one/r/lib-utils.json"],
+  "categories": ["component", "typography", "animation", "text"],
   "files": [
     {
       "path": "src/registry/components/spaceui/morphing-text/index.tsx",

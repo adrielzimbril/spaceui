@@ -4,17 +4,12 @@
   "type": "registry:component",
   "title": "Item media stack",
   "description": "Icon stack in shadcn item",
-  "dependencies": [
-    "@tabler/icons-react"
-  ],
+  "dependencies": ["@tabler/icons-react"],
   "registryDependencies": [
     "https://www.spaceui.one/r/components-spaceui-icon-stack.json",
     "https://www.spaceui.one/r/components-spaceui-item.json"
   ],
-  "categories": [
-    "component",
-    "icon-stack"
-  ],
+  "categories": ["component", "icon-stack"],
   "files": [
     {
       "path": "src/registry/demo/components/spaceui/icon-stack/c-icon-stack-06/index.tsx",

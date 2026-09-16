@@ -4,13 +4,8 @@
   "type": "registry:ui",
   "title": "Combobox 7",
   "description": "Combobox with grouped items",
-  "registryDependencies": [
-    "https://www.spaceui.one/r/primitives-combobox.json"
-  ],
-  "categories": [
-    "combobox",
-    "input"
-  ],
+  "registryDependencies": ["https://www.spaceui.one/r/primitives-combobox.json"],
+  "categories": ["combobox", "input"],
   "files": [
     {
       "path": "src/registry/demo/primitives/combobox/p-combobox-07/index.tsx",

@@ -4,13 +4,8 @@
   "type": "registry:ui",
   "title": "Button 3",
   "description": "Disabled button",
-  "registryDependencies": [
-    "https://www.spaceui.one/r/primitives-button.json"
-  ],
-  "categories": [
-    "button",
-    "disabled"
-  ],
+  "registryDependencies": ["https://www.spaceui.one/r/primitives-button.json"],
+  "categories": ["button", "disabled"],
   "files": [
     {
       "path": "src/registry/demo/primitives/button/p-button-03/index.tsx",

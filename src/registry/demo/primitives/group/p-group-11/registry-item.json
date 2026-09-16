@@ -4,18 +4,14 @@
   "type": "registry:ui",
   "title": "Group 11",
   "description": "Group with popup",
-  "dependencies": [
-    "@tabler/icons-react"
-  ],
+  "dependencies": ["@tabler/icons-react"],
   "registryDependencies": [
     "https://www.spaceui.one/r/primitives-badge.json",
     "https://www.spaceui.one/r/primitives-button.json",
     "https://www.spaceui.one/r/primitives-group.json",
     "https://www.spaceui.one/r/primitives-popover.json"
   ],
-  "categories": [
-    "group"
-  ],
+  "categories": ["group"],
   "files": [
     {
       "path": "src/registry/demo/primitives/group/p-group-11/index.tsx",

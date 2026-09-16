@@ -4,15 +4,9 @@
   "type": "registry:ui",
   "title": "Collapsible",
   "description": "Accessible Collapsible primitive component for Space UI.",
-  "dependencies": [
-    "@base-ui/react"
-  ],
-  "registryDependencies": [
-    "https://www.spaceui.one/r/lib-utils.json"
-  ],
-  "categories": [
-    "collapsible"
-  ],
+  "dependencies": ["@base-ui/react"],
+  "registryDependencies": ["https://www.spaceui.one/r/lib-utils.json"],
+  "categories": ["collapsible"],
   "files": [
     {
       "path": "src/registry/primitives/collapsible/index.tsx",

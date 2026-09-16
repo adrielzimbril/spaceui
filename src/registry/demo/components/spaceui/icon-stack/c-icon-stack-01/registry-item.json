@@ -4,16 +4,9 @@
   "type": "registry:component",
   "title": "Isometric icon stack",
   "description": "Layered isometric icon",
-  "dependencies": [
-    "@tabler/icons-react"
-  ],
-  "registryDependencies": [
-    "https://www.spaceui.one/r/components-spaceui-icon-stack.json"
-  ],
-  "categories": [
-    "component",
-    "icon-stack"
-  ],
+  "dependencies": ["@tabler/icons-react"],
+  "registryDependencies": ["https://www.spaceui.one/r/components-spaceui-icon-stack.json"],
+  "categories": ["component", "icon-stack"],
   "files": [
     {
       "path": "src/registry/demo/components/spaceui/icon-stack/c-icon-stack-01/index.tsx",

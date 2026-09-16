@@ -4,23 +4,14 @@
   "type": "registry:ui",
   "title": "Number Field 10",
   "description": "Number field in form",
-  "dependencies": [
-    "zod",
-    "zod-v4"
-  ],
+  "dependencies": ["zod", "zod-v4"],
   "registryDependencies": [
     "https://www.spaceui.one/r/primitives-button.json",
     "https://www.spaceui.one/r/primitives-field.json",
     "https://www.spaceui.one/r/primitives-form.json",
     "https://www.spaceui.one/r/primitives-number-field.json"
   ],
-  "categories": [
-    "number field",
-    "input",
-    "form",
-    "field",
-    "zod"
-  ],
+  "categories": ["number field", "input", "form", "field", "zod"],
   "files": [
     {
       "path": "src/registry/demo/primitives/number-field/p-number-field-10/index.tsx",

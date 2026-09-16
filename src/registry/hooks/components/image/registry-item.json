@@ -4,11 +4,7 @@
   "type": "registry:hook",
   "title": "Image",
   "description": "Image component.",
-  "categories": [
-    "hooks",
-    "components",
-    "image"
-  ],
+  "categories": ["hooks", "components", "image"],
   "files": [
     {
       "path": "src/registry/hooks/components/image/index.tsx",

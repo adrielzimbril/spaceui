@@ -4,18 +4,12 @@
   "type": "registry:component",
   "title": "Sortable list persisted to a backend",
   "description": "Persist the new order with onValueCommit, optimistic updates, and Sonner rollback",
-  "dependencies": [
-    "@tabler/icons-react",
-    "sonner"
-  ],
+  "dependencies": ["@tabler/icons-react", "sonner"],
   "registryDependencies": [
     "https://www.spaceui.one/r/components-spaceui-sortable.json",
     "https://www.spaceui.one/r/primitives-badge.json"
   ],
-  "categories": [
-    "component",
-    "sortable"
-  ],
+  "categories": ["component", "sortable"],
   "files": [
     {
       "path": "src/registry/demo/components/spaceui/sortable/c-sortable-08/index.tsx",

@@ -4,17 +4,9 @@
   "type": "registry:ui",
   "title": "Navigation Menu",
   "description": "Accessible Navigation Menu primitive component for Space UI.",
-  "dependencies": [
-    "@base-ui/react",
-    "class-variance-authority",
-    "lucide-react"
-  ],
-  "registryDependencies": [
-    "https://www.spaceui.one/r/lib-utils.json"
-  ],
-  "categories": [
-    "navigation-menu"
-  ],
+  "dependencies": ["@base-ui/react", "class-variance-authority", "lucide-react"],
+  "registryDependencies": ["https://www.spaceui.one/r/lib-utils.json"],
+  "categories": ["navigation-menu"],
   "files": [
     {
       "path": "src/registry/primitives/navigation-menu/index.tsx",

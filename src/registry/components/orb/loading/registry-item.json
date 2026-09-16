@@ -4,14 +4,8 @@
   "type": "registry:component",
   "title": "Loading Orb",
   "description": "Procedural matrix pixel grid loader with Tailwind styling, motion presets, and companion status banner.",
-  "dependencies": [
-    "motion"
-  ],
-  "categories": [
-    "orb",
-    "loader",
-    "ai"
-  ],
+  "dependencies": ["motion"],
+  "categories": ["orb", "loader", "ai"],
   "files": [
     {
       "path": "src/registry/components/orb/loading/index.tsx",

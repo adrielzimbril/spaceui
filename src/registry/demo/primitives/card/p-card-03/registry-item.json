@@ -4,10 +4,7 @@
   "type": "registry:ui",
   "title": "Card 3",
   "description": "Authentication card with separators",
-  "dependencies": [
-    "@tabler/icons-react",
-    "lucide-react"
-  ],
+  "dependencies": ["@tabler/icons-react", "lucide-react"],
   "registryDependencies": [
     "https://www.spaceui.one/r/primitives-button.json",
     "https://www.spaceui.one/r/primitives-card.json",
@@ -15,10 +12,7 @@
     "https://www.spaceui.one/r/primitives-form.json",
     "https://www.spaceui.one/r/primitives-input.json"
   ],
-  "categories": [
-    "card",
-    "form"
-  ],
+  "categories": ["card", "form"],
   "files": [
     {
       "path": "src/registry/demo/primitives/card/p-card-03/index.tsx",

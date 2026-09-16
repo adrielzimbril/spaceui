@@ -1,11 +1,7 @@
 {
   "version": "2.2.0",
   "updated_at": "2026-09-07T23:24:41.564Z",
-  "shapes": [
-    "circle",
-    "square",
-    "4x3"
-  ],
+  "shapes": ["circle", "square", "4x3"],
   "total_per_shape": {
     "circle": 430,
     "square": 430,

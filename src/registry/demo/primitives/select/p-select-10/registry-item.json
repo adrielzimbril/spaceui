@@ -10,9 +10,7 @@
     "https://www.spaceui.one/r/primitives-form.json",
     "https://www.spaceui.one/r/primitives-select.json"
   ],
-  "categories": [
-    "select"
-  ],
+  "categories": ["select"],
   "files": [
     {
       "path": "src/registry/demo/primitives/select/p-select-10/index.tsx",

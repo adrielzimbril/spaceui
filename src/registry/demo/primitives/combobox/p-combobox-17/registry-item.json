@@ -4,17 +4,12 @@
   "type": "registry:ui",
   "title": "Combobox 17",
   "description": "Combobox with select trigger",
-  "dependencies": [
-    "@tabler/icons-react"
-  ],
+  "dependencies": ["@tabler/icons-react"],
   "registryDependencies": [
     "https://www.spaceui.one/r/primitives-combobox.json",
     "https://www.spaceui.one/r/primitives-select.json"
   ],
-  "categories": [
-    "combobox",
-    "select"
-  ],
+  "categories": ["combobox", "select"],
   "files": [
     {
       "path": "src/registry/demo/primitives/combobox/p-combobox-17/index.tsx",

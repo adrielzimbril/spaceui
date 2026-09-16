@@ -4,12 +4,8 @@
   "type": "registry:ui",
   "title": "Spinner 1",
   "description": "Basic spinner",
-  "registryDependencies": [
-    "https://www.spaceui.one/r/primitives-spinner.json"
-  ],
-  "categories": [
-    "spinner"
-  ],
+  "registryDependencies": ["https://www.spaceui.one/r/primitives-spinner.json"],
+  "categories": ["spinner"],
   "files": [
     {
       "path": "src/registry/demo/primitives/spinner/p-spinner-01/index.tsx",

@@ -4,11 +4,7 @@
   "type": "registry:hook",
   "title": "useMap",
   "description": "useMap hook.",
-  "categories": [
-    "hooks",
-    "form",
-    "map"
-  ],
+  "categories": ["hooks", "form", "map"],
   "files": [
     {
       "path": "src/registry/hooks/form/use-map/index.ts",

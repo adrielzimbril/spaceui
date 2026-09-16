@@ -8,9 +8,7 @@
     "https://www.spaceui.one/r/components-spaceui-liquid-metal-card.json",
     "https://www.spaceui.one/r/primitives-button.json"
   ],
-  "categories": [
-    "liquid-metal-card-default"
-  ],
+  "categories": ["liquid-metal-card-default"],
   "files": [
     {
       "path": "src/registry/demo/components/spaceui/c-liquid-metal-card-default-01/index.tsx",

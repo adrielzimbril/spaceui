@@ -4,12 +4,8 @@
   "type": "registry:lib",
   "title": "Utils",
   "description": "Utility and configuration helper for Utils.",
-  "dependencies": [
-    "cn"
-  ],
-  "categories": [
-    "utils"
-  ],
+  "dependencies": ["cn"],
+  "categories": ["utils"],
   "files": [
     {
       "path": "src/registry/lib/utils/index.ts",

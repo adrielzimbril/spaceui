@@ -4,10 +4,7 @@
   "type": "registry:component",
   "title": "Image upload with sorting.",
   "description": "Image upload with sorting.",
-  "dependencies": [
-    "@tabler/icons-react",
-    "sonner"
-  ],
+  "dependencies": ["@tabler/icons-react", "sonner"],
   "registryDependencies": [
     "https://www.spaceui.one/r/components-spaceui-sortable.json",
     "https://www.spaceui.one/r/lib-utils.json",
@@ -16,10 +13,7 @@
     "https://www.spaceui.one/r/primitives-card.json",
     "https://www.spaceui.one/r/primitives-progress.json"
   ],
-  "categories": [
-    "component",
-    "file-upload"
-  ],
+  "categories": ["component", "file-upload"],
   "files": [
     {
       "path": "src/registry/demo/components/spaceui/file-upload/c-file-upload-08/index.tsx",

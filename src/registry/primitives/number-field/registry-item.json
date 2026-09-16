@@ -4,17 +4,12 @@
   "type": "registry:ui",
   "title": "Number Field",
   "description": "Accessible Number Field primitive component for Space UI.",
-  "dependencies": [
-    "@base-ui/react",
-    "lucide-react"
-  ],
+  "dependencies": ["@base-ui/react", "lucide-react"],
   "registryDependencies": [
     "https://www.spaceui.one/r/lib-utils.json",
     "https://www.spaceui.one/r/primitives-label.json"
   ],
-  "categories": [
-    "number-field"
-  ],
+  "categories": ["number-field"],
   "files": [
     {
       "path": "src/registry/primitives/number-field/index.tsx",

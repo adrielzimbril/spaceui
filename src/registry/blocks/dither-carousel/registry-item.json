@@ -8,10 +8,7 @@
     "https://www.spaceui.one/r/lib-utils.json",
     "https://www.spaceui.one/r/lib-next-image-url.json"
   ],
-  "categories": [
-    "block",
-    "dither-carousel"
-  ],
+  "categories": ["block", "dither-carousel"],
   "files": [
     {
       "path": "src/registry/blocks/dither-carousel/index.tsx",

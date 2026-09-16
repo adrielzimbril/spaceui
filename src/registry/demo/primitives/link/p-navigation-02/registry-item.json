@@ -4,14 +4,8 @@
   "type": "registry:ui",
   "title": "Navigation 2",
   "description": "Segmented navigation links",
-  "registryDependencies": [
-    "https://www.spaceui.one/r/lib-segmented-control.json"
-  ],
-  "categories": [
-    "link",
-    "navigation",
-    "segmented-control"
-  ],
+  "registryDependencies": ["https://www.spaceui.one/r/lib-segmented-control.json"],
+  "categories": ["link", "navigation", "segmented-control"],
   "files": [
     {
       "path": "src/registry/demo/primitives/link/p-navigation-02/index.tsx",

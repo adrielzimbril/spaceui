@@ -8,12 +8,7 @@
     "https://www.spaceui.one/r/primitives-input-group.json",
     "https://www.spaceui.one/r/primitives-spinner.json"
   ],
-  "categories": [
-    "input",
-    "input group",
-    "spinner",
-    "loading"
-  ],
+  "categories": ["input", "input group", "spinner", "loading"],
   "files": [
     {
       "path": "src/registry/demo/primitives/input/p-input-15/index.tsx",

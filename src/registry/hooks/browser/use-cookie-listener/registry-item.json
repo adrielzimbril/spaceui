@@ -4,14 +4,8 @@
   "type": "registry:hook",
   "title": "useCookieListener",
   "description": "useCookieListener hook.",
-  "registryDependencies": [
-    "https://www.spaceui.one/r/hooks-utils-cookie.json"
-  ],
-  "categories": [
-    "hooks",
-    "browser",
-    "cookie-listener"
-  ],
+  "registryDependencies": ["https://www.spaceui.one/r/hooks-utils-cookie.json"],
+  "categories": ["hooks", "browser", "cookie-listener"],
   "files": [
     {
       "path": "src/registry/hooks/browser/use-cookie-listener/index.ts",

@@ -4,12 +4,8 @@
   "type": "registry:ui",
   "title": "Breadcrumb 2",
   "description": "Breadcrumb with custom separator",
-  "registryDependencies": [
-    "https://www.spaceui.one/r/primitives-breadcrumb.json"
-  ],
-  "categories": [
-    "breadcrumb"
-  ],
+  "registryDependencies": ["https://www.spaceui.one/r/primitives-breadcrumb.json"],
+  "categories": ["breadcrumb"],
   "files": [
     {
       "path": "src/registry/demo/primitives/breadcrumb/p-breadcrumb-02/index.tsx",

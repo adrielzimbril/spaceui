@@ -8,10 +8,7 @@
     "https://www.spaceui.one/r/primitives-button.json",
     "https://www.spaceui.one/r/primitives-toast.json"
   ],
-  "categories": [
-    "toast",
-    "button"
-  ],
+  "categories": ["toast", "button"],
   "files": [
     {
       "path": "src/registry/demo/primitives/toast/p-toast-06/index.tsx",

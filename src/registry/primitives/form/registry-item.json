@@ -4,12 +4,8 @@
   "type": "registry:ui",
   "title": "Form",
   "description": "Accessible Form primitive component for Space UI.",
-  "dependencies": [
-    "@base-ui/react"
-  ],
-  "categories": [
-    "form"
-  ],
+  "dependencies": ["@base-ui/react"],
+  "categories": ["form"],
   "files": [
     {
       "path": "src/registry/primitives/form/index.tsx",

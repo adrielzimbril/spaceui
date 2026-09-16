@@ -4,14 +4,8 @@
   "type": "registry:hook",
   "title": "useLocalStorage",
   "description": "useLocalStorage hook.",
-  "registryDependencies": [
-    "https://www.spaceui.one/r/hooks-dom-use-event-listener.json"
-  ],
-  "categories": [
-    "hooks",
-    "browser",
-    "local-storage"
-  ],
+  "registryDependencies": ["https://www.spaceui.one/r/hooks-dom-use-event-listener.json"],
+  "categories": ["hooks", "browser", "local-storage"],
   "files": [
     {
       "path": "src/registry/hooks/browser/use-local-storage/index.ts",

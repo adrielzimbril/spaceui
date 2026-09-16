@@ -4,13 +4,8 @@
   "type": "registry:component",
   "title": "Rating with decimal value.",
   "description": "Rating with decimal value.",
-  "registryDependencies": [
-    "https://www.spaceui.one/r/components-spaceui-rating.json"
-  ],
-  "categories": [
-    "component",
-    "rating"
-  ],
+  "registryDependencies": ["https://www.spaceui.one/r/components-spaceui-rating.json"],
+  "categories": ["component", "rating"],
   "files": [
     {
       "path": "src/registry/demo/components/spaceui/rating/c-rating-02/index.tsx",

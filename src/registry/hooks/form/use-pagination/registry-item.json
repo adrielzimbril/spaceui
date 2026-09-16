@@ -4,11 +4,7 @@
   "type": "registry:hook",
   "title": "usePagination",
   "description": "usePagination hook.",
-  "categories": [
-    "hooks",
-    "form",
-    "pagination"
-  ],
+  "categories": ["hooks", "form", "pagination"],
   "files": [
     {
       "path": "src/registry/hooks/form/use-pagination/index.ts",

@@ -4,12 +4,8 @@
   "type": "registry:ui",
   "title": "Accordion 1",
   "description": "Basic accordion",
-  "registryDependencies": [
-    "https://www.spaceui.one/r/primitives-accordion.json"
-  ],
-  "categories": [
-    "accordion"
-  ],
+  "registryDependencies": ["https://www.spaceui.one/r/primitives-accordion.json"],
+  "categories": ["accordion"],
   "files": [
     {
       "path": "src/registry/demo/primitives/accordion/p-accordion-01/index.tsx",

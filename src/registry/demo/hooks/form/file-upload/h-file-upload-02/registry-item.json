@@ -4,19 +4,13 @@
   "type": "registry:hook",
   "title": "useFileUpload (PDFs & Documents)",
   "description": "Document uploader with type constraints",
-  "dependencies": [
-    "@tabler/icons-react"
-  ],
+  "dependencies": ["@tabler/icons-react"],
   "registryDependencies": [
     "https://www.spaceui.one/r/hooks-form-use-file-upload.json",
     "https://www.spaceui.one/r/primitives-badge.json",
     "https://www.spaceui.one/r/primitives-card.json"
   ],
-  "categories": [
-    "hooks",
-    "form",
-    "file-upload"
-  ],
+  "categories": ["hooks", "form", "file-upload"],
   "files": [
     {
       "path": "src/registry/demo/hooks/form/file-upload/h-file-upload-02/index.tsx",

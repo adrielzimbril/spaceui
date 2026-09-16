@@ -4,15 +4,9 @@
   "type": "registry:ui",
   "title": "Toolbar",
   "description": "Accessible Toolbar primitive component for Space UI.",
-  "dependencies": [
-    "@base-ui/react"
-  ],
-  "registryDependencies": [
-    "https://www.spaceui.one/r/lib-utils.json"
-  ],
-  "categories": [
-    "toolbar"
-  ],
+  "dependencies": ["@base-ui/react"],
+  "registryDependencies": ["https://www.spaceui.one/r/lib-utils.json"],
+  "categories": ["toolbar"],
   "files": [
     {
       "path": "src/registry/primitives/toolbar/index.tsx",

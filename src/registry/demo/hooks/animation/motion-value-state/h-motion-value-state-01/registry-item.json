@@ -4,19 +4,13 @@
   "type": "registry:hook",
   "title": "useMotionValueState",
   "description": "Framer Motion value subscriber",
-  "dependencies": [
-    "@tabler/icons-react"
-  ],
+  "dependencies": ["@tabler/icons-react"],
   "registryDependencies": [
     "https://www.spaceui.one/r/primitives-badge.json",
     "https://www.spaceui.one/r/primitives-button.json",
     "https://www.spaceui.one/r/primitives-card.json"
   ],
-  "categories": [
-    "hooks",
-    "animation",
-    "motion-value-state"
-  ],
+  "categories": ["hooks", "animation", "motion-value-state"],
   "files": [
     {
       "path": "src/registry/demo/hooks/animation/motion-value-state/h-motion-value-state-01/index.tsx",

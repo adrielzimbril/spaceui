@@ -4,13 +4,8 @@
   "type": "registry:block",
   "title": "Lens Carousel Block",
   "description": "Momentum-driven drag & scroll gallery carousel with inertia easing, an active-card focus state, and atmospheric gradient placeholders for failed image loads.",
-  "registryDependencies": [
-    "https://www.spaceui.one/r/lib-utils.json"
-  ],
-  "categories": [
-    "block",
-    "lens-carousel"
-  ],
+  "registryDependencies": ["https://www.spaceui.one/r/lib-utils.json"],
+  "categories": ["block", "lens-carousel"],
   "files": [
     {
       "path": "src/registry/blocks/lens-carousel/index.tsx",
