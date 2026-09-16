@@ -1174,6 +1174,43 @@ export const index: Record<string, any> = {
     })(),
     command: '@spaceui/components-shader-cloud',
   },
+  "components-shader-heat-shade": {
+    name: "components-shader-heat-shade",
+    description: "WebGPU fbm heat field with ember and hot tints along a moving boundary.",
+    type: "registry:component",
+    dependencies: ["vgpu"],
+    devDependencies: undefined,
+    registryDependencies: ["https://www.spaceui.one/r/lib-gpu-runtime.json","https://www.spaceui.one/r/lib-utils.json"],
+    files: [
+  {
+    "path": "src/registry/components/shader/heat-shade/index.tsx",
+    "type": "registry:component",
+    "target": "components/shader/heat-shade.tsx"
+  },
+  {
+    "path": "src/registry/components/shader/heat-shade/heat-shade.wgsl.ts",
+    "type": "registry:lib",
+    "target": "components/shader/heat-shade.wgsl.ts"
+  }
+],
+    keywords: [],
+    component: (() => {
+      const LazyComp = React.lazy(async () => {
+        const mod = await import("@/registry/components/shader/heat-shade/index.tsx");
+        const exportName = Object.keys(mod).find(
+          key => typeof mod[key] === 'function' || typeof mod[key] === 'object'
+        ) || "components-shader-heat-shade";
+        const Comp = mod.default || mod[exportName];
+        if (mod.animations) {
+          (LazyComp as any).animations = mod.animations;
+        }
+        return { default: Comp };
+      });
+      LazyComp.demoProps = {};
+      return LazyComp;
+    })(),
+    command: '@spaceui/components-shader-heat-shade',
+  },
   "components-shader-paper-shader": {
     name: "components-shader-paper-shader",
     description: "Paper Shaders WebGL2 canvas driven by a fragment shader and live uniforms.",
@@ -2357,6 +2394,38 @@ export const index: Record<string, any> = {
       return LazyComp;
     })(),
     command: '@spaceui/components-spaceui-fluid-countdown',
+  },
+  "components-spaceui-frost-blurred": {
+    name: "components-spaceui-frost-blurred",
+    description: "Stacked, masked backdrop-filter layers that frost content along an edge.",
+    type: "registry:component",
+    dependencies: [],
+    devDependencies: undefined,
+    registryDependencies: ["https://www.spaceui.one/r/lib-utils.json"],
+    files: [
+  {
+    "path": "src/registry/components/spaceui/frost-blurred/index.tsx",
+    "type": "registry:component",
+    "target": "components/spaceui/frost-blurred.tsx"
+  }
+],
+    keywords: [],
+    component: (() => {
+      const LazyComp = React.lazy(async () => {
+        const mod = await import("@/registry/components/spaceui/frost-blurred/index.tsx");
+        const exportName = Object.keys(mod).find(
+          key => typeof mod[key] === 'function' || typeof mod[key] === 'object'
+        ) || "components-spaceui-frost-blurred";
+        const Comp = mod.default || mod[exportName];
+        if (mod.animations) {
+          (LazyComp as any).animations = mod.animations;
+        }
+        return { default: Comp };
+      });
+      LazyComp.demoProps = {};
+      return LazyComp;
+    })(),
+    command: '@spaceui/components-spaceui-frost-blurred',
   },
   "components-spaceui-github-activity": {
     name: "components-spaceui-github-activity",
@@ -3733,6 +3802,38 @@ export const index: Record<string, any> = {
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-cloud-01',
+  },
+  "demo-c-heat-shade-01": {
+    name: "demo-c-heat-shade-01",
+    description: "Animated heat field with ember and hot color controls.",
+    type: "registry:component",
+    dependencies: undefined,
+    devDependencies: undefined,
+    registryDependencies: ["https://www.spaceui.one/r/components-shader-heat-shade.json"],
+    files: [
+  {
+    "path": "src/registry/demo/components/shader/heat-shade/c-heat-shade-01/index.tsx",
+    "type": "registry:component",
+    "target": "components/shader/heat-shade.tsx"
+  }
+],
+    keywords: [],
+    component: (() => {
+      const LazyComp = React.lazy(async () => {
+        const mod = await import("@/registry/demo/components/shader/heat-shade/c-heat-shade-01/index.tsx");
+        const exportName = Object.keys(mod).find(
+          key => typeof mod[key] === 'function' || typeof mod[key] === 'object'
+        ) || "demo-c-heat-shade-01";
+        const Comp = mod.default || mod[exportName];
+        if (mod.animations) {
+          (LazyComp as any).animations = mod.animations;
+        }
+        return { default: Comp };
+      });
+      LazyComp.demoProps = {"base":{"value":"#304dff"},"hot":{"value":"#8298ff"},"speed":{"value":1,"min":0,"max":3,"step":0.1}};
+      return LazyComp;
+    })(),
+    command: '@spaceui/demo-c-heat-shade-01',
   },
   "demo-c-paper-shader-01": {
     name: "demo-c-paper-shader-01",
@@ -6458,6 +6559,38 @@ export const index: Record<string, any> = {
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-fluid-countdown-01',
+  },
+  "demo-c-frost-blurred-01": {
+    name: "demo-c-frost-blurred-01",
+    description: "Large type fading into a stacked frost blur along the bottom edge.",
+    type: "registry:component",
+    dependencies: undefined,
+    devDependencies: undefined,
+    registryDependencies: ["https://www.spaceui.one/r/components-spaceui-frost-blurred.json"],
+    files: [
+  {
+    "path": "src/registry/demo/components/spaceui/frost-blurred/c-frost-blurred-01/index.tsx",
+    "type": "registry:component",
+    "target": "components/spaceui/frost-blurred-demo-01.tsx"
+  }
+],
+    keywords: [],
+    component: (() => {
+      const LazyComp = React.lazy(async () => {
+        const mod = await import("@/registry/demo/components/spaceui/frost-blurred/c-frost-blurred-01/index.tsx");
+        const exportName = Object.keys(mod).find(
+          key => typeof mod[key] === 'function' || typeof mod[key] === 'object'
+        ) || "demo-c-frost-blurred-01";
+        const Comp = mod.default || mod[exportName];
+        if (mod.animations) {
+          (LazyComp as any).animations = mod.animations;
+        }
+        return { default: Comp };
+      });
+      LazyComp.demoProps = {"text":{"value":"Space UI"},"layers":{"value":8,"min":3,"max":10,"step":1},"strength":{"value":1,"min":0.25,"max":2,"step":0.25},"height":{"value":"62%","options":{"Half":"50%","Default":"62%","Deep":"80%"}},"side":{"value":"bottom","options":{"Bottom":"bottom","Top":"top"}}};
+      return LazyComp;
+    })(),
+    command: '@spaceui/demo-c-frost-blurred-01',
   },
   "demo-c-github-activity-01": {
     name: "demo-c-github-activity-01",

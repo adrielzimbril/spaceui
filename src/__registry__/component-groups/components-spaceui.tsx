@@ -84,6 +84,10 @@ export const registryComponents: Record<string, RegistryComponent> = {
     () => import("@/registry/components/spaceui/fluid-countdown/index.tsx"),
     {},
   ),
+  "components-spaceui-frost-blurred": lazyRegistryComponent(
+    () => import("@/registry/components/spaceui/frost-blurred/index.tsx"),
+    {},
+  ),
   "components-spaceui-github-activity": lazyRegistryComponent(
     () => import("@/registry/components/spaceui/github-activity/index.tsx"),
     {},

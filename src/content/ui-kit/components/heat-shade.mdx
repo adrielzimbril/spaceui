@@ -1,0 +1,41 @@
+---
+title: Heat Shade
+description: WebGPU heat field. Tint the ember and the hot edge, then let the boundary drift.
+preview: demo-c-heat-shade-01
+---
+
+FBM flame boundary in WGSL (`vgpu`). Two color stops — base ember and hot rim — plus a grain edge.
+
+## Installation
+
+<ComponentInstallation name="components-shader-heat-shade" />
+
+Depends on `vgpu`. WebGPU required.
+
+## Files
+
+| File                            | Role                           |
+| ------------------------------- | ------------------------------ |
+| `heat-shade/index.tsx`          | vgpu surface, clock, low-power |
+| `heat-shade/heat-shade.wgsl.ts` | FBM heat field                 |
+
+## Usage
+
+```tsx
+import { HeatShade } from '@/components/shader/heat-shade'
+
+export default function SpaceUI() {
+  return <HeatShade className="h-96 w-full" base="#304dff" hot="#8298ff" speed={1} />
+}
+```
+
+## API Reference
+
+### HeatShade
+
+| Prop        | Type     | Default   | Description  |
+| ----------- | -------- | --------- | ------------ |
+| `base`      | `string` | `#304dff` | Ember tint   |
+| `hot`       | `string` | `#8298ff` | Hot rim      |
+| `speed`     | `number` | `1`       | Drift speed  |
+| `className` | `string` | —         | Canvas class |

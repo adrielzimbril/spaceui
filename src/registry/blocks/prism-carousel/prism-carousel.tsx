@@ -129,11 +129,10 @@ type Panel = { texture: WebGLTexture | null; aspect: number; fade: number }
 
 export function PrismCarousel({
   items,
-  brand,
   panelHeight = 0.62,
   gap = 12,
   radius = 6,
-  tint = 'oklch(0.70 0.12 250)',
+  tint = 'oklch(0.76 0.12 62.53)',
   gooey = 0.35,
   focusable = false,
   closeLabel = 'Close',
@@ -452,17 +451,15 @@ export function PrismCarousel({
       for (let i = 0; i < count; i++) {
         const panel = panels[i]
         panel.fade += ((panel.texture ? 1 : 0) - panel.fade) * 0.1
-        if (panel.fade < 0.005) continue
-        gl.bindTexture(gl.TEXTURE_2D, panel.texture)
-        gl.uniform1f(panelU('uFade'), panel.fade)
+        screenX[i] = Infinity
 
         const w0 = widths[i] * shrink
         const h0 = panelPx * shrink
-        const focusOffset = (i - focusIndex) * FOCUS_STAGGER
-        const panelFocus = clamp((focus - Math.abs(focusOffset)) / (1 - FOCUS_STAGGER), 0, 1)
         const isFocused = i === focusIndex
-        const drop = (1 - panelFocus) * height * FOCUS_DROP
-        const scale = isFocused ? 1 + FOCUS_GROW * panelFocus : 1
+        const focusOffset = (i - focusIndex) * FOCUS_STAGGER
+        const panelFocus = focus > 0 ? clamp((focus - Math.abs(focusOffset)) / (1 - FOCUS_STAGGER), 0, 1) : 0
+        const drop = focus > 0 && !isFocused ? (1 - panelFocus) * height * FOCUS_DROP : 0
+        const scale = focus > 0 && isFocused ? 1 + FOCUS_GROW * panelFocus : 1
 
         const centerDistance = Math.abs(centers[i] - (((scroll % total) + total) % total))
         const entryDelay = (centerDistance / total) * ENTRY_STAGGER * count
@@ -472,19 +469,19 @@ export function PrismCarousel({
 
         const w = w0 * scale * entryScale
         const h = h0 * scale * entryScale
+        const cy = -drop - entryLift
+        const x = ((((centers[i] - scroll) % total) + total * 1.5) % total) - total / 2
 
-        const xBase = centers[i] - scroll
-        const kMin = Math.floor((-half - xBase - widths[i]) / total) - 1
-        const kMax = Math.ceil((half - xBase + widths[i]) / total) + 1
-
-        for (let k = kMin; k <= kMax; k++) {
-          const cx = xBase + k * total
-          if (Math.abs(cx) < half + 1) screenX[i] = cx
+        for (let c = 0; c < copies; c++) {
+          const cx = x + (c - Math.floor(copies / 2)) * total
           if (cx + w / 2 < -half || cx - w / 2 > half) continue
+          if (Math.abs(cx) < Math.abs(screenX[i])) screenX[i] = cx
+          if (!panel.texture || panel.fade < 0.005) continue
 
-          const cy = isFocused ? 0 : -drop - entryLift
           const bridgeExt = gooeyVal > 0.001 ? settings.current.gap * 1.4 : 0.0
           const quadW = w + bridgeExt
+          gl.bindTexture(gl.TEXTURE_2D, panel.texture)
+          gl.uniform1f(panelU('uFade'), panel.fade)
           gl.uniform4f(panelU('uRect'), cx, cy, quadW, h)
           gl.uniform2f(panelU('uCardSize'), w, h)
           gl.drawArrays(gl.TRIANGLES, 0, 6)
@@ -534,14 +531,14 @@ export function PrismCarousel({
     return (
       <section
         aria-roledescription="carousel"
-        aria-label={brand ?? 'Gallery'}
+        aria-label={'Gallery'}
         className={cn('bg-background text-foreground relative h-full w-full overflow-hidden', className)}
         {...props}
       >
         <ul className="flex h-full w-full items-center gap-4 overflow-x-auto p-8">
           {items.map((entryItem, i) => (
             <li key={entryItem.image} className="flex-none">
-              <div className="relative aspect-[3/2] h-[60vh] overflow-hidden rounded-md">
+              <div className="relative aspect-3/2 h-[60vh] overflow-hidden rounded-md">
                 <NextImage
                   src={entryItem.image}
                   alt={entryItem.title}
@@ -563,7 +560,7 @@ export function PrismCarousel({
   return (
     <section
       aria-roledescription="carousel"
-      aria-label={brand ?? 'Gallery'}
+      aria-label={'Gallery'}
       className={cn(
         'bg-background text-foreground relative h-full min-h-full w-full overflow-hidden select-none',
         className,
@@ -574,7 +571,7 @@ export function PrismCarousel({
         ref={canvasRef}
         tabIndex={0}
         role="listbox"
-        aria-label={brand ?? 'Gallery'}
+        aria-label={'Gallery'}
         aria-activedescendant={`prism-carousel-${active}`}
         className="bg-background text-foreground focus-visible:outline-foreground absolute inset-0 h-full w-full cursor-grab touch-pan-x outline-none focus-visible:outline-2 focus-visible:-outline-offset-4 active:cursor-grabbing"
         onKeyDown={(event) => {
@@ -595,12 +592,6 @@ export function PrismCarousel({
           </li>
         ))}
       </ul>
-
-      {brand ? (
-        <div className="pointer-events-none absolute top-[6%] left-[5%] text-sm font-medium tracking-tight">
-          {brand}
-        </div>
-      ) : null}
 
       <div
         className={cn(

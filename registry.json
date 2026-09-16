@@ -1118,6 +1118,38 @@
       "updatedAt": "2026-09-03"
     },
     {
+      "name": "components-shader-heat-shade",
+      "type": "registry:component",
+      "title": "Heat Shade",
+      "description": "WebGPU fbm heat field with ember and hot tints along a moving boundary.",
+      "dependencies": [
+        "vgpu"
+      ],
+      "registryDependencies": [
+        "https://www.spaceui.one/r/lib-gpu-runtime.json",
+        "https://www.spaceui.one/r/lib-utils.json"
+      ],
+      "categories": [
+        "shader",
+        "background",
+        "heat"
+      ],
+      "files": [
+        {
+          "path": "src/registry/components/shader/heat-shade/index.tsx",
+          "type": "registry:component",
+          "target": "components/shader/heat-shade.tsx"
+        },
+        {
+          "path": "src/registry/components/shader/heat-shade/heat-shade.wgsl.ts",
+          "type": "registry:lib",
+          "target": "components/shader/heat-shade.wgsl.ts"
+        }
+      ],
+      "createdAt": "2026-09-16",
+      "updatedAt": "2026-09-16"
+    },
+    {
       "name": "components-shader-paper-shader",
       "type": "registry:component",
       "title": "Paper Shader",
@@ -2190,6 +2222,30 @@
       ],
       "createdAt": "2026-09-12",
       "updatedAt": "2026-09-12"
+    },
+    {
+      "name": "components-spaceui-frost-blurred",
+      "type": "registry:component",
+      "title": "Frost Blurred",
+      "description": "Stacked, masked backdrop-filter layers that frost content along an edge.",
+      "dependencies": [],
+      "registryDependencies": [
+        "https://www.spaceui.one/r/lib-utils.json"
+      ],
+      "categories": [
+        "component",
+        "overlay",
+        "blur"
+      ],
+      "files": [
+        {
+          "path": "src/registry/components/spaceui/frost-blurred/index.tsx",
+          "type": "registry:component",
+          "target": "components/spaceui/frost-blurred.tsx"
+        }
+      ],
+      "createdAt": "2026-09-16",
+      "updatedAt": "2026-09-16"
     },
     {
       "name": "components-spaceui-github-activity",
@@ -3929,6 +3985,44 @@
       ],
       "createdAt": "2026-09-03",
       "updatedAt": "2026-09-03"
+    },
+    {
+      "name": "demo-c-heat-shade-01",
+      "type": "registry:component",
+      "title": "Heat Shade Demo",
+      "description": "Animated heat field with ember and hot color controls.",
+      "registryDependencies": [
+        "https://www.spaceui.one/r/components-shader-heat-shade.json"
+      ],
+      "categories": [
+        "shader",
+        "heat"
+      ],
+      "meta": {
+        "demoProps": {
+          "base": {
+            "value": "#304dff"
+          },
+          "hot": {
+            "value": "#8298ff"
+          },
+          "speed": {
+            "value": 1,
+            "min": 0,
+            "max": 3,
+            "step": 0.1
+          }
+        }
+      },
+      "files": [
+        {
+          "path": "src/registry/demo/components/shader/heat-shade/c-heat-shade-01/index.tsx",
+          "type": "registry:component",
+          "target": "components/shader/heat-shade.tsx"
+        }
+      ],
+      "createdAt": "2026-09-16",
+      "updatedAt": "2026-09-16"
     },
     {
       "name": "demo-c-paper-shader-01",
@@ -6476,6 +6570,63 @@
       ],
       "createdAt": "2026-09-12",
       "updatedAt": "2026-09-12"
+    },
+    {
+      "name": "demo-c-frost-blurred-01",
+      "type": "registry:component",
+      "title": "Frost Blurred Demo",
+      "description": "Large type fading into a stacked frost blur along the bottom edge.",
+      "registryDependencies": [
+        "https://www.spaceui.one/r/components-spaceui-frost-blurred.json"
+      ],
+      "categories": [
+        "component",
+        "overlay",
+        "demo"
+      ],
+      "meta": {
+        "demoProps": {
+          "text": {
+            "value": "Space UI"
+          },
+          "layers": {
+            "value": 8,
+            "min": 3,
+            "max": 10,
+            "step": 1
+          },
+          "strength": {
+            "value": 1,
+            "min": 0.25,
+            "max": 2,
+            "step": 0.25
+          },
+          "height": {
+            "value": "62%",
+            "options": {
+              "Half": "50%",
+              "Default": "62%",
+              "Deep": "80%"
+            }
+          },
+          "side": {
+            "value": "bottom",
+            "options": {
+              "Bottom": "bottom",
+              "Top": "top"
+            }
+          }
+        }
+      },
+      "files": [
+        {
+          "path": "src/registry/demo/components/spaceui/frost-blurred/c-frost-blurred-01/index.tsx",
+          "type": "registry:component",
+          "target": "components/spaceui/frost-blurred-demo-01.tsx"
+        }
+      ],
+      "createdAt": "2026-09-16",
+      "updatedAt": "2026-09-16"
     },
     {
       "name": "demo-c-github-activity-01",

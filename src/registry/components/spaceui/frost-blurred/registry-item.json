@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "components-spaceui-frost-blurred",
+  "type": "registry:component",
+  "title": "Frost Blurred",
+  "description": "Stacked, masked backdrop-filter layers that frost content along an edge.",
+  "dependencies": [],
+  "registryDependencies": ["https://www.spaceui.one/r/lib-utils.json"],
+  "categories": ["component", "overlay", "blur"],
+  "files": [
+    {
+      "path": "src/registry/components/spaceui/frost-blurred/index.tsx",
+      "type": "registry:component",
+      "target": "components/spaceui/frost-blurred.tsx"
+    }
+  ],
+  "createdAt": "2026-09-16",
+  "updatedAt": "2026-09-16"
+}

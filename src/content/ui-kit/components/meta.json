@@ -12,6 +12,7 @@
     "date-selector",
     "event-calendar",
     "filters",
+    "frost-blurred",
     "icon-stack",
     "image-dark",
     "kanban",
@@ -54,6 +55,7 @@
     "bloop",
     "---Shader---",
     "cloud",
+    "heat-shade",
     "paper-shader"
   ]
 }

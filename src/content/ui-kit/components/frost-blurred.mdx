@@ -1,0 +1,46 @@
+---
+title: Frost Blurred
+description: Stacked, masked backdrop-filter layers that frost content along an edge.
+preview:
+  name: demo-c-frost-blurred-01
+  contained: false
+---
+
+A progressive frost overlay. Each layer is a stronger blur, masked so the effect ramps instead of cutting off.
+
+## Installation
+
+<ComponentInstallation name="components-spaceui-frost-blurred" />
+
+## Usage
+
+```tsx
+import { FrostBlurred } from '@/components/spaceui/frost-blurred'
+
+export default function Hero() {
+  return (
+    <FrostBlurred height="62%" side="bottom">
+      <h1 className="text-8xl font-medium">UImaxxing</h1>
+    </FrostBlurred>
+  )
+}
+```
+
+Without children, render it as an overlay on a relative parent:
+
+```tsx
+<div className="relative">
+  <img src="/cover.jpg" alt="" />
+  <FrostBlurred className="absolute inset-x-0 bottom-0" height="40%" />
+</div>
+```
+
+## Props
+
+| Prop       | Type                | Default    | Description                                      |
+| ---------- | ------------------- | ---------- | ------------------------------------------------ |
+| `layers`   | `number`            | `8`        | Stacked blur bands.                              |
+| `strength` | `number`            | `1`        | Multiplier on each band's blur radius.           |
+| `height`   | `string \| number`  | `'62%'`    | Overlay height.                                  |
+| `side`     | `'top' \| 'bottom'` | `'bottom'` | Edge the frost grows from.                       |
+| `children` | `React.ReactNode`   | —          | Content to frost. Omit to use as a pure overlay. |

@@ -1,0 +1,24 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "components-spaceui-frost-blurred",
+  "title": "Frost Blurred",
+  "description": "Stacked, masked backdrop-filter layers that frost content along an edge.",
+  "dependencies": [],
+  "registryDependencies": [
+    "https://www.spaceui.one/r/lib-utils.json"
+  ],
+  "files": [
+    {
+      "path": "src/registry/components/spaceui/frost-blurred/index.tsx",
+      "content": "'use client'\n\nimport * as React from 'react'\nimport { cn } from '@/lib/utils'\n\nexport type FrostBlurredSide = 'top' | 'bottom'\n\nexport interface FrostBlurredProps extends React.HTMLAttributes<HTMLDivElement> {\n  layers?: number\n  strength?: number\n  height?: string | number\n  side?: FrostBlurredSide\n}\n\nfunction layerMask(index: number, count: number, side: FrostBlurredSide) {\n  const band = 100 / count\n  const start = index * band\n  const a = start + band\n  const b = start + band * 2\n  const end = start + band * 3\n  const dir = side === 'top' ? 'to top' : 'to bottom'\n  const stops =\n    index === count - 1\n      ? `rgba(0,0,0,0) ${start}%, rgba(0,0,0,1) ${Math.min(a, 100)}%`\n      : `rgba(0,0,0,0) ${start}%, rgba(0,0,0,1) ${a}%, rgba(0,0,0,1) ${Math.min(b, 100)}%, rgba(0,0,0,0) ${Math.min(end, 112.5)}%`\n  return `linear-gradient(${dir}, ${stops})`\n}\n\nexport function FrostBlurred({\n  layers = 8,\n  strength = 1,\n  height = '62%',\n  side = 'bottom',\n  className,\n  children,\n  style,\n  ...props\n}: FrostBlurredProps) {\n  const count = Math.max(1, Math.round(layers))\n  const overlayHeight = typeof height === 'number' ? `${height}px` : height\n\n  const overlay = (\n    <div\n      aria-hidden=\"true\"\n      className={cn('pointer-events-none absolute inset-x-0 z-10', children ? null : className)}\n      style={{\n        height: overlayHeight,\n        top: side === 'top' ? 0 : undefined,\n        bottom: side === 'bottom' ? 0 : undefined,\n        ...(children ? undefined : style),\n      }}\n      {...(children ? undefined : props)}\n    >\n      {Array.from({ length: count }, (_, index) => {\n        const blur = 0.5 * 2 ** index * strength\n        const mask = layerMask(index, count, side)\n        return (\n          <div\n            key={index}\n            className=\"absolute inset-0\"\n            style={{\n              zIndex: index + 1,\n              backdropFilter: `blur(${blur}px)`,\n              WebkitBackdropFilter: `blur(${blur}px)`,\n              maskImage: mask,\n              WebkitMaskImage: mask,\n            }}\n          />\n        )\n      })}\n    </div>\n  )\n\n  if (!children) {\n    return overlay\n  }\n\n  return (\n    <div className={cn('relative overflow-hidden', className)} style={style} {...props}>\n      {children}\n      {overlay}\n    </div>\n  )\n}\n",
+      "type": "registry:component",
+      "target": "components/spaceui/frost-blurred.tsx"
+    }
+  ],
+  "categories": [
+    "component",
+    "overlay",
+    "blur"
+  ],
+  "type": "registry:component"
+}

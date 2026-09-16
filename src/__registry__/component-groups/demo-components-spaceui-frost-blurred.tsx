@@ -32,16 +32,8 @@ function lazyRegistryComponent(
 }
 
 export const registryComponents: Record<string, RegistryComponent> = {
-  "components-shader-cloud": lazyRegistryComponent(
-    () => import("@/registry/components/shader/cloud/index.tsx"),
-    {},
-  ),
-  "components-shader-heat-shade": lazyRegistryComponent(
-    () => import("@/registry/components/shader/heat-shade/index.tsx"),
-    {},
-  ),
-  "components-shader-paper-shader": lazyRegistryComponent(
-    () => import("@/registry/components/shader/paper-shader/index.tsx"),
-    {},
+  "demo-c-frost-blurred-01": lazyRegistryComponent(
+    () => import("@/registry/demo/components/spaceui/frost-blurred/c-frost-blurred-01/index.tsx"),
+    {"text":{"value":"Space UI"},"layers":{"value":8,"min":3,"max":10,"step":1},"strength":{"value":1,"min":0.25,"max":2,"step":0.25},"height":{"value":"62%","options":{"Half":"50%","Default":"62%","Deep":"80%"}},"side":{"value":"bottom","options":{"Bottom":"bottom","Top":"top"}}},
   ),
 };

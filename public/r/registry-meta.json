@@ -270,7 +270,7 @@
     "createdAt": "2026-09-12",
     "updatedAt": "2026-09-12",
     "size": "37.1 KB",
-    "rawSize": 38014,
+    "rawSize": 38008,
     "directSize": "37.1 KB",
     "fileCount": 4,
     "dependencies": [],
@@ -330,7 +330,7 @@
     "createdAt": "2026-09-12",
     "updatedAt": "2026-09-12",
     "size": "37.1 KB",
-    "rawSize": 38014,
+    "rawSize": 38008,
     "directSize": "37.1 KB",
     "fileCount": 4,
     "dependencies": [],
@@ -390,7 +390,7 @@
     "createdAt": "2026-09-12",
     "updatedAt": "2026-09-12",
     "size": "37.1 KB",
-    "rawSize": 38014,
+    "rawSize": 38008,
     "directSize": "37.1 KB",
     "fileCount": 4,
     "dependencies": [],
@@ -773,7 +773,7 @@
     "createdAt": "2026-09-12",
     "updatedAt": "2026-09-12",
     "size": "38 KB",
-    "rawSize": 38958,
+    "rawSize": 38954,
     "directSize": "38 KB",
     "fileCount": 4,
     "dependencies": [],
@@ -832,9 +832,9 @@
     ],
     "createdAt": "2026-09-12",
     "updatedAt": "2026-09-12",
-    "size": "30.9 KB",
-    "rawSize": 31654,
-    "directSize": "30.9 KB",
+    "size": "31.4 KB",
+    "rawSize": 32164,
+    "directSize": "31.4 KB",
     "fileCount": 4,
     "dependencies": [],
     "registryDependencies": [
@@ -2231,6 +2231,18 @@
     "dependents": [],
     "related": [
       {
+        "name": "heat-shade",
+        "title": "Heat Shade",
+        "description": "WebGPU fbm heat field with ember and hot tints along a moving boundary.",
+        "url": "/ui-kit/components/shader/heat-shade",
+        "category": "Shader",
+        "categories": [
+          "shader",
+          "background",
+          "heat"
+        ]
+      },
+      {
         "name": "paper-shader",
         "title": "Paper Shader",
         "description": "Paper Shaders WebGL2 canvas driven by a fragment shader and live uniforms.",
@@ -2271,6 +2283,124 @@
     ],
     "dependents": [],
     "related": [
+      {
+        "name": "heat-shade",
+        "title": "Heat Shade",
+        "description": "WebGPU fbm heat field with ember and hot tints along a moving boundary.",
+        "url": "/ui-kit/components/shader/heat-shade",
+        "category": "Shader",
+        "categories": [
+          "shader",
+          "background",
+          "heat"
+        ]
+      },
+      {
+        "name": "paper-shader",
+        "title": "Paper Shader",
+        "description": "Paper Shaders WebGL2 canvas driven by a fragment shader and live uniforms.",
+        "url": "/ui-kit/components/shader/paper-shader",
+        "category": "Shader",
+        "categories": [
+          "shader",
+          "webgl"
+        ]
+      }
+    ]
+  },
+  "heat-shade": {
+    "name": "components-shader-heat-shade",
+    "shortName": "heat-shade",
+    "title": "Heat Shade",
+    "description": "WebGPU fbm heat field with ember and hot tints along a moving boundary.",
+    "type": "registry:component",
+    "url": "/ui-kit/components/shader/heat-shade",
+    "category": "Shader",
+    "categories": [
+      "shader",
+      "background",
+      "heat"
+    ],
+    "createdAt": "2026-09-16",
+    "updatedAt": "2026-09-16",
+    "size": "6.5 KB",
+    "rawSize": 6651,
+    "directSize": "6.5 KB",
+    "fileCount": 2,
+    "dependencies": [
+      "vgpu"
+    ],
+    "registryDependencies": [
+      "https://www.spaceui.one/r/lib-gpu-runtime.json",
+      "https://www.spaceui.one/r/lib-utils.json"
+    ],
+    "dependents": [],
+    "related": [
+      {
+        "name": "cloud",
+        "title": "Cloud",
+        "description": "Interactive volumetric cloud material rendered as a full-bleed shader surface.",
+        "url": "/ui-kit/components/shader/cloud",
+        "category": "Shader",
+        "categories": [
+          "shader",
+          "cloud",
+          "background"
+        ]
+      },
+      {
+        "name": "paper-shader",
+        "title": "Paper Shader",
+        "description": "Paper Shaders WebGL2 canvas driven by a fragment shader and live uniforms.",
+        "url": "/ui-kit/components/shader/paper-shader",
+        "category": "Shader",
+        "categories": [
+          "shader",
+          "webgl"
+        ]
+      }
+    ]
+  },
+  "components-shader-heat-shade": {
+    "name": "components-shader-heat-shade",
+    "shortName": "heat-shade",
+    "title": "Heat Shade",
+    "description": "WebGPU fbm heat field with ember and hot tints along a moving boundary.",
+    "type": "registry:component",
+    "url": "/ui-kit/components/shader/heat-shade",
+    "category": "Shader",
+    "categories": [
+      "shader",
+      "background",
+      "heat"
+    ],
+    "createdAt": "2026-09-16",
+    "updatedAt": "2026-09-16",
+    "size": "6.5 KB",
+    "rawSize": 6651,
+    "directSize": "6.5 KB",
+    "fileCount": 2,
+    "dependencies": [
+      "vgpu"
+    ],
+    "registryDependencies": [
+      "https://www.spaceui.one/r/lib-gpu-runtime.json",
+      "https://www.spaceui.one/r/lib-utils.json"
+    ],
+    "dependents": [],
+    "related": [
+      {
+        "name": "cloud",
+        "title": "Cloud",
+        "description": "Interactive volumetric cloud material rendered as a full-bleed shader surface.",
+        "url": "/ui-kit/components/shader/cloud",
+        "category": "Shader",
+        "categories": [
+          "shader",
+          "cloud",
+          "background"
+        ]
+      },
       {
         "name": "paper-shader",
         "title": "Paper Shader",
@@ -2317,6 +2447,18 @@
           "cloud",
           "background"
         ]
+      },
+      {
+        "name": "heat-shade",
+        "title": "Heat Shade",
+        "description": "WebGPU fbm heat field with ember and hot tints along a moving boundary.",
+        "url": "/ui-kit/components/shader/heat-shade",
+        "category": "Shader",
+        "categories": [
+          "shader",
+          "background",
+          "heat"
+        ]
       }
     ]
   },
@@ -2352,6 +2494,18 @@
           "shader",
           "cloud",
           "background"
+        ]
+      },
+      {
+        "name": "heat-shade",
+        "title": "Heat Shade",
+        "description": "WebGPU fbm heat field with ember and hot tints along a moving boundary.",
+        "url": "/ui-kit/components/shader/heat-shade",
+        "category": "Shader",
+        "categories": [
+          "shader",
+          "background",
+          "heat"
         ]
       }
     ]
@@ -6264,6 +6418,56 @@
     "registryDependencies": [
       "https://www.spaceui.one/r/lib-utils.json",
       "https://www.spaceui.one/r/primitives-button.json"
+    ],
+    "dependents": [],
+    "related": []
+  },
+  "frost-blurred": {
+    "name": "components-spaceui-frost-blurred",
+    "shortName": "frost-blurred",
+    "title": "Frost Blurred",
+    "description": "Stacked, masked backdrop-filter layers that frost content along an edge.",
+    "type": "registry:component",
+    "url": "/ui-kit/components/spaceui/frost-blurred",
+    "category": "Overlay",
+    "categories": [
+      "overlay",
+      "blur"
+    ],
+    "createdAt": "2026-09-16",
+    "updatedAt": "2026-09-16",
+    "size": "2.2 KB",
+    "rawSize": 2290,
+    "directSize": "2.2 KB",
+    "fileCount": 1,
+    "dependencies": [],
+    "registryDependencies": [
+      "https://www.spaceui.one/r/lib-utils.json"
+    ],
+    "dependents": [],
+    "related": []
+  },
+  "components-spaceui-frost-blurred": {
+    "name": "components-spaceui-frost-blurred",
+    "shortName": "frost-blurred",
+    "title": "Frost Blurred",
+    "description": "Stacked, masked backdrop-filter layers that frost content along an edge.",
+    "type": "registry:component",
+    "url": "/ui-kit/components/spaceui/frost-blurred",
+    "category": "Overlay",
+    "categories": [
+      "overlay",
+      "blur"
+    ],
+    "createdAt": "2026-09-16",
+    "updatedAt": "2026-09-16",
+    "size": "2.2 KB",
+    "rawSize": 2290,
+    "directSize": "2.2 KB",
+    "fileCount": 1,
+    "dependencies": [],
+    "registryDependencies": [
+      "https://www.spaceui.one/r/lib-utils.json"
     ],
     "dependents": [],
     "related": []

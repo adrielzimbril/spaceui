@@ -1,0 +1,57 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-c-frost-blurred-01",
+  "title": "Frost Blurred Demo",
+  "description": "Large type fading into a stacked frost blur along the bottom edge.",
+  "registryDependencies": [
+    "https://www.spaceui.one/r/components-spaceui-frost-blurred.json"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/components/spaceui/frost-blurred/c-frost-blurred-01/index.tsx",
+      "content": "'use client'\n\nimport * as React from 'react'\nimport { FrostBlurred, type FrostBlurredSide } from '@/components/spaceui/frost-blurred'\n\nexport interface FrostBlurredDemoProps {\n  layers?: number\n  strength?: number\n  height?: string\n  side?: FrostBlurredSide\n  text?: string\n}\n\nexport default function Demo({\n  layers = 8,\n  strength = 1,\n  height = '62%',\n  side = 'bottom',\n  text = 'Space UI',\n}: FrostBlurredDemoProps) {\n  return (\n    <div className=\"flex size-full min-h-96 items-end justify-center overflow-hidden px-4 pt-10 sm:px-6\">\n      <FrostBlurred layers={Number(layers)} strength={Number(strength)} height={height} side={side} className=\"w-full\">\n        <span className=\"text-foreground block select-none text-center text-[clamp(2.5rem,15vw,12rem)] leading-[0.78] font-medium tracking-[-0.045em]\">\n          {text}\n        </span>\n      </FrostBlurred>\n    </div>\n  )\n}\n",
+      "type": "registry:component",
+      "target": "components/spaceui/frost-blurred-demo-01.tsx"
+    }
+  ],
+  "meta": {
+    "demoProps": {
+      "text": {
+        "value": "Space UI"
+      },
+      "layers": {
+        "value": 8,
+        "min": 3,
+        "max": 10,
+        "step": 1
+      },
+      "strength": {
+        "value": 1,
+        "min": 0.25,
+        "max": 2,
+        "step": 0.25
+      },
+      "height": {
+        "value": "62%",
+        "options": {
+          "Half": "50%",
+          "Default": "62%",
+          "Deep": "80%"
+        }
+      },
+      "side": {
+        "value": "bottom",
+        "options": {
+          "Bottom": "bottom",
+          "Top": "top"
+        }
+      }
+    }
+  },
+  "categories": [
+    "component",
+    "overlay",
+    "demo"
+  ],
+  "type": "registry:component"
+}

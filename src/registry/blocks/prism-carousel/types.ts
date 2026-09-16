@@ -11,15 +11,13 @@ export interface PrismCarouselItem {
 
 export interface PrismCarouselProps extends Omit<React.ComponentPropsWithoutRef<'section'>, 'children'> {
   items: PrismCarouselItem[]
-  /** Wordmark in the top-left. Omit to drop it. @default undefined */
-  brand?: string
   /** Panel height, as a fraction of the stage. @default 0.62 */
   panelHeight?: number
   /** Space between panels, in px. @default 12 */
   gap?: number
   /** Panel corner radius, in px. @default 6 */
   radius?: number
-  /** The lens ring and aura colour. @default "oklch(0.70 0.12 250)" */
+  /** The lens ring and aura colour. @default "oklch(0.76 0.12 62.53)" */
   tint?: string
   /** Gooey fluid refraction and edge blending. @default 0.35 */
   gooey?: boolean | number
