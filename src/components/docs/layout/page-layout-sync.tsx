@@ -71,6 +71,8 @@ export function PageLayoutSync({ mode = Mode.both, defaultMode, path = '', previ
       restart: config.restart,
       bigScreen: config.bigScreen,
       componentGroup,
+      externalUrl: config.externalUrl,
+      hideDocPanel: config.showcase,
     })
   }, [preview, title, path, pathname, registerDefaultPreview])
 

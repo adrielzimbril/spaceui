@@ -1,7 +1,7 @@
 'use client'
-/* eslint-disable @next/next/no-img-element */
 
 import React from 'react'
+import NextImage from 'next/image'
 import { AnimatePresence, motion } from 'motion/react'
 import { ease, glass } from '../lib/data'
 
@@ -95,16 +95,16 @@ export function GlassDock({
         <GlassSheen />
         <span className="relative size-[30px] flex-none overflow-hidden rounded-full bg-black/20 shadow-inner md:size-[50px]">
           <AnimatePresence initial={false}>
-            <motion.img
+            <motion.div
               key={navImage}
-              src={navImage}
-              alt=""
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.35, ease: 'easeOut' }}
-              className="absolute inset-0 size-full object-cover"
-            />
+              className="absolute inset-0"
+            >
+              <NextImage src={navImage} alt="" fill sizes="70px" className="object-cover" />
+            </motion.div>
           </AnimatePresence>
         </span>
         <span className="relative h-[2.4em] min-w-0 flex-1 overflow-hidden text-center uppercase leading-none">

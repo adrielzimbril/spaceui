@@ -81,7 +81,7 @@ export const WORK_LENS_ITEMS: LensCarouselItem[] = [
 
 export default function BlockLensCarousel() {
   return (
-    <div className="relative h-dvh w-full overflow-hidden rounded-3xl bg-background">
+    <div className="relative h-dvh w-full overflow-hidden bg-white">
       <LensCarousel items={WORK_LENS_ITEMS} />
     </div>
   )

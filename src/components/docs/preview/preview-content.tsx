@@ -23,6 +23,7 @@ export interface PreviewContentProps {
   registryError?: boolean
   reloadKey?: number | string
   className?: string
+  externalUrl?: string
 }
 
 export function PreviewContent({
@@ -40,18 +41,20 @@ export function PreviewContent({
   registryError = false,
   reloadKey,
   className,
+  externalUrl,
 }: PreviewContentProps) {
   const isContained = getEffectiveContained(contained, container, name, componentGroup)
 
   const resolvedPreviewName = previewName || name
 
   if (
-    registryError ||
-    (!componentGroup &&
-      !name.startsWith('demo-primitives-') &&
-      !name.startsWith('primitives-') &&
-      !Component &&
-      !children)
+    !externalUrl &&
+    (registryError ||
+      (!componentGroup &&
+        !name.startsWith('demo-primitives-') &&
+        !name.startsWith('primitives-') &&
+        !Component &&
+        !children))
   ) {
     return (
       <div className="flex min-h-65 w-full items-center justify-center p-8 gap-1 text-sm text-destructive">
@@ -75,7 +78,13 @@ export function PreviewContent({
           data-slot="preview"
           className={cn('flex size-full min-h-0 min-w-0 items-center justify-center', isContained && 'w-full max-w-72')}
         >
-          <Iframe key={reloadKey} name={resolvedPreviewName} bigScreen={bigScreen} themeOverride={themeOverride} />
+          <Iframe
+            key={reloadKey}
+            name={resolvedPreviewName}
+            bigScreen={bigScreen}
+            themeOverride={themeOverride}
+            src={externalUrl}
+          />
         </div>
       </div>
     )

@@ -20,6 +20,7 @@ const META: Record<CatalogSection, { title: string; pages: string[] }> = {
 
 function categoryBadge(section: CatalogSection, groupTitle: string) {
   const title = groupTitle.toLowerCase()
+  if (title === 'showcase') return 'Showcase'
   if (title === 'orb') return 'Orb'
   if (title.includes('shader')) return 'Shader'
   if (title.includes('background')) return 'Background'

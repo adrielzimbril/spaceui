@@ -1,12 +1,10 @@
 'use client'
-/* eslint-disable @next/next/no-img-element */
 
 import React, {
   type PointerEvent as ReactPointerEvent,
   type RefObject,
   type WheelEvent as ReactWheelEvent,
 } from 'react'
-import NextImage from 'next/image'
 import { motion } from 'motion/react'
 import { ease } from '../lib/data'
 
@@ -57,22 +55,15 @@ export function HorizontalGallery({
               initial={{ opacity: 0, x: 40 }}
               animate={{ opacity: lightboxIndex === index ? 0 : 1, x: 0 }}
               transition={{ duration: 0.8, ease }}
-              className="group relative mr-[clamp(24px,4vw,60px)] block shrink-0 cursor-zoom-in overflow-hidden rounded-2xl border border-white/10 shadow-2xl bg-neutral-900"
+              className="group relative mr-[clamp(24px,4vw,60px)] block shrink-0 cursor-zoom-in bg-transparent"
               data-horizontal-lens-index={index}
               style={{
                 width: 'clamp(280px, 38vw, 560px)',
                 aspectRatio: '16 / 10',
               }}
             >
-              <NextImage
-                src={src}
-                alt={`Lens ${String(index + 1).padStart(2, '0')}`}
-                fill
-                sizes="(max-width: 768px) 80vw, 38vw"
-                className="object-cover transition-transform duration-500 group-hover:scale-105"
-              />
               <span className="sr-only">{`Lens ${String(index + 1).padStart(2, '0')}`}</span>
-              <span className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+              <span className="pointer-events-none absolute inset-0 bg-white/0 transition-colors duration-500 group-hover:bg-white/[.025]" />
             </motion.button>
           )
         })}

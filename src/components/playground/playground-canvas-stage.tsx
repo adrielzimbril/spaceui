@@ -215,10 +215,12 @@ export function PlaygroundCanvasStage({
         <PlaygroundToolbar
           showInfo={showInfo}
           onToggleInfo={onToggleInfo}
+          hideDocPanelToggle={activePreview?.hideDocPanel}
           isImmersive={isImmersive}
           onToggleImmersive={onToggleImmersive}
           onReplay={handleReplay}
           previewName={resolvedPreviewName}
+          externalUrl={activePreview?.externalUrl}
           hasBinds={Boolean(localBinds || activePreview?.binds)}
           tweakpaneOpen={tweakMode}
           onToggleTweakpane={() => setTweakMode((prev) => !prev)}
@@ -256,6 +258,7 @@ export function PlaygroundCanvasStage({
                 bigScreen={activePreview.bigScreen}
                 themeOverride={themeOverride}
                 reloadKey={reloadKey}
+                externalUrl={activePreview.externalUrl}
               />
             )}
           </div>

@@ -2,9 +2,12 @@
 
 import * as React from 'react'
 import Link from 'next/link'
+import NumberFlow from '@number-flow/react'
 import { registryStats } from '@/__registry__/stats'
+import projectsData from '@/data/projects.json'
 import { useInView } from '@/registry/hooks/animation/use-in-view'
 import { Badge } from '@/registry/components/spaceui/badge-squircle'
+import { megaMenuTools } from '@/config/menu-config'
 import { OrbBloopCard } from './bento/registry/orb-bloop-card'
 import { MorphingTextCard } from './bento/registry/morphing-text-card'
 import { BouncyAccordionCard } from './bento/registry/bouncy-accordion-card'
@@ -13,6 +16,9 @@ import { LoadingOrbCard } from './bento/registry/loading-orb-card'
 import { WordsPreloaderCard } from './bento/registry/words-preloader-card'
 import { TimelineCard } from './bento/registry/timeline-card'
 import { GitHubActivityCard } from './bento/registry/github-activity-card'
+import { AvatarsSquishmojiCard } from './bento/packages/avatars-squishmoji-card'
+import { FlagsCard } from './bento/packages/flags-card'
+import { EmojiCard } from './bento/packages/emoji-card'
 import { IconArrowUpRight } from '@tabler/icons-react'
 import { Button } from '@/registry/components/spaceui/button-squircle'
 
@@ -48,35 +54,53 @@ export function RegistryGrid() {
 
       <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
         <OrbBloopCard isVisible={isVisible} />
-        {/* <MorphingTextCard /> */}
-        {/* <BouncyAccordionCard /> */}
+        {/* <MorphingTextCard isVisible={isVisible} /> */}
+        {/* <BouncyAccordionCard isVisible={isVisible} /> */}
         <HandleReelCard />
-        {/* <LoadingOrbCard /> */}
+        <FlagsCard isVisible={isVisible} />
+        <TimelineCard isVisible={isVisible} />
+        <GitHubActivityCard isVisible={isVisible} />
+        <AvatarsSquishmojiCard isVisible={isVisible} count={9} />
         <WordsPreloaderCard isVisible={isVisible} />
-        <TimelineCard />
-        <GitHubActivityCard />
+        <LoadingOrbCard isVisible={isVisible} />
+        <EmojiCard isVisible={isVisible} />
       </div>
 
-      <div className="mt-10 grid gap-4 sm:grid-cols-4">
-        <div className="rounded-2xl bg-muted p-6 sm:p-8">
-          <p className="text-4xl font-semibold tracking-tight text-foreground">{registryStats.primitives}</p>
+      <div className="mt-10 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-5">
+        <Link href="/primitives" data-space-hover className="rounded-2xl bg-muted p-6 sm:p-8">
+          <p className="text-4xl font-semibold tracking-tight text-foreground">
+            <NumberFlow value={isVisible ? registryStats.primitives : 0} />
+          </p>
           <p className="mt-2 text-sm font-medium text-muted-foreground">Base UI Primitives</p>
-        </div>
+        </Link>
 
-        <div className="rounded-2xl bg-muted p-6 sm:p-8">
-          <p className="text-4xl font-semibold tracking-tight text-foreground">{registryStats.components}</p>
+        <Link href="/components" data-space-hover className="rounded-2xl bg-muted p-6 sm:p-8">
+          <p className="text-4xl font-semibold tracking-tight text-foreground">
+            <NumberFlow value={isVisible ? registryStats.components : 0} />
+          </p>
           <p className="mt-2 text-sm font-medium text-muted-foreground">Interactive Components</p>
-        </div>
+        </Link>
 
-        <div className="rounded-2xl bg-muted p-6 sm:p-8">
-          <p className="text-4xl font-semibold tracking-tight text-foreground">{registryStats.templates}</p>
+        <Link href="/templates" data-space-hover className="rounded-2xl bg-muted p-6 sm:p-8">
+          <p className="text-4xl font-semibold tracking-tight text-foreground">
+            <NumberFlow value={isVisible ? registryStats.templates + projectsData.projects.length : 0} />
+          </p>
           <p className="mt-2 text-sm font-medium text-muted-foreground">Templates</p>
-        </div>
+        </Link>
 
-        <div className="rounded-2xl bg-muted p-6 sm:p-8">
-          <p className="text-4xl font-semibold tracking-tight text-foreground">{registryStats.hooksOnly}</p>
+        <Link href="/hooks" data-space-hover className="rounded-2xl bg-muted p-6 sm:p-8">
+          <p className="text-4xl font-semibold tracking-tight text-foreground">
+            <NumberFlow value={isVisible ? registryStats.hooksOnly : 0} />
+          </p>
           <p className="mt-2 text-sm font-medium text-muted-foreground">Production Hooks</p>
-        </div>
+        </Link>
+
+        <Link href="/tools" data-space-hover className="rounded-2xl bg-muted p-6 sm:p-8">
+          <p className="text-4xl font-semibold tracking-tight text-foreground">
+            <NumberFlow value={isVisible ? megaMenuTools.length : 0} />
+          </p>
+          <p className="mt-2 text-sm font-medium text-muted-foreground">Creative Tools</p>
+        </Link>
       </div>
       <div className="flex mt-6 justify-center self-center align-center">
         <Button

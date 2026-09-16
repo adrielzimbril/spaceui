@@ -93,7 +93,7 @@ export function EmojiCard({ isVisible = true }: EmojiCardProps) {
                   variant="ghost"
                   onClick={() => sparkleSound()}
                   title={em.name}
-                  className="group flex h-auto! flex-col items-center gap-1 p-1 cursor-pointer transition-transform hover:scale-115 active:scale-95 select-none"
+                  className="group flex h-auto! flex-col items-center gap-1 p-1 cursor-pointer transition-transform hover:scale-110 select-none"
                 >
                   <div className="relative size-9 overflow-hidden rounded-xl p-1 flex items-center justify-center bg-muted/30">
                     <MorphIcon activeKey={`${em.char}-${activeEmojiStyle.source}`} variant="blur-scale" duration={0.28}>

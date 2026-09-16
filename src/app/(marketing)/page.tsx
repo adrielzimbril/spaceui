@@ -16,7 +16,7 @@ export default function HomePage() {
       <RegistryGrid />
 
       {/* 3. Packages — Independent @usespaceui/* packages & Creative Studio */}
-      <PackagesSection />
+      {/* <PackagesSection /> */}
 
       {/* 4. Showcase — Production Starters & Landings */}
       {/* <ShowcaseSection /> */}

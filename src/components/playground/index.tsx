@@ -31,7 +31,8 @@ export function PlaygroundSplitView({ children }: { children: React.ReactNode })
     return <>{children}</>
   }
 
-  const showInfo = isImmersive ? false : isDesktop ? desktopShowInfo : mobileShowInfo
+  const hideDocPanel = Boolean(activePreview?.hideDocPanel)
+  const showInfo = hideDocPanel ? false : isImmersive ? false : isDesktop ? desktopShowInfo : mobileShowInfo
 
   const handleToggleInfo = () => {
     bloomSound()
@@ -49,10 +50,12 @@ export function PlaygroundSplitView({ children }: { children: React.ReactNode })
 
   return (
     <div className="relative h-dvh w-full overflow-hidden bg-background text-foreground overscroll-none flex flex-col z-30">
-      {/* 2. Left Sliding Documentation & Code Panel (40%) */}
-      <PlaygroundDocPanel showInfo={showInfo} onClose={handleToggleInfo}>
-        {children}
-      </PlaygroundDocPanel>
+      {/* 2. Left Sliding Documentation & Code Panel (40%) — omitted entirely when the active preview has no doc content */}
+      {!hideDocPanel && (
+        <PlaygroundDocPanel showInfo={showInfo} onClose={handleToggleInfo}>
+          {children}
+        </PlaygroundDocPanel>
+      )}
 
       {/* 3. Right Interactive Canvas Stage (60% or 100%) */}
       <PlaygroundCanvasStage

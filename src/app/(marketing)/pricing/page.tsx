@@ -21,7 +21,7 @@ import { HeroAvatar, MarketingHero } from '@/components/marketing/shared/hero'
 import { AnimatedStat } from '@/components/pricing/animated-stat'
 import { BuyButton } from '@/components/pricing/buy-button'
 import { PricingCalculator } from '@/components/pricing/pricing-calculator'
-import { Accordion, AccordionItem, AccordionPanel, AccordionTrigger } from '@/registry/primitives/accordion'
+import { BouncyAccordion } from '@/registry/components/spaceui/bouncy-accordion'
 import { Card, CardPanel } from '@/registry/primitives/card'
 import { Frame, FrameFooter, FrameHeader } from '@/registry/primitives/frame'
 import { Progress, ProgressIndicator, ProgressTrack } from '@/registry/primitives/progress'
@@ -447,8 +447,29 @@ export default function PricingPage() {
         </div>
       </section>
 
+      {/* FAQ */}
+      <section data-page-section className="mx-auto max-w-7xl scroll-mt-16 px-5 sm:px-6 py-16">
+        <SectionHeader badge="FAQ" title="Frequently asked questions" description="Still unsure? Here's the rundown." />
+
+        <BouncyAccordion
+          className="mx-auto mt-10 squircle w-full max-w-xl"
+          defaultValue={0}
+          items={faqs.map((faq) => ({ title: faq.question, description: faq.answer }))}
+        />
+
+        <p className="mt-8 text-center text-sm text-muted-foreground">
+          Still have questions? email at{' '}
+          <a
+            href={`mailto:${siteConfig.email}`}
+            className="font-semibold text-foreground transition-colors hover:text-primary"
+          >
+            {siteConfig.email}
+          </a>
+        </p>
+      </section>
+
       {/* Closing CTA */}
-      <section data-page-section className="mx-auto max-w-7xl scroll-mt-16 px-5 sm:px-6 py-10">
+      <section data-page-section className="mx-auto max-w-3xl scroll-mt-16 px-5 sm:px-6 py-10">
         <div className="flex flex-col items-center gap-6 rounded-5xl bg-muted p-10 text-center sm:p-14">
           <h2 className="text-[28px] font-semibold tracking-tight text-foreground sm:text-[36px]">
             Ready to ship faster?
@@ -460,90 +481,16 @@ export default function PricingPage() {
             {POLAR_PRODUCTS.proYearly ? (
               <BuyButton productId={POLAR_PRODUCTS.proYearly} label="Get Pro" variant="primary" size="lg" />
             ) : (
-              <Button variant="primary" size="lg" asPointer render={<Link href="/checkout?products=pro_yearly" />}>
-                <IconBolt className="size-4" />
-                <span>Get Pro</span>
-              </Button>
+              <LiquidBorder className="flex w-full squircle rounded-full p-0.75 hover:scale-105 transition-all duration-300">
+                <Button variant="primary" asPointer render={<Link href="/checkout?products=pro_yearly" />}>
+                  <IconBolt className="size-4" />
+                  <span>Get Pro</span>
+                </Button>
+              </LiquidBorder>
             )}
-            <Button
-              variant="outline"
-              size="lg"
-              render={<Link href="#plans" />}
-              data-space-hover
-              className="bg-background"
-            >
-              Compare plans
-            </Button>
           </div>
         </div>
       </section>
-
-      {/* FAQ */}
-      <section data-page-section className="mx-auto max-w-7xl scroll-mt-16 px-5 sm:px-6 py-16">
-        <SectionHeader badge="FAQ" title="Frequently asked questions" description="Still unsure? Here's the rundown." />
-
-        <Accordion className="mx-auto mt-10 w-full max-w-2xl">
-          {faqs.map((faq, index) => (
-            <AccordionItem key={faq.question} value={`faq-${index}`}>
-              <AccordionTrigger>{faq.question}</AccordionTrigger>
-              <AccordionPanel>{faq.answer}</AccordionPanel>
-            </AccordionItem>
-          ))}
-        </Accordion>
-      </section>
-
-      {/* Contact & customer portal */}
-      <section data-page-section className="mx-auto max-w-7xl scroll-mt-16 px-5 sm:px-6 py-4">
-        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-          <div className="flex flex-col items-center gap-4 rounded-3xl bg-muted p-6 text-center sm:items-start sm:p-8 sm:text-left">
-            <div className="space-y-1">
-              <h4 className="font-semibold text-foreground">Need something custom?</h4>
-              <p className="text-muted-foreground text-xs sm:text-sm">
-                Agency licensing, larger teams, or a custom bundle — let's talk.
-              </p>
-            </div>
-            <Button
-              variant="base"
-              size="sm"
-              asPointer
-              data-space-hover
-              render={<a href={`mailto:${siteConfig.email}`} />}
-            >
-              <IconMail className="size-3.5" />
-              <span>Contact us</span>
-            </Button>
-          </div>
-
-          <div className="flex flex-col items-center gap-4 rounded-3xl bg-muted p-6 text-center sm:items-start sm:p-8 sm:text-left">
-            <div className="space-y-1">
-              <h4 className="font-semibold text-foreground">Already subscribed?</h4>
-              <p className="text-muted-foreground text-xs sm:text-sm">
-                Manage your subscription, invoices, and payment method through the secure customer portal.
-              </p>
-            </div>
-            <Button variant="base" size="sm" asPointer data-space-hover render={<a href="/api/customer-portal" />}>
-              <span>Polar customer portal</span>
-              <IconArrowRight className="size-3.5" />
-            </Button>
-          </div>
-        </div>
-      </section>
-
-      {/* Trust badges */}
-      <div className="mt-10 flex flex-wrap items-center justify-center gap-8 text-muted-foreground text-xs">
-        <div className="flex items-center gap-2">
-          <IconShieldCheck className="size-4 text-emerald-500" />
-          <span>Secure payment via Polar</span>
-        </div>
-        <div className="flex items-center gap-2">
-          <IconBolt className="size-4 text-primary" />
-          <span>Instant access after checkout</span>
-        </div>
-        <div className="flex items-center gap-2">
-          <IconRocket className="size-4 text-amber-500" />
-          <span>Updates included</span>
-        </div>
-      </div>
     </div>
   )
 }

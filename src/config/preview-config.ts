@@ -32,6 +32,10 @@ export interface PreviewOptions {
   container?: boolean
   align?: 'start' | 'center' | 'end'
   className?: string
+  /** Raw external URL to iframe (e.g. a live showcase site) instead of the internal /registry/view/ route. */
+  externalUrl?: string
+  /** Marks a preview with no installable code/MDX content — hides the split-view info/doc panel entirely. */
+  showcase?: boolean
 }
 
 export function normalizePreviewConfig(preview?: string | PreviewOptions | null): PreviewOptions | null {

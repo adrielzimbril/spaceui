@@ -1,7 +1,7 @@
 'use client'
-/* eslint-disable @next/next/no-img-element */
 
 import React, { type RefObject } from 'react'
+import NextImage from 'next/image'
 import { AnimatePresence, motion } from 'motion/react'
 
 export interface LightboxModalProps {
@@ -32,17 +32,17 @@ export function LightboxModal({
           <div ref={fixedBackdropRef} className="pointer-events-none absolute inset-0 bg-black opacity-0" />
           <div ref={fixedFrameRef} className="pointer-events-none fixed z-10 overflow-hidden bg-black">
             <AnimatePresence initial={false} mode="sync" custom={fixedDirection}>
-              <motion.img
+              <motion.div
                 key={images[lightboxIndex]}
-                src={images[lightboxIndex]}
-                alt=""
                 custom={fixedDirection}
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
                 transition={{ duration: 0.36, ease: 'easeOut' }}
-                className="absolute inset-0 size-full object-cover"
-              />
+                className="absolute inset-0"
+              >
+                <NextImage src={images[lightboxIndex]} alt="" fill sizes="100vw" className="object-cover" priority />
+              </motion.div>
             </AnimatePresence>
           </div>
           <button

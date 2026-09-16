@@ -287,18 +287,36 @@ export function extractSectionsFromNode(nodes: any[]): SectionItem[] {
   return sections.filter((s) => s.items.length > 0)
 }
 
+function itemCreatedAt(url: string): number {
+  const slug = url.split('/').filter(Boolean).pop()
+  if (!slug) return 0
+  const meta = registryMeta as Record<string, { createdAt?: string }>
+  const raw = meta[slug]?.createdAt || meta[`template-${slug}`]?.createdAt
+  const time = raw ? new Date(raw).getTime() : 0
+  return Number.isNaN(time) ? 0 : time
+}
+
 export function sortComponentsSections(sections: SectionItem[]): SectionItem[] {
-  return [...sections].sort((a, b) => {
-    const aTitle = typeof a?.title === 'string' ? a.title.toLowerCase() : String(a?.title ?? '').toLowerCase()
-    const bTitle = typeof b?.title === 'string' ? b.title.toLowerCase() : String(b?.title ?? '').toLowerCase()
-    const order = ['components', 'text', 'backgrounds', 'orb', 'carousels', 'blocks', 'shader', 'templates']
-    const aIndex = order.findIndex((k) => aTitle.includes(k))
-    const bIndex = order.findIndex((k) => bTitle.includes(k))
-    if (aIndex !== -1 && bIndex !== -1) return aIndex - bIndex
-    if (aIndex !== -1) return -1
-    if (bIndex !== -1) return 1
-    return 0
-  })
+  return [...sections]
+    .sort((a, b) => {
+      const aTitle = typeof a?.title === 'string' ? a.title.toLowerCase() : String(a?.title ?? '').toLowerCase()
+      const bTitle = typeof b?.title === 'string' ? b.title.toLowerCase() : String(b?.title ?? '').toLowerCase()
+      const order = ['components', 'text', 'backgrounds', 'orb', 'carousels', 'blocks', 'shader', 'templates']
+      const aIndex = order.findIndex((k) => aTitle.includes(k))
+      const bIndex = order.findIndex((k) => bTitle.includes(k))
+      if (aIndex !== -1 && bIndex !== -1) return aIndex - bIndex
+      if (aIndex !== -1) return -1
+      if (bIndex !== -1) return 1
+      return 0
+    })
+    .map((section) => {
+      const title = typeof section.title === 'string' ? section.title.toLowerCase() : ''
+      if (!title.includes('showcase')) return section
+      return {
+        ...section,
+        items: [...section.items].sort((a, b) => itemCreatedAt(b.url) - itemCreatedAt(a.url)),
+      }
+    })
 }
 
 export function getActiveHub(pathname: string): HubItem {

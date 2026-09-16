@@ -6,6 +6,10 @@
   "description": "Full-page immersive photography template with Three.js WebGL distortion, inertial dragging, and GSAP lightbox.",
   "dependencies": ["motion", "gsap", "three"],
   "devDependencies": ["@types/three"],
+  "registryDependencies": [
+    "https://www.spaceui.one/r/lib-next-image-url.json",
+    "https://www.spaceui.one/r/block-lens-carousel.json"
+  ],
   "categories": ["templates", "portfolios"],
   "files": [
     {
@@ -34,11 +38,6 @@
       "target": "components/immersive-lens/client-page.tsx"
     },
     {
-      "path": "src/registry/templates/immersive-lens/components/vertical-gallery.tsx",
-      "type": "registry:component",
-      "target": "components/immersive-lens/vertical-gallery.tsx"
-    },
-    {
       "path": "src/registry/templates/immersive-lens/components/horizontal-gallery.tsx",
       "type": "registry:component",
       "target": "components/immersive-lens/horizontal-gallery.tsx"
@@ -57,11 +56,6 @@
       "path": "src/registry/templates/immersive-lens/components/custom-cursor.tsx",
       "type": "registry:component",
       "target": "components/immersive-lens/custom-cursor.tsx"
-    },
-    {
-      "path": "src/registry/templates/immersive-lens/components/lens-webgl-layer.tsx",
-      "type": "registry:component",
-      "target": "components/immersive-lens/lens-webgl-layer.tsx"
     },
     {
       "path": "src/registry/templates/immersive-lens/hooks/use-custom-cursor.ts",

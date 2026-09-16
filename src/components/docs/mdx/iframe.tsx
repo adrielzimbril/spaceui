@@ -10,10 +10,12 @@ export default function Iframe({
   name,
   bigScreen = false,
   themeOverride = 'system',
+  src: srcOverride,
 }: {
   name: string
   bigScreen?: boolean
   themeOverride?: 'system' | 'light' | 'dark'
+  src?: string
 }) {
   const { resolvedTheme } = useTheme()
   const iframeRef = useRef<HTMLIFrameElement | null>(null)
@@ -49,7 +51,7 @@ export default function Iframe({
   if (!origin) return <PreviewLoading />
 
   const [path, query] = name.split('?')
-  const src = `${origin}/registry/view/${encodeURIComponent(path)}${query ? `?${query}` : ''}`
+  const src = srcOverride || `${origin}/registry/view/${encodeURIComponent(path)}${query ? `?${query}` : ''}`
 
   return (
     <div className="relative size-full min-h-0 min-w-0">

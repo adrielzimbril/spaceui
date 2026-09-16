@@ -3,7 +3,7 @@
 import { useCallback, useEffect, useRef, useState } from 'react'
 import gsap from 'gsap'
 import { galleryImages } from '../lib/data'
-import { galleryImageSizes } from '../components/lens-webgl-layer'
+import { galleryImageSizes } from '@/registry/blocks/lens-carousel/lens-webgl-layer'
 
 function setFixedBackdropMask(element: HTMLDivElement, progress: number, direction: 1 | -1) {
   const clamped = Math.max(0, Math.min(progress, 1))

@@ -2,6 +2,7 @@
 
 import gsap from 'gsap'
 import { useEffect, useRef, type RefObject } from 'react'
+import { getOptimizedImageUrl } from '@/registry/lib/next-image-url'
 import {
   ClampToEdgeWrapping,
   Color,
@@ -496,7 +497,7 @@ export function LensWebGLLayer({
       if (!item || item.requested || disposed || !imageUrl) return
       item.requested = true
       loader.load(
-        imageUrl,
+        getOptimizedImageUrl(imageUrl, { width: 1600 }),
         (texture: any) => {
           if (disposed) {
             texture.dispose()

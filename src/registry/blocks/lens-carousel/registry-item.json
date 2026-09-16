@@ -3,8 +3,13 @@
   "name": "block-lens-carousel",
   "type": "registry:block",
   "title": "Lens Carousel Block",
-  "description": "Momentum-driven drag & scroll gallery carousel with inertia easing, an active-card focus state, and atmospheric gradient placeholders for failed image loads.",
-  "registryDependencies": ["https://www.spaceui.one/r/lib-utils.json"],
+  "description": "Vertical WebGL lens gallery. Scroll-linked image planes from Immersive Lens.",
+  "dependencies": ["motion", "gsap", "three"],
+  "devDependencies": ["@types/three"],
+  "registryDependencies": [
+    "https://www.spaceui.one/r/lib-utils.json",
+    "https://www.spaceui.one/r/lib-next-image-url.json"
+  ],
   "categories": ["block", "lens-carousel"],
   "files": [
     {
@@ -21,6 +26,16 @@
       "path": "src/registry/blocks/lens-carousel/types.ts",
       "type": "registry:block",
       "target": "components/blocks/lens-carousel/types.ts"
+    },
+    {
+      "path": "src/registry/blocks/lens-carousel/lens-webgl-layer.tsx",
+      "type": "registry:block",
+      "target": "components/blocks/lens-carousel/lens-webgl-layer.tsx"
+    },
+    {
+      "path": "src/registry/blocks/lens-carousel/vertical-gallery.tsx",
+      "type": "registry:block",
+      "target": "components/blocks/lens-carousel/vertical-gallery.tsx"
     }
   ],
   "createdAt": "2026-09-16",

@@ -60,19 +60,6 @@ export function WordsPreloaderCard({ isVisible = true }: { isVisible?: boolean }
       <FrameFooter className="flex flex-row items-center justify-between p-2">
         <FrameTitle className="text-muted-foreground">Words Preloader</FrameTitle>
         <div className="flex items-center gap-1.5">
-          <Button
-            variant="secondary"
-            size="icon-xs"
-            onClick={() => {
-              tickSound()
-              setPreloaderKey((prev) => prev + 1)
-            }}
-            data-space-hover
-            title="Replay animation"
-            className="rounded-full cursor-pointer"
-          >
-            <IconRotateClockwise className="size-3.5" />
-          </Button>
           <Link
             href="/components/spaceui/words-preloader"
             data-space-hover

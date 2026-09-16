@@ -204,9 +204,9 @@ export function TimelineCard() {
   }, [cycleIndex, isHovered, current.durationMs])
 
   return (
-    <Frame className="flex flex-col h-full">
+    <Frame className="flex flex-col h-full md:row-span-2">
       <Card className="flex-1 flex flex-col h-full rounded-xl before:rounded-xl overflow-hidden">
-        <CardPanel className="flex-1 flex min-h-72 max-h-72 overflow-y-auto p-2 sm:p-3 rounded-lg [&::-webkit-scrollbar]:hidden">
+        <CardPanel className="flex-1 flex min-h-72 md:max-h-none max-h-72 overflow-y-auto p-2 sm:p-3 rounded-lg [&::-webkit-scrollbar]:hidden">
           <div
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}

@@ -25,10 +25,12 @@ import { cn } from '@/registry/lib/utils'
 export interface PlaygroundToolbarProps {
   showInfo: boolean
   onToggleInfo: () => void
+  hideDocPanelToggle?: boolean
   isImmersive?: boolean
   onToggleImmersive?: () => void
   onReplay: () => void
   previewName?: string
+  externalUrl?: string
   hasBinds?: boolean
   tweakpaneOpen?: boolean
   onToggleTweakpane?: () => void
@@ -42,10 +44,12 @@ export interface PlaygroundToolbarProps {
 export function PlaygroundToolbar({
   showInfo,
   onToggleInfo,
+  hideDocPanelToggle = false,
   isImmersive = false,
   onToggleImmersive,
   onReplay,
   previewName,
+  externalUrl,
   hasBinds,
   tweakpaneOpen,
   onToggleTweakpane,
@@ -107,15 +111,21 @@ export function PlaygroundToolbar({
   return (
     <ToolbarSection aria-label="Playground actions" className={cn('right-2 top-2 md:top-4', className)}>
       {/* 1. Toggle Doc Panel (Hide/Show side elements to expand canvas) */}
-      <ToolbarButton label={showInfo ? 'Hide side panel' : 'Show side panel'} pressed={showInfo} onClick={onToggleInfo}>
-        <MorphIcon activeKey={showInfo ? 'expanded' : 'collapsed'} variant="blur-scale">
-          {showInfo ? (
-            <IconLayoutSidebarLeftCollapse className="size-4" />
-          ) : (
-            <IconLayoutSidebarLeftExpand className="size-4" />
-          )}
-        </MorphIcon>
-      </ToolbarButton>
+      {!hideDocPanelToggle && (
+        <ToolbarButton
+          label={showInfo ? 'Hide side panel' : 'Show side panel'}
+          pressed={showInfo}
+          onClick={onToggleInfo}
+        >
+          <MorphIcon activeKey={showInfo ? 'expanded' : 'collapsed'} variant="blur-scale">
+            {showInfo ? (
+              <IconLayoutSidebarLeftCollapse className="size-4" />
+            ) : (
+              <IconLayoutSidebarLeftExpand className="size-4" />
+            )}
+          </MorphIcon>
+        </ToolbarButton>
+      )}
 
       {/* 2. Total Immersion (Hide UI / Fullscreen 100vw x 100vh) */}
       {onToggleImmersive && (
@@ -128,7 +138,7 @@ export function PlaygroundToolbar({
         <ToolbarButton
           label="Open in new window"
           onClick={() => {
-            window.open(`/registry/view/${previewName}`, '_blank')
+            window.open(externalUrl || `/registry/view/${previewName}`, '_blank')
           }}
         >
           <IconExternalLink className="size-4" />

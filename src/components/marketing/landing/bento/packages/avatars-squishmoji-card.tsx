@@ -12,6 +12,7 @@ import { Card, CardPanel } from '@/registry/primitives/card'
 import { dropletSound, tapSound } from '@/components/providers/sound-provider'
 import { BENTO_CYCLE_INTERVAL } from '@/config/space-config'
 import { useStaggeredInterval } from '@/hooks/use-staggered-interval'
+import { cn } from '@/registry/lib/utils'
 import { TextMorph } from 'torph/react'
 
 const ALL_AVATAR_VARIANTS: AvatarVariant[] = ['pebble', 'lumina', 'splash', 'critter', 'invader', 'animals']
@@ -46,70 +47,55 @@ type MixedCharacter =
       bg: SquishBackgroundStyle
     }
 
-const INITIAL_CHARACTERS: MixedCharacter[] = [
-  { id: '1', type: 'avatar', variant: 'pebble', label: 'Pebble' },
-  { id: '2', type: 'squishmoji', expr: 'happy', label: 'Happy', shape: 'all', bg: 'taygeta' },
-  { id: '3', type: 'avatar', variant: 'lumina', label: 'Lumina' },
-  { id: '4', type: 'squishmoji', expr: 'excited', label: 'Excited', shape: 'all', bg: 'maia' },
-  { id: '5', type: 'avatar', variant: 'critter', label: 'Critter' },
-  { id: '6', type: 'squishmoji', expr: 'laughing', label: 'Laughing', shape: 'all', bg: 'alcyone' },
-]
+function buildCharacters(count: number): MixedCharacter[] {
+  const shuffledVariants = [...ALL_AVATAR_VARIANTS].sort(() => Math.random() - 0.5)
+  const shuffledExprs = [...ALL_SQUISH_EXPRS].sort(() => Math.random() - 0.5)
+
+  const characters: MixedCharacter[] = []
+  let avatarIdx = 0
+  let squishIdx = 0
+
+  for (let i = 0; i < count; i++) {
+    if (i % 2 === 0) {
+      const variant = shuffledVariants[avatarIdx % shuffledVariants.length]
+      avatarIdx++
+      characters.push({
+        id: String(i + 1),
+        type: 'avatar',
+        variant,
+        label: variant.charAt(0).toUpperCase() + variant.slice(1),
+      })
+    } else {
+      const expr = shuffledExprs[squishIdx % shuffledExprs.length]
+      squishIdx++
+      characters.push({ id: String(i + 1), type: 'squishmoji', ...expr })
+    }
+  }
+
+  return characters
+}
 
 interface AvatarsSquishmojiCardProps {
   isVisible?: boolean
+  className?: string
+  count?: number
 }
 
-export function AvatarsSquishmojiCard({ isVisible = true }: AvatarsSquishmojiCardProps) {
+export function AvatarsSquishmojiCard({ isVisible = true, className, count = 6 }: AvatarsSquishmojiCardProps) {
   const [charSeed, setCharSeed] = React.useState('space-packages')
-  const [characters, setCharacters] = React.useState<MixedCharacter[]>(INITIAL_CHARACTERS)
+  const [characters, setCharacters] = React.useState<MixedCharacter[]>(() => buildCharacters(count))
   const [hovered, setHovered] = React.useState<number | null>(null)
 
-  const randomizeCharacters = React.useCallback((playSound = false) => {
-    if (playSound) {
-      dropletSound()
-    }
-    const newSeed = Math.random().toString(36).slice(2, 8)
-    setCharSeed(newSeed)
-
-    const shuffledVariants = [...ALL_AVATAR_VARIANTS].sort(() => Math.random() - 0.5)
-    const shuffledExprs = [...ALL_SQUISH_EXPRS].sort(() => Math.random() - 0.5)
-
-    setCharacters([
-      {
-        id: '1',
-        type: 'avatar',
-        variant: shuffledVariants[0],
-        label: shuffledVariants[0].charAt(0).toUpperCase() + shuffledVariants[0].slice(1),
-      },
-      {
-        id: '2',
-        type: 'squishmoji',
-        ...shuffledExprs[0],
-      },
-      {
-        id: '3',
-        type: 'avatar',
-        variant: shuffledVariants[1],
-        label: shuffledVariants[1].charAt(0).toUpperCase() + shuffledVariants[1].slice(1),
-      },
-      {
-        id: '4',
-        type: 'squishmoji',
-        ...shuffledExprs[1],
-      },
-      {
-        id: '5',
-        type: 'avatar',
-        variant: shuffledVariants[2],
-        label: shuffledVariants[2].charAt(0).toUpperCase() + shuffledVariants[2].slice(1),
-      },
-      {
-        id: '6',
-        type: 'squishmoji',
-        ...shuffledExprs[2],
-      },
-    ])
-  }, [])
+  const randomizeCharacters = React.useCallback(
+    (playSound = false) => {
+      if (playSound) {
+        dropletSound()
+      }
+      setCharSeed(Math.random().toString(36).slice(2, 8))
+      setCharacters(buildCharacters(count))
+    },
+    [count],
+  )
 
   useStaggeredInterval(
     () => {
@@ -120,10 +106,15 @@ export function AvatarsSquishmojiCard({ isVisible = true }: AvatarsSquishmojiCar
   )
 
   return (
-    <Frame className="flex flex-col h-full sm:col-span-2 lg:col-span-2">
+    <Frame className={cn('flex flex-col h-full sm:col-span-2 lg:col-span-2', className)}>
       <Card className="flex-1 flex flex-col h-full rounded-xl before:rounded-xl overflow-hidden">
         <CardPanel className="flex-1 flex flex-col justify-center gap-3 p-4 min-h-48 rounded-lg">
-          <div className="grid grid-cols-6 gap-2 w-full items-center justify-items-center">
+          <div
+            className={cn(
+              'grid gap-2 w-full items-center justify-items-center',
+              count <= 6 ? 'grid-cols-6' : 'grid-cols-3',
+            )}
+          >
             {characters.map((item, idx) => (
               <div
                 key={`char-slot-${idx}`}

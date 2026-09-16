@@ -4,8 +4,12 @@
   "type": "registry:ui",
   "title": "Field",
   "description": "Accessible Field primitive component for Space UI.",
-  "dependencies": ["@base-ui/react"],
-  "registryDependencies": ["https://www.spaceui.one/r/lib-utils.json"],
+  "dependencies": [
+    "@base-ui/react"
+  ],
+  "registryDependencies": [
+    "https://www.spaceui.one/r/lib-utils.json"
+  ],
   "cssVars": {
     "dark": {
       "destructive-foreground": "var(--color-red-400)"
@@ -14,7 +18,9 @@
       "destructive-foreground": "var(--color-red-500)"
     }
   },
-  "categories": ["field"],
+  "categories": [
+    "field"
+  ],
   "files": [
     {
       "path": "src/registry/primitives/field/index.tsx",

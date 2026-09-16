@@ -3,7 +3,8 @@
 import React, { useRef, type RefObject } from 'react'
 import { motion } from 'motion/react'
 import { galleryImageSizes } from './lens-webgl-layer'
-import { ease } from '../lib/data'
+
+const ease = [0.104, 0.204, 0.492, 1] as const
 
 export interface GalleryImageProps {
   index: number

@@ -9,6 +9,7 @@ import { IconChevronDown, IconCheck } from '@tabler/icons-react'
 import { slideSound } from '@/components/providers/sound-provider'
 import { Menu, MenuItem, MenuPopup, MenuTrigger } from '@/registry/primitives/menu'
 import { ScrollArea } from '@/registry/primitives/scroll-area'
+import { Button } from '@/registry/primitives/button'
 import { MenuAvatarIcon } from '@/components/layout/mega-menu'
 import { HUBS, resolvePathSections, getActiveHub, NavBadge, type SectionItem, type HubItem } from '@/lib/nav-registry'
 
@@ -50,10 +51,27 @@ function HubItemContent({
   )
 }
 
+function scrollSidebarTo(el: HTMLElement, block: 'start' | 'center' = 'center') {
+  const scrollContainer = el.closest('[data-slot="scroll-area-viewport"]') as HTMLElement | null
+  if (!scrollContainer) {
+    el.scrollIntoView({ behavior: 'smooth', block, inline: 'nearest' })
+    return
+  }
+  const containerRect = scrollContainer.getBoundingClientRect()
+  const itemRect = el.getBoundingClientRect()
+  const relativeTop = itemRect.top - containerRect.top + scrollContainer.scrollTop
+  const offset = block === 'center' ? containerRect.height / 2 - itemRect.height / 2 : 8
+  scrollContainer.scrollTo({
+    top: Math.max(0, relativeTop - offset),
+    behavior: 'smooth',
+  })
+}
+
 export function DocsSidebar() {
   const pathname = usePathname()
   const router = useRouter()
   const activeItemRef = React.useRef<HTMLLIElement | null>(null)
+  const sectionRefs = React.useRef<Record<string, HTMLDivElement | null>>({})
 
   // Determine active hub
   const activeHub = React.useMemo(() => getActiveHub(pathname), [pathname])
@@ -63,42 +81,35 @@ export function DocsSidebar() {
     return resolvePathSections(pathname, source.pageTree.children ?? [], uiKitSource.pageTree.children ?? [])
   }, [pathname])
 
-  // Auto-scroll to active item in sidebar viewport
+  const isItemActive = React.useCallback(
+    (url: string) => {
+      return pathname === url || pathname === `${url}/` || pathname.startsWith(`${url}/`)
+    },
+    [pathname],
+  )
+
   React.useEffect(() => {
     const scrollToActive = () => {
-      const el = activeItemRef.current
-      if (!el) return
-
-      const scrollContainer = el.closest('[data-slot="scroll-area-viewport"]') as HTMLElement | null
-      if (scrollContainer) {
-        const containerRect = scrollContainer.getBoundingClientRect()
-        const itemRect = el.getBoundingClientRect()
-
-        const relativeTop = itemRect.top - containerRect.top + scrollContainer.scrollTop
-        const targetScrollTop = relativeTop - containerRect.height / 2 + itemRect.height / 2
-
-        scrollContainer.scrollTo({
-          top: Math.max(0, targetScrollTop),
-          behavior: 'smooth',
-        })
-      } else {
-        el.scrollIntoView({
-          behavior: 'smooth',
-          block: 'center',
-          inline: 'nearest',
-        })
+      if (activeItemRef.current) {
+        scrollSidebarTo(activeItemRef.current, 'center')
+        return
       }
+      const section = sections.find((entry) =>
+        entry.items.some((item) => isItemActive(item.url) || pathname.includes(`/${entry.title.toLowerCase()}/`)),
+      )
+      const heading = section ? sectionRefs.current[section.title] : null
+      if (heading) scrollSidebarTo(heading, 'start')
     }
 
     scrollToActive()
     const rafId = requestAnimationFrame(scrollToActive)
-    const timeoutId = setTimeout(scrollToActive, 120)
+    const timeoutId = setTimeout(scrollToActive, 180)
 
     return () => {
       cancelAnimationFrame(rafId)
       clearTimeout(timeoutId)
     }
-  }, [pathname, sections])
+  }, [pathname, sections, isItemActive])
 
   return (
     <aside className="border-none w-64 not-lg:hidden sticky top-0 z-30 h-screen pt-2 overflow-hidden bg-background text-sm flex flex-col">
@@ -138,17 +149,33 @@ export function DocsSidebar() {
         {/* Sections List */}
         <div className="flex flex-col gap-4 w-full py-2">
           {sections.map((section) => (
-            <div key={section.title} className="flex flex-col gap-1 p-2 text-sm font-medium">
-              <div className="flex items-center justify-between px-2 py-1 text-[.6875rem] font-semibold uppercase tracking-wider text-muted-foreground">
+            <div
+              key={section.title}
+              ref={(node) => {
+                sectionRefs.current[section.title] = node
+              }}
+              className="flex flex-col gap-1 p-2 text-sm font-medium"
+            >
+              <Button
+                variant="ghost"
+                size="xs"
+                onClick={() => {
+                  const heading = sectionRefs.current[section.title]
+                  if (heading) scrollSidebarTo(heading, 'start')
+                  const first = section.items[0]
+                  if (first?.url) router.push(first.url)
+                }}
+                className="h-auto w-full justify-between px-2 py-1 text-[.6875rem] font-semibold uppercase tracking-wider text-muted-foreground hover:text-foreground"
+              >
                 <span>{section.title}</span>
                 {section.items.length > 0 && (
                   <span className="text-[.625rem] font-normal text-muted-foreground">{section.items.length}</span>
                 )}
-              </div>
+              </Button>
 
               <ul className="relative flex flex-col gap-0.5">
                 {section.items.map((item) => {
-                  const isActive = pathname === item.url || pathname === `${item.url}/`
+                  const isActive = isItemActive(item.url)
                   const Icon = item.icon
 
                   return (

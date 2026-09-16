@@ -13,6 +13,7 @@ import { EmojiSource, EmojiType } from '@usespaceui/emoji'
 import { HeroAvatar } from '@/components/marketing/shared/hero'
 import { useMediaQuery } from '@/registry/hooks/browser/use-media-query'
 import { HeatShade } from '@/registry/components/shader/heat-shade'
+import { LiquidBorder } from '@/registry/components/spaceui/liquid-metal-border'
 
 const HERO_IDEAS = ['ideas', 'products', 'apps', 'sites', 'brands']
 const HERO_UI = ['better', 'space']
@@ -108,15 +109,17 @@ export function Hero() {
 
           {/* ── Primary Actions ── */}
           <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row sm:flex-wrap">
-            <Button
-              render={<Link href="/primitives" />}
-              data-space-hover
-              data-space-click="confirm"
-              className="inline-flex items-center gap-2 px-6 py-3.5 font-medium active:scale-[0.98] transition-all duration-300"
-            >
-              <span>Browse components</span>
-              <IconArrowUpRight className="size-4" />
-            </Button>
+            <LiquidBorder className="inline-flex squircle rounded-full p-0.75 transition-all duration-300 hover:scale-105">
+              <Button
+                render={<Link href="/primitives" />}
+                data-space-hover
+                data-space-click="confirm"
+                className="inline-flex items-center gap-2 px-6 py-3.5 font-medium active:scale-[0.98] transition-all duration-300"
+              >
+                <span>Browse components</span>
+                <IconArrowUpRight className="size-4" />
+              </Button>
+            </LiquidBorder>
 
             {/* <span className="relative inline-flex group">
               <Link
