@@ -12,6 +12,7 @@ import { MorphIcon } from '@/registry/components/spaceui/morph-icon'
 import { resolveEmojiUrl, EmojiFormat, EmojiSource, EmojiType } from '@usespaceui/emoji'
 import { BENTO_CYCLE_INTERVAL } from '@/config/space-config'
 import { useStaggeredInterval } from '@/hooks/use-staggered-interval'
+import { TextMorph } from 'torph/react'
 
 const EMOJI_ANIM_STYLES = [
   { source: EmojiSource.Fluent, type: EmojiType.Anim, format: EmojiFormat.Webp, label: 'Fluent' },
@@ -110,7 +111,7 @@ export function EmojiCard({ isVisible = true }: EmojiCardProps) {
                     </MorphIcon>
                   </div>
                   <span className="text-[10px] text-muted-foreground group-hover:text-foreground transition-colors truncate max-w-[52px] text-center">
-                    {em.name}
+                    <TextMorph>{em.name}</TextMorph>
                   </span>
                 </Button>
               )

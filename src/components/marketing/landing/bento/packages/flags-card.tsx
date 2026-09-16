@@ -10,6 +10,7 @@ import { MorphIcon } from '@/registry/components/spaceui/morph-icon'
 import { tickSound } from '@/components/providers/sound-provider'
 import { BENTO_CYCLE_INTERVAL } from '@/config/space-config'
 import { useStaggeredInterval } from '@/hooks/use-staggered-interval'
+import { TextMorph } from 'torph/react'
 
 const FLAG_SETS = [
   [
@@ -80,7 +81,9 @@ export function FlagsCard({ isVisible = true }: FlagsCardProps) {
                     <AssetFlag code={f.code} shape="circle" size={28} alt={f.name} className="ring-0" />
                   </MorphIcon>
                 </div>
-                <span className="text-[10px] font-medium text-muted-foreground uppercase">{f.code}</span>
+                <span className="text-[10px] font-medium text-muted-foreground uppercase">
+                  <TextMorph>{f.code}</TextMorph>
+                </span>
               </div>
             ))}
           </div>

@@ -1,6 +1,8 @@
 'use client'
 
+import * as React from 'react'
 import { IconArrowUpRight } from '@tabler/icons-react'
+import { TextMorph } from 'torph/react'
 import { InlineInstallBar } from '@/components/docs/installation/inline-install-bar'
 import { siteConfig } from '@/config/space-config'
 import { Button } from '@/registry/components/spaceui/button-squircle'
@@ -13,12 +15,26 @@ import { Squishmoji } from '@usespaceui/squishmoji/react'
 import { Avatar } from '@usespaceui/avatars/react'
 import { useMediaQuery } from '@/registry/hooks/browser/use-media-query'
 
+const HERO_IDEAS = ['ideas', 'products', 'apps', 'sites', 'brands']
+const HERO_UI = ['better', 'space']
+
+function useRotatingWord(words: string[], intervalMs: number) {
+  const [index, setIndex] = React.useState(0)
+  React.useEffect(() => {
+    const id = window.setInterval(() => setIndex((i) => (i + 1) % words.length), intervalMs)
+    return () => window.clearInterval(id)
+  }, [words, intervalMs])
+  return words[index]
+}
+
 export function Hero() {
   const isLg = useMediaQuery('(min-width: 1024px)', true)
   const isMd = useMediaQuery('(min-width: 768px)', true)
   const isSm = useMediaQuery('(min-width: 640px)', true)
 
   const avatarSize = isLg ? 75 : isMd ? 68 : isSm ? 56 : 38
+  const ideaWord = useRotatingWord(HERO_IDEAS, 2800)
+  const uiWord = useRotatingWord(HERO_UI, 3400)
 
   return (
     <section id="hero" data-page-section className="relative overflow-hidden pt-24 pb-8 md:pb-12">
@@ -40,7 +56,10 @@ export function Hero() {
 
           {/* ── Main Headline ── */}
           <h1 className="mt-7 max-w-5xl text-balance text-[42px] font-semibold tracking-tight leading-[1.05] text-foreground sm:text-[64px] md:text-[76px] lg:text-[84px]">
-            Ship your ideas
+            Ship your{' '}
+            <span className="inline-block">
+              <TextMorph>{ideaWord}</TextMorph>
+            </span>
             {/* <div className="relative inline-flex items-center justify-center size-12 sm:size-16 md:size-20 lg:size-24 shrink-0 overflow-visible">
               <Avatar name="p" variant="ghost" size={avatarSize} circle />
               <Avatar name="c" variant="lumina" size={avatarSize} circle />              <Avatar name="c" variant="pebble"variant="lumina" size={avatarSize} circle />

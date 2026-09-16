@@ -12,6 +12,7 @@ import { Card, CardPanel } from '@/registry/primitives/card'
 import { dropletSound, tapSound } from '@/components/providers/sound-provider'
 import { BENTO_CYCLE_INTERVAL } from '@/config/space-config'
 import { useStaggeredInterval } from '@/hooks/use-staggered-interval'
+import { TextMorph } from 'torph/react'
 
 const ALL_AVATAR_VARIANTS: AvatarVariant[] = ['pebble', 'lumina', 'splash', 'critter', 'invader', 'animals']
 
@@ -150,7 +151,9 @@ export function AvatarsSquishmojiCard({ isVisible = true }: AvatarsSquishmojiCar
                     />
                   </div>
                 )}
-                <span className="text-[10px] font-medium text-muted-foreground capitalize">{item.label}</span>
+                <span className="text-[10px] font-medium text-muted-foreground">
+                  <TextMorph>{item.label}</TextMorph>
+                </span>
               </div>
             ))}
           </div>
