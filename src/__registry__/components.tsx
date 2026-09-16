@@ -109,6 +109,7 @@ export const componentGroups: Record<string, string> = {
   "demo-c-orb-thinking-09": "demo-components-orb-thinking",
   "demo-c-cloud-01": "demo-components-shader-cloud",
   "demo-c-heat-shade-01": "demo-components-shader-heat-shade",
+  "demo-c-heat-shade-02": "demo-components-shader-heat-shade",
   "demo-c-paper-shader-01": "demo-components-shader-paper-shader",
   "demo-c-adaptive-density-grid-01": "demo-components-spaceui-adaptive-density-grid",
   "demo-c-adaptive-density-grid-02": "demo-components-spaceui-adaptive-density-grid",

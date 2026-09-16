@@ -12,7 +12,7 @@
         "value": "Space UI"
       },
       "layers": {
-        "value": 8,
+        "value": 4,
         "min": 3,
         "max": 10,
         "step": 1

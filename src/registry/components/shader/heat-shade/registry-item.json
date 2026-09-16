@@ -20,6 +20,11 @@
       "path": "src/registry/components/shader/heat-shade/heat-shade.wgsl.ts",
       "type": "registry:lib",
       "target": "components/shader/heat-shade.wgsl.ts"
+    },
+    {
+      "path": "src/registry/components/shader/heat-shade/heat-licks.wgsl.ts",
+      "type": "registry:lib",
+      "target": "components/shader/heat-licks.wgsl.ts"
     }
   ],
   "createdAt": "2026-09-16",

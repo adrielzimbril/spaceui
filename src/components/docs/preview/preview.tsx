@@ -151,7 +151,7 @@ export function ComponentPreview({
   }, [entry])
 
   useEffect(() => {
-    const demoProps = entry?.meta?.demoProps ?? (Component as any)?.demoProps ?? {}
+    const demoProps = (Component as any)?.demoProps ?? entry?.meta?.demoProps ?? {}
 
     setBinds(Object.keys(demoProps).length > 0 ? (demoProps as Binds) : null)
     setComponentProps(Object.keys(demoProps).length > 0 ? unwrapValues(demoProps) : null)
@@ -193,7 +193,7 @@ export function ComponentPreview({
 
   const handleReset = () => {
     setKey((prev) => prev + 1)
-    const demoProps = entry?.meta?.demoProps ?? (Component as any)?.demoProps ?? {}
+    const demoProps = (Component as any)?.demoProps ?? entry?.meta?.demoProps ?? {}
     if (Object.keys(demoProps).length > 0) {
       setBinds(demoProps as Binds)
       setComponentProps(unwrapValues(demoProps))
@@ -218,17 +218,9 @@ export function ComponentPreview({
         componentGroup,
         bigScreen,
       })
-      if (activeTweakName !== null) {
-        if (binds) {
-          setActiveTweakName(name)
-        } else {
-          setActiveTweakName(null)
-        }
-      }
     }
   }, [
     activePreview?.name,
-    activeTweakName,
     name,
     title,
     Component,
@@ -244,7 +236,6 @@ export function ComponentPreview({
     componentGroup,
     bigScreen,
     setActivePreview,
-    setActiveTweakName,
   ])
 
   useEffect(() => {
@@ -442,11 +433,7 @@ export function ComponentPreview({
                       onClick={(e) => {
                         e.stopPropagation()
                         handleActivate()
-                        if (activeTweakName === name) {
-                          setActiveTweakName(null)
-                        } else {
-                          setActiveTweakName(name)
-                        }
+                        setActiveTweakName((prev) => (prev === name ? null : name))
                       }}
                       className={cn(
                         'rounded-sm text-muted-foreground hover:bg-background hover:text-foreground transition-colors cursor-pointer',
@@ -485,14 +472,14 @@ export function ComponentPreview({
         </TabsContent>
       </Tabs>
 
-      {binds && (
+      {binds && activeTweakName === name ? (
         <Tweakpane
           binds={binds}
           onBindsChange={setBinds}
-          show={activeTweakName === name}
+          show
           onClose={() => setActiveTweakName(null)}
         />
-      )}
+      ) : null}
     </div>
   )
 }

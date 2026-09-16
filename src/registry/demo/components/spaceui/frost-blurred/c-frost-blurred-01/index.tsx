@@ -13,7 +13,7 @@ export interface FrostBlurredDemoProps {
 }
 
 export default function Demo({
-  layers = 8,
+  layers = 4,
   strength = 1,
   height = '62%',
   side = 'bottom',

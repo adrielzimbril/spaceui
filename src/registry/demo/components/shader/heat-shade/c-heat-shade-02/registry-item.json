@@ -1,9 +1,9 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
-  "name": "demo-c-heat-shade-01",
+  "name": "demo-c-heat-shade-02",
   "type": "registry:component",
-  "title": "Heat Shade Licks",
-  "description": "Climbing heat tongues with origin and color controls.",
+  "title": "Heat Shade Field",
+  "description": "Drifting heat field with origin and color controls.",
   "registryDependencies": ["https://www.spaceui.one/r/components-shader-heat-shade.json"],
   "categories": ["shader", "heat"],
   "meta": {
@@ -31,9 +31,9 @@
   },
   "files": [
     {
-      "path": "src/registry/demo/components/shader/heat-shade/c-heat-shade-01/index.tsx",
+      "path": "src/registry/demo/components/shader/heat-shade/c-heat-shade-02/index.tsx",
       "type": "registry:component",
-      "target": "components/shader/heat-shade.tsx"
+      "target": "components/shader/heat-shade-licks.tsx"
     }
   ],
   "createdAt": "2026-09-16",

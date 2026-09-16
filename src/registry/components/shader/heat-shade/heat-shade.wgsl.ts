@@ -5,6 +5,10 @@ struct Params {
   speed: f32,
   baseColor: vec4f,
   hotColor: vec4f,
+  fromTop: f32,
+  _pad0: f32,
+  _pad1: f32,
+  _pad2: f32,
 }
 
 @group(0) @binding(0) var<uniform> params: Params;
@@ -40,15 +44,16 @@ fn fbm(point: vec2f) -> f32 {
 
 @fragment
 fn fs_main(@location(0) uv: vec2f) -> @location(0) vec4f {
+  let y = mix(uv.y, 1.0 - uv.y, params.fromTop);
   let aspect = params.resolution.x / max(params.resolution.y, 1.0);
   let motion = params.time * params.speed;
   let wideNoise = fbm(vec2f(uv.x * aspect * 1.45, -motion * 0.15));
-  let warp = fbm(vec2f(uv.x * aspect * 2.4 + wideNoise, uv.y * 1.7 - motion * 0.23));
+  let warp = fbm(vec2f(uv.x * aspect * 2.4 + wideNoise, y * 1.7 - motion * 0.23));
   let detail = fbm(vec2f(uv.x * aspect * 5.2 + warp * 1.3, -motion * 0.36));
   let slowWave = sin(uv.x * aspect * 4.2 + motion * 0.17) * 0.035;
   let boundary = 0.61 - wideNoise * 0.24 - warp * 0.14
     + detail * 0.08 + slowWave;
-  let signedDistance = uv.y - boundary;
+  let signedDistance = y - boundary;
   let primaryFlame = smoothstep(-0.045, 0.075, signedDistance);
 
   let secondaryNoise = fbm(vec2f(
@@ -57,18 +62,18 @@ fn fs_main(@location(0) uv: vec2f) -> @location(0) vec4f {
   ));
   let secondaryWarp = fbm(vec2f(
     uv.x * aspect * 3.1 + secondaryNoise * 1.2,
-    uv.y * 1.9 - motion * 0.31
+    y * 1.9 - motion * 0.31
   ));
   let secondaryBoundary = 0.68 - secondaryNoise * 0.2
     - secondaryWarp * 0.11
     + sin(uv.x * aspect * 5.4 - motion * 0.24) * 0.025;
-  let secondaryDistance = uv.y - secondaryBoundary;
+  let secondaryDistance = y - secondaryBoundary;
   let secondaryFlame = smoothstep(-0.035, 0.065, secondaryDistance);
   let flame = max(primaryFlame, secondaryFlame * 0.88);
   let softEdge = exp(-abs(signedDistance) * 18.0);
   let secondaryEdge = exp(-abs(secondaryDistance) * 21.0);
-  let verticalHeat = smoothstep(boundary - 0.02, 1.0, uv.y);
-  let grain = noise(uv * params.resolution * 0.18 + motion * 1.1) - 0.5;
+  let verticalHeat = smoothstep(boundary - 0.02, 1.0, y);
+  let grain = noise(vec2f(uv.x, y) * params.resolution * 0.18 + motion * 1.1) - 0.5;
 
   let ember = params.baseColor.xyz;
   var color = mix(vec3f(0.0), ember, flame);

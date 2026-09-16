@@ -1191,6 +1191,11 @@ export const index: Record<string, any> = {
     "path": "src/registry/components/shader/heat-shade/heat-shade.wgsl.ts",
     "type": "registry:lib",
     "target": "components/shader/heat-shade.wgsl.ts"
+  },
+  {
+    "path": "src/registry/components/shader/heat-shade/heat-licks.wgsl.ts",
+    "type": "registry:lib",
+    "target": "components/shader/heat-licks.wgsl.ts"
   }
 ],
     keywords: [],
@@ -3830,10 +3835,42 @@ export const index: Record<string, any> = {
         }
         return { default: Comp };
       });
-      LazyComp.demoProps = {"base":{"value":"#27272a"},"hot":{"value":"#e4e4e7"},"speed":{"value":1,"min":0,"max":3,"step":0.1}};
+      LazyComp.demoProps = {"base":{"value":"#2a7bba"},"hot":{"value":"#43c8ff"},"speed":{"value":1,"min":0,"max":3,"step":0.1},"from":{"value":"bottom","options":{"Bottom":"bottom","Top":"top"}}};
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-heat-shade-01',
+  },
+  "demo-c-heat-shade-02": {
+    name: "demo-c-heat-shade-02",
+    description: "Climbing heat tongues for footer and edge washes.",
+    type: "registry:component",
+    dependencies: undefined,
+    devDependencies: undefined,
+    registryDependencies: ["https://www.spaceui.one/r/components-shader-heat-shade.json"],
+    files: [
+  {
+    "path": "src/registry/demo/components/shader/heat-shade/c-heat-shade-02/index.tsx",
+    "type": "registry:component",
+    "target": "components/shader/heat-shade-licks.tsx"
+  }
+],
+    keywords: [],
+    component: (() => {
+      const LazyComp = React.lazy(async () => {
+        const mod = await import("@/registry/demo/components/shader/heat-shade/c-heat-shade-02/index.tsx");
+        const exportName = Object.keys(mod).find(
+          key => typeof mod[key] === 'function' || typeof mod[key] === 'object'
+        ) || "demo-c-heat-shade-02";
+        const Comp = mod.default || mod[exportName];
+        if (mod.animations) {
+          (LazyComp as any).animations = mod.animations;
+        }
+        return { default: Comp };
+      });
+      LazyComp.demoProps = {"base":{"value":"#2a7bba"},"hot":{"value":"#43c8ff"},"speed":{"value":1,"min":0,"max":3,"step":0.1},"from":{"value":"bottom","options":{"Bottom":"bottom","Top":"top"}}};
+      return LazyComp;
+    })(),
+    command: '@spaceui/demo-c-heat-shade-02',
   },
   "demo-c-paper-shader-01": {
     name: "demo-c-paper-shader-01",
@@ -6587,7 +6624,7 @@ export const index: Record<string, any> = {
         }
         return { default: Comp };
       });
-      LazyComp.demoProps = {"text":{"value":"Space UI"},"layers":{"value":8,"min":3,"max":10,"step":1},"strength":{"value":1,"min":0.25,"max":2,"step":0.25},"height":{"value":"62%","options":{"Half":"50%","Default":"62%","Deep":"80%"}},"side":{"value":"bottom","options":{"Bottom":"bottom","Top":"top"}},"tint":{"value":0.22,"min":0,"max":0.6,"step":0.02}};
+      LazyComp.demoProps = {"text":{"value":"Space UI"},"layers":{"value":4,"min":3,"max":10,"step":1},"strength":{"value":1,"min":0.25,"max":2,"step":0.25},"height":{"value":"62%","options":{"Half":"50%","Default":"62%","Deep":"80%"}},"side":{"value":"bottom","options":{"Bottom":"bottom","Top":"top"}},"tint":{"value":0.22,"min":0,"max":0.6,"step":0.02}};
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-frost-blurred-01',

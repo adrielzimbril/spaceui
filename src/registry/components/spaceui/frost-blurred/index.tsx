@@ -20,7 +20,7 @@ function layerMask(index: number, count: number, side: FrostBlurredSide) {
   const b = start + band * 2
   const end = start + band * 3
   const dir = side === 'top' ? 'to top' : 'to bottom'
-  const peak = index === count - 1 ? 0.55 : 0.72
+  const peak = index === count - 1 ? 0.42 : 0.58
   const stops =
     index === count - 1
       ? `rgba(255,255,255,0) ${start}%, rgba(255,255,255,${peak}) ${Math.min(a, 100)}%`
@@ -29,11 +29,11 @@ function layerMask(index: number, count: number, side: FrostBlurredSide) {
 }
 
 export function FrostBlurred({
-  layers = 8,
+  layers = 4,
   strength = 1,
   height = '62%',
   side = 'bottom',
-  tint = 0.22,
+  tint = 0.18,
   className,
   children,
   style,
@@ -57,16 +57,18 @@ export function FrostBlurred({
       {...(children ? undefined : props)}
     >
       {Array.from({ length: count }, (_, index) => {
-        const blur = 0.5 * 2 ** index * strength
+        const blur = (2 + index * 6) * strength
         const mask = layerMask(index, count, side)
+        const glass = Math.round(6 + (index / Math.max(count - 1, 1)) * wash * 28)
         return (
           <div
             key={index}
-            className="absolute inset-0 bg-transparent"
+            className="absolute inset-0"
             style={{
               zIndex: index + 1,
-              backdropFilter: `blur(${blur}px)`,
-              WebkitBackdropFilter: `blur(${blur}px)`,
+              background: `color-mix(in oklab, var(--background) ${glass}%, transparent)`,
+              backdropFilter: `blur(${blur}px) saturate(1.15)`,
+              WebkitBackdropFilter: `blur(${blur}px) saturate(1.15)`,
               maskImage: mask,
               WebkitMaskImage: mask,
               maskMode: 'alpha',
@@ -79,7 +81,7 @@ export function FrostBlurred({
           className="absolute inset-0"
           style={{
             zIndex: count + 2,
-            background: `linear-gradient(${dir}, transparent 0%, color-mix(in oklab, var(--background) ${Math.round(wash * 100)}%, transparent) 100%)`,
+            background: `linear-gradient(${dir}, transparent 12%, color-mix(in oklab, var(--background) ${Math.round(wash * 55)}%, transparent) 100%)`,
           }}
         />
       ) : null}

@@ -9,7 +9,7 @@
   "files": [
     {
       "path": "src/registry/demo/components/spaceui/frost-blurred/c-frost-blurred-01/index.tsx",
-      "content": "'use client'\n\nimport * as React from 'react'\nimport { FrostBlurred, type FrostBlurredSide } from '@/components/spaceui/frost-blurred'\n\nexport interface FrostBlurredDemoProps {\n  layers?: number\n  strength?: number\n  height?: string\n  side?: FrostBlurredSide\n  tint?: number\n  text?: string\n}\n\nexport default function Demo({\n  layers = 8,\n  strength = 1,\n  height = '62%',\n  side = 'bottom',\n  tint = 0.22,\n  text = 'Space UI',\n}: FrostBlurredDemoProps) {\n  return (\n    <div className=\"flex justify-center px-4 sm:px-6\">\n      <FrostBlurred\n        layers={Number(layers)}\n        strength={Number(strength)}\n        height={height}\n        side={side}\n        tint={Number(tint)}\n        className=\"w-full\"\n      >\n        <span className=\"text-foreground block select-none text-center text-[clamp(2.5rem,15vw,12rem)] leading-normal font-medium tracking-[-0.045em]\">\n          {text}\n        </span>\n      </FrostBlurred>\n    </div>\n  )\n}\n",
+      "content": "'use client'\n\nimport * as React from 'react'\nimport { FrostBlurred, type FrostBlurredSide } from '@/components/spaceui/frost-blurred'\n\nexport interface FrostBlurredDemoProps {\n  layers?: number\n  strength?: number\n  height?: string\n  side?: FrostBlurredSide\n  tint?: number\n  text?: string\n}\n\nexport default function Demo({\n  layers = 4,\n  strength = 1,\n  height = '62%',\n  side = 'bottom',\n  tint = 0.22,\n  text = 'Space UI',\n}: FrostBlurredDemoProps) {\n  return (\n    <div className=\"flex justify-center px-4 sm:px-6\">\n      <FrostBlurred\n        layers={Number(layers)}\n        strength={Number(strength)}\n        height={height}\n        side={side}\n        tint={Number(tint)}\n        className=\"w-full\"\n      >\n        <span className=\"text-foreground block select-none font-open-runde text-center text-[clamp(2.5rem,15vw,12rem)] leading-normal font-medium tracking-[-0.045em]\">\n          {text}\n        </span>\n      </FrostBlurred>\n    </div>\n  )\n}\n",
       "type": "registry:component",
       "target": "components/spaceui/frost-blurred-demo-01.tsx"
     }
@@ -20,7 +20,7 @@
         "value": "Space UI"
       },
       "layers": {
-        "value": 8,
+        "value": 4,
         "min": 3,
         "max": 10,
         "step": 1

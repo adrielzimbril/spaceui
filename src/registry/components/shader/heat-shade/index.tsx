@@ -4,11 +4,18 @@ import * as React from 'react'
 import { cn } from '@/registry/lib/utils'
 import { attachGpuGate, deferUntilVisible } from '@/registry/lib/gpu-runtime'
 import { HEAT_SHADE_WGSL } from './heat-shade.wgsl'
+import { HEAT_LICKS_WGSL } from './heat-licks.wgsl'
+
+export type HeatShadeVariant = 'field' | 'licks'
+
+export type HeatShadeFrom = 'top' | 'bottom'
 
 export type HeatShadeProps = {
   base?: string
   hot?: string
   speed?: number
+  variant?: HeatShadeVariant
+  from?: HeatShadeFrom
   className?: string
 }
 
@@ -17,10 +24,17 @@ function hexToRgba(hex: string): [number, number, number, number] {
   return [parseInt(h.slice(0, 2), 16) / 255, parseInt(h.slice(2, 4), 16) / 255, parseInt(h.slice(4, 6), 16) / 255, 1]
 }
 
-export function HeatShade({ base = '#27272a', hot = '#e4e4e7', speed = 1, className }: HeatShadeProps) {
+export function HeatShade({
+  base = '#2a7bba',
+  hot = '#43c8ff',
+  speed = 1,
+  variant = 'licks',
+  from = 'bottom',
+  className,
+}: HeatShadeProps) {
   const canvasRef = React.useRef<HTMLCanvasElement>(null)
-  const propsRef = React.useRef({ base, hot, speed })
-  propsRef.current = { base, hot, speed }
+  const propsRef = React.useRef({ base, hot, speed, from })
+  propsRef.current = { base, hot, speed, from }
 
   React.useEffect(() => {
     const canvas = canvasRef.current
@@ -49,7 +63,7 @@ export function HeatShade({ base = '#27272a', hot = '#e4e4e7', speed = 1, classN
         format: 'bgra8unorm',
       })
       const p = propsRef.current
-      const shade = effect(gpu, HEAT_SHADE_WGSL, {
+      const shade = effect(gpu, variant === 'licks' ? HEAT_LICKS_WGSL : HEAT_SHADE_WGSL, {
         set: {
           params: {
             resolution: [1, 1],
@@ -57,6 +71,7 @@ export function HeatShade({ base = '#27272a', hot = '#e4e4e7', speed = 1, classN
             speed: p.speed,
             baseColor: hexToRgba(p.base),
             hotColor: hexToRgba(p.hot),
+            fromTop: p.from === 'top' ? 1 : 0,
           },
         },
       })
@@ -79,11 +94,12 @@ export function HeatShade({ base = '#27272a', hot = '#e4e4e7', speed = 1, classN
           time: reduced ? 0 : clock(gpu).time,
           speed: cur.speed,
         }
-        const key = `${cur.base}${cur.hot}${cur.speed}`
+        const key = `${cur.base}${cur.hot}${cur.speed}${cur.from}`
         if (key !== lastKey) {
           lastKey = key
           next.baseColor = hexToRgba(cur.base)
           next.hotColor = hexToRgba(cur.hot)
+          next.fromTop = cur.from === 'top' ? 1 : 0
         }
         if (width !== lastW || height !== lastH) {
           lastW = width
@@ -117,7 +133,7 @@ export function HeatShade({ base = '#27272a', hot = '#e4e4e7', speed = 1, classN
       disposeGate?.()
       disposeGpu?.()
     }
-  }, [])
+  }, [variant])
 
   return <canvas ref={canvasRef} aria-label="Animated heat shade" className={cn('block size-full', className)} />
 }

@@ -6,8 +6,6 @@ preview:
   contained: false
 ---
 
-A progressive frost overlay. Each layer is a stronger blur, masked so the effect ramps instead of cutting off.
-
 ## Installation
 
 <ComponentInstallation name="components-spaceui-frost-blurred" />
@@ -39,9 +37,9 @@ Without children, render it as an overlay on a relative parent:
 
 | Prop       | Type                | Default    | Description                                      |
 | ---------- | ------------------- | ---------- | ------------------------------------------------ |
-| `layers`   | `number`            | `8`        | Stacked blur bands.                              |
+| `layers`   | `number`            | `4`        | Stacked blur bands.                              |
 | `strength` | `number`            | `1`        | Multiplier on each band's blur radius.           |
 | `height`   | `string \| number`  | `'62%'`    | Overlay height.                                  |
 | `side`     | `'top' \| 'bottom'` | `'bottom'` | Edge the frost grows from.                       |
-| `tint`     | `number`            | `0.22`     | Theme-aware `--background` wash (0 = blur only). |
+| `tint`     | `number`            | `0.18`     | Theme-aware `--background` glass mix.            |
 | `children` | `React.ReactNode`   | —          | Content to frost. Omit to use as a pure overlay. |

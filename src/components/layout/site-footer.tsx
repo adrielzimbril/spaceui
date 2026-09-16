@@ -75,10 +75,12 @@ export function SiteFooter() {
   return (
     <footer className="relative isolate z-10 w-full overflow-hidden pt-12" data-global-footer>
       <HeatShade
-        className="pointer-events-none absolute inset-x-0 bottom-0 z-0 h-[min(28rem,70%)] opacity-35 mix-blend-multiply dark:opacity-50 dark:mix-blend-screen"
-        base="#4DAAE9"
-        hot="#5FC4FF"
-        speed={0.45}
+        variant="licks"
+        from="bottom"
+        className="pointer-events-none absolute inset-x-0 bottom-0 z-0 h-[min(28rem,70%)] opacity-55 dark:opacity-70"
+        base="#2a7bba"
+        hot="#43c8ff"
+        speed={0.7}
       />
       <div className="relative z-30 mx-auto w-[calc(100%-2rem)] sm:w-[calc(100%-3rem)] -bottom-0.75 max-w-7xl">
         <div

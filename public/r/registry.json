@@ -1144,6 +1144,11 @@
           "path": "src/registry/components/shader/heat-shade/heat-shade.wgsl.ts",
           "type": "registry:lib",
           "target": "components/shader/heat-shade.wgsl.ts"
+        },
+        {
+          "path": "src/registry/components/shader/heat-shade/heat-licks.wgsl.ts",
+          "type": "registry:lib",
+          "target": "components/shader/heat-licks.wgsl.ts"
         }
       ],
       "createdAt": "2026-09-16",
@@ -4001,10 +4006,10 @@
       "meta": {
         "demoProps": {
           "base": {
-            "value": "#27272a"
+            "value": "#2a7bba"
           },
           "hot": {
-            "value": "#e4e4e7"
+            "value": "#43c8ff"
           },
           "speed": {
             "value": 1,
@@ -4019,6 +4024,44 @@
           "path": "src/registry/demo/components/shader/heat-shade/c-heat-shade-01/index.tsx",
           "type": "registry:component",
           "target": "components/shader/heat-shade.tsx"
+        }
+      ],
+      "createdAt": "2026-09-16",
+      "updatedAt": "2026-09-16"
+    },
+    {
+      "name": "demo-c-heat-shade-02",
+      "type": "registry:component",
+      "title": "Heat Shade Licks",
+      "description": "Climbing heat tongues for footer and edge washes.",
+      "registryDependencies": [
+        "https://www.spaceui.one/r/components-shader-heat-shade.json"
+      ],
+      "categories": [
+        "shader",
+        "heat"
+      ],
+      "meta": {
+        "demoProps": {
+          "base": {
+            "value": "#2a7bba"
+          },
+          "hot": {
+            "value": "#43c8ff"
+          },
+          "speed": {
+            "value": 1,
+            "min": 0,
+            "max": 3,
+            "step": 0.1
+          }
+        }
+      },
+      "files": [
+        {
+          "path": "src/registry/demo/components/shader/heat-shade/c-heat-shade-02/index.tsx",
+          "type": "registry:component",
+          "target": "components/shader/heat-shade-licks.tsx"
         }
       ],
       "createdAt": "2026-09-16",
@@ -6590,7 +6633,7 @@
             "value": "Space UI"
           },
           "layers": {
-            "value": 8,
+            "value": 4,
             "min": 3,
             "max": 10,
             "step": 1

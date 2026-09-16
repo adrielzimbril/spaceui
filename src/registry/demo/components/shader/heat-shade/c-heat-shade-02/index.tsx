@@ -3,7 +3,7 @@
 import * as React from 'react'
 import { HeatShade, type HeatShadeFrom } from '@/registry/components/shader/heat-shade'
 
-export interface HeatShadeDemoProps {
+export interface HeatShadeFieldDemoProps {
   base?: string
   hot?: string
   speed?: number
@@ -15,10 +15,10 @@ export default function Demo({
   hot = '#43c8ff',
   speed = 1,
   from = 'bottom',
-}: HeatShadeDemoProps) {
+}: HeatShadeFieldDemoProps) {
   return (
     <div className="relative size-full min-h-96 overflow-hidden bg-background">
-      <HeatShade className="absolute inset-0" variant="licks" from={from} base={base} hot={hot} speed={speed} />
+      <HeatShade className="absolute inset-0" variant="field" from={from} base={base} hot={hot} speed={speed} />
     </div>
   )
 }
