@@ -9,6 +9,7 @@ import { AssetFlag } from '@/tools/flags/asset-flag'
 import { MorphIcon } from '@/registry/components/spaceui/morph-icon'
 import { tickSound } from '@/components/providers/sound-provider'
 import { BENTO_CYCLE_INTERVAL } from '@/config/space-config'
+import { useStaggeredInterval } from '@/hooks/use-staggered-interval'
 
 const FLAG_SETS = [
   [
@@ -52,13 +53,9 @@ interface FlagsCardProps {
 export function FlagsCard({ isVisible = true }: FlagsCardProps) {
   const [flagSetIndex, setFlagSetIndex] = React.useState(0)
 
-  React.useEffect(() => {
-    if (!isVisible) return
-    const timer = setInterval(() => {
-      setFlagSetIndex((prev) => (prev + 1) % FLAG_SETS.length)
-    }, BENTO_CYCLE_INTERVAL)
-    return () => clearInterval(timer)
-  }, [isVisible])
+  useStaggeredInterval(() => {
+    setFlagSetIndex((prev) => (prev + 1) % FLAG_SETS.length)
+  }, BENTO_CYCLE_INTERVAL, isVisible)
 
   return (
     <Frame className="flex flex-col h-full">

@@ -12,6 +12,7 @@ import { tickSound } from '@/components/providers/sound-provider'
 import { imagelib } from '@/lib/imagelib'
 import { BENTO_CYCLE_INTERVAL, USER_INTERACTION_DEBOUNCE } from '@/config/space-config'
 import { cn } from '@/registry/lib/utils'
+import { useStaggeredInterval } from '@/hooks/use-staggered-interval'
 
 const DEFAULT_COLS_SEQUENCE = [3, 2, 4, 2, 4]
 
@@ -46,20 +47,16 @@ export function ImageSplitCard({ isVisible = true }: ImageSplitCardProps) {
     })
   }, [])
 
-  React.useEffect(() => {
-    if (!isVisible) return
-    const timer = setInterval(() => {
-      if (Date.now() - lastSplitInteractionRef.current < USER_INTERACTION_DEBOUNCE) {
-        return
-      }
-      setSplitSampleIdx((prev) => {
-        const next = (prev + 1) % SPLIT_SAMPLES.length
-        setSplitCols(SPLIT_SAMPLES[next].defaultCols)
-        return next
-      })
-    }, BENTO_CYCLE_INTERVAL)
-    return () => clearInterval(timer)
-  }, [isVisible])
+  useStaggeredInterval(() => {
+    if (Date.now() - lastSplitInteractionRef.current < USER_INTERACTION_DEBOUNCE) {
+      return
+    }
+    setSplitSampleIdx((prev) => {
+      const next = (prev + 1) % SPLIT_SAMPLES.length
+      setSplitCols(SPLIT_SAMPLES[next].defaultCols)
+      return next
+    })
+  }, BENTO_CYCLE_INTERVAL, isVisible)
 
   return (
     <Frame className="flex flex-col h-full sm:col-span-2 lg:col-span-2">

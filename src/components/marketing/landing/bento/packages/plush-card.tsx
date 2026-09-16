@@ -13,6 +13,7 @@ import { DEFAULT_CONFIG, PLUSH_PRESETS } from '@/tools/plush/presets'
 import type { PlushPreset } from '@/tools/plush/types'
 import { BENTO_CYCLE_INTERVAL, USER_INTERACTION_DEBOUNCE } from '@/config/space-config'
 import { cn } from '@/registry/lib/utils'
+import { useStaggeredInterval } from '@/hooks/use-staggered-interval'
 
 const SHOWCASE_PLUSH_PRESETS = PLUSH_PRESETS.filter((p) =>
   ['spaceui', 'logo', 'squish', 'invader', 'squiggle', 'kendo', 'doddle'].includes(p.id),
@@ -137,22 +138,18 @@ export function PlushCard({ isVisible = true, hasBeenVisible = true }: PlushCard
     applyPlushPreset(nextPreset, true)
   }, [applyPlushPreset])
 
-  React.useEffect(() => {
-    if (!isVisible) return
-    const timer = setInterval(() => {
-      if (
-        plushLoadingRef.current ||
-        isPlushInteractingRef.current ||
-        Date.now() - lastPlushInteractionRef.current < USER_INTERACTION_DEBOUNCE
-      ) {
-        return
-      }
-      const available = SHOWCASE_PLUSH_PRESETS.filter((p) => p.id !== activePlushPresetRef.current.id)
-      const nextPreset = available[Math.floor(Math.random() * available.length)] ?? SHOWCASE_PLUSH_PRESETS[0]
-      applyPlushPreset(nextPreset, false)
-    }, BENTO_CYCLE_INTERVAL)
-    return () => clearInterval(timer)
-  }, [isVisible, applyPlushPreset])
+  useStaggeredInterval(() => {
+    if (
+      plushLoadingRef.current ||
+      isPlushInteractingRef.current ||
+      Date.now() - lastPlushInteractionRef.current < USER_INTERACTION_DEBOUNCE
+    ) {
+      return
+    }
+    const available = SHOWCASE_PLUSH_PRESETS.filter((p) => p.id !== activePlushPresetRef.current.id)
+    const nextPreset = available[Math.floor(Math.random() * available.length)] ?? SHOWCASE_PLUSH_PRESETS[0]
+    applyPlushPreset(nextPreset, false)
+  }, BENTO_CYCLE_INTERVAL, isVisible)
 
   const resetPlushOrientation = () => {
     lastPlushInteractionRef.current = Date.now()

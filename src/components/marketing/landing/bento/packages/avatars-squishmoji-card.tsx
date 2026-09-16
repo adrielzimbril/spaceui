@@ -11,6 +11,7 @@ import { Frame, FrameFooter, FrameTitle } from '@/registry/primitives/frame'
 import { Card, CardPanel } from '@/registry/primitives/card'
 import { dropletSound, tapSound } from '@/components/providers/sound-provider'
 import { BENTO_CYCLE_INTERVAL } from '@/config/space-config'
+import { useStaggeredInterval } from '@/hooks/use-staggered-interval'
 
 const ALL_AVATAR_VARIANTS: AvatarVariant[] = ['pebble', 'lumina', 'splash', 'critter', 'invader', 'animals']
 
@@ -108,13 +109,9 @@ export function AvatarsSquishmojiCard({ isVisible = true }: AvatarsSquishmojiCar
     ])
   }, [])
 
-  React.useEffect(() => {
-    if (!isVisible) return
-    const timer = setInterval(() => {
-      randomizeCharacters(false)
-    }, BENTO_CYCLE_INTERVAL)
-    return () => clearInterval(timer)
-  }, [isVisible, randomizeCharacters])
+  useStaggeredInterval(() => {
+    randomizeCharacters(false)
+  }, BENTO_CYCLE_INTERVAL, isVisible)
 
   return (
     <Frame className="flex flex-col h-full sm:col-span-2 lg:col-span-2">

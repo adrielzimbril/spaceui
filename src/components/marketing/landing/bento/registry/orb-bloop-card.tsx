@@ -8,21 +8,19 @@ import { Card, CardPanel } from '@/registry/primitives/card'
 import { OrbBloop } from '@/registry/components/orb/bloop'
 import { BloopState } from '@/registry/components/orb/bloop/types'
 import { BENTO_CYCLE_INTERVAL } from '@/config/space-config'
+import { useStaggeredInterval } from '@/hooks/use-staggered-interval'
+
+const BLOOP_MODES: BloopState[] = [BloopState.idle, BloopState.listen, BloopState.think, BloopState.speak]
 
 export function OrbBloopCard({ isVisible = true }: { isVisible?: boolean }) {
   const [bloopState, setBloopState] = React.useState<BloopState>(BloopState.idle)
 
-  React.useEffect(() => {
-    if (!isVisible) return
-    const modes: BloopState[] = [BloopState.idle, BloopState.listen, BloopState.think, BloopState.speak]
-    const timer = setInterval(() => {
-      setBloopState((prev) => {
-        const nextIdx = (modes.indexOf(prev) + 1) % modes.length
-        return modes[nextIdx]
-      })
-    }, BENTO_CYCLE_INTERVAL)
-    return () => clearInterval(timer)
-  }, [isVisible])
+  useStaggeredInterval(() => {
+    setBloopState((prev) => {
+      const nextIdx = (BLOOP_MODES.indexOf(prev) + 1) % BLOOP_MODES.length
+      return BLOOP_MODES[nextIdx]
+    })
+  }, BENTO_CYCLE_INTERVAL, isVisible)
 
   return (
     <Frame className="flex flex-col h-full">

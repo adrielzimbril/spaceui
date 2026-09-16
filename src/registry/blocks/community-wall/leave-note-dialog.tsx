@@ -25,6 +25,7 @@ import { Github, Google } from './social-icons'
 import { loading, confirm, deny } from '@usespaceui/sounds'
 import { createClient } from '@/integrations/supabase/client'
 import { cn } from '@/registry/lib/utils'
+import { useConfirmExit } from '@/registry/hooks/lifecycle/use-confirm-exit'
 
 interface LeaveNoteDialogProps {
   open: boolean
@@ -69,10 +70,17 @@ export function LeaveNoteDialog({
       if (user?.user_metadata?.name || user?.name) {
         setAuthorName(user.user_metadata?.name || user.name)
       }
+      if (!comment.trim()) {
+        setPatternIndex(Math.floor(Math.random() * patterns.length))
+        setRotation(config.rotation.default)
+      }
     } else {
       setIsGuest(false)
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [open, user])
+
+  useConfirmExit(open && Boolean(comment.trim()), 'You have an unsent note — leaving will discard it.')
 
   const handlePrevPattern = () => {
     setPatternIndex((prev) => (prev - 1 + patterns.length) % patterns.length)
@@ -341,7 +349,6 @@ export function LeaveNoteDialog({
                           variant="outline"
                           className="flex-1"
                           onClick={() => {
-                            setComment('')
                             onOpenChange(false)
                           }}
                         >
@@ -365,7 +372,6 @@ export function LeaveNoteDialog({
                     variant="outline"
                     className="flex-1"
                     onClick={() => {
-                      setComment('')
                       onOpenChange(false)
                     }}
                   >

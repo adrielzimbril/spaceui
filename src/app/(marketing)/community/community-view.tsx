@@ -92,13 +92,14 @@ export function CommunityView({ initialMessages = [], initialUser = null }: Comm
   }, [])
 
   React.useEffect(() => {
+    // Already have server-rendered messages — skip the redundant round trip.
+    if (initialMessages.length > 0) return
+
     let isMounted = true
 
     async function fetchNotes() {
       try {
-        const res = await fetch('/api/community/messages', {
-          cache: 'no-store',
-        })
+        const res = await fetch('/api/community/messages')
         if (!res.ok) return
         const json = await res.json()
         if (json.success && Array.isArray(json.messages) && isMounted) {
@@ -118,7 +119,7 @@ export function CommunityView({ initialMessages = [], initialUser = null }: Comm
     return () => {
       isMounted = false
     }
-  }, [])
+  }, [initialMessages])
 
   const stats = React.useMemo(() => {
     const totalMessages = messages.length

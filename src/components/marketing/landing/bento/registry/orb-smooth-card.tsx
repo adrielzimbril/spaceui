@@ -7,6 +7,7 @@ import { Frame, FrameFooter, FrameTitle } from '@/registry/primitives/frame'
 import { Card, CardPanel } from '@/registry/primitives/card'
 import { OrbSmooth } from '@/registry/components/orb/smooth'
 import { BENTO_CYCLE_INTERVAL } from '@/config/space-config'
+import { useStaggeredInterval } from '@/hooks/use-staggered-interval'
 
 const SMOOTH_STATES = [
   { id: 'pure', label: 'Pure Fluid · No Grain', speed: 3.2, watercolor: 0, timeScale: 1.1, grain: 0 },
@@ -23,26 +24,21 @@ export function OrbSmoothCard({ isVisible = true }: { isVisible?: boolean }) {
   const [smoothStateIndex, setSmoothStateIndex] = React.useState(0)
   const [smoothSeedIndex, setSmoothSeedIndex] = React.useState(0)
 
-  React.useEffect(() => {
-    if (!isVisible) return
-    const timer = setInterval(() => {
-      setSmoothStateIndex((prev) => {
-        const next = (prev + 1) % SMOOTH_STATES.length
-        if (next === 0) {
-          setSmoothSeedIndex((s) => (s + 1) % SMOOTH_LUMINA_SEEDS.length)
-        }
-        return next
-      })
-    }, BENTO_CYCLE_INTERVAL)
-    return () => clearInterval(timer)
-  }, [isVisible])
+  useStaggeredInterval(() => {
+    setSmoothStateIndex((prev) => {
+      const next = (prev + 1) % SMOOTH_STATES.length
+      if (next === 0) {
+        setSmoothSeedIndex((s) => (s + 1) % SMOOTH_LUMINA_SEEDS.length)
+      }
+      return next
+    })
+  }, BENTO_CYCLE_INTERVAL, isVisible)
 
   return (
     <Frame className="flex flex-col h-full">
       <Card className="flex-1 flex flex-col h-full rounded-xl before:rounded-xl overflow-hidden">
         <CardPanel className="flex-1 flex min-h-72 flex-col items-center justify-center p-4 rounded-lg">
           <OrbSmooth
-            key={SMOOTH_LUMINA_SEEDS[smoothSeedIndex]}
             size={190}
             textureUrl={`https://avatars.spaceui.one/v1?name=${SMOOTH_LUMINA_SEEDS[smoothSeedIndex]}&variant=lumina&format=svg`}
             audioMode="ambient"

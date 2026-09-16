@@ -2,7 +2,8 @@ import type { Metadata } from 'next'
 import { MarketingHero, HeroAvatar } from '@/components/marketing/shared/hero'
 import { CommunityView } from './community-view'
 import { cookies } from 'next/headers'
-import { createClient } from '@/integrations/supabase/server'
+import { createClient, createAdminClient } from '@/integrations/supabase/server'
+import type { CommunityMessage } from '@/registry/blocks/community-wall'
 
 export const metadata: Metadata = {
   title: 'Community Wall — Space UI',
@@ -12,6 +13,7 @@ export const metadata: Metadata = {
 
 export default async function CommunityPage() {
   let initialUser = null
+  let initialMessages: CommunityMessage[] = []
   try {
     const cookieStore = await cookies()
     const supabase = createClient(cookieStore)
@@ -21,8 +23,18 @@ export default async function CommunityPage() {
       } = await supabase.auth.getUser()
       initialUser = user
     }
+
+    const dbClient = supabase || createAdminClient()
+    if (dbClient) {
+      const { data } = await dbClient
+        .from('community_wall')
+        .select('*')
+        .order('created_at', { ascending: false })
+        .limit(200)
+      initialMessages = data || []
+    }
   } catch (err) {
-    // Continue without user
+    // Continue without user/messages — CommunityView falls back to a client fetch
   }
 
   return (
@@ -44,7 +56,7 @@ export default async function CommunityPage() {
       />
 
       <main className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <CommunityView initialUser={initialUser} />
+        <CommunityView initialUser={initialUser} initialMessages={initialMessages} />
       </main>
     </div>
   )

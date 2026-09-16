@@ -8,14 +8,14 @@ export function isLowPowerGpu() {
   return Boolean(connection?.saveData || coarse || reduced || narrow || cores <= 6)
 }
 
-export function deferUntilVisible(canvas: HTMLCanvasElement, start: () => void) {
+export function deferUntilVisible(canvas: HTMLCanvasElement, start: () => void, rootMargin = '600px') {
   const io = new IntersectionObserver(
     ([entry]) => {
       if (!entry.isIntersecting) return
       io.disconnect()
       start()
     },
-    { threshold: 0.12, rootMargin: '0px' },
+    { threshold: 0, rootMargin },
   )
   io.observe(canvas)
   return () => io.disconnect()
