@@ -21,7 +21,7 @@ export const imagelib: ImageLibrary = {
       {
         id: 'sample-monolith',
         name: 'Monolith Horizon',
-        url: '/samples/image-1.png',
+        url: 'https://cdn.spaceui.one/atom/samples/image-1.png',
         description: 'Scenic landscape featuring a monolithic ring over a tranquil lake at sunset',
         width: 1672,
         height: 941,
@@ -29,7 +29,7 @@ export const imagelib: ImageLibrary = {
       {
         id: 'sample-portrait',
         name: 'Bloom Portrait',
-        url: '/samples/image-2.png',
+        url: 'https://cdn.spaceui.one/atom/samples/image-2.png',
         description: 'Cinematic portrait with vivid blue eyes framed by soft orange petals and sunlight',
         width: 2912,
         height: 1632,
@@ -37,7 +37,7 @@ export const imagelib: ImageLibrary = {
       {
         id: 'sample-architecture',
         name: 'Forest Villa',
-        url: '/samples/image-3.png',
+        url: 'https://cdn.spaceui.one/atom/samples/image-3.png',
         description: 'Modern minimalist architectural pavilion nestled in a moody autumnal woodland',
         width: 2912,
         height: 1632,
@@ -45,7 +45,7 @@ export const imagelib: ImageLibrary = {
       {
         id: 'sample-archway',
         name: 'Stone Archway',
-        url: '/samples/image-4.png',
+        url: 'https://cdn.spaceui.one/atom/samples/image-4.png',
         description: 'Fantasy landscape with a monumental natural stone bridge over a reflective river valley',
         width: 1672,
         height: 941,
@@ -53,7 +53,7 @@ export const imagelib: ImageLibrary = {
       {
         id: 'sample-botanical',
         name: 'Botanical Serenity',
-        url: '/samples/image-5.png',
+        url: 'https://cdn.spaceui.one/atom/samples/image-5.png',
         description: 'Ethereal artistic portrait immersed in lush botanical foliage with dappled light',
         width: 1632,
         height: 918,
@@ -63,7 +63,7 @@ export const imagelib: ImageLibrary = {
       {
         id: 'spaceui',
         name: 'Space UI',
-        url: '/samples/spaceui.png',
+        url: 'https://cdn.spaceui.one/atom/samples/spaceui.png',
         description: 'Space UI brand emblem badge',
         width: 512,
         height: 512,
@@ -71,7 +71,7 @@ export const imagelib: ImageLibrary = {
       {
         id: 'logo',
         name: 'Logo',
-        url: '/samples/logo.svg',
+        url: 'https://cdn.spaceui.one/atom/samples/logo.svg',
         description: 'Space UI emblem with blue glossy metaballs',
         width: 512,
         height: 512,
@@ -79,7 +79,7 @@ export const imagelib: ImageLibrary = {
       {
         id: 'squiggle',
         name: 'Squiggle',
-        url: '/samples/squiggle.svg',
+        url: 'https://cdn.spaceui.one/atom/samples/squiggle.svg',
         description: 'Expressive golden squiggle face',
         width: 512,
         height: 512,
@@ -87,7 +87,7 @@ export const imagelib: ImageLibrary = {
       {
         id: 'squish',
         name: 'Squish',
-        url: '/samples/squish.svg',
+        url: 'https://cdn.spaceui.one/atom/samples/squish.svg',
         description: 'Cute squish creature with pastel gradient',
         width: 1000,
         height: 1000,
@@ -95,7 +95,7 @@ export const imagelib: ImageLibrary = {
       {
         id: 'invader',
         name: 'Invader',
-        url: '/samples/invader.svg',
+        url: 'https://cdn.spaceui.one/atom/samples/invader.svg',
         description: 'Retro pixel space invader',
         width: 512,
         height: 512,
@@ -103,7 +103,7 @@ export const imagelib: ImageLibrary = {
       {
         id: 'lumina',
         name: 'Lumina',
-        url: '/samples/lumina.svg',
+        url: 'https://cdn.spaceui.one/atom/samples/lumina.svg',
         description: 'Lumina space avatar',
         width: 512,
         height: 512,
@@ -111,7 +111,7 @@ export const imagelib: ImageLibrary = {
       {
         id: 'glitch',
         name: 'Glitch',
-        url: '/samples/glitch.svg',
+        url: 'https://cdn.spaceui.one/atom/samples/glitch.svg',
         description: 'Glitch SPACEavatar',
         width: 512,
         height: 512,
@@ -119,7 +119,7 @@ export const imagelib: ImageLibrary = {
       {
         id: 'doddle',
         name: 'Doddle',
-        url: '/samples/doddle.svg',
+        url: 'https://cdn.spaceui.one/atom/samples/doddle.svg',
         description: 'Whimsical doodle illustration on off-white',
         width: 512,
         height: 512,
@@ -127,7 +127,7 @@ export const imagelib: ImageLibrary = {
       {
         id: 'kendo',
         name: 'Kendo',
-        url: '/samples/kendo.svg',
+        url: 'https://cdn.spaceui.one/atom/samples/kendo.svg',
         description: 'Kendo warrior avatar on obsidian plush',
         width: 512,
         height: 512,
@@ -135,7 +135,7 @@ export const imagelib: ImageLibrary = {
       {
         id: 'image-1',
         name: 'Monolith',
-        url: '/samples/image-1.png',
+        url: 'https://cdn.spaceui.one/atom/samples/image-1.png',
         description: 'Scenic monolithic ring landscape',
         width: 1672,
         height: 941,

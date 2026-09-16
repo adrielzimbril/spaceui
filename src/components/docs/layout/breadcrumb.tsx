@@ -14,7 +14,7 @@ import { cn } from '@/registry/lib/utils'
 
 const SEGMENT_LABELS: Record<string, string> = {
   docs: 'Docs',
-  'ui-kit': 'UI Kit',
+  'ui-kit': 'Library',
   primitives: 'Primitives',
   components: 'Components',
   spaceui: 'Space UI',

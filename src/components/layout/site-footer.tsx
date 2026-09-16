@@ -20,7 +20,7 @@ interface FooterGroup {
 
 const FOOTER_GROUPS: FooterGroup[] = [
   {
-    title: 'UI Kit',
+    title: 'Library',
     links: [
       { label: 'Primitives', href: '/primitives' },
       { label: 'Components', href: '/components' },
@@ -54,7 +54,6 @@ const FOOTER_GROUPS: FooterGroup[] = [
       { label: 'Installation', href: '/docs/installation' },
       { label: 'MCP & AI Protocol', href: '/docs/mcp' },
       { label: 'Agent Skills', href: '/docs/skills' },
-      { label: 'Iconography', href: '/docs/fundamentals/iconography' },
       { label: 'Changelog', href: '/docs/changelog' },
     ],
   },
@@ -115,7 +114,7 @@ export function SiteFooter() {
 
           <div
             className={cn(
-              'relative border-4  squircle rounded-5xl z-10 p-6 sm:p-10 lg:p-12',
+              'relative border-4 bg-background/50 squircle rounded-5xl z-10 p-6 sm:p-10 lg:p-12',
               isDark ? 'border-zinc-900' : 'border-background',
             )}
           >

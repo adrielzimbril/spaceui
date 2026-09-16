@@ -10,7 +10,7 @@ export const WORK_DITHER_ITEMS: DitherCarouselItem[] = [
     title: 'Twilight Silhouette',
   },
   {
-    image: 'https://cdn.spaceui.one/atom/samples/image-19.jpg',
+    image: 'https://cdn.spaceui.one/atom/samples/image-19.png',
     title: 'Floral Veil',
   },
   {
@@ -26,7 +26,7 @@ export const WORK_DITHER_ITEMS: DitherCarouselItem[] = [
     title: 'Hydrangea Profile',
   },
   {
-    image: 'https://cdn.spaceui.one/atom/samples/image-34.jpg',
+    image: 'https://cdn.spaceui.one/atom/samples/image-34.png',
     title: 'Glass Ruffle',
   },
   {
@@ -34,15 +34,15 @@ export const WORK_DITHER_ITEMS: DitherCarouselItem[] = [
     title: 'Cyber Visor',
   },
   {
-    image: 'https://cdn.spaceui.one/atom/samples/image-36.jpg',
+    image: 'https://cdn.spaceui.one/atom/samples/image-36.png',
     title: 'Jellyfish Veil',
   },
   {
-    image: 'https://cdn.spaceui.one/atom/samples/image-37.jpg',
+    image: 'https://cdn.spaceui.one/atom/samples/image-37.png',
     title: 'Light Streak',
   },
   {
-    image: 'https://cdn.spaceui.one/atom/samples/image-38.jpg',
+    image: 'https://cdn.spaceui.one/atom/samples/image-38.png',
     title: 'Amber Silhouette',
   },
   {

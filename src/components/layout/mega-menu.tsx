@@ -354,7 +354,7 @@ export function MegaMenu({ className }: { className?: string }) {
                   ))}
                   <div className="bg-border -mx-1 my-2 h-px" aria-hidden="true" />
                   <Link
-                    href="#"
+                    href="/pricing"
                     onClick={handleClose}
                     className="group/cta relative overflow-hidden rounded-xl border border-muted bg-muted hover:bg-accent p-2.5 flex items-center gap-3 transition-colors cursor-pointer outline-none select-none"
                   >
@@ -364,12 +364,7 @@ export function MegaMenu({ className }: { className?: string }) {
                       className="border-blue-400 group-hover/cta:scale-105 transition-transform duration-200"
                     />
                     <span className="flex min-w-0 flex-1 flex-col gap-0.5">
-                      <span className="flex items-center gap-2">
-                        <span className="text-foreground text-sm leading-none font-semibold">Get All-Access</span>
-                        <Badge variant="warning" size="sm">
-                          Coming Soon
-                        </Badge>
-                      </span>
+                      <span className="text-foreground text-sm leading-none font-semibold">Get All-Access</span>
                       <span className="text-muted-foreground truncate text-xs leading-snug">
                         Every Pro block, template, and update.
                       </span>
@@ -383,14 +378,13 @@ export function MegaMenu({ className }: { className?: string }) {
             </NavigationMenuContent>
           </NavigationMenuItem>
 
-          {/* UI Kit Menu */}
           <NavigationMenuItem value="ui-kit">
             <NavigationMenuTrigger className="bg-transparent hover:bg-muted focus:bg-muted gap-1.5">
               <span
                 aria-hidden="true"
                 className="hidden size-1.5 rounded-full bg-current opacity-40 transition-all duration-300 group-hover:opacity-100 group-data-[state=open]:opacity-100 group-data-popup-open:opacity-100 group-data-[state=open]:scale-125 group-data-popup-open:scale-125 shrink-0"
               />
-              Products
+              Library
             </NavigationMenuTrigger>
             <NavigationMenuContent keepMounted className="w-140 shrink-0 max-w-none p-5 pt-3.5">
               <MenuContentMeasurer id="ui-kit" onMeasured={handleMeasured}>

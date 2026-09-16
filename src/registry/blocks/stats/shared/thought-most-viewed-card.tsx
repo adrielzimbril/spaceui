@@ -31,7 +31,8 @@ export function ThoughtMostViewedCard({
   className,
 }: ThoughtMostViewedCardProps) {
   const [isHovered, setIsHovered] = React.useState(false)
-  const effectiveImage = coverImage || imagelib.tools.imagesplit[0]?.url || '/samples/image-1.png'
+  const effectiveImage =
+    coverImage || imagelib.tools.imagesplit[0]?.url || 'https://cdn.spaceui.one/atom/samples/image-1.png'
 
   const emojiUrl = React.useMemo(() => {
     try {

@@ -15,8 +15,8 @@ export const SITE_NAV_ITEMS = searchNavShortcuts
 
 export function SiteHeader() {
   return (
-    <header className="sticky top-3 z-50 mx-auto w-full max-w-6xl px-3 sm:px-4 md:px-6 pointer-events-none -mb-[68px]">
-      <div className="relative mx-auto flex sm:grid h-14 grid-cols-[auto_1fr_auto] justify-between items-center gap-3 px-3 md:px-4 lg:px-6 xl:grid-cols-[1fr_auto_1fr] rounded-2xl border border-border bg-background backdrop-blur-lg transition-colors duration-300 pointer-events-auto">
+    <header className="sticky top-3 z-50 mx-auto w-full max-w-6xl px-3 sm:px-4 md:px-6 pointer-events-none -mb-17">
+      <div className="relative mx-auto flex sm:grid h-14 grid-cols-[auto_1fr_auto] justify-between items-center gap-3 px-3 md:px-4 lg:px-6 lg:grid-cols-[1fr_auto_1fr] rounded-2xl border border-border bg-background backdrop-blur-lg transition-colors duration-300 pointer-events-auto">
         <div className="flex min-w-0 items-center gap-2">
           <Link
             href="/"
@@ -38,7 +38,7 @@ export function SiteHeader() {
                 className="relative scale-150 origin-center transition-transform"
               />
             </div>
-            <span className="text-sm md:text-lg font-bold inline ml-1.5">Space UI</span>
+            <span className="text-sm font-bold inline ml-1.5 lg:hidden">Space UI</span>
           </Link>
         </div>
 
@@ -61,9 +61,9 @@ export function SiteHeader() {
             <div className="motion-safe:active:scale-[0.96] transition-transform">
               <GitHubLink />
             </div>
-            <div className="motion-safe:active:scale-[0.96] transition-transform">
+            {/* <div className="motion-safe:active:scale-[0.96] transition-transform">
               <ModeSwitcher size="lg" />
-            </div>
+            </div> */}
             {/* <Link
               href="/dashboard"
               className="inline-flex size-8 items-center justify-center rounded-md"

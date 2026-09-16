@@ -22,7 +22,7 @@ export function generateStaticParams() {
 
 export async function generateMetadata(props: { params: Promise<{ slug?: string[] }> }) {
   const { slug = [] } = await props.params
-  if (!slug.length) return { title: 'UI Kit' }
+  if (!slug.length) return { title: 'Library' }
   const page = source.getPage(slug)
   if (!page) notFound()
 

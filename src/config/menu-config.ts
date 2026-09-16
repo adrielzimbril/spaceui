@@ -76,7 +76,7 @@ export const megaMenuDocs: MegaMenuItem[] = [
     color: DEFAULT_COLOR_CODE.BLUE,
   },
   {
-    title: 'Ecosystem',
+    title: 'Changelog',
     href: '/docs/changelog',
     description: 'Changelog and roadmap.',
     icon: IconNetwork,
@@ -264,7 +264,7 @@ export const mobileNavGroups: NavGroup[] = [
     ],
   },
   {
-    label: 'UI Kit',
+    label: 'Library',
     items: [
       ...megaMenuUiKit.map((item) => ({
         title: item.title,
@@ -274,6 +274,7 @@ export const mobileNavGroups: NavGroup[] = [
         isDrillable: true,
       })),
       { title: 'Templates', href: '/templates', group: 'Templates', isDrillable: true },
+      { title: 'All Starters & Projects', href: '/showcase', group: 'Showcase', isDrillable: false },
     ],
   },
   {
@@ -286,10 +287,6 @@ export const mobileNavGroups: NavGroup[] = [
       upcoming: item.upcoming,
       isDrillable: false,
     })),
-  },
-  {
-    label: 'Showcase',
-    items: [{ title: 'All Starters & Projects', href: '/showcase', group: 'Showcase', isDrillable: false }],
   },
 ]
 

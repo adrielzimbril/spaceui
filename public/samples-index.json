@@ -257,7 +257,7 @@
     },
     {
       "id": 19,
-      "filename": "image-19.jpg",
+      "filename": "image-19.png",
       "title": "Floral Veil",
       "category": "Portrait",
       "description": "Translucent lace veil draped over figure holding pastel floral blooms",
@@ -266,8 +266,8 @@
       "aspectRatio": 0.684,
       "format": "jpg",
       "sizeBytes": 7658901,
-      "localPath": "/samples/image-19.jpg",
-      "cdnUrl": "https://cdn.spaceui.one/atom/samples/image-19.jpg"
+      "localPath": "/samples/image-19.png",
+      "cdnUrl": "https://cdn.spaceui.one/atom/samples/image-19.png"
     },
     {
       "id": 20,
@@ -467,7 +467,7 @@
     },
     {
       "id": 34,
-      "filename": "image-34.jpg",
+      "filename": "image-34.png",
       "title": "Glass Ruffle",
       "category": "Fashion",
       "description": "High fashion portrait adorned with luminous fluid glass ruffle collar",
@@ -476,8 +476,8 @@
       "aspectRatio": 0.667,
       "format": "jpg",
       "sizeBytes": 5647369,
-      "localPath": "/samples/image-34.jpg",
-      "cdnUrl": "https://cdn.spaceui.one/atom/samples/image-34.jpg"
+      "localPath": "/samples/image-34.png",
+      "cdnUrl": "https://cdn.spaceui.one/atom/samples/image-34.png"
     },
     {
       "id": 35,
@@ -495,7 +495,7 @@
     },
     {
       "id": 36,
-      "filename": "image-36.jpg",
+      "filename": "image-36.png",
       "title": "Jellyfish Veil",
       "category": "Fashion",
       "description": "Iridescent bioluminescent jellyfish-inspired headdress in azure light",
@@ -504,12 +504,12 @@
       "aspectRatio": 0.667,
       "format": "jpg",
       "sizeBytes": 3700088,
-      "localPath": "/samples/image-36.jpg",
-      "cdnUrl": "https://cdn.spaceui.one/atom/samples/image-36.jpg"
+      "localPath": "/samples/image-36.png",
+      "cdnUrl": "https://cdn.spaceui.one/atom/samples/image-36.png"
     },
     {
       "id": 37,
-      "filename": "image-37.jpg",
+      "filename": "image-37.png",
       "title": "Light Streak",
       "category": "Portrait",
       "description": "Cinematic studio portrait traversed by flowing kinetic light trails",
@@ -518,12 +518,12 @@
       "aspectRatio": 0.667,
       "format": "jpg",
       "sizeBytes": 5889885,
-      "localPath": "/samples/image-37.jpg",
-      "cdnUrl": "https://cdn.spaceui.one/atom/samples/image-37.jpg"
+      "localPath": "/samples/image-37.png",
+      "cdnUrl": "https://cdn.spaceui.one/atom/samples/image-37.png"
     },
     {
       "id": 38,
-      "filename": "image-38.jpg",
+      "filename": "image-38.png",
       "title": "Amber Silhouette",
       "category": "Portrait",
       "description": "Minimalist profile with sunglasses backlit against intense amber orange",
@@ -532,8 +532,8 @@
       "aspectRatio": 0.545,
       "format": "jpg",
       "sizeBytes": 1125119,
-      "localPath": "/samples/image-38.jpg",
-      "cdnUrl": "https://cdn.spaceui.one/atom/samples/image-38.jpg"
+      "localPath": "/samples/image-38.png",
+      "cdnUrl": "https://cdn.spaceui.one/atom/samples/image-38.png"
     },
     {
       "id": 39,
@@ -579,7 +579,7 @@
     },
     {
       "id": 42,
-      "filename": "image-42.jpg",
+      "filename": "image-42.png",
       "title": "Cloud Reverie",
       "category": "Portrait",
       "description": "Woman with afro hair surrounded by fluffy surreal pink sunset clouds",
@@ -588,8 +588,8 @@
       "aspectRatio": 0.684,
       "format": "jpg",
       "sizeBytes": 857627,
-      "localPath": "/samples/image-42.jpg",
-      "cdnUrl": "https://cdn.spaceui.one/atom/samples/image-42.jpg"
+      "localPath": "/samples/image-42.png",
+      "cdnUrl": "https://cdn.spaceui.one/atom/samples/image-42.png"
     },
     {
       "id": 43,

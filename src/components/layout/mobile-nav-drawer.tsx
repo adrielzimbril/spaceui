@@ -32,7 +32,6 @@ import {
   IconChevronRight,
   IconCircle,
   IconCode,
-  IconCompass,
   IconCreditCard,
   IconDeviceDesktop,
   IconFlag,
@@ -88,7 +87,7 @@ function getGroupIcon(group: string, title?: string) {
     case 'Tools':
       return IconTool
     case 'Showcase':
-      return IconCompass
+      return IconLayoutGrid
     default:
       return IconDelta
   }
@@ -554,7 +553,7 @@ export function MobileNavDrawer({ open, onOpenChange, trees = [], trigger, trigg
                 <div className="bg-border/70 mx-2 my-1.5 h-px" aria-hidden="true" />
                 <div className="px-2 pb-1">
                   <Link
-                    href="#"
+                    href="/pricing"
                     onClick={handleLinkClick}
                     className="group/cta relative overflow-hidden rounded-xl border border-muted bg-muted hover:bg-accent p-2.5 flex items-center gap-3 transition-colors cursor-pointer outline-none select-none"
                   >
@@ -564,12 +563,7 @@ export function MobileNavDrawer({ open, onOpenChange, trees = [], trigger, trigg
                       className="border-blue-400 group-hover/cta:scale-105 transition-transform duration-200"
                     />
                     <span className="flex min-w-0 flex-1 flex-col gap-0.5">
-                      <span className="flex items-center gap-2">
-                        <span className="text-foreground text-sm leading-none font-semibold">Get All-Access</span>
-                        <Badge variant="warning" size="sm">
-                          Coming Soon
-                        </Badge>
-                      </span>
+                      <span className="text-foreground text-sm leading-none font-semibold">Get All-Access</span>
                       <span className="text-muted-foreground truncate text-xs leading-snug">
                         Every Pro block, template, and update.
                       </span>

@@ -73,7 +73,7 @@ export const MOCK_TOP_VIEWED: ThoughtItem[] = [
     title: 'Designing High-Performance React Canvas Shaders',
     slug: 'designing-canvas-shaders',
     description: 'Deep dive into reactive shaders, render loops, and WebGL hardware acceleration in modern interfaces.',
-    coverImage: '/samples/image-1.png',
+    coverImage: 'https://cdn.spaceui.one/atom/samples/image-1.png',
     count: 18420,
   },
   {
@@ -81,21 +81,21 @@ export const MOCK_TOP_VIEWED: ThoughtItem[] = [
     slug: 'fluid-motion-design-systems',
     description:
       'Constructing resilient physics springs and continuous interruptible gestures across responsive screens.',
-    coverImage: '/samples/image-2.png',
+    coverImage: 'https://cdn.spaceui.one/atom/samples/image-2.png',
     count: 14210,
   },
   {
     title: 'The Evolution of OKLCH Colors and Dynamic Gamuts',
     slug: 'evolution-oklch-gamuts',
     description: 'Perceptual uniformity, gamut mapping, and wide-color display gamuts in modern design systems.',
-    coverImage: '/samples/image-3.png',
+    coverImage: 'https://cdn.spaceui.one/atom/samples/image-3.png',
     count: 11840,
   },
   {
     title: 'Optimizing Framer Motion Layout Springs at Scale',
     slug: 'optimizing-motion-springs',
     description: 'Architecting buttery 120fps morph animations without triggering DOM layout recalculation storms.',
-    coverImage: '/samples/image-4.png',
+    coverImage: 'https://cdn.spaceui.one/atom/samples/image-4.png',
     count: 9350,
   },
 ]
