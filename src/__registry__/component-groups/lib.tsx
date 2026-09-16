@@ -40,6 +40,10 @@ export const registryComponents: Record<string, RegistryComponent> = {
     () => import("@/registry/lib/gpu-runtime/index.ts"),
     {},
   ),
+  "lib-next-image-url": lazyRegistryComponent(
+    () => import("@/registry/lib/next-image-url/index.ts"),
+    {},
+  ),
   "lib-segmented-control": lazyRegistryComponent(
     () => import("@/registry/lib/segmented-control/index.ts"),
     {},

@@ -941,6 +941,7 @@ export const componentGroups: Record<string, string> = {
   "lib-base-ui-use-render": "lib-base-ui",
   "lib-get-strict-context": "lib",
   "lib-gpu-runtime": "lib",
+  "lib-next-image-url": "lib",
   "lib-segmented-control": "lib",
   "lib-utils": "lib",
   "primitives-accordion": "primitives",

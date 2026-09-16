@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "lib-next-image-url",
+  "title": "Next Image URL",
+  "description": "Builds Next.js's own /_next/image optimized URL for raw Image()/canvas/WebGL texture loads.",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/registry/lib/next-image-url/index.ts",
+      "content": "import { getImageProps } from 'next/image'\n\n/**\n * Gets the URL Next.js's own `<Image>` component would render (through\n * whichever `loader` the project has configured — the built-in `/_next/image`\n * optimizer by default, or a custom one), so raw `new Image()` / canvas /\n * WebGL texture loads can go through the same resize + format conversion\n * pipeline instead of downloading the original, unoptimized file.\n *\n * Requires the source host to be allowed in `next.config`'s\n * `images.remotePatterns` (local `/public` paths need no extra config).\n */\nexport interface OptimizedImageUrlOptions {\n  /** Target width in px — should be one of Next's `deviceSizes`/`imageSizes`, or Next will still serve the closest allowed size. */\n  width: number\n  /** Only affects srcSet math for the default loader (which resizes by width and keeps the source aspect ratio) — defaults to `width`. */\n  height?: number\n  /** 1-100, defaults to Next's own default of 75. */\n  quality?: number\n  /** Unused visually (no `<img>` is ever rendered) but required by `getImageProps`. */\n  alt?: string\n}\n\nexport function getOptimizedImageUrl(\n  src: string,\n  { width, height, quality = 75, alt = 'Space UI resized image' }: OptimizedImageUrlOptions,\n): string {\n  const {\n    props: { src: optimizedSrc },\n  } = getImageProps({ src, alt, width, height: height ?? width, quality })\n  return optimizedSrc\n}\n",
+      "type": "registry:lib",
+      "target": "lib/next-image-url.ts"
+    }
+  ],
+  "type": "registry:lib"
+}

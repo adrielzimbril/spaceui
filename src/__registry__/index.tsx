@@ -376,7 +376,7 @@ export const index: Record<string, any> = {
     type: "registry:block",
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ["https://www.spaceui.one/r/lib-utils.json"],
+    registryDependencies: ["https://www.spaceui.one/r/lib-utils.json","https://www.spaceui.one/r/lib-next-image-url.json"],
     files: [
   {
     "path": "src/registry/blocks/liquid-gooey-carousel/index.tsx",
@@ -30544,6 +30544,38 @@ export const index: Record<string, any> = {
       return LazyComp;
     })(),
     command: '@spaceui/lib-gpu-runtime',
+  },
+  "lib-next-image-url": {
+    name: "lib-next-image-url",
+    description: "Builds Next.js's own /_next/image optimized URL for raw Image()/canvas/WebGL texture loads.",
+    type: "registry:lib",
+    dependencies: [],
+    devDependencies: undefined,
+    registryDependencies: [],
+    files: [
+  {
+    "path": "src/registry/lib/next-image-url/index.ts",
+    "type": "registry:lib",
+    "target": "lib/next-image-url.ts"
+  }
+],
+    keywords: [],
+    component: (() => {
+      const LazyComp = React.lazy(async () => {
+        const mod = await import("@/registry/lib/next-image-url/index.ts");
+        const exportName = Object.keys(mod).find(
+          key => typeof mod[key] === 'function' || typeof mod[key] === 'object'
+        ) || "lib-next-image-url";
+        const Comp = mod.default || mod[exportName];
+        if (mod.animations) {
+          (LazyComp as any).animations = mod.animations;
+        }
+        return { default: Comp };
+      });
+      LazyComp.demoProps = {};
+      return LazyComp;
+    })(),
+    command: '@spaceui/lib-next-image-url',
   },
   "lib-segmented-control": {
     name: "lib-segmented-control",

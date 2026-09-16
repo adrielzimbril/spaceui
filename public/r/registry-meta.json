@@ -269,9 +269,9 @@
     ],
     "createdAt": "2026-09-12",
     "updatedAt": "2026-09-12",
-    "size": "37 KB",
-    "rawSize": 37906,
-    "directSize": "37 KB",
+    "size": "37.1 KB",
+    "rawSize": 38014,
+    "directSize": "37.1 KB",
     "fileCount": 4,
     "dependencies": [],
     "registryDependencies": [
@@ -317,9 +317,9 @@
     ],
     "createdAt": "2026-09-12",
     "updatedAt": "2026-09-12",
-    "size": "37 KB",
-    "rawSize": 37906,
-    "directSize": "37 KB",
+    "size": "37.1 KB",
+    "rawSize": 38014,
+    "directSize": "37.1 KB",
     "fileCount": 4,
     "dependencies": [],
     "registryDependencies": [
@@ -365,9 +365,9 @@
     ],
     "createdAt": "2026-09-12",
     "updatedAt": "2026-09-12",
-    "size": "37 KB",
-    "rawSize": 37906,
-    "directSize": "37 KB",
+    "size": "37.1 KB",
+    "rawSize": 38014,
+    "directSize": "37.1 KB",
     "fileCount": 4,
     "dependencies": [],
     "registryDependencies": [
@@ -677,13 +677,14 @@
     ],
     "createdAt": "2026-09-12",
     "updatedAt": "2026-09-12",
-    "size": "37.8 KB",
-    "rawSize": 38744,
-    "directSize": "37.8 KB",
+    "size": "38 KB",
+    "rawSize": 38958,
+    "directSize": "38 KB",
     "fileCount": 4,
     "dependencies": [],
     "registryDependencies": [
-      "https://www.spaceui.one/r/lib-utils.json"
+      "https://www.spaceui.one/r/lib-utils.json",
+      "https://www.spaceui.one/r/lib-next-image-url.json"
     ],
     "dependents": [],
     "related": [
@@ -725,9 +726,9 @@
     ],
     "createdAt": "2026-09-12",
     "updatedAt": "2026-09-12",
-    "size": "30.8 KB",
-    "rawSize": 31546,
-    "directSize": "30.8 KB",
+    "size": "30.9 KB",
+    "rawSize": 31654,
+    "directSize": "30.9 KB",
     "fileCount": 4,
     "dependencies": [],
     "registryDependencies": [
@@ -1834,9 +1835,9 @@
     ],
     "createdAt": "2026-09-03",
     "updatedAt": "2026-09-03",
-    "size": "38.7 KB",
-    "rawSize": 39621,
-    "directSize": "38.7 KB",
+    "size": "38.8 KB",
+    "rawSize": 39740,
+    "directSize": "38.8 KB",
     "fileCount": 6,
     "dependencies": [
       "vgpu"
@@ -1902,9 +1903,9 @@
     ],
     "createdAt": "2026-09-03",
     "updatedAt": "2026-09-03",
-    "size": "38.7 KB",
-    "rawSize": 39621,
-    "directSize": "38.7 KB",
+    "size": "38.8 KB",
+    "rawSize": 39740,
+    "directSize": "38.8 KB",
     "fileCount": 6,
     "dependencies": [
       "vgpu"
