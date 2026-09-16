@@ -15,7 +15,7 @@ import { AudioCard } from './bento/packages/audio-card'
 import { IconArrowUpRight } from '@tabler/icons-react'
 
 export function PackagesSection() {
-  const [ref, isVisible] = useInView({ threshold: 0.05, rootMargin: '150px' })
+  const [ref, isVisible] = useInView({ threshold: 0.05, rootMargin: '80px' })
   const [hasBeenVisible, setHasBeenVisible] = React.useState(false)
 
   React.useEffect(() => {

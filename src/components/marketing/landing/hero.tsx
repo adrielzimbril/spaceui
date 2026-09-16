@@ -11,9 +11,8 @@ import { Link } from '@/registry/primitives/link'
 import { AssetEmoji } from '@/tools/emoji/asset-emoji'
 import { EmojiSource, EmojiType } from '@usespaceui/emoji'
 import { HeroAvatar } from '@/components/marketing/shared/hero'
-import { Squishmoji } from '@usespaceui/squishmoji/react'
-import { Avatar } from '@usespaceui/avatars/react'
 import { useMediaQuery } from '@/registry/hooks/browser/use-media-query'
+import { HeatShade } from '@/registry/components/shader/heat-shade'
 
 const HERO_IDEAS = ['ideas', 'products', 'apps', 'sites', 'brands']
 const HERO_UI = ['better', 'space']
@@ -140,6 +139,14 @@ export function Hero() {
           </div>
         </div>
       </div>
+      {/* <HeatShade
+        variant="licks"
+        from="top"
+        className="absolute top-0 right-0 size-full opacity-70 dark:opacity-80"
+        base="#2a7bba"
+        hot="#43c8ff"
+        speed={1}
+      /> */}
     </section>
   )
 }

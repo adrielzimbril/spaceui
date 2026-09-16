@@ -186,8 +186,8 @@ export function SiteFooter() {
         <div
           className="pointer-events-none absolute inset-0 z-0 bg-muted"
           style={clip ? { clipPath: `url(#${clipId})` } : { clipPath: 'inset(100%)' }}
-        >
-          <HeatShade
+        />
+        {/* <HeatShade
             variant="licks"
             from="bottom"
             className="size-full opacity-70 dark:opacity-80"
@@ -197,7 +197,7 @@ export function SiteFooter() {
             dpr={0.45}
             fps={24}
           />
-        </div>
+        </div> */}
         <div className="relative z-10 mx-auto w-[calc(100%-2rem)] sm:w-[calc(100%-3rem)] -bottom-0.75 max-w-7xl">
           <div
             data-footer-shell

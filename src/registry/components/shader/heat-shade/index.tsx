@@ -18,6 +18,7 @@ export type HeatShadeProps = {
   from?: HeatShadeFrom
   dpr?: number
   fps?: number
+  rootMargin?: string
   className?: string
 }
 
@@ -34,6 +35,7 @@ export function HeatShade({
   from = 'bottom',
   dpr,
   fps,
+  rootMargin = '80px',
   className,
 }: HeatShadeProps) {
   const canvasRef = React.useRef<HTMLCanvasElement>(null)
@@ -139,11 +141,15 @@ export function HeatShade({
       }
     }
 
-    disposeDefer = deferUntilVisible(canvas, () => {
-      mount().catch((error) => {
-        console.error('HeatShade WebGPU init failed:', error)
-      })
-    })
+    disposeDefer = deferUntilVisible(
+      canvas,
+      () => {
+        mount().catch((error) => {
+          console.error('HeatShade WebGPU init failed:', error)
+        })
+      },
+      rootMargin,
+    )
 
     return () => {
       cancelled = true
@@ -152,7 +158,7 @@ export function HeatShade({
       disposeGate?.()
       disposeGpu?.()
     }
-  }, [variant])
+  }, [variant, dpr, fps, rootMargin])
 
   return <canvas ref={canvasRef} aria-label="Animated heat shade" className={cn('block size-full', className)} />
 }

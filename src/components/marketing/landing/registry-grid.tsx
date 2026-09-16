@@ -6,7 +6,7 @@ import { registryStats } from '@/__registry__/stats'
 import { useInView } from '@/registry/hooks/animation/use-in-view'
 import { Badge } from '@/registry/components/spaceui/badge-squircle'
 import { OrbBloopCard } from './bento/registry/orb-bloop-card'
-import { OrbSmoothCard } from './bento/registry/orb-smooth-card'
+import { MorphingTextCard } from './bento/registry/morphing-text-card'
 import { BouncyAccordionCard } from './bento/registry/bouncy-accordion-card'
 import { HandleReelCard } from './bento/registry/handle-reel-card'
 import { LoadingOrbCard } from './bento/registry/loading-orb-card'
@@ -17,7 +17,7 @@ import { IconArrowUpRight } from '@tabler/icons-react'
 import { Button } from '@/registry/components/spaceui/button-squircle'
 
 export function RegistryGrid() {
-  const [ref, isVisible] = useInView({ rootMargin: '100px 0px', initialInView: true })
+  const [ref, isVisible] = useInView({ rootMargin: '80px 0px', initialInView: false })
 
   return (
     <section ref={ref} id="registry" data-page-section className="mx-auto max-w-7xl scroll-mt-16 px-5 sm:px-6 py-20">
@@ -48,10 +48,10 @@ export function RegistryGrid() {
 
       <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
         <OrbBloopCard isVisible={isVisible} />
-        <OrbSmoothCard isVisible={isVisible} />
-        <BouncyAccordionCard />
+        {/* <MorphingTextCard /> */}
+        {/* <BouncyAccordionCard /> */}
         <HandleReelCard />
-        <LoadingOrbCard />
+        {/* <LoadingOrbCard /> */}
         <WordsPreloaderCard isVisible={isVisible} />
         <TimelineCard />
         <GitHubActivityCard />

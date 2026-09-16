@@ -1,21 +1,18 @@
 'use client'
 
 import NumberFlow from '@number-flow/react'
-import { Card, CardPanel } from '@/registry/primitives/card'
 import { useInView } from '@/registry/hooks/animation/use-in-view'
 
 export function AnimatedStat({ label, value }: { label: string; value: number }) {
   const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.4 })
 
   return (
-    <Card ref={ref} className="squircle items-center rounded-3xl bg-card/40 p-5 text-center">
-      <CardPanel className="items-center gap-1 p-0">
-        <span className="flex items-baseline gap-0.5 font-bold text-3xl text-foreground tabular-nums">
-          <NumberFlow value={inView ? value : 0} />
-          <span>+</span>
-        </span>
-        <span className="text-muted-foreground text-xs">{label}</span>
-      </CardPanel>
-    </Card>
+    <div ref={ref} className="rounded-2xl bg-muted p-6 sm:p-8">
+      <p className="flex items-baseline gap-0.5 font-semibold text-4xl text-foreground tracking-tight tabular-nums">
+        <NumberFlow value={inView ? value : 0} />
+        <span>+</span>
+      </p>
+      <p className="mt-2 text-sm font-medium text-muted-foreground">{label}</p>
+    </div>
   )
 }

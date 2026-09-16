@@ -62,6 +62,7 @@ interface AvatarsSquishmojiCardProps {
 export function AvatarsSquishmojiCard({ isVisible = true }: AvatarsSquishmojiCardProps) {
   const [charSeed, setCharSeed] = React.useState('space-packages')
   const [characters, setCharacters] = React.useState<MixedCharacter[]>(INITIAL_CHARACTERS)
+  const [hovered, setHovered] = React.useState<number | null>(null)
 
   const randomizeCharacters = React.useCallback((playSound = false) => {
     if (playSound) {
@@ -126,6 +127,8 @@ export function AvatarsSquishmojiCard({ isVisible = true }: AvatarsSquishmojiCar
             {characters.map((item, idx) => (
               <div
                 key={`char-slot-${idx}`}
+                onMouseEnter={() => setHovered(idx)}
+                onMouseLeave={() => setHovered(null)}
                 onClick={() => {
                   tapSound()
                   randomizeCharacters(true)
@@ -134,7 +137,13 @@ export function AvatarsSquishmojiCard({ isVisible = true }: AvatarsSquishmojiCar
               >
                 {item.type === 'avatar' ? (
                   <div className="relative size-11 overflow-hidden rounded-full">
-                    <Avatar name={`${charSeed}-${item.variant}`} variant={item.variant} size={44} circle animate />
+                    <Avatar
+                      name={`${charSeed}-${item.variant}`}
+                      variant={item.variant}
+                      size={44}
+                      circle
+                      animate={hovered === idx}
+                    />
                   </div>
                 ) : (
                   <div className="relative size-11 flex items-center justify-center">
@@ -144,8 +153,8 @@ export function AvatarsSquishmojiCard({ isVisible = true }: AvatarsSquishmojiCar
                       shape="all"
                       size={44}
                       backgroundStyle={item.bg}
-                      animate
-                      animWobble
+                      animate={hovered === idx}
+                      animWobble={hovered === idx}
                       animOnHover
                       animOnClick
                     />

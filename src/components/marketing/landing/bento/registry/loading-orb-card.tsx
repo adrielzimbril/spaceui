@@ -8,12 +8,9 @@ import { Card, CardPanel } from '@/registry/primitives/card'
 import { LoadingOrb } from '@/registry/components/orb/loading'
 
 const TAILWIND_COLORS = [
-  { label: 'Foreground', className: 'text-foreground' },
   { label: 'Primary', className: 'text-primary' },
   { label: 'Emerald', className: 'text-emerald-500' },
-  { label: 'Indigo', className: 'text-indigo-500' },
   { label: 'Amber', className: 'text-amber-500' },
-  { label: 'Rose', className: 'text-rose-500' },
   { label: 'Cyan', className: 'text-cyan-500' },
 ]
 
