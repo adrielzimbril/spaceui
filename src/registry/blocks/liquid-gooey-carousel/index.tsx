@@ -22,8 +22,8 @@ export const WORK_LIQUID_ITEMS: LiquidGooeyItem[] = [
     title: 'Ocean Sanctuary',
   },
   {
-    image: 'https://cdn.spaceui.one/atom/samples/image-14.png',
-    title: 'Citrus Glow',
+    image: 'https://cdn.spaceui.one/atom/samples/image-23.png',
+    title: 'Red Ribbon',
   },
   {
     image: 'https://cdn.spaceui.one/atom/samples/image-16.png',
@@ -38,8 +38,8 @@ export const WORK_LIQUID_ITEMS: LiquidGooeyItem[] = [
     title: 'Cliff Pavilion',
   },
   {
-    image: 'https://cdn.spaceui.one/atom/samples/image-20.png',
-    title: 'Autumn Retreat',
+    image: 'https://cdn.spaceui.one/atom/samples/image-26.png',
+    title: 'Autumn Arch',
   },
   {
     image: 'https://cdn.spaceui.one/atom/samples/image-21.png',

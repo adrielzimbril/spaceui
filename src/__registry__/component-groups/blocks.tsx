@@ -36,6 +36,10 @@ export const registryComponents: Record<string, RegistryComponent> = {
     () => import("@/registry/blocks/dither-carousel/index.tsx"),
     {},
   ),
+  "block-lens-carousel": lazyRegistryComponent(
+    () => import("@/registry/blocks/lens-carousel/index.tsx"),
+    {},
+  ),
   "block-liquid-gooey-carousel": lazyRegistryComponent(
     () => import("@/registry/blocks/liquid-gooey-carousel/index.tsx"),
     {},

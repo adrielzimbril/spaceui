@@ -275,10 +275,22 @@
     "fileCount": 4,
     "dependencies": [],
     "registryDependencies": [
-      "https://www.spaceui.one/r/lib-utils.json"
+      "https://www.spaceui.one/r/lib-utils.json",
+      "https://www.spaceui.one/r/lib-next-image-url.json"
     ],
     "dependents": [],
     "related": [
+      {
+        "name": "block-lens-carousel",
+        "title": "Lens Carousel Block",
+        "description": "Momentum-driven drag & scroll gallery carousel with inertia easing, an active-card focus state, and atmospheric gradient placeholders for failed image loads.",
+        "url": "/ui-kit/blocks/block",
+        "category": "Block",
+        "categories": [
+          "block",
+          "lens-carousel"
+        ]
+      },
       {
         "name": "block-liquid-gooey-carousel",
         "title": "Liquid Gooey Carousel Block",
@@ -323,10 +335,22 @@
     "fileCount": 4,
     "dependencies": [],
     "registryDependencies": [
-      "https://www.spaceui.one/r/lib-utils.json"
+      "https://www.spaceui.one/r/lib-utils.json",
+      "https://www.spaceui.one/r/lib-next-image-url.json"
     ],
     "dependents": [],
     "related": [
+      {
+        "name": "block-lens-carousel",
+        "title": "Lens Carousel Block",
+        "description": "Momentum-driven drag & scroll gallery carousel with inertia easing, an active-card focus state, and atmospheric gradient placeholders for failed image loads.",
+        "url": "/ui-kit/blocks/block",
+        "category": "Block",
+        "categories": [
+          "block",
+          "lens-carousel"
+        ]
+      },
       {
         "name": "block-liquid-gooey-carousel",
         "title": "Liquid Gooey Carousel Block",
@@ -371,10 +395,22 @@
     "fileCount": 4,
     "dependencies": [],
     "registryDependencies": [
-      "https://www.spaceui.one/r/lib-utils.json"
+      "https://www.spaceui.one/r/lib-utils.json",
+      "https://www.spaceui.one/r/lib-next-image-url.json"
     ],
     "dependents": [],
     "related": [
+      {
+        "name": "block-lens-carousel",
+        "title": "Lens Carousel Block",
+        "description": "Momentum-driven drag & scroll gallery carousel with inertia easing, an active-card focus state, and atmospheric gradient placeholders for failed image loads.",
+        "url": "/ui-kit/blocks/block",
+        "category": "Block",
+        "categories": [
+          "block",
+          "lens-carousel"
+        ]
+      },
       {
         "name": "block-liquid-gooey-carousel",
         "title": "Liquid Gooey Carousel Block",
@@ -663,6 +699,65 @@
     "dependents": [],
     "related": []
   },
+  "block-lens-carousel": {
+    "name": "block-lens-carousel",
+    "shortName": "block-lens-carousel",
+    "title": "Lens Carousel Block",
+    "description": "Momentum-driven drag & scroll gallery carousel with inertia easing, an active-card focus state, and atmospheric gradient placeholders for failed image loads.",
+    "type": "registry:block",
+    "url": "/ui-kit/blocks/block",
+    "category": "Block",
+    "categories": [
+      "block",
+      "lens-carousel"
+    ],
+    "createdAt": "2026-09-16",
+    "updatedAt": "2026-09-16",
+    "size": "14.3 KB",
+    "rawSize": 14599,
+    "directSize": "14.3 KB",
+    "fileCount": 3,
+    "dependencies": [],
+    "registryDependencies": [
+      "https://www.spaceui.one/r/lib-utils.json"
+    ],
+    "dependents": [],
+    "related": [
+      {
+        "name": "block-dither-carousel",
+        "title": "Dither Carousel Block",
+        "description": "3D cylindrical spiral carousel in WebGL2 with curved cards, axial directional blur, and matrix dither pattern.",
+        "url": "/ui-kit/blocks/block",
+        "category": "Block",
+        "categories": [
+          "block",
+          "dither-carousel"
+        ]
+      },
+      {
+        "name": "block-liquid-gooey-carousel",
+        "title": "Liquid Gooey Carousel Block",
+        "description": "Smooth-minimum signed distance field WebGL2 carousel with liquid fusing cards that pull organic metaball strands when separated.",
+        "url": "/ui-kit/blocks/block",
+        "category": "Block",
+        "categories": [
+          "block",
+          "liquid-gooey-carousel"
+        ]
+      },
+      {
+        "name": "block-prism-carousel",
+        "title": "Prism Carousel Block",
+        "description": "Continuous image strip rendered to an offscreen texture and sampled through a thick optical glass lens shader with radial refraction and chromatic aberration.",
+        "url": "/ui-kit/blocks/block",
+        "category": "Block",
+        "categories": [
+          "block",
+          "prism-carousel"
+        ]
+      }
+    ]
+  },
   "block-liquid-gooey-carousel": {
     "name": "block-liquid-gooey-carousel",
     "shortName": "block-liquid-gooey-carousel",
@@ -700,6 +795,17 @@
         ]
       },
       {
+        "name": "block-lens-carousel",
+        "title": "Lens Carousel Block",
+        "description": "Momentum-driven drag & scroll gallery carousel with inertia easing, an active-card focus state, and atmospheric gradient placeholders for failed image loads.",
+        "url": "/ui-kit/blocks/block",
+        "category": "Block",
+        "categories": [
+          "block",
+          "lens-carousel"
+        ]
+      },
+      {
         "name": "block-prism-carousel",
         "title": "Prism Carousel Block",
         "description": "Continuous image strip rendered to an offscreen texture and sampled through a thick optical glass lens shader with radial refraction and chromatic aberration.",
@@ -732,7 +838,8 @@
     "fileCount": 4,
     "dependencies": [],
     "registryDependencies": [
-      "https://www.spaceui.one/r/lib-utils.json"
+      "https://www.spaceui.one/r/lib-utils.json",
+      "https://www.spaceui.one/r/lib-next-image-url.json"
     ],
     "dependents": [],
     "related": [
@@ -745,6 +852,17 @@
         "categories": [
           "block",
           "dither-carousel"
+        ]
+      },
+      {
+        "name": "block-lens-carousel",
+        "title": "Lens Carousel Block",
+        "description": "Momentum-driven drag & scroll gallery carousel with inertia easing, an active-card focus state, and atmospheric gradient placeholders for failed image loads.",
+        "url": "/ui-kit/blocks/block",
+        "category": "Block",
+        "categories": [
+          "block",
+          "lens-carousel"
         ]
       },
       {
@@ -1845,6 +1963,7 @@
     "registryDependencies": [
       "https://www.spaceui.one/r/lib-gpu-runtime.json",
       "https://www.spaceui.one/r/lib-utils.json",
+      "https://www.spaceui.one/r/lib-next-image-url.json",
       "https://www.spaceui.one/r/primitives-toast.json"
     ],
     "dependents": [],
@@ -1913,6 +2032,7 @@
     "registryDependencies": [
       "https://www.spaceui.one/r/lib-gpu-runtime.json",
       "https://www.spaceui.one/r/lib-utils.json",
+      "https://www.spaceui.one/r/lib-next-image-url.json",
       "https://www.spaceui.one/r/primitives-toast.json"
     ],
     "dependents": [],

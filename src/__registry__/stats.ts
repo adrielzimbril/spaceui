@@ -2,7 +2,7 @@
 export const registryStats = {
   "components": 69,
   "primitives": 60,
-  "blocks": 15,
+  "blocks": 16,
   "templates": 2,
   "hooks": 82,
   "hooksOnly": 61,

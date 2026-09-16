@@ -36,11 +36,11 @@ export const imagelib: ImageLibrary = {
       },
       {
         id: 'sample-architecture',
-        name: 'Forest Villa',
-        url: 'https://cdn.spaceui.one/atom/samples/image-3.png',
-        description: 'Modern minimalist architectural pavilion nestled in a moody autumnal woodland',
-        width: 2912,
-        height: 1632,
+        name: 'Oculus Coast',
+        url: 'https://cdn.spaceui.one/atom/samples/image-6.png',
+        description: 'Circular stone oculus opening looking onto a calm ocean sunset',
+        width: 1672,
+        height: 941,
       },
       {
         id: 'sample-archway',

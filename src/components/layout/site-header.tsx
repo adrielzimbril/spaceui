@@ -38,7 +38,7 @@ export function SiteHeader() {
                 className="relative scale-150 origin-center transition-transform"
               />
             </div>
-            <span className="text-sm font-bold inline ml-1.5 lg:hidden">Space UI</span>
+            {/* <span className="text-sm font-bold inline ml-1.5 lg:hidden">Space UI</span> */}
           </Link>
         </div>
 

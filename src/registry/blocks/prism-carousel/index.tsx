@@ -6,9 +6,9 @@ import type { PrismCarouselItem } from './types'
 
 export const WORK_PRISM: PrismCarouselItem[] = [
   {
-    image: 'https://cdn.spaceui.one/atom/samples/image-20.png',
-    title: 'Autumn Retreat',
-    caption: 'Architecture in foliage',
+    image: 'https://cdn.spaceui.one/atom/samples/image-6.png',
+    title: 'Oculus Coast',
+    caption: 'Circular stone oculus over the sea',
   },
   {
     image: 'https://cdn.spaceui.one/atom/samples/image-21.png',
@@ -31,9 +31,9 @@ export const WORK_PRISM: PrismCarouselItem[] = [
     caption: 'Orbital geometry composition',
   },
   {
-    image: 'https://cdn.spaceui.one/atom/samples/image-25.png',
-    title: 'River Pavilion',
-    caption: 'Waterfront timber shelter',
+    image: 'https://cdn.spaceui.one/atom/samples/image-7.png',
+    title: 'Sanctuary Cave',
+    caption: 'Subterranean arches and reflecting pool',
   },
   {
     image: 'https://cdn.spaceui.one/atom/samples/image-26.png',
@@ -56,9 +56,9 @@ export const WORK_PRISM: PrismCarouselItem[] = [
     caption: 'Luminous horizon sculpture',
   },
   {
-    image: 'https://cdn.spaceui.one/atom/samples/image-2.png',
-    title: 'Flora Portrait',
-    caption: 'Botanical floral composition',
+    image: 'https://cdn.spaceui.one/atom/samples/image-5.png',
+    title: 'Botanical Serenity',
+    caption: 'Ethereal portrait in lush foliage',
   },
   {
     image: 'https://cdn.spaceui.one/atom/samples/image-4.png',

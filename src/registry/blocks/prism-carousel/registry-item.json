@@ -5,7 +5,8 @@
   "title": "Prism Carousel Block",
   "description": "Continuous image strip rendered to an offscreen texture and sampled through a thick optical glass lens shader with radial refraction and chromatic aberration.",
   "registryDependencies": [
-    "https://www.spaceui.one/r/lib-utils.json"
+    "https://www.spaceui.one/r/lib-utils.json",
+    "https://www.spaceui.one/r/lib-next-image-url.json"
   ],
   "categories": [
     "block",

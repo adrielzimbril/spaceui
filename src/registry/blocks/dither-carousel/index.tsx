@@ -6,8 +6,8 @@ import type { DitherCarouselItem } from './types'
 
 export const WORK_DITHER_ITEMS: DitherCarouselItem[] = [
   {
-    image: 'https://cdn.spaceui.one/atom/samples/image-15.png',
-    title: 'Twilight Silhouette',
+    image: 'https://cdn.spaceui.one/atom/samples/image-42.png',
+    title: 'Cloud Reverie',
   },
   {
     image: 'https://cdn.spaceui.one/atom/samples/image-19.png',

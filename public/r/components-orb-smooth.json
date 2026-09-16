@@ -9,6 +9,7 @@
   "registryDependencies": [
     "https://www.spaceui.one/r/lib-gpu-runtime.json",
     "https://www.spaceui.one/r/lib-utils.json",
+    "https://www.spaceui.one/r/lib-next-image-url.json",
     "https://www.spaceui.one/r/primitives-toast.json"
   ],
   "files": [

@@ -143,7 +143,7 @@ export const index: Record<string, any> = {
     type: "registry:block",
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ["https://www.spaceui.one/r/lib-utils.json"],
+    registryDependencies: ["https://www.spaceui.one/r/lib-utils.json","https://www.spaceui.one/r/lib-next-image-url.json"],
     files: [
   {
     "path": "src/registry/blocks/dither-carousel/index.tsx",
@@ -370,6 +370,48 @@ export const index: Record<string, any> = {
     })(),
     command: '@spaceui/block-interactive-grid-hero-1',
   },
+  "block-lens-carousel": {
+    name: "block-lens-carousel",
+    description: "Momentum-driven drag & scroll gallery carousel with inertia easing, an active-card focus state, and atmospheric gradient placeholders for failed image loads.",
+    type: "registry:block",
+    dependencies: undefined,
+    devDependencies: undefined,
+    registryDependencies: ["https://www.spaceui.one/r/lib-utils.json"],
+    files: [
+  {
+    "path": "src/registry/blocks/lens-carousel/index.tsx",
+    "type": "registry:block",
+    "target": "components/blocks/lens-carousel/index.tsx"
+  },
+  {
+    "path": "src/registry/blocks/lens-carousel/lens-carousel.tsx",
+    "type": "registry:block",
+    "target": "components/blocks/lens-carousel/lens-carousel.tsx"
+  },
+  {
+    "path": "src/registry/blocks/lens-carousel/types.ts",
+    "type": "registry:block",
+    "target": "components/blocks/lens-carousel/types.ts"
+  }
+],
+    keywords: [],
+    component: (() => {
+      const LazyComp = React.lazy(async () => {
+        const mod = await import("@/registry/blocks/lens-carousel/index.tsx");
+        const exportName = Object.keys(mod).find(
+          key => typeof mod[key] === 'function' || typeof mod[key] === 'object'
+        ) || "block-lens-carousel";
+        const Comp = mod.default || mod[exportName];
+        if (mod.animations) {
+          (LazyComp as any).animations = mod.animations;
+        }
+        return { default: Comp };
+      });
+      LazyComp.demoProps = {};
+      return LazyComp;
+    })(),
+    command: '@spaceui/block-lens-carousel',
+  },
   "block-liquid-gooey-carousel": {
     name: "block-liquid-gooey-carousel",
     description: "Smooth-minimum signed distance field WebGL2 carousel with liquid fusing cards that pull organic metaball strands when separated.",
@@ -423,7 +465,7 @@ export const index: Record<string, any> = {
     type: "registry:block",
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ["https://www.spaceui.one/r/lib-utils.json"],
+    registryDependencies: ["https://www.spaceui.one/r/lib-utils.json","https://www.spaceui.one/r/lib-next-image-url.json"],
     files: [
   {
     "path": "src/registry/blocks/prism-carousel/index.tsx",
@@ -937,7 +979,7 @@ export const index: Record<string, any> = {
     type: "registry:component",
     dependencies: ["vgpu"],
     devDependencies: undefined,
-    registryDependencies: ["https://www.spaceui.one/r/lib-gpu-runtime.json","https://www.spaceui.one/r/lib-utils.json","https://www.spaceui.one/r/primitives-toast.json"],
+    registryDependencies: ["https://www.spaceui.one/r/lib-gpu-runtime.json","https://www.spaceui.one/r/lib-utils.json","https://www.spaceui.one/r/lib-next-image-url.json","https://www.spaceui.one/r/primitives-toast.json"],
     files: [
   {
     "path": "src/registry/components/orb/smooth/index.tsx",

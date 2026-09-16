@@ -15,14 +15,12 @@ function GlobalLayoutContent({ children }: { children: React.ReactNode }) {
   const pathname = usePathname()
   const { isStandard, isImmersive } = useLayoutMode()
   const isResourceStudio = pathname.startsWith('/tools/')
+  const marketingRoutes = ['/', '/tools', '/pricing', '/terms', '/privacy']
+
+  const marketingStartsWithRoutes = ['/showcase']
+
   const isMarketing =
-    pathname === '/' ||
-    pathname === '/showcase' ||
-    pathname.startsWith('/showcase/') ||
-    pathname === '/customize' ||
-    pathname === '/privacy' ||
-    pathname === '/terms' ||
-    pathname === '/tools'
+    marketingRoutes.includes(pathname) || marketingStartsWithRoutes.some((route) => pathname.startsWith(route))
 
   if (isImmersive || isResourceStudio) {
     return <>{children}</>
@@ -67,33 +65,25 @@ export function GlobalLayoutWrapper({
   const pathname = usePathname()
   const isPreview = pathname.startsWith('/registry/view') || pathname.startsWith('/examples')
 
-  if (isPreview) {
-    return (
-      <SquircleProvider>
-        <ToastProvider>
-          <AnchoredToastProvider>
-            <SoundProvider>{children}</SoundProvider>
-          </AnchoredToastProvider>
-        </ToastProvider>
-      </SquircleProvider>
-    )
-  }
+  const content = isPreview ? (
+    children
+  ) : (
+    <PackageManagerProvider>
+      <BrandColorProvider>
+        <BundleProvider>
+          <LayoutModeProvider initialMode={initialLayoutMode}>
+            <GlobalLayoutContent>{children}</GlobalLayoutContent>
+          </LayoutModeProvider>
+        </BundleProvider>
+      </BrandColorProvider>
+    </PackageManagerProvider>
+  )
 
   return (
     <SquircleProvider>
       <ToastProvider>
         <AnchoredToastProvider>
-          <SoundProvider>
-            <PackageManagerProvider>
-              <BrandColorProvider>
-                <BundleProvider>
-                  <LayoutModeProvider initialMode={initialLayoutMode}>
-                    <GlobalLayoutContent>{children}</GlobalLayoutContent>
-                  </LayoutModeProvider>
-                </BundleProvider>
-              </BrandColorProvider>
-            </PackageManagerProvider>
-          </SoundProvider>
+          <SoundProvider>{content}</SoundProvider>
         </AnchoredToastProvider>
       </ToastProvider>
     </SquircleProvider>

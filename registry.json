@@ -124,7 +124,8 @@
       "title": "Dither Carousel Block",
       "description": "3D cylindrical spiral carousel in WebGL2 with curved cards, axial directional blur, and matrix dither pattern.",
       "registryDependencies": [
-        "https://www.spaceui.one/r/lib-utils.json"
+        "https://www.spaceui.one/r/lib-utils.json",
+        "https://www.spaceui.one/r/lib-next-image-url.json"
       ],
       "categories": [
         "block",
@@ -356,6 +357,38 @@
       "updatedAt": "2026-09-14"
     },
     {
+      "name": "block-lens-carousel",
+      "type": "registry:block",
+      "title": "Lens Carousel Block",
+      "description": "Momentum-driven drag & scroll gallery carousel with inertia easing, an active-card focus state, and atmospheric gradient placeholders for failed image loads.",
+      "registryDependencies": [
+        "https://www.spaceui.one/r/lib-utils.json"
+      ],
+      "categories": [
+        "block",
+        "lens-carousel"
+      ],
+      "files": [
+        {
+          "path": "src/registry/blocks/lens-carousel/index.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/lens-carousel/index.tsx"
+        },
+        {
+          "path": "src/registry/blocks/lens-carousel/lens-carousel.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/lens-carousel/lens-carousel.tsx"
+        },
+        {
+          "path": "src/registry/blocks/lens-carousel/types.ts",
+          "type": "registry:block",
+          "target": "components/blocks/lens-carousel/types.ts"
+        }
+      ],
+      "createdAt": "2026-09-16",
+      "updatedAt": "2026-09-16"
+    },
+    {
       "name": "block-liquid-gooey-carousel",
       "type": "registry:block",
       "title": "Liquid Gooey Carousel Block",
@@ -399,7 +432,8 @@
       "title": "Prism Carousel Block",
       "description": "Continuous image strip rendered to an offscreen texture and sampled through a thick optical glass lens shader with radial refraction and chromatic aberration.",
       "registryDependencies": [
-        "https://www.spaceui.one/r/lib-utils.json"
+        "https://www.spaceui.one/r/lib-utils.json",
+        "https://www.spaceui.one/r/lib-next-image-url.json"
       ],
       "categories": [
         "block",
@@ -949,6 +983,7 @@
       "registryDependencies": [
         "https://www.spaceui.one/r/lib-gpu-runtime.json",
         "https://www.spaceui.one/r/lib-utils.json",
+        "https://www.spaceui.one/r/lib-next-image-url.json",
         "https://www.spaceui.one/r/primitives-toast.json"
       ]
     },
