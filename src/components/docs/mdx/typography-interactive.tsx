@@ -495,7 +495,7 @@ export function HeadingSpecs() {
                     <Badge variant="secondary" className="w-fit text-[.6875rem] px-2 py-0.5 font-mono">
                       {item.level}
                     </Badge>
-                    <span className="text-xs font-mono text-muted-foreground">{item.tag}</span>
+                    <span className="text-xs text-muted-foreground">{item.tag}</span>
                   </div>
                   <Code className="text-xs">{spec.tw}</Code>
                 </div>

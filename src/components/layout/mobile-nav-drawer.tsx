@@ -26,7 +26,6 @@ import { Kbd } from '@/registry/primitives/kbd'
 import {
   IconArrowRight,
   IconArrowLeft,
-  IconCrown,
   IconAtom,
   IconBook,
   IconBox,
@@ -59,6 +58,7 @@ import {
   type PageItem,
   type SectionItem,
 } from '@/lib/nav-registry'
+import { MenuAvatarIcon, ToolMenuIcon } from '@/components/layout/mega-menu'
 
 interface MobileNavDrawerProps {
   open?: boolean
@@ -87,12 +87,14 @@ function getGroupIcon(group: string, title?: string) {
       return IconMoodSmile
     case 'Tools':
       return IconTool
+    case 'Showcase':
+      return IconCompass
     default:
       return IconDelta
   }
 }
 
-import { mobileNavGroups, type NavItem } from '@/config/menu-config'
+import { mobileNavGroups, megaMenuTools, type NavItem } from '@/config/menu-config'
 import { GitHubLink } from '@/registry/components/spaceui/github-link'
 
 const NAV_GROUPS = mobileNavGroups
@@ -474,6 +476,7 @@ export function MobileNavDrawer({ open, onOpenChange, trees = [], trigger, trigg
                     <div className="flex flex-col gap-0.5 px-2">
                       {group.items.map((item) => {
                         const Icon = getGroupIcon(item.group, item.title)
+                        const tool = item.group === 'Tools' ? megaMenuTools.find((t) => t.title === item.title) : null
                         const isCurrent = pathname === item.href || pathname.startsWith(item.href + '/')
                         const count = categoryCounts[item.title]
                         const isComingSoon =
@@ -483,7 +486,11 @@ export function MobileNavDrawer({ open, onOpenChange, trees = [], trigger, trigg
                         const innerContent = (
                           <>
                             <div className="flex items-center gap-2.5 min-w-0">
-                              <Icon className="size-4 shrink-0 text-muted-foreground" />
+                              {tool ? (
+                                <ToolMenuIcon tool={tool} size={16} />
+                              ) : (
+                                <Icon className="size-4 shrink-0 text-muted-foreground" />
+                              )}
                               <span className="truncate text-sm">{item.title}</span>
                               {renderBadge(displayBadge)}
                             </div>
@@ -549,25 +556,27 @@ export function MobileNavDrawer({ open, onOpenChange, trees = [], trigger, trigg
                   <Link
                     href="#"
                     onClick={handleLinkClick}
-                    className="group/cta flex w-full items-center justify-between rounded-xl px-3 py-2.5 border border-amber-500/25 bg-linear-to-r from-amber-500/10 via-amber-500/5 to-orange-500/10 hover:border-amber-500/45 transition-all duration-200 cursor-pointer outline-none"
+                    className="group/cta relative overflow-hidden rounded-xl border border-muted bg-muted hover:bg-accent p-2.5 flex items-center gap-3 transition-colors cursor-pointer outline-none select-none"
                   >
-                    <div className="flex items-center gap-2.5 min-w-0">
-                      <div className="flex shrink-0 items-center justify-center size-8 rounded-lg bg-amber-500/15 text-amber-600 dark:text-amber-400 border border-amber-500/20">
-                        <IconCrown className="size-4" />
-                      </div>
-                      <div className="flex flex-col gap-0.5 min-w-0">
-                        <div className="flex items-center gap-1.5">
-                          <span className="text-sm font-semibold text-foreground">Get All-Access</span>
-                          <Badge variant="warning" size="sm">
-                            Coming Soon
-                          </Badge>
-                        </div>
-                        <span className="text-xs text-muted-foreground truncate">
-                          Every Pro block, template & update.
-                        </span>
-                      </div>
-                    </div>
-                    <IconArrowRight className="size-4 text-muted-foreground group-hover/cta:text-foreground group-hover/cta:translate-x-0.5 transition-all duration-200 shrink-0 ml-2" />
+                    <MenuAvatarIcon
+                      seed="Space Pro"
+                      variant="lumina"
+                      className="border-blue-400 group-hover/cta:scale-105 transition-transform duration-200"
+                    />
+                    <span className="flex min-w-0 flex-1 flex-col gap-0.5">
+                      <span className="flex items-center gap-2">
+                        <span className="text-foreground text-sm leading-none font-semibold">Get All-Access</span>
+                        <Badge variant="warning" size="sm">
+                          Coming Soon
+                        </Badge>
+                      </span>
+                      <span className="text-muted-foreground truncate text-xs leading-snug">
+                        Every Pro block, template, and update.
+                      </span>
+                    </span>
+                    <span className="text-muted-foreground group-hover/cta:text-foreground group-hover/cta:translate-x-0.5 transition-all duration-200 ml-1 shrink-0">
+                      <IconArrowRight className="size-4" />
+                    </span>
                   </Link>
                 </div>
               </div>

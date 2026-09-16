@@ -65,7 +65,7 @@ export function NavigationMenuTrigger({
       {children}
       <ChevronDownIcon
         aria-hidden="true"
-        className="size-3.5 transition-transform duration-300 ease-[cubic-bezier(0.32,0.72,0,1)] group-data-popup-open:rotate-180 group-data-[state=open]:rotate-180 opacity-70"
+        className="size-3.5 transition-transform duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] group-data-popup-open:rotate-180 group-data-[state=open]:rotate-180 opacity-70"
       />
     </NavigationMenuPrimitive.Trigger>
   )
@@ -79,7 +79,7 @@ export function NavigationMenuContent({
     <NavigationMenuPrimitive.Content
       className={cn(
         'w-full outline-none p-1',
-        'transition-[opacity,transform] duration-[320ms] ease-[cubic-bezier(0.32,0.72,0,1)]',
+        'transition-[opacity,transform] duration-200 ease-[cubic-bezier(0.22,1,0.36,1)]',
         'data-[starting-style]:opacity-0 data-[ending-style]:opacity-0',
         'data-[starting-style]:data-[activation-direction=left]:-translate-x-5 data-[starting-style]:data-[activation-direction=right]:translate-x-5',
         'data-[ending-style]:data-[activation-direction=left]:translate-x-5 data-[ending-style]:data-[activation-direction=right]:-translate-x-5',
@@ -106,7 +106,7 @@ export function NavigationMenuPositioner({
       sideOffset={sideOffset}
       align={align}
       className={cn(
-        'z-50 transition-[top,left,right,bottom] duration-[360ms] ease-[cubic-bezier(0.32,0.72,0,1)] data-instant:transition-none',
+        'z-50 transition-[top,left,right,bottom] duration-220 ease-[cubic-bezier(0.22,1,0.36,1)] data-instant:transition-none',
         'before:absolute before:content-[""] data-[side=bottom]:before:top-[-10px] data-[side=bottom]:before:right-0 data-[side=bottom]:before:left-0 data-[side=bottom]:before:h-2.5',
         className,
       )}
@@ -120,7 +120,7 @@ export function NavigationMenuPopup({ className, ...props }: NavigationMenuPrimi
   return (
     <NavigationMenuPrimitive.Popup
       className={cn(
-        'relative h-(--popup-height,auto) w-(--popup-width,auto) origin-(--transform-origin) overflow-hidden rounded-2xl border border-border/80 bg-popover/95 text-popover-foreground shadow-2xl shadow-black/10 dark:shadow-black/50 backdrop-blur-xl transition-[width,height,opacity,transform] duration-[360ms] ease-[cubic-bezier(0.32,0.72,0,1)] outline-none',
+        'relative h-(--popup-height,auto) w-(--popup-width,auto) origin-(--transform-origin) overflow-hidden rounded-2xl border border-border/80 bg-popover/95 text-popover-foreground shadow-2xl shadow-black/10 dark:shadow-black/50 backdrop-blur-xl transition-[width,height,opacity,transform] duration-220 ease-[cubic-bezier(0.22,1,0.36,1)] outline-none',
         'data-[starting-style]:scale-95 data-[starting-style]:opacity-0',
         'data-[ending-style]:scale-95 data-[ending-style]:opacity-0 data-[ending-style]:duration-150',
         className,

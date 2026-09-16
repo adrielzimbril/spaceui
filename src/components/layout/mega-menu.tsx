@@ -87,10 +87,6 @@ function SpaceMenuShell() {
     // Initial sync
     drawPaths(popupEl.offsetWidth, popupEl.offsetHeight)
 
-    // ResizeObserver fires on every layout-affecting frame (including mid
-    // CSS-transition frames), and hands us the box size directly — so we
-    // never need to force a synchronous reflow by reading offsetWidth/Height
-    // from a rAF loop.
     const ro = new ResizeObserver(([entry]) => {
       const box = entry.borderBoxSize?.[0]
       if (box) {
@@ -137,16 +133,74 @@ export function MenuAvatarIcon({ seed, className, variant }: MenuAvatarIconProps
   )
 }
 
-function ToolMenuIcon({ tool }: { tool: (typeof designTools)[number] }) {
+export function ToolMenuIcon({
+  tool,
+  size = 32,
+  className,
+}: {
+  tool: (typeof designTools)[number]
+  size?: number
+  className?: string
+}) {
   const isAllTools = tool.label === 'all-tools' || tool.title.toLowerCase().includes('all tools')
   return (
     <div
       className={cn(
-        'flex shrink-0 items-center justify-center size-8 squircle rounded-full relative overflow-hidden border border-muted',
+        'flex shrink-0 items-center justify-center squircle rounded-full relative overflow-hidden border border-muted',
         isAllTools ? 'bg-background' : 'bg-muted',
+        className,
       )}
+      style={{ width: size, height: size }}
     >
-      <ToolAssetIcon label={tool.title || tool.label} size={32} />
+      <ToolAssetIcon label={tool.title || tool.label} size={size} />
+    </div>
+  )
+}
+
+const DEFAULT_MENU_SIZES: Record<string, { width: number; height: number }> = {
+  docs: { width: 420, height: 382 },
+  'ui-kit': { width: 560, height: 209 },
+  tools: { width: 760, height: 526 },
+}
+
+function MenuContentMeasurer({
+  id,
+  onMeasured,
+  children,
+}: {
+  id: string
+  onMeasured: (id: string, width: number, height: number) => void
+  children: React.ReactNode
+}) {
+  const ref = React.useRef<HTMLDivElement>(null)
+
+  React.useLayoutEffect(() => {
+    const el = ref.current
+    if (!el) return
+
+    const measure = () => {
+      const parent = el.parentElement
+      if (!parent) return
+      const w = Math.round(parent.offsetWidth)
+      const h = Math.round(parent.offsetHeight)
+      if (w > 0 && h > 0) {
+        onMeasured(id, w, h)
+      }
+    }
+
+    measure()
+    const ro = new ResizeObserver(measure)
+    ro.observe(el)
+    if (el.parentElement) {
+      ro.observe(el.parentElement)
+    }
+
+    return () => ro.disconnect()
+  }, [id, onMeasured])
+
+  return (
+    <div ref={ref} className="contents">
+      {children}
     </div>
   )
 }
@@ -154,6 +208,27 @@ function ToolMenuIcon({ tool }: { tool: (typeof designTools)[number] }) {
 export function MegaMenu({ className }: { className?: string }) {
   const [value, setValue] = React.useState<string | null>(null)
   const isClickTriggered = React.useRef<boolean>(false)
+  const [menuSizes, setMenuSizes] = React.useState(DEFAULT_MENU_SIZES)
+  const lastValueRef = React.useRef<string>('ui-kit')
+
+  if (value && menuSizes[value]) {
+    lastValueRef.current = value
+  }
+
+  const activeSize = value && menuSizes[value] ? menuSizes[value] : menuSizes[lastValueRef.current]
+
+  const handleMeasured = React.useCallback((id: string, width: number, height: number) => {
+    setMenuSizes((prev) => {
+      const existing = prev[id]
+      if (existing && existing.width === width && Math.abs(existing.height - height) <= 1) {
+        return prev
+      }
+      return {
+        ...prev,
+        [id]: { width, height },
+      }
+    })
+  }, [])
 
   const handleClose = () => {
     setValue(null)
@@ -249,10 +324,11 @@ export function MegaMenu({ className }: { className?: string }) {
               Docs
             </NavigationMenuTrigger>
             <NavigationMenuContent keepMounted className="w-105 shrink-0 max-w-none p-5 pt-3.5">
-              <div className="hidden text-[11px] font-semibold tracking-wider text-muted-foreground uppercase px-2.5 mb-2">
-                Documentation
-              </div>
-              <div className="grid gap-1">
+              <MenuContentMeasurer id="docs" onMeasured={handleMeasured}>
+                <div className="hidden text-[11px] font-semibold tracking-wider text-muted-foreground uppercase px-2.5 mb-2">
+                  Documentation
+                </div>
+                <div className="grid gap-1">
                   {docs.map((doc) => (
                     <Link
                       key={doc.title}
@@ -274,35 +350,36 @@ export function MegaMenu({ className }: { className?: string }) {
                         <span className="text-muted-foreground truncate text-xs leading-snug">{doc.description}</span>
                       </span>
                       <IconChevronRight className="size-4 text-muted-foreground/0 group-hover/row:text-muted-foreground/60 group-focus-visible/row:text-muted-foreground/60 ml-2 shrink-0 -translate-x-1 transition-all duration-200 group-hover/row:translate-x-0 group-focus-visible/row:translate-x-0" />
+                    </Link>
+                  ))}
+                  <div className="bg-border -mx-1 my-2 h-px" aria-hidden="true" />
+                  <Link
+                    href="#"
+                    onClick={handleClose}
+                    className="group/cta relative overflow-hidden rounded-xl border border-muted bg-muted hover:bg-accent p-2.5 flex items-center gap-3 transition-colors cursor-pointer outline-none select-none"
+                  >
+                    <MenuAvatarIcon
+                      seed="Space Pro"
+                      variant="lumina"
+                      className="border-blue-400 group-hover/cta:scale-105 transition-transform duration-200"
+                    />
+                    <span className="flex min-w-0 flex-1 flex-col gap-0.5">
+                      <span className="flex items-center gap-2">
+                        <span className="text-foreground text-sm leading-none font-semibold">Get All-Access</span>
+                        <Badge variant="warning" size="sm">
+                          Coming Soon
+                        </Badge>
+                      </span>
+                      <span className="text-muted-foreground truncate text-xs leading-snug">
+                        Every Pro block, template, and update.
+                      </span>
+                    </span>
+                    <span className="text-muted-foreground group-hover/cta:text-foreground group-hover/cta:translate-x-0.5 transition-all duration-200 ml-1 shrink-0">
+                      <IconArrowRight className="size-4" />
+                    </span>
                   </Link>
-                ))}
-                <div className="bg-border -mx-1 my-2 h-px" aria-hidden="true" />
-                <Link
-                  href="#"
-                  onClick={handleClose}
-                  className="group/cta relative overflow-hidden rounded-xl border border-muted bg-muted hover:bg-accent p-2.5 flex items-center gap-3 transition-colors cursor-pointer outline-none select-none"
-                >
-                  <MenuAvatarIcon
-                    seed="Space Pro"
-                    variant="lumina"
-                    className="border-blue-400 group-hover/cta:scale-105 transition-transform duration-200"
-                  />
-                  <span className="flex min-w-0 flex-1 flex-col gap-0.5">
-                    <span className="flex items-center gap-2">
-                      <span className="text-foreground text-sm leading-none font-semibold">Get All-Access</span>
-                      <Badge variant="warning" size="sm">
-                        Coming Soon
-                      </Badge>
-                    </span>
-                    <span className="text-muted-foreground truncate text-xs leading-snug">
-                      Every Pro block, template, and update.
-                    </span>
-                  </span>
-                  <span className="text-muted-foreground group-hover/cta:text-foreground group-hover/cta:translate-x-0.5 transition-all duration-200 ml-1 shrink-0">
-                    <IconArrowRight className="size-4" />
-                  </span>
-                </Link>
-              </div>
+                </div>
+              </MenuContentMeasurer>
             </NavigationMenuContent>
           </NavigationMenuItem>
 
@@ -316,23 +393,25 @@ export function MegaMenu({ className }: { className?: string }) {
               Products
             </NavigationMenuTrigger>
             <NavigationMenuContent keepMounted className="w-140 shrink-0 max-w-none p-5 pt-3.5">
-              <div className="hidden text-[11px] font-semibold tracking-wider text-muted-foreground uppercase px-2.5 mb-2">
-                UI Kit & Primitives
-              </div>
-              <div className="grid grid-cols-2 gap-2">
-                <ListItem title="Primitives" href="/primitives" seed="Primitives" onClick={handleClose}>
-                  Basic accessible UI elements like Buttons, Inputs, Dialogs.
-                </ListItem>
-                <ListItem title="Blocks" href="/blocks" seed="Blocks" onClick={handleClose}>
-                  Ready-to-use section blocks and page sections.
-                </ListItem>
-                <ListItem title="Hooks & Utils" href="/hooks" seed="Hooks & Utils" onClick={handleClose}>
-                  Sensory React hooks, flow-control and pure DX utilities.
-                </ListItem>
-                <ListItem title="Templates" href="/templates" seed="Templates" onClick={handleClose}>
-                  Full-page starter templates for your next app.
-                </ListItem>
-              </div>
+              <MenuContentMeasurer id="ui-kit" onMeasured={handleMeasured}>
+                <div className="hidden text-[11px] font-semibold tracking-wider text-muted-foreground uppercase px-2.5 mb-2">
+                  UI Kit & Primitives
+                </div>
+                <div className="grid grid-cols-2 gap-2">
+                  <ListItem title="Primitives" href="/primitives" seed="Primitives" onClick={handleClose}>
+                    Basic accessible UI elements like Buttons, Inputs, Dialogs.
+                  </ListItem>
+                  <ListItem title="Blocks" href="/blocks" seed="Blocks" onClick={handleClose}>
+                    Ready-to-use section blocks and page sections.
+                  </ListItem>
+                  <ListItem title="Hooks & Utils" href="/hooks" seed="Hooks & Utils" onClick={handleClose}>
+                    Sensory React hooks, flow-control and pure DX utilities.
+                  </ListItem>
+                  <ListItem title="Templates" href="/templates" seed="Templates" onClick={handleClose}>
+                    Full-page starter templates for your next app.
+                  </ListItem>
+                </div>
+              </MenuContentMeasurer>
             </NavigationMenuContent>
           </NavigationMenuItem>
 
@@ -346,62 +425,64 @@ export function MegaMenu({ className }: { className?: string }) {
               Tools
             </NavigationMenuTrigger>
             <NavigationMenuContent keepMounted className="w-190 shrink-0 max-w-none p-5 pt-3.5">
-              <div className="flex flex-col gap-1">
-                <div className="hidden text-[11px] font-semibold tracking-wider text-muted-foreground uppercase px-2.5 mb-2">
-                  Design Tools
-                </div>
-                <div className="grid grid-cols-2 gap-2.5">
-                  {designTools.map((tool) => {
-                    const isExternal = tool.href?.startsWith('http')
-                    const isInactive = tool.upcoming && (tool.href === '#' || !tool.href)
-                    const isComingSoon = tool.upcoming || tool.release === 'coming-soon'
-                    const isAllTools = tool.label === 'all-tools' || tool.title.toLowerCase().includes('all tools')
+              <MenuContentMeasurer id="tools" onMeasured={handleMeasured}>
+                <div className="flex flex-col gap-1">
+                  <div className="hidden text-[11px] font-semibold tracking-wider text-muted-foreground uppercase px-2.5 mb-2">
+                    Design Tools
+                  </div>
+                  <div className="grid grid-cols-2 gap-2.5">
+                    {designTools.map((tool) => {
+                      const isExternal = tool.href?.startsWith('http')
+                      const isInactive = tool.upcoming && (tool.href === '#' || !tool.href)
+                      const isComingSoon = tool.upcoming || tool.release === 'coming-soon'
+                      const isAllTools = tool.label === 'all-tools' || tool.title.toLowerCase().includes('all tools')
 
-                    return (
-                      <Link
-                        key={tool.title}
-                        href={tool.href ?? '#'}
-                        target={isExternal ? '_blank' : undefined}
-                        rel={isExternal ? 'noopener noreferrer' : undefined}
-                        onClick={isInactive ? (e) => e.preventDefault() : handleClose}
-                        className={cn(
-                          'flex flex-row items-start gap-3 rounded-xl p-2.5 transition-colors select-none min-w-0',
-                          isAllTools
-                            ? 'bg-muted hover:bg-accent border border-muted'
-                            : 'hover:bg-muted border border-transparent',
-                          isInactive && 'cursor-default opacity-75 hover:bg-transparent',
-                        )}
-                      >
-                        <ToolMenuIcon tool={tool} />
-                        <div className="flex flex-col min-w-0 flex-1 gap-0.5">
-                          <div className="flex items-center gap-1.5 min-w-0">
-                            <span
-                              className={cn(
-                                'text-sm font-medium leading-none truncate',
-                                isComingSoon ? 'text-muted-foreground' : 'text-foreground',
-                              )}
-                            >
-                              {tool.title}
+                      return (
+                        <Link
+                          key={tool.title}
+                          href={tool.href ?? '#'}
+                          target={isExternal ? '_blank' : undefined}
+                          rel={isExternal ? 'noopener noreferrer' : undefined}
+                          onClick={isInactive ? (e) => e.preventDefault() : handleClose}
+                          className={cn(
+                            'flex flex-row items-start gap-3 rounded-xl p-2.5 transition-colors select-none min-w-0',
+                            isAllTools
+                              ? 'bg-muted hover:bg-accent border border-muted'
+                              : 'hover:bg-muted border border-transparent',
+                            isInactive && 'cursor-default opacity-75 hover:bg-transparent',
+                          )}
+                        >
+                          <ToolMenuIcon tool={tool} />
+                          <div className="flex flex-col min-w-0 flex-1 gap-0.5">
+                            <div className="flex items-center gap-1.5 min-w-0">
+                              <span
+                                className={cn(
+                                  'text-sm font-medium leading-none truncate',
+                                  isComingSoon ? 'text-muted-foreground' : 'text-foreground',
+                                )}
+                              >
+                                {tool.title}
+                              </span>
+                              {isComingSoon ? (
+                                <Badge variant="warning" size="sm" className="rounded-sm shrink-0">
+                                  <span aria-hidden="true">Coming Soon</span>
+                                </Badge>
+                              ) : tool.release === 'beta' ? (
+                                <Badge variant="secondary" size="sm" className="rounded-sm shrink-0">
+                                  <span aria-hidden="true">Beta</span>
+                                </Badge>
+                              ) : null}
+                            </div>
+                            <span className="text-muted-foreground line-clamp-2 text-xs leading-snug mt-0.5">
+                              {tool.description}
                             </span>
-                            {isComingSoon ? (
-                              <Badge variant="warning" size="sm" className="rounded-sm shrink-0">
-                                <span aria-hidden="true">Coming Soon</span>
-                              </Badge>
-                            ) : tool.release === 'beta' ? (
-                              <Badge variant="secondary" size="sm" className="rounded-sm shrink-0">
-                                <span aria-hidden="true">Beta</span>
-                              </Badge>
-                            ) : null}
                           </div>
-                          <span className="text-muted-foreground line-clamp-2 text-xs leading-snug mt-0.5">
-                            {tool.description}
-                          </span>
-                        </div>
-                      </Link>
-                    )
-                  })}
+                        </Link>
+                      )
+                    })}
+                  </div>
                 </div>
-              </div>
+              </MenuContentMeasurer>
             </NavigationMenuContent>
           </NavigationMenuItem>
 
@@ -426,7 +507,17 @@ export function MegaMenu({ className }: { className?: string }) {
         {/* Base UI Animated Viewport & Positioner Portal */}
         <NavigationMenuPortal>
           <NavigationMenuPositioner sideOffset={9}>
-            <NavigationMenuPopup className="border-0! bg-transparent! shadow-none! rounded-none! backdrop-blur-none! overflow-visible! data-starting-style:scale-100! data-ending-style:scale-100!">
+            <NavigationMenuPopup
+              style={{
+                ...(activeSize
+                  ? {
+                      width: `${activeSize.width}px`,
+                      height: `${activeSize.height}px`,
+                    }
+                  : {}),
+              }}
+              className="border-0! bg-transparent! shadow-none! rounded-none! backdrop-blur-none! overflow-visible! data-starting-style:scale-100! data-ending-style:scale-100!"
+            >
               <SpaceMenuShell />
               <NavigationMenuViewport className="relative z-10 h-full w-full overflow-hidden rounded-b-3xl" />
             </NavigationMenuPopup>

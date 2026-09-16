@@ -81,7 +81,7 @@ const columns: ColumnDef<Flight>[] = [
   },
   {
     accessorKey: 'flightCode',
-    cell: ({ row }) => <div className="font-medium font-mono text-muted-foreground">{row.getValue('flightCode')}</div>,
+    cell: ({ row }) => <div className="font-medium text-muted-foreground">{row.getValue('flightCode')}</div>,
     header: 'Flight',
     size: 80,
   },

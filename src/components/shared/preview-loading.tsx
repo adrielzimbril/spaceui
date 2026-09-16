@@ -101,7 +101,7 @@ export function PreviewLoading({ size = 'default', morph = true, label, classNam
             </motion.div>
           </AnimatePresence>
         </div>
-        {label && <span className="text-xs font-mono text-muted-foreground/60">{label}</span>}
+        {label && <span className="text-xs text-muted-foreground/60">{label}</span>}
       </div>
     </div>
   )

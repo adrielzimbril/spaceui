@@ -471,7 +471,7 @@ export function CommandMenu({
             </div>
             {copyPayload && (
               <div className="flex min-w-0 items-center gap-2 text-xs">
-                <span className="truncate font-mono text-muted-foreground">{copyPayload}</span>
+                <span className="truncate text-muted-foreground">{copyPayload}</span>
                 <KbdGroup>
                   <Kbd>{isMac ? '⌘' : 'Ctrl'}</Kbd>
                   <Kbd>C</Kbd>
