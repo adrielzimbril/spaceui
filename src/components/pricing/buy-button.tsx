@@ -16,7 +16,7 @@ interface BuyButtonProps extends Omit<ButtonProps, 'onClick'> {
 
 export function BuyButton({
   productId,
-  label = 'Acheter maintenant',
+  label = 'Buy now',
   price,
   successUrl,
   variant = 'primary',
@@ -61,7 +61,7 @@ export function BuyButton({
       {isLoading ? (
         <>
           <Loader2 className="size-4 animate-spin mr-2" />
-          <span>Redirection...</span>
+          <span>Redirecting...</span>
         </>
       ) : (
         <>

@@ -84,12 +84,15 @@ function LayoutModeToggle() {
   )
 }
 
-export function FloatNav() {
+export function FloatNav({ className }: { className?: string }) {
   const { isImmersive } = useLayoutMode()
   if (isImmersive) return null
 
   return (
-    <nav aria-label="Floating Dock Navigation" className="fixed bottom-22 md:bottom-5 left-1/2 -translate-x-1/2 z-50">
+    <nav
+      aria-label="Floating Dock Navigation"
+      className={cn('fixed bottom-22 md:bottom-5 left-1/2 -translate-x-1/2 z-50', className)}
+    >
       <Group className="inline-flex items-center rounded-xl bg-muted p-0.5 gap-1 border-2 border-muted">
         {/* Site controls */}
         <ModeSwitcher

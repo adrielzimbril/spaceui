@@ -16,7 +16,13 @@ function GlobalLayoutContent({ children }: { children: React.ReactNode }) {
   const { isStandard, isImmersive } = useLayoutMode()
   const isResourceStudio = pathname.startsWith('/tools/')
   const isMarketing =
-    pathname === '/' || pathname === '/showcase' || pathname.startsWith('/showcase/') || pathname === '/customize'
+    pathname === '/' ||
+    pathname === '/showcase' ||
+    pathname.startsWith('/showcase/') ||
+    pathname === '/customize' ||
+    pathname === '/privacy' ||
+    pathname === '/terms' ||
+    pathname === '/tools'
 
   if (isImmersive || isResourceStudio) {
     return <>{children}</>
@@ -27,7 +33,7 @@ function GlobalLayoutContent({ children }: { children: React.ReactNode }) {
       <>
         <SiteHeader />
         {children}
-        <FloatNav />
+        <FloatNav className="bottom-6" />
       </>
     )
   }
