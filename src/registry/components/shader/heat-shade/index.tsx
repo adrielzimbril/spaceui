@@ -16,6 +16,8 @@ export type HeatShadeProps = {
   speed?: number
   variant?: HeatShadeVariant
   from?: HeatShadeFrom
+  dpr?: number
+  fps?: number
   className?: string
 }
 
@@ -30,6 +32,8 @@ export function HeatShade({
   speed = 1,
   variant = 'licks',
   from = 'bottom',
+  dpr,
+  fps,
   className,
 }: HeatShadeProps) {
   const canvasRef = React.useRef<HTMLCanvasElement>(null)
@@ -55,10 +59,22 @@ export function HeatShade({
         return
       }
 
-      const gate = attachGpuGate(canvas)
+      let running: { stop: () => void } | undefined
+      let draw = (_passFrame: { pass: (target: unknown, fx: unknown) => void }) => {}
+
+      const gate = attachGpuGate(canvas, (paused) => {
+        if (paused) {
+          running?.stop()
+          running = undefined
+        } else if (!running) {
+          running = frameLoop(gpu, (frame) => draw(frame))
+        }
+      })
       disposeGate = gate.dispose
+      const pixelRatio = dpr ?? (gate.state.lowPower ? 0.4 : Math.min(window.devicePixelRatio || 1, 1.25))
+      const frameMs = fps ? 1000 / fps : gate.frameMs
       const canvasSurface = surface(gpu, canvasRef.current, {
-        dpr: gate.state.lowPower ? 0.5 : Math.min(window.devicePixelRatio || 1, 2),
+        dpr: pixelRatio,
         alphaMode: 'premultiplied',
         format: 'bgra8unorm',
       })
@@ -82,10 +98,10 @@ export function HeatShade({
       let lastKey = ''
       let lastDraw = 0
 
-      const draw = (passFrame: { pass: (target: unknown, fx: unknown) => void }) => {
+      draw = (passFrame) => {
         if (gate.state.paused) return
         const now = performance.now()
-        if (gate.frameMs && now - lastDraw < gate.frameMs) return
+        if (frameMs && now - lastDraw < frameMs) return
         lastDraw = now
         const width = Math.max(canvas.clientWidth, 1)
         const height = Math.max(canvas.clientHeight, 1)
@@ -110,10 +126,13 @@ export function HeatShade({
         passFrame.pass(canvasSurface, shade)
       }
 
-      const loop = frameLoop(gpu, (gpuFrame) => {
-        draw(gpuFrame)
-      })
-      stopLoop = () => loop.stop()
+      if (!gate.state.paused && !running) {
+        running = frameLoop(gpu, (frame) => draw(frame))
+      }
+      stopLoop = () => {
+        running?.stop()
+        running = undefined
+      }
 
       disposeGpu = () => {
         gpu.dispose()

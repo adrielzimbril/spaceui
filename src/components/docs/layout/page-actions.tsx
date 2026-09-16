@@ -19,6 +19,7 @@ import { useBundle, prettify } from '@/components/providers/bundle-provider'
 import { useUiSound } from '@/components/providers/sound-provider'
 import { useClipboard } from '@/registry/hooks/browser/use-clipboard'
 import { siteConfig } from '@/config/space-config'
+import { TextMorph } from 'torph/react'
 
 const cache = new Map<string, string>()
 
@@ -158,7 +159,7 @@ export function PageActions({
             title={isBundled ? 'Remove from bundle' : 'Add to bundle'}
           >
             <IconPackage className="size-3.5" />
-            <span>{isBundled ? 'In Bundle' : 'Bundle'}</span>
+            <TextMorph>{isBundled ? 'In Bundle' : 'Bundle'}</TextMorph>
           </Button>
           <div className="h-3.5 w-px bg-border/60" />
         </>

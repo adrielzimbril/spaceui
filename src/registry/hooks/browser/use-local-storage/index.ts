@@ -60,16 +60,19 @@ export function useLocalStorage<T>(
   }, [key, initialValue])
 
   useEventListener('storage', (e: StorageEvent) => {
-    if (e.key === key && e.newValue) {
+    if (e.key !== key) return
+    if (e.newValue === null) {
+      setStoredValue(initialValue)
+      return
+    }
+    try {
       try {
-        try {
-          setStoredValue(JSON.parse(e.newValue))
-        } catch {
-          setStoredValue(e.newValue as unknown as T)
-        }
-      } catch (error) {
-        console.warn(`Error syncing localStorage key "${key}":`, error)
+        setStoredValue(JSON.parse(e.newValue))
+      } catch {
+        setStoredValue(e.newValue as unknown as T)
       }
+    } catch (error) {
+      console.warn(`Error syncing localStorage key "${key}":`, error)
     }
   })
 

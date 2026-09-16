@@ -68,6 +68,27 @@ export function BundleProvider({ children }: { children: React.ReactNode }) {
     }
   }, [setItems])
 
+  useEffect(() => {
+    const channel = new BroadcastChannel(STORAGE_KEY)
+    const onMessage = (event: MessageEvent<BundleItem[]>) => {
+      if (!Array.isArray(event.data)) return
+      setItems((current) =>
+        JSON.stringify(current) === JSON.stringify(event.data) ? current : event.data,
+      )
+    }
+    channel.addEventListener('message', onMessage)
+    return () => {
+      channel.removeEventListener('message', onMessage)
+      channel.close()
+    }
+  }, [setItems])
+
+  useEffect(() => {
+    const channel = new BroadcastChannel(STORAGE_KEY)
+    channel.postMessage(items)
+    channel.close()
+  }, [items])
+
   const value = useMemo<BundleContextValue>(
     () => ({
       add: (item) => {

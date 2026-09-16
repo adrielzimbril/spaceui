@@ -24,6 +24,7 @@ import { IconPackage, IconPackageExport, IconX, IconBox, IconShare, IconTrash } 
 import { useClipboard } from '@/registry/hooks/browser/use-clipboard'
 import { cn } from '@/registry/lib/utils'
 import { REGISTRY_NAMESPACE } from '@/lib/install-command'
+import { TextMorph } from 'torph/react'
 
 export function BundleDrawer() {
   const { items, count, remove, clear, message } = useBundle()
@@ -60,14 +61,16 @@ export function BundleDrawer() {
             }}
           >
             <IconPackage className="size-3.5" />
-            <span className="hidden sm:inline font-medium text-xs">Bundle</span>
+            <span className="hidden sm:inline font-medium text-xs">
+              <TextMorph>Bundle</TextMorph>
+            </span>
             {count > 0 && (
               <Badge
                 variant="secondary"
                 square
                 className="bg-background size-4.5 p-0 flex items-center justify-center text-foreground text-[10px] font-bold"
               >
-                {count}
+                <TextMorph>{String(count)}</TextMorph>
               </Badge>
             )}
           </Button>
@@ -93,7 +96,7 @@ export function BundleDrawer() {
                 size="sm"
                 className="rounded-sm text-[10px] uppercase tracking-wider text-muted-foreground ml-1"
               >
-                Bundle ({count})
+                <TextMorph>{`Bundle (${count})`}</TextMorph>
               </Badge>
             </div>
 
@@ -127,7 +130,7 @@ export function BundleDrawer() {
                 <div className="flex items-center justify-between px-4 py-1.5 text-xs font-medium tracking-wider text-muted-foreground">
                   <span>Selected Components</span>
                   <span className="text-[.6875rem] uppercase text-muted-foreground">
-                    {count} {count <= 1 ? 'Item' : 'Items'}
+                    <TextMorph>{`${count} ${count <= 1 ? 'Item' : 'Items'}`}</TextMorph>
                   </span>
                 </div>
 
@@ -189,14 +192,18 @@ export function BundleDrawer() {
 
         {/* Footer — mirrors MobileNavDrawer */}
         <DrawerFooter className="shrink-0 flex-row items-center justify-between! border-none px-0.5 pb-2 pt-0">
-          <Button
-            variant="secondary"
-            onClick={handleCopyShare}
-            className="flex h-8 gap-2 items-center justify-center bg-background rounded-md px-3 text-sm font-medium hover:bg-muted text-foreground cursor-pointer"
-          >
-            <IconShare className="size-3.5 text-muted-foreground" />
-            <span>{copiedShare ? 'Copied link!' : 'Share bundle'}</span>
-          </Button>
+          {count > 0 ? (
+            <Button
+              variant="secondary"
+              onClick={handleCopyShare}
+              className="flex h-8 gap-2 items-center justify-center bg-background! rounded-md px-3 text-sm font-medium hover:bg-muted text-foreground cursor-pointer"
+            >
+              <IconShare className="size-3.5 text-muted-foreground" />
+              <TextMorph>{copiedShare ? 'Copied link!' : 'Share bundle'}</TextMorph>
+            </Button>
+          ) : (
+            <span />
+          )}
           {count > 0 && (
             <Button
               variant="secondary"
@@ -204,10 +211,10 @@ export function BundleDrawer() {
                 slideSound('out')
                 clear()
               }}
-              className="flex h-8 gap-2 items-center justify-center bg-background rounded-md px-3 text-sm font-medium hover:bg-muted text-muted-foreground hover:text-destructive cursor-pointer"
+              className="flex h-8 gap-2 items-center justify-center bg-background! rounded-md px-3 text-sm font-medium hover:bg-muted text-muted-foreground hover:text-destructive cursor-pointer"
             >
               <IconTrash className="size-3.5" />
-              <span>Clear all</span>
+              <TextMorph>Clear all</TextMorph>
             </Button>
           )}
         </DrawerFooter>
