@@ -72,7 +72,9 @@ export function isUncontainedComponent(name?: string, componentGroup?: string | 
 
   const isTemplate = lowerName.includes('templates') || lowerGroup.includes('templates')
 
-  return isShader || isGradient || isBlock || isTemplate
+  const isShowcase = lowerName.startsWith('showcase-')
+
+  return isShader || isGradient || isBlock || isTemplate || isShowcase
 }
 
 /**

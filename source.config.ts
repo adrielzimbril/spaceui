@@ -17,6 +17,8 @@ const previewOptionsSchema = z.object({
   container: z.boolean().optional(),
   align: z.enum(['start', 'center', 'end']).optional(),
   className: z.string().optional(),
+  externalUrl: z.string().optional(),
+  showcase: z.boolean().optional(),
 })
 
 const sharedSchema = {

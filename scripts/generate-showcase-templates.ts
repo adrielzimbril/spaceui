@@ -24,18 +24,20 @@ function buildMdx(project: ProjectItem, slug: string): string {
   return `---
 title: "${escapeYaml(project.title)}"
 description: "${escapeYaml(project.description)}"
-showcase: true
 preview:
   name: showcase-${slug}
   iframe: true
   open: true
+  showcase: true
   externalUrl: "${project.url}"
 ---
 `
 }
 
 function main() {
-  const projects = (projectsData as { projects: ProjectItem[] }).projects
+  const projects = [...(projectsData as { projects: ProjectItem[] }).projects].sort(
+    (a, b) => new Date(b.created_at).getTime() - new Date(a.created_at).getTime(),
+  )
   const seen = new Set<string>()
   const slugs: string[] = []
 

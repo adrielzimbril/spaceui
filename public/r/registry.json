@@ -372,9 +372,18 @@
       "name": "block-lens-carousel",
       "type": "registry:block",
       "title": "Lens Carousel Block",
-      "description": "Momentum-driven drag & scroll gallery carousel with inertia easing, an active-card focus state, and atmospheric gradient placeholders for failed image loads.",
+      "description": "Vertical WebGL lens gallery. Scroll-linked image planes from Immersive Lens.",
+      "dependencies": [
+        "motion",
+        "gsap",
+        "three"
+      ],
+      "devDependencies": [
+        "@types/three"
+      ],
       "registryDependencies": [
-        "https://www.spaceui.one/r/lib-utils.json"
+        "https://www.spaceui.one/r/lib-utils.json",
+        "https://www.spaceui.one/r/lib-next-image-url.json"
       ],
       "categories": [
         "block",
@@ -395,6 +404,16 @@
           "path": "src/registry/blocks/lens-carousel/types.ts",
           "type": "registry:block",
           "target": "components/blocks/lens-carousel/types.ts"
+        },
+        {
+          "path": "src/registry/blocks/lens-carousel/lens-webgl-layer.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/lens-carousel/lens-webgl-layer.tsx"
+        },
+        {
+          "path": "src/registry/blocks/lens-carousel/vertical-gallery.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/lens-carousel/vertical-gallery.tsx"
         }
       ],
       "createdAt": "2026-09-16",
@@ -27130,6 +27149,10 @@
       "devDependencies": [
         "@types/three"
       ],
+      "registryDependencies": [
+        "https://www.spaceui.one/r/lib-next-image-url.json",
+        "https://www.spaceui.one/r/block-lens-carousel.json"
+      ],
       "categories": [
         "templates",
         "portfolios"
@@ -27161,11 +27184,6 @@
           "target": "components/immersive-lens/client-page.tsx"
         },
         {
-          "path": "src/registry/templates/immersive-lens/components/vertical-gallery.tsx",
-          "type": "registry:component",
-          "target": "components/immersive-lens/vertical-gallery.tsx"
-        },
-        {
           "path": "src/registry/templates/immersive-lens/components/horizontal-gallery.tsx",
           "type": "registry:component",
           "target": "components/immersive-lens/horizontal-gallery.tsx"
@@ -27184,11 +27202,6 @@
           "path": "src/registry/templates/immersive-lens/components/custom-cursor.tsx",
           "type": "registry:component",
           "target": "components/immersive-lens/custom-cursor.tsx"
-        },
-        {
-          "path": "src/registry/templates/immersive-lens/components/lens-webgl-layer.tsx",
-          "type": "registry:component",
-          "target": "components/immersive-lens/lens-webgl-layer.tsx"
         },
         {
           "path": "src/registry/templates/immersive-lens/hooks/use-custom-cursor.ts",

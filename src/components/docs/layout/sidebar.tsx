@@ -51,10 +51,22 @@ function HubItemContent({
   )
 }
 
+function getScrollParent(el: HTMLElement): HTMLElement | null {
+  const slotted = el.closest('[data-slot="scroll-area-viewport"]') as HTMLElement | null
+  if (slotted) return slotted
+  let node = el.parentElement
+  while (node) {
+    const overflowY = getComputedStyle(node).overflowY
+    if (overflowY === 'auto' || overflowY === 'scroll') return node
+    node = node.parentElement
+  }
+  return null
+}
+
 function scrollSidebarTo(el: HTMLElement, block: 'start' | 'center' = 'center') {
-  const scrollContainer = el.closest('[data-slot="scroll-area-viewport"]') as HTMLElement | null
+  const scrollContainer = getScrollParent(el)
   if (!scrollContainer) {
-    el.scrollIntoView({ behavior: 'smooth', block, inline: 'nearest' })
+    el.scrollIntoView({ behavior: 'auto', block, inline: 'nearest' })
     return
   }
   const containerRect = scrollContainer.getBoundingClientRect()
@@ -63,7 +75,7 @@ function scrollSidebarTo(el: HTMLElement, block: 'start' | 'center' = 'center') 
   const offset = block === 'center' ? containerRect.height / 2 - itemRect.height / 2 : 8
   scrollContainer.scrollTo({
     top: Math.max(0, relativeTop - offset),
-    behavior: 'smooth',
+    behavior: 'auto',
   })
 }
 
@@ -83,31 +95,54 @@ export function DocsSidebar() {
 
   const isItemActive = React.useCallback(
     (url: string) => {
-      return pathname === url || pathname === `${url}/` || pathname.startsWith(`${url}/`)
+      if (pathname === url || pathname === `${url}/`) return true
+      const pathParts = pathname.split('/').filter(Boolean)
+      const urlParts = url.split('/').filter(Boolean)
+      const pathSlug = pathParts.at(-1)
+      const urlSlug = urlParts.at(-1)
+      return Boolean(pathSlug && urlSlug && pathSlug === urlSlug && pathParts.length === urlParts.length)
     },
     [pathname],
   )
 
-  React.useEffect(() => {
+  React.useLayoutEffect(() => {
+    let cancelled = false
+    let attempts = 0
+
     const scrollToActive = () => {
-      if (activeItemRef.current) {
-        scrollSidebarTo(activeItemRef.current, 'center')
-        return
+      if (cancelled) return
+      const item = activeItemRef.current
+      if (item) {
+        scrollSidebarTo(item, 'center')
+        return true
       }
-      const section = sections.find((entry) =>
-        entry.items.some((item) => isItemActive(item.url) || pathname.includes(`/${entry.title.toLowerCase()}/`)),
-      )
+      const pathChunk = pathname.split('/').filter(Boolean)[0]
+      const section = sections.find((entry) => {
+        if (entry.items.some((item) => isItemActive(item.url))) return true
+        const title = entry.title.toLowerCase()
+        return Boolean(pathChunk && title.includes(pathChunk))
+      })
       const heading = section ? sectionRefs.current[section.title] : null
-      if (heading) scrollSidebarTo(heading, 'start')
+      if (heading) {
+        scrollSidebarTo(heading, 'start')
+        return true
+      }
+      return false
     }
 
-    scrollToActive()
-    const rafId = requestAnimationFrame(scrollToActive)
-    const timeoutId = setTimeout(scrollToActive, 180)
+    const tick = () => {
+      if (cancelled || attempts > 20) return
+      attempts += 1
+      if (!scrollToActive()) {
+        requestAnimationFrame(tick)
+      }
+    }
 
+    tick()
+    const timeoutId = window.setTimeout(scrollToActive, 320)
     return () => {
-      cancelAnimationFrame(rafId)
-      clearTimeout(timeoutId)
+      cancelled = true
+      window.clearTimeout(timeoutId)
     }
   }, [pathname, sections, isItemActive])
 
@@ -162,10 +197,8 @@ export function DocsSidebar() {
                 onClick={() => {
                   const heading = sectionRefs.current[section.title]
                   if (heading) scrollSidebarTo(heading, 'start')
-                  const first = section.items[0]
-                  if (first?.url) router.push(first.url)
                 }}
-                className="h-auto w-full justify-between px-2 py-1 text-[.6875rem] font-semibold uppercase tracking-wider text-muted-foreground hover:text-foreground"
+                className="h-auto w-full justify-between px-2 py-1 text-[.6875rem] font-semibold uppercase tracking-wider text-muted-foreground hover:bg-transparent hover:text-muted-foreground data-pressed:bg-transparent focus-visible:ring-0"
               >
                 <span>{section.title}</span>
                 {section.items.length > 0 && (

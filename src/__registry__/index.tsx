@@ -377,11 +377,11 @@ export const index: Record<string, any> = {
   },
   "block-lens-carousel": {
     name: "block-lens-carousel",
-    description: "Momentum-driven drag & scroll gallery carousel with inertia easing, an active-card focus state, and atmospheric gradient placeholders for failed image loads.",
+    description: "Vertical WebGL lens gallery. Scroll-linked image planes from Immersive Lens.",
     type: "registry:block",
-    dependencies: undefined,
-    devDependencies: undefined,
-    registryDependencies: ["https://www.spaceui.one/r/lib-utils.json"],
+    dependencies: ["motion","gsap","three"],
+    devDependencies: ["@types/three"],
+    registryDependencies: ["https://www.spaceui.one/r/lib-utils.json","https://www.spaceui.one/r/lib-next-image-url.json"],
     files: [
   {
     "path": "src/registry/blocks/lens-carousel/index.tsx",
@@ -397,6 +397,16 @@ export const index: Record<string, any> = {
     "path": "src/registry/blocks/lens-carousel/types.ts",
     "type": "registry:block",
     "target": "components/blocks/lens-carousel/types.ts"
+  },
+  {
+    "path": "src/registry/blocks/lens-carousel/lens-webgl-layer.tsx",
+    "type": "registry:block",
+    "target": "components/blocks/lens-carousel/lens-webgl-layer.tsx"
+  },
+  {
+    "path": "src/registry/blocks/lens-carousel/vertical-gallery.tsx",
+    "type": "registry:block",
+    "target": "components/blocks/lens-carousel/vertical-gallery.tsx"
   }
 ],
     keywords: [],
@@ -32588,7 +32598,7 @@ export const index: Record<string, any> = {
     type: "registry:block",
     dependencies: ["motion","gsap","three"],
     devDependencies: ["@types/three"],
-    registryDependencies: undefined,
+    registryDependencies: ["https://www.spaceui.one/r/lib-next-image-url.json","https://www.spaceui.one/r/block-lens-carousel.json"],
     files: [
   {
     "path": "src/registry/templates/immersive-lens/index.tsx",
@@ -32616,11 +32626,6 @@ export const index: Record<string, any> = {
     "target": "components/immersive-lens/client-page.tsx"
   },
   {
-    "path": "src/registry/templates/immersive-lens/components/vertical-gallery.tsx",
-    "type": "registry:component",
-    "target": "components/immersive-lens/vertical-gallery.tsx"
-  },
-  {
     "path": "src/registry/templates/immersive-lens/components/horizontal-gallery.tsx",
     "type": "registry:component",
     "target": "components/immersive-lens/horizontal-gallery.tsx"
@@ -32639,11 +32644,6 @@ export const index: Record<string, any> = {
     "path": "src/registry/templates/immersive-lens/components/custom-cursor.tsx",
     "type": "registry:component",
     "target": "components/immersive-lens/custom-cursor.tsx"
-  },
-  {
-    "path": "src/registry/templates/immersive-lens/components/lens-webgl-layer.tsx",
-    "type": "registry:component",
-    "target": "components/immersive-lens/lens-webgl-layer.tsx"
   },
   {
     "path": "src/registry/templates/immersive-lens/hooks/use-custom-cursor.ts",

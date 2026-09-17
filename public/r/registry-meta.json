@@ -304,7 +304,7 @@
       {
         "name": "block-lens-carousel",
         "title": "Lens Carousel Block",
-        "description": "Momentum-driven drag & scroll gallery carousel with inertia easing, an active-card focus state, and atmospheric gradient placeholders for failed image loads.",
+        "description": "Vertical WebGL lens gallery. Scroll-linked image planes from Immersive Lens.",
         "url": "/ui-kit/blocks/block",
         "category": "Block",
         "categories": [
@@ -364,7 +364,7 @@
       {
         "name": "block-lens-carousel",
         "title": "Lens Carousel Block",
-        "description": "Momentum-driven drag & scroll gallery carousel with inertia easing, an active-card focus state, and atmospheric gradient placeholders for failed image loads.",
+        "description": "Vertical WebGL lens gallery. Scroll-linked image planes from Immersive Lens.",
         "url": "/ui-kit/blocks/block",
         "category": "Block",
         "categories": [
@@ -424,7 +424,7 @@
       {
         "name": "block-lens-carousel",
         "title": "Lens Carousel Block",
-        "description": "Momentum-driven drag & scroll gallery carousel with inertia easing, an active-card focus state, and atmospheric gradient placeholders for failed image loads.",
+        "description": "Vertical WebGL lens gallery. Scroll-linked image planes from Immersive Lens.",
         "url": "/ui-kit/blocks/block",
         "category": "Block",
         "categories": [
@@ -724,7 +724,7 @@
     "name": "block-lens-carousel",
     "shortName": "block-lens-carousel",
     "title": "Lens Carousel Block",
-    "description": "Momentum-driven drag & scroll gallery carousel with inertia easing, an active-card focus state, and atmospheric gradient placeholders for failed image loads.",
+    "description": "Vertical WebGL lens gallery. Scroll-linked image planes from Immersive Lens.",
     "type": "registry:block",
     "url": "/ui-kit/blocks/block",
     "category": "Block",
@@ -734,13 +734,18 @@
     ],
     "createdAt": "2026-09-16",
     "updatedAt": "2026-09-16",
-    "size": "14.3 KB",
-    "rawSize": 14599,
-    "directSize": "14.3 KB",
-    "fileCount": 3,
-    "dependencies": [],
+    "size": "28.1 KB",
+    "rawSize": 28728,
+    "directSize": "28.1 KB",
+    "fileCount": 5,
+    "dependencies": [
+      "motion",
+      "gsap",
+      "three"
+    ],
     "registryDependencies": [
-      "https://www.spaceui.one/r/lib-utils.json"
+      "https://www.spaceui.one/r/lib-utils.json",
+      "https://www.spaceui.one/r/lib-next-image-url.json"
     ],
     "dependents": [],
     "related": [
@@ -818,7 +823,7 @@
       {
         "name": "block-lens-carousel",
         "title": "Lens Carousel Block",
-        "description": "Momentum-driven drag & scroll gallery carousel with inertia easing, an active-card focus state, and atmospheric gradient placeholders for failed image loads.",
+        "description": "Vertical WebGL lens gallery. Scroll-linked image planes from Immersive Lens.",
         "url": "/ui-kit/blocks/block",
         "category": "Block",
         "categories": [
@@ -878,7 +883,7 @@
       {
         "name": "block-lens-carousel",
         "title": "Lens Carousel Block",
-        "description": "Momentum-driven drag & scroll gallery carousel with inertia easing, an active-card focus state, and atmospheric gradient placeholders for failed image loads.",
+        "description": "Vertical WebGL lens gallery. Scroll-linked image planes from Immersive Lens.",
         "url": "/ui-kit/blocks/block",
         "category": "Block",
         "categories": [
@@ -23364,16 +23369,19 @@
     ],
     "createdAt": "2026-09-04",
     "updatedAt": "2026-09-04",
-    "size": "63.6 KB",
-    "rawSize": 65081,
-    "directSize": "63.6 KB",
-    "fileCount": 15,
+    "size": "39.4 KB",
+    "rawSize": 40344,
+    "directSize": "39.4 KB",
+    "fileCount": 13,
     "dependencies": [
       "motion",
       "gsap",
       "three"
     ],
-    "registryDependencies": [],
+    "registryDependencies": [
+      "https://www.spaceui.one/r/lib-next-image-url.json",
+      "https://www.spaceui.one/r/block-lens-carousel.json"
+    ],
     "dependents": [],
     "related": [
       {
@@ -23404,16 +23412,19 @@
     ],
     "createdAt": "2026-09-04",
     "updatedAt": "2026-09-04",
-    "size": "63.6 KB",
-    "rawSize": 65081,
-    "directSize": "63.6 KB",
-    "fileCount": 15,
+    "size": "39.4 KB",
+    "rawSize": 40344,
+    "directSize": "39.4 KB",
+    "fileCount": 13,
     "dependencies": [
       "motion",
       "gsap",
       "three"
     ],
-    "registryDependencies": [],
+    "registryDependencies": [
+      "https://www.spaceui.one/r/lib-next-image-url.json",
+      "https://www.spaceui.one/r/block-lens-carousel.json"
+    ],
     "dependents": [],
     "related": [
       {
@@ -23444,16 +23455,19 @@
     ],
     "createdAt": "2026-09-04",
     "updatedAt": "2026-09-04",
-    "size": "63.6 KB",
-    "rawSize": 65081,
-    "directSize": "63.6 KB",
-    "fileCount": 15,
+    "size": "39.4 KB",
+    "rawSize": 40344,
+    "directSize": "39.4 KB",
+    "fileCount": 13,
     "dependencies": [
       "motion",
       "gsap",
       "three"
     ],
-    "registryDependencies": [],
+    "registryDependencies": [
+      "https://www.spaceui.one/r/lib-next-image-url.json",
+      "https://www.spaceui.one/r/block-lens-carousel.json"
+    ],
     "dependents": [],
     "related": [
       {

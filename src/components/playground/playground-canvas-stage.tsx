@@ -169,11 +169,13 @@ export function PlaygroundCanvasStage({
     }
   }
 
+  const isShowcaseStage = Boolean(activePreview?.hideDocPanel)
+
   return (
     <div
       className={cn(
         'relative flex h-dvh w-full items-center justify-end overflow-hidden transition-all duration-300 ease-in-out',
-        isImmersive ? 'bg-background p-0' : 'bg-muted p-2',
+        isImmersive || isShowcaseStage ? 'bg-background p-0' : 'bg-muted p-2',
       )}
     >
       <motion.div
@@ -184,7 +186,7 @@ export function PlaygroundCanvasStage({
         transition={{ type: 'spring', stiffness: 150, damping: 26, mass: 0.82 }}
         className={cn(
           'relative h-full overflow-clip flex items-center justify-center transition-colors duration-200',
-          isImmersive ? 'rounded-none' : 'rounded-2xl',
+          isImmersive || isShowcaseStage ? 'rounded-none' : 'rounded-2xl',
           themeOverride === 'dark'
             ? 'force-dark dark bg-background text-foreground'
             : themeOverride === 'light'
@@ -275,8 +277,8 @@ export function PlaygroundCanvasStage({
           />
         )}
 
-        {/* Bottom Center Inline Install Bar (hidden in immersive mode) */}
-        {!isImmersive && !showInfo && (
+        {/* Bottom Center Inline Install Bar (hidden in immersive mode and for showcase entries with no installable package) */}
+        {!isImmersive && !showInfo && !isShowcaseStage && (
           <div
             data-playground-ui
             className="pointer-events-auto fixed bottom-18 left-1/2 z-30 hidden -translate-x-1/2 lg:block"

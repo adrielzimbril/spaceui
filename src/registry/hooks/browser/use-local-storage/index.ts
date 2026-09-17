@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useCallback } from 'react'
+import { useState, useCallback, useEffect } from 'react'
 import { useEventListener } from '@/registry/hooks/dom/use-event-listener'
 
 /**
@@ -18,22 +18,21 @@ export function useLocalStorage<T>(
   key: string,
   initialValue: T,
 ): [T, (value: T | ((val: T) => T)) => void, () => void] {
-  const [storedValue, setStoredValue] = useState<T>(() => {
-    if (typeof window === 'undefined') return initialValue
+  const [storedValue, setStoredValue] = useState<T>(initialValue)
+
+  useEffect(() => {
     try {
       const item = window.localStorage.getItem(key)
-      if (!item) return initialValue
-
+      if (!item) return
       try {
-        return JSON.parse(item)
-      } catch (parseError) {
-        return item as unknown as T
+        setStoredValue(JSON.parse(item))
+      } catch {
+        setStoredValue(item as unknown as T)
       }
     } catch (error) {
       console.warn(`Error reading localStorage key "${key}":`, error)
-      return initialValue
     }
-  })
+  }, [key])
 
   const setValue = useCallback(
     (value: T | ((val: T) => T)) => {
