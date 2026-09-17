@@ -32,20 +32,8 @@ function lazyRegistryComponent(
 }
 
 export const registryComponents: Record<string, RegistryComponent> = {
-  "components-shader-cloud": lazyRegistryComponent(
-    () => import("@/registry/components/shader/cloud/index.tsx"),
-    {},
-  ),
-  "components-shader-heat-shade": lazyRegistryComponent(
-    () => import("@/registry/components/shader/heat-shade/index.tsx"),
-    {},
-  ),
-  "components-shader-paper-shader": lazyRegistryComponent(
-    () => import("@/registry/components/shader/paper-shader/index.tsx"),
-    {},
-  ),
-  "components-shader-silk-gradient": lazyRegistryComponent(
-    () => import("@/registry/components/shader/silk-gradient/index.tsx"),
-    {},
+  "demo-c-silk-gradient-01": lazyRegistryComponent(
+    () => import("@/registry/demo/components/shader/silk-gradient/c-silk-gradient-01/index.tsx"),
+    {"color1":{"value":"#4c9bff"},"color2":{"value":"#1f4fd8"},"color3":{"value":"#0a1a4a"},"speed":{"value":1,"min":0,"max":3,"step":0.1},"animate":{"value":true},"grain":{"value":true}},
   ),
 };

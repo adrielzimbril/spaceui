@@ -7,6 +7,7 @@ import {
   IconBoxMultiple,
   IconCheck,
   IconDeviceLaptop,
+  IconInfoCircle,
   IconMail,
   IconPalette,
   IconRocket,
@@ -66,8 +67,8 @@ const plans = [
     ],
     recommended: false,
     cta: (
-      <Button variant="outline" full hover whileTap asPointer render={<Link href="/primitives" />}>
-        Start for free
+      <Button variant="outline" full hover whileTap asPointer render={<Link href="/components" />}>
+        Browse components
       </Button>
     ),
   },
@@ -365,13 +366,30 @@ export default function PricingPage() {
             </Frame>
           ))}
         </div>
+        <div className="mx-auto mt-8 flex max-w-2xl items-start gap-3 rounded-2xl bg-muted px-4 py-3.5">
+          <Badge size="xs" square className="bg-background shrink-0">
+            <IconInfoCircle className="size-4" stroke={1.75} />
+          </Badge>
+          <p className="text-sm text-foreground">
+            Students, or if list price is steep where you live — we can work something out.
+            <span className="mt-0.5 block text-muted-foreground">
+              Send a student ID, license, or similar proof to{' '}
+              <a
+                href={`mailto:${siteConfig.email}`}
+                className="font-medium text-foreground underline-offset-2 hover:underline"
+              >
+                {siteConfig.email}
+              </a>
+            </span>
+          </p>
+        </div>
       </section>
 
       <section id="savings" data-page-section className="mx-auto max-w-6xl scroll-mt-16 px-5 sm:px-6 py-16">
         <SectionHeader
           badge="Savings calculator"
-          title="Calculate what you save."
-          description="Adjust the time and cost of building polished sections from scratch. See the value of starting from production-ready source."
+          title="What is your time worth?"
+          description="Tell us how long this would take to build and what an hour costs. We’ll do the math."
         />
         <div className="mt-12">
           <SavingsCalculator />

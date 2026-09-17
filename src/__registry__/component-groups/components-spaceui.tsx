@@ -152,6 +152,10 @@ export const registryComponents: Record<string, RegistryComponent> = {
     () => import("@/registry/components/spaceui/section-scrollspy/index.tsx"),
     {},
   ),
+  "components-spaceui-slosh-slider": lazyRegistryComponent(
+    () => import("@/registry/components/spaceui/slosh-slider/index.tsx"),
+    {},
+  ),
   "components-spaceui-sortable": lazyRegistryComponent(
     () => import("@/registry/components/spaceui/sortable/index.tsx"),
     {},

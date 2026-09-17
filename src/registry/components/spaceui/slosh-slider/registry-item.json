@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "components-spaceui-slosh-slider",
+  "type": "registry:component",
+  "title": "Slosh Slider",
+  "description": "Liquid fill slider with viscosity, momentum, and tilt.",
+  "dependencies": [],
+  "registryDependencies": ["https://www.spaceui.one/r/lib-utils.json"],
+  "categories": ["component", "slider"],
+  "files": [
+    {
+      "path": "src/registry/components/spaceui/slosh-slider/index.tsx",
+      "type": "registry:component",
+      "target": "components/spaceui/slosh-slider.tsx"
+    }
+  ],
+  "createdAt": "2026-09-17",
+  "updatedAt": "2026-09-17"
+}

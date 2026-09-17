@@ -1276,6 +1276,37 @@
       "updatedAt": "2026-09-03"
     },
     {
+      "name": "components-shader-silk-gradient",
+      "type": "registry:component",
+      "title": "Silk Gradient",
+      "description": "WebGPU silk mesh gradient. Three colors, warp, grain.",
+      "dependencies": [
+        "vgpu"
+      ],
+      "registryDependencies": [
+        "https://www.spaceui.one/r/lib-gpu-runtime.json",
+        "https://www.spaceui.one/r/lib-utils.json"
+      ],
+      "categories": [
+        "shader",
+        "background"
+      ],
+      "files": [
+        {
+          "path": "src/registry/components/shader/silk-gradient/index.tsx",
+          "type": "registry:component",
+          "target": "components/shader/silk-gradient.tsx"
+        },
+        {
+          "path": "src/registry/components/shader/silk-gradient/silk-gradient.wgsl.ts",
+          "type": "registry:lib",
+          "target": "components/shader/silk-gradient.wgsl.ts"
+        }
+      ],
+      "createdAt": "2026-09-17",
+      "updatedAt": "2026-09-17"
+    },
+    {
       "name": "components-spaceui-adaptive-density-grid",
       "type": "registry:component",
       "title": "Adaptive Density Grid",
@@ -2768,6 +2799,29 @@
       "updatedAt": "2026-09-04"
     },
     {
+      "name": "components-spaceui-slosh-slider",
+      "type": "registry:component",
+      "title": "Slosh Slider",
+      "description": "Liquid fill slider with viscosity, momentum, and tilt.",
+      "dependencies": [],
+      "registryDependencies": [
+        "https://www.spaceui.one/r/lib-utils.json"
+      ],
+      "categories": [
+        "component",
+        "slider"
+      ],
+      "files": [
+        {
+          "path": "src/registry/components/spaceui/slosh-slider/index.tsx",
+          "type": "registry:component",
+          "target": "components/spaceui/slosh-slider.tsx"
+        }
+      ],
+      "createdAt": "2026-09-17",
+      "updatedAt": "2026-09-17"
+    },
+    {
       "name": "components-spaceui-sortable",
       "type": "registry:component",
       "title": "Sortable",
@@ -4188,6 +4242,53 @@
       ],
       "createdAt": "2026-09-03",
       "updatedAt": "2026-09-03"
+    },
+    {
+      "name": "demo-c-silk-gradient-01",
+      "type": "registry:component",
+      "title": "Silk Gradient Demo",
+      "description": "Warped three-color silk field with grain.",
+      "registryDependencies": [
+        "https://www.spaceui.one/r/components-shader-silk-gradient.json"
+      ],
+      "categories": [
+        "shader",
+        "background"
+      ],
+      "meta": {
+        "demoProps": {
+          "color1": {
+            "value": "#4c9bff"
+          },
+          "color2": {
+            "value": "#1f4fd8"
+          },
+          "color3": {
+            "value": "#0a1a4a"
+          },
+          "speed": {
+            "value": 1,
+            "min": 0,
+            "max": 3,
+            "step": 0.1
+          },
+          "animate": {
+            "value": true
+          },
+          "grain": {
+            "value": true
+          }
+        }
+      },
+      "files": [
+        {
+          "path": "src/registry/demo/components/shader/silk-gradient/c-silk-gradient-01/index.tsx",
+          "type": "registry:component",
+          "target": "components/shader/silk-gradient-demo.tsx"
+        }
+      ],
+      "createdAt": "2026-09-17",
+      "updatedAt": "2026-09-17"
     },
     {
       "name": "demo-c-adaptive-density-grid-01",
@@ -8170,6 +8271,56 @@
       ],
       "createdAt": "2026-09-04",
       "updatedAt": "2026-09-04"
+    },
+    {
+      "name": "demo-c-slosh-slider-01",
+      "type": "registry:component",
+      "title": "Slosh Slider Demo",
+      "description": "Liquid slider with corner, viscosity, momentum, and tilt.",
+      "registryDependencies": [
+        "https://www.spaceui.one/r/components-spaceui-slosh-slider.json"
+      ],
+      "categories": [
+        "component",
+        "slider"
+      ],
+      "meta": {
+        "demoProps": {
+          "corner": {
+            "value": 13,
+            "min": 0,
+            "max": 20,
+            "step": 1
+          },
+          "viscosity": {
+            "value": 15,
+            "min": 0,
+            "max": 100,
+            "step": 1
+          },
+          "momentum": {
+            "value": 55,
+            "min": 0,
+            "max": 100,
+            "step": 1
+          },
+          "tilt": {
+            "value": 45,
+            "min": 0,
+            "max": 100,
+            "step": 1
+          }
+        }
+      },
+      "files": [
+        {
+          "path": "src/registry/demo/components/spaceui/slosh-slider/c-slosh-slider-01/index.tsx",
+          "type": "registry:component",
+          "target": "components/spaceui/slosh-slider-demo.tsx"
+        }
+      ],
+      "createdAt": "2026-09-17",
+      "updatedAt": "2026-09-17"
     },
     {
       "name": "demo-c-sortable-01",

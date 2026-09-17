@@ -1,0 +1,26 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-c-slosh-slider-01",
+  "type": "registry:component",
+  "title": "Slosh Slider Demo",
+  "description": "Liquid slider with corner, viscosity, momentum, and tilt.",
+  "registryDependencies": ["https://www.spaceui.one/r/components-spaceui-slosh-slider.json"],
+  "categories": ["component", "slider"],
+  "meta": {
+    "demoProps": {
+      "corner": { "value": 13, "min": 0, "max": 20, "step": 1 },
+      "viscosity": { "value": 15, "min": 0, "max": 100, "step": 1 },
+      "momentum": { "value": 55, "min": 0, "max": 100, "step": 1 },
+      "tilt": { "value": 45, "min": 0, "max": 100, "step": 1 }
+    }
+  },
+  "files": [
+    {
+      "path": "src/registry/demo/components/spaceui/slosh-slider/c-slosh-slider-01/index.tsx",
+      "type": "registry:component",
+      "target": "components/spaceui/slosh-slider-demo.tsx"
+    }
+  ],
+  "createdAt": "2026-09-17",
+  "updatedAt": "2026-09-17"
+}

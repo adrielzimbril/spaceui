@@ -1313,6 +1313,43 @@ export const index: Record<string, any> = {
     })(),
     command: '@spaceui/components-shader-paper-shader',
   },
+  "components-shader-silk-gradient": {
+    name: "components-shader-silk-gradient",
+    description: "WebGPU silk mesh gradient. Three colors, warp, grain.",
+    type: "registry:component",
+    dependencies: ["vgpu"],
+    devDependencies: undefined,
+    registryDependencies: ["https://www.spaceui.one/r/lib-gpu-runtime.json","https://www.spaceui.one/r/lib-utils.json"],
+    files: [
+  {
+    "path": "src/registry/components/shader/silk-gradient/index.tsx",
+    "type": "registry:component",
+    "target": "components/shader/silk-gradient.tsx"
+  },
+  {
+    "path": "src/registry/components/shader/silk-gradient/silk-gradient.wgsl.ts",
+    "type": "registry:lib",
+    "target": "components/shader/silk-gradient.wgsl.ts"
+  }
+],
+    keywords: [],
+    component: (() => {
+      const LazyComp = React.lazy(async () => {
+        const mod = await import("@/registry/components/shader/silk-gradient/index.tsx");
+        const exportName = Object.keys(mod).find(
+          key => typeof mod[key] === 'function' || typeof mod[key] === 'object'
+        ) || "components-shader-silk-gradient";
+        const Comp = mod.default || mod[exportName];
+        if (mod.animations) {
+          (LazyComp as any).animations = mod.animations;
+        }
+        return { default: Comp };
+      });
+      LazyComp.demoProps = {};
+      return LazyComp;
+    })(),
+    command: '@spaceui/components-shader-silk-gradient',
+  },
   "components-spaceui-adaptive-density-grid": {
     name: "components-spaceui-adaptive-density-grid",
     description: "A fluid polymorphic grid with physics-based velocity spring pill tabs, cinematic staggered reflow transitions, and memory-optimized layout shifts.",
@@ -3009,6 +3046,38 @@ export const index: Record<string, any> = {
     })(),
     command: '@spaceui/components-spaceui-section-scrollspy',
   },
+  "components-spaceui-slosh-slider": {
+    name: "components-spaceui-slosh-slider",
+    description: "Liquid fill slider with viscosity, momentum, and tilt.",
+    type: "registry:component",
+    dependencies: [],
+    devDependencies: undefined,
+    registryDependencies: ["https://www.spaceui.one/r/lib-utils.json"],
+    files: [
+  {
+    "path": "src/registry/components/spaceui/slosh-slider/index.tsx",
+    "type": "registry:component",
+    "target": "components/spaceui/slosh-slider.tsx"
+  }
+],
+    keywords: [],
+    component: (() => {
+      const LazyComp = React.lazy(async () => {
+        const mod = await import("@/registry/components/spaceui/slosh-slider/index.tsx");
+        const exportName = Object.keys(mod).find(
+          key => typeof mod[key] === 'function' || typeof mod[key] === 'object'
+        ) || "components-spaceui-slosh-slider";
+        const Comp = mod.default || mod[exportName];
+        if (mod.animations) {
+          (LazyComp as any).animations = mod.animations;
+        }
+        return { default: Comp };
+      });
+      LazyComp.demoProps = {};
+      return LazyComp;
+    })(),
+    command: '@spaceui/components-spaceui-slosh-slider',
+  },
   "components-spaceui-sortable": {
     name: "components-spaceui-sortable",
     description: "Sortable component for Space UI.",
@@ -3941,6 +4010,38 @@ export const index: Record<string, any> = {
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-paper-shader-01',
+  },
+  "demo-c-silk-gradient-01": {
+    name: "demo-c-silk-gradient-01",
+    description: "Warped three-color silk field with grain.",
+    type: "registry:component",
+    dependencies: undefined,
+    devDependencies: undefined,
+    registryDependencies: ["https://www.spaceui.one/r/components-shader-silk-gradient.json"],
+    files: [
+  {
+    "path": "src/registry/demo/components/shader/silk-gradient/c-silk-gradient-01/index.tsx",
+    "type": "registry:component",
+    "target": "components/shader/silk-gradient-demo.tsx"
+  }
+],
+    keywords: [],
+    component: (() => {
+      const LazyComp = React.lazy(async () => {
+        const mod = await import("@/registry/demo/components/shader/silk-gradient/c-silk-gradient-01/index.tsx");
+        const exportName = Object.keys(mod).find(
+          key => typeof mod[key] === 'function' || typeof mod[key] === 'object'
+        ) || "demo-c-silk-gradient-01";
+        const Comp = mod.default || mod[exportName];
+        if (mod.animations) {
+          (LazyComp as any).animations = mod.animations;
+        }
+        return { default: Comp };
+      });
+      LazyComp.demoProps = {"color1":{"value":"#4c9bff"},"color2":{"value":"#1f4fd8"},"color3":{"value":"#0a1a4a"},"speed":{"value":1,"min":0,"max":3,"step":0.1},"animate":{"value":true},"grain":{"value":true}};
+      return LazyComp;
+    })(),
+    command: '@spaceui/demo-c-silk-gradient-01',
   },
   "demo-c-adaptive-density-grid-01": {
     name: "demo-c-adaptive-density-grid-01",
@@ -8387,6 +8488,38 @@ export const index: Record<string, any> = {
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-section-scrollspy-01',
+  },
+  "demo-c-slosh-slider-01": {
+    name: "demo-c-slosh-slider-01",
+    description: "Liquid slider with corner, viscosity, momentum, and tilt.",
+    type: "registry:component",
+    dependencies: undefined,
+    devDependencies: undefined,
+    registryDependencies: ["https://www.spaceui.one/r/components-spaceui-slosh-slider.json"],
+    files: [
+  {
+    "path": "src/registry/demo/components/spaceui/slosh-slider/c-slosh-slider-01/index.tsx",
+    "type": "registry:component",
+    "target": "components/spaceui/slosh-slider-demo.tsx"
+  }
+],
+    keywords: [],
+    component: (() => {
+      const LazyComp = React.lazy(async () => {
+        const mod = await import("@/registry/demo/components/spaceui/slosh-slider/c-slosh-slider-01/index.tsx");
+        const exportName = Object.keys(mod).find(
+          key => typeof mod[key] === 'function' || typeof mod[key] === 'object'
+        ) || "demo-c-slosh-slider-01";
+        const Comp = mod.default || mod[exportName];
+        if (mod.animations) {
+          (LazyComp as any).animations = mod.animations;
+        }
+        return { default: Comp };
+      });
+      LazyComp.demoProps = {"corner":{"value":13,"min":0,"max":20,"step":1},"viscosity":{"value":15,"min":0,"max":100,"step":1},"momentum":{"value":55,"min":0,"max":100,"step":1},"tilt":{"value":45,"min":0,"max":100,"step":1}};
+      return LazyComp;
+    })(),
+    command: '@spaceui/demo-c-slosh-slider-01',
   },
   "demo-c-sortable-01": {
     name: "demo-c-sortable-01",

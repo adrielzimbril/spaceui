@@ -32,20 +32,8 @@ function lazyRegistryComponent(
 }
 
 export const registryComponents: Record<string, RegistryComponent> = {
-  "components-shader-cloud": lazyRegistryComponent(
-    () => import("@/registry/components/shader/cloud/index.tsx"),
-    {},
-  ),
-  "components-shader-heat-shade": lazyRegistryComponent(
-    () => import("@/registry/components/shader/heat-shade/index.tsx"),
-    {},
-  ),
-  "components-shader-paper-shader": lazyRegistryComponent(
-    () => import("@/registry/components/shader/paper-shader/index.tsx"),
-    {},
-  ),
-  "components-shader-silk-gradient": lazyRegistryComponent(
-    () => import("@/registry/components/shader/silk-gradient/index.tsx"),
-    {},
+  "demo-c-slosh-slider-01": lazyRegistryComponent(
+    () => import("@/registry/demo/components/spaceui/slosh-slider/c-slosh-slider-01/index.tsx"),
+    {"corner":{"value":13,"min":0,"max":20,"step":1},"viscosity":{"value":15,"min":0,"max":100,"step":1},"momentum":{"value":55,"min":0,"max":100,"step":1},"tilt":{"value":45,"min":0,"max":100,"step":1}},
   ),
 };

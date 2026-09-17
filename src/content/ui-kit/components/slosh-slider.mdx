@@ -1,0 +1,34 @@
+---
+title: Slosh Slider
+description: Liquid fill slider. Corner, viscosity, momentum, tilt.
+preview: demo-c-slosh-slider-01
+---
+
+## Installation
+
+<ComponentInstallation name="components-spaceui-slosh-slider" />
+
+## Usage
+
+```tsx
+import { SloshSlider } from '@/components/spaceui/slosh-slider'
+
+export default function Example() {
+  const [value, setValue] = React.useState(42)
+  return <SloshSlider value={value} onValueChange={setValue} corner={13} viscosity={15} momentum={55} tilt={45} />
+}
+```
+
+## Props
+
+| Prop            | Type                      | Default | Description              |
+| --------------- | ------------------------- | ------- | ------------------------ |
+| `value`         | `number`                  | —       | Controlled value         |
+| `min`           | `number`                  | `0`     | Minimum                  |
+| `max`           | `number`                  | `100`   | Maximum                  |
+| `step`          | `number`                  | `1`     | Snap                     |
+| `onValueChange` | `(value: number) => void` | —       | Change handler           |
+| `corner`        | `number`                  | `13`    | Fill radius, 0–20        |
+| `viscosity`     | `number`                  | `15`    | 0 rigid, 100 loose       |
+| `momentum`      | `number`                  | `55`    | Coast after release      |
+| `tilt`          | `number`                  | `45`    | Lean on the leading edge |

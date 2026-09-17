@@ -16,23 +16,14 @@ Depends on `vgpu`. WebGPU required.
 import { SilkGradient } from '@/components/shader/silk-gradient'
 
 export default function SpaceUI() {
-  return (
-    <SilkGradient
-      className="h-96 w-full"
-      color1="#4c9bff"
-      color2="#1f4fd8"
-      color3="#0a1a4a"
-      animate
-      grain
-    />
-  )
+  return <SilkGradient className="h-96 w-full" color1="#4c9bff" color2="#1f4fd8" color3="#0a1a4a" animate grain />
 }
 ```
 
 ## API Reference
 
-| Prop        | Type      | Default   | Description        |
-| ----------- | --------- | --------- | ------------------ |
+| Prop        | Type      | Default  | Description     |
+| ----------- | --------- | -------- | --------------- |
 | `color1`    | `string`  | required | Light silk      |
 | `color2`    | `string`  | required | Mid warp        |
 | `color3`    | `string`  | required | Dark blend      |

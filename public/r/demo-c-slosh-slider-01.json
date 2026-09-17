@@ -1,0 +1,50 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-c-slosh-slider-01",
+  "title": "Slosh Slider Demo",
+  "description": "Liquid slider with corner, viscosity, momentum, and tilt.",
+  "registryDependencies": [
+    "https://www.spaceui.one/r/components-spaceui-slosh-slider.json"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/components/spaceui/slosh-slider/c-slosh-slider-01/index.tsx",
+      "content": "'use client'\n\nimport * as React from 'react'\nimport { SloshSlider } from '@/components/spaceui/slosh-slider'\n\nexport interface SloshSliderDemoProps {\n  corner?: number\n  viscosity?: number\n  momentum?: number\n  tilt?: number\n}\n\nexport default function Demo({ corner = 13, viscosity = 15, momentum = 55, tilt = 45 }: SloshSliderDemoProps) {\n  const [value, setValue] = React.useState(42)\n  return (\n    <div className=\"flex w-full max-w-md flex-col gap-3 px-6\">\n      <SloshSlider\n        value={value}\n        onValueChange={setValue}\n        corner={Number(corner)}\n        viscosity={Number(viscosity)}\n        momentum={Number(momentum)}\n        tilt={Number(tilt)}\n      />\n      <p className=\"text-center text-sm tabular-nums text-muted-foreground\">{value}</p>\n    </div>\n  )\n}\n",
+      "type": "registry:component",
+      "target": "components/spaceui/slosh-slider-demo.tsx"
+    }
+  ],
+  "meta": {
+    "demoProps": {
+      "corner": {
+        "value": 13,
+        "min": 0,
+        "max": 20,
+        "step": 1
+      },
+      "viscosity": {
+        "value": 15,
+        "min": 0,
+        "max": 100,
+        "step": 1
+      },
+      "momentum": {
+        "value": 55,
+        "min": 0,
+        "max": 100,
+        "step": 1
+      },
+      "tilt": {
+        "value": 45,
+        "min": 0,
+        "max": 100,
+        "step": 1
+      }
+    }
+  },
+  "categories": [
+    "component",
+    "slider"
+  ],
+  "type": "registry:component"
+}

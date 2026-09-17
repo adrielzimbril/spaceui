@@ -2309,14 +2309,14 @@
         ]
       },
       {
-        "name": "liquid-metal-border",
-        "title": "Liquid Metal Border",
-        "description": "Liquid metal shader as a border wrap around any registry component.",
-        "url": "/ui-kit/components/spaceui/liquid-metal-border",
+        "name": "silk-gradient",
+        "title": "Silk Gradient",
+        "description": "WebGPU silk mesh gradient. Three colors, warp, grain.",
+        "url": "/ui-kit/components/shader/silk-gradient",
         "category": "Shader",
         "categories": [
           "shader",
-          "liquid"
+          "background"
         ]
       }
     ]
@@ -2373,14 +2373,14 @@
         ]
       },
       {
-        "name": "liquid-metal-border",
-        "title": "Liquid Metal Border",
-        "description": "Liquid metal shader as a border wrap around any registry component.",
-        "url": "/ui-kit/components/spaceui/liquid-metal-border",
+        "name": "silk-gradient",
+        "title": "Silk Gradient",
+        "description": "WebGPU silk mesh gradient. Three colors, warp, grain.",
+        "url": "/ui-kit/components/shader/silk-gradient",
         "category": "Shader",
         "categories": [
           "shader",
-          "liquid"
+          "background"
         ]
       }
     ]
@@ -2437,14 +2437,14 @@
         ]
       },
       {
-        "name": "liquid-metal-border",
-        "title": "Liquid Metal Border",
-        "description": "Liquid metal shader as a border wrap around any registry component.",
-        "url": "/ui-kit/components/spaceui/liquid-metal-border",
+        "name": "silk-gradient",
+        "title": "Silk Gradient",
+        "description": "WebGPU silk mesh gradient. Three colors, warp, grain.",
+        "url": "/ui-kit/components/shader/silk-gradient",
         "category": "Shader",
         "categories": [
           "shader",
-          "liquid"
+          "background"
         ]
       }
     ]
@@ -2501,14 +2501,14 @@
         ]
       },
       {
-        "name": "liquid-metal-border",
-        "title": "Liquid Metal Border",
-        "description": "Liquid metal shader as a border wrap around any registry component.",
-        "url": "/ui-kit/components/spaceui/liquid-metal-border",
+        "name": "silk-gradient",
+        "title": "Silk Gradient",
+        "description": "WebGPU silk mesh gradient. Three colors, warp, grain.",
+        "url": "/ui-kit/components/shader/silk-gradient",
         "category": "Shader",
         "categories": [
           "shader",
-          "liquid"
+          "background"
         ]
       }
     ]
@@ -2560,14 +2560,14 @@
         ]
       },
       {
-        "name": "liquid-metal-border",
-        "title": "Liquid Metal Border",
-        "description": "Liquid metal shader as a border wrap around any registry component.",
-        "url": "/ui-kit/components/spaceui/liquid-metal-border",
+        "name": "silk-gradient",
+        "title": "Silk Gradient",
+        "description": "WebGPU silk mesh gradient. Three colors, warp, grain.",
+        "url": "/ui-kit/components/shader/silk-gradient",
         "category": "Shader",
         "categories": [
           "shader",
-          "liquid"
+          "background"
         ]
       }
     ]
@@ -2619,14 +2619,142 @@
         ]
       },
       {
-        "name": "liquid-metal-border",
-        "title": "Liquid Metal Border",
-        "description": "Liquid metal shader as a border wrap around any registry component.",
-        "url": "/ui-kit/components/spaceui/liquid-metal-border",
+        "name": "silk-gradient",
+        "title": "Silk Gradient",
+        "description": "WebGPU silk mesh gradient. Three colors, warp, grain.",
+        "url": "/ui-kit/components/shader/silk-gradient",
         "category": "Shader",
         "categories": [
           "shader",
-          "liquid"
+          "background"
+        ]
+      }
+    ]
+  },
+  "silk-gradient": {
+    "name": "components-shader-silk-gradient",
+    "shortName": "silk-gradient",
+    "title": "Silk Gradient",
+    "description": "WebGPU silk mesh gradient. Three colors, warp, grain.",
+    "type": "registry:component",
+    "url": "/ui-kit/components/shader/silk-gradient",
+    "category": "Shader",
+    "categories": [
+      "shader",
+      "background"
+    ],
+    "createdAt": "2026-09-17",
+    "updatedAt": "2026-09-17",
+    "size": "7.4 KB",
+    "rawSize": 7613,
+    "directSize": "7.4 KB",
+    "fileCount": 2,
+    "dependencies": [
+      "vgpu"
+    ],
+    "registryDependencies": [
+      "https://www.spaceui.one/r/lib-gpu-runtime.json",
+      "https://www.spaceui.one/r/lib-utils.json"
+    ],
+    "dependents": [],
+    "related": [
+      {
+        "name": "cloud",
+        "title": "Cloud",
+        "description": "Interactive volumetric cloud material rendered as a full-bleed shader surface.",
+        "url": "/ui-kit/components/shader/cloud",
+        "category": "Shader",
+        "categories": [
+          "shader",
+          "cloud",
+          "background"
+        ]
+      },
+      {
+        "name": "heat-shade",
+        "title": "Heat Shade",
+        "description": "WebGPU fbm heat field with ember and hot tints along a moving boundary.",
+        "url": "/ui-kit/components/shader/heat-shade",
+        "category": "Shader",
+        "categories": [
+          "shader",
+          "background",
+          "heat"
+        ]
+      },
+      {
+        "name": "paper-shader",
+        "title": "Paper Shader",
+        "description": "Paper Shaders WebGL2 canvas driven by a fragment shader and live uniforms.",
+        "url": "/ui-kit/components/shader/paper-shader",
+        "category": "Shader",
+        "categories": [
+          "shader",
+          "webgl"
+        ]
+      }
+    ]
+  },
+  "components-shader-silk-gradient": {
+    "name": "components-shader-silk-gradient",
+    "shortName": "silk-gradient",
+    "title": "Silk Gradient",
+    "description": "WebGPU silk mesh gradient. Three colors, warp, grain.",
+    "type": "registry:component",
+    "url": "/ui-kit/components/shader/silk-gradient",
+    "category": "Shader",
+    "categories": [
+      "shader",
+      "background"
+    ],
+    "createdAt": "2026-09-17",
+    "updatedAt": "2026-09-17",
+    "size": "7.4 KB",
+    "rawSize": 7613,
+    "directSize": "7.4 KB",
+    "fileCount": 2,
+    "dependencies": [
+      "vgpu"
+    ],
+    "registryDependencies": [
+      "https://www.spaceui.one/r/lib-gpu-runtime.json",
+      "https://www.spaceui.one/r/lib-utils.json"
+    ],
+    "dependents": [],
+    "related": [
+      {
+        "name": "cloud",
+        "title": "Cloud",
+        "description": "Interactive volumetric cloud material rendered as a full-bleed shader surface.",
+        "url": "/ui-kit/components/shader/cloud",
+        "category": "Shader",
+        "categories": [
+          "shader",
+          "cloud",
+          "background"
+        ]
+      },
+      {
+        "name": "heat-shade",
+        "title": "Heat Shade",
+        "description": "WebGPU fbm heat field with ember and hot tints along a moving boundary.",
+        "url": "/ui-kit/components/shader/heat-shade",
+        "category": "Shader",
+        "categories": [
+          "shader",
+          "background",
+          "heat"
+        ]
+      },
+      {
+        "name": "paper-shader",
+        "title": "Paper Shader",
+        "description": "Paper Shaders WebGL2 canvas driven by a fragment shader and live uniforms.",
+        "url": "/ui-kit/components/shader/paper-shader",
+        "category": "Shader",
+        "categories": [
+          "shader",
+          "webgl"
         ]
       }
     ]
@@ -7559,6 +7687,76 @@
     "dependents": [],
     "related": []
   },
+  "slosh-slider": {
+    "name": "components-spaceui-slosh-slider",
+    "shortName": "slosh-slider",
+    "title": "Slosh Slider",
+    "description": "Liquid fill slider with viscosity, momentum, and tilt.",
+    "type": "registry:component",
+    "url": "/ui-kit/components/spaceui/slosh-slider",
+    "category": "Slider",
+    "categories": [
+      "slider"
+    ],
+    "createdAt": "2026-09-17",
+    "updatedAt": "2026-09-17",
+    "size": "5.1 KB",
+    "rawSize": 5186,
+    "directSize": "5.1 KB",
+    "fileCount": 1,
+    "dependencies": [],
+    "registryDependencies": [
+      "https://www.spaceui.one/r/lib-utils.json"
+    ],
+    "dependents": [],
+    "related": [
+      {
+        "name": "slider",
+        "title": "Slider",
+        "description": "Accessible Slider primitive component for Space UI.",
+        "url": "/ui-kit/primitives/slider",
+        "category": "Slider",
+        "categories": [
+          "slider"
+        ]
+      }
+    ]
+  },
+  "components-spaceui-slosh-slider": {
+    "name": "components-spaceui-slosh-slider",
+    "shortName": "slosh-slider",
+    "title": "Slosh Slider",
+    "description": "Liquid fill slider with viscosity, momentum, and tilt.",
+    "type": "registry:component",
+    "url": "/ui-kit/components/spaceui/slosh-slider",
+    "category": "Slider",
+    "categories": [
+      "slider"
+    ],
+    "createdAt": "2026-09-17",
+    "updatedAt": "2026-09-17",
+    "size": "5.1 KB",
+    "rawSize": 5186,
+    "directSize": "5.1 KB",
+    "fileCount": 1,
+    "dependencies": [],
+    "registryDependencies": [
+      "https://www.spaceui.one/r/lib-utils.json"
+    ],
+    "dependents": [],
+    "related": [
+      {
+        "name": "slider",
+        "title": "Slider",
+        "description": "Accessible Slider primitive component for Space UI.",
+        "url": "/ui-kit/primitives/slider",
+        "category": "Slider",
+        "categories": [
+          "slider"
+        ]
+      }
+    ]
+  },
   "sortable": {
     "name": "components-spaceui-sortable",
     "shortName": "sortable",
@@ -10352,7 +10550,7 @@
     "createdAt": "2026-09-03",
     "updatedAt": "2026-09-03",
     "size": "2.3 KB",
-    "rawSize": 2374,
+    "rawSize": 2325,
     "directSize": "2.3 KB",
     "fileCount": 1,
     "dependencies": [],
@@ -10415,7 +10613,7 @@
     "createdAt": "2026-09-03",
     "updatedAt": "2026-09-03",
     "size": "2.3 KB",
-    "rawSize": 2374,
+    "rawSize": 2325,
     "directSize": "2.3 KB",
     "fileCount": 1,
     "dependencies": [],
@@ -10478,7 +10676,7 @@
     "createdAt": "2026-09-03",
     "updatedAt": "2026-09-03",
     "size": "2.3 KB",
-    "rawSize": 2374,
+    "rawSize": 2325,
     "directSize": "2.3 KB",
     "fileCount": 1,
     "dependencies": [],
@@ -22811,7 +23009,18 @@
       "https://www.spaceui.one/r/lib-utils.json"
     ],
     "dependents": [],
-    "related": []
+    "related": [
+      {
+        "name": "slosh-slider",
+        "title": "Slosh Slider",
+        "description": "Liquid fill slider with viscosity, momentum, and tilt.",
+        "url": "/ui-kit/components/spaceui/slosh-slider",
+        "category": "Slider",
+        "categories": [
+          "slider"
+        ]
+      }
+    ]
   },
   "primitives-slider": {
     "name": "primitives-slider",
@@ -22837,7 +23046,18 @@
       "https://www.spaceui.one/r/lib-utils.json"
     ],
     "dependents": [],
-    "related": []
+    "related": [
+      {
+        "name": "slosh-slider",
+        "title": "Slosh Slider",
+        "description": "Liquid fill slider with viscosity, momentum, and tilt.",
+        "url": "/ui-kit/components/spaceui/slosh-slider",
+        "category": "Slider",
+        "categories": [
+          "slider"
+        ]
+      }
+    ]
   },
   "spinner": {
     "name": "primitives-spinner",
