@@ -42,6 +42,11 @@ export const metadata: Metadata = {
   icons: [
     {
       rel: 'icon',
+      type: 'image/svg+xml',
+      url: '/favicon.svg',
+    },
+    {
+      rel: 'icon',
       type: 'image/png',
       sizes: '32x32',
       url: '/favicon-32x32.png',
@@ -65,6 +70,11 @@ export const metadata: Metadata = {
     },
   ],
   publisher: siteConfig.appName,
+  manifest: '/manifest.json',
+  themeColor: [
+    { media: '(prefers-color-scheme: light)', color: '#ffffff' },
+    { media: '(prefers-color-scheme: dark)', color: '#09090b' },
+  ],
   openGraph: {
     title: siteConfig.title,
     description: siteConfig.ogDescription,
