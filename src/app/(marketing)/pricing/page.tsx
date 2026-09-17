@@ -21,6 +21,7 @@ import { HeroAvatar, MarketingHero } from '@/components/marketing/shared/hero'
 import { AnimatedStat } from '@/components/pricing/animated-stat'
 import { BuyButton } from '@/components/pricing/buy-button'
 import { PricingCalculator } from '@/components/pricing/pricing-calculator'
+import { SavingsCalculator } from '@/components/pricing/savings-calculator'
 import { BouncyAccordion } from '@/registry/components/spaceui/bouncy-accordion'
 import { Card, CardPanel } from '@/registry/primitives/card'
 import { Frame, FrameFooter, FrameHeader } from '@/registry/primitives/frame'
@@ -93,7 +94,7 @@ const plans = [
       <LiquidBorder className="flex w-full squircle rounded-full p-0.75 hover:scale-105 transition-all duration-300">
         <Button variant="primary" full size="lg" asPointer render={<Link href="/checkout?products=pro_yearly" />}>
           <IconBolt className="size-4" />
-          <span>Get Pro</span>
+          <span>Get instant access</span>
         </Button>
       </LiquidBorder>
     ),
@@ -366,10 +367,20 @@ export default function PricingPage() {
         </div>
       </section>
 
-      {/* Calculator */}
+      <section id="savings" data-page-section className="mx-auto max-w-6xl scroll-mt-16 px-5 sm:px-6 py-16">
+        <SectionHeader
+          badge="Savings calculator"
+          title="Calculate what you save."
+          description="Adjust the time and cost of building polished sections from scratch. See the value of starting from production-ready source."
+        />
+        <div className="mt-12">
+          <SavingsCalculator />
+        </div>
+      </section>
+
       <section data-page-section className="mx-auto max-w-7xl scroll-mt-16 px-5 sm:px-6 py-16">
         <SectionHeader
-          badge="Calculate your savings"
+          badge="Compare plans"
           title="Which option is right for you?"
           description="Run the numbers before you decide between subscribing, buying templates individually, or going Lifetime."
         />

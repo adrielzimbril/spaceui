@@ -69,35 +69,35 @@ export function RegistryGrid() {
       <div className="mt-10 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-5">
         <Link href="/primitives" data-space-hover className="rounded-2xl bg-muted p-6 sm:p-8">
           <p className="text-4xl font-semibold tracking-tight text-foreground">
-            <NumberFlow value={isVisible ? registryStats.primitives : 0} />
+            <NumberFlow value={isVisible ? registryStats.primitives : 0} />+
           </p>
           <p className="mt-2 text-sm font-medium text-muted-foreground">Base UI Primitives</p>
         </Link>
 
         <Link href="/components" data-space-hover className="rounded-2xl bg-muted p-6 sm:p-8">
           <p className="text-4xl font-semibold tracking-tight text-foreground">
-            <NumberFlow value={isVisible ? registryStats.components : 0} />
+            <NumberFlow value={isVisible ? registryStats.components : 0} />+
           </p>
           <p className="mt-2 text-sm font-medium text-muted-foreground">Interactive Components</p>
         </Link>
 
         <Link href="/templates" data-space-hover className="rounded-2xl bg-muted p-6 sm:p-8">
           <p className="text-4xl font-semibold tracking-tight text-foreground">
-            <NumberFlow value={isVisible ? registryStats.templates + projectsData.projects.length : 0} />
+            <NumberFlow value={isVisible ? registryStats.templates + projectsData.projects.length : 0} />+
           </p>
           <p className="mt-2 text-sm font-medium text-muted-foreground">Templates</p>
         </Link>
 
         <Link href="/hooks" data-space-hover className="rounded-2xl bg-muted p-6 sm:p-8">
           <p className="text-4xl font-semibold tracking-tight text-foreground">
-            <NumberFlow value={isVisible ? registryStats.hooksOnly : 0} />
+            <NumberFlow value={isVisible ? registryStats.hooksOnly : 0} />+
           </p>
           <p className="mt-2 text-sm font-medium text-muted-foreground">Production Hooks</p>
         </Link>
 
         <Link href="/tools" data-space-hover className="rounded-2xl bg-muted p-6 sm:p-8">
           <p className="text-4xl font-semibold tracking-tight text-foreground">
-            <NumberFlow value={isVisible ? megaMenuTools.length : 0} />
+            <NumberFlow value={isVisible ? megaMenuTools.length : 0} />+
           </p>
           <p className="mt-2 text-sm font-medium text-muted-foreground">Creative Tools</p>
         </Link>

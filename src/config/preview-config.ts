@@ -99,7 +99,7 @@ export function getEffectiveContained(
  * Prevents flashing in standard mode for split-preferred routes like shaders and blocks.
  *
  * Rules:
- * - Shaders (now flat: /components/cloud, /components/paper-shader): defaultMode 'split'
+ * - Shaders (now flat: /components/shader): defaultMode 'split'
  * - Individual Block pages (/blocks/[slug]): defaultMode 'split', mode 'both' (not locked to dual)
  * - Catalog index pages (/blocks, /components): standard
  */
@@ -130,7 +130,7 @@ export function isCatalogRoute(pathname?: string | null): boolean {
  * Rules:
  * - Docs pages (/docs, /docs/*): strictly locked to standard mode (no dual mode)
  * - Catalog index pages (/ui-kit, /blocks, /templates, /primitives, /components, /hooks, ...): strictly locked to standard mode (no dual mode)
- * - Shaders detail pages (now flat: /components/cloud, /components/paper-shader): defaultMode 'split'
+ * - Shaders detail pages (now flat: /components/shader): defaultMode 'split'
  * - Individual Block pages (/blocks/[slug]): defaultMode 'split', mode 'split'
  * - Individual Template pages (/templates/[slug]): defaultMode 'split', mode 'split'
  */
@@ -156,7 +156,7 @@ export function getRouteLayoutDefaults(pathname?: string | null): {
     }
   }
 
-  // 3. Shaders detail pages (now flat: /components/cloud, /components/paper-shader)
+  // 3. Shaders detail pages (now flat: /components/shader)
   const SHADER_SLUGS = ['/components/cloud', '/components/paper-shader']
   if (SHADER_SLUGS.some((s) => pathname === s || pathname.startsWith(s + '/'))) {
     return {

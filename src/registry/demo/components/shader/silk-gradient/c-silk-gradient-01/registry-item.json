@@ -1,0 +1,28 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-c-silk-gradient-01",
+  "type": "registry:component",
+  "title": "Silk Gradient Demo",
+  "description": "Warped three-color silk field with grain.",
+  "registryDependencies": ["https://www.spaceui.one/r/components-shader-silk-gradient.json"],
+  "categories": ["shader", "background"],
+  "meta": {
+    "demoProps": {
+      "color1": { "value": "#4c9bff" },
+      "color2": { "value": "#1f4fd8" },
+      "color3": { "value": "#0a1a4a" },
+      "speed": { "value": 1, "min": 0, "max": 3, "step": 0.1 },
+      "animate": { "value": true },
+      "grain": { "value": true }
+    }
+  },
+  "files": [
+    {
+      "path": "src/registry/demo/components/shader/silk-gradient/c-silk-gradient-01/index.tsx",
+      "type": "registry:component",
+      "target": "components/shader/silk-gradient-demo.tsx"
+    }
+  ],
+  "createdAt": "2026-09-17",
+  "updatedAt": "2026-09-17"
+}
