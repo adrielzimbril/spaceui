@@ -31,7 +31,7 @@ export function LiquidBorder({
       {...props}
     >
       <LiquidMetal
-        className="pointer-events-none absolute inset-0 size-full"
+        className="pointer-events-none absolute inset-0 size-full rounded-[inherit]"
         shape="none"
         speed={speed}
         repetition={repetition}

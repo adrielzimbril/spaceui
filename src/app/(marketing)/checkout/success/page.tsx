@@ -7,6 +7,7 @@ import { SuccessConfetti } from '@/components/checkout/success-confetti'
 import { AssetEmoji } from '@/tools/emoji/asset-emoji'
 import { EmojiSource, EmojiType } from '@usespaceui/emoji'
 import { CheckCircle2, ArrowRight, ShieldCheck } from 'lucide-react'
+import { logger } from '@/registry/utils/logger'
 
 interface SuccessPageProps {
   searchParams: Promise<{ checkout_id?: string }>
@@ -20,7 +21,7 @@ export default async function CheckoutSuccessPage({ searchParams }: SuccessPageP
     try {
       checkoutData = await polar.checkouts.get({ id: checkout_id })
     } catch (err) {
-      console.error('Failed to load Polar checkout:', err)
+      logger.error('Failed to load Polar checkout:', err)
     }
   }
 

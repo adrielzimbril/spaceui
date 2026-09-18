@@ -379,12 +379,12 @@ export default function PricingPage() {
             <Frame
               key={plan.key}
               className={cn(
-                'flex h-full flex-col squircle rounded-5xl p-1.5 transition-all duration-300',
+                'flex h-full flex-col squircle rounded-3xl p-1.5 transition-all duration-300',
                 plan.recommended && 'bg-primary/10',
               )}
             >
-              <Card className="relative flex h-full flex-col gap-5 overflow-hidden rounded-3xl bg-background p-4 sm:p-5 before:rounded-7xl">
-                <div className="relative flex min-h-40 flex-col justify-between gap-6 overflow-hidden squircle rounded-5xl p-4 sm:p-5 bg-muted">
+              <Card className="relative flex h-full flex-col gap-5 overflow-hidden rounded-2xl bg-background p-4 sm:p-5 before:rounded-7xl">
+                <div className="relative flex min-h-40 flex-col justify-between gap-6 overflow-hidden squircle rounded-2xl p-4 sm:p-5 bg-muted">
                   {plan.silk && (
                     <>
                       <div

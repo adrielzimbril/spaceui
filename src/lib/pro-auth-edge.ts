@@ -27,7 +27,6 @@ export function normalizeComponentSlug(slug: string): { clean: string; direct: s
   return { clean, direct }
 }
 
-// Edge-safe check: registry meta only, no Node.js filesystem fallback.
 export function isComponentPro(slug: string): boolean {
   if (!slug) return false
 
@@ -136,10 +135,7 @@ export async function verifyProAuthorization(
     }
   }
 
-  // 4. Check license_keys table if token exists. This validates a secret bearer
-  // credential handed by a CLI, not a browser session, so it must run on the service
-  // role — the anon client's `select own` RLS policy would never match a cookie-less
-  // request and would silently reject every valid token.
+  // 4. Check license_keys table if token exists
   if (token) {
     try {
       const admin = createAdminClient()

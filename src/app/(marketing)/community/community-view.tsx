@@ -5,6 +5,7 @@ import { CommunityWall, type CommunityMessage } from '@/registry/blocks/communit
 import { StatsSection } from './stats-section'
 import { createClient } from '@/integrations/supabase/client'
 import posthog from 'posthog-js'
+import { logger } from '@/registry/utils/logger'
 
 interface CommunityViewProps {
   initialMessages?: CommunityMessage[]
@@ -69,7 +70,7 @@ export function CommunityView({ initialMessages = [], initialUser = null }: Comm
             window.history.replaceState({}, '', url.pathname + (url.search ? url.search : ''))
           })
           .catch((err) => {
-            console.error('Failed to exchange auth code:', err)
+            logger.error('Failed to exchange auth code:', err)
           })
       }
     }
@@ -108,7 +109,7 @@ export function CommunityView({ initialMessages = [], initialUser = null }: Comm
           }
         }
       } catch (e) {
-        console.error('Failed to load community notes', e)
+        logger.error('Failed to load community notes', e)
       } finally {
         if (isMounted) setIsLoading(false)
       }
@@ -166,7 +167,7 @@ export function CommunityView({ initialMessages = [], initialUser = null }: Comm
       })
       return true
     } catch (err: any) {
-      console.error('Submit error:', err)
+      logger.error('Submit error:', err)
       throw err
     }
   }
@@ -184,7 +185,7 @@ export function CommunityView({ initialMessages = [], initialUser = null }: Comm
       setUser(null)
       window.location.href = '/community'
     } catch (err) {
-      console.error('Logout error:', err)
+      logger.error('Logout error:', err)
       window.location.href = '/community'
     }
   }

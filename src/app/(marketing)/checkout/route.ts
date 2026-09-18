@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from 'next/server'
 import { cookies } from 'next/headers'
 import { polar } from '@/lib/polar'
 import { createClient } from '@/integrations/supabase/server'
+import { logger } from '@/registry/utils/logger'
 
 export async function GET(request: NextRequest) {
   const searchParams = request.nextUrl.searchParams
@@ -28,7 +29,7 @@ export async function GET(request: NextRequest) {
       }
     }
   } catch (err) {
-    console.error('Failed to retrieve Supabase session during checkout:', err)
+    logger.error('Failed to retrieve Supabase session during checkout:', err)
   }
 
   const customerEmail = authenticatedEmail ?? searchParams.get('customerEmail') ?? undefined
@@ -49,7 +50,7 @@ export async function GET(request: NextRequest) {
 
     return NextResponse.redirect(checkout.url)
   } catch (error: any) {
-    console.error('Error creating Polar checkout session:', error)
+    logger.error('Error creating Polar checkout session:', error)
     return NextResponse.json({ error: error?.message || 'Failed to create checkout session' }, { status: 500 })
   }
 }

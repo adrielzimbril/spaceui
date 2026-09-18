@@ -40,6 +40,7 @@ import { ModeSwitcher } from '@/registry/components/spaceui/mode-switcher'
 import registryMeta from '@/__registry__/meta.json'
 import { usePathname } from 'next/navigation'
 import { ProSplitPlaceholder } from './pro-split-placeholder'
+import { useProAccess } from '@/components/providers/pro-access-provider'
 
 export interface ComponentPreviewProps extends React.HTMLAttributes<HTMLDivElement> {
   name: string
@@ -177,6 +178,9 @@ export function ComponentPreview({
       return metaRecord[depName]?.isPro === true
     }),
   )
+
+  const hasProAccess = useProAccess()
+  const isLocked = isPro && !hasProAccess
 
   const previewName = useMemo(() => {
     const flattenedProps = flattenFirstLevel(componentProps as Record<string, Record<string, unknown>> | null)
@@ -322,7 +326,7 @@ export function ComponentPreview({
       <Tabs value={tab} onValueChange={(v) => setTab(v as 'preview' | 'code')} className="gap-0">
         <div className="flex flex-wrap items-center justify-between gap-3 px-3 pb-1 pt-1">
           <div className="flex items-center gap-2">
-            {!isPro && (
+            {!isLocked && (
               <TabsList
                 className={cn(
                   'flex items-center rounded-lg bg-background p-1 font-medium relative z-0',
@@ -411,7 +415,7 @@ export function ComponentPreview({
                 enableTransition={false}
               />
             )}
-            {allowCopy && !isPro && code && (
+            {allowCopy && !isLocked && code && (
               <CopyButton
                 content={code}
                 variant="ghost"
@@ -504,7 +508,7 @@ export function ComponentPreview({
         </TabsContent>
 
         <TabsContent value="code" className="rounded-[0.875rem] bg-background py-1.5 overflow-hidden outline-none mt-2">
-          {isPro ? <ProSplitPlaceholder /> : <ShikiRenderer code={code ?? ''} lang="tsx" className="max-h-126" />}
+          <ShikiRenderer code={code ?? ''} lang="tsx" className="max-h-126" />
         </TabsContent>
       </Tabs>
 

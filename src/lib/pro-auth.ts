@@ -5,9 +5,6 @@ export { verifyProAuthorization } from './pro-auth-edge'
 const proStatusCache = new Map<string, boolean>()
 const PRO_REGEX = /"isPro"\s*:\s*true|\bisPro\s*:\s*true|\bpro\s*:\s*true/
 
-// Node-only: adds a filesystem fallback on top of the edge-safe registry-meta check.
-// Never import this file from middleware.ts or anything else bundled for the Edge Runtime —
-// use `isComponentPro` from `./pro-auth-edge` there instead.
 export function isComponentPro(slug: string): boolean {
   if (!slug) return false
 

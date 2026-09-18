@@ -47,8 +47,6 @@ export function BuyButton({
       params.set('successUrl', successUrl)
     }
 
-    // Full browser navigation, not router.push: /checkout replies with a 307 to
-    // Polar's hosted checkout (an external domain), which only a real navigation follows.
     window.location.href = `/checkout?${params.toString()}`
   }
 
@@ -80,7 +78,7 @@ export function BuyButton({
   if (!border) return button
 
   return (
-    <LiquidBorder className="flex w-full [&_div]:size-full squircle rounded-full p-0.75 hover:scale-105 transition-all duration-300">
+    <LiquidBorder className="flex w-full [&_div]:size-full squircle rounded-full [&_canva]:squircle [&_canva]:rounded-full  [&_div]:squircle [&_div]:rounded-full p-0.75 hover:scale-105 transition-all duration-300">
       {button}
     </LiquidBorder>
   )

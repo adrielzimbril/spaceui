@@ -32,6 +32,7 @@ import { ModeSwitcher } from '@/registry/components/spaceui/mode-switcher'
 import registryMeta from '@/__registry__/meta.json'
 import { usePathname } from 'next/navigation'
 import { ProSplitPlaceholder } from './pro-split-placeholder'
+import { useProAccess } from '@/components/providers/pro-access-provider'
 
 export interface ShowcaseCardProps extends React.HTMLAttributes<HTMLDivElement> {
   name: string
@@ -117,6 +118,9 @@ export function ShowcaseCard({
       return metaRecord[depName]?.isPro === true
     }),
   )
+
+  const hasProAccess = useProAccess()
+  const isLocked = isPro && !hasProAccess
 
   const previewName = useMemo(() => {
     return name
@@ -271,7 +275,7 @@ export function ShowcaseCard({
           )}
 
           {/* View Code Drawer Trigger */}
-          {!isPro && (
+          {!isLocked && (
             <Button
               size="default"
               variant="ghost"

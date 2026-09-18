@@ -6,6 +6,7 @@ import { IconMessageCircleFilled, IconUserFilled, IconGraphFilled } from '@table
 import { Badge } from '@/registry/components/spaceui/badge-squircle'
 import { Button } from '@/registry/components/spaceui/button-squircle'
 import { StatusBadge } from '@/registry/components/spaceui/status-badge'
+import { logger } from '@/registry/utils/logger'
 
 export type IconComponent = React.ComponentType<{ size?: number; className?: string }>
 
@@ -79,7 +80,7 @@ export function StatsSection({
         window.location.href = '/community'
       }
     } catch (err) {
-      console.error('Logout failed:', err)
+      logger.error('Logout failed:', err)
       window.location.href = '/community'
     } finally {
       setIsLoggingOut(false)
