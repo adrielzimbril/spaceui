@@ -1,0 +1,27 @@
+---
+title: Morphing Command Bar
+description: Elastic command bar that expands seamlessly from passive state to active input with action trigger.
+preview: demo-c-morphing-command-bar-01
+---
+
+## Installation
+
+<ComponentInstallation name="components-spaceui-morphing-command-bar" />
+
+## Usage
+
+```tsx
+import { MorphingCommandBar } from '@/components/spaceui/morphing-command-bar'
+
+export default function Example() {
+  return <MorphingCommandBar />
+}
+```
+
+## Props
+
+| Prop          | Type                      | Default                                   | Description            |
+| ------------- | ------------------------- | ----------------------------------------- | ---------------------- |
+| `placeholder` | `string`                  | `'Search components, actions or docs...'` | Input placeholder text |
+| `onSubmit`    | `(query: string) => void` | `—`                                       | Submit callback        |
+| `corner`      | `number`                  | `28`                                      | Corner radius in px    |

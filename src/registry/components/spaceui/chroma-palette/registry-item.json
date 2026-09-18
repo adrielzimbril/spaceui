@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "components-spaceui-chroma-palette",
+  "type": "registry:component",
+  "title": "Chroma Palette",
+  "description": "Perceptually uniform color generator and interactive swatch palette with organic gooey fluid morph and one-click copy.",
+  "dependencies": ["motion", "@tabler/icons-react", "@usespaceui/gradients"],
+  "registryDependencies": [
+    "https://www.spaceui.one/r/lib-utils.json",
+    "https://www.spaceui.one/r/components-spaceui-morph-icon.json"
+  ],
+  "categories": ["component", "color", "palette"],
+  "files": [
+    {
+      "path": "src/registry/components/spaceui/chroma-palette/index.tsx",
+      "type": "registry:component",
+      "target": "components/spaceui/chroma-palette.tsx"
+    }
+  ],
+  "createdAt": "2026-09-17",
+  "updatedAt": "2026-09-17"
+}

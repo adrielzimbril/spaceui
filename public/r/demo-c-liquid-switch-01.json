@@ -1,0 +1,35 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-c-liquid-switch-01",
+  "title": "Liquid Switch Demo",
+  "description": "Elastic toggle switch with velocity-based organic stretch and spring return physics.",
+  "registryDependencies": [
+    "https://www.spaceui.one/r/components-spaceui-liquid-switch.json"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/components/spaceui/liquid-switch/c-liquid-switch-01/index.tsx",
+      "content": "'use client'\n\nimport * as React from 'react'\nimport { LiquidSwitch } from '@/components/spaceui/liquid-switch'\n\nexport interface LiquidSwitchDemoProps {\n  stretch?: number\n  speed?: number\n  disabled?: boolean\n}\n\nexport default function Demo({ stretch = 36, speed = 50, disabled = false }: LiquidSwitchDemoProps) {\n  const [checked, setChecked] = React.useState(false)\n\n  return (\n    <div className=\"flex flex-col items-center justify-center p-8 min-h-[260px] select-none\">\n      <div className=\"flex flex-col items-center gap-5\">\n        <LiquidSwitch\n          checked={checked}\n          onCheckedChange={setChecked}\n          stretch={Number(stretch)}\n          speed={Number(speed)}\n          disabled={Boolean(disabled)}\n        />\n        <div className=\"flex items-center gap-2 text-xs font-medium text-muted-foreground\">\n          <span\n            className={`w-2 h-2 rounded-full transition-colors ${\n              checked ? 'bg-emerald-500 ring-2 ring-emerald-500/20' : 'bg-muted-foreground'\n            }`}\n          />\n          <span>{checked ? 'Enabled' : 'Disabled'}</span>\n        </div>\n      </div>\n    </div>\n  )\n}\n",
+      "type": "registry:component",
+      "target": "components/spaceui/liquid-switch-demo.tsx"
+    }
+  ],
+  "meta": {
+    "demoProps": {
+      "stretch": {
+        "value": 36,
+        "min": 0,
+        "max": 100,
+        "step": 5
+      },
+      "disabled": {
+        "value": false
+      }
+    }
+  },
+  "categories": [
+    "component",
+    "demo"
+  ],
+  "type": "registry:component"
+}

@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "components-spaceui-interactive-checklist",
+  "type": "registry:component",
+  "title": "Interactive Checklist",
+  "description": "Tactile checklist with spring checkmarks, animated strike-through lines, and completion progress.",
+  "dependencies": ["motion", "@tabler/icons-react"],
+  "registryDependencies": ["https://www.spaceui.one/r/lib-utils.json"],
+  "categories": ["component", "list", "todo"],
+  "files": [
+    {
+      "path": "src/registry/components/spaceui/interactive-checklist/index.tsx",
+      "type": "registry:component",
+      "target": "components/spaceui/interactive-checklist.tsx"
+    }
+  ],
+  "createdAt": "2026-09-17",
+  "updatedAt": "2026-09-17"
+}

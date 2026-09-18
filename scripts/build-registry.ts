@@ -921,11 +921,29 @@ export default async function RegistryViewPage({
     (item) => item.name.startsWith('template-') || item.type === 'registry:template',
   )
 
+  const demoItems = [...uniqueItems.keys()].filter((name) => name.startsWith('demo-'))
+
+  // Load showcase projects to track free and pro templates
+  let templatesFree = 0
+  let templatesPro = 0
+  try {
+    const projectsPath = path.join(process.cwd(), 'src', 'data', 'projects.json')
+    const projectsRaw = await fs.readFile(projectsPath, 'utf-8')
+    const parsed = JSON.parse(projectsRaw)
+    const list = Array.isArray(parsed.projects) ? parsed.projects : []
+    templatesFree = list.filter((p: any) => !p.isPro).length
+    templatesPro = list.filter((p: any) => p.isPro).length
+  } catch {}
+
   const stats = {
     components: [...uniqueItems.keys()].filter((name) => name.startsWith('components-')).length,
     primitives: [...uniqueItems.keys()].filter((name) => name.startsWith('primitives-')).length,
     blocks: blockItems.length,
     templates: templateItems.length,
+    templatesFree,
+    templatesPro,
+    templatesTotal: templatesFree + templatesPro,
+    demos: demoItems.length,
     hooks: hookNames.length,
     hooksOnly,
     hookComponents,

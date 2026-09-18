@@ -13,11 +13,11 @@ export interface FrostBlurredDemoProps {
 }
 
 export default function Demo({
-  layers = 4,
+  layers = 7,
   strength = 1,
   height = '62%',
   side = 'bottom',
-  tint = 0.22,
+  tint = 0,
   text = 'Space UI',
 }: FrostBlurredDemoProps) {
   return (

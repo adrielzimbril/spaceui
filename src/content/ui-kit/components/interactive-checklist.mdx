@@ -1,0 +1,28 @@
+---
+title: Interactive Checklist
+description: Tactile checklist with spring checkmarks, animated strike-through lines, and completion progress.
+preview: demo-c-interactive-checklist-01
+---
+
+## Installation
+
+<ComponentInstallation name="components-spaceui-interactive-checklist" />
+
+## Usage
+
+```tsx
+import { InteractiveChecklist } from '@/components/spaceui/interactive-checklist'
+
+export default function Example() {
+  return <InteractiveChecklist />
+}
+```
+
+## Props
+
+| Prop            | Type              | Default          | Description                       |
+| --------------- | ----------------- | ---------------- | --------------------------------- |
+| `initialItems`  | `ChecklistItem[]` | `DEFAULT_TASKS`  | Initial checklist tasks           |
+| `title`         | `string`          | `'Sprint Tasks'` | Checklist title                   |
+| `corner`        | `number`          | `24`             | Corner radius in px               |
+| `onCompleteAll` | `() => void`      | `—`              | Triggered when all items are done |

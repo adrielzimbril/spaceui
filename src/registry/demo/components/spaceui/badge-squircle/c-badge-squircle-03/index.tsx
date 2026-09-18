@@ -2,6 +2,7 @@
 
 import * as React from 'react'
 import { Badge } from '@/registry/components/spaceui/badge-squircle'
+import { toastManager } from '@/registry/primitives/toast'
 import { IconArrowUpRight, IconEyeFilled, IconSparkles } from '@tabler/icons-react'
 
 export default function Demo() {
@@ -40,7 +41,13 @@ export default function Demo() {
           render={
             <button
               type="button"
-              onClick={() => alert('Clicked Badge Button!')}
+              onClick={() =>
+                toastManager.add({
+                  type: 'info',
+                  title: 'Badge clicked',
+                  description: 'Interactive badge action executed.',
+                })
+              }
               className="cursor-pointer hover:opacity-90 transition-opacity"
             />
           }

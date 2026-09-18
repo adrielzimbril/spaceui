@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "components-spaceui-liquid-sortable-list",
+  "type": "registry:component",
+  "title": "Liquid Sortable List",
+  "description": "Smooth drag-and-drop sortable team list with generative avatars, spring reordering, and tactile feedback.",
+  "dependencies": ["@usespaceui/avatars", "motion", "lucide-react"],
+  "registryDependencies": ["https://www.spaceui.one/r/lib-utils.json"],
+  "categories": ["component", "list", "dnd"],
+  "files": [
+    {
+      "path": "src/registry/components/spaceui/liquid-sortable-list/index.tsx",
+      "type": "registry:component",
+      "target": "components/spaceui/liquid-sortable-list.tsx"
+    }
+  ],
+  "createdAt": "2026-09-17",
+  "updatedAt": "2026-09-17"
+}

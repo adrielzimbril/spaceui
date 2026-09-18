@@ -1,0 +1,29 @@
+---
+title: Morphing Search Pill
+description: Adaptive search pill that expands smoothly from a compact button into a full input field.
+preview: demo-c-morphing-search-pill-01
+---
+
+## Installation
+
+<ComponentInstallation name="components-spaceui-morphing-search-pill" />
+
+## Usage
+
+```tsx
+import { MorphingSearchPill } from '@/components/spaceui/morphing-search-pill'
+
+export default function Example() {
+  return <MorphingSearchPill />
+}
+```
+
+## Props
+
+| Prop             | Type                      | Default             | Description                |
+| ---------------- | ------------------------- | ------------------- | -------------------------- |
+| `placeholder`    | `string`                  | `'Quick search...'` | Search field placeholder   |
+| `onSearch`       | `(query: string) => void` | `—`                 | Search query callback      |
+| `collapsedWidth` | `number`                  | `64`                | Width when collapsed in px |
+| `expandedWidth`  | `number`                  | `280`               | Width when expanded in px  |
+| `corner`         | `number`                  | `20`                | Pill corner radius         |

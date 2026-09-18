@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "components-spaceui-morphing-search-pill",
+  "type": "registry:component",
+  "title": "Morphing Search Pill",
+  "description": "Adaptive search pill that expands smoothly from a compact button into a full input field.",
+  "dependencies": ["motion"],
+  "registryDependencies": ["https://www.spaceui.one/r/lib-utils.json"],
+  "categories": ["component", "search", "input"],
+  "files": [
+    {
+      "path": "src/registry/components/spaceui/morphing-search-pill/index.tsx",
+      "type": "registry:component",
+      "target": "components/spaceui/morphing-search-pill.tsx"
+    }
+  ],
+  "createdAt": "2026-09-17",
+  "updatedAt": "2026-09-17"
+}

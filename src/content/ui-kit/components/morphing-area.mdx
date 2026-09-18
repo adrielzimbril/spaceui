@@ -1,0 +1,51 @@
+---
+title: Morphing Area
+description: Adaptive aspect ratio surface with constant-area morphing for any child element, card, or media.
+preview: demo-c-morphing-area-01
+---
+
+## Installation
+
+<ComponentInstallation name="components-spaceui-morphing-area" />
+
+## Usage
+
+```tsx
+import { MorphingArea } from '@/components/spaceui/morphing-area'
+
+export default function Example() {
+  return (
+    <MorphingArea ratio="4:3" rounded={8} squircle={false}>
+      <img
+        src="/your-image.jpg"
+        alt=""
+        className="size-full object-cover"
+      />
+    </MorphingArea>
+  )
+}
+```
+
+You can pass any content as `children`, including custom UI cards, gradients, or media:
+
+```tsx
+<MorphingArea ratio="1:1" rounded={12} squircle>
+  <div className="size-full bg-gradient-to-br from-indigo-500 to-purple-600 p-6 flex flex-col justify-between text-white">
+    <h3>Dynamic Card</h3>
+    <p>Morphs smoothly across aspect ratios.</p>
+  </div>
+</MorphingArea>
+```
+
+## Props
+
+| Prop        | Type                                                               | Default    | Description                                                      |
+| ----------- | ------------------------------------------------------------------ | ---------- | ---------------------------------------------------------------- |
+| `children`  | `React.ReactNode`                                                  | `—`        | Child elements (images, cards, media) to morph.                  |
+| `ratio`     | `'4:3' \| '1:1' \| '3:4' \| '16:9' \| 'land' \| 'square' \| 'tall'` | `'1:1'`    | Target aspect ratio for constant-area surface morphing.          |
+| `width`     | `string \| number`                                                 | `—`        | Optional explicit width override.                                |
+| `height`    | `string \| number`                                                 | `—`        | Optional explicit height override.                               |
+| `rounded`   | `number`                                                           | `8`        | Corner radius in pixels (min 0).                                 |
+| `squircle`  | `boolean`                                                          | `false`    | Enables continuous squircle curvature via `@usespaceui/squircle`.|
+| `morph`     | `number`                                                           | `50`       | Morph transition spring duration modifier (0–100).               |
+| `className` | `string`                                                           | `—`        | Additional class names.                                          |

@@ -1,0 +1,28 @@
+---
+title: Liquid Sortable List
+description: Smooth drag-and-drop sortable team list with generative avatars and spring reordering.
+preview: demo-c-liquid-sortable-list-01
+---
+
+## Installation
+
+<ComponentInstallation name="components-spaceui-liquid-sortable-list" />
+
+## Usage
+
+```tsx
+import { LiquidSortableList } from '@/components/spaceui/liquid-sortable-list'
+
+export default function Example() {
+  return <LiquidSortableList />
+}
+```
+
+## Props
+
+| Prop            | Type                                | Default              | Description                  |
+| --------------- | ----------------------------------- | -------------------- | ---------------------------- |
+| `items`         | `SortableMember[]`                  | `DEFAULT_MEMBERS`    | Items with avatars and roles |
+| `onOrderChange` | `(items: SortableMember[]) => void` | `—`                  | Callback when order changes  |
+| `title`         | `string`                            | `'Reorder Priority'` | Header title                 |
+| `corner`        | `number`                            | `20`                 | Card corner radius           |

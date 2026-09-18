@@ -1,0 +1,39 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-c-team-roster-selector-01",
+  "title": "Team Roster Selector Demo",
+  "description": "Interactive team roster selection list with generative avatars, spring hover pill, and multi-select state.",
+  "registryDependencies": [
+    "https://www.spaceui.one/r/components-spaceui-team-roster-selector.json",
+    "https://www.spaceui.one/r/primitives-toast.json"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/components/spaceui/team-roster-selector/c-team-roster-selector-01/index.tsx",
+      "content": "'use client'\n\nimport * as React from 'react'\nimport { TeamRosterSelector } from '@/components/spaceui/team-roster-selector'\nimport { toastManager } from '@/components/ui/toast'\n\nexport interface TeamRosterDemoProps {\n  corner?: number\n  maxDisplay?: number\n}\n\nexport default function Demo({ corner = 24, maxDisplay = 5 }: TeamRosterDemoProps) {\n  const [selected, setSelected] = React.useState<string[]>(['guillermo'])\n\n  return (\n    <div className=\"flex flex-col items-center justify-center gap-3 py-6 px-4\">\n      <TeamRosterSelector\n        corner={Number(corner)}\n        maxDisplay={Number(maxDisplay)}\n        selectedIds={selected}\n        onSelectionChange={setSelected}\n        onAction={(ids) => {\n          toastManager.add({\n            type: 'success',\n            title: 'Members assigned',\n            description: `Successfully assigned ${ids.length} member${ids.length > 1 ? 's' : ''} to the project.`,\n          })\n        }}\n      />\n    </div>\n  )\n}\n",
+      "type": "registry:component",
+      "target": "components/spaceui/team-roster-selector-demo.tsx"
+    }
+  ],
+  "meta": {
+    "demoProps": {
+      "corner": {
+        "value": 24,
+        "min": 8,
+        "max": 36,
+        "step": 2
+      },
+      "maxDisplay": {
+        "value": 5,
+        "min": 2,
+        "max": 5,
+        "step": 1
+      }
+    }
+  },
+  "categories": [
+    "component",
+    "demo"
+  ],
+  "type": "registry:component"
+}

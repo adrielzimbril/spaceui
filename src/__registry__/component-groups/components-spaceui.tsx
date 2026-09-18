@@ -64,6 +64,10 @@ export const registryComponents: Record<string, RegistryComponent> = {
     () => import("@/registry/components/spaceui/button-squircle/index.tsx"),
     {},
   ),
+  "components-spaceui-chroma-palette": lazyRegistryComponent(
+    () => import("@/registry/components/spaceui/chroma-palette/index.tsx"),
+    {},
+  ),
   "components-spaceui-copy": lazyRegistryComponent(
     () => import("@/registry/components/spaceui/copy/index.tsx"),
     {},
@@ -104,6 +108,10 @@ export const registryComponents: Record<string, RegistryComponent> = {
     () => import("@/registry/components/spaceui/image-dark/index.tsx"),
     {},
   ),
+  "components-spaceui-interactive-checklist": lazyRegistryComponent(
+    () => import("@/registry/components/spaceui/interactive-checklist/index.tsx"),
+    {},
+  ),
   "components-spaceui-item": lazyRegistryComponent(
     () => import("@/registry/components/spaceui/item/index.tsx"),
     {},
@@ -116,8 +124,28 @@ export const registryComponents: Record<string, RegistryComponent> = {
     () => import("@/registry/components/spaceui/liquid-metal-border/index.tsx"),
     {},
   ),
+  "components-spaceui-liquid-sortable-list": lazyRegistryComponent(
+    () => import("@/registry/components/spaceui/liquid-sortable-list/index.tsx"),
+    {},
+  ),
+  "components-spaceui-liquid-switch": lazyRegistryComponent(
+    () => import("@/registry/components/spaceui/liquid-switch/index.tsx"),
+    {},
+  ),
   "components-spaceui-morph-icon": lazyRegistryComponent(
     () => import("@/registry/components/spaceui/morph-icon/index.tsx"),
+    {},
+  ),
+  "components-spaceui-morphing-area": lazyRegistryComponent(
+    () => import("@/registry/components/spaceui/morphing-area/index.tsx"),
+    {},
+  ),
+  "components-spaceui-morphing-command-bar": lazyRegistryComponent(
+    () => import("@/registry/components/spaceui/morphing-command-bar/index.tsx"),
+    {},
+  ),
+  "components-spaceui-morphing-search-pill": lazyRegistryComponent(
+    () => import("@/registry/components/spaceui/morphing-search-pill/index.tsx"),
     {},
   ),
   "components-spaceui-morphing-text": lazyRegistryComponent(
@@ -152,6 +180,10 @@ export const registryComponents: Record<string, RegistryComponent> = {
     () => import("@/registry/components/spaceui/section-scrollspy/index.tsx"),
     {},
   ),
+  "components-spaceui-slide-to-confirm": lazyRegistryComponent(
+    () => import("@/registry/components/spaceui/slide-to-confirm/index.tsx"),
+    {},
+  ),
   "components-spaceui-slosh-slider": lazyRegistryComponent(
     () => import("@/registry/components/spaceui/slosh-slider/index.tsx"),
     {},
@@ -162,6 +194,10 @@ export const registryComponents: Record<string, RegistryComponent> = {
   ),
   "components-spaceui-status-badge": lazyRegistryComponent(
     () => import("@/registry/components/spaceui/status-badge/index.tsx"),
+    {},
+  ),
+  "components-spaceui-team-roster-selector": lazyRegistryComponent(
+    () => import("@/registry/components/spaceui/team-roster-selector/index.tsx"),
     {},
   ),
   "components-spaceui-theme-toggle": lazyRegistryComponent(

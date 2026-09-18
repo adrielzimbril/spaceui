@@ -1,0 +1,30 @@
+---
+title: Chroma Palette
+description: Perceptually uniform color generator and interactive swatch palette with organic gooey fluid morph and one-click copy.
+preview: demo-c-chroma-palette-01
+---
+
+## Installation
+
+<ComponentInstallation name="components-spaceui-chroma-palette" />
+
+## Usage
+
+```tsx
+import { ChromaPalette } from '@/components/spaceui/chroma-palette'
+
+export default function Example() {
+  return <ChromaPalette count={5} />
+}
+```
+
+## Props
+
+| Prop              | Type                         | Default     | Description                                     |
+| ----------------- | ---------------------------- | ----------- | ----------------------------------------------- |
+| `count`           | `number`                     | `5`         | Number of color swatches (min 2, max 5)         |
+| `corner`          | `number`                     | `14`        | Swatch corner radius                            |
+| `morph`           | `number`                     | `50`        | Morphing animation speed / intensity (0-100)    |
+| `palettes`        | `string[][]`                 | `undefined` | Optional array of preset color palettes         |
+| `onGenerate`      | `() => string[]`             | `undefined` | Custom palette generation callback              |
+| `onPaletteChange` | `(colors: string[]) => void` | `undefined` | Callback invoked when a new palette is selected |

@@ -1,0 +1,30 @@
+---
+title: Liquid Switch
+description: Elastic toggle switch with velocity-based organic stretch and spring return physics.
+preview: demo-c-liquid-switch-01
+---
+
+## Installation
+
+<ComponentInstallation name="components-spaceui-liquid-switch" />
+
+## Usage
+
+```tsx
+import { LiquidSwitch } from '@/components/spaceui/liquid-switch'
+
+export default function Example() {
+  return <LiquidSwitch />
+}
+```
+
+## Props
+
+| Prop              | Type                         | Default | Description                       |
+| ----------------- | ---------------------------- | ------- | --------------------------------- |
+| `checked`         | `boolean`                    | `—`     | Controlled checked state          |
+| `defaultChecked`  | `boolean`                    | `false` | Default checked state             |
+| `onCheckedChange` | `(checked: boolean) => void` | `—`     | Toggle change callback            |
+| `stretch`         | `number`                     | `36`    | Dynamic elongation factor (0-100) |
+| `label`           | `string`                     | `—`     | Optional companion label          |
+| `disabled`        | `boolean`                    | `false` | Disabled interaction              |

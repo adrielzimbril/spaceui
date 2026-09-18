@@ -21,14 +21,15 @@ export default function Example() {
 
 ## Props
 
-| Prop            | Type                      | Default | Description              |
-| --------------- | ------------------------- | ------- | ------------------------ |
-| `value`         | `number`                  | —       | Controlled value         |
-| `min`           | `number`                  | `0`     | Minimum                  |
-| `max`           | `number`                  | `100`   | Maximum                  |
-| `step`          | `number`                  | `1`     | Snap                     |
-| `onValueChange` | `(value: number) => void` | —       | Change handler           |
-| `corner`        | `number`                  | `13`    | Fill radius, 0–20        |
-| `viscosity`     | `number`                  | `15`    | 0 rigid, 100 loose       |
-| `momentum`      | `number`                  | `55`    | Coast after release      |
-| `tilt`          | `number`                  | `45`    | Lean on the leading edge |
+| Prop            | Type                      | Default | Description                            |
+| --------------- | ------------------------- | ------- | -------------------------------------- |
+| `value`         | `number`                  | —       | Controlled value                       |
+| `min`           | `number`                  | `0`     | Minimum                                |
+| `max`           | `number`                  | `100`   | Maximum                                |
+| `step`          | `number`                  | `1`     | Snap                                   |
+| `height`        | `number \| string`        | `40`    | Slider track height in px or CSS unit  |
+| `onValueChange` | `(value: number) => void` | —       | Change handler                         |
+| `corner`        | `number`                  | `13`    | Fill radius, 0–20                      |
+| `viscosity`     | `number`                  | `15`    | 0 rigid, 100 loose                     |
+| `momentum`      | `number`                  | `55`    | Coast after release                    |
+| `tilt`          | `number`                  | `45`    | Lean on the leading edge               |

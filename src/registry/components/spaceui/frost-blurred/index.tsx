@@ -3,7 +3,7 @@
 import * as React from 'react'
 import { cn } from '@/registry/lib/utils'
 
-export type FrostBlurredSide = 'top' | 'bottom'
+export type FrostBlurredSide = 'top' | 'bottom' | 'left' | 'right'
 
 export interface FrostBlurredProps extends React.HTMLAttributes<HTMLDivElement> {
   layers?: number
@@ -11,80 +11,122 @@ export interface FrostBlurredProps extends React.HTMLAttributes<HTMLDivElement> 
   height?: string | number
   side?: FrostBlurredSide
   tint?: number
+  opacity?: number
 }
 
-function layerMask(index: number, count: number, side: FrostBlurredSide) {
-  const band = 100 / count
-  const start = index * band
-  const a = start + band
-  const b = start + band * 2
-  const end = start + band * 3
-  const dir = side === 'top' ? 'to top' : 'to bottom'
-  const peak = index === count - 1 ? 0.42 : 0.58
-  const stops =
-    index === count - 1
-      ? `rgba(255,255,255,0) ${start}%, rgba(255,255,255,${peak}) ${Math.min(a, 100)}%`
-      : `rgba(255,255,255,0) ${start}%, rgba(255,255,255,${peak}) ${a}%, rgba(255,255,255,${peak}) ${Math.min(b, 100)}%, rgba(255,255,255,0) ${Math.min(end, 112.5)}%`
-  return `linear-gradient(${dir}, ${stops})`
+const DEFAULT_BLUR_STEPS = [0.084, 0.125, 0.214, 0.386, 0.664, 0.986, 1.15]
+
+function getGradualMask(index: number, count: number, side: FrostBlurredSide) {
+  const step = 100 / count
+  const start = (index * step).toFixed(2)
+  const peak1 = ((index + 1) * step).toFixed(2)
+  const peak2 = ((index + 2) * step).toFixed(2)
+  const end = ((index + 3) * step).toFixed(2)
+
+  const dir =
+    side === 'top'
+      ? 'to top'
+      : side === 'bottom'
+        ? 'to bottom'
+        : side === 'left'
+          ? 'to left'
+          : 'to right'
+
+  if (index === count - 1) {
+    return `linear-gradient(${dir}, transparent ${start}%, black 100%, black 100%)`
+  }
+  if (index === count - 2) {
+    return `linear-gradient(${dir}, transparent ${start}%, black ${peak1}%, black 100%, transparent 100%)`
+  }
+  return `linear-gradient(${dir}, transparent ${start}%, black ${peak1}%, black ${peak2}%, transparent ${end}%)`
 }
 
 export function FrostBlurred({
-  layers = 4,
+  layers = 7,
   strength = 1,
   height = '62%',
   side = 'bottom',
-  tint = 0.18,
+  tint = 0,
+  opacity = 0.9,
   className,
   children,
   style,
   ...props
 }: FrostBlurredProps) {
   const count = Math.max(1, Math.round(layers))
-  const overlayHeight = typeof height === 'number' ? `${height}px` : height
-  const dir = side === 'top' ? 'to top' : 'to bottom'
-  const wash = Math.min(1, Math.max(0, tint))
+  const overlayDim = typeof height === 'number' ? `${height}px` : height
+  const isHorizontal = side === 'left' || side === 'right'
+
+  const blurs = React.useMemo(() => {
+    if (count === DEFAULT_BLUR_STEPS.length) {
+      return DEFAULT_BLUR_STEPS.map((v) => v * strength)
+    }
+    const minBlur = 0.084
+    const maxBlur = 1.15
+    return Array.from({ length: count }, (_, i) => {
+      const t = count === 1 ? 1 : i / (count - 1)
+      const val = minBlur * Math.pow(maxBlur / minBlur, t)
+      return val * strength
+    })
+  }, [count, strength])
+
+  const sideStyles: React.CSSProperties = isHorizontal
+    ? {
+        width: overlayDim,
+        top: 0,
+        bottom: 0,
+        left: side === 'left' ? 0 : undefined,
+        right: side === 'right' ? 0 : undefined,
+      }
+    : {
+        height: overlayDim,
+        left: 0,
+        right: 0,
+        top: side === 'top' ? 0 : undefined,
+        bottom: side === 'bottom' ? 0 : undefined,
+      }
 
   const overlay = (
     <div
       aria-hidden="true"
-      className={cn('pointer-events-none absolute inset-x-0 z-10 isolate', children ? null : className)}
+      className={cn(
+        'gradual-blur pointer-events-none absolute z-10 select-none overflow-hidden',
+        children ? null : className,
+      )}
       style={{
-        height: overlayHeight,
-        top: side === 'top' ? 0 : undefined,
-        bottom: side === 'bottom' ? 0 : undefined,
+        ...sideStyles,
         ...(children ? undefined : style),
       }}
       {...(children ? undefined : props)}
     >
-      {Array.from({ length: count }, (_, index) => {
-        const blur = (2 + index * 6) * strength
-        const mask = layerMask(index, count, side)
-        const glass = Math.round(6 + (index / Math.max(count - 1, 1)) * wash * 28)
-        return (
+      <div className="relative size-full">
+        {blurs.map((blurVal, index) => {
+          const mask = getGradualMask(index, count, side)
+          return (
+            <div
+              key={index}
+              className="absolute inset-0"
+              style={{
+                zIndex: index + 1,
+                backdropFilter: `blur(${blurVal.toFixed(3)}rem)`,
+                WebkitBackdropFilter: `blur(${blurVal.toFixed(3)}rem)`,
+                maskImage: mask,
+                WebkitMaskImage: mask,
+                opacity,
+              }}
+            />
+          )
+        })}
+        {tint > 0 && (
           <div
-            key={index}
             className="absolute inset-0"
             style={{
-              zIndex: index + 1,
-              background: `color-mix(in oklab, var(--background) ${glass}%, transparent)`,
-              backdropFilter: `blur(${blur}px) saturate(1.15)`,
-              WebkitBackdropFilter: `blur(${blur}px) saturate(1.15)`,
-              maskImage: mask,
-              WebkitMaskImage: mask,
-              maskMode: 'alpha',
+              zIndex: count + 1,
+              background: `linear-gradient(${side === 'top' ? 'to top' : side === 'bottom' ? 'to bottom' : side === 'left' ? 'to left' : 'to right'}, transparent 0%, color-mix(in oklab, var(--background) ${Math.round(tint * 100)}%, transparent) 100%)`,
             }}
           />
-        )
-      })}
-      {wash > 0 ? (
-        <div
-          className="absolute inset-0"
-          style={{
-            zIndex: count + 2,
-            background: `linear-gradient(${dir}, transparent 12%, color-mix(in oklab, var(--background) ${Math.round(wash * 55)}%, transparent) 100%)`,
-          }}
-        />
-      ) : null}
+        )}
+      </div>
     </div>
   )
 

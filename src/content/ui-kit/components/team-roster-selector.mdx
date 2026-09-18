@@ -1,0 +1,30 @@
+---
+title: Team Roster Selector
+description: Interactive team roster selection list with generative avatars, spring hover pill, and multi-select state.
+preview: demo-c-team-roster-selector-01
+---
+
+## Installation
+
+<ComponentInstallation name="components-spaceui-team-roster-selector" />
+
+## Usage
+
+```tsx
+import { TeamRosterSelector } from '@/components/spaceui/team-roster-selector'
+
+export default function Example() {
+  return <TeamRosterSelector />
+}
+```
+
+## Props
+
+| Prop                | Type                      | Default           | Description                            |
+| ------------------- | ------------------------- | ----------------- | -------------------------------------- |
+| `members`           | `TeamMember[]`            | `DEFAULT_MEMBERS` | List of team members with avatar seeds |
+| `selectedIds`       | `string[]`                | `—`               | Controlled selected member IDs         |
+| `onSelectionChange` | `(ids: string[]) => void` | `—`               | Selection change callback              |
+| `onAction`          | `(ids: string[]) => void` | `—`               | CTA action button callback             |
+| `title`             | `string`                  | `'Team Members'`  | Header title text                      |
+| `corner`            | `number`                  | `24`              | Corner radius in px                    |

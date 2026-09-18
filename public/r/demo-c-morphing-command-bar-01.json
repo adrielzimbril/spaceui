@@ -1,0 +1,33 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-c-morphing-command-bar-01",
+  "title": "Morphing Command Bar Demo",
+  "description": "Elastic command bar that expands seamlessly from passive state to active input with action trigger.",
+  "registryDependencies": [
+    "https://www.spaceui.one/r/components-spaceui-morphing-command-bar.json",
+    "https://www.spaceui.one/r/components-spaceui-morphing-text.json"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/components/spaceui/morphing-command-bar/c-morphing-command-bar-01/index.tsx",
+      "content": "'use client'\n\nimport * as React from 'react'\nimport { MorphingCommandBar } from '@/components/spaceui/morphing-command-bar'\nimport { TextMorph } from '@/components/spaceui/morphing-text'\n\nexport interface MorphingCommandDemoProps {\n  corner?: number\n}\n\nexport default function Demo({ corner = 28 }: MorphingCommandDemoProps) {\n  const [submitted, setSubmitted] = React.useState<string | null>(null)\n\n  return (\n    <div className=\"flex flex-col items-center justify-center gap-[1.25rem] py-[2rem] px-[1rem]\">\n      <MorphingCommandBar corner={Number(corner)} onSubmit={(val) => setSubmitted(val)} />\n      {submitted && (\n        <TextMorph className=\"text-[0.8125rem] font-medium text-muted-foreground\">\n          {`Executed: \"${submitted}\"`}\n        </TextMorph>\n      )}\n    </div>\n  )\n}\n",
+      "type": "registry:component",
+      "target": "components/spaceui/morphing-command-bar-demo.tsx"
+    }
+  ],
+  "meta": {
+    "demoProps": {
+      "corner": {
+        "value": 28,
+        "min": 10,
+        "max": 28,
+        "step": 2
+      }
+    }
+  },
+  "categories": [
+    "component",
+    "demo"
+  ],
+  "type": "registry:component"
+}

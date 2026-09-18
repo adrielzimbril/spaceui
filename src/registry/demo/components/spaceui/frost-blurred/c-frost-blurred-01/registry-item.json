@@ -12,7 +12,7 @@
         "value": "Space UI"
       },
       "layers": {
-        "value": 4,
+        "value": 7,
         "min": 3,
         "max": 10,
         "step": 1
@@ -39,7 +39,7 @@
         }
       },
       "tint": {
-        "value": 0.22,
+        "value": 0,
         "min": 0,
         "max": 0.6,
         "step": 0.02

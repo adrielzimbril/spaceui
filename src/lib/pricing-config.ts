@@ -1,3 +1,5 @@
+import { registryStats } from '@/__registry__/stats'
+
 export const PRO_YEARLY_PRICE = 99
 export const PRO_YEARLY_NEXT_PRICE = 129
 export const LIFETIME_PRICE = 179
@@ -9,8 +11,12 @@ export const PRO_YEARLY_MILESTONE_CURRENT = 63
 export const PRO_YEARLY_MILESTONE_TARGET = 100
 
 export const REGISTRY_STATS = {
-  primitives: 61,
-  proComponents: 41,
-  blockCollections: 12,
-  examples: 779,
+  primitives: registryStats.primitives,
+  proComponents: registryStats.components,
+  blockCollections: registryStats.blocks,
+  examples: registryStats.demos,
+  templatesFree: registryStats.templatesFree,
+  templatesPro: registryStats.templatesPro,
+  templatesTotal: registryStats.templatesTotal,
+  totalComponents: registryStats.primitives + registryStats.components,
 }

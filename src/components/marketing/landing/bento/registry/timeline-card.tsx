@@ -187,21 +187,21 @@ function StatusBadge({ status, duration }: { status: string; duration: string })
   )
 }
 
-export function TimelineCard() {
+export function TimelineCard({ isVisible = true }: { isVisible?: boolean }) {
   const [cycleIndex, setCycleIndex] = React.useState(0)
   const [isHovered, setIsHovered] = React.useState(false)
 
   const current = PIPELINE_CYCLE[cycleIndex]
 
   React.useEffect(() => {
-    if (isHovered) return
+    if (isHovered || !isVisible) return
 
     const timer = setTimeout(() => {
       setCycleIndex((prev) => (prev + 1) % PIPELINE_CYCLE.length)
     }, current.durationMs)
 
     return () => clearTimeout(timer)
-  }, [cycleIndex, isHovered, current.durationMs])
+  }, [cycleIndex, isHovered, isVisible, current.durationMs])
 
   return (
     <Frame className="flex flex-col h-full md:row-span-2">

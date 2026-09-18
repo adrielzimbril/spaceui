@@ -1516,6 +1516,35 @@
       "updatedAt": "2026-09-12"
     },
     {
+      "name": "components-spaceui-chroma-palette",
+      "type": "registry:component",
+      "title": "Chroma Palette",
+      "description": "Perceptually uniform color generator and interactive swatch palette with organic gooey fluid morph and one-click copy.",
+      "dependencies": [
+        "motion",
+        "@tabler/icons-react",
+        "@usespaceui/gradients"
+      ],
+      "registryDependencies": [
+        "https://www.spaceui.one/r/lib-utils.json",
+        "https://www.spaceui.one/r/components-spaceui-morph-icon.json"
+      ],
+      "categories": [
+        "component",
+        "color",
+        "palette"
+      ],
+      "files": [
+        {
+          "path": "src/registry/components/spaceui/chroma-palette/index.tsx",
+          "type": "registry:component",
+          "target": "components/spaceui/chroma-palette.tsx"
+        }
+      ],
+      "createdAt": "2026-09-17",
+      "updatedAt": "2026-09-17"
+    },
+    {
       "name": "components-spaceui-copy",
       "type": "registry:component",
       "title": "Copy Button",
@@ -2492,6 +2521,33 @@
       "updatedAt": "2026-08-29"
     },
     {
+      "name": "components-spaceui-interactive-checklist",
+      "type": "registry:component",
+      "title": "Interactive Checklist",
+      "description": "Tactile checklist with spring checkmarks, animated strike-through lines, and completion progress.",
+      "dependencies": [
+        "motion",
+        "@tabler/icons-react"
+      ],
+      "registryDependencies": [
+        "https://www.spaceui.one/r/lib-utils.json"
+      ],
+      "categories": [
+        "component",
+        "list",
+        "todo"
+      ],
+      "files": [
+        {
+          "path": "src/registry/components/spaceui/interactive-checklist/index.tsx",
+          "type": "registry:component",
+          "target": "components/spaceui/interactive-checklist.tsx"
+        }
+      ],
+      "createdAt": "2026-09-17",
+      "updatedAt": "2026-09-17"
+    },
+    {
       "name": "components-spaceui-item",
       "type": "registry:component",
       "title": "Item",
@@ -2572,6 +2628,60 @@
       "updatedAt": "2026-09-16"
     },
     {
+      "name": "components-spaceui-liquid-sortable-list",
+      "type": "registry:component",
+      "title": "Liquid Sortable List",
+      "description": "Smooth drag-and-drop sortable team list with generative avatars, spring reordering, and tactile feedback.",
+      "dependencies": [
+        "@usespaceui/avatars",
+        "motion",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "https://www.spaceui.one/r/lib-utils.json"
+      ],
+      "categories": [
+        "component",
+        "list",
+        "dnd"
+      ],
+      "files": [
+        {
+          "path": "src/registry/components/spaceui/liquid-sortable-list/index.tsx",
+          "type": "registry:component",
+          "target": "components/spaceui/liquid-sortable-list.tsx"
+        }
+      ],
+      "createdAt": "2026-09-17",
+      "updatedAt": "2026-09-17"
+    },
+    {
+      "name": "components-spaceui-liquid-switch",
+      "type": "registry:component",
+      "title": "Liquid Switch",
+      "description": "Elastic toggle switch with velocity-based organic stretch and spring return physics.",
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [
+        "https://www.spaceui.one/r/lib-utils.json"
+      ],
+      "categories": [
+        "component",
+        "switch",
+        "toggle"
+      ],
+      "files": [
+        {
+          "path": "src/registry/components/spaceui/liquid-switch/index.tsx",
+          "type": "registry:component",
+          "target": "components/spaceui/liquid-switch.tsx"
+        }
+      ],
+      "createdAt": "2026-09-17",
+      "updatedAt": "2026-09-17"
+    },
+    {
       "name": "components-spaceui-morph-icon",
       "type": "registry:component",
       "title": "Morph Icon",
@@ -2595,6 +2705,83 @@
       ],
       "createdAt": "2026-08-26",
       "updatedAt": "2026-08-26"
+    },
+    {
+      "name": "components-spaceui-morphing-area",
+      "type": "registry:component",
+      "title": "Morphing Area",
+      "description": "Adaptive aspect ratio frame with constant-area surface morphing — pass any image, color, or content as its background.",
+      "dependencies": [],
+      "registryDependencies": [
+        "https://www.spaceui.one/r/lib-utils.json"
+      ],
+      "categories": [
+        "component",
+        "aspect-ratio",
+        "image"
+      ],
+      "files": [
+        {
+          "path": "src/registry/components/spaceui/morphing-area/index.tsx",
+          "type": "registry:component",
+          "target": "components/spaceui/morphing-area.tsx"
+        }
+      ],
+      "createdAt": "2026-09-17",
+      "updatedAt": "2026-09-17"
+    },
+    {
+      "name": "components-spaceui-morphing-command-bar",
+      "type": "registry:component",
+      "title": "Morphing Command Bar",
+      "description": "Elastic command bar that expands seamlessly from passive state to active input with integrated action trigger.",
+      "dependencies": [
+        "motion",
+        "@tabler/icons-react"
+      ],
+      "registryDependencies": [
+        "https://www.spaceui.one/r/lib-utils.json"
+      ],
+      "categories": [
+        "component",
+        "command",
+        "search"
+      ],
+      "files": [
+        {
+          "path": "src/registry/components/spaceui/morphing-command-bar/index.tsx",
+          "type": "registry:component",
+          "target": "components/spaceui/morphing-command-bar.tsx"
+        }
+      ],
+      "createdAt": "2026-09-17",
+      "updatedAt": "2026-09-17"
+    },
+    {
+      "name": "components-spaceui-morphing-search-pill",
+      "type": "registry:component",
+      "title": "Morphing Search Pill",
+      "description": "Adaptive search pill that expands smoothly from a compact button into a full input field.",
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [
+        "https://www.spaceui.one/r/lib-utils.json"
+      ],
+      "categories": [
+        "component",
+        "search",
+        "input"
+      ],
+      "files": [
+        {
+          "path": "src/registry/components/spaceui/morphing-search-pill/index.tsx",
+          "type": "registry:component",
+          "target": "components/spaceui/morphing-search-pill.tsx"
+        }
+      ],
+      "createdAt": "2026-09-17",
+      "updatedAt": "2026-09-17"
     },
     {
       "name": "components-spaceui-morphing-text",
@@ -2799,6 +2986,34 @@
       "updatedAt": "2026-09-04"
     },
     {
+      "name": "components-spaceui-slide-to-confirm",
+      "type": "registry:component",
+      "title": "Slide To Confirm",
+      "description": "Tactile slide-to-action control with spring physics and inertia confirmation.",
+      "dependencies": [
+        "motion",
+        "@tabler/icons-react",
+        "torph"
+      ],
+      "registryDependencies": [
+        "https://www.spaceui.one/r/lib-utils.json"
+      ],
+      "categories": [
+        "component",
+        "button",
+        "slider"
+      ],
+      "files": [
+        {
+          "path": "src/registry/components/spaceui/slide-to-confirm/index.tsx",
+          "type": "registry:component",
+          "target": "components/spaceui/slide-to-confirm.tsx"
+        }
+      ],
+      "createdAt": "2026-09-17",
+      "updatedAt": "2026-09-17"
+    },
+    {
       "name": "components-spaceui-slosh-slider",
       "type": "registry:component",
       "title": "Slosh Slider",
@@ -2873,6 +3088,39 @@
       ],
       "createdAt": "2026-08-21",
       "updatedAt": "2026-09-12"
+    },
+    {
+      "name": "components-spaceui-team-roster-selector",
+      "type": "registry:component",
+      "title": "Team Roster Selector",
+      "description": "Interactive team roster selection list with generative avatars, spring hover pill, and multi-select state.",
+      "dependencies": [
+        "@usespaceui/avatars",
+        "@usespaceui/squircle",
+        "@number-flow/react",
+        "motion",
+        "@tabler/icons-react"
+      ],
+      "registryDependencies": [
+        "https://www.spaceui.one/r/lib-utils.json",
+        "https://www.spaceui.one/r/components-spaceui-morph-icon.json",
+        "https://www.spaceui.one/r/components-spaceui-button-squircle.json",
+        "https://www.spaceui.one/r/primitives-toast.json"
+      ],
+      "categories": [
+        "component",
+        "list",
+        "avatar"
+      ],
+      "files": [
+        {
+          "path": "src/registry/components/spaceui/team-roster-selector/index.tsx",
+          "type": "registry:component",
+          "target": "components/spaceui/team-roster-selector.tsx"
+        }
+      ],
+      "createdAt": "2026-09-17",
+      "updatedAt": "2026-09-17"
     },
     {
       "name": "components-spaceui-theme-toggle",
@@ -4430,7 +4678,8 @@
         "@tabler/icons-react"
       ],
       "registryDependencies": [
-        "https://www.spaceui.one/r/components-spaceui-badge-squircle.json"
+        "https://www.spaceui.one/r/components-spaceui-badge-squircle.json",
+        "https://www.spaceui.one/r/primitives-toast.json"
       ],
       "categories": [
         "component",
@@ -4605,6 +4854,48 @@
       ],
       "createdAt": "2026-09-12",
       "updatedAt": "2026-09-12"
+    },
+    {
+      "name": "demo-c-chroma-palette-01",
+      "type": "registry:component",
+      "title": "Chroma Palette Demo",
+      "description": "Perceptually uniform color generator and interactive swatch palette using @usespaceui/gradients.",
+      "dependencies": [
+        "@usespaceui/gradients"
+      ],
+      "registryDependencies": [
+        "https://www.spaceui.one/r/components-spaceui-chroma-palette.json",
+        "https://www.spaceui.one/r/components-spaceui-morphing-text.json"
+      ],
+      "categories": [
+        "component",
+        "demo"
+      ],
+      "meta": {
+        "demoProps": {
+          "count": {
+            "value": 5,
+            "min": 2,
+            "max": 5,
+            "step": 1
+          },
+          "corner": {
+            "value": 14,
+            "min": 4,
+            "max": 24,
+            "step": 2
+          }
+        }
+      },
+      "files": [
+        {
+          "path": "src/registry/demo/components/spaceui/chroma-palette/c-chroma-palette-01/index.tsx",
+          "type": "registry:component",
+          "target": "components/spaceui/chroma-palette-demo.tsx"
+        }
+      ],
+      "createdAt": "2026-09-17",
+      "updatedAt": "2026-09-17"
     },
     {
       "name": "demo-c-data-grid-01",
@@ -7012,6 +7303,38 @@
       "updatedAt": "2026-08-21"
     },
     {
+      "name": "demo-c-interactive-checklist-01",
+      "type": "registry:component",
+      "title": "Interactive Checklist Demo",
+      "description": "Tactile checklist with spring checkmarks, animated strike-through lines, and completion progress.",
+      "registryDependencies": [
+        "https://www.spaceui.one/r/components-spaceui-interactive-checklist.json"
+      ],
+      "categories": [
+        "component",
+        "demo"
+      ],
+      "meta": {
+        "demoProps": {
+          "corner": {
+            "value": 24,
+            "min": 10,
+            "max": 32,
+            "step": 2
+          }
+        }
+      },
+      "files": [
+        {
+          "path": "src/registry/demo/components/spaceui/interactive-checklist/c-interactive-checklist-01/index.tsx",
+          "type": "registry:component",
+          "target": "components/spaceui/interactive-checklist-demo.tsx"
+        }
+      ],
+      "createdAt": "2026-09-17",
+      "updatedAt": "2026-09-17"
+    },
+    {
       "name": "demo-c-kanban-01",
       "type": "registry:component",
       "title": "Kanban board with placeholder overlay",
@@ -7249,6 +7572,73 @@
       "updatedAt": "2026-09-16"
     },
     {
+      "name": "demo-c-liquid-sortable-list-01",
+      "type": "registry:component",
+      "title": "Liquid Sortable List Demo",
+      "description": "Smooth drag-and-drop sortable team list with generative avatars and spring reordering.",
+      "registryDependencies": [
+        "https://www.spaceui.one/r/components-spaceui-liquid-sortable-list.json"
+      ],
+      "categories": [
+        "component",
+        "demo"
+      ],
+      "meta": {
+        "demoProps": {
+          "corner": {
+            "value": 20,
+            "min": 8,
+            "max": 32,
+            "step": 2
+          }
+        }
+      },
+      "files": [
+        {
+          "path": "src/registry/demo/components/spaceui/liquid-sortable-list/c-liquid-sortable-list-01/index.tsx",
+          "type": "registry:component",
+          "target": "components/spaceui/liquid-sortable-list-demo.tsx"
+        }
+      ],
+      "createdAt": "2026-09-17",
+      "updatedAt": "2026-09-17"
+    },
+    {
+      "name": "demo-c-liquid-switch-01",
+      "type": "registry:component",
+      "title": "Liquid Switch Demo",
+      "description": "Elastic toggle switch with velocity-based organic stretch and spring return physics.",
+      "registryDependencies": [
+        "https://www.spaceui.one/r/components-spaceui-liquid-switch.json"
+      ],
+      "categories": [
+        "component",
+        "demo"
+      ],
+      "meta": {
+        "demoProps": {
+          "stretch": {
+            "value": 36,
+            "min": 0,
+            "max": 100,
+            "step": 5
+          },
+          "disabled": {
+            "value": false
+          }
+        }
+      },
+      "files": [
+        {
+          "path": "src/registry/demo/components/spaceui/liquid-switch/c-liquid-switch-01/index.tsx",
+          "type": "registry:component",
+          "target": "components/spaceui/liquid-switch-demo.tsx"
+        }
+      ],
+      "createdAt": "2026-09-17",
+      "updatedAt": "2026-09-17"
+    },
+    {
       "name": "demo-c-morph-icon-01",
       "type": "registry:component",
       "title": "Morph Icon Interactive Playground",
@@ -7405,6 +7795,122 @@
       ],
       "createdAt": "2026-08-26",
       "updatedAt": "2026-08-26"
+    },
+    {
+      "name": "demo-c-morphing-area-01",
+      "type": "registry:component",
+      "title": "Morphing Area Demo",
+      "description": "Interactive demo of equal-area aspect ratio morphing.",
+      "registryDependencies": [
+        "https://www.spaceui.one/r/components-spaceui-morphing-area.json",
+        "https://www.spaceui.one/r/lib-next-image-url.json"
+      ],
+      "categories": [
+        "component",
+        "demo"
+      ],
+      "meta": {
+        "demoProps": {
+          "corner": {
+            "value": 18,
+            "min": 0,
+            "max": 36,
+            "step": 2
+          },
+          "morph": {
+            "value": 50,
+            "min": 0,
+            "max": 100,
+            "step": 5
+          }
+        }
+      },
+      "files": [
+        {
+          "path": "src/registry/demo/components/spaceui/morphing-area/c-morphing-area-01/index.tsx",
+          "type": "registry:component",
+          "target": "components/spaceui/morphing-area-demo.tsx"
+        }
+      ],
+      "createdAt": "2026-09-17",
+      "updatedAt": "2026-09-17"
+    },
+    {
+      "name": "demo-c-morphing-command-bar-01",
+      "type": "registry:component",
+      "title": "Morphing Command Bar Demo",
+      "description": "Elastic command bar that expands seamlessly from passive state to active input with action trigger.",
+      "registryDependencies": [
+        "https://www.spaceui.one/r/components-spaceui-morphing-command-bar.json",
+        "https://www.spaceui.one/r/components-spaceui-morphing-text.json"
+      ],
+      "categories": [
+        "component",
+        "demo"
+      ],
+      "meta": {
+        "demoProps": {
+          "corner": {
+            "value": 28,
+            "min": 10,
+            "max": 28,
+            "step": 2
+          }
+        }
+      },
+      "files": [
+        {
+          "path": "src/registry/demo/components/spaceui/morphing-command-bar/c-morphing-command-bar-01/index.tsx",
+          "type": "registry:component",
+          "target": "components/spaceui/morphing-command-bar-demo.tsx"
+        }
+      ],
+      "createdAt": "2026-09-17",
+      "updatedAt": "2026-09-17"
+    },
+    {
+      "name": "demo-c-morphing-search-pill-01",
+      "type": "registry:component",
+      "title": "Morphing Search Pill Demo",
+      "description": "Adaptive search pill that expands smoothly from a compact button into a full input field.",
+      "registryDependencies": [
+        "https://www.spaceui.one/r/components-spaceui-morphing-search-pill.json"
+      ],
+      "categories": [
+        "component",
+        "demo"
+      ],
+      "meta": {
+        "demoProps": {
+          "collapsedWidth": {
+            "value": 64,
+            "min": 64,
+            "max": 180,
+            "step": 4
+          },
+          "expandedWidth": {
+            "value": 280,
+            "min": 220,
+            "max": 360,
+            "step": 10
+          },
+          "corner": {
+            "value": 20,
+            "min": 8,
+            "max": 24,
+            "step": 2
+          }
+        }
+      },
+      "files": [
+        {
+          "path": "src/registry/demo/components/spaceui/morphing-search-pill/c-morphing-search-pill-01/index.tsx",
+          "type": "registry:component",
+          "target": "components/spaceui/morphing-search-pill-demo.tsx"
+        }
+      ],
+      "createdAt": "2026-09-17",
+      "updatedAt": "2026-09-17"
     },
     {
       "name": "demo-c-morphing-text-01",
@@ -8273,6 +8779,50 @@
       "updatedAt": "2026-09-04"
     },
     {
+      "name": "demo-c-slide-to-confirm-01",
+      "type": "registry:component",
+      "title": "Slide To Confirm Demo",
+      "description": "Tactile slide-to-confirm action slider with inertia spring physics.",
+      "registryDependencies": [
+        "https://www.spaceui.one/r/components-spaceui-slide-to-confirm.json"
+      ],
+      "categories": [
+        "component",
+        "demo"
+      ],
+      "meta": {
+        "demoProps": {
+          "speed": {
+            "value": 50,
+            "min": 0,
+            "max": 100,
+            "step": 5
+          },
+          "width": {
+            "value": 320,
+            "min": 260,
+            "max": 460,
+            "step": 10
+          },
+          "corner": {
+            "value": 28,
+            "min": 0,
+            "max": 28,
+            "step": 2
+          }
+        }
+      },
+      "files": [
+        {
+          "path": "src/registry/demo/components/spaceui/slide-to-confirm/c-slide-to-confirm-01/index.tsx",
+          "type": "registry:component",
+          "target": "components/spaceui/slide-to-confirm-demo.tsx"
+        }
+      ],
+      "createdAt": "2026-09-17",
+      "updatedAt": "2026-09-17"
+    },
+    {
       "name": "demo-c-slosh-slider-01",
       "type": "registry:component",
       "title": "Slosh Slider Demo",
@@ -8765,6 +9315,45 @@
       ],
       "createdAt": "2026-08-21",
       "updatedAt": "2026-08-21"
+    },
+    {
+      "name": "demo-c-team-roster-selector-01",
+      "type": "registry:component",
+      "title": "Team Roster Selector Demo",
+      "description": "Interactive team roster selection list with generative avatars, spring hover pill, and multi-select state.",
+      "registryDependencies": [
+        "https://www.spaceui.one/r/components-spaceui-team-roster-selector.json",
+        "https://www.spaceui.one/r/primitives-toast.json"
+      ],
+      "categories": [
+        "component",
+        "demo"
+      ],
+      "meta": {
+        "demoProps": {
+          "corner": {
+            "value": 24,
+            "min": 8,
+            "max": 36,
+            "step": 2
+          },
+          "maxDisplay": {
+            "value": 5,
+            "min": 2,
+            "max": 5,
+            "step": 1
+          }
+        }
+      },
+      "files": [
+        {
+          "path": "src/registry/demo/components/spaceui/team-roster-selector/c-team-roster-selector-01/index.tsx",
+          "type": "registry:component",
+          "target": "components/spaceui/team-roster-selector-demo.tsx"
+        }
+      ],
+      "createdAt": "2026-09-17",
+      "updatedAt": "2026-09-17"
     },
     {
       "name": "demo-c-theme-toggle-01",

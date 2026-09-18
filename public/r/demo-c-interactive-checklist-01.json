@@ -1,0 +1,32 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-c-interactive-checklist-01",
+  "title": "Interactive Checklist Demo",
+  "description": "Tactile checklist with spring checkmarks, animated strike-through lines, and completion progress.",
+  "registryDependencies": [
+    "https://www.spaceui.one/r/components-spaceui-interactive-checklist.json"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/components/spaceui/interactive-checklist/c-interactive-checklist-01/index.tsx",
+      "content": "'use client'\n\nimport * as React from 'react'\nimport { InteractiveChecklist } from '@/components/spaceui/interactive-checklist'\n\nexport interface InteractiveChecklistDemoProps {\n  corner?: number\n}\n\nexport default function Demo({ corner = 24 }: InteractiveChecklistDemoProps) {\n  return (\n    <div className=\"flex flex-col items-center justify-center gap-3 py-6 px-4\">\n      <InteractiveChecklist corner={Number(corner)} />\n    </div>\n  )\n}\n",
+      "type": "registry:component",
+      "target": "components/spaceui/interactive-checklist-demo.tsx"
+    }
+  ],
+  "meta": {
+    "demoProps": {
+      "corner": {
+        "value": 24,
+        "min": 10,
+        "max": 32,
+        "step": 2
+      }
+    }
+  },
+  "categories": [
+    "component",
+    "demo"
+  ],
+  "type": "registry:component"
+}

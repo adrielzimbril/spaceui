@@ -59,7 +59,7 @@ export function RegistryGrid() {
         <HandleReelCard />
         <FlagsCard isVisible={isVisible} />
         <TimelineCard isVisible={isVisible} />
-        <GitHubActivityCard isVisible={isVisible} />
+        <GitHubActivityCard />
         <AvatarsSquishmojiCard isVisible={isVisible} count={9} />
         <WordsPreloaderCard isVisible={isVisible} />
         <LoadingOrbCard isVisible={isVisible} />
@@ -83,7 +83,7 @@ export function RegistryGrid() {
 
         <Link href="/templates" data-space-hover className="rounded-2xl bg-muted p-6 sm:p-8">
           <p className="text-4xl font-semibold tracking-tight text-foreground">
-            <NumberFlow value={isVisible ? registryStats.templates + projectsData.projects.length : 0} />+
+            <NumberFlow value={isVisible ? registryStats.templatesFree : 0} />+
           </p>
           <p className="mt-2 text-sm font-medium text-muted-foreground">Templates</p>
         </Link>

@@ -5,7 +5,10 @@
   "title": "Badge Squircle Icons & Polymorphic Render",
   "description": "Showcase of tactile squircle badges with icons and polymorphic link and button rendering.",
   "dependencies": ["@tabler/icons-react"],
-  "registryDependencies": ["https://www.spaceui.one/r/components-spaceui-badge-squircle.json"],
+  "registryDependencies": [
+    "https://www.spaceui.one/r/components-spaceui-badge-squircle.json",
+    "https://www.spaceui.one/r/primitives-toast.json"
+  ],
   "categories": ["component", "badge", "squircle", "features"],
   "files": [
     {

@@ -1606,6 +1606,38 @@ export const index: Record<string, any> = {
     })(),
     command: '@spaceui/components-spaceui-button-squircle',
   },
+  "components-spaceui-chroma-palette": {
+    name: "components-spaceui-chroma-palette",
+    description: "Perceptually uniform color generator and interactive swatch palette with organic gooey fluid morph and one-click copy.",
+    type: "registry:component",
+    dependencies: ["motion","@tabler/icons-react","@usespaceui/gradients"],
+    devDependencies: undefined,
+    registryDependencies: ["https://www.spaceui.one/r/lib-utils.json","https://www.spaceui.one/r/components-spaceui-morph-icon.json"],
+    files: [
+  {
+    "path": "src/registry/components/spaceui/chroma-palette/index.tsx",
+    "type": "registry:component",
+    "target": "components/spaceui/chroma-palette.tsx"
+  }
+],
+    keywords: [],
+    component: (() => {
+      const LazyComp = React.lazy(async () => {
+        const mod = await import("@/registry/components/spaceui/chroma-palette/index.tsx");
+        const exportName = Object.keys(mod).find(
+          key => typeof mod[key] === 'function' || typeof mod[key] === 'object'
+        ) || "components-spaceui-chroma-palette";
+        const Comp = mod.default || mod[exportName];
+        if (mod.animations) {
+          (LazyComp as any).animations = mod.animations;
+        }
+        return { default: Comp };
+      });
+      LazyComp.demoProps = {};
+      return LazyComp;
+    })(),
+    command: '@spaceui/components-spaceui-chroma-palette',
+  },
   "components-spaceui-copy": {
     name: "components-spaceui-copy",
     description: "A copy-to-clipboard button with animated icon transition.",
@@ -2662,6 +2694,38 @@ export const index: Record<string, any> = {
     })(),
     command: '@spaceui/components-spaceui-image-dark',
   },
+  "components-spaceui-interactive-checklist": {
+    name: "components-spaceui-interactive-checklist",
+    description: "Tactile checklist with spring checkmarks, animated strike-through lines, and completion progress.",
+    type: "registry:component",
+    dependencies: ["motion","@tabler/icons-react"],
+    devDependencies: undefined,
+    registryDependencies: ["https://www.spaceui.one/r/lib-utils.json"],
+    files: [
+  {
+    "path": "src/registry/components/spaceui/interactive-checklist/index.tsx",
+    "type": "registry:component",
+    "target": "components/spaceui/interactive-checklist.tsx"
+  }
+],
+    keywords: [],
+    component: (() => {
+      const LazyComp = React.lazy(async () => {
+        const mod = await import("@/registry/components/spaceui/interactive-checklist/index.tsx");
+        const exportName = Object.keys(mod).find(
+          key => typeof mod[key] === 'function' || typeof mod[key] === 'object'
+        ) || "components-spaceui-interactive-checklist";
+        const Comp = mod.default || mod[exportName];
+        if (mod.animations) {
+          (LazyComp as any).animations = mod.animations;
+        }
+        return { default: Comp };
+      });
+      LazyComp.demoProps = {};
+      return LazyComp;
+    })(),
+    command: '@spaceui/components-spaceui-interactive-checklist',
+  },
   "components-spaceui-item": {
     name: "components-spaceui-item",
     description: "Composable Item primitive with media, content, title, and description slots for lists and rows.",
@@ -2758,6 +2822,70 @@ export const index: Record<string, any> = {
     })(),
     command: '@spaceui/components-spaceui-liquid-metal-border',
   },
+  "components-spaceui-liquid-sortable-list": {
+    name: "components-spaceui-liquid-sortable-list",
+    description: "Smooth drag-and-drop sortable team list with generative avatars, spring reordering, and tactile feedback.",
+    type: "registry:component",
+    dependencies: ["@usespaceui/avatars","motion","lucide-react"],
+    devDependencies: undefined,
+    registryDependencies: ["https://www.spaceui.one/r/lib-utils.json"],
+    files: [
+  {
+    "path": "src/registry/components/spaceui/liquid-sortable-list/index.tsx",
+    "type": "registry:component",
+    "target": "components/spaceui/liquid-sortable-list.tsx"
+  }
+],
+    keywords: [],
+    component: (() => {
+      const LazyComp = React.lazy(async () => {
+        const mod = await import("@/registry/components/spaceui/liquid-sortable-list/index.tsx");
+        const exportName = Object.keys(mod).find(
+          key => typeof mod[key] === 'function' || typeof mod[key] === 'object'
+        ) || "components-spaceui-liquid-sortable-list";
+        const Comp = mod.default || mod[exportName];
+        if (mod.animations) {
+          (LazyComp as any).animations = mod.animations;
+        }
+        return { default: Comp };
+      });
+      LazyComp.demoProps = {};
+      return LazyComp;
+    })(),
+    command: '@spaceui/components-spaceui-liquid-sortable-list',
+  },
+  "components-spaceui-liquid-switch": {
+    name: "components-spaceui-liquid-switch",
+    description: "Elastic toggle switch with velocity-based organic stretch and spring return physics.",
+    type: "registry:component",
+    dependencies: ["motion"],
+    devDependencies: undefined,
+    registryDependencies: ["https://www.spaceui.one/r/lib-utils.json"],
+    files: [
+  {
+    "path": "src/registry/components/spaceui/liquid-switch/index.tsx",
+    "type": "registry:component",
+    "target": "components/spaceui/liquid-switch.tsx"
+  }
+],
+    keywords: [],
+    component: (() => {
+      const LazyComp = React.lazy(async () => {
+        const mod = await import("@/registry/components/spaceui/liquid-switch/index.tsx");
+        const exportName = Object.keys(mod).find(
+          key => typeof mod[key] === 'function' || typeof mod[key] === 'object'
+        ) || "components-spaceui-liquid-switch";
+        const Comp = mod.default || mod[exportName];
+        if (mod.animations) {
+          (LazyComp as any).animations = mod.animations;
+        }
+        return { default: Comp };
+      });
+      LazyComp.demoProps = {};
+      return LazyComp;
+    })(),
+    command: '@spaceui/components-spaceui-liquid-switch',
+  },
   "components-spaceui-morph-icon": {
     name: "components-spaceui-morph-icon",
     description: "An animated morphing icon transition wrapper supporting motion presets like blur-scale, rotate-scale, flip, and spring.",
@@ -2789,6 +2917,102 @@ export const index: Record<string, any> = {
       return LazyComp;
     })(),
     command: '@spaceui/components-spaceui-morph-icon',
+  },
+  "components-spaceui-morphing-area": {
+    name: "components-spaceui-morphing-area",
+    description: "Adaptive aspect ratio frame with constant-area surface morphing — pass any image, color, or content as its background.",
+    type: "registry:component",
+    dependencies: [],
+    devDependencies: undefined,
+    registryDependencies: ["https://www.spaceui.one/r/lib-utils.json"],
+    files: [
+  {
+    "path": "src/registry/components/spaceui/morphing-area/index.tsx",
+    "type": "registry:component",
+    "target": "components/spaceui/morphing-area.tsx"
+  }
+],
+    keywords: [],
+    component: (() => {
+      const LazyComp = React.lazy(async () => {
+        const mod = await import("@/registry/components/spaceui/morphing-area/index.tsx");
+        const exportName = Object.keys(mod).find(
+          key => typeof mod[key] === 'function' || typeof mod[key] === 'object'
+        ) || "components-spaceui-morphing-area";
+        const Comp = mod.default || mod[exportName];
+        if (mod.animations) {
+          (LazyComp as any).animations = mod.animations;
+        }
+        return { default: Comp };
+      });
+      LazyComp.demoProps = {};
+      return LazyComp;
+    })(),
+    command: '@spaceui/components-spaceui-morphing-area',
+  },
+  "components-spaceui-morphing-command-bar": {
+    name: "components-spaceui-morphing-command-bar",
+    description: "Elastic command bar that expands seamlessly from passive state to active input with integrated action trigger.",
+    type: "registry:component",
+    dependencies: ["motion","@tabler/icons-react"],
+    devDependencies: undefined,
+    registryDependencies: ["https://www.spaceui.one/r/lib-utils.json"],
+    files: [
+  {
+    "path": "src/registry/components/spaceui/morphing-command-bar/index.tsx",
+    "type": "registry:component",
+    "target": "components/spaceui/morphing-command-bar.tsx"
+  }
+],
+    keywords: [],
+    component: (() => {
+      const LazyComp = React.lazy(async () => {
+        const mod = await import("@/registry/components/spaceui/morphing-command-bar/index.tsx");
+        const exportName = Object.keys(mod).find(
+          key => typeof mod[key] === 'function' || typeof mod[key] === 'object'
+        ) || "components-spaceui-morphing-command-bar";
+        const Comp = mod.default || mod[exportName];
+        if (mod.animations) {
+          (LazyComp as any).animations = mod.animations;
+        }
+        return { default: Comp };
+      });
+      LazyComp.demoProps = {};
+      return LazyComp;
+    })(),
+    command: '@spaceui/components-spaceui-morphing-command-bar',
+  },
+  "components-spaceui-morphing-search-pill": {
+    name: "components-spaceui-morphing-search-pill",
+    description: "Adaptive search pill that expands smoothly from a compact button into a full input field.",
+    type: "registry:component",
+    dependencies: ["motion"],
+    devDependencies: undefined,
+    registryDependencies: ["https://www.spaceui.one/r/lib-utils.json"],
+    files: [
+  {
+    "path": "src/registry/components/spaceui/morphing-search-pill/index.tsx",
+    "type": "registry:component",
+    "target": "components/spaceui/morphing-search-pill.tsx"
+  }
+],
+    keywords: [],
+    component: (() => {
+      const LazyComp = React.lazy(async () => {
+        const mod = await import("@/registry/components/spaceui/morphing-search-pill/index.tsx");
+        const exportName = Object.keys(mod).find(
+          key => typeof mod[key] === 'function' || typeof mod[key] === 'object'
+        ) || "components-spaceui-morphing-search-pill";
+        const Comp = mod.default || mod[exportName];
+        if (mod.animations) {
+          (LazyComp as any).animations = mod.animations;
+        }
+        return { default: Comp };
+      });
+      LazyComp.demoProps = {};
+      return LazyComp;
+    })(),
+    command: '@spaceui/components-spaceui-morphing-search-pill',
   },
   "components-spaceui-morphing-text": {
     name: "components-spaceui-morphing-text",
@@ -3046,6 +3270,38 @@ export const index: Record<string, any> = {
     })(),
     command: '@spaceui/components-spaceui-section-scrollspy',
   },
+  "components-spaceui-slide-to-confirm": {
+    name: "components-spaceui-slide-to-confirm",
+    description: "Tactile slide-to-action control with spring physics and inertia confirmation.",
+    type: "registry:component",
+    dependencies: ["motion","@tabler/icons-react","torph"],
+    devDependencies: undefined,
+    registryDependencies: ["https://www.spaceui.one/r/lib-utils.json"],
+    files: [
+  {
+    "path": "src/registry/components/spaceui/slide-to-confirm/index.tsx",
+    "type": "registry:component",
+    "target": "components/spaceui/slide-to-confirm.tsx"
+  }
+],
+    keywords: [],
+    component: (() => {
+      const LazyComp = React.lazy(async () => {
+        const mod = await import("@/registry/components/spaceui/slide-to-confirm/index.tsx");
+        const exportName = Object.keys(mod).find(
+          key => typeof mod[key] === 'function' || typeof mod[key] === 'object'
+        ) || "components-spaceui-slide-to-confirm";
+        const Comp = mod.default || mod[exportName];
+        if (mod.animations) {
+          (LazyComp as any).animations = mod.animations;
+        }
+        return { default: Comp };
+      });
+      LazyComp.demoProps = {};
+      return LazyComp;
+    })(),
+    command: '@spaceui/components-spaceui-slide-to-confirm',
+  },
   "components-spaceui-slosh-slider": {
     name: "components-spaceui-slosh-slider",
     description: "Liquid fill slider with viscosity, momentum, and tilt.",
@@ -3141,6 +3397,38 @@ export const index: Record<string, any> = {
       return LazyComp;
     })(),
     command: '@spaceui/components-spaceui-status-badge',
+  },
+  "components-spaceui-team-roster-selector": {
+    name: "components-spaceui-team-roster-selector",
+    description: "Interactive team roster selection list with generative avatars, spring hover pill, and multi-select state.",
+    type: "registry:component",
+    dependencies: ["@usespaceui/avatars","@usespaceui/squircle","@number-flow/react","motion","@tabler/icons-react"],
+    devDependencies: undefined,
+    registryDependencies: ["https://www.spaceui.one/r/lib-utils.json","https://www.spaceui.one/r/components-spaceui-morph-icon.json","https://www.spaceui.one/r/components-spaceui-button-squircle.json","https://www.spaceui.one/r/primitives-toast.json"],
+    files: [
+  {
+    "path": "src/registry/components/spaceui/team-roster-selector/index.tsx",
+    "type": "registry:component",
+    "target": "components/spaceui/team-roster-selector.tsx"
+  }
+],
+    keywords: [],
+    component: (() => {
+      const LazyComp = React.lazy(async () => {
+        const mod = await import("@/registry/components/spaceui/team-roster-selector/index.tsx");
+        const exportName = Object.keys(mod).find(
+          key => typeof mod[key] === 'function' || typeof mod[key] === 'object'
+        ) || "components-spaceui-team-roster-selector";
+        const Comp = mod.default || mod[exportName];
+        if (mod.animations) {
+          (LazyComp as any).animations = mod.animations;
+        }
+        return { default: Comp };
+      });
+      LazyComp.demoProps = {};
+      return LazyComp;
+    })(),
+    command: '@spaceui/components-spaceui-team-roster-selector',
   },
   "components-spaceui-theme-toggle": {
     name: "components-spaceui-theme-toggle",
@@ -4209,7 +4497,7 @@ export const index: Record<string, any> = {
     type: "registry:component",
     dependencies: ["@tabler/icons-react"],
     devDependencies: undefined,
-    registryDependencies: ["https://www.spaceui.one/r/components-spaceui-badge-squircle.json"],
+    registryDependencies: ["https://www.spaceui.one/r/components-spaceui-badge-squircle.json","https://www.spaceui.one/r/primitives-toast.json"],
     files: [
   {
     "path": "src/registry/demo/components/spaceui/badge-squircle/c-badge-squircle-03/index.tsx",
@@ -4394,6 +4682,38 @@ export const index: Record<string, any> = {
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-button-squircle-03',
+  },
+  "demo-c-chroma-palette-01": {
+    name: "demo-c-chroma-palette-01",
+    description: "Perceptually uniform color generator and interactive swatch palette using @usespaceui/gradients.",
+    type: "registry:component",
+    dependencies: ["@usespaceui/gradients"],
+    devDependencies: undefined,
+    registryDependencies: ["https://www.spaceui.one/r/components-spaceui-chroma-palette.json","https://www.spaceui.one/r/components-spaceui-morphing-text.json"],
+    files: [
+  {
+    "path": "src/registry/demo/components/spaceui/chroma-palette/c-chroma-palette-01/index.tsx",
+    "type": "registry:component",
+    "target": "components/spaceui/chroma-palette-demo.tsx"
+  }
+],
+    keywords: [],
+    component: (() => {
+      const LazyComp = React.lazy(async () => {
+        const mod = await import("@/registry/demo/components/spaceui/chroma-palette/c-chroma-palette-01/index.tsx");
+        const exportName = Object.keys(mod).find(
+          key => typeof mod[key] === 'function' || typeof mod[key] === 'object'
+        ) || "demo-c-chroma-palette-01";
+        const Comp = mod.default || mod[exportName];
+        if (mod.animations) {
+          (LazyComp as any).animations = mod.animations;
+        }
+        return { default: Comp };
+      });
+      LazyComp.demoProps = {"count":{"value":5,"min":2,"max":5,"step":1},"corner":{"value":14,"min":4,"max":24,"step":2}};
+      return LazyComp;
+    })(),
+    command: '@spaceui/demo-c-chroma-palette-01',
   },
   "demo-c-data-grid-01": {
     name: "demo-c-data-grid-01",
@@ -6857,6 +7177,38 @@ export const index: Record<string, any> = {
     })(),
     command: '@spaceui/demo-c-image-dark-02',
   },
+  "demo-c-interactive-checklist-01": {
+    name: "demo-c-interactive-checklist-01",
+    description: "Tactile checklist with spring checkmarks, animated strike-through lines, and completion progress.",
+    type: "registry:component",
+    dependencies: undefined,
+    devDependencies: undefined,
+    registryDependencies: ["https://www.spaceui.one/r/components-spaceui-interactive-checklist.json"],
+    files: [
+  {
+    "path": "src/registry/demo/components/spaceui/interactive-checklist/c-interactive-checklist-01/index.tsx",
+    "type": "registry:component",
+    "target": "components/spaceui/interactive-checklist-demo.tsx"
+  }
+],
+    keywords: [],
+    component: (() => {
+      const LazyComp = React.lazy(async () => {
+        const mod = await import("@/registry/demo/components/spaceui/interactive-checklist/c-interactive-checklist-01/index.tsx");
+        const exportName = Object.keys(mod).find(
+          key => typeof mod[key] === 'function' || typeof mod[key] === 'object'
+        ) || "demo-c-interactive-checklist-01";
+        const Comp = mod.default || mod[exportName];
+        if (mod.animations) {
+          (LazyComp as any).animations = mod.animations;
+        }
+        return { default: Comp };
+      });
+      LazyComp.demoProps = {"corner":{"value":24,"min":10,"max":32,"step":2}};
+      return LazyComp;
+    })(),
+    command: '@spaceui/demo-c-interactive-checklist-01',
+  },
   "demo-c-kanban-01": {
     name: "demo-c-kanban-01",
     description: "Kanban board with placeholder overlay",
@@ -7145,6 +7497,70 @@ export const index: Record<string, any> = {
     })(),
     command: '@spaceui/demo-c-liquid-metal-border-03',
   },
+  "demo-c-liquid-sortable-list-01": {
+    name: "demo-c-liquid-sortable-list-01",
+    description: "Smooth drag-and-drop sortable team list with generative avatars and spring reordering.",
+    type: "registry:component",
+    dependencies: undefined,
+    devDependencies: undefined,
+    registryDependencies: ["https://www.spaceui.one/r/components-spaceui-liquid-sortable-list.json"],
+    files: [
+  {
+    "path": "src/registry/demo/components/spaceui/liquid-sortable-list/c-liquid-sortable-list-01/index.tsx",
+    "type": "registry:component",
+    "target": "components/spaceui/liquid-sortable-list-demo.tsx"
+  }
+],
+    keywords: [],
+    component: (() => {
+      const LazyComp = React.lazy(async () => {
+        const mod = await import("@/registry/demo/components/spaceui/liquid-sortable-list/c-liquid-sortable-list-01/index.tsx");
+        const exportName = Object.keys(mod).find(
+          key => typeof mod[key] === 'function' || typeof mod[key] === 'object'
+        ) || "demo-c-liquid-sortable-list-01";
+        const Comp = mod.default || mod[exportName];
+        if (mod.animations) {
+          (LazyComp as any).animations = mod.animations;
+        }
+        return { default: Comp };
+      });
+      LazyComp.demoProps = {"corner":{"value":20,"min":8,"max":32,"step":2}};
+      return LazyComp;
+    })(),
+    command: '@spaceui/demo-c-liquid-sortable-list-01',
+  },
+  "demo-c-liquid-switch-01": {
+    name: "demo-c-liquid-switch-01",
+    description: "Elastic toggle switch with velocity-based organic stretch and spring return physics.",
+    type: "registry:component",
+    dependencies: undefined,
+    devDependencies: undefined,
+    registryDependencies: ["https://www.spaceui.one/r/components-spaceui-liquid-switch.json"],
+    files: [
+  {
+    "path": "src/registry/demo/components/spaceui/liquid-switch/c-liquid-switch-01/index.tsx",
+    "type": "registry:component",
+    "target": "components/spaceui/liquid-switch-demo.tsx"
+  }
+],
+    keywords: [],
+    component: (() => {
+      const LazyComp = React.lazy(async () => {
+        const mod = await import("@/registry/demo/components/spaceui/liquid-switch/c-liquid-switch-01/index.tsx");
+        const exportName = Object.keys(mod).find(
+          key => typeof mod[key] === 'function' || typeof mod[key] === 'object'
+        ) || "demo-c-liquid-switch-01";
+        const Comp = mod.default || mod[exportName];
+        if (mod.animations) {
+          (LazyComp as any).animations = mod.animations;
+        }
+        return { default: Comp };
+      });
+      LazyComp.demoProps = {"stretch":{"value":36,"min":0,"max":100,"step":5},"disabled":{"value":false}};
+      return LazyComp;
+    })(),
+    command: '@spaceui/demo-c-liquid-switch-01',
+  },
   "demo-c-morph-icon-01": {
     name: "demo-c-morph-icon-01",
     description: "Interactive MorphIcon demo with real-time tweakable animation variants and durations.",
@@ -7336,6 +7752,102 @@ export const index: Record<string, any> = {
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-morph-icon-06',
+  },
+  "demo-c-morphing-area-01": {
+    name: "demo-c-morphing-area-01",
+    description: "Interactive demo of equal-area aspect ratio morphing.",
+    type: "registry:component",
+    dependencies: undefined,
+    devDependencies: undefined,
+    registryDependencies: ["https://www.spaceui.one/r/components-spaceui-morphing-area.json","https://www.spaceui.one/r/lib-next-image-url.json"],
+    files: [
+  {
+    "path": "src/registry/demo/components/spaceui/morphing-area/c-morphing-area-01/index.tsx",
+    "type": "registry:component",
+    "target": "components/spaceui/morphing-area-demo.tsx"
+  }
+],
+    keywords: [],
+    component: (() => {
+      const LazyComp = React.lazy(async () => {
+        const mod = await import("@/registry/demo/components/spaceui/morphing-area/c-morphing-area-01/index.tsx");
+        const exportName = Object.keys(mod).find(
+          key => typeof mod[key] === 'function' || typeof mod[key] === 'object'
+        ) || "demo-c-morphing-area-01";
+        const Comp = mod.default || mod[exportName];
+        if (mod.animations) {
+          (LazyComp as any).animations = mod.animations;
+        }
+        return { default: Comp };
+      });
+      LazyComp.demoProps = {"corner":{"value":18,"min":0,"max":36,"step":2},"morph":{"value":50,"min":0,"max":100,"step":5}};
+      return LazyComp;
+    })(),
+    command: '@spaceui/demo-c-morphing-area-01',
+  },
+  "demo-c-morphing-command-bar-01": {
+    name: "demo-c-morphing-command-bar-01",
+    description: "Elastic command bar that expands seamlessly from passive state to active input with action trigger.",
+    type: "registry:component",
+    dependencies: undefined,
+    devDependencies: undefined,
+    registryDependencies: ["https://www.spaceui.one/r/components-spaceui-morphing-command-bar.json","https://www.spaceui.one/r/components-spaceui-morphing-text.json"],
+    files: [
+  {
+    "path": "src/registry/demo/components/spaceui/morphing-command-bar/c-morphing-command-bar-01/index.tsx",
+    "type": "registry:component",
+    "target": "components/spaceui/morphing-command-bar-demo.tsx"
+  }
+],
+    keywords: [],
+    component: (() => {
+      const LazyComp = React.lazy(async () => {
+        const mod = await import("@/registry/demo/components/spaceui/morphing-command-bar/c-morphing-command-bar-01/index.tsx");
+        const exportName = Object.keys(mod).find(
+          key => typeof mod[key] === 'function' || typeof mod[key] === 'object'
+        ) || "demo-c-morphing-command-bar-01";
+        const Comp = mod.default || mod[exportName];
+        if (mod.animations) {
+          (LazyComp as any).animations = mod.animations;
+        }
+        return { default: Comp };
+      });
+      LazyComp.demoProps = {"corner":{"value":28,"min":10,"max":28,"step":2}};
+      return LazyComp;
+    })(),
+    command: '@spaceui/demo-c-morphing-command-bar-01',
+  },
+  "demo-c-morphing-search-pill-01": {
+    name: "demo-c-morphing-search-pill-01",
+    description: "Adaptive search pill that expands smoothly from a compact button into a full input field.",
+    type: "registry:component",
+    dependencies: undefined,
+    devDependencies: undefined,
+    registryDependencies: ["https://www.spaceui.one/r/components-spaceui-morphing-search-pill.json"],
+    files: [
+  {
+    "path": "src/registry/demo/components/spaceui/morphing-search-pill/c-morphing-search-pill-01/index.tsx",
+    "type": "registry:component",
+    "target": "components/spaceui/morphing-search-pill-demo.tsx"
+  }
+],
+    keywords: [],
+    component: (() => {
+      const LazyComp = React.lazy(async () => {
+        const mod = await import("@/registry/demo/components/spaceui/morphing-search-pill/c-morphing-search-pill-01/index.tsx");
+        const exportName = Object.keys(mod).find(
+          key => typeof mod[key] === 'function' || typeof mod[key] === 'object'
+        ) || "demo-c-morphing-search-pill-01";
+        const Comp = mod.default || mod[exportName];
+        if (mod.animations) {
+          (LazyComp as any).animations = mod.animations;
+        }
+        return { default: Comp };
+      });
+      LazyComp.demoProps = {"collapsedWidth":{"value":64,"min":64,"max":180,"step":4},"expandedWidth":{"value":280,"min":220,"max":360,"step":10},"corner":{"value":20,"min":8,"max":24,"step":2}};
+      return LazyComp;
+    })(),
+    command: '@spaceui/demo-c-morphing-search-pill-01',
   },
   "demo-c-morphing-text-01": {
     name: "demo-c-morphing-text-01",
@@ -8489,6 +9001,38 @@ export const index: Record<string, any> = {
     })(),
     command: '@spaceui/demo-c-section-scrollspy-01',
   },
+  "demo-c-slide-to-confirm-01": {
+    name: "demo-c-slide-to-confirm-01",
+    description: "Tactile slide-to-confirm action slider with inertia spring physics.",
+    type: "registry:component",
+    dependencies: undefined,
+    devDependencies: undefined,
+    registryDependencies: ["https://www.spaceui.one/r/components-spaceui-slide-to-confirm.json"],
+    files: [
+  {
+    "path": "src/registry/demo/components/spaceui/slide-to-confirm/c-slide-to-confirm-01/index.tsx",
+    "type": "registry:component",
+    "target": "components/spaceui/slide-to-confirm-demo.tsx"
+  }
+],
+    keywords: [],
+    component: (() => {
+      const LazyComp = React.lazy(async () => {
+        const mod = await import("@/registry/demo/components/spaceui/slide-to-confirm/c-slide-to-confirm-01/index.tsx");
+        const exportName = Object.keys(mod).find(
+          key => typeof mod[key] === 'function' || typeof mod[key] === 'object'
+        ) || "demo-c-slide-to-confirm-01";
+        const Comp = mod.default || mod[exportName];
+        if (mod.animations) {
+          (LazyComp as any).animations = mod.animations;
+        }
+        return { default: Comp };
+      });
+      LazyComp.demoProps = {"speed":{"value":50,"min":0,"max":100,"step":5},"width":{"value":320,"min":260,"max":460,"step":10},"corner":{"value":28,"min":0,"max":28,"step":2}};
+      return LazyComp;
+    })(),
+    command: '@spaceui/demo-c-slide-to-confirm-01',
+  },
   "demo-c-slosh-slider-01": {
     name: "demo-c-slosh-slider-01",
     description: "Liquid slider with corner, viscosity, momentum, and tilt.",
@@ -9096,6 +9640,38 @@ export const index: Record<string, any> = {
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-status-badge-09',
+  },
+  "demo-c-team-roster-selector-01": {
+    name: "demo-c-team-roster-selector-01",
+    description: "Interactive team roster selection list with generative avatars, spring hover pill, and multi-select state.",
+    type: "registry:component",
+    dependencies: undefined,
+    devDependencies: undefined,
+    registryDependencies: ["https://www.spaceui.one/r/components-spaceui-team-roster-selector.json","https://www.spaceui.one/r/primitives-toast.json"],
+    files: [
+  {
+    "path": "src/registry/demo/components/spaceui/team-roster-selector/c-team-roster-selector-01/index.tsx",
+    "type": "registry:component",
+    "target": "components/spaceui/team-roster-selector-demo.tsx"
+  }
+],
+    keywords: [],
+    component: (() => {
+      const LazyComp = React.lazy(async () => {
+        const mod = await import("@/registry/demo/components/spaceui/team-roster-selector/c-team-roster-selector-01/index.tsx");
+        const exportName = Object.keys(mod).find(
+          key => typeof mod[key] === 'function' || typeof mod[key] === 'object'
+        ) || "demo-c-team-roster-selector-01";
+        const Comp = mod.default || mod[exportName];
+        if (mod.animations) {
+          (LazyComp as any).animations = mod.animations;
+        }
+        return { default: Comp };
+      });
+      LazyComp.demoProps = {"corner":{"value":24,"min":8,"max":36,"step":2},"maxDisplay":{"value":5,"min":2,"max":5,"step":1}};
+      return LazyComp;
+    })(),
+    command: '@spaceui/demo-c-team-roster-selector-01',
   },
   "demo-c-theme-toggle-01": {
     name: "demo-c-theme-toggle-01",

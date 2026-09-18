@@ -35,11 +35,12 @@ Without children, render it as an overlay on a relative parent:
 
 ## Props
 
-| Prop       | Type                | Default    | Description                                      |
-| ---------- | ------------------- | ---------- | ------------------------------------------------ |
-| `layers`   | `number`            | `4`        | Stacked blur bands.                              |
-| `strength` | `number`            | `1`        | Multiplier on each band's blur radius.           |
-| `height`   | `string \| number`  | `'62%'`    | Overlay height.                                  |
-| `side`     | `'top' \| 'bottom'` | `'bottom'` | Edge the frost grows from.                       |
-| `tint`     | `number`            | `0.18`     | Theme-aware `--background` glass mix.            |
-| `children` | `React.ReactNode`   | —          | Content to frost. Omit to use as a pure overlay. |
+| Prop       | Type                                         | Default    | Description                                      |
+| ---------- | -------------------------------------------- | ---------- | ------------------------------------------------ |
+| `layers`   | `number`                                     | `7`        | Stacked progressive blur layers.                 |
+| `strength` | `number`                                     | `1`        | Multiplier on each layer's blur radius.          |
+| `height`   | `string \| number`                           | `'62%'`    | Overlay height (or width if left/right).         |
+| `side`     | `'top' \| 'bottom' \| 'left' \| 'right'`     | `'bottom'` | Edge the frost grows from.                       |
+| `tint`     | `number`                                     | `0`        | Optional theme background mix (0 for pure glass).|
+| `opacity`  | `number`                                     | `0.9`      | Layer opacity.                                   |
+| `children` | `React.ReactNode`                            | —          | Content to frost. Omit to use as a pure overlay. |

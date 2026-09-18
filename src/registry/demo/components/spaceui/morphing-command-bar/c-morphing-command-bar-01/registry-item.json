@@ -1,0 +1,31 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-c-morphing-command-bar-01",
+  "type": "registry:component",
+  "title": "Morphing Command Bar Demo",
+  "description": "Elastic command bar that expands seamlessly from passive state to active input with action trigger.",
+  "registryDependencies": [
+    "https://www.spaceui.one/r/components-spaceui-morphing-command-bar.json",
+    "https://www.spaceui.one/r/components-spaceui-morphing-text.json"
+  ],
+  "categories": ["component", "demo"],
+  "meta": {
+    "demoProps": {
+      "corner": {
+        "value": 28,
+        "min": 10,
+        "max": 28,
+        "step": 2
+      }
+    }
+  },
+  "files": [
+    {
+      "path": "src/registry/demo/components/spaceui/morphing-command-bar/c-morphing-command-bar-01/index.tsx",
+      "type": "registry:component",
+      "target": "components/spaceui/morphing-command-bar-demo.tsx"
+    }
+  ],
+  "createdAt": "2026-09-17",
+  "updatedAt": "2026-09-17"
+}

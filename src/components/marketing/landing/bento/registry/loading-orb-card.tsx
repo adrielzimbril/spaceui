@@ -14,7 +14,7 @@ const TAILWIND_COLORS = [
   { label: 'Cyan', className: 'text-cyan-500' },
 ]
 
-export function LoadingOrbCard() {
+export function LoadingOrbCard({ isVisible = true }: { isVisible?: boolean }) {
   return (
     <Frame className="flex flex-col h-full">
       <Card className="flex-1 flex flex-col h-full rounded-xl before:rounded-xl overflow-hidden">
@@ -22,7 +22,7 @@ export function LoadingOrbCard() {
           {TAILWIND_COLORS.map(({ label, className }) => (
             <div key={label} className="flex flex-col items-center gap-2 select-none">
               <div className="flex items-center justify-center">
-                <LoadingOrb className={className} size={44} speed={750} />
+                <LoadingOrb className={className} size={44} speed={750} pattern={isVisible ? undefined : 0} />
               </div>
               <span className="text-xs font-medium tracking-tight text-muted-foreground">{label}</span>
             </div>

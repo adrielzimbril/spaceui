@@ -1,0 +1,31 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-c-liquid-switch-01",
+  "type": "registry:component",
+  "title": "Liquid Switch Demo",
+  "description": "Elastic toggle switch with velocity-based organic stretch and spring return physics.",
+  "registryDependencies": ["https://www.spaceui.one/r/components-spaceui-liquid-switch.json"],
+  "categories": ["component", "demo"],
+  "meta": {
+    "demoProps": {
+      "stretch": {
+        "value": 36,
+        "min": 0,
+        "max": 100,
+        "step": 5
+      },
+      "disabled": {
+        "value": false
+      }
+    }
+  },
+  "files": [
+    {
+      "path": "src/registry/demo/components/spaceui/liquid-switch/c-liquid-switch-01/index.tsx",
+      "type": "registry:component",
+      "target": "components/spaceui/liquid-switch-demo.tsx"
+    }
+  ],
+  "createdAt": "2026-09-17",
+  "updatedAt": "2026-09-17"
+}

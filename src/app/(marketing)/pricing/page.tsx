@@ -36,6 +36,7 @@ import {
   PRO_YEARLY_PRICE,
   REGISTRY_STATS,
 } from '@/lib/pricing-config'
+import { SilkGradient } from '@/registry/components/shader/silk-gradient'
 import { LiquidBorder } from '@/registry/components/spaceui/liquid-metal-border'
 import { cn } from '@/registry/lib/utils'
 
@@ -54,11 +55,19 @@ const plans = [
   {
     key: 'free',
     name: 'Community',
-    badgeLabel: 'Free',
+    tag: 'COMMUNITY',
     description: 'Get started with Space UI and ship with the open-source primitives.',
     price: 0,
     priceSuffix: '/ forever',
+    strikethrough: null,
     chip: null as string | null,
+    silk: {
+      color1: '#94a3b8',
+      color2: '#cbd5e1',
+      color3: '#64748b',
+      fallback: 'from-slate-400/10 via-slate-300/5 to-transparent',
+      opacity: 'opacity-25 dark:opacity-100',
+    },
     features: [
       'All base primitives & components',
       'Standard CLI installer',
@@ -67,7 +76,16 @@ const plans = [
     ],
     recommended: false,
     cta: (
-      <Button variant="outline" full hover whileTap asPointer render={<Link href="/components" />}>
+      <Button
+        variant="outline"
+        full
+        size="lg"
+        hover
+        whileTap
+        asPointer
+        render={<Link href="/components" />}
+        className="bg-background!"
+      >
         Browse components
       </Button>
     ),
@@ -75,11 +93,20 @@ const plans = [
   {
     key: 'pro',
     name: 'Pro Yearly',
-    badgeLabel: 'Most popular',
+    tag: 'PRO',
+    badgeLabel: 'Best value',
     description: 'For developers and studios shipping polished products every week.',
     price: PRO_YEARLY_PRICE,
     priceSuffix: '/ year',
+    strikethrough: `$${PRO_YEARLY_NEXT_PRICE}`,
     chip: null as string | null,
+    silk: {
+      color1: '#ff6b4a',
+      color2: '#ffa07a',
+      color3: '#ff4071',
+      fallback: 'from-rose-500/25 via-amber-500/15 to-transparent',
+      opacity: 'opacity-20 dark:opacity-100',
+    },
     features: [
       'Everything in Community',
       'All Pro components & shader effects',
@@ -103,11 +130,19 @@ const plans = [
   {
     key: 'lifetime',
     name: 'Lifetime',
-    badgeLabel: 'One-time',
+    tag: 'LIFETIME',
     description: 'Pay once, use Space UI forever. No recurring billing, ever.',
     price: LIFETIME_PRICE,
     priceSuffix: '/ once',
+    strikethrough: null,
     chip: 'Team license · 3 developers',
+    silk: {
+      color1: '#7c3aed',
+      color2: '#6366f1',
+      color3: '#a855f7',
+      fallback: 'from-violet-500/25 via-indigo-500/15 to-transparent',
+      opacity: 'opacity-20 dark:opacity-100',
+    },
     features: [
       'Everything in Pro, forever',
       'All future updates included',
@@ -124,21 +159,17 @@ const plans = [
         size="lg"
       />
     ) : (
-      <>
-        {/* <LiquidBorder className="flex w-full squircle rounded-full p-0.75"> */}
-        <Button
-          variant="primary"
-          full
-          hover
-          whileTap
-          size="lg"
-          asPointer
-          render={<Link href="/checkout?products=lifetime" />}
-        >
-          Get lifetime access
-        </Button>
-        {/* </LiquidBorder> */}
-      </>
+      <Button
+        variant="primary"
+        full
+        hover
+        whileTap
+        size="lg"
+        asPointer
+        render={<Link href="/checkout?products=lifetime" />}
+      >
+        Get lifetime access
+      </Button>
     ),
   },
 ]
@@ -172,43 +203,11 @@ const templates = [
 ]
 
 const stats = [
-  { label: 'Primitives', value: REGISTRY_STATS.primitives },
-  { label: 'Pro components', value: REGISTRY_STATS.proComponents },
-  { label: 'Block collections', value: REGISTRY_STATS.blockCollections },
-  { label: 'Examples & demos', value: REGISTRY_STATS.examples },
-]
-
-const featureGrid = [
-  {
-    icon: IconBoxMultiple,
-    title: 'Every primitive & Pro component',
-    description: `${REGISTRY_STATS.primitives}+ base primitives and ${REGISTRY_STATS.proComponents}+ Pro components, ready to drop in.`,
-  },
-  {
-    icon: IconBolt,
-    title: 'New drops every week',
-    description: 'Fresh components, blocks, and effects ship weekly at no extra charge.',
-  },
-  {
-    icon: IconTerminal2,
-    title: 'CLI installer, everywhere',
-    description: 'One command installs into Next.js, Vite, Remix, or any React setup.',
-  },
-  {
-    icon: IconPalette,
-    title: 'Themes & design tokens',
-    description: 'Registry themes, Tailwind CSS v4 tokens, and full dark mode out of the box.',
-  },
-  {
-    icon: IconSparkles,
-    title: 'Motion & micro-interactions',
-    description: 'Built on Motion, with squircle effects and animated primitives throughout.',
-  },
-  {
-    icon: IconShieldCheck,
-    title: 'Full TypeScript, fully typed',
-    description: 'Every component ships with complete types, no `any`, no guesswork.',
-  },
+  { label: 'Base Primitives', value: REGISTRY_STATS.primitives },
+  { label: 'Pro Components', value: REGISTRY_STATS.proComponents },
+  { label: 'Templates', value: REGISTRY_STATS.templatesTotal },
+  { label: 'Block Collections', value: REGISTRY_STATS.blockCollections },
+  { label: 'Demos & Examples', value: REGISTRY_STATS.examples },
 ]
 
 const faqs = [
@@ -297,39 +296,83 @@ export default function PricingPage() {
           {plans.map((plan) => (
             <Frame
               key={plan.key}
-              className={cn('flex h-full flex-col rounded-3xl p-1.5', plan.recommended && 'bg-primary/10')}
+              className={cn(
+                'flex h-full flex-col squircle rounded-7xl p-1.5 transition-all duration-300',
+                plan.recommended && 'bg-primary/10',
+              )}
             >
-              {/* {plan.recommended && (
-                <FrameHeader className="flex flex-row items-center justify-center px-3 py-2">
-                  <Badge variant="primary" size="sm" className="font-semibold text-xs">
-                    {plan.badgeLabel}
-                  </Badge>
-                </FrameHeader>
-              )} */}
-              <Card className="flex h-full flex-col justify-between gap-6 rounded-2xl bg-background p-6 before:rounded-2xl">
-                <div className="flex flex-col gap-4">
-                  <div className="flex items-center justify-between gap-2">
-                    <h3 className="text-lg font-semibold tracking-tight text-foreground">{plan.name}</h3>
-                    {!plan.recommended ? (
-                      <Badge size="sm" className="text-xs">
-                        {plan.badgeLabel}
-                      </Badge>
-                    ) : (
-                      <LiquidBorder className="inline-flex squircle rounded-full p-0.75">
-                        <Badge size="sm" className="text-xs">
+              <Card className="relative flex h-full flex-col justify-between gap-6 overflow-hidden rounded-3xl bg-background p-5 sm:p-6 before:rounded-7xl">
+                <div className="relative flex min-h-40 flex-col justify-between gap-6 overflow-hidden squircle rounded-5xl border border-border/50 p-5 sm:p-6 bg-muted/20">
+                  {plan.silk && (
+                    <>
+                      <div
+                        className={cn(
+                          'pointer-events-none absolute inset-0 bg-linear-to-b opacity-45 transition-opacity',
+                          plan.silk.fallback,
+                        )}
+                      />
+                      <div className={cn('pointer-events-none absolute inset-0 transition-opacity', plan.silk.opacity)}>
+                        <SilkGradient
+                          className="size-full"
+                          color1={plan.silk.color1}
+                          color2={plan.silk.color2}
+                          color3={plan.silk.color3}
+                          speed={0.65}
+                          animate
+                          grain={false}
+                        />
+                      </div>
+                    </>
+                  )}
+
+                  <div className="relative z-10 flex items-center justify-between gap-2">
+                    <Badge size="xs" variant="outline" className="select-none rounded-full bg-background!   uppercase">
+                      {plan.tag}
+                    </Badge>
+
+                    {plan.badgeLabel &&
+                      (plan.recommended ? (
+                        <LiquidBorder className="inline-flex squircle rounded-full p-0.75 shadow-xs">
+                          <Badge size="xs" variant="primary" className="select-none">
+                            {plan.badgeLabel}
+                          </Badge>
+                        </LiquidBorder>
+                      ) : (
+                        <Badge size="xs" variant="secondary" className="bg-muted!">
                           {plan.badgeLabel}
                         </Badge>
-                      </LiquidBorder>
+                      ))}
+                  </div>
+
+                  {/* Big Price Display matching screenshot */}
+                  <div className="relative z-10 flex items-baseline gap-1 pt-1">
+                    {plan.price === 0 ? (
+                      <span className="font-semibold text-4xl sm:text-5xl text-foreground tracking-tight">Free</span>
+                    ) : (
+                      <>
+                        <span className="text-xl sm:text-2xl font-semibold text-muted-foreground dark:text-foreground/90 self-start mt-0.5">
+                          $
+                        </span>
+                        <span className="font-semibold text-4xl sm:text-5xl text-foreground tracking-tight">
+                          {plan.price}
+                        </span>
+                        <span className="text-muted-foreground dark:text-foreground/90 text-xs sm:text-sm ml-1 font-normal">
+                          {plan.priceSuffix}
+                        </span>
+                        {plan.strikethrough && (
+                          <span className="text-muted-foreground/50 dark:text-foreground/80 line-through text-xs sm:text-sm ml-1.5 font-normal">
+                            {plan.strikethrough}
+                          </span>
+                        )}
+                      </>
                     )}
                   </div>
-                  <p className="text-xs text-muted-foreground sm:text-sm">{plan.description}</p>
+                </div>
+
+                <div className="flex flex-col gap-4 flex-1 px-1">
+                  <p className="text-xs text-muted-foreground sm:text-sm leading-relaxed">{plan.description}</p>
 
                   <CardPanel className="space-y-4 p-0">
-                    <div className="flex items-baseline gap-1">
-                      <span className="font-semibold text-4xl text-foreground tracking-tight">${plan.price}</span>
-                      <span className="text-muted-foreground text-xs">{plan.priceSuffix}</span>
-                    </div>
-
                     {plan.key === 'pro' && (
                       <div className="space-y-1.5">
                         <div className="flex items-center justify-between text-[11px] text-muted-foreground">
@@ -351,7 +394,7 @@ export default function PricingPage() {
                       </Badge>
                     )}
 
-                    <ul className="space-y-2.5 text-foreground/90 text-xs sm:text-sm">
+                    <ul className="space-y-2.5 text-foreground/90 text-xs sm:text-sm pt-2 border-t border-border/50">
                       {plan.features.map((feature) => (
                         <li key={feature} className="flex items-start gap-2">
                           <IconCheck className="mt-0.5 size-4 shrink-0 text-emerald-500" />
@@ -364,6 +407,11 @@ export default function PricingPage() {
               </Card>
               <FrameFooter className="p-2">{plan.cta}</FrameFooter>
             </Frame>
+          ))}
+        </div>
+        <div className="mt-10 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-5">
+          {stats.map((stat) => (
+            <AnimatedStat key={stat.label} label={stat.label} value={stat.value} />
           ))}
         </div>
         <div className="mx-auto mt-8 flex max-w-2xl items-start gap-3 rounded-2xl bg-muted px-4 py-3.5">
@@ -443,35 +491,6 @@ export default function PricingPage() {
                 />
               </FrameFooter>
             </Frame>
-          ))}
-        </div>
-      </section>
-
-      {/* What's included */}
-      <section data-page-section className="mx-auto max-w-7xl scroll-mt-16 px-5 sm:px-6 py-16">
-        <SectionHeader
-          badge="What you get"
-          title="A growing, production-ready library"
-          description="Every plan builds on the same foundation — Base UI, Tailwind CSS v4, and a registry that ships new work weekly."
-        />
-
-        <div className="mt-10 grid grid-cols-2 gap-4 sm:grid-cols-4">
-          {stats.map((stat) => (
-            <AnimatedStat key={stat.label} label={stat.label} value={stat.value} />
-          ))}
-        </div>
-
-        <div className="mx-auto mt-10 grid max-w-4xl grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {featureGrid.map((feature) => (
-            <div key={feature.title} className="flex items-start gap-3">
-              <div className="grid size-10 shrink-0 place-items-center squircle rounded-full bg-primary/10 text-primary">
-                <feature.icon className="size-4.5" stroke={1.75} />
-              </div>
-              <div className="space-y-0.5">
-                <h3 className="font-semibold text-foreground text-sm">{feature.title}</h3>
-                <p className="text-muted-foreground text-xs">{feature.description}</p>
-              </div>
-            </div>
           ))}
         </div>
       </section>

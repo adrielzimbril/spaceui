@@ -4,19 +4,27 @@ import * as React from 'react'
 import { SloshSlider } from '@/registry/components/spaceui/slosh-slider'
 
 export interface SloshSliderDemoProps {
+  height?: number
   corner?: number
   viscosity?: number
   momentum?: number
   tilt?: number
 }
 
-export default function Demo({ corner = 13, viscosity = 15, momentum = 55, tilt = 45 }: SloshSliderDemoProps) {
+export default function Demo({
+  height = 40,
+  corner = 13,
+  viscosity = 15,
+  momentum = 55,
+  tilt = 45,
+}: SloshSliderDemoProps) {
   const [value, setValue] = React.useState(42)
   return (
     <div className="flex w-full max-w-md flex-col gap-3 px-6">
       <SloshSlider
         value={value}
         onValueChange={setValue}
+        height={Number(height)}
         corner={Number(corner)}
         viscosity={Number(viscosity)}
         momentum={Number(momentum)}

@@ -3302,6 +3302,17 @@
     "dependents": [],
     "related": [
       {
+        "name": "slide-to-confirm",
+        "title": "Slide To Confirm",
+        "description": "Tactile slide-to-action control with spring physics and inertia confirmation.",
+        "url": "/ui-kit/components/spaceui/slide-to-confirm",
+        "category": "Button",
+        "categories": [
+          "button",
+          "slider"
+        ]
+      },
+      {
         "name": "button",
         "title": "Button",
         "description": "Accessible Button primitive component for Space UI.",
@@ -3344,6 +3355,17 @@
     "dependents": [],
     "related": [
       {
+        "name": "slide-to-confirm",
+        "title": "Slide To Confirm",
+        "description": "Tactile slide-to-action control with spring physics and inertia confirmation.",
+        "url": "/ui-kit/components/spaceui/slide-to-confirm",
+        "category": "Button",
+        "categories": [
+          "button",
+          "slider"
+        ]
+      },
+      {
         "name": "button",
         "title": "Button",
         "description": "Accessible Button primitive component for Space UI.",
@@ -3354,6 +3376,66 @@
         ]
       }
     ]
+  },
+  "chroma-palette": {
+    "name": "components-spaceui-chroma-palette",
+    "shortName": "chroma-palette",
+    "title": "Chroma Palette",
+    "description": "Perceptually uniform color generator and interactive swatch palette with organic gooey fluid morph and one-click copy.",
+    "type": "registry:component",
+    "url": "/ui-kit/components/spaceui/chroma-palette",
+    "category": "Color",
+    "categories": [
+      "color",
+      "palette"
+    ],
+    "createdAt": "2026-09-17",
+    "updatedAt": "2026-09-17",
+    "size": "9.7 KB",
+    "rawSize": 9932,
+    "directSize": "9.7 KB",
+    "fileCount": 1,
+    "dependencies": [
+      "motion",
+      "@tabler/icons-react",
+      "@usespaceui/gradients"
+    ],
+    "registryDependencies": [
+      "https://www.spaceui.one/r/lib-utils.json",
+      "https://www.spaceui.one/r/components-spaceui-morph-icon.json"
+    ],
+    "dependents": [],
+    "related": []
+  },
+  "components-spaceui-chroma-palette": {
+    "name": "components-spaceui-chroma-palette",
+    "shortName": "chroma-palette",
+    "title": "Chroma Palette",
+    "description": "Perceptually uniform color generator and interactive swatch palette with organic gooey fluid morph and one-click copy.",
+    "type": "registry:component",
+    "url": "/ui-kit/components/spaceui/chroma-palette",
+    "category": "Color",
+    "categories": [
+      "color",
+      "palette"
+    ],
+    "createdAt": "2026-09-17",
+    "updatedAt": "2026-09-17",
+    "size": "9.7 KB",
+    "rawSize": 9932,
+    "directSize": "9.7 KB",
+    "fileCount": 1,
+    "dependencies": [
+      "motion",
+      "@tabler/icons-react",
+      "@usespaceui/gradients"
+    ],
+    "registryDependencies": [
+      "https://www.spaceui.one/r/lib-utils.json",
+      "https://www.spaceui.one/r/components-spaceui-morph-icon.json"
+    ],
+    "dependents": [],
+    "related": []
   },
   "copy": {
     "name": "components-spaceui-copy",
@@ -6945,6 +7027,108 @@
     "dependents": [],
     "related": []
   },
+  "interactive-checklist": {
+    "name": "components-spaceui-interactive-checklist",
+    "shortName": "interactive-checklist",
+    "title": "Interactive Checklist",
+    "description": "Tactile checklist with spring checkmarks, animated strike-through lines, and completion progress.",
+    "type": "registry:component",
+    "url": "/ui-kit/components/spaceui/interactive-checklist",
+    "category": "List",
+    "categories": [
+      "list",
+      "todo"
+    ],
+    "createdAt": "2026-09-17",
+    "updatedAt": "2026-09-17",
+    "size": "7.4 KB",
+    "rawSize": 7556,
+    "directSize": "7.4 KB",
+    "fileCount": 1,
+    "dependencies": [
+      "motion",
+      "@tabler/icons-react"
+    ],
+    "registryDependencies": [
+      "https://www.spaceui.one/r/lib-utils.json"
+    ],
+    "dependents": [],
+    "related": [
+      {
+        "name": "liquid-sortable-list",
+        "title": "Liquid Sortable List",
+        "description": "Smooth drag-and-drop sortable team list with generative avatars, spring reordering, and tactile feedback.",
+        "url": "/ui-kit/components/spaceui/liquid-sortable-list",
+        "category": "List",
+        "categories": [
+          "list",
+          "dnd"
+        ]
+      },
+      {
+        "name": "team-roster-selector",
+        "title": "Team Roster Selector",
+        "description": "Interactive team roster selection list with generative avatars, spring hover pill, and multi-select state.",
+        "url": "/ui-kit/components/spaceui/team-roster-selector",
+        "category": "List",
+        "categories": [
+          "list",
+          "avatar"
+        ]
+      }
+    ]
+  },
+  "components-spaceui-interactive-checklist": {
+    "name": "components-spaceui-interactive-checklist",
+    "shortName": "interactive-checklist",
+    "title": "Interactive Checklist",
+    "description": "Tactile checklist with spring checkmarks, animated strike-through lines, and completion progress.",
+    "type": "registry:component",
+    "url": "/ui-kit/components/spaceui/interactive-checklist",
+    "category": "List",
+    "categories": [
+      "list",
+      "todo"
+    ],
+    "createdAt": "2026-09-17",
+    "updatedAt": "2026-09-17",
+    "size": "7.4 KB",
+    "rawSize": 7556,
+    "directSize": "7.4 KB",
+    "fileCount": 1,
+    "dependencies": [
+      "motion",
+      "@tabler/icons-react"
+    ],
+    "registryDependencies": [
+      "https://www.spaceui.one/r/lib-utils.json"
+    ],
+    "dependents": [],
+    "related": [
+      {
+        "name": "liquid-sortable-list",
+        "title": "Liquid Sortable List",
+        "description": "Smooth drag-and-drop sortable team list with generative avatars, spring reordering, and tactile feedback.",
+        "url": "/ui-kit/components/spaceui/liquid-sortable-list",
+        "category": "List",
+        "categories": [
+          "list",
+          "dnd"
+        ]
+      },
+      {
+        "name": "team-roster-selector",
+        "title": "Team Roster Selector",
+        "description": "Interactive team roster selection list with generative avatars, spring hover pill, and multi-select state.",
+        "url": "/ui-kit/components/spaceui/team-roster-selector",
+        "category": "List",
+        "categories": [
+          "list",
+          "avatar"
+        ]
+      }
+    ]
+  },
   "item": {
     "name": "components-spaceui-item",
     "shortName": "item",
@@ -7183,6 +7367,186 @@
       }
     ]
   },
+  "liquid-sortable-list": {
+    "name": "components-spaceui-liquid-sortable-list",
+    "shortName": "liquid-sortable-list",
+    "title": "Liquid Sortable List",
+    "description": "Smooth drag-and-drop sortable team list with generative avatars, spring reordering, and tactile feedback.",
+    "type": "registry:component",
+    "url": "/ui-kit/components/spaceui/liquid-sortable-list",
+    "category": "List",
+    "categories": [
+      "list",
+      "dnd"
+    ],
+    "createdAt": "2026-09-17",
+    "updatedAt": "2026-09-17",
+    "size": "8.5 KB",
+    "rawSize": 8749,
+    "directSize": "8.5 KB",
+    "fileCount": 1,
+    "dependencies": [
+      "@usespaceui/avatars",
+      "motion",
+      "lucide-react"
+    ],
+    "registryDependencies": [
+      "https://www.spaceui.one/r/lib-utils.json"
+    ],
+    "dependents": [],
+    "related": [
+      {
+        "name": "interactive-checklist",
+        "title": "Interactive Checklist",
+        "description": "Tactile checklist with spring checkmarks, animated strike-through lines, and completion progress.",
+        "url": "/ui-kit/components/spaceui/interactive-checklist",
+        "category": "List",
+        "categories": [
+          "list",
+          "todo"
+        ]
+      },
+      {
+        "name": "team-roster-selector",
+        "title": "Team Roster Selector",
+        "description": "Interactive team roster selection list with generative avatars, spring hover pill, and multi-select state.",
+        "url": "/ui-kit/components/spaceui/team-roster-selector",
+        "category": "List",
+        "categories": [
+          "list",
+          "avatar"
+        ]
+      }
+    ]
+  },
+  "components-spaceui-liquid-sortable-list": {
+    "name": "components-spaceui-liquid-sortable-list",
+    "shortName": "liquid-sortable-list",
+    "title": "Liquid Sortable List",
+    "description": "Smooth drag-and-drop sortable team list with generative avatars, spring reordering, and tactile feedback.",
+    "type": "registry:component",
+    "url": "/ui-kit/components/spaceui/liquid-sortable-list",
+    "category": "List",
+    "categories": [
+      "list",
+      "dnd"
+    ],
+    "createdAt": "2026-09-17",
+    "updatedAt": "2026-09-17",
+    "size": "8.5 KB",
+    "rawSize": 8749,
+    "directSize": "8.5 KB",
+    "fileCount": 1,
+    "dependencies": [
+      "@usespaceui/avatars",
+      "motion",
+      "lucide-react"
+    ],
+    "registryDependencies": [
+      "https://www.spaceui.one/r/lib-utils.json"
+    ],
+    "dependents": [],
+    "related": [
+      {
+        "name": "interactive-checklist",
+        "title": "Interactive Checklist",
+        "description": "Tactile checklist with spring checkmarks, animated strike-through lines, and completion progress.",
+        "url": "/ui-kit/components/spaceui/interactive-checklist",
+        "category": "List",
+        "categories": [
+          "list",
+          "todo"
+        ]
+      },
+      {
+        "name": "team-roster-selector",
+        "title": "Team Roster Selector",
+        "description": "Interactive team roster selection list with generative avatars, spring hover pill, and multi-select state.",
+        "url": "/ui-kit/components/spaceui/team-roster-selector",
+        "category": "List",
+        "categories": [
+          "list",
+          "avatar"
+        ]
+      }
+    ]
+  },
+  "liquid-switch": {
+    "name": "components-spaceui-liquid-switch",
+    "shortName": "liquid-switch",
+    "title": "Liquid Switch",
+    "description": "Elastic toggle switch with velocity-based organic stretch and spring return physics.",
+    "type": "registry:component",
+    "url": "/ui-kit/components/spaceui/liquid-switch",
+    "category": "Switch",
+    "categories": [
+      "switch",
+      "toggle"
+    ],
+    "createdAt": "2026-09-17",
+    "updatedAt": "2026-09-17",
+    "size": "6 KB",
+    "rawSize": 6178,
+    "directSize": "6 KB",
+    "fileCount": 1,
+    "dependencies": [
+      "motion"
+    ],
+    "registryDependencies": [
+      "https://www.spaceui.one/r/lib-utils.json"
+    ],
+    "dependents": [],
+    "related": [
+      {
+        "name": "switch",
+        "title": "Switch",
+        "description": "Accessible Switch primitive component for Space UI.",
+        "url": "/ui-kit/primitives/switch",
+        "category": "Switch",
+        "categories": [
+          "switch"
+        ]
+      }
+    ]
+  },
+  "components-spaceui-liquid-switch": {
+    "name": "components-spaceui-liquid-switch",
+    "shortName": "liquid-switch",
+    "title": "Liquid Switch",
+    "description": "Elastic toggle switch with velocity-based organic stretch and spring return physics.",
+    "type": "registry:component",
+    "url": "/ui-kit/components/spaceui/liquid-switch",
+    "category": "Switch",
+    "categories": [
+      "switch",
+      "toggle"
+    ],
+    "createdAt": "2026-09-17",
+    "updatedAt": "2026-09-17",
+    "size": "6 KB",
+    "rawSize": 6178,
+    "directSize": "6 KB",
+    "fileCount": 1,
+    "dependencies": [
+      "motion"
+    ],
+    "registryDependencies": [
+      "https://www.spaceui.one/r/lib-utils.json"
+    ],
+    "dependents": [],
+    "related": [
+      {
+        "name": "switch",
+        "title": "Switch",
+        "description": "Accessible Switch primitive component for Space UI.",
+        "url": "/ui-kit/primitives/switch",
+        "category": "Switch",
+        "categories": [
+          "switch"
+        ]
+      }
+    ]
+  },
   "morph-icon": {
     "name": "components-spaceui-morph-icon",
     "shortName": "morph-icon",
@@ -7225,6 +7589,210 @@
     "size": "2.2 KB",
     "rawSize": 2254,
     "directSize": "2.2 KB",
+    "fileCount": 1,
+    "dependencies": [
+      "motion"
+    ],
+    "registryDependencies": [
+      "https://www.spaceui.one/r/lib-utils.json"
+    ],
+    "dependents": [],
+    "related": []
+  },
+  "morphing-area": {
+    "name": "components-spaceui-morphing-area",
+    "shortName": "morphing-area",
+    "title": "Morphing Area",
+    "description": "Adaptive aspect ratio frame with constant-area surface morphing — pass any image, color, or content as its background.",
+    "type": "registry:component",
+    "url": "/ui-kit/components/spaceui/morphing-area",
+    "category": "Aspect-ratio",
+    "categories": [
+      "aspect-ratio",
+      "image"
+    ],
+    "createdAt": "2026-09-17",
+    "updatedAt": "2026-09-17",
+    "size": "5.7 KB",
+    "rawSize": 5834,
+    "directSize": "5.7 KB",
+    "fileCount": 1,
+    "dependencies": [],
+    "registryDependencies": [
+      "https://www.spaceui.one/r/lib-utils.json"
+    ],
+    "dependents": [],
+    "related": [
+      {
+        "name": "aspect-ratio",
+        "title": "Aspect Ratio",
+        "description": "Accessible Aspect Ratio primitive component for Space UI.",
+        "url": "/ui-kit/primitives/aspect-ratio",
+        "category": "Aspect-ratio",
+        "categories": [
+          "aspect-ratio"
+        ]
+      }
+    ]
+  },
+  "components-spaceui-morphing-area": {
+    "name": "components-spaceui-morphing-area",
+    "shortName": "morphing-area",
+    "title": "Morphing Area",
+    "description": "Adaptive aspect ratio frame with constant-area surface morphing — pass any image, color, or content as its background.",
+    "type": "registry:component",
+    "url": "/ui-kit/components/spaceui/morphing-area",
+    "category": "Aspect-ratio",
+    "categories": [
+      "aspect-ratio",
+      "image"
+    ],
+    "createdAt": "2026-09-17",
+    "updatedAt": "2026-09-17",
+    "size": "5.7 KB",
+    "rawSize": 5834,
+    "directSize": "5.7 KB",
+    "fileCount": 1,
+    "dependencies": [],
+    "registryDependencies": [
+      "https://www.spaceui.one/r/lib-utils.json"
+    ],
+    "dependents": [],
+    "related": [
+      {
+        "name": "aspect-ratio",
+        "title": "Aspect Ratio",
+        "description": "Accessible Aspect Ratio primitive component for Space UI.",
+        "url": "/ui-kit/primitives/aspect-ratio",
+        "category": "Aspect-ratio",
+        "categories": [
+          "aspect-ratio"
+        ]
+      }
+    ]
+  },
+  "morphing-command-bar": {
+    "name": "components-spaceui-morphing-command-bar",
+    "shortName": "morphing-command-bar",
+    "title": "Morphing Command Bar",
+    "description": "Elastic command bar that expands seamlessly from passive state to active input with integrated action trigger.",
+    "type": "registry:component",
+    "url": "/ui-kit/components/spaceui/morphing-command-bar",
+    "category": "Command",
+    "categories": [
+      "command",
+      "search"
+    ],
+    "createdAt": "2026-09-17",
+    "updatedAt": "2026-09-17",
+    "size": "7.5 KB",
+    "rawSize": 7684,
+    "directSize": "7.5 KB",
+    "fileCount": 1,
+    "dependencies": [
+      "motion",
+      "@tabler/icons-react"
+    ],
+    "registryDependencies": [
+      "https://www.spaceui.one/r/lib-utils.json"
+    ],
+    "dependents": [],
+    "related": [
+      {
+        "name": "command",
+        "title": "Command",
+        "description": "Accessible Command primitive component for Space UI.",
+        "url": "/ui-kit/primitives/command",
+        "category": "Command",
+        "categories": [
+          "command"
+        ]
+      }
+    ]
+  },
+  "components-spaceui-morphing-command-bar": {
+    "name": "components-spaceui-morphing-command-bar",
+    "shortName": "morphing-command-bar",
+    "title": "Morphing Command Bar",
+    "description": "Elastic command bar that expands seamlessly from passive state to active input with integrated action trigger.",
+    "type": "registry:component",
+    "url": "/ui-kit/components/spaceui/morphing-command-bar",
+    "category": "Command",
+    "categories": [
+      "command",
+      "search"
+    ],
+    "createdAt": "2026-09-17",
+    "updatedAt": "2026-09-17",
+    "size": "7.5 KB",
+    "rawSize": 7684,
+    "directSize": "7.5 KB",
+    "fileCount": 1,
+    "dependencies": [
+      "motion",
+      "@tabler/icons-react"
+    ],
+    "registryDependencies": [
+      "https://www.spaceui.one/r/lib-utils.json"
+    ],
+    "dependents": [],
+    "related": [
+      {
+        "name": "command",
+        "title": "Command",
+        "description": "Accessible Command primitive component for Space UI.",
+        "url": "/ui-kit/primitives/command",
+        "category": "Command",
+        "categories": [
+          "command"
+        ]
+      }
+    ]
+  },
+  "morphing-search-pill": {
+    "name": "components-spaceui-morphing-search-pill",
+    "shortName": "morphing-search-pill",
+    "title": "Morphing Search Pill",
+    "description": "Adaptive search pill that expands smoothly from a compact button into a full input field.",
+    "type": "registry:component",
+    "url": "/ui-kit/components/spaceui/morphing-search-pill",
+    "category": "Search",
+    "categories": [
+      "search",
+      "input"
+    ],
+    "createdAt": "2026-09-17",
+    "updatedAt": "2026-09-17",
+    "size": "8.3 KB",
+    "rawSize": 8513,
+    "directSize": "8.3 KB",
+    "fileCount": 1,
+    "dependencies": [
+      "motion"
+    ],
+    "registryDependencies": [
+      "https://www.spaceui.one/r/lib-utils.json"
+    ],
+    "dependents": [],
+    "related": []
+  },
+  "components-spaceui-morphing-search-pill": {
+    "name": "components-spaceui-morphing-search-pill",
+    "shortName": "morphing-search-pill",
+    "title": "Morphing Search Pill",
+    "description": "Adaptive search pill that expands smoothly from a compact button into a full input field.",
+    "type": "registry:component",
+    "url": "/ui-kit/components/spaceui/morphing-search-pill",
+    "category": "Search",
+    "categories": [
+      "search",
+      "input"
+    ],
+    "createdAt": "2026-09-17",
+    "updatedAt": "2026-09-17",
+    "size": "8.3 KB",
+    "rawSize": 8513,
+    "directSize": "8.3 KB",
     "fileCount": 1,
     "dependencies": [
       "motion"
@@ -7687,6 +8255,112 @@
     "dependents": [],
     "related": []
   },
+  "slide-to-confirm": {
+    "name": "components-spaceui-slide-to-confirm",
+    "shortName": "slide-to-confirm",
+    "title": "Slide To Confirm",
+    "description": "Tactile slide-to-action control with spring physics and inertia confirmation.",
+    "type": "registry:component",
+    "url": "/ui-kit/components/spaceui/slide-to-confirm",
+    "category": "Button",
+    "categories": [
+      "button",
+      "slider"
+    ],
+    "createdAt": "2026-09-17",
+    "updatedAt": "2026-09-17",
+    "size": "8.7 KB",
+    "rawSize": 8896,
+    "directSize": "8.7 KB",
+    "fileCount": 1,
+    "dependencies": [
+      "motion",
+      "@tabler/icons-react",
+      "torph"
+    ],
+    "registryDependencies": [
+      "https://www.spaceui.one/r/lib-utils.json"
+    ],
+    "dependents": [],
+    "related": [
+      {
+        "name": "button-squircle",
+        "title": "Button Squircle",
+        "description": "Tactile squircle button and badge components featuring dynamic curvature morphing on hover from the original portfolio design.",
+        "url": "/ui-kit/components/spaceui/button-squircle",
+        "category": "Button",
+        "categories": [
+          "button",
+          "badge",
+          "squircle",
+          "tactile"
+        ]
+      },
+      {
+        "name": "button",
+        "title": "Button",
+        "description": "Accessible Button primitive component for Space UI.",
+        "url": "/ui-kit/primitives/button",
+        "category": "Button",
+        "categories": [
+          "button"
+        ]
+      }
+    ]
+  },
+  "components-spaceui-slide-to-confirm": {
+    "name": "components-spaceui-slide-to-confirm",
+    "shortName": "slide-to-confirm",
+    "title": "Slide To Confirm",
+    "description": "Tactile slide-to-action control with spring physics and inertia confirmation.",
+    "type": "registry:component",
+    "url": "/ui-kit/components/spaceui/slide-to-confirm",
+    "category": "Button",
+    "categories": [
+      "button",
+      "slider"
+    ],
+    "createdAt": "2026-09-17",
+    "updatedAt": "2026-09-17",
+    "size": "8.7 KB",
+    "rawSize": 8896,
+    "directSize": "8.7 KB",
+    "fileCount": 1,
+    "dependencies": [
+      "motion",
+      "@tabler/icons-react",
+      "torph"
+    ],
+    "registryDependencies": [
+      "https://www.spaceui.one/r/lib-utils.json"
+    ],
+    "dependents": [],
+    "related": [
+      {
+        "name": "button-squircle",
+        "title": "Button Squircle",
+        "description": "Tactile squircle button and badge components featuring dynamic curvature morphing on hover from the original portfolio design.",
+        "url": "/ui-kit/components/spaceui/button-squircle",
+        "category": "Button",
+        "categories": [
+          "button",
+          "badge",
+          "squircle",
+          "tactile"
+        ]
+      },
+      {
+        "name": "button",
+        "title": "Button",
+        "description": "Accessible Button primitive component for Space UI.",
+        "url": "/ui-kit/primitives/button",
+        "category": "Button",
+        "categories": [
+          "button"
+        ]
+      }
+    ]
+  },
   "slosh-slider": {
     "name": "components-spaceui-slosh-slider",
     "shortName": "slosh-slider",
@@ -7700,9 +8374,9 @@
     ],
     "createdAt": "2026-09-17",
     "updatedAt": "2026-09-17",
-    "size": "5.1 KB",
-    "rawSize": 5186,
-    "directSize": "5.1 KB",
+    "size": "9.7 KB",
+    "rawSize": 9935,
+    "directSize": "9.7 KB",
     "fileCount": 1,
     "dependencies": [],
     "registryDependencies": [
@@ -7735,9 +8409,9 @@
     ],
     "createdAt": "2026-09-17",
     "updatedAt": "2026-09-17",
-    "size": "5.1 KB",
-    "rawSize": 5186,
-    "directSize": "5.1 KB",
+    "size": "9.7 KB",
+    "rawSize": 9935,
+    "directSize": "9.7 KB",
     "fileCount": 1,
     "dependencies": [],
     "registryDependencies": [
@@ -7866,6 +8540,120 @@
     ],
     "dependents": [],
     "related": []
+  },
+  "team-roster-selector": {
+    "name": "components-spaceui-team-roster-selector",
+    "shortName": "team-roster-selector",
+    "title": "Team Roster Selector",
+    "description": "Interactive team roster selection list with generative avatars, spring hover pill, and multi-select state.",
+    "type": "registry:component",
+    "url": "/ui-kit/components/spaceui/team-roster-selector",
+    "category": "List",
+    "categories": [
+      "list",
+      "avatar"
+    ],
+    "createdAt": "2026-09-17",
+    "updatedAt": "2026-09-17",
+    "size": "6.8 KB",
+    "rawSize": 6984,
+    "directSize": "6.8 KB",
+    "fileCount": 1,
+    "dependencies": [
+      "@usespaceui/avatars",
+      "@usespaceui/squircle",
+      "@number-flow/react",
+      "motion",
+      "@tabler/icons-react"
+    ],
+    "registryDependencies": [
+      "https://www.spaceui.one/r/lib-utils.json",
+      "https://www.spaceui.one/r/components-spaceui-morph-icon.json",
+      "https://www.spaceui.one/r/components-spaceui-button-squircle.json",
+      "https://www.spaceui.one/r/primitives-toast.json"
+    ],
+    "dependents": [],
+    "related": [
+      {
+        "name": "interactive-checklist",
+        "title": "Interactive Checklist",
+        "description": "Tactile checklist with spring checkmarks, animated strike-through lines, and completion progress.",
+        "url": "/ui-kit/components/spaceui/interactive-checklist",
+        "category": "List",
+        "categories": [
+          "list",
+          "todo"
+        ]
+      },
+      {
+        "name": "liquid-sortable-list",
+        "title": "Liquid Sortable List",
+        "description": "Smooth drag-and-drop sortable team list with generative avatars, spring reordering, and tactile feedback.",
+        "url": "/ui-kit/components/spaceui/liquid-sortable-list",
+        "category": "List",
+        "categories": [
+          "list",
+          "dnd"
+        ]
+      }
+    ]
+  },
+  "components-spaceui-team-roster-selector": {
+    "name": "components-spaceui-team-roster-selector",
+    "shortName": "team-roster-selector",
+    "title": "Team Roster Selector",
+    "description": "Interactive team roster selection list with generative avatars, spring hover pill, and multi-select state.",
+    "type": "registry:component",
+    "url": "/ui-kit/components/spaceui/team-roster-selector",
+    "category": "List",
+    "categories": [
+      "list",
+      "avatar"
+    ],
+    "createdAt": "2026-09-17",
+    "updatedAt": "2026-09-17",
+    "size": "6.8 KB",
+    "rawSize": 6984,
+    "directSize": "6.8 KB",
+    "fileCount": 1,
+    "dependencies": [
+      "@usespaceui/avatars",
+      "@usespaceui/squircle",
+      "@number-flow/react",
+      "motion",
+      "@tabler/icons-react"
+    ],
+    "registryDependencies": [
+      "https://www.spaceui.one/r/lib-utils.json",
+      "https://www.spaceui.one/r/components-spaceui-morph-icon.json",
+      "https://www.spaceui.one/r/components-spaceui-button-squircle.json",
+      "https://www.spaceui.one/r/primitives-toast.json"
+    ],
+    "dependents": [],
+    "related": [
+      {
+        "name": "interactive-checklist",
+        "title": "Interactive Checklist",
+        "description": "Tactile checklist with spring checkmarks, animated strike-through lines, and completion progress.",
+        "url": "/ui-kit/components/spaceui/interactive-checklist",
+        "category": "List",
+        "categories": [
+          "list",
+          "todo"
+        ]
+      },
+      {
+        "name": "liquid-sortable-list",
+        "title": "Liquid Sortable List",
+        "description": "Smooth drag-and-drop sortable team list with generative avatars, spring reordering, and tactile feedback.",
+        "url": "/ui-kit/components/spaceui/liquid-sortable-list",
+        "category": "List",
+        "categories": [
+          "list",
+          "dnd"
+        ]
+      }
+    ]
   },
   "theme-toggle": {
     "name": "components-spaceui-theme-toggle",
@@ -13207,7 +13995,19 @@
       "https://www.spaceui.one/r/lib-utils.json"
     ],
     "dependents": [],
-    "related": []
+    "related": [
+      {
+        "name": "liquid-switch",
+        "title": "Liquid Switch",
+        "description": "Elastic toggle switch with velocity-based organic stretch and spring return physics.",
+        "url": "/ui-kit/components/spaceui/liquid-switch",
+        "category": "Switch",
+        "categories": [
+          "switch",
+          "toggle"
+        ]
+      }
+    ]
   },
   "hooks-components-switch": {
     "name": "hooks-components-switch",
@@ -20453,7 +21253,19 @@
       "https://www.spaceui.one/r/lib-utils.json"
     ],
     "dependents": [],
-    "related": []
+    "related": [
+      {
+        "name": "morphing-area",
+        "title": "Morphing Area",
+        "description": "Adaptive aspect ratio frame with constant-area surface morphing — pass any image, color, or content as its background.",
+        "url": "/ui-kit/components/spaceui/morphing-area",
+        "category": "Aspect-ratio",
+        "categories": [
+          "aspect-ratio",
+          "image"
+        ]
+      }
+    ]
   },
   "primitives-aspect-ratio": {
     "name": "primitives-aspect-ratio",
@@ -20477,7 +21289,19 @@
       "https://www.spaceui.one/r/lib-utils.json"
     ],
     "dependents": [],
-    "related": []
+    "related": [
+      {
+        "name": "morphing-area",
+        "title": "Morphing Area",
+        "description": "Adaptive aspect ratio frame with constant-area surface morphing — pass any image, color, or content as its background.",
+        "url": "/ui-kit/components/spaceui/morphing-area",
+        "category": "Aspect-ratio",
+        "categories": [
+          "aspect-ratio",
+          "image"
+        ]
+      }
+    ]
   },
   "autocomplete": {
     "name": "primitives-autocomplete",
@@ -20804,6 +21628,17 @@
           "squircle",
           "tactile"
         ]
+      },
+      {
+        "name": "slide-to-confirm",
+        "title": "Slide To Confirm",
+        "description": "Tactile slide-to-action control with spring physics and inertia confirmation.",
+        "url": "/ui-kit/components/spaceui/slide-to-confirm",
+        "category": "Button",
+        "categories": [
+          "button",
+          "slider"
+        ]
       }
     ]
   },
@@ -20845,6 +21680,17 @@
           "badge",
           "squircle",
           "tactile"
+        ]
+      },
+      {
+        "name": "slide-to-confirm",
+        "title": "Slide To Confirm",
+        "description": "Tactile slide-to-action control with spring physics and inertia confirmation.",
+        "url": "/ui-kit/components/spaceui/slide-to-confirm",
+        "category": "Button",
+        "categories": [
+          "button",
+          "slider"
         ]
       }
     ]
@@ -21200,7 +22046,19 @@
       "https://www.spaceui.one/r/primitives-kbd.json"
     ],
     "dependents": [],
-    "related": []
+    "related": [
+      {
+        "name": "morphing-command-bar",
+        "title": "Morphing Command Bar",
+        "description": "Elastic command bar that expands seamlessly from passive state to active input with integrated action trigger.",
+        "url": "/ui-kit/components/spaceui/morphing-command-bar",
+        "category": "Command",
+        "categories": [
+          "command",
+          "search"
+        ]
+      }
+    ]
   },
   "primitives-command": {
     "name": "primitives-command",
@@ -21229,7 +22087,19 @@
       "https://www.spaceui.one/r/primitives-kbd.json"
     ],
     "dependents": [],
-    "related": []
+    "related": [
+      {
+        "name": "morphing-command-bar",
+        "title": "Morphing Command Bar",
+        "description": "Elastic command bar that expands seamlessly from passive state to active input with integrated action trigger.",
+        "url": "/ui-kit/components/spaceui/morphing-command-bar",
+        "category": "Command",
+        "categories": [
+          "command",
+          "search"
+        ]
+      }
+    ]
   },
   "context-menu": {
     "name": "primitives-context-menu",
@@ -23135,7 +24005,19 @@
       "https://www.spaceui.one/r/lib-utils.json"
     ],
     "dependents": [],
-    "related": []
+    "related": [
+      {
+        "name": "liquid-switch",
+        "title": "Liquid Switch",
+        "description": "Elastic toggle switch with velocity-based organic stretch and spring return physics.",
+        "url": "/ui-kit/components/spaceui/liquid-switch",
+        "category": "Switch",
+        "categories": [
+          "switch",
+          "toggle"
+        ]
+      }
+    ]
   },
   "table": {
     "name": "primitives-table",

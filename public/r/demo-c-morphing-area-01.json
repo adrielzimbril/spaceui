@@ -1,0 +1,39 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-c-morphing-area-01",
+  "title": "Morphing Area Demo",
+  "description": "Interactive demo of equal-area aspect ratio morphing.",
+  "registryDependencies": [
+    "https://www.spaceui.one/r/components-spaceui-morphing-area.json",
+    "https://www.spaceui.one/r/lib-next-image-url.json"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/components/spaceui/morphing-area/c-morphing-area-01/index.tsx",
+      "content": "'use client'\n\nimport { MorphingArea } from '@/components/spaceui/morphing-area'\nimport { getOptimizedImageUrl } from '@/lib/next-image-url'\nimport { imagelib } from '@/lib/imagelib'\n\nexport interface MorphingAreaDemoProps {\n  corner?: number\n  morph?: number\n}\n\nconst imageSrc = getOptimizedImageUrl(imagelib.tools.imagesplit[0].url, { width: 552 })\n\nexport default function Demo({ corner = 18, morph = 50 }: MorphingAreaDemoProps) {\n  return (\n    <div className=\"flex flex-col items-center justify-center gap-[0.75rem] py-[1.5rem] px-[1rem]\">\n      <MorphingArea corner={Number(corner)} morph={Number(morph)} imageSrc={imageSrc} />\n    </div>\n  )\n}\n",
+      "type": "registry:component",
+      "target": "components/spaceui/morphing-area-demo.tsx"
+    }
+  ],
+  "meta": {
+    "demoProps": {
+      "corner": {
+        "value": 18,
+        "min": 0,
+        "max": 36,
+        "step": 2
+      },
+      "morph": {
+        "value": 50,
+        "min": 0,
+        "max": 100,
+        "step": 5
+      }
+    }
+  },
+  "categories": [
+    "component",
+    "demo"
+  ],
+  "type": "registry:component"
+}

@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "components-spaceui-slide-to-confirm",
+  "type": "registry:component",
+  "title": "Slide To Confirm",
+  "description": "Tactile slide-to-action control with spring physics and inertia confirmation.",
+  "dependencies": ["motion", "@tabler/icons-react", "torph"],
+  "registryDependencies": ["https://www.spaceui.one/r/lib-utils.json"],
+  "categories": ["component", "button", "slider"],
+  "files": [
+    {
+      "path": "src/registry/components/spaceui/slide-to-confirm/index.tsx",
+      "type": "registry:component",
+      "target": "components/spaceui/slide-to-confirm.tsx"
+    }
+  ],
+  "createdAt": "2026-09-17",
+  "updatedAt": "2026-09-17"
+}

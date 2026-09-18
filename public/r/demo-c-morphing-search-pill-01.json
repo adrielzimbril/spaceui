@@ -1,0 +1,44 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-c-morphing-search-pill-01",
+  "title": "Morphing Search Pill Demo",
+  "description": "Adaptive search pill that expands smoothly from a compact button into a full input field.",
+  "registryDependencies": [
+    "https://www.spaceui.one/r/components-spaceui-morphing-search-pill.json"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/components/spaceui/morphing-search-pill/c-morphing-search-pill-01/index.tsx",
+      "content": "'use client'\n\nimport * as React from 'react'\nimport { MorphingSearchPill } from '@/components/spaceui/morphing-search-pill'\n\nexport interface MorphingSearchDemoProps {\n  collapsedWidth?: number\n  expandedWidth?: number\n  corner?: number\n}\n\nexport default function Demo({ collapsedWidth = 64, expandedWidth = 280, corner = 20 }: MorphingSearchDemoProps) {\n  const [query, setQuery] = React.useState('')\n\n  return (\n    <div className=\"flex flex-col items-center justify-center gap-4 py-8 px-4\">\n      <MorphingSearchPill\n        collapsedWidth={Number(collapsedWidth)}\n        expandedWidth={Number(expandedWidth)}\n        corner={Number(corner)}\n        onSearch={setQuery}\n      />\n      {query && <span className=\"text-xs font-medium text-muted-foreground\">Query: &quot;{query}&quot;</span>}\n    </div>\n  )\n}\n",
+      "type": "registry:component",
+      "target": "components/spaceui/morphing-search-pill-demo.tsx"
+    }
+  ],
+  "meta": {
+    "demoProps": {
+      "collapsedWidth": {
+        "value": 64,
+        "min": 64,
+        "max": 180,
+        "step": 4
+      },
+      "expandedWidth": {
+        "value": 280,
+        "min": 220,
+        "max": 360,
+        "step": 10
+      },
+      "corner": {
+        "value": 20,
+        "min": 8,
+        "max": 24,
+        "step": 2
+      }
+    }
+  },
+  "categories": [
+    "component",
+    "demo"
+  ],
+  "type": "registry:component"
+}

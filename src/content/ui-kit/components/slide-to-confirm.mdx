@@ -1,0 +1,32 @@
+---
+title: Slide To Confirm
+description: Tactile slide-to-confirm action slider with inertia spring physics.
+preview: demo-c-slide-to-confirm-01
+---
+
+## Installation
+
+<ComponentInstallation name="components-spaceui-slide-to-confirm" />
+
+## Usage
+
+```tsx
+import { SlideToConfirm } from '@/components/spaceui/slide-to-confirm'
+
+export default function Example() {
+  return <SlideToConfirm />
+}
+```
+
+## Props
+
+| Prop             | Type         | Default              | Description                  |
+| ---------------- | ------------ | -------------------- | ---------------------------- |
+| `label`          | `string`     | `'Slide to confirm'` | Track placeholder label      |
+| `confirmedLabel` | `string`     | `'Confirmed'`        | Confirmed state label        |
+| `onConfirm`      | `() => void` | `—`                  | Callback on successful slide |
+| `resetDelay`     | `number`     | `2400`               | Auto reset duration in ms    |
+| `width`          | `number`     | `320`                | Track width in px            |
+| `speed`          | `number`     | `50`                 | Spring return speed (0-100)  |
+| `corner`         | `number`     | `28`                 | Corner border radius         |
+| `disabled`       | `boolean`    | `false`              | Disabled state               |

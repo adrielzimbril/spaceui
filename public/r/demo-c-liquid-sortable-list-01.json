@@ -1,0 +1,32 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-c-liquid-sortable-list-01",
+  "title": "Liquid Sortable List Demo",
+  "description": "Smooth drag-and-drop sortable team list with generative avatars and spring reordering.",
+  "registryDependencies": [
+    "https://www.spaceui.one/r/components-spaceui-liquid-sortable-list.json"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/components/spaceui/liquid-sortable-list/c-liquid-sortable-list-01/index.tsx",
+      "content": "'use client'\n\nimport * as React from 'react'\nimport { LiquidSortableList } from '@/components/spaceui/liquid-sortable-list'\n\nexport interface LiquidSortableDemoProps {\n  corner?: number\n}\n\nexport default function Demo({ corner = 20 }: LiquidSortableDemoProps) {\n  return (\n    <div className=\"flex flex-col items-center justify-center gap-3 py-6 px-4\">\n      <LiquidSortableList corner={Number(corner)} />\n    </div>\n  )\n}\n",
+      "type": "registry:component",
+      "target": "components/spaceui/liquid-sortable-list-demo.tsx"
+    }
+  ],
+  "meta": {
+    "demoProps": {
+      "corner": {
+        "value": 20,
+        "min": 8,
+        "max": 32,
+        "step": 2
+      }
+    }
+  },
+  "categories": [
+    "component",
+    "demo"
+  ],
+  "type": "registry:component"
+}

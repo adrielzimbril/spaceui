@@ -22,7 +22,7 @@ function RelatedCard({ item }: { item: RelatedComponent }) {
   return (
     <Link
       href={item.url}
-      className="group relative flex flex-col justify-between rounded-2xl p-1 gap-1 bg-muted hover:bg-muted/80 transition-all duration-300"
+      className="group relative flex flex-col justify-between rounded-2xl p-1 gap-1 bg-muted hover:bg-muted/80 transition-all duration-300 min-w-64"
     >
       <div className="flex w-full px-2.5 pt-2 pb-1 items-center justify-between gap-2">
         <span className="font-semibold text-sm text-foreground group-hover:text-primary transition-colors truncate">
@@ -47,7 +47,7 @@ function RelatedCard({ item }: { item: RelatedComponent }) {
 
 function RelatedGrid({ items }: { items: RelatedComponent[] }) {
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3.5 [html[data-layout-mode=split]_&]:grid-cols-1! [html[data-layout-mode=canvas]_&]:grid-cols-1!">
+    <div className="grid grid-cols-[repeat(auto-fill,minmax(16rem,1fr))] gap-3.5 [html[data-layout-mode=split]_&]:grid-cols-1! [html[data-layout-mode=canvas]_&]:grid-cols-1!">
       {items.map((item, index) => (
         <RelatedCard key={item.name ? `${item.url}-${item.name}` : `${item.url}-${item.title}-${index}`} item={item} />
       ))}

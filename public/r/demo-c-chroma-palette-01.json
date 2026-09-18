@@ -1,0 +1,42 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-c-chroma-palette-01",
+  "title": "Chroma Palette Demo",
+  "description": "Perceptually uniform color generator and interactive swatch palette using @usespaceui/gradients.",
+  "dependencies": [
+    "@usespaceui/gradients"
+  ],
+  "registryDependencies": [
+    "https://www.spaceui.one/r/components-spaceui-chroma-palette.json",
+    "https://www.spaceui.one/r/components-spaceui-morphing-text.json"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/components/spaceui/chroma-palette/c-chroma-palette-01/index.tsx",
+      "content": "'use client'\n\nimport * as React from 'react'\nimport { NICE_PALETTES } from '@usespaceui/gradients'\nimport { ChromaPalette } from '@/components/spaceui/chroma-palette'\nimport { TextMorph } from '@/components/spaceui/morphing-text'\n\nexport interface ChromaPaletteDemoProps {\n  count?: number\n  corner?: number\n}\n\nexport default function Demo({ count = 5, corner = 14 }: ChromaPaletteDemoProps) {\n  const clampedCount = Math.min(5, Math.max(2, Number(count)))\n\n  // Extract color arrays from NICE_PALETTES sliced to the specified count\n  const palettes = React.useMemo(() => {\n    return NICE_PALETTES.map((p) => p.colors.slice(0, clampedCount))\n  }, [clampedCount])\n\n  const [currentPaletteName, setCurrentPaletteName] = React.useState<string>(() => {\n    return NICE_PALETTES[0]?.name ?? 'Sirius'\n  })\n\n  const handlePaletteChange = React.useCallback(\n    (colors: string[]) => {\n      // Find matching preset name if any\n      const match = NICE_PALETTES.find((p) =>\n        p.colors.slice(0, clampedCount).every((c, i) => c.toLowerCase() === colors[i]?.toLowerCase()),\n      )\n      if (match) {\n        setCurrentPaletteName(match.name)\n      }\n    },\n    [clampedCount],\n  )\n\n  return (\n    <div className=\"flex flex-col items-center justify-center gap-[1rem] py-[1.5rem] px-[1rem]\">\n      <ChromaPalette\n        count={clampedCount}\n        corner={Number(corner)}\n        palettes={palettes}\n        onPaletteChange={handlePaletteChange}\n      />\n      {currentPaletteName && (\n        <TextMorph className=\"text-[0.75rem] font-medium tracking-wide text-muted-foreground uppercase\">\n          {currentPaletteName}\n        </TextMorph>\n      )}\n    </div>\n  )\n}\n",
+      "type": "registry:component",
+      "target": "components/spaceui/chroma-palette-demo.tsx"
+    }
+  ],
+  "meta": {
+    "demoProps": {
+      "count": {
+        "value": 5,
+        "min": 2,
+        "max": 5,
+        "step": 1
+      },
+      "corner": {
+        "value": 14,
+        "min": 4,
+        "max": 24,
+        "step": 2
+      }
+    }
+  },
+  "categories": [
+    "component",
+    "demo"
+  ],
+  "type": "registry:component"
+}

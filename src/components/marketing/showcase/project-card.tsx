@@ -7,6 +7,7 @@ import { Frame, FrameFooter, FrameTitle } from '@/registry/primitives/frame'
 import { Card, CardPanel } from '@/registry/primitives/card'
 import { Badge } from '@/registry/components/spaceui/badge-squircle'
 import { Button } from '@/registry/components/spaceui/button-squircle'
+import { LiquidBorder } from '@/registry/components/spaceui/liquid-metal-border'
 import { useInView } from '@/registry/hooks/animation/use-in-view'
 import type { ProjectItem } from '@/types/project'
 
@@ -44,12 +45,17 @@ export function ProjectCard({ project, priority = false }: ProjectCardProps) {
             )}
 
             <div className="absolute top-2.5 left-2.5 z-10 flex items-center w-[calc(100%-(0.625rem*2))] justify-end gap-1.5">
-              {/* <Badge size="xs" variant="outline" className="bg-background border-border text-foreground select-none">
-              #{formattedNumber}
-            </Badge> */}
-              <Badge size="xs" variant={project.isPro ? 'primary' : 'secondary'} className="select-none">
-                {project.isPro ? 'PRO' : 'Free'}
-              </Badge>
+              {project.isPro ? (
+                <LiquidBorder className="inline-flex squircle rounded-full p-0.75">
+                  <Badge size="xs" variant="primary" className="select-none">
+                    PRO
+                  </Badge>
+                </LiquidBorder>
+              ) : (
+                <Badge size="xs" variant="secondary" className="select-none">
+                  Free
+                </Badge>
+              )}
             </div>
 
             {project.url && !project.isPro && (
@@ -84,17 +90,17 @@ export function ProjectCard({ project, priority = false }: ProjectCardProps) {
               </Button>
             )}
             {project.isPro ? (
-              <>
+              <LiquidBorder className="inline-flex squircle rounded-full p-0.75">
                 <Button
                   variant="secondary"
                   size="icon-xs"
                   disabled
                   title="Pro Template — Coming Soon"
-                  className="cursor-not-allowed"
+                  className="opacity-100! cursor-not-allowed"
                 >
                   <IconLock className="size-3.5" />
                 </Button>
-              </>
+              </LiquidBorder>
             ) : (
               <>
                 {project.repo_url && (
