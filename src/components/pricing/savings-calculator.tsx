@@ -233,7 +233,7 @@ export function SavingsCalculator({ className }: { className?: string }) {
               </CardPanel>
             </Card>
             <FrameFooter className="p-2">
-              <LiquidBorder className="flex w-full squircle rounded-full p-0.75 hover:scale-105 transition-all duration-300">
+              <LiquidBorder className="flex w-full [&_div]:size-full squircle rounded-full p-0.75 hover:scale-105 transition-all duration-300">
                 <Button variant="primary" size="lg" full asPointer render={<Link href="#plans" />}>
                   Get lifetime access
                 </Button>

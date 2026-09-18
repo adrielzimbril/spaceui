@@ -2,8 +2,9 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "block-stats-github",
   "type": "registry:block",
-  "title": "GitHub & Open-Source Activity Block",
+  "title": "GitHub \u0026 Open-Source Activity Block",
   "description": "Interactive GitHub contribution activity heatmap graph with metrics for stars, forks, and commits.",
+  "isPro": true,
   "registryDependencies": [
     "https://www.spaceui.one/r/lib-utils.json",
     "https://www.spaceui.one/r/primitives-frame.json",

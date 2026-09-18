@@ -1,0 +1,27 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-c-silk-border-02",
+  "title": "Silk Border Demo - Button and Badge",
+  "description": "Tactile buttons and badges wrapped with fluid WebGPU silk borders.",
+  "dependencies": [
+    "vgpu"
+  ],
+  "registryDependencies": [
+    "https://www.spaceui.one/r/components-spaceui-silk-border.json",
+    "https://www.spaceui.one/r/components-spaceui-button-squircle.json",
+    "https://www.spaceui.one/r/components-spaceui-badge-squircle.json"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/components/spaceui/silk-border/c-silk-border-02/index.tsx",
+      "content": "'use client'\n\nimport { SilkBorder } from '@/components/spaceui/silk-border'\nimport { Button } from '@/components/spaceui/button-squircle'\nimport { Badge } from '@/components/spaceui/badge-squircle'\n\nexport default function Demo() {\n  return (\n    <div className=\"flex flex-wrap items-center justify-center gap-6 p-6\">\n      <SilkBorder preset=\"lifetime\" className=\"inline-flex squircle rounded-full p-0.75 shadow-sm\">\n        <Button variant=\"primary\">Explore Pro Silk</Button>\n      </SilkBorder>\n\n      <SilkBorder preset=\"sunset\" className=\"inline-flex squircle rounded-full p-0.75\">\n        <Badge size=\"sm\" variant=\"primary\" className=\"select-none\">\n          SUNSET EDITION\n        </Badge>\n      </SilkBorder>\n\n      <SilkBorder preset=\"emerald\" className=\"inline-flex squircle rounded-full p-0.75\">\n        <Badge size=\"sm\" variant=\"secondary\" className=\"select-none\">\n          SYSTEM ACTIVE\n        </Badge>\n      </SilkBorder>\n    </div>\n  )\n}\n",
+      "type": "registry:component",
+      "target": "components/spaceui/silk-border-button-demo.tsx"
+    }
+  ],
+  "categories": [
+    "demo",
+    "component"
+  ],
+  "type": "registry:component"
+}

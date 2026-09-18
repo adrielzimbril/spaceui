@@ -203,10 +203,8 @@ export function isNodePro(url: string, name: string, node?: any): boolean {
     frontmatter?.isPro === true ||
     frontmatter?.pro === true ||
     node?.isPro === true ||
-    slug === 'slosh-slider' ||
-    slug === 'components-spaceui-slosh-slider' ||
     registryEntry?.isPro === true ||
-    registryEntry?.meta?.isPro === true
+    registryEntry?.meta?.isPro === true,
   )
 }
 

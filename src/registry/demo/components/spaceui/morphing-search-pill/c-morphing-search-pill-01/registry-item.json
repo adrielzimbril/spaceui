@@ -4,6 +4,7 @@
   "type": "registry:component",
   "title": "Morphing Search Pill Demo",
   "description": "Adaptive search pill that expands smoothly from a compact button into a full input field.",
+  "isPro": true,
   "registryDependencies": ["https://www.spaceui.one/r/components-spaceui-morphing-search-pill.json"],
   "categories": ["component", "demo"],
   "meta": {

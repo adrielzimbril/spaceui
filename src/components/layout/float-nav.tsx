@@ -1,8 +1,10 @@
 'use client'
 
 import React from 'react'
+import { AnimatePresence, motion } from 'motion/react'
 import { useSoundToggle, useUiSound } from '@/components/providers/sound-provider'
 import { useLayoutMode, Mode } from '@/components/providers/layout-mode-provider'
+import { useThemeLock } from '@/components/providers/theme-lock-provider'
 import { IconVolume, IconVolumeOff, IconLayoutColumns, IconLayoutSidebarRight } from '@tabler/icons-react'
 import { Group } from '@/registry/primitives/group'
 import { Button } from '@/registry/primitives/button'
@@ -86,6 +88,8 @@ function LayoutModeToggle() {
 
 export function FloatNav({ className }: { className?: string }) {
   const { isImmersive } = useLayoutMode()
+  const { isThemeLocked } = useThemeLock()
+
   if (isImmersive) return null
 
   return (
@@ -94,11 +98,25 @@ export function FloatNav({ className }: { className?: string }) {
       className={cn('fixed bottom-22 md:bottom-5 left-1/2 -translate-x-1/2 z-50', className)}
     >
       <Group className="inline-flex items-center rounded-xl bg-muted p-0.5 gap-1 border-2 border-muted">
-        {/* Site controls */}
-        <ModeSwitcher
-          variant="ghost"
-          className="size-8 rounded-lg! bg-background hover:bg-background text-muted-foreground hover:text-foreground cursor-pointer transition-colors overflow-hidden"
-        />
+        {/* Theme toggle — hidden with blur when route forces a theme */}
+        <AnimatePresence initial={false}>
+          {!isThemeLocked && (
+            <motion.div
+              key="theme-mode-switcher"
+              initial={{ opacity: 0, scale: 0.75, filter: 'blur(6px)', width: 0 }}
+              animate={{ opacity: 1, scale: 1, filter: 'blur(0px)', width: '2rem' }}
+              exit={{ opacity: 0, scale: 0.75, filter: 'blur(6px)', width: 0 }}
+              transition={{ duration: 0.25, ease: [0.32, 0, 0.67, 0] }}
+              className="overflow-hidden shrink-0"
+            >
+              <ModeSwitcher
+                variant="ghost"
+                className="size-8 rounded-lg! bg-background hover:bg-background text-muted-foreground hover:text-foreground cursor-pointer transition-colors overflow-hidden"
+              />
+            </motion.div>
+          )}
+        </AnimatePresence>
+
         <SoundToggle />
         <ColorPickerNav />
         <LayoutModeToggle />

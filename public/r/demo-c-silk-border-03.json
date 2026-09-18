@@ -1,0 +1,28 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-c-silk-border-03",
+  "title": "Silk Border Demo - Card",
+  "description": "Card component wrapped in a fluid WebGPU silk border frame with CSS fallback.",
+  "dependencies": [
+    "vgpu"
+  ],
+  "registryDependencies": [
+    "https://www.spaceui.one/r/components-spaceui-silk-border.json",
+    "https://www.spaceui.one/r/primitives-card.json",
+    "https://www.spaceui.one/r/components-spaceui-button-squircle.json",
+    "https://www.spaceui.one/r/components-spaceui-badge-squircle.json"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/components/spaceui/silk-border/c-silk-border-03/index.tsx",
+      "content": "'use client'\n\nimport { SilkBorder } from '@/components/spaceui/silk-border'\nimport { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card'\nimport { Button } from '@/components/spaceui/button-squircle'\nimport { Badge } from '@/components/spaceui/badge-squircle'\n\nexport default function Demo() {\n  return (\n    <div className=\"flex w-full max-w-md items-center justify-center p-6\">\n      <SilkBorder preset=\"pro\" className=\"w-full squircle rounded-3xl p-1 shadow-lg\">\n        <Card className=\"w-full rounded-2xl bg-background/95 backdrop-blur-md p-6\">\n          <CardHeader className=\"p-0 pb-4\">\n            <div className=\"flex items-center justify-between gap-2\">\n              <CardTitle className=\"text-lg\">Space UI Pro Tier</CardTitle>\n              <Badge size=\"xs\" variant=\"primary\">\n                LIFETIME\n              </Badge>\n            </div>\n            <CardDescription>Full access to all shaders, components, and blocks.</CardDescription>\n          </CardHeader>\n          <CardContent className=\"p-0 pb-6 text-sm text-muted-foreground\">\n            Get instant access to production-grade WebGPU canvas shaders and fluid squircle primitives.\n          </CardContent>\n          <CardFooter className=\"flex items-center justify-between p-0\">\n            <span className=\"text-xs text-muted-foreground\">All future updates included</span>\n            <Button variant=\"primary\" size=\"sm\">\n              Upgrade Now\n            </Button>\n          </CardFooter>\n        </Card>\n      </SilkBorder>\n    </div>\n  )\n}\n",
+      "type": "registry:component",
+      "target": "components/spaceui/silk-border-card-demo.tsx"
+    }
+  ],
+  "categories": [
+    "demo",
+    "component"
+  ],
+  "type": "registry:component"
+}

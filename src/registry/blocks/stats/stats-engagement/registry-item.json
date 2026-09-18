@@ -2,8 +2,9 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "block-stats-engagement",
   "type": "registry:block",
-  "title": "Engagement & Community Activity Block",
+  "title": "Engagement \u0026 Community Activity Block",
   "description": "Comprehensive reader engagement showcase with top articles, interactive emoji reaction counters, category tags, and changelog updates.",
+  "isPro": true,
   "registryDependencies": [
     "https://www.spaceui.one/r/lib-utils.json",
     "https://www.spaceui.one/r/primitives-frame.json",

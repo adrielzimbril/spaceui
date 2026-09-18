@@ -2,26 +2,30 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "demo-c-morphing-area-01",
   "title": "Morphing Area Demo",
-  "description": "Interactive demo of equal-area aspect ratio morphing.",
+  "description": "Interactive demo of equal-area aspect ratio morphing with custom children.",
   "registryDependencies": [
     "https://www.spaceui.one/r/components-spaceui-morphing-area.json",
+    "https://www.spaceui.one/r/primitives-tabs.json",
     "https://www.spaceui.one/r/lib-next-image-url.json"
   ],
   "files": [
     {
       "path": "src/registry/demo/components/spaceui/morphing-area/c-morphing-area-01/index.tsx",
-      "content": "'use client'\n\nimport { MorphingArea } from '@/components/spaceui/morphing-area'\nimport { getOptimizedImageUrl } from '@/lib/next-image-url'\nimport { imagelib } from '@/lib/imagelib'\n\nexport interface MorphingAreaDemoProps {\n  corner?: number\n  morph?: number\n}\n\nconst imageSrc = getOptimizedImageUrl(imagelib.tools.imagesplit[0].url, { width: 552 })\n\nexport default function Demo({ corner = 18, morph = 50 }: MorphingAreaDemoProps) {\n  return (\n    <div className=\"flex flex-col items-center justify-center gap-[0.75rem] py-[1.5rem] px-[1rem]\">\n      <MorphingArea corner={Number(corner)} morph={Number(morph)} imageSrc={imageSrc} />\n    </div>\n  )\n}\n",
+      "content": "'use client'\n\nimport * as React from 'react'\nimport { IconRectangle, IconSquare, IconRectangleVertical } from '@tabler/icons-react'\nimport { Tabs, TabsList, TabsTab } from '@/components/ui/tabs'\nimport { MorphingArea, MORPHING_AREA_OPTIONS } from '@/components/spaceui/morphing-area'\nimport { getOptimizedImageUrl } from '@/lib/next-image-url'\nimport { imagelib } from '@/lib/imagelib'\n\nexport interface MorphingAreaDemoProps {\n  rounded?: number\n  morph?: number\n  squircle?: boolean\n}\n\nconst imageSrc = getOptimizedImageUrl(imagelib.tools.imagesplit[0].url, { width: 552 })\n\nexport default function Demo({ rounded = 8, morph = 50, squircle = false }: MorphingAreaDemoProps) {\n  const [activeRatio, setActiveRatio] = React.useState<'land' | 'square' | 'tall'>('square')\n\n  const currentOption = MORPHING_AREA_OPTIONS.find((opt) => opt.id === activeRatio) ?? MORPHING_AREA_OPTIONS[1]\n\n  return (\n    <div className=\"flex flex-col items-center justify-center gap-5 py-6 px-4 select-none font-sans\">\n      {/* Equal-Area Morphing Stage */}\n      <div className=\"w-[17.25rem] h-[17.25rem] flex items-center justify-center overflow-hidden\">\n        <MorphingArea\n          ratio={currentOption.ratio}\n          rounded={Number(rounded)}\n          morph={Number(morph)}\n          squircle={Boolean(squircle)}\n        >\n          <img\n            src={imageSrc}\n            alt=\"Morphing visual demo\"\n            className=\"size-full object-cover select-none pointer-events-none\"\n          />\n        </MorphingArea>\n      </div>\n\n      {/* Tabs ratio selector using Space UI Tabs primitive and Tabler icons */}\n      <Tabs value={activeRatio} onValueChange={(val) => setActiveRatio(val as 'land' | 'square' | 'tall')}>\n        <TabsList className=\"p-1 rounded-xl\">\n          <TabsTab\n            value=\"land\"\n            data-space-hover\n            data-space-click\n            className=\"flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium\"\n          >\n            <IconRectangle className=\"size-3.5\" strokeWidth={2} />\n          </TabsTab>\n          <TabsTab\n            value=\"square\"\n            data-space-hover\n            data-space-click\n            className=\"flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium\"\n          >\n            <IconSquare className=\"size-3.5\" strokeWidth={2} />\n          </TabsTab>\n          <TabsTab\n            value=\"tall\"\n            data-space-hover\n            data-space-click\n            className=\"flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium\"\n          >\n            <IconRectangleVertical className=\"size-3.5\" strokeWidth={2} />\n          </TabsTab>\n        </TabsList>\n      </Tabs>\n    </div>\n  )\n}\n",
       "type": "registry:component",
       "target": "components/spaceui/morphing-area-demo.tsx"
     }
   ],
   "meta": {
     "demoProps": {
-      "corner": {
-        "value": 18,
+      "rounded": {
+        "value": 8,
         "min": 0,
         "max": 36,
-        "step": 2
+        "step": 1
+      },
+      "squircle": {
+        "value": false
       },
       "morph": {
         "value": 50,

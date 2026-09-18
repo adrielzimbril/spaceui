@@ -3,20 +3,28 @@
   "name": "demo-c-slosh-slider-01",
   "title": "Slosh Slider Demo",
   "description": "Liquid slider with corner, viscosity, momentum, and tilt.",
-  "isPro": true,
   "registryDependencies": [
     "https://www.spaceui.one/r/components-spaceui-slosh-slider.json"
   ],
   "files": [
     {
       "path": "src/registry/demo/components/spaceui/slosh-slider/c-slosh-slider-01/index.tsx",
-      "content": "'use client'\n\nimport * as React from 'react'\nimport { SloshSlider } from '@/components/spaceui/slosh-slider'\n\nexport interface SloshSliderDemoProps {\n  corner?: number\n  viscosity?: number\n  momentum?: number\n  tilt?: number\n}\n\nexport default function Demo({ corner = 13, viscosity = 15, momentum = 55, tilt = 45 }: SloshSliderDemoProps) {\n  const [value, setValue] = React.useState(42)\n  return (\n    <div className=\"flex w-full max-w-md flex-col gap-3 px-6\">\n      <SloshSlider\n        value={value}\n        onValueChange={setValue}\n        corner={Number(corner)}\n        viscosity={Number(viscosity)}\n        momentum={Number(momentum)}\n        tilt={Number(tilt)}\n      />\n      <p className=\"text-center text-sm tabular-nums text-muted-foreground\">{value}</p>\n    </div>\n  )\n}\n",
+      "content": "'use client'\n\nimport * as React from 'react'\nimport { SloshSlider } from '@/components/spaceui/slosh-slider'\n\nexport interface SloshSliderDemoProps {\n  height?: number\n  corner?: number\n  viscosity?: number\n  momentum?: number\n  tilt?: number\n  ring?: boolean\n}\n\nexport default function Demo({\n  height = 40,\n  corner = 13,\n  viscosity = 15,\n  momentum = 55,\n  tilt = 45,\n  ring = true,\n}: SloshSliderDemoProps) {\n  const [value, setValue] = React.useState(42)\n  return (\n    <div className=\"flex w-full max-w-md flex-col gap-3 px-6\">\n      <SloshSlider\n        value={value}\n        onValueChange={setValue}\n        height={Number(height)}\n        corner={Number(corner)}\n        viscosity={Number(viscosity)}\n        momentum={Number(momentum)}\n        tilt={Number(tilt)}\n        ring={Boolean(ring)}\n      />\n      <p className=\"text-center text-sm tabular-nums text-muted-foreground\">{value}</p>\n    </div>\n  )\n}\n",
       "type": "registry:component",
       "target": "components/spaceui/slosh-slider-demo.tsx"
     }
   ],
   "meta": {
     "demoProps": {
+      "ring": {
+        "value": true
+      },
+      "height": {
+        "value": 40,
+        "min": 16,
+        "max": 64,
+        "step": 2
+      },
       "corner": {
         "value": 13,
         "min": 0,

@@ -23,14 +23,7 @@ function getGradualMask(index: number, count: number, side: FrostBlurredSide) {
   const peak2 = ((index + 2) * step).toFixed(2)
   const end = ((index + 3) * step).toFixed(2)
 
-  const dir =
-    side === 'top'
-      ? 'to top'
-      : side === 'bottom'
-        ? 'to bottom'
-        : side === 'left'
-          ? 'to left'
-          : 'to right'
+  const dir = side === 'top' ? 'to top' : side === 'bottom' ? 'to bottom' : side === 'left' ? 'to left' : 'to right'
 
   if (index === count - 1) {
     return `linear-gradient(${dir}, transparent ${start}%, black 100%, black 100%)`

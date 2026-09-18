@@ -64,6 +64,7 @@
       "type": "registry:block",
       "title": "Community Wall",
       "description": "Interactive draggable infinite canvas community wall with radial bloom distribution, card patterns, collision avoidance, tilt controls, and note submission modal.",
+      "isPro": true,
       "dependencies": [
         "@usespaceui/avatars",
         "@usespaceui/sounds",
@@ -373,6 +374,7 @@
       "type": "registry:block",
       "title": "Lens Carousel Block",
       "description": "Vertical WebGL lens gallery. Scroll-linked image planes from Immersive Lens.",
+      "isPro": true,
       "dependencies": [
         "motion",
         "gsap",
@@ -600,6 +602,7 @@
       "type": "registry:block",
       "title": "Blog & Content Stats Block",
       "description": "Content publication metrics including total articles, words written, reader messages, and reading time.",
+      "isPro": true,
       "registryDependencies": [
         "https://www.spaceui.one/r/lib-utils.json",
         "https://www.spaceui.one/r/primitives-frame.json",
@@ -648,6 +651,7 @@
       "type": "registry:block",
       "title": "Engagement & Community Activity Block",
       "description": "Comprehensive reader engagement showcase with top articles, interactive emoji reaction counters, category tags, and changelog updates.",
+      "isPro": true,
       "registryDependencies": [
         "https://www.spaceui.one/r/lib-utils.json",
         "https://www.spaceui.one/r/primitives-frame.json",
@@ -717,6 +721,7 @@
       "type": "registry:block",
       "title": "General Stats Metrics Block",
       "description": "Interactive metric overview cards with floating spring emoji decorations and semantic color accents.",
+      "isPro": true,
       "registryDependencies": [
         "https://www.spaceui.one/r/lib-utils.json",
         "https://www.spaceui.one/r/primitives-frame.json",
@@ -765,6 +770,7 @@
       "type": "registry:block",
       "title": "GitHub & Open-Source Activity Block",
       "description": "Interactive GitHub contribution activity heatmap graph with metrics for stars, forks, and commits.",
+      "isPro": true,
       "registryDependencies": [
         "https://www.spaceui.one/r/lib-utils.json",
         "https://www.spaceui.one/r/primitives-frame.json",
@@ -821,6 +827,7 @@
       "type": "registry:block",
       "title": "Performance & Lighthouse Block",
       "description": "Lighthouse audit results dashboard featuring mobile & desktop scores with radar chart visuals.",
+      "isPro": true,
       "registryDependencies": [
         "https://www.spaceui.one/r/lib-utils.json",
         "https://www.spaceui.one/r/primitives-frame.json",
@@ -1280,6 +1287,7 @@
       "type": "registry:component",
       "title": "Silk Gradient",
       "description": "WebGPU silk mesh gradient. Three colors, warp, grain.",
+      "isPro": true,
       "dependencies": [
         "vgpu"
       ],
@@ -1520,6 +1528,7 @@
       "type": "registry:component",
       "title": "Chroma Palette",
       "description": "Perceptually uniform color generator and interactive swatch palette with organic gooey fluid morph and one-click copy.",
+      "isPro": true,
       "dependencies": [
         "motion",
         "@tabler/icons-react",
@@ -2710,15 +2719,17 @@
       "name": "components-spaceui-morphing-area",
       "type": "registry:component",
       "title": "Morphing Area",
-      "description": "Adaptive aspect ratio frame with constant-area surface morphing — pass any image, color, or content as its background.",
-      "dependencies": [],
+      "description": "Adaptive aspect ratio frame with constant-area surface morphing for any child element, image, or media.",
+      "dependencies": [
+        "@usespaceui/squircle"
+      ],
       "registryDependencies": [
         "https://www.spaceui.one/r/lib-utils.json"
       ],
       "categories": [
         "component",
         "aspect-ratio",
-        "image"
+        "layout"
       ],
       "files": [
         {
@@ -2735,6 +2746,7 @@
       "type": "registry:component",
       "title": "Morphing Command Bar",
       "description": "Elastic command bar that expands seamlessly from passive state to active input with integrated action trigger.",
+      "isPro": true,
       "dependencies": [
         "motion",
         "@tabler/icons-react"
@@ -2762,6 +2774,7 @@
       "type": "registry:component",
       "title": "Morphing Search Pill",
       "description": "Adaptive search pill that expands smoothly from a compact button into a full input field.",
+      "isPro": true,
       "dependencies": [
         "motion"
       ],
@@ -2986,6 +2999,33 @@
       "updatedAt": "2026-09-04"
     },
     {
+      "name": "components-spaceui-silk-border",
+      "type": "registry:component",
+      "title": "Silk Border",
+      "description": "Fluid WebGPU silk mesh gradient wrapper with preset themes and CSS fallback.",
+      "isPro": true,
+      "dependencies": [
+        "vgpu"
+      ],
+      "registryDependencies": [
+        "https://www.spaceui.one/r/components-shader-silk-gradient.json",
+        "https://www.spaceui.one/r/lib-utils.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/components/spaceui/silk-border/index.tsx",
+          "type": "registry:component",
+          "target": "components/spaceui/silk-border.tsx"
+        }
+      ],
+      "categories": [
+        "component",
+        "shader",
+        "silk",
+        "border"
+      ]
+    },
+    {
       "name": "components-spaceui-slide-to-confirm",
       "type": "registry:component",
       "title": "Slide To Confirm",
@@ -3018,6 +3058,7 @@
       "type": "registry:component",
       "title": "Slosh Slider",
       "description": "Liquid fill slider with viscosity, momentum, and tilt.",
+      "isPro": true,
       "dependencies": [],
       "registryDependencies": [
         "https://www.spaceui.one/r/lib-utils.json"
@@ -4496,6 +4537,7 @@
       "type": "registry:component",
       "title": "Silk Gradient Demo",
       "description": "Warped three-color silk field with grain.",
+      "isPro": true,
       "registryDependencies": [
         "https://www.spaceui.one/r/components-shader-silk-gradient.json"
       ],
@@ -4860,6 +4902,7 @@
       "type": "registry:component",
       "title": "Chroma Palette Demo",
       "description": "Perceptually uniform color generator and interactive swatch palette using @usespaceui/gradients.",
+      "isPro": true,
       "dependencies": [
         "@usespaceui/gradients"
       ],
@@ -6877,7 +6920,7 @@
             "value": "Space UI"
           },
           "layers": {
-            "value": 4,
+            "value": 7,
             "min": 3,
             "max": 10,
             "step": 1
@@ -6904,7 +6947,7 @@
             }
           },
           "tint": {
-            "value": 0.22,
+            "value": 0,
             "min": 0,
             "max": 0.6,
             "step": 0.02
@@ -7800,9 +7843,10 @@
       "name": "demo-c-morphing-area-01",
       "type": "registry:component",
       "title": "Morphing Area Demo",
-      "description": "Interactive demo of equal-area aspect ratio morphing.",
+      "description": "Interactive demo of equal-area aspect ratio morphing with custom children.",
       "registryDependencies": [
         "https://www.spaceui.one/r/components-spaceui-morphing-area.json",
+        "https://www.spaceui.one/r/primitives-tabs.json",
         "https://www.spaceui.one/r/lib-next-image-url.json"
       ],
       "categories": [
@@ -7811,11 +7855,14 @@
       ],
       "meta": {
         "demoProps": {
-          "corner": {
-            "value": 18,
+          "rounded": {
+            "value": 8,
             "min": 0,
             "max": 36,
-            "step": 2
+            "step": 1
+          },
+          "squircle": {
+            "value": false
           },
           "morph": {
             "value": 50,
@@ -7840,6 +7887,7 @@
       "type": "registry:component",
       "title": "Morphing Command Bar Demo",
       "description": "Elastic command bar that expands seamlessly from passive state to active input with action trigger.",
+      "isPro": true,
       "registryDependencies": [
         "https://www.spaceui.one/r/components-spaceui-morphing-command-bar.json",
         "https://www.spaceui.one/r/components-spaceui-morphing-text.json"
@@ -7873,6 +7921,7 @@
       "type": "registry:component",
       "title": "Morphing Search Pill Demo",
       "description": "Adaptive search pill that expands smoothly from a compact button into a full input field.",
+      "isPro": true,
       "registryDependencies": [
         "https://www.spaceui.one/r/components-spaceui-morphing-search-pill.json"
       ],
@@ -8779,6 +8828,85 @@
       "updatedAt": "2026-09-04"
     },
     {
+      "name": "demo-c-silk-border-01",
+      "type": "registry:component",
+      "title": "Silk Border Demo - Avatar",
+      "description": "Avatars wrapped with dynamic WebGPU silk borders in various presets.",
+      "isPro": true,
+      "dependencies": [
+        "vgpu"
+      ],
+      "registryDependencies": [
+        "https://www.spaceui.one/r/components-spaceui-silk-border.json",
+        "https://www.spaceui.one/r/components-spaceui-avatar-extended.json",
+        "https://www.spaceui.one/r/primitives-avatar.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/demo/components/spaceui/silk-border/c-silk-border-01/index.tsx",
+          "type": "registry:component",
+          "target": "components/spaceui/silk-border-demo.tsx"
+        }
+      ],
+      "categories": [
+        "demo",
+        "component"
+      ]
+    },
+    {
+      "name": "demo-c-silk-border-02",
+      "type": "registry:component",
+      "title": "Silk Border Demo - Button and Badge",
+      "description": "Tactile buttons and badges wrapped with fluid WebGPU silk borders.",
+      "isPro": true,
+      "dependencies": [
+        "vgpu"
+      ],
+      "registryDependencies": [
+        "https://www.spaceui.one/r/components-spaceui-silk-border.json",
+        "https://www.spaceui.one/r/components-spaceui-button-squircle.json",
+        "https://www.spaceui.one/r/components-spaceui-badge-squircle.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/demo/components/spaceui/silk-border/c-silk-border-02/index.tsx",
+          "type": "registry:component",
+          "target": "components/spaceui/silk-border-button-demo.tsx"
+        }
+      ],
+      "categories": [
+        "demo",
+        "component"
+      ]
+    },
+    {
+      "name": "demo-c-silk-border-03",
+      "type": "registry:component",
+      "title": "Silk Border Demo - Card",
+      "description": "Card component wrapped in a fluid WebGPU silk border frame with CSS fallback.",
+      "isPro": true,
+      "dependencies": [
+        "vgpu"
+      ],
+      "registryDependencies": [
+        "https://www.spaceui.one/r/components-spaceui-silk-border.json",
+        "https://www.spaceui.one/r/primitives-card.json",
+        "https://www.spaceui.one/r/components-spaceui-button-squircle.json",
+        "https://www.spaceui.one/r/components-spaceui-badge-squircle.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/demo/components/spaceui/silk-border/c-silk-border-03/index.tsx",
+          "type": "registry:component",
+          "target": "components/spaceui/silk-border-card-demo.tsx"
+        }
+      ],
+      "categories": [
+        "demo",
+        "component"
+      ]
+    },
+    {
       "name": "demo-c-slide-to-confirm-01",
       "type": "registry:component",
       "title": "Slide To Confirm Demo",
@@ -8827,6 +8955,7 @@
       "type": "registry:component",
       "title": "Slosh Slider Demo",
       "description": "Liquid slider with corner, viscosity, momentum, and tilt.",
+      "isPro": true,
       "registryDependencies": [
         "https://www.spaceui.one/r/components-spaceui-slosh-slider.json"
       ],
@@ -8836,6 +8965,15 @@
       ],
       "meta": {
         "demoProps": {
+          "ring": {
+            "value": true
+          },
+          "height": {
+            "value": 40,
+            "min": 16,
+            "max": 64,
+            "step": 2
+          },
           "corner": {
             "value": 13,
             "min": 0,

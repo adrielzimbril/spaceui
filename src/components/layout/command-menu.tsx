@@ -239,9 +239,8 @@ export function CommandMenu({
           node?.isPro ||
           node?.frontmatter?.isPro ||
           node?.frontmatter?.pro ||
-          slug === 'slosh-slider' ||
           (registryMeta as Record<string, any>)[slug]?.isPro ||
-          (registryMeta as Record<string, any>)[slug]?.meta?.isPro
+          (registryMeta as Record<string, any>)[slug]?.meta?.isPro,
         )
 
         if (!allItems.some((i) => i.url === url)) {

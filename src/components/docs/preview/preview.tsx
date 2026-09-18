@@ -197,9 +197,7 @@ export function ComponentPreview({
   const { themeOverride, setThemeOverride } = usePreviewTheme(name)
   const { entry, error: registryError } = useRegistryEntry(name)
 
-  const isPro = Boolean(
-    props.isPro || (Component as any)?.isPro || entry?.isPro || entry?.meta?.isPro || name.includes('slosh-slider'),
-  )
+  const isPro = Boolean(props.isPro || (Component as any)?.isPro || entry?.isPro || entry?.meta?.isPro)
 
   const previewName = useMemo(() => {
     const flattenedProps = flattenFirstLevel(componentProps as Record<string, Record<string, unknown>> | null)

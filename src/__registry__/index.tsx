@@ -2920,9 +2920,9 @@ export const index: Record<string, any> = {
   },
   "components-spaceui-morphing-area": {
     name: "components-spaceui-morphing-area",
-    description: "Adaptive aspect ratio frame with constant-area surface morphing — pass any image, color, or content as its background.",
+    description: "Adaptive aspect ratio frame with constant-area surface morphing for any child element, image, or media.",
     type: "registry:component",
-    dependencies: [],
+    dependencies: ["@usespaceui/squircle"],
     devDependencies: undefined,
     registryDependencies: ["https://www.spaceui.one/r/lib-utils.json"],
     files: [
@@ -3269,6 +3269,38 @@ export const index: Record<string, any> = {
       return LazyComp;
     })(),
     command: '@spaceui/components-spaceui-section-scrollspy',
+  },
+  "components-spaceui-silk-border": {
+    name: "components-spaceui-silk-border",
+    description: "Fluid WebGPU silk mesh gradient wrapper with preset themes and CSS fallback.",
+    type: "registry:component",
+    dependencies: ["vgpu"],
+    devDependencies: undefined,
+    registryDependencies: ["https://www.spaceui.one/r/components-shader-silk-gradient.json","https://www.spaceui.one/r/lib-utils.json"],
+    files: [
+  {
+    "path": "src/registry/components/spaceui/silk-border/index.tsx",
+    "type": "registry:component",
+    "target": "components/spaceui/silk-border.tsx"
+  }
+],
+    keywords: [],
+    component: (() => {
+      const LazyComp = React.lazy(async () => {
+        const mod = await import("@/registry/components/spaceui/silk-border/index.tsx");
+        const exportName = Object.keys(mod).find(
+          key => typeof mod[key] === 'function' || typeof mod[key] === 'object'
+        ) || "components-spaceui-silk-border";
+        const Comp = mod.default || mod[exportName];
+        if (mod.animations) {
+          (LazyComp as any).animations = mod.animations;
+        }
+        return { default: Comp };
+      });
+      LazyComp.demoProps = {};
+      return LazyComp;
+    })(),
+    command: '@spaceui/components-spaceui-silk-border',
   },
   "components-spaceui-slide-to-confirm": {
     name: "components-spaceui-slide-to-confirm",
@@ -6726,7 +6758,7 @@ export const index: Record<string, any> = {
         }
         return { default: Comp };
       });
-      LazyComp.demoProps = {"text":{"value":"Space UI"},"layers":{"value":4,"min":3,"max":10,"step":1},"strength":{"value":1,"min":0.25,"max":2,"step":0.25},"height":{"value":"62%","options":{"Half":"50%","Default":"62%","Deep":"80%"}},"side":{"value":"bottom","options":{"Bottom":"bottom","Top":"top"}},"tint":{"value":0.22,"min":0,"max":0.6,"step":0.02}};
+      LazyComp.demoProps = {"text":{"value":"Space UI"},"layers":{"value":7,"min":3,"max":10,"step":1},"strength":{"value":1,"min":0.25,"max":2,"step":0.25},"height":{"value":"62%","options":{"Half":"50%","Default":"62%","Deep":"80%"}},"side":{"value":"bottom","options":{"Bottom":"bottom","Top":"top"}},"tint":{"value":0,"min":0,"max":0.6,"step":0.02}};
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-frost-blurred-01',
@@ -7755,11 +7787,11 @@ export const index: Record<string, any> = {
   },
   "demo-c-morphing-area-01": {
     name: "demo-c-morphing-area-01",
-    description: "Interactive demo of equal-area aspect ratio morphing.",
+    description: "Interactive demo of equal-area aspect ratio morphing with custom children.",
     type: "registry:component",
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ["https://www.spaceui.one/r/components-spaceui-morphing-area.json","https://www.spaceui.one/r/lib-next-image-url.json"],
+    registryDependencies: ["https://www.spaceui.one/r/components-spaceui-morphing-area.json","https://www.spaceui.one/r/primitives-tabs.json","https://www.spaceui.one/r/lib-next-image-url.json"],
     files: [
   {
     "path": "src/registry/demo/components/spaceui/morphing-area/c-morphing-area-01/index.tsx",
@@ -7780,7 +7812,7 @@ export const index: Record<string, any> = {
         }
         return { default: Comp };
       });
-      LazyComp.demoProps = {"corner":{"value":18,"min":0,"max":36,"step":2},"morph":{"value":50,"min":0,"max":100,"step":5}};
+      LazyComp.demoProps = {"rounded":{"value":8,"min":0,"max":36,"step":1},"squircle":{"value":false},"morph":{"value":50,"min":0,"max":100,"step":5}};
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-morphing-area-01',
@@ -9001,6 +9033,102 @@ export const index: Record<string, any> = {
     })(),
     command: '@spaceui/demo-c-section-scrollspy-01',
   },
+  "demo-c-silk-border-01": {
+    name: "demo-c-silk-border-01",
+    description: "Avatars wrapped with dynamic WebGPU silk borders in various presets.",
+    type: "registry:component",
+    dependencies: ["vgpu"],
+    devDependencies: undefined,
+    registryDependencies: ["https://www.spaceui.one/r/components-spaceui-silk-border.json","https://www.spaceui.one/r/components-spaceui-avatar-extended.json","https://www.spaceui.one/r/primitives-avatar.json"],
+    files: [
+  {
+    "path": "src/registry/demo/components/spaceui/silk-border/c-silk-border-01/index.tsx",
+    "type": "registry:component",
+    "target": "components/spaceui/silk-border-demo.tsx"
+  }
+],
+    keywords: [],
+    component: (() => {
+      const LazyComp = React.lazy(async () => {
+        const mod = await import("@/registry/demo/components/spaceui/silk-border/c-silk-border-01/index.tsx");
+        const exportName = Object.keys(mod).find(
+          key => typeof mod[key] === 'function' || typeof mod[key] === 'object'
+        ) || "demo-c-silk-border-01";
+        const Comp = mod.default || mod[exportName];
+        if (mod.animations) {
+          (LazyComp as any).animations = mod.animations;
+        }
+        return { default: Comp };
+      });
+      LazyComp.demoProps = {};
+      return LazyComp;
+    })(),
+    command: '@spaceui/demo-c-silk-border-01',
+  },
+  "demo-c-silk-border-02": {
+    name: "demo-c-silk-border-02",
+    description: "Tactile buttons and badges wrapped with fluid WebGPU silk borders.",
+    type: "registry:component",
+    dependencies: ["vgpu"],
+    devDependencies: undefined,
+    registryDependencies: ["https://www.spaceui.one/r/components-spaceui-silk-border.json","https://www.spaceui.one/r/components-spaceui-button-squircle.json","https://www.spaceui.one/r/components-spaceui-badge-squircle.json"],
+    files: [
+  {
+    "path": "src/registry/demo/components/spaceui/silk-border/c-silk-border-02/index.tsx",
+    "type": "registry:component",
+    "target": "components/spaceui/silk-border-button-demo.tsx"
+  }
+],
+    keywords: [],
+    component: (() => {
+      const LazyComp = React.lazy(async () => {
+        const mod = await import("@/registry/demo/components/spaceui/silk-border/c-silk-border-02/index.tsx");
+        const exportName = Object.keys(mod).find(
+          key => typeof mod[key] === 'function' || typeof mod[key] === 'object'
+        ) || "demo-c-silk-border-02";
+        const Comp = mod.default || mod[exportName];
+        if (mod.animations) {
+          (LazyComp as any).animations = mod.animations;
+        }
+        return { default: Comp };
+      });
+      LazyComp.demoProps = {};
+      return LazyComp;
+    })(),
+    command: '@spaceui/demo-c-silk-border-02',
+  },
+  "demo-c-silk-border-03": {
+    name: "demo-c-silk-border-03",
+    description: "Card component wrapped in a fluid WebGPU silk border frame with CSS fallback.",
+    type: "registry:component",
+    dependencies: ["vgpu"],
+    devDependencies: undefined,
+    registryDependencies: ["https://www.spaceui.one/r/components-spaceui-silk-border.json","https://www.spaceui.one/r/primitives-card.json","https://www.spaceui.one/r/components-spaceui-button-squircle.json","https://www.spaceui.one/r/components-spaceui-badge-squircle.json"],
+    files: [
+  {
+    "path": "src/registry/demo/components/spaceui/silk-border/c-silk-border-03/index.tsx",
+    "type": "registry:component",
+    "target": "components/spaceui/silk-border-card-demo.tsx"
+  }
+],
+    keywords: [],
+    component: (() => {
+      const LazyComp = React.lazy(async () => {
+        const mod = await import("@/registry/demo/components/spaceui/silk-border/c-silk-border-03/index.tsx");
+        const exportName = Object.keys(mod).find(
+          key => typeof mod[key] === 'function' || typeof mod[key] === 'object'
+        ) || "demo-c-silk-border-03";
+        const Comp = mod.default || mod[exportName];
+        if (mod.animations) {
+          (LazyComp as any).animations = mod.animations;
+        }
+        return { default: Comp };
+      });
+      LazyComp.demoProps = {};
+      return LazyComp;
+    })(),
+    command: '@spaceui/demo-c-silk-border-03',
+  },
   "demo-c-slide-to-confirm-01": {
     name: "demo-c-slide-to-confirm-01",
     description: "Tactile slide-to-confirm action slider with inertia spring physics.",
@@ -9060,7 +9188,7 @@ export const index: Record<string, any> = {
         }
         return { default: Comp };
       });
-      LazyComp.demoProps = {"corner":{"value":13,"min":0,"max":20,"step":1},"viscosity":{"value":15,"min":0,"max":100,"step":1},"momentum":{"value":55,"min":0,"max":100,"step":1},"tilt":{"value":45,"min":0,"max":100,"step":1}};
+      LazyComp.demoProps = {"ring":{"value":true},"height":{"value":40,"min":16,"max":64,"step":2},"corner":{"value":13,"min":0,"max":20,"step":1},"viscosity":{"value":15,"min":0,"max":100,"step":1},"momentum":{"value":55,"min":0,"max":100,"step":1},"tilt":{"value":45,"min":0,"max":100,"step":1}};
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-slosh-slider-01',

@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-c-silk-border-01",
+  "type": "registry:component",
+  "title": "Silk Border Demo - Avatar",
+  "description": "Avatars wrapped with dynamic WebGPU silk borders in various presets.",
+  "isPro": true,
+  "dependencies": ["vgpu"],
+  "registryDependencies": [
+    "https://www.spaceui.one/r/components-spaceui-silk-border.json",
+    "https://www.spaceui.one/r/components-spaceui-avatar-extended.json",
+    "https://www.spaceui.one/r/primitives-avatar.json"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/components/spaceui/silk-border/c-silk-border-01/index.tsx",
+      "type": "registry:component",
+      "target": "components/spaceui/silk-border-demo.tsx"
+    }
+  ],
+  "categories": ["demo", "component"]
+}

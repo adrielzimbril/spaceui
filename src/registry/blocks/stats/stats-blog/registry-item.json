@@ -2,8 +2,9 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "block-stats-blog",
   "type": "registry:block",
-  "title": "Blog & Content Stats Block",
+  "title": "Blog \u0026 Content Stats Block",
   "description": "Content publication metrics including total articles, words written, reader messages, and reading time.",
+  "isPro": true,
   "registryDependencies": [
     "https://www.spaceui.one/r/lib-utils.json",
     "https://www.spaceui.one/r/primitives-frame.json",

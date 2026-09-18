@@ -353,6 +353,7 @@ async function buildRegistryMetaGraph(items: any[]) {
             ],
       createdAt: item.createdAt,
       updatedAt: item.updatedAt,
+      isPro: item.isPro === true ? true : undefined,
       size: formatBytes(totalBytes),
       rawSize: totalBytes,
       directSize: formatBytes(directBytes),

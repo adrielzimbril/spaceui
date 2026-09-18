@@ -4,6 +4,7 @@
   "type": "registry:component",
   "title": "Silk Gradient",
   "description": "WebGPU silk mesh gradient. Three colors, warp, grain.",
+  "isPro": true,
   "dependencies": ["vgpu"],
   "registryDependencies": [
     "https://www.spaceui.one/r/lib-gpu-runtime.json",

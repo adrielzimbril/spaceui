@@ -4,6 +4,7 @@
   "type": "registry:component",
   "title": "Chroma Palette",
   "description": "Perceptually uniform color generator and interactive swatch palette with organic gooey fluid morph and one-click copy.",
+  "isPro": true,
   "dependencies": ["motion", "@tabler/icons-react", "@usespaceui/gradients"],
   "registryDependencies": [
     "https://www.spaceui.one/r/lib-utils.json",

@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "components-spaceui-silk-border",
+  "type": "registry:component",
+  "title": "Silk Border",
+  "description": "Fluid WebGPU silk mesh gradient wrapper with preset themes and CSS fallback.",
+  "isPro": true,
+  "dependencies": ["vgpu"],
+  "registryDependencies": [
+    "https://www.spaceui.one/r/components-shader-silk-gradient.json",
+    "https://www.spaceui.one/r/lib-utils.json"
+  ],
+  "files": [
+    {
+      "path": "src/registry/components/spaceui/silk-border/index.tsx",
+      "type": "registry:component",
+      "target": "components/spaceui/silk-border.tsx"
+    }
+  ],
+  "categories": ["component", "shader", "silk", "border"]
+}

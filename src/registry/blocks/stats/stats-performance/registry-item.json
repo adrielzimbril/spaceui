@@ -2,8 +2,9 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "block-stats-performance",
   "type": "registry:block",
-  "title": "Performance & Lighthouse Block",
-  "description": "Lighthouse audit results dashboard featuring mobile & desktop scores with radar chart visuals.",
+  "title": "Performance \u0026 Lighthouse Block",
+  "description": "Lighthouse audit results dashboard featuring mobile \u0026 desktop scores with radar chart visuals.",
+  "isPro": true,
   "registryDependencies": [
     "https://www.spaceui.one/r/lib-utils.json",
     "https://www.spaceui.one/r/primitives-frame.json",

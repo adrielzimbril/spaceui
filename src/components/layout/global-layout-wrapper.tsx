@@ -10,6 +10,7 @@ import { BundleProvider } from '@/components/providers/bundle-provider'
 import { LayoutModeProvider, useLayoutMode, Mode, type LayoutMode } from '@/components/providers/layout-mode-provider'
 import { SquircleProvider } from '@/components/providers/squircle-provider'
 import { FloatNav } from '@/components/layout/float-nav'
+import { ThemeLockProvider } from '@/components/providers/theme-lock-provider'
 
 function GlobalLayoutContent({ children }: { children: React.ReactNode }) {
   const pathname = usePathname()
@@ -68,15 +69,17 @@ export function GlobalLayoutWrapper({
   const content = isPreview ? (
     children
   ) : (
-    <PackageManagerProvider>
-      <BrandColorProvider>
-        <BundleProvider>
-          <LayoutModeProvider initialMode={initialLayoutMode}>
-            <GlobalLayoutContent>{children}</GlobalLayoutContent>
-          </LayoutModeProvider>
-        </BundleProvider>
-      </BrandColorProvider>
-    </PackageManagerProvider>
+    <ThemeLockProvider>
+      <PackageManagerProvider>
+        <BrandColorProvider>
+          <BundleProvider>
+            <LayoutModeProvider initialMode={initialLayoutMode}>
+              <GlobalLayoutContent>{children}</GlobalLayoutContent>
+            </LayoutModeProvider>
+          </BundleProvider>
+        </BrandColorProvider>
+      </PackageManagerProvider>
+    </ThemeLockProvider>
   )
 
   return (

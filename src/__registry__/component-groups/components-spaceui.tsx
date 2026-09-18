@@ -180,6 +180,10 @@ export const registryComponents: Record<string, RegistryComponent> = {
     () => import("@/registry/components/spaceui/section-scrollspy/index.tsx"),
     {},
   ),
+  "components-spaceui-silk-border": lazyRegistryComponent(
+    () => import("@/registry/components/spaceui/silk-border/index.tsx"),
+    {},
+  ),
   "components-spaceui-slide-to-confirm": lazyRegistryComponent(
     () => import("@/registry/components/spaceui/slide-to-confirm/index.tsx"),
     {},

@@ -4,6 +4,7 @@
   "type": "registry:component",
   "title": "Morphing Command Bar",
   "description": "Elastic command bar that expands seamlessly from passive state to active input with integrated action trigger.",
+  "isPro": true,
   "dependencies": ["motion", "@tabler/icons-react"],
   "registryDependencies": ["https://www.spaceui.one/r/lib-utils.json"],
   "categories": ["component", "command", "search"],

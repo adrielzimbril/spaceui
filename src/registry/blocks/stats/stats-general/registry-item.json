@@ -4,6 +4,7 @@
   "type": "registry:block",
   "title": "General Stats Metrics Block",
   "description": "Interactive metric overview cards with floating spring emoji decorations and semantic color accents.",
+  "isPro": true,
   "registryDependencies": [
     "https://www.spaceui.one/r/lib-utils.json",
     "https://www.spaceui.one/r/primitives-frame.json",

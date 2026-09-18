@@ -1,0 +1,27 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-c-silk-border-01",
+  "title": "Silk Border Demo - Avatar",
+  "description": "Avatars wrapped with dynamic WebGPU silk borders in various presets.",
+  "dependencies": [
+    "vgpu"
+  ],
+  "registryDependencies": [
+    "https://www.spaceui.one/r/components-spaceui-silk-border.json",
+    "https://www.spaceui.one/r/components-spaceui-avatar-extended.json",
+    "https://www.spaceui.one/r/primitives-avatar.json"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/components/spaceui/silk-border/c-silk-border-01/index.tsx",
+      "content": "'use client'\n\nimport { SilkBorder } from '@/components/spaceui/silk-border'\nimport { Avatar } from '@/components/ui/avatar'\nimport { AvatarFallback } from '@/components/spaceui/avatar-extended'\n\nexport default function Demo() {\n  return (\n    <div className=\"flex flex-wrap items-center justify-center gap-6 p-6\">\n      <SilkBorder preset=\"pro\" className=\"inline-flex size-16 rounded-full p-0.75\">\n        <Avatar className=\"size-full\">\n          <AvatarFallback name=\"space\" variant=\"pebble\" />\n        </Avatar>\n      </SilkBorder>\n\n      <SilkBorder preset=\"ocean\" className=\"inline-flex size-16 rounded-full p-0.75\">\n        <Avatar className=\"size-full\">\n          <AvatarFallback name=\"galaxy\" variant=\"mesh\" />\n        </Avatar>\n      </SilkBorder>\n\n      <SilkBorder preset=\"community\" className=\"inline-flex size-16 rounded-full p-0.75\">\n        <Avatar className=\"size-full\">\n          <AvatarFallback name=\"starlight\" variant=\"doodle\" />\n        </Avatar>\n      </SilkBorder>\n    </div>\n  )\n}\n",
+      "type": "registry:component",
+      "target": "components/spaceui/silk-border-demo.tsx"
+    }
+  ],
+  "categories": [
+    "demo",
+    "component"
+  ],
+  "type": "registry:component"
+}

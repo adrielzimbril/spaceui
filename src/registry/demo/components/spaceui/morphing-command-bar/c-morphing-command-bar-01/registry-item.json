@@ -4,6 +4,7 @@
   "type": "registry:component",
   "title": "Morphing Command Bar Demo",
   "description": "Elastic command bar that expands seamlessly from passive state to active input with action trigger.",
+  "isPro": true,
   "registryDependencies": [
     "https://www.spaceui.one/r/components-spaceui-morphing-command-bar.json",
     "https://www.spaceui.one/r/components-spaceui-morphing-text.json"

@@ -4,6 +4,7 @@
   "type": "registry:block",
   "title": "Community Wall",
   "description": "Interactive draggable infinite canvas community wall with radial bloom distribution, card patterns, collision avoidance, tilt controls, and note submission modal.",
+  "isPro": true,
   "dependencies": ["@usespaceui/avatars", "@usespaceui/sounds", "@tabler/icons-react"],
   "registryDependencies": [
     "https://www.spaceui.one/r/lib-utils.json",

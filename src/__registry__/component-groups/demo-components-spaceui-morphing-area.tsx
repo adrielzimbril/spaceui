@@ -34,6 +34,6 @@ function lazyRegistryComponent(
 export const registryComponents: Record<string, RegistryComponent> = {
   "demo-c-morphing-area-01": lazyRegistryComponent(
     () => import("@/registry/demo/components/spaceui/morphing-area/c-morphing-area-01/index.tsx"),
-    {"corner":{"value":18,"min":0,"max":36,"step":2},"morph":{"value":50,"min":0,"max":100,"step":5}},
+    {"rounded":{"value":8,"min":0,"max":36,"step":1},"squircle":{"value":false},"morph":{"value":50,"min":0,"max":100,"step":5}},
   ),
 };

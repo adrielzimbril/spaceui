@@ -54,12 +54,11 @@ export function ProjectCard({ project, priority = false }: ProjectCardProps) {
                   Free
                 </Badge>
               )}
-              {project.created_at &&
-                Date.now() - new Date(project.created_at).getTime() <= 7 * 24 * 60 * 60 * 1000 && (
-                  <Badge size="xs" variant="primary" className="select-none">
-                    NEW
-                  </Badge>
-                )}
+              {project.created_at && Date.now() - new Date(project.created_at).getTime() <= 7 * 24 * 60 * 60 * 1000 && (
+                <Badge size="xs" variant="primary" className="select-none">
+                  NEW
+                </Badge>
+              )}
             </div>
 
             {project.isPro ? (
