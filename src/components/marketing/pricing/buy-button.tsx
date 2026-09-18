@@ -80,7 +80,7 @@ export function BuyButton({
   const preset = typeof border === 'string' ? border : undefined
 
   return (
-    <div className="flex flex-wrap items-center justify-center">
+    <div className="flex flex-wrap items-center justify-center w-full">
       <LiquidBorder
         preset={preset}
         className="flex w-full [&_div]:size-full squircle rounded-7xl p-0.75 hover:scale-105 transition-all duration-300"

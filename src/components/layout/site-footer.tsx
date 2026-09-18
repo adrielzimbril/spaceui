@@ -184,24 +184,24 @@ export function SiteFooter() {
           </clipPath>
         </svg>
         <div
-          className="pointer-events-none absolute inset-0 z-0 bg-muted"
-          style={clip ? { clipPath: `url(#${clipId})` } : { clipPath: 'inset(100%)' }}
-        />
-        {/* <HeatShade
-            variant="licks"
-            from="bottom"
-            className="size-full opacity-70 dark:opacity-80"
-            base="#2a7bba"
-            hot="#43c8ff"
-            speed={0.7}
-            dpr={0.45}
-            fps={24}
-          />
-        </div> */}
+          className="pointer-events-none absolute inset-0 z-0"
+          style={clip ? { clipPath: `url(#${clipId})` } : { display: 'none' }}
+        >
+          {/* <HeatShade
+              variant="licks"
+              from="bottom"
+              className="size-full opacity-70 dark:opacity-80"
+              base="#2a7bba"
+              hot="#43c8ff"
+              speed={0.7}
+              dpr={0.45}
+              fps={24}
+            /> */}
+        </div>
         <div className="relative z-10 mx-auto w-[calc(100%-2rem)] sm:w-[calc(100%-3rem)] -bottom-0.75 max-w-7xl">
           <div
             data-footer-shell
-            className="relative z-10 squircle rounded-t-3xl sm:rounded-t-7xl p-4 md-p-6 text-foreground"
+            className="relative z-10 squircle rounded-t-3xl sm:rounded-t-7xl p-4 md:p-6 text-foreground bg-muted"
           >
             <div
               className={cn(
@@ -275,7 +275,7 @@ export function SiteFooter() {
                 className="pointer-events-none absolute bottom-0 -left-6.5 w-7.5 h-6.5 overflow-visible z-10 sm:hidden"
                 viewBox="0 0 30 26"
               >
-                <path d="M 26 0 Q 26 26 0 26 H 30 V 0 Z" className="fill-transparent" />
+                <path d="M 26 0 Q 26 26 0 26 H 30 V 0 Z" className="fill-muted" />
               </svg>
 
               <svg
@@ -284,7 +284,7 @@ export function SiteFooter() {
                 className="pointer-events-none absolute bottom-1 -left-9.75 w-11 h-10 overflow-visible z-10 hidden sm:block"
                 viewBox="0 0 44 40"
               >
-                <path d="M 40 0 Q 40 40 0 40 H 44 V 0 Z" className="fill-transparent" />
+                <path d="M 40 0 Q 40 40 0 40 H 44 V 0 Z" className="fill-muted" />
               </svg>
 
               <svg
@@ -293,7 +293,7 @@ export function SiteFooter() {
                 className="pointer-events-none absolute bottom-0 -right-6.5 w-7.5 h-6.5 overflow-visible z-10 sm:hidden"
                 viewBox="0 0 30 26"
               >
-                <path d="M 4 0 Q 4 26 30 26 H 0 V 0 Z" className="fill-transparent" />
+                <path d="M 4 0 Q 4 26 30 26 H 0 V 0 Z" className="fill-muted" />
               </svg>
 
               <svg
@@ -302,13 +302,13 @@ export function SiteFooter() {
                 className="pointer-events-none absolute bottom-1 -right-9.75 w-11 h-10 overflow-visible z-10 hidden sm:block"
                 viewBox="0 0 44 40"
               >
-                <path d="M 4 0 Q 4 40 44 40 H 0 V 0 Z" className="fill-transparent" />
+                <path d="M 4 0 Q 4 40 44 40 H 0 V 0 Z" className="fill-muted" />
               </svg>
             </div>
           </div>
         </div>
 
-        <div className="relative -mt-px h-10 sm:h-14 w-full" aria-hidden="true" data-footer-band />
+        <div className="relative -mt-px h-10 sm:h-14 w-full bg-muted" aria-hidden="true" data-footer-band />
       </div>
     </footer>
   )

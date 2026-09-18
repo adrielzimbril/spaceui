@@ -1,8 +1,12 @@
 import React from 'react'
 import { sendEmail, type SendEmailOptions } from './provider/resend'
+import { sendWithBrevo } from './provider'
 import { ProLicenseDeliveryEmail, type ProLicenseDeliveryEmailProps } from './templates/pro-license-delivery-email'
 
 export { sendEmail, type SendEmailOptions } from './provider/resend'
+export { sendWithBrevo } from './provider'
+export * as mailProviders from './provider'
+export * from './types'
 export { Wrapper, type WrapperProps } from './components/wrapper'
 export { PrimaryButton, type PrimaryButtonProps } from './components/primary-button'
 export { ProLicenseDeliveryEmail, type ProLicenseDeliveryEmailProps } from './templates/pro-license-delivery-email'

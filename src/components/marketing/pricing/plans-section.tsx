@@ -225,10 +225,8 @@ const plans = [
         label="Get lifetime access"
         variant="primary"
         full
-        hover
-        whileTap
         size="lg"
-        border="violet"
+        border="sunset"
       />
     ),
   },

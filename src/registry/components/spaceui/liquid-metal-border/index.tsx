@@ -19,32 +19,32 @@ export const LIQUID_PRESETS: Record<LiquidPreset, { colorBack: string; colorTint
   chrome: {
     colorBack: '#AAAAAC',
     colorTint: '#ffffff',
-    fallback: 'from-slate-300/20 via-slate-100/10 to-transparent',
+    fallback: 'from-slate-300/30 via-slate-100/20 to-transparent',
   },
   gold: {
     colorBack: '#8a6a1f',
     colorTint: '#ffe9a8',
-    fallback: 'from-amber-400/20 via-yellow-200/10 to-transparent',
+    fallback: 'from-amber-400/30 via-yellow-200/20 to-transparent',
   },
   ocean: {
     colorBack: '#0f3f5c',
     colorTint: '#7fdcff',
-    fallback: 'from-cyan-500/20 via-blue-500/10 to-transparent',
+    fallback: 'from-cyan-500/30 via-blue-500/20 to-transparent',
   },
   sunset: {
     colorBack: '#7a2a3a',
     colorTint: '#ffb37a',
-    fallback: 'from-rose-500/20 via-orange-400/10 to-transparent',
+    fallback: 'from-rose-500/30 via-orange-400/20 to-transparent',
   },
   emerald: {
     colorBack: '#134e3a',
     colorTint: '#6ee7b7',
-    fallback: 'from-emerald-500/20 via-emerald-300/10 to-transparent',
+    fallback: 'from-emerald-500/30 via-emerald-300/20 to-transparent',
   },
   violet: {
     colorBack: '#3b1c6b',
     colorTint: '#c9a6ff',
-    fallback: 'from-violet-500/20 via-purple-300/10 to-transparent',
+    fallback: 'from-violet-500/30 via-purple-300/20 to-transparent',
   },
 }
 
@@ -78,16 +78,20 @@ export function LiquidBorder({
     <div
       data-slot="liquid-border"
       className={cn(
-        'relative isolate overflow-hidden translate-z-0 will-change-transform flex items-center justify-center leading-none',
+        'relative isolate overflow-hidden flex items-center justify-center leading-none',
+        '[&_canvas]:rounded-[inherit] [&>div]:rounded-[inherit]',
         className,
       )}
-      {...props}
+      style={{
+        WebkitMaskImage: '-webkit-radial-gradient(white, black)',
+        ...props.style,
+      }}
     >
       {/* CSS gradient fallback */}
-      <div className={cn('pointer-events-none absolute inset-0 bg-linear-to-b transition-opacity', activeFallback)} />
+      <div className={cn('pointer-events-none absolute inset-0 rounded-[inherit] bg-linear-to-b transition-opacity', activeFallback)} />
 
       <LiquidMetal
-        className="pointer-events-none absolute inset-0 size-full overflow-hidden rounded-[inherit]"
+        className="pointer-events-none absolute inset-0 size-full overflow-hidden rounded-[inherit] [&_canvas]:rounded-[inherit]"
         shape="none"
         colorBack={activeColorBack}
         colorTint={activeColorTint}
