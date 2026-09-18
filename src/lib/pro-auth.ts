@@ -54,7 +54,7 @@ export function isComponentPro(slug: string): boolean {
       // Check MDX documentation frontmatter
       const docCategories = ['blocks', 'primitives', 'components', 'templates']
       for (const cat of docCategories) {
-        const mdxFile = path.join(appRoot, 'src', 'content', 'ui-kit', cat, `${direct}.mdx`)
+        const mdxFile = path.join(appRoot, 'src', 'content', 'library', cat, `${direct}.mdx`)
         if (fs.existsSync(mdxFile)) {
           const content = fs.readFileSync(mdxFile, 'utf8')
           const match = content.match(/^---\r?\n([\s\S]*?)\r?\n---/)

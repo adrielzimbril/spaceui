@@ -7,7 +7,6 @@ import { SloshSlider } from '@/registry/components/spaceui/slosh-slider'
 import { IconClock } from '@tabler/icons-react'
 import { EmojiSource, EmojiType } from '@usespaceui/emoji'
 import { AssetEmoji } from '@/tools/emoji/asset-emoji'
-import { Button } from '@/registry/components/spaceui/button-squircle'
 import { Badge } from '@/registry/components/spaceui/badge-squircle'
 import { StatusBadge } from '@/registry/components/spaceui/status-badge'
 import { Card, CardPanel } from '@/registry/primitives/card'
@@ -15,9 +14,8 @@ import { Frame, FrameFooter } from '@/registry/primitives/frame'
 import { SilkGradient } from '@/registry/components/shader/silk-gradient'
 import { LIFETIME_PRICE, POLAR_PRODUCTS } from '@/lib/pricing-config'
 import { cn } from '@/registry/lib/utils'
-import Link from 'next/link'
-import { BuyButton } from '@/components/pricing/buy-button'
-import { LiquidBorder } from '@/registry/components/spaceui/liquid-metal-border'
+import { BuyButton } from './buy-button'
+import { SectionHeader } from './section-header'
 
 const currencyFormat = {
   style: 'currency',
@@ -84,7 +82,7 @@ function Row({
   )
 }
 
-export function SavingsCalculator({ className }: { className?: string }) {
+function SavingsCalculator({ className }: { className?: string }) {
   const [hours, setHours] = React.useState(160)
   const [rate, setRate] = React.useState(90)
   const scratch = hours * rate
@@ -134,14 +132,6 @@ export function SavingsCalculator({ className }: { className?: string }) {
                   />
                 </StatusBadge>
                 <div className="flex flex-col">
-                  {/* <div className="flex flex-wrap items-center gap-2">
-                    <span className="text-xl text-muted-foreground line-through tabular-nums">
-                      {new Intl.NumberFormat('en-US', currencyFormat).format(scratch)}
-                    </span>
-                    <Badge size="sm" variant="success">
-                      ${LIFETIME_PRICE}
-                    </Badge>
-                  </div> */}
                   <div className="flex flex-wrap items-center gap-2.5">
                     <NumberFlow
                       value={savings}
@@ -149,41 +139,13 @@ export function SavingsCalculator({ className }: { className?: string }) {
                       className="isolate font-semibold text-5xl leading-none tracking-tight text-foreground tabular-nums sm:text-6xl"
                     />
                     <div className="flex flex-col items-end">
-                      {/* <Badge size="sm" variant="success" className="!opacity-0">
-                        ${LIFETIME_PRICE}
-                      </Badge> */}
-                      {/* <span className="text-sm text-muted-foreground/60 line-through tabular-nums">
-                        {new Intl.NumberFormat('en-US', currencyFormat).format(scratch)}
-                      </span> */}
                       <span className="text-3xl md:text-4xl pt-3 font-semibold text-muted-foreground/60 line-through tabular-nums">
                         {new Intl.NumberFormat('en-US', currencyFormat).format(scratch)}
                       </span>
-                      {/* <span className="text-lg leading-tight text-muted-foreground/80">
-                        {new Intl.NumberFormat('en-US', currencyFormat).format(scratch)} Saved with
-                        <span className="block">lifetime access</span>
-                      </span> */}
-                      {/* <span className="text-lg leading-tight text-muted-foreground/80">
-                        Saved with
-                        <span className="block">lifetime access</span>
-                      </span> */}
                     </div>
                   </div>{' '}
                   <div className="flex flex-wrap items-center gap-2">
-                    {/* <span className="text-md text-muted-foreground/90">
-                      <span className="text-muted-foreground/90  line-through tabular-nums">
-                        {new Intl.NumberFormat('en-US', currencyFormat).format(scratch)}
-                      </span>{' '}
-                      Saved with the $179 one-time purchase.
-                    </span> */}
                     <span className="text-md text-muted-foreground/90">Saved with the $179 one-time purchase.</span>
-                    {/* <span className="text-md text-muted-foreground/90">after the $179 one-time price.</span>{' '} */}
-                    {/* <span className="text-sm text-muted-foreground">You pay</span>{' '} */}
-                    {/* <span className="text-sm text-muted-foreground line-through tabular-nums">
-                      {new Intl.NumberFormat('en-US', currencyFormat).format(scratch)}
-                    </span> */}
-                    {/* <Badge size="sm" variant="success">
-                      ${LIFETIME_PRICE}
-                    </Badge> */}
                   </div>
                 </div>
                 <div className="space-y-3 border-t border-border/70 pt-4">
@@ -226,10 +188,6 @@ export function SavingsCalculator({ className }: { className?: string }) {
                       </span>
                     </div>
                   </div>
-                  {/* <p className="shrink-0 text-right text-sm text-foreground">
-                    Keep the time.
-                    <span className="mt-0.5 block text-muted-foreground">Spend it on the product.</span>
-                  </p> */}
                 </div>
               </CardPanel>
             </Card>
@@ -250,5 +208,20 @@ export function SavingsCalculator({ className }: { className?: string }) {
         Estimates build time only. Real savings depend on your workflow and how you ship.
       </p>
     </div>
+  )
+}
+
+export function SavingsSection() {
+  return (
+    <section id="savings" data-page-section className="mx-auto max-w-6xl scroll-mt-16 px-5 sm:px-6 py-16">
+      <SectionHeader
+        badge="Savings calculator"
+        title="What is your time worth?"
+        description="Tell us how long this would take to build and what an hour costs. We’ll do the math."
+      />
+      <div className="relative">
+        <SavingsCalculator />
+      </div>
+    </section>
   )
 }

@@ -115,7 +115,7 @@ export function isCatalogRoute(pathname?: string | null): boolean {
   const normalized = pathname.startsWith('/') ? pathname : `/${pathname}`
   const clean = normalized.split('?')[0].split('#')[0].replace(/\/+$/, '')
 
-  if (clean === '/ui-kit') return true
+  if (clean === '/library') return true
   if (clean.endsWith('/index')) return true
 
   const catalogExactRoutes = ['/primitives', '/components', '/blocks', '/templates', '/hooks', '/showcase']
@@ -129,7 +129,7 @@ export function isCatalogRoute(pathname?: string | null): boolean {
  *
  * Rules:
  * - Docs pages (/docs, /docs/*): strictly locked to standard mode (no dual mode)
- * - Catalog index pages (/ui-kit, /blocks, /templates, /primitives, /components, /hooks, ...): strictly locked to standard mode (no dual mode)
+ * - Catalog index pages (/library, /blocks, /templates, /primitives, /components, /hooks, ...): strictly locked to standard mode (no dual mode)
  * - Shaders detail pages (now flat: /components/shader): defaultMode 'split'
  * - Individual Block pages (/blocks/[slug]): defaultMode 'split', mode 'split'
  * - Individual Template pages (/templates/[slug]): defaultMode 'split', mode 'split'

@@ -13,7 +13,7 @@ export const registryStats = {
   "templatesFree": 16,
   "templatesPro": 5,
   "templatesTotal": 21,
-  "demos": 788,
+  "demos": 790,
   "hooks": 82,
   "hooksFree": 82,
   "hooksPro": 0,

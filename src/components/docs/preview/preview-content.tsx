@@ -49,12 +49,9 @@ export function PreviewContent({
 
   if (
     !externalUrl &&
-    (registryError ||
-      (!componentGroup &&
-        !name.startsWith('demo-primitives-') &&
-        !name.startsWith('primitives-') &&
-        !Component &&
-        !children))
+    !Component &&
+    !children &&
+    (registryError || (!componentGroup && !name.startsWith('demo-primitives-') && !name.startsWith('primitives-')))
   ) {
     return (
       <div className="flex min-h-65 w-full items-center justify-center p-8 gap-1 text-sm text-destructive">

@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-c-liquid-metal-border-04",
+  "type": "registry:component",
+  "title": "Liquid Metal Border Presets",
+  "description": "Every Liquid Metal Border preset shown wrapping a generative avatar.",
+  "dependencies": ["@usespaceui/avatars"],
+  "registryDependencies": ["https://www.spaceui.one/r/components-spaceui-liquid-metal-border.json"],
+  "categories": ["liquid"],
+  "files": [
+    {
+      "path": "src/registry/demo/components/spaceui/liquid-metal-border/c-liquid-metal-border-04/index.tsx",
+      "type": "registry:component",
+      "target": "components/spaceui/liquid-metal-border-presets.tsx"
+    }
+  ],
+  "createdAt": "2026-09-18",
+  "updatedAt": "2026-09-18"
+}

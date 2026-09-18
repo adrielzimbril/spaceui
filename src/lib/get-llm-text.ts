@@ -18,7 +18,9 @@ export async function getLLMText(page: Page | any) {
     throw new Error('Page is required')
   }
 
-  const collection = page.url.startsWith('/ui-kit') ? 'ui-kit' : page.url.startsWith('/tools') ? 'resources' : 'docs'
+  const libraryPrefixes = ['/primitives', '/components', '/blocks', '/hooks', '/templates']
+  const isLibraryPage = libraryPrefixes.some((prefix) => page.url === prefix || page.url.startsWith(`${prefix}/`))
+  const collection = isLibraryPage ? 'library' : page.url.startsWith('/tools') ? 'resources' : 'docs'
 
   let fullPath = page.absolutePath
 

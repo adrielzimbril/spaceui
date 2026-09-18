@@ -318,11 +318,7 @@ export function ComponentPreview({
   const showToolbar = (effectiveRestart || effectiveOpen || Boolean(binds)) && !(isSplit && isEffectivelySelected)
 
   return (
-    <div
-      onClickCapture={handleActivate}
-      className={cn('rounded-2xl bg-muted w-full p-2 mt-5.5 not-prose', className)}
-      {...props}
-    >
+    <div className={cn('rounded-2xl bg-muted w-full p-2 mt-5.5 not-prose', className)} {...props}>
       <Tabs value={tab} onValueChange={(v) => setTab(v as 'preview' | 'code')} className="gap-0">
         <div className="flex flex-wrap items-center justify-between gap-3 px-3 pb-1 pt-1">
           <div className="flex items-center gap-2">

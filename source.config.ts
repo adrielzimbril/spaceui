@@ -53,7 +53,7 @@ export const docs = defineDocs({
 })
 
 export const uiKit = defineDocs({
-  dir: 'src/content/ui-kit',
+  dir: 'src/content/library',
   docs: sharedSchema,
   meta: {
     schema: metaSchema,

@@ -7272,9 +7272,9 @@
     ],
     "createdAt": "2026-09-16",
     "updatedAt": "2026-09-16",
-    "size": "1.3 KB",
-    "rawSize": 1332,
-    "directSize": "1.3 KB",
+    "size": "3.1 KB",
+    "rawSize": 3209,
+    "directSize": "3.1 KB",
     "fileCount": 1,
     "dependencies": [
       "@paper-design/shaders-react"
@@ -7335,9 +7335,9 @@
     ],
     "createdAt": "2026-09-16",
     "updatedAt": "2026-09-16",
-    "size": "1.3 KB",
-    "rawSize": 1332,
-    "directSize": "1.3 KB",
+    "size": "3.1 KB",
+    "rawSize": 3209,
+    "directSize": "3.1 KB",
     "fileCount": 1,
     "dependencies": [
       "@paper-design/shaders-react"
@@ -8295,7 +8295,7 @@
     ],
     "isPro": true,
     "size": "3.3 KB",
-    "rawSize": 3374,
+    "rawSize": 3394,
     "directSize": "3.3 KB",
     "fileCount": 1,
     "dependencies": [
@@ -8359,7 +8359,7 @@
     ],
     "isPro": true,
     "size": "3.3 KB",
-    "rawSize": 3374,
+    "rawSize": 3394,
     "directSize": "3.3 KB",
     "fileCount": 1,
     "dependencies": [

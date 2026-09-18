@@ -102,7 +102,7 @@ export default async function Page(props: { params: Promise<{ slug?: string[] }>
       <PageLayoutSync
         mode={showCatalog ? Mode.standard : pageData.mode}
         defaultMode={showCatalog ? Mode.standard : pageData.defaultMode}
-        path={`ui-kit/${page.path}`}
+        path={`library/${page.path}`}
         preview={showCatalog ? null : pageData.preview}
         title={pageData.title}
       />
@@ -119,8 +119,8 @@ export default async function Page(props: { params: Promise<{ slug?: string[] }>
             <DocsPageHeader
               title={pageData.title}
               description={pageData.description}
-              slug={['ui-kit', ...(params.slug ?? [])]}
-              path={`ui-kit/${page.path}`}
+              slug={['library', ...(params.slug ?? [])]}
+              path={`library/${page.path}`}
               url={page.url}
               docMeta={docMeta}
               lastModified={pageData.lastModified}

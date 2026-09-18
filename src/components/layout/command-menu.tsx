@@ -46,6 +46,7 @@ import {
   CommandShortcut,
 } from '@/registry/primitives/command'
 import { Kbd, KbdGroup } from '@/registry/primitives/kbd'
+import { EmptyMedia } from '@/registry/primitives/empty'
 import { useConfig } from '@/hooks/use-config'
 import type { source } from '@/lib/source'
 import { cn } from '@/registry/lib/utils'

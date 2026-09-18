@@ -7617,6 +7617,30 @@
       "updatedAt": "2026-09-16"
     },
     {
+      "name": "demo-c-liquid-metal-border-04",
+      "type": "registry:component",
+      "title": "Liquid Metal Border Presets",
+      "description": "Every Liquid Metal Border preset shown as an animated Squishmoji avatar.",
+      "dependencies": [
+        "@usespaceui/squishmoji"
+      ],
+      "registryDependencies": [
+        "https://www.spaceui.one/r/components-spaceui-liquid-metal-border.json"
+      ],
+      "categories": [
+        "liquid"
+      ],
+      "files": [
+        {
+          "path": "src/registry/demo/components/spaceui/liquid-metal-border/c-liquid-metal-border-04/index.tsx",
+          "type": "registry:component",
+          "target": "components/spaceui/liquid-metal-border-presets.tsx"
+        }
+      ],
+      "createdAt": "2026-09-18",
+      "updatedAt": "2026-09-18"
+    },
+    {
       "name": "demo-c-liquid-sortable-list-01",
       "type": "registry:component",
       "title": "Liquid Sortable List Demo",
@@ -8901,6 +8925,31 @@
           "path": "src/registry/demo/components/spaceui/silk-border/c-silk-border-03/index.tsx",
           "type": "registry:component",
           "target": "components/spaceui/silk-border-card-demo.tsx"
+        }
+      ],
+      "categories": [
+        "demo",
+        "component"
+      ]
+    },
+    {
+      "name": "demo-c-silk-border-04",
+      "type": "registry:component",
+      "title": "Silk Border Demo - Presets",
+      "description": "Every Silk Border preset shown as an animated Squishmoji avatar.",
+      "isPro": true,
+      "dependencies": [
+        "vgpu",
+        "@usespaceui/squishmoji"
+      ],
+      "registryDependencies": [
+        "https://www.spaceui.one/r/components-spaceui-silk-border.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/demo/components/spaceui/silk-border/c-silk-border-04/index.tsx",
+          "type": "registry:component",
+          "target": "components/spaceui/silk-border-presets-demo.tsx"
         }
       ],
       "categories": [

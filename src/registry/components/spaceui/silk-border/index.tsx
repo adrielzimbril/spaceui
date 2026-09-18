@@ -4,7 +4,7 @@ import * as React from 'react'
 import { SilkGradient } from '@/registry/components/shader/silk-gradient'
 import { cn } from '@/registry/lib/utils'
 
-export type SilkPreset = 'community' | 'pro' | 'lifetime' | 'ocean' | 'sunset' | 'emerald' | 'amber' | 'violet'
+export type SilkPreset = 'aurora' | 'ember' | 'twilight' | 'ocean' | 'sunset' | 'emerald' | 'amber' | 'violet'
 
 export interface SilkBorderProps extends React.ComponentProps<'div'> {
   color1?: string
@@ -20,19 +20,19 @@ export interface SilkBorderProps extends React.ComponentProps<'div'> {
 }
 
 export const SILK_PRESETS: Record<SilkPreset, { color1: string; color2: string; color3: string; fallback: string }> = {
-  community: {
+  aurora: {
     color1: '#a855f7',
     color2: '#ec4899',
     color3: '#3b82f6',
     fallback: 'from-purple-500/20 via-pink-500/20 to-blue-500/20',
   },
-  pro: {
+  ember: {
     color1: '#fbbf24',
     color2: '#f97316',
     color3: '#e11d48',
     fallback: 'from-amber-500/20 via-orange-500/20 to-rose-500/20',
   },
-  lifetime: {
+  twilight: {
     color1: '#6366f1',
     color2: '#8b5cf6',
     color3: '#ec4899',
@@ -75,7 +75,7 @@ export function SilkBorder({
   className,
   innerClassName,
   fallbackClassName,
-  preset = 'pro',
+  preset = 'ember',
   color1,
   color2,
   color3,
@@ -84,7 +84,7 @@ export function SilkBorder({
   grain = false,
   ...props
 }: SilkBorderProps) {
-  const selectedPreset = SILK_PRESETS[preset] || SILK_PRESETS.pro
+  const selectedPreset = SILK_PRESETS[preset] || SILK_PRESETS.ember
   const activeColor1 = color1 || selectedPreset.color1
   const activeColor2 = color2 || selectedPreset.color2
   const activeColor3 = color3 || selectedPreset.color3
@@ -99,7 +99,7 @@ export function SilkBorder({
       {/* CSS Gradient fallback */}
       <div
         className={cn(
-          'pointer-events-none absolute inset-0 bg-linear-to-b opacity-60 transition-opacity',
+          'pointer-events-none absolute inset-0 bg-linear-to-b opacity-90 transition-opacity',
           activeFallback,
         )}
       />

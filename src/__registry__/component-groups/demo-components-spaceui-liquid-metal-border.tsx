@@ -44,4 +44,8 @@ export const registryComponents: Record<string, RegistryComponent> = {
     () => import("@/registry/demo/components/spaceui/liquid-metal-border/c-liquid-metal-border-03/index.tsx"),
     {},
   ),
+  "demo-c-liquid-metal-border-04": lazyRegistryComponent(
+    () => import("@/registry/demo/components/spaceui/liquid-metal-border/c-liquid-metal-border-04/index.tsx"),
+    {},
+  ),
 };

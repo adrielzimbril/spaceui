@@ -7,7 +7,7 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 export default function Demo() {
   return (
     <LiquidBorder className="w-full max-w-sm rounded-xl p-0.75">
-      <Card>
+      <Card className="w-full">
         <CardHeader>
           <CardTitle>Create project</CardTitle>
           <CardDescription>Deploy your new project in one-click.</CardDescription>

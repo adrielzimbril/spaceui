@@ -73,13 +73,13 @@ const config: NextConfig = {
   },
   async rewrites() {
     return {
-      // Transparent proxy: /components/* → served by the ui-kit/[[...slug]] route
+      // Transparent proxy: /components/* → served by the library/[[...slug]] route
       beforeFiles: [
-        { source: '/components/:path*', destination: '/ui-kit/components/:path*' },
-        { source: '/primitives/:path*', destination: '/ui-kit/primitives/:path*' },
-        { source: '/blocks/:path*', destination: '/ui-kit/blocks/:path*' },
-        { source: '/hooks/:path*', destination: '/ui-kit/hooks/:path*' },
-        { source: '/templates/:path*', destination: '/ui-kit/templates/:path*' },
+        { source: '/components/:path*', destination: '/library/components/:path*' },
+        { source: '/primitives/:path*', destination: '/library/primitives/:path*' },
+        { source: '/blocks/:path*', destination: '/library/blocks/:path*' },
+        { source: '/hooks/:path*', destination: '/library/hooks/:path*' },
+        { source: '/templates/:path*', destination: '/library/templates/:path*' },
       ],
       afterFiles: [
         { source: '/docs/:path*.mdx', destination: '/llms.mdx/docs/:path*' },
@@ -138,6 +138,12 @@ const config: NextConfig = {
       // All old /ui-kit/* URLs → /* (covers groups, sections, everything)
       {
         source: '/ui-kit/:path*',
+        destination: '/:path*',
+        permanent: true,
+      },
+      // /library/* is the internal route (proxied from /components, /primitives, etc.) — avoid duplicate content
+      {
+        source: '/library/:path*',
         destination: '/:path*',
         permanent: true,
       },

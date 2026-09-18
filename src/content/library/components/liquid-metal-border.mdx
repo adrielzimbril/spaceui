@@ -1,0 +1,63 @@
+---
+title: Liquid Metal Border
+description: Liquid metal shader as a border wrap. Put any registry component inside.
+preview:
+  name: demo-c-liquid-metal-border-01
+  className: mb-4
+---
+
+## Installation
+
+<ComponentInstallation name="components-spaceui-liquid-metal-border" />
+
+## Usage
+
+```tsx
+import { LiquidBorder } from '@/components/spaceui/liquid-metal-border'
+import { Avatar } from '@/components/ui/avatar'
+import { AvatarFallback } from '@/components/spaceui/avatar-extended'
+
+;<LiquidBorder className="inline-flex size-14 rounded-full p-0.75">
+  <Avatar className="size-full">
+    <AvatarFallback name="space" variant="pebble" />
+  </Avatar>
+</LiquidBorder>
+```
+
+`rounded-*` and `p-0.75` on `LiquidBorder` are the metal ring.
+
+## Variants
+
+### Button
+
+<ComponentPreview name="demo-c-liquid-metal-border-02" className="mb-4" />
+
+### Card
+
+<ComponentPreview name="demo-c-liquid-metal-border-03" className="mb-4" />
+
+### Presets
+
+<ComponentPreview name="demo-c-liquid-metal-border-04" className="mb-4" />
+
+## Props
+
+| Prop                | Type                                                                 | Default    | Description                                    |
+| ------------------- | -------------------------------------------------------------------- | ---------- | ---------------------------------------------- |
+| `children`          | `node`                                                               | —          | Any registry component                         |
+| `preset`            | `'chrome' \| 'gold' \| 'ocean' \| 'sunset' \| 'emerald' \| 'violet'` | `'chrome'` | Built-in metal tint and fallback palette       |
+| `colorBack`         | `string`                                                             | —          | Custom base metal color (overrides preset)     |
+| `colorTint`         | `string`                                                             | —          | Custom highlight tint color (overrides preset) |
+| `fallbackClassName` | `string`                                                             | —          | CSS linear gradient classes for fallback layer |
+| `innerClassName`    | `string`                                                             | —          | Class names for the relative content wrapper   |
+| `speed`             | `number`                                                             | `0.6`      | Animation speed                                |
+| `repetition`        | `number`                                                             | `4`        | Pattern repeats                                |
+| `softness`          | `number`                                                             | `0.5`      | Highlight softness                             |
+| `shiftRed`          | `number`                                                             | `0.3`      | Red shift                                      |
+| `shiftBlue`         | `number`                                                             | `0.3`      | Blue shift                                     |
+| `distortion`        | `number`                                                             | `0`        | Distortion                                     |
+| `contour`           | `number`                                                             | `0`        | Contour                                        |
+| `angle`             | `number`                                                             | `45`       | Pattern angle                                  |
+| `scale`             | `number`                                                             | `8`        | Pattern scale                                  |
+| `offsetX`           | `number`                                                             | `0.1`      | X offset                                       |
+| `offsetY`           | `number`                                                             | `-0.1`     | Y offset                                       |

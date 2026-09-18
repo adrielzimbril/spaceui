@@ -2,7 +2,7 @@
 
 import * as React from 'react'
 import { Button, type ButtonProps } from '@/registry/components/spaceui/button-squircle'
-import { LiquidBorder } from '@/registry/components/spaceui/liquid-metal-border'
+import { LiquidBorder, type LiquidPreset } from '@/registry/components/spaceui/liquid-metal-border'
 import { tickSound } from '@/components/providers/sound-provider'
 import { cn } from '@/registry/lib/utils'
 import { Loader2 } from 'lucide-react'
@@ -13,8 +13,8 @@ interface BuyButtonProps extends Omit<ButtonProps, 'onClick'> {
   price?: string
   successUrl?: string
   onCheckoutStart?: () => void
-  /** Wrap the button in the animated liquid-metal border used for primary CTAs. */
-  border?: boolean
+  /** Wrap the button in the animated liquid-metal border used for primary CTAs. Pass a preset name to pick its color, or `true` for the default. */
+  border?: boolean | LiquidPreset
 }
 
 export function BuyButton({
@@ -77,9 +77,16 @@ export function BuyButton({
 
   if (!border) return button
 
+  const preset = typeof border === 'string' ? border : undefined
+
   return (
-    <LiquidBorder className="flex w-full [&_div]:size-full squircle rounded-full [&_canva]:squircle [&_canva]:rounded-full  [&_div]:squircle [&_div]:rounded-full p-0.75 hover:scale-105 transition-all duration-300">
-      {button}
-    </LiquidBorder>
+    <div className="flex flex-wrap items-center justify-center">
+      <LiquidBorder
+        preset={preset}
+        className="flex w-full [&_div]:size-full squircle rounded-7xl p-0.75 hover:scale-105 transition-all duration-300"
+      >
+        {button}
+      </LiquidBorder>
+    </div>
   )
 }

@@ -7529,6 +7529,38 @@ export const index: Record<string, any> = {
     })(),
     command: '@spaceui/demo-c-liquid-metal-border-03',
   },
+  "demo-c-liquid-metal-border-04": {
+    name: "demo-c-liquid-metal-border-04",
+    description: "Every Liquid Metal Border preset shown as an animated Squishmoji avatar.",
+    type: "registry:component",
+    dependencies: ["@usespaceui/squishmoji"],
+    devDependencies: undefined,
+    registryDependencies: ["https://www.spaceui.one/r/components-spaceui-liquid-metal-border.json"],
+    files: [
+  {
+    "path": "src/registry/demo/components/spaceui/liquid-metal-border/c-liquid-metal-border-04/index.tsx",
+    "type": "registry:component",
+    "target": "components/spaceui/liquid-metal-border-presets.tsx"
+  }
+],
+    keywords: [],
+    component: (() => {
+      const LazyComp = React.lazy(async () => {
+        const mod = await import("@/registry/demo/components/spaceui/liquid-metal-border/c-liquid-metal-border-04/index.tsx");
+        const exportName = Object.keys(mod).find(
+          key => typeof mod[key] === 'function' || typeof mod[key] === 'object'
+        ) || "demo-c-liquid-metal-border-04";
+        const Comp = mod.default || mod[exportName];
+        if (mod.animations) {
+          (LazyComp as any).animations = mod.animations;
+        }
+        return { default: Comp };
+      });
+      LazyComp.demoProps = {};
+      return LazyComp;
+    })(),
+    command: '@spaceui/demo-c-liquid-metal-border-04',
+  },
   "demo-c-liquid-sortable-list-01": {
     name: "demo-c-liquid-sortable-list-01",
     description: "Smooth drag-and-drop sortable team list with generative avatars and spring reordering.",
@@ -9128,6 +9160,38 @@ export const index: Record<string, any> = {
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-silk-border-03',
+  },
+  "demo-c-silk-border-04": {
+    name: "demo-c-silk-border-04",
+    description: "Every Silk Border preset shown as an animated Squishmoji avatar.",
+    type: "registry:component",
+    dependencies: ["vgpu","@usespaceui/squishmoji"],
+    devDependencies: undefined,
+    registryDependencies: ["https://www.spaceui.one/r/components-spaceui-silk-border.json"],
+    files: [
+  {
+    "path": "src/registry/demo/components/spaceui/silk-border/c-silk-border-04/index.tsx",
+    "type": "registry:component",
+    "target": "components/spaceui/silk-border-presets-demo.tsx"
+  }
+],
+    keywords: [],
+    component: (() => {
+      const LazyComp = React.lazy(async () => {
+        const mod = await import("@/registry/demo/components/spaceui/silk-border/c-silk-border-04/index.tsx");
+        const exportName = Object.keys(mod).find(
+          key => typeof mod[key] === 'function' || typeof mod[key] === 'object'
+        ) || "demo-c-silk-border-04";
+        const Comp = mod.default || mod[exportName];
+        if (mod.animations) {
+          (LazyComp as any).animations = mod.animations;
+        }
+        return { default: Comp };
+      });
+      LazyComp.demoProps = {};
+      return LazyComp;
+    })(),
+    command: '@spaceui/demo-c-silk-border-04',
   },
   "demo-c-slide-to-confirm-01": {
     name: "demo-c-slide-to-confirm-01",

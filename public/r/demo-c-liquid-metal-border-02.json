@@ -10,7 +10,7 @@
   "files": [
     {
       "path": "src/registry/demo/components/spaceui/liquid-metal-border/c-liquid-metal-border-02/index.tsx",
-      "content": "'use client'\n\nimport { LiquidBorder } from '@/components/spaceui/liquid-metal-border'\nimport { Button } from '@/components/spaceui/button-squircle'\n\nexport default function Demo() {\n  return (\n    <LiquidBorder className=\"inline-flex rounded-full p-0.75\">\n      <Button variant=\"primary\">Click me</Button>\n    </LiquidBorder>\n  )\n}\n",
+      "content": "'use client'\n\nimport { LiquidBorder } from '@/components/spaceui/liquid-metal-border'\nimport { Button } from '@/components/spaceui/button-squircle'\n\nexport default function Demo() {\n  return (\n    <LiquidBorder className=\"inline-flex squircle rounded-full p-0.75\">\n      <Button variant=\"primary\">Click me</Button>\n    </LiquidBorder>\n  )\n}\n",
       "type": "registry:component",
       "target": "components/spaceui/liquid-metal-border-button.tsx"
     }

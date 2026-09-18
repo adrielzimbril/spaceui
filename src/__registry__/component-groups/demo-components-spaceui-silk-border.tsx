@@ -44,4 +44,8 @@ export const registryComponents: Record<string, RegistryComponent> = {
     () => import("@/registry/demo/components/spaceui/silk-border/c-silk-border-03/index.tsx"),
     {},
   ),
+  "demo-c-silk-border-04": lazyRegistryComponent(
+    () => import("@/registry/demo/components/spaceui/silk-border/c-silk-border-04/index.tsx"),
+    {},
+  ),
 };

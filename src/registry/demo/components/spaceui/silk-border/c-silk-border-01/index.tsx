@@ -7,7 +7,7 @@ import { AvatarFallback } from '@/registry/components/spaceui/avatar-extended'
 export default function Demo() {
   return (
     <div className="flex flex-wrap items-center justify-center gap-6 p-6">
-      <SilkBorder preset="pro" className="inline-flex size-16 rounded-full p-0.75">
+      <SilkBorder preset="ember" className="inline-flex size-16 rounded-full p-0.75">
         <Avatar className="size-full">
           <AvatarFallback name="space" variant="pebble" />
         </Avatar>
@@ -15,11 +15,11 @@ export default function Demo() {
 
       <SilkBorder preset="ocean" className="inline-flex size-16 rounded-full p-0.75">
         <Avatar className="size-full">
-          <AvatarFallback name="galaxy" variant="mesh" />
+          <AvatarFallback name="galaxy" variant="invader" />
         </Avatar>
       </SilkBorder>
 
-      <SilkBorder preset="community" className="inline-flex size-16 rounded-full p-0.75">
+      <SilkBorder preset="aurora" className="inline-flex size-16 rounded-full p-0.75">
         <Avatar className="size-full">
           <AvatarFallback name="starlight" variant="doodle" />
         </Avatar>
