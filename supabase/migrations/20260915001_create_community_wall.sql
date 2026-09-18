@@ -14,22 +14,26 @@ create table if not exists public.community_wall (
 alter table public.community_wall enable row level security;
 
 -- Allow public read access to all messages
-create policy if not exists community_wall_select_all
+drop policy if exists community_wall_select_all on public.community_wall;
+create policy community_wall_select_all
   on public.community_wall
   for select using (true);
 
 -- Allow public and authenticated inserts
-create policy if not exists community_wall_insert_all
+drop policy if exists community_wall_insert_all on public.community_wall;
+create policy community_wall_insert_all
   on public.community_wall
   for insert with check (true);
 
 -- Allow users to update their own messages
-create policy if not exists community_wall_update_own
+drop policy if exists community_wall_update_own on public.community_wall;
+create policy community_wall_update_own
   on public.community_wall
   for update using (auth.uid() = user_id);
 
 -- Allow users to delete their own messages
-create policy if not exists community_wall_delete_own
+drop policy if exists community_wall_delete_own on public.community_wall;
+create policy community_wall_delete_own
   on public.community_wall
   for delete using (auth.uid() = user_id);
 

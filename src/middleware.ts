@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { isComponentPro, verifyProAuthorization } from '@/lib/pro-auth'
+import { isComponentPro, verifyProAuthorization } from '@/lib/pro-auth-edge'
 
 export async function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl

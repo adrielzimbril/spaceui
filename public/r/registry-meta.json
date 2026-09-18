@@ -738,9 +738,9 @@
     "createdAt": "2026-09-16",
     "updatedAt": "2026-09-16",
     "isPro": true,
-    "size": "28.1 KB",
-    "rawSize": 28728,
-    "directSize": "28.1 KB",
+    "size": "27.9 KB",
+    "rawSize": 28530,
+    "directSize": "27.9 KB",
     "fileCount": 5,
     "dependencies": [
       "motion",
@@ -24627,7 +24627,7 @@
     "createdAt": "2026-09-04",
     "updatedAt": "2026-09-04",
     "size": "39.4 KB",
-    "rawSize": 40344,
+    "rawSize": 40353,
     "directSize": "39.4 KB",
     "fileCount": 13,
     "dependencies": [
@@ -24637,7 +24637,8 @@
     ],
     "registryDependencies": [
       "https://www.spaceui.one/r/lib-next-image-url.json",
-      "https://www.spaceui.one/r/block-lens-carousel.json"
+      "https://www.spaceui.one/r/block-lens-carousel.json",
+      "https://www.spaceui.one/r/lib-utils.json"
     ],
     "dependents": [],
     "related": [
@@ -24670,7 +24671,7 @@
     "createdAt": "2026-09-04",
     "updatedAt": "2026-09-04",
     "size": "39.4 KB",
-    "rawSize": 40344,
+    "rawSize": 40353,
     "directSize": "39.4 KB",
     "fileCount": 13,
     "dependencies": [
@@ -24680,7 +24681,8 @@
     ],
     "registryDependencies": [
       "https://www.spaceui.one/r/lib-next-image-url.json",
-      "https://www.spaceui.one/r/block-lens-carousel.json"
+      "https://www.spaceui.one/r/block-lens-carousel.json",
+      "https://www.spaceui.one/r/lib-utils.json"
     ],
     "dependents": [],
     "related": [
@@ -24713,7 +24715,7 @@
     "createdAt": "2026-09-04",
     "updatedAt": "2026-09-04",
     "size": "39.4 KB",
-    "rawSize": 40344,
+    "rawSize": 40353,
     "directSize": "39.4 KB",
     "fileCount": 13,
     "dependencies": [
@@ -24723,7 +24725,8 @@
     ],
     "registryDependencies": [
       "https://www.spaceui.one/r/lib-next-image-url.json",
-      "https://www.spaceui.one/r/block-lens-carousel.json"
+      "https://www.spaceui.one/r/block-lens-carousel.json",
+      "https://www.spaceui.one/r/lib-utils.json"
     ],
     "dependents": [],
     "related": [
@@ -24769,7 +24772,8 @@
       "https://www.spaceui.one/r/block-stats-github.json",
       "https://www.spaceui.one/r/block-stats-blog.json",
       "https://www.spaceui.one/r/block-stats-performance.json",
-      "https://www.spaceui.one/r/block-stats-engagement.json"
+      "https://www.spaceui.one/r/block-stats-engagement.json",
+      "https://www.spaceui.one/r/lib-utils.json"
     ],
     "dependents": [],
     "related": [

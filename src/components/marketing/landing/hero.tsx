@@ -55,7 +55,7 @@ export function Hero() {
           </Link>
 
           {/* ── Main Headline ── */}
-          <h1 className="mt-7 max-w-5xl text-balance text-[42px] font-semibold tracking-tight leading-[1.05] text-foreground sm:text-[64px] md:text-[76px] lg:text-[84px]">
+          <h1 className="mt-7 max-w-5xl text-balance text-[3.125rem] font-semibold tracking-tight leading-[1.08] text-foreground sm:text-[4rem] md:text-[4.75rem] lg:text-[5.25rem]">
             Ship your{' '}
             <span className="inline-block">
               <TextMorph>{ideaWord}</TextMorph>

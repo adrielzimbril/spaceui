@@ -32,3 +32,9 @@ export const REGISTRY_STATS = {
   totalFree: registryStats.totalFree,
   totalComponents: registryStats.primitives + registryStats.components,
 }
+
+export const POLAR_PRODUCTS = {
+  proYearly: process.env.NEXT_PUBLIC_POLAR_PRO_YEARLY_ID || '',
+  allAccessLifetime: process.env.NEXT_PUBLIC_POLAR_LIFETIME_ID || '',
+  templateImmersiveLens: process.env.NEXT_PUBLIC_POLAR_TEMPLATE_IMMERSIVE_ID || '',
+}

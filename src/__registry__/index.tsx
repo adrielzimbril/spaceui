@@ -33435,7 +33435,7 @@ export const index: Record<string, any> = {
     type: "registry:block",
     dependencies: ["motion","gsap","three"],
     devDependencies: ["@types/three"],
-    registryDependencies: ["https://www.spaceui.one/r/lib-next-image-url.json","https://www.spaceui.one/r/block-lens-carousel.json"],
+    registryDependencies: ["https://www.spaceui.one/r/lib-next-image-url.json","https://www.spaceui.one/r/block-lens-carousel.json","https://www.spaceui.one/r/lib-utils.json"],
     files: [
   {
     "path": "src/registry/templates/immersive-lens/index.tsx",
@@ -33527,7 +33527,7 @@ export const index: Record<string, any> = {
     type: "registry:block",
     dependencies: ["motion","@tabler/icons-react"],
     devDependencies: undefined,
-    registryDependencies: ["https://www.spaceui.one/r/block-stats-general.json","https://www.spaceui.one/r/block-stats-github.json","https://www.spaceui.one/r/block-stats-blog.json","https://www.spaceui.one/r/block-stats-performance.json","https://www.spaceui.one/r/block-stats-engagement.json"],
+    registryDependencies: ["https://www.spaceui.one/r/block-stats-general.json","https://www.spaceui.one/r/block-stats-github.json","https://www.spaceui.one/r/block-stats-blog.json","https://www.spaceui.one/r/block-stats-performance.json","https://www.spaceui.one/r/block-stats-engagement.json","https://www.spaceui.one/r/lib-utils.json"],
     files: [
   {
     "path": "src/registry/templates/stats/index.tsx",

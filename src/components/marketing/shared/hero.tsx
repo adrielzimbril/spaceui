@@ -113,7 +113,7 @@ export function MarketingHero({
             </div>
           )}
 
-          <h1 className="mt-7 max-w-5xl text-balance text-[36px] font-semibold tracking-tight leading-[1.08] text-foreground sm:text-[54px] md:text-[66px] lg:text-[76px]">
+          <h1 className="mt-7 max-w-5xl text-balance text-[3.125rem] font-semibold tracking-tight leading-[1.08] text-foreground sm:text-[4rem] md:text-[4.75rem] lg:text-[5.25rem]">
             {title}
           </h1>
 

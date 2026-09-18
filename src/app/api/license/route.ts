@@ -2,6 +2,8 @@ import { cookies } from 'next/headers'
 import { NextResponse } from 'next/server'
 import { createServerClient } from '@supabase/ssr'
 import { supabaseConfig } from '@/integrations/supabase/client'
+import { createAdminClient } from '@/integrations/supabase/server'
+import { generateSignedLicenseToken } from '@/lib/token-security'
 
 export async function GET() {
   if (!supabaseConfig.url || !supabaseConfig.anonKey) {
@@ -50,8 +52,39 @@ export async function GET() {
       )
     }
 
-    // Retrieve user session or generated token
-    const token = `spaceui_${user.id.substring(0, 12)}`
+    const plan: 'pro_lifetime' | 'pro_annual' = metadata.plan === 'lifetime' ? 'pro_lifetime' : 'pro_annual'
+
+    const admin = createAdminClient()
+    if (!admin) {
+      return NextResponse.json({ error: 'Database not configured' }, { status: 500 })
+    }
+
+    // Reuse an existing active key so re-fetching the license doesn't invalidate a
+    // token the user already put in their components.json.
+    const { data: existing } = await (admin as any)
+      .from('license_keys')
+      .select('key')
+      .eq('user_id', user.id)
+      .eq('status', 'active')
+      .order('created_at', { ascending: false })
+      .limit(1)
+      .maybeSingle()
+
+    let token: string = existing?.key
+
+    if (!token) {
+      token = generateSignedLicenseToken({ sub: user.email || user.id, plan, iat: Date.now() })
+      const { error: insertError } = await (admin as any).from('license_keys').insert({
+        user_id: user.id,
+        key: token,
+        plan,
+        status: 'active',
+      })
+      if (insertError) {
+        console.error('[/api/license] Failed to persist license key:', insertError)
+        return NextResponse.json({ error: 'Failed to issue license key' }, { status: 500 })
+      }
+    }
 
     return NextResponse.json({
       isPro: true,

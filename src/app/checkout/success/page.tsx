@@ -1,8 +1,12 @@
 import Link from 'next/link'
 import { polar } from '@/lib/polar'
 import { Button } from '@/registry/components/spaceui/button-squircle'
-import { Badge } from '@/registry/components/spaceui/badge-squircle'
-import { CheckCircle2, ArrowRight, ShieldCheck, Sparkles } from 'lucide-react'
+import { StatusBadge } from '@/registry/components/spaceui/status-badge'
+import { LiquidBorder } from '@/registry/components/spaceui/liquid-metal-border'
+import { SuccessConfetti } from '@/components/checkout/success-confetti'
+import { AssetEmoji } from '@/tools/emoji/asset-emoji'
+import { EmojiSource, EmojiType } from '@usespaceui/emoji'
+import { CheckCircle2, ArrowRight, ShieldCheck } from 'lucide-react'
 
 interface SuccessPageProps {
   searchParams: Promise<{ checkout_id?: string }>
@@ -24,74 +28,69 @@ export default async function CheckoutSuccessPage({ searchParams }: SuccessPageP
   const status = checkoutData?.status ?? 'confirmed'
 
   return (
-    <main className="relative min-h-[80vh] flex items-center justify-center px-4 py-16">
-      {/* Background glow */}
-      <div
-        className="pointer-events-none absolute -top-24 left-1/2 -translate-x-1/2 size-96 rounded-full bg-primary/10 blur-3xl"
-        aria-hidden="true"
-      />
+    <main className="relative flex min-h-[80vh] items-center justify-center px-5 py-16">
+      <SuccessConfetti />
 
-      <div className="relative w-full max-w-lg border border-border/70 bg-card/60 backdrop-blur-xl p-8 sm:p-10 squircle rounded-4xl shadow-2xl text-center space-y-6">
-        {/* Animated Icon */}
-        <div className="mx-auto flex size-20 items-center justify-center rounded-3xl bg-emerald-500/10 text-emerald-500 border border-emerald-500/20 shadow-inner">
-          <CheckCircle2 className="size-10 stroke-[2.2]" />
+      <div className="mx-auto flex w-full max-w-lg flex-col items-center gap-6 squircle rounded-5xl bg-muted p-10 text-center sm:p-14">
+        <StatusBadge
+          variant="outline"
+          status="online"
+          size="lg"
+          primaryText="Payment confirmed"
+          className="select-none bg-background border-none"
+        >
+          <AssetEmoji codepoint="🎉" source={EmojiSource.Fluent} type={EmojiType.Anim} size={20} lazy={false} />
+        </StatusBadge>
+
+        <div className="flex size-16 items-center justify-center rounded-full bg-background text-emerald-500">
+          <CheckCircle2 className="size-9" strokeWidth={2} />
         </div>
 
-        {/* Title & Description */}
         <div className="space-y-2">
-          <div className="flex items-center justify-center gap-2">
-            <Badge variant="outline" className="text-xs px-2.5 py-0.5 border-emerald-500/30 text-emerald-500">
-              <Sparkles className="size-3 mr-1" /> Paiement validé
-            </Badge>
-          </div>
-          <h1 className="text-2xl sm:text-3xl font-bold tracking-tight text-foreground">
-            Merci pour votre confiance !
-          </h1>
-          <p className="text-sm sm:text-base text-muted-foreground max-w-md mx-auto">
-            Votre commande a été confirmée avec succès. Vous bénéficiez désormais de l'accès complet à vos composants
-            Space UI.
+          <h1 className="text-[28px] font-semibold tracking-tight text-foreground sm:text-[36px]">You're all set</h1>
+          <p className="max-w-sm text-muted-foreground text-sm sm:text-base">
+            Your order is confirmed. You now have full access to your Space UI components.
           </p>
         </div>
 
-        {/* Details Box */}
         {(customerEmail || checkout_id) && (
-          <div className="rounded-2xl bg-muted/40 border border-border/50 p-4 text-left text-xs sm:text-sm space-y-2">
+          <div className="w-full space-y-2 squircle rounded-3xl bg-background p-4 text-left text-xs sm:text-sm">
             {customerEmail && (
               <div className="flex items-center justify-between text-muted-foreground">
-                <span>Compte associé :</span>
+                <span>Account</span>
                 <span className="font-medium text-foreground">{customerEmail}</span>
               </div>
             )}
             {checkout_id && (
               <div className="flex items-center justify-between text-muted-foreground">
-                <span>Réf commande :</span>
+                <span>Order ref</span>
                 <span className="font-mono text-foreground">{checkout_id.slice(0, 16)}...</span>
               </div>
             )}
             <div className="flex items-center justify-between text-muted-foreground">
-              <span>Statut Polar :</span>
+              <span>Status</span>
               <span className="font-medium capitalize text-emerald-500">{status}</span>
             </div>
           </div>
         )}
 
-        <div className="pt-2 flex flex-col sm:flex-row items-center justify-center gap-3">
-          <Button variant="primary" size="lg" full asPointer asChild>
-            <Link href="/primitives" className="flex items-center justify-center gap-2">
-              <span>Explorer les composants</span>
-              <ArrowRight className="size-4" />
-            </Link>
+        <LiquidBorder className="flex squircle rounded-full p-0.75 hover:scale-105 transition-all duration-300">
+          <Button
+            variant="primary"
+            size="lg"
+            full
+            asPointer
+            className="bg-primary!"
+            render={<Link href="/primitives" className="flex items-center justify-center gap-2" />}
+          >
+            <span>Explore components</span>
+            <ArrowRight className="size-4" />
           </Button>
-          <Button variant="base" size="lg" full asPointer asChild>
-            <Link href="/">
-              <span>Retour à l'accueil</span>
-            </Link>
-          </Button>
-        </div>
+        </LiquidBorder>
 
-        <div className="flex items-center justify-center gap-2 text-xs text-muted-foreground pt-2">
+        <div className="flex items-center justify-center gap-2 text-xs text-muted-foreground">
           <ShieldCheck className="size-4 text-emerald-500" />
-          <span>Paiement sécurisé opéré par Polar</span>
+          <span>Payment securely processed by Polar</span>
         </div>
       </div>
     </main>

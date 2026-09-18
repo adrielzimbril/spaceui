@@ -13,9 +13,10 @@ import { StatusBadge } from '@/registry/components/spaceui/status-badge'
 import { Card, CardPanel } from '@/registry/primitives/card'
 import { Frame, FrameFooter } from '@/registry/primitives/frame'
 import { SilkGradient } from '@/registry/components/shader/silk-gradient'
-import { LIFETIME_PRICE } from '@/lib/pricing-config'
+import { LIFETIME_PRICE, POLAR_PRODUCTS } from '@/lib/pricing-config'
 import { cn } from '@/registry/lib/utils'
 import Link from 'next/link'
+import { BuyButton } from '@/components/pricing/buy-button'
 import { LiquidBorder } from '@/registry/components/spaceui/liquid-metal-border'
 
 const currencyFormat = {
@@ -233,11 +234,14 @@ export function SavingsCalculator({ className }: { className?: string }) {
               </CardPanel>
             </Card>
             <FrameFooter className="p-2">
-              <LiquidBorder className="flex w-full [&_div]:size-full squircle rounded-full p-0.75 hover:scale-105 transition-all duration-300">
-                <Button variant="primary" size="lg" full asPointer render={<Link href="#plans" />}>
-                  Get lifetime access
-                </Button>
-              </LiquidBorder>
+              <BuyButton
+                productId={POLAR_PRODUCTS.allAccessLifetime}
+                label="Get lifetime access"
+                variant="primary"
+                full
+                size="lg"
+                border
+              />
             </FrameFooter>
           </Frame>
         </div>
