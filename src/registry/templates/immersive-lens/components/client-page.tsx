@@ -12,6 +12,7 @@ import { LensWebGLLayer } from '@/registry/blocks/lens-carousel/lens-webgl-layer
 import { useCustomCursor } from '../hooks/use-custom-cursor'
 import { useHorizontalDrag } from '../hooks/use-horizontal-drag'
 import { useLightbox } from '../hooks/use-lightbox'
+import { cn } from '@/registry/lib/utils'
 
 export function ClientPage() {
   const [loading, setLoading] = useState(true)
@@ -104,9 +105,9 @@ export function ClientPage() {
 
   return (
     <div
-      className={`fixed inset-0 z-[60] isolate overflow-hidden bg-white text-black font-sans ${
-        cursorActive || lightboxIndex !== null ? 'cursor-none' : ''
-      }`}
+      className={cn('fixed inset-0 z-60 isolate overflow-hidden', {
+        'cursor-none': cursorActive || lightboxIndex !== null,
+      })}
     >
       <LensWebGLLayer
         active={mode === 'vertical'}

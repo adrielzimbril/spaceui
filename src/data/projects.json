@@ -319,7 +319,7 @@
       "url": "https://folio-landing.adrielzimbril.com",
       "repo": "adrielzimbril/folio-landing",
       "repo_url": "https://github.com/adrielzimbril/folio-landing",
-      "isPro": false,
+      "isPro": true,
       "preview": {
         "image": {
           "format": "png",
@@ -350,7 +350,7 @@
       "url": "https://ashura-landing.adrielzimbril.com",
       "repo": "adrielzimbril/ashura-landing",
       "repo_url": "https://github.com/adrielzimbril/ashura-landing",
-      "isPro": false,
+      "isPro": true,
       "preview": {
         "image": {
           "format": "png",
@@ -474,7 +474,7 @@
       "url": "https://haumea-landing.adrielzimbril.com",
       "repo": "adrielzimbril/haumea-landing",
       "repo_url": "https://github.com/adrielzimbril/haumea-landing",
-      "isPro": false,
+      "isPro": true,
       "preview": {
         "image": {
           "format": "png",

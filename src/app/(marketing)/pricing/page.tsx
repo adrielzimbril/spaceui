@@ -249,7 +249,7 @@ const faqs = [
 
 function SectionHeader({ badge, title, description }: { badge: string; title: string; description: string }) {
   return (
-    <div className="flex flex-col items-center justify-center gap-2 text-center">
+    <div className="flex flex-col items-center justify-center gap-2 mb-12 text-center">
       <Badge size="md" className="px-3.5 py-1.5 font-semibold text-xs tracking-tight">
         {badge}
       </Badge>
@@ -292,7 +292,12 @@ export default function PricingPage() {
       </MarketingHero>
 
       <section id="plans" data-page-section className="mx-auto max-w-7xl scroll-mt-24 px-5 sm:px-6 py-10">
-        <div className="grid grid-cols-1 items-stretch gap-6 md:grid-cols-3 lg:gap-8">
+        <SectionHeader
+          badge="Savings calculator"
+          title="What is your time worth?"
+          description="Tell us how long this would take to build and what an hour costs. We’ll do the math."
+        />
+        <div className="relative grid grid-cols-1 items-stretch gap-6 md:grid-cols-3 lg:gap-8">
           {plans.map((plan) => (
             <Frame
               key={plan.key}
@@ -439,8 +444,50 @@ export default function PricingPage() {
           title="What is your time worth?"
           description="Tell us how long this would take to build and what an hour costs. We’ll do the math."
         />
-        <div className="mt-12">
+        <div className="relative">
           <SavingsCalculator />
+        </div>
+      </section>
+      <section data-page-section className="mx-auto max-w-7xl scroll-mt-16 px-5 sm:px-6 py-16">
+        <SectionHeader badge="FAQ" title="Frequently asked questions" description="Still unsure? Here's the rundown." />
+
+        <BouncyAccordion
+          className="mx-auto mt-10 squircle w-full max-w-xl"
+          defaultValue={0}
+          items={faqs.map((faq) => ({ title: faq.question, description: faq.answer }))}
+        />
+
+        <p className="mt-8 text-center text-sm text-muted-foreground">
+          Still have questions? email at{' '}
+          <a
+            href={`mailto:${siteConfig.email}`}
+            className="font-semibold text-foreground transition-colors hover:text-primary"
+          >
+            {siteConfig.email}
+          </a>
+        </p>
+      </section>
+
+      <section data-page-section className="mx-auto max-w-3xl scroll-mt-16 px-5 sm:px-6 py-10">
+        <div className="flex flex-col items-center gap-6 rounded-5xl bg-muted p-10 text-center sm:p-14">
+          <h2 className="text-[28px] font-semibold tracking-tight text-foreground sm:text-[36px]">
+            Ready to ship faster?
+          </h2>
+          <p className="max-w-xl text-muted-foreground text-sm sm:text-base">
+            Join Space UI Pro and get every component, block, and future drop — starting at ${PRO_YEARLY_PRICE}/year.
+          </p>
+          <div className="flex flex-wrap items-center justify-center gap-3">
+            {POLAR_PRODUCTS.proYearly ? (
+              <BuyButton productId={POLAR_PRODUCTS.proYearly} label="Get Pro" variant="primary" size="lg" />
+            ) : (
+              <LiquidBorder className="flex w-full squircle rounded-full p-0.75 hover:scale-105 transition-all duration-300">
+                <Button variant="primary" asPointer render={<Link href="/checkout?products=pro_yearly" />}>
+                  <IconBolt className="size-4" />
+                  <span>Get Pro</span>
+                </Button>
+              </LiquidBorder>
+            )}
+          </div>
         </div>
       </section>
 
@@ -451,7 +498,7 @@ export default function PricingPage() {
           description="Only need one specific product, no subscription? Buy templates separately at a fixed price."
         />
 
-        <div className="mt-12 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+        <div className="relative grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
           {templates.map((template) => (
             <Frame key={template.id} className="flex flex-col h-full">
               <Card className="flex-1 flex flex-col h-full rounded-xl before:rounded-xl overflow-hidden bg-background">
@@ -480,50 +527,6 @@ export default function PricingPage() {
               </FrameFooter>
             </Frame>
           ))}
-        </div>
-      </section>
-
-      <section data-page-section className="mx-auto max-w-7xl scroll-mt-16 px-5 sm:px-6 py-16">
-        <SectionHeader badge="FAQ" title="Frequently asked questions" description="Still unsure? Here's the rundown." />
-
-        <BouncyAccordion
-          className="mx-auto mt-10 squircle w-full max-w-xl"
-          defaultValue={0}
-          items={faqs.map((faq) => ({ title: faq.question, description: faq.answer }))}
-        />
-
-        <p className="mt-8 text-center text-sm text-muted-foreground">
-          Still have questions? email at{' '}
-          <a
-            href={`mailto:${siteConfig.email}`}
-            className="font-semibold text-foreground transition-colors hover:text-primary"
-          >
-            {siteConfig.email}
-          </a>
-        </p>
-      </section>
-
-      {/* Closing CTA */}
-      <section data-page-section className="mx-auto max-w-3xl scroll-mt-16 px-5 sm:px-6 py-10">
-        <div className="flex flex-col items-center gap-6 rounded-5xl bg-muted p-10 text-center sm:p-14">
-          <h2 className="text-[28px] font-semibold tracking-tight text-foreground sm:text-[36px]">
-            Ready to ship faster?
-          </h2>
-          <p className="max-w-xl text-muted-foreground text-sm sm:text-base">
-            Join Space UI Pro and get every component, block, and future drop — starting at ${PRO_YEARLY_PRICE}/year.
-          </p>
-          <div className="flex flex-wrap items-center justify-center gap-3">
-            {POLAR_PRODUCTS.proYearly ? (
-              <BuyButton productId={POLAR_PRODUCTS.proYearly} label="Get Pro" variant="primary" size="lg" />
-            ) : (
-              <LiquidBorder className="flex w-full squircle rounded-full p-0.75 hover:scale-105 transition-all duration-300">
-                <Button variant="primary" asPointer render={<Link href="/checkout?products=pro_yearly" />}>
-                  <IconBolt className="size-4" />
-                  <span>Get Pro</span>
-                </Button>
-              </LiquidBorder>
-            )}
-          </div>
         </div>
       </section>
     </div>

@@ -11,7 +11,8 @@
     "https://www.spaceui.one/r/block-stats-github.json",
     "https://www.spaceui.one/r/block-stats-blog.json",
     "https://www.spaceui.one/r/block-stats-performance.json",
-    "https://www.spaceui.one/r/block-stats-engagement.json"
+    "https://www.spaceui.one/r/block-stats-engagement.json",
+    "https://www.spaceui.one/r/lib-utils.json"
   ],
   "files": [
     {

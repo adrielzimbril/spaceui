@@ -42,7 +42,7 @@ type LayoutModeContextValue = {
   isStandard: boolean
   activePreview: ActivePreviewInfo | null
   setActivePreview: (info: ActivePreviewInfo | null) => void
-  registerDefaultPreview: (info: ActivePreviewInfo) => void
+  registerDefaultPreview: (info: ActivePreviewInfo, isPriority?: boolean) => void
   pageConstraint: PageLayoutConstraint | null
   setPageConstraint: (constraint: PageLayoutConstraint | null) => void
   canSwitchMode: boolean
@@ -232,25 +232,28 @@ export function LayoutModeProvider({
     }
   }, [isModeLocked, mode, setUserPreferredMode, removeSplitInfo, removeMobileSplitInfo])
 
-  const registerDefaultPreview = useCallback((info: ActivePreviewInfo) => {
+  const registerDefaultPreview = useCallback((info: ActivePreviewInfo, isPriority = false) => {
     setActivePreview((current) => {
-      if (!current || current.name !== info.name) {
-        return info
+      if (current && !isPriority) {
+        if (current.name === info.name) {
+          return {
+            ...current,
+            ...info,
+            code: info.code ?? current.code,
+            component: info.component ?? current.component,
+            componentProps: info.componentProps ?? current.componentProps,
+            binds: info.binds ?? current.binds,
+            themeOverride: info.themeOverride ?? current.themeOverride,
+            restart: info.restart ?? current.restart,
+            open: info.open ?? current.open,
+            contained: info.contained ?? current.contained,
+            componentGroup: info.componentGroup ?? current.componentGroup,
+            bigScreen: info.bigScreen ?? current.bigScreen,
+          }
+        }
+        return current
       }
-      return {
-        ...current,
-        ...info,
-        code: info.code ?? current.code,
-        component: info.component ?? current.component,
-        componentProps: info.componentProps ?? current.componentProps,
-        binds: info.binds ?? current.binds,
-        themeOverride: info.themeOverride ?? current.themeOverride,
-        restart: info.restart ?? current.restart,
-        open: info.open ?? current.open,
-        contained: info.contained ?? current.contained,
-        componentGroup: info.componentGroup ?? current.componentGroup,
-        bigScreen: info.bigScreen ?? current.bigScreen,
-      }
+      return info
     })
   }, [])
 

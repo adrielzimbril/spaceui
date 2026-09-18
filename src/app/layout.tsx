@@ -135,8 +135,14 @@ export default async function Layout({ children }: { children: ReactNode }) {
             __html: `(function(){try{var m=document.cookie.match(/(?:space-ui-layout-mode|space-ui-layout-mode)=([^;]+)/);var mode=m?m[1]:(localStorage.getItem('space-ui-layout-mode')||localStorage.getItem('space-ui-layout-mode')||'standard');document.documentElement.setAttribute('data-layout-mode',mode);}catch(e){}})();`,
           }}
         />
+        <script
+          id="theme-lock-init"
+          dangerouslySetInnerHTML={{
+            __html: `(function(){try{var routes={'/showcase':'dark'};var p=window.location.pathname.replace(/\\/+$/,'');for(var r in routes){if(p===r||p.startsWith(r+'/')){var t=routes[r];document.documentElement.classList.remove(t==='dark'?'light':'dark');document.documentElement.classList.add(t);document.documentElement.style.colorScheme=t;break;}}}catch(e){}})();`,
+          }}
+        />
+        <Script id="json-ld" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       </head>
-      <Script id="json-ld" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
 
       <body
         className={cn(

@@ -5,6 +5,8 @@ import type * as React from 'react'
 import { ComponentSourceTabs, type ResolvedSource } from '@/components/docs/preview/source-tabs'
 import { DynamicCodeBlock } from '@/components/docs/code/dynamic-codeblock'
 import { cn } from '@/registry/lib/utils'
+import { isComponentPro } from '@/lib/pro-auth'
+import { InstallCommandBlock } from '@/components/docs/installation/install-command-block'
 
 export type ComponentSourceProps = React.ComponentProps<'div'> & {
   name?: string
@@ -71,8 +73,12 @@ async function resolveRegistryItem(
   resolveDependencies = true,
   defaultLanguage?: string,
 ): Promise<ResolvedSource[]> {
-  const cleanName = name.replace(/^@[^/]+\//, '').replace(/\.json$/, '')
-  if (!cleanName || visited.has(cleanName)) {
+  const cleanName = name
+    .replace(/.*\/([^/]+)\.json$/i, '$1')
+    .replace(/^@[^/]+\//, '')
+    .replace(/\.json$/, '')
+
+  if (!cleanName || visited.has(cleanName) || isComponentPro(cleanName)) {
     return []
   }
   visited.add(cleanName)
@@ -88,7 +94,7 @@ async function resolveRegistryItem(
     // Continue to filesystem lookup
   }
 
-  if (parsed?.isPro || parsed?.meta?.isPro) {
+  if (parsed?.isPro || parsed?.meta?.isPro || isComponentPro(cleanName)) {
     return []
   }
 
@@ -164,11 +170,17 @@ async function resolveRegistryItem(
   // 3. Resolve recursive dependencies if enabled
   if (resolveDependencies && registryDeps.length > 0) {
     for (const rawDep of registryDeps) {
-      const depName = rawDep.replace(/^@[^/]+\//, '').replace(/\.json$/, '')
-      if (depName && !visited.has(depName)) {
-        const depSources = await resolveRegistryItem(depName, visited, resolveDependencies, defaultLanguage)
-        results.push(...depSources)
+      const depName = rawDep
+        .replace(/.*\/([^/]+)\.json$/i, '$1')
+        .replace(/^@[^/]+\//, '')
+        .replace(/\.json$/, '')
+
+      if (!depName || visited.has(depName) || isComponentPro(depName)) {
+        continue
       }
+
+      const depSources = await resolveRegistryItem(depName, visited, resolveDependencies, defaultLanguage)
+      results.push(...depSources)
     }
   }
 
@@ -207,6 +219,27 @@ export async function ComponentSource({
   const resolved = resolvedNested.flat()
 
   if (resolved.length === 0) {
+    if (name && isComponentPro(name)) {
+      const clean = name
+        .replace(/.*\/([^/]+)\.json$/i, '$1')
+        .replace(/^@[^/]+\//, '')
+        .replace(/\.json$/, '')
+      return (
+        <div
+          data-slot="component-source"
+          className={cn('rounded-xl border border-dashed border-border/80 bg-muted/30 p-5 my-3 text-center not-prose', className)}
+        >
+          <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-xs font-semibold bg-primary/10 text-primary mb-2">
+            Pro Component
+          </div>
+          <h4 className="text-sm font-semibold text-foreground">Source code is protected</h4>
+          <p className="text-xs text-muted-foreground mt-1 max-w-sm mx-auto mb-3">
+            This component requires Space UI Pro authorization. Install it via CLI with your authenticated token:
+          </p>
+          <InstallCommandBlock isShadcn packages={clean} />
+        </div>
+      )
+    }
     return null
   }
 

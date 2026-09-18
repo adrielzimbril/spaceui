@@ -60,20 +60,23 @@ export function PageLayoutSync({ mode = Mode.both, defaultMode, path = '', previ
     const effectiveOpen = config.open ?? !effectiveContained
     const ActiveComponent = useIframe ? null : index[config.name]?.component
 
-    registerDefaultPreview({
-      name: config.name,
-      title: config.title ?? title ?? config.name,
-      component: ActiveComponent,
-      useIframe,
-      previewName: config.name,
-      contained: effectiveContained,
-      open: effectiveOpen,
-      restart: config.restart,
-      bigScreen: config.bigScreen,
-      componentGroup,
-      externalUrl: config.externalUrl,
-      hideDocPanel: config.showcase,
-    })
+    registerDefaultPreview(
+      {
+        name: config.name,
+        title: config.title ?? title ?? config.name,
+        component: ActiveComponent,
+        useIframe,
+        previewName: config.name,
+        contained: effectiveContained,
+        open: effectiveOpen,
+        restart: config.restart,
+        bigScreen: config.bigScreen,
+        componentGroup,
+        externalUrl: config.externalUrl,
+        hideDocPanel: config.showcase,
+      },
+      true,
+    )
   }, [preview, title, path, pathname, registerDefaultPreview])
 
   return null

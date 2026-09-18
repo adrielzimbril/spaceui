@@ -426,6 +426,7 @@
       "type": "registry:block",
       "title": "Liquid Gooey Carousel Block",
       "description": "Smooth-minimum signed distance field WebGL2 carousel with liquid fusing cards that pull organic metaball strands when separated.",
+      "isPro": true,
       "registryDependencies": [
         "https://www.spaceui.one/r/lib-utils.json",
         "https://www.spaceui.one/r/lib-next-image-url.json"
@@ -464,6 +465,7 @@
       "type": "registry:block",
       "title": "Prism Carousel Block",
       "description": "Continuous image strip rendered to an offscreen texture and sampled through a thick optical glass lens shader with radial refraction and chromatic aberration.",
+      "isPro": true,
       "registryDependencies": [
         "https://www.spaceui.one/r/lib-utils.json",
         "https://www.spaceui.one/r/lib-next-image-url.json"

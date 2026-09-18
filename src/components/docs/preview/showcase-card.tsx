@@ -29,6 +29,9 @@ import { CodeDrawer } from '@/components/docs/preview/code-drawer'
 import { PreviewContent } from '@/components/docs/preview/preview-content'
 import { getEffectiveContained } from '@/config/preview-config'
 import { ModeSwitcher } from '@/registry/components/spaceui/mode-switcher'
+import registryMeta from '@/__registry__/meta.json'
+import { usePathname } from 'next/navigation'
+import { ProSplitPlaceholder } from './pro-split-placeholder'
 
 export interface ShowcaseCardProps extends React.HTMLAttributes<HTMLDivElement> {
   name: string
@@ -40,6 +43,7 @@ export interface ShowcaseCardProps extends React.HTMLAttributes<HTMLDivElement> 
   allowCopy?: boolean
   contained?: boolean
   container?: boolean
+  isPro?: boolean
 }
 
 function slugify(text: string): string {
@@ -83,6 +87,36 @@ export function ShowcaseCard({
   const rawContained = contained !== undefined ? contained : container
   const effectiveContained = getEffectiveContained(contained, container, name, componentGroup)
   const effectiveOpen = open ?? !effectiveContained
+
+  const pathname = usePathname()
+  const cleanGroup = componentGroup?.replace(/^demo-/, '')
+  const derivedSlug = name.replace(/^(demo-)?(c|b|p)-/, '').replace(/-\d+$/, '')
+  const pageSlug = pathname ? pathname.split('/').filter(Boolean).pop() : undefined
+  const metaRecord = registryMeta as Record<string, any>
+
+  const isPro = Boolean(
+    props.isPro ||
+    (Component as any)?.isPro ||
+    entry?.isPro ||
+    entry?.meta?.isPro ||
+    metaRecord[name]?.isPro === true ||
+    metaRecord[name]?.meta?.isPro === true ||
+    (cleanGroup && metaRecord[cleanGroup]?.isPro === true) ||
+    (derivedSlug &&
+      (metaRecord[derivedSlug]?.isPro === true ||
+        metaRecord[`components-spaceui-${derivedSlug}`]?.isPro === true ||
+        metaRecord[`blocks-${derivedSlug}`]?.isPro === true ||
+        metaRecord[`components-shader-${derivedSlug}`]?.isPro === true)) ||
+    (pageSlug &&
+      (metaRecord[pageSlug]?.isPro === true ||
+        metaRecord[`components-spaceui-${pageSlug}`]?.isPro === true ||
+        metaRecord[`blocks-${pageSlug}`]?.isPro === true ||
+        metaRecord[`components-shader-${pageSlug}`]?.isPro === true)) ||
+    (entry?.registryDependencies as string[] | undefined)?.some((dep) => {
+      const depName = dep.replace(/.*\/([^/]+)\.json$/, '$1')
+      return metaRecord[depName]?.isPro === true
+    }),
+  )
 
   const previewName = useMemo(() => {
     return name
@@ -237,35 +271,41 @@ export function ShowcaseCard({
           )}
 
           {/* View Code Drawer Trigger */}
-          <Button
-            size="default"
-            variant="ghost"
-            onClick={() => {
-              bloomSound()
-              setCodeDrawerOpen(true)
-            }}
-            className="gap-1.5 bg-background hover:bg-background text-xs text-foreground cursor-pointer font-medium"
-          >
-            {/* <IconFileCode className="size-3.5 text-muted-foreground" /> */}
-            <span>Code</span>
-          </Button>
+          {!isPro && (
+            <Button
+              size="default"
+              variant="ghost"
+              onClick={() => {
+                bloomSound()
+                setCodeDrawerOpen(true)
+              }}
+              className="gap-1.5 bg-background hover:bg-background text-xs text-foreground cursor-pointer font-medium"
+            >
+              {/* <IconFileCode className="size-3.5 text-muted-foreground" /> */}
+              <span>Code</span>
+            </Button>
+          )}
         </div>
       </div>
 
       {/* Canvas Area */}
       <div className="rounded-[0.875rem] bg-background h-full min-h-55 flex items-center justify-center relative overflow-hidden group">
-        <PreviewContent
-          name={name}
-          previewName={previewName}
-          componentGroup={componentGroup}
-          Component={Component}
-          children={children}
-          useIframe={useIframe}
-          contained={effectiveContained}
-          themeOverride={themeOverride}
-          registryError={Boolean(registryError)}
-          reloadKey={key}
-        />
+        {isSplit && isSelected ? (
+          <ProSplitPlaceholder />
+        ) : (
+          <PreviewContent
+            name={name}
+            previewName={previewName}
+            componentGroup={componentGroup}
+            Component={Component}
+            children={children}
+            useIframe={useIframe}
+            contained={effectiveContained}
+            themeOverride={themeOverride}
+            registryError={Boolean(registryError)}
+            reloadKey={key}
+          />
+        )}
       </div>
 
       {/* View Code Right Drawer */}

@@ -5,6 +5,9 @@ import { ComponentSource } from '@/components/docs/preview/source'
 import { InstallCommandBlock } from '@/components/docs/installation/install-command-block'
 import { SpaceCodeTabs, TabsList, TabsTab, TabsPanel } from '@/components/docs/code/space-code-tabs'
 import { Steps, Step } from 'fumadocs-ui/components/steps'
+import { Badge } from '@/registry/components/spaceui/badge-squircle'
+import { ProBadge } from '@/components/shared/pro-badge'
+import { isComponentPro } from '@/lib/pro-auth'
 
 export interface ComponentInstallationProps {
   name: string
@@ -26,7 +29,10 @@ function getAppRoot(): string {
 }
 
 export async function ComponentInstallation({ name, className, isPro: isProProp }: ComponentInstallationProps) {
-  const cleanName = name.replace(/^@[^/]+\//, '').replace(/\.json$/, '')
+  const cleanName = name
+    .replace(/.*\/([^/]+)\.json$/i, '$1')
+    .replace(/^@[^/]+\//, '')
+    .replace(/\.json$/, '')
   const appRoot = getAppRoot()
 
   // Try to load registry json to find dependencies and css
@@ -47,7 +53,7 @@ export async function ComponentInstallation({ name, className, isPro: isProProp 
     }
   }
 
-  const isPro = Boolean(isProProp || parsed?.isPro || parsed?.meta?.isPro)
+  const isPro = Boolean(isProProp || parsed?.isPro || parsed?.meta?.isPro || isComponentPro(cleanName))
 
   if (isPro) {
     return (
@@ -59,6 +65,18 @@ export async function ComponentInstallation({ name, className, isPro: isProProp 
 
   const dependencies: string[] = parsed?.dependencies || []
   const registryDependencies: string[] = parsed?.registryDependencies || []
+
+  // Split registryDependencies into free and Pro components
+  const freeRegistryDependencies: string[] = []
+  const proRegistryDependencies: string[] = []
+
+  for (const dep of registryDependencies) {
+    if (isComponentPro(dep)) {
+      proRegistryDependencies.push(dep)
+    } else {
+      freeRegistryDependencies.push(dep)
+    }
+  }
 
   return (
     <SpaceCodeTabs className={className}>
@@ -80,10 +98,20 @@ export async function ComponentInstallation({ name, className, isPro: isProProp 
             </Step>
           )}
 
-          {registryDependencies.length > 0 && (
+          {freeRegistryDependencies.length > 0 && (
             <Step>
               <h4>Install the following registry dependencies:</h4>
-              <InstallCommandBlock isShadcn packages={registryDependencies.join(' ')} />
+              <InstallCommandBlock isShadcn packages={freeRegistryDependencies.join(' ')} />
+            </Step>
+          )}
+
+          {proRegistryDependencies.length > 0 && (
+            <Step>
+              <div className="flex items-center gap-2">
+                <h4 className="font-semibold text-foreground">Install required Pro components:</h4>
+                <ProBadge size="xs" className="leading-normal" />
+              </div>
+              <InstallCommandBlock isShadcn packages={proRegistryDependencies.join(' ')} />
             </Step>
           )}
 

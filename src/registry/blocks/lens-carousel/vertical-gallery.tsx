@@ -68,14 +68,8 @@ export function VerticalGallery({
       onScroll={onScroll}
       className="relative z-10 h-full w-full overflow-y-auto overflow-x-hidden overscroll-none [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
     >
-      <main className="px-5 pb-40 pt-[clamp(60px,10svh,120px)] md:px-[60px]">
-        <div
-          aria-hidden="true"
-          className="my-[100px] text-center font-serif text-[clamp(64px,13.1184vw,190px)] opacity-0"
-        >
-          Category
-        </div>
-        <div className="mx-auto grid w-full max-w-[720px] gap-y-5 md:gap-y-[30px]">
+      <main className="px-5 pb-40 pt-[clamp(60px,10svh,120px)] md:px-15">
+        <div className="mx-auto grid w-full max-w-180 gap-y-5 md:gap-y-7.5">
           {images.map((src, index) => (
             <GalleryImage
               key={src}

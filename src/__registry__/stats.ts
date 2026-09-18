@@ -7,8 +7,8 @@ export const registryStats = {
   "primitivesFree": 60,
   "primitivesPro": 0,
   "blocks": 16,
-  "blocksFree": 9,
-  "blocksPro": 7,
+  "blocksFree": 7,
+  "blocksPro": 9,
   "templates": 2,
   "templatesFree": 19,
   "templatesPro": 2,
@@ -20,6 +20,6 @@ export const registryStats = {
   "hooksOnly": 61,
   "hookComponents": 8,
   "hookUtils": 13,
-  "totalPro": 15,
-  "totalFree": 246
+  "totalPro": 17,
+  "totalFree": 244
 } as const;

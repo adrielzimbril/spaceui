@@ -8,6 +8,7 @@ import { MorphIcon } from '@/registry/components/spaceui/morph-icon'
 import { cn } from '@/registry/lib/utils'
 import { flushSync } from 'react-dom'
 import { bloomSound } from '@/components/providers/sound-provider'
+import { useThemeLock } from '@/components/providers/theme-lock-provider'
 
 export type ThemeValue = 'system' | 'light' | 'dark'
 
@@ -68,6 +69,7 @@ export function ModeSwitcher({
   ...props
 }: ModeSwitcherProps) {
   const { theme, setTheme, resolvedTheme } = useTheme()
+  const { isThemeLocked } = useThemeLock()
   const [mounted, setMounted] = React.useState(false)
   const buttonRef = React.useRef<HTMLButtonElement | null>(null)
 
@@ -85,6 +87,10 @@ export function ModeSwitcher({
   const activeIconKey = !displaySystemIcon && currentTheme === 'system' ? resolved : currentTheme
 
   const cycleTheme = React.useCallback(async () => {
+    if (isThemeLocked && !isControlled) {
+      return
+    }
+
     const nextTheme: ThemeValue =
       currentTheme === 'system'
         ? resolved === 'light'
@@ -121,13 +127,15 @@ export function ModeSwitcher({
   if (!mounted && !isControlled) {
     return (
       <Button
-        className={cn('relative size-8', className)}
+        className={cn('relative overflow-hidden cursor-pointer', className)}
         size={size}
         title="Toggle theme"
         variant={variant}
+        suppressHydrationWarning
         {...props}
       >
-        <span className={calculatedIconClass} />
+        <IconSun className={cn(calculatedIconClass, 'dark:hidden')} />
+        <IconMoon className={cn(calculatedIconClass, 'hidden dark:block')} />
         <span className="sr-only">Toggle theme</span>
       </Button>
     )
@@ -135,9 +143,11 @@ export function ModeSwitcher({
 
   const tooltipTitle =
     title ||
-    (currentTheme === 'system'
-      ? `Theme: system (${resolved}) (click to switch)`
-      : `Theme: ${currentTheme} (click to switch)`)
+    (isThemeLocked && !isControlled
+      ? 'Theme locked to dark on Showcase'
+      : currentTheme === 'system'
+        ? `Theme: system (${resolved}) (click to switch)`
+        : `Theme: ${currentTheme} (click to switch)`)
 
   return (
     <Button
@@ -145,7 +155,11 @@ export function ModeSwitcher({
       onClick={cycleTheme}
       size={size}
       variant={variant}
-      className={cn('relative overflow-hidden cursor-pointer', className)}
+      className={cn(
+        'relative overflow-hidden',
+        isThemeLocked && !isControlled ? 'cursor-default opacity-80' : 'cursor-pointer',
+        className,
+      )}
       title={tooltipTitle}
       aria-label={tooltipTitle}
       suppressHydrationWarning

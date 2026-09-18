@@ -3,6 +3,7 @@
   "name": "block-lens-carousel",
   "title": "Lens Carousel Block",
   "description": "Vertical WebGL lens gallery. Scroll-linked image planes from Immersive Lens.",
+  "isPro": true,
   "dependencies": [
     "motion",
     "gsap",
