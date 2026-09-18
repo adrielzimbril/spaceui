@@ -19,6 +19,14 @@ import {
   IconAdjustmentsHorizontal,
   IconMaximize,
   IconPackage,
+  IconSparkles,
+  IconLayersIntersect,
+  IconComponents,
+  IconAtom,
+  IconBox,
+  IconTerminal2,
+  IconRocket,
+  IconGalaxy,
 } from '@tabler/icons-react'
 import { CopyButton } from '@/registry/components/spaceui/copy'
 import { bloomSound } from '@/components/providers/sound-provider'
@@ -42,6 +50,58 @@ export interface ComponentPreviewProps extends React.HTMLAttributes<HTMLDivEleme
   allowCopy?: boolean
   contained?: boolean
   container?: boolean
+  isPro?: boolean
+}
+
+const PRO_ICONS = [
+  { id: 'components', component: IconComponents },
+  { id: 'layers', component: IconLayersIntersect },
+  { id: 'atom', component: IconAtom },
+  { id: 'box', component: IconBox },
+  { id: 'terminal', component: IconTerminal2 },
+  { id: 'galaxy', component: IconGalaxy },
+  { id: 'rocket', component: IconRocket },
+]
+
+function ProSplitPlaceholder() {
+  const [iconIndex, setIconIndex] = useState(0)
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setIconIndex((prev) => (prev + 1) % PRO_ICONS.length)
+    }, 2500)
+    return () => clearInterval(timer)
+  }, [])
+
+  const current = PRO_ICONS[iconIndex]
+  const CurrentIcon = current.component
+
+  return (
+    <div className="flex flex-col items-center justify-center gap-4 py-16 px-4 min-h-75 select-none text-center">
+      <div className="relative flex items-center justify-center">
+        <AnimatePresence mode="popLayout" initial={false}>
+          <motion.div
+            key={current.id}
+            initial={{ scale: 0.5, opacity: 0, filter: 'blur(4px)', rotate: -20 }}
+            animate={{ scale: 1, opacity: 1, filter: 'blur(0px)', rotate: 0 }}
+            exit={{ scale: 0.5, opacity: 0, filter: 'blur(4px)', rotate: 20 }}
+            transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
+            className="flex items-center justify-center text-muted-foreground/80"
+          >
+            <CurrentIcon className="size-9" />
+          </motion.div>
+        </AnimatePresence>
+      </div>
+
+      <div className="flex items-center gap-2.5 text-xs font-medium text-foreground">
+        <span className="relative flex size-2 items-center justify-center shrink-0">
+          <span className="absolute inline-flex size-full rounded-full bg-emerald-400 opacity-75 animate-ping" />
+          <span className="relative inline-flex size-2 rounded-full bg-emerald-500" />
+        </span>
+        <span>Active on Canvas Stage</span>
+      </div>
+    </div>
+  )
 }
 
 function flattenFirstLevel(input?: Record<string, Record<string, unknown>> | null): Record<string, unknown> {
@@ -136,6 +196,10 @@ export function ComponentPreview({
   const [key, setKey] = useState(0)
   const { themeOverride, setThemeOverride } = usePreviewTheme(name)
   const { entry, error: registryError } = useRegistryEntry(name)
+
+  const isPro = Boolean(
+    props.isPro || (Component as any)?.isPro || entry?.isPro || entry?.meta?.isPro || name.includes('slosh-slider'),
+  )
 
   const previewName = useMemo(() => {
     const flattenedProps = flattenFirstLevel(componentProps as Record<string, Record<string, unknown>> | null)
@@ -287,39 +351,41 @@ export function ComponentPreview({
       <Tabs value={tab} onValueChange={(v) => setTab(v as 'preview' | 'code')} className="gap-0">
         <div className="flex flex-wrap items-center justify-between gap-3 px-3 pb-1 pt-1">
           <div className="flex items-center gap-2">
-            <TabsList
-              className={cn(
-                'flex items-center rounded-lg bg-background p-1 font-medium relative z-0',
-                !title && 'ml-auto',
-              )}
-              aria-label="Preview and Code"
-            >
-              <TabsTrigger
-                value="preview"
-                disabled={isSplit && isEffectivelySelected}
-                onClick={() => {
-                  if (isSplit && isEffectivelySelected) return
-                  bloomSound()
-                  setTab('preview')
-                }}
+            {!isPro && (
+              <TabsList
                 className={cn(
-                  'relative z-10 px-2.5 py-1.5 text-xs font-semibold text-muted-foreground hover:text-foreground data-active:text-foreground outline-none cursor-pointer transition-all duration-300 data-active:bg-muted',
-                  isSplit && isEffectivelySelected && 'opacity-40 cursor-not-allowed pointer-events-none',
+                  'flex items-center rounded-lg bg-background p-1 font-medium relative z-0',
+                  !title && 'ml-auto',
                 )}
+                aria-label="Preview and Code"
               >
-                Preview
-              </TabsTrigger>
-              <TabsTrigger
-                value="code"
-                onClick={() => {
-                  bloomSound()
-                  setTab('code')
-                }}
-                className="relative z-10 px-2.5 py-1.5 text-xs font-semibold text-muted-foreground hover:text-foreground data-active:text-foreground outline-none cursor-pointer transition-all duration-300 data-active:bg-muted"
-              >
-                Code
-              </TabsTrigger>
-            </TabsList>
+                <TabsTrigger
+                  value="preview"
+                  disabled={isSplit && isEffectivelySelected}
+                  onClick={() => {
+                    if (isSplit && isEffectivelySelected) return
+                    bloomSound()
+                    setTab('preview')
+                  }}
+                  className={cn(
+                    'relative z-10 px-2.5 py-1.5 text-xs font-semibold text-muted-foreground hover:text-foreground data-active:text-foreground outline-none cursor-pointer transition-all duration-300 data-active:bg-muted',
+                    isSplit && isEffectivelySelected && 'opacity-40 cursor-not-allowed pointer-events-none',
+                  )}
+                >
+                  Preview
+                </TabsTrigger>
+                <TabsTrigger
+                  value="code"
+                  onClick={() => {
+                    bloomSound()
+                    setTab('code')
+                  }}
+                  className="relative z-10 px-2.5 py-1.5 text-xs font-semibold text-muted-foreground hover:text-foreground data-active:text-foreground outline-none cursor-pointer transition-all duration-300 data-active:bg-muted"
+                >
+                  Code
+                </TabsTrigger>
+              </TabsList>
+            )}
           </div>
 
           <div className="flex items-center gap-2 ml-auto">
@@ -379,7 +445,7 @@ export function ComponentPreview({
                 enableTransition={false}
               />
             )}
-            {allowCopy && code && (
+            {allowCopy && !isPro && code && (
               <CopyButton
                 content={code}
                 variant="ghost"
@@ -468,7 +534,7 @@ export function ComponentPreview({
         </TabsContent>
 
         <TabsContent value="code" className="rounded-[0.875rem] bg-background py-1.5 overflow-hidden outline-none mt-2">
-          <ShikiRenderer code={code ?? ''} lang="tsx" className="max-h-126" />
+          {isPro ? <ProSplitPlaceholder /> : <ShikiRenderer code={code ?? ''} lang="tsx" className="max-h-126" />}
         </TabsContent>
       </Tabs>
 

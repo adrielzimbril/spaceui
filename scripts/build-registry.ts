@@ -909,45 +909,81 @@ export default async function RegistryViewPage({
 `,
   )
 
-  const hookNames = [...uniqueItems.keys()].filter((name) => name.startsWith('hooks-') && !name.startsWith('demo-'))
-  const hookComponents = hookNames.filter((name) => name.startsWith('hooks-components-')).length
-  const hookUtils = hookNames.filter((name) => name.startsWith('hooks-utils-')).length
-  const hooksOnly = hookNames.length - hookComponents - hookUtils
+  const isItemPro = (item: any) =>
+    Boolean(item?.isPro || item?.meta?.isPro || item?.tier === 'pro' || item?.categories?.includes('pro'))
+
+  const componentItems = [...uniqueItems.values()].filter((item) => item.name.startsWith('components-'))
+  const componentsPro = componentItems.filter(isItemPro).length
+  const componentsFree = componentItems.length - componentsPro
+
+  const primitiveItems = [...uniqueItems.values()].filter((item) => item.name.startsWith('primitives-'))
+  const primitivesPro = primitiveItems.filter(isItemPro).length
+  const primitivesFree = primitiveItems.length - primitivesPro
 
   const blockItems = [...uniqueItems.values()].filter(
     (item) => item.name.startsWith('block-') || (item.type === 'registry:block' && !item.name.startsWith('template-')),
   )
-  const templateItems = [...uniqueItems.values()].filter(
+  const blocksPro = blockItems.filter(isItemPro).length
+  const blocksFree = blockItems.length - blocksPro
+
+  const hookItems = [...uniqueItems.values()].filter(
+    (item) => item.name.startsWith('hooks-') && !item.name.startsWith('demo-'),
+  )
+  const hooksPro = hookItems.filter(isItemPro).length
+  const hooksFree = hookItems.length - hooksPro
+  const hookComponents = hookItems.filter((item) => item.name.startsWith('hooks-components-')).length
+  const hookUtils = hookItems.filter((item) => item.name.startsWith('hooks-utils-')).length
+  const hooksOnly = hookItems.length - hookComponents - hookUtils
+
+  const templateRegistryItems = [...uniqueItems.values()].filter(
     (item) => item.name.startsWith('template-') || item.type === 'registry:template',
   )
+  const templatesRegistryPro = templateRegistryItems.filter(isItemPro).length
 
   const demoItems = [...uniqueItems.keys()].filter((name) => name.startsWith('demo-'))
 
   // Load showcase projects to track free and pro templates
-  let templatesFree = 0
-  let templatesPro = 0
+  let showcaseTemplatesFree = 0
+  let showcaseTemplatesPro = 0
   try {
     const projectsPath = path.join(process.cwd(), 'src', 'data', 'projects.json')
     const projectsRaw = await fs.readFile(projectsPath, 'utf-8')
     const parsed = JSON.parse(projectsRaw)
     const list = Array.isArray(parsed.projects) ? parsed.projects : []
-    templatesFree = list.filter((p: any) => !p.isPro).length
-    templatesPro = list.filter((p: any) => p.isPro).length
+    showcaseTemplatesFree = list.filter((p: any) => !p.isPro).length
+    showcaseTemplatesPro = list.filter((p: any) => p.isPro).length
   } catch {}
 
+  const templatesFree = showcaseTemplatesFree + (templateRegistryItems.length - templatesRegistryPro)
+  const templatesPro = showcaseTemplatesPro + templatesRegistryPro
+  const templatesTotal = templatesFree + templatesPro
+
+  const totalPro = componentsPro + primitivesPro + blocksPro + templatesPro + hooksPro
+  const totalFree = componentsFree + primitivesFree + blocksFree + templatesFree + hooksFree
+
   const stats = {
-    components: [...uniqueItems.keys()].filter((name) => name.startsWith('components-')).length,
-    primitives: [...uniqueItems.keys()].filter((name) => name.startsWith('primitives-')).length,
+    components: componentItems.length,
+    componentsFree,
+    componentsPro,
+    primitives: primitiveItems.length,
+    primitivesFree,
+    primitivesPro,
     blocks: blockItems.length,
-    templates: templateItems.length,
+    blocksFree,
+    blocksPro,
+    templates: templateRegistryItems.length,
     templatesFree,
     templatesPro,
-    templatesTotal: templatesFree + templatesPro,
+    templatesTotal,
     demos: demoItems.length,
-    hooks: hookNames.length,
+    hooks: hookItems.length,
+    hooksFree,
+    hooksPro,
     hooksOnly,
     hookComponents,
     hookUtils,
+    totalPro,
+    totalFree,
   }
   await writeFileWithRetry(
     path.join(process.cwd(), 'src/__registry__/stats.ts'),

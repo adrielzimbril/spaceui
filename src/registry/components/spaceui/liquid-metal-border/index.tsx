@@ -25,7 +25,11 @@ export function LiquidBorder({
   ...props
 }: LiquidBorderProps) {
   return (
-    <div data-slot="liquid-border" className={cn('relative isolate overflow-hidden', className)} {...props}>
+    <div
+      data-slot="liquid-border"
+      className={cn('relative isolate overflow-hidden flex items-center justify-center leading-none', className)}
+      {...props}
+    >
       <LiquidMetal
         className="pointer-events-none absolute inset-0 size-full"
         shape="none"
@@ -41,7 +45,7 @@ export function LiquidBorder({
         offsetX={offsetX}
         offsetY={offsetY}
       />
-      <div className="relative z-10 size-full">{children}</div>
+      <div className="relative z-10 flex items-center justify-center leading-none">{children}</div>
     </div>
   )
 }

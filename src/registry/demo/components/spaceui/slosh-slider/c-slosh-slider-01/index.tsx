@@ -9,6 +9,7 @@ export interface SloshSliderDemoProps {
   viscosity?: number
   momentum?: number
   tilt?: number
+  ring?: boolean
 }
 
 export default function Demo({
@@ -17,6 +18,7 @@ export default function Demo({
   viscosity = 15,
   momentum = 55,
   tilt = 45,
+  ring = true,
 }: SloshSliderDemoProps) {
   const [value, setValue] = React.useState(42)
   return (
@@ -29,6 +31,7 @@ export default function Demo({
         viscosity={Number(viscosity)}
         momentum={Number(momentum)}
         tilt={Number(tilt)}
+        ring={Boolean(ring)}
       />
       <p className="text-center text-sm tabular-nums text-muted-foreground">{value}</p>
     </div>

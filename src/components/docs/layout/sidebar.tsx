@@ -12,6 +12,7 @@ import { ScrollArea } from '@/registry/primitives/scroll-area'
 import { Button } from '@/registry/primitives/button'
 import { MenuAvatarIcon } from '@/components/layout/mega-menu'
 import { HUBS, resolvePathSections, getActiveHub, NavBadge, type SectionItem, type HubItem } from '@/lib/nav-registry'
+import { ProBadge } from '@/components/shared/pro-badge'
 
 function HubItemContent({
   hub,
@@ -236,8 +237,10 @@ export function DocsSidebar() {
                           <span className="truncate">{item.name}</span>
                         </div>
 
-                        {/* ReUI Soft Squircle Badges */}
-                        <NavBadge badge={item.badge} />
+                        <div className="flex items-center gap-1.5 shrink-0 ml-auto">
+                          {item.isPro && <ProBadge size="2xs" />}
+                          <NavBadge badge={item.badge} />
+                        </div>
                       </Link>
                     </li>
                   )

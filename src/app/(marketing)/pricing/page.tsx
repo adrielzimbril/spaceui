@@ -2,16 +2,10 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import {
   IconArrowRight,
-  IconArrowUpRight,
   IconBolt,
-  IconBoxMultiple,
   IconCheck,
   IconDeviceLaptop,
   IconInfoCircle,
-  IconMail,
-  IconPalette,
-  IconRocket,
-  IconShieldCheck,
   IconSparkles,
   IconTerminal2,
 } from '@tabler/icons-react'
@@ -21,7 +15,6 @@ import { Button } from '@/registry/components/spaceui/button-squircle'
 import { HeroAvatar, MarketingHero } from '@/components/marketing/shared/hero'
 import { AnimatedStat } from '@/components/pricing/animated-stat'
 import { BuyButton } from '@/components/pricing/buy-button'
-import { PricingCalculator } from '@/components/pricing/pricing-calculator'
 import { SavingsCalculator } from '@/components/pricing/savings-calculator'
 import { BouncyAccordion } from '@/registry/components/spaceui/bouncy-accordion'
 import { Card, CardPanel } from '@/registry/primitives/card'
@@ -119,8 +112,15 @@ const plans = [
     cta: POLAR_PRODUCTS.proYearly ? (
       <BuyButton productId={POLAR_PRODUCTS.proYearly} label="Get Pro" variant="primary" full size="lg" />
     ) : (
-      <LiquidBorder className="flex w-full squircle rounded-full p-0.75 hover:scale-105 transition-all duration-300">
-        <Button variant="primary" full size="lg" asPointer render={<Link href="/checkout?products=pro_yearly" />}>
+      <LiquidBorder className="flex w-full [&_div]:size-full squircle rounded-full p-0.75 hover:scale-105 transition-all duration-300">
+        <Button
+          variant="primary"
+          className="bg-primary!"
+          full
+          size="lg"
+          asPointer
+          render={<Link href="/checkout?products=pro_yearly" />}
+        >
           <IconBolt className="size-4" />
           <span>Get instant access</span>
         </Button>
@@ -333,7 +333,7 @@ export default function PricingPage() {
                     {plan.badgeLabel &&
                       (plan.recommended ? (
                         <LiquidBorder className="inline-flex squircle rounded-full p-0.75 shadow-xs">
-                          <Badge size="xs" variant="primary" className="select-none">
+                          <Badge size="xs" variant="primary" className="select-none bg-primary!">
                             {plan.badgeLabel}
                           </Badge>
                         </LiquidBorder>
@@ -446,18 +446,6 @@ export default function PricingPage() {
 
       <section data-page-section className="mx-auto max-w-7xl scroll-mt-16 px-5 sm:px-6 py-16">
         <SectionHeader
-          badge="Compare plans"
-          title="Which option is right for you?"
-          description="Run the numbers before you decide between subscribing, buying templates individually, or going Lifetime."
-        />
-        <div className="mt-12">
-          <PricingCalculator />
-        </div>
-      </section>
-
-      {/* Fixed-price templates */}
-      <section data-page-section className="mx-auto max-w-7xl scroll-mt-16 px-5 sm:px-6 py-16">
-        <SectionHeader
           badge="One-time, fixed-price purchases"
           title="Ready-to-deploy templates & kits"
           description="Only need one specific product, no subscription? Buy templates separately at a fixed price."
@@ -495,7 +483,6 @@ export default function PricingPage() {
         </div>
       </section>
 
-      {/* FAQ */}
       <section data-page-section className="mx-auto max-w-7xl scroll-mt-16 px-5 sm:px-6 py-16">
         <SectionHeader badge="FAQ" title="Frequently asked questions" description="Still unsure? Here's the rundown." />
 

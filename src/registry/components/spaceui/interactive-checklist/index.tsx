@@ -85,7 +85,7 @@ export function InteractiveChecklist({
   return (
     <div
       className={cn(
-        'w-[300px] select-none font-sans rounded-[var(--chk-r,18px)] p-3.5',
+        'w-60 select-none font-sans rounded-[var(--chk-r,18px)] p-3.5',
         'bg-muted text-foreground transition-[height] duration-300',
         className,
       )}
@@ -153,7 +153,7 @@ export function InteractiveChecklist({
               </div>
 
               {/* Text with animated line-through */}
-              <div className="relative flex-1 min-w-0">
+              <div className="relative min-w-0">
                 <span
                   className={cn(
                     'text-[13.5px] font-medium tracking-tight truncate block transition-colors duration-200',

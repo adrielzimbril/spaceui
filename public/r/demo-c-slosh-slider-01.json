@@ -3,6 +3,7 @@
   "name": "demo-c-slosh-slider-01",
   "title": "Slosh Slider Demo",
   "description": "Liquid slider with corner, viscosity, momentum, and tilt.",
+  "isPro": true,
   "registryDependencies": [
     "https://www.spaceui.one/r/components-spaceui-slosh-slider.json"
   ],

@@ -50,6 +50,7 @@ export interface PageItem {
   url: string
   icon?: React.ComponentType<{ className?: string }>
   badge?: BadgeType
+  isPro?: boolean
 }
 
 export interface SectionItem {
@@ -193,6 +194,22 @@ export function resolveNavIcon(
 
 const ONE_WEEK_MS = 7 * 24 * 60 * 60 * 1000
 
+export function isNodePro(url: string, name: string, node?: any): boolean {
+  const frontmatter = node?.frontmatter
+  const slug = url.split('/').filter(Boolean).pop()
+  const registryEntry = slug ? (registryMeta as Record<string, any>)[slug] : undefined
+
+  return Boolean(
+    frontmatter?.isPro === true ||
+    frontmatter?.pro === true ||
+    node?.isPro === true ||
+    slug === 'slosh-slider' ||
+    slug === 'components-spaceui-slosh-slider' ||
+    registryEntry?.isPro === true ||
+    registryEntry?.meta?.isPro === true
+  )
+}
+
 export function resolveNavBadge(url: string, name: string, node?: any): BadgeType | null {
   const frontmatter = node?.frontmatter
 
@@ -263,6 +280,7 @@ export function extractSectionsFromNode(nodes: any[]): SectionItem[] {
             url: item.index.url,
             icon: resolveNavIcon(item.index.url, indexName, item.index),
             badge: resolveNavBadge(item.index.url, indexName, item.index) ?? undefined,
+            isPro: isNodePro(item.index.url, indexName, item.index),
           })
         }
         process(item.children || [])
@@ -273,6 +291,7 @@ export function extractSectionsFromNode(nodes: any[]): SectionItem[] {
           url: item.url,
           icon: resolveNavIcon(item.url, pageName, item),
           badge: resolveNavBadge(item.url, pageName, item) ?? undefined,
+          isPro: isNodePro(item.url, pageName, item),
         })
       }
     }

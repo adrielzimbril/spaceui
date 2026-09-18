@@ -13,11 +13,13 @@ export interface PublicRegistryEntry {
   name: string
   description?: string
   type: string
+  isPro?: boolean
   dependencies?: string[]
   devDependencies?: string[]
   registryDependencies?: string[]
   files: PublicRegistryFile[]
   meta?: {
+    isPro?: boolean
     demoProps?: Record<string, unknown>
     keywords?: string[]
   }

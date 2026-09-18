@@ -10,6 +10,7 @@ export type SloshSliderProps = {
   max?: number
   step?: number
   height?: number | string
+  ring?: boolean
   onValueChange?: (value: number) => void
   corner?: number
   viscosity?: number
@@ -35,6 +36,7 @@ export function SloshSlider({
   max = 100,
   step = 1,
   height,
+  ring = true,
   onValueChange,
   corner = DEFAULT_CORNER,
   viscosity = DEFAULT_VISCOSITY,
@@ -289,52 +291,69 @@ export function SloshSlider({
   const knobInset = Math.max(2, Math.round(numericHeight * 0.15))
   const knobWidth = numericHeight <= 24 ? 'w-0.75' : 'w-1'
 
+  const trackElement = (
+    <div
+      ref={trackRef}
+      role="slider"
+      tabIndex={disabled ? -1 : 0}
+      aria-label="Liquid slider"
+      aria-valuemin={min}
+      aria-valuemax={max}
+      aria-valuenow={value ?? defaultValue}
+      onPointerDown={handlePointerDown}
+      onPointerMove={handlePointerMove}
+      onPointerUp={handlePointerUp}
+      onPointerCancel={handlePointerUp}
+      onKeyDown={handleKeyDown}
+      className={cn(
+        'relative overflow-hidden touch-none outline-none cursor-ew-resize bg-muted',
+        'focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-1',
+        disabled && 'opacity-50 cursor-not-allowed pointer-events-none',
+      )}
+      style={{
+        borderRadius: clampedCorner,
+        height: trackHeight,
+      }}
+    >
+      <div
+        ref={fillRef}
+        className="absolute inset-y-0 left-0 bg-card"
+        style={{
+          width: `${initialPct.toFixed(2)}%`,
+          clipPath: 'polygon(0 0, calc(100% + var(--lean, 0px)) 0, calc(100% - var(--lean, 0px)) 100%, 0 100%)',
+        }}
+      />
+      <div
+        ref={knobRef}
+        className={cn('absolute rounded-full z-999 ml-[-0.09375rem] bg-foreground pointer-events-none', knobWidth)}
+        style={{
+          marginLeft: -1.5,
+          top: knobInset,
+          bottom: knobInset,
+          left: `${initialPct.toFixed(2)}%`,
+        }}
+      />
+    </div>
+  )
+
+  if (!ring) {
+    return <div className={cn('select-none w-full max-w-85', className)}>{trackElement}</div>
+  }
+
+  const ringPad = numericHeight <= 24 ? 'p-[0.09125rem]' : 'p-[0.125rem]'
+  const outerRadius = clampedCorner + (numericHeight <= 24 ? 2 : 3)
+
   return (
     <div className={cn('select-none w-full max-w-85', className)}>
       <div
-        ref={trackRef}
-        role="slider"
-        tabIndex={disabled ? -1 : 0}
-        aria-label="Liquid slider"
-        aria-valuemin={min}
-        aria-valuemax={max}
-        aria-valuenow={value ?? defaultValue}
-        onPointerDown={handlePointerDown}
-        onPointerMove={handlePointerMove}
-        onPointerUp={handlePointerUp}
-        onPointerCancel={handlePointerUp}
-        onKeyDown={handleKeyDown}
         className={cn(
-          'relative overflow-hidden touch-none outline-none cursor-ew-resize',
-          'bg-muted ring-2 ring-muted ring-offset-1 ring-offset-back focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2',
+          'border-2 border-muted bg-background/50 transition-colors',
+          ringPad,
           disabled && 'opacity-50 cursor-not-allowed pointer-events-none',
         )}
-        style={{
-          borderRadius: clampedCorner,
-          height: trackHeight,
-        }}
+        style={{ borderRadius: outerRadius }}
       >
-        <div
-          ref={fillRef}
-          className="absolute inset-y-0 left-0 bg-card"
-          style={{
-            width: `${initialPct.toFixed(2)}%`,
-            clipPath: 'polygon(0 0, calc(100% + var(--lean, 0px)) 0, calc(100% - var(--lean, 0px)) 100%, 0 100%)',
-          }}
-        />
-        <div
-          ref={knobRef}
-          className={cn(
-            'absolute rounded-full z-999 ml-[-0.09375rem] bg-foreground pointer-events-none',
-            knobWidth,
-          )}
-          style={{
-            marginLeft: -1.5,
-            top: knobInset,
-            bottom: knobInset,
-            left: `${initialPct.toFixed(2)}%`,
-          }}
-        />
+        {trackElement}
       </div>
     </div>
   )

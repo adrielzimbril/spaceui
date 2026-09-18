@@ -2,12 +2,14 @@
 
 import * as React from 'react'
 import Image from 'next/image'
+import Link from 'next/link'
 import { IconBrandGithub, IconArrowUpRight, IconLock } from '@tabler/icons-react'
 import { Frame, FrameFooter, FrameTitle } from '@/registry/primitives/frame'
 import { Card, CardPanel } from '@/registry/primitives/card'
 import { Badge } from '@/registry/components/spaceui/badge-squircle'
 import { Button } from '@/registry/components/spaceui/button-squircle'
 import { LiquidBorder } from '@/registry/components/spaceui/liquid-metal-border'
+import { ProBadge } from '@/components/shared/pro-badge'
 import { useInView } from '@/registry/hooks/animation/use-in-view'
 import type { ProjectItem } from '@/types/project'
 
@@ -46,26 +48,36 @@ export function ProjectCard({ project, priority = false }: ProjectCardProps) {
 
             <div className="absolute top-2.5 left-2.5 z-10 flex items-center w-[calc(100%-(0.625rem*2))] justify-end gap-1.5">
               {project.isPro ? (
-                <LiquidBorder className="inline-flex squircle rounded-full p-0.75">
-                  <Badge size="xs" variant="primary" className="select-none">
-                    PRO
-                  </Badge>
-                </LiquidBorder>
+                <ProBadge size="xs" />
               ) : (
                 <Badge size="xs" variant="secondary" className="select-none">
                   Free
                 </Badge>
               )}
+              {project.created_at &&
+                Date.now() - new Date(project.created_at).getTime() <= 7 * 24 * 60 * 60 * 1000 && (
+                  <Badge size="xs" variant="primary" className="select-none">
+                    NEW
+                  </Badge>
+                )}
             </div>
 
-            {project.url && !project.isPro && (
-              <a
-                href={project.url}
-                target="_blank"
-                rel="noreferrer noopener"
-                className="absolute inset-0 z-0"
-                aria-label={`Preview ${project.title}`}
+            {project.isPro ? (
+              <Link
+                href="/pricing"
+                className="absolute inset-0 z-0 cursor-pointer"
+                aria-label={`View pricing for ${project.title}`}
               />
+            ) : (
+              project.url && (
+                <a
+                  href={project.url}
+                  target="_blank"
+                  rel="noreferrer noopener"
+                  className="absolute inset-0 z-0"
+                  aria-label={`Preview ${project.title}`}
+                />
+              )
             )}
           </CardPanel>
         </Card>
@@ -94,9 +106,10 @@ export function ProjectCard({ project, priority = false }: ProjectCardProps) {
                 <Button
                   variant="secondary"
                   size="icon-xs"
-                  disabled
-                  title="Pro Template — Coming Soon"
-                  className="opacity-100! cursor-not-allowed"
+                  render={<Link href="/pricing" />}
+                  data-space-hover
+                  title="Upgrade to Pro — View pricing"
+                  className="cursor-pointer bg-muted! transition-transform duration-200 hover:scale-105 active:scale-95"
                 >
                   <IconLock className="size-3.5" />
                 </Button>

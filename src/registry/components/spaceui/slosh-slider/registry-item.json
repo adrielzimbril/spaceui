@@ -4,6 +4,7 @@
   "type": "registry:component",
   "title": "Slosh Slider",
   "description": "Liquid fill slider with viscosity, momentum, and tilt.",
+  "isPro": true,
   "dependencies": [],
   "registryDependencies": ["https://www.spaceui.one/r/lib-utils.json"],
   "categories": ["component", "slider"],

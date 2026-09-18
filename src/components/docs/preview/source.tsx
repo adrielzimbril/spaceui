@@ -88,6 +88,10 @@ async function resolveRegistryItem(
     // Continue to filesystem lookup
   }
 
+  if (parsed?.isPro || parsed?.meta?.isPro) {
+    return []
+  }
+
   const results: ResolvedSource[] = []
   const registryDeps: string[] = []
 

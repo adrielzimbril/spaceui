@@ -57,6 +57,7 @@ import {
   type PageItem,
   type SectionItem,
 } from '@/lib/nav-registry'
+import { ProBadge } from '@/components/shared/pro-badge'
 import { MenuAvatarIcon, ToolMenuIcon } from '@/components/layout/mega-menu'
 
 interface MobileNavDrawerProps {
@@ -278,9 +279,14 @@ export function MobileNavDrawer({ open, onOpenChange, trees = [], trigger, trigg
     return filtered
   }, [searchQuery, trees])
 
-  const renderBadge = (badgeType: string | undefined | null) => {
-    if (!badgeType) return null
-    return <NavBadge badge={badgeType as any} className="shrink-0 ml-auto" />
+  const renderBadge = (badgeType: string | undefined | null, isPro?: boolean) => {
+    if (!badgeType && !isPro) return null
+    return (
+      <div className="flex items-center gap-1.5 shrink-0 ml-auto">
+        {isPro && <ProBadge size="2xs" />}
+        <NavBadge badge={badgeType as any} />
+      </div>
+    )
   }
 
   const isDesktop = useMediaQuery('(min-width: 768px)')
@@ -399,7 +405,7 @@ export function MobileNavDrawer({ open, onOpenChange, trees = [], trigger, trigg
                             >
                               <Icon className="size-4 shrink-0 text-muted-foreground" />
                               <span className="truncate text-sm">{item.name}</span>
-                              {renderBadge(item.badge)}
+                              {renderBadge(item.badge, item.isPro)}
                             </Link>
                           )
                         })}
@@ -454,7 +460,7 @@ export function MobileNavDrawer({ open, onOpenChange, trees = [], trigger, trigg
                             >
                               <Icon className="size-4 shrink-0 text-muted-foreground" />
                               <span className="truncate text-sm">{item.name}</span>
-                              {renderBadge(item.badge)}
+                              {renderBadge(item.badge, item.isPro)}
                             </Link>
                           )
                         })}

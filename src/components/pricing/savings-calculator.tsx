@@ -40,17 +40,17 @@ function EstimateSlider({
 }) {
   return (
     <SloshSlider
-      height={20}
+      height={24}
       value={value}
       min={min}
       max={max}
       step={step}
       onValueChange={onChange}
-      corner={4}
-      viscosity={15}
-      momentum={55}
-      tilt={45}
-      className="-ml-0.5"
+      corner={8}
+      viscosity={10}
+      momentum={10}
+      tilt={0}
+      className="max-w-full"
     />
   )
 }

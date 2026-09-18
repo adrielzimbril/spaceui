@@ -9,6 +9,7 @@ import { Steps, Step } from 'fumadocs-ui/components/steps'
 export interface ComponentInstallationProps {
   name: string
   className?: string
+  isPro?: boolean
 }
 
 function getAppRoot(): string {
@@ -24,7 +25,7 @@ function getAppRoot(): string {
   return process.cwd()
 }
 
-export async function ComponentInstallation({ name, className }: ComponentInstallationProps) {
+export async function ComponentInstallation({ name, className, isPro: isProProp }: ComponentInstallationProps) {
   const cleanName = name.replace(/^@[^/]+\//, '').replace(/\.json$/, '')
   const appRoot = getAppRoot()
 
@@ -44,6 +45,16 @@ export async function ComponentInstallation({ name, className }: ComponentInstal
     } catch {
       // ignore
     }
+  }
+
+  const isPro = Boolean(isProProp || parsed?.isPro || parsed?.meta?.isPro)
+
+  if (isPro) {
+    return (
+      <div className={className}>
+        <InstallCommandBlock isShadcn packages={cleanName} />
+      </div>
+    )
   }
 
   const dependencies: string[] = parsed?.dependencies || []

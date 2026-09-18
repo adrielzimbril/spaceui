@@ -48,9 +48,10 @@ import {
 import { Kbd, KbdGroup } from '@/registry/primitives/kbd'
 import { useConfig } from '@/hooks/use-config'
 import type { source } from '@/lib/source'
-import { EmptyMedia } from '@/registry/primitives/empty'
 import { cn } from '@/registry/lib/utils'
 import { searchStaticResources, searchNavShortcuts } from '@/config/menu-config'
+import { ProBadge } from '@/components/shared/pro-badge'
+import registryMeta from '@/__registry__/meta.json'
 
 interface PageItem {
   value: string
@@ -58,6 +59,7 @@ interface PageItem {
   url: string
   group: string
   isComponent: boolean
+  isPro?: boolean
   keywords?: string[]
 }
 
@@ -233,6 +235,14 @@ export function CommandMenu({
         }
 
         const label = node.name || formatSegment(slug)
+        const isPro = Boolean(
+          node?.isPro ||
+          node?.frontmatter?.isPro ||
+          node?.frontmatter?.pro ||
+          slug === 'slosh-slider' ||
+          (registryMeta as Record<string, any>)[slug]?.isPro ||
+          (registryMeta as Record<string, any>)[slug]?.meta?.isPro
+        )
 
         if (!allItems.some((i) => i.url === url)) {
           allItems.push({
@@ -241,6 +251,7 @@ export function CommandMenu({
             url,
             group,
             isComponent,
+            isPro,
             keywords: [group.toLowerCase(), slug, label.toLowerCase(), ...slug.split('-')],
           })
         }
@@ -434,6 +445,7 @@ export function CommandMenu({
                           <div className="flex items-center gap-2.5 min-w-0">
                             <ItemIcon className="size-4 shrink-0 text-muted-foreground" />
                             <span className="truncate">{item.label}</span>
+                            {item.isPro && <ProBadge size="2xs" className="shrink-0" />}
                           </div>
                           {/* {item.shortcut && (
                             <CommandShortcut>
