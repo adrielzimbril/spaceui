@@ -18,6 +18,3 @@ export const LIBRARY_LAYOUT_PROPS: DocsLayoutProps = {
     },
   ],
 }
-
-// Backwards compatibility alias
-export const UI_KIT_LAYOUT_PROPS = LIBRARY_LAYOUT_PROPS

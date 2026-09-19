@@ -9,16 +9,15 @@ import { PlaygroundViewportSwitcher, type ViewportMode } from './playground-view
 import { PlaygroundToolbar } from './playground-toolbar'
 import { InlineInstallBar } from '@/components/docs/installation/inline-install-bar'
 import { PreviewContent } from '@/components/docs/preview/preview-content'
-import { index } from '@/__registry__/index'
 import { useLayoutMode, type ActivePreviewInfo } from '@/components/providers/layout-mode-provider'
 import { Tweakpane, type Binds } from '@/components/docs/preview/tweakpane'
 import { cn } from '@/registry/lib/utils'
-import { MobileNavDrawer } from '@/components/layout/mobile-nav-drawer'
-import { source, librarySource, resourcesSource } from '@/lib/source'
 import { getEffectiveContained } from '@/config/preview-config'
 import { useMediaQuery, useIsMobile } from '@/registry/hooks/browser/use-media-query'
 import { useRegistryEntry } from '@/components/docs/preview/hooks/use-registry-entry'
 import { REGISTRY_NAMESPACE } from '@/lib/install-command'
+import { MobileNavDrawer } from '@/components/layout/mobile-nav-drawer'
+import { source, librarySource, resourcesSource } from '@/lib/source'
 
 export interface PlaygroundCanvasStageProps {
   showInfo: boolean

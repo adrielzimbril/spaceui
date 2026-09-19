@@ -5,7 +5,7 @@ import { Button, type ButtonProps } from '@/registry/components/spaceui/button-s
 import { LiquidBorder, type LiquidPreset } from '@/registry/components/spaceui/liquid-metal-border'
 import { tickSound } from '@/components/providers/sound-provider'
 import { cn } from '@/registry/lib/utils'
-import { Loader2 } from 'lucide-react'
+import { IconLoader2 } from '@tabler/icons-react'
 
 interface BuyButtonProps extends Omit<ButtonProps, 'onClick'> {
   productId: string
@@ -69,7 +69,7 @@ export function BuyButton({
     >
       {isLoading ? (
         <>
-          <Loader2 className="size-4 animate-spin mr-2" />
+          <IconLoader2 className="size-4 animate-spin mr-2" />
           <span>Redirecting...</span>
         </>
       ) : (

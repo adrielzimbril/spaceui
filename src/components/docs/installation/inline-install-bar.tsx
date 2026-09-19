@@ -5,9 +5,9 @@ import { bloomSound } from '@/components/providers/sound-provider'
 import { usePackageManager, type PackageManager } from '@/components/providers/package-manager-provider'
 import { Select, SelectTrigger, SelectValue, SelectPopup, SelectItem } from '@/registry/primitives/select'
 import { CopyButton } from '@/registry/components/spaceui/copy'
-import { ShikiRenderer } from '@/components/docs/code/shiki-renderer'
 import { getShadcnAddCommands, getPackageInstallCommands, REGISTRY_NAMESPACE } from '@/lib/install-command'
 import { cn } from '@/registry/lib/utils'
+import { ScrollArea } from '@/registry/primitives/scroll-area'
 
 const MANAGERS: { id: PackageManager; name: string }[] = [
   { id: 'pnpm', name: 'pnpm' },
@@ -20,6 +20,38 @@ export interface InlineInstallBarProps extends React.HTMLAttributes<HTMLDivEleme
   packageName?: string
   isShadcn?: boolean
   commandOverride?: string | Partial<Record<PackageManager, string>>
+}
+
+function ShikiBashCode({ command }: { command: string }) {
+  if (!command) return null
+
+  const parts = command.split(' ').filter(Boolean)
+
+  return (
+    <code className="select-all text-[.8125rem] whitespace-nowrap">
+      <span className="line">
+        {parts.map((part, index) => {
+          const isFirst = index === 0
+          const text = isFirst ? part : ` ${part}`
+
+          return (
+            <span
+              key={index}
+              style={
+                {
+                  '--shiki-light': isFirst ? '#6F42C1' : '#032F62',
+                  '--shiki-dark': isFirst ? '#B392F0' : '#9ECBFF',
+                } as React.CSSProperties
+              }
+              className={isFirst ? 'text-[#6F42C1] dark:text-[#B392F0]' : 'text-[#032F62] dark:text-[#9ECBFF]'}
+            >
+              {text}
+            </span>
+          )
+        })}
+      </span>
+    </code>
+  )
 }
 
 export function InlineInstallBar({
@@ -80,17 +112,19 @@ export function InlineInstallBar({
         </Select>
 
         <span aria-hidden="true" className="h-4 w-px shrink-0 bg-border" />
-        <div className="relative min-w-0 flex-1 truncate [&_code_.line]:px-0! [&_code]:font-mono!!">
-          <ShikiRenderer
-            code={command}
-            lang="bash"
-            className="flex items-center p-0!"
-            lineNumbers={false}
+        <div className="relative min-w-0 flex-1 h-fit flex items-center overflow-hidden">
+          <ScrollArea
+            clampContentMinWidth={false}
             scrollbarGutter={false}
             scrollFade
             overscrollContain
             showScrollbar={false}
-          />
+            className="size-full flex items-center"
+          >
+            <div className="w-max flex items-center h-full py-1">
+              <ShikiBashCode command={command} />
+            </div>
+          </ScrollArea>
         </div>
         <CopyButton
           content={command}

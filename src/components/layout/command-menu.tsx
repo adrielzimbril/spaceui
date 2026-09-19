@@ -1,6 +1,39 @@
 'use client'
 
+import registryMeta from '@/__registry__/client-meta.json'
+import { usePackageManager } from '@/components/providers/package-manager-provider'
+import { ProBadge } from '@/components/shared/pro-badge'
+import { searchNavShortcuts, searchStaticResources } from '@/config/menu-config'
+import { useConfig } from '@/hooks/use-config'
+import { componentCategoryMap, getHookComponentSlugs, getPureUtilSlugs } from '@/lib/content-categories'
+import { getShadcnAddCommands } from '@/lib/install-command'
+import { librarySource, resourcesSource, source } from '@/lib/source'
+import { useClipboard } from '@/registry/hooks/browser/use-clipboard'
+import { useIsMac } from '@/registry/hooks/browser/use-is-mac'
+import { useEventListener } from '@/registry/hooks/dom/use-event-listener'
+import { cn } from '@/registry/lib/utils'
+import { Button } from '@/registry/primitives/button'
 import {
+  Command,
+  CommandCollection,
+  CommandDialog,
+  CommandDialogPopup,
+  CommandDialogTrigger,
+  CommandEmpty,
+  CommandFooter,
+  CommandGroup,
+  CommandGroupLabel,
+  CommandInput,
+  CommandItem,
+  CommandList,
+  CommandPanel,
+} from '@/registry/primitives/command'
+import { EmptyMedia } from '@/registry/primitives/empty'
+import { Kbd, KbdGroup } from '@/registry/primitives/kbd'
+import { toastManager } from '@/registry/primitives/toast'
+import {
+  IconArrowDown,
+  IconArrowUp,
   IconAtom,
   IconBook2,
   IconBox,
@@ -19,46 +52,11 @@ import {
   IconTypography,
   IconWand,
   IconWaveSine,
-  IconArrowBackUp,
-  IconArrowUp,
-  IconArrowDown,
 } from '@tabler/icons-react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import type { ComponentProps } from 'react'
 import * as React from 'react'
-import { useClipboard } from '@/registry/hooks/browser/use-clipboard'
-import { useIsMac } from '@/registry/hooks/browser/use-is-mac'
-import { useEventListener } from '@/registry/hooks/dom/use-event-listener'
-import { Button } from '@/registry/primitives/button'
-import {
-  Command,
-  CommandCollection,
-  CommandDialog,
-  CommandDialogPopup,
-  CommandDialogTrigger,
-  CommandEmpty,
-  CommandFooter,
-  CommandGroup,
-  CommandGroupLabel,
-  CommandInput,
-  CommandItem,
-  CommandList,
-  CommandPanel,
-  CommandShortcut,
-} from '@/registry/primitives/command'
-import { Kbd, KbdGroup } from '@/registry/primitives/kbd'
-import { EmptyMedia } from '@/registry/primitives/empty'
-import { useConfig } from '@/hooks/use-config'
-import type { source } from '@/lib/source'
-import { cn } from '@/registry/lib/utils'
-import { searchStaticResources, searchNavShortcuts } from '@/config/menu-config'
-import { ProBadge } from '@/components/shared/pro-badge'
-import registryMeta from '@/__registry__/client-meta.json'
-import { usePackageManager } from '@/components/providers/package-manager-provider'
-import { getShadcnAddCommands } from '@/lib/install-command'
-import { toastManager } from '@/registry/primitives/toast'
-import { componentCategoryMap, getHookComponentSlugs, getPureUtilSlugs } from '@/lib/content-categories'
 
 interface PageItem {
   value: string
@@ -254,7 +252,12 @@ export function CommandMenu({
     }
 
     // Process all trees provided
-    const treeList = trees && trees.length > 0 ? trees : tree ? [tree] : []
+    const treeList =
+      trees && trees.length > 0
+        ? trees
+        : tree
+          ? [tree]
+          : [source.pageTree, librarySource.pageTree, resourcesSource.pageTree]
     treeList.forEach((t) => {
       if (t && Array.isArray(t.children)) {
         t.children.forEach((child: any) => collectPages(child))

@@ -123,9 +123,6 @@ export const megaMenuLibrary: MegaMenuItem[] = [
   },
 ]
 
-// Backwards compatibility alias
-export const megaMenuUiKit = megaMenuLibrary
-
 export const megaMenuTools: ResourceItem[] = [
   {
     title: 'UI Avatars',
@@ -339,7 +336,6 @@ export const menuConfig = {
   megaMenu: {
     docs: megaMenuDocs,
     library: megaMenuLibrary,
-    uiKit: megaMenuLibrary,
     tools: megaMenuTools,
   },
   mobileMenu: {

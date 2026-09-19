@@ -1,5 +1,5 @@
-import type { Metadata } from 'next'
 import { PlushPlayground } from '@/tools/plush/playground'
+import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'Plush — Interactive Tactile Fur & 3D Cushions',

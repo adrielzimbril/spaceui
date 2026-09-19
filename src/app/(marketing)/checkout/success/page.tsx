@@ -1,13 +1,13 @@
-import Link from 'next/link'
+import { SuccessConfetti } from '@/components/checkout/success-confetti'
 import { polar } from '@/lib/polar'
 import { Button } from '@/registry/components/spaceui/button-squircle'
-import { StatusBadge } from '@/registry/components/spaceui/status-badge'
 import { LiquidBorder } from '@/registry/components/spaceui/liquid-metal-border'
-import { SuccessConfetti } from '@/components/checkout/success-confetti'
-import { AssetEmoji } from '@/tools/emoji/asset-emoji'
-import { EmojiSource, EmojiType } from '@usespaceui/emoji'
-import { CheckCircle2, ArrowRight, ShieldCheck } from 'lucide-react'
+import { StatusBadge } from '@/registry/components/spaceui/status-badge'
 import { logger } from '@/registry/utils/logger'
+import { AssetEmoji } from '@/tools/emoji/asset-emoji'
+import { IconArrowRight, IconCircleCheck, IconShieldCheck } from '@tabler/icons-react'
+import { EmojiSource, EmojiType } from '@usespaceui/emoji'
+import Link from 'next/link'
 
 interface SuccessPageProps {
   searchParams: Promise<{ checkout_id?: string }>
@@ -44,7 +44,7 @@ export default async function CheckoutSuccessPage({ searchParams }: SuccessPageP
         </StatusBadge>
 
         <div className="flex size-16 items-center justify-center rounded-full bg-background text-emerald-500">
-          <CheckCircle2 className="size-9" strokeWidth={2} />
+          <IconCircleCheck className="size-9" strokeWidth={2} />
         </div>
 
         <div className="space-y-2">
@@ -85,12 +85,12 @@ export default async function CheckoutSuccessPage({ searchParams }: SuccessPageP
             render={<Link href="/primitives" className="flex items-center justify-center gap-2" />}
           >
             <span>Explore components</span>
-            <ArrowRight className="size-4" />
+            <IconArrowRight className="size-4" />
           </Button>
         </LiquidBorder>
 
         <div className="flex items-center justify-center gap-2 text-xs text-muted-foreground">
-          <ShieldCheck className="size-4 text-emerald-500" />
+          <IconShieldCheck className="size-4 text-emerald-500" />
           <span>Payment securely processed by Polar</span>
         </div>
       </div>

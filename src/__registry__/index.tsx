@@ -4395,7 +4395,7 @@ export const index: Record<string, any> = {
         }
         return { default: Comp };
       });
-      LazyComp.demoProps = {"color1":{"value":"#6a68ee"},"color1Opacity":{"value":0.3,"min":0,"max":1,"step":0.05},"color2":{"value":"#c9a6ff"},"color2Opacity":{"value":0.3,"min":0,"max":1,"step":0.05},"color3":{"value":"#04106c"},"color3Opacity":{"value":0.3,"min":0,"max":1,"step":0.05},"heatBaseColor":{"value":"#6a68ee"},"heatBaseColorOpacity":{"value":0.5,"min":0,"max":1,"step":0.05},"hotColor":{"value":"#04106c"},"heatOpacity":{"value":0.5,"min":0,"max":1,"step":0.05},"speed":{"value":0.8,"min":0,"max":3,"step":0.1},"animate":{"value":true},"grain":{"value":true}};
+      LazyComp.demoProps = {"color1":{"value":"#6a68ee"},"color1Opacity":{"value":0.3,"min":0,"max":1,"step":0.05},"color2":{"value":"#c9a6ff"},"color2Opacity":{"value":0.3,"min":0,"max":1,"step":0.05},"color3":{"value":"#04106c"},"color3Opacity":{"value":0.3,"min":0,"max":1,"step":0.05},"heatBaseColor":{"value":"#6a68ee"},"heatBaseColorOpacity":{"value":0.5,"min":0,"max":1,"step":0.05},"hotColor":{"value":"#04106c"},"heatOpacity":{"value":0.5,"min":0,"max":1,"step":0.05},"speed":{"value":1,"min":0,"max":3,"step":0.1},"animate":{"value":true},"grain":{"value":true}};
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-silk-flare-01',

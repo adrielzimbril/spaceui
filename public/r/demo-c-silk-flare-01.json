@@ -9,7 +9,7 @@
   "files": [
     {
       "path": "src/registry/demo/components/shader/silk-flare/c-silk-flare-01/index.tsx",
-      "content": "'use client'\n\nimport * as React from 'react'\nimport { SilkFlare, type SilkFlareFrom } from '@/components/shader/silk-flare'\n\nexport interface SilkFlareDemoProps {\n  color1?: string\n  color1Opacity?: number\n  color2?: string\n  color2Opacity?: number\n  color3?: string\n  color3Opacity?: number\n  heatBaseColor?: string\n  heatBaseColorOpacity?: number\n  hotColor?: string\n  heatOpacity?: number\n  from?: SilkFlareFrom\n  speed?: number\n  animate?: boolean\n  grain?: boolean\n}\n\nexport default function Demo({\n  color1 = '#6a68ee',\n  color1Opacity = 0.3,\n  color2 = '#c9a6ff',\n  color2Opacity = 0.3,\n  color3 = '#04106c',\n  color3Opacity = 0.3,\n  heatBaseColor = '#6a68ee',\n  heatBaseColorOpacity = 0.5,\n  hotColor = '#04106c',\n  heatOpacity = 0.5,\n  from = 'bottom',\n  speed = 0.8,\n  animate = true,\n  grain = true,\n}: SilkFlareDemoProps) {\n  return (\n    <div className=\"relative size-full min-h-96 h-[stretch] overflow-hidden bg-background\">\n      <SilkFlare\n        className=\"absolute inset-0\"\n        color1={color1}\n        color1Opacity={color1Opacity}\n        color2={color2}\n        color2Opacity={color2Opacity}\n        color3={color3}\n        color3Opacity={color3Opacity}\n        heatBaseColor={heatBaseColor}\n        heatBaseColorOpacity={heatBaseColorOpacity}\n        hotColor={hotColor}\n        heatOpacity={heatOpacity}\n        from={from}\n        speed={speed}\n        animate={animate}\n        grain={grain}\n      />\n    </div>\n  )\n}\n",
+      "content": "'use client'\n\nimport * as React from 'react'\nimport { SilkFlare, type SilkFlareFrom } from '@/components/shader/silk-flare'\n\nexport interface SilkFlareDemoProps {\n  color1?: string\n  color1Opacity?: number\n  color2?: string\n  color2Opacity?: number\n  color3?: string\n  color3Opacity?: number\n  heatBaseColor?: string\n  heatBaseColorOpacity?: number\n  hotColor?: string\n  heatOpacity?: number\n  from?: SilkFlareFrom\n  speed?: number\n  animate?: boolean\n  grain?: boolean\n}\n\nexport default function Demo({\n  color1 = '#6a68ee',\n  color1Opacity = 0.3,\n  color2 = '#c9a6ff',\n  color2Opacity = 0.3,\n  color3 = '#04106c',\n  color3Opacity = 0.3,\n  heatBaseColor = '#6a68ee',\n  heatBaseColorOpacity = 0.5,\n  hotColor = '#04106c',\n  heatOpacity = 0.5,\n  from = 'bottom',\n  speed = 1,\n  animate = true,\n  grain = true,\n}: SilkFlareDemoProps) {\n  return (\n    <div className=\"relative size-full min-h-96 h-[stretch] overflow-hidden bg-background\">\n      <SilkFlare\n        className=\"absolute inset-0\"\n        color1={color1}\n        color1Opacity={color1Opacity}\n        color2={color2}\n        color2Opacity={color2Opacity}\n        color3={color3}\n        color3Opacity={color3Opacity}\n        heatBaseColor={heatBaseColor}\n        heatBaseColorOpacity={heatBaseColorOpacity}\n        hotColor={hotColor}\n        heatOpacity={heatOpacity}\n        from={from}\n        speed={speed}\n        animate={animate}\n        grain={grain}\n      />\n    </div>\n  )\n}\n",
       "type": "registry:component",
       "target": "components/shader/silk-flare-demo.tsx"
     }
@@ -62,7 +62,7 @@
         "step": 0.05
       },
       "speed": {
-        "value": 0.8,
+        "value": 1,
         "min": 0,
         "max": 3,
         "step": 0.1

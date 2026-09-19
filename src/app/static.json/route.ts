@@ -1,6 +1,6 @@
-import { NextResponse } from 'next/server'
 import { source } from '@/lib/source'
 import type { OramaDocument } from 'fumadocs-core/search/orama-cloud'
+import { NextResponse } from 'next/server'
 
 export async function GET(): Promise<Response> {
   const pages = source.getPages()

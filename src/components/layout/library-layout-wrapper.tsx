@@ -1,12 +1,12 @@
 'use client'
 
-import React from 'react'
+import { DocsSidebar } from '@/components/docs/layout/sidebar'
+import { SiteLayout } from '@/components/layout/site-layout'
+import { PlaygroundSplitView } from '@/components/playground'
 import { useLayoutMode } from '@/components/providers/layout-mode-provider'
 import { ProAccessProvider } from '@/components/providers/pro-access-provider'
 import { SidebarProvider } from '@/registry/primitives/sidebar'
-import { SiteLayout } from '@/components/layout/site-layout'
-import { DocsSidebar } from '@/components/docs/layout/sidebar'
-import { PlaygroundSplitView } from '@/components/playground'
+import React from 'react'
 
 export function LibraryLayoutWrapper({
   children,
@@ -38,6 +38,3 @@ export function LibraryLayoutWrapper({
     </ProAccessProvider>
   )
 }
-
-// Backwards compatibility alias
-export const UiKitLayoutWrapper = LibraryLayoutWrapper

@@ -80,9 +80,6 @@ export function getLibraryCatalog(slug: string[] | undefined): RelatedGroup[] {
   return getSectionCatalog(section)
 }
 
-// Backwards compatibility alias
-export const getUiKitCatalog = getLibraryCatalog
-
 function getSectionCatalog(section: CatalogSection): RelatedGroup[] {
   const meta = META[section]
   const bySlug = pageMap(section)

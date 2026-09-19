@@ -52,7 +52,7 @@ export const docs = defineDocs({
   },
 })
 
-export const uiKit = defineDocs({
+export const library = defineDocs({
   dir: 'src/content/library',
   docs: sharedSchema,
   meta: {

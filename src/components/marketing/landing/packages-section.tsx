@@ -5,13 +5,9 @@ import Link from 'next/link'
 import { useInView } from '@/registry/hooks/animation/use-in-view'
 import { Badge } from '@/registry/components/spaceui/badge-squircle'
 import { Button } from '@/registry/components/spaceui/button-squircle'
-import { PlushCard } from './bento/packages/plush-card'
 import { AvatarsSquishmojiCard } from './bento/packages/avatars-squishmoji-card'
 import { FlagsCard } from './bento/packages/flags-card'
-import { SquircleCard } from './bento/packages/squircle-card'
-import { ImageSplitCard } from './bento/packages/image-split-card'
 import { EmojiCard } from './bento/packages/emoji-card'
-import { AudioCard } from './bento/packages/audio-card'
 import { IconArrowUpRight } from '@tabler/icons-react'
 
 export function PackagesSection() {

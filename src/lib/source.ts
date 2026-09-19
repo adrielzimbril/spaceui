@@ -1,10 +1,15 @@
-import { docs, uiKit, resources } from '../../.source/server'
+import { docs, library, resources } from '../../.source/server'
 import { LucideIcons } from '@/registry/icons/lucide-icons'
 import { attachFile } from '@/lib/attach-file'
 import SpaceUIIcon from '@/registry/icons/animateui-icon'
 import { loader, type InferMetaType, type InferPageType } from 'fumadocs-core/source'
-import { icons } from 'lucide-react'
+import { IconBox, IconLayout } from '@tabler/icons-react'
 import { createElement } from 'react'
+
+const TABLER_DOC_ICONS: Record<string, any> = {
+  Layout: IconLayout,
+  Cuboid: IconBox,
+}
 
 const commonLoaderOptions = {
   pageTree: {
@@ -16,7 +21,7 @@ const commonLoaderOptions = {
   },
   icon(icon?: string) {
     if (!icon) return
-    if (icon in icons) return createElement(icons[icon as keyof typeof icons])
+    if (icon in TABLER_DOC_ICONS) return createElement(TABLER_DOC_ICONS[icon])
     if (icon === 'SpaceUIIcon') return createElement(SpaceUIIcon)
     if (icon === 'LucideIcons') return createElement(LucideIcons)
   },
@@ -30,12 +35,9 @@ export const source = loader({
 
 export const librarySource = loader({
   baseUrl: '',
-  source: uiKit.toFumadocsSource(),
+  source: library.toFumadocsSource(),
   ...commonLoaderOptions,
 })
-
-// Alias for backwards compatibility
-export const uiKitSource = librarySource
 
 export const resourcesSource = loader({
   baseUrl: '/tools',

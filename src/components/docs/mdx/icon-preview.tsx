@@ -2,16 +2,78 @@
 
 import * as React from 'react'
 import { Badge } from '@/registry/primitives/badge'
-import * as TablerIcons from '@tabler/icons-react'
-import * as LucideIcons from 'lucide-react'
+import {
+  IconSettings,
+  IconCalendar,
+  IconBell,
+  IconSearch,
+  IconUser,
+  IconFolder,
+  IconMail,
+  IconSparkles,
+  IconSparkle,
+  IconShield,
+  IconLayoutGrid,
+  IconAdjustmentsHorizontal,
+  IconTrash,
+} from '@tabler/icons-react'
+import {
+  Settings,
+  Calendar,
+  Bell,
+  Search,
+  User,
+  Folder,
+  Mail,
+  Sparkles,
+  Shield,
+  LayoutGrid,
+  SlidersHorizontal,
+  Trash,
+} from 'lucide-react'
 
 export interface IconPreviewProps {
   library: 'tabler' | 'lucide'
   name: string
 }
 
+const TABLER_ICONS: Record<string, React.ComponentType<{ className?: string; strokeWidth?: number }>> = {
+  IconSettings,
+  IconCalendar,
+  IconBell,
+  IconSearch,
+  IconUser,
+  IconFolder,
+  IconMail,
+  IconSparkles,
+  IconSparkle,
+  IconShield,
+  IconLayoutGrid,
+  IconAdjustmentsHorizontal,
+  IconTrash,
+}
+
+const LUCIDE_ICONS: Record<string, React.ComponentType<{ className?: string; strokeWidth?: number }>> = {
+  Settings,
+  Calendar,
+  Bell,
+  Search,
+  User,
+  Folder,
+  Mail,
+  Sparkles,
+  Shield,
+  LayoutGrid,
+  SlidersHorizontal,
+  Trash,
+}
+
 export function IconPreview({ library, name }: IconPreviewProps) {
-  const IconComponent = library === 'tabler' ? (TablerIcons as any)[name] : (LucideIcons as any)[name]
+  const IconComponent = library === 'tabler' ? TABLER_ICONS[name] : LUCIDE_ICONS[name]
+
+  if (!IconComponent) {
+    return null
+  }
 
   return (
     <span className="inline-flex items-center gap-2 align-middle">

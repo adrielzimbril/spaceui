@@ -2,14 +2,36 @@
 
 import { turn as turnSound } from '@usespaceui/sounds'
 import { Squishmoji } from '@usespaceui/squishmoji/react'
-import { CommandMenu } from '@/components/layout/command-menu'
+import dynamic from 'next/dynamic'
 import { ModeSwitcher } from '@/registry/components/spaceui/mode-switcher'
 import { MegaMenu } from '@/components/layout/mega-menu'
-import { MobileNavDrawer } from '@/components/layout/mobile-nav-drawer'
-import { source, librarySource, resourcesSource } from '@/lib/source'
 import { Link } from '@/registry/primitives/link'
 import { GitHubLink } from '@/registry/components/spaceui/github-link'
 import { searchNavShortcuts } from '@/config/menu-config'
+import { Button } from '@/registry/primitives/button'
+import { IconSearch } from '@tabler/icons-react'
+import { Kbd, KbdGroup } from '@/registry/primitives/kbd'
+
+const CommandMenu = dynamic(() => import('@/components/layout/command-menu').then((mod) => mod.CommandMenu), {
+  ssr: false,
+  loading: () => (
+    <Button variant="outline" size="lg" className="px-1 border-muted w-full">
+      <span className="bg-muted aspect-square rounded-md px-1.5 py-0.5 inline-flex items-center justify-center">
+        <IconSearch className="size-4 text-muted-foreground shrink-0" />
+      </span>
+      <span className="hidden sm:inline text-xs text-muted-foreground">Search…</span>
+      <KbdGroup className="gap-1 ml-auto">
+        <Kbd className="aspect-square">⌘</Kbd>
+        <Kbd className="aspect-square">K</Kbd>
+      </KbdGroup>
+    </Button>
+  ),
+})
+
+const MobileNavDrawer = dynamic(
+  () => import('@/components/layout/mobile-nav-drawer').then((mod) => mod.MobileNavDrawer),
+  { ssr: false },
+)
 
 export const SITE_NAV_ITEMS = searchNavShortcuts
 
@@ -53,7 +75,6 @@ export function SiteHeader() {
                 href: item.href,
                 label: item.label,
               }))}
-              trees={[source.pageTree, librarySource.pageTree, resourcesSource.pageTree]}
             />
           </div>
 
@@ -80,7 +101,7 @@ export function SiteHeader() {
             <span>Sign in</span>
           </Link> */}
 
-          <MobileNavDrawer trees={[source.pageTree, librarySource.pageTree, resourcesSource.pageTree]} />
+          <MobileNavDrawer />
         </div>
       </div>
     </header>

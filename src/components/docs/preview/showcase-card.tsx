@@ -25,11 +25,14 @@ import { bloomSound } from '@/components/providers/sound-provider'
 import { formatCodeForDisplay } from '@/lib/install-command'
 import { useBundle, prettify } from '@/components/providers/bundle-provider'
 import { useLayoutMode } from '@/components/providers/layout-mode-provider'
-import { CodeDrawer } from '@/components/docs/preview/code-drawer'
+import dynamic from 'next/dynamic'
+const CodeDrawer = dynamic(() => import('@/components/docs/preview/code-drawer').then((m) => m.CodeDrawer), {
+  ssr: false,
+})
 import { PreviewContent } from '@/components/docs/preview/preview-content'
 import { getEffectiveContained } from '@/config/preview-config'
 import { ModeSwitcher } from '@/registry/components/spaceui/mode-switcher'
-import registryMeta from '@/__registry__/meta.json'
+import registryMeta from '@/__registry__/client-meta.json'
 import { usePathname } from 'next/navigation'
 import { ProSplitPlaceholder } from './pro-split-placeholder'
 import { useProAccess } from '@/components/providers/pro-access-provider'

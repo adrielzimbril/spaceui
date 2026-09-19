@@ -1,5 +1,5 @@
-import type { Metadata } from 'next'
 import { ImageSplitPlayground } from '@/tools/imagesplit/playground'
+import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'Image Split — Split images into seamless columns & carousels',
