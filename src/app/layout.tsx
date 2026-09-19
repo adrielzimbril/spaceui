@@ -13,6 +13,7 @@ import { cn } from '@/registry/lib/utils'
 import { siteConfig } from '@/config/space-config'
 import { cookies } from 'next/headers'
 import { Mode, type LayoutMode } from '@/components/providers/layout-mode-provider'
+import { ThemeCookieSync, THEME_COOKIE_KEY } from '@/components/providers/theme-cookie-sync'
 
 // TODO: Cache Components adoption. Refactor this route so this opt-out can be removed.
 // See: https://nextjs.org/docs/app/guides/migrating-to-cache-components
@@ -122,9 +123,12 @@ const geistMono = Geist_Mono({
 
 export default async function Layout({ children }: { children: ReactNode }) {
   let initialLayoutMode: LayoutMode = Mode.standard
+  let initialTheme: 'light' | 'dark' | null = null
   try {
     const cookieStore = await cookies()
     initialLayoutMode = (cookieStore.get('space-ui-layout-mode')?.value as LayoutMode) || Mode.standard
+    const themeCookie = cookieStore.get(THEME_COOKIE_KEY)?.value
+    initialTheme = themeCookie === 'dark' || themeCookie === 'light' ? themeCookie : null
   } catch {
     // Fallback to standard during static prerendering or when cookies() rejects
   }
@@ -132,8 +136,9 @@ export default async function Layout({ children }: { children: ReactNode }) {
   return (
     <html
       lang="en"
-      className={cn(inter.variable, geistMono.variable, inter.className)}
+      className={cn(inter.variable, geistMono.variable, inter.className, initialTheme)}
       data-layout-mode={initialLayoutMode}
+      style={initialTheme ? { colorScheme: initialTheme } : undefined}
       suppressHydrationWarning
     >
       <head>
@@ -146,7 +151,7 @@ export default async function Layout({ children }: { children: ReactNode }) {
         <script
           id="theme-init"
           dangerouslySetInnerHTML={{
-            __html: `(function(){try{var routes={'/showcase':'dark'};var p=window.location.pathname.replace(/\\/+$/,'');var locked=null;for(var r in routes){if(p===r||p.startsWith(r+'/')){locked=routes[r];break;}}var t=locked||localStorage.getItem('theme');var isDark=t==='dark'||((!t||t==='system')&&window.matchMedia('(prefers-color-scheme: dark)').matches);var root=document.documentElement;if(isDark){root.classList.add('dark');root.classList.remove('light');root.style.colorScheme='dark';}else{root.classList.remove('dark');root.classList.add('light');root.style.colorScheme='light';}}catch(e){}})();`,
+            __html: `(function(){try{var routes={'/showcase':'dark'};var p=window.location.pathname.replace(/\\/+$/,'');var locked=null;for(var r in routes){if(p===r||p.startsWith(r+'/')){locked=routes[r];break;}}var t=locked||localStorage.getItem('theme');var isDark=t==='dark'||((!t||t==='system')&&window.matchMedia('(prefers-color-scheme: dark)').matches);var root=document.documentElement;if(isDark){root.classList.add('dark');root.classList.remove('light');root.style.colorScheme='dark';}else{root.classList.remove('dark');root.classList.add('light');root.style.colorScheme='light';}}catch(e){}requestAnimationFrame(function(){requestAnimationFrame(function(){document.documentElement.classList.add('theme-ready');});});})();`,
           }}
         />
         <Script id="json-ld" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
@@ -160,6 +165,7 @@ export default async function Layout({ children }: { children: ReactNode }) {
         )}
       >
         <RootProvider search={{ enabled: false }} theme={{ disableTransitionOnChange: true }}>
+          <ThemeCookieSync />
           <NuqsAdapter>
             <GlobalLayoutWrapper initialLayoutMode={initialLayoutMode}>{children}</GlobalLayoutWrapper>
           </NuqsAdapter>

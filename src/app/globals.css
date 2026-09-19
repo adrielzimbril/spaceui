@@ -62,6 +62,53 @@
   --destructive-foreground: var(--color-red-500);
 }
 
+@media (prefers-color-scheme: dark) {
+  :root:not(.light):not(.dark) {
+    color-scheme: dark;
+    --background: var(--color-zinc-950);
+    --foreground: var(--color-white);
+
+    --muted: hsl(0deg 0% 10.2%);
+    --muted-foreground: var(--color-zinc-400);
+
+    --card: var(--color-zinc-950);
+    --card-foreground: var(--color-zinc-50);
+
+    --border: --alpha(var(--color-white) / 8%);
+    --pill-active-bg: --alpha(var(--color-white) / 14%);
+
+    --popover: var(--color-zinc-950);
+    --popover-foreground: var(--color-zinc-50);
+
+    --primary: var(--color-zinc-50);
+    --primary-foreground: var(--color-zinc-950);
+
+    --secondary: var(--color-zinc-800);
+    --secondary-foreground: var(--color-zinc-50);
+
+    --accent: hsl(0deg 2.2% 8.47%);
+    --accent-foreground: var(--color-zinc-50);
+
+    --input: --alpha(var(--color-white) / 10%);
+    --ring: transparent;
+
+    --info: var(--color-blue-100);
+    --info-foreground: var(--color-blue-800);
+
+    --success: var(--color-emerald-100);
+    --success-foreground: var(--color-emerald-800);
+
+    --warning: var(--color-amber-100);
+    --warning-foreground: var(--color-amber-800);
+
+    --error: var(--color-red-100);
+    --error-foreground: var(--color-red-800);
+
+    --destructive: var(--color-red-800);
+    --destructive-foreground: var(--color-red-400);
+  }
+}
+
 .dark {
   color-scheme: dark;
   --background: var(--color-zinc-950);
@@ -171,11 +218,18 @@
 
 html,
 body {
-  @apply bg-[var(--background)] text-[var(--foreground)] font-body font-medium antialiased [font-synthesis:none] [transition:color,background_0.3s_ease];
+  @apply bg-[var(--background)] text-[var(--foreground)] font-body font-medium antialiased [font-synthesis:none];
 }
 
-/* Interactive affordance is global so semantic links and composed Base UI
-   triggers never fall back to the text cursor. Disabled controls opt out. */
+html:not(.theme-ready) * {
+  transition: none !important;
+}
+
+html.theme-ready,
+html.theme-ready body {
+  @apply [transition:color,background_0.3s_ease];
+}
+
 :where(
   a[href],
   button:not(:disabled),
