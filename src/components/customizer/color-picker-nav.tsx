@@ -7,11 +7,15 @@ import { Popover, PopoverTrigger, PopoverPopup } from '@/registry/primitives/pop
 import { Button } from '@/registry/primitives/button'
 import { ScrollArea } from '@/registry/primitives/scroll-area'
 import { IconCheck, IconRotateClockwise } from '@tabler/icons-react'
+import { usePathname } from 'next/navigation'
+import { isMarketingRoute } from '@/config/preview-config'
 import { cn } from '@/registry/lib/utils'
 
 export function ColorPickerNav() {
   const { activePalette, setPalette, resetPalette } = useBrandColor()
   const { playSound } = useUiSound()
+  const pathname = usePathname()
+  const isMarketing = isMarketingRoute(pathname)
 
   return (
     <Popover>
@@ -21,7 +25,10 @@ export function ColorPickerNav() {
             variant="ghost"
             size="icon"
             aria-label="Choose primary brand color"
-            className="size-8 rounded-lg! bg-background data-pressed:bg-background text-muted-foreground hover:text-foreground cursor-pointer transition-colors overflow-hidden"
+            className={cn(
+              'size-8 rounded-lg! bg-background data-pressed:bg-background text-muted-foreground hover:text-foreground cursor-pointer transition-colors overflow-hidden',
+              isMarketing && 'hidden! opacity-0',
+            )}
             onClick={() => playSound('bloom')}
           />
         }

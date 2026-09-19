@@ -34,6 +34,6 @@ function lazyRegistryComponent(
 export const registryComponents: Record<string, RegistryComponent> = {
   "demo-c-silk-flare-01": lazyRegistryComponent(
     () => import("@/registry/demo/components/shader/silk-flare/c-silk-flare-01/index.tsx"),
-    {"color1":{"value":"#7c3aed"},"color2":{"value":"#6366f1"},"color3":{"value":"#a855f7"},"hotColor":{"value":"#38bdf8"},"heatOpacity":{"value":0.5,"min":0,"max":1,"step":0.05},"speed":{"value":0.8,"min":0,"max":3,"step":0.1},"animate":{"value":true},"grain":{"value":true}},
+    {"color1":{"value":"#6a68ee"},"color1Opacity":{"value":0.3,"min":0,"max":1,"step":0.05},"color2":{"value":"#c9a6ff"},"color2Opacity":{"value":0.3,"min":0,"max":1,"step":0.05},"color3":{"value":"#04106c"},"color3Opacity":{"value":0.3,"min":0,"max":1,"step":0.05},"heatBaseColor":{"value":"#6a68ee"},"heatBaseColorOpacity":{"value":0.5,"min":0,"max":1,"step":0.05},"hotColor":{"value":"#04106c"},"heatOpacity":{"value":0.5,"min":0,"max":1,"step":0.05},"speed":{"value":1,"min":0,"max":3,"step":0.1},"animate":{"value":true},"grain":{"value":true}},
   ),
 };

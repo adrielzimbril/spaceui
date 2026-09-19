@@ -466,6 +466,23 @@ async function buildRegistryMetaGraph(items: any[]) {
     path.join(process.cwd(), 'public', 'r', 'registry-meta.json'),
     JSON.stringify(metaMap, null, 2),
   )
+
+  // Lightweight client metadata (isPro, createdAt, updatedAt only) to avoid shipping 720KB JSON to client bundles
+  const clientMeta: Record<string, { isPro?: boolean; createdAt?: string; updatedAt?: string }> = {}
+  for (const [key, entry] of Object.entries(metaMap)) {
+    const e = entry as any
+    if (e.isPro || e.createdAt || e.updatedAt || e.meta?.isPro) {
+      clientMeta[key] = {
+        ...(e.isPro || e.meta?.isPro ? { isPro: true } : {}),
+        ...(e.createdAt ? { createdAt: e.createdAt } : {}),
+        ...(e.updatedAt ? { updatedAt: e.updatedAt } : {}),
+      }
+    }
+  }
+  await writeFileWithRetry(
+    path.join(process.cwd(), 'src', '__registry__', 'client-meta.json'),
+    JSON.stringify(clientMeta),
+  )
 }
 
 /**

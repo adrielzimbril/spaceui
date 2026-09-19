@@ -1,5 +1,3 @@
-'use client'
-
 import { Hero } from '@/components/marketing/landing/hero'
 import { RegistryGrid } from '@/components/marketing/landing/registry-grid'
 import { PackagesSection } from '@/components/marketing/landing/packages-section'

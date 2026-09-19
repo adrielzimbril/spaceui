@@ -32,6 +32,7 @@ import {
   IconUsers,
   type Icon,
 } from '@tabler/icons-react'
+import { useTheme } from 'next-themes'
 import { Badge, type BadgeProps } from '@/registry/components/spaceui/badge-squircle'
 import { Button } from '@/registry/components/spaceui/button-squircle'
 import { AnimatedStat } from './animated-stat'
@@ -74,8 +75,8 @@ function buildPlans(pricing: PricingSnapshot) {
         fallback:
           'from-slate-400/40 via-slate-300/25 to-slate-500/15 dark:from-slate-400/85 dark:via-slate-300/70 dark:to-slate-500/55',
         background:
-          'data-[shade=ready]:from-slate-400/10 data-[shade=ready]:via-slate-300/5 data-[shade=ready]:to-transparent data-[shade=ready]:opacity-45',
-        opacity: 'opacity-25 dark:opacity-100',
+          'data-[shade=ready]:from-slate-400/25 data-[shade=ready]:via-slate-300/15 data-[shade=ready]:to-transparent data-[shade=ready]:opacity-45',
+        opacity: 'opacity-65 dark:opacity-100',
       },
       features: [
         {
@@ -130,7 +131,7 @@ function buildPlans(pricing: PricingSnapshot) {
           'from-rose-500/40 via-amber-500/25 to-rose-600/15 dark:from-rose-500/85 dark:via-amber-500/70 dark:to-rose-600/55',
         background:
           'data-[shade=ready]:from-rose-500/25 data-[shade=ready]:via-amber-500/15 data-[shade=ready]:to-transparent data-[shade=ready]:opacity-45',
-        opacity: 'opacity-20 dark:opacity-100',
+        opacity: 'opacity-60 dark:opacity-100',
       },
       features: [
         { icon: IconLayersUnion, text: 'Everything in Community' },
@@ -205,7 +206,7 @@ function buildPlans(pricing: PricingSnapshot) {
           'from-violet-600/40 via-indigo-500/25 to-purple-500/15 dark:from-violet-600/85 dark:via-indigo-500/70 dark:to-purple-500/55',
         background:
           'data-[shade=ready]:from-violet-500/25 data-[shade=ready]:via-indigo-500/15 data-[shade=ready]:to-transparent data-[shade=ready]:opacity-45',
-        opacity: 'opacity-20 dark:opacity-100',
+        opacity: 'opacity-60 dark:opacity-100',
       },
       features: [
         { icon: IconInfinity, text: 'Everything in Pro, forever' },
@@ -253,14 +254,19 @@ const stats = [
 
 export function PlansSection({ pricing }: { pricing: PricingSnapshot }) {
   const [isShaderReady, setIsShaderReady] = React.useState(false)
+  const [mounted, setMounted] = React.useState(false)
+  const { resolvedTheme } = useTheme()
   const plans = React.useMemo(() => buildPlans(pricing), [pricing])
   const spotsLeft =
     pricing.proYearlyMilestoneTarget != null
       ? Math.max(0, pricing.proYearlyMilestoneTarget - pricing.proYearlyMilestoneCurrent)
       : null
+  const silkColorOpacity = mounted && resolvedTheme === 'dark' ? 1 : 0.2
+
+  React.useEffect(() => setMounted(true), [])
 
   React.useEffect(() => {
-    sleep(800).then(() => setIsShaderReady(true))
+    sleep(1800).then(() => setIsShaderReady(true))
   }, [])
 
   return (
@@ -308,14 +314,17 @@ export function PlansSection({ pricing }: { pricing: PricingSnapshot }) {
                         plan.silk.background,
                       )}
                     />
-                    <div className={cn('pointer-events-none absolute inset-0 transition-opacity', plan.silk.opacity)}>
+                    <div className="pointer-events-none absolute inset-0 transition-opacity">
                       <SilkFlare
                         className="size-full"
                         color1={plan.silk.color1}
                         color2={plan.silk.color2}
                         color3={plan.silk.color3}
+                        heatBaseColor={plan.silk.color1}
+                        color1Opacity={silkColorOpacity}
+                        color2Opacity={silkColorOpacity}
+                        color3Opacity={silkColorOpacity}
                         hotColor={plan.silk.color3}
-                        heatOpacity={0.5}
                         from="bottom"
                         speed={0.75}
                         animate

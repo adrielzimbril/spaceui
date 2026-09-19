@@ -43,7 +43,7 @@ const ALL_ANIMATED_EMOJIS = [
   { char: '🦁', name: 'Lion' },
   { char: '🐼', name: 'Panda' },
   { char: '🦋', name: 'Butterfly' },
-  { char: '🌺', name: 'Flower' },
+  { char: '🌸', name: 'Flower' },
   { char: '🌈', name: 'Rainbow' },
   { char: '⚽', name: 'Soccer' },
   { char: '☕', name: 'Coffee' },

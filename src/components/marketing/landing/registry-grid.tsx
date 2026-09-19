@@ -3,7 +3,6 @@
 import * as React from 'react'
 import Link from 'next/link'
 import { registryStats } from '@/__registry__/stats'
-import projectsData from '@/data/projects.json'
 import { useInView } from '@/registry/hooks/animation/use-in-view'
 import { Badge } from '@/registry/components/spaceui/badge-squircle'
 import { megaMenuTools } from '@/config/menu-config'
@@ -22,7 +21,7 @@ import { IconArrowUpRight } from '@tabler/icons-react'
 import { Button } from '@/registry/components/spaceui/button-squircle'
 
 export function RegistryGrid() {
-  const [ref, isVisible] = useInView({ rootMargin: '80px 0px', initialInView: false })
+  const [ref, isVisible] = useInView({ rootMargin: '200px 0px', initialInView: false })
 
   return (
     <section ref={ref} id="registry" data-page-section className="mx-auto max-w-7xl scroll-mt-16 px-5 sm:px-6 py-20">

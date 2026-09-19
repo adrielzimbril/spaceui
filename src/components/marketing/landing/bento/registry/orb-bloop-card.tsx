@@ -30,18 +30,22 @@ export function OrbBloopCard({ isVisible = true }: { isVisible?: boolean }) {
     <Frame className="flex flex-col h-full">
       <Card className="flex-1 flex flex-col h-full rounded-xl before:rounded-xl overflow-hidden">
         <CardPanel className="flex-1 flex min-h-72 flex-col items-center justify-center p-4 rounded-lg">
-          <OrbBloop
-            mode={bloopState}
-            size={185}
-            palette="candy"
-            eyeSize={1.12}
-            pupilSize={1.05}
-            glow
-            interactive
-            trackPointer={false}
-            interactiveSquish
-            autoBlink
-          />
+          {isVisible ? (
+            <OrbBloop
+              mode={bloopState}
+              size={185}
+              palette="candy"
+              eyeSize={1.12}
+              pupilSize={1.05}
+              glow
+              interactive
+              trackPointer={false}
+              interactiveSquish
+              autoBlink
+            />
+          ) : (
+            <div className="size-46 rounded-full bg-muted/60" />
+          )}
         </CardPanel>
       </Card>
       <FrameFooter className="flex flex-row items-center justify-between p-2">

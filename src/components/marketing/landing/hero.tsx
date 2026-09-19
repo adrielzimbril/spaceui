@@ -12,7 +12,6 @@ import { AssetEmoji } from '@/tools/emoji/asset-emoji'
 import { EmojiSource, EmojiType } from '@usespaceui/emoji'
 import { HeroAvatar } from '@/components/marketing/shared/hero'
 import { useMediaQuery } from '@/registry/hooks/browser/use-media-query'
-import { HeatShade } from '@/registry/components/shader/heat-shade'
 import { LiquidBorder } from '@/registry/components/spaceui/liquid-metal-border'
 
 const HERO_IDEAS = ['ideas', 'products', 'apps', 'sites', 'brands']

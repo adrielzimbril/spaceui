@@ -40,7 +40,7 @@ import {
 } from '@tabler/icons-react'
 import { Badge } from '@/registry/primitives/badge'
 import { DEFAULT_COLOR_CODE } from '@/lib/theme-colors'
-import registryMeta from '@/__registry__/meta.json'
+import registryMeta from '@/__registry__/client-meta.json'
 import { cn } from '@/registry/lib/utils'
 
 export type BadgeType = 'new' | 'beta' | 'updated' | 'coming-soon'

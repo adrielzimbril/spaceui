@@ -2662,9 +2662,9 @@
     "createdAt": "2026-09-19",
     "updatedAt": "2026-09-19",
     "isPro": true,
-    "size": "9.3 KB",
-    "rawSize": 9545,
-    "directSize": "9.3 KB",
+    "size": "11.1 KB",
+    "rawSize": 11395,
+    "directSize": "11.1 KB",
     "fileCount": 2,
     "dependencies": [
       "vgpu"
@@ -2727,9 +2727,9 @@
     "createdAt": "2026-09-19",
     "updatedAt": "2026-09-19",
     "isPro": true,
-    "size": "9.3 KB",
-    "rawSize": 9545,
-    "directSize": "9.3 KB",
+    "size": "11.1 KB",
+    "rawSize": 11395,
+    "directSize": "11.1 KB",
     "fileCount": 2,
     "dependencies": [
       "vgpu"

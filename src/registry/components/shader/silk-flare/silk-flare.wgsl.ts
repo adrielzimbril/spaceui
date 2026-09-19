@@ -6,6 +6,7 @@ struct Params {
   color1: vec4f,
   color2: vec4f,
   color3: vec4f,
+  heatBaseColor: vec4f,
   hotColor: vec4f,
   warp: vec4f,
   blend: vec4f,
@@ -103,9 +104,18 @@ fn fs_main(@location(0) uv: vec2f) -> @location(0) vec4f {
   let edge1 = 0.2 - b + s;
   let v0 = 0.5 - b + s;
   let v1 = -0.3 - b - s;
-  let layer1 = mix(params.color3.xyz, params.color2.xyz, smoothstep(edge0, edge1, blendX));
-  let layer2 = mix(params.color2.xyz, params.color1.xyz, smoothstep(edge0, edge1, blendX));
-  var col = mix(layer1, layer2, smoothstep(v0, v1, tuv.y));
+  let wx = smoothstep(edge0, edge1, blendX);
+  let wy = smoothstep(v0, v1, tuv.y);
+
+  let gradLayer1 = mix(params.color3.xyz, params.color2.xyz, wx);
+  let gradLayer2 = mix(params.color2.xyz, params.color1.xyz, wx);
+  let gradColor = mix(gradLayer1, gradLayer2, wy);
+
+  // Alpha follows the exact same mix weights as the color itself, so a color set to 0 opacity
+  // genuinely lets the page behind the canvas show through in the region it would have covered.
+  let gradAlpha1 = mix(params.color3.w, params.color2.w, wx);
+  let gradAlpha2 = mix(params.color2.w, params.color1.w, wx);
+  let gradAlpha = mix(gradAlpha1, gradAlpha2, wy);
 
   // --- 2. Heat Flare Licks Layer ---
   let y = mix(1.0 - uv.y, uv.y, params.fromTop);
@@ -115,13 +125,18 @@ fn fs_main(@location(0) uv: vec2f) -> @location(0) vec4f {
   let fb = fbm(vec2f(hx * 5.3 + 4.2, y * 2.9 - heatMotion * 1.5));
   let field = a * 0.72 + fb * 0.34;
   let energy = clamp(field * 2.4 - y * 2.3, 0.0, 1.0);
-  let heatAlpha = (0.3 * smoothstep(0.06, 0.5, energy) + 0.7 * smoothstep(0.5, 0.96, energy)) * params.heatOpacity;
-  let heatColor = mix(params.color1.xyz, params.hotColor.xyz, energy);
+  let heatMask = 0.3 * smoothstep(0.06, 0.5, energy) + 0.7 * smoothstep(0.5, 0.96, energy);
+  let heatColor = mix(params.heatBaseColor.xyz, params.hotColor.xyz, energy);
+  let heatAlpha = heatMask * params.heatOpacity * mix(params.heatBaseColor.w, params.hotColor.w, energy);
 
-  // Composite: blend rising heat flare directly over silk gradient
-  col = mix(col, heatColor, heatAlpha);
+  // --- 3. Composite heat flare OVER the silk gradient (standard unpremultiplied "over" op) ---
+  let outAlpha = heatAlpha + gradAlpha * (1.0 - heatAlpha);
+  var col = vec3f(0.0);
+  if (outAlpha > 0.0001) {
+    col = (heatColor * heatAlpha + gradColor * gradAlpha * (1.0 - heatAlpha)) / outAlpha;
+  }
 
-  // --- 3. Film Grain & Look Grading ---
+  // --- 4. Film Grain & Look Grading ---
   var grainUv = uv * max(params.grain.y, 0.001);
   if (params.grain.z > 0.5) {
     grainUv += vec2f(params.time * 0.05);
@@ -134,6 +149,7 @@ fn fs_main(@location(0) uv: vec2f) -> @location(0) vec4f {
   col = pow(max(col, vec3f(0.0)), vec3f(1.0 / max(params.look.y, 0.001)));
   col = clamp(col, vec3f(0.0), vec3f(1.0));
 
-  return vec4f(col, 1.0);
+  // Premultiplied output — the canvas surface is configured for alphaMode 'premultiplied'.
+  return vec4f(col * outAlpha, outAlpha);
 }
 `

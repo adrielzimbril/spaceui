@@ -123,6 +123,20 @@ function isNestedBinds(binds: Binds): binds is NestedBinds {
   )
 }
 
+function countBinds(binds: Binds): number {
+  if (isNestedBinds(binds)) {
+    return Object.values(binds).reduce((total, group) => total + Object.keys(group).length, 0)
+  }
+  return Object.keys(binds).length
+}
+
+function panelHeightClass(binds: Binds): string {
+  const count = countBinds(binds)
+  if (count <= 2) return 'h-32'
+  if (count <= 5) return 'h-86'
+  return 'h-135'
+}
+
 function ControlLabel({ children, value }: { children: React.ReactNode; value?: React.ReactNode }) {
   return (
     <div className="flex items-center justify-between gap-3">
@@ -423,7 +437,7 @@ const Tweakpane = ({ show, onClose, onBindsChange, ...props }: TweakpaneProps) =
             aria-label="Component configuration"
             className="pointer-events-auto absolute bottom-6 right-6 flex max-h-[calc(100dvh-6.5rem)] w-[min(18rem,calc(100vw-2rem))] flex-col rounded-2xl bg-muted p-1.5 overscroll-none"
           >
-            <div className="relative flex flex-col h-135">
+            <div className={cn('relative flex flex-col', panelHeightClass(localBinds))}>
               <div
                 onPointerDown={(e) => panelDragControls.start(e)}
                 className="flex h-10 cursor-grab touch-none select-none items-center justify-between gap-3 rounded-lg bg-background px-3 active:cursor-grabbing"

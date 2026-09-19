@@ -9,8 +9,13 @@ export type SilkFlareFrom = 'bottom' | 'top'
 
 export type SilkFlareProps = {
   color1: string
+  color1Opacity?: number
   color2: string
+  color2Opacity?: number
   color3: string
+  color3Opacity?: number
+  heatBaseColor?: string
+  heatBaseColorOpacity?: number
   hotColor?: string
   heatOpacity?: number
   from?: SilkFlareFrom
@@ -23,15 +28,21 @@ export type SilkFlareProps = {
   className?: string
 }
 
-function hexToRgba(hex: string): [number, number, number, number] {
+function hexToRgba(hex: string, alpha = 1): [number, number, number, number] {
   const h = hex.replace('#', '')
-  return [parseInt(h.slice(0, 2), 16) / 255, parseInt(h.slice(2, 4), 16) / 255, parseInt(h.slice(4, 6), 16) / 255, 1]
+  const a = h.length >= 8 ? parseInt(h.slice(6, 8), 16) / 255 : alpha
+  return [parseInt(h.slice(0, 2), 16) / 255, parseInt(h.slice(2, 4), 16) / 255, parseInt(h.slice(4, 6), 16) / 255, a]
 }
 
 function shaderParams(cur: {
   color1: string
+  color1Opacity?: number
   color2: string
+  color2Opacity?: number
   color3: string
+  color3Opacity?: number
+  heatBaseColor?: string
+  heatBaseColorOpacity?: number
   hotColor?: string
   heatOpacity?: number
   from?: SilkFlareFrom
@@ -40,9 +51,10 @@ function shaderParams(cur: {
 }) {
   return {
     timeSpeed: cur.speed * 0.25,
-    color1: hexToRgba(cur.color1),
-    color2: hexToRgba(cur.color2),
-    color3: hexToRgba(cur.color3),
+    color1: hexToRgba(cur.color1, cur.color1Opacity ?? 0.3),
+    color2: hexToRgba(cur.color2, cur.color2Opacity ?? 0.3),
+    color3: hexToRgba(cur.color3, cur.color3Opacity ?? 0.3),
+    heatBaseColor: hexToRgba(cur.heatBaseColor ?? '#2a7bba', cur.heatBaseColorOpacity ?? 0.5),
     hotColor: hexToRgba(cur.hotColor || cur.color3),
     warp: [1, 5, 2, 50],
     blend: [0, 0.05, 0, 500],
@@ -56,8 +68,13 @@ function shaderParams(cur: {
 
 export function SilkFlare({
   color1,
+  color1Opacity = 0.3,
   color2,
+  color2Opacity = 0.3,
   color3,
+  color3Opacity = 0.3,
+  heatBaseColor = '#2a7bba',
+  heatBaseColorOpacity = 0.5,
   hotColor,
   heatOpacity = 0.5,
   from = 'bottom',
@@ -70,8 +87,38 @@ export function SilkFlare({
   className,
 }: SilkFlareProps) {
   const canvasRef = React.useRef<HTMLCanvasElement>(null)
-  const propsRef = React.useRef({ color1, color2, color3, hotColor, heatOpacity, from, speed, animate, grain })
-  propsRef.current = { color1, color2, color3, hotColor, heatOpacity, from, speed, animate, grain }
+  const propsRef = React.useRef({
+    color1,
+    color1Opacity,
+    color2,
+    color2Opacity,
+    color3,
+    color3Opacity,
+    heatBaseColor,
+    heatBaseColorOpacity,
+    hotColor,
+    heatOpacity,
+    from,
+    speed,
+    animate,
+    grain,
+  })
+  propsRef.current = {
+    color1,
+    color1Opacity,
+    color2,
+    color2Opacity,
+    color3,
+    color3Opacity,
+    heatBaseColor,
+    heatBaseColorOpacity,
+    hotColor,
+    heatOpacity,
+    from,
+    speed,
+    animate,
+    grain,
+  }
 
   React.useEffect(() => {
     const canvas = canvasRef.current
@@ -108,7 +155,7 @@ export function SilkFlare({
       const frameMs = fps ? 1000 / fps : gate.frameMs
       const canvasSurface = surface(gpu, canvasRef.current, {
         dpr: pixelRatio,
-        alphaMode: 'opaque',
+        alphaMode: 'premultiplied',
         format: 'bgra8unorm',
       })
       const p = propsRef.current
@@ -140,7 +187,7 @@ export function SilkFlare({
         const next: Record<string, unknown> = {
           time: moving ? clock(gpu).time : 0,
         }
-        const key = `${cur.color1}${cur.color2}${cur.color3}${cur.hotColor}${cur.heatOpacity}${cur.from}${cur.speed}${cur.animate}${cur.grain}`
+        const key = `${cur.color1}${cur.color1Opacity}${cur.color2}${cur.color2Opacity}${cur.color3}${cur.color3Opacity}${cur.heatBaseColor}${cur.heatBaseColorOpacity}${cur.hotColor}${cur.heatOpacity}${cur.from}${cur.speed}${cur.animate}${cur.grain}`
         if (key !== lastKey) {
           lastKey = key
           Object.assign(next, shaderParams(cur))
