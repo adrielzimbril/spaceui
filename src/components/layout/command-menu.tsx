@@ -23,6 +23,7 @@ import {
   IconArrowDown,
 } from '@tabler/icons-react'
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 import type { ComponentProps } from 'react'
 import * as React from 'react'
 import { useClipboard } from '@/registry/hooks/browser/use-clipboard'
@@ -53,6 +54,10 @@ import { cn } from '@/registry/lib/utils'
 import { searchStaticResources, searchNavShortcuts } from '@/config/menu-config'
 import { ProBadge } from '@/components/shared/pro-badge'
 import registryMeta from '@/__registry__/meta.json'
+import { usePackageManager } from '@/components/providers/package-manager-provider'
+import { getShadcnAddCommands } from '@/lib/install-command'
+import { toastManager } from '@/registry/primitives/toast'
+import { componentCategoryMap, getHookComponentSlugs, getPureUtilSlugs } from '@/lib/content-categories'
 
 interface PageItem {
   value: string
@@ -69,21 +74,8 @@ interface PageGroup {
   items: PageItem[]
 }
 
-const HOOK_COMPONENTS = new Set(['class', 'for', 'if', 'image', 'in-view', 'render-after', 'show', 'switch'])
-
-const PURE_UTILS = new Set([
-  'cache',
-  'cookie',
-  'event',
-  'format-bytes',
-  'format-content',
-  'format-date',
-  'format-text',
-  'is-negative',
-  'logger',
-  'range-map',
-  'sleep',
-])
+const HOOK_COMPONENTS = getHookComponentSlugs()
+const PURE_UTILS = getPureUtilSlugs()
 
 const GROUP_ORDER = [
   'Navigation',
@@ -91,6 +83,8 @@ const GROUP_ORDER = [
   'Primitives',
   'Components',
   'Backgrounds',
+  'Shader',
+  'Orb',
   'Effects',
   'Texts',
   'Hooks',
@@ -111,7 +105,10 @@ function getGroupIcon(group: string, isComponent: boolean) {
     case 'Components':
       return IconAtom
     case 'Backgrounds':
+    case 'Shader':
       return IconSparkles
+    case 'Orb':
+      return IconAtom
     case 'Effects':
       return IconWand
     case 'Texts':
@@ -147,8 +144,10 @@ export function CommandMenu({
   trees?: Array<typeof source.pageTree | any>
   navItems?: { href: string; label: string }[]
 }) {
+  const pathname = usePathname()
   const isMac = useIsMac()
   const [config] = useConfig()
+  const [packageManager] = usePackageManager()
   const { copy: copyToClipboard } = useClipboard({ timeout: 2000 })
   const [open, setOpen] = React.useState(false)
   const [selectedType, setSelectedType] = React.useState<'page' | 'component' | null>(null)
@@ -177,35 +176,25 @@ export function CommandMenu({
         let group = defaultGroup
         let isComponent = false
 
-        const BACKGROUND_SLUGS = new Set(['bubble', 'gradient'])
-        const ORB_SLUGS = new Set(['smooth', 'bloop'])
-        const SHADER_SLUGS = new Set(['cloud', 'paper-shader', 'heat-shade'])
-
         if (url.startsWith('/primitives')) {
           group = 'Primitives'
           isComponent = true
-        } else if (url.startsWith('/components') && BACKGROUND_SLUGS.has(slug)) {
-          group = 'Backgrounds'
-          isComponent = true
-        } else if (url.startsWith('/components') && ORB_SLUGS.has(slug)) {
-          group = 'Orb'
-          isComponent = true
-        } else if (url.startsWith('/components') && SHADER_SLUGS.has(slug)) {
-          group = 'Shader'
-          isComponent = true
-        } else if (
-          url.startsWith('/components/effects') ||
-          url.includes('/effects/') ||
-          slug === 'motion-effect' ||
-          slug === 'motion-highlight'
-        ) {
-          group = 'Effects'
-          isComponent = true
-        } else if (url.startsWith('/components/texts') || url.includes('/texts/') || slug === 'splitting') {
-          group = 'Texts'
-          isComponent = true
         } else if (url.startsWith('/components')) {
-          group = 'Components'
+          const category = componentCategoryMap.get(slug)
+          if (category) {
+            group = category
+          } else if (
+            url.startsWith('/components/effects') ||
+            url.includes('/effects/') ||
+            slug === 'motion-effect' ||
+            slug === 'motion-highlight'
+          ) {
+            group = 'Effects'
+          } else if (url.startsWith('/components/texts') || url.includes('/texts/') || slug === 'splitting') {
+            group = 'Texts'
+          } else {
+            group = 'Components'
+          }
           isComponent = true
         } else if (url.startsWith('/hooks')) {
           if (HOOK_COMPONENTS.has(slug)) {
@@ -343,36 +332,128 @@ export function CommandMenu({
 
   const handlePageHighlight = (item: PageItem) => {
     if (item.isComponent) {
-      const componentName = item.url.split('/').pop()
+      const componentName = item.url.split('/').pop() || ''
+      const registryName =
+        item.group === 'Primitives' && !componentName.startsWith('primitives-')
+          ? `primitives-${componentName}`
+          : item.group === 'Blocks' && !componentName.startsWith('block-')
+            ? `block-${componentName}`
+            : componentName
       setSelectedType('component')
-      setCopyPayload(`npx space-ui add ${componentName}`)
+      const commands = getShadcnAddCommands(registryName)
+      setCopyPayload(commands[packageManager] || commands.pnpm)
     } else {
       setSelectedType('page')
       setCopyPayload(typeof window !== 'undefined' ? window.location.origin + item.url : item.url)
     }
   }
 
-  // Keyboard shortcut (Cmd+K / Ctrl+K / slash)
+  const handleOpenChange = (nextOpen: boolean) => {
+    setOpen(nextOpen)
+    if (!nextOpen) {
+      setSelectedType(null)
+      setCopyPayload('')
+    }
+  }
+
+  // Resolve the install command for the current page
+  const currentPageCommand = React.useMemo(() => {
+    if (!pathname) return null
+    const segments = pathname.split('/').filter(Boolean)
+    if (segments.length === 0) return null
+    const slug = segments[segments.length - 1]
+
+    // 1. Check if matching an item from groupedItems
+    for (const group of groupedItems) {
+      for (const item of group.items) {
+        if (item.isComponent && (item.url === pathname || pathname.endsWith(item.url) || item.url.endsWith(pathname))) {
+          const componentName = item.url.split('/').pop() || slug
+          const registryName =
+            item.group === 'Primitives' && !componentName.startsWith('primitives-')
+              ? `primitives-${componentName}`
+              : item.group === 'Blocks' && !componentName.startsWith('block-')
+                ? `block-${componentName}`
+                : componentName
+          const commands = getShadcnAddCommands(registryName)
+          return commands[packageManager] || commands.pnpm
+        }
+      }
+    }
+
+    // 2. Direct path matching fallback
+    if (pathname.includes('/primitives/')) {
+      const commands = getShadcnAddCommands(`primitives-${slug}`)
+      return commands[packageManager] || commands.pnpm
+    }
+    if (pathname.includes('/blocks/')) {
+      const commands = getShadcnAddCommands(`block-${slug}`)
+      return commands[packageManager] || commands.pnpm
+    }
+    if (pathname.includes('/components/')) {
+      const commands = getShadcnAddCommands(slug)
+      return commands[packageManager] || commands.pnpm
+    }
+    if (pathname.includes('/hooks/')) {
+      const commands = getShadcnAddCommands(slug)
+      return commands[packageManager] || commands.pnpm
+    }
+
+    return null
+  }, [pathname, groupedItems, packageManager])
+
+  // Keyboard shortcut (Cmd+K / Ctrl+K / slash and Cmd+C / Ctrl+C)
   useEventListener(
     'keydown',
     (e: KeyboardEvent) => {
+      // Don't intercept when user is typing in form controls
+      const isInputFocused =
+        (e.target instanceof HTMLElement && e.target.isContentEditable) ||
+        e.target instanceof HTMLInputElement ||
+        e.target instanceof HTMLTextAreaElement ||
+        e.target instanceof HTMLSelectElement
+
+      if (isInputFocused) {
+        return
+      }
+
+      // Open / toggle Command menu
       if ((e.key === 'k' && (e.metaKey || e.ctrlKey)) || e.key === '/') {
-        if (
-          (e.target instanceof HTMLElement && e.target.isContentEditable) ||
-          e.target instanceof HTMLInputElement ||
-          e.target instanceof HTMLTextAreaElement ||
-          e.target instanceof HTMLSelectElement
-        ) {
+        e.preventDefault()
+        setOpen((open) => !open)
+        return
+      }
+
+      // Cmd+C / Ctrl+C to copy install command
+      if (e.key === 'c' && (e.metaKey || e.ctrlKey)) {
+        // If user has actively selected text on the page or input, allow native copy!
+        const selection = typeof window !== 'undefined' ? window.getSelection()?.toString().trim() : ''
+        if (selection) {
           return
         }
 
-        e.preventDefault()
-        setOpen((open) => !open)
-      }
+        // Case A: Inside CommandDialog, copy highlighted item
+        if (open) {
+          if (copyPayload && (selectedType === 'page' || selectedType === 'component')) {
+            e.preventDefault()
+            copyToClipboard(copyPayload)
+            toastManager.add({
+              type: 'success',
+              title: 'Copied to clipboard',
+              description: copyPayload,
+            })
+          }
+          return
+        }
 
-      if (e.key === 'c' && (e.metaKey || e.ctrlKey)) {
-        if (selectedType === 'page' || selectedType === 'component') {
-          copyToClipboard(copyPayload)
+        // Case B: On page, copy current component's install command
+        if (currentPageCommand) {
+          e.preventDefault()
+          copyToClipboard(currentPageCommand)
+          toastManager.add({
+            type: 'success',
+            title: 'Copied install command',
+            description: currentPageCommand,
+          })
         }
       }
     },
@@ -380,7 +461,7 @@ export function CommandMenu({
   )
 
   return (
-    <CommandDialog onOpenChange={setOpen} open={open} {...props}>
+    <CommandDialog onOpenChange={handleOpenChange} open={open} {...props}>
       <CommandDialogTrigger render={<Button variant="outline" size="lg" />} className="px-1 border-muted w-full">
         <span className="bg-muted aspect-square rounded-md px-1.5 py-0.5 inline-flex items-center justify-center">
           <IconSearch className="size-4 text-muted-foreground shrink-0" />

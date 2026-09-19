@@ -1,3 +1,5 @@
+import { isShader } from '@/lib/content-categories'
+
 export const Mode = {
   split: 'split',
   standard: 'standard',
@@ -54,7 +56,7 @@ export interface ComponentCategoryConfig {
 
 /**
  * Checks if a component belongs to uncontained categories:
- * - Shaders
+ * - Shaders (dynamically discovered)
  * - Gradients (gradient backgrounds, liquid-metal, etc.)
  * - Blocks
  */
@@ -63,8 +65,11 @@ export function isUncontainedComponent(name?: string, componentGroup?: string | 
   const lowerName = (name || '').toLowerCase()
   const lowerGroup = (componentGroup || '').toLowerCase()
 
-  const isShader =
-    lowerName.includes('shader') || lowerGroup.includes('shader') || lowerName.startsWith('demo-components-shader-')
+  const isShaderComponent =
+    isShader(lowerName) ||
+    lowerName.includes('shader') ||
+    lowerGroup.includes('shader') ||
+    lowerName.startsWith('demo-components-shader-')
 
   const isGradient = lowerName.includes('gradient') || lowerGroup.includes('gradient')
 
@@ -74,7 +79,7 @@ export function isUncontainedComponent(name?: string, componentGroup?: string | 
 
   const isShowcase = lowerName.startsWith('showcase-')
 
-  return isShader || isGradient || isBlock || isTemplate || isShowcase
+  return isShaderComponent || isGradient || isBlock || isTemplate || isShowcase
 }
 
 /**
@@ -130,7 +135,7 @@ export function isCatalogRoute(pathname?: string | null): boolean {
  * Rules:
  * - Docs pages (/docs, /docs/*): strictly locked to standard mode (no dual mode)
  * - Catalog index pages (/library, /blocks, /templates, /primitives, /components, /hooks, ...): strictly locked to standard mode (no dual mode)
- * - Shaders detail pages (now flat: /components/shader): defaultMode 'split'
+ * - Shaders detail pages (/components/cloud, /components/heat-shade, /library/components/..., etc.): defaultMode 'split'
  * - Individual Block pages (/blocks/[slug]): defaultMode 'split', mode 'split'
  * - Individual Template pages (/templates/[slug]): defaultMode 'split', mode 'split'
  */
@@ -156,12 +161,11 @@ export function getRouteLayoutDefaults(pathname?: string | null): {
     }
   }
 
-  // 3. Shaders detail pages (now flat: /components/shader)
-  const SHADER_SLUGS = ['/components/cloud', '/components/paper-shader']
-  if (SHADER_SLUGS.some((s) => pathname === s || pathname.startsWith(s + '/'))) {
+  // 3. Shaders detail pages (dynamically detected via content manifest & route patterns)
+  if (isShader(pathname)) {
     return {
       mode: Mode.split,
-      constraint: { mode: Mode.both, defaultMode: Mode.split },
+      constraint: { mode: Mode.split, defaultMode: Mode.split },
     }
   }
 
@@ -173,7 +177,7 @@ export function getRouteLayoutDefaults(pathname?: string | null): {
     }
   }
 
-  // 5. Individual Templates detail pages (/templates/...)
+  // 5. Individual Template pages (/templates/...)
   if (pathname.includes('/templates/') || pathname.startsWith('/templates/')) {
     return {
       mode: Mode.split,

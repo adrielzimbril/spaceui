@@ -318,7 +318,7 @@ export function sortComponentsSections(sections: SectionItem[]): SectionItem[] {
     .sort((a, b) => {
       const aTitle = typeof a?.title === 'string' ? a.title.toLowerCase() : String(a?.title ?? '').toLowerCase()
       const bTitle = typeof b?.title === 'string' ? b.title.toLowerCase() : String(b?.title ?? '').toLowerCase()
-      const order = ['components', 'text', 'backgrounds', 'orb', 'carousels', 'blocks', 'shader', 'templates']
+      const order = ['components', 'text', 'orb', 'backgrounds', 'shader', 'blocks', 'carousels', 'templates']
       const aIndex = order.findIndex((k) => aTitle.includes(k))
       const bIndex = order.findIndex((k) => bTitle.includes(k))
       if (aIndex !== -1 && bIndex !== -1) return aIndex - bIndex
