@@ -1286,6 +1286,38 @@
       "updatedAt": "2026-09-03"
     },
     {
+      "name": "components-shader-silk-flare",
+      "type": "registry:component",
+      "title": "Silk Flare",
+      "description": "WebGPU single-pass composite shader fusing silky mesh warp gradients and rising thermodynamic heat flares.",
+      "isPro": true,
+      "dependencies": [
+        "vgpu"
+      ],
+      "registryDependencies": [
+        "https://www.spaceui.one/r/lib-gpu-runtime.json",
+        "https://www.spaceui.one/r/lib-utils.json"
+      ],
+      "categories": [
+        "shader",
+        "background"
+      ],
+      "files": [
+        {
+          "path": "src/registry/components/shader/silk-flare/index.tsx",
+          "type": "registry:component",
+          "target": "components/shader/silk-flare.tsx"
+        },
+        {
+          "path": "src/registry/components/shader/silk-flare/silk-flare.wgsl.ts",
+          "type": "registry:lib",
+          "target": "components/shader/silk-flare.wgsl.ts"
+        }
+      ],
+      "createdAt": "2026-09-19",
+      "updatedAt": "2026-09-19"
+    },
+    {
       "name": "components-shader-silk-gradient",
       "type": "registry:component",
       "title": "Silk Gradient",
@@ -4534,6 +4566,63 @@
       ],
       "createdAt": "2026-09-03",
       "updatedAt": "2026-09-03"
+    },
+    {
+      "name": "demo-c-silk-flare-01",
+      "type": "registry:component",
+      "title": "Silk Flare Demo",
+      "description": "Composite WebGPU shader blending silky mesh gradients with rising thermodynamic heat flares.",
+      "isPro": true,
+      "registryDependencies": [
+        "https://www.spaceui.one/r/components-shader-silk-flare.json"
+      ],
+      "categories": [
+        "shader",
+        "background"
+      ],
+      "meta": {
+        "demoProps": {
+          "color1": {
+            "value": "#7c3aed"
+          },
+          "color2": {
+            "value": "#6366f1"
+          },
+          "color3": {
+            "value": "#a855f7"
+          },
+          "hotColor": {
+            "value": "#38bdf8"
+          },
+          "heatOpacity": {
+            "value": 0.5,
+            "min": 0,
+            "max": 1,
+            "step": 0.05
+          },
+          "speed": {
+            "value": 0.8,
+            "min": 0,
+            "max": 3,
+            "step": 0.1
+          },
+          "animate": {
+            "value": true
+          },
+          "grain": {
+            "value": true
+          }
+        }
+      },
+      "files": [
+        {
+          "path": "src/registry/demo/components/shader/silk-flare/c-silk-flare-01/index.tsx",
+          "type": "registry:component",
+          "target": "components/shader/silk-flare-demo.tsx"
+        }
+      ],
+      "createdAt": "2026-09-19",
+      "updatedAt": "2026-09-19"
     },
     {
       "name": "demo-c-silk-gradient-01",

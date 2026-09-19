@@ -219,7 +219,7 @@ export function DocsSidebar() {
                         prefetch={false}
                         onClick={() => slideSound('in')}
                         className={cn(
-                          'group relative flex min-h-8 w-full items-center justify-between gap-2 rounded-sm px-2.5 py-1.5 text-[.8125rem] text-foreground font medium transition-all duration-150 outline-none cursor-pointer',
+                          'group relative flex min-h-8 w-full items-center justify-between gap-2 rounded-sm px-2.5 py-1.5 text-[.8125rem] text-foreground font-medium transition-all duration-150 outline-none cursor-pointer',
                           'hover:bg-accent hover:text-foreground',
                           isActive && 'bg-accent text-foreground font-medium',
                         )}
@@ -238,7 +238,7 @@ export function DocsSidebar() {
                         </div>
 
                         <div className="flex items-center gap-1.5 shrink-0 ml-auto">
-                          {item.isPro && <ProBadge size="2xs" />}
+                          {item.isPro && <ProBadge size="2xs" asLink={false} liquid={true} />}
                           <NavBadge badge={item.badge} />
                         </div>
                       </Link>

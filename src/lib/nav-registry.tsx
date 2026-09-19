@@ -337,20 +337,22 @@ export function sortComponentsSections(sections: SectionItem[]): SectionItem[] {
 }
 
 export function getActiveHub(pathname: string): HubItem {
-  if (pathname.startsWith('/hooks')) {
+  const path = pathname.replace(/^\/library/, '')
+  if (path.startsWith('/hooks')) {
     return HUBS[1]
   }
-  if (pathname.startsWith('/components') || pathname.startsWith('/blocks') || pathname.startsWith('/templates')) {
+  if (path.startsWith('/components') || path.startsWith('/blocks') || path.startsWith('/templates')) {
     return HUBS[2]
   }
-  if (pathname.startsWith('/tools')) {
+  if (path.startsWith('/tools')) {
     return HUBS[3]
   }
   return HUBS[0]
 }
 
 export function resolvePathSections(pathname: string, docsTree: any[] = [], libraryTree: any[] = []): SectionItem[] {
-  if (pathname.startsWith('/hooks')) {
+  const path = pathname.replace(/^\/library/, '')
+  if (path.startsWith('/hooks')) {
     const hooksFolder = libraryTree.find(
       (n: any) => n.type === 'folder' && (n.name?.toLowerCase().includes('hook') || n.$id?.includes('hooks')),
     )
@@ -358,10 +360,9 @@ export function resolvePathSections(pathname: string, docsTree: any[] = [], libr
   }
 
   const isDocsOrPrimitives =
-    (pathname.startsWith('/docs') && !pathname.startsWith('/docs/icons')) || pathname.startsWith('/primitives')
+    (path.startsWith('/docs') && !path.startsWith('/docs/icons')) || path.startsWith('/primitives')
 
-  const isComponents =
-    pathname.startsWith('/components') || pathname.startsWith('/blocks') || pathname.startsWith('/templates')
+  const isComponents = path.startsWith('/components') || path.startsWith('/blocks') || path.startsWith('/templates')
 
   if (isDocsOrPrimitives) {
     const primitivesFolder = libraryTree.find(

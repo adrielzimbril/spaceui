@@ -11,12 +11,12 @@ import { Badge } from '@/registry/components/spaceui/badge-squircle'
 import { StatusBadge } from '@/registry/components/spaceui/status-badge'
 import { Card, CardPanel } from '@/registry/primitives/card'
 import { Frame, FrameFooter } from '@/registry/primitives/frame'
-import { SilkGradient } from '@/registry/components/shader/silk-gradient'
 import { POLAR_PRODUCTS } from '@/lib/pricing-config'
 import type { PricingSnapshot } from '@/lib/pricing-tiers'
 import { cn } from '@/registry/lib/utils'
 import { BuyButton } from './buy-button'
 import { SectionHeader } from './section-header'
+import { SilkGradient } from '@/registry/components/shader/silk-gradient'
 
 const currencyFormat = {
   style: 'currency',

@@ -32,24 +32,8 @@ function lazyRegistryComponent(
 }
 
 export const registryComponents: Record<string, RegistryComponent> = {
-  "components-shader-cloud": lazyRegistryComponent(
-    () => import("@/registry/components/shader/cloud/index.tsx"),
-    {},
-  ),
-  "components-shader-heat-shade": lazyRegistryComponent(
-    () => import("@/registry/components/shader/heat-shade/index.tsx"),
-    {},
-  ),
-  "components-shader-paper-shader": lazyRegistryComponent(
-    () => import("@/registry/components/shader/paper-shader/index.tsx"),
-    {},
-  ),
-  "components-shader-silk-flare": lazyRegistryComponent(
-    () => import("@/registry/components/shader/silk-flare/index.tsx"),
-    {},
-  ),
-  "components-shader-silk-gradient": lazyRegistryComponent(
-    () => import("@/registry/components/shader/silk-gradient/index.tsx"),
-    {},
+  "demo-c-silk-flare-01": lazyRegistryComponent(
+    () => import("@/registry/demo/components/shader/silk-flare/c-silk-flare-01/index.tsx"),
+    {"color1":{"value":"#7c3aed"},"color2":{"value":"#6366f1"},"color3":{"value":"#a855f7"},"hotColor":{"value":"#38bdf8"},"heatOpacity":{"value":0.5,"min":0,"max":1,"step":0.05},"speed":{"value":0.8,"min":0,"max":3,"step":0.1},"animate":{"value":true},"grain":{"value":true}},
   ),
 };

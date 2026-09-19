@@ -12,7 +12,7 @@ export interface HeatShadeDemoProps {
 
 export default function Demo({ base = '#2a7bba', hot = '#43c8ff', speed = 1, from = 'bottom' }: HeatShadeDemoProps) {
   return (
-    <div className="relative size-full min-h-96 overflow-hidden bg-background">
+    <div className="relative size-full min-h-96 h-[stretch] overflow-hidden bg-background">
       <HeatShade className="absolute inset-0" variant="licks" from={from} base={base} hot={hot} speed={speed} />
     </div>
   )

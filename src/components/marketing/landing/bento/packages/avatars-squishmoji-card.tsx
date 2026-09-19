@@ -48,16 +48,13 @@ type MixedCharacter =
     }
 
 function buildCharacters(count: number): MixedCharacter[] {
-  const shuffledVariants = [...ALL_AVATAR_VARIANTS].sort(() => Math.random() - 0.5)
-  const shuffledExprs = [...ALL_SQUISH_EXPRS].sort(() => Math.random() - 0.5)
-
   const characters: MixedCharacter[] = []
   let avatarIdx = 0
   let squishIdx = 0
 
   for (let i = 0; i < count; i++) {
     if (i % 2 === 0) {
-      const variant = shuffledVariants[avatarIdx % shuffledVariants.length]
+      const variant = ALL_AVATAR_VARIANTS[avatarIdx % ALL_AVATAR_VARIANTS.length]
       avatarIdx++
       characters.push({
         id: String(i + 1),
@@ -66,7 +63,7 @@ function buildCharacters(count: number): MixedCharacter[] {
         label: variant.charAt(0).toUpperCase() + variant.slice(1),
       })
     } else {
-      const expr = shuffledExprs[squishIdx % shuffledExprs.length]
+      const expr = ALL_SQUISH_EXPRS[squishIdx % ALL_SQUISH_EXPRS.length]
       squishIdx++
       characters.push({ id: String(i + 1), type: 'squishmoji', ...expr })
     }

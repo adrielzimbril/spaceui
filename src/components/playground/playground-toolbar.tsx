@@ -13,7 +13,7 @@ import {
   IconMoon,
   IconLayoutColumns,
   IconExternalLink,
-  IconAdjustmentsHorizontal,
+  IconAdjustments,
   IconDeviceDesktop,
 } from '@tabler/icons-react'
 import { useTheme } from 'next-themes'
@@ -170,7 +170,7 @@ export function PlaygroundToolbar({
       {/* 5. Tweakpane config props (only if component has configurable binds) */}
       {hasBinds && onToggleTweakpane && (
         <ToolbarButton label="Configure props" pressed={tweakpaneOpen} onClick={onToggleTweakpane}>
-          <IconAdjustmentsHorizontal className="size-4" />
+          <IconAdjustments className="size-4" />
         </ToolbarButton>
       )}
     </ToolbarSection>

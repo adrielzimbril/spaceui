@@ -4,8 +4,13 @@
   "type": "registry:ui",
   "title": "Badge",
   "description": "Accessible Badge primitive component for Space UI.",
-  "dependencies": ["@base-ui/react", "class-variance-authority"],
-  "registryDependencies": ["https://www.spaceui.one/r/lib-utils.json"],
+  "dependencies": [
+    "@base-ui/react",
+    "class-variance-authority"
+  ],
+  "registryDependencies": [
+    "https://www.spaceui.one/r/lib-utils.json"
+  ],
   "cssVars": {
     "dark": {
       "destructive-foreground": "var(--color-red-400)",
@@ -26,7 +31,9 @@
       "warning-foreground": "var(--color-amber-900)"
     }
   },
-  "categories": ["badge"],
+  "categories": [
+    "badge"
+  ],
   "files": [
     {
       "path": "src/registry/primitives/badge/index.tsx",

@@ -32,7 +32,6 @@ import {
   IconUsers,
   type Icon,
 } from '@tabler/icons-react'
-import NumberFlow from '@number-flow/react'
 import { Badge, type BadgeProps } from '@/registry/components/spaceui/badge-squircle'
 import { Button } from '@/registry/components/spaceui/button-squircle'
 import { AnimatedStat } from './animated-stat'
@@ -40,8 +39,7 @@ import { BuyButton } from './buy-button'
 import { Card, CardPanel } from '@/registry/primitives/card'
 import { Frame, FrameFooter } from '@/registry/primitives/frame'
 import { LiquidBorder } from '@/registry/components/spaceui/liquid-metal-border'
-import { HeatShade } from '@/registry/components/shader/heat-shade'
-import { SilkGradient } from '@/registry/components/shader/silk-gradient'
+import { SilkFlare } from '@/registry/components/shader/silk-flare'
 import { siteConfig } from '@/config/space-config'
 import { POLAR_PRODUCTS, REGISTRY_STATS } from '@/lib/pricing-config'
 import type { PricingSnapshot } from '@/lib/pricing-tiers'
@@ -73,7 +71,8 @@ function buildPlans(pricing: PricingSnapshot) {
         color1: '#94a3b8',
         color2: '#cbd5e1',
         color3: '#64748b',
-        fallback: 'from-slate-400/40 via-slate-300/25 to-slate-500/15',
+        fallback:
+          'from-slate-400/40 via-slate-300/25 to-slate-500/15 dark:from-slate-400/85 dark:via-slate-300/70 dark:to-slate-500/55',
         background:
           'data-[shade=ready]:from-slate-400/10 data-[shade=ready]:via-slate-300/5 data-[shade=ready]:to-transparent data-[shade=ready]:opacity-45',
         opacity: 'opacity-25 dark:opacity-100',
@@ -127,7 +126,8 @@ function buildPlans(pricing: PricingSnapshot) {
         color1: '#ff6b4a',
         color2: '#ffa07a',
         color3: '#ff4071',
-        fallback: 'from-rose-500/40 via-amber-500/25 to-rose-600/15',
+        fallback:
+          'from-rose-500/40 via-amber-500/25 to-rose-600/15 dark:from-rose-500/85 dark:via-amber-500/70 dark:to-rose-600/55',
         background:
           'data-[shade=ready]:from-rose-500/25 data-[shade=ready]:via-amber-500/15 data-[shade=ready]:to-transparent data-[shade=ready]:opacity-45',
         opacity: 'opacity-20 dark:opacity-100',
@@ -201,7 +201,8 @@ function buildPlans(pricing: PricingSnapshot) {
         color1: '#7c3aed',
         color2: '#6366f1',
         color3: '#a855f7',
-        fallback: 'from-violet-600/40 via-indigo-500/25 to-purple-500/15',
+        fallback:
+          'from-violet-600/40 via-indigo-500/25 to-purple-500/15 dark:from-violet-600/85 dark:via-indigo-500/70 dark:to-purple-500/55',
         background:
           'data-[shade=ready]:from-violet-500/25 data-[shade=ready]:via-indigo-500/15 data-[shade=ready]:to-transparent data-[shade=ready]:opacity-45',
         opacity: 'opacity-20 dark:opacity-100',
@@ -272,7 +273,7 @@ export function PlansSection({ pricing }: { pricing: PricingSnapshot }) {
         badge={
           spotsLeft != null ? (
             <span className="inline-flex items-center gap-1">
-              <NumberFlow value={spotsLeft} className="tabular-nums" />
+              <span>{spotsLeft}</span>
               <span>spots left at this price</span>
             </span>
           ) : (
@@ -308,24 +309,18 @@ export function PlansSection({ pricing }: { pricing: PricingSnapshot }) {
                       )}
                     />
                     <div className={cn('pointer-events-none absolute inset-0 transition-opacity', plan.silk.opacity)}>
-                      <SilkGradient
+                      <SilkFlare
                         className="size-full"
                         color1={plan.silk.color1}
                         color2={plan.silk.color2}
                         color3={plan.silk.color3}
-                        speed={0.65}
-                        animate
-                        grain={false}
-                      />
-                    </div>
-                    <div className={cn('pointer-events-none absolute inset-0 transition-opacity opacity-50')}>
-                      <HeatShade
-                        className="size-full"
-                        variant="licks"
+                        hotColor={plan.silk.color3}
+                        heatOpacity={0.5}
                         from="bottom"
-                        base={plan.silk.color1}
-                        hot={plan.silk.color3}
-                        speed={0.95}
+                        speed={0.75}
+                        animate
+                        // grain={false}
+                        dpr={1}
                       />
                     </div>
                   </>

@@ -20,13 +20,15 @@ export function ProBadge({
   size = 'xs',
   className,
   badgeClassName,
-  asLink = true,
+  asLink = false,
   href = '/pricing',
   text = 'PRO',
   liquid = true,
 }: ProBadgeProps) {
-  const badgeSize = size === '2xs' ? 'xs' : size
-  const borderPadding = size === '2xs' ? 'p-[0.09125rem]' : size === 'default' ? 'p-1' : 'p-0.75'
+  const isMini = size === '2xs'
+  const badgeSize = isMini ? 'xs' : size
+  const borderPadding = isMini ? 'p-[0.09125rem]' : size === 'default' ? 'p-1' : 'p-0.75'
+  const useLiquid = liquid
 
   const badgeContent = (
     <Badge
@@ -42,7 +44,7 @@ export function ProBadge({
     </Badge>
   )
 
-  const renderedBadge = liquid ? (
+  const renderedBadge = useLiquid ? (
     <LiquidBorder
       className={cn(
         'inline-flex items-center justify-center squircle rounded-full leading-none shrink-0',

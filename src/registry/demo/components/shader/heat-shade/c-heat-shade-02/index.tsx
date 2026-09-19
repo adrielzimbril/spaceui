@@ -17,7 +17,7 @@ export default function Demo({
   from = 'bottom',
 }: HeatShadeFieldDemoProps) {
   return (
-    <div className="relative size-full min-h-96 overflow-hidden bg-background">
+    <div className="relative size-full min-h-96 h-[stretch] overflow-hidden bg-background">
       <HeatShade className="absolute inset-0" variant="field" from={from} base={base} hot={hot} speed={speed} />
     </div>
   )

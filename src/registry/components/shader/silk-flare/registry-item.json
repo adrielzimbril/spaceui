@@ -1,0 +1,28 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "components-shader-silk-flare",
+  "type": "registry:component",
+  "title": "Silk Flare",
+  "description": "WebGPU single-pass composite shader fusing silky mesh warp gradients and rising thermodynamic heat flares.",
+  "isPro": true,
+  "dependencies": ["vgpu"],
+  "registryDependencies": [
+    "https://www.spaceui.one/r/lib-gpu-runtime.json",
+    "https://www.spaceui.one/r/lib-utils.json"
+  ],
+  "categories": ["shader", "background"],
+  "files": [
+    {
+      "path": "src/registry/components/shader/silk-flare/index.tsx",
+      "type": "registry:component",
+      "target": "components/shader/silk-flare.tsx"
+    },
+    {
+      "path": "src/registry/components/shader/silk-flare/silk-flare.wgsl.ts",
+      "type": "registry:lib",
+      "target": "components/shader/silk-flare.wgsl.ts"
+    }
+  ],
+  "createdAt": "2026-09-19",
+  "updatedAt": "2026-09-19"
+}

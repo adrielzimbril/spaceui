@@ -128,11 +128,29 @@ export function isCatalogRoute(pathname?: string | null): boolean {
   return catalogExactRoutes.includes(clean)
 }
 
+export function isMarketingRoute(pathname?: string | null): boolean {
+  if (!pathname) return false
+  const normalized = pathname.startsWith('/') ? pathname : `/${pathname}`
+  const clean = normalized.split('?')[0].split('#')[0].replace(/\/+$/, '')
+  if (clean === '') return true
+  return (
+    clean === '/' ||
+    clean.startsWith('/pricing') ||
+    clean.startsWith('/community') ||
+    clean.startsWith('/checkout') ||
+    clean.startsWith('/showcase') ||
+    clean.startsWith('/tools') ||
+    clean.startsWith('/terms') ||
+    clean.startsWith('/privacy')
+  )
+}
+
 /**
  * Resolves the initial route-level layout constraint and default mode synchronously.
  * Prevents flashing in standard mode for split-preferred routes like shaders and blocks.
  *
  * Rules:
+ * - Marketing pages (/, /pricing, /community, ...): strictly locked to standard mode (no split studio)
  * - Docs pages (/docs, /docs/*): strictly locked to standard mode (no dual mode)
  * - Catalog index pages (/library, /blocks, /templates, /primitives, /components, /hooks, ...): strictly locked to standard mode (no dual mode)
  * - Shaders detail pages (/components/cloud, /components/heat-shade, /library/components/..., etc.): defaultMode 'split'
@@ -144,6 +162,14 @@ export function getRouteLayoutDefaults(pathname?: string | null): {
   constraint: PageLayoutConstraint
 } | null {
   if (!pathname) return null
+
+  // 0. Marketing pages are strictly locked to standard mode
+  if (isMarketingRoute(pathname)) {
+    return {
+      mode: Mode.standard,
+      constraint: { mode: Mode.standard, defaultMode: Mode.standard },
+    }
+  }
 
   // 1. All docs pages are strictly locked to standard mode (no dual mode)
   if (isDocsRoute(pathname)) {

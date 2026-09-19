@@ -13,6 +13,8 @@ import { ModeSwitcher } from '@/registry/components/spaceui/mode-switcher'
 import { ColorPickerNav } from '@/components/customizer/color-picker-nav'
 import { PmNav } from '@/components/customizer/pm-nav'
 import { BundleDrawer } from '@/components/customizer/bundle-drawer'
+import { usePathname } from 'next/navigation'
+import { isMarketingRoute } from '@/config/preview-config'
 import { cn } from '@/registry/lib/utils'
 
 function SoundToggle() {
@@ -50,9 +52,10 @@ function SoundToggle() {
 }
 
 function LayoutModeToggle() {
+  const pathname = usePathname()
   const { mode, cycleMode, canSwitchMode, isModeLocked } = useLayoutMode()
 
-  if (isModeLocked) return null
+  if (isModeLocked || isMarketingRoute(pathname)) return null
 
   return (
     <Button

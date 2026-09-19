@@ -1,0 +1,56 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-c-silk-flare-01",
+  "title": "Silk Flare Demo",
+  "description": "Composite WebGPU shader blending silky mesh gradients with rising thermodynamic heat flares.",
+  "registryDependencies": [
+    "https://www.spaceui.one/r/components-shader-silk-flare.json"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/components/shader/silk-flare/c-silk-flare-01/index.tsx",
+      "content": "'use client'\n\nimport * as React from 'react'\nimport { SilkFlare, type SilkFlareFrom } from '@/components/shader/silk-flare'\n\nexport interface SilkFlareDemoProps {\n  color1?: string\n  color2?: string\n  color3?: string\n  hotColor?: string\n  heatOpacity?: number\n  from?: SilkFlareFrom\n  speed?: number\n  animate?: boolean\n  grain?: boolean\n}\n\nexport default function Demo({\n  color1 = '#7c3aed',\n  color2 = '#6366f1',\n  color3 = '#a855f7',\n  hotColor = '#38bdf8',\n  heatOpacity = 0.5,\n  from = 'bottom',\n  speed = 0.8,\n  animate = true,\n  grain = true,\n}: SilkFlareDemoProps) {\n  return (\n    <div className=\"relative size-full min-h-96 h-[stretch] overflow-hidden bg-background\">\n      <SilkFlare\n        className=\"absolute inset-0\"\n        color1={color1}\n        color2={color2}\n        color3={color3}\n        hotColor={hotColor}\n        heatOpacity={heatOpacity}\n        from={from}\n        speed={speed}\n        animate={animate}\n        grain={grain}\n      />\n    </div>\n  )\n}\n",
+      "type": "registry:component",
+      "target": "components/shader/silk-flare-demo.tsx"
+    }
+  ],
+  "meta": {
+    "demoProps": {
+      "color1": {
+        "value": "#7c3aed"
+      },
+      "color2": {
+        "value": "#6366f1"
+      },
+      "color3": {
+        "value": "#a855f7"
+      },
+      "hotColor": {
+        "value": "#38bdf8"
+      },
+      "heatOpacity": {
+        "value": 0.5,
+        "min": 0,
+        "max": 1,
+        "step": 0.05
+      },
+      "speed": {
+        "value": 0.8,
+        "min": 0,
+        "max": 3,
+        "step": 0.1
+      },
+      "animate": {
+        "value": true
+      },
+      "grain": {
+        "value": true
+      }
+    }
+  },
+  "categories": [
+    "shader",
+    "background"
+  ],
+  "type": "registry:component"
+}

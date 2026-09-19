@@ -1,0 +1,51 @@
+---
+title: Silk Flare
+description: WebGPU single-pass composite shader fusing silky mesh warp gradients and rising thermodynamic heat flares.
+preview: demo-c-silk-flare-01
+defaultMode: split
+---
+
+## Installation
+
+<ComponentInstallation name="components-shader-silk-flare" />
+
+Depends on `vgpu`. WebGPU required.
+
+## Usage
+
+```tsx
+import { SilkFlare } from '@/components/shader/silk-flare'
+
+export default function SpaceUI() {
+  return (
+    <SilkFlare
+      className="h-96 w-full"
+      color1="#7c3aed"
+      color2="#6366f1"
+      color3="#a855f7"
+      hotColor="#38bdf8"
+      heatOpacity={0.5}
+      from="bottom"
+      speed={0.8}
+      animate
+      grain
+    />
+  )
+}
+```
+
+## API Reference
+
+| Prop          | Type                | Default            | Description                                        |
+| ------------- | ------------------- | ------------------ | -------------------------------------------------- |
+| `color1`      | `string`            | required           | First silk mesh base color                         |
+| `color2`      | `string`            | required           | Mid warp mesh color                                |
+| `color3`      | `string`            | required           | Dark silk blend color                              |
+| `hotColor`    | `string`            | `color3`           | Peak flame/flare heat color                        |
+| `heatOpacity` | `number`            | `0.5`              | Intensity/opacity of the thermodynamic flare layer |
+| `from`        | `'bottom' \| 'top'` | `'bottom'`         | Direction of rising heat licks                     |
+| `speed`       | `number`            | `0.8`              | Animation velocity                                 |
+| `animate`     | `boolean`           | `true`             | Play / pause animation                             |
+| `grain`       | `boolean`           | `true`             | Film grain overlay                                 |
+| `dpr`         | `number`            | `devicePixelRatio` | Target device pixel ratio cap                      |
+| `className`   | `string`            | —                  | Canvas class name                                  |

@@ -12,7 +12,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@
 import { Switch } from '@/registry/primitives/switch'
 import { ScrollArea } from '@/registry/primitives/scroll-area'
 import { TabsPrimitive } from '@/registry/primitives/tabs'
-import { IconChevronDown, IconCircle, IconX, IconUpload } from '@tabler/icons-react'
+import { IconAdjustments, IconChevronDown, IconX, IconUpload } from '@tabler/icons-react'
 import { Button } from '@/registry/primitives/button'
 
 // ... Keep types ...
@@ -429,7 +429,7 @@ const Tweakpane = ({ show, onClose, onBindsChange, ...props }: TweakpaneProps) =
                 className="flex h-10 cursor-grab touch-none select-none items-center justify-between gap-3 rounded-lg bg-background px-3 active:cursor-grabbing"
               >
                 <div className="flex min-w-0 items-center gap-2">
-                  <IconCircle aria-hidden="true" className="size-3.5 shrink-0 text-muted-foreground" />
+                  <IconAdjustments aria-hidden="true" className="size-3.5 shrink-0 text-muted-foreground" />
                   <div className="flex min-w-0 items-baseline gap-2">
                     <h3 className="truncate text-sm font-semibold">Configuration</h3>
                     <span className="truncate text-[0.625rem] text-muted-foreground">Properties</span>

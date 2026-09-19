@@ -9,7 +9,7 @@
   "files": [
     {
       "path": "src/registry/demo/components/shader/heat-shade/c-heat-shade-02/index.tsx",
-      "content": "'use client'\n\nimport * as React from 'react'\nimport { HeatShade, type HeatShadeFrom } from '@/components/shader/heat-shade'\n\nexport interface HeatShadeFieldDemoProps {\n  base?: string\n  hot?: string\n  speed?: number\n  from?: HeatShadeFrom\n}\n\nexport default function Demo({\n  base = '#2a7bba',\n  hot = '#43c8ff',\n  speed = 1,\n  from = 'bottom',\n}: HeatShadeFieldDemoProps) {\n  return (\n    <div className=\"relative size-full min-h-96 overflow-hidden bg-background\">\n      <HeatShade className=\"absolute inset-0\" variant=\"field\" from={from} base={base} hot={hot} speed={speed} />\n    </div>\n  )\n}\n",
+      "content": "'use client'\n\nimport * as React from 'react'\nimport { HeatShade, type HeatShadeFrom } from '@/components/shader/heat-shade'\n\nexport interface HeatShadeFieldDemoProps {\n  base?: string\n  hot?: string\n  speed?: number\n  from?: HeatShadeFrom\n}\n\nexport default function Demo({\n  base = '#2a7bba',\n  hot = '#43c8ff',\n  speed = 1,\n  from = 'bottom',\n}: HeatShadeFieldDemoProps) {\n  return (\n    <div className=\"relative size-full min-h-96 h-[stretch] overflow-hidden bg-background\">\n      <HeatShade className=\"absolute inset-0\" variant=\"field\" from={from} base={base} hot={hot} speed={speed} />\n    </div>\n  )\n}\n",
       "type": "registry:component",
       "target": "components/shader/heat-shade-licks.tsx"
     }

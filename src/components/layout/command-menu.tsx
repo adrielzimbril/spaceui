@@ -18,6 +18,7 @@ import {
   IconTool,
   IconTypography,
   IconWand,
+  IconWaveSine,
   IconArrowBackUp,
   IconArrowUp,
   IconArrowDown,
@@ -105,8 +106,9 @@ function getGroupIcon(group: string, isComponent: boolean) {
     case 'Components':
       return IconAtom
     case 'Backgrounds':
-    case 'Shader':
       return IconSparkles
+    case 'Shader':
+      return IconWaveSine
     case 'Orb':
       return IconAtom
     case 'Effects':
@@ -526,7 +528,7 @@ export function CommandMenu({
                           <div className="flex items-center gap-2.5 min-w-0">
                             <ItemIcon className="size-4 shrink-0 text-muted-foreground" />
                             <span className="truncate">{item.label}</span>
-                            {item.isPro && <ProBadge size="2xs" className="shrink-0" />}
+                            {item.isPro && <ProBadge size="2xs" asLink={false} liquid={true} className="shrink-0" />}
                           </div>
                           {/* {item.shortcut && (
                             <CommandShortcut>

@@ -1313,6 +1313,43 @@ export const index: Record<string, any> = {
     })(),
     command: '@spaceui/components-shader-paper-shader',
   },
+  "components-shader-silk-flare": {
+    name: "components-shader-silk-flare",
+    description: "WebGPU single-pass composite shader fusing silky mesh warp gradients and rising thermodynamic heat flares.",
+    type: "registry:component",
+    dependencies: ["vgpu"],
+    devDependencies: undefined,
+    registryDependencies: ["https://www.spaceui.one/r/lib-gpu-runtime.json","https://www.spaceui.one/r/lib-utils.json"],
+    files: [
+  {
+    "path": "src/registry/components/shader/silk-flare/index.tsx",
+    "type": "registry:component",
+    "target": "components/shader/silk-flare.tsx"
+  },
+  {
+    "path": "src/registry/components/shader/silk-flare/silk-flare.wgsl.ts",
+    "type": "registry:lib",
+    "target": "components/shader/silk-flare.wgsl.ts"
+  }
+],
+    keywords: [],
+    component: (() => {
+      const LazyComp = React.lazy(async () => {
+        const mod = await import("@/registry/components/shader/silk-flare/index.tsx");
+        const exportName = Object.keys(mod).find(
+          key => typeof mod[key] === 'function' || typeof mod[key] === 'object'
+        ) || "components-shader-silk-flare";
+        const Comp = mod.default || mod[exportName];
+        if (mod.animations) {
+          (LazyComp as any).animations = mod.animations;
+        }
+        return { default: Comp };
+      });
+      LazyComp.demoProps = {};
+      return LazyComp;
+    })(),
+    command: '@spaceui/components-shader-silk-flare',
+  },
   "components-shader-silk-gradient": {
     name: "components-shader-silk-gradient",
     description: "WebGPU silk mesh gradient. Three colors, warp, grain.",
@@ -4330,6 +4367,38 @@ export const index: Record<string, any> = {
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-paper-shader-01',
+  },
+  "demo-c-silk-flare-01": {
+    name: "demo-c-silk-flare-01",
+    description: "Composite WebGPU shader blending silky mesh gradients with rising thermodynamic heat flares.",
+    type: "registry:component",
+    dependencies: undefined,
+    devDependencies: undefined,
+    registryDependencies: ["https://www.spaceui.one/r/components-shader-silk-flare.json"],
+    files: [
+  {
+    "path": "src/registry/demo/components/shader/silk-flare/c-silk-flare-01/index.tsx",
+    "type": "registry:component",
+    "target": "components/shader/silk-flare-demo.tsx"
+  }
+],
+    keywords: [],
+    component: (() => {
+      const LazyComp = React.lazy(async () => {
+        const mod = await import("@/registry/demo/components/shader/silk-flare/c-silk-flare-01/index.tsx");
+        const exportName = Object.keys(mod).find(
+          key => typeof mod[key] === 'function' || typeof mod[key] === 'object'
+        ) || "demo-c-silk-flare-01";
+        const Comp = mod.default || mod[exportName];
+        if (mod.animations) {
+          (LazyComp as any).animations = mod.animations;
+        }
+        return { default: Comp };
+      });
+      LazyComp.demoProps = {"color1":{"value":"#7c3aed"},"color2":{"value":"#6366f1"},"color3":{"value":"#a855f7"},"hotColor":{"value":"#38bdf8"},"heatOpacity":{"value":0.5,"min":0,"max":1,"step":0.05},"speed":{"value":0.8,"min":0,"max":3,"step":0.1},"animate":{"value":true},"grain":{"value":true}};
+      return LazyComp;
+    })(),
+    command: '@spaceui/demo-c-silk-flare-01',
   },
   "demo-c-silk-gradient-01": {
     name: "demo-c-silk-gradient-01",

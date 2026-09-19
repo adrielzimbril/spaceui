@@ -4,7 +4,10 @@
   "type": "registry:ui",
   "title": "Button",
   "description": "Accessible Button primitive component for Space UI.",
-  "dependencies": ["@base-ui/react", "class-variance-authority"],
+  "dependencies": [
+    "@base-ui/react",
+    "class-variance-authority"
+  ],
   "registryDependencies": [
     "https://www.spaceui.one/r/lib-utils.json",
     "https://www.spaceui.one/r/primitives-spinner.json"
@@ -17,7 +20,9 @@
       "destructive-foreground": "var(--color-red-500)"
     }
   },
-  "categories": ["button"],
+  "categories": [
+    "button"
+  ],
   "files": [
     {
       "path": "src/registry/primitives/button/index.tsx",

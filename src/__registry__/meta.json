@@ -2325,10 +2325,10 @@
         ]
       },
       {
-        "name": "silk-gradient",
-        "title": "Silk Gradient",
-        "description": "WebGPU silk mesh gradient. Three colors, warp, grain.",
-        "url": "/ui-kit/components/shader/silk-gradient",
+        "name": "silk-flare",
+        "title": "Silk Flare",
+        "description": "WebGPU single-pass composite shader fusing silky mesh warp gradients and rising thermodynamic heat flares.",
+        "url": "/ui-kit/components/shader/silk-flare",
         "category": "Shader",
         "categories": [
           "shader",
@@ -2389,10 +2389,10 @@
         ]
       },
       {
-        "name": "silk-gradient",
-        "title": "Silk Gradient",
-        "description": "WebGPU silk mesh gradient. Three colors, warp, grain.",
-        "url": "/ui-kit/components/shader/silk-gradient",
+        "name": "silk-flare",
+        "title": "Silk Flare",
+        "description": "WebGPU single-pass composite shader fusing silky mesh warp gradients and rising thermodynamic heat flares.",
+        "url": "/ui-kit/components/shader/silk-flare",
         "category": "Shader",
         "categories": [
           "shader",
@@ -2453,10 +2453,10 @@
         ]
       },
       {
-        "name": "silk-gradient",
-        "title": "Silk Gradient",
-        "description": "WebGPU silk mesh gradient. Three colors, warp, grain.",
-        "url": "/ui-kit/components/shader/silk-gradient",
+        "name": "silk-flare",
+        "title": "Silk Flare",
+        "description": "WebGPU single-pass composite shader fusing silky mesh warp gradients and rising thermodynamic heat flares.",
+        "url": "/ui-kit/components/shader/silk-flare",
         "category": "Shader",
         "categories": [
           "shader",
@@ -2517,10 +2517,10 @@
         ]
       },
       {
-        "name": "silk-gradient",
-        "title": "Silk Gradient",
-        "description": "WebGPU silk mesh gradient. Three colors, warp, grain.",
-        "url": "/ui-kit/components/shader/silk-gradient",
+        "name": "silk-flare",
+        "title": "Silk Flare",
+        "description": "WebGPU single-pass composite shader fusing silky mesh warp gradients and rising thermodynamic heat flares.",
+        "url": "/ui-kit/components/shader/silk-flare",
         "category": "Shader",
         "categories": [
           "shader",
@@ -2576,10 +2576,10 @@
         ]
       },
       {
-        "name": "silk-gradient",
-        "title": "Silk Gradient",
-        "description": "WebGPU silk mesh gradient. Three colors, warp, grain.",
-        "url": "/ui-kit/components/shader/silk-gradient",
+        "name": "silk-flare",
+        "title": "Silk Flare",
+        "description": "WebGPU single-pass composite shader fusing silky mesh warp gradients and rising thermodynamic heat flares.",
+        "url": "/ui-kit/components/shader/silk-flare",
         "category": "Shader",
         "categories": [
           "shader",
@@ -2635,14 +2635,144 @@
         ]
       },
       {
-        "name": "silk-gradient",
-        "title": "Silk Gradient",
-        "description": "WebGPU silk mesh gradient. Three colors, warp, grain.",
-        "url": "/ui-kit/components/shader/silk-gradient",
+        "name": "silk-flare",
+        "title": "Silk Flare",
+        "description": "WebGPU single-pass composite shader fusing silky mesh warp gradients and rising thermodynamic heat flares.",
+        "url": "/ui-kit/components/shader/silk-flare",
         "category": "Shader",
         "categories": [
           "shader",
           "background"
+        ]
+      }
+    ]
+  },
+  "silk-flare": {
+    "name": "components-shader-silk-flare",
+    "shortName": "silk-flare",
+    "title": "Silk Flare",
+    "description": "WebGPU single-pass composite shader fusing silky mesh warp gradients and rising thermodynamic heat flares.",
+    "type": "registry:component",
+    "url": "/ui-kit/components/shader/silk-flare",
+    "category": "Shader",
+    "categories": [
+      "shader",
+      "background"
+    ],
+    "createdAt": "2026-09-19",
+    "updatedAt": "2026-09-19",
+    "isPro": true,
+    "size": "9.3 KB",
+    "rawSize": 9545,
+    "directSize": "9.3 KB",
+    "fileCount": 2,
+    "dependencies": [
+      "vgpu"
+    ],
+    "registryDependencies": [
+      "https://www.spaceui.one/r/lib-gpu-runtime.json",
+      "https://www.spaceui.one/r/lib-utils.json"
+    ],
+    "dependents": [],
+    "related": [
+      {
+        "name": "cloud",
+        "title": "Cloud",
+        "description": "Interactive volumetric cloud material rendered as a full-bleed shader surface.",
+        "url": "/ui-kit/components/shader/cloud",
+        "category": "Shader",
+        "categories": [
+          "shader",
+          "cloud",
+          "background"
+        ]
+      },
+      {
+        "name": "heat-shade",
+        "title": "Heat Shade",
+        "description": "WebGPU fbm heat field with ember and hot tints along a moving boundary.",
+        "url": "/ui-kit/components/shader/heat-shade",
+        "category": "Shader",
+        "categories": [
+          "shader",
+          "background",
+          "heat"
+        ]
+      },
+      {
+        "name": "paper-shader",
+        "title": "Paper Shader",
+        "description": "Paper Shaders WebGL2 canvas driven by a fragment shader and live uniforms.",
+        "url": "/ui-kit/components/shader/paper-shader",
+        "category": "Shader",
+        "categories": [
+          "shader",
+          "webgl"
+        ]
+      }
+    ]
+  },
+  "components-shader-silk-flare": {
+    "name": "components-shader-silk-flare",
+    "shortName": "silk-flare",
+    "title": "Silk Flare",
+    "description": "WebGPU single-pass composite shader fusing silky mesh warp gradients and rising thermodynamic heat flares.",
+    "type": "registry:component",
+    "url": "/ui-kit/components/shader/silk-flare",
+    "category": "Shader",
+    "categories": [
+      "shader",
+      "background"
+    ],
+    "createdAt": "2026-09-19",
+    "updatedAt": "2026-09-19",
+    "isPro": true,
+    "size": "9.3 KB",
+    "rawSize": 9545,
+    "directSize": "9.3 KB",
+    "fileCount": 2,
+    "dependencies": [
+      "vgpu"
+    ],
+    "registryDependencies": [
+      "https://www.spaceui.one/r/lib-gpu-runtime.json",
+      "https://www.spaceui.one/r/lib-utils.json"
+    ],
+    "dependents": [],
+    "related": [
+      {
+        "name": "cloud",
+        "title": "Cloud",
+        "description": "Interactive volumetric cloud material rendered as a full-bleed shader surface.",
+        "url": "/ui-kit/components/shader/cloud",
+        "category": "Shader",
+        "categories": [
+          "shader",
+          "cloud",
+          "background"
+        ]
+      },
+      {
+        "name": "heat-shade",
+        "title": "Heat Shade",
+        "description": "WebGPU fbm heat field with ember and hot tints along a moving boundary.",
+        "url": "/ui-kit/components/shader/heat-shade",
+        "category": "Shader",
+        "categories": [
+          "shader",
+          "background",
+          "heat"
+        ]
+      },
+      {
+        "name": "paper-shader",
+        "title": "Paper Shader",
+        "description": "Paper Shaders WebGL2 canvas driven by a fragment shader and live uniforms.",
+        "url": "/ui-kit/components/shader/paper-shader",
+        "category": "Shader",
+        "categories": [
+          "shader",
+          "webgl"
         ]
       }
     ]

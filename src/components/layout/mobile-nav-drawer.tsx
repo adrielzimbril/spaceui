@@ -283,7 +283,7 @@ export function MobileNavDrawer({ open, onOpenChange, trees = [], trigger, trigg
     if (!badgeType && !isPro) return null
     return (
       <div className="flex items-center gap-1.5 shrink-0 ml-auto">
-        {isPro && <ProBadge size="2xs" />}
+        {isPro && <ProBadge size="2xs" asLink={false} liquid={true} />}
         <NavBadge badge={badgeType as any} />
       </div>
     )

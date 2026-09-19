@@ -46,6 +46,19 @@ export function attachGpuGate(canvas: HTMLCanvasElement, onPaused?: (paused: boo
     else sync()
   }
   document.addEventListener('visibilitychange', onVis)
+
+  let scrollTimer: ReturnType<typeof setTimeout> | undefined
+  const onScroll = () => {
+    if (!state.paused) {
+      setPaused(true)
+    }
+    if (scrollTimer) clearTimeout(scrollTimer)
+    scrollTimer = setTimeout(() => {
+      sync()
+    }, 100)
+  }
+  window.addEventListener('scroll', onScroll, { passive: true })
+
   sync()
 
   return {
@@ -54,6 +67,8 @@ export function attachGpuGate(canvas: HTMLCanvasElement, onPaused?: (paused: boo
     dispose() {
       io.disconnect()
       document.removeEventListener('visibilitychange', onVis)
+      window.removeEventListener('scroll', onScroll)
+      if (scrollTimer) clearTimeout(scrollTimer)
     },
   }
 }

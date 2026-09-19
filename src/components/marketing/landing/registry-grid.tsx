@@ -2,7 +2,6 @@
 
 import * as React from 'react'
 import Link from 'next/link'
-import NumberFlow from '@number-flow/react'
 import { registryStats } from '@/__registry__/stats'
 import projectsData from '@/data/projects.json'
 import { useInView } from '@/registry/hooks/animation/use-in-view'
@@ -68,37 +67,27 @@ export function RegistryGrid() {
 
       <div className="mt-10 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-5">
         <Link href="/primitives" data-space-hover className="rounded-2xl bg-muted p-6 sm:p-8">
-          <p className="text-4xl font-semibold tracking-tight text-foreground">
-            <NumberFlow value={isVisible ? registryStats.primitives : 0} />+
-          </p>
+          <p className="text-4xl font-semibold tracking-tight text-foreground">{registryStats.primitives}+</p>
           <p className="mt-2 text-sm font-medium text-muted-foreground">Base UI Primitives</p>
         </Link>
 
         <Link href="/components" data-space-hover className="rounded-2xl bg-muted p-6 sm:p-8">
-          <p className="text-4xl font-semibold tracking-tight text-foreground">
-            <NumberFlow value={isVisible ? registryStats.components : 0} />+
-          </p>
+          <p className="text-4xl font-semibold tracking-tight text-foreground">{registryStats.components}+</p>
           <p className="mt-2 text-sm font-medium text-muted-foreground">Interactive Components</p>
         </Link>
 
         <Link href="/templates" data-space-hover className="rounded-2xl bg-muted p-6 sm:p-8">
-          <p className="text-4xl font-semibold tracking-tight text-foreground">
-            <NumberFlow value={isVisible ? registryStats.templatesFree : 0} />+
-          </p>
+          <p className="text-4xl font-semibold tracking-tight text-foreground">{registryStats.templatesFree}+</p>
           <p className="mt-2 text-sm font-medium text-muted-foreground">Templates</p>
         </Link>
 
         <Link href="/hooks" data-space-hover className="rounded-2xl bg-muted p-6 sm:p-8">
-          <p className="text-4xl font-semibold tracking-tight text-foreground">
-            <NumberFlow value={isVisible ? registryStats.hooksOnly : 0} />+
-          </p>
+          <p className="text-4xl font-semibold tracking-tight text-foreground">{registryStats.hooksOnly}+</p>
           <p className="mt-2 text-sm font-medium text-muted-foreground">Production Hooks</p>
         </Link>
 
         <Link href="/tools" data-space-hover className="rounded-2xl bg-muted p-6 sm:p-8">
-          <p className="text-4xl font-semibold tracking-tight text-foreground">
-            <NumberFlow value={isVisible ? megaMenuTools.length : 0} />+
-          </p>
+          <p className="text-4xl font-semibold tracking-tight text-foreground">{megaMenuTools.length}+</p>
           <p className="mt-2 text-sm font-medium text-muted-foreground">Creative Tools</p>
         </Link>
       </div>
