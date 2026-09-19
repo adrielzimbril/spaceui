@@ -92,7 +92,7 @@ export const megaMenuDocs: MegaMenuItem[] = [
   },
 ]
 
-export const megaMenuUiKit: MegaMenuItem[] = [
+export const megaMenuLibrary: MegaMenuItem[] = [
   {
     title: 'Primitives',
     href: '/primitives',
@@ -122,6 +122,9 @@ export const megaMenuUiKit: MegaMenuItem[] = [
     color: DEFAULT_COLOR_CODE.PINKISH_PURPLE,
   },
 ]
+
+// Backwards compatibility alias
+export const megaMenuUiKit = megaMenuLibrary
 
 export const megaMenuTools: ResourceItem[] = [
   {
@@ -266,7 +269,7 @@ export const mobileNavGroups: NavGroup[] = [
   {
     label: 'Library',
     items: [
-      ...megaMenuUiKit.map((item) => ({
+      ...megaMenuLibrary.map((item) => ({
         title: item.title,
         href: item.href,
         group: item.title,
@@ -335,7 +338,8 @@ export const searchStaticResources = megaMenuTools.map((tool) => ({
 export const menuConfig = {
   megaMenu: {
     docs: megaMenuDocs,
-    uiKit: megaMenuUiKit,
+    library: megaMenuLibrary,
+    uiKit: megaMenuLibrary,
     tools: megaMenuTools,
   },
   mobileMenu: {

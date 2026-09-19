@@ -6,7 +6,7 @@ import { DocsPager } from '@/components/docs/layout/docs-pager'
 import { siteConfig } from '@/config/space-config'
 
 export const metadata: Metadata = {
-  title: 'Terms of Service — Space UI',
+  title: 'Terms of Service',
   description:
     'The terms and conditions governing the use of Space UI, our component registry, interactive tools, and community services.',
 }

@@ -2,10 +2,10 @@ import { notFound, redirect } from 'next/navigation'
 import { getMDXComponents } from '@/mdx-components'
 import { createRelativeLink } from 'fumadocs-ui/mdx'
 
-import { uiKitSource as source } from '@/lib/source'
+import { librarySource as source } from '@/lib/source'
 import { getDocsNeighbours } from '@/lib/docs-nav'
 import { RelatedComponents } from '@/components/docs/layout/related-components'
-import { getUiKitCatalog, isCatalogIndex } from '@/lib/catalog'
+import { getLibraryCatalog, isCatalogIndex } from '@/lib/catalog'
 import { DocsPageHeader } from '@/components/docs/layout/docs-page-header'
 import { DocsPager } from '@/components/docs/layout/docs-pager'
 import { DocsTocSidebar } from '@/components/docs/layout/docs-toc-sidebar'
@@ -89,7 +89,7 @@ export default async function Page(props: { params: Promise<{ slug?: string[] }>
     params.slug?.[0] === 'components' ||
     page.url.startsWith('/blocks') ||
     page.url.startsWith('/components')
-  const catalog = showCatalog ? getUiKitCatalog(params.slug) : []
+  const catalog = showCatalog ? getLibraryCatalog(params.slug) : []
 
   const previewConfig = normalizePreviewConfig(pageData.preview)
   const isTemplate =

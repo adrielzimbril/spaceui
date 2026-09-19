@@ -8,11 +8,11 @@ import { UpcomingToolCard } from '@/components/marketing/tools/upcoming-tool-car
 import { Badge } from '@/registry/components/spaceui/badge-squircle'
 
 export const metadata: Metadata = {
-  title: 'Tools — Space UI',
+  title: 'Tools',
   description:
     'Creative tools, deterministic generators, image slicers and sensory design utilities from the Space UI design system.',
   openGraph: {
-    title: 'Tools — Space UI',
+    title: 'Tools',
     description:
       'Creative tools, deterministic generators, image slicers and sensory design utilities from the Space UI design system.',
     type: 'website',

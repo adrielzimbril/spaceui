@@ -1,5 +1,5 @@
 import type { MetadataRoute } from 'next'
-import { source, uiKitSource, resourcesSource } from '@/lib/source'
+import { source, librarySource, resourcesSource } from '@/lib/source'
 import { getBaseUrl } from '@/lib/base-url'
 import { getSitemapRoutes } from '@/config/routes'
 
@@ -8,7 +8,7 @@ import { getSitemapRoutes } from '@/config/routes'
  * Automatically crawls:
  * 1. Declarative routes from src/config/routes.ts (where inSitemap: true)
  * 2. Documentation pages from Fumadocs (/docs/...)
- * 3. UI Kit pages (/components/..., /blocks/..., /templates/..., etc.)
+ * 3. Library pages (/components/..., /blocks/..., /templates/..., etc.)
  * 4. Standalone tool hubs and utilities (/tools/...)
  */
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
@@ -31,8 +31,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: page.url === '/docs' ? 0.9 : 0.8,
   }))
 
-  // 3. Fumadocs UI Kit Pages (/components/..., /blocks/..., /templates/..., etc.)
-  const uiKitPages: MetadataRoute.Sitemap = uiKitSource.getPages().map((page) => {
+  // 3. Fumadocs Library Pages (/components/..., /blocks/..., /templates/..., etc.)
+  const libraryPages: MetadataRoute.Sitemap = librarySource.getPages().map((page) => {
     const isCategoryRoot = page.url === '/components' || page.url === '/blocks' || page.url === '/templates'
     return {
       url: `${baseUrl}${page.url}`,
@@ -63,7 +63,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const seenUrls = new Set<string>()
   const sitemapEntries: MetadataRoute.Sitemap = []
 
-  for (const entry of [...baseRoutes, ...docsPages, ...uiKitPages, ...resourcesPages, ...standaloneTools]) {
+  for (const entry of [...baseRoutes, ...docsPages, ...libraryPages, ...resourcesPages, ...standaloneTools]) {
     // Normalize URL: remove duplicate slashes except protocol
     const normalizedUrl = entry.url.replace(/([^:]\/)\/+/g, '$1')
     if (!seenUrls.has(normalizedUrl)) {

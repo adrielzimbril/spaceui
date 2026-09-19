@@ -14,7 +14,7 @@ import { useLayoutMode, type ActivePreviewInfo } from '@/components/providers/la
 import { Tweakpane, type Binds } from '@/components/docs/preview/tweakpane'
 import { cn } from '@/registry/lib/utils'
 import { MobileNavDrawer } from '@/components/layout/mobile-nav-drawer'
-import { source, uiKitSource, resourcesSource } from '@/lib/source'
+import { source, librarySource, resourcesSource } from '@/lib/source'
 import { getEffectiveContained } from '@/config/preview-config'
 import { useMediaQuery, useIsMobile } from '@/registry/hooks/browser/use-media-query'
 import { useRegistryEntry } from '@/components/docs/preview/hooks/use-registry-entry'
@@ -199,7 +199,7 @@ export function PlaygroundCanvasStage({
           <ToolbarSection aria-label="Navigation and Drawer triggers" className="left-2 top-2 md:top-4">
             {/* Global Navigation Drawer Button */}
             <MobileNavDrawer
-              trees={[source.pageTree, uiKitSource.pageTree, resourcesSource.pageTree]}
+              trees={[source.pageTree, librarySource.pageTree, resourcesSource.pageTree]}
               triggerClassName="flex!"
               trigger={
                 <ToolbarButton label="Open Mobile Navigation Menu">

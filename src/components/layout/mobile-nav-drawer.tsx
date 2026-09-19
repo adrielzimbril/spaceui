@@ -135,7 +135,7 @@ export function MobileNavDrawer({ open, onOpenChange, trees = [], trigger, trigg
   const drillSections = React.useMemo<SectionItem[]>(() => {
     if (!drillTarget || !trees.length) return []
     const sourceTree = trees[0]
-    const uiKitTree = trees[1]
+    const libraryTree = trees[1]
 
     if (drillTarget.title === 'Others' || (drillTarget.group === 'Docs' && drillTarget.isDrillable)) {
       const docsNodes = sourceTree?.children ?? []
@@ -143,16 +143,16 @@ export function MobileNavDrawer({ open, onOpenChange, trees = [], trigger, trigg
     }
 
     if (drillTarget.title === 'Hooks & Utils') {
-      const uiKitNodes = uiKitTree?.children ?? []
-      const hooksFolder = uiKitNodes.find(
+      const libraryNodes = libraryTree?.children ?? []
+      const hooksFolder = libraryNodes.find(
         (n: any) => n.type === 'folder' && (n.name?.toLowerCase().includes('hook') || n.$id?.includes('hooks')),
       )
       return hooksFolder ? extractSectionsFromNode([hooksFolder]) : []
     }
 
     if (drillTarget.title === 'Primitives') {
-      const uiKitNodes = uiKitTree?.children ?? []
-      const primitivesFolder = uiKitNodes.find(
+      const libraryNodes = libraryTree?.children ?? []
+      const primitivesFolder = libraryNodes.find(
         (n: any) =>
           n.type === 'folder' && (n.name?.toLowerCase().includes('primitive') || n.$id?.includes('primitives')),
       )
@@ -160,24 +160,24 @@ export function MobileNavDrawer({ open, onOpenChange, trees = [], trigger, trigg
     }
 
     if (drillTarget.title === 'Blocks') {
-      const uiKitNodes = uiKitTree?.children ?? []
-      const blocksFolder = uiKitNodes.find(
+      const libraryNodes = libraryTree?.children ?? []
+      const blocksFolder = libraryNodes.find(
         (n: any) => n.type === 'folder' && (n.name?.toLowerCase().includes('block') || n.$id?.includes('blocks')),
       )
       return blocksFolder ? extractSectionsFromNode([blocksFolder]) : []
     }
 
     if (drillTarget.title === 'Templates') {
-      const uiKitNodes = uiKitTree?.children ?? []
-      const templatesFolder = uiKitNodes.find(
+      const libraryNodes = libraryTree?.children ?? []
+      const templatesFolder = libraryNodes.find(
         (n: any) => n.type === 'folder' && (n.name?.toLowerCase().includes('template') || n.$id?.includes('templates')),
       )
       return templatesFolder ? extractSectionsFromNode([templatesFolder]) : []
     }
 
     if (drillTarget.title === 'Components') {
-      const uiKitNodes = uiKitTree?.children ?? []
-      const nonPrimitives = uiKitNodes.filter(
+      const libraryNodes = libraryTree?.children ?? []
+      const nonPrimitives = libraryNodes.filter(
         (n: any) =>
           n.type === 'folder' &&
           !n.name?.toLowerCase().includes('primitive') &&
@@ -199,38 +199,38 @@ export function MobileNavDrawer({ open, onOpenChange, trees = [], trigger, trigg
   const categoryCounts = React.useMemo<Record<string, number | undefined>>(() => {
     if (!trees.length) return {}
     const sourceTree = trees[0]
-    const uiKitTree = trees[1]
-    const uiKitNodes = uiKitTree?.children ?? []
+    const libraryTree = trees[1]
+    const libraryNodes = libraryTree?.children ?? []
 
-    const hooksFolder = uiKitNodes.find(
+    const hooksFolder = libraryNodes.find(
       (n: any) => n.type === 'folder' && (n.name?.toLowerCase().includes('hook') || n.$id?.includes('hooks')),
     )
     const hooksCount = hooksFolder
       ? extractSectionsFromNode([hooksFolder]).reduce((acc, s) => acc + s.items.length, 0)
       : 0
 
-    const primitivesFolder = uiKitNodes.find(
+    const primitivesFolder = libraryNodes.find(
       (n: any) => n.type === 'folder' && (n.name?.toLowerCase().includes('primitive') || n.$id?.includes('primitives')),
     )
     const primitivesCount = primitivesFolder
       ? extractSectionsFromNode([primitivesFolder]).reduce((acc, s) => acc + s.items.length, 0)
       : 0
 
-    const blocksFolder = uiKitNodes.find(
+    const blocksFolder = libraryNodes.find(
       (n: any) => n.type === 'folder' && (n.name?.toLowerCase().includes('block') || n.$id?.includes('blocks')),
     )
     const blocksCount = blocksFolder
       ? extractSectionsFromNode([blocksFolder]).reduce((acc, s) => acc + s.items.length, 0)
       : 0
 
-    const templatesFolder = uiKitNodes.find(
+    const templatesFolder = libraryNodes.find(
       (n: any) => n.type === 'folder' && (n.name?.toLowerCase().includes('template') || n.$id?.includes('templates')),
     )
     const templatesCount = templatesFolder
       ? extractSectionsFromNode([templatesFolder]).reduce((acc, s) => acc + s.items.length, 0)
       : 0
 
-    const nonPrimitives = uiKitNodes.filter(
+    const nonPrimitives = libraryNodes.filter(
       (n: any) =>
         n.type === 'folder' &&
         !n.name?.toLowerCase().includes('primitive') &&

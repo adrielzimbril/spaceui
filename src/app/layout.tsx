@@ -121,8 +121,13 @@ const geistMono = Geist_Mono({
 })
 
 export default async function Layout({ children }: { children: ReactNode }) {
-  const cookieStore = await cookies()
-  const initialLayoutMode = (cookieStore.get('space-ui-layout-mode')?.value as LayoutMode) || Mode.standard
+  let initialLayoutMode: LayoutMode = Mode.standard
+  try {
+    const cookieStore = await cookies()
+    initialLayoutMode = (cookieStore.get('space-ui-layout-mode')?.value as LayoutMode) || Mode.standard
+  } catch {
+    // Fallback to standard during static prerendering or when cookies() rejects
+  }
 
   return (
     <html
@@ -139,9 +144,9 @@ export default async function Layout({ children }: { children: ReactNode }) {
           }}
         />
         <script
-          id="theme-lock-init"
+          id="theme-init"
           dangerouslySetInnerHTML={{
-            __html: `(function(){try{var routes={'/showcase':'dark'};var p=window.location.pathname.replace(/\\/+$/,'');for(var r in routes){if(p===r||p.startsWith(r+'/')){var t=routes[r];document.documentElement.classList.remove(t==='dark'?'light':'dark');document.documentElement.classList.add(t);document.documentElement.style.colorScheme=t;break;}}}catch(e){}})();`,
+            __html: `(function(){try{var routes={'/showcase':'dark'};var p=window.location.pathname.replace(/\\/+$/,'');var locked=null;for(var r in routes){if(p===r||p.startsWith(r+'/')){locked=routes[r];break;}}var t=locked||localStorage.getItem('theme');var isDark=t==='dark'||((!t||t==='system')&&window.matchMedia('(prefers-color-scheme: dark)').matches);var root=document.documentElement;if(isDark){root.classList.add('dark');root.classList.remove('light');root.style.colorScheme='dark';}else{root.classList.remove('dark');root.classList.add('light');root.style.colorScheme='light';}}catch(e){}})();`,
           }}
         />
         <Script id="json-ld" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
@@ -154,7 +159,7 @@ export default async function Layout({ children }: { children: ReactNode }) {
           // 'screenshot-mode',
         )}
       >
-        <RootProvider search={{ enabled: false }}>
+        <RootProvider search={{ enabled: false }} theme={{ disableTransitionOnChange: true }}>
           <NuqsAdapter>
             <GlobalLayoutWrapper initialLayoutMode={initialLayoutMode}>{children}</GlobalLayoutWrapper>
           </NuqsAdapter>

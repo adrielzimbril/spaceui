@@ -1,7 +1,7 @@
 import { FlagPlayground } from '@/tools/flags/playground'
 
 export const metadata = {
-  title: 'Flags — Space UI',
+  title: 'Flags',
   description: '430 country and 201 language vector flags in circle, square, and 4:3 SVG.',
 }
 

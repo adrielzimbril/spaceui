@@ -28,11 +28,14 @@ export const source = loader({
   ...commonLoaderOptions,
 })
 
-export const uiKitSource = loader({
+export const librarySource = loader({
   baseUrl: '',
   source: uiKit.toFumadocsSource(),
   ...commonLoaderOptions,
 })
+
+// Alias for backwards compatibility
+export const uiKitSource = librarySource
 
 export const resourcesSource = loader({
   baseUrl: '/tools',

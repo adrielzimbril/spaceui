@@ -34,6 +34,13 @@ export async function GET() {
 
     return NextResponse.json({ user })
   } catch (err: any) {
+    if (
+      err?.digest === 'HANGING_PROMISE_REJECTION' ||
+      err?.digest?.startsWith('DYNAMIC_SERVER_USAGE') ||
+      err?.message?.includes('During prerendering')
+    ) {
+      return NextResponse.json({ user: null })
+    }
     console.error('[/api/auth/user] error:', err)
     return NextResponse.json({ user: null })
   }

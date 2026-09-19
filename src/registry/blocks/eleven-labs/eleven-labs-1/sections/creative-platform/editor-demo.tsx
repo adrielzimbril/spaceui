@@ -1,12 +1,57 @@
+'use client'
+
+import * as React from 'react'
 import { IconSparkles } from '@tabler/icons-react'
+import { SilkGradient } from '@/registry/components/shader/silk-gradient'
+
+function createTimelineThumbnail(color1 = '#ce4f31', color2 = '#74afe0', color3 = '#324298'): string {
+  if (typeof document === 'undefined') return ''
+  try {
+    const canvas = document.createElement('canvas')
+    canvas.width = 96
+    canvas.height = 64
+    const ctx = canvas.getContext('2d')
+    if (!ctx) return ''
+
+    const grad = ctx.createLinearGradient(0, 64, 96, 0)
+    grad.addColorStop(0, color3)
+    grad.addColorStop(0.35, color1)
+    grad.addColorStop(0.65, color2)
+    grad.addColorStop(1, color3)
+    ctx.fillStyle = grad
+    ctx.fillRect(0, 0, 96, 64)
+
+    const imgData = ctx.getImageData(0, 0, 96, 64)
+    const data = imgData.data
+    for (let i = 0; i < data.length; i += 4) {
+      const noise = (Math.random() - 0.5) * 16
+      data[i] = Math.min(255, Math.max(0, data[i] + noise))
+      data[i + 1] = Math.min(255, Math.max(0, data[i + 1] + noise))
+      data[i + 2] = Math.min(255, Math.max(0, data[i + 2] + noise))
+    }
+    ctx.putImageData(imgData, 0, 0)
+    return canvas.toDataURL('image/webp', 0.9)
+  } catch {
+    return ''
+  }
+}
 
 export function EditorDemo() {
+  const [timelineUrl, setTimelineUrl] = React.useState<string>('')
+
+  React.useEffect(() => {
+    setTimelineUrl(createTimelineThumbnail('#ce4f31', '#74afe0', '#324298'))
+  }, [])
   return (
     <article className="relative isolate h-full overflow-hidden rounded-[20px] bg-[#f5f3f1]">
-      <img
-        src="/mastermind/creative-platform-bg.jpeg"
-        alt=""
-        className="absolute inset-0 -z-20 size-full object-cover"
+      <SilkGradient
+        className="pointer-events-none absolute inset-0 -z-20 size-full"
+        color1="#d36f5b"
+        color2="#b5cdec"
+        color3="#bbbfd3"
+        animate
+        speed={0.85}
+        grain
       />
       <div
         className="absolute inset-0 -z-10"
@@ -30,19 +75,36 @@ export function EditorDemo() {
                 </p>
               </div>
               <div className="flex w-[30%] border-l border-[#dedbd8] py-10 pl-10">
-                <div className="relative w-full overflow-hidden rounded-l-lg opacity-10">
-                  <img
-                    src="/mastermind/creative-platform-frame.png"
-                    alt=""
+                <div className="relative h-full w-full overflow-hidden rounded-l-lg opacity-80">
+                  <SilkGradient
                     className="size-full object-cover object-left"
+                    color1="#ce4f31"
+                    color2="#74afe0"
+                    color3="#324298"
+                    animate
+                    speed={0.85}
+                    grain
                   />
                 </div>
               </div>
             </div>
             <div className="w-full border-t border-[#dedbd8] p-4">
               <div className="w-fit rounded-[11.5px] p-[3.5px] ring-[1.5px] ring-black ring-inset">
-                <div className="relative h-8 w-60 overflow-hidden rounded-lg">
-                  <img src="/mastermind/creative-platform-timeline.png" alt="" className="size-full object-cover" />
+                <div
+                  className="relative h-8 w-60 overflow-hidden rounded-lg bg-[#324298]"
+                  style={{
+                    backgroundImage: timelineUrl ? `url(${timelineUrl})` : undefined,
+                    backgroundSize: '48px 32px',
+                    backgroundRepeat: 'repeat-x',
+                  }}
+                >
+                  <div className="pointer-events-none absolute inset-0 grid grid-cols-5 divide-x divide-white/20">
+                    <div />
+                    <div />
+                    <div />
+                    <div />
+                    <div />
+                  </div>
                 </div>
               </div>
               <div className="mt-3 flex w-full gap-x-2">

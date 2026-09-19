@@ -180,6 +180,7 @@
       ],
       "registryDependencies": [
         "https://www.spaceui.one/r/components-orb-smooth.json",
+        "https://www.spaceui.one/r/components-shader-silk-gradient.json",
         "https://www.spaceui.one/r/lib-utils.json"
       ],
       "categories": [
@@ -264,7 +265,7 @@
         }
       ],
       "createdAt": "2026-09-03",
-      "updatedAt": "2026-09-04"
+      "updatedAt": "2026-09-18"
     },
     {
       "name": "block-interactive-fun-facts",
@@ -7620,9 +7621,9 @@
       "name": "demo-c-liquid-metal-border-04",
       "type": "registry:component",
       "title": "Liquid Metal Border Presets",
-      "description": "Every Liquid Metal Border preset shown as an animated Squishmoji avatar.",
+      "description": "Every Liquid Metal Border preset shown wrapping a generative avatar.",
       "dependencies": [
-        "@usespaceui/squishmoji"
+        "@usespaceui/avatars"
       ],
       "registryDependencies": [
         "https://www.spaceui.one/r/components-spaceui-liquid-metal-border.json"
@@ -8936,11 +8937,11 @@
       "name": "demo-c-silk-border-04",
       "type": "registry:component",
       "title": "Silk Border Demo - Presets",
-      "description": "Every Silk Border preset shown as an animated Squishmoji avatar.",
+      "description": "Every Silk Border preset shown wrapping a generative avatar.",
       "isPro": true,
       "dependencies": [
         "vgpu",
-        "@usespaceui/squishmoji"
+        "@usespaceui/avatars"
       ],
       "registryDependencies": [
         "https://www.spaceui.one/r/components-spaceui-silk-border.json"

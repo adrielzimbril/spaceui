@@ -6,7 +6,7 @@ import { CommandMenu } from '@/components/layout/command-menu'
 import { ModeSwitcher } from '@/registry/components/spaceui/mode-switcher'
 import { MegaMenu } from '@/components/layout/mega-menu'
 import { MobileNavDrawer } from '@/components/layout/mobile-nav-drawer'
-import { source, uiKitSource, resourcesSource } from '@/lib/source'
+import { source, librarySource, resourcesSource } from '@/lib/source'
 import { Link } from '@/registry/primitives/link'
 import { GitHubLink } from '@/registry/components/spaceui/github-link'
 import { searchNavShortcuts } from '@/config/menu-config'
@@ -47,13 +47,13 @@ export function SiteHeader() {
         </nav>
 
         <div className="flex min-w-0 items-center justify-end gap-1.5">
-          <div className="w-full flex-1 md:w-auto md:flex-none mr-1">
+          <div className="hidden sm:block w-full flex-1 md:w-auto md:flex-none mr-1">
             <CommandMenu
               navItems={SITE_NAV_ITEMS.map((item) => ({
                 href: item.href,
                 label: item.label,
               }))}
-              trees={[source.pageTree, uiKitSource.pageTree, resourcesSource.pageTree]}
+              trees={[source.pageTree, librarySource.pageTree, resourcesSource.pageTree]}
             />
           </div>
 
@@ -80,7 +80,7 @@ export function SiteHeader() {
             <span>Sign in</span>
           </Link> */}
 
-          <MobileNavDrawer trees={[source.pageTree, uiKitSource.pageTree, resourcesSource.pageTree]} />
+          <MobileNavDrawer trees={[source.pageTree, librarySource.pageTree, resourcesSource.pageTree]} />
         </div>
       </div>
     </header>

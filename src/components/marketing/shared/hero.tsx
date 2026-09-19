@@ -93,7 +93,7 @@ export function MarketingHero({
   )
 
   return (
-    <section className={cn('relative overflow-hidden pt-24 pb-8 md:pb-12', className)}>
+    <section className={cn('relative overflow-hidden pt-24 md:pt-34 pb-8 md:pb-12', className)}>
       <div
         className={cn(
           'bg-muted rounded-5xl mx-2 md:mx-auto pt-12 pb-16 md:pt-20 md:pb-24 max-w-310 px-5 sm:px-6',

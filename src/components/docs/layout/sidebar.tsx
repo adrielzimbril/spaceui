@@ -4,7 +4,7 @@ import * as React from 'react'
 import Link from 'next/link'
 import { usePathname, useRouter } from 'next/navigation'
 import { cn } from '@/registry/lib/utils'
-import { source, uiKitSource } from '@/lib/source'
+import { source, librarySource } from '@/lib/source'
 import { IconChevronDown, IconCheck } from '@tabler/icons-react'
 import { slideSound } from '@/components/providers/sound-provider'
 import { Menu, MenuItem, MenuPopup, MenuTrigger } from '@/registry/primitives/menu'
@@ -91,7 +91,7 @@ export function DocsSidebar() {
 
   // Determine sections to display
   const sections = React.useMemo<SectionItem[]>(() => {
-    return resolvePathSections(pathname, source.pageTree.children ?? [], uiKitSource.pageTree.children ?? [])
+    return resolvePathSections(pathname, source.pageTree.children ?? [], librarySource.pageTree.children ?? [])
   }, [pathname])
 
   const isItemActive = React.useCallback(

@@ -195,7 +195,7 @@ export const index: Record<string, any> = {
     type: "registry:block",
     dependencies: ["@elevenlabs/elevenlabs-js","@tabler/icons-react"],
     devDependencies: undefined,
-    registryDependencies: ["https://www.spaceui.one/r/components-orb-smooth.json","https://www.spaceui.one/r/lib-utils.json"],
+    registryDependencies: ["https://www.spaceui.one/r/components-orb-smooth.json","https://www.spaceui.one/r/components-shader-silk-gradient.json","https://www.spaceui.one/r/lib-utils.json"],
     files: [
   {
     "path": "src/registry/blocks/eleven-labs/eleven-labs-1/index.tsx",
@@ -7531,9 +7531,9 @@ export const index: Record<string, any> = {
   },
   "demo-c-liquid-metal-border-04": {
     name: "demo-c-liquid-metal-border-04",
-    description: "Every Liquid Metal Border preset shown as an animated Squishmoji avatar.",
+    description: "Every Liquid Metal Border preset shown wrapping a generative avatar.",
     type: "registry:component",
-    dependencies: ["@usespaceui/squishmoji"],
+    dependencies: ["@usespaceui/avatars"],
     devDependencies: undefined,
     registryDependencies: ["https://www.spaceui.one/r/components-spaceui-liquid-metal-border.json"],
     files: [
@@ -9163,9 +9163,9 @@ export const index: Record<string, any> = {
   },
   "demo-c-silk-border-04": {
     name: "demo-c-silk-border-04",
-    description: "Every Silk Border preset shown as an animated Squishmoji avatar.",
+    description: "Every Silk Border preset shown wrapping a generative avatar.",
     type: "registry:component",
-    dependencies: ["vgpu","@usespaceui/squishmoji"],
+    dependencies: ["vgpu","@usespaceui/avatars"],
     devDependencies: undefined,
     registryDependencies: ["https://www.spaceui.one/r/components-spaceui-silk-border.json"],
     files: [

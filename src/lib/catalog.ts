@@ -5,7 +5,7 @@ import blocksMeta from '@/content/library/blocks/meta.json'
 import templatesMeta from '@/content/library/templates/meta.json'
 import type { RelatedComponent } from '@/lib/docs-metadata'
 import type { RelatedGroup } from '@/components/docs/layout/related-components'
-import { uiKitSource } from '@/lib/source'
+import { librarySource } from '@/lib/source'
 
 export const CATALOG_SECTIONS = ['hooks', 'primitives', 'components', 'blocks', 'templates'] as const
 export type CatalogSection = (typeof CATALOG_SECTIONS)[number]
@@ -53,7 +53,7 @@ export function isCatalogIndex(slug: string[] | undefined) {
 
 function pageMap(section: CatalogSection) {
   return new Map(
-    uiKitSource
+    librarySource
       .getPages()
       .filter((page) => page.slugs[0] === section && page.slugs.length > 1)
       .map((page) => [page.slugs.slice(1).join('/'), page]),
@@ -74,11 +74,14 @@ function toItem(
   }
 }
 
-export function getUiKitCatalog(slug: string[] | undefined): RelatedGroup[] {
+export function getLibraryCatalog(slug: string[] | undefined): RelatedGroup[] {
   const section = slug?.[0]
   if (!isCatalogSection(section)) return []
   return getSectionCatalog(section)
 }
+
+// Backwards compatibility alias
+export const getUiKitCatalog = getLibraryCatalog
 
 function getSectionCatalog(section: CatalogSection): RelatedGroup[] {
   const meta = META[section]

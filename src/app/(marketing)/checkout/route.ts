@@ -2,11 +2,15 @@ import { NextRequest, NextResponse } from 'next/server'
 import { cookies } from 'next/headers'
 import { polar } from '@/lib/polar'
 import { createClient } from '@/integrations/supabase/server'
+import { KNOWN_DISCOUNT_IDS } from '@/lib/pricing-config'
 import { logger } from '@/registry/utils/logger'
 
 export async function GET(request: NextRequest) {
   const searchParams = request.nextUrl.searchParams
   const products = searchParams.get('products')
+  const requestedDiscountId = searchParams.get('discountId')
+  const discountId =
+    requestedDiscountId && KNOWN_DISCOUNT_IDS.has(requestedDiscountId) ? requestedDiscountId : undefined
 
   if (!products) {
     return NextResponse.json({ error: 'Missing products in query parameter' }, { status: 400 })
@@ -42,6 +46,7 @@ export async function GET(request: NextRequest) {
   try {
     const checkout = await polar.checkouts.create({
       products: products.split(','),
+      discountId,
       customerEmail,
       customerId,
       externalCustomerId,

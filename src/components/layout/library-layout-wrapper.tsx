@@ -8,7 +8,7 @@ import { SiteLayout } from '@/components/layout/site-layout'
 import { DocsSidebar } from '@/components/docs/layout/sidebar'
 import { PlaygroundSplitView } from '@/components/playground'
 
-export function UiKitLayoutWrapper({
+export function LibraryLayoutWrapper({
   children,
   hasProAccess = false,
 }: {
@@ -38,3 +38,6 @@ export function UiKitLayoutWrapper({
     </ProAccessProvider>
   )
 }
+
+// Backwards compatibility alias
+export const UiKitLayoutWrapper = LibraryLayoutWrapper

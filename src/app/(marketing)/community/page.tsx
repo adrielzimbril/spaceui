@@ -6,7 +6,7 @@ import { createClient, createAdminClient } from '@/integrations/supabase/server'
 import type { CommunityMessage } from '@/registry/blocks/community-wall'
 
 export const metadata: Metadata = {
-  title: 'Community Wall — Space UI',
+  title: 'Community Wall',
   description:
     'An interactive infinite canvas where developers, designers, and creators pin notes, love letters, and ideas for Space UI.',
 }

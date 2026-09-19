@@ -1,6 +1,6 @@
 import { type NextRequest, NextResponse } from 'next/server'
 import { getLLMText } from '@/lib/get-llm-text'
-import { source, uiKitSource, resourcesSource } from '@/lib/source'
+import { source, librarySource, resourcesSource } from '@/lib/source'
 import { notFound } from 'next/navigation'
 
 export async function GET(_req: NextRequest, { params }: { params: Promise<{ slug?: string[] }> }) {
@@ -13,14 +13,14 @@ export async function GET(_req: NextRequest, { params }: { params: Promise<{ slu
 
   let page: any = null
 
-  if (cleanSlug[0] === 'ui-kit') {
-    page = uiKitSource.getPage(cleanSlug.slice(1))
+  if (cleanSlug[0] === 'library' || cleanSlug[0] === 'ui-kit') {
+    page = librarySource.getPage(cleanSlug.slice(1))
   } else if (cleanSlug[0] === 'tools' || cleanSlug[0] === 'resources') {
     page = resourcesSource.getPage(cleanSlug.slice(1))
   } else if (cleanSlug[0] === 'docs') {
     page = source.getPage(cleanSlug.slice(1))
   } else {
-    page = source.getPage(cleanSlug) || uiKitSource.getPage(cleanSlug) || resourcesSource.getPage(cleanSlug)
+    page = source.getPage(cleanSlug) || librarySource.getPage(cleanSlug) || resourcesSource.getPage(cleanSlug)
   }
 
   if (!page) notFound()
@@ -41,7 +41,8 @@ export async function GET(_req: NextRequest, { params }: { params: Promise<{ slu
 export function generateStaticParams() {
   return [
     ...source.generateParams().map((p) => ({ slug: ['docs', ...(p.slug || [])] })),
-    ...uiKitSource.generateParams().map((p) => ({ slug: ['ui-kit', ...(p.slug || [])] })),
+    ...librarySource.generateParams().map((p) => ({ slug: ['library', ...(p.slug || [])] })),
+    ...librarySource.generateParams().map((p) => ({ slug: ['ui-kit', ...(p.slug || [])] })),
     ...resourcesSource.generateParams().map((p) => ({ slug: ['tools', ...(p.slug || [])] })),
   ]
 }

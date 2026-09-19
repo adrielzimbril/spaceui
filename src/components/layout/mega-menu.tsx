@@ -128,7 +128,7 @@ export function MenuAvatarIcon({ seed, className, variant }: MenuAvatarIconProps
         className,
       )}
     >
-      <Avatar name={seed} variant={variant || 'shaula'} size={32} circle={false} />
+      <Avatar name={seed} variant={(variant as any) || 'shaula'} size={32} circle={false} />
     </div>
   )
 }
@@ -159,6 +159,7 @@ export function ToolMenuIcon({
 
 const DEFAULT_MENU_SIZES: Record<string, { width: number; height: number }> = {
   docs: { width: 420, height: 382 },
+  library: { width: 560, height: 209 },
   'ui-kit': { width: 560, height: 209 },
   tools: { width: 760, height: 526 },
 }
@@ -209,7 +210,7 @@ export function MegaMenu({ className }: { className?: string }) {
   const [value, setValue] = React.useState<string | null>(null)
   const isClickTriggered = React.useRef<boolean>(false)
   const [menuSizes, setMenuSizes] = React.useState(DEFAULT_MENU_SIZES)
-  const lastValueRef = React.useRef<string>('ui-kit')
+  const lastValueRef = React.useRef<string>('library')
 
   if (value && menuSizes[value]) {
     lastValueRef.current = value
@@ -378,7 +379,7 @@ export function MegaMenu({ className }: { className?: string }) {
             </NavigationMenuContent>
           </NavigationMenuItem>
 
-          <NavigationMenuItem value="ui-kit">
+          <NavigationMenuItem value="library">
             <NavigationMenuTrigger className="bg-transparent hover:bg-muted focus:bg-muted gap-1.5">
               <span
                 aria-hidden="true"
@@ -387,9 +388,9 @@ export function MegaMenu({ className }: { className?: string }) {
               Library
             </NavigationMenuTrigger>
             <NavigationMenuContent keepMounted className="w-140 shrink-0 max-w-none p-5 pt-3.5">
-              <MenuContentMeasurer id="ui-kit" onMeasured={handleMeasured}>
+              <MenuContentMeasurer id="library" onMeasured={handleMeasured}>
                 <div className="hidden text-[11px] font-semibold tracking-wider text-muted-foreground uppercase px-2.5 mb-2">
-                  UI Kit & Primitives
+                  Library & Primitives
                 </div>
                 <div className="grid grid-cols-2 gap-2">
                   <ListItem title="Primitives" href="/primitives" seed="Primitives" onClick={handleClose}>

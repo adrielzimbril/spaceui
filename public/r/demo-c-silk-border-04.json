@@ -2,10 +2,10 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "demo-c-silk-border-04",
   "title": "Silk Border Demo - Presets",
-  "description": "Every Silk Border preset shown as an animated Squishmoji avatar.",
+  "description": "Every Silk Border preset shown wrapping a generative avatar.",
   "dependencies": [
     "vgpu",
-    "@usespaceui/squishmoji"
+    "@usespaceui/avatars"
   ],
   "registryDependencies": [
     "https://www.spaceui.one/r/components-spaceui-silk-border.json"
@@ -13,7 +13,7 @@
   "files": [
     {
       "path": "src/registry/demo/components/spaceui/silk-border/c-silk-border-04/index.tsx",
-      "content": "'use client'\n\nimport { SilkBorder, SILK_PRESETS, type SilkPreset } from '@/components/spaceui/silk-border'\nimport { Squishmoji } from '@usespaceui/squishmoji/react'\n\nconst PRESETS = Object.keys(SILK_PRESETS) as SilkPreset[]\n\nexport default function Demo() {\n  return (\n    <div className=\"flex flex-wrap items-center justify-center gap-6 p-6\">\n      {PRESETS.map((preset) => (\n        <SilkBorder key={preset} preset={preset} className=\"inline-flex size-16 rounded-full p-0.75\">\n          <Squishmoji\n            seed={preset}\n            shape=\"all\"\n            expression=\"all\"\n            backgroundStyle=\"all\"\n            size={56}\n            animate\n            animWobble\n            animOnHover\n            animOnClick\n          />\n        </SilkBorder>\n      ))}\n    </div>\n  )\n}\n",
+      "content": "'use client'\n\nimport { SilkBorder, SILK_PRESETS, type SilkPreset } from '@/components/spaceui/silk-border'\nimport { Avatar } from '@usespaceui/avatars/react'\n\nconst PRESETS = Object.keys(SILK_PRESETS) as SilkPreset[]\n\nexport default function Demo() {\n  return (\n    <div className=\"flex flex-wrap items-center justify-center gap-6 p-6\">\n      {PRESETS.map((preset) => (\n        <SilkBorder key={preset} preset={preset} className=\"inline-flex size-16 rounded-full p-0.75\">\n          <Avatar name={preset} variant=\"all\" size={56} circle animate />\n        </SilkBorder>\n      ))}\n    </div>\n  )\n}\n",
       "type": "registry:component",
       "target": "components/spaceui/silk-border-presets-demo.tsx"
     }

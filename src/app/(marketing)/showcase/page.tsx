@@ -6,7 +6,7 @@ import { ShowcaseGallery } from '@/components/marketing/showcase/showcase-galler
 import { PageThemeLock } from '@/components/providers/theme-lock-provider'
 
 export const metadata: Metadata = {
-  title: 'Showcase — Space UI',
+  title: 'Showcase',
   description: 'Explore production-ready templates and landing pages built with Space UI.',
 }
 

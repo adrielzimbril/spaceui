@@ -1,4 +1,5 @@
 import { cookies } from 'next/headers'
+import { connection } from 'next/server'
 import { createClient } from '@/integrations/supabase/server'
 
 export interface UserSubscriptionStatus {
@@ -18,6 +19,9 @@ export async function getCurrentUserSubscription(): Promise<UserSubscriptionStat
   }
 
   try {
+    // Supabase's auth.getUser() reads Date.now() internally (JWT expiry check) — excluding it from
+    // the static prerender shell avoids Next's "unstable value Date.now()" prerender error.
+    await connection()
     const cookieStore = await cookies()
     const supabase = createClient(cookieStore)
     if (!supabase) return defaultStatus
@@ -41,7 +45,14 @@ export async function getCurrentUserSubscription(): Promise<UserSubscriptionStat
       polarCustomerId: appMeta.polar_customer_id ?? null,
       unlockedProducts,
     }
-  } catch (error) {
+  } catch (error: any) {
+    if (
+      error?.digest === 'HANGING_PROMISE_REJECTION' ||
+      error?.digest?.startsWith('DYNAMIC_SERVER_USAGE') ||
+      error?.message?.includes('During prerendering')
+    ) {
+      return defaultStatus
+    }
     console.error('Error getting user subscription status:', error)
     return defaultStatus
   }

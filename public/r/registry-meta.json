@@ -472,10 +472,10 @@
       "block"
     ],
     "createdAt": "2026-09-03",
-    "updatedAt": "2026-09-04",
-    "size": "98.7 KB",
-    "rawSize": 101066,
-    "directSize": "98.7 KB",
+    "updatedAt": "2026-09-18",
+    "size": "100.7 KB",
+    "rawSize": 103071,
+    "directSize": "100.7 KB",
     "fileCount": 15,
     "dependencies": [
       "@elevenlabs/elevenlabs-js",
@@ -483,6 +483,7 @@
     ],
     "registryDependencies": [
       "https://www.spaceui.one/r/components-orb-smooth.json",
+      "https://www.spaceui.one/r/components-shader-silk-gradient.json",
       "https://www.spaceui.one/r/lib-utils.json"
     ],
     "dependents": [],
@@ -501,10 +502,10 @@
       "block"
     ],
     "createdAt": "2026-09-03",
-    "updatedAt": "2026-09-04",
-    "size": "98.7 KB",
-    "rawSize": 101066,
-    "directSize": "98.7 KB",
+    "updatedAt": "2026-09-18",
+    "size": "100.7 KB",
+    "rawSize": 103071,
+    "directSize": "100.7 KB",
     "fileCount": 15,
     "dependencies": [
       "@elevenlabs/elevenlabs-js",
@@ -512,6 +513,7 @@
     ],
     "registryDependencies": [
       "https://www.spaceui.one/r/components-orb-smooth.json",
+      "https://www.spaceui.one/r/components-shader-silk-gradient.json",
       "https://www.spaceui.one/r/lib-utils.json"
     ],
     "dependents": [],
@@ -530,10 +532,10 @@
       "block"
     ],
     "createdAt": "2026-09-03",
-    "updatedAt": "2026-09-04",
-    "size": "98.7 KB",
-    "rawSize": 101066,
-    "directSize": "98.7 KB",
+    "updatedAt": "2026-09-18",
+    "size": "100.7 KB",
+    "rawSize": 103071,
+    "directSize": "100.7 KB",
     "fileCount": 15,
     "dependencies": [
       "@elevenlabs/elevenlabs-js",
@@ -541,6 +543,7 @@
     ],
     "registryDependencies": [
       "https://www.spaceui.one/r/components-orb-smooth.json",
+      "https://www.spaceui.one/r/components-shader-silk-gradient.json",
       "https://www.spaceui.one/r/lib-utils.json"
     ],
     "dependents": [],
@@ -7272,9 +7275,9 @@
     ],
     "createdAt": "2026-09-16",
     "updatedAt": "2026-09-16",
-    "size": "3.1 KB",
-    "rawSize": 3209,
-    "directSize": "3.1 KB",
+    "size": "4.1 KB",
+    "rawSize": 4187,
+    "directSize": "4.1 KB",
     "fileCount": 1,
     "dependencies": [
       "@paper-design/shaders-react"
@@ -7335,9 +7338,9 @@
     ],
     "createdAt": "2026-09-16",
     "updatedAt": "2026-09-16",
-    "size": "3.1 KB",
-    "rawSize": 3209,
-    "directSize": "3.1 KB",
+    "size": "4.1 KB",
+    "rawSize": 4187,
+    "directSize": "4.1 KB",
     "fileCount": 1,
     "dependencies": [
       "@paper-design/shaders-react"
@@ -8295,7 +8298,7 @@
     ],
     "isPro": true,
     "size": "3.3 KB",
-    "rawSize": 3394,
+    "rawSize": 3376,
     "directSize": "3.3 KB",
     "fileCount": 1,
     "dependencies": [
@@ -8359,7 +8362,7 @@
     ],
     "isPro": true,
     "size": "3.3 KB",
-    "rawSize": 3394,
+    "rawSize": 3376,
     "directSize": "3.3 KB",
     "fileCount": 1,
     "dependencies": [

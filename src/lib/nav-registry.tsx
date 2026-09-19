@@ -349,9 +349,9 @@ export function getActiveHub(pathname: string): HubItem {
   return HUBS[0]
 }
 
-export function resolvePathSections(pathname: string, docsTree: any[] = [], uiKitTree: any[] = []): SectionItem[] {
+export function resolvePathSections(pathname: string, docsTree: any[] = [], libraryTree: any[] = []): SectionItem[] {
   if (pathname.startsWith('/hooks')) {
-    const hooksFolder = uiKitTree.find(
+    const hooksFolder = libraryTree.find(
       (n: any) => n.type === 'folder' && (n.name?.toLowerCase().includes('hook') || n.$id?.includes('hooks')),
     )
     return hooksFolder ? extractSectionsFromNode([hooksFolder]) : []
@@ -364,7 +364,7 @@ export function resolvePathSections(pathname: string, docsTree: any[] = [], uiKi
     pathname.startsWith('/components') || pathname.startsWith('/blocks') || pathname.startsWith('/templates')
 
   if (isDocsOrPrimitives) {
-    const primitivesFolder = uiKitTree.find(
+    const primitivesFolder = libraryTree.find(
       (n: any) => n.type === 'folder' && (n.name?.toLowerCase().includes('primitive') || n.$id?.includes('primitives')),
     )
 
@@ -375,7 +375,7 @@ export function resolvePathSections(pathname: string, docsTree: any[] = [], uiKi
   }
 
   if (isComponents) {
-    const nonPrimitives = uiKitTree.filter(
+    const nonPrimitives = libraryTree.filter(
       (n: any) =>
         n.type === 'folder' &&
         !n.name?.toLowerCase().includes('primitive') &&

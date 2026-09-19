@@ -2,9 +2,9 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "demo-c-liquid-metal-border-04",
   "title": "Liquid Metal Border Presets",
-  "description": "Every Liquid Metal Border preset shown as an animated Squishmoji avatar.",
+  "description": "Every Liquid Metal Border preset shown wrapping a generative avatar.",
   "dependencies": [
-    "@usespaceui/squishmoji"
+    "@usespaceui/avatars"
   ],
   "registryDependencies": [
     "https://www.spaceui.one/r/components-spaceui-liquid-metal-border.json"
@@ -12,7 +12,7 @@
   "files": [
     {
       "path": "src/registry/demo/components/spaceui/liquid-metal-border/c-liquid-metal-border-04/index.tsx",
-      "content": "'use client'\n\nimport { LiquidBorder, LIQUID_PRESETS, type LiquidPreset } from '@/components/spaceui/liquid-metal-border'\nimport { Squishmoji } from '@usespaceui/squishmoji/react'\n\nconst PRESETS = Object.keys(LIQUID_PRESETS) as LiquidPreset[]\n\nexport default function Demo() {\n  return (\n    <div className=\"flex flex-wrap items-center justify-center gap-6 p-6\">\n      {PRESETS.map((preset) => (\n        <LiquidBorder key={preset} preset={preset} className=\"inline-flex size-16 rounded-full p-0.75\">\n          <Squishmoji\n            seed={preset}\n            shape=\"all\"\n            expression=\"all\"\n            backgroundStyle=\"all\"\n            size={56}\n            animate\n            animWobble\n            animOnHover\n            animOnClick\n          />\n        </LiquidBorder>\n      ))}\n    </div>\n  )\n}\n",
+      "content": "'use client'\n\nimport { LiquidBorder, LIQUID_PRESETS, type LiquidPreset } from '@/components/spaceui/liquid-metal-border'\nimport { Avatar } from '@usespaceui/avatars/react'\n\nconst PRESETS = Object.keys(LIQUID_PRESETS) as LiquidPreset[]\n\nexport default function Demo() {\n  return (\n    <div className=\"flex flex-wrap items-center justify-center gap-6 p-6\">\n      {PRESETS.map((preset) => (\n        <LiquidBorder key={preset} preset={preset} className=\"inline-flex size-16 rounded-full p-0.75\">\n          <Avatar name={preset} variant=\"all\" size={56} circle animate />\n        </LiquidBorder>\n      ))}\n    </div>\n  )\n}\n",
       "type": "registry:component",
       "target": "components/spaceui/liquid-metal-border-presets.tsx"
     }

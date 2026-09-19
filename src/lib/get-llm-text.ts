@@ -38,7 +38,7 @@ export async function getLLMText(page: Page | any) {
     throw new Error(`Unable to resolve file path for page: ${page.url}`)
   }
 
-  const content = await fs.readFile(fullPath, 'utf-8')
+  const content = await fs.readFile(/*turbopackIgnore: true*/ fullPath, 'utf-8')
 
   const processed = await processor.process({
     path: fullPath,

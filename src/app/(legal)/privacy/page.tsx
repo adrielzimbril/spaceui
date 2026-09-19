@@ -7,7 +7,7 @@ import { siteConfig } from '@/config/space-config'
 import { TypeTable } from '@/components/docs/mdx/type-table'
 
 export const metadata: Metadata = {
-  title: 'Privacy Policy — Space UI',
+  title: 'Privacy Policy',
   description:
     'Learn how Space UI collects, handles, and protects your information when using our documentation, component registry, and Community Wall.',
 }

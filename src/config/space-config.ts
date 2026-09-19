@@ -1,6 +1,7 @@
 import {
   menuConfig,
   megaMenuDocs,
+  megaMenuLibrary,
   megaMenuUiKit,
   megaMenuTools,
   mobileNavGroups,
@@ -16,6 +17,7 @@ import {
 export {
   menuConfig,
   megaMenuDocs,
+  megaMenuLibrary,
   megaMenuUiKit,
   megaMenuTools,
   mobileNavGroups,

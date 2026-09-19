@@ -1,7 +1,7 @@
 import { notFound } from 'next/navigation'
 import type { Metadata } from 'next'
 import { resourcesSource as source } from '@/lib/source'
-import { UiKitLayoutWrapper } from '@/components/layout/ui-kit-layout-wrapper'
+import { LibraryLayoutWrapper } from '@/components/layout/library-layout-wrapper'
 import { ResourcesMdx } from '../resources-mdx'
 
 export default async function Page(props: { params: Promise<{ slug: string[] }> }) {
@@ -16,9 +16,9 @@ export default async function Page(props: { params: Promise<{ slug: string[] }> 
   )
     notFound()
   return (
-    <UiKitLayoutWrapper>
+    <LibraryLayoutWrapper>
       <ResourcesMdx slug={slug} />
-    </UiKitLayoutWrapper>
+    </LibraryLayoutWrapper>
   )
 }
 

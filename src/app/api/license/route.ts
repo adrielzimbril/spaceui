@@ -100,6 +100,13 @@ export async function GET() {
       },
     })
   } catch (err: any) {
+    if (
+      err?.digest === 'HANGING_PROMISE_REJECTION' ||
+      err?.digest?.startsWith('DYNAMIC_SERVER_USAGE') ||
+      err?.message?.includes('During prerendering')
+    ) {
+      return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
+    }
     console.error('[/api/license] error:', err)
     return NextResponse.json({ error: 'Internal server error' }, { status: 500 })
   }

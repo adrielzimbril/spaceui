@@ -8,6 +8,66 @@ import { Changelog, ChangelogItem, ChangelogChange } from '@/components/docs/mdx
 <Changelog>
 
 <ChangelogItem
+  date="2026-09-19"
+  version="0.0.13"
+  title="Shaders, Liquid Physics, Community Wall & Design Polish"
+  summary="Procedural WGSL shaders, liquid metal and silk borders, fluid physics components, interactive community wall, and global design refinements."
+>
+
+<ChangelogChange kind="Components">
+
+- Added `LiquidMetalBorder` and `SilkBorder`: liquid metal flow and shimmering silk reactive borders with configurable lighting and angles.
+- Added procedural WebGPU/WGSL shaders:
+  - `HeatShade`: procedural heat distortion shader with dynamic heat licks.
+  - `SilkGradient`: fluid real-time silk wave gradient shader.
+- Added fluid physics & morphing components:
+  - `LiquidSwitch`: fluid toggle switch with organic liquid morphing.
+  - `LiquidSortableList`: drag-and-drop sortable list with smooth fluid transitions.
+  - `SloshSlider`: interactive range slider with fluid slosh physics.
+  - `SlideToConfirm`: interactive swipe/slide-to-action confirmation control.
+  - `FrostBlurred`: frosted glass blur with chromatic diffusion and layered depth.
+- Added animated text & search components:
+  - `MorphingText`: smooth text morphing between words and phrases.
+  - `BlurRevealText`: staged kinetic blur-to-clear text reveal animation.
+  - `MorphingCommandBar`, `MorphingSearchPill` & `MorphingArea`: expandable search pills and morphing command bar controls.
+- Added utility & layout components:
+  - `AdaptiveDensityGrid`: dynamic layout grid with fluid cell packing.
+  - `ChromaPalette`: interactive color palette previewer and selector.
+  - `InteractiveChecklist`: micro-animated interactive checklist.
+  - `TeamRosterSelector`: interactive team member selection widget.
+
+</ChangelogChange>
+
+<ChangelogChange kind="new">
+
+- Added `CommunityWall`: interactive infinite canvas block for community notes, stickers, and social badges.
+- Added `InteractiveGridHero`: hero block with proximity-reactive cursor mesh grid.
+- Added dedicated Pricing page with interactive savings calculator and plan comparisons.
+- Expanded **Emoji Explorer** asset catalog with 30,000+ indexed Unicode assets.
+- Added quick export drawer to **OG Image Generator**.
+
+</ChangelogChange>
+
+<ChangelogChange kind="improved">
+
+- Global design polish across landing sections, bento showcases, and navigation.
+- Enhanced component preview stages and documentation layouts.
+- Optimized WebGPU/WebGL shader rendering and frame pacing.
+- Refined typography hierarchy with custom Open Runde font pairings.
+
+</ChangelogChange>
+
+<ChangelogChange kind="fixed">
+
+- Fixed reactive storage synchronization in `useLocalStorage`.
+- Fixed threshold and trigger edge cases in `useLoadMore`.
+- Fixed WebGL context cleanup and memory disposal on component unmount.
+
+</ChangelogChange>
+
+</ChangelogItem>
+
+<ChangelogItem
   date="2026-09-14"
   version="0.0.12"
   title="Floating Multi-Pill Layout, New Components & Design Tools"

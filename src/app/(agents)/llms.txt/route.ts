@@ -1,8 +1,8 @@
-import { source, uiKitSource } from '@/lib/source'
+import { source, librarySource } from '@/lib/source'
 
 export async function GET() {
   const docsPages = source.getPages()
-  const uiPages = uiKitSource.getPages()
+  const libraryPages = librarySource.getPages()
 
   const lines = [
     '# Space UI',
@@ -13,9 +13,9 @@ export async function GET() {
     '',
     ...docsPages.map((p) => `- [${p.data.title}](${p.url}): ${p.data.description || ''}`),
     '',
-    '## UI Primitives & Components',
+    '## Library (Primitives & Components)',
     '',
-    ...uiPages.map((p) => `- [${p.data.title}](${p.url}): ${p.data.description || ''}`),
+    ...libraryPages.map((p) => `- [${p.data.title}](${p.url}): ${p.data.description || ''}`),
     '',
     '## Full Corpus & LLM Endpoints',
     '',

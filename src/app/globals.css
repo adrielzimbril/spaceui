@@ -18,6 +18,7 @@
 @source '../node_modules/fumadocs-ui/dist/**/*.js';
 
 :root {
+  color-scheme: light;
   --background: var(--color-white);
   --foreground: var(--color-zinc-950);
 
@@ -62,6 +63,7 @@
 }
 
 .dark {
+  color-scheme: dark;
   --background: var(--color-zinc-950);
   --foreground: var(--color-white);
 

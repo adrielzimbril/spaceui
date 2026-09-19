@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { isComponentPro, verifyProAuthorization } from '@/lib/pro-auth-edge'
 
-export async function middleware(request: NextRequest) {
+export async function proxy(request: NextRequest) {
   const { pathname } = request.nextUrl
 
   // 1. Intercept /public/r/... and normalize to /r/...

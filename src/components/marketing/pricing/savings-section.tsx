@@ -12,7 +12,8 @@ import { StatusBadge } from '@/registry/components/spaceui/status-badge'
 import { Card, CardPanel } from '@/registry/primitives/card'
 import { Frame, FrameFooter } from '@/registry/primitives/frame'
 import { SilkGradient } from '@/registry/components/shader/silk-gradient'
-import { LIFETIME_PRICE, POLAR_PRODUCTS } from '@/lib/pricing-config'
+import { POLAR_PRODUCTS } from '@/lib/pricing-config'
+import type { PricingSnapshot } from '@/lib/pricing-tiers'
 import { cn } from '@/registry/lib/utils'
 import { BuyButton } from './buy-button'
 import { SectionHeader } from './section-header'
@@ -82,11 +83,19 @@ function Row({
   )
 }
 
-function SavingsCalculator({ className }: { className?: string }) {
+function SavingsCalculator({
+  className,
+  lifetimePrice,
+  lifetimeDiscountId,
+}: {
+  className?: string
+  lifetimePrice: number
+  lifetimeDiscountId: string | null
+}) {
   const [hours, setHours] = React.useState(160)
   const [rate, setRate] = React.useState(90)
   const scratch = hours * rate
-  const savings = Math.max(0, scratch - LIFETIME_PRICE)
+  const savings = Math.max(0, scratch - lifetimePrice)
   const timeBack = React.useMemo(() => {
     if (hours < 40) {
       const n = hours / 8
@@ -105,10 +114,11 @@ function SavingsCalculator({ className }: { className?: string }) {
       <div className="relative overflow-hidden squircle rounded-3xl py-6 sm:py-8">
         <SilkGradient
           className="pointer-events-none absolute inset-0"
-          color1="#4c9bff"
-          color2="#59adef"
-          color3="#6073ff"
+          color1="#6a68ee"
+          color2="#c9a6ff"
+          color3="#04106c"
           animate
+          speed={2}
           grain
         />
         <div className="relative z-10 mx-auto max-w-xl p-4 py-8 sm:p-5 sm:py-8">
@@ -145,7 +155,9 @@ function SavingsCalculator({ className }: { className?: string }) {
                     </div>
                   </div>{' '}
                   <div className="flex flex-wrap items-center gap-2">
-                    <span className="text-md text-muted-foreground/90">Saved with the $179 one-time purchase.</span>
+                    <span className="text-md text-muted-foreground/90">
+                      Saved with the ${lifetimePrice} one-time purchase.
+                    </span>
                   </div>
                 </div>
                 <div className="space-y-3 border-t border-border/70 pt-4">
@@ -194,11 +206,12 @@ function SavingsCalculator({ className }: { className?: string }) {
             <FrameFooter className="p-2">
               <BuyButton
                 productId={POLAR_PRODUCTS.allAccessLifetime}
+                discountId={lifetimeDiscountId}
                 label="Get lifetime access"
                 variant="primary"
                 full
                 size="lg"
-                border
+                border="violet"
               />
             </FrameFooter>
           </Frame>
@@ -211,7 +224,7 @@ function SavingsCalculator({ className }: { className?: string }) {
   )
 }
 
-export function SavingsSection() {
+export function SavingsSection({ pricing }: { pricing: PricingSnapshot }) {
   return (
     <section id="savings" data-page-section className="mx-auto max-w-6xl scroll-mt-16 px-5 sm:px-6 py-16">
       <SectionHeader
@@ -220,7 +233,7 @@ export function SavingsSection() {
         description="Tell us how long this would take to build and what an hour costs. We’ll do the math."
       />
       <div className="relative">
-        <SavingsCalculator />
+        <SavingsCalculator lifetimePrice={pricing.lifetimePrice} lifetimeDiscountId={pricing.lifetimeDiscountId} />
       </div>
     </section>
   )

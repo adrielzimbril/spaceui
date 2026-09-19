@@ -1,9 +1,5 @@
 import { logger } from '@/registry/utils/logger'
-import {
-  type ContactInput,
-  ContactProvider,
-  type ContactProviderType,
-} from '@/integrations/contact/types/types'
+import { type ContactInput, ContactProvider, type ContactProviderType } from '@/integrations/contact/types/types'
 import { addWithBrevo, addWithResend, addWithCustom } from '@/integrations/contact/provider'
 import { ConfigValue } from '@/config/integrations'
 

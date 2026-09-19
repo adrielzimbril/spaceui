@@ -5,37 +5,42 @@ import { PlansSection } from '@/components/marketing/pricing/plans-section'
 import { SavingsSection } from '@/components/marketing/pricing/savings-section'
 import { FaqSection } from '@/components/marketing/pricing/faq-section'
 import { CtaSection } from '@/components/marketing/pricing/cta-section'
-import { siteConfig } from '@/config/space-config'
+import { getPricingSnapshot } from '@/lib/pricing-tiers'
 
 export const metadata: Metadata = {
-  title: `Pricing - ${siteConfig.appName}`,
+  title: 'Pricing',
   description: 'Simple, transparent pricing. Subscribe for unlimited access or buy templates one at a time.',
 }
 
-export default function PricingPage() {
+// getPricingSnapshot() reads live sales counts from Supabase — genuinely dynamic, can't be a static shell.
+export const instant = false
+
+export default async function PricingPage() {
+  const pricing = await getPricingSnapshot()
+
   return (
     <div className="relative min-h-dvh bg-background text-foreground selection:bg-primary/20 pb-20">
       <MarketingHero
         statusBadge={{
-          primaryText: 'Pricing',
-          secondaryText: 'Simple, transparent',
+          primaryText: `${pricing.proYearlyDiscountPercent}% OFF`,
+          secondaryText: 'Limited time offer',
           emojiCodepoint: '💎',
           emojiSource: EmojiSource.Telegram,
           href: '#plans',
         }}
         title={
           <>
-            Ship better interfaces <HeroAvatar name="pricing-space" variant="invader" animate /> at full speed{' '}
+            Ship <HeroAvatar name="pricing-space" variant="invader" animate /> in days, not months{' '}
             <HeroAvatar name="space" variant="pebble" />
           </>
         }
-        description="Subscribe for unlimited access to the entire library, or buy the templates you need one at a time."
+        description="Premium components, blocks, and templates ready to drop in with new drops every week."
       />
 
-      <PlansSection />
-      <SavingsSection />
+      <PlansSection pricing={pricing} />
+      <SavingsSection pricing={pricing} />
       <FaqSection />
-      <CtaSection />
+      <CtaSection pricing={pricing} />
     </div>
   )
 }

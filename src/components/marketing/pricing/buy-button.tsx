@@ -9,6 +9,8 @@ import { Loader2 } from 'lucide-react'
 
 interface BuyButtonProps extends Omit<ButtonProps, 'onClick'> {
   productId: string
+  /** Discount id to apply automatically at checkout (e.g. the current tier's early-bird discount). */
+  discountId?: string | null
   label?: string
   price?: string
   successUrl?: string
@@ -19,6 +21,7 @@ interface BuyButtonProps extends Omit<ButtonProps, 'onClick'> {
 
 export function BuyButton({
   productId,
+  discountId,
   label = 'Buy now',
   price,
   successUrl,
@@ -43,6 +46,9 @@ export function BuyButton({
 
     const params = new URLSearchParams()
     params.set('products', productId)
+    if (discountId) {
+      params.set('discountId', discountId)
+    }
     if (successUrl) {
       params.set('successUrl', successUrl)
     }
@@ -80,13 +86,11 @@ export function BuyButton({
   const preset = typeof border === 'string' ? border : undefined
 
   return (
-    <div className="flex flex-wrap items-center justify-center w-full">
-      <LiquidBorder
-        preset={preset}
-        className="flex w-full [&_div]:size-full squircle rounded-7xl p-0.75 hover:scale-105 transition-all duration-300"
-      >
-        {button}
-      </LiquidBorder>
-    </div>
+    <LiquidBorder
+      preset={preset}
+      className="flex w-full [&_div]:size-full squircle rounded-7xl p-0.75 hover:scale-105 transition-all duration-300"
+    >
+      {button}
+    </LiquidBorder>
   )
 }
