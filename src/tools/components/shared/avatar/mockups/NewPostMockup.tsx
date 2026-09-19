@@ -2,10 +2,10 @@ import { Button } from '@/registry/primitives/button'
 import { IconHeart, IconMessageCircle } from '@tabler/icons-react'
 import { cn } from '@/registry/lib/utils'
 import { Persona as Avatar } from '@/tools/components/shared/avatar/persona'
-import type { MockupAvatarOptions } from './MockupPrimitives'
+import { MockupShaderPhoto, type MockupAvatarOptions } from './MockupPrimitives'
 
 export default function NewPostMockup({
-  img,
+  img: _img,
   likes,
   name,
   ...avatar
@@ -23,16 +23,7 @@ export default function NewPostMockup({
         </p>
       </div>
       <div className="relative mt-4 aspect-video w-full overflow-hidden rounded-2xl bg-muted">
-        <Avatar
-          name={(name || 'post') + '-lumina' + (seed || '')}
-          variant="lumina"
-          size={320}
-          circle={false}
-          colors={restAvatar.colors}
-          animate={restAvatar.animate}
-          effect={restAvatar.effect}
-          className="flex size-full items-center justify-center [&_svg]:size-full [&_svg]:object-cover"
-        />
+        <MockupShaderPhoto seed={name} colors={restAvatar.colors} animate={restAvatar.animate} />
       </div>
       <div className="mt-4 flex items-center gap-3">
         <div className="flex -space-x-2">

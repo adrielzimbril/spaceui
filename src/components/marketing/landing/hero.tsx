@@ -1,29 +1,35 @@
 'use client'
 
-import * as React from 'react'
-import { IconArrowUpRight } from '@tabler/icons-react'
-import { TextMorph } from 'torph/react'
 import { InlineInstallBar } from '@/components/docs/installation/inline-install-bar'
+import { HeroAvatar } from '@/components/marketing/shared/hero'
 import { siteConfig } from '@/config/space-config'
 import { Button } from '@/registry/components/spaceui/button-squircle'
+import { LiquidBorder } from '@/registry/components/spaceui/liquid-metal-border'
+import { BlurRevealText } from '@/registry/components/spaceui/blur-reveal-text'
 import { StatusBadge } from '@/registry/components/spaceui/status-badge'
+import { useMediaQuery } from '@/registry/hooks/browser/use-media-query'
 import { Link } from '@/registry/primitives/link'
 import { AssetEmoji } from '@/tools/emoji/asset-emoji'
+import { IconArrowUpRight } from '@tabler/icons-react'
 import { EmojiSource, EmojiType } from '@usespaceui/emoji'
-import { HeroAvatar } from '@/components/marketing/shared/hero'
-import { useMediaQuery } from '@/registry/hooks/browser/use-media-query'
-import { LiquidBorder } from '@/registry/components/spaceui/liquid-metal-border'
+import * as React from 'react'
+import { REGISTRY_STATS } from '@/lib/pricing-config'
 
-const HERO_IDEAS = ['ideas', 'products', 'apps', 'sites', 'brands']
-const HERO_UI = ['better', 'space']
+const HERO_BADGE_PHRASES = [
+  'Built for Next.js & Base UI',
+  `${REGISTRY_STATS.components}+ production-ready components`,
+  'New drops every week',
+  'Open-source & MIT licensed',
+  "Copy, paste, ship it's yours",
+]
 
-function useRotatingWord(words: string[], intervalMs: number) {
+function useRotatingText(items: string[], intervalMs: number) {
   const [index, setIndex] = React.useState(0)
   React.useEffect(() => {
-    const id = window.setInterval(() => setIndex((i) => (i + 1) % words.length), intervalMs)
+    const id = window.setInterval(() => setIndex((i) => (i + 1) % items.length), intervalMs)
     return () => window.clearInterval(id)
-  }, [words, intervalMs])
-  return words[index]
+  }, [items, intervalMs])
+  return items[index]
 }
 
 export function Hero() {
@@ -31,9 +37,7 @@ export function Hero() {
   const isMd = useMediaQuery('(min-width: 768px)', true)
   const isSm = useMediaQuery('(min-width: 640px)', true)
 
-  const avatarSize = isLg ? 75 : isMd ? 68 : isSm ? 56 : 38
-  const ideaWord = useRotatingWord(HERO_IDEAS, 2800)
-  const uiWord = useRotatingWord(HERO_UI, 3400)
+  const badgePhrase = useRotatingText(HERO_BADGE_PHRASES, 3400)
 
   return (
     <section id="hero" data-page-section className="relative overflow-hidden pt-24 pb-8 md:pb-12">
@@ -48,52 +52,31 @@ export function Hero() {
               className="select-none bg-background border-none cursor-pointer transition-colors"
               secondaryTextClassName="inline-flex items-center gap-1.5 pr-1"
             >
-              Built for Next.js &amp; Base UI
+              <BlurRevealText
+                as="span"
+                text={badgePhrase}
+                replayKey={badgePhrase}
+                splitBy="characters"
+                inView={false}
+                stagger={0.04}
+                duration={0.3}
+                className="whitespace-nowrap"
+              />
               <AssetEmoji codepoint="🚀" source={EmojiSource.Fluent} type={EmojiType.Anim} size={22} lazy={false} />
             </StatusBadge>
           </Link>
 
           {/* ── Main Headline ── */}
           <h1 className="mt-7 max-w-5xl text-balance text-[3.125rem] font-semibold tracking-tight leading-[1.08] text-foreground sm:text-[4rem] md:text-[4.75rem] lg:text-[5.25rem]">
-            Ship your{' '}
-            <span className="inline-block">
-              <TextMorph>{ideaWord}</TextMorph>
-            </span>
-            {/* <div className="relative inline-flex items-center justify-center size-12 sm:size-16 md:size-20 lg:size-24 shrink-0 overflow-visible">
-              <Avatar name="p" variant="ghost" size={avatarSize} circle />
-              <Avatar name="c" variant="lumina" size={avatarSize} circle />              <Avatar name="c" variant="pebble"variant="lumina" size={avatarSize} circle />
-              <Avatar name="c" variant="pebble" size={avatarSize} circle />
-            </div> */}{' '}
+            Ship your ideas faster
             {/* <HeroAvatar name="p" variant="ghost" />
-             <HeroAvatar name="c" variant="lumina" />
-             <HeroAvatar name="c" variant="pebble" /> */}
-            faster
-            <br />
-            with
-            {/* <div className="relative inline-flex items-center justify-center size-24 -bottom-1.25 shrink-0 overflow-visible">
-              <Squishmoji
-                seed="o"
-                shape="lion"
-                expression="loving"
-                backgroundStyle="all"
-                animate
-                animOnClick
-                animOnHover
-                // animWobble
-                size={110}
-                className="scale-175 origin-center transition-transform"
-              />
-            </div>{' '} */}
-            {/* <div className="relative inline-flex items-center justify-center size-12 sm:size-16 md:size-20 lg:size-24 shrink-0 overflow-visible">
-              <Avatar name="c" variant="doodle" size={avatarSize} circle />
-            </div> */}
             <HeroAvatar name="c" variant="doodle" />
-            better UI
-            {/* <div className="relative inline-flex items-center justify-center size-12 sm:size-16 md:size-20 lg:size-24 shrink-0 overflow-visible">
-              <Avatar name="c" variant="lumina" size={avatarSize} circle />
-            </div> */}
             <HeroAvatar name="c" variant="lumina" />
-            {/* <span className="inline-flex leading-1">😍</span> */}
+             <HeroAvatar name="space" variant="pebble" />
+            <HeroAvatar name="pc" variant="pebble" /> */}
+            <br />
+            with <HeroAvatar name="c" variant="doodle" className="[&_svg_rect]:fill-white" /> better UI{' '}
+            <HeroAvatar name="c" variant="lumina" />
           </h1>
 
           {/* ── Subtitle ── */}

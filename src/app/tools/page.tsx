@@ -34,11 +34,8 @@ export default function ToolsIndexPage() {
         }}
         title={
           <>
-            Sensory utilities
-            <HeroAvatar name="tools" variant="splash" animate />
-            for creators
-            <HeroAvatar name="designers" variant="pebble" />
-            &amp; UI designers.
+            Sensory utilities <HeroAvatar name="tools" variant="splash" animate /> for creators{' '}
+            <HeroAvatar name="designers" variant="pebble" /> &amp; UI designers.
           </>
         }
         description="Explore generative deterministic avatars, fluent emojis, spatial web audio sounds, and image carousel slicers. All client-side, instant and zero-latency."

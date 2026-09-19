@@ -1,14 +1,14 @@
 'use client'
 
-import * as React from 'react'
-import Link from 'next/link'
 import { StatusBadge } from '@/registry/components/spaceui/status-badge'
-import { AssetEmoji } from '@/tools/emoji/asset-emoji'
-import { EmojiSource, EmojiType } from '@usespaceui/emoji'
-import { Avatar } from '@usespaceui/avatars/react'
-import type { AvatarVariant } from '@usespaceui/avatars'
 import { useMediaQuery } from '@/registry/hooks/browser/use-media-query'
 import { cn } from '@/registry/lib/utils'
+import { AssetEmoji } from '@/tools/emoji/asset-emoji'
+import type { AvatarVariant } from '@usespaceui/avatars'
+import { Avatar } from '@usespaceui/avatars/react'
+import { EmojiSource, EmojiType } from '@usespaceui/emoji'
+import Link from 'next/link'
+import * as React from 'react'
 
 export interface HeroAvatarProps {
   name?: string
@@ -28,7 +28,7 @@ export function HeroAvatar({ name = 'space', variant = 'lumina', animate = false
   return (
     <span
       className={cn(
-        'relative inline-flex items-center justify-center px-2 size-12.5 sm:size-16.5 md:size-20 lg:size-22 shrink-0 overflow-visible',
+        'relative inline-flex items-center justify-center mx-0 size-12.5 sm:size-16.5 md:size-16 lg:size-18 shrink-0 overflow-visible',
         className,
       )}
     >
@@ -39,7 +39,7 @@ export function HeroAvatar({ name = 'space', variant = 'lumina', animate = false
         size={resolvedSize}
         circle
         animate={animate}
-        className="relative flex size-full aspect-square overflow-hidden -bottom-2.5 [&_svg]:size-full! [&_svg]:absolute [&_svg]:object-cover pointer-events-none"
+        className="relative flex size-full aspect-square overflow-hidden -bottom-0 [&_svg]:size-full! [&_svg]:absolute [&_svg]:object-cover pointer-events-none"
       />
     </span>
   )

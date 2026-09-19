@@ -1,16 +1,16 @@
 'use client'
 
+import { MegaMenu } from '@/components/layout/mega-menu'
+import { searchNavShortcuts } from '@/config/menu-config'
+import { siteConfig } from '@/config/space-config'
+import { GitHubLink } from '@/registry/components/spaceui/github-link'
+import { Button } from '@/registry/primitives/button'
+import { Kbd, KbdGroup } from '@/registry/primitives/kbd'
+import { Link } from '@/registry/primitives/link'
+import { IconBrandX, IconSearch } from '@tabler/icons-react'
 import { turn as turnSound } from '@usespaceui/sounds'
 import { Squishmoji } from '@usespaceui/squishmoji/react'
 import dynamic from 'next/dynamic'
-import { ModeSwitcher } from '@/registry/components/spaceui/mode-switcher'
-import { MegaMenu } from '@/components/layout/mega-menu'
-import { Link } from '@/registry/primitives/link'
-import { GitHubLink } from '@/registry/components/spaceui/github-link'
-import { searchNavShortcuts } from '@/config/menu-config'
-import { Button } from '@/registry/primitives/button'
-import { IconSearch } from '@tabler/icons-react'
-import { Kbd, KbdGroup } from '@/registry/primitives/kbd'
 
 const CommandMenu = dynamic(() => import('@/components/layout/command-menu').then((mod) => mod.CommandMenu), {
   ssr: false,
@@ -78,7 +78,19 @@ export function SiteHeader() {
             />
           </div>
 
-          <div className="hidden sm:flex items-center gap-1">
+          <div className="flex items-center gap-1">
+            <Link
+              href={siteConfig.links.x}
+              aria-label="Follow on X"
+              rel="noreferrer"
+              target="_blank"
+              asButton
+              variant="secondary"
+              size="icon"
+              className="relative px-[calc(--spacing(3.5)-1px)] sm:h-8 shadow-none motion-safe:active:scale-[0.96] transition-transform"
+            >
+              <IconBrandX className="size-4" />
+            </Link>
             <div className="motion-safe:active:scale-[0.96] transition-transform">
               <GitHubLink />
             </div>

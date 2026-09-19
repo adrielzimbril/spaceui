@@ -1,6 +1,9 @@
 import { cn } from '@/registry/lib/utils'
+import { generatePalette } from '@usespaceui/gradients'
+import { SilkGradient } from '@/registry/components/shader/silk-gradient'
 import type { AvatarEffect, AvatarVariant } from '@usespaceui/avatars'
 import type React from 'react'
+import { randomWord } from '@/registry/utils/format-text'
 
 export interface MockupAvatarOptions {
   animate?: boolean
@@ -9,6 +12,44 @@ export interface MockupAvatarOptions {
   effect?: AvatarEffect
   seed?: string
   variant: AvatarVariant
+}
+
+const DEFAULT_SHADER_COLORS: [string, string, string] = ['#6a68ee', '#c9a6ff', '#04106c']
+
+export function pickShaderColors(colors?: string[]): [string, string, string] {
+  if (colors && colors.length >= 3) return [colors[0], colors[1], colors[2]]
+  return DEFAULT_SHADER_COLORS
+}
+
+export function MockupShaderPhoto({
+  seed,
+  colors,
+  animate,
+  className,
+}: {
+  seed: string
+  colors?: string[]
+  animate?: boolean
+  className?: string
+}): React.ReactElement {
+  const colorsArray = colors ?? generatePalette(randomWord()).colors
+  const [color1, color2, color3] = pickShaderColors(colorsArray)
+  return (
+    <div className={cn('absolute inset-0', className)}>
+      <div
+        aria-hidden="true"
+        className="absolute inset-0"
+        style={{ background: `linear-gradient(135deg, ${color1}, ${color2}, ${color3})` }}
+      />
+      <SilkGradient
+        color1={color1}
+        color2={color2}
+        color3={color3}
+        animate={animate}
+        className="absolute inset-0 opacity-60 transition-opacity dark:opacity-100"
+      />
+    </div>
+  )
 }
 
 export function MockupSurface({

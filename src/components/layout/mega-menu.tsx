@@ -1,26 +1,25 @@
 'use client'
 
-import * as React from 'react'
+import { ToolAssetIcon } from '@/components/marketing/tools/tool-asset-icon'
+import { megaMenuDocs, megaMenuTools } from '@/config/menu-config'
 import { cn } from '@/registry/lib/utils'
-import { Link } from '@/registry/primitives/link'
-import { Avatar } from '@usespaceui/avatars/react'
-import { IconArrowRight, IconChevronRight } from '@tabler/icons-react'
 import { Badge } from '@/registry/primitives/badge'
+import { Link } from '@/registry/primitives/link'
 import {
   NavigationMenu,
-  NavigationMenuList,
-  NavigationMenuItem,
-  NavigationMenuTrigger,
   NavigationMenuContent,
+  NavigationMenuItem,
+  NavigationMenuList,
+  NavigationMenuPopup,
   NavigationMenuPortal,
   NavigationMenuPositioner,
-  NavigationMenuPopup,
+  NavigationMenuTrigger,
   NavigationMenuViewport,
-  NavigationMenuLink,
   navigationMenuTriggerStyle,
 } from '@/registry/primitives/navigation-menu'
-import { megaMenuDocs, megaMenuTools } from '@/config/menu-config'
-import { ToolAssetIcon } from '@/components/marketing/tools/tool-asset-icon'
+import { IconArrowRight, IconChevronRight } from '@tabler/icons-react'
+import { Avatar } from '@usespaceui/avatars/react'
+import * as React from 'react'
 
 const docs = megaMenuDocs
 const designTools = megaMenuTools
@@ -482,7 +481,7 @@ export function MegaMenu({ className }: { className?: string }) {
           </NavigationMenuItem>
 
           {/* Showcase Link */}
-          <NavigationMenuItem value="showcase">
+          {/* <NavigationMenuItem value="showcase">
             <Link
               href="/showcase"
               className={cn(
@@ -495,6 +494,23 @@ export function MegaMenu({ className }: { className?: string }) {
                 className="hidden size-1.5 rounded-full bg-current opacity-40 transition-all duration-300 group-hover:opacity-100 group-focus-visible:opacity-100 shrink-0"
               />
               AI Showcase
+            </Link>
+          </NavigationMenuItem> */}
+
+          {/* Pricing Link */}
+          <NavigationMenuItem value="pricing">
+            <Link
+              href="/pricing"
+              className={cn(
+                navigationMenuTriggerStyle(),
+                'bg-transparent hover:bg-muted focus:bg-muted no-underline gap-1.5',
+              )}
+            >
+              <span
+                aria-hidden="true"
+                className="hidden size-1.5 rounded-full bg-current opacity-40 transition-all duration-300 group-hover:opacity-100 group-focus-visible:opacity-100 shrink-0"
+              />
+              Pricing
             </Link>
           </NavigationMenuItem>
         </NavigationMenuList>

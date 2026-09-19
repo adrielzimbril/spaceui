@@ -25,6 +25,31 @@ export function getRouteThemeConstraint(pathname?: string | null): RouteThemeCon
   return null
 }
 
+/**
+ * `next-themes`' <ThemeProvider> always injects its own no-flash script as
+ * the first child of its context provider — i.e. inside <body>, right before
+ * the rest of the app. That script only knows about localStorage/system
+ * preference; it has no idea about THEME_LOCKED_ROUTES, so on a hard load of
+ * a locked route it blindly re-applies the user's regular theme right after
+ * our <head> script correctly forced the lock, undoing it until React
+ * hydrates and ThemeLockProvider's effect corrects it again.
+ *
+ * Render this right after `<RootProvider>`'s opening (so it lands directly
+ * after next-themes' own script in the DOM) to have the final say before any
+ * real content paints.
+ */
+export function ThemeLockScript() {
+  const routesJson = JSON.stringify(THEME_LOCKED_ROUTES)
+  return (
+    <script
+      id="theme-lock-reconcile"
+      dangerouslySetInnerHTML={{
+        __html: `(function(){try{var routes=${routesJson};var p=window.location.pathname.replace(/\\/+$/,'');var locked=null;for(var r in routes){if(p===r||p.indexOf(r+'/')===0){locked=routes[r];break;}}if(locked){var root=document.documentElement;var opposite=locked==='dark'?'light':'dark';root.classList.remove(opposite);root.classList.add(locked);root.style.colorScheme=locked;}}catch(e){}})();`,
+      }}
+    />
+  )
+}
+
 interface ThemeLockContextValue {
   isThemeLocked: boolean
   lockedTheme: RouteThemeConstraint

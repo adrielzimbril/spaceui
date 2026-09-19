@@ -14,6 +14,7 @@ import { siteConfig } from '@/config/space-config'
 import { cookies } from 'next/headers'
 import { Mode, type LayoutMode } from '@/components/providers/layout-mode-provider'
 import { ThemeCookieSync, THEME_COOKIE_KEY } from '@/components/providers/theme-cookie-sync'
+import { ThemeLockScript, THEME_LOCKED_ROUTES } from '@/components/providers/theme-lock-provider'
 
 // TODO: Cache Components adoption. Refactor this route so this opt-out can be removed.
 // See: https://nextjs.org/docs/app/guides/migrating-to-cache-components
@@ -151,7 +152,7 @@ export default async function Layout({ children }: { children: ReactNode }) {
         <script
           id="theme-init"
           dangerouslySetInnerHTML={{
-            __html: `(function(){try{var routes={'/showcase':'dark'};var p=window.location.pathname.replace(/\\/+$/,'');var locked=null;for(var r in routes){if(p===r||p.startsWith(r+'/')){locked=routes[r];break;}}var t=locked||localStorage.getItem('theme');var isDark=t==='dark'||((!t||t==='system')&&window.matchMedia('(prefers-color-scheme: dark)').matches);var root=document.documentElement;if(isDark){root.classList.add('dark');root.classList.remove('light');root.style.colorScheme='dark';}else{root.classList.remove('dark');root.classList.add('light');root.style.colorScheme='light';}}catch(e){}requestAnimationFrame(function(){requestAnimationFrame(function(){document.documentElement.classList.add('theme-ready');});});})();`,
+            __html: `(function(){try{var routes=${JSON.stringify(THEME_LOCKED_ROUTES)};var p=window.location.pathname.replace(/\\/+$/,'');var locked=null;for(var r in routes){if(p===r||p.indexOf(r+'/')===0){locked=routes[r];break;}}var t=locked||localStorage.getItem('theme');var isDark=t==='dark'||((!t||t==='system')&&window.matchMedia('(prefers-color-scheme: dark)').matches);var root=document.documentElement;if(isDark){root.classList.add('dark');root.classList.remove('light');root.style.colorScheme='dark';}else{root.classList.remove('dark');root.classList.add('light');root.style.colorScheme='light';}}catch(e){}requestAnimationFrame(function(){requestAnimationFrame(function(){document.documentElement.classList.add('theme-ready');});});})();`,
           }}
         />
         <Script id="json-ld" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
@@ -165,6 +166,7 @@ export default async function Layout({ children }: { children: ReactNode }) {
         )}
       >
         <RootProvider search={{ enabled: false }} theme={{ disableTransitionOnChange: true }}>
+          <ThemeLockScript />
           <ThemeCookieSync />
           <NuqsAdapter>
             <GlobalLayoutWrapper initialLayoutMode={initialLayoutMode}>{children}</GlobalLayoutWrapper>
