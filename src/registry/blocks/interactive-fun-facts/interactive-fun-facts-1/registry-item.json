@@ -7,8 +7,8 @@
   "dependencies": ["@tabler/icons-react"],
   "registryDependencies": [
     "https://www.spaceui.one/r/lib-utils.json",
-    "https://www.spaceui.one/r/primitives-badge.json",
-    "https://www.spaceui.one/r/primitives-button.json",
+    "https://www.spaceui.one/r/components-spaceui-badge-squircle.json",
+    "https://www.spaceui.one/r/components-spaceui-button-squircle.json",
     "https://www.spaceui.one/r/primitives-card.json",
     "https://www.spaceui.one/r/primitives-dialog.json",
     "https://www.spaceui.one/r/primitives-toast.json"
@@ -37,5 +37,5 @@
     }
   ],
   "createdAt": "2026-08-31",
-  "updatedAt": "2026-08-31"
+  "updatedAt": "2026-09-20"
 }

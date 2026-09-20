@@ -3,8 +3,8 @@
 import { useState } from 'react'
 import { cn } from '@/registry/lib/utils'
 import { toastManager } from '@/registry/primitives/toast'
-import { Button } from '@/registry/primitives/button'
-import { Badge } from '@/registry/primitives/badge'
+import { Button } from '@/registry/components/spaceui/button-squircle'
+import { Badge } from '@/registry/components/spaceui/badge-squircle'
 import { questionsLocale, type Question, type GameItem } from './data'
 import { GuessButton, QuestionCard } from './question-card'
 import { AllFactsModal, CustomAlert } from './modals'
@@ -76,7 +76,7 @@ export function SectionLayout({
   isPage?: boolean
 }) {
   return (
-    <section className={cn('relative w-full py-14 md:py-[104px]', className)} id={id}>
+    <section className={cn('relative w-full py-14 md:py-26 px-2 md:px-8', className)} id={id}>
       {(title || badge) && (
         <SectionHeader
           title={title}
@@ -89,7 +89,7 @@ export function SectionLayout({
       )}
       <div
         className={cn(
-          'flex flex-col items-center justify-center justify-items-center self-center place-self-center w-full gap-6',
+          'flex flex-col max-w-5xl mx-auto items-center justify-center justify-items-center self-center place-self-center w-full gap-6',
           !isFlex && 'md:grid grid-cols-1 md:grid-cols-2 md:max-w-[90%] place-items-center place-self-center',
           contentClassName,
         )}

@@ -26,6 +26,7 @@ export const REGISTRY_COMMAND_STYLE: 'scoped' | 'url' = 'scoped'
  */
 const KNOWN_SHORT_MAPPINGS: Record<string, string> = {
   utils: 'lib-utils',
+  essentials: 'essentials',
   // Primitives short names
   accordion: 'primitives-accordion',
   'alert-dialog': 'primitives-alert-dialog',

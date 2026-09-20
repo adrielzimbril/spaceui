@@ -2,8 +2,8 @@
 
 import { useEffect } from 'react'
 import { cn } from '@/registry/lib/utils'
-import { Button } from '@/registry/primitives/button'
-import { Badge } from '@/registry/primitives/badge'
+import { Button } from '@/registry/components/spaceui/button-squircle'
+import { Badge } from '@/registry/components/spaceui/badge-squircle'
 import {
   Dialog,
   DialogPopup,
@@ -40,7 +40,12 @@ export function CustomAlert({
     <Dialog open={isVisible} onOpenChange={(open) => !open && onClose()}>
       <DialogPopup className="max-w-sm px-4 pt-2 flex flex-col" showCloseButton={false}>
         <DialogPanel className="p-4 flex flex-col gap-4 items-center text-center">
-          <Badge variant="secondary" square className="bg-background p-0! text-[2.625rem]! rounded-2xl size-auto!">
+          <Badge
+            variant="secondary"
+            square
+            squircle={false}
+            className="bg-background p-0! text-[2.625rem]! rounded-2xl size-auto!"
+          >
             {isCorrect ? '🎉' : '😅'}
           </Badge>
 
@@ -60,7 +65,7 @@ export function CustomAlert({
 
           {question?.funFact && (
             <div className="w-full rounded-2xl border-2 border-muted bg-card p-4 text-center">
-              <Badge variant={isCorrect ? 'success' : 'warning'} size="lg" className="mb-2">
+              <Badge variant={isCorrect ? 'success' : 'warning'} size="sm" className="mb-2">
                 Behind the fact 🥸
               </Badge>
               <p className="text-sm text-foreground/90 leading-relaxed">{question.funFact}</p>
@@ -69,7 +74,7 @@ export function CustomAlert({
         </DialogPanel>
 
         <DialogFooter className="mt-2 border-t border-muted" variant="bare">
-          <Button onClick={onClose} size="xl" className="w-full cursor-pointer">
+          <Button onClick={onClose} size="lg" className="w-full cursor-pointer">
             {isCorrect ? 'Continue 😍' : 'Retry 😩'}
           </Button>
         </DialogFooter>
@@ -130,7 +135,7 @@ export function AllFactsModal({
             return (
               <div key={question.id} className="rounded-2xl border-2 border-muted bg-card p-4">
                 <div className="flex items-start gap-3 sm:gap-4">
-                  <Badge variant="secondary" square className="text-2xl! p-3! rounded-xl size-auto!">
+                  <Badge variant="secondary" square squircle={false} className="text-2xl! p-3! rounded-xl size-auto!">
                     {question.emoji}
                   </Badge>
 
@@ -140,12 +145,12 @@ export function AllFactsModal({
 
                     {/* Badges */}
                     <div className="flex gap-2 flex-wrap">
-                      <Badge variant={question.isTrue ? 'success' : 'error'} size="lg">
+                      <Badge variant={question.isTrue ? 'success' : 'error'} size="sm">
                         {question.isTrue ? 'Real Truth' : 'Lie'}
                       </Badge>
 
                       {userGuessed && (
-                        <Badge variant={userGuessedCorrect ? 'info' : 'warning'} size="lg">
+                        <Badge variant={userGuessedCorrect ? 'info' : 'warning'} size="sm">
                           {userGuessedCorrect ? 'Guessed Correctly' : 'Incorrect Guess'}
                         </Badge>
                       )}
@@ -158,7 +163,7 @@ export function AllFactsModal({
         </DialogPanel>
 
         <DialogFooter className="mt-4 border-t border-muted" variant="bare">
-          <Button onClick={onClose} size="xl" className="w-full cursor-pointer">
+          <Button onClick={onClose} size="lg" className="w-full cursor-pointer">
             Understood 😊
           </Button>
         </DialogFooter>

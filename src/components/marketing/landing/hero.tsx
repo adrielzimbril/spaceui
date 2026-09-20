@@ -56,8 +56,8 @@ export function Hero() {
           </p>
 
           {/* ── Official Inline Install Bar ── */}
-          <div className="mt-8 flex w-full max-w-xl justify-center">
-            <InlineInstallBar packageName="orb-bloop" isShadcn className="w-full" />
+          <div className="mt-8 flex w-full justify-center">
+            <InlineInstallBar packageName="essentials" isShadcn className="w-fit max-w-full" />
           </div>
 
           {/* ── Primary Actions ── */}

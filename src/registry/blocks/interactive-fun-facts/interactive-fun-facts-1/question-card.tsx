@@ -2,7 +2,7 @@
 
 import { cn } from '@/registry/lib/utils'
 import { Card, CardPanel } from '@/registry/primitives/card'
-import { Badge } from '@/registry/primitives/badge'
+import { Badge } from '@/registry/components/spaceui/badge-squircle'
 import type { Question } from './data'
 
 export function GuessButton({
@@ -124,6 +124,7 @@ export function QuestionCard({
         <div className="flex flex-col items-start gap-4 w-full max-w-[90%] py-12 mx-auto">
           <Badge
             variant="secondary"
+            squircle={false}
             className="aspect-square p-4 rounded-full size-auto! [&>svg]:size-12! [&>img]:size-12!"
           >
             <span className="text-4xl">{question.emoji}</span>

@@ -21,6 +21,7 @@ export const badgeVariants = cva(
         warning: 'border-transparent bg-warning text-warning-foreground',
         success: 'border-transparent bg-success text-success-foreground',
         info: 'border-transparent bg-info text-info-foreground',
+        error: 'border-transparent bg-error text-error-foreground',
       },
       size: {
         xs: 'text-[11px] px-2.5 py-1 gap-1',
@@ -50,6 +51,7 @@ export interface BadgeProps extends useRender.ComponentProps<'span'>, VariantPro
     | 'warning'
     | 'success'
     | 'info'
+    | 'error'
   size?: 'xs' | 'sm' | 'default' | 'md' | 'lg'
   square?: boolean
   squircle?: boolean
