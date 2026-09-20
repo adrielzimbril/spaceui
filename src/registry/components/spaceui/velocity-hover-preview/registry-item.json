@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "components-spaceui-velocity-hover-preview",
+  "type": "registry:component",
+  "title": "Velocity Hover Preview",
+  "description": "An interactive list component projecting a floating WebGL preview with inertial momentum mesh-warping and pixel block dissolve crossfading.",
+  "isPro": true,
+  "dependencies": ["three", "gsap"],
+  "registryDependencies": [
+    "https://www.spaceui.one/r/lib-utils.json",
+    "https://www.spaceui.one/r/lib-next-image-url.json"
+  ],
+  "categories": ["component", "media", "canvas", "shaders"],
+  "files": [
+    {
+      "path": "src/registry/components/spaceui/velocity-hover-preview/index.tsx",
+      "type": "registry:component",
+      "target": "components/spaceui/velocity-hover-preview.tsx"
+    }
+  ],
+  "createdAt": "2026-09-20",
+  "updatedAt": "2026-09-20"
+}

@@ -1,0 +1,51 @@
+---
+title: Velocity Hover Preview
+description: Interactive kinetic list and hover carousel projecting a floating WebGL preview with inertial momentum mesh-warping and pixel block entry/exit wave crossfading.
+isPro: true
+preview:
+  name: demo-c-velocity-hover-preview-01
+  contained: false
+---
+
+Interactive kinetic hover carousel. Hovering list items projects an orthographic WebGL preview that trails pointer velocity with inertia, vertex momentum distortion, and pixel wave entrance and exit dissolves.
+
+## Installation
+
+<ComponentInstallation name="components-spaceui-velocity-hover-preview" />
+
+## Usage
+
+```tsx
+import { VelocityHoverPreview } from '@/components/spaceui/velocity-hover-preview'
+
+const sampleServices = [
+  {
+    id: '01',
+    num: '01',
+    title: 'Space UI Twilight Ring',
+    subtitle: 'Luminous Coastal Horizon & Twilight Shaders',
+    mediaUrl: 'https://cdn.spaceui.one/atom/samples/image-1.png',
+  },
+  {
+    id: '02',
+    num: '02',
+    title: 'Flora Kinetic Portrait',
+    subtitle: 'Botanical Florals & Reactive Micro-interactions',
+    mediaUrl: 'https://cdn.spaceui.one/atom/samples/image-2.png',
+  },
+]
+
+export default function Example() {
+  return <VelocityHoverPreview items={sampleServices} accentColor="#ffe9a8" />
+}
+```
+
+## Props
+
+| Prop            | Type                          | Default     | Description                                                     |
+| --------------- | ----------------------------- | ----------- | --------------------------------------------------------------- |
+| `items`         | `PreviewItem[]`               | `[]`        | Array of items with title, subtitle, mediaUrl, and num.         |
+| `accentColor`   | `string`                      | `'#ffe9a8'` | Accent color of pixel wave transition bands (Aurum by default). |
+| `gridDensity`   | `number`                      | `32`        | Density of matrix blocks in transition waves.                   |
+| `warpIntensity` | `number`                      | `0.45`      | Inertial momentum mesh distortion scale.                        |
+| `onItemSelect`  | `(item: PreviewItem) => void` | —           | Callback when a list item is clicked.                           |

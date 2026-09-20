@@ -1,0 +1,24 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-c-pixel-fill-button-01",
+  "title": "Pixel Fill Button Demo",
+  "description": "Interactive demo of Pixel Fill Button with different pixel accent colors.",
+  "registryDependencies": [
+    "https://www.spaceui.one/r/components-spaceui-pixel-fill-button.json",
+    "https://www.spaceui.one/r/primitives-button.json",
+    "https://www.spaceui.one/r/lib-utils.json"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/components/spaceui/pixel-fill-button/c-pixel-fill-button-01/index.tsx",
+      "content": "'use client'\n\nimport * as React from 'react'\nimport { PixelFillButton } from '@/components/spaceui/pixel-fill-button'\nimport { Button } from '@/components/ui/button'\nimport { tickSound } from '@/components/providers/sound-provider'\nimport { cn } from '@/lib/utils'\n\nexport default function Demo() {\n  return (\n    <div className=\"flex min-h-115 w-full flex-col items-center justify-center gap-8 p-6 sm:p-10\">\n      <div className=\"flex w-full max-w-4xl flex-col items-center justify-center gap-8\">\n        <div className=\"flex w-full flex-col items-center gap-3\">\n          <span className=\"text-[0.6875rem] font-semibold tracking-wider text-muted-foreground uppercase\">\n            Liquid Metal Border Edition\n          </span>\n          <div className=\"flex flex-wrap items-center justify-center gap-5\">\n            <PixelFillButton\n              borderEffect=\"metal\"\n              metalPreset=\"chrome\"\n              pixelColor=\"#e2e8f0\"\n              textColorOnHover=\"#000000\"\n              size=\"default\"\n            >\n              Liquid Chrome 🫧\n            </PixelFillButton>\n\n            <PixelFillButton\n              borderEffect=\"metal\"\n              metalPreset=\"gold\"\n              pixelColor=\"#ffe9a8\"\n              textColorOnHover=\"#000000\"\n              size=\"default\"\n            >\n              Liquid Gold 🏆\n            </PixelFillButton>\n\n            <PixelFillButton\n              borderEffect=\"metal\"\n              metalPreset=\"violet\"\n              pixelColor=\"#c9a6ff\"\n              textColorOnHover=\"#000000\"\n              size=\"default\"\n            >\n              Liquid Violet 🔮\n            </PixelFillButton>\n          </div>\n        </div>\n\n        <div className=\"flex w-full flex-col items-center gap-3\">\n          <span className=\"text-[0.6875rem] font-semibold tracking-wider text-muted-foreground uppercase\">\n            Classic Edition\n          </span>\n          <div className=\"flex flex-wrap items-center justify-center gap-5\">\n            <PixelFillButton borderEffect=\"default\" pixelColor=\"#ffe9a8\" textColorOnHover=\"#000000\" size=\"default\">\n              Space UI 🤯❣️\n            </PixelFillButton>\n\n            <PixelFillButton\n              borderEffect=\"default\"\n              pixelColor=\"#93c5fd\"\n              textColorOnHover=\"#000000\"\n              variant=\"outline\"\n              size=\"default\"\n            >\n              Explore Universe 🌌\n            </PixelFillButton>\n\n            <PixelFillButton borderEffect=\"default\" pixelColor=\"#fdba74\" textColorOnHover=\"#000000\" size=\"default\">\n              Deploy Project 🚀\n            </PixelFillButton>\n          </div>\n        </div>\n\n        <div className=\"flex w-full flex-col items-center gap-3\">\n          <span className=\"text-[0.6875rem] font-semibold tracking-wider text-muted-foreground uppercase\">\n            Silk Border Edition\n          </span>\n          <div className=\"flex flex-wrap items-center justify-center gap-5\">\n            <PixelFillButton\n              borderEffect=\"silk\"\n              pixelColor=\"#c084fc\"\n              silkPreset=\"twilight\"\n              textColorOnHover=\"#ffffff\"\n              size=\"default\"\n            >\n              Silk Twilight ✨\n            </PixelFillButton>\n\n            <PixelFillButton\n              borderEffect=\"silk\"\n              silkPreset=\"aurora\"\n              pixelColor=\"#ec4899\"\n              textColorOnHover=\"#ffffff\"\n\n              size=\"default\"\n            >\n              Silk Aurora 🌃\n            </PixelFillButton>\n\n            <PixelFillButton\n              borderEffect=\"silk\"\n              silkPreset=\"sunset\"\n              pixelColor=\"#fb923c\"\n              textColorOnHover=\"#ffffff\"\n\n              size=\"default\"\n            >\n              Silk Sunset 🌅\n            </PixelFillButton>\n          </div>\n        </div>\n      </div>\n    </div>\n  )\n}\n",
+      "type": "registry:component",
+      "target": "demo/c-pixel-fill-button-01.tsx"
+    }
+  ],
+  "categories": [
+    "demo",
+    "button"
+  ],
+  "type": "registry:component"
+}

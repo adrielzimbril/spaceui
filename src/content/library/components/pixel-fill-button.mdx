@@ -1,0 +1,53 @@
+---
+title: Pixel Fill Button
+description: An interactive button whose background fills with square matrix pixels radiating from the cursor entry point on hover.
+preview:
+  name: demo-c-pixel-fill-button-01
+  contained: false
+---
+
+## Installation
+
+<ComponentInstallation name="components-spaceui-pixel-fill-button" />
+
+## Usage
+
+```tsx
+import { PixelFillButton } from '@/components/spaceui/pixel-fill-button'
+
+export default function Example() {
+  return (
+    <div className="flex gap-4">
+      {/* Classic */}
+      <PixelFillButton pixelColor="#ffe9a8">Classic Button</PixelFillButton>
+
+      {/* Silk Border */}
+      <PixelFillButton borderEffect="silk" silkPreset="twilight" pixelColor="#ec4899">
+        Silk Edition
+      </PixelFillButton>
+
+      {/* Metal Border */}
+      <PixelFillButton borderEffect="metal" metalPreset="chrome" pixelColor="#ffffff">
+        Metal Edition
+      </PixelFillButton>
+    </div>
+  )
+}
+```
+
+## API Reference
+
+| Prop               | Type                                       | Default      | Description                                                   |
+| ------------------ | ------------------------------------------ | ------------ | ------------------------------------------------------------- |
+| `children`         | `ReactNode`                                | —            | Button label / icons                                          |
+| `borderEffect`     | `'default' \| 'silk' \| 'metal' \| 'none'` | `'default'`  | Active border styling wrapper (Silk shader or Liquid Metal)   |
+| `silkPreset`       | `SilkPreset`                               | `'twilight'` | Preset palette for the Silk Border ('aurora', 'sunset', etc.) |
+| `metalPreset`      | `LiquidPreset`                             | `'chrome'`   | Preset finish for the Metal Border ('gold', 'violet', etc.)   |
+| `pixelColor`       | `string`                                   | `'#ffe9a8'`  | Color of the expanding matrix pixels                          |
+| `textColorOnHover` | `string`                                   | `'#000000'`  | Color applied to the text when pixel-filled                   |
+| `pixelSize`        | `number`                                   | `4`          | Size in pixels of each square grain                           |
+| `blurAmount`       | `string`                                   | `'8px'`      | Text transition blur amount                                   |
+| `squircle`         | `boolean`                                  | `true`       | Smooth squircle curvature styling                             |
+| `href`             | `string`                                   | —            | Optional URL (renders an `<a>` tag when provided)             |
+| `borderClassName`  | `string`                                   | —            | Custom class names for the outer border container             |
+| `className`        | `string`                                   | —            | Custom class names for the button element                     |

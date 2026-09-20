@@ -1,0 +1,37 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-c-velocity-hover-preview-01",
+  "type": "registry:component",
+  "title": "Velocity Hover Preview Demo",
+  "description": "Interactive services list with floating WebGL preview and velocity momentum warp.",
+  "isPro": true,
+  "registryDependencies": ["https://www.spaceui.one/r/components-spaceui-velocity-hover-preview.json"],
+  "categories": ["demo", "media"],
+  "meta": {
+    "demoProps": {
+      "accentColor": {
+        "value": "#ffe9a8",
+        "options": {
+          "Aurum": "#ffe9a8",
+          "Mercury": "#f0f4f8",
+          "Iris": "#c9a6ff",
+          "Cobalt": "#93c5fd",
+          "Forge": "#fdba74",
+          "Jade": "#6ee7b7",
+          "Pearl": "#fafafa",
+          "White": "#ffffff",
+          "Black": "#000000"
+        }
+      }
+    }
+  },
+  "files": [
+    {
+      "path": "src/registry/demo/components/spaceui/velocity-hover-preview/c-velocity-hover-preview-01/index.tsx",
+      "type": "registry:component",
+      "target": "demo/c-velocity-hover-preview-01.tsx"
+    }
+  ],
+  "createdAt": "2026-09-20",
+  "updatedAt": "2026-09-20"
+}

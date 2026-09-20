@@ -1,0 +1,113 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-c-fluid-dither-crossfade-01",
+  "title": "Fluid Dither Crossfade Demo",
+  "description": "Interactive demo of Fluid Dither Crossfade with real-time fluid simulation and Bayer dithering.",
+  "dependencies": [
+    "motion"
+  ],
+  "registryDependencies": [
+    "https://www.spaceui.one/r/components-spaceui-fluid-dither-crossfade.json",
+    "https://www.spaceui.one/r/primitives-button.json",
+    "https://www.spaceui.one/r/lib-utils.json"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/components/spaceui/fluid-dither-crossfade/c-fluid-dither-crossfade-01/index.tsx",
+      "content": "'use client'\n\nimport * as React from 'react'\nimport { AnimatePresence, motion, useReducedMotion } from 'motion/react'\nimport NextImage from 'next/image'\nimport { FluidDitherCrossfade } from '@/components/spaceui/fluid-dither-crossfade'\nimport { Button } from '@/components/ui/button'\nimport { tickSound } from '@/components/providers/sound-provider'\nimport { cn } from '@/lib/utils'\n\nexport interface FluidDitherCrossfadeDemoProps {\n  imageFront?: string\n  imageBack?: string\n  brushSize?: number\n  pixelRes?: number\n  pixelEdgeRes?: number\n  ditherGrid?: number\n  distortionStrength?: number\n  inkDissipation?: number\n  accentColor?: string\n  revealStyle?: 'stagger' | 'blur' | 'pixelate'\n}\n\nconst PRESET_PAIRS = [\n  {\n    id: 'pair-0',\n    title: 'Monolith Horizon',\n    imageA: 'https://cdn.spaceui.one/atom/samples/image-0-f.png',\n    imageB: 'https://cdn.spaceui.one/atom/samples/image-0-b.png',\n    nameA: 'Front',\n    nameB: 'Back',\n  },\n  {\n    id: 'pair-1',\n    title: 'Twilight Ring',\n    imageA: 'https://cdn.spaceui.one/atom/samples/image-1-f.png',\n    imageB: 'https://cdn.spaceui.one/atom/samples/image-1-b.png',\n    nameA: 'Front',\n    nameB: 'Back',\n  },\n  {\n    id: 'pair-2',\n    title: 'Flora Portrait',\n    imageA: 'https://cdn.spaceui.one/atom/samples/image-2-f.png',\n    imageB: 'https://cdn.spaceui.one/atom/samples/image-2-b.png',\n    nameA: 'Front',\n    nameB: 'Back',\n  },\n  {\n    id: 'pair-3',\n    title: 'Forest Sanctum',\n    imageA: 'https://cdn.spaceui.one/atom/samples/image-3-f.png',\n    imageB: 'https://cdn.spaceui.one/atom/samples/image-3-b.png',\n    nameA: 'Front',\n    nameB: 'Back',\n  },\n]\n\nexport default function Demo({\n  imageFront,\n  imageBack,\n  brushSize = 0.3,\n  pixelRes = 150,\n  pixelEdgeRes = 80,\n  ditherGrid = 20,\n  distortionStrength = 9.18,\n  inkDissipation = 0.926,\n  accentColor = '#ffe9a8',\n  revealStyle = 'pixelate',\n}: FluidDitherCrossfadeDemoProps) {\n  const [selectedPair, setSelectedPair] = React.useState<{ a: string; b: string } | null>({\n    a: PRESET_PAIRS[0].imageA,\n    b: PRESET_PAIRS[0].imageB,\n  })\n  const [customFront, setCustomFront] = React.useState<string | null>(null)\n  const [customBack, setCustomBack] = React.useState<string | null>(null)\n\n  React.useEffect(() => {\n    if (imageFront) {\n      setCustomFront(imageFront)\n      setSelectedPair(null)\n    } else if (imageFront === '') {\n      setCustomFront(null)\n    }\n  }, [imageFront])\n\n  React.useEffect(() => {\n    if (imageBack) {\n      setCustomBack(imageBack)\n      setSelectedPair(null)\n    } else if (imageBack === '') {\n      setCustomBack(null)\n    }\n  }, [imageBack])\n\n  const effectiveA = customFront || selectedPair?.a || PRESET_PAIRS[0].imageA\n  const effectiveB = customBack || selectedPair?.b || PRESET_PAIRS[0].imageB\n\n  const reduced = useReducedMotion() ?? false\n  const morphTransition = reduced ? { duration: 0 } : { duration: 0.22, ease: [0.16, 1, 0.3, 1] as const }\n\n  return (\n    <div className=\"flex w-full flex-col items-center justify-center p-4 sm:p-8 gap-6 min-h-[520px]\">\n      <AnimatePresence mode=\"wait\" initial={false}>\n        <motion.div\n          key={`${effectiveA}-${effectiveB}`}\n          initial={reduced ? false : { scale: 0.98, opacity: 0, filter: 'blur(6px)' }}\n          animate={{ scale: 1, opacity: 1, filter: 'blur(0px)' }}\n          exit={reduced ? { opacity: 0 } : { scale: 0.98, opacity: 0, filter: 'blur(6px)', pointerEvents: 'none' }}\n          transition={morphTransition}\n          className=\"w-full max-w-4xl lg:max-w-5xl overflow-hidden rounded-2xl will-change-[opacity,transform,filter]\"\n        >\n          <FluidDitherCrossfade\n            key={`${effectiveA}-${effectiveB}-${brushSize}-${pixelRes}-${pixelEdgeRes}-${ditherGrid}-${distortionStrength}-${inkDissipation}-${accentColor}-${revealStyle}`}\n            imageA={effectiveA}\n            imageB={effectiveB}\n            bgColor={accentColor}\n            brushSize={Number(brushSize)}\n            pixelRes={Number(pixelRes)}\n            pixelEdgeRes={Number(pixelEdgeRes)}\n            ditherGrid={Number(ditherGrid)}\n            distortionStrength={Number(distortionStrength)}\n            inkDissipation={Number(inkDissipation)}\n            revealStyle={revealStyle}\n            className=\"w-full\"\n          />\n        </motion.div>\n      </AnimatePresence>\n\n      {/* Preset transition pair cards styled like Trajectory */}\n      <div className=\"flex flex-wrap items-center justify-center gap-2.5\">\n        {PRESET_PAIRS.map((pair) => {\n          const isSelected = !customFront && !customBack && effectiveA === pair.imageA && effectiveB === pair.imageB\n          return (\n            <Button\n              key={pair.id}\n              type=\"button\"\n              variant=\"ghost\"\n              data-space-hover=\"tick\"\n              onClick={() => {\n                tickSound()\n                setCustomFront(null)\n                setCustomBack(null)\n                setSelectedPair({ a: pair.imageA, b: pair.imageB })\n              }}\n              className={cn(\n                'group flex h-auto! flex-col items-center gap-1.5 rounded-xl bg-muted p-1.5 transition-all hover:bg-muted cursor-pointer shadow-none',\n                isSelected && 'ring-2 ring-muted ring-offset-2 ring-offset-background',\n              )}\n            >\n              <div className=\"flex gap-0.5 overflow-hidden rounded-lg bg-background\">\n                <NextImage\n                  src={pair.imageA}\n                  alt={pair.nameA}\n                  width={56}\n                  height={64}\n                  className=\"aspect-square w-14 object-cover\"\n                />\n                <NextImage\n                  src={pair.imageB}\n                  alt={pair.nameB}\n                  width={56}\n                  height={64}\n                  className=\"aspect-square w-14 object-cover\"\n                />\n              </div>\n              <span\n                className={cn(\n                  'max-w-28 truncate px-1 text-[0.6875rem] font-medium transition-colors',\n                  isSelected ? 'font-semibold text-foreground' : 'text-muted-foreground group-hover:text-foreground',\n                )}\n              >\n                {pair.title}\n              </span>\n            </Button>\n          )\n        })}\n      </div>\n    </div>\n  )\n}\n",
+      "type": "registry:component",
+      "target": "demo/c-fluid-dither-crossfade-01.tsx"
+    }
+  ],
+  "meta": {
+    "demoProps": {
+      "imageFront": {
+        "type": "file",
+        "accept": "image/*",
+        "value": ""
+      },
+      "imageBack": {
+        "type": "file",
+        "accept": "image/*",
+        "value": ""
+      },
+      "revealStyle": {
+        "value": "pixelate",
+        "options": {
+          "Pixelate sweep": "pixelate",
+          "Blur morph": "blur",
+          "Stagger wipe": "stagger"
+        }
+      },
+      "brushSize": {
+        "value": 0.3,
+        "options": {
+          "Subtle (0.3)": 0.3,
+          "Balanced (0.64)": 0.64,
+          "Broad (1.0)": 1,
+          "Huge (1.5)": 1.5
+        }
+      },
+      "pixelRes": {
+        "value": 150,
+        "options": {
+          "High Def (300)": 300,
+          "Standard (150)": 150,
+          "Retro (80)": 80,
+          "Low Bit (40)": 40
+        }
+      },
+      "pixelEdgeRes": {
+        "value": 80,
+        "options": {
+          "Fine Mask (120)": 120,
+          "Chunky Blocks (80)": 80,
+          "Giant Pixels (40)": 40
+        }
+      },
+      "distortionStrength": {
+        "value": 9.18,
+        "options": {
+          "Gentle (4.0)": 4,
+          "Original (9.18)": 9.18,
+          "Heavy (18.0)": 18
+        }
+      },
+      "ditherGrid": {
+        "value": 20,
+        "options": {
+          "Micro (8)": 8,
+          "Classic (20)": 20,
+          "Macro (40)": 40
+        }
+      },
+      "inkDissipation": {
+        "value": 0.926,
+        "options": {
+          "Fast Fade (0.88)": 0.88,
+          "Balanced (0.926)": 0.926,
+          "Persistent (0.97)": 0.97
+        }
+      },
+      "accentColor": {
+        "value": "#ffe9a8",
+        "options": {
+          "Aurum": "#ffe9a8",
+          "Mercury": "#f0f4f8",
+          "Iris": "#c9a6ff",
+          "Cobalt": "#93c5fd",
+          "Forge": "#fdba74",
+          "Jade": "#6ee7b7",
+          "Pearl": "#fafafa",
+          "White": "#ffffff",
+          "Black": "#000000"
+        }
+      }
+    }
+  },
+  "categories": [
+    "demo",
+    "media"
+  ],
+  "type": "registry:component"
+}

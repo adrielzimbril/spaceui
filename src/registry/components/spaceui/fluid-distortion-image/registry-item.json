@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "components-spaceui-fluid-distortion-image",
+  "type": "registry:component",
+  "title": "Fluid Distortion Image",
+  "description": "An interactive WebGL image component with cover UV mapping and dynamic cursor fluid-distortion ripples using data textures.",
+  "isPro": true,
+  "dependencies": ["three", "gsap"],
+  "registryDependencies": [
+    "https://www.spaceui.one/r/lib-utils.json",
+    "https://www.spaceui.one/r/lib-next-image-url.json"
+  ],
+  "categories": ["component", "media", "canvas", "shaders"],
+  "files": [
+    {
+      "path": "src/registry/components/spaceui/fluid-distortion-image/index.tsx",
+      "type": "registry:component",
+      "target": "components/spaceui/fluid-distortion-image.tsx"
+    }
+  ],
+  "createdAt": "2026-09-20",
+  "updatedAt": "2026-09-20"
+}

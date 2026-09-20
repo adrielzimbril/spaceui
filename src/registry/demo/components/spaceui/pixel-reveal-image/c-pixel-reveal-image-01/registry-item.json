@@ -1,0 +1,79 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-c-pixel-reveal-image-01",
+  "type": "registry:component",
+  "title": "Pixel Reveal Image Demo",
+  "description": "Interactive demo of Pixel Reveal Image with real-time scroll matrix wavefront.",
+  "isPro": true,
+  "dependencies": ["motion"],
+  "registryDependencies": [
+    "https://www.spaceui.one/r/components-spaceui-pixel-reveal-image.json",
+    "https://www.spaceui.one/r/primitives-button.json",
+    "https://www.spaceui.one/r/lib-utils.json"
+  ],
+  "categories": ["demo", "media"],
+  "meta": {
+    "demoProps": {
+      "textureFile": {
+        "type": "file",
+        "accept": "image/*",
+        "value": ""
+      },
+      "accentColor": {
+        "value": "#ffe9a8",
+        "options": {
+          "Aurum": "#ffe9a8",
+          "Mercury": "#f0f4f8",
+          "Iris": "#c9a6ff",
+          "Cobalt": "#93c5fd",
+          "Forge": "#fdba74",
+          "Jade": "#6ee7b7",
+          "Pearl": "#fafafa",
+          "White": "#ffffff",
+          "Black": "#000000"
+        }
+      },
+      "gridDensity": {
+        "value": 38,
+        "options": {
+          "Fine (60)": 60,
+          "Standard (38)": 38,
+          "Chunky (20)": 20
+        }
+      },
+      "bandWidth": {
+        "value": 3.5,
+        "options": {
+          "Tight (2.0)": 2.0,
+          "Standard (3.5)": 3.5,
+          "Broad (6.0)": 6.0
+        }
+      },
+      "noiseIntensity": {
+        "value": 0.16,
+        "options": {
+          "Subtle (0.08)": 0.08,
+          "Balanced (0.16)": 0.16,
+          "Heavy (0.35)": 0.35
+        }
+      },
+      "trigger": {
+        "value": "loop",
+        "options": {
+          "Loop (Auto)": "loop",
+          "Hover": "hover",
+          "Scroll": "scroll"
+        }
+      }
+    }
+  },
+  "files": [
+    {
+      "path": "src/registry/demo/components/spaceui/pixel-reveal-image/c-pixel-reveal-image-01/index.tsx",
+      "type": "registry:component",
+      "target": "demo/c-pixel-reveal-image-01.tsx"
+    }
+  ],
+  "createdAt": "2026-09-20",
+  "updatedAt": "2026-09-20"
+}

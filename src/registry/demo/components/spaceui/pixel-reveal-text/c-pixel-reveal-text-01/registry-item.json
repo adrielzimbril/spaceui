@@ -1,0 +1,74 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-c-pixel-reveal-text-01",
+  "type": "registry:component",
+  "title": "Pixel Reveal Text Demo",
+  "description": "Interactive demo of Pixel Reveal Text emerging from matrix noise.",
+  "isPro": true,
+  "registryDependencies": ["https://www.spaceui.one/r/components-spaceui-pixel-reveal-text.json"],
+  "categories": ["demo", "text"],
+  "meta": {
+    "demoProps": {
+      "text": {
+        "value": "Space UI 🤯❣️"
+      },
+      "edgeColor": {
+        "value": "#ffe9a8",
+        "options": {
+          "Aurum": "#ffe9a8",
+          "Mercury": "#f0f4f8",
+          "Iris": "#c9a6ff",
+          "Cobalt": "#93c5fd",
+          "Forge": "#fdba74",
+          "Jade": "#6ee7b7",
+          "Pearl": "#fafafa",
+          "White": "#ffffff",
+          "Black": "#000000"
+        }
+      },
+      "pixelSize": {
+        "value": 4,
+        "options": {
+          "Fine (2px)": 2,
+          "Crisp (4px)": 4,
+          "Pixelated (8px)": 8,
+          "Blocky (14px)": 14
+        }
+      },
+      "fontSize": {
+        "value": 54,
+        "options": {
+          "Medium (36px)": 36,
+          "Large (54px)": 54,
+          "Display (72px)": 72
+        }
+      },
+      "speed": {
+        "value": 1,
+        "options": {
+          "Slow (0.6x)": 0.6,
+          "Normal (1x)": 1,
+          "Fast (1.5x)": 1.5,
+          "Turbo (2x)": 2
+        }
+      },
+      "trigger": {
+        "value": "loop",
+        "options": {
+          "Loop (Auto)": "loop",
+          "Hover": "hover",
+          "Scroll": "scroll"
+        }
+      }
+    }
+  },
+  "files": [
+    {
+      "path": "src/registry/demo/components/spaceui/pixel-reveal-text/c-pixel-reveal-text-01/index.tsx",
+      "type": "registry:component",
+      "target": "demo/c-pixel-reveal-text-01.tsx"
+    }
+  ],
+  "createdAt": "2026-09-20",
+  "updatedAt": "2026-09-20"
+}

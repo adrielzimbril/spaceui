@@ -1,0 +1,35 @@
+---
+title: Pixel Reveal Image
+description: A WebGL image component with dynamic pixel matrix wave and customizable neon accent border on scroll.
+preview:
+  name: demo-c-pixel-reveal-image-01
+  contained: false
+---
+
+## Installation
+
+<ComponentInstallation name="components-spaceui-pixel-reveal-image" />
+
+## Usage
+
+```tsx
+import { PixelRevealImage } from '@/components/spaceui/pixel-reveal-image'
+
+export default function Example() {
+  return <PixelRevealImage src="/images/showcase.jpg" alt="Creative portrait" accentColor="#ffe9a8" gridDensity={40} />
+}
+```
+
+## API Reference
+
+| Prop             | Type                                 | Default                 | Description                                                |
+| ---------------- | ------------------------------------ | ----------------------- | ---------------------------------------------------------- |
+| `src`            | `string`                             | —                       | Path or URL to the source image                            |
+| `alt`            | `string`                             | `'Pixel reveal visual'` | Accessible image label                                     |
+| `accentColor`    | `string`                             | `'#ffe9a8'`             | Accent color for transition edge pixels (Aurum by default) |
+| `gridDensity`    | `number`                             | `40`                    | Number of pixel blocks across the matrix grid              |
+| `bandWidth`      | `number`                             | `3.5`                   | Thickness of the glowing pixel transition wave             |
+| `noiseIntensity` | `number`                             | `0.16`                  | Procedural jitter noise dispersion                         |
+| `direction`      | `'top-to-bottom' \| 'bottom-to-top'` | `'bottom-to-top'`       | Wavefront sweep direction                                  |
+| `progress`       | `number`                             | —                       | Optional controlled progress value (0 to 1)                |
+| `aspectRatio`    | `number`                             | `3 / 4`                 | Aspect ratio of the canvas container                       |

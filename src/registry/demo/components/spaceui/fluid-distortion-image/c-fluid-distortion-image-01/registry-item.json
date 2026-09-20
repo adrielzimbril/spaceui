@@ -1,0 +1,65 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-c-fluid-distortion-image-01",
+  "type": "registry:component",
+  "title": "Fluid Distortion Image Demo",
+  "description": "Interactive demo of Fluid Distortion Image with real-time cursor impulse ripples.",
+  "isPro": true,
+  "dependencies": ["motion"],
+  "registryDependencies": [
+    "https://www.spaceui.one/r/components-spaceui-fluid-distortion-image.json",
+    "https://www.spaceui.one/r/primitives-button.json",
+    "https://www.spaceui.one/r/lib-utils.json"
+  ],
+  "categories": ["demo", "media"],
+  "meta": {
+    "demoProps": {
+      "textureFile": {
+        "type": "file",
+        "accept": "image/*",
+        "value": ""
+      },
+      "revealStyle": {
+        "value": "pixelate",
+        "options": {
+          "Pixelate sweep": "pixelate",
+          "Blur morph": "blur"
+        }
+      },
+      "distortionIntensity": {
+        "value": 0.02,
+        "options": {
+          "Subtle (0.01)": 0.01,
+          "Original (0.02)": 0.02,
+          "Intense (0.05)": 0.05,
+          "Extreme (0.09)": 0.09
+        }
+      },
+      "relaxationSpeed": {
+        "value": 0.95,
+        "options": {
+          "Fast (0.88)": 0.88,
+          "Standard (0.95)": 0.95,
+          "Trailing (0.98)": 0.98
+        }
+      },
+      "radius": {
+        "value": 8.96,
+        "options": {
+          "Small (5.0)": 5.0,
+          "Original (8.96)": 8.96,
+          "Large (14.0)": 14.0
+        }
+      }
+    }
+  },
+  "files": [
+    {
+      "path": "src/registry/demo/components/spaceui/fluid-distortion-image/c-fluid-distortion-image-01/index.tsx",
+      "type": "registry:component",
+      "target": "demo/c-fluid-distortion-image-01.tsx"
+    }
+  ],
+  "createdAt": "2026-09-20",
+  "updatedAt": "2026-09-20"
+}

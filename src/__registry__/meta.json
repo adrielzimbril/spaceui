@@ -3544,6 +3544,17 @@
         ]
       },
       {
+        "name": "pixel-fill-button",
+        "title": "Pixel Fill Button",
+        "description": "An interactive button whose background fills with square matrix pixels radiating from the cursor entry point on hover.",
+        "url": "/ui-kit/components/spaceui/pixel-fill-button",
+        "category": "Button",
+        "categories": [
+          "button",
+          "canvas"
+        ]
+      },
+      {
         "name": "slide-to-confirm",
         "title": "Slide To Confirm",
         "description": "Tactile slide-to-action control with spring physics and inertia confirmation.",
@@ -3552,16 +3563,6 @@
         "categories": [
           "button",
           "slider"
-        ]
-      },
-      {
-        "name": "button",
-        "title": "Button",
-        "description": "Accessible Button primitive component for Space UI.",
-        "url": "/ui-kit/primitives/button",
-        "category": "Button",
-        "categories": [
-          "button"
         ]
       }
     ]
@@ -3609,6 +3610,17 @@
         ]
       },
       {
+        "name": "pixel-fill-button",
+        "title": "Pixel Fill Button",
+        "description": "An interactive button whose background fills with square matrix pixels radiating from the cursor entry point on hover.",
+        "url": "/ui-kit/components/spaceui/pixel-fill-button",
+        "category": "Button",
+        "categories": [
+          "button",
+          "canvas"
+        ]
+      },
+      {
         "name": "slide-to-confirm",
         "title": "Slide To Confirm",
         "description": "Tactile slide-to-action control with spring physics and inertia confirmation.",
@@ -3617,16 +3629,6 @@
         "categories": [
           "button",
           "slider"
-        ]
-      },
-      {
-        "name": "button",
-        "title": "Button",
-        "description": "Accessible Button primitive component for Space UI.",
-        "url": "/ui-kit/primitives/button",
-        "category": "Button",
-        "categories": [
-          "button"
         ]
       }
     ]
@@ -7067,6 +7069,406 @@
     "dependents": [],
     "related": []
   },
+  "fluid-crossfade": {
+    "name": "components-spaceui-fluid-crossfade",
+    "shortName": "fluid-crossfade",
+    "title": "Fluid Crossfade",
+    "description": "Interactive fluid wave simulation with chromatic refraction and Bayer dither blending between two textures.",
+    "type": "registry:component",
+    "url": "/ui-kit/components/spaceui/fluid-crossfade",
+    "category": "Shader",
+    "categories": [
+      "shader",
+      "fluid"
+    ],
+    "createdAt": "2026-09-20",
+    "updatedAt": "2026-09-20",
+    "isPro": true,
+    "size": "9.8 KB",
+    "rawSize": 10059,
+    "directSize": "9.8 KB",
+    "fileCount": 1,
+    "dependencies": [
+      "three"
+    ],
+    "registryDependencies": [
+      "https://www.spaceui.one/r/lib-utils.json",
+      "https://www.spaceui.one/r/lib-next-image-url.json"
+    ],
+    "dependents": [],
+    "related": [
+      {
+        "name": "cloud",
+        "title": "Cloud",
+        "description": "Interactive volumetric cloud material rendered as a full-bleed shader surface.",
+        "url": "/ui-kit/components/shader/cloud",
+        "category": "Shader",
+        "categories": [
+          "shader",
+          "cloud",
+          "background"
+        ]
+      },
+      {
+        "name": "heat-shade",
+        "title": "Heat Shade",
+        "description": "WebGPU fbm heat field with ember and hot tints along a moving boundary.",
+        "url": "/ui-kit/components/shader/heat-shade",
+        "category": "Shader",
+        "categories": [
+          "shader",
+          "background",
+          "heat"
+        ]
+      },
+      {
+        "name": "paper-shader",
+        "title": "Paper Shader",
+        "description": "Paper Shaders WebGL2 canvas driven by a fragment shader and live uniforms.",
+        "url": "/ui-kit/components/shader/paper-shader",
+        "category": "Shader",
+        "categories": [
+          "shader",
+          "webgl"
+        ]
+      }
+    ]
+  },
+  "components-spaceui-fluid-crossfade": {
+    "name": "components-spaceui-fluid-crossfade",
+    "shortName": "fluid-crossfade",
+    "title": "Fluid Crossfade",
+    "description": "Interactive fluid wave simulation with chromatic refraction and Bayer dither blending between two textures.",
+    "type": "registry:component",
+    "url": "/ui-kit/components/spaceui/fluid-crossfade",
+    "category": "Shader",
+    "categories": [
+      "shader",
+      "fluid"
+    ],
+    "createdAt": "2026-09-20",
+    "updatedAt": "2026-09-20",
+    "isPro": true,
+    "size": "9.8 KB",
+    "rawSize": 10059,
+    "directSize": "9.8 KB",
+    "fileCount": 1,
+    "dependencies": [
+      "three"
+    ],
+    "registryDependencies": [
+      "https://www.spaceui.one/r/lib-utils.json",
+      "https://www.spaceui.one/r/lib-next-image-url.json"
+    ],
+    "dependents": [],
+    "related": [
+      {
+        "name": "cloud",
+        "title": "Cloud",
+        "description": "Interactive volumetric cloud material rendered as a full-bleed shader surface.",
+        "url": "/ui-kit/components/shader/cloud",
+        "category": "Shader",
+        "categories": [
+          "shader",
+          "cloud",
+          "background"
+        ]
+      },
+      {
+        "name": "heat-shade",
+        "title": "Heat Shade",
+        "description": "WebGPU fbm heat field with ember and hot tints along a moving boundary.",
+        "url": "/ui-kit/components/shader/heat-shade",
+        "category": "Shader",
+        "categories": [
+          "shader",
+          "background",
+          "heat"
+        ]
+      },
+      {
+        "name": "paper-shader",
+        "title": "Paper Shader",
+        "description": "Paper Shaders WebGL2 canvas driven by a fragment shader and live uniforms.",
+        "url": "/ui-kit/components/shader/paper-shader",
+        "category": "Shader",
+        "categories": [
+          "shader",
+          "webgl"
+        ]
+      }
+    ]
+  },
+  "fluid-distortion-image": {
+    "name": "components-spaceui-fluid-distortion-image",
+    "shortName": "fluid-distortion-image",
+    "title": "Fluid Distortion Image",
+    "description": "An interactive WebGL image component with cover UV mapping and dynamic cursor fluid-distortion ripples using data textures.",
+    "type": "registry:component",
+    "url": "/ui-kit/components/spaceui/fluid-distortion-image",
+    "category": "Media",
+    "categories": [
+      "media",
+      "canvas",
+      "shaders"
+    ],
+    "createdAt": "2026-09-20",
+    "updatedAt": "2026-09-20",
+    "isPro": true,
+    "size": "12.4 KB",
+    "rawSize": 12721,
+    "directSize": "12.4 KB",
+    "fileCount": 1,
+    "dependencies": [
+      "three",
+      "gsap"
+    ],
+    "registryDependencies": [
+      "https://www.spaceui.one/r/lib-utils.json",
+      "https://www.spaceui.one/r/lib-next-image-url.json"
+    ],
+    "dependents": [],
+    "related": [
+      {
+        "name": "fluid-dither-crossfade",
+        "title": "Fluid Dither Crossfade",
+        "description": "A dual-pass WebGL shader component featuring real-time Navier-Stokes fluid pressure simulation and Bayer 4x4 matrix ordered dithering crossfade.",
+        "url": "/ui-kit/components/spaceui/fluid-dither-crossfade",
+        "category": "Media",
+        "categories": [
+          "media",
+          "canvas",
+          "shaders"
+        ]
+      },
+      {
+        "name": "pixel-reveal-image",
+        "title": "Pixel Reveal Image",
+        "description": "A WebGL image reveal component with dynamic pixel matrix wave and customizable neon accent border on scroll.",
+        "url": "/ui-kit/components/spaceui/pixel-reveal-image",
+        "category": "Media",
+        "categories": [
+          "media",
+          "canvas",
+          "shaders"
+        ]
+      },
+      {
+        "name": "velocity-hover-preview",
+        "title": "Velocity Hover Preview",
+        "description": "An interactive list component projecting a floating WebGL preview with inertial momentum mesh-warping and pixel block dissolve crossfading.",
+        "url": "/ui-kit/components/spaceui/velocity-hover-preview",
+        "category": "Media",
+        "categories": [
+          "media",
+          "canvas",
+          "shaders"
+        ]
+      }
+    ]
+  },
+  "components-spaceui-fluid-distortion-image": {
+    "name": "components-spaceui-fluid-distortion-image",
+    "shortName": "fluid-distortion-image",
+    "title": "Fluid Distortion Image",
+    "description": "An interactive WebGL image component with cover UV mapping and dynamic cursor fluid-distortion ripples using data textures.",
+    "type": "registry:component",
+    "url": "/ui-kit/components/spaceui/fluid-distortion-image",
+    "category": "Media",
+    "categories": [
+      "media",
+      "canvas",
+      "shaders"
+    ],
+    "createdAt": "2026-09-20",
+    "updatedAt": "2026-09-20",
+    "isPro": true,
+    "size": "12.4 KB",
+    "rawSize": 12721,
+    "directSize": "12.4 KB",
+    "fileCount": 1,
+    "dependencies": [
+      "three",
+      "gsap"
+    ],
+    "registryDependencies": [
+      "https://www.spaceui.one/r/lib-utils.json",
+      "https://www.spaceui.one/r/lib-next-image-url.json"
+    ],
+    "dependents": [],
+    "related": [
+      {
+        "name": "fluid-dither-crossfade",
+        "title": "Fluid Dither Crossfade",
+        "description": "A dual-pass WebGL shader component featuring real-time Navier-Stokes fluid pressure simulation and Bayer 4x4 matrix ordered dithering crossfade.",
+        "url": "/ui-kit/components/spaceui/fluid-dither-crossfade",
+        "category": "Media",
+        "categories": [
+          "media",
+          "canvas",
+          "shaders"
+        ]
+      },
+      {
+        "name": "pixel-reveal-image",
+        "title": "Pixel Reveal Image",
+        "description": "A WebGL image reveal component with dynamic pixel matrix wave and customizable neon accent border on scroll.",
+        "url": "/ui-kit/components/spaceui/pixel-reveal-image",
+        "category": "Media",
+        "categories": [
+          "media",
+          "canvas",
+          "shaders"
+        ]
+      },
+      {
+        "name": "velocity-hover-preview",
+        "title": "Velocity Hover Preview",
+        "description": "An interactive list component projecting a floating WebGL preview with inertial momentum mesh-warping and pixel block dissolve crossfading.",
+        "url": "/ui-kit/components/spaceui/velocity-hover-preview",
+        "category": "Media",
+        "categories": [
+          "media",
+          "canvas",
+          "shaders"
+        ]
+      }
+    ]
+  },
+  "fluid-dither-crossfade": {
+    "name": "components-spaceui-fluid-dither-crossfade",
+    "shortName": "fluid-dither-crossfade",
+    "title": "Fluid Dither Crossfade",
+    "description": "A dual-pass WebGL shader component featuring real-time Navier-Stokes fluid pressure simulation and Bayer 4x4 matrix ordered dithering crossfade.",
+    "type": "registry:component",
+    "url": "/ui-kit/components/spaceui/fluid-dither-crossfade",
+    "category": "Media",
+    "categories": [
+      "media",
+      "canvas",
+      "shaders"
+    ],
+    "createdAt": "2026-09-20",
+    "updatedAt": "2026-09-20",
+    "isPro": true,
+    "size": "22.5 KB",
+    "rawSize": 23062,
+    "directSize": "22.5 KB",
+    "fileCount": 1,
+    "dependencies": [
+      "three"
+    ],
+    "registryDependencies": [
+      "https://www.spaceui.one/r/lib-utils.json",
+      "https://www.spaceui.one/r/lib-next-image-url.json"
+    ],
+    "dependents": [],
+    "related": [
+      {
+        "name": "fluid-distortion-image",
+        "title": "Fluid Distortion Image",
+        "description": "An interactive WebGL image component with cover UV mapping and dynamic cursor fluid-distortion ripples using data textures.",
+        "url": "/ui-kit/components/spaceui/fluid-distortion-image",
+        "category": "Media",
+        "categories": [
+          "media",
+          "canvas",
+          "shaders"
+        ]
+      },
+      {
+        "name": "pixel-reveal-image",
+        "title": "Pixel Reveal Image",
+        "description": "A WebGL image reveal component with dynamic pixel matrix wave and customizable neon accent border on scroll.",
+        "url": "/ui-kit/components/spaceui/pixel-reveal-image",
+        "category": "Media",
+        "categories": [
+          "media",
+          "canvas",
+          "shaders"
+        ]
+      },
+      {
+        "name": "velocity-hover-preview",
+        "title": "Velocity Hover Preview",
+        "description": "An interactive list component projecting a floating WebGL preview with inertial momentum mesh-warping and pixel block dissolve crossfading.",
+        "url": "/ui-kit/components/spaceui/velocity-hover-preview",
+        "category": "Media",
+        "categories": [
+          "media",
+          "canvas",
+          "shaders"
+        ]
+      }
+    ]
+  },
+  "components-spaceui-fluid-dither-crossfade": {
+    "name": "components-spaceui-fluid-dither-crossfade",
+    "shortName": "fluid-dither-crossfade",
+    "title": "Fluid Dither Crossfade",
+    "description": "A dual-pass WebGL shader component featuring real-time Navier-Stokes fluid pressure simulation and Bayer 4x4 matrix ordered dithering crossfade.",
+    "type": "registry:component",
+    "url": "/ui-kit/components/spaceui/fluid-dither-crossfade",
+    "category": "Media",
+    "categories": [
+      "media",
+      "canvas",
+      "shaders"
+    ],
+    "createdAt": "2026-09-20",
+    "updatedAt": "2026-09-20",
+    "isPro": true,
+    "size": "22.5 KB",
+    "rawSize": 23062,
+    "directSize": "22.5 KB",
+    "fileCount": 1,
+    "dependencies": [
+      "three"
+    ],
+    "registryDependencies": [
+      "https://www.spaceui.one/r/lib-utils.json",
+      "https://www.spaceui.one/r/lib-next-image-url.json"
+    ],
+    "dependents": [],
+    "related": [
+      {
+        "name": "fluid-distortion-image",
+        "title": "Fluid Distortion Image",
+        "description": "An interactive WebGL image component with cover UV mapping and dynamic cursor fluid-distortion ripples using data textures.",
+        "url": "/ui-kit/components/spaceui/fluid-distortion-image",
+        "category": "Media",
+        "categories": [
+          "media",
+          "canvas",
+          "shaders"
+        ]
+      },
+      {
+        "name": "pixel-reveal-image",
+        "title": "Pixel Reveal Image",
+        "description": "A WebGL image reveal component with dynamic pixel matrix wave and customizable neon accent border on scroll.",
+        "url": "/ui-kit/components/spaceui/pixel-reveal-image",
+        "category": "Media",
+        "categories": [
+          "media",
+          "canvas",
+          "shaders"
+        ]
+      },
+      {
+        "name": "velocity-hover-preview",
+        "title": "Velocity Hover Preview",
+        "description": "An interactive list component projecting a floating WebGL preview with inertial momentum mesh-warping and pixel block dissolve crossfading.",
+        "url": "/ui-kit/components/spaceui/velocity-hover-preview",
+        "category": "Media",
+        "categories": [
+          "media",
+          "canvas",
+          "shaders"
+        ]
+      }
+    ]
+  },
   "frost-blurred": {
     "name": "components-spaceui-frost-blurred",
     "shortName": "frost-blurred",
@@ -7232,6 +7634,17 @@
         ]
       },
       {
+        "name": "pixel-fill-button",
+        "title": "Pixel Fill Button",
+        "description": "An interactive button whose background fills with square matrix pixels radiating from the cursor entry point on hover.",
+        "url": "/ui-kit/components/spaceui/pixel-fill-button",
+        "category": "Button",
+        "categories": [
+          "button",
+          "canvas"
+        ]
+      },
+      {
         "name": "slide-to-confirm",
         "title": "Slide To Confirm",
         "description": "Tactile slide-to-action control with spring physics and inertia confirmation.",
@@ -7240,16 +7653,6 @@
         "categories": [
           "button",
           "slider"
-        ]
-      },
-      {
-        "name": "button",
-        "title": "Button",
-        "description": "Accessible Button primitive component for Space UI.",
-        "url": "/ui-kit/primitives/button",
-        "category": "Button",
-        "categories": [
-          "button"
         ]
       }
     ]
@@ -7297,6 +7700,17 @@
         ]
       },
       {
+        "name": "pixel-fill-button",
+        "title": "Pixel Fill Button",
+        "description": "An interactive button whose background fills with square matrix pixels radiating from the cursor entry point on hover.",
+        "url": "/ui-kit/components/spaceui/pixel-fill-button",
+        "category": "Button",
+        "categories": [
+          "button",
+          "canvas"
+        ]
+      },
+      {
         "name": "slide-to-confirm",
         "title": "Slide To Confirm",
         "description": "Tactile slide-to-action control with spring physics and inertia confirmation.",
@@ -7305,16 +7719,6 @@
         "categories": [
           "button",
           "slider"
-        ]
-      },
-      {
-        "name": "button",
-        "title": "Button",
-        "description": "Accessible Button primitive component for Space UI.",
-        "url": "/ui-kit/primitives/button",
-        "category": "Button",
-        "categories": [
-          "button"
         ]
       }
     ]
@@ -8991,6 +9395,366 @@
     "dependents": [],
     "related": []
   },
+  "pixel-fill-button": {
+    "name": "components-spaceui-pixel-fill-button",
+    "shortName": "pixel-fill-button",
+    "title": "Pixel Fill Button",
+    "description": "An interactive button whose background fills with square matrix pixels radiating from the cursor entry point on hover.",
+    "type": "registry:component",
+    "url": "/ui-kit/components/spaceui/pixel-fill-button",
+    "category": "Button",
+    "categories": [
+      "button",
+      "canvas"
+    ],
+    "createdAt": "2026-09-20",
+    "updatedAt": "2026-09-20",
+    "isPro": true,
+    "size": "11.4 KB",
+    "rawSize": 11623,
+    "directSize": "11.4 KB",
+    "fileCount": 1,
+    "dependencies": [
+      "gsap",
+      "motion",
+      "class-variance-authority",
+      "@paper-design/shaders-react"
+    ],
+    "registryDependencies": [
+      "https://www.spaceui.one/r/lib-utils.json",
+      "https://www.spaceui.one/r/components-spaceui-silk-border.json",
+      "https://www.spaceui.one/r/components-spaceui-liquid-metal-border.json"
+    ],
+    "dependents": [],
+    "related": [
+      {
+        "name": "button-squircle",
+        "title": "Button Squircle",
+        "description": "Tactile squircle button and badge components featuring dynamic curvature morphing on hover from the original portfolio design.",
+        "url": "/ui-kit/components/spaceui/button-squircle",
+        "category": "Button",
+        "categories": [
+          "button",
+          "badge",
+          "squircle",
+          "tactile"
+        ]
+      },
+      {
+        "name": "glass-button",
+        "title": "Glass Button",
+        "description": "A glassmorphic button built on top of Button Squircle — backdrop blur, layered inset highlights and a hover shine sweep.",
+        "url": "/ui-kit/components/spaceui/glass-button",
+        "category": "Button",
+        "categories": [
+          "button",
+          "glass",
+          "squircle"
+        ]
+      },
+      {
+        "name": "slide-to-confirm",
+        "title": "Slide To Confirm",
+        "description": "Tactile slide-to-action control with spring physics and inertia confirmation.",
+        "url": "/ui-kit/components/spaceui/slide-to-confirm",
+        "category": "Button",
+        "categories": [
+          "button",
+          "slider"
+        ]
+      }
+    ]
+  },
+  "components-spaceui-pixel-fill-button": {
+    "name": "components-spaceui-pixel-fill-button",
+    "shortName": "pixel-fill-button",
+    "title": "Pixel Fill Button",
+    "description": "An interactive button whose background fills with square matrix pixels radiating from the cursor entry point on hover.",
+    "type": "registry:component",
+    "url": "/ui-kit/components/spaceui/pixel-fill-button",
+    "category": "Button",
+    "categories": [
+      "button",
+      "canvas"
+    ],
+    "createdAt": "2026-09-20",
+    "updatedAt": "2026-09-20",
+    "isPro": true,
+    "size": "11.4 KB",
+    "rawSize": 11623,
+    "directSize": "11.4 KB",
+    "fileCount": 1,
+    "dependencies": [
+      "gsap",
+      "motion",
+      "class-variance-authority",
+      "@paper-design/shaders-react"
+    ],
+    "registryDependencies": [
+      "https://www.spaceui.one/r/lib-utils.json",
+      "https://www.spaceui.one/r/components-spaceui-silk-border.json",
+      "https://www.spaceui.one/r/components-spaceui-liquid-metal-border.json"
+    ],
+    "dependents": [],
+    "related": [
+      {
+        "name": "button-squircle",
+        "title": "Button Squircle",
+        "description": "Tactile squircle button and badge components featuring dynamic curvature morphing on hover from the original portfolio design.",
+        "url": "/ui-kit/components/spaceui/button-squircle",
+        "category": "Button",
+        "categories": [
+          "button",
+          "badge",
+          "squircle",
+          "tactile"
+        ]
+      },
+      {
+        "name": "glass-button",
+        "title": "Glass Button",
+        "description": "A glassmorphic button built on top of Button Squircle — backdrop blur, layered inset highlights and a hover shine sweep.",
+        "url": "/ui-kit/components/spaceui/glass-button",
+        "category": "Button",
+        "categories": [
+          "button",
+          "glass",
+          "squircle"
+        ]
+      },
+      {
+        "name": "slide-to-confirm",
+        "title": "Slide To Confirm",
+        "description": "Tactile slide-to-action control with spring physics and inertia confirmation.",
+        "url": "/ui-kit/components/spaceui/slide-to-confirm",
+        "category": "Button",
+        "categories": [
+          "button",
+          "slider"
+        ]
+      }
+    ]
+  },
+  "pixel-reveal-image": {
+    "name": "components-spaceui-pixel-reveal-image",
+    "shortName": "pixel-reveal-image",
+    "title": "Pixel Reveal Image",
+    "description": "A WebGL image reveal component with dynamic pixel matrix wave and customizable neon accent border on scroll.",
+    "type": "registry:component",
+    "url": "/ui-kit/components/spaceui/pixel-reveal-image",
+    "category": "Media",
+    "categories": [
+      "media",
+      "canvas",
+      "shaders"
+    ],
+    "createdAt": "2026-09-20",
+    "updatedAt": "2026-09-20",
+    "isPro": true,
+    "size": "13.4 KB",
+    "rawSize": 13679,
+    "directSize": "13.4 KB",
+    "fileCount": 1,
+    "dependencies": [
+      "three",
+      "gsap"
+    ],
+    "registryDependencies": [
+      "https://www.spaceui.one/r/lib-utils.json",
+      "https://www.spaceui.one/r/lib-next-image-url.json"
+    ],
+    "dependents": [],
+    "related": [
+      {
+        "name": "fluid-distortion-image",
+        "title": "Fluid Distortion Image",
+        "description": "An interactive WebGL image component with cover UV mapping and dynamic cursor fluid-distortion ripples using data textures.",
+        "url": "/ui-kit/components/spaceui/fluid-distortion-image",
+        "category": "Media",
+        "categories": [
+          "media",
+          "canvas",
+          "shaders"
+        ]
+      },
+      {
+        "name": "fluid-dither-crossfade",
+        "title": "Fluid Dither Crossfade",
+        "description": "A dual-pass WebGL shader component featuring real-time Navier-Stokes fluid pressure simulation and Bayer 4x4 matrix ordered dithering crossfade.",
+        "url": "/ui-kit/components/spaceui/fluid-dither-crossfade",
+        "category": "Media",
+        "categories": [
+          "media",
+          "canvas",
+          "shaders"
+        ]
+      },
+      {
+        "name": "velocity-hover-preview",
+        "title": "Velocity Hover Preview",
+        "description": "An interactive list component projecting a floating WebGL preview with inertial momentum mesh-warping and pixel block dissolve crossfading.",
+        "url": "/ui-kit/components/spaceui/velocity-hover-preview",
+        "category": "Media",
+        "categories": [
+          "media",
+          "canvas",
+          "shaders"
+        ]
+      }
+    ]
+  },
+  "components-spaceui-pixel-reveal-image": {
+    "name": "components-spaceui-pixel-reveal-image",
+    "shortName": "pixel-reveal-image",
+    "title": "Pixel Reveal Image",
+    "description": "A WebGL image reveal component with dynamic pixel matrix wave and customizable neon accent border on scroll.",
+    "type": "registry:component",
+    "url": "/ui-kit/components/spaceui/pixel-reveal-image",
+    "category": "Media",
+    "categories": [
+      "media",
+      "canvas",
+      "shaders"
+    ],
+    "createdAt": "2026-09-20",
+    "updatedAt": "2026-09-20",
+    "isPro": true,
+    "size": "13.4 KB",
+    "rawSize": 13679,
+    "directSize": "13.4 KB",
+    "fileCount": 1,
+    "dependencies": [
+      "three",
+      "gsap"
+    ],
+    "registryDependencies": [
+      "https://www.spaceui.one/r/lib-utils.json",
+      "https://www.spaceui.one/r/lib-next-image-url.json"
+    ],
+    "dependents": [],
+    "related": [
+      {
+        "name": "fluid-distortion-image",
+        "title": "Fluid Distortion Image",
+        "description": "An interactive WebGL image component with cover UV mapping and dynamic cursor fluid-distortion ripples using data textures.",
+        "url": "/ui-kit/components/spaceui/fluid-distortion-image",
+        "category": "Media",
+        "categories": [
+          "media",
+          "canvas",
+          "shaders"
+        ]
+      },
+      {
+        "name": "fluid-dither-crossfade",
+        "title": "Fluid Dither Crossfade",
+        "description": "A dual-pass WebGL shader component featuring real-time Navier-Stokes fluid pressure simulation and Bayer 4x4 matrix ordered dithering crossfade.",
+        "url": "/ui-kit/components/spaceui/fluid-dither-crossfade",
+        "category": "Media",
+        "categories": [
+          "media",
+          "canvas",
+          "shaders"
+        ]
+      },
+      {
+        "name": "velocity-hover-preview",
+        "title": "Velocity Hover Preview",
+        "description": "An interactive list component projecting a floating WebGL preview with inertial momentum mesh-warping and pixel block dissolve crossfading.",
+        "url": "/ui-kit/components/spaceui/velocity-hover-preview",
+        "category": "Media",
+        "categories": [
+          "media",
+          "canvas",
+          "shaders"
+        ]
+      }
+    ]
+  },
+  "pixel-reveal-text": {
+    "name": "components-spaceui-pixel-reveal-text",
+    "shortName": "pixel-reveal-text",
+    "title": "Pixel Reveal Text",
+    "description": "A typography shader component that materializes text out of pixel matrix noise with neon contour highlights on scroll.",
+    "type": "registry:component",
+    "url": "/ui-kit/components/spaceui/pixel-reveal-text",
+    "category": "Text",
+    "categories": [
+      "text",
+      "canvas",
+      "shaders"
+    ],
+    "createdAt": "2026-09-20",
+    "updatedAt": "2026-09-20",
+    "isPro": true,
+    "size": "11.4 KB",
+    "rawSize": 11724,
+    "directSize": "11.4 KB",
+    "fileCount": 1,
+    "dependencies": [
+      "three",
+      "gsap"
+    ],
+    "registryDependencies": [
+      "https://www.spaceui.one/r/lib-utils.json"
+    ],
+    "dependents": [],
+    "related": [
+      {
+        "name": "scatter-text",
+        "title": "Scatter Text",
+        "description": "A text input whose content scatters into drifting canvas grains on submit.",
+        "url": "/ui-kit/components/spaceui/scatter-text",
+        "category": "Text",
+        "categories": [
+          "text",
+          "canvas"
+        ]
+      }
+    ]
+  },
+  "components-spaceui-pixel-reveal-text": {
+    "name": "components-spaceui-pixel-reveal-text",
+    "shortName": "pixel-reveal-text",
+    "title": "Pixel Reveal Text",
+    "description": "A typography shader component that materializes text out of pixel matrix noise with neon contour highlights on scroll.",
+    "type": "registry:component",
+    "url": "/ui-kit/components/spaceui/pixel-reveal-text",
+    "category": "Text",
+    "categories": [
+      "text",
+      "canvas",
+      "shaders"
+    ],
+    "createdAt": "2026-09-20",
+    "updatedAt": "2026-09-20",
+    "isPro": true,
+    "size": "11.4 KB",
+    "rawSize": 11724,
+    "directSize": "11.4 KB",
+    "fileCount": 1,
+    "dependencies": [
+      "three",
+      "gsap"
+    ],
+    "registryDependencies": [
+      "https://www.spaceui.one/r/lib-utils.json"
+    ],
+    "dependents": [],
+    "related": [
+      {
+        "name": "scatter-text",
+        "title": "Scatter Text",
+        "description": "A text input whose content scatters into drifting canvas grains on submit.",
+        "url": "/ui-kit/components/spaceui/scatter-text",
+        "category": "Text",
+        "categories": [
+          "text",
+          "canvas"
+        ]
+      }
+    ]
+  },
   "rating": {
     "name": "components-spaceui-rating",
     "shortName": "rating",
@@ -9114,16 +9878,29 @@
     "createdAt": "2026-09-20",
     "updatedAt": "2026-09-20",
     "isPro": true,
-    "size": "7.2 KB",
-    "rawSize": 7372,
-    "directSize": "7.2 KB",
+    "size": "8.4 KB",
+    "rawSize": 8620,
+    "directSize": "8.4 KB",
     "fileCount": 1,
     "dependencies": [],
     "registryDependencies": [
       "https://www.spaceui.one/r/lib-utils.json"
     ],
     "dependents": [],
-    "related": []
+    "related": [
+      {
+        "name": "pixel-reveal-text",
+        "title": "Pixel Reveal Text",
+        "description": "A typography shader component that materializes text out of pixel matrix noise with neon contour highlights on scroll.",
+        "url": "/ui-kit/components/spaceui/pixel-reveal-text",
+        "category": "Text",
+        "categories": [
+          "text",
+          "canvas",
+          "shaders"
+        ]
+      }
+    ]
   },
   "components-spaceui-scatter-text": {
     "name": "components-spaceui-scatter-text",
@@ -9140,16 +9917,29 @@
     "createdAt": "2026-09-20",
     "updatedAt": "2026-09-20",
     "isPro": true,
-    "size": "7.2 KB",
-    "rawSize": 7372,
-    "directSize": "7.2 KB",
+    "size": "8.4 KB",
+    "rawSize": 8620,
+    "directSize": "8.4 KB",
     "fileCount": 1,
     "dependencies": [],
     "registryDependencies": [
       "https://www.spaceui.one/r/lib-utils.json"
     ],
     "dependents": [],
-    "related": []
+    "related": [
+      {
+        "name": "pixel-reveal-text",
+        "title": "Pixel Reveal Text",
+        "description": "A typography shader component that materializes text out of pixel matrix noise with neon contour highlights on scroll.",
+        "url": "/ui-kit/components/spaceui/pixel-reveal-text",
+        "category": "Text",
+        "categories": [
+          "text",
+          "canvas",
+          "shaders"
+        ]
+      }
+    ]
   },
   "scrollspy": {
     "name": "components-spaceui-scrollspy",
@@ -9429,13 +10219,14 @@
         ]
       },
       {
-        "name": "button",
-        "title": "Button",
-        "description": "Accessible Button primitive component for Space UI.",
-        "url": "/ui-kit/primitives/button",
+        "name": "pixel-fill-button",
+        "title": "Pixel Fill Button",
+        "description": "An interactive button whose background fills with square matrix pixels radiating from the cursor entry point on hover.",
+        "url": "/ui-kit/components/spaceui/pixel-fill-button",
         "category": "Button",
         "categories": [
-          "button"
+          "button",
+          "canvas"
         ]
       }
     ]
@@ -9494,13 +10285,14 @@
         ]
       },
       {
-        "name": "button",
-        "title": "Button",
-        "description": "Accessible Button primitive component for Space UI.",
-        "url": "/ui-kit/primitives/button",
+        "name": "pixel-fill-button",
+        "title": "Pixel Fill Button",
+        "description": "An interactive button whose background fills with square matrix pixels radiating from the cursor entry point on hover.",
+        "url": "/ui-kit/components/spaceui/pixel-fill-button",
         "category": "Button",
         "categories": [
-          "button"
+          "button",
+          "canvas"
         ]
       }
     ]
@@ -10366,6 +11158,142 @@
     ],
     "dependents": [],
     "related": []
+  },
+  "velocity-hover-preview": {
+    "name": "components-spaceui-velocity-hover-preview",
+    "shortName": "velocity-hover-preview",
+    "title": "Velocity Hover Preview",
+    "description": "An interactive list component projecting a floating WebGL preview with inertial momentum mesh-warping and pixel block dissolve crossfading.",
+    "type": "registry:component",
+    "url": "/ui-kit/components/spaceui/velocity-hover-preview",
+    "category": "Media",
+    "categories": [
+      "media",
+      "canvas",
+      "shaders"
+    ],
+    "createdAt": "2026-09-20",
+    "updatedAt": "2026-09-20",
+    "isPro": true,
+    "size": "12.6 KB",
+    "rawSize": 12888,
+    "directSize": "12.6 KB",
+    "fileCount": 1,
+    "dependencies": [
+      "three",
+      "gsap"
+    ],
+    "registryDependencies": [
+      "https://www.spaceui.one/r/lib-utils.json",
+      "https://www.spaceui.one/r/lib-next-image-url.json"
+    ],
+    "dependents": [],
+    "related": [
+      {
+        "name": "fluid-distortion-image",
+        "title": "Fluid Distortion Image",
+        "description": "An interactive WebGL image component with cover UV mapping and dynamic cursor fluid-distortion ripples using data textures.",
+        "url": "/ui-kit/components/spaceui/fluid-distortion-image",
+        "category": "Media",
+        "categories": [
+          "media",
+          "canvas",
+          "shaders"
+        ]
+      },
+      {
+        "name": "fluid-dither-crossfade",
+        "title": "Fluid Dither Crossfade",
+        "description": "A dual-pass WebGL shader component featuring real-time Navier-Stokes fluid pressure simulation and Bayer 4x4 matrix ordered dithering crossfade.",
+        "url": "/ui-kit/components/spaceui/fluid-dither-crossfade",
+        "category": "Media",
+        "categories": [
+          "media",
+          "canvas",
+          "shaders"
+        ]
+      },
+      {
+        "name": "pixel-reveal-image",
+        "title": "Pixel Reveal Image",
+        "description": "A WebGL image reveal component with dynamic pixel matrix wave and customizable neon accent border on scroll.",
+        "url": "/ui-kit/components/spaceui/pixel-reveal-image",
+        "category": "Media",
+        "categories": [
+          "media",
+          "canvas",
+          "shaders"
+        ]
+      }
+    ]
+  },
+  "components-spaceui-velocity-hover-preview": {
+    "name": "components-spaceui-velocity-hover-preview",
+    "shortName": "velocity-hover-preview",
+    "title": "Velocity Hover Preview",
+    "description": "An interactive list component projecting a floating WebGL preview with inertial momentum mesh-warping and pixel block dissolve crossfading.",
+    "type": "registry:component",
+    "url": "/ui-kit/components/spaceui/velocity-hover-preview",
+    "category": "Media",
+    "categories": [
+      "media",
+      "canvas",
+      "shaders"
+    ],
+    "createdAt": "2026-09-20",
+    "updatedAt": "2026-09-20",
+    "isPro": true,
+    "size": "12.6 KB",
+    "rawSize": 12888,
+    "directSize": "12.6 KB",
+    "fileCount": 1,
+    "dependencies": [
+      "three",
+      "gsap"
+    ],
+    "registryDependencies": [
+      "https://www.spaceui.one/r/lib-utils.json",
+      "https://www.spaceui.one/r/lib-next-image-url.json"
+    ],
+    "dependents": [],
+    "related": [
+      {
+        "name": "fluid-distortion-image",
+        "title": "Fluid Distortion Image",
+        "description": "An interactive WebGL image component with cover UV mapping and dynamic cursor fluid-distortion ripples using data textures.",
+        "url": "/ui-kit/components/spaceui/fluid-distortion-image",
+        "category": "Media",
+        "categories": [
+          "media",
+          "canvas",
+          "shaders"
+        ]
+      },
+      {
+        "name": "fluid-dither-crossfade",
+        "title": "Fluid Dither Crossfade",
+        "description": "A dual-pass WebGL shader component featuring real-time Navier-Stokes fluid pressure simulation and Bayer 4x4 matrix ordered dithering crossfade.",
+        "url": "/ui-kit/components/spaceui/fluid-dither-crossfade",
+        "category": "Media",
+        "categories": [
+          "media",
+          "canvas",
+          "shaders"
+        ]
+      },
+      {
+        "name": "pixel-reveal-image",
+        "title": "Pixel Reveal Image",
+        "description": "A WebGL image reveal component with dynamic pixel matrix wave and customizable neon accent border on scroll.",
+        "url": "/ui-kit/components/spaceui/pixel-reveal-image",
+        "category": "Media",
+        "categories": [
+          "media",
+          "canvas",
+          "shaders"
+        ]
+      }
+    ]
   },
   "words-preloader": {
     "name": "components-spaceui-words-preloader",
@@ -23130,14 +24058,14 @@
         ]
       },
       {
-        "name": "slide-to-confirm",
-        "title": "Slide To Confirm",
-        "description": "Tactile slide-to-action control with spring physics and inertia confirmation.",
-        "url": "/ui-kit/components/spaceui/slide-to-confirm",
+        "name": "pixel-fill-button",
+        "title": "Pixel Fill Button",
+        "description": "An interactive button whose background fills with square matrix pixels radiating from the cursor entry point on hover.",
+        "url": "/ui-kit/components/spaceui/pixel-fill-button",
         "category": "Button",
         "categories": [
           "button",
-          "slider"
+          "canvas"
         ]
       }
     ]
@@ -23195,14 +24123,14 @@
         ]
       },
       {
-        "name": "slide-to-confirm",
-        "title": "Slide To Confirm",
-        "description": "Tactile slide-to-action control with spring physics and inertia confirmation.",
-        "url": "/ui-kit/components/spaceui/slide-to-confirm",
+        "name": "pixel-fill-button",
+        "title": "Pixel Fill Button",
+        "description": "An interactive button whose background fills with square matrix pixels radiating from the cursor entry point on hover.",
+        "url": "/ui-kit/components/spaceui/pixel-fill-button",
         "category": "Button",
         "categories": [
           "button",
-          "slider"
+          "canvas"
         ]
       }
     ]

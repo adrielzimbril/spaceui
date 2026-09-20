@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "components-spaceui-pixel-reveal-text",
+  "type": "registry:component",
+  "title": "Pixel Reveal Text",
+  "description": "A typography shader component that materializes text out of pixel matrix noise with neon contour highlights on scroll.",
+  "isPro": true,
+  "dependencies": ["three", "gsap"],
+  "registryDependencies": ["https://www.spaceui.one/r/lib-utils.json"],
+  "categories": ["component", "text", "canvas", "shaders"],
+  "files": [
+    {
+      "path": "src/registry/components/spaceui/pixel-reveal-text/index.tsx",
+      "type": "registry:component",
+      "target": "components/spaceui/pixel-reveal-text.tsx"
+    }
+  ],
+  "createdAt": "2026-09-20",
+  "updatedAt": "2026-09-20"
+}

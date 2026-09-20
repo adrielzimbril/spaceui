@@ -23,8 +23,6 @@ interface ScatterParticle {
   color: string
 }
 
-const CANVAS_DIMENSION = 800
-
 export function ScatterText({
   placeholder,
   value: controlledValue,
@@ -46,14 +44,22 @@ export function ScatterText({
 
   const captureGlyphs = React.useCallback(() => {
     const input = fieldRef.current
+    const container = containerRef.current
     const canvas = surfaceRef.current
-    if (!input || !canvas) return
+    if (!input || !canvas || !container) return
     const ctx = canvas.getContext('2d')
     if (!ctx) return
 
-    canvas.width = CANVAS_DIMENSION
-    canvas.height = CANVAS_DIMENSION
-    ctx.clearRect(0, 0, CANVAS_DIMENSION, CANVAS_DIMENSION)
+    const width = Math.max(Math.ceil(input.offsetWidth || container.offsetWidth || 300), 50)
+    const height = Math.max(Math.ceil(input.offsetHeight || container.offsetHeight || 50), 30)
+    const dpr = Math.min(typeof window !== 'undefined' ? window.devicePixelRatio : 1, 2)
+
+    canvas.width = Math.ceil(width * dpr)
+    canvas.height = Math.ceil(height * dpr)
+    canvas.style.width = `${width}px`
+    canvas.style.height = `${height}px`
+
+    ctx.clearRect(0, 0, canvas.width, canvas.height)
 
     if (!activeValue) {
       particlePoolRef.current = []
@@ -61,8 +67,14 @@ export function ScatterText({
     }
 
     const computed = getComputedStyle(input)
-    const fontSize = parseFloat(computed.fontSize) || 36
-    ctx.font = `${2 * fontSize}px ${computed.fontFamily}`
+    const fontSize = parseFloat(computed.fontSize) || 24
+    const paddingLeft = parseFloat(computed.paddingLeft) || 0
+    const paddingTop = parseFloat(computed.paddingTop) || 0
+    const paddingBottom = parseFloat(computed.paddingBottom) || 0
+
+    ctx.save()
+    ctx.scale(dpr, dpr)
+    ctx.font = `${computed.fontWeight || '400'} ${fontSize}px ${computed.fontFamily}`
 
     // Safely extract theme/element text color
     let glyphColor = computed.color
@@ -75,26 +87,31 @@ export function ScatterText({
     }
 
     ctx.fillStyle = glyphColor
-    ctx.letterSpacing = computed.letterSpacing !== 'normal' ? computed.letterSpacing : '-0.05em'
+    if (computed.letterSpacing && computed.letterSpacing !== 'normal') {
+      ctx.letterSpacing = computed.letterSpacing
+    }
 
     const metrics = ctx.measureText(activeValue)
-    const fontAscent = metrics.actualBoundingBoxAscent || fontSize
-    const fontDescent = metrics.actualBoundingBoxDescent || 0
-    const baselineY = fontAscent + fontDescent + 10
-    ctx.fillText(activeValue, 0, baselineY)
+    const fontAscent = metrics.actualBoundingBoxAscent || fontSize * 0.8
+    const fontDescent = metrics.actualBoundingBoxDescent || fontSize * 0.2
+    const contentHeight = height - paddingTop - paddingBottom
+    const baselineY = paddingTop + (contentHeight + fontAscent - fontDescent) / 2
 
-    const imageData = ctx.getImageData(0, 0, CANVAS_DIMENSION, CANVAS_DIMENSION).data
+    ctx.fillText(activeValue, paddingLeft, baselineY)
+    ctx.restore()
+
+    const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height).data
     const generated: ScatterParticle[] = []
 
-    for (let py = 0; py < CANVAS_DIMENSION; py++) {
-      const rowOffset = py * CANVAS_DIMENSION * 4
-      for (let px = 0; px < CANVAS_DIMENSION; px++) {
+    for (let py = 0; py < canvas.height; py++) {
+      const rowOffset = py * canvas.width * 4
+      for (let px = 0; px < canvas.width; px++) {
         const offset = rowOffset + px * 4
         const a = imageData[offset + 3]
         if (a > 24) {
           generated.push({
-            x: px,
-            y: py,
+            x: px / dpr,
+            y: py / dpr,
             size: 1.2,
             alpha: a / 255,
             vx: (Math.random() - 0.5) * 1.8,
@@ -112,6 +129,18 @@ export function ScatterText({
       captureGlyphs()
     }
   }, [activeValue, captureGlyphs])
+
+  React.useEffect(() => {
+    const container = containerRef.current
+    if (!container) return
+    const ro = new ResizeObserver(() => {
+      if (!isAnimatingRef.current) {
+        captureGlyphs()
+      }
+    })
+    ro.observe(container)
+    return () => ro.disconnect()
+  }, [captureGlyphs])
 
   const triggerDissolve = React.useCallback(() => {
     if (isAnimatingRef.current || !activeValue) return
@@ -142,10 +171,12 @@ export function ScatterText({
         }
         particlePoolRef.current = surviving
 
-        const ctx = surfaceRef.current?.getContext('2d')
-        if (ctx) {
-          const clearOriginX = Math.max(0, wavefrontX)
-          ctx.clearRect(clearOriginX, 0, CANVAS_DIMENSION - clearOriginX, CANVAS_DIMENSION)
+        const canvas = surfaceRef.current
+        const ctx = canvas?.getContext('2d')
+        if (ctx && canvas) {
+          const dpr = Math.min(typeof window !== 'undefined' ? window.devicePixelRatio : 1, 2)
+          const clearOriginX = Math.max(0, wavefrontX * dpr)
+          ctx.clearRect(clearOriginX, 0, canvas.width - clearOriginX, canvas.height)
 
           ctx.shadowBlur = 2
           for (let idx = 0; idx < surviving.length; idx++) {
@@ -154,7 +185,7 @@ export function ScatterText({
               const fill = `${pt.color}${pt.alpha.toFixed(3)})`
               ctx.shadowColor = fill
               ctx.fillStyle = fill
-              ctx.fillRect(pt.x, pt.y, pt.size, pt.size)
+              ctx.fillRect(pt.x * dpr, pt.y * dpr, pt.size * dpr, pt.size * dpr)
             }
           }
         }
@@ -176,7 +207,7 @@ export function ScatterText({
   return (
     <form
       ref={containerRef}
-      className={cn('relative mx-auto w-full text-3xl tracking-tight lg:text-5xl', className)}
+      className={cn('relative mx-auto w-full overflow-hidden text-3xl tracking-tight lg:text-5xl', className)}
       onSubmit={(e) => {
         e.preventDefault()
         triggerDissolve()
@@ -186,7 +217,7 @@ export function ScatterText({
         ref={surfaceRef}
         aria-hidden="true"
         className={cn(
-          'pointer-events-none absolute top-[10%] left-0 origin-top-left scale-50 transition-opacity duration-150 lg:top-[12%]',
+          'pointer-events-none absolute inset-0 h-full w-full transition-opacity duration-150',
           isDissolving ? 'opacity-100 blur-[2px]' : 'opacity-0 blur-0',
         )}
       />

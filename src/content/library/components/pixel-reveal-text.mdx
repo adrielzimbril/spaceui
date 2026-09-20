@@ -1,0 +1,41 @@
+---
+title: Pixel Reveal Text
+description: A typography shader component that materializes text out of pixel matrix noise with neon contour highlights on scroll.
+preview:
+  name: demo-c-pixel-reveal-text-01
+  contained: false
+---
+
+## Animoji Phrases
+
+The same loop effect cycling through a rotating set of phrases, in top of the Animoji component.
+
+<ComponentPreview name="demo-c-pixel-reveal-text-02" contained={false} />
+
+## Installation
+
+<ComponentInstallation name="components-spaceui-pixel-reveal-text" />
+
+## Usage
+
+```tsx
+import { PixelRevealText } from '@/components/spaceui/pixel-reveal-text'
+
+export default function Example() {
+  return <PixelRevealText text="Every detail, perfected." fontSize={44} pixelSize={4} edgeColor="#ffe9a8" />
+}
+```
+
+## API Reference
+
+| Prop            | Type               | Default     | Description                                                |
+| --------------- | ------------------ | ----------- | ---------------------------------------------------------- |
+| `text`          | `string`           | —           | Text content to reveal                                     |
+| `fontSize`      | `number`           | `44`        | Font size in pixels                                        |
+| `fontFamily`    | `string`           | `'inherit'` | CSS font family                                            |
+| `fontWeight`    | `string \| number` | `600`       | Font weight                                                |
+| `color`         | `string`           | —           | Base text color (inherits from theme if omitted)           |
+| `edgeColor`     | `string`           | `'#ffe9a8'` | Accent color of the advancing wavefront (Aurum by default) |
+| `pixelSize`     | `number`           | `4`         | Resolution of pixel blocks                                 |
+| `noiseStrength` | `number`           | `0.35`      | Degree of matrix randomness during reveal                  |
+| `progress`      | `number`           | —           | Optional controlled reveal progress (0 to 1)               |

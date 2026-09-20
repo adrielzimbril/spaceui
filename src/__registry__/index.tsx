@@ -2635,6 +2635,102 @@ export const index: Record<string, any> = {
     })(),
     command: '@spaceui/components-spaceui-fluid-countdown',
   },
+  "components-spaceui-fluid-crossfade": {
+    name: "components-spaceui-fluid-crossfade",
+    description: "Interactive fluid wave simulation with chromatic refraction and Bayer dither blending between two textures.",
+    type: "registry:component",
+    dependencies: ["three"],
+    devDependencies: undefined,
+    registryDependencies: ["https://www.spaceui.one/r/lib-utils.json","https://www.spaceui.one/r/lib-next-image-url.json"],
+    files: [
+  {
+    "path": "src/registry/components/spaceui/fluid-crossfade/index.tsx",
+    "type": "registry:component",
+    "target": "components/spaceui/fluid-crossfade.tsx"
+  }
+],
+    keywords: [],
+    component: (() => {
+      const LazyComp = React.lazy(async () => {
+        const mod = await import("@/registry/components/spaceui/fluid-crossfade/index.tsx");
+        const exportName = Object.keys(mod).find(
+          key => typeof mod[key] === 'function' || typeof mod[key] === 'object'
+        ) || "components-spaceui-fluid-crossfade";
+        const Comp = mod.default || mod[exportName];
+        if (mod.animations) {
+          (LazyComp as any).animations = mod.animations;
+        }
+        return { default: Comp };
+      });
+      LazyComp.demoProps = {};
+      return LazyComp;
+    })(),
+    command: '@spaceui/components-spaceui-fluid-crossfade',
+  },
+  "components-spaceui-fluid-distortion-image": {
+    name: "components-spaceui-fluid-distortion-image",
+    description: "An interactive WebGL image component with cover UV mapping and dynamic cursor fluid-distortion ripples using data textures.",
+    type: "registry:component",
+    dependencies: ["three","gsap"],
+    devDependencies: undefined,
+    registryDependencies: ["https://www.spaceui.one/r/lib-utils.json","https://www.spaceui.one/r/lib-next-image-url.json"],
+    files: [
+  {
+    "path": "src/registry/components/spaceui/fluid-distortion-image/index.tsx",
+    "type": "registry:component",
+    "target": "components/spaceui/fluid-distortion-image.tsx"
+  }
+],
+    keywords: [],
+    component: (() => {
+      const LazyComp = React.lazy(async () => {
+        const mod = await import("@/registry/components/spaceui/fluid-distortion-image/index.tsx");
+        const exportName = Object.keys(mod).find(
+          key => typeof mod[key] === 'function' || typeof mod[key] === 'object'
+        ) || "components-spaceui-fluid-distortion-image";
+        const Comp = mod.default || mod[exportName];
+        if (mod.animations) {
+          (LazyComp as any).animations = mod.animations;
+        }
+        return { default: Comp };
+      });
+      LazyComp.demoProps = {};
+      return LazyComp;
+    })(),
+    command: '@spaceui/components-spaceui-fluid-distortion-image',
+  },
+  "components-spaceui-fluid-dither-crossfade": {
+    name: "components-spaceui-fluid-dither-crossfade",
+    description: "A dual-pass WebGL shader component featuring real-time Navier-Stokes fluid pressure simulation and Bayer 4x4 matrix ordered dithering crossfade.",
+    type: "registry:component",
+    dependencies: ["three"],
+    devDependencies: undefined,
+    registryDependencies: ["https://www.spaceui.one/r/lib-utils.json","https://www.spaceui.one/r/lib-next-image-url.json"],
+    files: [
+  {
+    "path": "src/registry/components/spaceui/fluid-dither-crossfade/index.tsx",
+    "type": "registry:component",
+    "target": "components/spaceui/fluid-dither-crossfade.tsx"
+  }
+],
+    keywords: [],
+    component: (() => {
+      const LazyComp = React.lazy(async () => {
+        const mod = await import("@/registry/components/spaceui/fluid-dither-crossfade/index.tsx");
+        const exportName = Object.keys(mod).find(
+          key => typeof mod[key] === 'function' || typeof mod[key] === 'object'
+        ) || "components-spaceui-fluid-dither-crossfade";
+        const Comp = mod.default || mod[exportName];
+        if (mod.animations) {
+          (LazyComp as any).animations = mod.animations;
+        }
+        return { default: Comp };
+      });
+      LazyComp.demoProps = {};
+      return LazyComp;
+    })(),
+    command: '@spaceui/components-spaceui-fluid-dither-crossfade',
+  },
   "components-spaceui-frost-blurred": {
     name: "components-spaceui-frost-blurred",
     description: "Stacked, masked backdrop-filter layers that frost content along an edge.",
@@ -3403,6 +3499,102 @@ export const index: Record<string, any> = {
     })(),
     command: '@spaceui/components-spaceui-pin-list',
   },
+  "components-spaceui-pixel-fill-button": {
+    name: "components-spaceui-pixel-fill-button",
+    description: "An interactive button whose background fills with square matrix pixels radiating from the cursor entry point on hover.",
+    type: "registry:component",
+    dependencies: ["gsap","motion","class-variance-authority","@paper-design/shaders-react"],
+    devDependencies: undefined,
+    registryDependencies: ["https://www.spaceui.one/r/lib-utils.json","https://www.spaceui.one/r/components-spaceui-silk-border.json","https://www.spaceui.one/r/components-spaceui-liquid-metal-border.json"],
+    files: [
+  {
+    "path": "src/registry/components/spaceui/pixel-fill-button/index.tsx",
+    "type": "registry:component",
+    "target": "components/spaceui/pixel-fill-button.tsx"
+  }
+],
+    keywords: [],
+    component: (() => {
+      const LazyComp = React.lazy(async () => {
+        const mod = await import("@/registry/components/spaceui/pixel-fill-button/index.tsx");
+        const exportName = Object.keys(mod).find(
+          key => typeof mod[key] === 'function' || typeof mod[key] === 'object'
+        ) || "components-spaceui-pixel-fill-button";
+        const Comp = mod.default || mod[exportName];
+        if (mod.animations) {
+          (LazyComp as any).animations = mod.animations;
+        }
+        return { default: Comp };
+      });
+      LazyComp.demoProps = {};
+      return LazyComp;
+    })(),
+    command: '@spaceui/components-spaceui-pixel-fill-button',
+  },
+  "components-spaceui-pixel-reveal-image": {
+    name: "components-spaceui-pixel-reveal-image",
+    description: "A WebGL image reveal component with dynamic pixel matrix wave and customizable neon accent border on scroll.",
+    type: "registry:component",
+    dependencies: ["three","gsap"],
+    devDependencies: undefined,
+    registryDependencies: ["https://www.spaceui.one/r/lib-utils.json","https://www.spaceui.one/r/lib-next-image-url.json"],
+    files: [
+  {
+    "path": "src/registry/components/spaceui/pixel-reveal-image/index.tsx",
+    "type": "registry:component",
+    "target": "components/spaceui/pixel-reveal-image.tsx"
+  }
+],
+    keywords: [],
+    component: (() => {
+      const LazyComp = React.lazy(async () => {
+        const mod = await import("@/registry/components/spaceui/pixel-reveal-image/index.tsx");
+        const exportName = Object.keys(mod).find(
+          key => typeof mod[key] === 'function' || typeof mod[key] === 'object'
+        ) || "components-spaceui-pixel-reveal-image";
+        const Comp = mod.default || mod[exportName];
+        if (mod.animations) {
+          (LazyComp as any).animations = mod.animations;
+        }
+        return { default: Comp };
+      });
+      LazyComp.demoProps = {};
+      return LazyComp;
+    })(),
+    command: '@spaceui/components-spaceui-pixel-reveal-image',
+  },
+  "components-spaceui-pixel-reveal-text": {
+    name: "components-spaceui-pixel-reveal-text",
+    description: "A typography shader component that materializes text out of pixel matrix noise with neon contour highlights on scroll.",
+    type: "registry:component",
+    dependencies: ["three","gsap"],
+    devDependencies: undefined,
+    registryDependencies: ["https://www.spaceui.one/r/lib-utils.json"],
+    files: [
+  {
+    "path": "src/registry/components/spaceui/pixel-reveal-text/index.tsx",
+    "type": "registry:component",
+    "target": "components/spaceui/pixel-reveal-text.tsx"
+  }
+],
+    keywords: [],
+    component: (() => {
+      const LazyComp = React.lazy(async () => {
+        const mod = await import("@/registry/components/spaceui/pixel-reveal-text/index.tsx");
+        const exportName = Object.keys(mod).find(
+          key => typeof mod[key] === 'function' || typeof mod[key] === 'object'
+        ) || "components-spaceui-pixel-reveal-text";
+        const Comp = mod.default || mod[exportName];
+        if (mod.animations) {
+          (LazyComp as any).animations = mod.animations;
+        }
+        return { default: Comp };
+      });
+      LazyComp.demoProps = {};
+      return LazyComp;
+    })(),
+    command: '@spaceui/components-spaceui-pixel-reveal-text',
+  },
   "components-spaceui-rating": {
     name: "components-spaceui-rating",
     description: "Rating component for Space UI.",
@@ -3978,6 +4170,38 @@ export const index: Record<string, any> = {
       return LazyComp;
     })(),
     command: '@spaceui/components-spaceui-user-presence-avatar',
+  },
+  "components-spaceui-velocity-hover-preview": {
+    name: "components-spaceui-velocity-hover-preview",
+    description: "An interactive list component projecting a floating WebGL preview with inertial momentum mesh-warping and pixel block dissolve crossfading.",
+    type: "registry:component",
+    dependencies: ["three","gsap"],
+    devDependencies: undefined,
+    registryDependencies: ["https://www.spaceui.one/r/lib-utils.json","https://www.spaceui.one/r/lib-next-image-url.json"],
+    files: [
+  {
+    "path": "src/registry/components/spaceui/velocity-hover-preview/index.tsx",
+    "type": "registry:component",
+    "target": "components/spaceui/velocity-hover-preview.tsx"
+  }
+],
+    keywords: [],
+    component: (() => {
+      const LazyComp = React.lazy(async () => {
+        const mod = await import("@/registry/components/spaceui/velocity-hover-preview/index.tsx");
+        const exportName = Object.keys(mod).find(
+          key => typeof mod[key] === 'function' || typeof mod[key] === 'object'
+        ) || "components-spaceui-velocity-hover-preview";
+        const Comp = mod.default || mod[exportName];
+        if (mod.animations) {
+          (LazyComp as any).animations = mod.animations;
+        }
+        return { default: Comp };
+      });
+      LazyComp.demoProps = {};
+      return LazyComp;
+    })(),
+    command: '@spaceui/components-spaceui-velocity-hover-preview',
   },
   "components-spaceui-words-preloader": {
     name: "components-spaceui-words-preloader",
@@ -7312,6 +7536,102 @@ export const index: Record<string, any> = {
     })(),
     command: '@spaceui/demo-c-fluid-countdown-01',
   },
+  "demo-c-fluid-crossfade-01": {
+    name: "demo-c-fluid-crossfade-01",
+    description: "Interactive demo of Fluid Crossfade with fluid simulation, chromatic refraction, and Bayer dithering.",
+    type: "registry:component",
+    dependencies: undefined,
+    devDependencies: undefined,
+    registryDependencies: ["https://www.spaceui.one/r/components-spaceui-fluid-crossfade.json"],
+    files: [
+  {
+    "path": "src/registry/demo/components/spaceui/fluid-crossfade/c-fluid-crossfade-01/index.tsx",
+    "type": "registry:component",
+    "target": "demo/c-fluid-crossfade-01.tsx"
+  }
+],
+    keywords: [],
+    component: (() => {
+      const LazyComp = React.lazy(async () => {
+        const mod = await import("@/registry/demo/components/spaceui/fluid-crossfade/c-fluid-crossfade-01/index.tsx");
+        const exportName = Object.keys(mod).find(
+          key => typeof mod[key] === 'function' || typeof mod[key] === 'object'
+        ) || "demo-c-fluid-crossfade-01";
+        const Comp = mod.default || mod[exportName];
+        if (mod.animations) {
+          (LazyComp as any).animations = mod.animations;
+        }
+        return { default: Comp };
+      });
+      LazyComp.demoProps = {"imageSource":{"value":"url","options":{"Remote URL":"url","Upload File":"upload"}},"imageA":{"value":"https://cdn.spaceui.one/atom/samples/image-1.png","options":{"Landscape":"https://cdn.spaceui.one/atom/samples/image-1.png","Architecture":"https://cdn.spaceui.one/atom/samples/image-2.png"},"dependsOn":{"imageSource":"url"}},"imageFront":{"type":"file","accept":"image/*","value":"","dependsOn":{"imageSource":"upload"}},"imageB":{"value":"https://cdn.spaceui.one/atom/samples/image-2.png","options":{"Architecture":"https://cdn.spaceui.one/atom/samples/image-2.png","Portrait":"https://cdn.spaceui.one/atom/samples/image-3.png"},"dependsOn":{"imageSource":"url"}},"imageBack":{"type":"file","accept":"image/*","value":"","dependsOn":{"imageSource":"upload"}},"refractionStrength":{"value":0.85,"options":{"Subtle (0.4)":0.4,"Balanced (0.85)":0.85,"Intense (1.6)":1.6}},"ditherGrid":{"value":3,"options":{"Fine (2.0)":2,"Standard (3.0)":3,"Chunky (6.0)":6}},"pixelGridSize":{"value":240,"options":{"High-Res (320)":320,"Standard (240)":240,"Pixelated (120)":120}}};
+      return LazyComp;
+    })(),
+    command: '@spaceui/demo-c-fluid-crossfade-01',
+  },
+  "demo-c-fluid-distortion-image-01": {
+    name: "demo-c-fluid-distortion-image-01",
+    description: "Interactive demo of Fluid Distortion Image with real-time cursor impulse ripples.",
+    type: "registry:component",
+    dependencies: ["motion"],
+    devDependencies: undefined,
+    registryDependencies: ["https://www.spaceui.one/r/components-spaceui-fluid-distortion-image.json","https://www.spaceui.one/r/primitives-button.json","https://www.spaceui.one/r/lib-utils.json"],
+    files: [
+  {
+    "path": "src/registry/demo/components/spaceui/fluid-distortion-image/c-fluid-distortion-image-01/index.tsx",
+    "type": "registry:component",
+    "target": "demo/c-fluid-distortion-image-01.tsx"
+  }
+],
+    keywords: [],
+    component: (() => {
+      const LazyComp = React.lazy(async () => {
+        const mod = await import("@/registry/demo/components/spaceui/fluid-distortion-image/c-fluid-distortion-image-01/index.tsx");
+        const exportName = Object.keys(mod).find(
+          key => typeof mod[key] === 'function' || typeof mod[key] === 'object'
+        ) || "demo-c-fluid-distortion-image-01";
+        const Comp = mod.default || mod[exportName];
+        if (mod.animations) {
+          (LazyComp as any).animations = mod.animations;
+        }
+        return { default: Comp };
+      });
+      LazyComp.demoProps = {"textureFile":{"type":"file","accept":"image/*","value":""},"revealStyle":{"value":"pixelate","options":{"Pixelate sweep":"pixelate","Blur morph":"blur"}},"distortionIntensity":{"value":0.02,"options":{"Subtle (0.01)":0.01,"Original (0.02)":0.02,"Intense (0.05)":0.05,"Extreme (0.09)":0.09}},"relaxationSpeed":{"value":0.95,"options":{"Fast (0.88)":0.88,"Standard (0.95)":0.95,"Trailing (0.98)":0.98}},"radius":{"value":8.96,"options":{"Small (5.0)":5,"Original (8.96)":8.96,"Large (14.0)":14}}};
+      return LazyComp;
+    })(),
+    command: '@spaceui/demo-c-fluid-distortion-image-01',
+  },
+  "demo-c-fluid-dither-crossfade-01": {
+    name: "demo-c-fluid-dither-crossfade-01",
+    description: "Interactive demo of Fluid Dither Crossfade with real-time fluid simulation and Bayer dithering.",
+    type: "registry:component",
+    dependencies: ["motion"],
+    devDependencies: undefined,
+    registryDependencies: ["https://www.spaceui.one/r/components-spaceui-fluid-dither-crossfade.json","https://www.spaceui.one/r/primitives-button.json","https://www.spaceui.one/r/lib-utils.json"],
+    files: [
+  {
+    "path": "src/registry/demo/components/spaceui/fluid-dither-crossfade/c-fluid-dither-crossfade-01/index.tsx",
+    "type": "registry:component",
+    "target": "demo/c-fluid-dither-crossfade-01.tsx"
+  }
+],
+    keywords: [],
+    component: (() => {
+      const LazyComp = React.lazy(async () => {
+        const mod = await import("@/registry/demo/components/spaceui/fluid-dither-crossfade/c-fluid-dither-crossfade-01/index.tsx");
+        const exportName = Object.keys(mod).find(
+          key => typeof mod[key] === 'function' || typeof mod[key] === 'object'
+        ) || "demo-c-fluid-dither-crossfade-01";
+        const Comp = mod.default || mod[exportName];
+        if (mod.animations) {
+          (LazyComp as any).animations = mod.animations;
+        }
+        return { default: Comp };
+      });
+      LazyComp.demoProps = {"imageFront":{"type":"file","accept":"image/*","value":""},"imageBack":{"type":"file","accept":"image/*","value":""},"revealStyle":{"value":"pixelate","options":{"Pixelate sweep":"pixelate","Blur morph":"blur","Stagger wipe":"stagger"}},"brushSize":{"value":0.3,"options":{"Subtle (0.3)":0.3,"Balanced (0.64)":0.64,"Broad (1.0)":1,"Huge (1.5)":1.5}},"pixelRes":{"value":150,"options":{"High Def (300)":300,"Standard (150)":150,"Retro (80)":80,"Low Bit (40)":40}},"pixelEdgeRes":{"value":80,"options":{"Fine Mask (120)":120,"Chunky Blocks (80)":80,"Giant Pixels (40)":40}},"distortionStrength":{"value":9.18,"options":{"Gentle (4.0)":4,"Original (9.18)":9.18,"Heavy (18.0)":18}},"ditherGrid":{"value":20,"options":{"Micro (8)":8,"Classic (20)":20,"Macro (40)":40}},"inkDissipation":{"value":0.926,"options":{"Fast Fade (0.88)":0.88,"Balanced (0.926)":0.926,"Persistent (0.97)":0.97}},"accentColor":{"value":"#ffe9a8","options":{"Aurum":"#ffe9a8","Mercury":"#f0f4f8","Iris":"#c9a6ff","Cobalt":"#93c5fd","Forge":"#fdba74","Jade":"#6ee7b7","Pearl":"#fafafa","White":"#ffffff","Black":"#000000"}}};
+      return LazyComp;
+    })(),
+    command: '@spaceui/demo-c-fluid-dither-crossfade-01',
+  },
   "demo-c-frost-blurred-01": {
     name: "demo-c-frost-blurred-01",
     description: "Large type fading into a stacked frost blur along the bottom edge.",
@@ -9165,6 +9485,134 @@ export const index: Record<string, any> = {
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-pin-list-01',
+  },
+  "demo-c-pixel-fill-button-01": {
+    name: "demo-c-pixel-fill-button-01",
+    description: "Interactive demo of Pixel Fill Button with different pixel accent colors.",
+    type: "registry:component",
+    dependencies: undefined,
+    devDependencies: undefined,
+    registryDependencies: ["https://www.spaceui.one/r/components-spaceui-pixel-fill-button.json","https://www.spaceui.one/r/primitives-button.json","https://www.spaceui.one/r/lib-utils.json"],
+    files: [
+  {
+    "path": "src/registry/demo/components/spaceui/pixel-fill-button/c-pixel-fill-button-01/index.tsx",
+    "type": "registry:component",
+    "target": "demo/c-pixel-fill-button-01.tsx"
+  }
+],
+    keywords: [],
+    component: (() => {
+      const LazyComp = React.lazy(async () => {
+        const mod = await import("@/registry/demo/components/spaceui/pixel-fill-button/c-pixel-fill-button-01/index.tsx");
+        const exportName = Object.keys(mod).find(
+          key => typeof mod[key] === 'function' || typeof mod[key] === 'object'
+        ) || "demo-c-pixel-fill-button-01";
+        const Comp = mod.default || mod[exportName];
+        if (mod.animations) {
+          (LazyComp as any).animations = mod.animations;
+        }
+        return { default: Comp };
+      });
+      LazyComp.demoProps = {};
+      return LazyComp;
+    })(),
+    command: '@spaceui/demo-c-pixel-fill-button-01',
+  },
+  "demo-c-pixel-reveal-image-01": {
+    name: "demo-c-pixel-reveal-image-01",
+    description: "Interactive demo of Pixel Reveal Image with real-time scroll matrix wavefront.",
+    type: "registry:component",
+    dependencies: ["motion"],
+    devDependencies: undefined,
+    registryDependencies: ["https://www.spaceui.one/r/components-spaceui-pixel-reveal-image.json","https://www.spaceui.one/r/primitives-button.json","https://www.spaceui.one/r/lib-utils.json"],
+    files: [
+  {
+    "path": "src/registry/demo/components/spaceui/pixel-reveal-image/c-pixel-reveal-image-01/index.tsx",
+    "type": "registry:component",
+    "target": "demo/c-pixel-reveal-image-01.tsx"
+  }
+],
+    keywords: [],
+    component: (() => {
+      const LazyComp = React.lazy(async () => {
+        const mod = await import("@/registry/demo/components/spaceui/pixel-reveal-image/c-pixel-reveal-image-01/index.tsx");
+        const exportName = Object.keys(mod).find(
+          key => typeof mod[key] === 'function' || typeof mod[key] === 'object'
+        ) || "demo-c-pixel-reveal-image-01";
+        const Comp = mod.default || mod[exportName];
+        if (mod.animations) {
+          (LazyComp as any).animations = mod.animations;
+        }
+        return { default: Comp };
+      });
+      LazyComp.demoProps = {"textureFile":{"type":"file","accept":"image/*","value":""},"accentColor":{"value":"#ffe9a8","options":{"Aurum":"#ffe9a8","Mercury":"#f0f4f8","Iris":"#c9a6ff","Cobalt":"#93c5fd","Forge":"#fdba74","Jade":"#6ee7b7","Pearl":"#fafafa","White":"#ffffff","Black":"#000000"}},"gridDensity":{"value":38,"options":{"Fine (60)":60,"Standard (38)":38,"Chunky (20)":20}},"bandWidth":{"value":3.5,"options":{"Tight (2.0)":2,"Standard (3.5)":3.5,"Broad (6.0)":6}},"noiseIntensity":{"value":0.16,"options":{"Subtle (0.08)":0.08,"Balanced (0.16)":0.16,"Heavy (0.35)":0.35}},"trigger":{"value":"loop","options":{"Loop (Auto)":"loop","Hover":"hover","Scroll":"scroll"}}};
+      return LazyComp;
+    })(),
+    command: '@spaceui/demo-c-pixel-reveal-image-01',
+  },
+  "demo-c-pixel-reveal-text-01": {
+    name: "demo-c-pixel-reveal-text-01",
+    description: "Interactive demo of Pixel Reveal Text emerging from matrix noise.",
+    type: "registry:component",
+    dependencies: undefined,
+    devDependencies: undefined,
+    registryDependencies: ["https://www.spaceui.one/r/components-spaceui-pixel-reveal-text.json"],
+    files: [
+  {
+    "path": "src/registry/demo/components/spaceui/pixel-reveal-text/c-pixel-reveal-text-01/index.tsx",
+    "type": "registry:component",
+    "target": "demo/c-pixel-reveal-text-01.tsx"
+  }
+],
+    keywords: [],
+    component: (() => {
+      const LazyComp = React.lazy(async () => {
+        const mod = await import("@/registry/demo/components/spaceui/pixel-reveal-text/c-pixel-reveal-text-01/index.tsx");
+        const exportName = Object.keys(mod).find(
+          key => typeof mod[key] === 'function' || typeof mod[key] === 'object'
+        ) || "demo-c-pixel-reveal-text-01";
+        const Comp = mod.default || mod[exportName];
+        if (mod.animations) {
+          (LazyComp as any).animations = mod.animations;
+        }
+        return { default: Comp };
+      });
+      LazyComp.demoProps = {"text":{"value":"Space UI 🤯❣️"},"edgeColor":{"value":"#ffe9a8","options":{"Aurum":"#ffe9a8","Mercury":"#f0f4f8","Iris":"#c9a6ff","Cobalt":"#93c5fd","Forge":"#fdba74","Jade":"#6ee7b7","Pearl":"#fafafa","White":"#ffffff","Black":"#000000"}},"pixelSize":{"value":4,"options":{"Fine (2px)":2,"Crisp (4px)":4,"Pixelated (8px)":8,"Blocky (14px)":14}},"fontSize":{"value":54,"options":{"Medium (36px)":36,"Large (54px)":54,"Display (72px)":72}},"speed":{"value":1,"options":{"Slow (0.6x)":0.6,"Normal (1x)":1,"Fast (1.5x)":1.5,"Turbo (2x)":2}},"trigger":{"value":"loop","options":{"Loop (Auto)":"loop","Hover":"hover","Scroll":"scroll"}}};
+      return LazyComp;
+    })(),
+    command: '@spaceui/demo-c-pixel-reveal-text-01',
+  },
+  "demo-c-pixel-reveal-text-02": {
+    name: "demo-c-pixel-reveal-text-02",
+    description: "The pixel reveal loop cycling through a rotating set of phrases, in the style of the Animoji landing page card.",
+    type: "registry:component",
+    dependencies: undefined,
+    devDependencies: undefined,
+    registryDependencies: ["https://www.spaceui.one/r/components-spaceui-pixel-reveal-text.json"],
+    files: [
+  {
+    "path": "src/registry/demo/components/spaceui/pixel-reveal-text/c-pixel-reveal-text-02/index.tsx",
+    "type": "registry:component",
+    "target": "demo/c-pixel-reveal-text-02.tsx"
+  }
+],
+    keywords: [],
+    component: (() => {
+      const LazyComp = React.lazy(async () => {
+        const mod = await import("@/registry/demo/components/spaceui/pixel-reveal-text/c-pixel-reveal-text-02/index.tsx");
+        const exportName = Object.keys(mod).find(
+          key => typeof mod[key] === 'function' || typeof mod[key] === 'object'
+        ) || "demo-c-pixel-reveal-text-02";
+        const Comp = mod.default || mod[exportName];
+        if (mod.animations) {
+          (LazyComp as any).animations = mod.animations;
+        }
+        return { default: Comp };
+      });
+      LazyComp.demoProps = {};
+      return LazyComp;
+    })(),
+    command: '@spaceui/demo-c-pixel-reveal-text-02',
   },
   "demo-c-rating-01": {
     name: "demo-c-rating-01",
@@ -11405,6 +11853,38 @@ export const index: Record<string, any> = {
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-user-presence-avatar-01',
+  },
+  "demo-c-velocity-hover-preview-01": {
+    name: "demo-c-velocity-hover-preview-01",
+    description: "Interactive services list with floating WebGL preview and velocity momentum warp.",
+    type: "registry:component",
+    dependencies: undefined,
+    devDependencies: undefined,
+    registryDependencies: ["https://www.spaceui.one/r/components-spaceui-velocity-hover-preview.json"],
+    files: [
+  {
+    "path": "src/registry/demo/components/spaceui/velocity-hover-preview/c-velocity-hover-preview-01/index.tsx",
+    "type": "registry:component",
+    "target": "demo/c-velocity-hover-preview-01.tsx"
+  }
+],
+    keywords: [],
+    component: (() => {
+      const LazyComp = React.lazy(async () => {
+        const mod = await import("@/registry/demo/components/spaceui/velocity-hover-preview/c-velocity-hover-preview-01/index.tsx");
+        const exportName = Object.keys(mod).find(
+          key => typeof mod[key] === 'function' || typeof mod[key] === 'object'
+        ) || "demo-c-velocity-hover-preview-01";
+        const Comp = mod.default || mod[exportName];
+        if (mod.animations) {
+          (LazyComp as any).animations = mod.animations;
+        }
+        return { default: Comp };
+      });
+      LazyComp.demoProps = {"accentColor":{"value":"#ffe9a8","options":{"Aurum":"#ffe9a8","Mercury":"#f0f4f8","Iris":"#c9a6ff","Cobalt":"#93c5fd","Forge":"#fdba74","Jade":"#6ee7b7","Pearl":"#fafafa","White":"#ffffff","Black":"#000000"}}};
+      return LazyComp;
+    })(),
+    command: '@spaceui/demo-c-velocity-hover-preview-01',
   },
   "demo-c-words-preloader-01": {
     name: "demo-c-words-preloader-01",

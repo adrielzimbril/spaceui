@@ -96,6 +96,18 @@ export const registryComponents: Record<string, RegistryComponent> = {
     () => import("@/registry/components/spaceui/fluid-countdown/index.tsx"),
     {},
   ),
+  "components-spaceui-fluid-crossfade": lazyRegistryComponent(
+    () => import("@/registry/components/spaceui/fluid-crossfade/index.tsx"),
+    {},
+  ),
+  "components-spaceui-fluid-distortion-image": lazyRegistryComponent(
+    () => import("@/registry/components/spaceui/fluid-distortion-image/index.tsx"),
+    {},
+  ),
+  "components-spaceui-fluid-dither-crossfade": lazyRegistryComponent(
+    () => import("@/registry/components/spaceui/fluid-dither-crossfade/index.tsx"),
+    {},
+  ),
   "components-spaceui-frost-blurred": lazyRegistryComponent(
     () => import("@/registry/components/spaceui/frost-blurred/index.tsx"),
     {},
@@ -192,6 +204,18 @@ export const registryComponents: Record<string, RegistryComponent> = {
     () => import("@/registry/components/spaceui/pin-list/index.tsx"),
     {},
   ),
+  "components-spaceui-pixel-fill-button": lazyRegistryComponent(
+    () => import("@/registry/components/spaceui/pixel-fill-button/index.tsx"),
+    {},
+  ),
+  "components-spaceui-pixel-reveal-image": lazyRegistryComponent(
+    () => import("@/registry/components/spaceui/pixel-reveal-image/index.tsx"),
+    {},
+  ),
+  "components-spaceui-pixel-reveal-text": lazyRegistryComponent(
+    () => import("@/registry/components/spaceui/pixel-reveal-text/index.tsx"),
+    {},
+  ),
   "components-spaceui-rating": lazyRegistryComponent(
     () => import("@/registry/components/spaceui/rating/index.tsx"),
     {},
@@ -262,6 +286,10 @@ export const registryComponents: Record<string, RegistryComponent> = {
   ),
   "components-spaceui-user-presence-avatar": lazyRegistryComponent(
     () => import("@/registry/components/spaceui/user-presence-avatar/index.tsx"),
+    {},
+  ),
+  "components-spaceui-velocity-hover-preview": lazyRegistryComponent(
+    () => import("@/registry/components/spaceui/velocity-hover-preview/index.tsx"),
     {},
   ),
   "components-spaceui-words-preloader": lazyRegistryComponent(

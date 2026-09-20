@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-c-pixel-reveal-text-02",
+  "title": "Pixel Reveal Text — Cycling Phrases",
+  "description": "The pixel reveal loop cycling through a rotating set of phrases, in the style of the Animoji landing page card.",
+  "registryDependencies": [
+    "https://www.spaceui.one/r/components-spaceui-pixel-reveal-text.json"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/components/spaceui/pixel-reveal-text/c-pixel-reveal-text-02/index.tsx",
+      "content": "'use client'\n\nimport * as React from 'react'\nimport { PixelRevealText } from '@/components/spaceui/pixel-reveal-text'\n\nconst CYCLE_INTERVAL = 3300\n\nconst PHRASES = [\n  'Ship your ideas faster 🚀',\n  'Mind-blowing UI Library 🤯',\n  'You will love Space UI 🫧🦄',\n  'So satisfying to use 😋',\n  'Design better ✨',\n  'Ship with confidence 🎉',\n  '260+ components 📦',\n  'Open-source & MIT 🔓',\n  'Animated with Motion 🌀',\n  'Loved by the community ❤️',\n]\n\nexport default function Demo() {\n  const [index, setIndex] = React.useState(0)\n\n  React.useEffect(() => {\n    const id = window.setInterval(() => {\n      setIndex((prev) => (prev + 1) % PHRASES.length)\n    }, CYCLE_INTERVAL)\n    return () => window.clearInterval(id)\n  }, [])\n\n  return (\n    <div className=\"flex min-h-90 w-full items-center justify-center p-8 text-foreground\">\n      <PixelRevealText text={PHRASES[index]} fontSize={40} pixelSize={4} trigger=\"loop\" />\n    </div>\n  )\n}\n",
+      "type": "registry:component",
+      "target": "demo/c-pixel-reveal-text-02.tsx"
+    }
+  ],
+  "categories": [
+    "demo",
+    "text"
+  ],
+  "type": "registry:component"
+}

@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "components-spaceui-fluid-crossfade",
+  "type": "registry:component",
+  "title": "Fluid Crossfade",
+  "description": "Interactive fluid wave simulation with chromatic refraction and Bayer dither blending between two textures.",
+  "isPro": true,
+  "dependencies": ["three"],
+  "registryDependencies": [
+    "https://www.spaceui.one/r/lib-utils.json",
+    "https://www.spaceui.one/r/lib-next-image-url.json"
+  ],
+  "categories": ["component", "shader", "fluid"],
+  "files": [
+    {
+      "path": "src/registry/components/spaceui/fluid-crossfade/index.tsx",
+      "type": "registry:component",
+      "target": "components/spaceui/fluid-crossfade.tsx"
+    }
+  ],
+  "createdAt": "2026-09-20",
+  "updatedAt": "2026-09-20"
+}

@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-c-pixel-reveal-text-02",
+  "type": "registry:component",
+  "title": "Pixel Reveal Text — Cycling Phrases",
+  "description": "The pixel reveal loop cycling through a rotating set of phrases, in the style of the Animoji landing page card.",
+  "isPro": true,
+  "registryDependencies": ["https://www.spaceui.one/r/components-spaceui-pixel-reveal-text.json"],
+  "categories": ["demo", "text"],
+  "files": [
+    {
+      "path": "src/registry/demo/components/spaceui/pixel-reveal-text/c-pixel-reveal-text-02/index.tsx",
+      "type": "registry:component",
+      "target": "demo/c-pixel-reveal-text-02.tsx"
+    }
+  ],
+  "createdAt": "2026-09-20",
+  "updatedAt": "2026-09-20"
+}

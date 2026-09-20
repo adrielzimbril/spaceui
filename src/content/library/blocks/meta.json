@@ -17,6 +17,7 @@
     "dither-carousel",
     "liquid-gooey-carousel",
     "prism-carousel",
-    "lens-carousel"
+    "lens-carousel",
+    "velocity-hover-preview"
   ]
 }

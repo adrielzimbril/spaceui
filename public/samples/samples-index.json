@@ -1,7 +1,7 @@
 {
   "version": "1.0.0",
   "description": "Space UI Samples Catalog - Curated Visual Assets",
-  "totalItems": 43,
+  "totalItems": 51,
   "items": [
     {
       "id": 1,
@@ -604,6 +604,118 @@
       "sizeBytes": 5065497,
       "localPath": "/samples/image-43.png",
       "cdnUrl": "https://cdn.spaceui.one/atom/samples/image-43.png"
+    },
+    {
+      "id": 44,
+      "filename": "image-0-f.png",
+      "title": "Monolith Horizon (Front)",
+      "category": "Landscape",
+      "description": "Scenic landscape foreground element for crossfade and 3D depth reveal",
+      "width": 1672,
+      "height": 941,
+      "aspectRatio": 1.777,
+      "format": "png",
+      "sizeBytes": 2584206,
+      "localPath": "/samples/image-0-f.png",
+      "cdnUrl": "https://cdn.spaceui.one/atom/samples/image-0-f.png"
+    },
+    {
+      "id": 45,
+      "filename": "image-0-b.png",
+      "title": "Monolith Horizon (Back)",
+      "category": "Landscape",
+      "description": "Scenic landscape background element for crossfade and 3D depth reveal",
+      "width": 1672,
+      "height": 941,
+      "aspectRatio": 1.777,
+      "format": "png",
+      "sizeBytes": 2320591,
+      "localPath": "/samples/image-0-b.png",
+      "cdnUrl": "https://cdn.spaceui.one/atom/samples/image-0-b.png"
+    },
+    {
+      "id": 46,
+      "filename": "image-1-f.png",
+      "title": "Twilight Ring (Front)",
+      "category": "Sculpture",
+      "description": "Luminous ring sculpture foreground element for crossfade and 3D depth reveal",
+      "width": 2730,
+      "height": 1536,
+      "aspectRatio": 1.777,
+      "format": "png",
+      "sizeBytes": 8484920,
+      "localPath": "/samples/image-1-f.png",
+      "cdnUrl": "https://cdn.spaceui.one/atom/samples/image-1-f.png"
+    },
+    {
+      "id": 47,
+      "filename": "image-1-b.png",
+      "title": "Twilight Ring (Back)",
+      "category": "Sculpture",
+      "description": "Luminous coastal waters dusk background element for crossfade and 3D depth reveal",
+      "width": 1672,
+      "height": 941,
+      "aspectRatio": 1.777,
+      "format": "png",
+      "sizeBytes": 2422398,
+      "localPath": "/samples/image-1-b.png",
+      "cdnUrl": "https://cdn.spaceui.one/atom/samples/image-1-b.png"
+    },
+    {
+      "id": 48,
+      "filename": "image-2-f.png",
+      "title": "Flora Portrait (Front)",
+      "category": "Portrait",
+      "description": "Artistic portrait foreground character for crossfade and 3D depth reveal",
+      "width": 1536,
+      "height": 1024,
+      "aspectRatio": 1.5,
+      "format": "png",
+      "sizeBytes": 2898658,
+      "localPath": "/samples/image-2-f.png",
+      "cdnUrl": "https://cdn.spaceui.one/atom/samples/image-2-f.png"
+    },
+    {
+      "id": 49,
+      "filename": "image-2-b.png",
+      "title": "Flora Portrait (Back)",
+      "category": "Portrait",
+      "description": "Vibrant blooming botanical florals background for crossfade and 3D depth reveal",
+      "width": 1536,
+      "height": 1024,
+      "aspectRatio": 1.5,
+      "format": "png",
+      "sizeBytes": 3123492,
+      "localPath": "/samples/image-2-b.png",
+      "cdnUrl": "https://cdn.spaceui.one/atom/samples/image-2-b.png"
+    },
+    {
+      "id": 50,
+      "filename": "image-3-f.png",
+      "title": "Forest Sanctum (Front)",
+      "category": "Architecture",
+      "description": "Modern wooden pavilion foreground structure for crossfade and 3D depth reveal",
+      "width": 1536,
+      "height": 1024,
+      "aspectRatio": 1.5,
+      "format": "png",
+      "sizeBytes": 2639689,
+      "localPath": "/samples/image-3-f.png",
+      "cdnUrl": "https://cdn.spaceui.one/atom/samples/image-3-f.png"
+    },
+    {
+      "id": 51,
+      "filename": "image-3-b.png",
+      "title": "Forest Sanctum (Back)",
+      "category": "Architecture",
+      "description": "Misty pine forest landscape background for crossfade and 3D depth reveal",
+      "width": 1536,
+      "height": 1024,
+      "aspectRatio": 1.5,
+      "format": "png",
+      "sizeBytes": 3088447,
+      "localPath": "/samples/image-3-b.png",
+      "cdnUrl": "https://cdn.spaceui.one/atom/samples/image-3-b.png"
     }
   ]
 }

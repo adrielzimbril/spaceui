@@ -1,0 +1,94 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-c-fluid-crossfade-01",
+  "title": "Fluid Crossfade Demo",
+  "description": "Interactive demo of Fluid Crossfade with fluid simulation, chromatic refraction, and Bayer dithering.",
+  "registryDependencies": [
+    "https://www.spaceui.one/r/components-spaceui-fluid-crossfade.json"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/components/spaceui/fluid-crossfade/c-fluid-crossfade-01/index.tsx",
+      "content": "'use client'\n\nimport * as React from 'react'\nimport { FluidCrossfade } from '@/components/spaceui/fluid-crossfade'\n\nexport interface FluidCrossfadeDemoProps {\n  imageSource?: 'url' | 'upload'\n  imageA?: string\n  imageFront?: string\n  imageB?: string\n  imageBack?: string\n  ditherGrid?: number\n  pixelGridSize?: number\n  refractionStrength?: number\n}\n\nexport default function Demo({\n  imageSource = 'url',\n  imageA = 'https://cdn.spaceui.one/atom/samples/image-1.png',\n  imageFront,\n  imageB = 'https://cdn.spaceui.one/atom/samples/image-2.png',\n  imageBack,\n  ditherGrid = 3.0,\n  pixelGridSize = 240,\n  refractionStrength = 0.85,\n}: FluidCrossfadeDemoProps) {\n  const effectiveA = imageSource === 'upload' && imageFront ? imageFront : imageA\n  const effectiveB = imageSource === 'upload' && imageBack ? imageBack : imageB\n\n  return (\n    <div className=\"relative h-[650px] w-full overflow-hidden rounded-none border-0 sm:h-[800px]\">\n      <FluidCrossfade\n        key={`${effectiveA}-${effectiveB}-${ditherGrid}-${pixelGridSize}-${refractionStrength}`}\n        imageA={effectiveA}\n        imageB={effectiveB}\n        ditherGrid={Number(ditherGrid)}\n        pixelGridSize={Number(pixelGridSize)}\n        refractionStrength={Number(refractionStrength)}\n        className=\"h-full w-full rounded-none border-0\"\n      />\n    </div>\n  )\n}\n",
+      "type": "registry:component",
+      "target": "demo/c-fluid-crossfade-01.tsx"
+    }
+  ],
+  "meta": {
+    "demoProps": {
+      "imageSource": {
+        "value": "url",
+        "options": {
+          "Remote URL": "url",
+          "Upload File": "upload"
+        }
+      },
+      "imageA": {
+        "value": "https://cdn.spaceui.one/atom/samples/image-1.png",
+        "options": {
+          "Landscape": "https://cdn.spaceui.one/atom/samples/image-1.png",
+          "Architecture": "https://cdn.spaceui.one/atom/samples/image-2.png"
+        },
+        "dependsOn": {
+          "imageSource": "url"
+        }
+      },
+      "imageFront": {
+        "type": "file",
+        "accept": "image/*",
+        "value": "",
+        "dependsOn": {
+          "imageSource": "upload"
+        }
+      },
+      "imageB": {
+        "value": "https://cdn.spaceui.one/atom/samples/image-2.png",
+        "options": {
+          "Architecture": "https://cdn.spaceui.one/atom/samples/image-2.png",
+          "Portrait": "https://cdn.spaceui.one/atom/samples/image-3.png"
+        },
+        "dependsOn": {
+          "imageSource": "url"
+        }
+      },
+      "imageBack": {
+        "type": "file",
+        "accept": "image/*",
+        "value": "",
+        "dependsOn": {
+          "imageSource": "upload"
+        }
+      },
+      "refractionStrength": {
+        "value": 0.85,
+        "options": {
+          "Subtle (0.4)": 0.4,
+          "Balanced (0.85)": 0.85,
+          "Intense (1.6)": 1.6
+        }
+      },
+      "ditherGrid": {
+        "value": 3,
+        "options": {
+          "Fine (2.0)": 2,
+          "Standard (3.0)": 3,
+          "Chunky (6.0)": 6
+        }
+      },
+      "pixelGridSize": {
+        "value": 240,
+        "options": {
+          "High-Res (320)": 320,
+          "Standard (240)": 240,
+          "Pixelated (120)": 120
+        }
+      }
+    }
+  },
+  "categories": [
+    "demo",
+    "shader",
+    "fluid"
+  ],
+  "type": "registry:component"
+}

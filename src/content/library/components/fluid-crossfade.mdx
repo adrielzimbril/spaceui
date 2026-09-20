@@ -1,0 +1,40 @@
+---
+title: Fluid Crossfade
+description: Dual-pass WebGL fluid simulation with chromatic wave refraction and Bayer 4x4 matrix ordered dither crossfading.
+isPro: true
+preview:
+  name: demo-c-fluid-crossfade-01
+  contained: false
+---
+
+## Installation
+
+<ComponentInstallation name="components-spaceui-fluid-crossfade" />
+
+## Usage
+
+```tsx
+import { FluidCrossfade } from '@/components/spaceui/fluid-crossfade'
+
+export default function Example() {
+  return (
+    <FluidCrossfade
+      imageA="https://cdn.spaceui.one/atom/samples/image-1.png"
+      imageB="https://cdn.spaceui.one/atom/samples/image-2.png"
+      aspectRatio={16 / 9}
+      ditherGrid={3.0}
+    />
+  )
+}
+```
+
+## API Reference
+
+| Prop                 | Type     | Default  | Description                                 |
+| -------------------- | -------- | -------- | ------------------------------------------- |
+| `imageA`             | `string` | —        | Initial default texture URL                 |
+| `imageB`             | `string` | —        | Hover/transition texture URL                |
+| `ditherGrid`         | `number` | `3.0`    | Scale of the Bayer 4x4 dithering pattern    |
+| `pixelGridSize`      | `number` | `240`    | Resolution of pixel quantization            |
+| `refractionStrength` | `number` | `0.85`   | Power of fluid wave refraction on the image |
+| `aspectRatio`        | `number` | `16 / 9` | Aspect ratio of the canvas                  |

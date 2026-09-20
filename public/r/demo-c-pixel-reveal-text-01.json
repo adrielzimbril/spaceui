@@ -1,0 +1,77 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-c-pixel-reveal-text-01",
+  "title": "Pixel Reveal Text Demo",
+  "description": "Interactive demo of Pixel Reveal Text emerging from matrix noise.",
+  "registryDependencies": [
+    "https://www.spaceui.one/r/components-spaceui-pixel-reveal-text.json"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/components/spaceui/pixel-reveal-text/c-pixel-reveal-text-01/index.tsx",
+      "content": "'use client'\n\nimport * as React from 'react'\nimport { PixelRevealText } from '@/components/spaceui/pixel-reveal-text'\n\nexport interface PixelRevealTextDemoProps {\n  text?: string\n  edgeColor?: string\n  pixelSize?: number\n  fontSize?: number\n  speed?: number\n  trigger?: 'loop' | 'scroll' | 'hover'\n}\n\nexport default function Demo({\n  text = 'Space UI 🤯❣️',\n  edgeColor = '#ffe9a8',\n  pixelSize = 4,\n  fontSize = 54,\n  speed = 1,\n  trigger = 'loop',\n}: PixelRevealTextDemoProps) {\n  return (\n    <div className=\"flex min-h-[360px] w-full items-center justify-center p-8 text-foreground\">\n      <PixelRevealText\n        key={`${text}-${edgeColor}-${pixelSize}-${fontSize}-${speed}-${trigger}`}\n        text={text}\n        fontSize={Number(fontSize)}\n        pixelSize={Number(pixelSize)}\n        edgeColor={edgeColor}\n        speed={Number(speed)}\n        trigger={trigger}\n      />\n    </div>\n  )\n}\n",
+      "type": "registry:component",
+      "target": "demo/c-pixel-reveal-text-01.tsx"
+    }
+  ],
+  "meta": {
+    "demoProps": {
+      "text": {
+        "value": "Space UI 🤯❣️"
+      },
+      "edgeColor": {
+        "value": "#ffe9a8",
+        "options": {
+          "Aurum": "#ffe9a8",
+          "Mercury": "#f0f4f8",
+          "Iris": "#c9a6ff",
+          "Cobalt": "#93c5fd",
+          "Forge": "#fdba74",
+          "Jade": "#6ee7b7",
+          "Pearl": "#fafafa",
+          "White": "#ffffff",
+          "Black": "#000000"
+        }
+      },
+      "pixelSize": {
+        "value": 4,
+        "options": {
+          "Fine (2px)": 2,
+          "Crisp (4px)": 4,
+          "Pixelated (8px)": 8,
+          "Blocky (14px)": 14
+        }
+      },
+      "fontSize": {
+        "value": 54,
+        "options": {
+          "Medium (36px)": 36,
+          "Large (54px)": 54,
+          "Display (72px)": 72
+        }
+      },
+      "speed": {
+        "value": 1,
+        "options": {
+          "Slow (0.6x)": 0.6,
+          "Normal (1x)": 1,
+          "Fast (1.5x)": 1.5,
+          "Turbo (2x)": 2
+        }
+      },
+      "trigger": {
+        "value": "loop",
+        "options": {
+          "Loop (Auto)": "loop",
+          "Hover": "hover",
+          "Scroll": "scroll"
+        }
+      }
+    }
+  },
+  "categories": [
+    "demo",
+    "text"
+  ],
+  "type": "registry:component"
+}

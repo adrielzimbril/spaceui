@@ -1,0 +1,110 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-c-fluid-dither-crossfade-01",
+  "type": "registry:component",
+  "title": "Fluid Dither Crossfade Demo",
+  "description": "Interactive demo of Fluid Dither Crossfade with real-time fluid simulation and Bayer dithering.",
+  "isPro": true,
+  "dependencies": ["motion"],
+  "registryDependencies": [
+    "https://www.spaceui.one/r/components-spaceui-fluid-dither-crossfade.json",
+    "https://www.spaceui.one/r/primitives-button.json",
+    "https://www.spaceui.one/r/lib-utils.json"
+  ],
+  "categories": ["demo", "media"],
+  "meta": {
+    "demoProps": {
+      "imageFront": {
+        "type": "file",
+        "accept": "image/*",
+        "value": ""
+      },
+      "imageBack": {
+        "type": "file",
+        "accept": "image/*",
+        "value": ""
+      },
+      "revealStyle": {
+        "value": "pixelate",
+        "options": {
+          "Pixelate sweep": "pixelate",
+          "Blur morph": "blur",
+          "Stagger wipe": "stagger"
+        }
+      },
+      "brushSize": {
+        "value": 0.3,
+        "options": {
+          "Subtle (0.3)": 0.3,
+          "Balanced (0.64)": 0.64,
+          "Broad (1.0)": 1.0,
+          "Huge (1.5)": 1.5
+        }
+      },
+      "pixelRes": {
+        "value": 150,
+        "options": {
+          "High Def (300)": 300,
+          "Standard (150)": 150,
+          "Retro (80)": 80,
+          "Low Bit (40)": 40
+        }
+      },
+      "pixelEdgeRes": {
+        "value": 80,
+        "options": {
+          "Fine Mask (120)": 120,
+          "Chunky Blocks (80)": 80,
+          "Giant Pixels (40)": 40
+        }
+      },
+      "distortionStrength": {
+        "value": 9.18,
+        "options": {
+          "Gentle (4.0)": 4.0,
+          "Original (9.18)": 9.18,
+          "Heavy (18.0)": 18.0
+        }
+      },
+      "ditherGrid": {
+        "value": 20,
+        "options": {
+          "Micro (8)": 8,
+          "Classic (20)": 20,
+          "Macro (40)": 40
+        }
+      },
+      "inkDissipation": {
+        "value": 0.926,
+        "options": {
+          "Fast Fade (0.88)": 0.88,
+          "Balanced (0.926)": 0.926,
+          "Persistent (0.97)": 0.97
+        }
+      },
+      "accentColor": {
+        "value": "#ffe9a8",
+        "options": {
+          "Aurum": "#ffe9a8",
+          "Mercury": "#f0f4f8",
+          "Iris": "#c9a6ff",
+          "Cobalt": "#93c5fd",
+          "Forge": "#fdba74",
+          "Jade": "#6ee7b7",
+          "Pearl": "#fafafa",
+          "White": "#ffffff",
+          "Black": "#000000"
+        }
+      }
+    }
+  },
+  "files": [
+    {
+      "path": "src/registry/demo/components/spaceui/fluid-dither-crossfade/c-fluid-dither-crossfade-01/index.tsx",
+      "type": "registry:component",
+      "target": "demo/c-fluid-dither-crossfade-01.tsx"
+    }
+  ],
+  "createdAt": "2026-09-20",
+  "updatedAt": "2026-09-20"
+}

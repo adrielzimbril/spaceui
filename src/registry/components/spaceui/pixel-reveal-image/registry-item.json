@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "components-spaceui-pixel-reveal-image",
+  "type": "registry:component",
+  "title": "Pixel Reveal Image",
+  "description": "A WebGL image reveal component with dynamic pixel matrix wave and customizable neon accent border on scroll.",
+  "isPro": true,
+  "dependencies": ["three", "gsap"],
+  "registryDependencies": [
+    "https://www.spaceui.one/r/lib-utils.json",
+    "https://www.spaceui.one/r/lib-next-image-url.json"
+  ],
+  "categories": ["component", "media", "canvas", "shaders"],
+  "files": [
+    {
+      "path": "src/registry/components/spaceui/pixel-reveal-image/index.tsx",
+      "type": "registry:component",
+      "target": "components/spaceui/pixel-reveal-image.tsx"
+    }
+  ],
+  "createdAt": "2026-09-20",
+  "updatedAt": "2026-09-20"
+}

@@ -1,0 +1,39 @@
+---
+title: Fluid Distortion Image
+description: An interactive WebGL image component with cover UV mapping and dynamic cursor fluid-distortion ripples using data textures.
+preview:
+  name: demo-c-fluid-distortion-image-01
+  contained: false
+---
+
+## Installation
+
+<ComponentInstallation name="components-spaceui-fluid-distortion-image" />
+
+## Usage
+
+```tsx
+import { FluidDistortionImage } from '@/components/spaceui/fluid-distortion-image'
+
+export default function Example() {
+  return (
+    <FluidDistortionImage
+      src="/images/art.jpg"
+      alt="Interactive fluid artwork"
+      aspectRatio={16 / 10}
+      distortionIntensity={0.04}
+    />
+  )
+}
+```
+
+## API Reference
+
+| Prop                  | Type     | Default                     | Description                                  |
+| --------------------- | -------- | --------------------------- | -------------------------------------------- |
+| `src`                 | `string` | —                           | Image source URL                             |
+| `alt`                 | `string` | `'Distorted surface image'` | Accessible image label                       |
+| `aspectRatio`         | `number` | `16 / 10`                   | Fixed aspect ratio with object-cover mapping |
+| `distortionIntensity` | `number` | `0.03`                      | Strength of cursor ripple displacement       |
+| `relaxationSpeed`     | `number` | `0.94`                      | Decay rate of fluid velocity (0 to 1)        |
+| `radius`              | `number` | `0.18`                      | Radius of cursor impact area                 |

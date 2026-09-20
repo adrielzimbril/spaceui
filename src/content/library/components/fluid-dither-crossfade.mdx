@@ -1,0 +1,45 @@
+---
+title: Fluid Dither Crossfade
+description: A dual-pass WebGL shader component featuring real-time Navier-Stokes fluid pressure simulation and Bayer 4x4 matrix ordered dithering crossfade.
+preview:
+  name: demo-c-fluid-dither-crossfade-01
+  contained: false
+---
+
+## Installation
+
+<ComponentInstallation name="components-spaceui-fluid-dither-crossfade" />
+
+## Usage
+
+```tsx
+import { FluidDitherCrossfade } from '@/components/spaceui/fluid-dither-crossfade'
+
+export default function Example() {
+  return (
+    <FluidDitherCrossfade
+      imageA="https://cdn.spaceui.one/atom/samples/image-0-f.png"
+      imageB="https://cdn.spaceui.one/atom/samples/image-0-b.png"
+      pixelRes={150}
+      pixelEdgeRes={80}
+      ditherGrid={20}
+    />
+  )
+}
+```
+
+## API Reference
+
+| Prop                 | Type      | Default                                                | Description                                      |
+| -------------------- | --------- | ------------------------------------------------------ | ------------------------------------------------ |
+| `imageA`             | `string`  | `'https://cdn.spaceui.one/atom/samples/image-0-f.png'` | Initial base texture URL                         |
+| `imageB`             | `string`  | `'https://cdn.spaceui.one/atom/samples/image-0-b.png'` | Revealed target texture URL                      |
+| `bgColor`            | `string`  | `'#0e0e0e'`                                            | Canvas background color                          |
+| `pixelRes`           | `number`  | `150`                                                  | Pixelation resolution for revealed texture       |
+| `pixelEdgeRes`       | `number`  | `80`                                                   | Chunky pixel resolution for fluid ink boundary   |
+| `ditherGrid`         | `number`  | `20`                                                   | Bayer 4x4 matrix grid sampling size              |
+| `ditherEnabled`      | `boolean` | `true`                                                 | Whether ordered dithering is active              |
+| `brushSize`          | `number`  | `0.64`                                                 | Radius of cursor fluid wave & ink stroke         |
+| `distortionStrength` | `number`  | `9.18`                                                 | Intensity of wave chromatic refraction           |
+| `inkDissipation`     | `number`  | `0.926`                                                | Speed at which revealed ink mask fades back      |
+| `edgeThreshold`      | `number`  | `0.08`                                                 | Ink density threshold required to reveal image B |

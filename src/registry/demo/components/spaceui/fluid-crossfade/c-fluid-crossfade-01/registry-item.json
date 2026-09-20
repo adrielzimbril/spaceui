@@ -1,0 +1,90 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-c-fluid-crossfade-01",
+  "type": "registry:component",
+  "title": "Fluid Crossfade Demo",
+  "description": "Interactive demo of Fluid Crossfade with fluid simulation, chromatic refraction, and Bayer dithering.",
+  "isPro": true,
+  "registryDependencies": ["https://www.spaceui.one/r/components-spaceui-fluid-crossfade.json"],
+  "categories": ["demo", "shader", "fluid"],
+  "meta": {
+    "demoProps": {
+      "imageSource": {
+        "value": "url",
+        "options": {
+          "Remote URL": "url",
+          "Upload File": "upload"
+        }
+      },
+      "imageA": {
+        "value": "https://cdn.spaceui.one/atom/samples/image-1.png",
+        "options": {
+          "Landscape": "https://cdn.spaceui.one/atom/samples/image-1.png",
+          "Architecture": "https://cdn.spaceui.one/atom/samples/image-2.png"
+        },
+        "dependsOn": {
+          "imageSource": "url"
+        }
+      },
+      "imageFront": {
+        "type": "file",
+        "accept": "image/*",
+        "value": "",
+        "dependsOn": {
+          "imageSource": "upload"
+        }
+      },
+      "imageB": {
+        "value": "https://cdn.spaceui.one/atom/samples/image-2.png",
+        "options": {
+          "Architecture": "https://cdn.spaceui.one/atom/samples/image-2.png",
+          "Portrait": "https://cdn.spaceui.one/atom/samples/image-3.png"
+        },
+        "dependsOn": {
+          "imageSource": "url"
+        }
+      },
+      "imageBack": {
+        "type": "file",
+        "accept": "image/*",
+        "value": "",
+        "dependsOn": {
+          "imageSource": "upload"
+        }
+      },
+      "refractionStrength": {
+        "value": 0.85,
+        "options": {
+          "Subtle (0.4)": 0.4,
+          "Balanced (0.85)": 0.85,
+          "Intense (1.6)": 1.6
+        }
+      },
+      "ditherGrid": {
+        "value": 3.0,
+        "options": {
+          "Fine (2.0)": 2.0,
+          "Standard (3.0)": 3.0,
+          "Chunky (6.0)": 6.0
+        }
+      },
+      "pixelGridSize": {
+        "value": 240,
+        "options": {
+          "High-Res (320)": 320,
+          "Standard (240)": 240,
+          "Pixelated (120)": 120
+        }
+      }
+    }
+  },
+  "files": [
+    {
+      "path": "src/registry/demo/components/spaceui/fluid-crossfade/c-fluid-crossfade-01/index.tsx",
+      "type": "registry:component",
+      "target": "demo/c-fluid-crossfade-01.tsx"
+    }
+  ],
+  "createdAt": "2026-09-20",
+  "updatedAt": "2026-09-20"
+}

@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "components-spaceui-fluid-dither-crossfade",
+  "type": "registry:component",
+  "title": "Fluid Dither Crossfade",
+  "description": "A dual-pass WebGL shader component featuring real-time Navier-Stokes fluid pressure simulation and Bayer 4x4 matrix ordered dithering crossfade.",
+  "isPro": true,
+  "dependencies": ["three"],
+  "registryDependencies": [
+    "https://www.spaceui.one/r/lib-utils.json",
+    "https://www.spaceui.one/r/lib-next-image-url.json"
+  ],
+  "categories": ["component", "media", "canvas", "shaders"],
+  "files": [
+    {
+      "path": "src/registry/components/spaceui/fluid-dither-crossfade/index.tsx",
+      "type": "registry:component",
+      "target": "components/spaceui/fluid-dither-crossfade.tsx"
+    }
+  ],
+  "createdAt": "2026-09-20",
+  "updatedAt": "2026-09-20"
+}

@@ -20,6 +20,7 @@
     "squircle",
     "button-squircle",
     "glass-button",
+    "pixel-fill-button",
     "badge-squircle",
     "morphing-command-bar",
     "morphing-area",
@@ -62,6 +63,7 @@
     "textmoji",
     "animoji",
     "scatter-text",
+    "pixel-reveal-text",
     "---Orb---",
     "thinking",
     "loading",
@@ -75,6 +77,10 @@
     "heat-shade",
     "silk-gradient",
     "silk-flare",
-    "paper-shader"
+    "paper-shader",
+    "pixel-reveal-image",
+    "fluid-distortion-image",
+    "fluid-crossfade",
+    "fluid-dither-crossfade"
   ]
 }

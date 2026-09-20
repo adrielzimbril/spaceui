@@ -1,0 +1,68 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-c-fluid-distortion-image-01",
+  "title": "Fluid Distortion Image Demo",
+  "description": "Interactive demo of Fluid Distortion Image with real-time cursor impulse ripples.",
+  "dependencies": [
+    "motion"
+  ],
+  "registryDependencies": [
+    "https://www.spaceui.one/r/components-spaceui-fluid-distortion-image.json",
+    "https://www.spaceui.one/r/primitives-button.json",
+    "https://www.spaceui.one/r/lib-utils.json"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/components/spaceui/fluid-distortion-image/c-fluid-distortion-image-01/index.tsx",
+      "content": "'use client'\n\nimport * as React from 'react'\nimport { AnimatePresence, motion, useReducedMotion } from 'motion/react'\nimport NextImage from 'next/image'\nimport { FluidDistortionImage } from '@/components/spaceui/fluid-distortion-image'\nimport { Button } from '@/components/ui/button'\nimport { tickSound } from '@/components/providers/sound-provider'\nimport { cn } from '@/lib/utils'\n\nexport interface FluidDistortionImageDemoProps {\n  textureFile?: string\n  distortionIntensity?: number\n  relaxationSpeed?: number\n  radius?: number\n  revealStyle?: 'blur' | 'pixelate'\n}\n\nconst PRESET_SAMPLES = [\n  {\n    id: 'sample-1',\n    name: 'Twilight Ring',\n    url: 'https://cdn.spaceui.one/atom/samples/image-1-f.png',\n  },\n  {\n    id: 'sample-2',\n    name: 'Monolith Horizon',\n    url: 'https://cdn.spaceui.one/atom/samples/image-0-b.png',\n  },\n  {\n    id: 'sample-3',\n    name: 'Golden Shimmer',\n    url: 'https://cdn.spaceui.one/atom/samples/image-9.png',\n  },\n  {\n    id: 'sample-4',\n    name: 'Forest Sanctum',\n    url: 'https://cdn.spaceui.one/atom/samples/image-3.png',\n  },\n  {\n    id: 'sample-5',\n    name: 'Forest Sanctum (Back)',\n    url: 'https://cdn.spaceui.one/atom/samples/image-3-b.png',\n  },\n]\n\nexport default function Demo({\n  textureFile,\n  distortionIntensity = 0.02,\n  relaxationSpeed = 0.95,\n  radius = 8.96,\n  revealStyle = 'pixelate',\n}: FluidDistortionImageDemoProps) {\n  const [selectedPreset, setSelectedPreset] = React.useState<string | null>(PRESET_SAMPLES[0].url)\n  const [customFile, setCustomFile] = React.useState<string | null>(null)\n\n  React.useEffect(() => {\n    if (textureFile) {\n      setCustomFile(textureFile)\n      setSelectedPreset(null)\n    } else if (textureFile === '') {\n      setCustomFile(null)\n      setSelectedPreset(PRESET_SAMPLES[0].url)\n    }\n  }, [textureFile])\n\n  const effectiveSrc = customFile || selectedPreset || PRESET_SAMPLES[0].url\n\n  const reduced = useReducedMotion() ?? false\n  const morphTransition = reduced ? { duration: 0 } : { duration: 0.22, ease: [0.16, 1, 0.3, 1] as const }\n\n  return (\n    <div className=\"flex w-full flex-col items-center justify-center p-4 sm:p-8 gap-6 min-h-[520px]\">\n      <AnimatePresence mode=\"wait\" initial={false}>\n        <motion.div\n          key={effectiveSrc}\n          initial={reduced ? false : { scale: 0.98, opacity: 0, filter: 'blur(6px)' }}\n          animate={{ scale: 1, opacity: 1, filter: 'blur(0px)' }}\n          exit={reduced ? { opacity: 0 } : { scale: 0.98, opacity: 0, filter: 'blur(6px)', pointerEvents: 'none' }}\n          transition={morphTransition}\n          className=\"w-full max-w-4xl lg:max-w-5xl overflow-hidden rounded-2xl will-change-[opacity,transform,filter]\"\n        >\n          <FluidDistortionImage\n            key={`${effectiveSrc}-${distortionIntensity}-${relaxationSpeed}-${radius}-${revealStyle}`}\n            src={effectiveSrc}\n            alt=\"Scenic fluid interactive artwork\"\n            distortionIntensity={Number(distortionIntensity)}\n            relaxationSpeed={Number(relaxationSpeed)}\n            radius={Number(radius)}\n            revealStyle={revealStyle}\n            className=\"w-full\"\n          />\n        </motion.div>\n      </AnimatePresence>\n\n      {/* Preset thumbnail cards styled like Trajectory */}\n      <div className=\"flex flex-wrap items-center justify-center gap-2.5\">\n        {PRESET_SAMPLES.map((sample) => {\n          const isSelected = !customFile && effectiveSrc === sample.url\n          return (\n            <Button\n              key={sample.id}\n              type=\"button\"\n              variant=\"ghost\"\n              data-space-hover=\"tick\"\n              onClick={() => {\n                tickSound()\n                setCustomFile(null)\n                setSelectedPreset(sample.url)\n              }}\n              className={cn(\n                'group flex h-auto! flex-col items-center gap-1.5 rounded-xl bg-muted p-1.5 transition-all hover:bg-muted cursor-pointer shadow-none',\n                isSelected && 'ring-2 ring-muted ring-offset-2 ring-offset-background',\n              )}\n            >\n              <div className=\"relative aspect-video w-28 overflow-hidden rounded-lg bg-background\">\n                <NextImage\n                  src={sample.url}\n                  alt={sample.name}\n                  width={112}\n                  height={64}\n                  className=\"size-full object-cover\"\n                />\n              </div>\n              <span\n                className={cn(\n                  'max-w-[112px] truncate px-1 text-[0.6875rem] font-medium transition-colors',\n                  isSelected ? 'font-semibold text-foreground' : 'text-muted-foreground group-hover:text-foreground',\n                )}\n              >\n                {sample.name}\n              </span>\n            </Button>\n          )\n        })}\n      </div>\n    </div>\n  )\n}\n",
+      "type": "registry:component",
+      "target": "demo/c-fluid-distortion-image-01.tsx"
+    }
+  ],
+  "meta": {
+    "demoProps": {
+      "textureFile": {
+        "type": "file",
+        "accept": "image/*",
+        "value": ""
+      },
+      "revealStyle": {
+        "value": "pixelate",
+        "options": {
+          "Pixelate sweep": "pixelate",
+          "Blur morph": "blur"
+        }
+      },
+      "distortionIntensity": {
+        "value": 0.02,
+        "options": {
+          "Subtle (0.01)": 0.01,
+          "Original (0.02)": 0.02,
+          "Intense (0.05)": 0.05,
+          "Extreme (0.09)": 0.09
+        }
+      },
+      "relaxationSpeed": {
+        "value": 0.95,
+        "options": {
+          "Fast (0.88)": 0.88,
+          "Standard (0.95)": 0.95,
+          "Trailing (0.98)": 0.98
+        }
+      },
+      "radius": {
+        "value": 8.96,
+        "options": {
+          "Small (5.0)": 5,
+          "Original (8.96)": 8.96,
+          "Large (14.0)": 14
+        }
+      }
+    }
+  },
+  "categories": [
+    "demo",
+    "media"
+  ],
+  "type": "registry:component"
+}

@@ -1,0 +1,40 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-c-velocity-hover-preview-01",
+  "title": "Velocity Hover Preview Demo",
+  "description": "Interactive services list with floating WebGL preview and velocity momentum warp.",
+  "registryDependencies": [
+    "https://www.spaceui.one/r/components-spaceui-velocity-hover-preview.json"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/components/spaceui/velocity-hover-preview/c-velocity-hover-preview-01/index.tsx",
+      "content": "'use client'\n\nimport { VelocityHoverPreview } from '@/components/spaceui/velocity-hover-preview'\n\nconst sampleServices = [\n  {\n    id: '01',\n    num: '01',\n    title: 'Space UI Twilight Ring',\n    subtitle: 'Luminous Coastal Horizon & Twilight Shaders',\n    mediaUrl: 'https://cdn.spaceui.one/atom/samples/image-1.png',\n  },\n  {\n    id: '02',\n    num: '02',\n    title: 'Flora Kinetic Portrait',\n    subtitle: 'Botanical Florals & Reactive Micro-interactions',\n    mediaUrl: 'https://cdn.spaceui.one/atom/samples/image-2.png',\n  },\n  {\n    id: '03',\n    num: '03',\n    title: 'Forest Sanctum Architecture',\n    subtitle: 'Timber Pavilion Amidst Misty Pines & Flows',\n    mediaUrl: 'https://cdn.spaceui.one/atom/samples/image-3.png',\n  },\n  {\n    id: '04',\n    num: '04',\n    title: 'Blossom Archway Portal',\n    subtitle: 'Curved Stone Portals & Spatial Gateways',\n    mediaUrl: 'https://cdn.spaceui.one/atom/samples/image-4.png',\n  },\n  {\n    id: '05',\n    num: '05',\n    title: 'Space Botanical Slumber',\n    subtitle: 'High-Octane Shaders & Dreamy Foliage Depth',\n    mediaUrl: 'https://cdn.spaceui.one/atom/samples/image-5.png',\n  },\n]\n\nexport interface VelocityHoverPreviewDemoProps {\n  accentColor?: string\n}\n\nexport default function Demo({ accentColor = '#ffe9a8' }: VelocityHoverPreviewDemoProps) {\n  return (\n    <div className=\"w-full max-w-4xl px-4 py-8\">\n      <VelocityHoverPreview\n        items={sampleServices}\n        accentColor={accentColor}\n        onItemSelect={(item) => console.log('Selected:', item.title)}\n      />\n    </div>\n  )\n}\n",
+      "type": "registry:component",
+      "target": "demo/c-velocity-hover-preview-01.tsx"
+    }
+  ],
+  "meta": {
+    "demoProps": {
+      "accentColor": {
+        "value": "#ffe9a8",
+        "options": {
+          "Aurum": "#ffe9a8",
+          "Mercury": "#f0f4f8",
+          "Iris": "#c9a6ff",
+          "Cobalt": "#93c5fd",
+          "Forge": "#fdba74",
+          "Jade": "#6ee7b7",
+          "Pearl": "#fafafa",
+          "White": "#ffffff",
+          "Black": "#000000"
+        }
+      }
+    }
+  },
+  "categories": [
+    "demo",
+    "media"
+  ],
+  "type": "registry:component"
+}

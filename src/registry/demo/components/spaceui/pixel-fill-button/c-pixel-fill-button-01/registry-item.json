@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-c-pixel-fill-button-01",
+  "type": "registry:component",
+  "title": "Pixel Fill Button Demo",
+  "description": "Interactive demo of Pixel Fill Button with different pixel accent colors.",
+  "isPro": true,
+  "registryDependencies": [
+    "https://www.spaceui.one/r/components-spaceui-pixel-fill-button.json",
+    "https://www.spaceui.one/r/primitives-button.json",
+    "https://www.spaceui.one/r/lib-utils.json"
+  ],
+  "categories": ["demo", "button"],
+  "files": [
+    {
+      "path": "src/registry/demo/components/spaceui/pixel-fill-button/c-pixel-fill-button-01/index.tsx",
+      "type": "registry:component",
+      "target": "demo/c-pixel-fill-button-01.tsx"
+    }
+  ],
+  "createdAt": "2026-09-20",
+  "updatedAt": "2026-09-20"
+}

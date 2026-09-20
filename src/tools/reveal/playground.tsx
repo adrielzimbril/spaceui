@@ -25,29 +25,41 @@ const MIN_ZOOM = 0.25
 const MAX_ZOOM = 4
 
 const [
-  twilightRing,
-  twilightSilhouette,
-  blossomArch,
-  prismPortrait,
-  floraPortrait,
-  cobaltGaze,
-  cosmicRing,
-  cosmicWave,
-  astronautVisor,
-  cyberVisor,
+  monolithFront,
+  monolithBack,
+  twilightRingFront,
+  twilightRingBack,
+  floraPortraitFront,
+  floraPortraitBack,
+  forestSanctumFront,
+  forestSanctumBack,
 ] = imagelib.tools.reveal
 
 const REVEAL_PRESETS = [
   {
-    id: 'ring-silhouette',
-    name: 'Twilight Ring → Twilight Silhouette',
-    base: twilightRing,
-    reveal: twilightSilhouette,
+    id: 'monolith-depth',
+    name: 'Monolith Horizon',
+    base: monolithFront,
+    reveal: monolithBack,
   },
-  { id: 'blossom-prism', name: 'Blossom Arch → Prism Portrait', base: blossomArch, reveal: prismPortrait },
-  { id: 'flora-cobalt', name: 'Flora Portrait → Cobalt Gaze', base: floraPortrait, reveal: cobaltGaze },
-  { id: 'cosmic-ring-wave', name: 'Cosmic Ring → Cosmic Wave', base: cosmicRing, reveal: cosmicWave },
-  { id: 'astronaut-cyber', name: 'Astronaut Visor → Cyber Visor', base: astronautVisor, reveal: cyberVisor },
+  {
+    id: 'twilight-depth',
+    name: 'Twilight Ring',
+    base: twilightRingFront,
+    reveal: twilightRingBack,
+  },
+  {
+    id: 'flora-depth',
+    name: 'Flora Portrait',
+    base: floraPortraitFront,
+    reveal: floraPortraitBack,
+  },
+  {
+    id: 'forest-depth',
+    name: 'Forest Sanctum',
+    base: forestSanctumFront,
+    reveal: forestSanctumBack,
+  },
 ]
 
 function fileToDataURL(f: File): Promise<string> {

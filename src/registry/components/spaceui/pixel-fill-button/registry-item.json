@@ -1,0 +1,24 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "components-spaceui-pixel-fill-button",
+  "type": "registry:component",
+  "title": "Pixel Fill Button",
+  "description": "An interactive button whose background fills with square matrix pixels radiating from the cursor entry point on hover.",
+  "isPro": true,
+  "dependencies": ["gsap", "motion", "class-variance-authority", "@paper-design/shaders-react"],
+  "registryDependencies": [
+    "https://www.spaceui.one/r/lib-utils.json",
+    "https://www.spaceui.one/r/components-spaceui-silk-border.json",
+    "https://www.spaceui.one/r/components-spaceui-liquid-metal-border.json"
+  ],
+  "categories": ["component", "button", "canvas"],
+  "files": [
+    {
+      "path": "src/registry/components/spaceui/pixel-fill-button/index.tsx",
+      "type": "registry:component",
+      "target": "components/spaceui/pixel-fill-button.tsx"
+    }
+  ],
+  "createdAt": "2026-09-20",
+  "updatedAt": "2026-09-20"
+}
