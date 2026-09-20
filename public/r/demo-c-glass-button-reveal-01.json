@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-c-glass-button-reveal-01",
+  "title": "Glass Button — Blur Reveal",
+  "description": "An icon glass button that widens and blur-reveals a text label on hover.",
+  "registryDependencies": [
+    "https://www.spaceui.one/r/components-spaceui-glass-button.json",
+    "https://www.spaceui.one/r/components-shader-silk-gradient.json"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/components/spaceui/glass-button/c-glass-button-reveal-01/index.tsx",
+      "content": "'use client'\n\nimport * as React from 'react'\nimport { AnimatePresence, motion } from 'motion/react'\nimport { IconSparkles } from '@tabler/icons-react'\nimport { GlassButton } from '@/components/spaceui/glass-button'\nimport { SilkGradient } from '@/components/shader/silk-gradient'\n\nexport default function Demo() {\n  const [hovered, setHovered] = React.useState(false)\n\n  return (\n    <div className=\"relative squircle rounded-2xl bg-muted flex w-full items-center justify-center overflow-hidden rounded-2xl p-16\">\n      <SilkGradient\n        className=\"absolute inset-0 size-full\"\n        color1=\"#f97316\"\n        color2=\"#ec4899\"\n        color3=\"#8b5cf6\"\n        animate\n        speed={1}\n        grain\n      />\n      <GlassButton\n        size=\"icon-lg\"\n        className=\"w-10 justify-start px-0\"\n        onMouseEnter={() => setHovered(true)}\n        onMouseLeave={() => setHovered(false)}\n        render={\n          <motion.button\n            type=\"button\"\n            animate={{ width: hovered ? 168 : 40 }}\n            transition={{ type: 'spring', stiffness: 260, damping: 26 }}\n          />\n        }\n      >\n        <span className=\"flex shrink-0 items-center justify-center pl-2.5\">\n          <IconSparkles className=\"size-4.5\" />\n        </span>\n        <AnimatePresence>\n          {hovered && (\n            <motion.span\n              key=\"label\"\n              initial={{ opacity: 0, filter: 'blur(6px)' }}\n              animate={{ opacity: 1, filter: 'blur(0px)', transition: { duration: 0.35, delay: 0.1 } }}\n              exit={{ opacity: 0, filter: 'blur(6px)', transition: { duration: 0.15 } }}\n              className=\"whitespace-nowrap pr-4 text-sm font-medium\"\n            >\n              Try it now\n            </motion.span>\n          )}\n        </AnimatePresence>\n      </GlassButton>\n    </div>\n  )\n}\n",
+      "type": "registry:component",
+      "target": "components/spaceui/glass-button-reveal-demo.tsx"
+    }
+  ],
+  "categories": [
+    "component",
+    "button",
+    "glass",
+    "motion"
+  ],
+  "type": "registry:component"
+}

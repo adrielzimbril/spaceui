@@ -104,6 +104,10 @@ export const registryComponents: Record<string, RegistryComponent> = {
     () => import("@/registry/components/spaceui/github-activity/index.tsx"),
     {},
   ),
+  "components-spaceui-glass-button": lazyRegistryComponent(
+    () => import("@/registry/components/spaceui/glass-button/index.tsx"),
+    {},
+  ),
   "components-spaceui-gooey-blobs": lazyRegistryComponent(
     () => import("@/registry/components/spaceui/gooey-blobs/index.tsx"),
     {},
@@ -194,6 +198,10 @@ export const registryComponents: Record<string, RegistryComponent> = {
   ),
   "components-spaceui-resizable": lazyRegistryComponent(
     () => import("@/registry/components/spaceui/resizable/index.tsx"),
+    {},
+  ),
+  "components-spaceui-scatter-text": lazyRegistryComponent(
+    () => import("@/registry/components/spaceui/scatter-text/index.tsx"),
     {},
   ),
   "components-spaceui-scrollspy": lazyRegistryComponent(

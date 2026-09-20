@@ -1,0 +1,24 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-c-glass-button-icon-01",
+  "title": "Glass Button — Icon",
+  "description": "Icon-only glass buttons over a gradient backdrop.",
+  "registryDependencies": [
+    "https://www.spaceui.one/r/components-spaceui-glass-button.json",
+    "https://www.spaceui.one/r/components-shader-silk-gradient.json"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/components/spaceui/glass-button/c-glass-button-icon-01/index.tsx",
+      "content": "'use client'\n\nimport { IconHeart, IconBookmark, IconShare2 } from '@tabler/icons-react'\nimport { GlassButton } from '@/components/spaceui/glass-button'\nimport { SilkGradient } from '@/components/shader/silk-gradient'\n\nexport default function Demo() {\n  return (\n    <div className=\"relative squircle rounded-2xl bg-muted flex w-full items-center justify-center gap-4 overflow-hidden rounded-2xl p-16\">\n      <SilkGradient\n        className=\"absolute inset-0 size-full\"\n        color1=\"#6a68ee\"\n        color2=\"#c9a6ff\"\n        color3=\"#ffb199\"\n        animate\n        speed={1}\n        grain\n      />\n      <GlassButton size=\"icon-lg\" aria-label=\"Like\">\n        <IconHeart className=\"size-4.5\" />\n      </GlassButton>\n      <GlassButton size=\"icon-lg\" aria-label=\"Bookmark\">\n        <IconBookmark className=\"size-4.5\" />\n      </GlassButton>\n      <GlassButton size=\"icon-lg\" aria-label=\"Share\">\n        <IconShare2 className=\"size-4.5\" />\n      </GlassButton>\n    </div>\n  )\n}\n",
+      "type": "registry:component",
+      "target": "components/spaceui/glass-button-icon-demo.tsx"
+    }
+  ],
+  "categories": [
+    "component",
+    "button",
+    "glass"
+  ],
+  "type": "registry:component"
+}

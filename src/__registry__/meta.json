@@ -3056,8 +3056,9 @@
     ],
     "createdAt": "2026-09-03",
     "updatedAt": "2026-09-03",
+    "isPro": true,
     "size": "7.9 KB",
-    "rawSize": 8071,
+    "rawSize": 8116,
     "directSize": "7.9 KB",
     "fileCount": 1,
     "dependencies": [],
@@ -3080,8 +3081,9 @@
     ],
     "createdAt": "2026-09-03",
     "updatedAt": "2026-09-03",
+    "isPro": true,
     "size": "7.9 KB",
-    "rawSize": 8071,
+    "rawSize": 8116,
     "directSize": "7.9 KB",
     "fileCount": 1,
     "dependencies": [],
@@ -3530,6 +3532,18 @@
     "dependents": [],
     "related": [
       {
+        "name": "glass-button",
+        "title": "Glass Button",
+        "description": "A glassmorphic button built on top of Button Squircle — backdrop blur, layered inset highlights and a hover shine sweep.",
+        "url": "/ui-kit/components/spaceui/glass-button",
+        "category": "Button",
+        "categories": [
+          "button",
+          "glass",
+          "squircle"
+        ]
+      },
+      {
         "name": "slide-to-confirm",
         "title": "Slide To Confirm",
         "description": "Tactile slide-to-action control with spring physics and inertia confirmation.",
@@ -3582,6 +3596,18 @@
     ],
     "dependents": [],
     "related": [
+      {
+        "name": "glass-button",
+        "title": "Glass Button",
+        "description": "A glassmorphic button built on top of Button Squircle — backdrop blur, layered inset highlights and a hover shine sweep.",
+        "url": "/ui-kit/components/spaceui/glass-button",
+        "category": "Button",
+        "categories": [
+          "button",
+          "glass",
+          "squircle"
+        ]
+      },
       {
         "name": "slide-to-confirm",
         "title": "Slide To Confirm",
@@ -7163,6 +7189,136 @@
     "dependents": [],
     "related": []
   },
+  "glass-button": {
+    "name": "components-spaceui-glass-button",
+    "shortName": "glass-button",
+    "title": "Glass Button",
+    "description": "A glassmorphic button built on top of Button Squircle — backdrop blur, layered inset highlights and a hover shine sweep.",
+    "type": "registry:component",
+    "url": "/ui-kit/components/spaceui/glass-button",
+    "category": "Button",
+    "categories": [
+      "button",
+      "glass",
+      "squircle"
+    ],
+    "createdAt": "2026-09-20",
+    "updatedAt": "2026-09-20",
+    "size": "3.2 KB",
+    "rawSize": 3299,
+    "directSize": "3.2 KB",
+    "fileCount": 1,
+    "dependencies": [
+      "@base-ui/react",
+      "class-variance-authority"
+    ],
+    "registryDependencies": [
+      "https://www.spaceui.one/r/lib-utils.json",
+      "https://www.spaceui.one/r/components-spaceui-button-squircle.json"
+    ],
+    "dependents": [],
+    "related": [
+      {
+        "name": "button-squircle",
+        "title": "Button Squircle",
+        "description": "Tactile squircle button and badge components featuring dynamic curvature morphing on hover from the original portfolio design.",
+        "url": "/ui-kit/components/spaceui/button-squircle",
+        "category": "Button",
+        "categories": [
+          "button",
+          "badge",
+          "squircle",
+          "tactile"
+        ]
+      },
+      {
+        "name": "slide-to-confirm",
+        "title": "Slide To Confirm",
+        "description": "Tactile slide-to-action control with spring physics and inertia confirmation.",
+        "url": "/ui-kit/components/spaceui/slide-to-confirm",
+        "category": "Button",
+        "categories": [
+          "button",
+          "slider"
+        ]
+      },
+      {
+        "name": "button",
+        "title": "Button",
+        "description": "Accessible Button primitive component for Space UI.",
+        "url": "/ui-kit/primitives/button",
+        "category": "Button",
+        "categories": [
+          "button"
+        ]
+      }
+    ]
+  },
+  "components-spaceui-glass-button": {
+    "name": "components-spaceui-glass-button",
+    "shortName": "glass-button",
+    "title": "Glass Button",
+    "description": "A glassmorphic button built on top of Button Squircle — backdrop blur, layered inset highlights and a hover shine sweep.",
+    "type": "registry:component",
+    "url": "/ui-kit/components/spaceui/glass-button",
+    "category": "Button",
+    "categories": [
+      "button",
+      "glass",
+      "squircle"
+    ],
+    "createdAt": "2026-09-20",
+    "updatedAt": "2026-09-20",
+    "size": "3.2 KB",
+    "rawSize": 3299,
+    "directSize": "3.2 KB",
+    "fileCount": 1,
+    "dependencies": [
+      "@base-ui/react",
+      "class-variance-authority"
+    ],
+    "registryDependencies": [
+      "https://www.spaceui.one/r/lib-utils.json",
+      "https://www.spaceui.one/r/components-spaceui-button-squircle.json"
+    ],
+    "dependents": [],
+    "related": [
+      {
+        "name": "button-squircle",
+        "title": "Button Squircle",
+        "description": "Tactile squircle button and badge components featuring dynamic curvature morphing on hover from the original portfolio design.",
+        "url": "/ui-kit/components/spaceui/button-squircle",
+        "category": "Button",
+        "categories": [
+          "button",
+          "badge",
+          "squircle",
+          "tactile"
+        ]
+      },
+      {
+        "name": "slide-to-confirm",
+        "title": "Slide To Confirm",
+        "description": "Tactile slide-to-action control with spring physics and inertia confirmation.",
+        "url": "/ui-kit/components/spaceui/slide-to-confirm",
+        "category": "Button",
+        "categories": [
+          "button",
+          "slider"
+        ]
+      },
+      {
+        "name": "button",
+        "title": "Button",
+        "description": "Accessible Button primitive component for Space UI.",
+        "url": "/ui-kit/primitives/button",
+        "category": "Button",
+        "categories": [
+          "button"
+        ]
+      }
+    ]
+  },
   "gooey-blobs": {
     "name": "components-spaceui-gooey-blobs",
     "shortName": "gooey-blobs",
@@ -7299,6 +7455,7 @@
     ],
     "createdAt": "2026-09-20",
     "updatedAt": "2026-09-20",
+    "isPro": true,
     "size": "3 KB",
     "rawSize": 3110,
     "directSize": "3 KB",
@@ -7360,6 +7517,7 @@
     ],
     "createdAt": "2026-09-20",
     "updatedAt": "2026-09-20",
+    "isPro": true,
     "size": "3 KB",
     "rawSize": 3110,
     "directSize": "3 KB",
@@ -7421,6 +7579,7 @@
     ],
     "createdAt": "2026-09-20",
     "updatedAt": "2026-09-20",
+    "isPro": true,
     "size": "3.3 KB",
     "rawSize": 3330,
     "directSize": "3.3 KB",
@@ -7482,6 +7641,7 @@
     ],
     "createdAt": "2026-09-20",
     "updatedAt": "2026-09-20",
+    "isPro": true,
     "size": "3.3 KB",
     "rawSize": 3330,
     "directSize": "3.3 KB",
@@ -8939,6 +9099,58 @@
     "dependents": [],
     "related": []
   },
+  "scatter-text": {
+    "name": "components-spaceui-scatter-text",
+    "shortName": "scatter-text",
+    "title": "Scatter Text",
+    "description": "A text input whose content scatters into drifting canvas grains on submit.",
+    "type": "registry:component",
+    "url": "/ui-kit/components/spaceui/scatter-text",
+    "category": "Text",
+    "categories": [
+      "text",
+      "canvas"
+    ],
+    "createdAt": "2026-09-20",
+    "updatedAt": "2026-09-20",
+    "isPro": true,
+    "size": "7.2 KB",
+    "rawSize": 7372,
+    "directSize": "7.2 KB",
+    "fileCount": 1,
+    "dependencies": [],
+    "registryDependencies": [
+      "https://www.spaceui.one/r/lib-utils.json"
+    ],
+    "dependents": [],
+    "related": []
+  },
+  "components-spaceui-scatter-text": {
+    "name": "components-spaceui-scatter-text",
+    "shortName": "scatter-text",
+    "title": "Scatter Text",
+    "description": "A text input whose content scatters into drifting canvas grains on submit.",
+    "type": "registry:component",
+    "url": "/ui-kit/components/spaceui/scatter-text",
+    "category": "Text",
+    "categories": [
+      "text",
+      "canvas"
+    ],
+    "createdAt": "2026-09-20",
+    "updatedAt": "2026-09-20",
+    "isPro": true,
+    "size": "7.2 KB",
+    "rawSize": 7372,
+    "directSize": "7.2 KB",
+    "fileCount": 1,
+    "dependencies": [],
+    "registryDependencies": [
+      "https://www.spaceui.one/r/lib-utils.json"
+    ],
+    "dependents": [],
+    "related": []
+  },
   "scrollspy": {
     "name": "components-spaceui-scrollspy",
     "shortName": "scrollspy",
@@ -9205,6 +9417,18 @@
         ]
       },
       {
+        "name": "glass-button",
+        "title": "Glass Button",
+        "description": "A glassmorphic button built on top of Button Squircle — backdrop blur, layered inset highlights and a hover shine sweep.",
+        "url": "/ui-kit/components/spaceui/glass-button",
+        "category": "Button",
+        "categories": [
+          "button",
+          "glass",
+          "squircle"
+        ]
+      },
+      {
         "name": "button",
         "title": "Button",
         "description": "Accessible Button primitive component for Space UI.",
@@ -9255,6 +9479,18 @@
           "badge",
           "squircle",
           "tactile"
+        ]
+      },
+      {
+        "name": "glass-button",
+        "title": "Glass Button",
+        "description": "A glassmorphic button built on top of Button Squircle — backdrop blur, layered inset highlights and a hover shine sweep.",
+        "url": "/ui-kit/components/spaceui/glass-button",
+        "category": "Button",
+        "categories": [
+          "button",
+          "glass",
+          "squircle"
         ]
       },
       {
@@ -22882,6 +23118,18 @@
         ]
       },
       {
+        "name": "glass-button",
+        "title": "Glass Button",
+        "description": "A glassmorphic button built on top of Button Squircle — backdrop blur, layered inset highlights and a hover shine sweep.",
+        "url": "/ui-kit/components/spaceui/glass-button",
+        "category": "Button",
+        "categories": [
+          "button",
+          "glass",
+          "squircle"
+        ]
+      },
+      {
         "name": "slide-to-confirm",
         "title": "Slide To Confirm",
         "description": "Tactile slide-to-action control with spring physics and inertia confirmation.",
@@ -22932,6 +23180,18 @@
           "badge",
           "squircle",
           "tactile"
+        ]
+      },
+      {
+        "name": "glass-button",
+        "title": "Glass Button",
+        "description": "A glassmorphic button built on top of Button Squircle — backdrop blur, layered inset highlights and a hover shine sweep.",
+        "url": "/ui-kit/components/spaceui/glass-button",
+        "category": "Button",
+        "categories": [
+          "button",
+          "glass",
+          "squircle"
         ]
       },
       {

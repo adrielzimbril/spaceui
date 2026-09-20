@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-c-scatter-text-01",
+  "title": "Scatter Text — Email",
+  "description": "An email subscribe field that scatters into grains on submit.",
+  "registryDependencies": [
+    "https://www.spaceui.one/r/components-spaceui-scatter-text.json"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/components/spaceui/scatter-text/c-scatter-text-01/index.tsx",
+      "content": "'use client'\n\nimport { ScatterText } from '@/components/spaceui/scatter-text'\n\nexport default function Demo() {\n  return (\n    <div className=\"flex w-full items-center justify-center px-6\">\n      <div className=\"flex max-w-lg w-full items-center squircle rounded-2xl bg-muted px-6 lg:h-20\">\n        <ScatterText\n          placeholder=\"hello@spaceui.one\"\n          onSubmit={(value) => {\n            console.log('submitted', value)\n          }}\n        />\n      </div>\n    </div>\n  )\n}\n",
+      "type": "registry:component",
+      "target": "components/spaceui/scatter-text-demo.tsx"
+    }
+  ],
+  "categories": [
+    "component",
+    "text",
+    "canvas"
+  ],
+  "type": "registry:component"
+}

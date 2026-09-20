@@ -1,0 +1,29 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "components-spaceui-glass-button",
+  "title": "Glass Button",
+  "description": "A glassmorphic button built on top of Button Squircle — backdrop blur, layered inset highlights and a hover shine sweep.",
+  "dependencies": [
+    "@base-ui/react",
+    "class-variance-authority"
+  ],
+  "registryDependencies": [
+    "https://www.spaceui.one/r/lib-utils.json",
+    "https://www.spaceui.one/r/components-spaceui-button-squircle.json"
+  ],
+  "files": [
+    {
+      "path": "src/registry/components/spaceui/glass-button/index.tsx",
+      "content": "'use client'\n\nimport * as React from 'react'\nimport { Button, type ButtonProps } from '@/components/spaceui/button-squircle'\nimport { cn } from '@/lib/utils'\n\nexport interface GlassButtonProps extends Omit<ButtonProps, 'variant'> {\n  /** Use the squircle corner treatment instead of a full pill. @default false */\n  squircle?: boolean\n}\n\nexport const GlassButton = React.forwardRef<HTMLButtonElement, GlassButtonProps>(\n  ({ className, squircle = false, children, ...props }, ref) => {\n    return (\n      <span className={cn('group relative inline-flex', !squircle && 'rounded-full')}>\n        <span\n          aria-hidden=\"true\"\n          className={cn(\n            'pointer-events-none absolute -inset-1.5 bg-[linear-gradient(180deg,rgba(0,0,0,0.12),rgba(0,0,0,0.06))] opacity-70 blur-[3px] transition-[filter] duration-400 ease-[cubic-bezier(0.25,1,0.5,1)] group-hover:blur-[1.5px]',\n            squircle ? 'rounded-[inherit]' : 'rounded-full',\n          )}\n        />\n\n        <Button\n          ref={ref}\n          variant=\"ghost\"\n          squircle={squircle}\n          className={cn(\n            'relative isolate overflow-hidden text-foreground',\n            !squircle && 'rounded-full',\n            'bg-[linear-gradient(-75deg,rgba(255,255,255,0.05),rgba(255,255,255,0.22),rgba(255,255,255,0.05))]',\n            'shadow-[inset_0_2px_2px_rgba(0,0,0,0.035),inset_0_-2px_2px_rgba(255,255,255,0.5),0_4px_2px_-2px_rgba(0,0,0,0.1),0_0_2px_4px_rgba(255,255,255,0.2)_inset]',\n            'backdrop-blur-[3px] backdrop-saturate-150',\n            'transition-[transform,box-shadow] duration-400 ease-[cubic-bezier(0.25,1,0.5,1)]',\n            'hover:scale-[0.975] hover:shadow-[inset_0_2px_2px_rgba(0,0,0,0.035),inset_0_-2px_2px_rgba(255,255,255,0.5),0_1.2px_0.4px_-1.6px_rgba(0,0,0,0.25),0_0_0.8px_1.6px_rgba(255,255,255,0.5)_inset]',\n            'active:scale-[0.94]',\n            className,\n          )}\n          {...props}\n        >\n          <span\n            aria-hidden=\"true\"\n            className={cn(\n              'pointer-events-none absolute inset-0 z-1 p-px mask-exclude [-webkit-mask-composite:xor] [mask:linear-gradient(#000_0_0)_content-box,linear-gradient(#000_0_0)]',\n              'bg-[conic-gradient(from_-75deg_at_50%_50%,rgba(0,0,0,0.45),rgba(0,0,0,0)_5%_40%,rgba(0,0,0,0.45)_50%,rgba(0,0,0,0)_60%_95%,rgba(0,0,0,0.45)),linear-gradient(180deg,rgba(255,255,255,0.5),rgba(255,255,255,0.5))]',\n              squircle ? 'rounded-[inherit]' : 'rounded-full',\n            )}\n          />\n\n          <span\n            aria-hidden=\"true\"\n            className={cn(\n              'pointer-events-none absolute inset-0 z-2 overflow-hidden mix-blend-screen',\n              'bg-[linear-gradient(-45deg,transparent_0%,rgba(255,255,255,0.5)_40%_50%,transparent_55%)] bg-size-[200%_200%] bg-position-[0%_50%]',\n              'transition-[background-position] duration-500 ease-[cubic-bezier(0.25,1,0.5,1)] group-hover:bg-position-[25%_50%]',\n              squircle ? 'rounded-[inherit]' : 'rounded-full',\n            )}\n          />\n\n          <span className=\"relative z-10 inline-flex items-center gap-2 [text-shadow:0_1px_1px_rgba(0,0,0,0.05)]\">\n            {children}\n          </span>\n        </Button>\n      </span>\n    )\n  },\n)\nGlassButton.displayName = 'GlassButton'\n",
+      "type": "registry:component",
+      "target": "components/spaceui/glass-button.tsx"
+    }
+  ],
+  "categories": [
+    "component",
+    "button",
+    "glass",
+    "squircle"
+  ],
+  "type": "registry:component"
+}

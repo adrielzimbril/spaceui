@@ -4,6 +4,7 @@
   "type": "registry:component",
   "title": "Gooey Info Popover",
   "description": "A round trigger that gooey-morphs into an info panel on hover.",
+  "isPro": true,
   "dependencies": ["motion"],
   "registryDependencies": ["https://www.spaceui.one/r/lib-utils.json"],
   "categories": ["component", "gooey", "motion"],

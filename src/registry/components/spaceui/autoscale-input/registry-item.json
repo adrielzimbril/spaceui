@@ -4,6 +4,7 @@
   "type": "registry:component",
   "title": "Autoscale Input",
   "description": "Input that grows and shrinks its type to fit the available width, with locale number formatting.",
+  "isPro": true,
   "registryDependencies": ["https://www.spaceui.one/r/lib-utils.json"],
   "categories": ["component", "autoscale-input"],
   "files": [

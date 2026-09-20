@@ -4,6 +4,7 @@
   "type": "registry:component",
   "title": "Gooey Slots Tooltip",
   "description": "A round trigger that gooey-expands upward into a rich content card on hover.",
+  "isPro": true,
   "dependencies": ["motion"],
   "registryDependencies": ["https://www.spaceui.one/r/lib-utils.json"],
   "categories": ["component", "gooey", "motion"],

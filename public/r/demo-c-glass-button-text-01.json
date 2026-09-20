@@ -1,0 +1,24 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-c-glass-button-text-01",
+  "title": "Glass Button — Text",
+  "description": "A text + icon glass CTA button over a gradient backdrop.",
+  "registryDependencies": [
+    "https://www.spaceui.one/r/components-spaceui-glass-button.json",
+    "https://www.spaceui.one/r/components-shader-silk-gradient.json"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/components/spaceui/glass-button/c-glass-button-text-01/index.tsx",
+      "content": "'use client'\n\nimport { IconDownload } from '@tabler/icons-react'\nimport { GlassButton } from '@/components/spaceui/glass-button'\nimport { SilkGradient } from '@/components/shader/silk-gradient'\n\nexport default function Demo() {\n  return (\n    <div className=\"relative squircle rounded-2xl bg-muted flex w-full items-center justify-center overflow-hidden rounded-2xl p-16\">\n      <SilkGradient\n        className=\"absolute inset-0 size-full\"\n        color1=\"#0ea5e9\"\n        color2=\"#22d3ee\"\n        color3=\"#a3e635\"\n        animate\n        speed={1}\n        grain\n      />\n      <GlassButton size=\"lg\">\n        <IconDownload className=\"size-4.5\" />\n        Download for iOS\n      </GlassButton>\n    </div>\n  )\n}\n",
+      "type": "registry:component",
+      "target": "components/spaceui/glass-button-text-demo.tsx"
+    }
+  ],
+  "categories": [
+    "component",
+    "button",
+    "glass"
+  ],
+  "type": "registry:component"
+}

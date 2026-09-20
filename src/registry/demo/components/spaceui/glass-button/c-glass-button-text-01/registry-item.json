@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-c-glass-button-text-01",
+  "type": "registry:component",
+  "title": "Glass Button — Text",
+  "description": "A text + icon glass CTA button over a gradient backdrop.",
+  "registryDependencies": [
+    "https://www.spaceui.one/r/components-spaceui-glass-button.json",
+    "https://www.spaceui.one/r/components-shader-silk-gradient.json"
+  ],
+  "categories": ["component", "button", "glass"],
+  "files": [
+    {
+      "path": "src/registry/demo/components/spaceui/glass-button/c-glass-button-text-01/index.tsx",
+      "type": "registry:component",
+      "target": "components/spaceui/glass-button-text-demo.tsx"
+    }
+  ],
+  "createdAt": "2026-09-20",
+  "updatedAt": "2026-09-20"
+}

@@ -15,14 +15,14 @@ export type AutoscaleInputProps = Omit<React.ComponentProps<'input'>, 'size'> & 
   containerClassName?: string
 }
 
-const getSeparator = (type: AutoscaleNumberFormat) => (type === 'eu' || type === 'space' ? ',' : '.')
+const decimalMark = (type: AutoscaleNumberFormat) => (type === 'eu' || type === 'space' ? ',' : '.')
 
-function formatNumber(parts: { int: string; frac: string }, type: AutoscaleNumberFormat) {
+function groupDigits(parts: { int: string; frac: string }, type: AutoscaleNumberFormat) {
   const { int, frac } = parts
   if (type === 'string') return int
   if (!int && !frac) return ''
-  const sep = getSeparator(type)
-  const formattedInt = int
+  const sep = decimalMark(type)
+  const groupedInt = int
     ? (() => {
         switch (type) {
           case 'in':
@@ -48,12 +48,12 @@ function formatNumber(parts: { int: string; frac: string }, type: AutoscaleNumbe
         }
       })()
     : '0'
-  return frac ? `${formattedInt}${sep}${frac}` : formattedInt
+  return frac ? `${groupedInt}${sep}${frac}` : groupedInt
 }
 
-function parseInput(val: string, type: AutoscaleNumberFormat) {
+function normalizeDigits(val: string, type: AutoscaleNumberFormat) {
   if (type === 'string') return val
-  const sep = getSeparator(type)
+  const sep = decimalMark(type)
   let str = val
   switch (type) {
     case 'us':
@@ -76,12 +76,12 @@ function parseInput(val: string, type: AutoscaleNumberFormat) {
       ? { int: str.replace(/\D/g, ''), frac: '' }
       : { int: str.slice(0, idx).replace(/\D/g, ''), frac: str.slice(idx + 1).replace(/\D/g, '') }
   if (!parts.int && !parts.frac) return ''
-  let fmt = formatNumber(parts, type)
+  let fmt = groupDigits(parts, type)
   if (val.endsWith(sep) && !parts.frac) fmt += sep
   return fmt
 }
 
-function useAutoscale({
+function useFitFontSize({
   minSize = 12,
   maxSize = 512,
   emptyMeasureFallback = '',
@@ -98,68 +98,68 @@ function useAutoscale({
   inputRef?: React.Ref<HTMLInputElement>
   watch?: unknown
 }) {
-  const containerRef = React.useRef<HTMLInputElement | null>(null)
+  const elementRef = React.useRef<HTMLInputElement | null>(null)
   const [fontSize, setFontSize] = React.useState<number | null>(null)
 
-  const setRef = React.useCallback(
+  const assignRef = React.useCallback(
     (node: HTMLInputElement | null) => {
-      containerRef.current = node
+      elementRef.current = node
       if (typeof inputRef === 'function') inputRef(node)
       else if (inputRef) (inputRef as React.MutableRefObject<HTMLInputElement | null>).current = node
     },
     [inputRef],
   )
 
-  const compute = React.useCallback(() => {
-    const el = containerRef.current
+  const measure = React.useCallback(() => {
+    const el = elementRef.current
     if (!el || !el.parentElement) return
-    const pref = prefixRef.current
-    const suff = suffixRef.current
+    const lead = prefixRef.current
+    const trail = suffixRef.current
     const maxW = el.parentElement.offsetWidth
     el.style.whiteSpace = 'nowrap'
     el.style.display = 'inline-block'
     const val = el.value
     el.value = val || emptyMeasureFallback || '\xa0'
 
-    const applySize = (s: number) => {
+    const setFontPx = (s: number) => {
       const v = `${s}px`
       el.style.fontSize = v
-      if (pref) pref.style.fontSize = v
-      if (suff) suff.style.fontSize = v
+      if (lead) lead.style.fontSize = v
+      if (trail) trail.style.fontSize = v
     }
 
-    const getW = () => (pref?.offsetWidth ?? 0) + el.scrollWidth + (suff?.offsetWidth ?? 0)
+    const contentWidth = () => (lead?.offsetWidth ?? 0) + el.scrollWidth + (trail?.offsetWidth ?? 0)
 
     let low = minSize
     let high = maxSize
     while (high - low > 0.5) {
       const mid = (low + high) / 2
-      applySize(mid)
-      if (getW() > maxW) high = mid
+      setFontPx(mid)
+      if (contentWidth() > maxW) high = mid
       else low = mid
     }
 
-    const finalSize = Math.floor(low)
-    applySize(finalSize)
-    setFontSize(finalSize)
+    const resolvedSize = Math.floor(low)
+    setFontPx(resolvedSize)
+    setFontSize(resolvedSize)
     el.value = val
   }, [minSize, maxSize, emptyMeasureFallback, prefixRef, suffixRef])
 
   React.useEffect(() => {
-    const el = containerRef.current
+    const el = elementRef.current
     const parent = el?.parentElement
     if (!el || !parent) return
-    compute()
-    const ro = new ResizeObserver(compute)
+    measure()
+    const ro = new ResizeObserver(measure)
     ro.observe(parent)
     return () => ro.disconnect()
-  }, [compute])
+  }, [measure])
 
   React.useEffect(() => {
-    compute()
-  }, [compute, watch])
+    measure()
+  }, [measure, watch])
 
-  return { ref: setRef, fontSize }
+  return { ref: assignRef, fontSize }
 }
 
 export const AutoscaleInput = React.forwardRef<HTMLInputElement, AutoscaleInputProps>(function AutoscaleInput(
@@ -186,29 +186,29 @@ export const AutoscaleInput = React.forwardRef<HTMLInputElement, AutoscaleInputP
   ref,
 ) {
   const isControlled = value !== undefined
-  const [internalVal, setInternalVal] = React.useState(() => {
+  const [localVal, setLocalVal] = React.useState(() => {
     const init = defaultValue?.toString() ?? ''
-    return numberFormat === 'string' ? init : parseInput(init, numberFormat)
+    return numberFormat === 'string' ? init : normalizeDigits(init, numberFormat)
   })
 
-  const activeVal = isControlled ? (value?.toString() ?? '') : internalVal
-  const activePlaceholder =
-    placeholder ?? (numberFormat === 'string' ? 'Type here' : formatNumber({ int: '0', frac: '0' }, numberFormat))
-  const prefRef = React.useRef<HTMLSpanElement>(null)
-  const suffRef = React.useRef<HTMLSpanElement>(null)
+  const resolvedVal = isControlled ? (value?.toString() ?? '') : localVal
+  const resolvedPlaceholder =
+    placeholder ?? (numberFormat === 'string' ? 'Type here' : groupDigits({ int: '0', frac: '0' }, numberFormat))
+  const leadRef = React.useRef<HTMLSpanElement>(null)
+  const trailRef = React.useRef<HTMLSpanElement>(null)
 
-  const { ref: autoRef, fontSize } = useAutoscale({
+  const { ref: fitRef, fontSize } = useFitFontSize({
     minSize,
     maxSize,
-    emptyMeasureFallback: activePlaceholder,
-    prefixRef: prefRef,
-    suffixRef: suffRef,
+    emptyMeasureFallback: resolvedPlaceholder,
+    prefixRef: leadRef,
+    suffixRef: trailRef,
     inputRef: ref,
-    watch: [activeVal, activePlaceholder, minSize, maxSize, prefix, suffix],
+    watch: [resolvedVal, resolvedPlaceholder, minSize, maxSize, prefix, suffix],
   })
 
   const sizeStyle = fontSize ? { fontSize: `${fontSize}px` } : undefined
-  const empty = !activeVal
+  const isBlank = !resolvedVal
 
   return (
     <div className={cn('mx-auto w-full max-w-sm', containerClassName)}>
@@ -220,8 +220,8 @@ export const AutoscaleInput = React.forwardRef<HTMLInputElement, AutoscaleInputP
       >
         {prefix ? (
           <span
-            ref={prefRef}
-            className={cn('shrink-0 text-foreground', empty && 'text-foreground/20')}
+            ref={leadRef}
+            className={cn('shrink-0 text-foreground', isBlank && 'text-foreground/20')}
             style={sizeStyle}
           >
             {prefix}
@@ -229,16 +229,16 @@ export const AutoscaleInput = React.forwardRef<HTMLInputElement, AutoscaleInputP
         ) : null}
         <input
           {...rest}
-          ref={autoRef}
+          ref={fitRef}
           type="text"
           inputMode={inputMode ?? (numberFormat === 'string' ? 'text' : 'decimal')}
           autoComplete={autoComplete}
           spellCheck={spellCheck ?? numberFormat === 'string'}
-          value={activeVal}
-          placeholder={activePlaceholder}
+          value={resolvedVal}
+          placeholder={resolvedPlaceholder}
           onChange={(event) => {
-            const parsed = parseInput(event.target.value, numberFormat)
-            if (!isControlled) setInternalVal(parsed)
+            const parsed = normalizeDigits(event.target.value, numberFormat)
+            if (!isControlled) setLocalVal(parsed)
             onChange?.({
               ...event,
               target: { ...event.target, value: parsed },
@@ -256,8 +256,8 @@ export const AutoscaleInput = React.forwardRef<HTMLInputElement, AutoscaleInputP
         />
         {suffix ? (
           <span
-            ref={suffRef}
-            className={cn('shrink-0 text-foreground', empty && 'text-foreground/20')}
+            ref={trailRef}
+            className={cn('shrink-0 text-foreground', isBlank && 'text-foreground/20')}
             style={sizeStyle}
           >
             {suffix}

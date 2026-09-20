@@ -2699,6 +2699,38 @@ export const index: Record<string, any> = {
     })(),
     command: '@spaceui/components-spaceui-github-activity',
   },
+  "components-spaceui-glass-button": {
+    name: "components-spaceui-glass-button",
+    description: "A glassmorphic button built on top of Button Squircle — backdrop blur, layered inset highlights and a hover shine sweep.",
+    type: "registry:component",
+    dependencies: ["@base-ui/react","class-variance-authority"],
+    devDependencies: undefined,
+    registryDependencies: ["https://www.spaceui.one/r/lib-utils.json","https://www.spaceui.one/r/components-spaceui-button-squircle.json"],
+    files: [
+  {
+    "path": "src/registry/components/spaceui/glass-button/index.tsx",
+    "type": "registry:component",
+    "target": "components/spaceui/glass-button.tsx"
+  }
+],
+    keywords: [],
+    component: (() => {
+      const LazyComp = React.lazy(async () => {
+        const mod = await import("@/registry/components/spaceui/glass-button/index.tsx");
+        const exportName = Object.keys(mod).find(
+          key => typeof mod[key] === 'function' || typeof mod[key] === 'object'
+        ) || "components-spaceui-glass-button";
+        const Comp = mod.default || mod[exportName];
+        if (mod.animations) {
+          (LazyComp as any).animations = mod.animations;
+        }
+        return { default: Comp };
+      });
+      LazyComp.demoProps = {};
+      return LazyComp;
+    })(),
+    command: '@spaceui/components-spaceui-glass-button',
+  },
   "components-spaceui-gooey-blobs": {
     name: "components-spaceui-gooey-blobs",
     description: "Two draggable blobs that merge into one liquid shape via an SVG gooey filter.",
@@ -3434,6 +3466,38 @@ export const index: Record<string, any> = {
       return LazyComp;
     })(),
     command: '@spaceui/components-spaceui-resizable',
+  },
+  "components-spaceui-scatter-text": {
+    name: "components-spaceui-scatter-text",
+    description: "A text input whose content scatters into drifting canvas grains on submit.",
+    type: "registry:component",
+    dependencies: undefined,
+    devDependencies: undefined,
+    registryDependencies: ["https://www.spaceui.one/r/lib-utils.json"],
+    files: [
+  {
+    "path": "src/registry/components/spaceui/scatter-text/index.tsx",
+    "type": "registry:component",
+    "target": "components/spaceui/scatter-text.tsx"
+  }
+],
+    keywords: [],
+    component: (() => {
+      const LazyComp = React.lazy(async () => {
+        const mod = await import("@/registry/components/spaceui/scatter-text/index.tsx");
+        const exportName = Object.keys(mod).find(
+          key => typeof mod[key] === 'function' || typeof mod[key] === 'object'
+        ) || "components-spaceui-scatter-text";
+        const Comp = mod.default || mod[exportName];
+        if (mod.animations) {
+          (LazyComp as any).animations = mod.animations;
+        }
+        return { default: Comp };
+      });
+      LazyComp.demoProps = {};
+      return LazyComp;
+    })(),
+    command: '@spaceui/components-spaceui-scatter-text',
   },
   "components-spaceui-scrollspy": {
     name: "components-spaceui-scrollspy",
@@ -7406,6 +7470,102 @@ export const index: Record<string, any> = {
     })(),
     command: '@spaceui/demo-c-github-activity-03',
   },
+  "demo-c-glass-button-icon-01": {
+    name: "demo-c-glass-button-icon-01",
+    description: "Icon-only glass buttons over a gradient backdrop.",
+    type: "registry:component",
+    dependencies: undefined,
+    devDependencies: undefined,
+    registryDependencies: ["https://www.spaceui.one/r/components-spaceui-glass-button.json","https://www.spaceui.one/r/components-shader-silk-gradient.json"],
+    files: [
+  {
+    "path": "src/registry/demo/components/spaceui/glass-button/c-glass-button-icon-01/index.tsx",
+    "type": "registry:component",
+    "target": "components/spaceui/glass-button-icon-demo.tsx"
+  }
+],
+    keywords: [],
+    component: (() => {
+      const LazyComp = React.lazy(async () => {
+        const mod = await import("@/registry/demo/components/spaceui/glass-button/c-glass-button-icon-01/index.tsx");
+        const exportName = Object.keys(mod).find(
+          key => typeof mod[key] === 'function' || typeof mod[key] === 'object'
+        ) || "demo-c-glass-button-icon-01";
+        const Comp = mod.default || mod[exportName];
+        if (mod.animations) {
+          (LazyComp as any).animations = mod.animations;
+        }
+        return { default: Comp };
+      });
+      LazyComp.demoProps = {};
+      return LazyComp;
+    })(),
+    command: '@spaceui/demo-c-glass-button-icon-01',
+  },
+  "demo-c-glass-button-reveal-01": {
+    name: "demo-c-glass-button-reveal-01",
+    description: "An icon glass button that widens and blur-reveals a text label on hover.",
+    type: "registry:component",
+    dependencies: undefined,
+    devDependencies: undefined,
+    registryDependencies: ["https://www.spaceui.one/r/components-spaceui-glass-button.json","https://www.spaceui.one/r/components-shader-silk-gradient.json"],
+    files: [
+  {
+    "path": "src/registry/demo/components/spaceui/glass-button/c-glass-button-reveal-01/index.tsx",
+    "type": "registry:component",
+    "target": "components/spaceui/glass-button-reveal-demo.tsx"
+  }
+],
+    keywords: [],
+    component: (() => {
+      const LazyComp = React.lazy(async () => {
+        const mod = await import("@/registry/demo/components/spaceui/glass-button/c-glass-button-reveal-01/index.tsx");
+        const exportName = Object.keys(mod).find(
+          key => typeof mod[key] === 'function' || typeof mod[key] === 'object'
+        ) || "demo-c-glass-button-reveal-01";
+        const Comp = mod.default || mod[exportName];
+        if (mod.animations) {
+          (LazyComp as any).animations = mod.animations;
+        }
+        return { default: Comp };
+      });
+      LazyComp.demoProps = {};
+      return LazyComp;
+    })(),
+    command: '@spaceui/demo-c-glass-button-reveal-01',
+  },
+  "demo-c-glass-button-text-01": {
+    name: "demo-c-glass-button-text-01",
+    description: "A text + icon glass CTA button over a gradient backdrop.",
+    type: "registry:component",
+    dependencies: undefined,
+    devDependencies: undefined,
+    registryDependencies: ["https://www.spaceui.one/r/components-spaceui-glass-button.json","https://www.spaceui.one/r/components-shader-silk-gradient.json"],
+    files: [
+  {
+    "path": "src/registry/demo/components/spaceui/glass-button/c-glass-button-text-01/index.tsx",
+    "type": "registry:component",
+    "target": "components/spaceui/glass-button-text-demo.tsx"
+  }
+],
+    keywords: [],
+    component: (() => {
+      const LazyComp = React.lazy(async () => {
+        const mod = await import("@/registry/demo/components/spaceui/glass-button/c-glass-button-text-01/index.tsx");
+        const exportName = Object.keys(mod).find(
+          key => typeof mod[key] === 'function' || typeof mod[key] === 'object'
+        ) || "demo-c-glass-button-text-01";
+        const Comp = mod.default || mod[exportName];
+        if (mod.animations) {
+          (LazyComp as any).animations = mod.animations;
+        }
+        return { default: Comp };
+      });
+      LazyComp.demoProps = {};
+      return LazyComp;
+    })(),
+    command: '@spaceui/demo-c-glass-button-text-01',
+  },
   "demo-c-gooey-blobs-01": {
     name: "demo-c-gooey-blobs-01",
     description: "Drag the two blobs close together to see them merge.",
@@ -9613,6 +9773,38 @@ export const index: Record<string, any> = {
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-resizable-10',
+  },
+  "demo-c-scatter-text-01": {
+    name: "demo-c-scatter-text-01",
+    description: "An email subscribe field that scatters into grains on submit.",
+    type: "registry:component",
+    dependencies: undefined,
+    devDependencies: undefined,
+    registryDependencies: ["https://www.spaceui.one/r/components-spaceui-scatter-text.json"],
+    files: [
+  {
+    "path": "src/registry/demo/components/spaceui/scatter-text/c-scatter-text-01/index.tsx",
+    "type": "registry:component",
+    "target": "components/spaceui/scatter-text-demo.tsx"
+  }
+],
+    keywords: [],
+    component: (() => {
+      const LazyComp = React.lazy(async () => {
+        const mod = await import("@/registry/demo/components/spaceui/scatter-text/c-scatter-text-01/index.tsx");
+        const exportName = Object.keys(mod).find(
+          key => typeof mod[key] === 'function' || typeof mod[key] === 'object'
+        ) || "demo-c-scatter-text-01";
+        const Comp = mod.default || mod[exportName];
+        if (mod.animations) {
+          (LazyComp as any).animations = mod.animations;
+        }
+        return { default: Comp };
+      });
+      LazyComp.demoProps = {};
+      return LazyComp;
+    })(),
+    command: '@spaceui/demo-c-scatter-text-01',
   },
   "demo-c-scrollspy-01": {
     name: "demo-c-scrollspy-01",

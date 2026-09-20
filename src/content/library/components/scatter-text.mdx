@@ -1,0 +1,41 @@
+---
+title: Scatter Text
+description: A text input whose content scatters into drifting canvas grains on submit.
+preview:
+  name: demo-c-scatter-text-01
+  contained: false
+---
+
+## Installation
+
+<ComponentInstallation name="components-spaceui-scatter-text" />
+
+## Usage
+
+```tsx
+import { ScatterText } from '@/components/spaceui/scatter-text'
+
+export default function SpaceUI() {
+  return <ScatterText placeholder="adriel@spaceui.one" onSubmit={(value) => console.log(value)} />
+}
+```
+
+## Files
+
+| File                     | Role                                       |
+| ------------------------ | ------------------------------------------ |
+| `scatter-text/index.tsx` | Canvas rasterizing, scatter loop, the form |
+
+## API Reference
+
+| Prop             | Type                                         | Default | Description                               |
+| ---------------- | -------------------------------------------- | ------- | ----------------------------------------- |
+| `placeholder`    | `string`                                     | —       | Empty-state hint                          |
+| `value`          | `string`                                     | —       | Controlled value                          |
+| `defaultValue`   | `string`                                     | `''`    | Initial value when uncontrolled           |
+| `onChange`       | `(e: ChangeEvent<HTMLInputElement>) => void` | —       | Fires on every keystroke                  |
+| `onSubmit`       | `(value: string) => void`                    | —       | Fires once the scatter animation finishes |
+| `className`      | `string`                                     | —       | Outer form wrapper                        |
+| `inputClassName` | `string`                                     | —       | The `<input>` element                     |
+
+Submit either by pressing Enter or clicking the trailing button. Grain color is sampled from the input's own computed text color, so it follows light/dark theme automatically.

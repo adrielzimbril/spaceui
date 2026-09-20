@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-c-glass-button-reveal-01",
+  "type": "registry:component",
+  "title": "Glass Button — Blur Reveal",
+  "description": "An icon glass button that widens and blur-reveals a text label on hover.",
+  "registryDependencies": [
+    "https://www.spaceui.one/r/components-spaceui-glass-button.json",
+    "https://www.spaceui.one/r/components-shader-silk-gradient.json"
+  ],
+  "categories": ["component", "button", "glass", "motion"],
+  "files": [
+    {
+      "path": "src/registry/demo/components/spaceui/glass-button/c-glass-button-reveal-01/index.tsx",
+      "type": "registry:component",
+      "target": "components/spaceui/glass-button-reveal-demo.tsx"
+    }
+  ],
+  "createdAt": "2026-09-20",
+  "updatedAt": "2026-09-20"
+}

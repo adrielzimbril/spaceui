@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "components-spaceui-scatter-text",
+  "type": "registry:component",
+  "title": "Scatter Text",
+  "description": "A text input whose content scatters into drifting canvas grains on submit.",
+  "isPro": true,
+  "registryDependencies": ["https://www.spaceui.one/r/lib-utils.json"],
+  "categories": ["component", "text", "canvas"],
+  "files": [
+    {
+      "path": "src/registry/components/spaceui/scatter-text/index.tsx",
+      "type": "registry:component",
+      "target": "components/spaceui/scatter-text.tsx"
+    }
+  ],
+  "createdAt": "2026-09-20",
+  "updatedAt": "2026-09-20"
+}
