@@ -195,6 +195,16 @@ export const megaMenuTools: ResourceItem[] = [
     color: DEFAULT_COLOR_CODE.RED,
   },
   {
+    title: '3D Reveal',
+    label: 'reveal',
+    description: 'Brush-reveal two images together with real-time WebGL depth parallax.',
+    href: '/tools/reveal',
+    icon: IconBox,
+    upcoming: false,
+    release: 'new',
+    color: DEFAULT_COLOR_CODE.INDIGO,
+  },
+  {
     title: 'OG Image Generator',
     label: 'og-image',
     description: 'Generate dynamic social share images.',
