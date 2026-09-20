@@ -297,7 +297,7 @@ export const index: Record<string, any> = {
     type: "registry:block",
     dependencies: ["@tabler/icons-react"],
     devDependencies: undefined,
-    registryDependencies: ["https://www.spaceui.one/r/lib-utils.json","https://www.spaceui.one/r/primitives-badge.json","https://www.spaceui.one/r/primitives-button.json","https://www.spaceui.one/r/primitives-card.json","https://www.spaceui.one/r/primitives-dialog.json","https://www.spaceui.one/r/primitives-toast.json"],
+    registryDependencies: ["https://www.spaceui.one/r/lib-utils.json","https://www.spaceui.one/r/components-spaceui-badge-squircle.json","https://www.spaceui.one/r/components-spaceui-button-squircle.json","https://www.spaceui.one/r/primitives-card.json","https://www.spaceui.one/r/primitives-dialog.json","https://www.spaceui.one/r/primitives-toast.json"],
     files: [
   {
     "path": "src/registry/blocks/interactive-fun-facts/interactive-fun-facts-1/index.tsx",
@@ -2698,6 +2698,134 @@ export const index: Record<string, any> = {
       return LazyComp;
     })(),
     command: '@spaceui/components-spaceui-github-activity',
+  },
+  "components-spaceui-gooey-blobs": {
+    name: "components-spaceui-gooey-blobs",
+    description: "Two draggable blobs that merge into one liquid shape via an SVG gooey filter.",
+    type: "registry:component",
+    dependencies: ["motion"],
+    devDependencies: undefined,
+    registryDependencies: ["https://www.spaceui.one/r/lib-utils.json"],
+    files: [
+  {
+    "path": "src/registry/components/spaceui/gooey-blobs/index.tsx",
+    "type": "registry:component",
+    "target": "components/spaceui/gooey-blobs.tsx"
+  }
+],
+    keywords: [],
+    component: (() => {
+      const LazyComp = React.lazy(async () => {
+        const mod = await import("@/registry/components/spaceui/gooey-blobs/index.tsx");
+        const exportName = Object.keys(mod).find(
+          key => typeof mod[key] === 'function' || typeof mod[key] === 'object'
+        ) || "components-spaceui-gooey-blobs";
+        const Comp = mod.default || mod[exportName];
+        if (mod.animations) {
+          (LazyComp as any).animations = mod.animations;
+        }
+        return { default: Comp };
+      });
+      LazyComp.demoProps = {};
+      return LazyComp;
+    })(),
+    command: '@spaceui/components-spaceui-gooey-blobs',
+  },
+  "components-spaceui-gooey-info-popover": {
+    name: "components-spaceui-gooey-info-popover",
+    description: "A round trigger that gooey-morphs into an info panel on hover.",
+    type: "registry:component",
+    dependencies: ["motion"],
+    devDependencies: undefined,
+    registryDependencies: ["https://www.spaceui.one/r/lib-utils.json"],
+    files: [
+  {
+    "path": "src/registry/components/spaceui/gooey-info-popover/index.tsx",
+    "type": "registry:component",
+    "target": "components/spaceui/gooey-info-popover.tsx"
+  }
+],
+    keywords: [],
+    component: (() => {
+      const LazyComp = React.lazy(async () => {
+        const mod = await import("@/registry/components/spaceui/gooey-info-popover/index.tsx");
+        const exportName = Object.keys(mod).find(
+          key => typeof mod[key] === 'function' || typeof mod[key] === 'object'
+        ) || "components-spaceui-gooey-info-popover";
+        const Comp = mod.default || mod[exportName];
+        if (mod.animations) {
+          (LazyComp as any).animations = mod.animations;
+        }
+        return { default: Comp };
+      });
+      LazyComp.demoProps = {};
+      return LazyComp;
+    })(),
+    command: '@spaceui/components-spaceui-gooey-info-popover',
+  },
+  "components-spaceui-gooey-slots-tooltip": {
+    name: "components-spaceui-gooey-slots-tooltip",
+    description: "A round trigger that gooey-expands upward into a rich content card on hover.",
+    type: "registry:component",
+    dependencies: ["motion"],
+    devDependencies: undefined,
+    registryDependencies: ["https://www.spaceui.one/r/lib-utils.json"],
+    files: [
+  {
+    "path": "src/registry/components/spaceui/gooey-slots-tooltip/index.tsx",
+    "type": "registry:component",
+    "target": "components/spaceui/gooey-slots-tooltip.tsx"
+  }
+],
+    keywords: [],
+    component: (() => {
+      const LazyComp = React.lazy(async () => {
+        const mod = await import("@/registry/components/spaceui/gooey-slots-tooltip/index.tsx");
+        const exportName = Object.keys(mod).find(
+          key => typeof mod[key] === 'function' || typeof mod[key] === 'object'
+        ) || "components-spaceui-gooey-slots-tooltip";
+        const Comp = mod.default || mod[exportName];
+        if (mod.animations) {
+          (LazyComp as any).animations = mod.animations;
+        }
+        return { default: Comp };
+      });
+      LazyComp.demoProps = {};
+      return LazyComp;
+    })(),
+    command: '@spaceui/components-spaceui-gooey-slots-tooltip',
+  },
+  "components-spaceui-gooey-tooltip": {
+    name: "components-spaceui-gooey-tooltip",
+    description: "A tooltip bubble that mouse-follows and gooey-connects to its trigger button on hover.",
+    type: "registry:component",
+    dependencies: ["motion"],
+    devDependencies: undefined,
+    registryDependencies: ["https://www.spaceui.one/r/lib-utils.json"],
+    files: [
+  {
+    "path": "src/registry/components/spaceui/gooey-tooltip/index.tsx",
+    "type": "registry:component",
+    "target": "components/spaceui/gooey-tooltip.tsx"
+  }
+],
+    keywords: [],
+    component: (() => {
+      const LazyComp = React.lazy(async () => {
+        const mod = await import("@/registry/components/spaceui/gooey-tooltip/index.tsx");
+        const exportName = Object.keys(mod).find(
+          key => typeof mod[key] === 'function' || typeof mod[key] === 'object'
+        ) || "components-spaceui-gooey-tooltip";
+        const Comp = mod.default || mod[exportName];
+        if (mod.animations) {
+          (LazyComp as any).animations = mod.animations;
+        }
+        return { default: Comp };
+      });
+      LazyComp.demoProps = {};
+      return LazyComp;
+    })(),
+    command: '@spaceui/components-spaceui-gooey-tooltip',
   },
   "components-spaceui-handle-reel": {
     name: "components-spaceui-handle-reel",
@@ -7277,6 +7405,134 @@ export const index: Record<string, any> = {
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-github-activity-03',
+  },
+  "demo-c-gooey-blobs-01": {
+    name: "demo-c-gooey-blobs-01",
+    description: "Drag the two blobs close together to see them merge.",
+    type: "registry:component",
+    dependencies: undefined,
+    devDependencies: undefined,
+    registryDependencies: ["https://www.spaceui.one/r/components-spaceui-gooey-blobs.json"],
+    files: [
+  {
+    "path": "src/registry/demo/components/spaceui/gooey-blobs/c-gooey-blobs-01/index.tsx",
+    "type": "registry:component",
+    "target": "components/spaceui/gooey-blobs-demo.tsx"
+  }
+],
+    keywords: [],
+    component: (() => {
+      const LazyComp = React.lazy(async () => {
+        const mod = await import("@/registry/demo/components/spaceui/gooey-blobs/c-gooey-blobs-01/index.tsx");
+        const exportName = Object.keys(mod).find(
+          key => typeof mod[key] === 'function' || typeof mod[key] === 'object'
+        ) || "demo-c-gooey-blobs-01";
+        const Comp = mod.default || mod[exportName];
+        if (mod.animations) {
+          (LazyComp as any).animations = mod.animations;
+        }
+        return { default: Comp };
+      });
+      LazyComp.demoProps = {};
+      return LazyComp;
+    })(),
+    command: '@spaceui/demo-c-gooey-blobs-01',
+  },
+  "demo-c-gooey-info-popover-01": {
+    name: "demo-c-gooey-info-popover-01",
+    description: "Hover the info button to see it gooey-morph into a status card.",
+    type: "registry:component",
+    dependencies: undefined,
+    devDependencies: undefined,
+    registryDependencies: ["https://www.spaceui.one/r/components-spaceui-gooey-info-popover.json"],
+    files: [
+  {
+    "path": "src/registry/demo/components/spaceui/gooey-info-popover/c-gooey-info-popover-01/index.tsx",
+    "type": "registry:component",
+    "target": "components/spaceui/gooey-info-popover-demo.tsx"
+  }
+],
+    keywords: [],
+    component: (() => {
+      const LazyComp = React.lazy(async () => {
+        const mod = await import("@/registry/demo/components/spaceui/gooey-info-popover/c-gooey-info-popover-01/index.tsx");
+        const exportName = Object.keys(mod).find(
+          key => typeof mod[key] === 'function' || typeof mod[key] === 'object'
+        ) || "demo-c-gooey-info-popover-01";
+        const Comp = mod.default || mod[exportName];
+        if (mod.animations) {
+          (LazyComp as any).animations = mod.animations;
+        }
+        return { default: Comp };
+      });
+      LazyComp.demoProps = {};
+      return LazyComp;
+    })(),
+    command: '@spaceui/demo-c-gooey-info-popover-01',
+  },
+  "demo-c-gooey-slots-tooltip-01": {
+    name: "demo-c-gooey-slots-tooltip-01",
+    description: "Hover the info button to see it gooey-expand into a rich content card.",
+    type: "registry:component",
+    dependencies: undefined,
+    devDependencies: undefined,
+    registryDependencies: ["https://www.spaceui.one/r/components-spaceui-gooey-slots-tooltip.json"],
+    files: [
+  {
+    "path": "src/registry/demo/components/spaceui/gooey-slots-tooltip/c-gooey-slots-tooltip-01/index.tsx",
+    "type": "registry:component",
+    "target": "components/spaceui/gooey-slots-tooltip-demo.tsx"
+  }
+],
+    keywords: [],
+    component: (() => {
+      const LazyComp = React.lazy(async () => {
+        const mod = await import("@/registry/demo/components/spaceui/gooey-slots-tooltip/c-gooey-slots-tooltip-01/index.tsx");
+        const exportName = Object.keys(mod).find(
+          key => typeof mod[key] === 'function' || typeof mod[key] === 'object'
+        ) || "demo-c-gooey-slots-tooltip-01";
+        const Comp = mod.default || mod[exportName];
+        if (mod.animations) {
+          (LazyComp as any).animations = mod.animations;
+        }
+        return { default: Comp };
+      });
+      LazyComp.demoProps = {};
+      return LazyComp;
+    })(),
+    command: '@spaceui/demo-c-gooey-slots-tooltip-01',
+  },
+  "demo-c-gooey-tooltip-01": {
+    name: "demo-c-gooey-tooltip-01",
+    description: "Hover the button to see the tooltip follow your cursor and gooey-connect.",
+    type: "registry:component",
+    dependencies: undefined,
+    devDependencies: undefined,
+    registryDependencies: ["https://www.spaceui.one/r/components-spaceui-gooey-tooltip.json"],
+    files: [
+  {
+    "path": "src/registry/demo/components/spaceui/gooey-tooltip/c-gooey-tooltip-01/index.tsx",
+    "type": "registry:component",
+    "target": "components/spaceui/gooey-tooltip-demo.tsx"
+  }
+],
+    keywords: [],
+    component: (() => {
+      const LazyComp = React.lazy(async () => {
+        const mod = await import("@/registry/demo/components/spaceui/gooey-tooltip/c-gooey-tooltip-01/index.tsx");
+        const exportName = Object.keys(mod).find(
+          key => typeof mod[key] === 'function' || typeof mod[key] === 'object'
+        ) || "demo-c-gooey-tooltip-01";
+        const Comp = mod.default || mod[exportName];
+        if (mod.animations) {
+          (LazyComp as any).animations = mod.animations;
+        }
+        return { default: Comp };
+      });
+      LazyComp.demoProps = {};
+      return LazyComp;
+    })(),
+    command: '@spaceui/demo-c-gooey-tooltip-01',
   },
   "demo-c-handle-reel-01": {
     name: "demo-c-handle-reel-01",
@@ -31944,6 +32200,18 @@ export const index: Record<string, any> = {
     keywords: [],
     component: null,
     command: '@spaceui/lib-colors-neutral',
+  },
+  "essentials": {
+    name: "essentials",
+    description: "Installs every Space UI primitive, Base UI utilities, and the full theme in a single command.",
+    type: "registry:lib",
+    dependencies: undefined,
+    devDependencies: undefined,
+    registryDependencies: ["https://www.spaceui.one/r/lib-utils.json","https://www.spaceui.one/r/lib-style.json","https://www.spaceui.one/r/lib-base-ui.json","https://www.spaceui.one/r/primitives-accordion.json","https://www.spaceui.one/r/primitives-alert-dialog.json","https://www.spaceui.one/r/primitives-alert.json","https://www.spaceui.one/r/primitives-aspect-ratio.json","https://www.spaceui.one/r/primitives-autocomplete.json","https://www.spaceui.one/r/primitives-avatar.json","https://www.spaceui.one/r/primitives-badge.json","https://www.spaceui.one/r/primitives-breadcrumb.json","https://www.spaceui.one/r/primitives-button.json","https://www.spaceui.one/r/primitives-calendar.json","https://www.spaceui.one/r/primitives-card.json","https://www.spaceui.one/r/primitives-checkbox-group.json","https://www.spaceui.one/r/primitives-checkbox.json","https://www.spaceui.one/r/primitives-collapsible.json","https://www.spaceui.one/r/primitives-combobox.json","https://www.spaceui.one/r/primitives-command.json","https://www.spaceui.one/r/primitives-context-menu.json","https://www.spaceui.one/r/primitives-dialog.json","https://www.spaceui.one/r/primitives-direction.json","https://www.spaceui.one/r/primitives-drawer.json","https://www.spaceui.one/r/primitives-empty.json","https://www.spaceui.one/r/primitives-field.json","https://www.spaceui.one/r/primitives-fieldset.json","https://www.spaceui.one/r/primitives-form.json","https://www.spaceui.one/r/primitives-frame.json","https://www.spaceui.one/r/primitives-group.json","https://www.spaceui.one/r/primitives-input-group.json","https://www.spaceui.one/r/primitives-input.json","https://www.spaceui.one/r/primitives-kbd.json","https://www.spaceui.one/r/primitives-label.json","https://www.spaceui.one/r/primitives-link.json","https://www.spaceui.one/r/primitives-menu.json","https://www.spaceui.one/r/primitives-menubar.json","https://www.spaceui.one/r/primitives-meter.json","https://www.spaceui.one/r/primitives-navigation-menu.json","https://www.spaceui.one/r/primitives-number-field.json","https://www.spaceui.one/r/primitives-otp-field.json","https://www.spaceui.one/r/primitives-pagination.json","https://www.spaceui.one/r/primitives-popover.json","https://www.spaceui.one/r/primitives-preview-card.json","https://www.spaceui.one/r/primitives-preview-link-card.json","https://www.spaceui.one/r/primitives-progress.json","https://www.spaceui.one/r/primitives-radio-group.json","https://www.spaceui.one/r/primitives-scroll-area.json","https://www.spaceui.one/r/primitives-select.json","https://www.spaceui.one/r/primitives-separator.json","https://www.spaceui.one/r/primitives-sheet.json","https://www.spaceui.one/r/primitives-sidebar.json","https://www.spaceui.one/r/primitives-skeleton.json","https://www.spaceui.one/r/primitives-slider.json","https://www.spaceui.one/r/primitives-spinner.json","https://www.spaceui.one/r/primitives-switch.json","https://www.spaceui.one/r/primitives-table.json","https://www.spaceui.one/r/primitives-tabs.json","https://www.spaceui.one/r/primitives-textarea.json","https://www.spaceui.one/r/primitives-toast.json","https://www.spaceui.one/r/primitives-toggle-group.json","https://www.spaceui.one/r/primitives-toggle.json","https://www.spaceui.one/r/primitives-toolbar.json","https://www.spaceui.one/r/primitives-tooltip.json"],
+    files: [],
+    keywords: [],
+    component: null,
+    command: '@spaceui/essentials',
   },
   "lib-font-heading": {
     name: "lib-font-heading",

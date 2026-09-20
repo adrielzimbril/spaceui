@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-c-gooey-info-popover-01",
+  "type": "registry:component",
+  "title": "Gooey Info Popover Demo",
+  "description": "Hover the info button to see it gooey-morph into a status card.",
+  "registryDependencies": ["https://www.spaceui.one/r/components-spaceui-gooey-info-popover.json"],
+  "categories": ["component", "gooey", "motion"],
+  "files": [
+    {
+      "path": "src/registry/demo/components/spaceui/gooey-info-popover/c-gooey-info-popover-01/index.tsx",
+      "type": "registry:component",
+      "target": "components/spaceui/gooey-info-popover-demo.tsx"
+    }
+  ],
+  "createdAt": "2026-09-20",
+  "updatedAt": "2026-09-20"
+}

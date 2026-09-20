@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-c-gooey-blobs-01",
+  "title": "Gooey Blobs Demo",
+  "description": "Drag the two blobs close together to see them merge.",
+  "registryDependencies": [
+    "https://www.spaceui.one/r/components-spaceui-gooey-blobs.json"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/components/spaceui/gooey-blobs/c-gooey-blobs-01/index.tsx",
+      "content": "'use client'\n\nimport { GooeyBlobs } from '@/components/spaceui/gooey-blobs'\n\nexport default function Demo() {\n  return (\n    <div className=\"flex w-full items-center justify-center px-6 py-16\">\n      <GooeyBlobs />\n    </div>\n  )\n}\n",
+      "type": "registry:component",
+      "target": "components/spaceui/gooey-blobs-demo.tsx"
+    }
+  ],
+  "categories": [
+    "component",
+    "gooey",
+    "motion"
+  ],
+  "type": "registry:component"
+}

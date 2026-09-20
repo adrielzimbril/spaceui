@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-c-gooey-tooltip-01",
+  "type": "registry:component",
+  "title": "Gooey Tooltip Demo",
+  "description": "Hover the button to see the tooltip follow your cursor and gooey-connect.",
+  "registryDependencies": ["https://www.spaceui.one/r/components-spaceui-gooey-tooltip.json"],
+  "categories": ["component", "gooey", "motion"],
+  "files": [
+    {
+      "path": "src/registry/demo/components/spaceui/gooey-tooltip/c-gooey-tooltip-01/index.tsx",
+      "type": "registry:component",
+      "target": "components/spaceui/gooey-tooltip-demo.tsx"
+    }
+  ],
+  "createdAt": "2026-09-20",
+  "updatedAt": "2026-09-20"
+}

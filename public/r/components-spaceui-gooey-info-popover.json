@@ -1,0 +1,26 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "components-spaceui-gooey-info-popover",
+  "title": "Gooey Info Popover",
+  "description": "A round trigger that gooey-morphs into an info panel on hover.",
+  "dependencies": [
+    "motion"
+  ],
+  "registryDependencies": [
+    "https://www.spaceui.one/r/lib-utils.json"
+  ],
+  "files": [
+    {
+      "path": "src/registry/components/spaceui/gooey-info-popover/index.tsx",
+      "content": "'use client'\n\nimport * as React from 'react'\nimport { AnimatePresence, motion } from 'motion/react'\nimport { Button } from '@/components/spaceui/button-squircle'\nimport { cn } from '@/lib/utils'\n\nconst popoverSpring = { type: 'spring' as const, stiffness: 300, damping: 30 }\nconst REST_SIZE = 40\n\nexport interface GooeyInfoPopoverProps {\n  trigger: React.ReactNode\n  children: React.ReactNode\n  className?: string\n  panelClassName?: string\n  panelWidth?: number\n  panelHeight?: number\n}\n\nexport function GooeyInfoPopover({\n  trigger,\n  children,\n  className,\n  panelClassName,\n  panelWidth = 220,\n  panelHeight = 120,\n}: GooeyInfoPopoverProps) {\n  const filterId = React.useId().replace(/:/g, '')\n  const [hovered, setHovered] = React.useState(false)\n\n  const centerLeft = (size: number) => REST_SIZE / 2 - size / 2\n\n  const shapeAnimate = hovered\n    ? {\n        left: centerLeft(panelWidth),\n        y: -50,\n        width: panelWidth,\n        height: panelHeight,\n        borderRadius: 16,\n        transition: { ...popoverSpring, delay: 0.15, y: { ...popoverSpring, delay: 0 } },\n      }\n    : {\n        left: centerLeft(REST_SIZE),\n        y: 0,\n        width: REST_SIZE,\n        height: REST_SIZE,\n        borderRadius: 20,\n        transition: { ...popoverSpring, y: { ...popoverSpring, delay: 0.15 } },\n      }\n\n  return (\n    <div\n      className={cn('relative', className)}\n      onMouseEnter={() => setHovered(true)}\n      onMouseLeave={() => setHovered(false)}\n    >\n      <svg className=\"absolute size-0\" aria-hidden=\"true\">\n        <filter id={filterId}>\n          <feGaussianBlur in=\"SourceGraphic\" stdDeviation=\"4.4\" result=\"blur\" />\n          <feColorMatrix in=\"blur\" mode=\"matrix\" values=\"1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 20 -7\" />\n        </filter>\n      </svg>\n\n      <div className=\"pointer-events-none absolute bottom-0 left-0\" style={{ filter: `url(#${filterId})` }}>\n        <motion.div\n          initial={false}\n          animate={shapeAnimate}\n          className={cn('absolute bottom-0 bg-foreground', panelClassName)}\n        />\n        <div className=\"absolute bottom-0 left-0 size-10 rounded-full bg-foreground\" />\n      </div>\n\n      <AnimatePresence>\n        {hovered && (\n          <motion.div\n            initial={{ opacity: 0, y: 0, scale: 0.7 }}\n            animate={{ opacity: 1, y: -50, scale: 1, transition: { ...popoverSpring, delay: 0.15 } }}\n            exit={{ opacity: 0, y: 0, scale: 0.7, transition: { ...popoverSpring, delay: 0 } }}\n            style={{ left: centerLeft(panelWidth), width: panelWidth, height: panelHeight }}\n            className=\"pointer-events-none absolute bottom-0 flex flex-col justify-center overflow-hidden rounded-2xl p-4 text-background\"\n          >\n            {children}\n          </motion.div>\n        )}\n      </AnimatePresence>\n\n      <Button\n        size=\"icon-lg\"\n        aria-haspopup=\"dialog\"\n        aria-expanded={hovered}\n        className=\"relative z-10 [corner-shape:superellipse(1.25)] rounded-full text-background\"\n        squircle={false}\n      >\n        {trigger}\n      </Button>\n    </div>\n  )\n}\n",
+      "type": "registry:component",
+      "target": "components/spaceui/gooey-info-popover.tsx"
+    }
+  ],
+  "categories": [
+    "component",
+    "gooey",
+    "motion"
+  ],
+  "type": "registry:component"
+}

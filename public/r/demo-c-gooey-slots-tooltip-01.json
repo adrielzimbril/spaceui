@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-c-gooey-slots-tooltip-01",
+  "title": "Gooey Slots Tooltip Demo",
+  "description": "Hover the info button to see it gooey-expand into a rich content card.",
+  "registryDependencies": [
+    "https://www.spaceui.one/r/components-spaceui-gooey-slots-tooltip.json"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/components/spaceui/gooey-slots-tooltip/c-gooey-slots-tooltip-01/index.tsx",
+      "content": "'use client'\n\nimport { SilkFlare } from '@/components/shader/silk-flare'\nimport { Badge } from '@/components/spaceui/badge-squircle'\nimport { GooeySlotsTooltip } from '@/components/spaceui/gooey-slots-tooltip'\nimport { IconInfoCircle } from '@tabler/icons-react'\n\nexport default function Demo() {\n  return (\n    <div className=\"flex size-full items-end justify-center\">\n      <GooeySlotsTooltip trigger={<IconInfoCircle className=\"size-5\" />}>\n        <div className=\"relative dark flex h-full w-full flex-col justify-end pb-6\">\n          <div className=\"squircle absolute top-0 left-0 h-33 w-full overflow-hidden rounded-t-4xl\">\n            <SilkFlare\n              color1=\"#6a68ee\"\n              color2=\"#c9a6ff\"\n              color3=\"#04106c\"\n              color1Opacity={1}\n              color2Opacity={1}\n              color3Opacity={1}\n              animate\n              speed={1.5}\n              grain\n            />\n          </div>\n          <div className=\"mt-33 px-6\">\n            <h6 className=\"mt-6 mb-2 flex flex-wrap items-center text-xl font-semibold tracking-tight whitespace-nowrap\">\n              Fully slottable\n              <Badge variant=\"warning\" size=\"xs\" className=\"ml-2\">\n                New\n              </Badge>\n            </h6>\n            <p className=\"mb-2 text-xs leading-[160%] whitespace-nowrap opacity-60\">\n              Drop shaders, badges, your own JSX <br />\n              straight into the bubble—zero detaching\n            </p>\n          </div>\n        </div>\n      </GooeySlotsTooltip>\n    </div>\n  )\n}\n",
+      "type": "registry:component",
+      "target": "components/spaceui/gooey-slots-tooltip-demo.tsx"
+    }
+  ],
+  "categories": [
+    "component",
+    "gooey",
+    "motion"
+  ],
+  "type": "registry:component"
+}

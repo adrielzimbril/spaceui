@@ -3,10 +3,22 @@ export const mat4 = {
     const t = Math.tan(Math.PI * 0.5 - 0.5 * fov)
     const ri = 1 / (near - far)
     return new Float32Array([
-      t / aspect, 0, 0, 0,
-      0, t, 0, 0,
-      0, 0, (near + far) * ri, -1,
-      0, 0, near * far * ri * 2, 0,
+      t / aspect,
+      0,
+      0,
+      0,
+      0,
+      t,
+      0,
+      0,
+      0,
+      0,
+      (near + far) * ri,
+      -1,
+      0,
+      0,
+      near * far * ri * 2,
+      0,
     ])
   },
   translation(tx: number, ty: number, tz: number): Float32Array {
@@ -26,8 +38,7 @@ export const mat4 = {
     const o = new Float32Array(16)
     for (let i = 0; i < 4; i++)
       for (let j = 0; j < 4; j++)
-        o[i * 4 + j] =
-          b[i * 4] * a[j] + b[i * 4 + 1] * a[4 + j] + b[i * 4 + 2] * a[8 + j] + b[i * 4 + 3] * a[12 + j]
+        o[i * 4 + j] = b[i * 4] * a[j] + b[i * 4 + 1] * a[4 + j] + b[i * 4 + 2] * a[8 + j] + b[i * 4 + 3] * a[12 + j]
     return o
   },
   scale(m: Float32Array, sx: number, sy: number, sz: number): Float32Array {

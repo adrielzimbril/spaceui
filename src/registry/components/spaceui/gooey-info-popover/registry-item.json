@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "components-spaceui-gooey-info-popover",
+  "type": "registry:component",
+  "title": "Gooey Info Popover",
+  "description": "A round trigger that gooey-morphs into an info panel on hover.",
+  "dependencies": ["motion"],
+  "registryDependencies": ["https://www.spaceui.one/r/lib-utils.json"],
+  "categories": ["component", "gooey", "motion"],
+  "files": [
+    {
+      "path": "src/registry/components/spaceui/gooey-info-popover/index.tsx",
+      "type": "registry:component",
+      "target": "components/spaceui/gooey-info-popover.tsx"
+    }
+  ],
+  "createdAt": "2026-09-20",
+  "updatedAt": "2026-09-20"
+}

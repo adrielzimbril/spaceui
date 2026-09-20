@@ -561,18 +561,18 @@
       "interactive-fun-facts"
     ],
     "createdAt": "2026-08-31",
-    "updatedAt": "2026-08-31",
-    "size": "23.2 KB",
-    "rawSize": 23718,
-    "directSize": "23.2 KB",
+    "updatedAt": "2026-09-20",
+    "size": "23.4 KB",
+    "rawSize": 23951,
+    "directSize": "23.4 KB",
     "fileCount": 4,
     "dependencies": [
       "@tabler/icons-react"
     ],
     "registryDependencies": [
       "https://www.spaceui.one/r/lib-utils.json",
-      "https://www.spaceui.one/r/primitives-badge.json",
-      "https://www.spaceui.one/r/primitives-button.json",
+      "https://www.spaceui.one/r/components-spaceui-badge-squircle.json",
+      "https://www.spaceui.one/r/components-spaceui-button-squircle.json",
       "https://www.spaceui.one/r/primitives-card.json",
       "https://www.spaceui.one/r/primitives-dialog.json",
       "https://www.spaceui.one/r/primitives-toast.json"
@@ -592,18 +592,18 @@
       "interactive-fun-facts"
     ],
     "createdAt": "2026-08-31",
-    "updatedAt": "2026-08-31",
-    "size": "23.2 KB",
-    "rawSize": 23718,
-    "directSize": "23.2 KB",
+    "updatedAt": "2026-09-20",
+    "size": "23.4 KB",
+    "rawSize": 23951,
+    "directSize": "23.4 KB",
     "fileCount": 4,
     "dependencies": [
       "@tabler/icons-react"
     ],
     "registryDependencies": [
       "https://www.spaceui.one/r/lib-utils.json",
-      "https://www.spaceui.one/r/primitives-badge.json",
-      "https://www.spaceui.one/r/primitives-button.json",
+      "https://www.spaceui.one/r/components-spaceui-badge-squircle.json",
+      "https://www.spaceui.one/r/components-spaceui-button-squircle.json",
       "https://www.spaceui.one/r/primitives-card.json",
       "https://www.spaceui.one/r/primitives-dialog.json",
       "https://www.spaceui.one/r/primitives-toast.json"
@@ -623,18 +623,18 @@
       "interactive-fun-facts"
     ],
     "createdAt": "2026-08-31",
-    "updatedAt": "2026-08-31",
-    "size": "23.2 KB",
-    "rawSize": 23718,
-    "directSize": "23.2 KB",
+    "updatedAt": "2026-09-20",
+    "size": "23.4 KB",
+    "rawSize": 23951,
+    "directSize": "23.4 KB",
     "fileCount": 4,
     "dependencies": [
       "@tabler/icons-react"
     ],
     "registryDependencies": [
       "https://www.spaceui.one/r/lib-utils.json",
-      "https://www.spaceui.one/r/primitives-badge.json",
-      "https://www.spaceui.one/r/primitives-button.json",
+      "https://www.spaceui.one/r/components-spaceui-badge-squircle.json",
+      "https://www.spaceui.one/r/components-spaceui-button-squircle.json",
       "https://www.spaceui.one/r/primitives-card.json",
       "https://www.spaceui.one/r/primitives-dialog.json",
       "https://www.spaceui.one/r/primitives-toast.json"
@@ -3291,10 +3291,10 @@
       "tactile"
     ],
     "createdAt": "2026-09-12",
-    "updatedAt": "2026-09-12",
-    "size": "2.7 KB",
-    "rawSize": 2769,
-    "directSize": "2.7 KB",
+    "updatedAt": "2026-09-20",
+    "size": "2.8 KB",
+    "rawSize": 2851,
+    "directSize": "2.8 KB",
     "fileCount": 1,
     "dependencies": [
       "@usespaceui/squircle",
@@ -3332,10 +3332,10 @@
       "tactile"
     ],
     "createdAt": "2026-09-12",
-    "updatedAt": "2026-09-12",
-    "size": "2.7 KB",
-    "rawSize": 2769,
-    "directSize": "2.7 KB",
+    "updatedAt": "2026-09-20",
+    "size": "2.8 KB",
+    "rawSize": 2851,
+    "directSize": "2.8 KB",
     "fileCount": 1,
     "dependencies": [
       "@usespaceui/squircle",
@@ -7162,6 +7162,494 @@
     ],
     "dependents": [],
     "related": []
+  },
+  "gooey-blobs": {
+    "name": "components-spaceui-gooey-blobs",
+    "shortName": "gooey-blobs",
+    "title": "Gooey Blobs",
+    "description": "Two draggable blobs that merge into one liquid shape via an SVG gooey filter.",
+    "type": "registry:component",
+    "url": "/ui-kit/components/spaceui/gooey-blobs",
+    "category": "Gooey",
+    "categories": [
+      "gooey",
+      "motion"
+    ],
+    "createdAt": "2026-09-20",
+    "updatedAt": "2026-09-20",
+    "size": "1.8 KB",
+    "rawSize": 1836,
+    "directSize": "1.8 KB",
+    "fileCount": 1,
+    "dependencies": [
+      "motion"
+    ],
+    "registryDependencies": [
+      "https://www.spaceui.one/r/lib-utils.json"
+    ],
+    "dependents": [],
+    "related": [
+      {
+        "name": "gooey-info-popover",
+        "title": "Gooey Info Popover",
+        "description": "A round trigger that gooey-morphs into an info panel on hover.",
+        "url": "/ui-kit/components/spaceui/gooey-info-popover",
+        "category": "Gooey",
+        "categories": [
+          "gooey",
+          "motion"
+        ]
+      },
+      {
+        "name": "gooey-slots-tooltip",
+        "title": "Gooey Slots Tooltip",
+        "description": "A round trigger that gooey-expands upward into a rich content card on hover.",
+        "url": "/ui-kit/components/spaceui/gooey-slots-tooltip",
+        "category": "Gooey",
+        "categories": [
+          "gooey",
+          "motion"
+        ]
+      },
+      {
+        "name": "gooey-tooltip",
+        "title": "Gooey Tooltip",
+        "description": "A tooltip bubble that mouse-follows and gooey-connects to its trigger button on hover.",
+        "url": "/ui-kit/components/spaceui/gooey-tooltip",
+        "category": "Gooey",
+        "categories": [
+          "gooey",
+          "motion"
+        ]
+      }
+    ]
+  },
+  "components-spaceui-gooey-blobs": {
+    "name": "components-spaceui-gooey-blobs",
+    "shortName": "gooey-blobs",
+    "title": "Gooey Blobs",
+    "description": "Two draggable blobs that merge into one liquid shape via an SVG gooey filter.",
+    "type": "registry:component",
+    "url": "/ui-kit/components/spaceui/gooey-blobs",
+    "category": "Gooey",
+    "categories": [
+      "gooey",
+      "motion"
+    ],
+    "createdAt": "2026-09-20",
+    "updatedAt": "2026-09-20",
+    "size": "1.8 KB",
+    "rawSize": 1836,
+    "directSize": "1.8 KB",
+    "fileCount": 1,
+    "dependencies": [
+      "motion"
+    ],
+    "registryDependencies": [
+      "https://www.spaceui.one/r/lib-utils.json"
+    ],
+    "dependents": [],
+    "related": [
+      {
+        "name": "gooey-info-popover",
+        "title": "Gooey Info Popover",
+        "description": "A round trigger that gooey-morphs into an info panel on hover.",
+        "url": "/ui-kit/components/spaceui/gooey-info-popover",
+        "category": "Gooey",
+        "categories": [
+          "gooey",
+          "motion"
+        ]
+      },
+      {
+        "name": "gooey-slots-tooltip",
+        "title": "Gooey Slots Tooltip",
+        "description": "A round trigger that gooey-expands upward into a rich content card on hover.",
+        "url": "/ui-kit/components/spaceui/gooey-slots-tooltip",
+        "category": "Gooey",
+        "categories": [
+          "gooey",
+          "motion"
+        ]
+      },
+      {
+        "name": "gooey-tooltip",
+        "title": "Gooey Tooltip",
+        "description": "A tooltip bubble that mouse-follows and gooey-connects to its trigger button on hover.",
+        "url": "/ui-kit/components/spaceui/gooey-tooltip",
+        "category": "Gooey",
+        "categories": [
+          "gooey",
+          "motion"
+        ]
+      }
+    ]
+  },
+  "gooey-info-popover": {
+    "name": "components-spaceui-gooey-info-popover",
+    "shortName": "gooey-info-popover",
+    "title": "Gooey Info Popover",
+    "description": "A round trigger that gooey-morphs into an info panel on hover.",
+    "type": "registry:component",
+    "url": "/ui-kit/components/spaceui/gooey-info-popover",
+    "category": "Gooey",
+    "categories": [
+      "gooey",
+      "motion"
+    ],
+    "createdAt": "2026-09-20",
+    "updatedAt": "2026-09-20",
+    "size": "3 KB",
+    "rawSize": 3110,
+    "directSize": "3 KB",
+    "fileCount": 1,
+    "dependencies": [
+      "motion"
+    ],
+    "registryDependencies": [
+      "https://www.spaceui.one/r/lib-utils.json"
+    ],
+    "dependents": [],
+    "related": [
+      {
+        "name": "gooey-blobs",
+        "title": "Gooey Blobs",
+        "description": "Two draggable blobs that merge into one liquid shape via an SVG gooey filter.",
+        "url": "/ui-kit/components/spaceui/gooey-blobs",
+        "category": "Gooey",
+        "categories": [
+          "gooey",
+          "motion"
+        ]
+      },
+      {
+        "name": "gooey-slots-tooltip",
+        "title": "Gooey Slots Tooltip",
+        "description": "A round trigger that gooey-expands upward into a rich content card on hover.",
+        "url": "/ui-kit/components/spaceui/gooey-slots-tooltip",
+        "category": "Gooey",
+        "categories": [
+          "gooey",
+          "motion"
+        ]
+      },
+      {
+        "name": "gooey-tooltip",
+        "title": "Gooey Tooltip",
+        "description": "A tooltip bubble that mouse-follows and gooey-connects to its trigger button on hover.",
+        "url": "/ui-kit/components/spaceui/gooey-tooltip",
+        "category": "Gooey",
+        "categories": [
+          "gooey",
+          "motion"
+        ]
+      }
+    ]
+  },
+  "components-spaceui-gooey-info-popover": {
+    "name": "components-spaceui-gooey-info-popover",
+    "shortName": "gooey-info-popover",
+    "title": "Gooey Info Popover",
+    "description": "A round trigger that gooey-morphs into an info panel on hover.",
+    "type": "registry:component",
+    "url": "/ui-kit/components/spaceui/gooey-info-popover",
+    "category": "Gooey",
+    "categories": [
+      "gooey",
+      "motion"
+    ],
+    "createdAt": "2026-09-20",
+    "updatedAt": "2026-09-20",
+    "size": "3 KB",
+    "rawSize": 3110,
+    "directSize": "3 KB",
+    "fileCount": 1,
+    "dependencies": [
+      "motion"
+    ],
+    "registryDependencies": [
+      "https://www.spaceui.one/r/lib-utils.json"
+    ],
+    "dependents": [],
+    "related": [
+      {
+        "name": "gooey-blobs",
+        "title": "Gooey Blobs",
+        "description": "Two draggable blobs that merge into one liquid shape via an SVG gooey filter.",
+        "url": "/ui-kit/components/spaceui/gooey-blobs",
+        "category": "Gooey",
+        "categories": [
+          "gooey",
+          "motion"
+        ]
+      },
+      {
+        "name": "gooey-slots-tooltip",
+        "title": "Gooey Slots Tooltip",
+        "description": "A round trigger that gooey-expands upward into a rich content card on hover.",
+        "url": "/ui-kit/components/spaceui/gooey-slots-tooltip",
+        "category": "Gooey",
+        "categories": [
+          "gooey",
+          "motion"
+        ]
+      },
+      {
+        "name": "gooey-tooltip",
+        "title": "Gooey Tooltip",
+        "description": "A tooltip bubble that mouse-follows and gooey-connects to its trigger button on hover.",
+        "url": "/ui-kit/components/spaceui/gooey-tooltip",
+        "category": "Gooey",
+        "categories": [
+          "gooey",
+          "motion"
+        ]
+      }
+    ]
+  },
+  "gooey-slots-tooltip": {
+    "name": "components-spaceui-gooey-slots-tooltip",
+    "shortName": "gooey-slots-tooltip",
+    "title": "Gooey Slots Tooltip",
+    "description": "A round trigger that gooey-expands upward into a rich content card on hover.",
+    "type": "registry:component",
+    "url": "/ui-kit/components/spaceui/gooey-slots-tooltip",
+    "category": "Gooey",
+    "categories": [
+      "gooey",
+      "motion"
+    ],
+    "createdAt": "2026-09-20",
+    "updatedAt": "2026-09-20",
+    "size": "3.3 KB",
+    "rawSize": 3330,
+    "directSize": "3.3 KB",
+    "fileCount": 1,
+    "dependencies": [
+      "motion"
+    ],
+    "registryDependencies": [
+      "https://www.spaceui.one/r/lib-utils.json"
+    ],
+    "dependents": [],
+    "related": [
+      {
+        "name": "gooey-blobs",
+        "title": "Gooey Blobs",
+        "description": "Two draggable blobs that merge into one liquid shape via an SVG gooey filter.",
+        "url": "/ui-kit/components/spaceui/gooey-blobs",
+        "category": "Gooey",
+        "categories": [
+          "gooey",
+          "motion"
+        ]
+      },
+      {
+        "name": "gooey-info-popover",
+        "title": "Gooey Info Popover",
+        "description": "A round trigger that gooey-morphs into an info panel on hover.",
+        "url": "/ui-kit/components/spaceui/gooey-info-popover",
+        "category": "Gooey",
+        "categories": [
+          "gooey",
+          "motion"
+        ]
+      },
+      {
+        "name": "gooey-tooltip",
+        "title": "Gooey Tooltip",
+        "description": "A tooltip bubble that mouse-follows and gooey-connects to its trigger button on hover.",
+        "url": "/ui-kit/components/spaceui/gooey-tooltip",
+        "category": "Gooey",
+        "categories": [
+          "gooey",
+          "motion"
+        ]
+      }
+    ]
+  },
+  "components-spaceui-gooey-slots-tooltip": {
+    "name": "components-spaceui-gooey-slots-tooltip",
+    "shortName": "gooey-slots-tooltip",
+    "title": "Gooey Slots Tooltip",
+    "description": "A round trigger that gooey-expands upward into a rich content card on hover.",
+    "type": "registry:component",
+    "url": "/ui-kit/components/spaceui/gooey-slots-tooltip",
+    "category": "Gooey",
+    "categories": [
+      "gooey",
+      "motion"
+    ],
+    "createdAt": "2026-09-20",
+    "updatedAt": "2026-09-20",
+    "size": "3.3 KB",
+    "rawSize": 3330,
+    "directSize": "3.3 KB",
+    "fileCount": 1,
+    "dependencies": [
+      "motion"
+    ],
+    "registryDependencies": [
+      "https://www.spaceui.one/r/lib-utils.json"
+    ],
+    "dependents": [],
+    "related": [
+      {
+        "name": "gooey-blobs",
+        "title": "Gooey Blobs",
+        "description": "Two draggable blobs that merge into one liquid shape via an SVG gooey filter.",
+        "url": "/ui-kit/components/spaceui/gooey-blobs",
+        "category": "Gooey",
+        "categories": [
+          "gooey",
+          "motion"
+        ]
+      },
+      {
+        "name": "gooey-info-popover",
+        "title": "Gooey Info Popover",
+        "description": "A round trigger that gooey-morphs into an info panel on hover.",
+        "url": "/ui-kit/components/spaceui/gooey-info-popover",
+        "category": "Gooey",
+        "categories": [
+          "gooey",
+          "motion"
+        ]
+      },
+      {
+        "name": "gooey-tooltip",
+        "title": "Gooey Tooltip",
+        "description": "A tooltip bubble that mouse-follows and gooey-connects to its trigger button on hover.",
+        "url": "/ui-kit/components/spaceui/gooey-tooltip",
+        "category": "Gooey",
+        "categories": [
+          "gooey",
+          "motion"
+        ]
+      }
+    ]
+  },
+  "gooey-tooltip": {
+    "name": "components-spaceui-gooey-tooltip",
+    "shortName": "gooey-tooltip",
+    "title": "Gooey Tooltip",
+    "description": "A tooltip bubble that mouse-follows and gooey-connects to its trigger button on hover.",
+    "type": "registry:component",
+    "url": "/ui-kit/components/spaceui/gooey-tooltip",
+    "category": "Gooey",
+    "categories": [
+      "gooey",
+      "motion"
+    ],
+    "createdAt": "2026-09-20",
+    "updatedAt": "2026-09-20",
+    "size": "3.1 KB",
+    "rawSize": 3205,
+    "directSize": "3.1 KB",
+    "fileCount": 1,
+    "dependencies": [
+      "motion"
+    ],
+    "registryDependencies": [
+      "https://www.spaceui.one/r/lib-utils.json"
+    ],
+    "dependents": [],
+    "related": [
+      {
+        "name": "gooey-blobs",
+        "title": "Gooey Blobs",
+        "description": "Two draggable blobs that merge into one liquid shape via an SVG gooey filter.",
+        "url": "/ui-kit/components/spaceui/gooey-blobs",
+        "category": "Gooey",
+        "categories": [
+          "gooey",
+          "motion"
+        ]
+      },
+      {
+        "name": "gooey-info-popover",
+        "title": "Gooey Info Popover",
+        "description": "A round trigger that gooey-morphs into an info panel on hover.",
+        "url": "/ui-kit/components/spaceui/gooey-info-popover",
+        "category": "Gooey",
+        "categories": [
+          "gooey",
+          "motion"
+        ]
+      },
+      {
+        "name": "gooey-slots-tooltip",
+        "title": "Gooey Slots Tooltip",
+        "description": "A round trigger that gooey-expands upward into a rich content card on hover.",
+        "url": "/ui-kit/components/spaceui/gooey-slots-tooltip",
+        "category": "Gooey",
+        "categories": [
+          "gooey",
+          "motion"
+        ]
+      }
+    ]
+  },
+  "components-spaceui-gooey-tooltip": {
+    "name": "components-spaceui-gooey-tooltip",
+    "shortName": "gooey-tooltip",
+    "title": "Gooey Tooltip",
+    "description": "A tooltip bubble that mouse-follows and gooey-connects to its trigger button on hover.",
+    "type": "registry:component",
+    "url": "/ui-kit/components/spaceui/gooey-tooltip",
+    "category": "Gooey",
+    "categories": [
+      "gooey",
+      "motion"
+    ],
+    "createdAt": "2026-09-20",
+    "updatedAt": "2026-09-20",
+    "size": "3.1 KB",
+    "rawSize": 3205,
+    "directSize": "3.1 KB",
+    "fileCount": 1,
+    "dependencies": [
+      "motion"
+    ],
+    "registryDependencies": [
+      "https://www.spaceui.one/r/lib-utils.json"
+    ],
+    "dependents": [],
+    "related": [
+      {
+        "name": "gooey-blobs",
+        "title": "Gooey Blobs",
+        "description": "Two draggable blobs that merge into one liquid shape via an SVG gooey filter.",
+        "url": "/ui-kit/components/spaceui/gooey-blobs",
+        "category": "Gooey",
+        "categories": [
+          "gooey",
+          "motion"
+        ]
+      },
+      {
+        "name": "gooey-info-popover",
+        "title": "Gooey Info Popover",
+        "description": "A round trigger that gooey-morphs into an info panel on hover.",
+        "url": "/ui-kit/components/spaceui/gooey-info-popover",
+        "category": "Gooey",
+        "categories": [
+          "gooey",
+          "motion"
+        ]
+      },
+      {
+        "name": "gooey-slots-tooltip",
+        "title": "Gooey Slots Tooltip",
+        "description": "A round trigger that gooey-expands upward into a rich content card on hover.",
+        "url": "/ui-kit/components/spaceui/gooey-slots-tooltip",
+        "category": "Gooey",
+        "categories": [
+          "gooey",
+          "motion"
+        ]
+      }
+    ]
   },
   "handle-reel": {
     "name": "components-spaceui-handle-reel",

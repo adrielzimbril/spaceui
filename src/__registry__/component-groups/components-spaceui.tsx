@@ -104,6 +104,22 @@ export const registryComponents: Record<string, RegistryComponent> = {
     () => import("@/registry/components/spaceui/github-activity/index.tsx"),
     {},
   ),
+  "components-spaceui-gooey-blobs": lazyRegistryComponent(
+    () => import("@/registry/components/spaceui/gooey-blobs/index.tsx"),
+    {},
+  ),
+  "components-spaceui-gooey-info-popover": lazyRegistryComponent(
+    () => import("@/registry/components/spaceui/gooey-info-popover/index.tsx"),
+    {},
+  ),
+  "components-spaceui-gooey-slots-tooltip": lazyRegistryComponent(
+    () => import("@/registry/components/spaceui/gooey-slots-tooltip/index.tsx"),
+    {},
+  ),
+  "components-spaceui-gooey-tooltip": lazyRegistryComponent(
+    () => import("@/registry/components/spaceui/gooey-tooltip/index.tsx"),
+    {},
+  ),
   "components-spaceui-handle-reel": lazyRegistryComponent(
     () => import("@/registry/components/spaceui/handle-reel/index.tsx"),
     {},

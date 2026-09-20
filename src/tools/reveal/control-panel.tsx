@@ -130,8 +130,8 @@ export function RevealControlPanel({
             <ImageSummaryCard label="Base image" src={baseSrc} name={baseName} onPick={onPickBase} />
             <ImageSummaryCard label="Reveal image" src={revealSrc} name={revealName} onPick={onPickReveal} />
             <p className="px-0.5 text-[0.625rem] leading-snug text-muted-foreground">
-              The brush paints away the base image to show the reveal image underneath, shaped by each image's
-              own depth.
+              The brush paints away the base image to show the reveal image underneath, shaped by each image's own
+              depth.
             </p>
           </div>
 
@@ -304,7 +304,9 @@ export function RevealControlPanel({
                       <span
                         className={cn(
                           'w-full truncate px-0.5 text-center text-[0.625rem] font-medium transition-colors',
-                          isSelected ? 'font-semibold text-foreground' : 'text-muted-foreground group-hover:text-foreground',
+                          isSelected
+                            ? 'font-semibold text-foreground'
+                            : 'text-muted-foreground group-hover:text-foreground',
                         )}
                       >
                         {TRAJECTORY_LABELS[i]}
@@ -335,7 +337,9 @@ export function RevealControlPanel({
                     }}
                     className={cn(
                       'h-auto! flex-1 rounded-lg bg-muted py-1.5 text-xs transition-all hover:bg-muted',
-                      isSelected ? 'font-semibold text-foreground ring-2 ring-muted ring-offset-2 ring-offset-background' : 'text-muted-foreground',
+                      isSelected
+                        ? 'font-semibold text-foreground ring-2 ring-muted ring-offset-2 ring-offset-background'
+                        : 'text-muted-foreground',
                     )}
                   >
                     {d}s

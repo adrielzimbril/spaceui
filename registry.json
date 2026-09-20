@@ -277,8 +277,8 @@
       ],
       "registryDependencies": [
         "https://www.spaceui.one/r/lib-utils.json",
-        "https://www.spaceui.one/r/primitives-badge.json",
-        "https://www.spaceui.one/r/primitives-button.json",
+        "https://www.spaceui.one/r/components-spaceui-badge-squircle.json",
+        "https://www.spaceui.one/r/components-spaceui-button-squircle.json",
         "https://www.spaceui.one/r/primitives-card.json",
         "https://www.spaceui.one/r/primitives-dialog.json",
         "https://www.spaceui.one/r/primitives-toast.json"
@@ -309,7 +309,7 @@
         }
       ],
       "createdAt": "2026-08-31",
-      "updatedAt": "2026-08-31"
+      "updatedAt": "2026-09-20"
     },
     {
       "name": "block-interactive-grid-hero-1",
@@ -1498,7 +1498,7 @@
         }
       ],
       "createdAt": "2026-09-12",
-      "updatedAt": "2026-09-12"
+      "updatedAt": "2026-09-20"
     },
     {
       "name": "components-spaceui-blur-reveal-text",
@@ -2547,6 +2547,110 @@
       ],
       "createdAt": "2026-09-12",
       "updatedAt": "2026-09-12"
+    },
+    {
+      "name": "components-spaceui-gooey-blobs",
+      "type": "registry:component",
+      "title": "Gooey Blobs",
+      "description": "Two draggable blobs that merge into one liquid shape via an SVG gooey filter.",
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [
+        "https://www.spaceui.one/r/lib-utils.json"
+      ],
+      "categories": [
+        "component",
+        "gooey",
+        "motion"
+      ],
+      "files": [
+        {
+          "path": "src/registry/components/spaceui/gooey-blobs/index.tsx",
+          "type": "registry:component",
+          "target": "components/spaceui/gooey-blobs.tsx"
+        }
+      ],
+      "createdAt": "2026-09-20",
+      "updatedAt": "2026-09-20"
+    },
+    {
+      "name": "components-spaceui-gooey-info-popover",
+      "type": "registry:component",
+      "title": "Gooey Info Popover",
+      "description": "A round trigger that gooey-morphs into an info panel on hover.",
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [
+        "https://www.spaceui.one/r/lib-utils.json"
+      ],
+      "categories": [
+        "component",
+        "gooey",
+        "motion"
+      ],
+      "files": [
+        {
+          "path": "src/registry/components/spaceui/gooey-info-popover/index.tsx",
+          "type": "registry:component",
+          "target": "components/spaceui/gooey-info-popover.tsx"
+        }
+      ],
+      "createdAt": "2026-09-20",
+      "updatedAt": "2026-09-20"
+    },
+    {
+      "name": "components-spaceui-gooey-slots-tooltip",
+      "type": "registry:component",
+      "title": "Gooey Slots Tooltip",
+      "description": "A round trigger that gooey-expands upward into a rich content card on hover.",
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [
+        "https://www.spaceui.one/r/lib-utils.json"
+      ],
+      "categories": [
+        "component",
+        "gooey",
+        "motion"
+      ],
+      "files": [
+        {
+          "path": "src/registry/components/spaceui/gooey-slots-tooltip/index.tsx",
+          "type": "registry:component",
+          "target": "components/spaceui/gooey-slots-tooltip.tsx"
+        }
+      ],
+      "createdAt": "2026-09-20",
+      "updatedAt": "2026-09-20"
+    },
+    {
+      "name": "components-spaceui-gooey-tooltip",
+      "type": "registry:component",
+      "title": "Gooey Tooltip",
+      "description": "A tooltip bubble that mouse-follows and gooey-connects to its trigger button on hover.",
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [
+        "https://www.spaceui.one/r/lib-utils.json"
+      ],
+      "categories": [
+        "component",
+        "gooey",
+        "motion"
+      ],
+      "files": [
+        {
+          "path": "src/registry/components/spaceui/gooey-tooltip/index.tsx",
+          "type": "registry:component",
+          "target": "components/spaceui/gooey-tooltip.tsx"
+        }
+      ],
+      "createdAt": "2026-09-20",
+      "updatedAt": "2026-09-20"
     },
     {
       "name": "components-spaceui-handle-reel",
@@ -7498,6 +7602,98 @@
       ],
       "createdAt": "2026-09-12",
       "updatedAt": "2026-09-12"
+    },
+    {
+      "name": "demo-c-gooey-blobs-01",
+      "type": "registry:component",
+      "title": "Gooey Blobs Demo",
+      "description": "Drag the two blobs close together to see them merge.",
+      "registryDependencies": [
+        "https://www.spaceui.one/r/components-spaceui-gooey-blobs.json"
+      ],
+      "categories": [
+        "component",
+        "gooey",
+        "motion"
+      ],
+      "files": [
+        {
+          "path": "src/registry/demo/components/spaceui/gooey-blobs/c-gooey-blobs-01/index.tsx",
+          "type": "registry:component",
+          "target": "components/spaceui/gooey-blobs-demo.tsx"
+        }
+      ],
+      "createdAt": "2026-09-20",
+      "updatedAt": "2026-09-20"
+    },
+    {
+      "name": "demo-c-gooey-info-popover-01",
+      "type": "registry:component",
+      "title": "Gooey Info Popover Demo",
+      "description": "Hover the info button to see it gooey-morph into a status card.",
+      "registryDependencies": [
+        "https://www.spaceui.one/r/components-spaceui-gooey-info-popover.json"
+      ],
+      "categories": [
+        "component",
+        "gooey",
+        "motion"
+      ],
+      "files": [
+        {
+          "path": "src/registry/demo/components/spaceui/gooey-info-popover/c-gooey-info-popover-01/index.tsx",
+          "type": "registry:component",
+          "target": "components/spaceui/gooey-info-popover-demo.tsx"
+        }
+      ],
+      "createdAt": "2026-09-20",
+      "updatedAt": "2026-09-20"
+    },
+    {
+      "name": "demo-c-gooey-slots-tooltip-01",
+      "type": "registry:component",
+      "title": "Gooey Slots Tooltip Demo",
+      "description": "Hover the info button to see it gooey-expand into a rich content card.",
+      "registryDependencies": [
+        "https://www.spaceui.one/r/components-spaceui-gooey-slots-tooltip.json"
+      ],
+      "categories": [
+        "component",
+        "gooey",
+        "motion"
+      ],
+      "files": [
+        {
+          "path": "src/registry/demo/components/spaceui/gooey-slots-tooltip/c-gooey-slots-tooltip-01/index.tsx",
+          "type": "registry:component",
+          "target": "components/spaceui/gooey-slots-tooltip-demo.tsx"
+        }
+      ],
+      "createdAt": "2026-09-20",
+      "updatedAt": "2026-09-20"
+    },
+    {
+      "name": "demo-c-gooey-tooltip-01",
+      "type": "registry:component",
+      "title": "Gooey Tooltip Demo",
+      "description": "Hover the button to see the tooltip follow your cursor and gooey-connect.",
+      "registryDependencies": [
+        "https://www.spaceui.one/r/components-spaceui-gooey-tooltip.json"
+      ],
+      "categories": [
+        "component",
+        "gooey",
+        "motion"
+      ],
+      "files": [
+        {
+          "path": "src/registry/demo/components/spaceui/gooey-tooltip/c-gooey-tooltip-01/index.tsx",
+          "type": "registry:component",
+          "target": "components/spaceui/gooey-tooltip-demo.tsx"
+        }
+      ],
+      "createdAt": "2026-09-20",
+      "updatedAt": "2026-09-20"
     },
     {
       "name": "demo-c-handle-reel-01",
@@ -26901,6 +27097,84 @@
       "files": [],
       "createdAt": "2026-08-21",
       "updatedAt": "2026-08-21"
+    },
+    {
+      "name": "essentials",
+      "type": "registry:lib",
+      "title": "Essentials",
+      "description": "Installs every Space UI primitive, Base UI utilities, and the full theme in a single command.",
+      "registryDependencies": [
+        "https://www.spaceui.one/r/lib-utils.json",
+        "https://www.spaceui.one/r/lib-style.json",
+        "https://www.spaceui.one/r/lib-base-ui.json",
+        "https://www.spaceui.one/r/primitives-accordion.json",
+        "https://www.spaceui.one/r/primitives-alert-dialog.json",
+        "https://www.spaceui.one/r/primitives-alert.json",
+        "https://www.spaceui.one/r/primitives-aspect-ratio.json",
+        "https://www.spaceui.one/r/primitives-autocomplete.json",
+        "https://www.spaceui.one/r/primitives-avatar.json",
+        "https://www.spaceui.one/r/primitives-badge.json",
+        "https://www.spaceui.one/r/primitives-breadcrumb.json",
+        "https://www.spaceui.one/r/primitives-button.json",
+        "https://www.spaceui.one/r/primitives-calendar.json",
+        "https://www.spaceui.one/r/primitives-card.json",
+        "https://www.spaceui.one/r/primitives-checkbox-group.json",
+        "https://www.spaceui.one/r/primitives-checkbox.json",
+        "https://www.spaceui.one/r/primitives-collapsible.json",
+        "https://www.spaceui.one/r/primitives-combobox.json",
+        "https://www.spaceui.one/r/primitives-command.json",
+        "https://www.spaceui.one/r/primitives-context-menu.json",
+        "https://www.spaceui.one/r/primitives-dialog.json",
+        "https://www.spaceui.one/r/primitives-direction.json",
+        "https://www.spaceui.one/r/primitives-drawer.json",
+        "https://www.spaceui.one/r/primitives-empty.json",
+        "https://www.spaceui.one/r/primitives-field.json",
+        "https://www.spaceui.one/r/primitives-fieldset.json",
+        "https://www.spaceui.one/r/primitives-form.json",
+        "https://www.spaceui.one/r/primitives-frame.json",
+        "https://www.spaceui.one/r/primitives-group.json",
+        "https://www.spaceui.one/r/primitives-input-group.json",
+        "https://www.spaceui.one/r/primitives-input.json",
+        "https://www.spaceui.one/r/primitives-kbd.json",
+        "https://www.spaceui.one/r/primitives-label.json",
+        "https://www.spaceui.one/r/primitives-link.json",
+        "https://www.spaceui.one/r/primitives-menu.json",
+        "https://www.spaceui.one/r/primitives-menubar.json",
+        "https://www.spaceui.one/r/primitives-meter.json",
+        "https://www.spaceui.one/r/primitives-navigation-menu.json",
+        "https://www.spaceui.one/r/primitives-number-field.json",
+        "https://www.spaceui.one/r/primitives-otp-field.json",
+        "https://www.spaceui.one/r/primitives-pagination.json",
+        "https://www.spaceui.one/r/primitives-popover.json",
+        "https://www.spaceui.one/r/primitives-preview-card.json",
+        "https://www.spaceui.one/r/primitives-preview-link-card.json",
+        "https://www.spaceui.one/r/primitives-progress.json",
+        "https://www.spaceui.one/r/primitives-radio-group.json",
+        "https://www.spaceui.one/r/primitives-scroll-area.json",
+        "https://www.spaceui.one/r/primitives-select.json",
+        "https://www.spaceui.one/r/primitives-separator.json",
+        "https://www.spaceui.one/r/primitives-sheet.json",
+        "https://www.spaceui.one/r/primitives-sidebar.json",
+        "https://www.spaceui.one/r/primitives-skeleton.json",
+        "https://www.spaceui.one/r/primitives-slider.json",
+        "https://www.spaceui.one/r/primitives-spinner.json",
+        "https://www.spaceui.one/r/primitives-switch.json",
+        "https://www.spaceui.one/r/primitives-table.json",
+        "https://www.spaceui.one/r/primitives-tabs.json",
+        "https://www.spaceui.one/r/primitives-textarea.json",
+        "https://www.spaceui.one/r/primitives-toast.json",
+        "https://www.spaceui.one/r/primitives-toggle-group.json",
+        "https://www.spaceui.one/r/primitives-toggle.json",
+        "https://www.spaceui.one/r/primitives-toolbar.json",
+        "https://www.spaceui.one/r/primitives-tooltip.json"
+      ],
+      "categories": [
+        "lib",
+        "primitives"
+      ],
+      "files": [],
+      "createdAt": "2026-09-20",
+      "updatedAt": "2026-09-20"
     },
     {
       "name": "lib-font-heading",

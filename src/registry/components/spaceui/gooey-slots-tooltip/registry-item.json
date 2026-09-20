@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "components-spaceui-gooey-slots-tooltip",
+  "type": "registry:component",
+  "title": "Gooey Slots Tooltip",
+  "description": "A round trigger that gooey-expands upward into a rich content card on hover.",
+  "dependencies": ["motion"],
+  "registryDependencies": ["https://www.spaceui.one/r/lib-utils.json"],
+  "categories": ["component", "gooey", "motion"],
+  "files": [
+    {
+      "path": "src/registry/components/spaceui/gooey-slots-tooltip/index.tsx",
+      "type": "registry:component",
+      "target": "components/spaceui/gooey-slots-tooltip.tsx"
+    }
+  ],
+  "createdAt": "2026-09-20",
+  "updatedAt": "2026-09-20"
+}

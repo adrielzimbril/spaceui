@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-c-gooey-tooltip-01",
+  "title": "Gooey Tooltip Demo",
+  "description": "Hover the button to see the tooltip follow your cursor and gooey-connect.",
+  "registryDependencies": [
+    "https://www.spaceui.one/r/components-spaceui-gooey-tooltip.json"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/components/spaceui/gooey-tooltip/c-gooey-tooltip-01/index.tsx",
+      "content": "'use client'\n\nimport { GooeyTooltip } from '@/components/spaceui/gooey-tooltip'\n\nexport default function Demo() {\n  return (\n    <div className=\"flex w-full items-center justify-center px-6 py-16\">\n      <GooeyTooltip />\n    </div>\n  )\n}\n",
+      "type": "registry:component",
+      "target": "components/spaceui/gooey-tooltip-demo.tsx"
+    }
+  ],
+  "categories": [
+    "component",
+    "gooey",
+    "motion"
+  ],
+  "type": "registry:component"
+}

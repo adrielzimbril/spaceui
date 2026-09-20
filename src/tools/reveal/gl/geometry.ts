@@ -15,9 +15,7 @@ export function createPlane(useUint32: boolean): PlaneGeometry {
       positions[pi++] = y / segments
     }
   }
-  const indices = useUint32
-    ? new Uint32Array(segments * segments * 6)
-    : new Uint16Array(segments * segments * 6)
+  const indices = useUint32 ? new Uint32Array(segments * segments * 6) : new Uint16Array(segments * segments * 6)
   let ii = 0
   for (let y = 0; y < segments; y++) {
     for (let x = 0; x < segments; x++) {

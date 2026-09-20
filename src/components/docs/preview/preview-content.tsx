@@ -109,7 +109,7 @@ export function PreviewContent({
         data-slot="preview"
         className={cn(
           'preview flex justify-center items-center *:place-content-center *:justify-center',
-          isContained ? 'w-full max-w-72' : 'size-full',
+          isContained ? 'size-full max-w-72' : 'size-full',
         )}
       >
         {Component ? (
