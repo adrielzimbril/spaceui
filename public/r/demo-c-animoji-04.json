@@ -1,19 +1,19 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "demo-c-animoji-04",
-  "title": "Textmoji Animated with Morphing Text",
-  "description": "MorphingText's renderChar hook piped through Animoji, so the emoji in each rotating phrase keeps animating through the transition.",
+  "title": "Textmoji Animated with Blur Reveal Text",
+  "description": "BlurRevealText's renderSegment hook piped through Animoji, cycling both the phrase and the emoji provider on every reveal.",
   "dependencies": [],
   "registryDependencies": [
     "https://www.spaceui.one/r/components-spaceui-animoji.json",
-    "https://www.spaceui.one/r/components-spaceui-morphing-text.json"
+    "https://www.spaceui.one/r/components-spaceui-blur-reveal-text.json"
   ],
   "files": [
     {
       "path": "src/registry/demo/components/spaceui/animoji/c-animoji-04/index.tsx",
-      "content": "'use client'\n\nimport { MorphingText } from '@/components/spaceui/morphing-text'\nimport { Animoji } from '@/components/spaceui/animoji'\n\nconst PHRASES = ['Ship faster 🚀', 'Design better ✨', 'Ship with confidence 🎉', 'Build with care 🛠️']\n\nexport default function Demo() {\n  return (\n    <div className=\"flex w-full items-center justify-center px-6 py-8\">\n      <MorphingText\n        texts={PHRASES}\n        renderChar={(char) => <Animoji>{char}</Animoji>}\n        textClassName=\"text-2xl sm:text-3xl\"\n      />\n    </div>\n  )\n}\n",
+      "content": "'use client'\n\nimport * as React from 'react'\nimport { BlurRevealText } from '@/components/spaceui/blur-reveal-text'\nimport { Animoji, type AnimojiSource } from '@/components/spaceui/animoji'\n\nconst PHRASES = [\n  'Ship faster 🚀',\n  'Design better ✨',\n  'Ship with confidence 🎉',\n  'Build with care 🛠️',\n  'Copy, paste, done ✅',\n  '260+ components 📦',\n  'New drops every week 🔥',\n  'Open-source & MIT 🔓',\n  'Built for Next.js ⚛️',\n  'Styled with Tailwind 🎨',\n  'Animated with Motion 🌀',\n  'Dark mode included 🌙',\n  'Accessible by default ♿',\n  'Made for developers 👩‍💻',\n  'Zero config setup ⚡',\n  'Loved by the community ❤️',\n]\n\nconst SOURCES: AnimojiSource[] = ['fluent', 'telegram', 'noto']\n\nexport default function Demo() {\n  const [index, setIndex] = React.useState(0)\n\n  React.useEffect(() => {\n    const id = window.setInterval(() => setIndex((i) => (i + 1) % PHRASES.length), 2200)\n    return () => window.clearInterval(id)\n  }, [])\n\n  const source = SOURCES[index % SOURCES.length]\n\n  return (\n    <div className=\"flex w-full items-center justify-center px-6 py-8\">\n      <BlurRevealText\n        text={PHRASES[index]}\n        replayKey={index}\n        splitBy=\"words\"\n        inView={false}\n        className=\"text-2xl font-semibold sm:text-3xl\"\n        renderSegment={(segment) => <Animoji source={source}>{segment}</Animoji>}\n      />\n    </div>\n  )\n}\n",
       "type": "registry:component",
-      "target": "components/spaceui/animoji-morphing.tsx"
+      "target": "components/spaceui/animoji-blur-reveal.tsx"
     }
   ],
   "categories": [

@@ -41,6 +41,7 @@ export default function Demo() {
         text={PHRASES[index]}
         replayKey={index}
         splitBy="words"
+        inView={false}
         className="text-2xl font-semibold sm:text-3xl"
         renderSegment={(segment) => <Textmoji source={source}>{segment}</Textmoji>}
       />

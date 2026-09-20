@@ -33,17 +33,17 @@ export default function HeroStatement() {
 
 ## Props
 
-| Prop         | Type                                 | Default      | Description                                                            |
-| ------------ | ------------------------------------ | ------------ | ---------------------------------------------------------------------- |
-| `text`       | `string`                             | **required** | The sentence or paragraph to animate.                                  |
-| `splitBy`    | `'words' \| 'characters' \| 'lines'` | `'words'`    | Splitting strategy for the animation tokens.                           |
-| `stagger`    | `number`                             | `0.05`       | Delay in seconds between consecutive tokens.                           |
-| `delay`      | `number`                             | `0.1`        | Initial delay in seconds before animation begins.                      |
-| `blurAmount` | `string`                             | `'12px'`     | Starting CSS blur radius for obscured tokens.                          |
-| `duration`   | `number`                             | `0.35`       | Duration of the transition for each individual token.                  |
-| `direction`  | `'up' \| 'down' \| 'none'`           | `'up'`       | Direction along the vertical axis from which tokens slide.             |
-| `yOffset`    | `number`                             | `8`          | Travel distance in pixels for the slide transition.                    |
-| `inView`     | `boolean`                            | `true`       | When true, animation triggers only once the element scrolls into view. |
-| `once`       | `boolean`                            | `true`       | Whether viewport triggering fires only on first view.                  |
-| `replayKey`  | `string \| number`                   | `undefined`  | Change this value to programmatically re-trigger the animation.        |
-| `renderSegment` | `(segment: string) => ReactNode`  | `undefined`  | Overrides how each segment renders — e.g. through Textmoji so emoji stay styled. |
+| Prop            | Type                                 | Default      | Description                                                                      |
+| --------------- | ------------------------------------ | ------------ | -------------------------------------------------------------------------------- |
+| `text`          | `string`                             | **required** | The sentence or paragraph to animate.                                            |
+| `splitBy`       | `'words' \| 'characters' \| 'lines'` | `'words'`    | Splitting strategy for the animation tokens.                                     |
+| `stagger`       | `number`                             | `0.05`       | Delay in seconds between consecutive tokens.                                     |
+| `delay`         | `number`                             | `0.1`        | Initial delay in seconds before animation begins.                                |
+| `blurAmount`    | `string`                             | `'12px'`     | Starting CSS blur radius for obscured tokens.                                    |
+| `duration`      | `number`                             | `0.35`       | Duration of the transition for each individual token.                            |
+| `direction`     | `'up' \| 'down' \| 'none'`           | `'up'`       | Direction along the vertical axis from which tokens slide.                       |
+| `yOffset`       | `number`                             | `8`          | Travel distance in pixels for the slide transition.                              |
+| `inView`        | `boolean`                            | `true`       | When true, animation triggers only once the element scrolls into view.           |
+| `once`          | `boolean`                            | `true`       | Whether viewport triggering fires only on first view.                            |
+| `replayKey`     | `string \| number`                   | `undefined`  | Change this value to programmatically re-trigger the animation.                  |
+| `renderSegment` | `(segment: string) => ReactNode`     | `undefined`  | Overrides how each segment renders — e.g. through Textmoji so emoji stay styled. |

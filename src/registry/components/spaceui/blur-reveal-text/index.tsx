@@ -97,15 +97,14 @@ export const BlurRevealText: React.FC<BlurRevealTextProps> = ({
       opacity: 0,
       filter: `blur(${blurAmount})`,
       y: initialY,
+      willChange: 'filter, transform, opacity',
     },
     visible: {
       opacity: 1,
-      filter: 'blur(0px)',
+      filter: 'none',
       y: 0,
-      transition: {
-        duration,
-        ease: [0.25, 0.1, 0.25, 1],
-      },
+      willChange: 'auto',
+      transition: { duration, ease: [0.25, 0.1, 0.25, 1] },
     },
   }
 
@@ -132,7 +131,7 @@ export const BlurRevealText: React.FC<BlurRevealTextProps> = ({
           <motion.span
             key={`${segment}-${index}`}
             variants={segmentVariants}
-            className={cn('inline-block whitespace-pre will-change-[filter,transform,opacity]', segmentClassName)}
+            className={cn('inline-block whitespace-pre', segmentClassName)}
           >
             {renderSegment ? renderSegment(displayText) : displayText}
           </motion.span>

@@ -2,43 +2,24 @@
 
 import { InlineInstallBar } from '@/components/docs/installation/inline-install-bar'
 import { HeroAvatar } from '@/components/marketing/shared/hero'
+import { HeroBadgeText } from '@/components/marketing/shared/hero-badge-text'
 import { siteConfig } from '@/config/space-config'
 import { Button } from '@/registry/components/spaceui/button-squircle'
 import { LiquidBorder } from '@/registry/components/spaceui/liquid-metal-border'
-import { BlurRevealText } from '@/registry/components/spaceui/blur-reveal-text'
 import { StatusBadge } from '@/registry/components/spaceui/status-badge'
-import { useMediaQuery } from '@/registry/hooks/browser/use-media-query'
 import { Link } from '@/registry/primitives/link'
-import { AssetEmoji } from '@/tools/emoji/asset-emoji'
 import { IconArrowUpRight } from '@tabler/icons-react'
-import { EmojiSource, EmojiType } from '@usespaceui/emoji'
-import * as React from 'react'
 import { REGISTRY_STATS } from '@/lib/pricing-config'
 
 const HERO_BADGE_PHRASES = [
-  'Built for Next.js & Base UI',
-  `${REGISTRY_STATS.components}+ production-ready components`,
-  'New drops every week',
-  'Open-source & MIT licensed',
-  "Copy, paste, ship it's yours",
+  'Built for Next.js & Base UI 🚀',
+  `${REGISTRY_STATS.components}+ production-ready components 🐼`,
+  'New drops every week 🔥',
+  'Open-source & MIT licensed 🙈',
+  "Copy, paste, ship it's yours 🦄",
 ]
 
-function useRotatingText(items: string[], intervalMs: number) {
-  const [index, setIndex] = React.useState(0)
-  React.useEffect(() => {
-    const id = window.setInterval(() => setIndex((i) => (i + 1) % items.length), intervalMs)
-    return () => window.clearInterval(id)
-  }, [items, intervalMs])
-  return items[index]
-}
-
 export function Hero() {
-  const isLg = useMediaQuery('(min-width: 1024px)', true)
-  const isMd = useMediaQuery('(min-width: 768px)', true)
-  const isSm = useMediaQuery('(min-width: 640px)', true)
-
-  const badgePhrase = useRotatingText(HERO_BADGE_PHRASES, 3400)
-
   return (
     <section id="hero" data-page-section className="relative overflow-hidden pt-24 pb-8 md:pb-12">
       <div className="bg-muted rounded-5xl mx-2 md:mx-auto pt-12 pb-16 md:pt-20 md:pb-24 max-w-310 px-5 sm:px-6">
@@ -52,17 +33,7 @@ export function Hero() {
               className="select-none bg-background border-none cursor-pointer transition-colors"
               secondaryTextClassName="inline-flex items-center gap-1.5 pr-1"
             >
-              <BlurRevealText
-                as="span"
-                text={badgePhrase}
-                replayKey={badgePhrase}
-                splitBy="characters"
-                inView={false}
-                stagger={0.04}
-                duration={0.3}
-                className="whitespace-nowrap"
-              />
-              <AssetEmoji codepoint="🚀" source={EmojiSource.Fluent} type={EmojiType.Anim} size={22} lazy={false} />
+              <HeroBadgeText text={HERO_BADGE_PHRASES} source="telegram" />
             </StatusBadge>
           </Link>
 

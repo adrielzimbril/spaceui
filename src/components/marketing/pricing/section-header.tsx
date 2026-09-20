@@ -2,8 +2,7 @@ import type * as React from 'react'
 import Link from 'next/link'
 import { Badge, type BadgeProps } from '@/registry/components/spaceui/badge-squircle'
 import { StatusBadge } from '@/registry/components/spaceui/status-badge'
-import { AssetEmoji } from '@/tools/emoji/asset-emoji'
-import { EmojiSource, EmojiType } from '@usespaceui/emoji'
+import { HeroBadgeText } from '@/components/marketing/shared/hero-badge-text'
 import type { MarketingHeroStatusBadge } from '@/components/marketing/shared/hero'
 
 export function SectionHeader({
@@ -27,14 +26,12 @@ export function SectionHeader({
       className="select-none border-none cursor-pointer transition-colors"
       secondaryTextClassName="inline-flex items-center gap-1.5 pr-1"
     >
-      {statusBadge.secondaryText}
-      {statusBadge.emojiCodepoint && (
-        <AssetEmoji
-          codepoint={statusBadge.emojiCodepoint}
-          source={statusBadge.emojiSource ?? EmojiSource.Fluent}
-          type={EmojiType.Anim}
-          size={22}
-          lazy={false}
+      {statusBadge.secondaryText && (
+        <HeroBadgeText
+          text={statusBadge.secondaryText}
+          animate={statusBadge.animate}
+          source={statusBadge.source}
+          delay={statusBadge.delay}
         />
       )}
     </StatusBadge>

@@ -7,8 +7,8 @@ import { Frame, FrameFooter, FrameTitle } from '@/registry/primitives/frame'
 import { Card, CardPanel } from '@/registry/primitives/card'
 import { BlurRevealText } from '@/registry/components/spaceui/blur-reveal-text'
 import { Animoji, type AnimojiSource } from '@/registry/components/spaceui/animoji'
-import { BENTO_CYCLE_INTERVAL } from '@/config/space-config'
-import { useStaggeredInterval } from '@/hooks/use-staggered-interval'
+
+const CYCLE_INTERVAL = 2800
 
 const SOURCES: AnimojiSource[] = ['fluent', 'telegram', 'noto']
 
@@ -46,21 +46,23 @@ const PHRASES = [
 
 export function AnimojiCard({ isVisible = true }: { isVisible?: boolean }) {
   const [index, setIndex] = React.useState(0)
+  const [source, setSource] = React.useState<AnimojiSource>(SOURCES[0])
 
-  useStaggeredInterval(
-    () => {
+  React.useEffect(() => {
+    if (!isVisible) return
+    const id = window.setInterval(() => {
       setIndex((prev) => (prev + 1) % PHRASES.length)
-    },
-    BENTO_CYCLE_INTERVAL,
-    isVisible,
-  )
-
-  const source = SOURCES[index % SOURCES.length]
+      // Independent random pick each tick — index%SOURCES.length would
+      // deterministically pair the same phrase with the same source forever.
+      setSource(SOURCES[Math.floor(Math.random() * SOURCES.length)])
+    }, CYCLE_INTERVAL)
+    return () => window.clearInterval(id)
+  }, [isVisible])
 
   return (
     <Frame className="flex flex-col h-full">
       <Card className="flex-1 flex flex-col h-full rounded-xl before:rounded-xl overflow-hidden">
-        <CardPanel className="flex-1 flex min-h-44 flex-col items-center justify-center p-3.5 rounded-lg">
+        <CardPanel className="flex-1 flex text-center min-h-44 flex-col items-center justify-center p-3.5 rounded-lg">
           <BlurRevealText
             text={PHRASES[index]}
             replayKey={index}

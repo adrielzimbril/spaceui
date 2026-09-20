@@ -28,8 +28,9 @@ export default function ToolsIndexPage() {
       <MarketingHero
         statusBadge={{
           primaryText: 'Tools',
-          secondaryText: 'Sensory & creative studios',
-          emojiCodepoint: '⚡',
+          secondaryText: 'Sensory & creative studios ⚡',
+          animate: false,
+          source: 'telegram',
           href: '/tools',
         }}
         title={

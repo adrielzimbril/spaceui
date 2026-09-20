@@ -9,7 +9,7 @@
   "files": [
     {
       "path": "src/registry/demo/components/spaceui/animoji/c-animoji-01/index.tsx",
-      "content": "'use client'\n\nimport { Animoji, type AnimojiSource } from '@/components/spaceui/animoji'\n\nexport interface AnimojiDemoProps {\n  text?: string\n  source?: AnimojiSource\n}\n\nexport default function Demo({\n  text = 'Ship your ideas faster 🚀 with Space UI 🫧🦄',\n  source = 'fluent',\n}: AnimojiDemoProps) {\n  return (\n    <div className=\"flex w-full max-w-md flex-col gap-4 px-6 text-center\">\n      <p className=\"text-lg leading-relaxed text-foreground\">\n        <Animoji source={source}>{text}</Animoji>\n      </p>\n    </div>\n  )\n}\n",
+      "content": "'use client'\n\nimport { Animoji, type AnimojiSource } from '@/components/spaceui/animoji'\n\nexport interface AnimojiDemoProps {\n  text?: string\n  source?: AnimojiSource\n}\n\nexport default function Demo({\n  text = 'Ship your ideas faster 🚀 with Space UI 🫧🦄',\n  source = 'fluent',\n}: AnimojiDemoProps) {\n  return (\n    <div className=\"flex w-full flex-col gap-4 px-6 text-center\">\n      <p className=\"text-2xl leading-relaxed text-foreground\">\n        <Animoji source={source}>{text}</Animoji>\n      </p>\n      <span className=\"text-lg text-muted-foreground\">\n        <Animoji source={source}>{'Built with \\u{2764}\\u{FE0F} love from \\u{1F1E8}\\u{1F1EE} 👋'}</Animoji>\n      </span>\n    </div>\n  )\n}\n",
       "type": "registry:component",
       "target": "components/spaceui/animoji-demo.tsx"
     }

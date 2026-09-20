@@ -12,14 +12,13 @@ export function useStaggeredInterval(callback: () => void, intervalMs: number, e
   callbackRef.current = callback
 
   const jitter = jitterMs ?? intervalMs * 0.5
-  const delayRef = React.useRef<number | null>(null)
-  if (delayRef.current === null) {
-    delayRef.current = intervalMs + Math.random() * jitter
-  }
+  // Recomputed only when intervalMs/jitterMs actually change, not on every render —
+  // a plain ref set once would ignore a later change to intervalMs entirely.
+  const delay = React.useMemo(() => intervalMs + Math.random() * jitter, [intervalMs, jitter])
 
   React.useEffect(() => {
     if (!enabled) return
-    const timer = setInterval(() => callbackRef.current(), delayRef.current!)
+    const timer = setInterval(() => callbackRef.current(), delay)
     return () => clearInterval(timer)
-  }, [enabled])
+  }, [enabled, delay])
 }

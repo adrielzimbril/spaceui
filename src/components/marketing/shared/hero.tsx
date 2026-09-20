@@ -3,10 +3,10 @@
 import { StatusBadge } from '@/registry/components/spaceui/status-badge'
 import { useMediaQuery } from '@/registry/hooks/browser/use-media-query'
 import { cn } from '@/registry/lib/utils'
-import { AssetEmoji } from '@/tools/emoji/asset-emoji'
+import { HeroBadgeText } from '@/components/marketing/shared/hero-badge-text'
+import type { AnimojiSource } from '@/registry/components/spaceui/animoji'
 import type { AvatarVariant } from '@usespaceui/avatars'
 import { Avatar } from '@usespaceui/avatars/react'
-import { EmojiSource, EmojiType } from '@usespaceui/emoji'
 import Link from 'next/link'
 import * as React from 'react'
 
@@ -47,9 +47,14 @@ export function HeroAvatar({ name = 'space', variant = 'lumina', animate = false
 
 export interface MarketingHeroStatusBadge {
   primaryText: string
-  secondaryText?: string
-  emojiCodepoint?: string
-  emojiSource?: EmojiSource
+  /** A single phrase loops in place; an array rotates through each phrase. Embed any emoji directly in the string. */
+  secondaryText?: string | string[]
+  /** Set false for a plain, unanimated badge. Ignored when `secondaryText` is an array. @default true */
+  animate?: boolean
+  /** @default 'fluent' */
+  source?: AnimojiSource
+  /** Loop/rotation interval in ms */
+  delay?: number
   href?: string
 }
 
@@ -79,14 +84,12 @@ export function MarketingHero({
       className="select-none bg-background border-none cursor-pointer transition-colors"
       secondaryTextClassName="inline-flex items-center gap-1.5 pr-1"
     >
-      {statusBadge.secondaryText}
-      {statusBadge.emojiCodepoint && (
-        <AssetEmoji
-          codepoint={statusBadge.emojiCodepoint}
-          source={statusBadge.emojiSource ?? EmojiSource.Fluent}
-          type={EmojiType.Anim}
-          size={22}
-          lazy={false}
+      {statusBadge.secondaryText && (
+        <HeroBadgeText
+          text={statusBadge.secondaryText}
+          animate={statusBadge.animate}
+          source={statusBadge.source}
+          delay={statusBadge.delay}
         />
       )}
     </StatusBadge>

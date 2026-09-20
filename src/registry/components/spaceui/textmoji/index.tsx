@@ -1,6 +1,7 @@
 'use client'
 
 import * as React from 'react'
+import Image from 'next/image'
 import emojiRegex from 'emoji-regex'
 import { EmojiSource, EmojiType, resolveEmojiUrl, fromUnicode } from '@usespaceui/emoji'
 import { cn } from '@/registry/lib/utils'
@@ -55,13 +56,14 @@ function EmojiGlyph({ emoji, source, className }: { emoji: string; source: Emoji
   if (!src || failed) return <>{emoji}</>
 
   return (
-    <img
+    <Image
       src={src}
       alt={emoji}
+      width={48}
+      height={48}
       draggable={false}
       onError={() => setFailed(true)}
-      // 1em tracks the inherited font size. -0.1em is Twemoji's own baseline offset.
-      className={cn('inline-block h-[1em] w-[1em] align-[-0.1em]', className)}
+      className={cn('pointer-events-none inline-block h-[1em] w-[1em] object-contain align-[-0.1em]', className)}
     />
   )
 }

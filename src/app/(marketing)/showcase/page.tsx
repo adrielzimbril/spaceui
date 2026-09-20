@@ -23,8 +23,9 @@ export default function ShowcasePage() {
         <MarketingHero
           statusBadge={{
             primaryText: 'Showcase',
-            secondaryText: 'Curated templates & apps',
-            emojiCodepoint: '✨',
+            secondaryText: 'Curated templates & apps ✨',
+            animate: false,
+            source: 'telegram',
             href: '/showcase',
           }}
           title={

@@ -1,5 +1,4 @@
 import type { Metadata } from 'next'
-import { EmojiSource } from '@usespaceui/emoji'
 import { HeroAvatar, MarketingHero } from '@/components/marketing/shared/hero'
 import { PlansSection } from '@/components/marketing/pricing/plans-section'
 import { SavingsSection } from '@/components/marketing/pricing/savings-section'
@@ -23,9 +22,8 @@ export default async function PricingPage() {
       <MarketingHero
         statusBadge={{
           primaryText: `${pricing.proYearlyDiscountPercent}% OFF`,
-          secondaryText: 'Limited time offer',
-          emojiCodepoint: '💎',
-          emojiSource: EmojiSource.Telegram,
+          secondaryText: 'Limited time offer 💎',
+          source: 'telegram',
           href: '#plans',
         }}
         title={

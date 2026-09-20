@@ -42,8 +42,9 @@ export default async function CommunityPage() {
       <MarketingHero
         statusBadge={{
           primaryText: 'Community Wall',
-          secondaryText: 'Live Canvas & Guestbook',
-          emojiCodepoint: '🪐',
+          secondaryText: 'Live Canvas & Guestbook 🪐',
+          animate: false,
+          source: 'telegram',
           href: '/community',
         }}
         title={
