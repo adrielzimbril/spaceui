@@ -1,0 +1,27 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "components-spaceui-animoji",
+  "title": "Textmoji Animated",
+  "description": "Renders every Unicode emoji in a string as an animated image sized to the surrounding text.",
+  "dependencies": [
+    "emoji-regex",
+    "@usespaceui/emoji"
+  ],
+  "registryDependencies": [
+    "https://www.spaceui.one/r/lib-utils.json"
+  ],
+  "files": [
+    {
+      "path": "src/registry/components/spaceui/animoji/index.tsx",
+      "content": "'use client'\n\nimport * as React from 'react'\nimport emojiRegex from 'emoji-regex'\nimport { EmojiSource, EmojiType, resolveEmojiUrl } from '@usespaceui/emoji'\nimport { cn } from '@/lib/utils'\n\ntype Segment = { kind: 'text'; value: string } | { kind: 'emoji'; value: string }\n\n// Same regex @usespaceui/emoji resolves codepoints with, so flags/ZWJ combos stay one match.\nfunction splitEmoji(text: string): Segment[] {\n  const segments: Segment[] = []\n  let lastIndex = 0\n  for (const match of text.matchAll(emojiRegex())) {\n    const index = match.index ?? 0\n    if (index > lastIndex) segments.push({ kind: 'text', value: text.slice(lastIndex, index) })\n    segments.push({ kind: 'emoji', value: match[0] })\n    lastIndex = index + match[0].length\n  }\n  if (lastIndex < text.length) segments.push({ kind: 'text', value: text.slice(lastIndex) })\n  return segments\n}\n\nfunction EmojiGlyph({ emoji, source, className }: { emoji: string; source: EmojiSource; className?: string }) {\n  // No format: @usespaceui/emoji already defaults to the right one per source + type.\n  const src = React.useMemo(() => {\n    try {\n      return resolveEmojiUrl(emoji, { source, type: EmojiType.Anim } as never)\n    } catch {\n      return ''\n    }\n  }, [emoji, source])\n  const [failed, setFailed] = React.useState(false)\n  React.useEffect(() => setFailed(false), [src])\n\n  // Raw glyph fallback rather than break the sentence.\n  if (!src || failed) return <>{emoji}</>\n\n  return (\n    <img\n      src={src}\n      alt={emoji}\n      draggable={false}\n      onError={() => setFailed(true)}\n      // 1em tracks the inherited font size. -0.1em is Twemoji's own baseline offset.\n      className={cn('inline-block h-[1em] w-[1em] align-[-0.1em]', className)}\n    />\n  )\n}\n\n/** Providers with an animated style — Apple, Twemoji and Blobmoji have none. */\nexport type AnimojiSource = typeof EmojiSource.Fluent | typeof EmojiSource.Telegram | typeof EmojiSource.Noto\n\nexport type AnimojiProps = {\n  children: string\n  /** @default 'fluent' */\n  source?: AnimojiSource\n  className?: string\n  emojiClassName?: string\n}\n\n/** Renders every Unicode emoji in `children` as an animated image sized to the surrounding text. */\nexport function Animoji({ children, source = EmojiSource.Fluent, className, emojiClassName }: AnimojiProps) {\n  return (\n    <span className={cn('inline', className)}>\n      {splitEmoji(children).map((segment, index) =>\n        segment.kind === 'text' ? (\n          <React.Fragment key={index}>{segment.value}</React.Fragment>\n        ) : (\n          <EmojiGlyph key={index} emoji={segment.value} source={source} className={emojiClassName} />\n        ),\n      )}\n    </span>\n  )\n}\n",
+      "type": "registry:component",
+      "target": "components/spaceui/animoji.tsx"
+    }
+  ],
+  "categories": [
+    "component",
+    "utility",
+    "emoji"
+  ],
+  "type": "registry:component"
+}

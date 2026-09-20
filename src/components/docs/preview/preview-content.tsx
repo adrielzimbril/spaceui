@@ -73,7 +73,10 @@ export function PreviewContent({
       >
         <div
           data-slot="preview"
-          className={cn('flex size-full min-h-0 min-w-0 items-center justify-center', isContained && 'w-full max-w-72')}
+          className={cn(
+            'flex size-full min-h-0 min-w-0 items-center justify-center *:place-content-center *:justify-center ',
+            isContained && 'w-full max-w-72',
+          )}
         >
           <Iframe
             key={reloadKey}
@@ -104,7 +107,10 @@ export function PreviewContent({
     >
       <div
         data-slot="preview"
-        className={cn('preview flex justify-center items-center', isContained ? 'w-full max-w-72' : 'size-full')}
+        className={cn(
+          'preview flex justify-center items-center *:place-content-center *:justify-center',
+          isContained ? 'w-full max-w-72' : 'size-full',
+        )}
       >
         {Component ? (
           <Suspense fallback={<PreviewLoading />}>

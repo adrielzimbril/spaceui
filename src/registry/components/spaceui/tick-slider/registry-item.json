@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "components-spaceui-tick-slider",
+  "type": "registry:component",
+  "title": "Tick Slider",
+  "description": "A scrubber drawn as a row of tick marks, with a real range input underneath for keyboard and screen reader support.",
+  "dependencies": [],
+  "registryDependencies": ["https://www.spaceui.one/r/lib-utils.json"],
+  "categories": ["component", "slider"],
+  "files": [
+    {
+      "path": "src/registry/components/spaceui/tick-slider/index.tsx",
+      "type": "registry:component",
+      "target": "components/spaceui/tick-slider.tsx"
+    }
+  ],
+  "createdAt": "2026-09-19",
+  "updatedAt": "2026-09-19"
+}

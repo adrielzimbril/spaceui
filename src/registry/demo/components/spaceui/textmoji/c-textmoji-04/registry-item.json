@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-c-textmoji-04",
+  "type": "registry:component",
+  "title": "Textmoji Unicode Escapes",
+  "description": "Emoji written as JS unicode escape sequences, including a two-code-point flag, resolved the same as pasted characters.",
+  "registryDependencies": ["https://www.spaceui.one/r/components-spaceui-textmoji.json"],
+  "categories": ["component", "utility", "emoji"],
+  "files": [
+    {
+      "path": "src/registry/demo/components/spaceui/textmoji/c-textmoji-04/index.tsx",
+      "type": "registry:component",
+      "target": "components/spaceui/textmoji-unicode.tsx"
+    }
+  ],
+  "createdAt": "2026-09-19",
+  "updatedAt": "2026-09-19",
+  "dependencies": []
+}

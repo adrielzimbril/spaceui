@@ -1,0 +1,24 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-c-textmoji-02",
+  "title": "Textmoji Sizes",
+  "description": "The same Textmoji call under different text size classes — no size prop, the image just tracks the inherited font size.",
+  "dependencies": [],
+  "registryDependencies": [
+    "https://www.spaceui.one/r/components-spaceui-textmoji.json"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/components/spaceui/textmoji/c-textmoji-02/index.tsx",
+      "content": "import { Textmoji } from '@/components/spaceui/textmoji'\n\nconst SIZES = [\n  { label: 'text-xs', className: 'text-xs' },\n  { label: 'text-base', className: 'text-base' },\n  { label: 'text-2xl', className: 'text-2xl' },\n  { label: 'text-4xl', className: 'text-4xl' },\n]\n\nexport default function Demo() {\n  return (\n    <div className=\"flex w-full max-w-md flex-col items-center gap-3 px-6\">\n      {SIZES.map(({ label, className }) => (\n        <div key={label} className=\"flex w-full items-center justify-center gap-4\">\n          <p className={className}>\n            <Textmoji>Ship faster 🚀</Textmoji>\n          </p>\n        </div>\n      ))}\n    </div>\n  )\n}\n",
+      "type": "registry:component",
+      "target": "components/spaceui/textmoji-sizes.tsx"
+    }
+  ],
+  "categories": [
+    "component",
+    "utility",
+    "emoji"
+  ],
+  "type": "registry:component"
+}

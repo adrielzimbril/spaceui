@@ -2963,6 +2963,86 @@
     "dependents": [],
     "related": []
   },
+  "animoji": {
+    "name": "components-spaceui-animoji",
+    "shortName": "animoji",
+    "title": "Textmoji Animated",
+    "description": "Renders every Unicode emoji in a string as an animated image sized to the surrounding text.",
+    "type": "registry:component",
+    "url": "/ui-kit/components/spaceui/animoji",
+    "category": "Utility",
+    "categories": [
+      "utility",
+      "emoji"
+    ],
+    "createdAt": "2026-09-19",
+    "updatedAt": "2026-09-19",
+    "size": "2.6 KB",
+    "rawSize": 2678,
+    "directSize": "2.6 KB",
+    "fileCount": 1,
+    "dependencies": [
+      "emoji-regex",
+      "@usespaceui/emoji"
+    ],
+    "registryDependencies": [
+      "https://www.spaceui.one/r/lib-utils.json"
+    ],
+    "dependents": [],
+    "related": [
+      {
+        "name": "textmoji",
+        "title": "Textmoji",
+        "description": "Renders every Unicode emoji in a string as an image sized to the surrounding text. Includes Animoji, the same for animated emoji styles.",
+        "url": "/ui-kit/components/spaceui/textmoji",
+        "category": "Utility",
+        "categories": [
+          "utility",
+          "emoji"
+        ]
+      }
+    ]
+  },
+  "components-spaceui-animoji": {
+    "name": "components-spaceui-animoji",
+    "shortName": "animoji",
+    "title": "Textmoji Animated",
+    "description": "Renders every Unicode emoji in a string as an animated image sized to the surrounding text.",
+    "type": "registry:component",
+    "url": "/ui-kit/components/spaceui/animoji",
+    "category": "Utility",
+    "categories": [
+      "utility",
+      "emoji"
+    ],
+    "createdAt": "2026-09-19",
+    "updatedAt": "2026-09-19",
+    "size": "2.6 KB",
+    "rawSize": 2678,
+    "directSize": "2.6 KB",
+    "fileCount": 1,
+    "dependencies": [
+      "emoji-regex",
+      "@usespaceui/emoji"
+    ],
+    "registryDependencies": [
+      "https://www.spaceui.one/r/lib-utils.json"
+    ],
+    "dependents": [],
+    "related": [
+      {
+        "name": "textmoji",
+        "title": "Textmoji",
+        "description": "Renders every Unicode emoji in a string as an image sized to the surrounding text. Includes Animoji, the same for animated emoji styles.",
+        "url": "/ui-kit/components/spaceui/textmoji",
+        "category": "Utility",
+        "categories": [
+          "utility",
+          "emoji"
+        ]
+      }
+    ]
+  },
   "autoscale-input": {
     "name": "components-spaceui-autoscale-input",
     "shortName": "autoscale-input",
@@ -7976,9 +8056,9 @@
     ],
     "createdAt": "2026-09-14",
     "updatedAt": "2026-09-14",
-    "size": "4.9 KB",
-    "rawSize": 5005,
-    "directSize": "4.9 KB",
+    "size": "5.3 KB",
+    "rawSize": 5442,
+    "directSize": "5.3 KB",
     "fileCount": 1,
     "dependencies": [
       "motion"
@@ -8017,9 +8097,9 @@
     ],
     "createdAt": "2026-09-14",
     "updatedAt": "2026-09-14",
-    "size": "4.9 KB",
-    "rawSize": 5005,
-    "directSize": "4.9 KB",
+    "size": "5.3 KB",
+    "rawSize": 5442,
+    "directSize": "5.3 KB",
     "fileCount": 1,
     "dependencies": [
       "motion"
@@ -8672,6 +8752,16 @@
     "dependents": [],
     "related": [
       {
+        "name": "tick-slider",
+        "title": "Tick Slider",
+        "description": "A scrubber drawn as a row of tick marks, with a real range input underneath for keyboard and screen reader support.",
+        "url": "/ui-kit/components/spaceui/tick-slider",
+        "category": "Slider",
+        "categories": [
+          "slider"
+        ]
+      },
+      {
         "name": "slider",
         "title": "Slider",
         "description": "Accessible Slider primitive component for Space UI.",
@@ -8707,6 +8797,16 @@
     ],
     "dependents": [],
     "related": [
+      {
+        "name": "tick-slider",
+        "title": "Tick Slider",
+        "description": "A scrubber drawn as a row of tick marks, with a real range input underneath for keyboard and screen reader support.",
+        "url": "/ui-kit/components/spaceui/tick-slider",
+        "category": "Slider",
+        "categories": [
+          "slider"
+        ]
+      },
       {
         "name": "slider",
         "title": "Slider",
@@ -8943,6 +9043,86 @@
       }
     ]
   },
+  "textmoji": {
+    "name": "components-spaceui-textmoji",
+    "shortName": "textmoji",
+    "title": "Textmoji",
+    "description": "Renders every Unicode emoji in a string as an image sized to the surrounding text. Includes Animoji, the same for animated emoji styles.",
+    "type": "registry:component",
+    "url": "/ui-kit/components/spaceui/textmoji",
+    "category": "Utility",
+    "categories": [
+      "utility",
+      "emoji"
+    ],
+    "createdAt": "2026-09-19",
+    "updatedAt": "2026-09-19",
+    "size": "2.7 KB",
+    "rawSize": 2767,
+    "directSize": "2.7 KB",
+    "fileCount": 1,
+    "dependencies": [
+      "emoji-regex",
+      "@usespaceui/emoji"
+    ],
+    "registryDependencies": [
+      "https://www.spaceui.one/r/lib-utils.json"
+    ],
+    "dependents": [],
+    "related": [
+      {
+        "name": "animoji",
+        "title": "Textmoji Animated",
+        "description": "Renders every Unicode emoji in a string as an animated image sized to the surrounding text.",
+        "url": "/ui-kit/components/spaceui/animoji",
+        "category": "Utility",
+        "categories": [
+          "utility",
+          "emoji"
+        ]
+      }
+    ]
+  },
+  "components-spaceui-textmoji": {
+    "name": "components-spaceui-textmoji",
+    "shortName": "textmoji",
+    "title": "Textmoji",
+    "description": "Renders every Unicode emoji in a string as an image sized to the surrounding text. Includes Animoji, the same for animated emoji styles.",
+    "type": "registry:component",
+    "url": "/ui-kit/components/spaceui/textmoji",
+    "category": "Utility",
+    "categories": [
+      "utility",
+      "emoji"
+    ],
+    "createdAt": "2026-09-19",
+    "updatedAt": "2026-09-19",
+    "size": "2.7 KB",
+    "rawSize": 2767,
+    "directSize": "2.7 KB",
+    "fileCount": 1,
+    "dependencies": [
+      "emoji-regex",
+      "@usespaceui/emoji"
+    ],
+    "registryDependencies": [
+      "https://www.spaceui.one/r/lib-utils.json"
+    ],
+    "dependents": [],
+    "related": [
+      {
+        "name": "animoji",
+        "title": "Textmoji Animated",
+        "description": "Renders every Unicode emoji in a string as an animated image sized to the surrounding text.",
+        "url": "/ui-kit/components/spaceui/animoji",
+        "category": "Utility",
+        "categories": [
+          "utility",
+          "emoji"
+        ]
+      }
+    ]
+  },
   "theme-toggle": {
     "name": "components-spaceui-theme-toggle",
     "shortName": "theme-toggle",
@@ -9002,6 +9182,96 @@
     ],
     "dependents": [],
     "related": []
+  },
+  "tick-slider": {
+    "name": "components-spaceui-tick-slider",
+    "shortName": "tick-slider",
+    "title": "Tick Slider",
+    "description": "A scrubber drawn as a row of tick marks, with a real range input underneath for keyboard and screen reader support.",
+    "type": "registry:component",
+    "url": "/ui-kit/components/spaceui/tick-slider",
+    "category": "Slider",
+    "categories": [
+      "slider"
+    ],
+    "createdAt": "2026-09-19",
+    "updatedAt": "2026-09-19",
+    "size": "5.5 KB",
+    "rawSize": 5586,
+    "directSize": "5.5 KB",
+    "fileCount": 1,
+    "dependencies": [],
+    "registryDependencies": [
+      "https://www.spaceui.one/r/lib-utils.json"
+    ],
+    "dependents": [],
+    "related": [
+      {
+        "name": "slosh-slider",
+        "title": "Slosh Slider",
+        "description": "Liquid fill slider with viscosity, momentum, and tilt.",
+        "url": "/ui-kit/components/spaceui/slosh-slider",
+        "category": "Slider",
+        "categories": [
+          "slider"
+        ]
+      },
+      {
+        "name": "slider",
+        "title": "Slider",
+        "description": "Accessible Slider primitive component for Space UI.",
+        "url": "/ui-kit/primitives/slider",
+        "category": "Slider",
+        "categories": [
+          "slider"
+        ]
+      }
+    ]
+  },
+  "components-spaceui-tick-slider": {
+    "name": "components-spaceui-tick-slider",
+    "shortName": "tick-slider",
+    "title": "Tick Slider",
+    "description": "A scrubber drawn as a row of tick marks, with a real range input underneath for keyboard and screen reader support.",
+    "type": "registry:component",
+    "url": "/ui-kit/components/spaceui/tick-slider",
+    "category": "Slider",
+    "categories": [
+      "slider"
+    ],
+    "createdAt": "2026-09-19",
+    "updatedAt": "2026-09-19",
+    "size": "5.5 KB",
+    "rawSize": 5586,
+    "directSize": "5.5 KB",
+    "fileCount": 1,
+    "dependencies": [],
+    "registryDependencies": [
+      "https://www.spaceui.one/r/lib-utils.json"
+    ],
+    "dependents": [],
+    "related": [
+      {
+        "name": "slosh-slider",
+        "title": "Slosh Slider",
+        "description": "Liquid fill slider with viscosity, momentum, and tilt.",
+        "url": "/ui-kit/components/spaceui/slosh-slider",
+        "category": "Slider",
+        "categories": [
+          "slider"
+        ]
+      },
+      {
+        "name": "slider",
+        "title": "Slider",
+        "description": "Accessible Slider primitive component for Space UI.",
+        "url": "/ui-kit/primitives/slider",
+        "category": "Slider",
+        "categories": [
+          "slider"
+        ]
+      }
+    ]
   },
   "timeline": {
     "name": "components-spaceui-timeline",
@@ -24177,6 +24447,16 @@
         "categories": [
           "slider"
         ]
+      },
+      {
+        "name": "tick-slider",
+        "title": "Tick Slider",
+        "description": "A scrubber drawn as a row of tick marks, with a real range input underneath for keyboard and screen reader support.",
+        "url": "/ui-kit/components/spaceui/tick-slider",
+        "category": "Slider",
+        "categories": [
+          "slider"
+        ]
       }
     ]
   },
@@ -24210,6 +24490,16 @@
         "title": "Slosh Slider",
         "description": "Liquid fill slider with viscosity, momentum, and tilt.",
         "url": "/ui-kit/components/spaceui/slosh-slider",
+        "category": "Slider",
+        "categories": [
+          "slider"
+        ]
+      },
+      {
+        "name": "tick-slider",
+        "title": "Tick Slider",
+        "description": "A scrubber drawn as a row of tick marks, with a real range input underneath for keyboard and screen reader support.",
+        "url": "/ui-kit/components/spaceui/tick-slider",
         "category": "Slider",
         "categories": [
           "slider"

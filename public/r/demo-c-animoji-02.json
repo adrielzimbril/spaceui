@@ -1,0 +1,24 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-c-animoji-02",
+  "title": "Textmoji Animated Sources",
+  "description": "The same emoji rendered through all three animated catalogs.",
+  "dependencies": [],
+  "registryDependencies": [
+    "https://www.spaceui.one/r/components-spaceui-animoji.json"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/components/spaceui/animoji/c-animoji-02/index.tsx",
+      "content": "import { Animoji, type AnimojiSource } from '@/components/spaceui/animoji'\n\nconst SOURCES: { label: string; source: AnimojiSource }[] = [\n  { label: 'Fluent', source: 'fluent' },\n  { label: 'Telegram', source: 'telegram' },\n  { label: 'Noto', source: 'noto' },\n]\n\nexport default function Demo() {\n  return (\n    <div className=\"grid w-full max-w-md grid-cols-3 gap-4 px-6\">\n      {SOURCES.map(({ label, source }) => (\n        <div key={label} className=\"flex flex-col items-center gap-2\">\n          <p className=\"text-3xl\">\n            <Animoji source={source}>🚀</Animoji>\n          </p>\n          <span className=\"text-[0.6875rem] text-muted-foreground\">{label}</span>\n        </div>\n      ))}\n    </div>\n  )\n}\n",
+      "type": "registry:component",
+      "target": "components/spaceui/animoji-sources.tsx"
+    }
+  ],
+  "categories": [
+    "component",
+    "utility",
+    "emoji"
+  ],
+  "type": "registry:component"
+}

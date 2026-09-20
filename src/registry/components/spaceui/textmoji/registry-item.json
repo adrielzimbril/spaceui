@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "components-spaceui-textmoji",
+  "type": "registry:component",
+  "title": "Textmoji",
+  "description": "Renders every Unicode emoji in a string as an image sized to the surrounding text. Includes Animoji, the same for animated emoji styles.",
+  "dependencies": ["emoji-regex", "@usespaceui/emoji"],
+  "registryDependencies": ["https://www.spaceui.one/r/lib-utils.json"],
+  "categories": ["component", "utility", "emoji"],
+  "files": [
+    {
+      "path": "src/registry/components/spaceui/textmoji/index.tsx",
+      "type": "registry:component",
+      "target": "components/spaceui/textmoji.tsx"
+    }
+  ],
+  "createdAt": "2026-09-19",
+  "updatedAt": "2026-09-19"
+}

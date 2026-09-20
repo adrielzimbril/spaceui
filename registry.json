@@ -1377,6 +1377,33 @@
       "updatedAt": "2026-09-14"
     },
     {
+      "name": "components-spaceui-animoji",
+      "type": "registry:component",
+      "title": "Textmoji Animated",
+      "description": "Renders every Unicode emoji in a string as an animated image sized to the surrounding text.",
+      "dependencies": [
+        "emoji-regex",
+        "@usespaceui/emoji"
+      ],
+      "registryDependencies": [
+        "https://www.spaceui.one/r/lib-utils.json"
+      ],
+      "categories": [
+        "component",
+        "utility",
+        "emoji"
+      ],
+      "files": [
+        {
+          "path": "src/registry/components/spaceui/animoji/index.tsx",
+          "type": "registry:component",
+          "target": "components/spaceui/animoji.tsx"
+        }
+      ],
+      "createdAt": "2026-09-19",
+      "updatedAt": "2026-09-19"
+    },
+    {
       "name": "components-spaceui-autoscale-input",
       "type": "registry:component",
       "title": "Autoscale Input",
@@ -3199,6 +3226,33 @@
       "updatedAt": "2026-09-17"
     },
     {
+      "name": "components-spaceui-textmoji",
+      "type": "registry:component",
+      "title": "Textmoji",
+      "description": "Renders every Unicode emoji in a string as an image sized to the surrounding text. Includes Animoji, the same for animated emoji styles.",
+      "dependencies": [
+        "emoji-regex",
+        "@usespaceui/emoji"
+      ],
+      "registryDependencies": [
+        "https://www.spaceui.one/r/lib-utils.json"
+      ],
+      "categories": [
+        "component",
+        "utility",
+        "emoji"
+      ],
+      "files": [
+        {
+          "path": "src/registry/components/spaceui/textmoji/index.tsx",
+          "type": "registry:component",
+          "target": "components/spaceui/textmoji.tsx"
+        }
+      ],
+      "createdAt": "2026-09-19",
+      "updatedAt": "2026-09-19"
+    },
+    {
       "name": "components-spaceui-theme-toggle",
       "type": "registry:component",
       "title": "Theme Toggle",
@@ -3226,6 +3280,29 @@
       ],
       "createdAt": "2026-09-03",
       "updatedAt": "2026-09-03"
+    },
+    {
+      "name": "components-spaceui-tick-slider",
+      "type": "registry:component",
+      "title": "Tick Slider",
+      "description": "A scrubber drawn as a row of tick marks, with a real range input underneath for keyboard and screen reader support.",
+      "dependencies": [],
+      "registryDependencies": [
+        "https://www.spaceui.one/r/lib-utils.json"
+      ],
+      "categories": [
+        "component",
+        "slider"
+      ],
+      "files": [
+        {
+          "path": "src/registry/components/spaceui/tick-slider/index.tsx",
+          "type": "registry:component",
+          "target": "components/spaceui/tick-slider.tsx"
+        }
+      ],
+      "createdAt": "2026-09-19",
+      "updatedAt": "2026-09-19"
     },
     {
       "name": "components-spaceui-timeline",
@@ -4759,6 +4836,117 @@
       ],
       "createdAt": "2026-09-14",
       "updatedAt": "2026-09-14"
+    },
+    {
+      "name": "demo-c-animoji-01",
+      "type": "registry:component",
+      "title": "Textmoji Animated Demo",
+      "description": "Inline text with emoji rendered as animated images sized to the surrounding font.",
+      "registryDependencies": [
+        "https://www.spaceui.one/r/components-spaceui-animoji.json"
+      ],
+      "categories": [
+        "component",
+        "utility",
+        "emoji"
+      ],
+      "meta": {
+        "demoProps": {
+          "text": {
+            "value": "Ship your ideas faster 🚀 with Space UI 🫧🦄"
+          },
+          "source": {
+            "value": "fluent",
+            "options": {
+              "Fluent": "fluent",
+              "Telegram": "telegram",
+              "Noto": "noto"
+            }
+          }
+        }
+      },
+      "files": [
+        {
+          "path": "src/registry/demo/components/spaceui/animoji/c-animoji-01/index.tsx",
+          "type": "registry:component",
+          "target": "components/spaceui/animoji-demo.tsx"
+        }
+      ],
+      "createdAt": "2026-09-19",
+      "updatedAt": "2026-09-19"
+    },
+    {
+      "name": "demo-c-animoji-02",
+      "type": "registry:component",
+      "title": "Textmoji Animated Sources",
+      "description": "The same emoji rendered through all three animated catalogs.",
+      "registryDependencies": [
+        "https://www.spaceui.one/r/components-spaceui-animoji.json"
+      ],
+      "categories": [
+        "component",
+        "utility",
+        "emoji"
+      ],
+      "files": [
+        {
+          "path": "src/registry/demo/components/spaceui/animoji/c-animoji-02/index.tsx",
+          "type": "registry:component",
+          "target": "components/spaceui/animoji-sources.tsx"
+        }
+      ],
+      "createdAt": "2026-09-19",
+      "updatedAt": "2026-09-19",
+      "dependencies": []
+    },
+    {
+      "name": "demo-c-animoji-03",
+      "type": "registry:component",
+      "title": "Textmoji Animated Unicode Escapes",
+      "description": "Emoji written as JS unicode escape sequences, including a two-code-point flag, resolved the same as pasted characters.",
+      "registryDependencies": [
+        "https://www.spaceui.one/r/components-spaceui-animoji.json"
+      ],
+      "categories": [
+        "component",
+        "utility",
+        "emoji"
+      ],
+      "files": [
+        {
+          "path": "src/registry/demo/components/spaceui/animoji/c-animoji-03/index.tsx",
+          "type": "registry:component",
+          "target": "components/spaceui/animoji-unicode.tsx"
+        }
+      ],
+      "createdAt": "2026-09-19",
+      "updatedAt": "2026-09-19",
+      "dependencies": []
+    },
+    {
+      "name": "demo-c-animoji-04",
+      "type": "registry:component",
+      "title": "Textmoji Animated with Morphing Text",
+      "description": "MorphingText's renderChar hook piped through Animoji, so the emoji in each rotating phrase keeps animating through the transition.",
+      "registryDependencies": [
+        "https://www.spaceui.one/r/components-spaceui-animoji.json",
+        "https://www.spaceui.one/r/components-spaceui-morphing-text.json"
+      ],
+      "categories": [
+        "component",
+        "utility",
+        "emoji"
+      ],
+      "files": [
+        {
+          "path": "src/registry/demo/components/spaceui/animoji/c-animoji-04/index.tsx",
+          "type": "registry:component",
+          "target": "components/spaceui/animoji-morphing.tsx"
+        }
+      ],
+      "createdAt": "2026-09-19",
+      "updatedAt": "2026-09-19",
+      "dependencies": []
     },
     {
       "name": "demo-c-autoscale-input-01",
@@ -9662,6 +9850,143 @@
       "updatedAt": "2026-09-17"
     },
     {
+      "name": "demo-c-textmoji-01",
+      "type": "registry:component",
+      "title": "Textmoji Demo",
+      "description": "Inline text with emoji rendered as images sized to the surrounding font, switchable across emoji styles.",
+      "registryDependencies": [
+        "https://www.spaceui.one/r/components-spaceui-textmoji.json"
+      ],
+      "categories": [
+        "component",
+        "utility",
+        "emoji"
+      ],
+      "meta": {
+        "demoProps": {
+          "text": {
+            "value": "Ship your ideas faster 🚀 with Space UI 🫧🦄"
+          },
+          "source": {
+            "value": "fluent",
+            "options": {
+              "Fluent": "fluent",
+              "Apple": "apple",
+              "Twemoji": "twemoji",
+              "Blobmoji": "blobmoji",
+              "Noto": "noto"
+            }
+          }
+        }
+      },
+      "files": [
+        {
+          "path": "src/registry/demo/components/spaceui/textmoji/c-textmoji-01/index.tsx",
+          "type": "registry:component",
+          "target": "components/spaceui/textmoji-demo.tsx"
+        }
+      ],
+      "createdAt": "2026-09-19",
+      "updatedAt": "2026-09-19"
+    },
+    {
+      "name": "demo-c-textmoji-02",
+      "type": "registry:component",
+      "title": "Textmoji Sizes",
+      "description": "The same Textmoji call under different text size classes — no size prop, the image just tracks the inherited font size.",
+      "registryDependencies": [
+        "https://www.spaceui.one/r/components-spaceui-textmoji.json"
+      ],
+      "categories": [
+        "component",
+        "utility",
+        "emoji"
+      ],
+      "files": [
+        {
+          "path": "src/registry/demo/components/spaceui/textmoji/c-textmoji-02/index.tsx",
+          "type": "registry:component",
+          "target": "components/spaceui/textmoji-sizes.tsx"
+        }
+      ],
+      "createdAt": "2026-09-19",
+      "updatedAt": "2026-09-19",
+      "dependencies": []
+    },
+    {
+      "name": "demo-c-textmoji-03",
+      "type": "registry:component",
+      "title": "Textmoji Sources",
+      "description": "The same emoji rendered through all six supported catalogs, each at its own default style.",
+      "registryDependencies": [
+        "https://www.spaceui.one/r/components-spaceui-textmoji.json"
+      ],
+      "categories": [
+        "component",
+        "utility",
+        "emoji"
+      ],
+      "files": [
+        {
+          "path": "src/registry/demo/components/spaceui/textmoji/c-textmoji-03/index.tsx",
+          "type": "registry:component",
+          "target": "components/spaceui/textmoji-sources.tsx"
+        }
+      ],
+      "createdAt": "2026-09-19",
+      "updatedAt": "2026-09-19",
+      "dependencies": []
+    },
+    {
+      "name": "demo-c-textmoji-04",
+      "type": "registry:component",
+      "title": "Textmoji Unicode Escapes",
+      "description": "Emoji written as JS unicode escape sequences, including a two-code-point flag, resolved the same as pasted characters.",
+      "registryDependencies": [
+        "https://www.spaceui.one/r/components-spaceui-textmoji.json"
+      ],
+      "categories": [
+        "component",
+        "utility",
+        "emoji"
+      ],
+      "files": [
+        {
+          "path": "src/registry/demo/components/spaceui/textmoji/c-textmoji-04/index.tsx",
+          "type": "registry:component",
+          "target": "components/spaceui/textmoji-unicode.tsx"
+        }
+      ],
+      "createdAt": "2026-09-19",
+      "updatedAt": "2026-09-19",
+      "dependencies": []
+    },
+    {
+      "name": "demo-c-textmoji-05",
+      "type": "registry:component",
+      "title": "Textmoji with Morphing Text",
+      "description": "MorphingText's renderChar hook piped through Textmoji, so the emoji in each rotating phrase stays styled through the transition.",
+      "registryDependencies": [
+        "https://www.spaceui.one/r/components-spaceui-textmoji.json",
+        "https://www.spaceui.one/r/components-spaceui-morphing-text.json"
+      ],
+      "categories": [
+        "component",
+        "utility",
+        "emoji"
+      ],
+      "files": [
+        {
+          "path": "src/registry/demo/components/spaceui/textmoji/c-textmoji-05/index.tsx",
+          "type": "registry:component",
+          "target": "components/spaceui/textmoji-morphing.tsx"
+        }
+      ],
+      "createdAt": "2026-09-19",
+      "updatedAt": "2026-09-19",
+      "dependencies": []
+    },
+    {
       "name": "demo-c-theme-toggle-01",
       "type": "registry:component",
       "title": "Theme Toggle Demo",
@@ -9773,6 +10098,59 @@
       ],
       "createdAt": "2026-09-03",
       "updatedAt": "2026-09-03"
+    },
+    {
+      "name": "demo-c-tick-slider-01",
+      "type": "registry:component",
+      "title": "Tick Slider Demo",
+      "description": "Tick-mark scrubber with configurable range and major-mark spacing.",
+      "registryDependencies": [
+        "https://www.spaceui.one/r/components-spaceui-tick-slider.json"
+      ],
+      "categories": [
+        "component",
+        "slider"
+      ],
+      "meta": {
+        "demoProps": {
+          "min": {
+            "value": 16,
+            "min": 0,
+            "max": 32,
+            "step": 1
+          },
+          "max": {
+            "value": 48,
+            "min": 33,
+            "max": 100,
+            "step": 1
+          },
+          "step": {
+            "value": 1,
+            "min": 1,
+            "max": 5,
+            "step": 1
+          },
+          "majorEvery": {
+            "value": 8,
+            "min": 1,
+            "max": 16,
+            "step": 1
+          },
+          "showValue": {
+            "value": true
+          }
+        }
+      },
+      "files": [
+        {
+          "path": "src/registry/demo/components/spaceui/tick-slider/c-tick-slider-01/index.tsx",
+          "type": "registry:component",
+          "target": "components/spaceui/tick-slider-demo.tsx"
+        }
+      ],
+      "createdAt": "2026-09-19",
+      "updatedAt": "2026-09-19"
     },
     {
       "name": "demo-c-timeline-01",

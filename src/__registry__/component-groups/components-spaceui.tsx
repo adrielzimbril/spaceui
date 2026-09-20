@@ -36,6 +36,10 @@ export const registryComponents: Record<string, RegistryComponent> = {
     () => import("@/registry/components/spaceui/adaptive-density-grid/index.tsx"),
     {},
   ),
+  "components-spaceui-animoji": lazyRegistryComponent(
+    () => import("@/registry/components/spaceui/animoji/index.tsx"),
+    {},
+  ),
   "components-spaceui-autoscale-input": lazyRegistryComponent(
     () => import("@/registry/components/spaceui/autoscale-input/index.tsx"),
     {},
@@ -204,8 +208,16 @@ export const registryComponents: Record<string, RegistryComponent> = {
     () => import("@/registry/components/spaceui/team-roster-selector/index.tsx"),
     {},
   ),
+  "components-spaceui-textmoji": lazyRegistryComponent(
+    () => import("@/registry/components/spaceui/textmoji/index.tsx"),
+    {},
+  ),
   "components-spaceui-theme-toggle": lazyRegistryComponent(
     () => import("@/registry/components/spaceui/theme-toggle/index.tsx"),
+    {},
+  ),
+  "components-spaceui-tick-slider": lazyRegistryComponent(
+    () => import("@/registry/components/spaceui/tick-slider/index.tsx"),
     {},
   ),
   "components-spaceui-timeline": lazyRegistryComponent(

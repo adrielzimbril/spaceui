@@ -1,0 +1,40 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-c-textmoji-01",
+  "title": "Textmoji Demo",
+  "description": "Inline text with emoji rendered as images sized to the surrounding font, switchable across emoji styles.",
+  "registryDependencies": [
+    "https://www.spaceui.one/r/components-spaceui-textmoji.json"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/components/spaceui/textmoji/c-textmoji-01/index.tsx",
+      "content": "'use client'\n\nimport { Textmoji, type StaticEmojiSource } from '@/components/spaceui/textmoji'\n\nexport interface TextmojiDemoProps {\n  text?: string\n  source?: StaticEmojiSource\n}\n\nexport default function Demo({\n  text = 'Ship your ideas faster 🚀 with Space UI 🫧🦄',\n  source = 'fluent',\n}: TextmojiDemoProps) {\n  return (\n    <div className=\"flex w-full max-w-md flex-col gap-4 px-6 text-center\">\n      <p className=\"text-lg leading-relaxed text-foreground\">\n        <Textmoji source={source}>{text}</Textmoji>\n      </p>\n    </div>\n  )\n}\n",
+      "type": "registry:component",
+      "target": "components/spaceui/textmoji-demo.tsx"
+    }
+  ],
+  "meta": {
+    "demoProps": {
+      "text": {
+        "value": "Ship your ideas faster 🚀 with Space UI 🫧🦄"
+      },
+      "source": {
+        "value": "fluent",
+        "options": {
+          "Fluent": "fluent",
+          "Apple": "apple",
+          "Twemoji": "twemoji",
+          "Blobmoji": "blobmoji",
+          "Noto": "noto"
+        }
+      }
+    }
+  },
+  "categories": [
+    "component",
+    "utility",
+    "emoji"
+  ],
+  "type": "registry:component"
+}

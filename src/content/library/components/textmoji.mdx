@@ -1,0 +1,54 @@
+---
+title: Textmoji
+description: Renders every Unicode emoji in a string as an image sized to the surrounding text.
+preview:
+  name: demo-c-textmoji-01
+  contained: false
+---
+
+## Installation
+
+<ComponentInstallation name="components-spaceui-textmoji" />
+
+## Usage
+
+```tsx
+import { Textmoji } from '@/components/spaceui/textmoji'
+
+export default function Example() {
+  return (
+    <p>
+      <Textmoji source="fluent">Ship your ideas faster 🚀 with better UI ✨</Textmoji>
+    </p>
+  )
+}
+```
+
+For animated emoji, use [Textmoji Animated](/components/animoji) instead — same API, different provider list.
+
+## Examples
+
+### Sizes
+
+<ComponentPreview name="demo-c-textmoji-02" contained={false} />
+
+### Sources
+
+<ComponentPreview name="demo-c-textmoji-03" contained={false} />
+
+### Unicode escapes & flags
+
+<ComponentPreview name="demo-c-textmoji-04" contained={false} />
+
+### With Blur Reveal Text
+
+<ComponentPreview name="demo-c-textmoji-05" contained={false} />
+
+## Props
+
+| Prop             | Type                                                       | Default    | Description                                            |
+| ---------------- | ---------------------------------------------------------- | ---------- | ------------------------------------------------------ |
+| `children`       | `string`                                                   | —          | The text to scan                                       |
+| `source`         | `'fluent' \| 'apple' \| 'twemoji' \| 'blobmoji' \| 'noto'` | `'fluent'` | Provider to render — only the ones with a static style |
+| `className`      | `string`                                                   | —          | Class on the outer wrapper                             |
+| `emojiClassName` | `string`                                                   | —          | Class applied to each rendered emoji image             |

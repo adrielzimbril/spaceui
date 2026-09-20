@@ -132,7 +132,9 @@ function countBinds(binds: Binds): number {
 
 function panelHeightClass(binds: Binds): string {
   const count = countBinds(binds)
-  if (count <= 2) return 'h-32'
+  if (count <= 1) return 'h-34'
+  if (count <= 2) return 'h-52'
+  if (count <= 4) return 'h-64'
   if (count <= 5) return 'h-86'
   return 'h-135'
 }

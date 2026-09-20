@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-c-animoji-02",
+  "type": "registry:component",
+  "title": "Textmoji Animated Sources",
+  "description": "The same emoji rendered through all three animated catalogs.",
+  "registryDependencies": ["https://www.spaceui.one/r/components-spaceui-animoji.json"],
+  "categories": ["component", "utility", "emoji"],
+  "files": [
+    {
+      "path": "src/registry/demo/components/spaceui/animoji/c-animoji-02/index.tsx",
+      "type": "registry:component",
+      "target": "components/spaceui/animoji-sources.tsx"
+    }
+  ],
+  "createdAt": "2026-09-19",
+  "updatedAt": "2026-09-19",
+  "dependencies": []
+}

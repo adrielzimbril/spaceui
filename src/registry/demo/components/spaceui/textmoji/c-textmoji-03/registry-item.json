@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-c-textmoji-03",
+  "type": "registry:component",
+  "title": "Textmoji Sources",
+  "description": "The same emoji rendered through all six supported catalogs, each at its own default style.",
+  "registryDependencies": ["https://www.spaceui.one/r/components-spaceui-textmoji.json"],
+  "categories": ["component", "utility", "emoji"],
+  "files": [
+    {
+      "path": "src/registry/demo/components/spaceui/textmoji/c-textmoji-03/index.tsx",
+      "type": "registry:component",
+      "target": "components/spaceui/textmoji-sources.tsx"
+    }
+  ],
+  "createdAt": "2026-09-19",
+  "updatedAt": "2026-09-19",
+  "dependencies": []
+}

@@ -46,3 +46,4 @@ export default function HeroStatement() {
 | `inView`     | `boolean`                            | `true`       | When true, animation triggers only once the element scrolls into view. |
 | `once`       | `boolean`                            | `true`       | Whether viewport triggering fires only on first view.                  |
 | `replayKey`  | `string \| number`                   | `undefined`  | Change this value to programmatically re-trigger the animation.        |
+| `renderSegment` | `(segment: string) => ReactNode`  | `undefined`  | Overrides how each segment renders — e.g. through Textmoji so emoji stay styled. |

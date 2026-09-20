@@ -1,0 +1,24 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-c-textmoji-03",
+  "title": "Textmoji Sources",
+  "description": "The same emoji rendered through all six supported catalogs, each at its own default style.",
+  "dependencies": [],
+  "registryDependencies": [
+    "https://www.spaceui.one/r/components-spaceui-textmoji.json"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/components/spaceui/textmoji/c-textmoji-03/index.tsx",
+      "content": "import { Textmoji, type StaticEmojiSource } from '@/components/spaceui/textmoji'\n\nconst SOURCES: { label: string; source: StaticEmojiSource }[] = [\n  { label: 'Fluent', source: 'fluent' },\n  { label: 'Apple', source: 'apple' },\n  { label: 'Twemoji', source: 'twemoji' },\n  { label: 'Blobmoji', source: 'blobmoji' },\n  { label: 'Noto', source: 'noto' },\n]\n\nexport default function Demo() {\n  return (\n    <div className=\"grid w-full max-w-md grid-cols-5 gap-4 px-6\">\n      {SOURCES.map(({ label, source }) => (\n        <div key={label} className=\"flex flex-col items-center gap-2\">\n          <p className=\"text-3xl\">\n            <Textmoji source={source}>🚀</Textmoji>\n          </p>\n          <span className=\"text-[0.6875rem] text-muted-foreground\">{label}</span>\n        </div>\n      ))}\n    </div>\n  )\n}\n",
+      "type": "registry:component",
+      "target": "components/spaceui/textmoji-sources.tsx"
+    }
+  ],
+  "categories": [
+    "component",
+    "utility",
+    "emoji"
+  ],
+  "type": "registry:component"
+}

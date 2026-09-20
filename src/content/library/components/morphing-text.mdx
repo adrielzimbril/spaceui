@@ -44,15 +44,16 @@ export default function RotatingHeadline() {
 
 ### MorphingText
 
-| Prop            | Type       | Default      | Description                                                   |
-| --------------- | ---------- | ------------ | ------------------------------------------------------------- |
-| `texts`         | `string[]` | **required** | The list of words or phrases to cycle through sequentially.   |
-| `interval`      | `number`   | `2400`       | Time in milliseconds before advancing to the next phrase.     |
-| `pauseOnHover`  | `boolean`  | `true`       | When true, pauses timer when cursor is hovered over the text. |
-| `blurAmount`    | `string`   | `'10px'`     | Blur radius applied to entering and exiting characters.       |
-| `springBounce`  | `number`   | `0.14`       | Spring bounce factor (0 to 1) for layout transitions.         |
-| `className`     | `string`   | `undefined`  | Custom styling for the wrapper container.                     |
-| `textClassName` | `string`   | `undefined`  | Custom styling for the text component.                        |
+| Prop            | Type                          | Default      | Description                                                                                               |
+| --------------- | ----------------------------- | ------------ | --------------------------------------------------------------------------------------------------------- |
+| `texts`         | `string[]`                    | **required** | The list of words or phrases to cycle through sequentially.                                               |
+| `interval`      | `number`                      | `2400`       | Time in milliseconds before advancing to the next phrase.                                                 |
+| `pauseOnHover`  | `boolean`                     | `true`       | When true, pauses timer when cursor is hovered over the text.                                             |
+| `blurAmount`    | `string`                      | `'10px'`     | Blur radius applied to entering and exiting characters.                                                   |
+| `springBounce`  | `number`                      | `0.14`       | Spring bounce factor (0 to 1) for layout transitions.                                                     |
+| `className`     | `string`                      | `undefined`  | Custom styling for the wrapper container.                                                                 |
+| `textClassName` | `string`                      | `undefined`  | Custom styling for the text component.                                                                    |
+| `renderChar`    | `(char: string) => ReactNode` | `undefined`  | Overrides how each character token renders — e.g. through Textmoji so emoji stay styled across the morph. |
 
 ### TextMorph (Single Morph)
 

@@ -15,6 +15,8 @@ export interface TextMorphProps extends React.HTMLAttributes<HTMLElement> {
   blurAmount?: string
   /** Spring bounce factor (0 to 1). @default 0.14 */
   springBounce?: number
+  /** Overrides how each character token renders, e.g. to run it through Textmoji. Defaults to the raw character. */
+  renderChar?: (char: string) => React.ReactNode
 }
 
 export interface MorphingTextProps extends React.HTMLAttributes<HTMLDivElement> {
@@ -32,6 +34,8 @@ export interface MorphingTextProps extends React.HTMLAttributes<HTMLDivElement> 
   className?: string
   /** Custom class for the text */
   textClassName?: string
+  /** Overrides how each character token renders, e.g. to run it through Textmoji. Defaults to the raw character. */
+  renderChar?: (char: string) => React.ReactNode
 }
 
 interface CharToken {
@@ -60,6 +64,7 @@ export const TextMorph: React.FC<TextMorphProps> = ({
   className,
   blurAmount = '10px',
   springBounce = 0.14,
+  renderChar,
   style,
   ...props
 }) => {
@@ -121,7 +126,7 @@ export const TextMorph: React.FC<TextMorphProps> = ({
               aria-hidden="true"
               className="inline-block whitespace-pre will-change-[transform,filter,opacity]"
             >
-              {token.displayChar}
+              {renderChar ? renderChar(token.displayChar) : token.displayChar}
             </motion.span>
           ))}
         </AnimatePresence>
@@ -138,6 +143,7 @@ export const MorphingText: React.FC<MorphingTextProps> = ({
   springBounce = 0.14,
   className,
   textClassName,
+  renderChar,
   onMouseEnter,
   onMouseLeave,
   ...props
@@ -175,6 +181,7 @@ export const MorphingText: React.FC<MorphingTextProps> = ({
       <TextMorph
         blurAmount={blurAmount}
         springBounce={springBounce}
+        renderChar={renderChar}
         className={cn(
           'text-3xl sm:text-5xl md:text-6xl font-bold tracking-tight text-foreground text-center',
           textClassName,

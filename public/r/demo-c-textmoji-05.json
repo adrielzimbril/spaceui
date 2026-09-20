@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-c-textmoji-05",
+  "title": "Textmoji with Morphing Text",
+  "description": "MorphingText's renderChar hook piped through Textmoji, so the emoji in each rotating phrase stays styled through the transition.",
+  "dependencies": [],
+  "registryDependencies": [
+    "https://www.spaceui.one/r/components-spaceui-textmoji.json",
+    "https://www.spaceui.one/r/components-spaceui-morphing-text.json"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/components/spaceui/textmoji/c-textmoji-05/index.tsx",
+      "content": "'use client'\n\nimport { MorphingText } from '@/components/spaceui/morphing-text'\nimport { Textmoji } from '@/components/spaceui/textmoji'\n\nconst PHRASES = ['Ship faster 🚀', 'Design better ✨', 'Ship with confidence 🎉', 'Build with care 🛠️']\n\nexport default function Demo() {\n  return (\n    <div className=\"flex w-full items-center justify-center px-6 py-8\">\n      <MorphingText\n        texts={PHRASES}\n        renderChar={(char) => <Textmoji>{char}</Textmoji>}\n        textClassName=\"text-2xl sm:text-3xl\"\n      />\n    </div>\n  )\n}\n",
+      "type": "registry:component",
+      "target": "components/spaceui/textmoji-morphing.tsx"
+    }
+  ],
+  "categories": [
+    "component",
+    "utility",
+    "emoji"
+  ],
+  "type": "registry:component"
+}

@@ -1,0 +1,51 @@
+---
+title: Tick Slider
+description: A scrubber drawn as a row of tick marks, backed by a real range input.
+preview:
+  name: demo-c-tick-slider-01
+  contained: false
+---
+
+## Installation
+
+<ComponentInstallation name="components-spaceui-tick-slider" />
+
+## Usage
+
+```tsx
+import { TickSlider } from '@/components/spaceui/tick-slider'
+
+export default function Example() {
+  const [value, setValue] = React.useState(24)
+  return (
+    <TickSlider
+      value={value}
+      onChange={setValue}
+      min={16}
+      max={48}
+      step={1}
+      majorEvery={8}
+      unit="px"
+      label="Font size"
+    />
+  )
+}
+```
+
+## Props
+
+| Prop             | Type                         | Default | Description                                               |
+| ---------------- | ---------------------------- | ------- | --------------------------------------------------------- |
+| `value`          | `number`                     | —       | Controlled value                                          |
+| `onChange`       | `(next: number) => void`     | —       | Change handler                                            |
+| `min`            | `number`                     | `0`     | Minimum                                                   |
+| `max`            | `number`                     | `100`   | Maximum                                                   |
+| `step`           | `number`                     | `1`     | Snap                                                      |
+| `majorEvery`     | `number`                     | `4`     | Every Nth step gets a taller mark                         |
+| `isMajorMark`    | `(value: number) => boolean` | —       | Custom predicate for taller marks, overrides `majorEvery` |
+| `label`          | `string`                     | —       | Accessible name — the control carries no visible label    |
+| `unit`           | `string`                     | `''`    | Suffix on the value readout                               |
+| `showValue`      | `boolean`                    | `true`  | Shows the numeric readout on the right                    |
+| `disabled`       | `boolean`                    | `false` | Disables the control                                      |
+| `trackClassName` | `string`                     | —       | Overrides the pitch-derived rail width, e.g. `flex-1`     |
+| `className`      | `string`                     | —       | Class on the outer wrapper                                |

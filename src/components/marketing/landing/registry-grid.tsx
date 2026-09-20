@@ -10,11 +10,11 @@ import { IconArrowUpRight } from '@tabler/icons-react'
 import { Button } from '@/registry/components/spaceui/button-squircle'
 import { OrbBloopCard } from './bento/registry/orb-bloop-card'
 import { HandleReelCard } from './bento/registry/handle-reel-card'
+import { AnimojiCard } from './bento/registry/animoji-card'
 import { FlagsCard } from './bento/packages/flags-card'
 import { TimelineCard } from './bento/registry/timeline-card'
 import { GitHubActivityCard } from './bento/registry/github-activity-card'
 import { AvatarsSquishmojiCard } from './bento/packages/avatars-squishmoji-card'
-import { WordsPreloaderCard } from './bento/registry/words-preloader-card'
 import { LoadingOrbCard } from './bento/registry/loading-orb-card'
 import { EmojiCard } from './bento/packages/emoji-card'
 
@@ -53,11 +53,12 @@ export function RegistryGrid() {
         {/* <MorphingTextCard isVisible={isVisible} /> */}
         {/* <BouncyAccordionCard isVisible={isVisible} /> */}
         <HandleReelCard />
-        <FlagsCard isVisible={isVisible} />
+        <AnimojiCard isVisible={isVisible} />
         <TimelineCard isVisible={isVisible} />
         <GitHubActivityCard />
         <AvatarsSquishmojiCard isVisible={isVisible} count={9} />
-        <WordsPreloaderCard isVisible={isVisible} />
+        <FlagsCard isVisible={isVisible} />
+        {/* <WordsPreloaderCard isVisible={isVisible} /> */}
         <LoadingOrbCard isVisible={isVisible} />
         <EmojiCard isVisible={isVisible} />
       </div>

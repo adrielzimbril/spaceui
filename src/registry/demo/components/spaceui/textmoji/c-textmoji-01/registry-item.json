@@ -1,0 +1,33 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-c-textmoji-01",
+  "type": "registry:component",
+  "title": "Textmoji Demo",
+  "description": "Inline text with emoji rendered as images sized to the surrounding font, switchable across emoji styles.",
+  "registryDependencies": ["https://www.spaceui.one/r/components-spaceui-textmoji.json"],
+  "categories": ["component", "utility", "emoji"],
+  "meta": {
+    "demoProps": {
+      "text": { "value": "Ship your ideas faster 🚀 with Space UI 🫧🦄" },
+      "source": {
+        "value": "fluent",
+        "options": {
+          "Fluent": "fluent",
+          "Apple": "apple",
+          "Twemoji": "twemoji",
+          "Blobmoji": "blobmoji",
+          "Noto": "noto"
+        }
+      }
+    }
+  },
+  "files": [
+    {
+      "path": "src/registry/demo/components/spaceui/textmoji/c-textmoji-01/index.tsx",
+      "type": "registry:component",
+      "target": "components/spaceui/textmoji-demo.tsx"
+    }
+  ],
+  "createdAt": "2026-09-19",
+  "updatedAt": "2026-09-19"
+}

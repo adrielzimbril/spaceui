@@ -1,0 +1,50 @@
+---
+title: Textmoji Animated
+description: Renders every Unicode emoji in a string as an animated image sized to the surrounding text.
+preview: 
+  name: demo-c-animoji-01
+  contained: false
+---
+
+## Installation
+
+<ComponentInstallation name="components-spaceui-animoji" />
+
+## Usage
+
+```tsx
+import { Animoji } from '@/components/spaceui/animoji'
+
+export default function Example() {
+  return (
+    <p>
+      <Animoji source="telegram">Ship your ideas faster 🚀</Animoji>
+    </p>
+  )
+}
+```
+
+For static emoji, use [Textmoji](/components/textmoji) instead — same API, different provider list.
+
+## Examples
+
+### Sources
+
+<ComponentPreview name="demo-c-animoji-02" contained={false} />
+
+### Unicode escapes & flags
+
+<ComponentPreview name="demo-c-animoji-03" contained={false} />
+
+### With Blur Reveal Text
+
+<ComponentPreview name="demo-c-animoji-04" contained={false} />
+
+## Props
+
+| Prop             | Type                               | Default    | Description                                               |
+| ---------------- | ---------------------------------- | ---------- | --------------------------------------------------------- |
+| `children`       | `string`                           | —          | The text to scan                                          |
+| `source`         | `'fluent' \| 'telegram' \| 'noto'` | `'fluent'` | Provider to render — only the ones with an animated style |
+| `className`      | `string`                           | —          | Class on the outer wrapper                                |
+| `emojiClassName` | `string`                           | —          | Class applied to each rendered emoji image                |

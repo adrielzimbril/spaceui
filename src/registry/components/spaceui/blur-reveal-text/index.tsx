@@ -37,6 +37,8 @@ export interface BlurRevealTextProps extends React.HTMLAttributes<HTMLElement> {
   once?: boolean
   /** Changing this key triggers a replay of the animation */
   replayKey?: string | number
+  /** Overrides how each segment renders, e.g. to run it through Textmoji. Defaults to the raw segment text. */
+  renderSegment?: (segment: string) => React.ReactNode
 }
 
 function splitText(text: string, mode: SplitMode): string[] {
@@ -66,6 +68,7 @@ export const BlurRevealText: React.FC<BlurRevealTextProps> = ({
   inView = true,
   once = true,
   replayKey,
+  renderSegment,
   style,
   ...props
 }) => {
@@ -131,7 +134,7 @@ export const BlurRevealText: React.FC<BlurRevealTextProps> = ({
             variants={segmentVariants}
             className={cn('inline-block whitespace-pre will-change-[filter,transform,opacity]', segmentClassName)}
           >
-            {displayText}
+            {renderSegment ? renderSegment(displayText) : displayText}
           </motion.span>
         )
       })}

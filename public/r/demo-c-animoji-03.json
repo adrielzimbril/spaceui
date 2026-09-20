@@ -1,0 +1,24 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-c-animoji-03",
+  "title": "Textmoji Animated Unicode Escapes",
+  "description": "Emoji written as JS unicode escape sequences, including a two-code-point flag, resolved the same as pasted characters.",
+  "dependencies": [],
+  "registryDependencies": [
+    "https://www.spaceui.one/r/components-spaceui-animoji.json"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/components/spaceui/animoji/c-animoji-03/index.tsx",
+      "content": "import { Animoji } from '@/components/spaceui/animoji'\n\nconst SOURCE = \"'Built with \\\\u{2764}\\\\u{FE0F} love from \\\\u{1F1E8}\\\\u{1F1EE}'\"\nconst text = 'Built with \\u{2764}\\u{FE0F} love from \\u{1F1E8}\\u{1F1EE}'\n\nexport default function Demo() {\n  return (\n    <div className=\"flex w-full max-w-md flex-col items-center gap-3 px-6 text-center\">\n      <p className=\"text-2xl\">\n        <Animoji>{text}</Animoji>\n      </p>\n      <code className=\"w-full rounded-lg bg-muted px-3 py-2 text-left text-xs break-all text-muted-foreground\">\n        {SOURCE}\n      </code>\n    </div>\n  )\n}\n",
+      "type": "registry:component",
+      "target": "components/spaceui/animoji-unicode.tsx"
+    }
+  ],
+  "categories": [
+    "component",
+    "utility",
+    "emoji"
+  ],
+  "type": "registry:component"
+}

@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-c-animoji-04",
+  "type": "registry:component",
+  "title": "Textmoji Animated with Blur Reveal Text",
+  "description": "BlurRevealText's renderSegment hook piped through Animoji, cycling both the phrase and the emoji provider on every reveal.",
+  "registryDependencies": [
+    "https://www.spaceui.one/r/components-spaceui-animoji.json",
+    "https://www.spaceui.one/r/components-spaceui-blur-reveal-text.json"
+  ],
+  "categories": ["component", "utility", "emoji"],
+  "files": [
+    {
+      "path": "src/registry/demo/components/spaceui/animoji/c-animoji-04/index.tsx",
+      "type": "registry:component",
+      "target": "components/spaceui/animoji-blur-reveal.tsx"
+    }
+  ],
+  "createdAt": "2026-09-19",
+  "updatedAt": "2026-09-20",
+  "dependencies": []
+}
