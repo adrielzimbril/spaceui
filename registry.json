@@ -2003,6 +2003,32 @@
       ]
     },
     {
+      "name": "components-spaceui-doodle-callout",
+      "type": "registry:component",
+      "title": "Doodle Callout",
+      "description": "A hand-drawn arrow that draws itself in next to a handwritten label that pops in letter by letter, replaying on a loop.",
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [
+        "https://www.spaceui.one/r/lib-utils.json"
+      ],
+      "categories": [
+        "component",
+        "motion",
+        "annotation"
+      ],
+      "files": [
+        {
+          "path": "src/registry/components/spaceui/doodle-callout/index.tsx",
+          "type": "registry:component",
+          "target": "components/spaceui/doodle-callout.tsx"
+        }
+      ],
+      "createdAt": "2026-09-20",
+      "updatedAt": "2026-09-20"
+    },
+    {
       "name": "components-spaceui-event-calendar",
       "type": "registry:component",
       "title": "Event Calendar",
@@ -3058,7 +3084,7 @@
         }
       ],
       "createdAt": "2026-09-04",
-      "updatedAt": "2026-09-04"
+      "updatedAt": "2026-09-20"
     },
     {
       "name": "components-spaceui-silk-border",
@@ -3137,7 +3163,31 @@
         }
       ],
       "createdAt": "2026-09-17",
-      "updatedAt": "2026-09-17"
+      "updatedAt": "2026-09-20"
+    },
+    {
+      "name": "components-spaceui-smooth-slider",
+      "type": "registry:component",
+      "title": "Smooth Slider",
+      "description": "A continuous slider with a filled track, tick dots, and a draggable thumb.",
+      "isPro": true,
+      "dependencies": [],
+      "registryDependencies": [
+        "https://www.spaceui.one/r/lib-utils.json"
+      ],
+      "categories": [
+        "component",
+        "slider"
+      ],
+      "files": [
+        {
+          "path": "src/registry/components/spaceui/smooth-slider/index.tsx",
+          "type": "registry:component",
+          "target": "components/spaceui/smooth-slider.tsx"
+        }
+      ],
+      "createdAt": "2026-09-20",
+      "updatedAt": "2026-09-20"
     },
     {
       "name": "components-spaceui-sortable",
@@ -3302,7 +3352,7 @@
         }
       ],
       "createdAt": "2026-09-19",
-      "updatedAt": "2026-09-19"
+      "updatedAt": "2026-09-20"
     },
     {
       "name": "components-spaceui-timeline",
@@ -6371,6 +6421,54 @@
       "updatedAt": "2026-09-03"
     },
     {
+      "name": "demo-c-doodle-callout-01",
+      "type": "registry:component",
+      "title": "Doodle Callout Demo",
+      "description": "A hand-drawn arrow and handwritten label pointing at a pricing plan, replaying on a loop.",
+      "registryDependencies": [
+        "https://www.spaceui.one/r/components-spaceui-doodle-callout.json"
+      ],
+      "categories": [
+        "component",
+        "motion",
+        "annotation"
+      ],
+      "meta": {
+        "demoProps": {
+          "label": {
+            "value": "Most popular"
+          },
+          "width": {
+            "value": 280,
+            "min": 150,
+            "max": 500,
+            "step": 10
+          },
+          "revealGap": {
+            "value": 400,
+            "min": 100,
+            "max": 2000,
+            "step": 100
+          },
+          "loopInterval": {
+            "value": 8000,
+            "min": 0,
+            "max": 15000,
+            "step": 500
+          }
+        }
+      },
+      "files": [
+        {
+          "path": "src/registry/demo/components/spaceui/doodle-callout/c-doodle-callout-01/index.tsx",
+          "type": "registry:component",
+          "target": "components/spaceui/doodle-callout-demo.tsx"
+        }
+      ],
+      "createdAt": "2026-09-20",
+      "updatedAt": "2026-09-20"
+    },
+    {
       "name": "demo-c-event-calendar-01",
       "type": "registry:component",
       "title": "Event calendar with all views and live settings",
@@ -9367,6 +9465,69 @@
       "updatedAt": "2026-09-17"
     },
     {
+      "name": "demo-c-smooth-slider-01",
+      "type": "registry:component",
+      "title": "Smooth Slider Demo",
+      "description": "Continuous slider with tick dots and a draggable thumb.",
+      "isPro": true,
+      "registryDependencies": [
+        "https://www.spaceui.one/r/components-spaceui-smooth-slider.json"
+      ],
+      "categories": [
+        "component",
+        "slider"
+      ],
+      "meta": {
+        "demoProps": {
+          "min": {
+            "value": 0,
+            "min": 0,
+            "max": 20,
+            "step": 1
+          },
+          "max": {
+            "value": 100,
+            "min": 60,
+            "max": 150,
+            "step": 1
+          },
+          "step": {
+            "value": 5,
+            "min": 1,
+            "max": 20,
+            "step": 1
+          },
+          "height": {
+            "value": 32,
+            "min": 16,
+            "max": 64,
+            "step": 2
+          },
+          "showTicks": {
+            "value": true
+          },
+          "fillFrom": {
+            "value": "#bae6fd"
+          },
+          "fillVia": {
+            "value": "#e0e7ff"
+          },
+          "fillTo": {
+            "value": "#60a5fa"
+          }
+        }
+      },
+      "files": [
+        {
+          "path": "src/registry/demo/components/spaceui/smooth-slider/c-smooth-slider-01/index.tsx",
+          "type": "registry:component",
+          "target": "components/spaceui/smooth-slider-demo.tsx"
+        }
+      ],
+      "createdAt": "2026-09-20",
+      "updatedAt": "2026-09-20"
+    },
+    {
       "name": "demo-c-sortable-01",
       "type": "registry:component",
       "title": "Sortable list of items with drag-and-drop",
@@ -10139,6 +10300,9 @@
           },
           "showValue": {
             "value": true
+          },
+          "fixedPitch": {
+            "value": true
           }
         }
       },
@@ -10150,7 +10314,7 @@
         }
       ],
       "createdAt": "2026-09-19",
-      "updatedAt": "2026-09-19"
+      "updatedAt": "2026-09-20"
     },
     {
       "name": "demo-c-timeline-01",
@@ -27089,7 +27253,7 @@
         }
       ],
       "createdAt": "2026-08-21",
-      "updatedAt": "2026-08-21"
+      "updatedAt": "2026-09-20"
     },
     {
       "name": "primitives-aspect-ratio",
@@ -27206,7 +27370,7 @@
         }
       ],
       "createdAt": "2026-08-21",
-      "updatedAt": "2026-08-21"
+      "updatedAt": "2026-09-20"
     },
     {
       "name": "primitives-breadcrumb",
@@ -27265,7 +27429,7 @@
         }
       ],
       "createdAt": "2026-08-21",
-      "updatedAt": "2026-08-21"
+      "updatedAt": "2026-09-20"
     },
     {
       "name": "primitives-calendar",
@@ -27442,7 +27606,7 @@
         }
       ],
       "createdAt": "2026-08-21",
-      "updatedAt": "2026-08-21"
+      "updatedAt": "2026-09-20"
     },
     {
       "name": "primitives-context-menu",
@@ -27502,7 +27666,7 @@
         }
       ],
       "createdAt": "2026-08-21",
-      "updatedAt": "2026-08-21"
+      "updatedAt": "2026-09-20"
     },
     {
       "name": "primitives-direction",
@@ -27550,7 +27714,7 @@
         }
       ],
       "createdAt": "2026-08-21",
-      "updatedAt": "2026-08-21"
+      "updatedAt": "2026-09-20"
     },
     {
       "name": "primitives-empty",
@@ -28483,7 +28647,7 @@
         }
       ],
       "createdAt": "2026-08-21",
-      "updatedAt": "2026-08-21"
+      "updatedAt": "2026-09-20"
     },
     {
       "name": "primitives-toggle-group",

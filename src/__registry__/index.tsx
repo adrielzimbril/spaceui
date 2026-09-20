@@ -2123,6 +2123,38 @@ export const index: Record<string, any> = {
     })(),
     command: '@spaceui/components-spaceui-dirt-carousel',
   },
+  "components-spaceui-doodle-callout": {
+    name: "components-spaceui-doodle-callout",
+    description: "A hand-drawn arrow that draws itself in next to a handwritten label that pops in letter by letter, replaying on a loop.",
+    type: "registry:component",
+    dependencies: ["motion"],
+    devDependencies: undefined,
+    registryDependencies: ["https://www.spaceui.one/r/lib-utils.json"],
+    files: [
+  {
+    "path": "src/registry/components/spaceui/doodle-callout/index.tsx",
+    "type": "registry:component",
+    "target": "components/spaceui/doodle-callout.tsx"
+  }
+],
+    keywords: [],
+    component: (() => {
+      const LazyComp = React.lazy(async () => {
+        const mod = await import("@/registry/components/spaceui/doodle-callout/index.tsx");
+        const exportName = Object.keys(mod).find(
+          key => typeof mod[key] === 'function' || typeof mod[key] === 'object'
+        ) || "components-spaceui-doodle-callout";
+        const Comp = mod.default || mod[exportName];
+        if (mod.animations) {
+          (LazyComp as any).animations = mod.animations;
+        }
+        return { default: Comp };
+      });
+      LazyComp.demoProps = {};
+      return LazyComp;
+    })(),
+    command: '@spaceui/components-spaceui-doodle-callout',
+  },
   "components-spaceui-event-calendar": {
     name: "components-spaceui-event-calendar",
     description: "Event Calendar component for Space UI.",
@@ -3434,6 +3466,38 @@ export const index: Record<string, any> = {
       return LazyComp;
     })(),
     command: '@spaceui/components-spaceui-slosh-slider',
+  },
+  "components-spaceui-smooth-slider": {
+    name: "components-spaceui-smooth-slider",
+    description: "A continuous slider with a filled track, tick dots, and a draggable thumb.",
+    type: "registry:component",
+    dependencies: [],
+    devDependencies: undefined,
+    registryDependencies: ["https://www.spaceui.one/r/lib-utils.json"],
+    files: [
+  {
+    "path": "src/registry/components/spaceui/smooth-slider/index.tsx",
+    "type": "registry:component",
+    "target": "components/spaceui/smooth-slider.tsx"
+  }
+],
+    keywords: [],
+    component: (() => {
+      const LazyComp = React.lazy(async () => {
+        const mod = await import("@/registry/components/spaceui/smooth-slider/index.tsx");
+        const exportName = Object.keys(mod).find(
+          key => typeof mod[key] === 'function' || typeof mod[key] === 'object'
+        ) || "components-spaceui-smooth-slider";
+        const Comp = mod.default || mod[exportName];
+        if (mod.animations) {
+          (LazyComp as any).animations = mod.animations;
+        }
+        return { default: Comp };
+      });
+      LazyComp.demoProps = {};
+      return LazyComp;
+    })(),
+    command: '@spaceui/components-spaceui-smooth-slider',
   },
   "components-spaceui-sortable": {
     name: "components-spaceui-sortable",
@@ -6127,6 +6191,38 @@ export const index: Record<string, any> = {
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-dirt-carousel-01',
+  },
+  "demo-c-doodle-callout-01": {
+    name: "demo-c-doodle-callout-01",
+    description: "A hand-drawn arrow and handwritten label pointing at a pricing plan, replaying on a loop.",
+    type: "registry:component",
+    dependencies: undefined,
+    devDependencies: undefined,
+    registryDependencies: ["https://www.spaceui.one/r/components-spaceui-doodle-callout.json"],
+    files: [
+  {
+    "path": "src/registry/demo/components/spaceui/doodle-callout/c-doodle-callout-01/index.tsx",
+    "type": "registry:component",
+    "target": "components/spaceui/doodle-callout-demo.tsx"
+  }
+],
+    keywords: [],
+    component: (() => {
+      const LazyComp = React.lazy(async () => {
+        const mod = await import("@/registry/demo/components/spaceui/doodle-callout/c-doodle-callout-01/index.tsx");
+        const exportName = Object.keys(mod).find(
+          key => typeof mod[key] === 'function' || typeof mod[key] === 'object'
+        ) || "demo-c-doodle-callout-01";
+        const Comp = mod.default || mod[exportName];
+        if (mod.animations) {
+          (LazyComp as any).animations = mod.animations;
+        }
+        return { default: Comp };
+      });
+      LazyComp.demoProps = {"label":{"value":"Most popular"},"width":{"value":280,"min":150,"max":500,"step":10},"revealGap":{"value":400,"min":100,"max":2000,"step":100},"loopInterval":{"value":8000,"min":0,"max":15000,"step":500}};
+      return LazyComp;
+    })(),
+    command: '@spaceui/demo-c-doodle-callout-01',
   },
   "demo-c-event-calendar-01": {
     name: "demo-c-event-calendar-01",
@@ -9550,6 +9646,38 @@ export const index: Record<string, any> = {
     })(),
     command: '@spaceui/demo-c-slosh-slider-01',
   },
+  "demo-c-smooth-slider-01": {
+    name: "demo-c-smooth-slider-01",
+    description: "Continuous slider with tick dots and a draggable thumb.",
+    type: "registry:component",
+    dependencies: undefined,
+    devDependencies: undefined,
+    registryDependencies: ["https://www.spaceui.one/r/components-spaceui-smooth-slider.json"],
+    files: [
+  {
+    "path": "src/registry/demo/components/spaceui/smooth-slider/c-smooth-slider-01/index.tsx",
+    "type": "registry:component",
+    "target": "components/spaceui/smooth-slider-demo.tsx"
+  }
+],
+    keywords: [],
+    component: (() => {
+      const LazyComp = React.lazy(async () => {
+        const mod = await import("@/registry/demo/components/spaceui/smooth-slider/c-smooth-slider-01/index.tsx");
+        const exportName = Object.keys(mod).find(
+          key => typeof mod[key] === 'function' || typeof mod[key] === 'object'
+        ) || "demo-c-smooth-slider-01";
+        const Comp = mod.default || mod[exportName];
+        if (mod.animations) {
+          (LazyComp as any).animations = mod.animations;
+        }
+        return { default: Comp };
+      });
+      LazyComp.demoProps = {"min":{"value":0,"min":0,"max":20,"step":1},"max":{"value":100,"min":60,"max":150,"step":1},"step":{"value":5,"min":1,"max":20,"step":1},"height":{"value":32,"min":16,"max":64,"step":2},"showTicks":{"value":true},"fillFrom":{"value":"#bae6fd"},"fillVia":{"value":"#e0e7ff"},"fillTo":{"value":"#60a5fa"}};
+      return LazyComp;
+    })(),
+    command: '@spaceui/demo-c-smooth-slider-01',
+  },
   "demo-c-sortable-01": {
     name: "demo-c-sortable-01",
     description: "Sortable list of items with drag-and-drop",
@@ -10377,7 +10505,7 @@ export const index: Record<string, any> = {
         }
         return { default: Comp };
       });
-      LazyComp.demoProps = {"min":{"value":16,"min":0,"max":32,"step":1},"max":{"value":48,"min":33,"max":100,"step":1},"step":{"value":1,"min":1,"max":5,"step":1},"majorEvery":{"value":8,"min":1,"max":16,"step":1},"showValue":{"value":true}};
+      LazyComp.demoProps = {"min":{"value":16,"min":0,"max":32,"step":1},"max":{"value":48,"min":33,"max":100,"step":1},"step":{"value":1,"min":1,"max":5,"step":1},"majorEvery":{"value":8,"min":1,"max":16,"step":1},"showValue":{"value":true},"fixedPitch":{"value":true}};
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-tick-slider-01',

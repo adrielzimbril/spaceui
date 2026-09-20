@@ -325,7 +325,7 @@ export function SloshSlider({
       />
       <div
         ref={knobRef}
-        className={cn('absolute rounded-full z-999 ml-[-0.09375rem] bg-foreground pointer-events-none', knobWidth)}
+        className={cn('absolute rounded-full z-2 ml-[-0.09375rem] bg-foreground pointer-events-none', knobWidth)}
         style={{
           marginLeft: -1.5,
           top: knobInset,

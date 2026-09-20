@@ -15,7 +15,7 @@ const HERO_BADGE_PHRASES = [
   'Built for Next.js & Base UI 🚀',
   `${REGISTRY_STATS.components}+ production-ready components 🐼`,
   'New drops every week 🔥',
-  'Open-source & MIT licensed 🙈',
+  'Open-source & MIT licensed 🗿',
   "Copy, paste, ship it's yours 🦄",
 ]
 

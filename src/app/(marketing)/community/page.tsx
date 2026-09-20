@@ -42,15 +42,15 @@ export default async function CommunityPage() {
       <MarketingHero
         statusBadge={{
           primaryText: 'Community Wall',
-          secondaryText: 'Live Canvas & Guestbook 🪐',
+          secondaryText: 'Live Canvas & Guestbook 🙉',
           animate: false,
           source: 'telegram',
           href: '/community',
         }}
         title={
           <>
-            Leave your <HeroAvatar name="heart" variant="lumina" animate /> mark on Space UI{' '}
-            <HeroAvatar name="space" variant="invader" />
+            Leave your <HeroAvatar name="com" variant="doodle" /> mark on Space UI{' '}
+            <HeroAvatar name="space" variant="invader" animate />
           </>
         }
         description="Explore messages from creators worldwide on our draggable infinite canvas. Add your note, customize your card pattern, and join the constellation."

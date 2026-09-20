@@ -125,7 +125,7 @@ export function SectionScrollspy({
   if (sections.length === 0 || typeof document === 'undefined') return null
 
   const node = (
-    <div className={cn(portal ? 'relative z-999 hidden md:block' : 'contents')}>
+    <div className={cn(portal ? 'relative z-50 hidden md:block' : 'contents')}>
       <ScrollBar
         sections={sections}
         activeSection={activeSection}

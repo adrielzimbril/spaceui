@@ -34,6 +34,6 @@ function lazyRegistryComponent(
 export const registryComponents: Record<string, RegistryComponent> = {
   "demo-c-tick-slider-01": lazyRegistryComponent(
     () => import("@/registry/demo/components/spaceui/tick-slider/c-tick-slider-01/index.tsx"),
-    {"min":{"value":16,"min":0,"max":32,"step":1},"max":{"value":48,"min":33,"max":100,"step":1},"step":{"value":1,"min":1,"max":5,"step":1},"majorEvery":{"value":8,"min":1,"max":16,"step":1},"showValue":{"value":true}},
+    {"min":{"value":16,"min":0,"max":32,"step":1},"max":{"value":48,"min":33,"max":100,"step":1},"step":{"value":1,"min":1,"max":5,"step":1},"majorEvery":{"value":8,"min":1,"max":16,"step":1},"showValue":{"value":true},"fixedPitch":{"value":true}},
   ),
 };

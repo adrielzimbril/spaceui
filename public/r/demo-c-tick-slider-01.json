@@ -9,7 +9,7 @@
   "files": [
     {
       "path": "src/registry/demo/components/spaceui/tick-slider/c-tick-slider-01/index.tsx",
-      "content": "'use client'\n\nimport * as React from 'react'\nimport { TickSlider } from '@/components/spaceui/tick-slider'\n\nexport interface TickSliderDemoProps {\n  min?: number\n  max?: number\n  step?: number\n  majorEvery?: number\n  unit?: string\n  showValue?: boolean\n}\n\nexport default function Demo({\n  min = 16,\n  max = 48,\n  step = 1,\n  majorEvery = 8,\n  unit = 'px',\n  showValue = true,\n}: TickSliderDemoProps) {\n  const [value, setValue] = React.useState(24)\n  return (\n    <div className=\"flex w-full items-center px-6\">\n      <TickSlider\n        value={value}\n        onChange={setValue}\n        min={Number(min)}\n        max={Number(max)}\n        step={Number(step)}\n        majorEvery={Number(majorEvery)}\n        unit={unit}\n        showValue={Boolean(showValue)}\n        label=\"Font size\"\n      />\n    </div>\n  )\n}\n",
+      "content": "'use client'\n\nimport * as React from 'react'\nimport { TickSlider } from '@/components/spaceui/tick-slider'\n\nexport interface TickSliderDemoProps {\n  min?: number\n  max?: number\n  step?: number\n  majorEvery?: number\n  unit?: string\n  showValue?: boolean\n  fixedPitch?: boolean\n}\n\nexport default function Demo({\n  min = 16,\n  max = 48,\n  step = 1,\n  majorEvery = 8,\n  unit = 'px',\n  showValue = true,\n  fixedPitch = true,\n}: TickSliderDemoProps) {\n  const [value, setValue] = React.useState(24)\n  return (\n    <div className=\"flex w-full items-center px-6\">\n      <TickSlider\n        value={value}\n        onChange={setValue}\n        min={Number(min)}\n        max={Number(max)}\n        step={Number(step)}\n        majorEvery={Number(majorEvery)}\n        unit={unit}\n        showValue={Boolean(showValue)}\n        fixedPitch={Boolean(fixedPitch)}\n        label=\"Font size\"\n      />\n    </div>\n  )\n}\n",
       "type": "registry:component",
       "target": "components/spaceui/tick-slider-demo.tsx"
     }
@@ -41,6 +41,9 @@
         "step": 1
       },
       "showValue": {
+        "value": true
+      },
+      "fixedPitch": {
         "value": true
       }
     }

@@ -1,0 +1,26 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-c-doodle-callout-01",
+  "type": "registry:component",
+  "title": "Doodle Callout Demo",
+  "description": "A hand-drawn arrow and handwritten label pointing at a pricing plan, replaying on a loop.",
+  "registryDependencies": ["https://www.spaceui.one/r/components-spaceui-doodle-callout.json"],
+  "categories": ["component", "motion", "annotation"],
+  "meta": {
+    "demoProps": {
+      "label": { "value": "Most popular" },
+      "width": { "value": 280, "min": 150, "max": 500, "step": 10 },
+      "revealGap": { "value": 400, "min": 100, "max": 2000, "step": 100 },
+      "loopInterval": { "value": 8000, "min": 0, "max": 15000, "step": 500 }
+    }
+  },
+  "files": [
+    {
+      "path": "src/registry/demo/components/spaceui/doodle-callout/c-doodle-callout-01/index.tsx",
+      "type": "registry:component",
+      "target": "components/spaceui/doodle-callout-demo.tsx"
+    }
+  ],
+  "createdAt": "2026-09-20",
+  "updatedAt": "2026-09-20"
+}

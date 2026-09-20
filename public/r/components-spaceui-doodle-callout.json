@@ -1,0 +1,26 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "components-spaceui-doodle-callout",
+  "title": "Doodle Callout",
+  "description": "A hand-drawn arrow that draws itself in next to a handwritten label that pops in letter by letter, replaying on a loop.",
+  "dependencies": [
+    "motion"
+  ],
+  "registryDependencies": [
+    "https://www.spaceui.one/r/lib-utils.json"
+  ],
+  "files": [
+    {
+      "path": "src/registry/components/spaceui/doodle-callout/index.tsx",
+      "content": "'use client'\n\nimport * as React from 'react'\nimport { motion, type Variants } from 'motion/react'\nimport { cn } from '@/lib/utils'\n\nconst DEFAULT_PATH =\n  'M1.5 21.4369C26.0507 41.1315 45.4422 49.4684 76.9385 48.0686C105.382 46.8045 136.321 33.2963 162.775 23.4529C195.528 11.2659 259.819 1.74102 278.851 40.5354C293.628 70.6582 271.479 106.679 236.622 96.8755C223.184 93.0961 216.24 75.1565 222.192 62.7107C228.621 49.2681 247.84 42.7879 261.132 39.6866C296.828 31.3576 310.32 59.0906 352.91 70.6684C395.5 82.2461 444.502 59.2461 444.502 4.11208C445.331 1.74673 450.007 11.1118 451.388 13.3211C456.454 21.4205 455.825 16.813 451.995 10.689C449.532 6.75051 446.963 -1.52406 442.455 2.63936C438.202 5.78942 431.802 12.0554 427.5 14.7459'\nconst DEFAULT_VIEWBOX = '0 0 457 101'\n\nconst strokeVariants: Variants = {\n  hidden: { pathLength: 0, opacity: 0 },\n  visible: {\n    pathLength: 1,\n    opacity: 1,\n    transition: { pathLength: { type: 'spring', duration: 2, bounce: 0 }, opacity: { duration: 0.01 } },\n  },\n}\n\nconst letterVariants: Variants = {\n  hidden: { opacity: 0, filter: 'blur(8px)', y: 4 },\n  visible: (i: number) => ({\n    opacity: 1,\n    filter: 'none',\n    y: 0,\n    transition: { delay: 0.03 * i, duration: 0.35, ease: [0.25, 0.1, 0.25, 1] },\n  }),\n}\n\nexport interface DoodleCalloutProps {\n  label: string\n  /** SVG path `d` for the hand-drawn stroke, animated from start to end. */\n  path?: string\n  /** viewBox matching the path's coordinate space. */\n  viewBox?: string\n  width?: number\n  height?: number\n  strokeWidth?: number\n  /** Delay between the stroke finishing and the label revealing, in ms. @default 400 */\n  revealGap?: number\n  /** How often the sequence replays once settled, in ms. Set 0 to disable. @default 8000 */\n  loopInterval?: number\n  className?: string\n  /** Class for the handwritten label — pass your own script/cursive font here. */\n  labelClassName?: string\n  strokeClassName?: string\n}\n\nexport function DoodleCallout({\n  label,\n  path = DEFAULT_PATH,\n  viewBox = DEFAULT_VIEWBOX,\n  width = 280,\n  height = 62,\n  strokeWidth = 5,\n  revealGap = 400,\n  loopInterval = 8000,\n  className,\n  labelClassName,\n  strokeClassName,\n}: DoodleCalloutProps) {\n  const [cycle, setCycle] = React.useState(0)\n  const [labelVisible, setLabelVisible] = React.useState(false)\n  const letters = React.useMemo(() => Array.from(label), [label])\n\n  React.useEffect(() => {\n    let cancelled = false\n    const timers: ReturnType<typeof setTimeout>[] = []\n    const after = (ms: number, fn: () => void) => {\n      timers.push(\n        setTimeout(() => {\n          if (!cancelled) fn()\n        }, ms),\n      )\n    }\n\n    function run() {\n      setLabelVisible(false)\n      after(revealGap, () => {\n        setLabelVisible(true)\n        if (loopInterval > 0) {\n          after(loopInterval, () => {\n            setCycle((c) => c + 1)\n            run()\n          })\n        }\n      })\n    }\n\n    run()\n\n    return () => {\n      cancelled = true\n      timers.forEach(clearTimeout)\n    }\n  }, [revealGap, loopInterval, label])\n\n  return (\n    <div className={cn('inline-flex flex-col gap-2', className)}>\n      <div className=\"relative\" style={{ width }}>\n        <span\n          key={cycle}\n          className={cn(\n            'absolute bottom-0 flex translate-x-[-50%] whitespace-nowrap text-lg text-primary italic',\n            labelClassName,\n          )}\n          style={{ left: '96%' }}\n        >\n          {letters.map((char, i) => (\n            <motion.span\n              key={i}\n              custom={i}\n              initial=\"hidden\"\n              animate={labelVisible ? 'visible' : 'hidden'}\n              variants={letterVariants}\n              className=\"inline-block\"\n            >\n              {char === ' ' ? ' ' : char}\n            </motion.span>\n          ))}\n        </span>\n      </div>\n      <motion.svg\n        width={width}\n        height={height}\n        viewBox={viewBox}\n        fill=\"none\"\n        preserveAspectRatio=\"xMidYMid meet\"\n        className={cn('overflow-visible text-primary', strokeClassName)}\n      >\n        <motion.path\n          key={cycle}\n          d={path}\n          stroke=\"currentColor\"\n          strokeWidth={strokeWidth}\n          strokeLinecap=\"round\"\n          fill=\"none\"\n          initial=\"hidden\"\n          animate=\"visible\"\n          variants={strokeVariants}\n        />\n      </motion.svg>\n    </div>\n  )\n}\n",
+      "type": "registry:component",
+      "target": "components/spaceui/doodle-callout.tsx"
+    }
+  ],
+  "categories": [
+    "component",
+    "motion",
+    "annotation"
+  ],
+  "type": "registry:component"
+}

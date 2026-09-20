@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "components-spaceui-doodle-callout",
+  "type": "registry:component",
+  "title": "Doodle Callout",
+  "description": "A hand-drawn arrow that draws itself in next to a handwritten label that pops in letter by letter, replaying on a loop.",
+  "dependencies": ["motion"],
+  "registryDependencies": ["https://www.spaceui.one/r/lib-utils.json"],
+  "categories": ["component", "motion", "annotation"],
+  "files": [
+    {
+      "path": "src/registry/components/spaceui/doodle-callout/index.tsx",
+      "type": "registry:component",
+      "target": "components/spaceui/doodle-callout.tsx"
+    }
+  ],
+  "createdAt": "2026-09-20",
+  "updatedAt": "2026-09-20"
+}

@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "components-spaceui-smooth-slider",
+  "type": "registry:component",
+  "title": "Smooth Slider",
+  "description": "A continuous slider with a filled track, tick dots, and a draggable thumb.",
+  "isPro": true,
+  "dependencies": [],
+  "registryDependencies": ["https://www.spaceui.one/r/lib-utils.json"],
+  "categories": ["component", "slider"],
+  "files": [
+    {
+      "path": "src/registry/components/spaceui/smooth-slider/index.tsx",
+      "type": "registry:component",
+      "target": "components/spaceui/smooth-slider.tsx"
+    }
+  ],
+  "createdAt": "2026-09-20",
+  "updatedAt": "2026-09-20"
+}

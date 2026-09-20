@@ -1,0 +1,42 @@
+---
+title: Doodle Callout
+description: A hand-drawn arrow that draws itself next to a handwritten label, replaying on a loop.
+preview: demo-c-doodle-callout-01
+---
+
+## Installation
+
+<ComponentInstallation name="components-spaceui-doodle-callout" />
+
+## Usage
+
+```tsx
+import { DoodleCallout } from '@/components/spaceui/doodle-callout'
+
+export default function PricingCard() {
+  return (
+    <div className="relative">
+      <div className="rounded-2xl bg-muted px-6 py-3">Complete plan</div>
+      <DoodleCallout label="Most popular" className="absolute top-full left-1/2" />
+    </div>
+  )
+}
+```
+
+The stroke draws from start to end, then the label blur-reveals in place above it. The whole sequence replays every `loopInterval`.
+
+## Props
+
+| Prop              | Type     | Default               | Description                                                               |
+| ----------------- | -------- | --------------------- | ------------------------------------------------------------------------- |
+| `label`           | `string` | —                     | The handwritten annotation text                                           |
+| `path`            | `string` | the hand-drawn stroke | SVG path `d`, animated from start to end                                  |
+| `viewBox`         | `string` | `'0 0 457 101'`       | viewBox matching the path's coordinate space                              |
+| `width`           | `number` | `280`                 | SVG width                                                                 |
+| `height`          | `number` | `62`                  | SVG height                                                                |
+| `strokeWidth`     | `number` | `5`                   | Stroke width                                                              |
+| `revealGap`       | `number` | `400`                 | Delay in ms between the stroke finishing and the label revealing          |
+| `loopInterval`    | `number` | `8000`                | How often the sequence replays once settled, in ms — `0` disables looping |
+| `className`       | `string` | —                     | Class on the outer wrapper                                                |
+| `labelClassName`  | `string` | —                     | Class on the label — pass your own script/cursive font here               |
+| `strokeClassName` | `string` | —                     | Class on the SVG                                                          |

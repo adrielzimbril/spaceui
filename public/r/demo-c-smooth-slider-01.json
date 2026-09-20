@@ -1,0 +1,62 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-c-smooth-slider-01",
+  "title": "Smooth Slider Demo",
+  "description": "Continuous slider with tick dots and a draggable thumb.",
+  "registryDependencies": [
+    "https://www.spaceui.one/r/components-spaceui-smooth-slider.json"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/components/spaceui/smooth-slider/c-smooth-slider-01/index.tsx",
+      "content": "'use client'\n\nimport * as React from 'react'\nimport { SmoothSlider } from '@/components/spaceui/smooth-slider'\n\nexport interface SmoothSliderDemoProps {\n  min?: number\n  max?: number\n  step?: number\n  height?: number\n  showTicks?: boolean\n  fillFrom?: string\n  fillVia?: string\n  fillTo?: string\n}\n\nexport default function Demo({\n  min = 0,\n  max = 100,\n  step = 5,\n  height = 32,\n  showTicks = true,\n  fillFrom = '#bae6fd',\n  fillVia = '#e0e7ff',\n  fillTo = '#60a5fa',\n}: SmoothSliderDemoProps) {\n  const [value, setValue] = React.useState(50)\n\n  return (\n    <div className=\"flex w-full flex-col items-center content-center justify-center gap-3\">\n      <SmoothSlider\n        value={value}\n        onValueChange={setValue}\n        min={Number(min)}\n        max={Number(max)}\n        step={Number(step)}\n        height={Number(height)}\n        showTicks={Boolean(showTicks)}\n        fillFrom={fillFrom}\n        fillVia={fillVia}\n        fillTo={fillTo}\n        label=\"Volume\"\n      />\n      <p className=\"text-center text-sm tabular-nums text-muted-foreground\">{value}</p>\n    </div>\n  )\n}\n",
+      "type": "registry:component",
+      "target": "components/spaceui/smooth-slider-demo.tsx"
+    }
+  ],
+  "meta": {
+    "demoProps": {
+      "min": {
+        "value": 0,
+        "min": 0,
+        "max": 20,
+        "step": 1
+      },
+      "max": {
+        "value": 100,
+        "min": 60,
+        "max": 150,
+        "step": 1
+      },
+      "step": {
+        "value": 5,
+        "min": 1,
+        "max": 20,
+        "step": 1
+      },
+      "height": {
+        "value": 32,
+        "min": 16,
+        "max": 64,
+        "step": 2
+      },
+      "showTicks": {
+        "value": true
+      },
+      "fillFrom": {
+        "value": "#bae6fd"
+      },
+      "fillVia": {
+        "value": "#e0e7ff"
+      },
+      "fillTo": {
+        "value": "#60a5fa"
+      }
+    }
+  },
+  "categories": [
+    "component",
+    "slider"
+  ],
+  "type": "registry:component"
+}

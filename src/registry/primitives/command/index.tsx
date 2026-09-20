@@ -1,8 +1,5 @@
 'use client'
 
-import { Dialog as CommandDialogPrimitive } from '@base-ui/react/dialog'
-import { SearchIcon } from 'lucide-react'
-import type * as React from 'react'
 import { cn } from '@/registry/lib/utils'
 import {
   Autocomplete,
@@ -16,6 +13,9 @@ import {
   AutocompleteSeparator,
 } from '@/registry/primitives/autocomplete'
 import { Kbd } from '@/registry/primitives/kbd'
+import { Dialog as CommandDialogPrimitive } from '@base-ui/react/dialog'
+import { SearchIcon } from 'lucide-react'
+import type * as React from 'react'
 
 export const CommandDialog: typeof CommandDialogPrimitive.Root = CommandDialogPrimitive.Root
 
@@ -73,7 +73,7 @@ export function CommandDialogPopup({
       <CommandDialogViewport>
         <CommandDialogPrimitive.Popup
           className={cn(
-            'relative row-start-2 flex max-h-115 min-h-0 w-full min-w-0 max-w-xl translate-y-[calc(-1.25rem*var(--nested-dialogs))] scale-[calc(1-0.1*var(--nested-dialogs))] flex-col rounded-2xl bg-muted p-1 text-popover-foreground opacity-[calc(1-0.1*var(--nested-dialogs))] outline-none transition-[scale,opacity,translate] duration-200 ease-in-out will-change-transform data-nested:data-ending-style:translate-y-8 data-nested:data-starting-style:translate-y-8 data-nested-dialog-open:origin-top data-ending-style:scale-98 data-starting-style:scale-98 data-ending-style:opacity-0 data-starting-style:opacity-0 **:data-[slot=scroll-area-viewport]:data-has-overflow-y:pe-1',
+            'relative row-start-2 flex [corner-shape:superellipse(1.25)] border-4 border-background max-h-115 min-h-0 w-full min-w-0 max-w-xl translate-y-[calc(-1.25rem*var(--nested-dialogs))] scale-[calc(1-0.1*var(--nested-dialogs))] flex-col rounded-2xl bg-muted p-1 text-popover-foreground opacity-[calc(1-0.1*var(--nested-dialogs))] outline-none transition-[scale,opacity,translate] duration-200 ease-in-out will-change-transform data-nested:data-ending-style:translate-y-8 data-nested:data-starting-style:translate-y-8 data-nested-dialog-open:origin-top data-ending-style:scale-98 data-starting-style:scale-98 data-ending-style:opacity-0 data-starting-style:opacity-0 **:data-[slot=scroll-area-viewport]:data-has-overflow-y:pe-1',
             className,
           )}
           data-slot="command-dialog-popup"

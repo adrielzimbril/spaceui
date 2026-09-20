@@ -84,6 +84,10 @@ export const registryComponents: Record<string, RegistryComponent> = {
     () => import("@/registry/components/spaceui/dirt-carousel/index.tsx"),
     {},
   ),
+  "components-spaceui-doodle-callout": lazyRegistryComponent(
+    () => import("@/registry/components/spaceui/doodle-callout/index.tsx"),
+    {},
+  ),
   "components-spaceui-filters": lazyRegistryComponent(
     () => import("@/registry/components/spaceui/filters/index.tsx"),
     {},
@@ -194,6 +198,10 @@ export const registryComponents: Record<string, RegistryComponent> = {
   ),
   "components-spaceui-slosh-slider": lazyRegistryComponent(
     () => import("@/registry/components/spaceui/slosh-slider/index.tsx"),
+    {},
+  ),
+  "components-spaceui-smooth-slider": lazyRegistryComponent(
+    () => import("@/registry/components/spaceui/smooth-slider/index.tsx"),
     {},
   ),
   "components-spaceui-sortable": lazyRegistryComponent(

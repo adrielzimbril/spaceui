@@ -1,0 +1,48 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-c-doodle-callout-01",
+  "title": "Doodle Callout Demo",
+  "description": "A hand-drawn arrow and handwritten label pointing at a pricing plan, replaying on a loop.",
+  "registryDependencies": [
+    "https://www.spaceui.one/r/components-spaceui-doodle-callout.json"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/components/spaceui/doodle-callout/c-doodle-callout-01/index.tsx",
+      "content": "'use client'\n\nimport { DoodleCallout } from '@/components/spaceui/doodle-callout'\n\nconst ASPECT_RATIO = 457 / 101\n\nexport interface DoodleCalloutDemoProps {\n  label?: string\n  width?: number\n  revealGap?: number\n  loopInterval?: number\n}\n\nexport default function Demo({\n  label = 'Most popular',\n  width = 280,\n  revealGap = 400,\n  loopInterval = 8000,\n}: DoodleCalloutDemoProps) {\n  const resolvedWidth = Number(width)\n\n  return (\n    <div className=\"flex w-full max-w-md items-start justify-center px-6 py-16\">\n      <DoodleCallout\n        label={label}\n        width={resolvedWidth}\n        height={resolvedWidth / ASPECT_RATIO}\n        revealGap={Number(revealGap)}\n        loopInterval={Number(loopInterval)}\n      />\n    </div>\n  )\n}\n",
+      "type": "registry:component",
+      "target": "components/spaceui/doodle-callout-demo.tsx"
+    }
+  ],
+  "meta": {
+    "demoProps": {
+      "label": {
+        "value": "Most popular"
+      },
+      "width": {
+        "value": 280,
+        "min": 150,
+        "max": 500,
+        "step": 10
+      },
+      "revealGap": {
+        "value": 400,
+        "min": 100,
+        "max": 2000,
+        "step": 100
+      },
+      "loopInterval": {
+        "value": 8000,
+        "min": 0,
+        "max": 15000,
+        "step": 500
+      }
+    }
+  },
+  "categories": [
+    "component",
+    "motion",
+    "annotation"
+  ],
+  "type": "registry:component"
+}

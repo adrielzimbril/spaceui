@@ -1,0 +1,38 @@
+---
+title: Smooth Slider
+description: A continuous slider with a filled track, tick dots, and a draggable thumb.
+preview: demo-c-smooth-slider-01
+---
+
+## Installation
+
+<ComponentInstallation name="components-spaceui-smooth-slider" />
+
+## Usage
+
+```tsx
+import { SmoothSlider } from '@/components/spaceui/smooth-slider'
+
+export default function Example() {
+  const [value, setValue] = React.useState(50)
+  return <SmoothSlider value={value} onValueChange={setValue} min={0} max={100} step={5} label="Volume" />
+}
+```
+
+## Props
+
+| Prop             | Type                      | Default    | Description                                                                                     |
+| ---------------- | ------------------------- | ---------- | ----------------------------------------------------------------------------------------------- |
+| `value`          | `number`                  | —          | Controlled value                                                                                |
+| `defaultValue`   | `number`                  | `50`       | Initial value when uncontrolled                                                                 |
+| `min`            | `number`                  | `0`        | Floor on the reachable value — positions stay anchored to `[0, max]`, `min` never rescales them |
+| `max`            | `number`                  | `100`      | Maximum                                                                                         |
+| `step`           | `number`                  | `1`        | Snap                                                                                            |
+| `height`         | `number`                  | `32`       | Thumb/fill diameter, in px — dots and the track's own height scale with it                      |
+| `showTicks`      | `boolean`                 | `true`     | Dots marking each reachable step along the track                                                |
+| `onValueChange`  | `(value: number) => void` | —          | Change handler                                                                                  |
+| `label`          | `string`                  | `'Slider'` | Accessible name — the control carries no visible one                                            |
+| `disabled`       | `boolean`                 | `false`    | Disables the control                                                                            |
+| `className`      | `string`                  | —          | Class on the outer track                                                                        |
+| `fillClassName`  | `string`                  | —          | Overrides the fill bar's background — the default is a gradient                                 |
+| `thumbClassName` | `string`                  | —          | Overrides the thumb's background                                                                |

@@ -5147,6 +5147,60 @@
     "dependents": [],
     "related": []
   },
+  "doodle-callout": {
+    "name": "components-spaceui-doodle-callout",
+    "shortName": "doodle-callout",
+    "title": "Doodle Callout",
+    "description": "A hand-drawn arrow that draws itself in next to a handwritten label that pops in letter by letter, replaying on a loop.",
+    "type": "registry:component",
+    "url": "/ui-kit/components/spaceui/doodle-callout",
+    "category": "Motion",
+    "categories": [
+      "motion",
+      "annotation"
+    ],
+    "createdAt": "2026-09-20",
+    "updatedAt": "2026-09-20",
+    "size": "4.3 KB",
+    "rawSize": 4395,
+    "directSize": "4.3 KB",
+    "fileCount": 1,
+    "dependencies": [
+      "motion"
+    ],
+    "registryDependencies": [
+      "https://www.spaceui.one/r/lib-utils.json"
+    ],
+    "dependents": [],
+    "related": []
+  },
+  "components-spaceui-doodle-callout": {
+    "name": "components-spaceui-doodle-callout",
+    "shortName": "doodle-callout",
+    "title": "Doodle Callout",
+    "description": "A hand-drawn arrow that draws itself in next to a handwritten label that pops in letter by letter, replaying on a loop.",
+    "type": "registry:component",
+    "url": "/ui-kit/components/spaceui/doodle-callout",
+    "category": "Motion",
+    "categories": [
+      "motion",
+      "annotation"
+    ],
+    "createdAt": "2026-09-20",
+    "updatedAt": "2026-09-20",
+    "size": "4.3 KB",
+    "rawSize": 4395,
+    "directSize": "4.3 KB",
+    "fileCount": 1,
+    "dependencies": [
+      "motion"
+    ],
+    "registryDependencies": [
+      "https://www.spaceui.one/r/lib-utils.json"
+    ],
+    "dependents": [],
+    "related": []
+  },
   "event-calendar": {
     "name": "components-spaceui-event-calendar",
     "shortName": "event-calendar",
@@ -8453,9 +8507,9 @@
       "section-scrollspy"
     ],
     "createdAt": "2026-09-04",
-    "updatedAt": "2026-09-04",
+    "updatedAt": "2026-09-20",
     "size": "10.9 KB",
-    "rawSize": 11185,
+    "rawSize": 11184,
     "directSize": "10.9 KB",
     "fileCount": 1,
     "dependencies": [
@@ -8479,9 +8533,9 @@
       "section-scrollspy"
     ],
     "createdAt": "2026-09-04",
-    "updatedAt": "2026-09-04",
+    "updatedAt": "2026-09-20",
     "size": "10.9 KB",
-    "rawSize": 11185,
+    "rawSize": 11184,
     "directSize": "10.9 KB",
     "fileCount": 1,
     "dependencies": [
@@ -8739,10 +8793,10 @@
       "slider"
     ],
     "createdAt": "2026-09-17",
-    "updatedAt": "2026-09-17",
+    "updatedAt": "2026-09-20",
     "isPro": true,
     "size": "11 KB",
-    "rawSize": 11302,
+    "rawSize": 11300,
     "directSize": "11 KB",
     "fileCount": 1,
     "dependencies": [],
@@ -8751,6 +8805,16 @@
     ],
     "dependents": [],
     "related": [
+      {
+        "name": "smooth-slider",
+        "title": "Smooth Slider",
+        "description": "A continuous slider with a filled track, tick dots, and a draggable thumb.",
+        "url": "/ui-kit/components/spaceui/smooth-slider",
+        "category": "Slider",
+        "categories": [
+          "slider"
+        ]
+      },
       {
         "name": "tick-slider",
         "title": "Tick Slider",
@@ -8785,10 +8849,10 @@
       "slider"
     ],
     "createdAt": "2026-09-17",
-    "updatedAt": "2026-09-17",
+    "updatedAt": "2026-09-20",
     "isPro": true,
     "size": "11 KB",
-    "rawSize": 11302,
+    "rawSize": 11300,
     "directSize": "11 KB",
     "fileCount": 1,
     "dependencies": [],
@@ -8797,6 +8861,128 @@
     ],
     "dependents": [],
     "related": [
+      {
+        "name": "smooth-slider",
+        "title": "Smooth Slider",
+        "description": "A continuous slider with a filled track, tick dots, and a draggable thumb.",
+        "url": "/ui-kit/components/spaceui/smooth-slider",
+        "category": "Slider",
+        "categories": [
+          "slider"
+        ]
+      },
+      {
+        "name": "tick-slider",
+        "title": "Tick Slider",
+        "description": "A scrubber drawn as a row of tick marks, with a real range input underneath for keyboard and screen reader support.",
+        "url": "/ui-kit/components/spaceui/tick-slider",
+        "category": "Slider",
+        "categories": [
+          "slider"
+        ]
+      },
+      {
+        "name": "slider",
+        "title": "Slider",
+        "description": "Accessible Slider primitive component for Space UI.",
+        "url": "/ui-kit/primitives/slider",
+        "category": "Slider",
+        "categories": [
+          "slider"
+        ]
+      }
+    ]
+  },
+  "smooth-slider": {
+    "name": "components-spaceui-smooth-slider",
+    "shortName": "smooth-slider",
+    "title": "Smooth Slider",
+    "description": "A continuous slider with a filled track, tick dots, and a draggable thumb.",
+    "type": "registry:component",
+    "url": "/ui-kit/components/spaceui/smooth-slider",
+    "category": "Slider",
+    "categories": [
+      "slider"
+    ],
+    "createdAt": "2026-09-20",
+    "updatedAt": "2026-09-20",
+    "isPro": true,
+    "size": "7.3 KB",
+    "rawSize": 7500,
+    "directSize": "7.3 KB",
+    "fileCount": 1,
+    "dependencies": [],
+    "registryDependencies": [
+      "https://www.spaceui.one/r/lib-utils.json"
+    ],
+    "dependents": [],
+    "related": [
+      {
+        "name": "slosh-slider",
+        "title": "Slosh Slider",
+        "description": "Liquid fill slider with viscosity, momentum, and tilt.",
+        "url": "/ui-kit/components/spaceui/slosh-slider",
+        "category": "Slider",
+        "categories": [
+          "slider"
+        ]
+      },
+      {
+        "name": "tick-slider",
+        "title": "Tick Slider",
+        "description": "A scrubber drawn as a row of tick marks, with a real range input underneath for keyboard and screen reader support.",
+        "url": "/ui-kit/components/spaceui/tick-slider",
+        "category": "Slider",
+        "categories": [
+          "slider"
+        ]
+      },
+      {
+        "name": "slider",
+        "title": "Slider",
+        "description": "Accessible Slider primitive component for Space UI.",
+        "url": "/ui-kit/primitives/slider",
+        "category": "Slider",
+        "categories": [
+          "slider"
+        ]
+      }
+    ]
+  },
+  "components-spaceui-smooth-slider": {
+    "name": "components-spaceui-smooth-slider",
+    "shortName": "smooth-slider",
+    "title": "Smooth Slider",
+    "description": "A continuous slider with a filled track, tick dots, and a draggable thumb.",
+    "type": "registry:component",
+    "url": "/ui-kit/components/spaceui/smooth-slider",
+    "category": "Slider",
+    "categories": [
+      "slider"
+    ],
+    "createdAt": "2026-09-20",
+    "updatedAt": "2026-09-20",
+    "isPro": true,
+    "size": "7.3 KB",
+    "rawSize": 7500,
+    "directSize": "7.3 KB",
+    "fileCount": 1,
+    "dependencies": [],
+    "registryDependencies": [
+      "https://www.spaceui.one/r/lib-utils.json"
+    ],
+    "dependents": [],
+    "related": [
+      {
+        "name": "slosh-slider",
+        "title": "Slosh Slider",
+        "description": "Liquid fill slider with viscosity, momentum, and tilt.",
+        "url": "/ui-kit/components/spaceui/slosh-slider",
+        "category": "Slider",
+        "categories": [
+          "slider"
+        ]
+      },
       {
         "name": "tick-slider",
         "title": "Tick Slider",
@@ -9195,10 +9381,10 @@
       "slider"
     ],
     "createdAt": "2026-09-19",
-    "updatedAt": "2026-09-19",
-    "size": "5.5 KB",
-    "rawSize": 5586,
-    "directSize": "5.5 KB",
+    "updatedAt": "2026-09-20",
+    "size": "5.7 KB",
+    "rawSize": 5804,
+    "directSize": "5.7 KB",
     "fileCount": 1,
     "dependencies": [],
     "registryDependencies": [
@@ -9211,6 +9397,16 @@
         "title": "Slosh Slider",
         "description": "Liquid fill slider with viscosity, momentum, and tilt.",
         "url": "/ui-kit/components/spaceui/slosh-slider",
+        "category": "Slider",
+        "categories": [
+          "slider"
+        ]
+      },
+      {
+        "name": "smooth-slider",
+        "title": "Smooth Slider",
+        "description": "A continuous slider with a filled track, tick dots, and a draggable thumb.",
+        "url": "/ui-kit/components/spaceui/smooth-slider",
         "category": "Slider",
         "categories": [
           "slider"
@@ -9240,10 +9436,10 @@
       "slider"
     ],
     "createdAt": "2026-09-19",
-    "updatedAt": "2026-09-19",
-    "size": "5.5 KB",
-    "rawSize": 5586,
-    "directSize": "5.5 KB",
+    "updatedAt": "2026-09-20",
+    "size": "5.7 KB",
+    "rawSize": 5804,
+    "directSize": "5.7 KB",
     "fileCount": 1,
     "dependencies": [],
     "registryDependencies": [
@@ -9256,6 +9452,16 @@
         "title": "Slosh Slider",
         "description": "Liquid fill slider with viscosity, momentum, and tilt.",
         "url": "/ui-kit/components/spaceui/slosh-slider",
+        "category": "Slider",
+        "categories": [
+          "slider"
+        ]
+      },
+      {
+        "name": "smooth-slider",
+        "title": "Smooth Slider",
+        "description": "A continuous slider with a filled track, tick dots, and a draggable thumb.",
+        "url": "/ui-kit/components/spaceui/smooth-slider",
         "category": "Slider",
         "categories": [
           "slider"
@@ -21233,9 +21439,9 @@
       "toggle"
     ],
     "createdAt": "2026-08-21",
-    "updatedAt": "2026-08-21",
+    "updatedAt": "2026-09-20",
     "size": "2 KB",
-    "rawSize": 2042,
+    "rawSize": 2076,
     "directSize": "2 KB",
     "fileCount": 1,
     "dependencies": [
@@ -21749,9 +21955,9 @@
       "alert-dialog"
     ],
     "createdAt": "2026-08-21",
-    "updatedAt": "2026-08-21",
+    "updatedAt": "2026-09-20",
     "size": "4.6 KB",
-    "rawSize": 4724,
+    "rawSize": 4739,
     "directSize": "4.6 KB",
     "fileCount": 1,
     "dependencies": [
@@ -21775,9 +21981,9 @@
       "alert-dialog"
     ],
     "createdAt": "2026-08-21",
-    "updatedAt": "2026-08-21",
+    "updatedAt": "2026-09-20",
     "size": "4.6 KB",
-    "rawSize": 4724,
+    "rawSize": 4739,
     "directSize": "4.6 KB",
     "fileCount": 1,
     "dependencies": [
@@ -22025,9 +22231,9 @@
       "badge"
     ],
     "createdAt": "2026-08-21",
-    "updatedAt": "2026-08-21",
+    "updatedAt": "2026-09-20",
     "size": "2.7 KB",
-    "rawSize": 2756,
+    "rawSize": 2790,
     "directSize": "2.7 KB",
     "fileCount": 1,
     "dependencies": [
@@ -22065,9 +22271,9 @@
       "badge"
     ],
     "createdAt": "2026-08-21",
-    "updatedAt": "2026-08-21",
+    "updatedAt": "2026-09-20",
     "size": "2.7 KB",
-    "rawSize": 2756,
+    "rawSize": 2790,
     "directSize": "2.7 KB",
     "fileCount": 1,
     "dependencies": [
@@ -22159,9 +22365,9 @@
       "button"
     ],
     "createdAt": "2026-08-21",
-    "updatedAt": "2026-08-21",
+    "updatedAt": "2026-09-20",
     "size": "5.2 KB",
-    "rawSize": 5280,
+    "rawSize": 5314,
     "directSize": "5.2 KB",
     "fileCount": 1,
     "dependencies": [
@@ -22212,9 +22418,9 @@
       "button"
     ],
     "createdAt": "2026-08-21",
-    "updatedAt": "2026-08-21",
+    "updatedAt": "2026-09-20",
     "size": "5.2 KB",
-    "rawSize": 5280,
+    "rawSize": 5314,
     "directSize": "5.2 KB",
     "fileCount": 1,
     "dependencies": [
@@ -22589,9 +22795,9 @@
       "command"
     ],
     "createdAt": "2026-08-21",
-    "updatedAt": "2026-08-21",
+    "updatedAt": "2026-09-20",
     "size": "7.6 KB",
-    "rawSize": 7755,
+    "rawSize": 7816,
     "directSize": "7.6 KB",
     "fileCount": 1,
     "dependencies": [
@@ -22630,9 +22836,9 @@
       "command"
     ],
     "createdAt": "2026-08-21",
-    "updatedAt": "2026-08-21",
+    "updatedAt": "2026-09-20",
     "size": "7.6 KB",
-    "rawSize": 7755,
+    "rawSize": 7816,
     "directSize": "7.6 KB",
     "fileCount": 1,
     "dependencies": [
@@ -22725,9 +22931,9 @@
       "dialog"
     ],
     "createdAt": "2026-08-21",
-    "updatedAt": "2026-08-21",
+    "updatedAt": "2026-09-20",
     "size": "6.1 KB",
-    "rawSize": 6226,
+    "rawSize": 6241,
     "directSize": "6.1 KB",
     "fileCount": 1,
     "dependencies": [
@@ -22754,9 +22960,9 @@
       "dialog"
     ],
     "createdAt": "2026-08-21",
-    "updatedAt": "2026-08-21",
+    "updatedAt": "2026-09-20",
     "size": "6.1 KB",
-    "rawSize": 6226,
+    "rawSize": 6241,
     "directSize": "6.1 KB",
     "fileCount": 1,
     "dependencies": [
@@ -22831,10 +23037,10 @@
       "drawer"
     ],
     "createdAt": "2026-08-21",
-    "updatedAt": "2026-08-21",
-    "size": "23 KB",
-    "rawSize": 23575,
-    "directSize": "23 KB",
+    "updatedAt": "2026-09-20",
+    "size": "23.1 KB",
+    "rawSize": 23650,
+    "directSize": "23.1 KB",
     "fileCount": 1,
     "dependencies": [
       "@base-ui/react",
@@ -22860,10 +23066,10 @@
       "drawer"
     ],
     "createdAt": "2026-08-21",
-    "updatedAt": "2026-08-21",
-    "size": "23 KB",
-    "rawSize": 23575,
-    "directSize": "23 KB",
+    "updatedAt": "2026-09-20",
+    "size": "23.1 KB",
+    "rawSize": 23650,
+    "directSize": "23.1 KB",
     "fileCount": 1,
     "dependencies": [
       "@base-ui/react",
@@ -24449,6 +24655,16 @@
         ]
       },
       {
+        "name": "smooth-slider",
+        "title": "Smooth Slider",
+        "description": "A continuous slider with a filled track, tick dots, and a draggable thumb.",
+        "url": "/ui-kit/components/spaceui/smooth-slider",
+        "category": "Slider",
+        "categories": [
+          "slider"
+        ]
+      },
+      {
         "name": "tick-slider",
         "title": "Tick Slider",
         "description": "A scrubber drawn as a row of tick marks, with a real range input underneath for keyboard and screen reader support.",
@@ -24490,6 +24706,16 @@
         "title": "Slosh Slider",
         "description": "Liquid fill slider with viscosity, momentum, and tilt.",
         "url": "/ui-kit/components/spaceui/slosh-slider",
+        "category": "Slider",
+        "categories": [
+          "slider"
+        ]
+      },
+      {
+        "name": "smooth-slider",
+        "title": "Smooth Slider",
+        "description": "A continuous slider with a filled track, tick dots, and a draggable thumb.",
+        "url": "/ui-kit/components/spaceui/smooth-slider",
         "category": "Slider",
         "categories": [
           "slider"
@@ -24825,9 +25051,9 @@
       "toggle"
     ],
     "createdAt": "2026-08-21",
-    "updatedAt": "2026-08-21",
+    "updatedAt": "2026-09-20",
     "size": "2 KB",
-    "rawSize": 2042,
+    "rawSize": 2076,
     "directSize": "2 KB",
     "fileCount": 1,
     "dependencies": [

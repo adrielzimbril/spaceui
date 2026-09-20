@@ -36,7 +36,9 @@ export type TickSliderProps = {
   /** Hides the numeric readout on the right, for a bare ruler. @default true */
   showValue?: boolean
   disabled?: boolean
-  /** Overrides the pitch-derived width — e.g. `flex-1` to fill a container. */
+  /** Sizes the rail from the mark pitch instead of filling the container. @default false */
+  fixedPitch?: boolean
+  /** Overrides the rail's width/class entirely — takes over from `fixedPitch`. */
   trackClassName?: string
   className?: string
 }
@@ -62,6 +64,7 @@ export function TickSlider({
   unit = '',
   showValue = true,
   disabled = false,
+  fixedPitch = false,
   trackClassName,
   className,
 }: TickSliderProps) {
@@ -94,7 +97,10 @@ export function TickSlider({
         className,
       )}
     >
-      <div className={cn('relative h-full', trackClassName)} style={trackClassName ? undefined : { width: railWidth }}>
+      <div
+        className={cn('relative h-full', trackClassName ?? (fixedPitch ? undefined : 'flex-1'))}
+        style={!trackClassName && fixedPitch ? { width: railWidth } : undefined}
+      >
         <div aria-hidden="true" className="flex h-full items-center justify-between px-3.5">
           {marks.map((mark, index) => (
             <span

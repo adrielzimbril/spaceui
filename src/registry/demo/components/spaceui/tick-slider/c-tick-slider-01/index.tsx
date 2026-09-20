@@ -10,6 +10,7 @@ export interface TickSliderDemoProps {
   majorEvery?: number
   unit?: string
   showValue?: boolean
+  fixedPitch?: boolean
 }
 
 export default function Demo({
@@ -19,6 +20,7 @@ export default function Demo({
   majorEvery = 8,
   unit = 'px',
   showValue = true,
+  fixedPitch = true,
 }: TickSliderDemoProps) {
   const [value, setValue] = React.useState(24)
   return (
@@ -32,6 +34,7 @@ export default function Demo({
         majorEvery={Number(majorEvery)}
         unit={unit}
         showValue={Boolean(showValue)}
+        fixedPitch={Boolean(fixedPitch)}
         label="Font size"
       />
     </div>

@@ -1,22 +1,24 @@
 'use client'
 
-import * as React from 'react'
-import NumberFlow from '@number-flow/react'
-import { TextMorph } from 'torph/react'
-import { SloshSlider } from '@/registry/components/spaceui/slosh-slider'
-import { IconClock } from '@tabler/icons-react'
-import { EmojiSource, EmojiType } from '@usespaceui/emoji'
-import { AssetEmoji } from '@/tools/emoji/asset-emoji'
-import { Badge } from '@/registry/components/spaceui/badge-squircle'
-import { StatusBadge } from '@/registry/components/spaceui/status-badge'
-import { Card, CardPanel } from '@/registry/primitives/card'
-import { Frame, FrameFooter } from '@/registry/primitives/frame'
 import { POLAR_PRODUCTS } from '@/lib/pricing-config'
 import type { PricingSnapshot } from '@/lib/pricing-tiers'
+import { SilkGradient } from '@/registry/components/shader/silk-gradient'
+import { Badge } from '@/registry/components/spaceui/badge-squircle'
+import { SloshSlider } from '@/registry/components/spaceui/slosh-slider'
+import { SmoothSlider } from '@/registry/components/spaceui/smooth-slider'
+import { StatusBadge } from '@/registry/components/spaceui/status-badge'
+import { TickSlider } from '@/registry/components/spaceui/tick-slider'
 import { cn } from '@/registry/lib/utils'
+import { Card, CardPanel } from '@/registry/primitives/card'
+import { Frame, FrameFooter } from '@/registry/primitives/frame'
+import { AssetEmoji } from '@/tools/emoji/asset-emoji'
+import NumberFlow from '@number-flow/react'
+import { IconClock } from '@tabler/icons-react'
+import { EmojiSource, EmojiType } from '@usespaceui/emoji'
+import * as React from 'react'
+import { TextMorph } from 'torph/react'
 import { BuyButton } from './buy-button'
 import { SectionHeader } from './section-header'
-import { SilkGradient } from '@/registry/components/shader/silk-gradient'
 
 const currencyFormat = {
   style: 'currency',
@@ -39,19 +41,41 @@ function EstimateSlider({
   onChange: (value: number) => void
 }) {
   return (
-    <SloshSlider
-      height={24}
-      value={value}
-      min={min}
-      max={max}
-      step={step}
-      onValueChange={onChange}
-      corner={8}
-      viscosity={10}
-      momentum={10}
-      tilt={0}
-      className="max-w-full"
-    />
+    <div className="flex flex-col gap-3">
+      {/* <SloshSlider
+        height={24}
+        value={value}
+        min={min}
+        max={max}
+        step={step}
+        onValueChange={onChange}
+        corner={8}
+        viscosity={10}
+        momentum={10}
+        tilt={0}
+        className="slosh max-w-full"
+      /> */}
+      <SmoothSlider
+        value={value}
+        min={min}
+        max={max}
+        step={step}
+        onValueChange={onChange}
+        height={24}
+        // showTicks={false}
+        className="smooth max-w-full"
+      />
+      {/* <TickSlider
+        value={value}
+        onChange={onChange}
+        min={min}
+        max={max}
+        step={step}
+        label="Estimate"
+        showValue={false}
+        className="tick max-w-full"
+      /> */}
+    </div>
   )
 }
 

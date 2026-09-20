@@ -1,0 +1,31 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-c-smooth-slider-01",
+  "type": "registry:component",
+  "title": "Smooth Slider Demo",
+  "description": "Continuous slider with tick dots and a draggable thumb.",
+  "isPro": true,
+  "registryDependencies": ["https://www.spaceui.one/r/components-spaceui-smooth-slider.json"],
+  "categories": ["component", "slider"],
+  "meta": {
+    "demoProps": {
+      "min": { "value": 0, "min": 0, "max": 20, "step": 1 },
+      "max": { "value": 100, "min": 60, "max": 150, "step": 1 },
+      "step": { "value": 5, "min": 1, "max": 20, "step": 1 },
+      "height": { "value": 32, "min": 16, "max": 64, "step": 2 },
+      "showTicks": { "value": true },
+      "fillFrom": { "value": "#bae6fd" },
+      "fillVia": { "value": "#e0e7ff" },
+      "fillTo": { "value": "#60a5fa" }
+    }
+  },
+  "files": [
+    {
+      "path": "src/registry/demo/components/spaceui/smooth-slider/c-smooth-slider-01/index.tsx",
+      "type": "registry:component",
+      "target": "components/spaceui/smooth-slider-demo.tsx"
+    }
+  ],
+  "createdAt": "2026-09-20",
+  "updatedAt": "2026-09-20"
+}
