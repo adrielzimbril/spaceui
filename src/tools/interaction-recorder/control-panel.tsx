@@ -1,9 +1,9 @@
 'use client'
 
-import { Fragment } from 'react'
-import { Avatar } from '@usespaceui/avatars/react'
-import { IconPlayerStop, IconAdjustments } from '@tabler/icons-react'
-import { cn } from '@/registry/lib/utils'
+import { nudgeSound, tapSound, tickSound, toggleSound } from '@/components/providers/sound-provider'
+import { Button } from '@/registry/components/spaceui/button-squircle'
+import { SloshSlider } from '@/registry/components/spaceui/slosh-slider'
+import { TickSlider } from '@/registry/components/spaceui/tick-slider'
 import {
   Combobox,
   ComboboxCollection,
@@ -16,12 +16,12 @@ import {
   ComboboxPopup,
   ComboboxSeparator,
 } from '@/registry/primitives/combobox'
-import { Button } from '@/registry/components/spaceui/button-squircle'
-import { Tabs, TabsList, TabsTab } from '@/registry/primitives/tabs'
 import { ScrollArea } from '@/registry/primitives/scroll-area'
-import { TickSlider } from '@/registry/components/spaceui/tick-slider'
-import { SloshSlider } from '@/registry/components/spaceui/slosh-slider'
-import { nudgeSound, tapSound, tickSound, toggleSound } from '@/components/providers/sound-provider'
+import { Tabs, TabsList, TabsTab } from '@/registry/primitives/tabs'
+import { IconPlayerStop } from '@tabler/icons-react'
+import { Avatar } from '@usespaceui/avatars/react'
+import { Fragment } from 'react'
+import type { SequenceTiming } from './timing'
 import {
   ASPECT_RATIOS,
   SCALES,
@@ -53,6 +53,7 @@ export interface InteractionControlPanelProps {
   hasBinds?: boolean
   showTweakpane?: boolean
   onToggleTweakpane?: () => void
+  timing?: SequenceTiming
 }
 
 export function InteractionControlPanel({
@@ -77,6 +78,7 @@ export function InteractionControlPanel({
   hasBinds,
   showTweakpane,
   onToggleTweakpane,
+  timing,
 }: InteractionControlPanelProps) {
   return (
     <div className="flex h-full min-h-0 flex-col bg-background text-foreground">
@@ -119,31 +121,6 @@ export function InteractionControlPanel({
                 </ComboboxList>
               </ComboboxPopup>
             </Combobox>
-
-            {hasBinds && (
-              <Button
-                type="button"
-                variant="outline"
-                size="sm"
-                onClick={() => {
-                  tapSound()
-                  onToggleTweakpane?.()
-                }}
-                data-space-hover="tick"
-                className={cn(
-                  'w-full justify-between rounded-xl text-xs font-medium cursor-pointer',
-                  showTweakpane && 'border-primary bg-primary/10 text-primary',
-                )}
-              >
-                <div className="flex items-center gap-2">
-                  <IconAdjustments className="size-4" />
-                  <span>Interaction Details</span>
-                </div>
-                <span className="text-[0.6875rem] text-muted-foreground">
-                  {showTweakpane ? 'Hide' : 'Configure'}
-                </span>
-              </Button>
-            )}
           </div>
 
           <div className="flex flex-col gap-2">
@@ -235,13 +212,28 @@ export function InteractionControlPanel({
             )}
           </div>
 
-          <div className="flex flex-col gap-2">
-            <span className="text-[0.6875rem] font-semibold text-muted-foreground">Loop</span>
-            <p className="text-xs text-muted-foreground">
-              {cycleSeconds != null
-                ? `Full flow: ${cycleSeconds.toFixed(1)}s (auto-detected) · total clip ${(cycleSeconds * loops).toFixed(1)}s`
-                : `No auto-detected cycle, defaulting to 10s · total clip ${(10 * loops).toFixed(1)}s`}
-            </p>
+          <div className="flex flex-col gap-2.5">
+            <div className="flex items-center justify-between">
+              <span className="text-[0.6875rem] font-semibold text-muted-foreground">Loop Sequence</span>
+              {timing && (
+                <span className="text-[0.6875rem] font-semibold text-foreground tabular-nums">
+                  {timing.totalDurationSeconds.toFixed(1)}s clip
+                </span>
+              )}
+            </div>
+
+            {timing && (
+              <div className="flex flex-col gap-1 [corner-shape:superellipse(1.25)] rounded-xl bg-muted p-2.5 text-xs">
+                <div className="flex items-center justify-between font-medium">
+                  <span className="truncate text-foreground font-semibold">{timing.scopeLabel}</span>
+                  <span className="shrink-0 text-muted-foreground tabular-nums text-[0.6875rem]">
+                    {timing.unitDurationSeconds.toFixed(1)}s / run
+                  </span>
+                </div>
+                <span className="text-[0.6875rem] truncate">{timing.detailLabel}</span>
+              </div>
+            )}
+
             <TickSlider
               label="Loop count"
               value={loops}
@@ -283,9 +275,9 @@ export function InteractionControlPanel({
               data-space-hover="tick"
               size="sm"
               full
-              className="flex-1 rounded-xl font-semibold"
+              className="flex-1 rounded-xl font-semibold gap-2 cursor-pointer"
             >
-              {busy ? 'Recording…' : 'Record'}
+              <span>{busy ? 'Recording…' : 'Record'}</span>
             </Button>
             {busy && (
               <Button

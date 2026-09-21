@@ -529,7 +529,7 @@ const Tweakpane = ({ show, onClose, onBindsChange, portal = true, className, ...
             data-preview-ui
             aria-label="Component configuration"
             className={cn(
-              'pointer-events-auto absolute bottom-6 right-6 flex flex-col rounded-2xl bg-muted p-1.5 overscroll-none shadow-lg border border-border/40',
+              'pointer-events-auto absolute bottom-6 right-6 flex flex-col [corner-shape:superellipse(1.25)] rounded-2xl bg-muted p-1.5 overscroll-none',
               portal
                 ? 'max-h-[calc(100dvh-6.5rem)] w-[min(18rem,calc(100vw-2rem))]'
                 : 'max-h-[calc(100%-3rem)] w-[min(18rem,calc(100%-2rem))]',

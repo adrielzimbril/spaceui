@@ -93,6 +93,10 @@ export interface DeployPipelineProps {
   pauseOnHover?: boolean
   /** Multiplier applied to each frame's duration (2 = twice as fast). */
   speed?: number
+  /** Target number of sequence cycles to execute before halting (used by recorder) */
+  targetLoops?: number
+  /** Callback fired when targetLoops sequence cycles have completed */
+  onSequenceComplete?: () => void
   className?: string
 }
 
@@ -109,6 +113,8 @@ export function DeployPipeline({
   paused,
   pauseOnHover = true,
   speed = 1,
+  targetLoops,
+  onSequenceComplete,
   className,
 }: DeployPipelineProps) {
   const isAnimated = animation !== 'inactive' && animation !== false
@@ -142,6 +148,11 @@ export function DeployPipeline({
   const [openSteps, setOpenSteps] = React.useState<Record<number, boolean>>({ 1: true })
   const lastActiveStepRef = React.useRef<number | null>(null)
   const loopTimeoutRef = React.useRef<ReturnType<typeof setTimeout> | null>(null)
+  const completedSequencesRef = React.useRef(0)
+  const onSequenceCompleteRef = React.useRef(onSequenceComplete)
+  React.useEffect(() => {
+    onSequenceCompleteRef.current = onSequenceComplete
+  }, [onSequenceComplete])
 
   const current = activeCycle[cycleIndex % activeCycle.length]
   const isPaused = !isAnimated || (paused ?? (pauseOnHover && isHovered))
@@ -211,9 +222,20 @@ export function DeployPipeline({
     const duration = Math.max(current.durationMs / Math.max(speed, 0.1), 50)
 
     if (isFinalFrame) {
+      const willCompleteSequence = cycleFlows && flowKeys.length > 1 ? currentFlowIdx + 1 >= flowKeys.length : true
+      const nextCompleted = completedSequencesRef.current + (willCompleteSequence ? 1 : 0)
+
       // At the end of the flow: advance to next flow or replay current
       if (autoPlay) {
         loopTimeoutRef.current = setTimeout(() => {
+          if (targetLoops && targetLoops > 0 && willCompleteSequence && nextCompleted >= targetLoops) {
+            completedSequencesRef.current = nextCompleted
+            onSequenceCompleteRef.current?.()
+            return
+          }
+          if (willCompleteSequence) {
+            completedSequencesRef.current = nextCompleted
+          }
           if (cycleFlows && flowKeys.length > 1) {
             setCurrentFlowIdx((prev) => (prev + 1) % flowKeys.length)
           } else {

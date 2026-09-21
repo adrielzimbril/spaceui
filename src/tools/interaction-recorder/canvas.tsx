@@ -18,6 +18,10 @@ export interface InteractionCanvasProps {
   isRecording?: boolean
   /** Bumped on reset to remount the interaction so its animation restarts from scratch. */
   resetKey?: number
+  /** Target number of sequence cycles to execute before halting */
+  targetLoops?: number
+  /** Callback fired when targetLoops sequence cycles have completed */
+  onSequenceComplete?: () => void
 }
 
 export function InteractionCanvas({
@@ -31,6 +35,8 @@ export function InteractionCanvas({
   elementZoom = 1,
   isRecording = false,
   resetKey = 0,
+  targetLoops,
+  onSequenceComplete,
 }: InteractionCanvasProps) {
   const wrapperRef = React.useRef<HTMLDivElement>(null)
   const [fitScale, setFitScale] = React.useState(1)
@@ -59,7 +65,12 @@ export function InteractionCanvas({
     item && Component ? (
       <div ref={stageRef} className="flex w-full max-w-xl items-center justify-center">
         <React.Suspense fallback={<PreviewLoading />}>
-          <Component key={resetKey} {...demoProps} />
+          <Component
+            key={resetKey}
+            {...demoProps}
+            targetLoops={targetLoops}
+            onSequenceComplete={onSequenceComplete}
+          />
         </React.Suspense>
       </div>
     ) : (

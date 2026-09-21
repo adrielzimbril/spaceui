@@ -142,13 +142,18 @@ export function ComponentPreview({
   const [binds, setBinds] = useState<Binds | null>(null)
   const [componentProps, setComponentProps] = useState<Record<string, unknown> | null>(null)
   const hasAutoOpenedRef = useRef(false)
-
   useEffect(() => {
-    if (isSelected && !hasAutoOpenedRef.current && !isMobile && binds && activeTweakName === null) {
+    if (!isSplit && isSelected && !hasAutoOpenedRef.current && !isMobile && binds && activeTweakName === null) {
       hasAutoOpenedRef.current = true
       setActiveTweakName(name)
     }
-  }, [isSelected, isMobile, binds, activeTweakName, name, setActiveTweakName])
+  }, [isSplit, isSelected, isMobile, binds, activeTweakName, name, setActiveTweakName])
+
+  useEffect(() => {
+    if (isSplit && activeTweakName === name) {
+      setActiveTweakName(null)
+    }
+  }, [isSplit, activeTweakName, name, setActiveTweakName])
 
   const [key, setKey] = useState(0)
   const { themeOverride, setThemeOverride } = usePreviewTheme(name)
@@ -462,7 +467,7 @@ export function ComponentPreview({
                     </Button>
                   )}
 
-                  {binds && (
+                  {!isSplit && binds && (
                     <Button
                       size="icon-xs"
                       variant="ghost"
@@ -512,7 +517,7 @@ export function ComponentPreview({
         </TabsContent>
       </Tabs>
 
-      {binds && activeTweakName === name ? (
+      {!isSplit && binds && activeTweakName === name ? (
         <Tweakpane binds={binds} onBindsChange={setBinds} show onClose={() => setActiveTweakName(null)} />
       ) : null}
     </div>

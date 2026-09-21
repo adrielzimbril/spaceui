@@ -15,6 +15,7 @@ import { index as registryIndex } from '@/__registry__/index'
 import { Tweakpane, type Binds } from '@/components/docs/preview/tweakpane'
 import { InteractionCanvas } from './canvas'
 import { InteractionControlPanel } from './control-panel'
+import { computeSequenceTiming } from './timing'
 import {
   BASE_CANVAS_SIZE,
   type AspectRatioValue,
@@ -79,17 +80,18 @@ export function InteractionRecorderPlayground({ items }: { items: InteractionRec
   const [selected, setSelected] = useState<InteractionRecorderItem | null>(items[0] ?? null)
   const [scale, setScale] = useState<ScaleValue>(1)
   const [aspectRatio, setAspectRatio] = useState<AspectRatioValue>(1)
-  const [elementZoom, setElementZoom] = useState(1.2)
+  const [elementZoom, setElementZoom] = useState(1.5)
   const [loops, setLoops] = useState(1)
   const [withSound, setWithSound] = useState(false)
   const [showGuide, setShowGuide] = useState(true)
-  const [showTweakpane, setShowTweakpane] = useState(false)
+  const [showTweakpane, setShowTweakpane] = useState(true)
   const [busy, setBusy] = useState<string | null>(null)
   const [progress, setProgress] = useState(0)
   const [resetKey, setResetKey] = useState(0)
   const { showRight, setShowRight } = useResourceSidebars()
   const stageRef = useRef<HTMLDivElement>(null)
   const cancelRef = useRef(false)
+  const sequenceCompleteResolverRef = useRef<(() => void) | null>(null)
 
   const entry = selected ? registryIndex[selected.name] : undefined
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -133,6 +135,10 @@ export function InteractionRecorderPlayground({ items }: { items: InteractionRec
     typeof interactionProps.speed === 'number' && interactionProps.speed > 0 ? interactionProps.speed : 1
   const cycleSeconds = baseCycleSeconds ? baseCycleSeconds / currentSpeed : null
 
+  const sequenceTiming = useMemo(() => {
+    return computeSequenceTiming(selected?.name, interactionProps, loops, cycleSeconds)
+  }, [selected?.name, interactionProps, loops, cycleSeconds])
+
   const handleStop = () => {
     cancelRef.current = true
   }
@@ -166,8 +172,13 @@ export function InteractionRecorderPlayground({ items }: { items: InteractionRec
 
     const outputWidth = Math.round(BASE_CANVAS_SIZE * aspectRatio * scale)
     const outputHeight = Math.round(BASE_CANVAS_SIZE * scale)
-    const perLoopSeconds = cycleSeconds ?? DEFAULT_CYCLE_SECONDS
-    const durationMs = Math.max(1000, Math.round(perLoopSeconds * loops * 1000))
+    const durationMs = Math.max(1000, Math.round(sequenceTiming.totalDurationSeconds * 1000))
+    const maxWatchdogMs = durationMs + 2500
+
+    let sequenceFinished = false
+    sequenceCompleteResolverRef.current = () => {
+      sequenceFinished = true
+    }
 
     let displayStream: MediaStream | null = null
     let recordCanvas: HTMLCanvasElement | null = null
@@ -265,6 +276,8 @@ export function InteractionRecorderPlayground({ items }: { items: InteractionRec
         recorder.onstop = () => resolve()
       })
 
+      // Restart animation cleanly from beginning right as recording starts
+      setResetKey((k) => k + 1)
       setBusy('Recording…')
       recorder.start()
 
@@ -272,7 +285,7 @@ export function InteractionRecorderPlayground({ items }: { items: InteractionRec
       await new Promise<void>((resolve) => {
         const drawFrame = () => {
           const elapsed = performance.now() - startedAt
-          if (cancelRef.current || elapsed >= durationMs) {
+          if (cancelRef.current || sequenceFinished || elapsed >= maxWatchdogMs) {
             resolve()
             return
           }
@@ -326,6 +339,7 @@ export function InteractionRecorderPlayground({ items }: { items: InteractionRec
       // eslint-disable-next-line no-alert
       alert(`Recording failed: ${(err as Error)?.message || String(err)}`)
     } finally {
+      sequenceCompleteResolverRef.current = null
       if (rafId !== null) cancelAnimationFrame(rafId)
       displayStream?.getTracks().forEach((t) => t.stop())
       sourceVideo?.remove()
@@ -365,6 +379,8 @@ export function InteractionRecorderPlayground({ items }: { items: InteractionRec
             elementZoom={elementZoom}
             isRecording={Boolean(busy)}
             resetKey={resetKey}
+            targetLoops={busy ? loops : undefined}
+            onSequenceComplete={() => sequenceCompleteResolverRef.current?.()}
           />
           {hasBinds && binds && (
             <Tweakpane
@@ -433,6 +449,7 @@ export function InteractionRecorderPlayground({ items }: { items: InteractionRec
           hasBinds={hasBinds}
           showTweakpane={showTweakpane}
           onToggleTweakpane={() => setShowTweakpane((v) => !v)}
+          timing={sequenceTiming}
         />
       }
     />

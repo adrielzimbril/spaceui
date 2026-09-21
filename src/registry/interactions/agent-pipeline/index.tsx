@@ -73,6 +73,10 @@ export interface AgentPipelineProps {
   speed?: number
   /** Time in seconds between agent relays during transfer */
   travelDuration?: number
+  /** Target number of sequence cycles to execute before halting (used by recorder) */
+  targetLoops?: number
+  /** Callback fired when targetLoops sequence cycles have completed */
+  onSequenceComplete?: () => void
   /** Additional CSS class names */
   className?: string
 }
@@ -172,6 +176,8 @@ export function AgentPipeline({
   pauseOnHover = true,
   speed = 1,
   travelDuration = 0.7,
+  targetLoops,
+  onSequenceComplete,
   className,
 }: AgentPipelineProps) {
   const isAnimated = animation !== 'inactive' && animation !== false
@@ -263,6 +269,11 @@ export function AgentPipeline({
   const isPausedRef = React.useRef(isPaused)
   const cycleFlowsRef = React.useRef(cycleFlows)
   const cyclePresetsRef = React.useRef(shouldCyclePresets)
+  const completedSequencesRef = React.useRef(0)
+  const onSequenceCompleteRef = React.useRef(onSequenceComplete)
+  React.useEffect(() => {
+    onSequenceCompleteRef.current = onSequenceComplete
+  }, [onSequenceComplete])
 
   const logContainerRef = React.useRef<HTMLDivElement>(null)
   const scrollBottomRef = React.useRef<HTMLDivElement>(null)
@@ -699,8 +710,40 @@ export function AgentPipeline({
   // Loop timer: when pipeline finishes (done or error), advance loop after delay if autoPlay is active
   React.useEffect(() => {
     if ((status === 'done' || status === 'error') && autoPlay && isAnimated && !isPaused) {
-      const delay = status === 'error' ? 2200 : 1800
+      const presetKeys = Object.keys(AGENT_PRESETS) as PresetKey[]
+      const currentPreset = AGENT_PRESETS[currentPresetKey] ?? AGENT_PRESETS.incident
+      const flows = currentPreset.flows
+      const willCyclePresets = cyclePresetsRef.current
+      const willCycleFlows = cycleFlowsRef.current
+
+      // Check if this run finishes 1 sequence cycle
+      let finishesCycle = false
+      if (willCyclePresets && willCycleFlows) {
+        const isLastFlow = currentFlowIdx + 1 >= flows.length
+        const currentPIdx = presetKeys.indexOf(currentPresetKey)
+        const isLastPreset = currentPIdx === presetKeys.length - 1
+        finishesCycle = isLastFlow && isLastPreset
+      } else if (willCyclePresets && !willCycleFlows) {
+        const currentPIdx = presetKeys.indexOf(currentPresetKey)
+        finishesCycle = currentPIdx === presetKeys.length - 1
+      } else if (!willCyclePresets && willCycleFlows) {
+        finishesCycle = currentFlowIdx + 1 >= flows.length
+      } else {
+        finishesCycle = true
+      }
+
+      const nextCompleted = completedSequencesRef.current + (finishesCycle ? 1 : 0)
+
+      const delay = (status === 'error' ? 2200 : 1800) / Math.max(speed, 0.1)
       const timer = setTimeout(() => {
+        if (targetLoops && targetLoops > 0 && finishesCycle && nextCompleted >= targetLoops) {
+          completedSequencesRef.current = nextCompleted
+          onSequenceCompleteRef.current?.()
+          return
+        }
+        if (finishesCycle) {
+          completedSequencesRef.current = nextCompleted
+        }
         advanceLoopRef.current()
       }, delay)
       loopTimeoutRef.current = timer
@@ -711,7 +754,7 @@ export function AgentPipeline({
         }
       }
     }
-  }, [status, autoPlay, isAnimated, isPaused])
+  }, [status, autoPlay, isAnimated, isPaused, currentPresetKey, currentFlowIdx, speed, targetLoops])
 
   // Handle external or hover pause / resume
   React.useEffect(() => {
