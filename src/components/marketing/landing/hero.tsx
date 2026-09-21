@@ -64,7 +64,7 @@ export function Hero() {
           <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row sm:flex-wrap">
             <LiquidBorder className="inline-flex squircle rounded-full p-0.75 transition-all duration-300 hover:scale-105">
               <Button
-                render={<Link href="/primitives" />}
+                render={<Link href="/components" />}
                 data-space-hover
                 data-space-click="confirm"
                 className="inline-flex items-center gap-2 px-6 py-3.5 font-medium active:scale-[0.98] transition-all duration-300"
