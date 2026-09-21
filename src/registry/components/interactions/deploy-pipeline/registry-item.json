@@ -1,0 +1,52 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "interactions-deploy-pipeline",
+  "type": "registry:component",
+  "title": "Deploy Pipeline",
+  "description": "A self-playing deploy pipeline that advances on its own, pauses on hover, and reveals per-step detail — drop it in to turn a static log into a living status feed.",
+  "isPro": true,
+  "dependencies": ["motion", "@tabler/icons-react"],
+  "registryDependencies": [
+    "https://www.spaceui.one/r/lib-utils.json",
+    "https://www.spaceui.one/r/components-spaceui-timeline.json",
+    "https://www.spaceui.one/r/components-spaceui-morph-icon.json",
+    "https://www.spaceui.one/r/primitives-frame.json",
+    "https://www.spaceui.one/r/primitives-card.json",
+    "https://www.spaceui.one/r/primitives-badge.json",
+    "https://www.spaceui.one/r/primitives-spinner.json",
+    "https://www.spaceui.one/r/primitives-avatar.json",
+    "https://www.spaceui.one/r/primitives-collapsible.json"
+  ],
+  "categories": ["interaction", "developer", "pipeline"],
+  "meta": {
+    "demoProps": {
+      "autoPlay": {
+        "value": true
+      },
+      "pauseOnHover": {
+        "value": true,
+        "dependsOn": {
+          "autoPlay": true
+        }
+      },
+      "speed": {
+        "value": 1,
+        "min": 0.25,
+        "max": 4,
+        "step": 0.25,
+        "dependsOn": {
+          "autoPlay": true
+        }
+      }
+    }
+  },
+  "files": [
+    {
+      "path": "src/registry/components/interactions/deploy-pipeline/index.tsx",
+      "type": "registry:component",
+      "target": "components/interactions/deploy-pipeline.tsx"
+    }
+  ],
+  "createdAt": "2026-09-21",
+  "updatedAt": "2026-09-21"
+}

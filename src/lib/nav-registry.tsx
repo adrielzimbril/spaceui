@@ -71,6 +71,22 @@ export interface HubItem {
 
 export const HUBS: HubItem[] = [
   {
+    id: 'components',
+    title: 'Components & Blocks',
+    description: 'Complex components, animations & layouts',
+    url: '/components',
+    icon: IconLayoutGrid,
+    color: DEFAULT_COLOR_CODE.LIME,
+  },
+  {
+    id: 'interactions',
+    title: 'Interactions',
+    description: 'Living components that move, respond & never sit still',
+    url: '/interactions',
+    icon: IconWand,
+    color: DEFAULT_COLOR_CODE.PINK,
+  },
+  {
     id: 'docs-primitives',
     title: 'Docs & Primitives',
     description: 'Guides, ecosystem & core UI elements',
@@ -85,14 +101,6 @@ export const HUBS: HubItem[] = [
     url: '/hooks',
     icon: IconSparkles,
     color: DEFAULT_COLOR_CODE.PURPLE,
-  },
-  {
-    id: 'components',
-    title: 'Components & Blocks',
-    description: 'Complex components, animations & layouts',
-    url: '/components',
-    icon: IconLayoutGrid,
-    color: DEFAULT_COLOR_CODE.LIME,
   },
   {
     id: 'tools',
@@ -338,16 +346,21 @@ export function sortComponentsSections(sections: SectionItem[]): SectionItem[] {
 
 export function getActiveHub(pathname: string): HubItem {
   const path = pathname.replace(/^\/library/, '')
+  const byId = (id: string) => HUBS.find((hub) => hub.id === id) ?? HUBS[0]
+
   if (path.startsWith('/hooks')) {
-    return HUBS[1]
+    return byId('hooks')
+  }
+  if (path.startsWith('/interactions')) {
+    return byId('interactions')
   }
   if (path.startsWith('/components') || path.startsWith('/blocks') || path.startsWith('/templates')) {
-    return HUBS[2]
+    return byId('components')
   }
   if (path.startsWith('/tools')) {
-    return HUBS[3]
+    return byId('tools')
   }
-  return HUBS[0]
+  return byId('docs-primitives')
 }
 
 export function resolvePathSections(pathname: string, docsTree: any[] = [], libraryTree: any[] = []): SectionItem[] {
@@ -357,6 +370,14 @@ export function resolvePathSections(pathname: string, docsTree: any[] = [], libr
       (n: any) => n.type === 'folder' && (n.name?.toLowerCase().includes('hook') || n.$id?.includes('hooks')),
     )
     return hooksFolder ? extractSectionsFromNode([hooksFolder]) : []
+  }
+
+  if (path.startsWith('/interactions')) {
+    const interactionsFolder = libraryTree.find(
+      (n: any) =>
+        n.type === 'folder' && (n.name?.toLowerCase().includes('interaction') || n.$id?.includes('interactions')),
+    )
+    return interactionsFolder ? extractSectionsFromNode([interactionsFolder]) : []
   }
 
   const isDocsOrPrimitives =
@@ -382,7 +403,9 @@ export function resolvePathSections(pathname: string, docsTree: any[] = [], libr
         !n.name?.toLowerCase().includes('primitive') &&
         !n.$id?.includes('primitives') &&
         !n.name?.toLowerCase().includes('hook') &&
-        !n.$id?.includes('hooks'),
+        !n.$id?.includes('hooks') &&
+        !n.name?.toLowerCase().includes('interaction') &&
+        !n.$id?.includes('interactions'),
     )
     const sections = extractSectionsFromNode(nonPrimitives)
     return sortComponentsSections(sections)

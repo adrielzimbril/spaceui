@@ -902,6 +902,38 @@ export const index: Record<string, any> = {
     })(),
     command: '@spaceui/components-backgrounds-gradient',
   },
+  "interactions-deploy-pipeline": {
+    name: "interactions-deploy-pipeline",
+    description: "A self-playing deploy pipeline that advances on its own, pauses on hover, and reveals per-step detail — drop it in to turn a static log into a living status feed.",
+    type: "registry:component",
+    dependencies: ["motion","@tabler/icons-react"],
+    devDependencies: undefined,
+    registryDependencies: ["https://www.spaceui.one/r/lib-utils.json","https://www.spaceui.one/r/components-spaceui-timeline.json","https://www.spaceui.one/r/components-spaceui-morph-icon.json","https://www.spaceui.one/r/primitives-frame.json","https://www.spaceui.one/r/primitives-card.json","https://www.spaceui.one/r/primitives-badge.json","https://www.spaceui.one/r/primitives-spinner.json","https://www.spaceui.one/r/primitives-avatar.json","https://www.spaceui.one/r/primitives-collapsible.json"],
+    files: [
+  {
+    "path": "src/registry/components/interactions/deploy-pipeline/index.tsx",
+    "type": "registry:component",
+    "target": "components/interactions/deploy-pipeline.tsx"
+  }
+],
+    keywords: [],
+    component: (() => {
+      const LazyComp = React.lazy(async () => {
+        const mod = await import("@/registry/components/interactions/deploy-pipeline/index.tsx");
+        const exportName = Object.keys(mod).find(
+          key => typeof mod[key] === 'function' || typeof mod[key] === 'object'
+        ) || "interactions-deploy-pipeline";
+        const Comp = mod.default || mod[exportName];
+        if (mod.animations) {
+          (LazyComp as any).animations = mod.animations;
+        }
+        return { default: Comp };
+      });
+      LazyComp.demoProps = {"autoPlay":{"value":true},"pauseOnHover":{"value":true,"dependsOn":{"autoPlay":true}},"speed":{"value":1,"min":0.25,"max":4,"step":0.25,"dependsOn":{"autoPlay":true}}};
+      return LazyComp;
+    })(),
+    command: '@spaceui/interactions-deploy-pipeline',
+  },
   "components-orb-bloop": {
     name: "components-orb-bloop",
     description: "Compact audio-reactive bloop orb shader.",

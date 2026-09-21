@@ -28,6 +28,7 @@ const FOOTER_GROUPS: FooterGroup[] = [
       { label: 'Blocks', href: '/blocks' },
       { label: 'Templates', href: '/templates' },
       { label: 'Hooks & Utils', href: '/hooks' },
+      { label: 'Interactions', href: '/interactions' },
       { label: 'Showcase Gallery', href: '/showcase' },
       { label: 'Plans & Pricing', href: '/pricing', highlight: true },
     ],

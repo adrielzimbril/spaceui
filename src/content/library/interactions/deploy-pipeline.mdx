@@ -1,0 +1,33 @@
+---
+title: Deploy Pipeline
+description: A deploy pipeline that plays itself — steps advance, badges update, and details unfold on their own, no click required.
+component: true
+base: base
+isPro: true
+preview:
+  name: interactions-deploy-pipeline
+  className: '**:[.preview]:h-auto'
+---
+
+## Usage
+
+```tsx
+import { DeployPipeline } from '@/components/interactions/deploy-pipeline'
+```
+
+```tsx
+<DeployPipeline />
+```
+
+## API Reference
+
+### DeployPipeline
+
+| Prop           | Type                    | Default | Description                                                |
+| :------------- | :---------------------- | :------ | :--------------------------------------------------------- |
+| `steps`        | `DeployPipelineStep[]`  | sample  | Steps rendered in the pipeline.                            |
+| `cycle`        | `DeployPipelineFrame[]` | sample  | Keyframes the pipeline auto-advances through.              |
+| `autoPlay`     | `boolean`               | `true`  | Auto-advance through `cycle` on a timer.                   |
+| `pauseOnHover` | `boolean`               | `true`  | Pause auto-advance while the pointer is over the pipeline. |
+| `speed`        | `number`                | `1`     | Multiplier applied to each frame's duration.               |
+| `className`    | `string`                | -       | Additional CSS classes for the outer card.                 |

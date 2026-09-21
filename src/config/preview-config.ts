@@ -123,7 +123,15 @@ export function isCatalogRoute(pathname?: string | null): boolean {
   if (clean === '/library') return true
   if (clean.endsWith('/index')) return true
 
-  const catalogExactRoutes = ['/primitives', '/components', '/blocks', '/templates', '/hooks', '/showcase']
+  const catalogExactRoutes = [
+    '/primitives',
+    '/components',
+    '/blocks',
+    '/templates',
+    '/hooks',
+    '/showcase',
+    '/interactions',
+  ]
 
   return catalogExactRoutes.includes(clean)
 }
@@ -156,6 +164,7 @@ export function isMarketingRoute(pathname?: string | null): boolean {
  * - Shaders detail pages (/components/cloud, /components/heat-shade, /library/components/..., etc.): defaultMode 'split'
  * - Individual Block pages (/blocks/[slug]): defaultMode 'split', mode 'split'
  * - Individual Template pages (/templates/[slug]): defaultMode 'split', mode 'split'
+ * - Individual Interaction pages (/interactions/[slug]): defaultMode 'split', mode 'split' (studio-only)
  */
 export function getRouteLayoutDefaults(pathname?: string | null): {
   mode: LayoutMode
@@ -205,6 +214,14 @@ export function getRouteLayoutDefaults(pathname?: string | null): {
 
   // 5. Individual Template pages (/templates/...)
   if (pathname.includes('/templates/') || pathname.startsWith('/templates/')) {
+    return {
+      mode: Mode.split,
+      constraint: { mode: Mode.split, defaultMode: Mode.split },
+    }
+  }
+
+  // 6. Individual Interaction pages (/interactions/...) — studio-only, no standard mode
+  if (pathname.includes('/interactions/') || pathname.startsWith('/interactions/')) {
     return {
       mode: Mode.split,
       constraint: { mode: Mode.split, defaultMode: Mode.split },

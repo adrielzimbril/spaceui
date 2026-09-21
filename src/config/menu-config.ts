@@ -16,6 +16,8 @@ import {
   IconLayoutGrid,
   IconVolume,
   IconCut,
+  IconWand,
+  IconUsers,
 } from '@tabler/icons-react'
 import { DEFAULT_COLOR_CODE } from '@/lib/theme-colors'
 
@@ -90,6 +92,13 @@ export const megaMenuDocs: MegaMenuItem[] = [
     badge: 'new',
     color: DEFAULT_COLOR_CODE.TURQUOISE,
   },
+  {
+    title: 'Community',
+    href: '/community',
+    description: 'Live canvas & guestbook from creators worldwide.',
+    icon: IconUsers,
+    color: DEFAULT_COLOR_CODE.PINKISH_GREEN,
+  },
 ]
 
 export const megaMenuLibrary: MegaMenuItem[] = [
@@ -120,6 +129,13 @@ export const megaMenuLibrary: MegaMenuItem[] = [
     description: 'Sensory React hooks, flow-control and pure DX utilities.',
     icon: IconSparkles,
     color: DEFAULT_COLOR_CODE.PINKISH_PURPLE,
+  },
+  {
+    title: 'Interactions',
+    href: '/interactions',
+    description: 'Living components that move, respond and never sit still.',
+    icon: IconWand,
+    color: DEFAULT_COLOR_CODE.PINK,
   },
 ]
 
@@ -175,6 +191,16 @@ export const megaMenuTools: ResourceItem[] = [
     color: DEFAULT_COLOR_CODE.YELLOW,
   },
   {
+    title: '3D Reveal',
+    label: 'reveal',
+    description: 'Brush-reveal two images together with real-time WebGL depth parallax.',
+    href: '/tools/reveal',
+    icon: IconBox,
+    upcoming: false,
+    release: 'new',
+    color: DEFAULT_COLOR_CODE.INDIGO,
+  },
+  {
     title: 'Image Split',
     label: 'imagesplit',
     description: 'Split images into seamless carousels, grids and columns.',
@@ -193,16 +219,6 @@ export const megaMenuTools: ResourceItem[] = [
     upcoming: false,
     release: 'new',
     color: DEFAULT_COLOR_CODE.RED,
-  },
-  {
-    title: '3D Reveal',
-    label: 'reveal',
-    description: 'Brush-reveal two images together with real-time WebGL depth parallax.',
-    href: '/tools/reveal',
-    icon: IconBox,
-    upcoming: false,
-    release: 'new',
-    color: DEFAULT_COLOR_CODE.INDIGO,
   },
   {
     title: 'OG Image Generator',
@@ -309,6 +325,11 @@ export const searchNavShortcuts: SearchShortcutItem[] = [
   { label: 'Primitives', href: '/primitives', keywords: ['primitives', 'base', 'elements'] },
   { label: 'Hooks & Utils', href: '/hooks', keywords: ['hooks', 'utilities', 'react'] },
   { label: 'Blocks', href: '/blocks/sign-in', keywords: ['blocks', 'sections', 'pages'] },
+  {
+    label: 'Interactions',
+    href: '/interactions',
+    keywords: ['interactions', 'motion', 'animated', 'live', 'autoplay'],
+  },
   { label: 'Documentation', href: '/docs', keywords: ['docs', 'guide', 'getting started'] },
   {
     label: 'Tools',

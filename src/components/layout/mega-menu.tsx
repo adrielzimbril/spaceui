@@ -158,8 +158,7 @@ export function ToolMenuIcon({
 
 const DEFAULT_MENU_SIZES: Record<string, { width: number; height: number }> = {
   docs: { width: 420, height: 382 },
-  library: { width: 560, height: 209 },
-  'ui-kit': { width: 560, height: 209 },
+  library: { width: 560, height: 300 },
   tools: { width: 760, height: 526 },
 }
 
@@ -403,6 +402,12 @@ export function MegaMenu({ className }: { className?: string }) {
                   </ListItem>
                   <ListItem title="Templates" href="/templates" seed="Templates" onClick={handleClose}>
                     Full-page starter templates for your next app.
+                  </ListItem>
+                  <ListItem title="Interactions" href="/interactions" seed="Interactions" onClick={handleClose}>
+                    Living components that move, respond and never sit still.
+                  </ListItem>
+                  <ListItem title="AI Showcase" href="/showcase" seed="AI Showcase" onClick={handleClose}>
+                    Real sites and starters built with Space UI.
                   </ListItem>
                 </div>
               </MenuContentMeasurer>

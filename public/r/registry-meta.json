@@ -1617,6 +1617,82 @@
       }
     ]
   },
+  "deploy-pipeline": {
+    "name": "interactions-deploy-pipeline",
+    "shortName": "deploy-pipeline",
+    "title": "Deploy Pipeline",
+    "description": "A self-playing deploy pipeline that advances on its own, pauses on hover, and reveals per-step detail — drop it in to turn a static log into a living status feed.",
+    "type": "registry:component",
+    "url": "/ui-kit/interactions/deploy-pipeline",
+    "category": "Interaction",
+    "categories": [
+      "interaction",
+      "developer",
+      "pipeline"
+    ],
+    "createdAt": "2026-09-21",
+    "updatedAt": "2026-09-21",
+    "isPro": true,
+    "size": "11.2 KB",
+    "rawSize": 11518,
+    "directSize": "11.2 KB",
+    "fileCount": 1,
+    "dependencies": [
+      "motion",
+      "@tabler/icons-react"
+    ],
+    "registryDependencies": [
+      "https://www.spaceui.one/r/lib-utils.json",
+      "https://www.spaceui.one/r/components-spaceui-timeline.json",
+      "https://www.spaceui.one/r/components-spaceui-morph-icon.json",
+      "https://www.spaceui.one/r/primitives-frame.json",
+      "https://www.spaceui.one/r/primitives-card.json",
+      "https://www.spaceui.one/r/primitives-badge.json",
+      "https://www.spaceui.one/r/primitives-spinner.json",
+      "https://www.spaceui.one/r/primitives-avatar.json",
+      "https://www.spaceui.one/r/primitives-collapsible.json"
+    ],
+    "dependents": [],
+    "related": []
+  },
+  "interactions-deploy-pipeline": {
+    "name": "interactions-deploy-pipeline",
+    "shortName": "deploy-pipeline",
+    "title": "Deploy Pipeline",
+    "description": "A self-playing deploy pipeline that advances on its own, pauses on hover, and reveals per-step detail — drop it in to turn a static log into a living status feed.",
+    "type": "registry:component",
+    "url": "/ui-kit/interactions/deploy-pipeline",
+    "category": "Interaction",
+    "categories": [
+      "interaction",
+      "developer",
+      "pipeline"
+    ],
+    "createdAt": "2026-09-21",
+    "updatedAt": "2026-09-21",
+    "isPro": true,
+    "size": "11.2 KB",
+    "rawSize": 11518,
+    "directSize": "11.2 KB",
+    "fileCount": 1,
+    "dependencies": [
+      "motion",
+      "@tabler/icons-react"
+    ],
+    "registryDependencies": [
+      "https://www.spaceui.one/r/lib-utils.json",
+      "https://www.spaceui.one/r/components-spaceui-timeline.json",
+      "https://www.spaceui.one/r/components-spaceui-morph-icon.json",
+      "https://www.spaceui.one/r/primitives-frame.json",
+      "https://www.spaceui.one/r/primitives-card.json",
+      "https://www.spaceui.one/r/primitives-badge.json",
+      "https://www.spaceui.one/r/primitives-spinner.json",
+      "https://www.spaceui.one/r/primitives-avatar.json",
+      "https://www.spaceui.one/r/primitives-collapsible.json"
+    ],
+    "dependents": [],
+    "related": []
+  },
   "bloop": {
     "name": "components-orb-bloop",
     "shortName": "bloop",

@@ -49,6 +49,7 @@ import {
   IconSearch,
   IconFolderOpen,
   IconDelta,
+  IconWand,
 } from '@tabler/icons-react'
 import {
   extractSectionsFromNode,
@@ -83,6 +84,8 @@ function getGroupIcon(group: string, title?: string) {
       return IconFolderHeart
     case 'Templates':
       return IconDeviceDesktop
+    case 'Interactions':
+      return IconWand
     case 'Icons':
       return IconMoodSmile
     case 'Tools':
@@ -182,6 +185,15 @@ export function MobileNavDrawer({
       return templatesFolder ? extractSectionsFromNode([templatesFolder]) : []
     }
 
+    if (drillTarget.title === 'Interactions') {
+      const libraryNodes = libraryTree?.children ?? []
+      const interactionsFolder = libraryNodes.find(
+        (n: any) =>
+          n.type === 'folder' && (n.name?.toLowerCase().includes('interaction') || n.$id?.includes('interactions')),
+      )
+      return interactionsFolder ? extractSectionsFromNode([interactionsFolder]) : []
+    }
+
     if (drillTarget.title === 'Components') {
       const libraryNodes = libraryTree?.children ?? []
       const nonPrimitives = libraryNodes.filter(
@@ -194,7 +206,9 @@ export function MobileNavDrawer({
           !n.name?.toLowerCase().includes('block') &&
           !n.$id?.includes('blocks') &&
           !n.name?.toLowerCase().includes('template') &&
-          !n.$id?.includes('templates'),
+          !n.$id?.includes('templates') &&
+          !n.name?.toLowerCase().includes('interaction') &&
+          !n.$id?.includes('interactions'),
       )
       return sortComponentsSections(extractSectionsFromNode(nonPrimitives))
     }

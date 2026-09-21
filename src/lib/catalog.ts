@@ -3,11 +3,12 @@ import primitivesMeta from '@/content/library/primitives/meta.json'
 import componentsMeta from '@/content/library/components/meta.json'
 import blocksMeta from '@/content/library/blocks/meta.json'
 import templatesMeta from '@/content/library/templates/meta.json'
+import interactionsMeta from '@/content/library/interactions/meta.json'
 import type { RelatedComponent } from '@/lib/docs-metadata'
 import type { RelatedGroup } from '@/components/docs/layout/related-components'
 import { librarySource } from '@/lib/source'
 
-export const CATALOG_SECTIONS = ['hooks', 'primitives', 'components', 'blocks', 'templates'] as const
+export const CATALOG_SECTIONS = ['hooks', 'primitives', 'components', 'blocks', 'templates', 'interactions'] as const
 export type CatalogSection = (typeof CATALOG_SECTIONS)[number]
 
 const META: Record<CatalogSection, { title: string; pages: string[] }> = {
@@ -16,6 +17,7 @@ const META: Record<CatalogSection, { title: string; pages: string[] }> = {
   components: componentsMeta,
   blocks: blocksMeta,
   templates: templatesMeta,
+  interactions: interactionsMeta,
 }
 
 function categoryBadge(section: CatalogSection, groupTitle: string) {
@@ -32,6 +34,7 @@ function categoryBadge(section: CatalogSection, groupTitle: string) {
   if (section === 'primitives') return 'Primitive'
   if (section === 'components') return 'Component'
   if (section === 'templates') return 'Template'
+  if (section === 'interactions') return 'Interaction'
   return 'Block'
 }
 

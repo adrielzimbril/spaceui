@@ -80,6 +80,7 @@ const config: NextConfig = {
         { source: '/blocks/:path*', destination: '/library/blocks/:path*' },
         { source: '/hooks/:path*', destination: '/library/hooks/:path*' },
         { source: '/templates/:path*', destination: '/library/templates/:path*' },
+        { source: '/interactions/:path*', destination: '/library/interactions/:path*' },
       ],
       afterFiles: [
         { source: '/docs/:path*.mdx', destination: '/llms.mdx/docs/:path*' },
@@ -88,6 +89,7 @@ const config: NextConfig = {
         { source: '/blocks/:path*.mdx', destination: '/llms.mdx/blocks/:path*' },
         { source: '/hooks/:path*.mdx', destination: '/llms.mdx/hooks/:path*' },
         { source: '/templates/:path*.mdx', destination: '/llms.mdx/templates/:path*' },
+        { source: '/interactions/:path*.mdx', destination: '/llms.mdx/interactions/:path*' },
         { source: '/tools/:path*.mdx', destination: '/llms.mdx/tools/:path*' },
         { source: '/:path*.mdx', destination: '/llms.mdx/:path*' },
       ],

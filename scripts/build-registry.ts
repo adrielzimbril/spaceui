@@ -232,15 +232,17 @@ async function buildRegistryMetaGraph(items: any[]) {
   // First pass: create index entries and calculate code sizes
   for (const item of uiItems) {
     const isBlock = item.type === 'registry:block'
+    const isInteractionComponent = item.name.startsWith('interactions-')
     const isPrimitive =
       !isBlock &&
+      !isInteractionComponent &&
       (item.name.startsWith('primitives-') ||
         (!item.name.startsWith('components-') &&
           !item.name.startsWith('icons-') &&
           !item.name.startsWith('hooks-') &&
           !item.name.startsWith('lib-')))
     const shortName = item.name.replace(
-      /^(primitives-|components-spaceui-|components-reui-base-|components-backgrounds-|components-shader-|components-orb-|components-|hooks-browser-|hooks-dom-|hooks-lifecycle-|hooks-animation-|hooks-form-|hooks-components-|hooks-utils-states-|hooks-utils-|hooks-|lib-|utils-)/,
+      /^(primitives-|components-spaceui-|components-reui-base-|components-backgrounds-|components-shader-|components-orb-|components-|interactions-|hooks-browser-|hooks-dom-|hooks-lifecycle-|hooks-animation-|hooks-form-|hooks-components-|hooks-utils-states-|hooks-utils-|hooks-|lib-|utils-)/,
       '',
     )
     const isSpaceComponent = item.name.includes('space') || item.name.startsWith('components-spaceui-')
@@ -255,15 +257,17 @@ async function buildRegistryMetaGraph(items: any[]) {
       ? `/ui-kit/hooks/${shortName}`
       : isBlock
         ? `/ui-kit/blocks/${blockCategory}`
-        : isPrimitive
-          ? `/ui-kit/primitives/${shortName}`
-          : isShaderComponent
-            ? `/ui-kit/components/shader/${shortName}`
-            : isBackgroundComponent
-              ? `/ui-kit/components/backgrounds/${shortName}`
-              : isOrbComponent
-                ? `/ui-kit/components/orb/${shortName}`
-                : `/ui-kit/components/${isSpaceComponent ? 'spaceui/' : ''}${shortName}`
+        : isInteractionComponent
+          ? `/ui-kit/interactions/${shortName}`
+          : isPrimitive
+            ? `/ui-kit/primitives/${shortName}`
+            : isShaderComponent
+              ? `/ui-kit/components/shader/${shortName}`
+              : isBackgroundComponent
+                ? `/ui-kit/components/backgrounds/${shortName}`
+                : isOrbComponent
+                  ? `/ui-kit/components/orb/${shortName}`
+                  : `/ui-kit/components/${isSpaceComponent ? 'spaceui/' : ''}${shortName}`
 
     // Calculate total transitive code size
     const allFiles = Array.from(new Set(getTransitiveFilePaths(item.name)))
@@ -322,9 +326,11 @@ async function buildRegistryMetaGraph(items: any[]) {
         : 'Hook'
       : isBlock
         ? 'Block'
-        : isPrimitive
-          ? 'Primitive'
-          : 'Component'
+        : isInteractionComponent
+          ? 'Interaction'
+          : isPrimitive
+            ? 'Primitive'
+            : 'Component'
     const mainCategory = itemCategories[0]
       ? itemCategories[0].charAt(0).toUpperCase() + itemCategories[0].slice(1)
       : fallbackCategory
@@ -347,9 +353,11 @@ async function buildRegistryMetaGraph(items: any[]) {
                   : 'hooks'
                 : isBlock
                   ? 'block'
-                  : isPrimitive
-                    ? 'primitive'
-                    : 'component',
+                  : isInteractionComponent
+                    ? 'interaction'
+                    : isPrimitive
+                      ? 'primitive'
+                      : 'component',
             ],
       createdAt: item.createdAt,
       updatedAt: item.updatedAt,
@@ -934,6 +942,10 @@ export default async function RegistryViewPage({
   const componentsPro = componentItems.filter(isItemPro).length
   const componentsFree = componentItems.length - componentsPro
 
+  const interactionItems = [...uniqueItems.values()].filter((item) => item.name.startsWith('interactions-'))
+  const interactionsPro = interactionItems.filter(isItemPro).length
+  const interactionsFree = interactionItems.length - interactionsPro
+
   const primitiveItems = [...uniqueItems.values()].filter((item) => item.name.startsWith('primitives-'))
   const primitivesPro = primitiveItems.filter(isItemPro).length
   const primitivesFree = primitiveItems.length - primitivesPro
@@ -976,13 +988,16 @@ export default async function RegistryViewPage({
   const templatesPro = showcaseTemplatesPro + templatesRegistryPro
   const templatesTotal = templatesFree + templatesPro
 
-  const totalPro = componentsPro + primitivesPro + blocksPro + templatesPro + hooksPro
-  const totalFree = componentsFree + primitivesFree + blocksFree + templatesFree + hooksFree
+  const totalPro = componentsPro + interactionsPro + primitivesPro + blocksPro + templatesPro + hooksPro
+  const totalFree = componentsFree + interactionsFree + primitivesFree + blocksFree + templatesFree + hooksFree
 
   const stats = {
     components: componentItems.length,
     componentsFree,
     componentsPro,
+    interactions: interactionItems.length,
+    interactionsFree,
+    interactionsPro,
     primitives: primitiveItems.length,
     primitivesFree,
     primitivesPro,

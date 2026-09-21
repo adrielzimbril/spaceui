@@ -148,7 +148,7 @@ export function DocsSidebar() {
   }, [pathname, sections, isItemActive])
 
   return (
-    <aside className="border-none w-64 not-lg:hidden sticky top-0 z-30 h-screen pt-2 overflow-hidden bg-background text-sm flex flex-col">
+    <aside className="border-none w-64 not-lg:hidden sticky top-0 z-30 h-screen overflow-hidden bg-background text-sm flex flex-col">
       <ScrollArea scrollFade scrollbarGutter className="w-full flex-1">
         {/* Hub Selector */}
         <Menu>
