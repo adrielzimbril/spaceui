@@ -18,7 +18,7 @@ import {
 } from '@/registry/primitives/combobox'
 import { ScrollArea } from '@/registry/primitives/scroll-area'
 import { Tabs, TabsList, TabsTab } from '@/registry/primitives/tabs'
-import { IconPlayerStop } from '@tabler/icons-react'
+import { IconCapture, IconPlayerStop } from '@tabler/icons-react'
 import { Avatar } from '@usespaceui/avatars/react'
 import { Fragment } from 'react'
 import type { SequenceTiming } from './timing'
@@ -54,6 +54,9 @@ export interface InteractionControlPanelProps {
   showTweakpane?: boolean
   onToggleTweakpane?: () => void
   timing?: SequenceTiming
+  pan?: { x: number; y: number }
+  onResetFraming?: () => void
+  onScreenshot?: () => void
 }
 
 export function InteractionControlPanel({
@@ -75,10 +78,13 @@ export function InteractionControlPanel({
   progress,
   onRecord,
   onStop,
+  onScreenshot,
   hasBinds,
   showTweakpane,
   onToggleTweakpane,
   timing,
+  pan,
+  onResetFraming,
 }: InteractionControlPanelProps) {
   return (
     <div className="flex h-full min-h-0 flex-col bg-background text-foreground">
@@ -168,7 +174,24 @@ export function InteractionControlPanel({
           <div className="flex flex-col gap-2">
             <div className="flex items-center justify-between">
               <span className="text-[0.6875rem] font-semibold text-muted-foreground">Element Zoom</span>
-              <span className="text-xs text-muted-foreground">{elementZoom.toFixed(1)}×</span>
+              <div className="flex items-center gap-2">
+                {onResetFraming && ((pan && (pan.x !== 0 || pan.y !== 0)) || elementZoom !== 1.6) && (
+                  <Button
+                    type="button"
+                    variant="ghost"
+                    size="xs"
+                    onClick={() => {
+                      tapSound()
+                      onResetFraming()
+                    }}
+                    data-space-hover="tick"
+                    className="h-5 px-1.5 text-[0.625rem] font-medium text-muted-foreground hover:text-foreground cursor-pointer"
+                  >
+                    Reset
+                  </Button>
+                )}
+                <span className="text-xs text-muted-foreground">{elementZoom.toFixed(1)}×</span>
+              </div>
             </div>
             <TickSlider
               label="Element zoom"
@@ -274,19 +297,32 @@ export function InteractionControlPanel({
               onClick={onRecord}
               data-space-hover="tick"
               size="sm"
-              full
               className="flex-1 rounded-xl font-semibold gap-2 cursor-pointer"
             >
               <span>{busy ? 'Recording…' : 'Record'}</span>
             </Button>
+            {onScreenshot && (
+              <Button
+                type="button"
+                variant="outline"
+                size="icon-lg"
+                disabled={!selected || Boolean(busy)}
+                onClick={onScreenshot}
+                data-space-hover="tick"
+                pointer
+                title="Screenshot (PNG)"
+              >
+                <IconCapture className="size-4" />
+              </Button>
+            )}
             {busy && (
               <Button
                 type="button"
                 variant="outline"
                 onClick={onStop}
                 data-space-hover="tick"
-                className="gap-2 rounded-xl"
-                size="sm"
+                size="icon-lg"
+                pointer
                 title="Stop and save what's recorded so far"
               >
                 <IconPlayerStop className="size-4" />
