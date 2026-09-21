@@ -147,7 +147,7 @@ export function InteractionRecorderPlayground({ items }: { items: InteractionRec
     bloomSound()
     setScale(1)
     setAspectRatio(1)
-    setElementZoom(1.2)
+    setElementZoom(1.5)
     setLoops(1)
     setWithSound(false)
     setShowGuide(true)
