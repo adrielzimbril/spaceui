@@ -1,4 +1,4 @@
-import { Button } from '@/registry/primitives/button'
+import { Button } from '@/registry/components/spaceui/button-squircle'
 import { Persona as Avatar } from '@/tools/components/shared/avatar/persona'
 import { MockupShaderPhoto, type MockupAvatarOptions } from './MockupPrimitives'
 import { cn } from '@/registry/lib/utils'

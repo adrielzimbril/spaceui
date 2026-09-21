@@ -14,11 +14,11 @@ import {
 } from '@usespaceui/emoji'
 import { AssetEmoji } from './asset-emoji'
 import { assetId } from './catalog'
-import { Button } from '@/registry/primitives/button'
+import { Button } from '@/registry/components/spaceui/button-squircle'
 import { Input } from '@/registry/primitives/input'
 import { ScrollArea } from '@/registry/primitives/scroll-area'
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/registry/primitives/select'
-import { Slider } from '@/registry/primitives/slider'
+import { TickSlider } from '@/registry/components/spaceui/tick-slider'
 import type { ResourceViewMode } from '@/tools/shared/types'
 import { DEFAULT_EMOJI } from './pool'
 
@@ -263,15 +263,7 @@ export function EmojiControlPanel({
           {view === 'seed' ? (
             <div className="flex flex-col gap-2">
               <span className="text-[0.6875rem] font-semibold text-muted-foreground">Size · {size}px</span>
-              <Slider
-                value={[size]}
-                min={32}
-                max={256}
-                onValueChange={(value) => {
-                  const next = Array.isArray(value) ? value[0] : value
-                  if (typeof next === 'number') setSize(next)
-                }}
-              />
+              <TickSlider label="Emoji size" value={size} min={32} max={256} onChange={setSize} showValue={false} />
             </div>
           ) : null}
         </div>

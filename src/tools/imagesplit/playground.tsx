@@ -3,7 +3,7 @@
 import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { AnimatePresence, motion, useReducedMotion } from 'motion/react'
 import { IconCut, IconDownload, IconPhoto } from '@tabler/icons-react'
-import { Button } from '@/registry/primitives/button'
+import { Button } from '@/registry/components/spaceui/button-squircle'
 import { Badge } from '@/registry/primitives/badge'
 import {
   bloomSound,

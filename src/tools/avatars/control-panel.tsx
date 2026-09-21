@@ -9,9 +9,9 @@ import {
 import { Avatar } from '@usespaceui/avatars/react'
 import { PRESET_PALETTES } from '@usespaceui/gradients'
 import { IconRefresh } from '@tabler/icons-react'
-import { Button } from '@/registry/primitives/button'
+import { Button } from '@/registry/components/spaceui/button-squircle'
 import { ScrollArea } from '@/registry/primitives/scroll-area'
-import { Slider } from '@/registry/primitives/slider'
+import { TickSlider } from '@/registry/components/spaceui/tick-slider'
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/registry/primitives/select'
 import { ToggleGroup, ToggleGroupItem } from '@/registry/primitives/toggle-group'
 import { AvatarVariantSelect, PaletteSelect } from './option-select'
@@ -160,14 +160,13 @@ export function AvatarControlPanel({
           {view === 'seed' ? (
             <div className="flex flex-col gap-2">
               <span className="text-[0.6875rem] font-semibold text-muted-foreground">Size · {size}px</span>
-              <Slider
-                value={[size]}
+              <TickSlider
+                label="Avatar size"
+                value={size}
                 min={SIZE_MIN}
                 max={SIZE_MAX}
-                onValueChange={(val) => {
-                  const next = Array.isArray(val) ? val[0] : val
-                  if (typeof next === 'number') setSize(next)
-                }}
+                onChange={setSize}
+                showValue={false}
               />
             </div>
           ) : null}

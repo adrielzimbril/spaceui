@@ -1617,6 +1617,110 @@
       }
     ]
   },
+  "agent-pipeline": {
+    "name": "interactions-agent-pipeline",
+    "shortName": "agent-pipeline",
+    "title": "Agent Pipeline",
+    "description": "An interactive multi-agent pipeline visualization with real-time physics, event logs, and playback controls.",
+    "type": "registry:component",
+    "url": "/ui-kit/interactions/agent-pipeline",
+    "category": "Interaction",
+    "categories": [
+      "interaction",
+      "agents",
+      "pipeline"
+    ],
+    "createdAt": "2026-09-21",
+    "updatedAt": "2026-09-21",
+    "isPro": true,
+    "size": "51.5 KB",
+    "rawSize": 52721,
+    "directSize": "51.5 KB",
+    "fileCount": 2,
+    "dependencies": [
+      "motion",
+      "@keyline-icons/react",
+      "@usespaceui/squishmoji",
+      "@usespaceui/sounds"
+    ],
+    "registryDependencies": [
+      "https://www.spaceui.one/r/lib-utils.json",
+      "https://www.spaceui.one/r/components-spaceui-badge-squircle.json",
+      "https://www.spaceui.one/r/primitives-scroll-area.json",
+      "https://www.spaceui.one/r/primitives-frame.json",
+      "https://www.spaceui.one/r/primitives-card.json",
+      "https://www.spaceui.one/r/components-spaceui-smooth-slider.json",
+      "https://www.spaceui.one/r/components-spaceui-blur-reveal-text.json",
+      "https://www.spaceui.one/r/hooks-utils-format-text.json"
+    ],
+    "dependents": [],
+    "related": [
+      {
+        "name": "deploy-pipeline",
+        "title": "Deploy Pipeline",
+        "description": "A self-playing deploy pipeline that advances on its own, pauses on hover, and reveals per-step detail — drop it in to turn a static log into a living status feed.",
+        "url": "/ui-kit/interactions/deploy-pipeline",
+        "category": "Interaction",
+        "categories": [
+          "interaction",
+          "developer",
+          "pipeline"
+        ]
+      }
+    ]
+  },
+  "interactions-agent-pipeline": {
+    "name": "interactions-agent-pipeline",
+    "shortName": "agent-pipeline",
+    "title": "Agent Pipeline",
+    "description": "An interactive multi-agent pipeline visualization with real-time physics, event logs, and playback controls.",
+    "type": "registry:component",
+    "url": "/ui-kit/interactions/agent-pipeline",
+    "category": "Interaction",
+    "categories": [
+      "interaction",
+      "agents",
+      "pipeline"
+    ],
+    "createdAt": "2026-09-21",
+    "updatedAt": "2026-09-21",
+    "isPro": true,
+    "size": "51.5 KB",
+    "rawSize": 52721,
+    "directSize": "51.5 KB",
+    "fileCount": 2,
+    "dependencies": [
+      "motion",
+      "@keyline-icons/react",
+      "@usespaceui/squishmoji",
+      "@usespaceui/sounds"
+    ],
+    "registryDependencies": [
+      "https://www.spaceui.one/r/lib-utils.json",
+      "https://www.spaceui.one/r/components-spaceui-badge-squircle.json",
+      "https://www.spaceui.one/r/primitives-scroll-area.json",
+      "https://www.spaceui.one/r/primitives-frame.json",
+      "https://www.spaceui.one/r/primitives-card.json",
+      "https://www.spaceui.one/r/components-spaceui-smooth-slider.json",
+      "https://www.spaceui.one/r/components-spaceui-blur-reveal-text.json",
+      "https://www.spaceui.one/r/hooks-utils-format-text.json"
+    ],
+    "dependents": [],
+    "related": [
+      {
+        "name": "deploy-pipeline",
+        "title": "Deploy Pipeline",
+        "description": "A self-playing deploy pipeline that advances on its own, pauses on hover, and reveals per-step detail — drop it in to turn a static log into a living status feed.",
+        "url": "/ui-kit/interactions/deploy-pipeline",
+        "category": "Interaction",
+        "categories": [
+          "interaction",
+          "developer",
+          "pipeline"
+        ]
+      }
+    ]
+  },
   "deploy-pipeline": {
     "name": "interactions-deploy-pipeline",
     "shortName": "deploy-pipeline",
@@ -1633,27 +1737,43 @@
     "createdAt": "2026-09-21",
     "updatedAt": "2026-09-21",
     "isPro": true,
-    "size": "11.2 KB",
-    "rawSize": 11518,
-    "directSize": "11.2 KB",
-    "fileCount": 1,
+    "size": "37.7 KB",
+    "rawSize": 38655,
+    "directSize": "37.7 KB",
+    "fileCount": 2,
     "dependencies": [
       "motion",
-      "@tabler/icons-react"
+      "@keyline-icons/react",
+      "@usespaceui/squishmoji",
+      "@usespaceui/sounds"
     ],
     "registryDependencies": [
       "https://www.spaceui.one/r/lib-utils.json",
       "https://www.spaceui.one/r/components-spaceui-timeline.json",
       "https://www.spaceui.one/r/components-spaceui-morph-icon.json",
       "https://www.spaceui.one/r/primitives-frame.json",
-      "https://www.spaceui.one/r/primitives-card.json",
-      "https://www.spaceui.one/r/primitives-badge.json",
+      "https://www.spaceui.one/r/components-spaceui-badge-squircle.json",
       "https://www.spaceui.one/r/primitives-spinner.json",
       "https://www.spaceui.one/r/primitives-avatar.json",
-      "https://www.spaceui.one/r/primitives-collapsible.json"
+      "https://www.spaceui.one/r/primitives-collapsible.json",
+      "https://www.spaceui.one/r/components-spaceui-blur-reveal-text.json",
+      "https://www.spaceui.one/r/primitives-card.json"
     ],
     "dependents": [],
-    "related": []
+    "related": [
+      {
+        "name": "agent-pipeline",
+        "title": "Agent Pipeline",
+        "description": "An interactive multi-agent pipeline visualization with real-time physics, event logs, and playback controls.",
+        "url": "/ui-kit/interactions/agent-pipeline",
+        "category": "Interaction",
+        "categories": [
+          "interaction",
+          "agents",
+          "pipeline"
+        ]
+      }
+    ]
   },
   "interactions-deploy-pipeline": {
     "name": "interactions-deploy-pipeline",
@@ -1671,27 +1791,43 @@
     "createdAt": "2026-09-21",
     "updatedAt": "2026-09-21",
     "isPro": true,
-    "size": "11.2 KB",
-    "rawSize": 11518,
-    "directSize": "11.2 KB",
-    "fileCount": 1,
+    "size": "37.7 KB",
+    "rawSize": 38655,
+    "directSize": "37.7 KB",
+    "fileCount": 2,
     "dependencies": [
       "motion",
-      "@tabler/icons-react"
+      "@keyline-icons/react",
+      "@usespaceui/squishmoji",
+      "@usespaceui/sounds"
     ],
     "registryDependencies": [
       "https://www.spaceui.one/r/lib-utils.json",
       "https://www.spaceui.one/r/components-spaceui-timeline.json",
       "https://www.spaceui.one/r/components-spaceui-morph-icon.json",
       "https://www.spaceui.one/r/primitives-frame.json",
-      "https://www.spaceui.one/r/primitives-card.json",
-      "https://www.spaceui.one/r/primitives-badge.json",
+      "https://www.spaceui.one/r/components-spaceui-badge-squircle.json",
       "https://www.spaceui.one/r/primitives-spinner.json",
       "https://www.spaceui.one/r/primitives-avatar.json",
-      "https://www.spaceui.one/r/primitives-collapsible.json"
+      "https://www.spaceui.one/r/primitives-collapsible.json",
+      "https://www.spaceui.one/r/components-spaceui-blur-reveal-text.json",
+      "https://www.spaceui.one/r/primitives-card.json"
     ],
     "dependents": [],
-    "related": []
+    "related": [
+      {
+        "name": "agent-pipeline",
+        "title": "Agent Pipeline",
+        "description": "An interactive multi-agent pipeline visualization with real-time physics, event logs, and playback controls.",
+        "url": "/ui-kit/interactions/agent-pipeline",
+        "category": "Interaction",
+        "categories": [
+          "interaction",
+          "agents",
+          "pipeline"
+        ]
+      }
+    ]
   },
   "bloop": {
     "name": "components-orb-bloop",
@@ -10388,7 +10524,7 @@
     "updatedAt": "2026-09-20",
     "isPro": true,
     "size": "11 KB",
-    "rawSize": 11300,
+    "rawSize": 11288,
     "directSize": "11 KB",
     "fileCount": 1,
     "dependencies": [],
@@ -10444,7 +10580,7 @@
     "updatedAt": "2026-09-20",
     "isPro": true,
     "size": "11 KB",
-    "rawSize": 11300,
+    "rawSize": 11288,
     "directSize": "11 KB",
     "fileCount": 1,
     "dependencies": [],

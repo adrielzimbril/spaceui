@@ -2,8 +2,8 @@
 
 import React from 'react'
 import { IconUpload } from '@tabler/icons-react'
-import { Button } from '@/registry/primitives/button'
-import { Slider } from '@/registry/primitives/slider'
+import { Button } from '@/registry/components/spaceui/button-squircle'
+import { TickSlider } from '@/registry/components/spaceui/tick-slider'
 import { Switch } from '@/registry/primitives/switch'
 import { ScrollArea } from '@/registry/primitives/scroll-area'
 import { Tabs, TabsList, TabsTab } from '@/registry/primitives/tabs'
@@ -199,7 +199,15 @@ export function OgLeftPanel({ s, set, onSelectPreset, activePresetId, onSelectSi
                 <span className="text-muted-foreground">Corner Radius</span>
                 <span className="text-muted-foreground">{s.radius}px</span>
               </div>
-              <Slider min={0} max={64} step={1} value={[s.radius]} onValueChange={(v) => handleSlider('radius', v)} />
+              <TickSlider
+                label="Corner radius"
+                min={0}
+                max={64}
+                step={1}
+                value={s.radius}
+                onChange={(v) => handleSlider('radius', v)}
+                showValue={false}
+              />
             </div>
 
             <div className="flex flex-col gap-1.5">
@@ -207,12 +215,14 @@ export function OgLeftPanel({ s, set, onSelectPreset, activePresetId, onSelectSi
                 <span className="text-muted-foreground">Inner Padding</span>
                 <span className="text-muted-foreground">{s.padding}px</span>
               </div>
-              <Slider
+              <TickSlider
+                label="Inner padding"
                 min={24}
                 max={140}
                 step={2}
-                value={[s.padding]}
-                onValueChange={(v) => handleSlider('padding', v)}
+                value={s.padding}
+                onChange={(v) => handleSlider('padding', v)}
+                showValue={false}
               />
             </div>
           </div>

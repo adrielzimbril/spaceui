@@ -3,7 +3,7 @@
 import type { ReactNode } from 'react'
 import { IconBrandFigma, IconBrandGithub, IconPuzzle } from '@tabler/icons-react'
 import { InlineInstallBar } from '@/components/docs/installation/inline-install-bar'
-import { Button } from '@/registry/primitives/button'
+import { Button } from '@/registry/components/spaceui/button-squircle'
 import { Group } from '@/registry/primitives/group'
 import type { ToolOutboundLinks } from '@/tools/shared/links'
 
@@ -53,7 +53,7 @@ export function ResourceInstallCluster({
     <div className="flex w-full min-w-0 items-center gap-1.5 md:w-auto md:gap-2">
       <InlineInstallBar className="min-w-0 flex-1 md:flex-none" packageName={packageName} isShadcn={isShadcn} />
       {outbound.length > 0 ? (
-        <Group className="inline-flex shrink-0 items-center gap-1 rounded-xl bg-background p-1 shadow-xs border border-border/40!">
+        <Group className="inline-flex shrink-0 items-center gap-1 rounded-xl bg-background p-1 border-2 border-muted">
           {outbound}
         </Group>
       ) : null}

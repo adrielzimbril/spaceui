@@ -1,4 +1,4 @@
-import { Button } from '@/registry/primitives/button'
+import { Button } from '@/registry/components/spaceui/button-squircle'
 import { IconHeart, IconMessageCircle } from '@tabler/icons-react'
 import { cn } from '@/registry/lib/utils'
 import { Persona as Avatar } from '@/tools/components/shared/avatar/persona'

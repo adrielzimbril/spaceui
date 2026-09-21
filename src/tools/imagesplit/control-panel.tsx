@@ -3,10 +3,10 @@
 import React from 'react'
 import Image from 'next/image'
 import { IconCut, IconPhoto, IconUpload } from '@tabler/icons-react'
-import { Button } from '@/registry/primitives/button'
+import { Button } from '@/registry/components/spaceui/button-squircle'
 import { ScrollArea } from '@/registry/primitives/scroll-area'
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/registry/primitives/select'
-import { Slider } from '@/registry/primitives/slider'
+import { TickSlider } from '@/registry/components/spaceui/tick-slider'
 import { Badge } from '@/registry/primitives/badge'
 import { Tabs, TabsList, TabsTab } from '@/registry/primitives/tabs'
 import { ToggleGroup, ToggleGroupItem } from '@/registry/primitives/toggle-group'
@@ -366,21 +366,20 @@ export function ImageSplitControlPanel({
               <span className="text-[0.6875rem] font-semibold text-muted-foreground">Zoom</span>
               <span className="text-[0.625rem] text-muted-foreground">{cfg.zoom.toFixed(2)}×</span>
             </div>
-            <Slider
-              value={[cfg.zoom]}
+            <TickSlider
+              label="Zoom"
+              value={cfg.zoom}
               min={1}
               max={5}
               step={0.01}
-              onValueChange={(val) => {
-                const next = Array.isArray(val) ? val[0] : val
-                if (typeof next === 'number') {
-                  const now = performance.now()
-                  if (now - lastZoomTick.current > 75) {
-                    tickSound()
-                    lastZoomTick.current = now
-                  }
-                  set('zoom', next)
+              showValue={false}
+              onChange={(next) => {
+                const now = performance.now()
+                if (now - lastZoomTick.current > 75) {
+                  tickSound()
+                  lastZoomTick.current = now
                 }
+                set('zoom', next)
               }}
             />
           </div>

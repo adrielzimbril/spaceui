@@ -1,6 +1,6 @@
 'use client'
 
-import { Slider } from '@/registry/primitives/slider'
+import { TickSlider } from '@/registry/components/spaceui/tick-slider'
 
 export function SliderRow({
   label,
@@ -26,13 +26,7 @@ export function SliderRow({
         <span className="font-semibold text-muted-foreground">{label}</span>
         <span className="tabular-nums text-muted-foreground">{displayed}</span>
       </div>
-      <Slider
-        min={min}
-        max={max}
-        step={step}
-        value={[value]}
-        onValueChange={(v) => onChange(Array.isArray(v) ? v[0] : v)}
-      />
+      <TickSlider label={label} min={min} max={max} step={step} value={value} onChange={onChange} showValue={false} />
     </div>
   )
 }

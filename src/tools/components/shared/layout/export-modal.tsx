@@ -5,7 +5,7 @@ import { IconDownload, IconX } from '@tabler/icons-react'
 import { bloomSound, slideSound } from '@/components/providers/sound-provider'
 import { DynamicCodeBlock } from '@/components/docs/code/dynamic-codeblock'
 import { CopyButton } from '@/registry/components/spaceui/copy'
-import { Button } from '@/registry/primitives/button'
+import { Button } from '@/registry/components/spaceui/button-squircle'
 import {
   Drawer,
   DrawerClose,

@@ -40,6 +40,7 @@ type LayoutModeContextValue = {
   cycleMode: () => void
   isSplit: boolean
   isStandard: boolean
+  isInteractions: boolean
   activePreview: ActivePreviewInfo | null
   setActivePreview: (info: ActivePreviewInfo | null) => void
   registerDefaultPreview: (info: ActivePreviewInfo, isPriority?: boolean) => void
@@ -61,6 +62,7 @@ const LayoutModeContext = createContext<LayoutModeContextValue>({
   cycleMode: () => {},
   isSplit: false,
   isStandard: true,
+  isInteractions: false,
   activePreview: null,
   setActivePreview: () => {},
   registerDefaultPreview: () => {},
@@ -136,6 +138,16 @@ export function LayoutModeProvider({
   }, [])
 
   const routeDefaults = useMemo(() => getRouteLayoutDefaults(pathname), [pathname])
+
+  const isInteractions = useMemo(() => {
+    return Boolean(
+      pathname?.startsWith('/interactions') ||
+      pathname?.startsWith('/library/interactions') ||
+      pathname?.includes('/interactions') ||
+      activePreview?.name?.startsWith('interactions-') ||
+      activePreview?.componentGroup === 'interactions',
+    )
+  }, [pathname, activePreview?.name, activePreview?.componentGroup])
 
   // Determine whether mode switching is allowed on the current page
   const isModeLocked = Boolean(
@@ -265,6 +277,7 @@ export function LayoutModeProvider({
       cycleMode,
       isSplit: mode === Mode.split,
       isStandard: mode === Mode.standard,
+      isInteractions,
       activePreview,
       setActivePreview,
       registerDefaultPreview,
@@ -283,6 +296,7 @@ export function LayoutModeProvider({
       userPreferredMode,
       setMode,
       cycleMode,
+      isInteractions,
       activePreview,
       registerDefaultPreview,
       pageConstraint,

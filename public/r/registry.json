@@ -929,6 +929,108 @@
       "updatedAt": "2026-08-21"
     },
     {
+      "name": "interactions-agent-pipeline",
+      "type": "registry:component",
+      "title": "Agent Pipeline",
+      "description": "An interactive multi-agent pipeline visualization with real-time physics, event logs, and playback controls.",
+      "isPro": true,
+      "dependencies": [
+        "motion",
+        "@keyline-icons/react",
+        "@usespaceui/squishmoji",
+        "@usespaceui/sounds"
+      ],
+      "registryDependencies": [
+        "https://www.spaceui.one/r/lib-utils.json",
+        "https://www.spaceui.one/r/components-spaceui-badge-squircle.json",
+        "https://www.spaceui.one/r/primitives-scroll-area.json",
+        "https://www.spaceui.one/r/primitives-frame.json",
+        "https://www.spaceui.one/r/primitives-card.json",
+        "https://www.spaceui.one/r/components-spaceui-smooth-slider.json",
+        "https://www.spaceui.one/r/components-spaceui-blur-reveal-text.json",
+        "https://www.spaceui.one/r/hooks-utils-format-text.json"
+      ],
+      "categories": [
+        "interaction",
+        "agents",
+        "pipeline"
+      ],
+      "meta": {
+        "cycleDurationMs": 12300,
+        "demoProps": {
+          "animation": {
+            "value": "active",
+            "options": {
+              "Active": "active",
+              "Inactive": "inactive"
+            }
+          },
+          "preset": {
+            "type": "select",
+            "value": "incident",
+            "options": {
+              "Incident": "incident",
+              "Code Review": "codereview",
+              "Support": "support",
+              "Growth": "growth"
+            }
+          },
+          "cycleFlows": {
+            "value": true,
+            "dependsOn": {
+              "animation": "active"
+            }
+          },
+          "flow": {
+            "type": "select",
+            "value": "success",
+            "options": {
+              "Success": "success",
+              "Error": "error"
+            },
+            "dependsOn": {
+              "cycleFlows": false
+            }
+          },
+          "autoPlay": {
+            "value": true,
+            "dependsOn": {
+              "animation": "active"
+            }
+          },
+          "pauseOnHover": {
+            "value": true,
+            "dependsOn": {
+              "animation": "active"
+            }
+          },
+          "speed": {
+            "value": 1,
+            "min": 0.25,
+            "max": 3,
+            "step": 0.25,
+            "dependsOn": {
+              "animation": "active"
+            }
+          }
+        }
+      },
+      "files": [
+        {
+          "path": "src/registry/components/interactions/agent-pipeline/index.tsx",
+          "type": "registry:component",
+          "target": "components/interactions/agent-pipeline.tsx"
+        },
+        {
+          "path": "src/registry/components/interactions/agent-pipeline/data.ts",
+          "type": "registry:component",
+          "target": "components/interactions/agent-pipeline-data.ts"
+        }
+      ],
+      "createdAt": "2026-09-21",
+      "updatedAt": "2026-09-21"
+    },
+    {
       "name": "interactions-deploy-pipeline",
       "type": "registry:component",
       "title": "Deploy Pipeline",
@@ -936,18 +1038,21 @@
       "isPro": true,
       "dependencies": [
         "motion",
-        "@tabler/icons-react"
+        "@keyline-icons/react",
+        "@usespaceui/squishmoji",
+        "@usespaceui/sounds"
       ],
       "registryDependencies": [
         "https://www.spaceui.one/r/lib-utils.json",
         "https://www.spaceui.one/r/components-spaceui-timeline.json",
         "https://www.spaceui.one/r/components-spaceui-morph-icon.json",
         "https://www.spaceui.one/r/primitives-frame.json",
-        "https://www.spaceui.one/r/primitives-card.json",
-        "https://www.spaceui.one/r/primitives-badge.json",
+        "https://www.spaceui.one/r/components-spaceui-badge-squircle.json",
         "https://www.spaceui.one/r/primitives-spinner.json",
         "https://www.spaceui.one/r/primitives-avatar.json",
-        "https://www.spaceui.one/r/primitives-collapsible.json"
+        "https://www.spaceui.one/r/primitives-collapsible.json",
+        "https://www.spaceui.one/r/components-spaceui-blur-reveal-text.json",
+        "https://www.spaceui.one/r/primitives-card.json"
       ],
       "categories": [
         "interaction",
@@ -955,14 +1060,44 @@
         "pipeline"
       ],
       "meta": {
+        "cycleDurationMs": 16700,
         "demoProps": {
+          "animation": {
+            "value": "active",
+            "options": {
+              "Active": "active",
+              "Inactive": "inactive"
+            }
+          },
+          "cycleFlows": {
+            "value": true,
+            "dependsOn": {
+              "animation": "active"
+            }
+          },
+          "flow": {
+            "type": "select",
+            "value": "production",
+            "options": {
+              "Production": "production",
+              "Test Failed": "test_failed",
+              "Canary Rollback": "canary_rollback",
+              "Hotfix": "hotfix"
+            },
+            "dependsOn": {
+              "cycleFlows": false
+            }
+          },
           "autoPlay": {
-            "value": true
+            "value": true,
+            "dependsOn": {
+              "animation": "active"
+            }
           },
           "pauseOnHover": {
             "value": true,
             "dependsOn": {
-              "autoPlay": true
+              "animation": "active"
             }
           },
           "speed": {
@@ -971,7 +1106,7 @@
             "max": 4,
             "step": 0.25,
             "dependsOn": {
-              "autoPlay": true
+              "animation": "active"
             }
           }
         }
@@ -981,6 +1116,11 @@
           "path": "src/registry/components/interactions/deploy-pipeline/index.tsx",
           "type": "registry:component",
           "target": "components/interactions/deploy-pipeline.tsx"
+        },
+        {
+          "path": "src/registry/components/interactions/deploy-pipeline/data.ts",
+          "type": "registry:component",
+          "target": "components/interactions/deploy-pipeline-data.ts"
         }
       ],
       "createdAt": "2026-09-21",

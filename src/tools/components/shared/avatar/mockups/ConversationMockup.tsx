@@ -1,7 +1,7 @@
 import { IconHeart, IconMessageCircle } from '@tabler/icons-react'
 import { Persona as Avatar } from '@/tools/components/shared/avatar/persona'
 import type { MockupAvatarOptions } from './MockupPrimitives'
-import { Button } from '@/registry/primitives/button'
+import { Button } from '@/registry/components/spaceui/button-squircle'
 import { cn } from '@/registry/lib/utils'
 
 interface ConversationUser {

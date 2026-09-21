@@ -15,6 +15,7 @@ import { getDocMetadata } from '@/lib/docs-metadata'
 import { PageLayoutSync } from '@/components/docs/layout/page-layout-sync'
 import { ComponentPreview } from '@/components/docs/preview/preview'
 import { normalizePreviewConfig, Mode } from '@/config/preview-config'
+import { OpenRunde } from '@/registry/lib/fonts/open-runde'
 import { cn } from '@/registry/lib/utils'
 
 export function generateStaticParams() {
@@ -96,6 +97,10 @@ export default async function Page(props: { params: Promise<{ slug?: string[] }>
     params.slug?.[0] === 'templates' ||
     page.url.startsWith('/templates') ||
     Boolean(previewConfig?.name.startsWith('template-'))
+  const isInteractions =
+    params.slug?.[0] === 'interactions' ||
+    page.url.startsWith('/interactions') ||
+    page.url.startsWith('/library/interactions')
 
   return (
     <>
@@ -106,7 +111,17 @@ export default async function Page(props: { params: Promise<{ slug?: string[] }>
         preview={showCatalog ? null : pageData.preview}
         title={pageData.title}
       />
-      <div className="flex items-stretch text-[1.05rem] sm:text-[15px] xl:w-full">
+      <div
+        className={cn(
+          'flex items-stretch text-[1.05rem] sm:text-[15px] xl:w-full',
+          isInteractions &&
+            cn(
+              OpenRunde.variable,
+              'font-open-runde!',
+              '[--font-body:var(--font-open-runde),sans-serif]! [--font-heading:var(--font-open-runde),sans-serif]! [--font-sans:var(--font-open-runde),sans-serif]!',
+            ),
+        )}
+      >
         {/* Main Content Column */}
         <div className="flex min-w-0 flex-1 flex-col">
           <div

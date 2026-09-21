@@ -133,6 +133,7 @@ export function PlaygroundToolbar({
           <IconArrowsMaximize className="size-4" />
         </ToolbarButton>
       )}
+
       {/* 3. Open in new tab / window (Full immersion / Respects open prop from standard mode) */}
       {open !== false && (
         <ToolbarButton
@@ -142,6 +143,13 @@ export function PlaygroundToolbar({
           }}
         >
           <IconExternalLink className="size-4" />
+        </ToolbarButton>
+      )}
+
+      {/* 2. Replay / Reset animation (shown by default if component has tweakpane binds or restart is enabled) */}
+      {(restart || hasBinds) && (
+        <ToolbarButton label={hasBinds ? 'Reset controls & replay' : 'Replay animation'} onClick={onReplay}>
+          <IconRotateClockwise className="size-4" />
         </ToolbarButton>
       )}
 
@@ -159,13 +167,6 @@ export function PlaygroundToolbar({
           {themeOverride !== 'system' && effectiveTheme === 'dark' && <IconMoon className="size-4" />}
         </MorphIcon>
       </ToolbarButton>
-
-      {/* 2. Replay / Reset animation (shown by default if component has tweakpane binds or restart is enabled) */}
-      {(restart || hasBinds) && (
-        <ToolbarButton label={hasBinds ? 'Reset controls & replay' : 'Replay animation'} onClick={onReplay}>
-          <IconRotateClockwise className="size-4" />
-        </ToolbarButton>
-      )}
 
       {/* 5. Tweakpane config props (only if component has configurable binds) */}
       {hasBinds && onToggleTweakpane && (

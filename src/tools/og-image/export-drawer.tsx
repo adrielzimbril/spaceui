@@ -15,9 +15,9 @@ import {
 } from '@tabler/icons-react'
 import { toCanvas, toPng } from 'html-to-image'
 import { ArrayBufferTarget, Muxer } from 'mp4-muxer'
-import { Button } from '@/registry/primitives/button'
+import { Button } from '@/registry/components/spaceui/button-squircle'
 import { Badge } from '@/registry/primitives/badge'
-import { Slider } from '@/registry/primitives/slider'
+import { TickSlider } from '@/registry/components/spaceui/tick-slider'
 import { Switch } from '@/registry/primitives/switch'
 import { Tabs, TabsList, TabsPanel, TabsTab } from '@/registry/primitives/tabs'
 import {
@@ -585,12 +585,14 @@ export const metadata: Metadata = {
               <div className="flex items-center justify-between text-xs pt-1">
                 <span className="text-muted-foreground">Loops ({loopCount}×)</span>
                 <div className="w-40">
-                  <Slider
+                  <TickSlider
+                    label="Loop count"
                     min={1}
                     max={5}
                     step={1}
-                    value={[loopCount]}
-                    onValueChange={(v) => setLoopCount(Array.isArray(v) ? v[0] : v)}
+                    value={loopCount}
+                    onChange={setLoopCount}
+                    showValue={false}
                   />
                 </div>
               </div>

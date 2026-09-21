@@ -3,5 +3,5 @@
   "description": "Components that never sit still",
   "icon": "Sparkles",
   "root": true,
-  "pages": ["---Developer---", "deploy-pipeline"]
+  "pages": ["---Developer---", "deploy-pipeline", "agent-pipeline"]
 }

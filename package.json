@@ -72,6 +72,7 @@
     "@floating-ui/react": "^0.27.20",
     "@getbrevo/brevo": "^3.0.4",
     "@hookform/resolvers": "^5.9.1",
+    "@keyline-icons/react": "^1.0.0",
     "@microlink/mql": "^0.17.1",
     "@number-flow/react": "^0.6.2",
     "@paper-design/shaders-react": "0.0.78",

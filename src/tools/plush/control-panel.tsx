@@ -3,8 +3,8 @@
 import React, { useRef } from 'react'
 import Image from 'next/image'
 import { IconSparkles, IconUpload, IconDownload } from '@tabler/icons-react'
-import { Button } from '@/registry/primitives/button'
-import { Slider } from '@/registry/primitives/slider'
+import { Button } from '@/registry/components/spaceui/button-squircle'
+import { TickSlider } from '@/registry/components/spaceui/tick-slider'
 import { Switch } from '@/registry/primitives/switch'
 import { ScrollArea } from '@/registry/primitives/scroll-area'
 import { ToggleGroup, ToggleGroupItem } from '@/registry/primitives/toggle-group'
@@ -230,12 +230,14 @@ export function PlushControlPanel({
                 <span className="text-muted-foreground">Roundness</span>
                 <span className="text-muted-foreground">{(config.roundness * 100).toFixed(0)}%</span>
               </div>
-              <Slider
+              <TickSlider
+                label="Roundness"
                 min={0}
                 max={1}
                 step={0.02}
-                value={[config.roundness]}
-                onValueChange={(val) => handleSlider('roundness', val)}
+                value={config.roundness}
+                onChange={(val) => handleSlider('roundness', val)}
+                showValue={false}
               />
             </div>
 
@@ -244,12 +246,14 @@ export function PlushControlPanel({
                 <span className="text-muted-foreground">Corner Radius</span>
                 <span className="text-muted-foreground">{config.cornerRadius.toFixed(2)}</span>
               </div>
-              <Slider
+              <TickSlider
+                label="Corner radius"
                 min={0.01}
                 max={0.4}
                 step={0.01}
-                value={[config.cornerRadius]}
-                onValueChange={(val) => handleSlider('cornerRadius', val)}
+                value={config.cornerRadius}
+                onChange={(val) => handleSlider('cornerRadius', val)}
+                showValue={false}
               />
             </div>
 
@@ -258,12 +262,14 @@ export function PlushControlPanel({
                 <span className="text-muted-foreground">Puffiness & Inflation</span>
                 <span className="text-muted-foreground">{(config.puffiness * 100).toFixed(0)}%</span>
               </div>
-              <Slider
+              <TickSlider
+                label="Puffiness"
                 min={0}
                 max={1}
                 step={0.02}
-                value={[config.puffiness]}
-                onValueChange={(val) => handleSlider('puffiness', val)}
+                value={config.puffiness}
+                onChange={(val) => handleSlider('puffiness', val)}
+                showValue={false}
               />
             </div>
           </div>
@@ -320,12 +326,14 @@ export function PlushControlPanel({
                 <span className="text-muted-foreground">Strand Length</span>
                 <span className="text-muted-foreground">{config.furSize.toFixed(2)}</span>
               </div>
-              <Slider
+              <TickSlider
+                label="Strand length"
                 min={0.4}
                 max={1.8}
                 step={0.05}
-                value={[config.furSize]}
-                onValueChange={(val) => handleSlider('furSize', val)}
+                value={config.furSize}
+                onChange={(val) => handleSlider('furSize', val)}
+                showValue={false}
               />
             </div>
 
@@ -334,12 +342,14 @@ export function PlushControlPanel({
                 <span className="text-muted-foreground">Fiber Thickness</span>
                 <span className="text-muted-foreground">{config.furThickness.toFixed(2)}</span>
               </div>
-              <Slider
+              <TickSlider
+                label="Fiber thickness"
                 min={0.4}
                 max={2.0}
                 step={0.05}
-                value={[config.furThickness]}
-                onValueChange={(val) => handleSlider('furThickness', val)}
+                value={config.furThickness}
+                onChange={(val) => handleSlider('furThickness', val)}
+                showValue={false}
               />
             </div>
 
@@ -348,12 +358,14 @@ export function PlushControlPanel({
                 <span className="text-muted-foreground">Rim Sheen & Highlights</span>
                 <span className="text-muted-foreground">{config.furHighlight.toFixed(2)}</span>
               </div>
-              <Slider
+              <TickSlider
+                label="Rim sheen and highlights"
                 min={0}
                 max={1}
                 step={0.05}
-                value={[config.furHighlight]}
-                onValueChange={(val) => handleSlider('furHighlight', val)}
+                value={config.furHighlight}
+                onChange={(val) => handleSlider('furHighlight', val)}
+                showValue={false}
               />
             </div>
 
@@ -362,12 +374,14 @@ export function PlushControlPanel({
                 <span className="text-muted-foreground">Artwork Dye Opacity</span>
                 <span className="text-muted-foreground">{Math.round(config.iconOpacity * 100)}%</span>
               </div>
-              <Slider
+              <TickSlider
+                label="Artwork dye opacity"
                 min={0}
                 max={1}
                 step={0.05}
-                value={[config.iconOpacity]}
-                onValueChange={(val) => handleSlider('iconOpacity', val)}
+                value={config.iconOpacity}
+                onChange={(val) => handleSlider('iconOpacity', val)}
+                showValue={false}
               />
             </div>
           </div>
@@ -380,12 +394,14 @@ export function PlushControlPanel({
                 <span className="text-muted-foreground">Petting Radius</span>
                 <span className="text-muted-foreground">{config.handSize.toFixed(2)}</span>
               </div>
-              <Slider
+              <TickSlider
+                label="Petting radius"
                 min={0.5}
                 max={2.0}
                 step={0.05}
-                value={[config.handSize]}
-                onValueChange={(val) => handleSlider('handSize', val)}
+                value={config.handSize}
+                onChange={(val) => handleSlider('handSize', val)}
+                showValue={false}
               />
             </div>
 
@@ -394,12 +410,14 @@ export function PlushControlPanel({
                 <span className="text-muted-foreground">Indent Pressure</span>
                 <span className="text-muted-foreground">{config.pressure.toFixed(2)}</span>
               </div>
-              <Slider
+              <TickSlider
+                label="Indent pressure"
                 min={0.2}
                 max={1.8}
                 step={0.05}
-                value={[config.pressure]}
-                onValueChange={(val) => handleSlider('pressure', val)}
+                value={config.pressure}
+                onChange={(val) => handleSlider('pressure', val)}
+                showValue={false}
               />
             </div>
           </div>

@@ -7,7 +7,7 @@ import { getFlagMetadata } from './catalog'
 import { resolveFlagUrl, snippetFor } from './cdn'
 import type { FlagMode, FlagShape } from './types'
 import { bloomSound } from '@/components/providers/sound-provider'
-import { Button } from '@/registry/primitives/button'
+import { Button } from '@/registry/components/spaceui/button-squircle'
 import { Select, SelectItem, SelectPopup, SelectTrigger, SelectValue } from '@/registry/primitives/select'
 import { ResourceExportModal, type ExportFormat } from '@/tools/components/shared/layout/export-modal'
 

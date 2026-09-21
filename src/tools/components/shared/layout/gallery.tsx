@@ -3,7 +3,7 @@
 import type { ReactNode } from 'react'
 import { useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react'
 import { useVirtualizer } from '@tanstack/react-virtual'
-import { Button } from '@/registry/primitives/button'
+import { Button } from '@/registry/components/spaceui/button-squircle'
 import { ScrollArea } from '@/registry/primitives/scroll-area'
 import { useMediaQuery } from '@/registry/hooks/browser/use-media-query'
 import { useResourceDesktop } from '@/tools/components/shared/layout/viewport'

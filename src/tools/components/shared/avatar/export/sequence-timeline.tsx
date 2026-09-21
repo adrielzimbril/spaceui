@@ -6,7 +6,7 @@ import { SortableContext, arrayMove, useSortable, verticalListSortingStrategy } 
 import { CSS } from '@dnd-kit/utilities'
 import { IconChevronRight, IconGripVertical, IconPlus, IconTrash } from '@tabler/icons-react'
 import { Squishmoji } from '@usespaceui/squishmoji/react'
-import { Button } from '@/registry/primitives/button'
+import { Button } from '@/registry/components/spaceui/button-squircle'
 import { Toggle } from '@/registry/primitives/toggle'
 import { ScrollArea } from '@/registry/primitives/scroll-area'
 import { cn } from '@/registry/lib/utils'

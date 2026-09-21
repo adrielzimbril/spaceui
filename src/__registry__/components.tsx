@@ -20,6 +20,7 @@ export const componentGroups: Record<string, string> = {
   "block-stats-performance": "blocks-stats",
   "components-backgrounds-bubble": "components-backgrounds",
   "components-backgrounds-gradient": "components-backgrounds",
+  "interactions-agent-pipeline": "components-interactions",
   "interactions-deploy-pipeline": "components-interactions",
   "components-orb-bloop": "components-orb",
   "components-orb-generating": "components-orb",

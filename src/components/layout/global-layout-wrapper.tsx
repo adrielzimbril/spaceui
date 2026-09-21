@@ -11,10 +11,12 @@ import { LayoutModeProvider, useLayoutMode, Mode, type LayoutMode } from '@/comp
 import { SquircleProvider } from '@/components/providers/squircle-provider'
 import { FloatNav } from '@/components/layout/float-nav'
 import { ThemeLockProvider } from '@/components/providers/theme-lock-provider'
+import { FloatNavProvider, useFloatNavRequested } from '@/components/providers/float-nav-provider'
 
 function GlobalLayoutContent({ children }: { children: React.ReactNode }) {
   const pathname = usePathname()
   const { isStandard, isImmersive } = useLayoutMode()
+  const toolWantsFloatNav = useFloatNavRequested()
   const isResourceStudio = pathname.startsWith('/tools/')
   const marketingRoutes = ['/', '/tools', '/pricing', '/terms', '/privacy']
 
@@ -23,8 +25,20 @@ function GlobalLayoutContent({ children }: { children: React.ReactNode }) {
   const isMarketing =
     marketingRoutes.includes(pathname) || marketingStartsWithRoutes.some((route) => pathname.startsWith(route))
 
-  if (isImmersive || isResourceStudio) {
+  if (isImmersive) {
     return <>{children}</>
+  }
+
+  // /tools/* pages use their own ResourceStudio toolbar and skip SiteHeader —
+  // a tool opts back into the global FloatNav via useFloatNav() instead of
+  // this route check hardcoding per-tool exceptions.
+  if (isResourceStudio) {
+    return (
+      <>
+        {children}
+        {toolWantsFloatNav && <FloatNav />}
+      </>
+    )
   }
 
   if (isMarketing) {
@@ -74,7 +88,9 @@ export function GlobalLayoutWrapper({
         <BrandColorProvider>
           <BundleProvider>
             <LayoutModeProvider initialMode={initialLayoutMode}>
-              <GlobalLayoutContent>{children}</GlobalLayoutContent>
+              <FloatNavProvider>
+                <GlobalLayoutContent>{children}</GlobalLayoutContent>
+              </FloatNavProvider>
             </LayoutModeProvider>
           </BundleProvider>
         </BrandColorProvider>

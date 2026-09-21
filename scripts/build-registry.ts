@@ -633,6 +633,7 @@ export const index: Record<string, any> = {`
         return { default: Comp };
       });
       LazyComp.demoProps = ${JSON.stringify(item?.meta?.demoProps ?? {})};
+      LazyComp.cycleDurationMs = ${JSON.stringify(item?.meta?.cycleDurationMs ?? null)};
       return LazyComp;
     })()`
         : 'null'

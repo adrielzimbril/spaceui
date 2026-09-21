@@ -55,6 +55,11 @@ export function PageLayoutSync({ mode = Mode.both, defaultMode, path = '', previ
     const normalizedPath = path.startsWith('/') ? path : `/${path}`
     const isTemplate = config.name.startsWith('template-') || normalizedPath.includes('/templates')
     const isBlock = config.name.startsWith('block-') || Boolean(componentGroup?.includes('block'))
+    const isInteraction =
+      config.name.startsWith('interactions-') ||
+      normalizedPath.includes('/interactions') ||
+      pathname.includes('/interactions') ||
+      Boolean(componentGroup?.includes('interactions'))
     const useIframe = config.iframe !== undefined ? config.iframe : isTemplate || isBlock
     const effectiveContained = getEffectiveContained(config.contained, config.container, config.name, componentGroup)
     const effectiveOpen = config.open ?? !effectiveContained
@@ -69,7 +74,7 @@ export function PageLayoutSync({ mode = Mode.both, defaultMode, path = '', previ
         previewName: config.name,
         contained: effectiveContained,
         open: effectiveOpen,
-        restart: config.restart,
+        restart: config.restart ?? isInteraction,
         bigScreen: config.bigScreen,
         componentGroup,
         externalUrl: config.externalUrl,

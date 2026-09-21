@@ -5,7 +5,7 @@ import { IconRefresh } from '@tabler/icons-react'
 import { bloomSound } from '@/components/providers/sound-provider'
 import { DynamicCodeBlock } from '@/components/docs/code/dynamic-codeblock'
 import { InstallCommandBlock } from '@/components/docs/installation/install-command-block'
-import { Button } from '@/registry/primitives/button'
+import { Button } from '@/registry/components/spaceui/button-squircle'
 import { Input } from '@/registry/primitives/input'
 
 export function ResourceSeedView({

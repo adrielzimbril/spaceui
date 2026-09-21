@@ -5,7 +5,7 @@ import { IconExternalLink } from '@tabler/icons-react'
 import { createAvatar, type AvatarEffect, type AvatarVariant } from '@usespaceui/avatars'
 import { Avatar } from '@usespaceui/avatars/react'
 import { bloomSound } from '@/components/providers/sound-provider'
-import { Button } from '@/registry/primitives/button'
+import { Button } from '@/registry/components/spaceui/button-squircle'
 import { Select, SelectItem, SelectPopup, SelectTrigger, SelectValue } from '@/registry/primitives/select'
 import { ResourceExportModal, type ExportFormat } from '@/tools/components/shared/layout/export-modal'
 

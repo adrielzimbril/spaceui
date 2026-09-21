@@ -3,7 +3,7 @@
 import React, { useCallback, useEffect, useRef, useState } from 'react'
 import { IconSparkles, IconUpload, IconHandFinger, IconCamera, IconFocus2 } from '@tabler/icons-react'
 import { ToolbarButton } from '@/components/playground/playground-toolbar-button'
-import { Button } from '@/registry/primitives/button'
+import { Button } from '@/registry/components/spaceui/button-squircle'
 import { Badge } from '@/registry/primitives/badge'
 import {
   confirmSound,

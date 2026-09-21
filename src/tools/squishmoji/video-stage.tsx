@@ -3,7 +3,7 @@
 import type { ReactNode, RefObject } from 'react'
 import { IconRefresh } from '@tabler/icons-react'
 import { bloomSound } from '@/components/providers/sound-provider'
-import { Button } from '@/registry/primitives/button'
+import { Button } from '@/registry/components/spaceui/button-squircle'
 import { Input } from '@/registry/primitives/input'
 import type { VideoAspect } from '@/tools/components/shared/avatar/export/dims'
 import { cn } from '@/registry/lib/utils'

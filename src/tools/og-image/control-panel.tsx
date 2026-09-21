@@ -15,8 +15,8 @@ import {
   IconUpload,
   IconX,
 } from '@tabler/icons-react'
-import { Button } from '@/registry/primitives/button'
-import { Slider } from '@/registry/primitives/slider'
+import { Button } from '@/registry/components/spaceui/button-squircle'
+import { TickSlider } from '@/registry/components/spaceui/tick-slider'
 import { Switch } from '@/registry/primitives/switch'
 import { Input } from '@/registry/primitives/input'
 import { ScrollArea } from '@/registry/primitives/scroll-area'
@@ -334,12 +334,14 @@ export function OgControlPanel({
                       <span className="text-muted-foreground">Image Dim / Tint</span>
                       <span className="text-muted-foreground">{s.bgImageDim}%</span>
                     </div>
-                    <Slider
+                    <TickSlider
+                      label="Image dim / tint"
                       min={0}
                       max={100}
                       step={1}
-                      value={[s.bgImageDim]}
-                      onValueChange={(v) => handleSlider('bgImageDim', v)}
+                      value={s.bgImageDim}
+                      onChange={(v) => handleSlider('bgImageDim', v)}
+                      showValue={false}
                     />
                   </div>
 
@@ -348,12 +350,14 @@ export function OgControlPanel({
                       <span className="text-muted-foreground">Image Scale</span>
                       <span className="text-muted-foreground">{s.bgScale}%</span>
                     </div>
-                    <Slider
+                    <TickSlider
+                      label="Image scale"
                       min={80}
                       max={160}
                       step={1}
-                      value={[s.bgScale]}
-                      onValueChange={(v) => handleSlider('bgScale', v)}
+                      value={s.bgScale}
+                      onChange={(v) => handleSlider('bgScale', v)}
+                      showValue={false}
                     />
                   </div>
 
@@ -499,12 +503,14 @@ export function OgControlPanel({
                     <span className="text-muted-foreground">Gradient Angle</span>
                     <span className="text-muted-foreground">{s.angle}°</span>
                   </div>
-                  <Slider
+                  <TickSlider
+                    label="Gradient angle"
                     min={0}
                     max={360}
                     step={5}
-                    value={[s.angle]}
-                    onValueChange={(v) => handleSlider('angle', v)}
+                    value={s.angle}
+                    onChange={(v) => handleSlider('angle', v)}
+                    showValue={false}
                   />
                 </div>
               )}
@@ -518,12 +524,14 @@ export function OgControlPanel({
                       <span className="text-muted-foreground">Orb Blur</span>
                       <span className="text-muted-foreground">{s.orbBlur}px</span>
                     </div>
-                    <Slider
+                    <TickSlider
+                      label="Orb blur"
                       min={20}
                       max={200}
                       step={2}
-                      value={[s.orbBlur]}
-                      onValueChange={(v) => handleSlider('orbBlur', v)}
+                      value={s.orbBlur}
+                      onChange={(v) => handleSlider('orbBlur', v)}
+                      showValue={false}
                     />
                   </div>
                   <div className="flex flex-col gap-1.5">
@@ -531,12 +539,14 @@ export function OgControlPanel({
                       <span className="text-muted-foreground">Orb Opacity</span>
                       <span className="text-muted-foreground">{s.orbOpacity}%</span>
                     </div>
-                    <Slider
+                    <TickSlider
+                      label="Orb opacity"
                       min={10}
                       max={100}
                       step={1}
-                      value={[s.orbOpacity]}
-                      onValueChange={(v) => handleSlider('orbOpacity', v)}
+                      value={s.orbOpacity}
+                      onChange={(v) => handleSlider('orbOpacity', v)}
+                      showValue={false}
                     />
                   </div>
                   <div className="flex flex-col gap-1.5">
@@ -544,12 +554,14 @@ export function OgControlPanel({
                       <span className="text-muted-foreground">Orb Size</span>
                       <span className="text-muted-foreground">{s.orbSize}%</span>
                     </div>
-                    <Slider
+                    <TickSlider
+                      label="Orb size"
                       min={60}
                       max={160}
                       step={1}
-                      value={[s.orbSize]}
-                      onValueChange={(v) => handleSlider('orbSize', v)}
+                      value={s.orbSize}
+                      onChange={(v) => handleSlider('orbSize', v)}
+                      showValue={false}
                     />
                   </div>
                 </div>
@@ -668,12 +680,14 @@ export function OgControlPanel({
                           <span className="text-muted-foreground">Item Size</span>
                           <span className="text-muted-foreground">{s.showcaseSize}px</span>
                         </div>
-                        <Slider
+                        <TickSlider
+                          label="Item size"
                           min={32}
                           max={96}
                           step={2}
-                          value={[s.showcaseSize]}
-                          onValueChange={(v) => handleSlider('showcaseSize', v)}
+                          value={s.showcaseSize}
+                          onChange={(v) => handleSlider('showcaseSize', v)}
+                          showValue={false}
                         />
                       </div>
 
@@ -682,12 +696,14 @@ export function OgControlPanel({
                           <span className="text-muted-foreground">Item Count</span>
                           <span className="text-muted-foreground">{s.showcaseCount}</span>
                         </div>
-                        <Slider
+                        <TickSlider
+                          label="Item count"
                           min={8}
                           max={36}
                           step={1}
-                          value={[s.showcaseCount]}
-                          onValueChange={(v) => handleSlider('showcaseCount', v)}
+                          value={s.showcaseCount}
+                          onChange={(v) => handleSlider('showcaseCount', v)}
+                          showValue={false}
                         />
                       </div>
 
@@ -696,12 +712,14 @@ export function OgControlPanel({
                           <span className="text-muted-foreground">Item Spacing Gap</span>
                           <span className="text-muted-foreground">{s.showcaseGap}px</span>
                         </div>
-                        <Slider
+                        <TickSlider
+                          label="Item spacing gap"
                           min={8}
                           max={32}
                           step={2}
-                          value={[s.showcaseGap]}
-                          onValueChange={(v) => handleSlider('showcaseGap', v)}
+                          value={s.showcaseGap}
+                          onChange={(v) => handleSlider('showcaseGap', v)}
+                          showValue={false}
                         />
                       </div>
 
@@ -873,12 +891,14 @@ export function OgControlPanel({
                     <span className="text-muted-foreground">Title Font Size</span>
                     <span className="text-muted-foreground">{s.titleSize}px</span>
                   </div>
-                  <Slider
+                  <TickSlider
+                    label="Title font size"
                     min={32}
                     max={140}
                     step={1}
-                    value={[s.titleSize]}
-                    onValueChange={(v) => handleSlider('titleSize', v)}
+                    value={s.titleSize}
+                    onChange={(v) => handleSlider('titleSize', v)}
+                    showValue={false}
                   />
                 </div>
 
@@ -887,12 +907,14 @@ export function OgControlPanel({
                     <span className="text-muted-foreground">Title Weight</span>
                     <span className="text-muted-foreground">{s.titleWeight}</span>
                   </div>
-                  <Slider
+                  <TickSlider
+                    label="Title weight"
                     min={400}
                     max={800}
                     step={100}
-                    value={[s.titleWeight]}
-                    onValueChange={(v) => handleSlider('titleWeight', v)}
+                    value={s.titleWeight}
+                    onChange={(v) => handleSlider('titleWeight', v)}
+                    showValue={false}
                   />
                 </div>
 
@@ -901,12 +923,14 @@ export function OgControlPanel({
                     <span className="text-muted-foreground">Tracking (Spacing)</span>
                     <span className="text-muted-foreground">{s.titleTracking}%</span>
                   </div>
-                  <Slider
+                  <TickSlider
+                    label="Tracking (spacing)"
                     min={-10}
                     max={2}
                     step={0.2}
-                    value={[s.titleTracking]}
-                    onValueChange={(v) => handleSlider('titleTracking', v)}
+                    value={s.titleTracking}
+                    onChange={(v) => handleSlider('titleTracking', v)}
+                    showValue={false}
                   />
                 </div>
               </div>
@@ -1003,16 +1027,14 @@ export function OgControlPanel({
                             <span className="text-muted-foreground">Radius</span>
                             <span className="text-muted-foreground">{s.chips[activeChipKey].radius}px</span>
                           </div>
-                          <Slider
+                          <TickSlider
+                            label="Chip radius"
                             min={0}
                             max={999}
                             step={2}
-                            value={[s.chips[activeChipKey].radius]}
-                            onValueChange={(v) =>
-                              setChip(activeChipKey, {
-                                radius: Array.isArray(v) ? v[0] : v,
-                              })
-                            }
+                            value={s.chips[activeChipKey].radius}
+                            onChange={(v) => setChip(activeChipKey, { radius: v })}
+                            showValue={false}
                           />
                         </div>
 
@@ -1117,12 +1139,14 @@ export function OgControlPanel({
                           <span className="text-muted-foreground">Logo Size</span>
                           <span className="text-muted-foreground">{s.logoSize}px</span>
                         </div>
-                        <Slider
+                        <TickSlider
+                          label="Logo size"
                           min={24}
                           max={80}
                           step={2}
-                          value={[s.logoSize]}
-                          onValueChange={(v) => handleSlider('logoSize', v)}
+                          value={s.logoSize}
+                          onChange={(v) => handleSlider('logoSize', v)}
+                          showValue={false}
                         />
                       </div>
 
@@ -1131,12 +1155,14 @@ export function OgControlPanel({
                           <span className="text-muted-foreground">Logo Gap</span>
                           <span className="text-muted-foreground">{s.logoGap}px</span>
                         </div>
-                        <Slider
+                        <TickSlider
+                          label="Logo gap"
                           min={8}
                           max={40}
                           step={2}
-                          value={[s.logoGap]}
-                          onValueChange={(v) => handleSlider('logoGap', v)}
+                          value={s.logoGap}
+                          onChange={(v) => handleSlider('logoGap', v)}
+                          showValue={false}
                         />
                       </div>
 
@@ -1214,12 +1240,14 @@ export function OgControlPanel({
                     <span className="text-muted-foreground">Total Duration</span>
                     <span className="text-muted-foreground">{s.animDuration}s</span>
                   </div>
-                  <Slider
+                  <TickSlider
+                    label="Total duration"
                     min={0.4}
                     max={12}
                     step={0.1}
-                    value={[s.animDuration]}
-                    onValueChange={(v) => handleSlider('animDuration', v)}
+                    value={s.animDuration}
+                    onChange={(v) => handleSlider('animDuration', v)}
+                    showValue={false}
                   />
                 </div>
 
@@ -1228,12 +1256,14 @@ export function OgControlPanel({
                     <span className="text-muted-foreground">Stagger Delay</span>
                     <span className="text-muted-foreground">{s.animStagger}s</span>
                   </div>
-                  <Slider
+                  <TickSlider
+                    label="Stagger delay"
                     min={0}
                     max={1.2}
                     step={0.02}
-                    value={[s.animStagger]}
-                    onValueChange={(v) => handleSlider('animStagger', v)}
+                    value={s.animStagger}
+                    onChange={(v) => handleSlider('animStagger', v)}
+                    showValue={false}
                   />
                 </div>
 
@@ -1242,12 +1272,14 @@ export function OgControlPanel({
                     <span className="text-muted-foreground">Hold at End</span>
                     <span className="text-muted-foreground">{s.animHold}s</span>
                   </div>
-                  <Slider
+                  <TickSlider
+                    label="Hold at end"
                     min={0}
                     max={8}
                     step={0.1}
-                    value={[s.animHold]}
-                    onValueChange={(v) => handleSlider('animHold', v)}
+                    value={s.animHold}
+                    onChange={(v) => handleSlider('animHold', v)}
+                    showValue={false}
                   />
                 </div>
 
@@ -1256,12 +1288,14 @@ export function OgControlPanel({
                     <span className="text-muted-foreground">Background Drift</span>
                     <span className="text-muted-foreground">{s.animBgDrift}px</span>
                   </div>
-                  <Slider
+                  <TickSlider
+                    label="Background drift"
                     min={0}
                     max={200}
                     step={5}
-                    value={[s.animBgDrift]}
-                    onValueChange={(v) => handleSlider('animBgDrift', v)}
+                    value={s.animBgDrift}
+                    onChange={(v) => handleSlider('animBgDrift', v)}
+                    showValue={false}
                   />
                 </div>
 
@@ -1270,12 +1304,14 @@ export function OgControlPanel({
                     <span className="text-muted-foreground">Framerate</span>
                     <span className="text-muted-foreground">{s.animFps} fps</span>
                   </div>
-                  <Slider
+                  <TickSlider
+                    label="Framerate"
                     min={12}
                     max={60}
                     step={1}
-                    value={[s.animFps]}
-                    onValueChange={(v) => handleSlider('animFps', v)}
+                    value={s.animFps}
+                    onChange={(v) => handleSlider('animFps', v)}
+                    showValue={false}
                   />
                 </div>
               </div>

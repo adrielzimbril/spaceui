@@ -344,10 +344,10 @@ export function SloshSlider({
   const outerRadius = clampedCorner + (numericHeight <= 24 ? 2 : 3)
 
   return (
-    <div className={cn('select-none w-full max-w-85', className)}>
+    <div className={cn('select-none w-full', className)}>
       <div
         className={cn(
-          'border-2 border-muted bg-background/50 transition-colors',
+          'border-2 border-muted bg-background transition-colors',
           ringPad,
           disabled && 'opacity-50 cursor-not-allowed pointer-events-none',
         )}

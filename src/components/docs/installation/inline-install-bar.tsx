@@ -83,7 +83,10 @@ export function InlineInstallBar({
 
   return (
     <div
-      className={cn('flex min-w-0 rounded-xl bg-background p-1 shadow-xs border border-border/40', className)}
+      className={cn(
+        'flex min-w-0 [corner-shape:superellipse(1.25)] rounded-xl bg-background p-1 border-2 border-muted',
+        className,
+      )}
       {...props}
     >
       <div className="flex h-10 w-full min-w-0 items-center gap-2 rounded-lg bg-muted px-1.5 pe-2.5">
@@ -98,7 +101,7 @@ export function InlineInstallBar({
         >
           <SelectTrigger
             aria-label="Package manager"
-            className="h-8 min-h-8 w-fit min-w-0 rounded-md border-0 bg-background px-2.5 text-[0.6875rem] font-medium text-foreground cursor-pointer justify-center"
+            className="h-8 min-h-8 w-fit min-w-0 [corner-shape:superellipse(1.25)] rounded-md border-0 bg-background px-2.5 text-[0.6875rem] font-medium text-foreground cursor-pointer justify-center"
           >
             <SelectValue />
           </SelectTrigger>
@@ -130,7 +133,7 @@ export function InlineInstallBar({
           content={command}
           variant="ghost"
           size="xs"
-          className="size-7 shrink-0 rounded-md bg-background hover:bg-background text-muted-foreground hover:text-foreground cursor-pointer transition-all duration-200"
+          className="size-7 shrink-0 [corner-shape:superellipse(1.25)] rounded-md bg-background hover:bg-background text-muted-foreground hover:text-foreground cursor-pointer transition-all duration-200"
         />
       </div>
     </div>

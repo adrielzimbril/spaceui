@@ -39,6 +39,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/block-card-info-1',
@@ -76,6 +77,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/block-card-info-2',
@@ -138,6 +140,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/block-community-wall-1',
@@ -185,6 +188,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/block-dither-carousel',
@@ -287,6 +291,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/block-eleven-labs',
@@ -334,6 +339,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/block-interactive-fun-facts',
@@ -371,6 +377,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {"cellSize":{"value":64,"options":{"Compact (48px)":48,"Standard (64px)":64,"Expanded (80px)":80}},"radius":{"value":"rounded","options":{"Square":"square","Rounded":"rounded","Full (Circle)":"full"}},"proximity":{"value":4,"options":{"Focused (3)":3,"Standard (4)":4,"Wide (5.5)":5.5}}};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/block-interactive-grid-hero-1',
@@ -423,6 +430,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/block-lens-carousel',
@@ -470,6 +478,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/block-liquid-gooey-carousel',
@@ -517,6 +526,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/block-prism-carousel',
@@ -549,6 +559,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {"title":{"value":"Welcome back"},"description":{"value":"Enter your credentials to access your account"},"buttonText":{"value":"Sign In"},"variant":{"value":"default","options":{"Default":"default","Elevated":"elevated","Bordered":"bordered","Soft":"soft"}},"buttonVariant":{"value":"default","options":{"Default":"default","Outline":"outline","Secondary":"secondary","Ghost":"ghost"}},"cardWidth":{"value":384,"min":280,"max":600,"step":8},"borderRadius":{"value":16,"min":0,"max":32,"step":2},"padding":{"value":24,"min":12,"max":48,"step":4},"socialColumns":{"value":2,"options":{"1 Column":1,"2 Columns":2}},"maxAttempts":{"value":5,"min":0,"max":10,"step":1},"showSocials":{"value":true},"showRememberMe":{"value":true},"showForgotPassword":{"value":true}};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/block-sign-in',
@@ -601,6 +612,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/block-stats-blog',
@@ -673,6 +685,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/block-stats-engagement',
@@ -725,6 +738,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/block-stats-general',
@@ -782,6 +796,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/block-stats-github',
@@ -834,6 +849,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/block-stats-performance',
@@ -866,6 +882,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/components-backgrounds-bubble',
@@ -898,22 +915,66 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/components-backgrounds-gradient',
+  },
+  "interactions-agent-pipeline": {
+    name: "interactions-agent-pipeline",
+    description: "An interactive multi-agent pipeline visualization with real-time physics, event logs, and playback controls.",
+    type: "registry:component",
+    dependencies: ["motion","@keyline-icons/react","@usespaceui/squishmoji","@usespaceui/sounds"],
+    devDependencies: undefined,
+    registryDependencies: ["https://www.spaceui.one/r/lib-utils.json","https://www.spaceui.one/r/components-spaceui-badge-squircle.json","https://www.spaceui.one/r/primitives-scroll-area.json","https://www.spaceui.one/r/primitives-frame.json","https://www.spaceui.one/r/primitives-card.json","https://www.spaceui.one/r/components-spaceui-smooth-slider.json","https://www.spaceui.one/r/components-spaceui-blur-reveal-text.json","https://www.spaceui.one/r/hooks-utils-format-text.json"],
+    files: [
+  {
+    "path": "src/registry/components/interactions/agent-pipeline/index.tsx",
+    "type": "registry:component",
+    "target": "components/interactions/agent-pipeline.tsx"
+  },
+  {
+    "path": "src/registry/components/interactions/agent-pipeline/data.ts",
+    "type": "registry:component",
+    "target": "components/interactions/agent-pipeline-data.ts"
+  }
+],
+    keywords: [],
+    component: (() => {
+      const LazyComp = React.lazy(async () => {
+        const mod = await import("@/registry/components/interactions/agent-pipeline/index.tsx");
+        const exportName = Object.keys(mod).find(
+          key => typeof mod[key] === 'function' || typeof mod[key] === 'object'
+        ) || "interactions-agent-pipeline";
+        const Comp = mod.default || mod[exportName];
+        if (mod.animations) {
+          (LazyComp as any).animations = mod.animations;
+        }
+        return { default: Comp };
+      });
+      LazyComp.demoProps = {"animation":{"value":"active","options":{"Active":"active","Inactive":"inactive"}},"preset":{"type":"select","value":"incident","options":{"Incident":"incident","Code Review":"codereview","Support":"support","Growth":"growth"}},"cycleFlows":{"value":true,"dependsOn":{"animation":"active"}},"flow":{"type":"select","value":"success","options":{"Success":"success","Error":"error"},"dependsOn":{"cycleFlows":false}},"autoPlay":{"value":true,"dependsOn":{"animation":"active"}},"pauseOnHover":{"value":true,"dependsOn":{"animation":"active"}},"speed":{"value":1,"min":0.25,"max":3,"step":0.25,"dependsOn":{"animation":"active"}}};
+      LazyComp.cycleDurationMs = 12300;
+      return LazyComp;
+    })(),
+    command: '@spaceui/interactions-agent-pipeline',
   },
   "interactions-deploy-pipeline": {
     name: "interactions-deploy-pipeline",
     description: "A self-playing deploy pipeline that advances on its own, pauses on hover, and reveals per-step detail — drop it in to turn a static log into a living status feed.",
     type: "registry:component",
-    dependencies: ["motion","@tabler/icons-react"],
+    dependencies: ["motion","@keyline-icons/react","@usespaceui/squishmoji","@usespaceui/sounds"],
     devDependencies: undefined,
-    registryDependencies: ["https://www.spaceui.one/r/lib-utils.json","https://www.spaceui.one/r/components-spaceui-timeline.json","https://www.spaceui.one/r/components-spaceui-morph-icon.json","https://www.spaceui.one/r/primitives-frame.json","https://www.spaceui.one/r/primitives-card.json","https://www.spaceui.one/r/primitives-badge.json","https://www.spaceui.one/r/primitives-spinner.json","https://www.spaceui.one/r/primitives-avatar.json","https://www.spaceui.one/r/primitives-collapsible.json"],
+    registryDependencies: ["https://www.spaceui.one/r/lib-utils.json","https://www.spaceui.one/r/components-spaceui-timeline.json","https://www.spaceui.one/r/components-spaceui-morph-icon.json","https://www.spaceui.one/r/primitives-frame.json","https://www.spaceui.one/r/components-spaceui-badge-squircle.json","https://www.spaceui.one/r/primitives-spinner.json","https://www.spaceui.one/r/primitives-avatar.json","https://www.spaceui.one/r/primitives-collapsible.json","https://www.spaceui.one/r/components-spaceui-blur-reveal-text.json","https://www.spaceui.one/r/primitives-card.json"],
     files: [
   {
     "path": "src/registry/components/interactions/deploy-pipeline/index.tsx",
     "type": "registry:component",
     "target": "components/interactions/deploy-pipeline.tsx"
+  },
+  {
+    "path": "src/registry/components/interactions/deploy-pipeline/data.ts",
+    "type": "registry:component",
+    "target": "components/interactions/deploy-pipeline-data.ts"
   }
 ],
     keywords: [],
@@ -929,7 +990,8 @@ export const index: Record<string, any> = {
         }
         return { default: Comp };
       });
-      LazyComp.demoProps = {"autoPlay":{"value":true},"pauseOnHover":{"value":true,"dependsOn":{"autoPlay":true}},"speed":{"value":1,"min":0.25,"max":4,"step":0.25,"dependsOn":{"autoPlay":true}}};
+      LazyComp.demoProps = {"animation":{"value":"active","options":{"Active":"active","Inactive":"inactive"}},"cycleFlows":{"value":true,"dependsOn":{"animation":"active"}},"flow":{"type":"select","value":"production","options":{"Production":"production","Test Failed":"test_failed","Canary Rollback":"canary_rollback","Hotfix":"hotfix"},"dependsOn":{"cycleFlows":false}},"autoPlay":{"value":true,"dependsOn":{"animation":"active"}},"pauseOnHover":{"value":true,"dependsOn":{"animation":"active"}},"speed":{"value":1,"min":0.25,"max":4,"step":0.25,"dependsOn":{"animation":"active"}}};
+      LazyComp.cycleDurationMs = 16700;
       return LazyComp;
     })(),
     command: '@spaceui/interactions-deploy-pipeline',
@@ -987,6 +1049,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/components-orb-bloop',
@@ -1034,6 +1097,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/components-orb-generating',
@@ -1066,6 +1130,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/components-orb-loading',
@@ -1123,6 +1188,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/components-orb-smooth',
@@ -1230,6 +1296,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/components-orb-thinking',
@@ -1267,6 +1334,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/components-shader-cloud',
@@ -1309,6 +1377,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/components-shader-heat-shade',
@@ -1341,6 +1410,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/components-shader-paper-shader',
@@ -1378,6 +1448,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/components-shader-silk-flare',
@@ -1415,6 +1486,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/components-shader-silk-gradient',
@@ -1447,6 +1519,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/components-spaceui-adaptive-density-grid',
@@ -1479,6 +1552,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/components-spaceui-animoji',
@@ -1511,6 +1585,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/components-spaceui-autoscale-input',
@@ -1543,6 +1618,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/components-spaceui-avatar-extended',
@@ -1575,6 +1651,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/components-spaceui-avatar-group',
@@ -1607,6 +1684,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/components-spaceui-badge-squircle',
@@ -1639,6 +1717,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/components-spaceui-blur-reveal-text',
@@ -1671,6 +1750,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/components-spaceui-bouncy-accordion',
@@ -1703,6 +1783,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/components-spaceui-button-squircle',
@@ -1735,6 +1816,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/components-spaceui-chroma-palette',
@@ -1767,6 +1849,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/components-spaceui-copy',
@@ -1799,6 +1882,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/components-spaceui-data-grid',
@@ -1831,6 +1915,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/components-spaceui-data-grid-column-filter',
@@ -1863,6 +1948,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/components-spaceui-data-grid-column-header',
@@ -1895,6 +1981,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/components-spaceui-data-grid-column-visibility',
@@ -1927,6 +2014,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/components-spaceui-data-grid-pagination',
@@ -1959,6 +2047,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/components-spaceui-data-grid-scroll-area',
@@ -1991,6 +2080,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/components-spaceui-data-grid-table',
@@ -2023,6 +2113,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/components-spaceui-data-grid-table-dnd',
@@ -2055,6 +2146,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/components-spaceui-data-grid-table-dnd-rows',
@@ -2087,6 +2179,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/components-spaceui-data-grid-table-virtual',
@@ -2119,6 +2212,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/components-spaceui-date-selector',
@@ -2151,6 +2245,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/components-spaceui-dirt-carousel',
@@ -2183,6 +2278,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/components-spaceui-doodle-callout',
@@ -2215,6 +2311,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/components-spaceui-event-calendar',
@@ -2247,6 +2344,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/components-spaceui-event-calendar-agenda-view',
@@ -2279,6 +2377,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/components-spaceui-event-calendar-content',
@@ -2311,6 +2410,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/components-spaceui-event-calendar-dnd',
@@ -2343,6 +2443,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/components-spaceui-event-calendar-event',
@@ -2375,6 +2476,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/components-spaceui-event-calendar-i18n',
@@ -2407,6 +2509,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/components-spaceui-event-calendar-lib',
@@ -2439,6 +2542,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/components-spaceui-event-calendar-month-view',
@@ -2471,6 +2575,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/components-spaceui-event-calendar-nav',
@@ -2503,6 +2608,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/components-spaceui-event-calendar-recurrence',
@@ -2535,6 +2641,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/components-spaceui-event-calendar-resource-view',
@@ -2567,6 +2674,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/components-spaceui-event-calendar-time-grid',
@@ -2599,6 +2707,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/components-spaceui-event-calendar-types',
@@ -2631,6 +2740,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/components-spaceui-filters',
@@ -2663,6 +2773,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/components-spaceui-fluid-countdown',
@@ -2695,6 +2806,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/components-spaceui-fluid-crossfade',
@@ -2727,6 +2839,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/components-spaceui-fluid-distortion-image',
@@ -2759,6 +2872,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/components-spaceui-fluid-dither-crossfade',
@@ -2791,6 +2905,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/components-spaceui-frost-blurred',
@@ -2823,6 +2938,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/components-spaceui-github-activity',
@@ -2855,6 +2971,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/components-spaceui-glass-button',
@@ -2887,6 +3004,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/components-spaceui-gooey-blobs',
@@ -2919,6 +3037,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/components-spaceui-gooey-info-popover',
@@ -2951,6 +3070,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/components-spaceui-gooey-slots-tooltip',
@@ -2983,6 +3103,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/components-spaceui-gooey-tooltip',
@@ -3015,6 +3136,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/components-spaceui-handle-reel',
@@ -3047,6 +3169,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/components-spaceui-icon-stack',
@@ -3079,6 +3202,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/components-spaceui-image-dark',
@@ -3111,6 +3235,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/components-spaceui-interactive-checklist',
@@ -3143,6 +3268,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/components-spaceui-item',
@@ -3175,6 +3301,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/components-spaceui-kanban',
@@ -3207,6 +3334,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/components-spaceui-liquid-metal-border',
@@ -3239,6 +3367,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/components-spaceui-liquid-sortable-list',
@@ -3271,6 +3400,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/components-spaceui-liquid-switch',
@@ -3303,6 +3433,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/components-spaceui-morph-icon',
@@ -3335,6 +3466,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/components-spaceui-morphing-area',
@@ -3367,6 +3499,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/components-spaceui-morphing-command-bar',
@@ -3399,6 +3532,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/components-spaceui-morphing-search-pill',
@@ -3431,6 +3565,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/components-spaceui-morphing-text',
@@ -3463,6 +3598,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/components-spaceui-notification-list',
@@ -3495,6 +3631,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/components-spaceui-phone-input',
@@ -3527,6 +3664,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/components-spaceui-pin-list',
@@ -3559,6 +3697,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/components-spaceui-pixel-fill-button',
@@ -3591,6 +3730,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/components-spaceui-pixel-reveal-image',
@@ -3623,6 +3763,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/components-spaceui-pixel-reveal-text',
@@ -3655,6 +3796,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/components-spaceui-rating',
@@ -3687,6 +3829,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/components-spaceui-resizable',
@@ -3719,6 +3862,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/components-spaceui-scatter-text',
@@ -3751,6 +3895,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/components-spaceui-scrollspy',
@@ -3783,6 +3928,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/components-spaceui-section-scrollspy',
@@ -3815,6 +3961,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/components-spaceui-silk-border',
@@ -3847,6 +3994,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/components-spaceui-slide-to-confirm',
@@ -3879,6 +4027,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/components-spaceui-slosh-slider',
@@ -3911,6 +4060,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/components-spaceui-smooth-slider',
@@ -3943,6 +4093,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/components-spaceui-sortable',
@@ -3975,6 +4126,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/components-spaceui-status-badge',
@@ -4007,6 +4159,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/components-spaceui-team-roster-selector',
@@ -4039,6 +4192,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/components-spaceui-textmoji',
@@ -4071,6 +4225,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/components-spaceui-theme-toggle',
@@ -4103,6 +4258,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/components-spaceui-tick-slider',
@@ -4135,6 +4291,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/components-spaceui-timeline',
@@ -4167,6 +4324,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/components-spaceui-tournament-bracket',
@@ -4199,6 +4357,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/components-spaceui-user-presence-avatar',
@@ -4231,6 +4390,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/components-spaceui-velocity-hover-preview',
@@ -4263,6 +4423,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/components-spaceui-words-preloader',
@@ -4295,6 +4456,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-backgrounds-bubble-01',
@@ -4327,6 +4489,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-backgrounds-gradient-01',
@@ -4359,6 +4522,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {"palette":{"value":"BLUE","options":{"Blue":"BLUE","Dark Blue":"DARK_BLUE","Green":"GREEN","Yellow":"YELLOW","Orange":"ORANGE","Amber":"AMBER","Pink":"PINK","Purple":"PURPLE","Greyscale":"GREYSCALE","Charcoal":"CHARCOAL","White":"WHITE","Black":"BLACK"}},"orbState":{"value":"listen","options":{"Idle":"idle","Listen":"listen","Think":"think","Speak":"speak"}},"size":{"value":240,"min":120,"max":520,"step":10},"watercolor":{"value":true},"watercolorStrength":{"value":0.5,"min":0,"max":1,"step":0.05,"dependsOn":{"watercolor":true}},"audioMode":{"value":"ambient","options":{"Ambient":"ambient","Microphone":"mic","Audio Track":"file"}},"audioSource":{"value":"url","options":{"Remote URL":"url","Upload File":"upload"},"dependsOn":{"audioMode":"file"}},"audioUrl":{"value":"https://cdn.pixabay.com/audio/2025/05/10/audio_3317d9a155.mp3","dependsOn":{"audioMode":"file","audioSource":"url"}},"audioFile":{"type":"file","accept":"audio/*","value":"","dependsOn":{"audioMode":"file","audioSource":"upload"}}};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-orb-bloop-01',
@@ -4391,6 +4555,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {"renderer":{"value":"css","options":{"CSS Keyframes":"css","Canvas 2D":"canvas"}},"size":{"value":240,"min":80,"max":420,"step":4},"depth":{"value":1,"min":0.4,"max":1.8,"step":0.05},"duration":{"value":2000,"min":600,"max":5000,"step":50},"stagger":{"value":100,"min":0,"max":300,"step":5},"pop":{"value":1.15,"min":1,"max":1.6,"step":0.01},"restOpacity":{"value":0.4,"min":0.1,"max":1,"step":0.05},"textSize":{"value":1.2,"min":0.7,"max":2.4,"step":0.05},"tracking":{"value":0,"min":-2,"max":8,"step":0.25},"text":{"value":"Generating"},"showText":{"value":true},"highlightColor":{"value":"#ffffff"},"haloColor":{"value":"#ad5fff"},"coreColor":{"value":"#471eec"},"haloColorAlt":{"value":"#d60a47"},"coreColorAlt":{"value":"#311e80"},"playback":{"value":"play","options":{"Play":"play","Pause":"pause"}}};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-orb-generating-01',
@@ -4423,6 +4588,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {"speed":{"value":750,"min":250,"max":2000,"step":50},"motionPreset":{"value":"morph","options":{"Morph":"morph","Fade":"fade","Scale":"scale","Blur":"blur","Flip":"flip"}},"radius":{"value":3,"min":0,"max":12,"step":1},"gap":{"value":3,"min":1,"max":8,"step":1},"showGhost":{"value":false},"size":{"value":64,"min":32,"max":140,"step":4},"className":{"value":"text-foreground","options":{"Foreground":"text-foreground","Primary":"text-primary","Emerald":"text-emerald-500","Indigo":"text-indigo-500","Amber":"text-amber-500","Rose":"text-rose-500","Cyan":"text-cyan-500"}}};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-orb-loading-01',
@@ -4455,6 +4621,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-orb-loading-02',
@@ -4487,6 +4654,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-orb-loading-03',
@@ -4519,6 +4687,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-orb-loading-04',
@@ -4551,6 +4720,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {"textureSource":{"value":"url","options":{"Remote URL":"url","Upload File":"upload"}},"textureUrl":{"value":"https://avatars.spaceui.one/v1?name=luna&variant=lumina&size=2000&format=png","dependsOn":{"textureSource":"url"}},"textureFile":{"type":"file","accept":"image/*","value":"","dependsOn":{"textureSource":"upload"}},"grain":{"value":true},"grainAnimated":{"value":true,"dependsOn":{"grain":true}},"grainOpacity":{"value":0.67,"min":0,"max":1,"step":0.05,"dependsOn":{"grain":true}},"watercolor":{"value":true},"watercolorStrength":{"value":0.5,"min":0,"max":1,"step":0.05,"dependsOn":{"watercolor":true}},"size":{"value":240,"min":120,"max":520,"step":10},"audioMode":{"value":"ambient","options":{"Ambient":"ambient","Microphone":"mic","Audio Track":"file"}},"audioSource":{"value":"url","options":{"Remote URL":"url","Upload File":"upload"},"dependsOn":{"audioMode":"file"}},"audioUrl":{"value":"https://cdn.pixabay.com/audio/2025/05/10/audio_3317d9a155.mp3","dependsOn":{"audioMode":"file","audioSource":"url"}},"audioFile":{"type":"file","accept":"audio/*","value":"","dependsOn":{"audioMode":"file","audioSource":"upload"}}};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-orb-smooth-01',
@@ -4583,6 +4753,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {"surface":{"value":"auto","options":{"Auto Theme":"auto","Ink (Dark)":"ink","Paper (Light)":"paper"}},"size":{"value":240,"min":120,"max":420,"step":10},"speed":{"value":1,"min":0.2,"max":2.5,"step":0.1},"scale":{"value":0.72,"min":0.3,"max":0.95,"step":0.02},"playback":{"value":"play","options":{"Play":"play","Pause":"pause"}}};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-orb-thinking-01',
@@ -4615,6 +4786,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {"surface":{"value":"auto","options":{"Auto Theme":"auto","Ink (Dark)":"ink","Paper (Light)":"paper"}},"size":{"value":240,"min":120,"max":420,"step":10},"speed":{"value":1,"min":0.2,"max":2.5,"step":0.1},"scale":{"value":0.72,"min":0.3,"max":0.95,"step":0.02},"playback":{"value":"play","options":{"Play":"play","Pause":"pause"}}};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-orb-thinking-02',
@@ -4647,6 +4819,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {"surface":{"value":"auto","options":{"Auto Theme":"auto","Ink (Dark)":"ink","Paper (Light)":"paper"}},"size":{"value":240,"min":120,"max":420,"step":10},"speed":{"value":1,"min":0.2,"max":2.5,"step":0.1},"scale":{"value":0.72,"min":0.3,"max":0.95,"step":0.02},"playback":{"value":"play","options":{"Play":"play","Pause":"pause"}}};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-orb-thinking-03',
@@ -4679,6 +4852,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {"surface":{"value":"auto","options":{"Auto Theme":"auto","Ink (Dark)":"ink","Paper (Light)":"paper"}},"size":{"value":240,"min":120,"max":420,"step":10},"speed":{"value":1,"min":0.2,"max":2.5,"step":0.1},"scale":{"value":0.72,"min":0.3,"max":0.95,"step":0.02},"playback":{"value":"play","options":{"Play":"play","Pause":"pause"}}};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-orb-thinking-04',
@@ -4711,6 +4885,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {"surface":{"value":"auto","options":{"Auto Theme":"auto","Ink (Dark)":"ink","Paper (Light)":"paper"}},"size":{"value":240,"min":120,"max":420,"step":10},"speed":{"value":1,"min":0.2,"max":2.5,"step":0.1},"scale":{"value":0.72,"min":0.3,"max":0.95,"step":0.02},"playback":{"value":"play","options":{"Play":"play","Pause":"pause"}}};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-orb-thinking-05',
@@ -4743,6 +4918,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {"surface":{"value":"auto","options":{"Auto Theme":"auto","Ink (Dark)":"ink","Paper (Light)":"paper"}},"size":{"value":240,"min":120,"max":420,"step":10},"speed":{"value":1,"min":0.2,"max":2.5,"step":0.1},"scale":{"value":0.72,"min":0.3,"max":0.95,"step":0.02},"playback":{"value":"play","options":{"Play":"play","Pause":"pause"}}};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-orb-thinking-06',
@@ -4775,6 +4951,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {"surface":{"value":"auto","options":{"Auto Theme":"auto","Ink (Dark)":"ink","Paper (Light)":"paper"}},"size":{"value":240,"min":120,"max":420,"step":10},"speed":{"value":1,"min":0.2,"max":2.5,"step":0.1},"scale":{"value":0.72,"min":0.3,"max":0.95,"step":0.02},"playback":{"value":"play","options":{"Play":"play","Pause":"pause"}}};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-orb-thinking-07',
@@ -4807,6 +4984,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {"surface":{"value":"auto","options":{"Auto Theme":"auto","Ink (Dark)":"ink","Paper (Light)":"paper"}},"size":{"value":240,"min":120,"max":420,"step":10},"speed":{"value":1,"min":0.2,"max":2.5,"step":0.1},"scale":{"value":0.72,"min":0.3,"max":0.95,"step":0.02},"playback":{"value":"play","options":{"Play":"play","Pause":"pause"}}};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-orb-thinking-08',
@@ -4839,6 +5017,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {"surface":{"value":"auto","options":{"Auto Theme":"auto","Ink (Dark)":"ink","Paper (Light)":"paper"}},"size":{"value":240,"min":120,"max":420,"step":10},"speed":{"value":1,"min":0.2,"max":2.5,"step":0.1},"scale":{"value":0.72,"min":0.3,"max":0.95,"step":0.02},"playback":{"value":"play","options":{"Play":"play","Pause":"pause"}}};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-orb-thinking-09',
@@ -4871,6 +5050,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {"speed":{"value":1,"min":0,"max":5,"step":0.1},"sky":{"value":"#68b8d7"},"cloudColor":{"value":"#adc1de"},"shadow":{"value":"#183550"},"sun":{"value":"#ff9919"},"glare":{"value":"#ff6633"},"sunlight":{"value":"#ff9933"},"bg":{"value":"#ffffff"}};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-cloud-01',
@@ -4903,6 +5083,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {"base":{"value":"#2a7bba"},"hot":{"value":"#43c8ff"},"speed":{"value":1,"min":0,"max":3,"step":0.1},"from":{"value":"bottom","options":{"Top":"top","Bottom":"bottom"}}};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-heat-shade-01',
@@ -4935,6 +5116,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {"base":{"value":"#2a7bba"},"hot":{"value":"#43c8ff"},"speed":{"value":1,"min":0,"max":3,"step":0.1},"from":{"value":"bottom","options":{"Top":"top","Bottom":"bottom"}}};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-heat-shade-02',
@@ -4972,6 +5154,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-paper-shader-01',
@@ -5004,6 +5187,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {"color1":{"value":"#6a68ee"},"color1Opacity":{"value":0.3,"min":0,"max":1,"step":0.05},"color2":{"value":"#c9a6ff"},"color2Opacity":{"value":0.3,"min":0,"max":1,"step":0.05},"color3":{"value":"#04106c"},"color3Opacity":{"value":0.3,"min":0,"max":1,"step":0.05},"heatBaseColor":{"value":"#6a68ee"},"heatBaseColorOpacity":{"value":0.5,"min":0,"max":1,"step":0.05},"hotColor":{"value":"#04106c"},"heatOpacity":{"value":0.5,"min":0,"max":1,"step":0.05},"speed":{"value":1,"min":0,"max":3,"step":0.1},"animate":{"value":true},"grain":{"value":true}};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-silk-flare-01',
@@ -5036,6 +5220,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {"color1":{"value":"#4c9bff"},"color2":{"value":"#1f4fd8"},"color3":{"value":"#0a1a4a"},"speed":{"value":1,"min":0,"max":3,"step":0.1},"animate":{"value":true},"grain":{"value":true}};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-silk-gradient-01',
@@ -5068,6 +5253,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-adaptive-density-grid-01',
@@ -5100,6 +5286,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-adaptive-density-grid-02',
@@ -5132,6 +5319,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {"text":{"value":"Ship your ideas faster 🚀 with Space UI 🫧🦄"},"source":{"value":"fluent","options":{"Fluent":"fluent","Telegram":"telegram","Noto":"noto"}}};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-animoji-01',
@@ -5164,6 +5352,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-animoji-02',
@@ -5196,6 +5385,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-animoji-03',
@@ -5228,6 +5418,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-animoji-04',
@@ -5260,6 +5451,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-autoscale-input-01',
@@ -5292,6 +5484,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-badge-squircle-01',
@@ -5324,6 +5517,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-badge-squircle-02',
@@ -5356,6 +5550,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-badge-squircle-03',
@@ -5388,6 +5583,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {"text":{"value":"Great design is not just what looks good. It is how every detail feels alive."},"splitBy":{"value":"words","options":{"Words":"words","Characters":"characters"}},"direction":{"value":"up","options":{"Upward":"up","Downward":"down","Stationary":"none"}},"blurAmount":{"value":"12px","options":{"Subtle (6px)":"6px","Balanced (12px)":"12px","Deep (20px)":"20px"}},"stagger":{"value":0.05,"options":{"Fast (0.03s)":0.03,"Normal (0.05s)":0.05,"Deliberate (0.09s)":0.09}}};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-blur-reveal-text-01',
@@ -5420,6 +5616,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-bouncy-accordion-01',
@@ -5452,6 +5649,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-button-squircle-01',
@@ -5484,6 +5682,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-button-squircle-02',
@@ -5516,6 +5715,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-button-squircle-03',
@@ -5548,6 +5748,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {"count":{"value":5,"min":2,"max":5,"step":1},"corner":{"value":14,"min":4,"max":24,"step":2}};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-chroma-palette-01',
@@ -5580,6 +5781,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-data-grid-01',
@@ -5612,6 +5814,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-data-grid-02',
@@ -5644,6 +5847,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-data-grid-03',
@@ -5676,6 +5880,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-data-grid-04',
@@ -5708,6 +5913,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-data-grid-05',
@@ -5740,6 +5946,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-data-grid-06',
@@ -5772,6 +5979,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-data-grid-07',
@@ -5804,6 +6012,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-data-grid-08',
@@ -5836,6 +6045,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-data-grid-09',
@@ -5868,6 +6078,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-data-grid-10',
@@ -5900,6 +6111,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-data-grid-11',
@@ -5932,6 +6144,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-data-grid-12',
@@ -5964,6 +6177,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-data-grid-13',
@@ -5996,6 +6210,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-data-grid-14',
@@ -6028,6 +6243,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-data-grid-15',
@@ -6060,6 +6276,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-data-grid-16',
@@ -6092,6 +6309,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-data-grid-17',
@@ -6124,6 +6342,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-data-grid-18',
@@ -6156,6 +6375,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-data-grid-19',
@@ -6188,6 +6408,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-data-grid-20',
@@ -6220,6 +6441,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-data-grid-21',
@@ -6252,6 +6474,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-data-grid-22',
@@ -6284,6 +6507,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-data-grid-23',
@@ -6316,6 +6540,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-data-grid-24',
@@ -6348,6 +6573,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-data-grid-25',
@@ -6380,6 +6606,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-data-grid-26',
@@ -6412,6 +6639,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-data-grid-27',
@@ -6444,6 +6672,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-data-grid-28',
@@ -6476,6 +6705,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-data-grid-29',
@@ -6508,6 +6738,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-date-selector-01',
@@ -6540,6 +6771,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-date-selector-02',
@@ -6572,6 +6804,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-date-selector-03',
@@ -6604,6 +6837,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-date-selector-04',
@@ -6636,6 +6870,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {"direction":{"value":"flat","options":{"Flat":"flat","Up":"up","Down":"down"}},"radius":{"value":800,"min":300,"max":1200,"step":20},"ballSize":{"value":800,"min":300,"max":1200,"step":20},"bounce":{"value":false},"mouseTilt":{"value":false},"snap":{"value":true},"autoRotate":{"value":false}};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-dirt-carousel-01',
@@ -6668,6 +6903,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {"label":{"value":"Most popular"},"width":{"value":280,"min":150,"max":500,"step":10},"revealGap":{"value":400,"min":100,"max":2000,"step":100},"loopInterval":{"value":8000,"min":0,"max":15000,"step":500}};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-doodle-callout-01',
@@ -6700,6 +6936,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-event-calendar-01',
@@ -6732,6 +6969,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-event-calendar-02',
@@ -6764,6 +7002,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-event-calendar-03',
@@ -6796,6 +7035,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-event-calendar-04',
@@ -6828,6 +7068,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-event-calendar-05',
@@ -6860,6 +7101,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-file-upload-01',
@@ -6892,6 +7134,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-file-upload-02',
@@ -6924,6 +7167,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-file-upload-03',
@@ -6956,6 +7200,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-file-upload-04',
@@ -6988,6 +7233,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-file-upload-05',
@@ -7020,6 +7266,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-file-upload-06',
@@ -7052,6 +7299,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-file-upload-07',
@@ -7084,6 +7332,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-file-upload-08',
@@ -7116,6 +7365,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-file-upload-09',
@@ -7148,6 +7398,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-file-upload-10',
@@ -7180,6 +7431,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-filters-01',
@@ -7212,6 +7464,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-filters-02',
@@ -7244,6 +7497,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-filters-03',
@@ -7276,6 +7530,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-filters-04',
@@ -7308,6 +7563,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-filters-05',
@@ -7340,6 +7596,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-filters-06',
@@ -7372,6 +7629,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-filters-07',
@@ -7404,6 +7662,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-filters-08',
@@ -7436,6 +7695,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-filters-09',
@@ -7468,6 +7728,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-filters-10',
@@ -7500,6 +7761,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-filters-11',
@@ -7532,6 +7794,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-filters-12',
@@ -7564,6 +7827,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-fluid-countdown-01',
@@ -7596,6 +7860,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {"imageSource":{"value":"url","options":{"Remote URL":"url","Upload File":"upload"}},"imageA":{"value":"https://cdn.spaceui.one/atom/samples/image-1.png","options":{"Landscape":"https://cdn.spaceui.one/atom/samples/image-1.png","Architecture":"https://cdn.spaceui.one/atom/samples/image-2.png"},"dependsOn":{"imageSource":"url"}},"imageFront":{"type":"file","accept":"image/*","value":"","dependsOn":{"imageSource":"upload"}},"imageB":{"value":"https://cdn.spaceui.one/atom/samples/image-2.png","options":{"Architecture":"https://cdn.spaceui.one/atom/samples/image-2.png","Portrait":"https://cdn.spaceui.one/atom/samples/image-3.png"},"dependsOn":{"imageSource":"url"}},"imageBack":{"type":"file","accept":"image/*","value":"","dependsOn":{"imageSource":"upload"}},"refractionStrength":{"value":0.85,"options":{"Subtle (0.4)":0.4,"Balanced (0.85)":0.85,"Intense (1.6)":1.6}},"ditherGrid":{"value":3,"options":{"Fine (2.0)":2,"Standard (3.0)":3,"Chunky (6.0)":6}},"pixelGridSize":{"value":240,"options":{"High-Res (320)":320,"Standard (240)":240,"Pixelated (120)":120}}};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-fluid-crossfade-01',
@@ -7628,6 +7893,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {"textureFile":{"type":"file","accept":"image/*","value":""},"revealStyle":{"value":"pixelate","options":{"Pixelate sweep":"pixelate","Blur morph":"blur"}},"distortionIntensity":{"value":0.02,"options":{"Subtle (0.01)":0.01,"Original (0.02)":0.02,"Intense (0.05)":0.05,"Extreme (0.09)":0.09}},"relaxationSpeed":{"value":0.95,"options":{"Fast (0.88)":0.88,"Standard (0.95)":0.95,"Trailing (0.98)":0.98}},"radius":{"value":8.96,"options":{"Small (5.0)":5,"Original (8.96)":8.96,"Large (14.0)":14}}};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-fluid-distortion-image-01',
@@ -7660,6 +7926,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {"imageFront":{"type":"file","accept":"image/*","value":""},"imageBack":{"type":"file","accept":"image/*","value":""},"revealStyle":{"value":"pixelate","options":{"Pixelate sweep":"pixelate","Blur morph":"blur","Stagger wipe":"stagger"}},"brushSize":{"value":0.3,"options":{"Subtle (0.3)":0.3,"Balanced (0.64)":0.64,"Broad (1.0)":1,"Huge (1.5)":1.5}},"pixelRes":{"value":150,"options":{"High Def (300)":300,"Standard (150)":150,"Retro (80)":80,"Low Bit (40)":40}},"pixelEdgeRes":{"value":80,"options":{"Fine Mask (120)":120,"Chunky Blocks (80)":80,"Giant Pixels (40)":40}},"distortionStrength":{"value":9.18,"options":{"Gentle (4.0)":4,"Original (9.18)":9.18,"Heavy (18.0)":18}},"ditherGrid":{"value":20,"options":{"Micro (8)":8,"Classic (20)":20,"Macro (40)":40}},"inkDissipation":{"value":0.926,"options":{"Fast Fade (0.88)":0.88,"Balanced (0.926)":0.926,"Persistent (0.97)":0.97}},"accentColor":{"value":"#ffe9a8","options":{"Aurum":"#ffe9a8","Mercury":"#f0f4f8","Iris":"#c9a6ff","Cobalt":"#93c5fd","Forge":"#fdba74","Jade":"#6ee7b7","Pearl":"#fafafa","White":"#ffffff","Black":"#000000"}}};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-fluid-dither-crossfade-01',
@@ -7692,6 +7959,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {"text":{"value":"Space UI"},"layers":{"value":7,"min":3,"max":10,"step":1},"strength":{"value":1,"min":0.25,"max":2,"step":0.25},"height":{"value":"62%","options":{"Half":"50%","Default":"62%","Deep":"80%"}},"side":{"value":"bottom","options":{"Bottom":"bottom","Top":"top"}},"tint":{"value":0,"min":0,"max":0.6,"step":0.02}};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-frost-blurred-01',
@@ -7724,6 +7992,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {"username":{"value":"adrielzimbril"},"shape":{"value":"rounded","options":{"Rounded":"rounded","Square":"square","Circle":"circle"}},"showHeader":{"value":true},"showLegend":{"value":true}};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-github-activity-01',
@@ -7771,6 +8040,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-github-activity-02',
@@ -7818,6 +8088,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-github-activity-03',
@@ -7850,6 +8121,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-glass-button-icon-01',
@@ -7882,6 +8154,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-glass-button-reveal-01',
@@ -7914,6 +8187,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-glass-button-text-01',
@@ -7946,6 +8220,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-gooey-blobs-01',
@@ -7978,6 +8253,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-gooey-info-popover-01',
@@ -8010,6 +8286,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-gooey-slots-tooltip-01',
@@ -8042,6 +8319,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-gooey-tooltip-01',
@@ -8074,6 +8352,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-handle-reel-01',
@@ -8106,6 +8385,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-handle-reel-02',
@@ -8138,6 +8418,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-icon-stack-01',
@@ -8170,6 +8451,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-icon-stack-02',
@@ -8202,6 +8484,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-icon-stack-03',
@@ -8234,6 +8517,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-icon-stack-04',
@@ -8266,6 +8550,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-icon-stack-05',
@@ -8298,6 +8583,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-icon-stack-06',
@@ -8330,6 +8616,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-image-dark-01',
@@ -8362,6 +8649,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-image-dark-02',
@@ -8394,6 +8682,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {"corner":{"value":24,"min":10,"max":32,"step":2}};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-interactive-checklist-01',
@@ -8426,6 +8715,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-kanban-01',
@@ -8458,6 +8748,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-kanban-02',
@@ -8490,6 +8781,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-kanban-03',
@@ -8522,6 +8814,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-kanban-04',
@@ -8554,6 +8847,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-kanban-05',
@@ -8586,6 +8880,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-kanban-06',
@@ -8618,6 +8913,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-liquid-metal-border-01',
@@ -8650,6 +8946,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-liquid-metal-border-02',
@@ -8682,6 +8979,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-liquid-metal-border-03',
@@ -8714,6 +9012,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-liquid-metal-border-04',
@@ -8746,6 +9045,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {"corner":{"value":20,"min":8,"max":32,"step":2}};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-liquid-sortable-list-01',
@@ -8778,6 +9078,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {"stretch":{"value":36,"min":0,"max":100,"step":5},"disabled":{"value":false}};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-liquid-switch-01',
@@ -8810,6 +9111,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-morph-icon-01',
@@ -8842,6 +9144,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-morph-icon-02',
@@ -8874,6 +9177,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-morph-icon-03',
@@ -8906,6 +9210,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-morph-icon-04',
@@ -8938,6 +9243,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-morph-icon-05',
@@ -8970,6 +9276,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-morph-icon-06',
@@ -9002,6 +9309,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {"rounded":{"value":8,"min":0,"max":36,"step":1},"squircle":{"value":false},"morph":{"value":50,"min":0,"max":100,"step":5}};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-morphing-area-01',
@@ -9034,6 +9342,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {"corner":{"value":28,"min":10,"max":28,"step":2}};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-morphing-command-bar-01',
@@ -9066,6 +9375,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {"collapsedWidth":{"value":64,"min":64,"max":180,"step":4},"expandedWidth":{"value":280,"min":220,"max":360,"step":10},"corner":{"value":20,"min":8,"max":24,"step":2}};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-morphing-search-pill-01',
@@ -9098,6 +9408,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {"interval":{"value":2400,"options":{"Fast (1600ms)":1600,"Standard (2400ms)":2400,"Slow (3400ms)":3400}},"blurAmount":{"value":"10px","options":{"Subtle (6px)":"6px","Balanced (10px)":"10px","Deep (16px)":"16px"}},"springBounce":{"value":0.14,"options":{"Tight (0.08)":0.08,"Balanced (0.14)":0.14,"Playful (0.24)":0.24}},"pauseOnHover":{"value":true}};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-morphing-text-01',
@@ -9130,6 +9441,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {"interval":{"value":2800,"options":{"Fast (2000ms)":2000,"Standard (2800ms)":2800,"Relaxed (3800ms)":3800}},"blurAmount":{"value":"10px","options":{"Subtle (6px)":"6px","Balanced (10px)":"10px","Deep (16px)":"16px"}},"pauseOnHover":{"value":true}};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-morphing-text-02',
@@ -9162,6 +9474,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-notification-list-01',
@@ -9194,6 +9507,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-phone-input-01',
@@ -9226,6 +9540,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-phone-input-02',
@@ -9258,6 +9573,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-phone-input-03',
@@ -9290,6 +9606,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-phone-input-04',
@@ -9322,6 +9639,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-phone-input-05',
@@ -9354,6 +9672,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-phone-input-06',
@@ -9386,6 +9705,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-phone-input-07',
@@ -9418,6 +9738,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-phone-input-08',
@@ -9450,6 +9771,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-phone-input-09',
@@ -9482,6 +9804,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-phone-input-10',
@@ -9514,6 +9837,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-pin-list-01',
@@ -9546,6 +9870,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-pixel-fill-button-01',
@@ -9578,6 +9903,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {"textureFile":{"type":"file","accept":"image/*","value":""},"accentColor":{"value":"#ffe9a8","options":{"Aurum":"#ffe9a8","Mercury":"#f0f4f8","Iris":"#c9a6ff","Cobalt":"#93c5fd","Forge":"#fdba74","Jade":"#6ee7b7","Pearl":"#fafafa","White":"#ffffff","Black":"#000000"}},"gridDensity":{"value":38,"options":{"Fine (60)":60,"Standard (38)":38,"Chunky (20)":20}},"bandWidth":{"value":3.5,"options":{"Tight (2.0)":2,"Standard (3.5)":3.5,"Broad (6.0)":6}},"noiseIntensity":{"value":0.16,"options":{"Subtle (0.08)":0.08,"Balanced (0.16)":0.16,"Heavy (0.35)":0.35}},"trigger":{"value":"loop","options":{"Loop (Auto)":"loop","Hover":"hover","Scroll":"scroll"}}};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-pixel-reveal-image-01',
@@ -9610,6 +9936,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {"text":{"value":"Space UI 🤯❣️"},"edgeColor":{"value":"#ffe9a8","options":{"Aurum":"#ffe9a8","Mercury":"#f0f4f8","Iris":"#c9a6ff","Cobalt":"#93c5fd","Forge":"#fdba74","Jade":"#6ee7b7","Pearl":"#fafafa","White":"#ffffff","Black":"#000000"}},"pixelSize":{"value":4,"options":{"Fine (2px)":2,"Crisp (4px)":4,"Pixelated (8px)":8,"Blocky (14px)":14}},"fontSize":{"value":54,"options":{"Medium (36px)":36,"Large (54px)":54,"Display (72px)":72}},"speed":{"value":1,"options":{"Slow (0.6x)":0.6,"Normal (1x)":1,"Fast (1.5x)":1.5,"Turbo (2x)":2}},"trigger":{"value":"loop","options":{"Loop (Auto)":"loop","Hover":"hover","Scroll":"scroll"}}};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-pixel-reveal-text-01',
@@ -9642,6 +9969,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-pixel-reveal-text-02',
@@ -9674,6 +10002,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-rating-01',
@@ -9706,6 +10035,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-rating-02',
@@ -9738,6 +10068,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-rating-03',
@@ -9770,6 +10101,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-rating-04',
@@ -9802,6 +10134,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-rating-05',
@@ -9834,6 +10167,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-rating-06',
@@ -9866,6 +10200,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-rating-07',
@@ -9898,6 +10233,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-rating-08',
@@ -9930,6 +10266,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-rating-09',
@@ -9962,6 +10299,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-resizable-01',
@@ -9994,6 +10332,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-resizable-02',
@@ -10026,6 +10365,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-resizable-03',
@@ -10058,6 +10398,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-resizable-04',
@@ -10090,6 +10431,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-resizable-05',
@@ -10122,6 +10464,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-resizable-06',
@@ -10154,6 +10497,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-resizable-07',
@@ -10186,6 +10530,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-resizable-08',
@@ -10218,6 +10563,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-resizable-09',
@@ -10250,6 +10596,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-resizable-10',
@@ -10282,6 +10629,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-scatter-text-01',
@@ -10314,6 +10662,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-scrollspy-01',
@@ -10346,6 +10695,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-scrollspy-02',
@@ -10378,6 +10728,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-section-scrollspy-01',
@@ -10410,6 +10761,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-silk-border-01',
@@ -10442,6 +10794,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-silk-border-02',
@@ -10474,6 +10827,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-silk-border-03',
@@ -10506,6 +10860,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-silk-border-04',
@@ -10538,6 +10893,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {"speed":{"value":50,"min":0,"max":100,"step":5},"width":{"value":320,"min":260,"max":460,"step":10},"corner":{"value":28,"min":0,"max":28,"step":2}};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-slide-to-confirm-01',
@@ -10570,6 +10926,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {"ring":{"value":true},"height":{"value":40,"min":16,"max":64,"step":2},"corner":{"value":13,"min":0,"max":20,"step":1},"viscosity":{"value":15,"min":0,"max":100,"step":1},"momentum":{"value":55,"min":0,"max":100,"step":1},"tilt":{"value":45,"min":0,"max":100,"step":1}};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-slosh-slider-01',
@@ -10602,6 +10959,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {"min":{"value":0,"min":0,"max":20,"step":1},"max":{"value":100,"min":60,"max":150,"step":1},"step":{"value":5,"min":1,"max":20,"step":1},"height":{"value":32,"min":16,"max":64,"step":2},"showTicks":{"value":true},"fillFrom":{"value":"#bae6fd"},"fillVia":{"value":"#e0e7ff"},"fillTo":{"value":"#60a5fa"}};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-smooth-slider-01',
@@ -10634,6 +10992,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-sortable-01',
@@ -10666,6 +11025,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-sortable-02',
@@ -10698,6 +11058,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-sortable-03',
@@ -10730,6 +11091,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-sortable-04',
@@ -10762,6 +11124,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-sortable-05',
@@ -10794,6 +11157,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-sortable-06',
@@ -10826,6 +11190,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-sortable-07',
@@ -10858,6 +11223,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-sortable-08',
@@ -10890,6 +11256,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-squircle-01',
@@ -10922,6 +11289,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-status-badge-01',
@@ -10954,6 +11322,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-status-badge-02',
@@ -10986,6 +11355,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-status-badge-03',
@@ -11018,6 +11388,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-status-badge-04',
@@ -11050,6 +11421,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-status-badge-05',
@@ -11082,6 +11454,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-status-badge-06',
@@ -11114,6 +11487,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-status-badge-07',
@@ -11146,6 +11520,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-status-badge-08',
@@ -11178,6 +11553,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-status-badge-09',
@@ -11210,6 +11586,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {"corner":{"value":24,"min":8,"max":36,"step":2},"maxDisplay":{"value":5,"min":2,"max":5,"step":1}};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-team-roster-selector-01',
@@ -11242,6 +11619,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {"text":{"value":"Ship your ideas faster 🚀 with Space UI 🫧🦄"},"source":{"value":"fluent","options":{"Fluent":"fluent","Apple":"apple","Twemoji":"twemoji","Blobmoji":"blobmoji","Noto":"noto"}}};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-textmoji-01',
@@ -11274,6 +11652,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-textmoji-02',
@@ -11306,6 +11685,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-textmoji-03',
@@ -11338,6 +11718,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-textmoji-04',
@@ -11370,6 +11751,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-textmoji-05',
@@ -11402,6 +11784,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {"variant":{"value":"circle","options":{"Circle":"circle","Circle Blur":"circle-blur","Rectangle":"rectangle","Polygon":"polygon"}},"startCircle":{"value":"center","label":"Direction","options":{"Center":"center","Top Left":"top-left","Top Right":"top-right","Bottom Left":"bottom-left","Bottom Right":"bottom-right","Top Center":"top-center","Bottom Center":"bottom-center"},"dependsOn":{"variant":["circle","circle-blur"]}},"startRectangle":{"value":"bottom-up","label":"Direction","options":{"Bottom Up":"bottom-up","Top Down":"top-down","Left Right":"left-right","Right Left":"right-left","Top Left":"top-left","Top Right":"top-right","Bottom Left":"bottom-left","Bottom Right":"bottom-right"},"dependsOn":{"variant":"rectangle"}},"startPolygon":{"value":"top-left","label":"Direction","options":{"Top Left":"top-left","Top Right":"top-right"},"dependsOn":{"variant":"polygon"}},"blur":{"value":false,"dependsOn":{"variant":["circle","rectangle","polygon"]}},"buttonVariant":{"value":"outline","options":{"Outline":"outline","Secondary":"secondary","Default":"default","Ghost":"ghost"}},"size":{"value":"lg","options":{"XS":"xs","SM":"sm","MD":"md","LG":"lg","XL":"xl"}}};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-theme-toggle-01',
@@ -11434,6 +11817,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {"min":{"value":16,"min":0,"max":32,"step":1},"max":{"value":48,"min":33,"max":100,"step":1},"step":{"value":1,"min":1,"max":5,"step":1},"majorEvery":{"value":8,"min":1,"max":16,"step":1},"showValue":{"value":true},"fixedPitch":{"value":true}};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-tick-slider-01',
@@ -11466,6 +11850,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-timeline-01',
@@ -11498,6 +11883,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-timeline-02',
@@ -11530,6 +11916,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-timeline-03',
@@ -11562,6 +11949,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-timeline-04',
@@ -11594,6 +11982,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-timeline-05',
@@ -11626,6 +12015,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-timeline-06',
@@ -11658,6 +12048,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-timeline-07',
@@ -11690,6 +12081,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-timeline-08',
@@ -11722,6 +12114,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-timeline-09',
@@ -11754,6 +12147,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-timeline-10',
@@ -11786,6 +12180,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-timeline-11',
@@ -11818,6 +12213,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-timeline-12',
@@ -11850,6 +12246,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-tournament-bracket-01',
@@ -11882,6 +12279,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-user-presence-avatar-01',
@@ -11914,6 +12312,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {"accentColor":{"value":"#ffe9a8","options":{"Aurum":"#ffe9a8","Mercury":"#f0f4f8","Iris":"#c9a6ff","Cobalt":"#93c5fd","Forge":"#fdba74","Jade":"#6ee7b7","Pearl":"#fafafa","White":"#ffffff","Black":"#000000"}}};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-velocity-hover-preview-01',
@@ -11946,6 +12345,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-c-words-preloader-01',
@@ -11978,6 +12378,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-h-auto-height-01',
@@ -12010,6 +12411,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-h-auto-height-02',
@@ -12042,6 +12444,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-h-controlled-state-01',
@@ -12074,6 +12477,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-h-data-state-01',
@@ -12106,6 +12510,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-h-use-in-view-01',
@@ -12138,6 +12543,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-h-motion-value-state-01',
@@ -12170,6 +12576,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-h-battery-status-01',
@@ -12202,6 +12609,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-h-clipboard-01',
@@ -12234,6 +12642,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-h-clipboard-02',
@@ -12266,6 +12675,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-h-clipboard-03',
@@ -12298,6 +12708,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-h-use-cookie-01',
@@ -12330,6 +12741,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-h-cookie-listener-01',
@@ -12362,6 +12774,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-h-device-os-01',
@@ -12394,6 +12807,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-h-favicon-01',
@@ -12426,6 +12840,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-h-fullscreen-01',
@@ -12458,6 +12873,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-h-is-mac-01',
@@ -12490,6 +12906,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-h-local-storage-01',
@@ -12522,6 +12939,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-h-local-storage-02',
@@ -12554,6 +12972,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-h-local-storage-03',
@@ -12586,6 +13005,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-h-media-query-01',
@@ -12618,6 +13038,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-h-network-01',
@@ -12650,6 +13071,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-h-orientation-01',
@@ -12682,6 +13104,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-h-prefers-theme-01',
@@ -12714,6 +13137,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-h-script-01',
@@ -12746,6 +13170,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-h-session-storage-01',
@@ -12778,6 +13203,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-h-share-01',
@@ -12810,6 +13236,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-h-tab-notification-01',
@@ -12842,6 +13269,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-h-title-01',
@@ -12874,6 +13302,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-h-class-01',
@@ -12906,6 +13335,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-h-for-01',
@@ -12938,6 +13368,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-h-for-02',
@@ -12970,6 +13401,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-h-if-01',
@@ -13002,6 +13434,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-h-image-01',
@@ -13034,6 +13467,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-h-in-view-01',
@@ -13066,6 +13500,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-h-render-after-01',
@@ -13098,6 +13533,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-h-show-01',
@@ -13130,6 +13566,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-h-switch-01',
@@ -13162,6 +13599,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-h-switch-02',
@@ -13194,6 +13632,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-h-click-outside-01',
@@ -13226,6 +13665,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-h-event-listener-01',
@@ -13258,6 +13698,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-h-hover-01',
@@ -13290,6 +13731,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-h-hover-02',
@@ -13322,6 +13764,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-h-intersection-observer-01',
@@ -13354,6 +13797,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-h-key-press-01',
@@ -13386,6 +13830,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-h-lock-body-scroll-01',
@@ -13418,6 +13863,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-h-mouse-position-01',
@@ -13450,6 +13896,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-h-scroll-device-01',
@@ -13482,6 +13929,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-h-scroll-position-01',
@@ -13514,6 +13962,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-h-scroll-to-01',
@@ -13546,6 +13995,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-h-size-01',
@@ -13578,6 +14028,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-h-window-size-01',
@@ -13610,6 +14061,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-h-character-limit-01',
@@ -13642,6 +14094,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-h-character-limit-02',
@@ -13674,6 +14127,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-h-file-upload-01',
@@ -13706,6 +14160,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-h-file-upload-02',
@@ -13738,6 +14193,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-h-file-upload-03',
@@ -13770,6 +14226,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-h-input-value-01',
@@ -13802,6 +14259,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-h-load-more-01',
@@ -13834,6 +14292,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-h-map-01',
@@ -13866,6 +14325,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-h-mutation-01',
@@ -13898,6 +14358,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-h-pagination-01',
@@ -13930,6 +14391,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-h-parse-markdown-01',
@@ -13962,6 +14424,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-h-reading-time-01',
@@ -13994,6 +14457,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-h-sanitize-content-01',
@@ -14026,6 +14490,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-h-confirm-exit-01',
@@ -14058,6 +14523,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-h-debounce-01',
@@ -14090,6 +14556,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-h-debounce-02',
@@ -14122,6 +14589,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-h-event-callback-01',
@@ -14154,6 +14622,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-h-first-render-01',
@@ -14186,6 +14655,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-h-first-visit-01',
@@ -14218,6 +14688,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-h-hold-01',
@@ -14250,6 +14721,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-h-idle-01',
@@ -14282,6 +14754,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-h-interval-01',
@@ -14314,6 +14787,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-h-interval-02',
@@ -14346,6 +14820,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-h-is-mounted-01',
@@ -14378,6 +14853,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-h-isomorphic-layout-effect-01',
@@ -14410,6 +14886,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-h-leave-detection-01',
@@ -14442,6 +14919,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-h-performance-mode-01',
@@ -14474,6 +14952,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-h-single-effect-01',
@@ -14506,6 +14985,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-h-toggle-01',
@@ -14538,6 +15018,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-h-update-effect-01',
@@ -14570,6 +15051,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-h-urgent-update-01',
@@ -14602,6 +15084,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-h-cache-01',
@@ -14634,6 +15117,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-h-cookie-01',
@@ -14666,6 +15150,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-h-event-01',
@@ -14698,6 +15183,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-h-format-bytes-01',
@@ -14730,6 +15216,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-h-format-bytes-02',
@@ -14762,6 +15249,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-h-format-content-01',
@@ -14794,6 +15282,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-h-format-date-01',
@@ -14826,6 +15315,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-h-format-text-01',
@@ -14858,6 +15348,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-h-is-negative-01',
@@ -14890,6 +15381,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-h-logger-01',
@@ -14922,6 +15414,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-h-range-map-01',
@@ -14954,6 +15447,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-h-range-map-02',
@@ -14986,6 +15480,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-h-sleep-01',
@@ -15018,6 +15513,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-accordion-01',
@@ -15050,6 +15546,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-accordion-02',
@@ -15082,6 +15579,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-accordion-03',
@@ -15114,6 +15612,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-alert-01',
@@ -15146,6 +15645,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-alert-02',
@@ -15178,6 +15678,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-alert-03',
@@ -15210,6 +15711,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-alert-04',
@@ -15242,6 +15744,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-alert-dialog-01',
@@ -15274,6 +15777,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-alert-dialog-02',
@@ -15306,6 +15810,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-aspect-ratio-01',
@@ -15338,6 +15843,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-aspect-ratio-02',
@@ -15370,6 +15876,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-aspect-ratio-03',
@@ -15402,6 +15909,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-aspect-ratio-04',
@@ -15434,6 +15942,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-aspect-ratio-05',
@@ -15466,6 +15975,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-aspect-ratio-06',
@@ -15498,6 +16008,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-aspect-ratio-07',
@@ -15530,6 +16041,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-aspect-ratio-08',
@@ -15562,6 +16074,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-autocomplete-01',
@@ -15594,6 +16107,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-autocomplete-02',
@@ -15626,6 +16140,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-autocomplete-03',
@@ -15658,6 +16173,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-autocomplete-04',
@@ -15690,6 +16206,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-autocomplete-05',
@@ -15722,6 +16239,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-autocomplete-06',
@@ -15754,6 +16272,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-autocomplete-07',
@@ -15786,6 +16305,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-autocomplete-08',
@@ -15818,6 +16338,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-autocomplete-09',
@@ -15850,6 +16371,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-autocomplete-10',
@@ -15882,6 +16404,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-autocomplete-11',
@@ -15914,6 +16437,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-autocomplete-12',
@@ -15946,6 +16470,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-autocomplete-13',
@@ -15978,6 +16503,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-autocomplete-14',
@@ -16010,6 +16536,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-autocomplete-15',
@@ -16042,6 +16569,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-avatar-01',
@@ -16074,6 +16602,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-avatar-02',
@@ -16106,6 +16635,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-avatar-03',
@@ -16138,6 +16668,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-avatar-04',
@@ -16170,6 +16701,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-avatar-05',
@@ -16202,6 +16734,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-avatar-06',
@@ -16234,6 +16767,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-avatar-07',
@@ -16266,6 +16800,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-avatar-08',
@@ -16298,6 +16833,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-avatar-09',
@@ -16330,6 +16866,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-avatar-10',
@@ -16362,6 +16899,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-avatar-11',
@@ -16394,6 +16932,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-badge-01',
@@ -16426,6 +16965,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-badge-02',
@@ -16458,6 +16998,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-badge-03',
@@ -16490,6 +17031,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-badge-04',
@@ -16522,6 +17064,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-badge-05',
@@ -16554,6 +17097,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-badge-06',
@@ -16586,6 +17130,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-badge-07',
@@ -16618,6 +17163,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-badge-08',
@@ -16650,6 +17196,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-badge-09',
@@ -16682,6 +17229,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-breadcrumb-01',
@@ -16714,6 +17262,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-breadcrumb-02',
@@ -16746,6 +17295,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-breadcrumb-03',
@@ -16778,6 +17328,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-breadcrumb-04',
@@ -16810,6 +17361,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-breadcrumb-05',
@@ -16842,6 +17394,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-breadcrumb-06',
@@ -16874,6 +17427,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-breadcrumb-07',
@@ -16906,6 +17460,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-button-01',
@@ -16938,6 +17493,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-button-02',
@@ -16970,6 +17526,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-button-03',
@@ -17002,6 +17559,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-button-04',
@@ -17034,6 +17592,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-button-05',
@@ -17066,6 +17625,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-button-06',
@@ -17098,6 +17658,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-button-07',
@@ -17130,6 +17691,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-button-08',
@@ -17162,6 +17724,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-button-09',
@@ -17194,6 +17757,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-button-10',
@@ -17226,6 +17790,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-button-11',
@@ -17258,6 +17823,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-button-12',
@@ -17290,6 +17856,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-button-13',
@@ -17322,6 +17889,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-button-14',
@@ -17354,6 +17922,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-button-15',
@@ -17386,6 +17955,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-button-16',
@@ -17418,6 +17988,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-button-17',
@@ -17450,6 +18021,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-button-18',
@@ -17482,6 +18054,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-button-19',
@@ -17514,6 +18087,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-button-20',
@@ -17546,6 +18120,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-button-21',
@@ -17578,6 +18153,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-button-22',
@@ -17610,6 +18186,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-button-23',
@@ -17642,6 +18219,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-button-24',
@@ -17674,6 +18252,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-button-25',
@@ -17706,6 +18285,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-button-26',
@@ -17738,6 +18318,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-button-27',
@@ -17770,6 +18351,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-button-28',
@@ -17802,6 +18384,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-button-29',
@@ -17834,6 +18417,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-calendar-01',
@@ -17866,6 +18450,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-calendar-02',
@@ -17898,6 +18483,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-calendar-03',
@@ -17930,6 +18516,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-calendar-04',
@@ -17962,6 +18549,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-calendar-05',
@@ -17994,6 +18582,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-calendar-06',
@@ -18026,6 +18615,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-calendar-07',
@@ -18058,6 +18648,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-calendar-08',
@@ -18090,6 +18681,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-calendar-09',
@@ -18122,6 +18714,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-calendar-10',
@@ -18154,6 +18747,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-calendar-11',
@@ -18186,6 +18780,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-calendar-12',
@@ -18218,6 +18813,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-calendar-13',
@@ -18250,6 +18846,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-calendar-14',
@@ -18282,6 +18879,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-calendar-15',
@@ -18314,6 +18912,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-calendar-16',
@@ -18346,6 +18945,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-calendar-17',
@@ -18378,6 +18978,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-calendar-18',
@@ -18410,6 +19011,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-calendar-19',
@@ -18442,6 +19044,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-calendar-20',
@@ -18474,6 +19077,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-calendar-21',
@@ -18506,6 +19110,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-calendar-22',
@@ -18538,6 +19143,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-calendar-23',
@@ -18570,6 +19176,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-calendar-24',
@@ -18602,6 +19209,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-calendar-25',
@@ -18634,6 +19242,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-card-01',
@@ -18666,6 +19275,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-card-02',
@@ -18698,6 +19308,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-card-03',
@@ -18730,6 +19341,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-card-04',
@@ -18762,6 +19374,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-card-05',
@@ -18794,6 +19407,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-card-06',
@@ -18826,6 +19440,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-card-07',
@@ -18858,6 +19473,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-card-08',
@@ -18890,6 +19506,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-card-09',
@@ -18922,6 +19539,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-card-10',
@@ -18954,6 +19572,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-card-11',
@@ -18986,6 +19605,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-checkbox-01',
@@ -19018,6 +19638,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-checkbox-02',
@@ -19050,6 +19671,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-checkbox-03',
@@ -19082,6 +19704,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-checkbox-04',
@@ -19114,6 +19737,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-checkbox-group-01',
@@ -19146,6 +19770,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-checkbox-group-02',
@@ -19178,6 +19803,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-checkbox-group-03',
@@ -19210,6 +19836,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-checkbox-group-04',
@@ -19242,6 +19869,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-checkbox-group-05',
@@ -19274,6 +19902,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-collapsible-01',
@@ -19306,6 +19935,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-combobox-01',
@@ -19338,6 +19968,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-combobox-02',
@@ -19370,6 +20001,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-combobox-03',
@@ -19402,6 +20034,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-combobox-04',
@@ -19434,6 +20067,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-combobox-05',
@@ -19466,6 +20100,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-combobox-06',
@@ -19498,6 +20133,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-combobox-07',
@@ -19530,6 +20166,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-combobox-08',
@@ -19562,6 +20199,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-combobox-09',
@@ -19594,6 +20232,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-combobox-10',
@@ -19626,6 +20265,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-combobox-11',
@@ -19658,6 +20298,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-combobox-12',
@@ -19690,6 +20331,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-combobox-13',
@@ -19722,6 +20364,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-combobox-14',
@@ -19754,6 +20397,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-combobox-15',
@@ -19786,6 +20430,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-combobox-16',
@@ -19818,6 +20463,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-combobox-17',
@@ -19850,6 +20496,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-combobox-18',
@@ -19882,6 +20529,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-combobox-19',
@@ -19914,6 +20562,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-command-01',
@@ -19946,6 +20595,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-command-02',
@@ -19978,6 +20628,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-context-menu-01',
@@ -20010,6 +20661,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-context-menu-02',
@@ -20042,6 +20694,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-context-menu-03',
@@ -20074,6 +20727,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-context-menu-04',
@@ -20106,6 +20760,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-context-menu-05',
@@ -20138,6 +20793,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-context-menu-06',
@@ -20170,6 +20826,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-context-menu-07',
@@ -20202,6 +20859,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-context-menu-08',
@@ -20234,6 +20892,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-date-picker-01',
@@ -20266,6 +20925,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-date-picker-02',
@@ -20298,6 +20958,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-date-picker-03',
@@ -20330,6 +20991,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-date-picker-04',
@@ -20362,6 +21024,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-date-picker-05',
@@ -20394,6 +21057,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-date-picker-06',
@@ -20426,6 +21090,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-date-picker-07',
@@ -20458,6 +21123,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-date-picker-08',
@@ -20490,6 +21156,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-date-picker-09',
@@ -20522,6 +21189,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-dialog-01',
@@ -20554,6 +21222,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-dialog-02',
@@ -20586,6 +21255,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-dialog-03',
@@ -20618,6 +21288,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-dialog-04',
@@ -20650,6 +21321,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-dialog-05',
@@ -20682,6 +21354,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-dialog-06',
@@ -20714,6 +21387,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-drawer-01',
@@ -20746,6 +21420,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-drawer-02',
@@ -20778,6 +21453,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-drawer-03',
@@ -20810,6 +21486,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-drawer-04',
@@ -20842,6 +21519,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-drawer-05',
@@ -20874,6 +21552,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-drawer-06',
@@ -20906,6 +21585,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-drawer-07',
@@ -20938,6 +21618,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-drawer-08',
@@ -20970,6 +21651,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-drawer-09',
@@ -21002,6 +21684,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-drawer-10',
@@ -21034,6 +21717,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-drawer-11',
@@ -21066,6 +21750,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-drawer-12',
@@ -21098,6 +21783,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-drawer-13',
@@ -21130,6 +21816,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-drawer-14',
@@ -21162,6 +21849,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-empty-01',
@@ -21194,6 +21882,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-field-01',
@@ -21226,6 +21915,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-field-02',
@@ -21258,6 +21948,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-field-03',
@@ -21290,6 +21981,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-field-04',
@@ -21322,6 +22014,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-field-05',
@@ -21354,6 +22047,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-field-06',
@@ -21386,6 +22080,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-field-07',
@@ -21418,6 +22113,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-field-08',
@@ -21450,6 +22146,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-field-09',
@@ -21482,6 +22179,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-field-10',
@@ -21514,6 +22212,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-field-11',
@@ -21546,6 +22245,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-field-12',
@@ -21578,6 +22278,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-field-13',
@@ -21610,6 +22311,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-field-14',
@@ -21642,6 +22344,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-field-15',
@@ -21674,6 +22377,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-field-16',
@@ -21706,6 +22410,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-field-17',
@@ -21738,6 +22443,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-field-18',
@@ -21770,6 +22476,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-fieldset-01',
@@ -21802,6 +22509,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-form-01',
@@ -21834,6 +22542,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-form-02',
@@ -21866,6 +22575,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-frame-01',
@@ -21898,6 +22608,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-frame-02',
@@ -21930,6 +22641,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-frame-03',
@@ -21962,6 +22674,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-frame-04',
@@ -21994,6 +22707,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-group-01',
@@ -22026,6 +22740,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-group-02',
@@ -22058,6 +22773,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-group-03',
@@ -22090,6 +22806,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-group-04',
@@ -22122,6 +22839,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-group-05',
@@ -22154,6 +22872,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-group-06',
@@ -22186,6 +22905,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-group-07',
@@ -22218,6 +22938,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-group-08',
@@ -22250,6 +22971,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-group-09',
@@ -22282,6 +23004,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-group-10',
@@ -22314,6 +23037,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-group-11',
@@ -22346,6 +23070,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-group-12',
@@ -22378,6 +23103,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-group-13',
@@ -22410,6 +23136,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-group-14',
@@ -22442,6 +23169,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-group-15',
@@ -22474,6 +23202,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-group-16',
@@ -22506,6 +23235,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-group-17',
@@ -22538,6 +23268,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-group-18',
@@ -22570,6 +23301,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-group-19',
@@ -22602,6 +23334,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-group-20',
@@ -22634,6 +23367,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-group-21',
@@ -22666,6 +23400,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-group-22',
@@ -22698,6 +23433,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-group-23',
@@ -22730,6 +23466,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-group-24',
@@ -22762,6 +23499,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-group-25',
@@ -22794,6 +23532,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-group-26',
@@ -22826,6 +23565,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-group-27',
@@ -22858,6 +23598,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-group-28',
@@ -22890,6 +23631,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-group-29',
@@ -22922,6 +23664,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-input-01',
@@ -22954,6 +23697,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-input-02',
@@ -22986,6 +23730,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-input-03',
@@ -23018,6 +23763,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-input-04',
@@ -23050,6 +23796,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-input-05',
@@ -23082,6 +23829,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-input-06',
@@ -23114,6 +23862,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-input-07',
@@ -23146,6 +23895,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-input-08',
@@ -23178,6 +23928,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-input-09',
@@ -23210,6 +23961,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-input-10',
@@ -23242,6 +23994,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-input-11',
@@ -23274,6 +24027,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-input-12',
@@ -23306,6 +24060,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-input-13',
@@ -23338,6 +24093,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-input-14',
@@ -23370,6 +24126,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-input-15',
@@ -23402,6 +24159,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-input-16',
@@ -23434,6 +24192,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-input-17',
@@ -23466,6 +24225,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-input-18',
@@ -23498,6 +24258,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-input-group-01',
@@ -23530,6 +24291,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-input-group-02',
@@ -23562,6 +24324,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-input-group-03',
@@ -23594,6 +24357,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-input-group-04',
@@ -23626,6 +24390,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-input-group-05',
@@ -23658,6 +24423,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-input-group-06',
@@ -23690,6 +24456,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-input-group-07',
@@ -23722,6 +24489,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-input-group-08',
@@ -23754,6 +24522,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-input-group-09',
@@ -23786,6 +24555,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-input-group-10',
@@ -23818,6 +24588,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-input-group-11',
@@ -23850,6 +24621,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-input-group-12',
@@ -23882,6 +24654,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-input-group-13',
@@ -23914,6 +24687,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-input-group-14',
@@ -23946,6 +24720,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-input-group-15',
@@ -23978,6 +24753,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-input-group-16',
@@ -24010,6 +24786,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-input-group-17',
@@ -24042,6 +24819,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-input-group-18',
@@ -24074,6 +24852,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-input-group-19',
@@ -24106,6 +24885,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-input-group-20',
@@ -24138,6 +24918,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-input-group-21',
@@ -24170,6 +24951,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-input-group-22',
@@ -24202,6 +24984,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-input-group-23',
@@ -24234,6 +25017,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-input-group-24',
@@ -24266,6 +25050,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-input-group-25',
@@ -24298,6 +25083,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-input-group-26',
@@ -24330,6 +25116,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-input-group-27',
@@ -24362,6 +25149,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-input-group-28',
@@ -24394,6 +25182,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-kbd-01',
@@ -24426,6 +25215,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-link-01',
@@ -24458,6 +25248,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-link-03',
@@ -24490,6 +25281,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-link-05',
@@ -24522,6 +25314,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-link-07',
@@ -24554,6 +25347,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-navigation-02',
@@ -24586,6 +25380,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-navigation-04',
@@ -24618,6 +25413,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-navigation-06',
@@ -24650,6 +25446,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-menu-01',
@@ -24682,6 +25479,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-menu-02',
@@ -24714,6 +25512,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-menu-03',
@@ -24746,6 +25545,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-menu-04',
@@ -24778,6 +25578,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-menu-05',
@@ -24810,6 +25611,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-menu-06',
@@ -24842,6 +25644,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-menu-07',
@@ -24874,6 +25677,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-menu-08',
@@ -24906,6 +25710,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-menu-09',
@@ -24938,6 +25743,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-menubar-01',
@@ -24970,6 +25776,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-meter-01',
@@ -25002,6 +25809,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-meter-02',
@@ -25034,6 +25842,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-meter-03',
@@ -25066,6 +25875,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-meter-04',
@@ -25098,6 +25908,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-navigation-menu-01',
@@ -25130,6 +25941,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-number-field-01',
@@ -25162,6 +25974,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-number-field-02',
@@ -25194,6 +26007,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-number-field-03',
@@ -25226,6 +26040,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-number-field-04',
@@ -25258,6 +26073,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-number-field-05',
@@ -25290,6 +26106,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-number-field-06',
@@ -25322,6 +26139,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-number-field-07',
@@ -25354,6 +26172,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-number-field-08',
@@ -25386,6 +26205,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-number-field-09',
@@ -25418,6 +26238,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-number-field-10',
@@ -25450,6 +26271,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-number-field-11',
@@ -25482,6 +26304,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-otp-field-01',
@@ -25514,6 +26337,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-otp-field-02',
@@ -25546,6 +26370,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-otp-field-03',
@@ -25578,6 +26403,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-otp-field-04',
@@ -25610,6 +26436,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-otp-field-05',
@@ -25642,6 +26469,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-otp-field-06',
@@ -25674,6 +26502,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-otp-field-07',
@@ -25706,6 +26535,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-otp-field-08',
@@ -25738,6 +26568,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-otp-field-09',
@@ -25770,6 +26601,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-preview-link-card-01',
@@ -25802,6 +26634,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-pagination-01',
@@ -25834,6 +26667,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-pagination-02',
@@ -25866,6 +26700,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-pagination-03',
@@ -25898,6 +26733,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-popover-01',
@@ -25930,6 +26766,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-popover-02',
@@ -25962,6 +26799,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-popover-03',
@@ -25994,6 +26832,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-popover-04',
@@ -26026,6 +26865,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-preview-card-01',
@@ -26058,6 +26898,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-progress-01',
@@ -26090,6 +26931,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-progress-02',
@@ -26122,6 +26964,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-progress-03',
@@ -26154,6 +26997,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-radio-group-01',
@@ -26186,6 +27030,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-radio-group-02',
@@ -26218,6 +27063,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-radio-group-03',
@@ -26250,6 +27096,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-radio-group-04',
@@ -26282,6 +27129,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-radio-group-05',
@@ -26314,6 +27162,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-radio-group-06',
@@ -26346,6 +27195,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-radio-group-07',
@@ -26378,6 +27228,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-radio-group-08',
@@ -26410,6 +27261,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-scroll-area-01',
@@ -26442,6 +27294,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-scroll-area-02',
@@ -26474,6 +27327,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-scroll-area-03',
@@ -26506,6 +27360,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-scroll-area-04',
@@ -26538,6 +27393,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-scroll-area-05',
@@ -26570,6 +27426,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-select-01',
@@ -26602,6 +27459,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-select-02',
@@ -26634,6 +27492,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-select-03',
@@ -26666,6 +27525,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-select-04',
@@ -26698,6 +27558,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-select-05',
@@ -26730,6 +27591,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-select-06',
@@ -26762,6 +27624,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-select-07',
@@ -26794,6 +27657,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-select-08',
@@ -26826,6 +27690,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-select-09',
@@ -26858,6 +27723,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-select-10',
@@ -26890,6 +27756,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-select-11',
@@ -26922,6 +27789,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-select-12',
@@ -26954,6 +27822,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-select-13',
@@ -26986,6 +27855,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-select-14',
@@ -27018,6 +27888,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-select-15',
@@ -27050,6 +27921,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-select-16',
@@ -27082,6 +27954,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-select-17',
@@ -27114,6 +27987,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-select-18',
@@ -27146,6 +28020,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-select-19',
@@ -27178,6 +28053,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-select-20',
@@ -27210,6 +28086,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-select-21',
@@ -27242,6 +28119,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-select-22',
@@ -27274,6 +28152,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-separator-01',
@@ -27306,6 +28185,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-sheet-01',
@@ -27338,6 +28218,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-sheet-02',
@@ -27370,6 +28251,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-sheet-03',
@@ -27402,6 +28284,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-sidebar-01',
@@ -27434,6 +28317,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-skeleton-01',
@@ -27466,6 +28350,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-skeleton-02',
@@ -27498,6 +28383,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-slider-01',
@@ -27530,6 +28416,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-slider-02',
@@ -27562,6 +28449,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-slider-03',
@@ -27594,6 +28482,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-slider-04',
@@ -27626,6 +28515,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-slider-05',
@@ -27658,6 +28548,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-slider-06',
@@ -27690,6 +28581,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-slider-07',
@@ -27722,6 +28614,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-slider-08',
@@ -27754,6 +28647,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-slider-09',
@@ -27786,6 +28680,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-slider-10',
@@ -27818,6 +28713,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-slider-11',
@@ -27850,6 +28746,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-slider-12',
@@ -27882,6 +28779,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-slider-13',
@@ -27914,6 +28812,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-slider-14',
@@ -27946,6 +28845,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-slider-15',
@@ -27978,6 +28878,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-slider-16',
@@ -28010,6 +28911,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-slider-17',
@@ -28042,6 +28944,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-slider-18',
@@ -28074,6 +28977,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-slider-19',
@@ -28106,6 +29010,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-slider-20',
@@ -28138,6 +29043,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-slider-21',
@@ -28170,6 +29076,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-slider-22',
@@ -28202,6 +29109,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-slider-23',
@@ -28234,6 +29142,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-spinner-01',
@@ -28266,6 +29175,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-switch-01',
@@ -28298,6 +29208,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-switch-02',
@@ -28330,6 +29241,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-switch-03',
@@ -28362,6 +29274,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-switch-04',
@@ -28394,6 +29307,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-switch-05',
@@ -28426,6 +29340,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-switch-06',
@@ -28458,6 +29373,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-switch-07',
@@ -28490,6 +29406,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-switch-08',
@@ -28522,6 +29439,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-table-01',
@@ -28554,6 +29472,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-table-02',
@@ -28586,6 +29505,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-table-03',
@@ -28618,6 +29538,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-table-04',
@@ -28650,6 +29571,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-table-05',
@@ -28682,6 +29604,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-table-06',
@@ -28714,6 +29637,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-table-07',
@@ -28746,6 +29670,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-table-08',
@@ -28778,6 +29703,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-table-09',
@@ -28810,6 +29736,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-tabs-01',
@@ -28842,6 +29769,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-tabs-02',
@@ -28874,6 +29802,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-tabs-03',
@@ -28906,6 +29835,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-tabs-04',
@@ -28938,6 +29868,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-tabs-05',
@@ -28970,6 +29901,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-tabs-06',
@@ -29002,6 +29934,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-tabs-07',
@@ -29034,6 +29967,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-tabs-08',
@@ -29066,6 +30000,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-tabs-09',
@@ -29098,6 +30033,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-tabs-10',
@@ -29130,6 +30066,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-tabs-11',
@@ -29162,6 +30099,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-tabs-12',
@@ -29194,6 +30132,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-tabs-13',
@@ -29226,6 +30165,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-textarea-01',
@@ -29258,6 +30198,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-textarea-02',
@@ -29290,6 +30231,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-textarea-03',
@@ -29322,6 +30264,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-textarea-04',
@@ -29354,6 +30297,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-textarea-05',
@@ -29386,6 +30330,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-textarea-06',
@@ -29418,6 +30363,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-textarea-07',
@@ -29450,6 +30396,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-textarea-08',
@@ -29482,6 +30429,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-textarea-09',
@@ -29514,6 +30462,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-textarea-10',
@@ -29546,6 +30495,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-textarea-11',
@@ -29578,6 +30528,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-textarea-12',
@@ -29610,6 +30561,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-textarea-13',
@@ -29642,6 +30594,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-textarea-14',
@@ -29674,6 +30627,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-toast-01',
@@ -29706,6 +30660,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-toast-02',
@@ -29738,6 +30693,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-toast-03',
@@ -29770,6 +30726,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-toast-04',
@@ -29802,6 +30759,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-toast-05',
@@ -29834,6 +30792,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-toast-06',
@@ -29866,6 +30825,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-toast-07',
@@ -29898,6 +30858,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-toast-08',
@@ -29930,6 +30891,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-toast-09',
@@ -29962,6 +30924,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-toggle-01',
@@ -29994,6 +30957,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-toggle-02',
@@ -30026,6 +30990,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-toggle-03',
@@ -30058,6 +31023,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-toggle-04',
@@ -30090,6 +31056,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-toggle-05',
@@ -30122,6 +31089,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-toggle-06',
@@ -30154,6 +31122,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-toggle-group-01',
@@ -30186,6 +31155,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-toggle-group-02',
@@ -30218,6 +31188,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-toggle-group-03',
@@ -30250,6 +31221,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-toggle-group-04',
@@ -30282,6 +31254,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-toggle-group-05',
@@ -30314,6 +31287,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-toggle-group-06',
@@ -30346,6 +31320,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-toggle-group-07',
@@ -30378,6 +31353,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-toolbar-01',
@@ -30410,6 +31386,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-tooltip-01',
@@ -30442,6 +31419,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-tooltip-02',
@@ -30474,6 +31452,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-tooltip-03',
@@ -30506,6 +31485,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/demo-p-tooltip-04',
@@ -30538,6 +31518,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/hooks-animation-use-auto-height',
@@ -30570,6 +31551,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/hooks-animation-use-controlled-state',
@@ -30602,6 +31584,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/hooks-animation-use-data-state',
@@ -30634,6 +31617,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/hooks-animation-use-in-view',
@@ -30666,6 +31650,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/hooks-animation-use-motion-value-state',
@@ -30698,6 +31683,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/hooks-browser-use-battery-status',
@@ -30730,6 +31716,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/hooks-browser-use-clipboard',
@@ -30762,6 +31749,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/hooks-browser-use-cookie',
@@ -30794,6 +31782,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/hooks-browser-use-cookie-listener',
@@ -30826,6 +31815,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/hooks-browser-use-device-os',
@@ -30858,6 +31848,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/hooks-browser-use-favicon',
@@ -30890,6 +31881,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/hooks-browser-use-fullscreen',
@@ -30922,6 +31914,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/hooks-browser-use-is-mac',
@@ -30954,6 +31947,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/hooks-browser-use-local-storage',
@@ -30986,6 +31980,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/hooks-browser-use-media-query',
@@ -31018,6 +32013,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/hooks-browser-use-network',
@@ -31050,6 +32046,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/hooks-browser-use-orientation',
@@ -31082,6 +32079,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/hooks-browser-use-prefers-theme',
@@ -31114,6 +32112,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/hooks-browser-use-script',
@@ -31146,6 +32145,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/hooks-browser-use-session-storage',
@@ -31178,6 +32178,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/hooks-browser-use-share',
@@ -31210,6 +32211,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/hooks-browser-use-tab-notification',
@@ -31242,6 +32244,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/hooks-browser-use-title',
@@ -31274,6 +32277,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/hooks-components-class',
@@ -31306,6 +32310,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/hooks-components-for',
@@ -31338,6 +32343,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/hooks-components-if',
@@ -31370,6 +32376,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/hooks-components-image',
@@ -31402,6 +32409,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/hooks-components-in-view',
@@ -31434,6 +32442,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/hooks-components-render-after',
@@ -31466,6 +32475,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/hooks-components-show',
@@ -31498,6 +32508,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/hooks-components-switch',
@@ -31530,6 +32541,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/hooks-dom-use-click-outside',
@@ -31562,6 +32574,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/hooks-dom-use-event-listener',
@@ -31594,6 +32607,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/hooks-dom-use-hover',
@@ -31626,6 +32640,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/hooks-dom-use-intersection-observer',
@@ -31658,6 +32673,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/hooks-dom-use-key-press',
@@ -31690,6 +32706,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/hooks-dom-use-lock-body-scroll',
@@ -31722,6 +32739,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/hooks-dom-use-mouse-position',
@@ -31754,6 +32772,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/hooks-dom-use-scroll-device',
@@ -31786,6 +32805,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/hooks-dom-use-scroll-position',
@@ -31818,6 +32838,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/hooks-dom-use-scroll-to',
@@ -31850,6 +32871,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/hooks-dom-use-size',
@@ -31882,6 +32904,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/hooks-dom-use-window-size',
@@ -31914,6 +32937,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/hooks-form-use-character-limit',
@@ -31946,6 +32970,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/hooks-form-use-file-upload',
@@ -31978,6 +33003,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/hooks-form-use-input-value',
@@ -32010,6 +33036,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/hooks-form-use-load-more',
@@ -32042,6 +33069,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/hooks-form-use-map',
@@ -32074,6 +33102,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/hooks-form-use-mutation',
@@ -32106,6 +33135,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/hooks-form-use-pagination',
@@ -32138,6 +33168,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/hooks-form-use-parse-markdown',
@@ -32170,6 +33201,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/hooks-form-use-reading-time',
@@ -32202,6 +33234,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/hooks-form-use-sanitize-content',
@@ -32234,6 +33267,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/hooks-lifecycle-use-confirm-exit',
@@ -32266,6 +33300,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/hooks-lifecycle-use-debounce',
@@ -32298,6 +33333,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/hooks-lifecycle-use-event-callback',
@@ -32330,6 +33366,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/hooks-lifecycle-use-first-render',
@@ -32362,6 +33399,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/hooks-lifecycle-use-first-visit',
@@ -32394,6 +33432,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/hooks-lifecycle-use-hold',
@@ -32426,6 +33465,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/hooks-lifecycle-use-idle',
@@ -32458,6 +33498,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/hooks-lifecycle-use-interval',
@@ -32490,6 +33531,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/hooks-lifecycle-use-is-mounted',
@@ -32522,6 +33564,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/hooks-lifecycle-use-isomorphic-layout-effect',
@@ -32554,6 +33597,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/hooks-lifecycle-use-leave-detection',
@@ -32586,6 +33630,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/hooks-lifecycle-use-performance-mode',
@@ -32618,6 +33663,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/hooks-lifecycle-use-single-effect',
@@ -32650,6 +33696,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/hooks-lifecycle-use-toggle',
@@ -32682,6 +33729,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/hooks-lifecycle-use-update-effect',
@@ -32714,6 +33762,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/hooks-lifecycle-use-urgent-update',
@@ -32761,6 +33810,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/lib-base-ui',
@@ -32793,6 +33843,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/lib-base-ui-csp-provider',
@@ -32825,6 +33876,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/lib-base-ui-direction-provider',
@@ -32857,6 +33909,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/lib-base-ui-merge-props',
@@ -32889,6 +33942,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/lib-base-ui-use-render',
@@ -33014,6 +34068,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/lib-get-strict-context',
@@ -33046,6 +34101,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/lib-gpu-runtime',
@@ -33078,6 +34134,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/lib-next-image-url',
@@ -33110,6 +34167,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/lib-segmented-control',
@@ -33154,6 +34212,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/lib-utils',
@@ -33186,6 +34245,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/primitives-accordion',
@@ -33218,6 +34278,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/primitives-alert',
@@ -33250,6 +34311,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/primitives-alert-dialog',
@@ -33282,6 +34344,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/primitives-aspect-ratio',
@@ -33314,6 +34377,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/primitives-autocomplete',
@@ -33346,6 +34410,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/primitives-avatar',
@@ -33378,6 +34443,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/primitives-badge',
@@ -33410,6 +34476,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/primitives-breadcrumb',
@@ -33442,6 +34509,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/primitives-button',
@@ -33474,6 +34542,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/primitives-calendar',
@@ -33506,6 +34575,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/primitives-card',
@@ -33538,6 +34608,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/primitives-checkbox',
@@ -33570,6 +34641,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/primitives-checkbox-group',
@@ -33602,6 +34674,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/primitives-collapsible',
@@ -33634,6 +34707,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/primitives-combobox',
@@ -33666,6 +34740,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/primitives-command',
@@ -33698,6 +34773,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/primitives-context-menu',
@@ -33730,6 +34806,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/primitives-dialog',
@@ -33762,6 +34839,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/primitives-direction',
@@ -33794,6 +34872,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/primitives-drawer',
@@ -33826,6 +34905,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/primitives-empty',
@@ -33858,6 +34938,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/primitives-field',
@@ -33890,6 +34971,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/primitives-fieldset',
@@ -33922,6 +35004,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/primitives-form',
@@ -33954,6 +35037,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/primitives-frame',
@@ -33986,6 +35070,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/primitives-group',
@@ -34018,6 +35103,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/primitives-input',
@@ -34050,6 +35136,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/primitives-input-group',
@@ -34082,6 +35169,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/primitives-kbd',
@@ -34114,6 +35202,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/primitives-label',
@@ -34146,6 +35235,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/primitives-link',
@@ -34178,6 +35268,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/primitives-menu',
@@ -34210,6 +35301,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/primitives-menubar',
@@ -34242,6 +35334,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/primitives-meter',
@@ -34274,6 +35367,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/primitives-navigation-menu',
@@ -34306,6 +35400,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/primitives-number-field',
@@ -34338,6 +35433,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/primitives-otp-field',
@@ -34370,6 +35466,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/primitives-pagination',
@@ -34402,6 +35499,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/primitives-popover',
@@ -34434,6 +35532,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/primitives-preview-card',
@@ -34466,6 +35565,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/primitives-preview-link-card',
@@ -34498,6 +35598,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/primitives-progress',
@@ -34530,6 +35631,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/primitives-radio-group',
@@ -34562,6 +35664,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/primitives-scroll-area',
@@ -34594,6 +35697,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/primitives-select',
@@ -34626,6 +35730,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/primitives-separator',
@@ -34658,6 +35763,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/primitives-sheet',
@@ -34690,6 +35796,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/primitives-sidebar',
@@ -34722,6 +35829,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/primitives-skeleton',
@@ -34754,6 +35862,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/primitives-slider',
@@ -34786,6 +35895,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/primitives-spinner',
@@ -34818,6 +35928,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/primitives-switch',
@@ -34850,6 +35961,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/primitives-table',
@@ -34882,6 +35994,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/primitives-tabs',
@@ -34914,6 +36027,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/primitives-textarea',
@@ -34946,6 +36060,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/primitives-toast',
@@ -34978,6 +36093,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/primitives-toggle',
@@ -35010,6 +36126,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/primitives-toggle-group',
@@ -35042,6 +36159,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/primitives-toolbar',
@@ -35074,6 +36192,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/primitives-tooltip',
@@ -35166,6 +36285,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/template-immersive-lens',
@@ -35203,6 +36323,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/template-stats',
@@ -35235,6 +36356,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/hooks-utils-cache',
@@ -35267,6 +36389,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/hooks-utils-cookie',
@@ -35299,6 +36422,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/hooks-utils-event',
@@ -35331,6 +36455,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/hooks-utils-format-bytes',
@@ -35363,6 +36488,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/hooks-utils-format-content',
@@ -35395,6 +36521,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/hooks-utils-format-date',
@@ -35427,6 +36554,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/hooks-utils-format-text',
@@ -35459,6 +36587,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/hooks-utils-is-negative',
@@ -35491,6 +36620,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/hooks-utils-logger',
@@ -35523,6 +36653,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/hooks-utils-range-map',
@@ -35555,6 +36686,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/hooks-utils-sleep',
@@ -35587,6 +36719,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/hooks-utils-states-catch-error',
@@ -35619,6 +36752,7 @@ export const index: Record<string, any> = {
         return { default: Comp };
       });
       LazyComp.demoProps = {};
+      LazyComp.cycleDurationMs = null;
       return LazyComp;
     })(),
     command: '@spaceui/hooks-utils-states-create-error',

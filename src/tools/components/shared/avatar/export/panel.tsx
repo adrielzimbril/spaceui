@@ -1,6 +1,6 @@
 'use client'
 
-import { Button } from '@/registry/primitives/button'
+import { Button } from '@/registry/components/spaceui/button-squircle'
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/registry/primitives/select'
 import { Separator } from '@/registry/primitives/separator'
 import { ToggleGroup, ToggleGroupItem } from '@/registry/primitives/toggle-group'

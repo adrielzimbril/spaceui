@@ -81,7 +81,7 @@ export function PlaygroundCanvasStage({
 }: PlaygroundCanvasStageProps) {
   const isDesktop = useMediaQuery('(min-width: 1024px)', true)
   const isMobile = useIsMobile()
-  const { setActivePreview } = useLayoutMode()
+  const { setActivePreview, isInteractions } = useLayoutMode()
   const { entry } = useRegistryEntry(activePreview?.name ?? null)
   const [tweakMode, setTweakMode] = useState(false)
   const hasAutoOpenedRef = useRef(false)
@@ -108,9 +108,18 @@ export function PlaygroundCanvasStage({
   const resolvedPreviewName = activePreview?.previewName || activePreview?.name
 
   useEffect(() => {
-    setLocalBinds(activePreview?.binds ?? null)
-    setLocalProps(activePreview?.componentProps ?? null)
-  }, [activePreview?.name, activePreview?.binds, activePreview?.componentProps])
+    if (activePreview?.binds) {
+      setLocalBinds(activePreview.binds)
+      setLocalProps(activePreview.componentProps ?? null)
+    } else if (entry?.meta?.demoProps && Object.keys(entry.meta.demoProps).length > 0) {
+      const freshBinds = JSON.parse(JSON.stringify(entry.meta.demoProps)) as Binds
+      setLocalBinds(freshBinds)
+      setLocalProps(unwrapValues(freshBinds))
+    } else {
+      setLocalBinds(null)
+      setLocalProps(activePreview?.componentProps ?? null)
+    }
+  }, [activePreview?.name, activePreview?.binds, activePreview?.componentProps, entry?.meta?.demoProps])
 
   const handleBindsChange = (newBinds: Binds) => {
     setLocalBinds(newBinds)
@@ -209,10 +218,11 @@ export function PlaygroundCanvasStage({
           </ToolbarSection>
         )}
 
-        {/* Top Center Viewport Switcher (hidden in immersive mode) */}
-        {!isImmersive && <PlaygroundViewportSwitcher viewport={viewport} onChange={onViewportChange} />}
+        {/* Top Center Viewport Switcher (hidden in immersive mode and interactions) */}
+        {!isImmersive && !isInteractions && (
+          <PlaygroundViewportSwitcher viewport={viewport} onChange={onViewportChange} />
+        )}
 
-        {/* Top Right Floating Actions Toolbar */}
         <PlaygroundToolbar
           showInfo={showInfo}
           onToggleInfo={onToggleInfo}
@@ -243,7 +253,7 @@ export function PlaygroundCanvasStage({
           <div
             className={cn(
               'relative size-full min-h-0 min-w-0 transition-all duration-300',
-              !isImmersive && VIEWPORT_WIDTH_CLASSES[viewport],
+              !isImmersive && !isInteractions && VIEWPORT_WIDTH_CLASSES[viewport],
             )}
             data-loaded={activePreview ? 'true' : 'false'}
           >
@@ -265,7 +275,6 @@ export function PlaygroundCanvasStage({
           </div>
         </div>
 
-        {/* Global Floating Tweakpane (hidden in immersive mode) */}
         {!isImmersive && localBinds && (
           <Tweakpane
             key={`${activePreview?.name ?? ''}-${tweakpaneKey}`}
@@ -276,8 +285,7 @@ export function PlaygroundCanvasStage({
           />
         )}
 
-        {/* Bottom Center Inline Install Bar (hidden in immersive mode and for showcase entries with no installable package) */}
-        {!isImmersive && !showInfo && !isShowcaseStage && (
+        {!isImmersive && !showInfo && !isShowcaseStage && !isInteractions && (
           <div
             data-playground-ui
             className="pointer-events-auto fixed bottom-18 left-1/2 z-30 hidden -translate-x-1/2 lg:block"

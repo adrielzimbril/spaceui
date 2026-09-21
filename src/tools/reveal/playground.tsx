@@ -5,7 +5,7 @@ import { imagelib } from '@/lib/imagelib'
 import { useFileUpload } from '@/registry/hooks/form/use-file-upload'
 import { cn } from '@/registry/lib/utils'
 import { Badge } from '@/registry/primitives/badge'
-import { Button } from '@/registry/primitives/button'
+import { Button } from '@/registry/components/spaceui/button-squircle'
 import { Group } from '@/registry/primitives/group'
 import { ResourceNav } from '@/tools/components/shared/layout/nav'
 import { ResourceStudio } from '@/tools/components/shared/layout/studio'
@@ -223,7 +223,7 @@ export function RevealPlayground() {
             </div>
 
             {hasBothImages && (
-              <Group className="pointer-events-auto absolute bottom-4 right-4 inline-flex shrink-0 items-center gap-1 rounded-xl bg-background p-1 shadow-xs border border-border/40!">
+              <Group className="pointer-events-auto absolute bottom-4 right-4 inline-flex shrink-0 items-center gap-1 rounded-xl bg-background p-1 border-2 border-muted">
                 <Button
                   variant="secondary"
                   size="icon-sm"

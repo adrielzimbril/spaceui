@@ -1,0 +1,42 @@
+---
+title: Agent Pipeline
+description: A living multi-agent workflow that models task routing, research, drafting, and approvals with real-time physics, activity feeds, and playback controls.
+component: true
+base: base
+isPro: true
+preview:
+  name: interactions-agent-pipeline
+  contained: false
+  className: '**:[.preview]:h-auto'
+---
+
+## Installation
+
+<ComponentInstallation name="interactions-agent-pipeline" />
+
+## Usage
+
+```tsx
+import { AgentPipeline } from '@/components/interactions/agent-pipeline'
+```
+
+```tsx
+<AgentPipeline />
+```
+
+## API Reference
+
+### AgentPipeline
+
+| Prop             | Type          | Default                    | Description                                                    |
+| :--------------- | :------------ | :------------------------- | :------------------------------------------------------------- |
+| `preset`         | `string`      | `'incident'`               | Selected workflow preset ('incident', 'codereview', etc.).     |
+| `flow`           | `string`      | `'success'`                | Selected flow variant ('success' or 'error').                  |
+| `cycleFlows`     | `boolean`     | `true`                     | Automatically cycle through all flows across consecutive runs. |
+| `taskTitle`      | `string`      | Preset task title          | Title of the task assigned to the multi-agent team.            |
+| `runId`          | `string`      | Auto-generated (`sp_XXXX`) | Identifier displayed for the pipeline execution.               |
+| `agents`         | `AgentStep[]` | Preset agents              | Custom sequence of agents, their roles, steps, and durations.  |
+| `autoPlay`       | `boolean`     | `true`                     | Automatically runs and loops the pipeline when mounted.        |
+| `speed`          | `number`      | `1`                        | Speed multiplier for pipeline execution.                       |
+| `travelDuration` | `number`      | `0.7`                      | Transfer duration in seconds between agent relays.             |
+| `className`      | `string`      | -                          | Additional CSS classes for the outer container.                |
