@@ -32,6 +32,7 @@ import { AgentPipeline } from '@/components/interactions/agent-pipeline'
 | :--------------- | :------------ | :------------------------- | :------------------------------------------------------------- |
 | `preset`         | `string`      | `'incident'`               | Selected workflow preset ('incident', 'codereview', etc.).     |
 | `flow`           | `string`      | `'success'`                | Selected flow variant ('success' or 'error').                  |
+| `cyclePresets`   | `boolean`     | `false`                    | Automatically cycle through all presets across runs.           |
 | `cycleFlows`     | `boolean`     | `true`                     | Automatically cycle through all flows across consecutive runs. |
 | `taskTitle`      | `string`      | Preset task title          | Title of the task assigned to the multi-agent team.            |
 | `runId`          | `string`      | Auto-generated (`sp_XXXX`) | Identifier displayed for the pipeline execution.               |

@@ -52,6 +52,8 @@ interface UncontrolledTweakpaneProps {
 type TweakpaneProps = (ControlledTweakpaneProps | UncontrolledTweakpaneProps) & {
   show: boolean
   onClose: () => void
+  portal?: boolean
+  className?: string
 }
 
 interface NumericInputProps extends React.InputHTMLAttributes<HTMLInputElement> {
@@ -484,7 +486,7 @@ const renderBinds = (binds: Binds, onBindsChange: (binds: Binds) => void) =>
     ? renderNestedBinds(binds, onBindsChange as (b: NestedBinds) => void)
     : renderFlatBinds(binds, onBindsChange as (b: FlatBinds) => void)
 
-const Tweakpane = ({ show, onClose, onBindsChange, ...props }: TweakpaneProps) => {
+const Tweakpane = ({ show, onClose, onBindsChange, portal = true, className, ...props }: TweakpaneProps) => {
   const [localBinds, setLocalBinds] = React.useState<Binds>('binds' in props ? props.binds : props.initialBinds)
   const panelDragControls = useDragControls()
   const viewportRef = React.useRef<HTMLDivElement>(null)
@@ -506,8 +508,11 @@ const Tweakpane = ({ show, onClose, onBindsChange, ...props }: TweakpaneProps) =
 
   if (!mounted) return null
 
-  return createPortal(
-    <div ref={viewportRef} className="pointer-events-none fixed inset-0 z-30">
+  const content = (
+    <div
+      ref={viewportRef}
+      className={cn('pointer-events-none z-30', portal ? 'fixed inset-0' : 'absolute inset-0 overflow-hidden')}
+    >
       <AnimatePresence initial={false}>
         {show && (
           <motion.aside
@@ -523,7 +528,13 @@ const Tweakpane = ({ show, onClose, onBindsChange, ...props }: TweakpaneProps) =
             transition={{ duration: 0.16, ease: [0.22, 1, 0.36, 1] }}
             data-preview-ui
             aria-label="Component configuration"
-            className="pointer-events-auto absolute bottom-6 right-6 flex max-h-[calc(100dvh-6.5rem)] w-[min(18rem,calc(100vw-2rem))] flex-col rounded-2xl bg-muted p-1.5 overscroll-none"
+            className={cn(
+              'pointer-events-auto absolute bottom-6 right-6 flex flex-col rounded-2xl bg-muted p-1.5 overscroll-none shadow-lg border border-border/40',
+              portal
+                ? 'max-h-[calc(100dvh-6.5rem)] w-[min(18rem,calc(100vw-2rem))]'
+                : 'max-h-[calc(100%-3rem)] w-[min(18rem,calc(100%-2rem))]',
+              className,
+            )}
           >
             <div className={cn('relative flex flex-col', panelHeightClass(localBinds))}>
               <div
@@ -556,9 +567,14 @@ const Tweakpane = ({ show, onClose, onBindsChange, ...props }: TweakpaneProps) =
           </motion.aside>
         )}
       </AnimatePresence>
-    </div>,
-    document.body,
+    </div>
   )
+
+  if (!portal) {
+    return content
+  }
+
+  return createPortal(content, document.body)
 }
 
 export { Tweakpane, type TweakpaneProps, type Binds }

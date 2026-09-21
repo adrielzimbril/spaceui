@@ -920,82 +920,6 @@ export const index: Record<string, any> = {
     })(),
     command: '@spaceui/components-backgrounds-gradient',
   },
-  "interactions-agent-pipeline": {
-    name: "interactions-agent-pipeline",
-    description: "An interactive multi-agent pipeline visualization with real-time physics, event logs, and playback controls.",
-    type: "registry:component",
-    dependencies: ["motion","@keyline-icons/react","@usespaceui/squishmoji","@usespaceui/sounds"],
-    devDependencies: undefined,
-    registryDependencies: ["https://www.spaceui.one/r/lib-utils.json","https://www.spaceui.one/r/components-spaceui-badge-squircle.json","https://www.spaceui.one/r/primitives-scroll-area.json","https://www.spaceui.one/r/primitives-frame.json","https://www.spaceui.one/r/primitives-card.json","https://www.spaceui.one/r/components-spaceui-smooth-slider.json","https://www.spaceui.one/r/components-spaceui-blur-reveal-text.json","https://www.spaceui.one/r/hooks-utils-format-text.json"],
-    files: [
-  {
-    "path": "src/registry/components/interactions/agent-pipeline/index.tsx",
-    "type": "registry:component",
-    "target": "components/interactions/agent-pipeline.tsx"
-  },
-  {
-    "path": "src/registry/components/interactions/agent-pipeline/data.ts",
-    "type": "registry:component",
-    "target": "components/interactions/agent-pipeline-data.ts"
-  }
-],
-    keywords: [],
-    component: (() => {
-      const LazyComp = React.lazy(async () => {
-        const mod = await import("@/registry/components/interactions/agent-pipeline/index.tsx");
-        const exportName = Object.keys(mod).find(
-          key => typeof mod[key] === 'function' || typeof mod[key] === 'object'
-        ) || "interactions-agent-pipeline";
-        const Comp = mod.default || mod[exportName];
-        if (mod.animations) {
-          (LazyComp as any).animations = mod.animations;
-        }
-        return { default: Comp };
-      });
-      LazyComp.demoProps = {"animation":{"value":"active","options":{"Active":"active","Inactive":"inactive"}},"preset":{"type":"select","value":"incident","options":{"Incident":"incident","Code Review":"codereview","Support":"support","Growth":"growth"}},"cycleFlows":{"value":true,"dependsOn":{"animation":"active"}},"flow":{"type":"select","value":"success","options":{"Success":"success","Error":"error"},"dependsOn":{"cycleFlows":false}},"autoPlay":{"value":true,"dependsOn":{"animation":"active"}},"pauseOnHover":{"value":true,"dependsOn":{"animation":"active"}},"speed":{"value":1,"min":0.25,"max":3,"step":0.25,"dependsOn":{"animation":"active"}}};
-      LazyComp.cycleDurationMs = 12300;
-      return LazyComp;
-    })(),
-    command: '@spaceui/interactions-agent-pipeline',
-  },
-  "interactions-deploy-pipeline": {
-    name: "interactions-deploy-pipeline",
-    description: "A self-playing deploy pipeline that advances on its own, pauses on hover, and reveals per-step detail — drop it in to turn a static log into a living status feed.",
-    type: "registry:component",
-    dependencies: ["motion","@keyline-icons/react","@usespaceui/squishmoji","@usespaceui/sounds"],
-    devDependencies: undefined,
-    registryDependencies: ["https://www.spaceui.one/r/lib-utils.json","https://www.spaceui.one/r/components-spaceui-timeline.json","https://www.spaceui.one/r/components-spaceui-morph-icon.json","https://www.spaceui.one/r/primitives-frame.json","https://www.spaceui.one/r/components-spaceui-badge-squircle.json","https://www.spaceui.one/r/primitives-spinner.json","https://www.spaceui.one/r/primitives-avatar.json","https://www.spaceui.one/r/primitives-collapsible.json","https://www.spaceui.one/r/components-spaceui-blur-reveal-text.json","https://www.spaceui.one/r/primitives-card.json"],
-    files: [
-  {
-    "path": "src/registry/components/interactions/deploy-pipeline/index.tsx",
-    "type": "registry:component",
-    "target": "components/interactions/deploy-pipeline.tsx"
-  },
-  {
-    "path": "src/registry/components/interactions/deploy-pipeline/data.ts",
-    "type": "registry:component",
-    "target": "components/interactions/deploy-pipeline-data.ts"
-  }
-],
-    keywords: [],
-    component: (() => {
-      const LazyComp = React.lazy(async () => {
-        const mod = await import("@/registry/components/interactions/deploy-pipeline/index.tsx");
-        const exportName = Object.keys(mod).find(
-          key => typeof mod[key] === 'function' || typeof mod[key] === 'object'
-        ) || "interactions-deploy-pipeline";
-        const Comp = mod.default || mod[exportName];
-        if (mod.animations) {
-          (LazyComp as any).animations = mod.animations;
-        }
-        return { default: Comp };
-      });
-      LazyComp.demoProps = {"animation":{"value":"active","options":{"Active":"active","Inactive":"inactive"}},"cycleFlows":{"value":true,"dependsOn":{"animation":"active"}},"flow":{"type":"select","value":"production","options":{"Production":"production","Test Failed":"test_failed","Canary Rollback":"canary_rollback","Hotfix":"hotfix"},"dependsOn":{"cycleFlows":false}},"autoPlay":{"value":true,"dependsOn":{"animation":"active"}},"pauseOnHover":{"value":true,"dependsOn":{"animation":"active"}},"speed":{"value":1,"min":0.25,"max":4,"step":0.25,"dependsOn":{"animation":"active"}}};
-      LazyComp.cycleDurationMs = 16700;
-      return LazyComp;
-    })(),
-    command: '@spaceui/interactions-deploy-pipeline',
-  },
   "components-orb-bloop": {
     name: "components-orb-bloop",
     description: "Compact audio-reactive bloop orb shader.",
@@ -33766,6 +33690,82 @@ export const index: Record<string, any> = {
       return LazyComp;
     })(),
     command: '@spaceui/hooks-lifecycle-use-urgent-update',
+  },
+  "interactions-agent-pipeline": {
+    name: "interactions-agent-pipeline",
+    description: "An interactive multi-agent pipeline visualization with real-time physics, event logs, and playback controls.",
+    type: "registry:component",
+    dependencies: ["motion","@keyline-icons/react","@usespaceui/squishmoji","@usespaceui/sounds"],
+    devDependencies: undefined,
+    registryDependencies: ["https://www.spaceui.one/r/lib-utils.json","https://www.spaceui.one/r/components-spaceui-badge-squircle.json","https://www.spaceui.one/r/primitives-scroll-area.json","https://www.spaceui.one/r/primitives-frame.json","https://www.spaceui.one/r/primitives-card.json","https://www.spaceui.one/r/components-spaceui-smooth-slider.json","https://www.spaceui.one/r/components-spaceui-blur-reveal-text.json","https://www.spaceui.one/r/hooks-utils-format-text.json"],
+    files: [
+  {
+    "path": "src/registry/interactions/agent-pipeline/index.tsx",
+    "type": "registry:component",
+    "target": "components/interactions/agent-pipeline.tsx"
+  },
+  {
+    "path": "src/registry/interactions/agent-pipeline/data.ts",
+    "type": "registry:component",
+    "target": "components/interactions/agent-pipeline-data.ts"
+  }
+],
+    keywords: [],
+    component: (() => {
+      const LazyComp = React.lazy(async () => {
+        const mod = await import("@/registry/interactions/agent-pipeline/index.tsx");
+        const exportName = Object.keys(mod).find(
+          key => typeof mod[key] === 'function' || typeof mod[key] === 'object'
+        ) || "interactions-agent-pipeline";
+        const Comp = mod.default || mod[exportName];
+        if (mod.animations) {
+          (LazyComp as any).animations = mod.animations;
+        }
+        return { default: Comp };
+      });
+      LazyComp.demoProps = {"animation":{"value":"active","options":{"Active":"active","Inactive":"inactive"}},"cyclePreset":{"value":true,"dependsOn":{"animation":"active"}},"preset":{"type":"select","value":"incident","options":{"Incident":"incident","Code Review":"codereview","Support":"support","Growth":"growth"},"dependsOn":{"cyclePreset":false}},"cycleFlows":{"value":true,"dependsOn":{"animation":"active"}},"flow":{"type":"select","value":"success","options":{"Success":"success","Error":"error"},"dependsOn":{"cycleFlows":false}},"autoPlay":{"value":true,"dependsOn":{"animation":"active"}},"pauseOnHover":{"value":true,"dependsOn":{"animation":"active"}},"speed":{"value":1,"min":0.25,"max":3,"step":0.25,"dependsOn":{"animation":"active"}}};
+      LazyComp.cycleDurationMs = 12300;
+      return LazyComp;
+    })(),
+    command: '@spaceui/interactions-agent-pipeline',
+  },
+  "interactions-deploy-pipeline": {
+    name: "interactions-deploy-pipeline",
+    description: "A self-playing deploy pipeline that advances on its own, pauses on hover, and reveals per-step detail — drop it in to turn a static log into a living status feed.",
+    type: "registry:component",
+    dependencies: ["motion","@keyline-icons/react","@usespaceui/squishmoji","@usespaceui/sounds"],
+    devDependencies: undefined,
+    registryDependencies: ["https://www.spaceui.one/r/lib-utils.json","https://www.spaceui.one/r/components-spaceui-timeline.json","https://www.spaceui.one/r/components-spaceui-morph-icon.json","https://www.spaceui.one/r/primitives-frame.json","https://www.spaceui.one/r/components-spaceui-badge-squircle.json","https://www.spaceui.one/r/primitives-spinner.json","https://www.spaceui.one/r/primitives-avatar.json","https://www.spaceui.one/r/primitives-collapsible.json","https://www.spaceui.one/r/components-spaceui-blur-reveal-text.json","https://www.spaceui.one/r/primitives-card.json"],
+    files: [
+  {
+    "path": "src/registry/interactions/deploy-pipeline/index.tsx",
+    "type": "registry:component",
+    "target": "components/interactions/deploy-pipeline.tsx"
+  },
+  {
+    "path": "src/registry/interactions/deploy-pipeline/data.ts",
+    "type": "registry:component",
+    "target": "components/interactions/deploy-pipeline-data.ts"
+  }
+],
+    keywords: [],
+    component: (() => {
+      const LazyComp = React.lazy(async () => {
+        const mod = await import("@/registry/interactions/deploy-pipeline/index.tsx");
+        const exportName = Object.keys(mod).find(
+          key => typeof mod[key] === 'function' || typeof mod[key] === 'object'
+        ) || "interactions-deploy-pipeline";
+        const Comp = mod.default || mod[exportName];
+        if (mod.animations) {
+          (LazyComp as any).animations = mod.animations;
+        }
+        return { default: Comp };
+      });
+      LazyComp.demoProps = {"animation":{"value":"active","options":{"Active":"active","Inactive":"inactive"}},"cycleFlows":{"value":true,"dependsOn":{"animation":"active"}},"flow":{"type":"select","value":"production","options":{"Production":"production","Test Failed":"test_failed","Canary Rollback":"canary_rollback","Hotfix":"hotfix"},"dependsOn":{"cycleFlows":false}},"autoPlay":{"value":true,"dependsOn":{"animation":"active"}},"pauseOnHover":{"value":true,"dependsOn":{"animation":"active"}},"speed":{"value":1,"min":0.25,"max":4,"step":0.25,"dependsOn":{"animation":"active"}}};
+      LazyComp.cycleDurationMs = 16700;
+      return LazyComp;
+    })(),
+    command: '@spaceui/interactions-deploy-pipeline',
   },
   "lib-base-ui": {
     name: "lib-base-ui",

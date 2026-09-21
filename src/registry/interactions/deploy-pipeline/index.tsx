@@ -283,9 +283,9 @@ export function DeployPipeline({
               className={cn(
                 'absolute inline-flex h-full w-full rounded-full opacity-75 animate-ping animation-duration-[2.25s]',
                 isCurrentFailed
-                  ? 'bg-rose-400'
+                  ? 'bg-rose-300'
                   : isAllDone(current)
-                    ? 'bg-emerald-400'
+                    ? 'bg-emerald-300'
                     : isPaused
                       ? 'bg-amber-300'
                       : 'bg-emerald-300',

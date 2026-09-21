@@ -47,6 +47,10 @@ export interface AgentPipelineProps {
   preset?: PresetKey | string
   /** Selected flow variant ('success' | 'error') */
   flow?: 'success' | 'error' | string
+  /** Whether to cycle through all presets across consecutive runs (default: false). When true, moves to next preset. */
+  cyclePresets?: boolean
+  /** Alias for cyclePresets */
+  cyclePreset?: boolean
   /** Whether to cycle through all flows across consecutive runs (default: true). If false, replays the same flow. */
   cycleFlows?: boolean
   /** Whether the pipeline should loop upon completing (alias for autoPlay behavior) */
@@ -92,21 +96,21 @@ function AgentNode({ agent, state, blinkTrigger }: AgentNodeProps) {
             'relative flex items-center justify-center size-14 [corner-shape:superellipse(1.25)] rounded-2xl bg-muted transition-all duration-200 shadow-none',
             (isDone || isActive) && 'ring-2 ring-offset-2 ring-offset-background ring-muted',
             // isDone && 'ring-2 ring-offset-2 ring-offset-background ring-primary/10',
-            isError && 'ring-2 ring-offset-2 ring-offset-background ring-rose-500',
+            isError && 'ring-2 ring-offset-2 ring-offset-background ring-rose-400',
           )}
         >
           <Squishmoji
             seed={agent.seed}
             size={30}
             animate
-            animWobble
+            // animWobble
             animOnHover
             animOnClick
             shape="all"
             expression="all"
             backgroundStyle="all"
             blinkTrigger={blinkTrigger}
-            className="scale-150 origin-center"
+            className="scale-175 origin-center"
           />
         </div>
 
@@ -141,7 +145,6 @@ function AgentNode({ agent, state, blinkTrigger }: AgentNodeProps) {
           className={cn(
             'text-xs font-medium transition-colors duration-200 truncate max-w-full',
             isActive && 'text-foreground font-semibold',
-            isError && 'text-rose-600 dark:text-rose-400 font-semibold',
             isDone && 'text-foreground',
             state === 'idle' && 'text-muted-foreground',
           )}
@@ -157,6 +160,8 @@ function AgentNode({ agent, state, blinkTrigger }: AgentNodeProps) {
 export function AgentPipeline({
   preset = 'incident',
   flow = 'success',
+  cyclePresets = true,
+  cyclePreset,
   cycleFlows = true,
   taskTitle,
   runId,
@@ -190,17 +195,55 @@ export function AgentPipeline({
   const activeRunId = runId ?? generatedRunId
 
   // Resolve active preset and flow
-  const activePreset = AGENT_PRESETS[preset as PresetKey] ?? AGENT_PRESETS.incident
-  const availableFlows = activePreset.flows
-  const [currentFlowIdx, setCurrentFlowIdx] = React.useState(0)
+  const shouldCyclePresets = cyclePreset !== undefined ? Boolean(cyclePreset) : Boolean(cyclePresets)
+  const shouldCycleFlows = Boolean(cycleFlows)
 
-  // Synchronize when the flow prop changes externally
-  React.useEffect(() => {
+  const [currentPresetKey, setCurrentPresetKey] = React.useState<PresetKey>(() =>
+    (preset as PresetKey) in AGENT_PRESETS ? (preset as PresetKey) : 'incident',
+  )
+
+  const activePreset = AGENT_PRESETS[currentPresetKey] ?? AGENT_PRESETS.incident
+  const availableFlows = activePreset.flows
+
+  const [currentFlowIdx, setCurrentFlowIdx] = React.useState(() => {
     const idx = availableFlows.findIndex((f) => f.id === flow)
-    if (idx >= 0) {
-      setCurrentFlowIdx(idx)
+    return idx >= 0 ? idx : 0
+  })
+
+  // Track previous prop values to avoid overriding internal cycling states
+  const prevPresetPropRef = React.useRef(preset)
+  const prevFlowPropRef = React.useRef(flow)
+  const prevCyclePresetsPropRef = React.useRef(shouldCyclePresets)
+  const prevCycleFlowsPropRef = React.useRef(shouldCycleFlows)
+
+  // Synchronize only when the preset prop changes externally or cycling is turned off
+  React.useEffect(() => {
+    const presetChanged = prevPresetPropRef.current !== preset
+    const cycleTurnedOff = prevCyclePresetsPropRef.current && !shouldCyclePresets
+    prevPresetPropRef.current = preset
+    prevCyclePresetsPropRef.current = shouldCyclePresets
+
+    if ((presetChanged || cycleTurnedOff) && preset && preset in AGENT_PRESETS) {
+      setCurrentPresetKey(preset as PresetKey)
+      setCurrentFlowIdx(0)
     }
-  }, [flow, availableFlows])
+  }, [preset, shouldCyclePresets])
+
+  // Synchronize only when the flow prop changes externally or flow cycling is turned off
+  React.useEffect(() => {
+    const flowChanged = prevFlowPropRef.current !== flow
+    const cycleTurnedOff = prevCycleFlowsPropRef.current && !shouldCycleFlows
+    prevFlowPropRef.current = flow
+    prevCycleFlowsPropRef.current = shouldCycleFlows
+
+    if (flowChanged || cycleTurnedOff) {
+      const activeP = AGENT_PRESETS[currentPresetKey] ?? AGENT_PRESETS.incident
+      const idx = activeP.flows.findIndex((f) => f.id === flow)
+      if (idx >= 0) {
+        setCurrentFlowIdx(idx)
+      }
+    }
+  }, [flow, shouldCycleFlows, currentPresetKey])
 
   const activeFlow = availableFlows[currentFlowIdx] ?? availableFlows[0]
   const currentTitle = taskTitle ?? activeFlow.taskTitle
@@ -219,6 +262,7 @@ export function AgentPipeline({
   const isAnimatedRef = React.useRef(isAnimated)
   const isPausedRef = React.useRef(isPaused)
   const cycleFlowsRef = React.useRef(cycleFlows)
+  const cyclePresetsRef = React.useRef(shouldCyclePresets)
 
   const logContainerRef = React.useRef<HTMLDivElement>(null)
   const scrollBottomRef = React.useRef<HTMLDivElement>(null)
@@ -261,8 +305,12 @@ export function AgentPipeline({
   }, [isPaused])
 
   React.useEffect(() => {
-    cycleFlowsRef.current = cycleFlows
-  }, [cycleFlows])
+    cycleFlowsRef.current = shouldCycleFlows
+  }, [shouldCycleFlows])
+
+  React.useEffect(() => {
+    cyclePresetsRef.current = shouldCyclePresets
+  }, [shouldCyclePresets])
 
   // Calculate timeline markers and schedules from current flow agents
   const { segments, allEvents, rawDuration, hasError, errorAgentIdx } = React.useMemo(() => {
@@ -577,24 +625,51 @@ export function AgentPipeline({
           safeSound(confirm)
           setTimeout(() => safeSound(sparkle), 160)
         }
-
-        // AutoPlay loop behavior: if cycleFlows is true, moves to next flow; if false, replays the same flow
-        if (autoPlayRef.current && isAnimatedRef.current && !isPausedRef.current) {
-          loopTimeoutRef.current = setTimeout(() => {
-            if (autoPlayRef.current && isAnimatedRef.current && !isPausedRef.current) {
-              if (cycleFlowsRef.current && availableFlows.length > 1) {
-                setCurrentFlowIdx((prev) => (prev + 1) % availableFlows.length)
-              } else {
-                startPipeline()
-              }
-            }
-          }, 2200)
-        }
       },
     })
 
     animControlsRef.current = controls
-  }, [progressMotion, stopAnimation, rawDuration, speed, runId, hasError, errorAgentIdx, availableFlows.length])
+  }, [progressMotion, stopAnimation, rawDuration, speed, runId, hasError, errorAgentIdx])
+
+  const advanceLoop = React.useCallback(() => {
+    const presetKeys = Object.keys(AGENT_PRESETS) as PresetKey[]
+    const currentPreset = AGENT_PRESETS[currentPresetKey] ?? AGENT_PRESETS.incident
+    const flows = currentPreset.flows
+    const willCyclePresets = cyclePresetsRef.current
+    const willCycleFlows = cycleFlowsRef.current
+
+    if (willCyclePresets && willCycleFlows) {
+      // 1. Advance flow; if at end of flows for this preset, advance to next preset and reset flow to 0
+      if (currentFlowIdx + 1 < flows.length) {
+        setCurrentFlowIdx((prev) => prev + 1)
+      } else {
+        const currentPIdx = presetKeys.indexOf(currentPresetKey)
+        const nextPIdx = (currentPIdx + 1) % presetKeys.length
+        setCurrentPresetKey(presetKeys[nextPIdx])
+        setCurrentFlowIdx(0)
+      }
+    } else if (willCyclePresets && !willCycleFlows) {
+      // 2. Advance to next preset, maintain current flow selection or clamp
+      const currentPIdx = presetKeys.indexOf(currentPresetKey)
+      const nextPIdx = (currentPIdx + 1) % presetKeys.length
+      setCurrentPresetKey(presetKeys[nextPIdx])
+    } else if (!willCyclePresets && willCycleFlows) {
+      // 3. Cycle flows within current preset only
+      if (flows.length > 1) {
+        setCurrentFlowIdx((prev) => (prev + 1) % flows.length)
+      } else {
+        startPipeline()
+      }
+    } else {
+      // 4. Replay same flow and preset
+      startPipeline()
+    }
+  }, [currentPresetKey, currentFlowIdx, startPipeline])
+
+  const advanceLoopRef = React.useRef(advanceLoop)
+  React.useEffect(() => {
+    advanceLoopRef.current = advanceLoop
+  }, [advanceLoop])
 
   // Sync speed changes live without restarting the animation
   React.useEffect(() => {
@@ -614,22 +689,29 @@ export function AgentPipeline({
     }
   }, [status, autoPlay, isAnimated, isPaused, startPipeline])
 
-  // Handle flow changes to restart cleanly
+  // Handle preset or flow changes to restart cleanly
   React.useEffect(() => {
     if (status !== 'idle' && !isPaused) {
       startPipeline()
     }
-  }, [currentFlowIdx])
+  }, [currentPresetKey, currentFlowIdx])
 
-  // If status is done/error and autoPlay toggles to true, restart
+  // Loop timer: when pipeline finishes (done or error), advance loop after delay if autoPlay is active
   React.useEffect(() => {
     if ((status === 'done' || status === 'error') && autoPlay && isAnimated && !isPaused) {
+      const delay = status === 'error' ? 2200 : 1800
       const timer = setTimeout(() => {
-        startPipeline()
-      }, 800)
-      return () => clearTimeout(timer)
+        advanceLoopRef.current()
+      }, delay)
+      loopTimeoutRef.current = timer
+      return () => {
+        clearTimeout(timer)
+        if (loopTimeoutRef.current === timer) {
+          loopTimeoutRef.current = null
+        }
+      }
     }
-  }, [status, autoPlay, isAnimated, isPaused, startPipeline])
+  }, [status, autoPlay, isAnimated, isPaused])
 
   // Handle external or hover pause / resume
   React.useEffect(() => {
@@ -710,12 +792,10 @@ export function AgentPipeline({
                 className={cn(
                   'absolute inline-flex h-full w-full rounded-full animate-ping animation-duration-[2.25s]',
                   status === 'error'
-                    ? 'bg-rose-400'
+                    ? 'bg-rose-300'
                     : status === 'paused'
-                      ? 'bg-amber-400'
-                      : isRunning
-                        ? 'bg-emerald-400'
-                        : 'bg-muted-foreground',
+                      ? 'bg-amber-300'
+                      : isRunning && 'bg-emerald-300',
                 )}
               />
               <span
@@ -725,9 +805,7 @@ export function AgentPipeline({
                     ? 'bg-rose-500'
                     : status === 'paused'
                       ? 'bg-amber-500'
-                      : isRunning
-                        ? 'bg-emerald-500'
-                        : 'bg-muted-foreground',
+                      : isRunning && 'bg-emerald-500',
                 )}
               />
             </span>
@@ -795,7 +873,7 @@ export function AgentPipeline({
             max={100}
             height={28}
             showTicks={false}
-            className="w-full [&>div]:opacity-100!"
+            className="w-full [&>div]:opacity-100! cursor-default"
             disabled
             onValueChange={(val) => {
               if (Math.abs(val - progressVal) > 1) {
@@ -832,14 +910,14 @@ export function AgentPipeline({
                   seed={currentAgent?.seed ?? 'agent'}
                   size={24}
                   animate
-                  animWobble
+                  // animWobble
                   animOnHover
                   animOnClick
                   shape="all"
                   expression="all"
                   backgroundStyle="all"
                   blinkTrigger={blinkTrigger}
-                  className="scale-150 origin-center"
+                  className="scale-175 origin-center"
                 />
               </div>
               <div className="min-w-0 flex-1">
@@ -848,7 +926,7 @@ export function AgentPipeline({
                   <Badge
                     variant={
                       status === 'error'
-                        ? 'destructive'
+                        ? 'error'
                         : status === 'done'
                           ? 'success'
                           : pipelineState.travel >= 0
@@ -857,7 +935,7 @@ export function AgentPipeline({
                     }
                     size="xs"
                     squircle
-                    className="shadow-none bg-background text-foreground"
+                    className={cn(!(status === 'error') && 'shadow-none bg-background text-foreground')}
                   >
                     {status === 'error'
                       ? 'Failed'
@@ -873,7 +951,7 @@ export function AgentPipeline({
                 <p
                   className={cn(
                     'text-xs truncate mt-0.5',
-                    status === 'error' ? 'text-rose-600 dark:text-rose-400 font-medium' : 'text-muted-foreground',
+                    // status === 'error' ? 'text-rose-600 dark:text-rose-400 font-medium' : 'text-muted-foreground',
                   )}
                 >
                   {status === 'error'
@@ -1002,7 +1080,7 @@ export function AgentPipeline({
               key={
                 status === 'running'
                   ? `run-${pipelineState.active}-${pipelineState.travel}`
-                  : `phase-${status}-${currentFlowIdx}`
+                  : `phase-${status}-${currentPresetKey}-${currentFlowIdx}`
               }
               initial={{ opacity: 0, y: 4 }}
               animate={{ opacity: 1, y: 0 }}

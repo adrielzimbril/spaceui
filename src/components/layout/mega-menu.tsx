@@ -391,23 +391,23 @@ export function MegaMenu({ className }: { className?: string }) {
                   Library & Primitives
                 </div>
                 <div className="grid grid-cols-2 gap-2">
+                  <ListItem title="Interactions" href="/interactions" seed="Interactions" onClick={handleClose}>
+                    Living components that move, respond and never sit still.
+                  </ListItem>
                   <ListItem title="Primitives" href="/primitives" seed="Primitives" onClick={handleClose}>
                     Basic accessible UI elements like Buttons, Inputs, Dialogs.
                   </ListItem>
                   <ListItem title="Blocks" href="/blocks" seed="Blocks" onClick={handleClose}>
                     Ready-to-use section blocks and page sections.
                   </ListItem>
-                  <ListItem title="Hooks & Utils" href="/hooks" seed="Hooks & Utils" onClick={handleClose}>
-                    Sensory React hooks, flow-control and pure DX utilities.
-                  </ListItem>
                   <ListItem title="Templates" href="/templates" seed="Templates" onClick={handleClose}>
                     Full-page starter templates for your next app.
                   </ListItem>
-                  <ListItem title="Interactions" href="/interactions" seed="Interactions" onClick={handleClose}>
-                    Living components that move, respond and never sit still.
-                  </ListItem>
                   <ListItem title="AI Showcase" href="/showcase" seed="AI Showcase" onClick={handleClose}>
                     Real sites and starters built with Space UI.
+                  </ListItem>
+                  <ListItem title="Hooks & Utils" href="/hooks" seed="Hooks & Utils" onClick={handleClose}>
+                    Sensory React hooks, flow-control and pure DX utilities.
                   </ListItem>
                 </div>
               </MenuContentMeasurer>

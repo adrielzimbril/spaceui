@@ -1,8 +1,8 @@
 'use client'
 
 import * as React from 'react'
-import { useMemo, useRef, useState } from 'react'
-import { IconCrop } from '@tabler/icons-react'
+import { useMemo, useRef, useState, useEffect } from 'react'
+import { IconCrop, IconAdjustments } from '@tabler/icons-react'
 import { ResourceStudio } from '@/tools/components/shared/layout/studio'
 import { ResourceNav } from '@/tools/components/shared/layout/nav'
 import { ResourceToolbar, type ResourceToolbarConfig } from '@/tools/components/shared/layout/toolbar'
@@ -12,6 +12,7 @@ import { bloomSound, confirmSound, nudgeSound, tapSound } from '@/components/pro
 import { useFloatNav } from '@/components/providers/float-nav-provider'
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 import { index as registryIndex } from '@/__registry__/index'
+import { Tweakpane, type Binds } from '@/components/docs/preview/tweakpane'
 import { InteractionCanvas } from './canvas'
 import { InteractionControlPanel } from './control-panel'
 import {
@@ -82,6 +83,7 @@ export function InteractionRecorderPlayground({ items }: { items: InteractionRec
   const [loops, setLoops] = useState(1)
   const [withSound, setWithSound] = useState(false)
   const [showGuide, setShowGuide] = useState(true)
+  const [showTweakpane, setShowTweakpane] = useState(false)
   const [busy, setBusy] = useState<string | null>(null)
   const [progress, setProgress] = useState(0)
   const [resetKey, setResetKey] = useState(0)
@@ -92,14 +94,44 @@ export function InteractionRecorderPlayground({ items }: { items: InteractionRec
   const entry = selected ? registryIndex[selected.name] : undefined
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const Component = entry?.component as React.ComponentType<any> | undefined
-  const demoProps = useMemo(
+
+  const initialBinds = useMemo<Binds | null>(() => {
+    if (!Component && !entry) return null
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    () => unwrapValues((Component as any)?.demoProps ?? {}),
-    [Component],
-  )
+    const dp = (Component as any)?.demoProps ?? (entry as any)?.meta?.demoProps ?? (entry as any)?.demoProps
+    if (dp && typeof dp === 'object' && Object.keys(dp).length > 0) {
+      return JSON.parse(JSON.stringify(dp)) as Binds
+    }
+    return null
+  }, [Component, entry])
+
+  const [binds, setBinds] = useState<Binds | null>(null)
+  const [interactionProps, setInteractionProps] = useState<Record<string, any>>({})
+
+  useEffect(() => {
+    if (initialBinds) {
+      setBinds(initialBinds)
+      setInteractionProps(unwrapValues(initialBinds))
+    } else {
+      setBinds(null)
+      setInteractionProps({})
+    }
+  }, [initialBinds])
+
+  const handleBindsChange = (newBinds: Binds) => {
+    setBinds(newBinds)
+    const unwrapped = unwrapValues(newBinds)
+    setInteractionProps(unwrapped)
+  }
+
+  const hasBinds = Boolean(binds && Object.keys(binds).length > 0)
+
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const cycleDurationMs = (Component as any)?.cycleDurationMs as number | null | undefined
-  const cycleSeconds = typeof cycleDurationMs === 'number' ? cycleDurationMs / 1000 : null
+  const baseCycleSeconds = typeof cycleDurationMs === 'number' ? cycleDurationMs / 1000 : null
+  const currentSpeed =
+    typeof interactionProps.speed === 'number' && interactionProps.speed > 0 ? interactionProps.speed : 1
+  const cycleSeconds = baseCycleSeconds ? baseCycleSeconds / currentSpeed : null
 
   const handleStop = () => {
     cancelRef.current = true
@@ -113,6 +145,10 @@ export function InteractionRecorderPlayground({ items }: { items: InteractionRec
     setLoops(1)
     setWithSound(false)
     setShowGuide(true)
+    if (initialBinds) {
+      setBinds(JSON.parse(JSON.stringify(initialBinds)))
+      setInteractionProps(unwrapValues(initialBinds))
+    }
     // Remounts the interaction component so its internal animation state
     // (timers, step index, etc.) restarts from scratch instead of just
     // continuing wherever it was.
@@ -317,34 +353,60 @@ export function InteractionRecorderPlayground({ items }: { items: InteractionRec
       rightWidth="20rem"
       onToggleRight={setShowRight}
       canvas={
-        <InteractionCanvas
-          item={selected}
-          Component={Component}
-          demoProps={demoProps}
-          stageRef={stageRef}
-          showGuide={showGuide}
-          scale={scale}
-          aspectRatio={aspectRatio}
-          elementZoom={elementZoom}
-          isRecording={Boolean(busy)}
-          resetKey={resetKey}
-        />
+        <>
+          <InteractionCanvas
+            item={selected}
+            Component={Component}
+            demoProps={interactionProps}
+            stageRef={stageRef}
+            showGuide={showGuide}
+            scale={scale}
+            aspectRatio={aspectRatio}
+            elementZoom={elementZoom}
+            isRecording={Boolean(busy)}
+            resetKey={resetKey}
+          />
+          {hasBinds && binds && (
+            <Tweakpane
+              key={`${selected?.name ?? ''}-${resetKey}`}
+              binds={binds}
+              onBindsChange={handleBindsChange}
+              show={showTweakpane && !busy}
+              onClose={() => setShowTweakpane(false)}
+              portal={false}
+            />
+          )}
+        </>
       }
       float={
         <ResourceToolbar
           config={toolbarConfig}
           left={<ResourceNav />}
           right={
-            <ToolbarButton
-              label={showGuide ? 'Hide recording bounds' : 'Show recording bounds'}
-              pressed={showGuide}
-              onClick={() => {
-                tapSound()
-                setShowGuide((v) => !v)
-              }}
-            >
-              <IconCrop className="size-4" />
-            </ToolbarButton>
+            <>
+              {hasBinds && (
+                <ToolbarButton
+                  label={showTweakpane ? 'Hide interaction controls' : 'Configure interaction'}
+                  pressed={showTweakpane}
+                  onClick={() => {
+                    tapSound()
+                    setShowTweakpane((v) => !v)
+                  }}
+                >
+                  <IconAdjustments className="size-4" />
+                </ToolbarButton>
+              )}
+              <ToolbarButton
+                label={showGuide ? 'Hide recording bounds' : 'Show recording bounds'}
+                pressed={showGuide}
+                onClick={() => {
+                  tapSound()
+                  setShowGuide((v) => !v)
+                }}
+              >
+                <IconCrop className="size-4" />
+              </ToolbarButton>
+            </>
           }
         />
       }
@@ -368,6 +430,9 @@ export function InteractionRecorderPlayground({ items }: { items: InteractionRec
           progress={progress}
           onRecord={handleRecord}
           onStop={handleStop}
+          hasBinds={hasBinds}
+          showTweakpane={showTweakpane}
+          onToggleTweakpane={() => setShowTweakpane((v) => !v)}
         />
       }
     />

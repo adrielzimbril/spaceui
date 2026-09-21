@@ -18,6 +18,7 @@ import { useRegistryEntry } from '@/components/docs/preview/hooks/use-registry-e
 import { REGISTRY_NAMESPACE } from '@/lib/install-command'
 import { MobileNavDrawer } from '@/components/layout/mobile-nav-drawer'
 import { source, librarySource, resourcesSource } from '@/lib/source'
+import { index } from '@/__registry__/index'
 
 export interface PlaygroundCanvasStageProps {
   showInfo: boolean
@@ -282,6 +283,7 @@ export function PlaygroundCanvasStage({
             onBindsChange={handleBindsChange}
             show={tweakMode}
             onClose={() => setTweakMode(false)}
+            portal={false}
           />
         )}
 

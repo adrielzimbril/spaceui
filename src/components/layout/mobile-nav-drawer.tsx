@@ -251,6 +251,14 @@ export function MobileNavDrawer({
       ? extractSectionsFromNode([templatesFolder]).reduce((acc, s) => acc + s.items.length, 0)
       : 0
 
+    const interactionsFolder = libraryNodes.find(
+      (n: any) =>
+        n.type === 'folder' && (n.name?.toLowerCase().includes('interaction') || n.$id?.includes('interactions')),
+    )
+    const interactionsCount = interactionsFolder
+      ? extractSectionsFromNode([interactionsFolder]).reduce((acc, s) => acc + s.items.length, 0)
+      : 0
+
     const nonPrimitives = libraryNodes.filter(
       (n: any) =>
         n.type === 'folder' &&
@@ -261,7 +269,9 @@ export function MobileNavDrawer({
         !n.name?.toLowerCase().includes('block') &&
         !n.$id?.includes('blocks') &&
         !n.name?.toLowerCase().includes('template') &&
-        !n.$id?.includes('templates'),
+        !n.$id?.includes('templates') &&
+        !n.name?.toLowerCase().includes('interaction') &&
+        !n.$id?.includes('interactions'),
     )
     const componentsCount = extractSectionsFromNode(nonPrimitives).reduce((acc, s) => acc + s.items.length, 0)
 
@@ -274,6 +284,7 @@ export function MobileNavDrawer({
       Components: componentsCount,
       Blocks: blocksCount,
       Templates: templatesCount,
+      Interactions: interactionsCount,
       'Hooks & Utils': hooksCount,
       Others: docsCount,
       Documentation: docsCount,

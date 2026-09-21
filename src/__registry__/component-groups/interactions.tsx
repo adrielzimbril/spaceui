@@ -33,11 +33,11 @@ function lazyRegistryComponent(
 
 export const registryComponents: Record<string, RegistryComponent> = {
   "interactions-agent-pipeline": lazyRegistryComponent(
-    () => import("@/registry/components/interactions/agent-pipeline/index.tsx"),
-    {"animation":{"value":"active","options":{"Active":"active","Inactive":"inactive"}},"preset":{"type":"select","value":"incident","options":{"Incident":"incident","Code Review":"codereview","Support":"support","Growth":"growth"}},"cycleFlows":{"value":true,"dependsOn":{"animation":"active"}},"flow":{"type":"select","value":"success","options":{"Success":"success","Error":"error"},"dependsOn":{"cycleFlows":false}},"autoPlay":{"value":true,"dependsOn":{"animation":"active"}},"pauseOnHover":{"value":true,"dependsOn":{"animation":"active"}},"speed":{"value":1,"min":0.25,"max":3,"step":0.25,"dependsOn":{"animation":"active"}}},
+    () => import("@/registry/interactions/agent-pipeline/index.tsx"),
+    {"animation":{"value":"active","options":{"Active":"active","Inactive":"inactive"}},"cyclePreset":{"value":true,"dependsOn":{"animation":"active"}},"preset":{"type":"select","value":"incident","options":{"Incident":"incident","Code Review":"codereview","Support":"support","Growth":"growth"},"dependsOn":{"cyclePreset":false}},"cycleFlows":{"value":true,"dependsOn":{"animation":"active"}},"flow":{"type":"select","value":"success","options":{"Success":"success","Error":"error"},"dependsOn":{"cycleFlows":false}},"autoPlay":{"value":true,"dependsOn":{"animation":"active"}},"pauseOnHover":{"value":true,"dependsOn":{"animation":"active"}},"speed":{"value":1,"min":0.25,"max":3,"step":0.25,"dependsOn":{"animation":"active"}}},
   ),
   "interactions-deploy-pipeline": lazyRegistryComponent(
-    () => import("@/registry/components/interactions/deploy-pipeline/index.tsx"),
+    () => import("@/registry/interactions/deploy-pipeline/index.tsx"),
     {"animation":{"value":"active","options":{"Active":"active","Inactive":"inactive"}},"cycleFlows":{"value":true,"dependsOn":{"animation":"active"}},"flow":{"type":"select","value":"production","options":{"Production":"production","Test Failed":"test_failed","Canary Rollback":"canary_rollback","Hotfix":"hotfix"},"dependsOn":{"cycleFlows":false}},"autoPlay":{"value":true,"dependsOn":{"animation":"active"}},"pauseOnHover":{"value":true,"dependsOn":{"animation":"active"}},"speed":{"value":1,"min":0.25,"max":4,"step":0.25,"dependsOn":{"animation":"active"}}},
   ),
 };

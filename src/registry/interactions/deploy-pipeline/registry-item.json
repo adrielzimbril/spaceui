@@ -1,40 +1,32 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
-  "name": "interactions-agent-pipeline",
+  "name": "interactions-deploy-pipeline",
   "type": "registry:component",
-  "title": "Agent Pipeline",
-  "description": "An interactive multi-agent pipeline visualization with real-time physics, event logs, and playback controls.",
+  "title": "Deploy Pipeline",
+  "description": "A self-playing deploy pipeline that advances on its own, pauses on hover, and reveals per-step detail — drop it in to turn a static log into a living status feed.",
   "isPro": true,
   "dependencies": ["motion", "@keyline-icons/react", "@usespaceui/squishmoji", "@usespaceui/sounds"],
   "registryDependencies": [
     "https://www.spaceui.one/r/lib-utils.json",
-    "https://www.spaceui.one/r/components-spaceui-badge-squircle.json",
-    "https://www.spaceui.one/r/primitives-scroll-area.json",
+    "https://www.spaceui.one/r/components-spaceui-timeline.json",
+    "https://www.spaceui.one/r/components-spaceui-morph-icon.json",
     "https://www.spaceui.one/r/primitives-frame.json",
-    "https://www.spaceui.one/r/primitives-card.json",
-    "https://www.spaceui.one/r/components-spaceui-smooth-slider.json",
+    "https://www.spaceui.one/r/components-spaceui-badge-squircle.json",
+    "https://www.spaceui.one/r/primitives-spinner.json",
+    "https://www.spaceui.one/r/primitives-avatar.json",
+    "https://www.spaceui.one/r/primitives-collapsible.json",
     "https://www.spaceui.one/r/components-spaceui-blur-reveal-text.json",
-    "https://www.spaceui.one/r/hooks-utils-format-text.json"
+    "https://www.spaceui.one/r/primitives-card.json"
   ],
-  "categories": ["interaction", "agents", "pipeline"],
+  "categories": ["interaction", "developer", "pipeline"],
   "meta": {
-    "cycleDurationMs": 12300,
+    "cycleDurationMs": 16700,
     "demoProps": {
       "animation": {
         "value": "active",
         "options": {
           "Active": "active",
           "Inactive": "inactive"
-        }
-      },
-      "preset": {
-        "type": "select",
-        "value": "incident",
-        "options": {
-          "Incident": "incident",
-          "Code Review": "codereview",
-          "Support": "support",
-          "Growth": "growth"
         }
       },
       "cycleFlows": {
@@ -45,10 +37,12 @@
       },
       "flow": {
         "type": "select",
-        "value": "success",
+        "value": "production",
         "options": {
-          "Success": "success",
-          "Error": "error"
+          "Production": "production",
+          "Test Failed": "test_failed",
+          "Canary Rollback": "canary_rollback",
+          "Hotfix": "hotfix"
         },
         "dependsOn": {
           "cycleFlows": false
@@ -69,7 +63,7 @@
       "speed": {
         "value": 1,
         "min": 0.25,
-        "max": 3,
+        "max": 4,
         "step": 0.25,
         "dependsOn": {
           "animation": "active"
@@ -79,14 +73,14 @@
   },
   "files": [
     {
-      "path": "src/registry/components/interactions/agent-pipeline/index.tsx",
+      "path": "src/registry/interactions/deploy-pipeline/index.tsx",
       "type": "registry:component",
-      "target": "components/interactions/agent-pipeline.tsx"
+      "target": "components/interactions/deploy-pipeline.tsx"
     },
     {
-      "path": "src/registry/components/interactions/agent-pipeline/data.ts",
+      "path": "src/registry/interactions/deploy-pipeline/data.ts",
       "type": "registry:component",
-      "target": "components/interactions/agent-pipeline-data.ts"
+      "target": "components/interactions/deploy-pipeline-data.ts"
     }
   ],
   "createdAt": "2026-09-21",

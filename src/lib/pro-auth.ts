@@ -39,7 +39,14 @@ export function isComponentPro(slug: string): boolean {
       }
 
       // Check registry-item.json in any registry category
-      const regCategories = ['blocks', 'primitives', 'components/spaceui', 'components/space', 'templates']
+      const regCategories = [
+        'blocks',
+        'primitives',
+        'interactions',
+        'components/spaceui',
+        'components/space',
+        'templates',
+      ]
       for (const cat of regCategories) {
         const regFile = path.join(appRoot, 'src', 'registry', cat, direct, 'registry-item.json')
         if (fs.existsSync(regFile)) {
@@ -52,7 +59,7 @@ export function isComponentPro(slug: string): boolean {
       }
 
       // Check MDX documentation frontmatter
-      const docCategories = ['blocks', 'primitives', 'components', 'templates']
+      const docCategories = ['blocks', 'primitives', 'interactions', 'components', 'templates']
       for (const cat of docCategories) {
         const mdxFile = path.join(appRoot, 'src', 'content', 'library', cat, `${direct}.mdx`)
         if (fs.existsSync(mdxFile)) {

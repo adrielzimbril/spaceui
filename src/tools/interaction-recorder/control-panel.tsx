@@ -2,7 +2,8 @@
 
 import { Fragment } from 'react'
 import { Avatar } from '@usespaceui/avatars/react'
-import { IconPlayerStop } from '@tabler/icons-react'
+import { IconPlayerStop, IconAdjustments } from '@tabler/icons-react'
+import { cn } from '@/registry/lib/utils'
 import {
   Combobox,
   ComboboxCollection,
@@ -49,6 +50,9 @@ export interface InteractionControlPanelProps {
   progress: number
   onRecord: () => void
   onStop: () => void
+  hasBinds?: boolean
+  showTweakpane?: boolean
+  onToggleTweakpane?: () => void
 }
 
 export function InteractionControlPanel({
@@ -70,6 +74,9 @@ export function InteractionControlPanel({
   progress,
   onRecord,
   onStop,
+  hasBinds,
+  showTweakpane,
+  onToggleTweakpane,
 }: InteractionControlPanelProps) {
   return (
     <div className="flex h-full min-h-0 flex-col bg-background text-foreground">
@@ -112,6 +119,31 @@ export function InteractionControlPanel({
                 </ComboboxList>
               </ComboboxPopup>
             </Combobox>
+
+            {hasBinds && (
+              <Button
+                type="button"
+                variant="outline"
+                size="sm"
+                onClick={() => {
+                  tapSound()
+                  onToggleTweakpane?.()
+                }}
+                data-space-hover="tick"
+                className={cn(
+                  'w-full justify-between rounded-xl text-xs font-medium cursor-pointer',
+                  showTweakpane && 'border-primary bg-primary/10 text-primary',
+                )}
+              >
+                <div className="flex items-center gap-2">
+                  <IconAdjustments className="size-4" />
+                  <span>Interaction Details</span>
+                </div>
+                <span className="text-[0.6875rem] text-muted-foreground">
+                  {showTweakpane ? 'Hide' : 'Configure'}
+                </span>
+              </Button>
+            )}
           </div>
 
           <div className="flex flex-col gap-2">
