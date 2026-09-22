@@ -34,6 +34,8 @@ export type SmoothSliderProps = {
   fillTo?: string
   /** Overrides the thumb's background. */
   thumbClassName?: string
+  /** Whether to animate value changes with a transition. Set to false when controlled via an animation loop or rapid updates. @default true */
+  animated?: boolean
 }
 
 export function SmoothSlider({
@@ -53,6 +55,7 @@ export function SmoothSlider({
   fillVia,
   fillTo,
   thumbClassName,
+  animated = true,
 }: SmoothSliderProps) {
   const trackRef = React.useRef<HTMLDivElement>(null)
   const [internalValue, setInternalValue] = React.useState(defaultValue)
@@ -178,7 +181,9 @@ export function SmoothSlider({
         <div
           className={cn(
             'absolute top-1/2 -translate-y-1/2 rounded-full',
-            dragging ? 'transition-none' : 'transition-[width] duration-300 ease-[cubic-bezier(0.34,1.56,0.64,1)]',
+            dragging || !animated
+              ? 'transition-none'
+              : 'transition-all duration-300 ease-[cubic-bezier(0.34,1.56,0.64,1)]',
             !(fillFrom || fillVia || fillTo) &&
               cn('bg-linear-to-r from-sky-200 via-indigo-200 to-blue-400', fillClassName),
           )}
@@ -204,7 +209,9 @@ export function SmoothSlider({
           onKeyDown={handleKeyDown}
           className={cn(
             'absolute top-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full bg-background border border-primary/10 outline-none',
-            dragging ? 'transition-none' : 'transition-transform duration-300 ease-[cubic-bezier(0.34,1.56,0.64,1)]',
+            dragging || !animated
+              ? 'transition-none'
+              : 'transition-all duration-300 ease-[cubic-bezier(0.34,1.56,0.64,1)]',
             dragging && 'scale-110',
             thumbClassName,
           )}
