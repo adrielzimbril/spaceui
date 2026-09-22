@@ -10,6 +10,7 @@ import { StatusBadge } from '@/registry/components/spaceui/status-badge'
 import { Link } from '@/registry/primitives/link'
 import { IconArrowUpRight } from '@tabler/icons-react'
 import { REGISTRY_STATS } from '@/lib/pricing-config'
+import { PixelFillButton } from '@/registry/components/spaceui/pixel-fill-button'
 
 const HERO_BADGE_PHRASES = [
   'Built for Next.js & Base UI 🚀',
@@ -62,7 +63,7 @@ export function Hero() {
 
           {/* ── Primary Actions ── */}
           <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row sm:flex-wrap">
-            <LiquidBorder className="inline-flex squircle rounded-full p-0.75 transition-all duration-300 hover:scale-105">
+            {/* <LiquidBorder className="inline-flex squircle rounded-full p-0.75 transition-all duration-300 hover:scale-105">
               <Button
                 render={<Link href="/components" />}
                 data-space-hover
@@ -72,7 +73,23 @@ export function Hero() {
                 <span>Browse components</span>
                 <IconArrowUpRight className="size-4" />
               </Button>
-            </LiquidBorder>
+            </LiquidBorder> */}
+
+            <PixelFillButton
+              borderEffect="metal"
+              metalPreset="chrome"
+              pixelColor="#e2e8f0"
+              textColorOnHover="#000000"
+              size="default"
+              href="/components"
+              data-space-hover
+              data-space-click="confirm"
+              variant="primary"
+              className="inline-flex items-center gap-2 px-6 py-3.5 font-medium active:scale-[0.98] transition-all duration-300"
+            >
+              <span>Browse components</span>
+              <IconArrowUpRight className="size-4" />
+            </PixelFillButton>
 
             {/* <span className="relative inline-flex group">
               <Link

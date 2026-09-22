@@ -341,11 +341,6 @@ export function InteractionControlPanel({
                 </TabsTab>
               </TabsList>
             </Tabs>
-            {withSound && (
-              <p className="text-[11px] text-muted-foreground">
-                The browser will ask which tab to share — pick this one and enable &quot;Share tab audio&quot;.
-              </p>
-            )}
           </div>
 
           <div className="flex flex-col gap-2.5">

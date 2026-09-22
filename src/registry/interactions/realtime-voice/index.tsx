@@ -8,10 +8,9 @@ import { MorphIcon } from '@/registry/components/spaceui/morph-icon'
 import { cn } from '@/registry/lib/utils'
 import { Card } from '@/registry/primitives/card'
 import { Frame, FrameFooter, FrameHeader } from '@/registry/primitives/frame'
-import { capitalizeText } from '@/registry/utils/format-text'
 import { logger } from '@/registry/utils/logger'
 import { Mic, MicOff, Pause, Phone, PhoneOff, AudioLines, X } from '@keyline-icons/react'
-import { bloom, tap } from '@usespaceui/sounds'
+import { bloom, ready, tap, whisper } from '@usespaceui/sounds'
 import { Squishmoji } from '@usespaceui/squishmoji/react'
 import { AnimatePresence, motion } from 'motion/react'
 import * as React from 'react'
@@ -117,12 +116,17 @@ export function RealtimeVoice({
     safeSound(tap)
     setIsActive((prev) => {
       const next = !prev
-      if (next && voiceState === 'idle') {
+      if (next) {
+        setElapsedMs(0)
+        setDialogueIndex(0)
         setVoiceState('listening')
+      } else {
+        setVoiceState('idle')
+        setElapsedMs(0)
       }
       return next
     })
-  }, [voiceState])
+  }, [])
 
   const handleEndCall = React.useCallback(() => {
     safeSound(tap)
@@ -135,13 +139,31 @@ export function RealtimeVoice({
     logger.info('Realtime voice session reset to standby.')
   }, [])
 
+  // Keep timer at 0 when idle
   React.useEffect(() => {
-    if (isPaused) return
+    if (voiceState === 'idle') {
+      setElapsedMs(0)
+    }
+  }, [voiceState])
+
+  // Reset timer on preset change
+  const isFirstMount = React.useRef(true)
+  React.useEffect(() => {
+    if (isFirstMount.current) {
+      isFirstMount.current = false
+      return
+    }
+    setElapsedMs(0)
+    setDialogueIndex(0)
+  }, [currentPresetKey])
+
+  React.useEffect(() => {
+    if (isPaused || voiceState === 'idle') return
     const interval = setInterval(() => {
-      setElapsedMs((prev) => prev + 100)
+      setElapsedMs((prev) => prev + Math.round(100 * Math.max(0.2, speed)))
     }, 100)
     return () => clearInterval(interval)
-  }, [isPaused])
+  }, [isPaused, voiceState, speed])
 
   React.useEffect(() => {
     const shouldBeActive = Boolean(autoPlay && isAnimationActive)
@@ -178,7 +200,7 @@ export function RealtimeVoice({
         setVoiceState('thinking')
       } else if (voiceState === 'thinking') {
         setVoiceState('speaking')
-        safeSound(bloom)
+        safeSound(whisper)
       } else if (voiceState === 'speaking') {
         const nextTurn = dialogueIndex + 1
         const finishedCurrentPreset = nextTurn >= activeDialogues.length
@@ -195,7 +217,8 @@ export function RealtimeVoice({
           if (targetLoops && targetLoops > 0 && finishesFullCycle && completedCyclesRef.current >= targetLoops) {
             setIsActive(false)
             setVoiceState('idle')
-            safeSound(bloom)
+            setElapsedMs(0)
+            safeSound(ready)
             logger.info(`Realtime voice reached target loops (${targetLoops}). Sequence complete.`)
             onSequenceComplete?.()
             return
@@ -206,10 +229,12 @@ export function RealtimeVoice({
             setCurrentPresetKey(presetKeys[nextPresetIdx])
           }
           setDialogueIndex(0)
+          setElapsedMs(0)
 
           if (!autoPlay || (!loop && finishesFullCycle)) {
             setIsActive(false)
             setVoiceState('idle')
+            setElapsedMs(0)
             return
           }
         } else {
@@ -257,9 +282,7 @@ export function RealtimeVoice({
     >
       <FrameHeader className="flex flex-row shrink-0 items-center justify-between gap-3 px-2 py-1.5 pb-2 border-none">
         <div className="flex items-center gap-2 min-w-0">
-          <div
-            className="relative size-6 shrink-0 overflow-hidden rounded-full bg-background flex items-center justify-center shadow-none cursor-pointer"
-          >
+          <div className="relative size-6 shrink-0 overflow-hidden rounded-full bg-background flex items-center justify-center shadow-none cursor-pointer">
             <Squishmoji
               seed="realtime-voice-agents"
               size={24}

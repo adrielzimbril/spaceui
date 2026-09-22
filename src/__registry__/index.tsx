@@ -33723,7 +33723,7 @@ export const index: Record<string, any> = {
         }
         return { default: Comp };
       });
-      LazyComp.demoProps = {"animation":{"value":"active","options":{"Active":"active","Inactive":"inactive"}},"cyclePreset":{"value":true,"dependsOn":{"animation":"active"}},"preset":{"type":"select","value":"incident","options":{"Incident":"incident","Code Review":"codereview","Support":"support","Growth":"growth"},"dependsOn":{"cyclePreset":false}},"cycleFlows":{"value":true,"dependsOn":{"animation":"active"}},"flow":{"type":"select","value":"success","options":{"Success":"success","Error":"error"},"dependsOn":{"cycleFlows":false}},"autoPlay":{"value":true,"dependsOn":{"animation":"active"}},"pauseOnHover":{"value":true,"dependsOn":{"animation":"active"}},"speed":{"value":1,"min":0.25,"max":3,"step":0.25,"dependsOn":{"animation":"active"}}};
+      LazyComp.demoProps = {"animation":{"value":"active","options":{"Active":"active","Inactive":"inactive"}},"cyclePreset":{"value":true,"dependsOn":{"animation":"active"}},"preset":{"type":"select","value":"incident","options":{"Incident":"incident","Code Review":"codereview","Support":"support","Growth":"growth"},"dependsOn":{"cyclePreset":false}},"cycleFlows":{"value":true,"dependsOn":{"animation":"active"}},"flow":{"type":"select","value":"success","options":{"Success":"success","Error":"error"},"dependsOn":{"cycleFlows":false}},"autoPlay":{"value":true,"dependsOn":{"animation":"active"}},"pauseOnHover":{"value":true,"dependsOn":{"animation":"active"}},"speed":{"value":1,"min":0.25,"max":5,"step":0.25,"dependsOn":{"animation":"active"}}};
       LazyComp.cycleDurationMs = 12300;
       return LazyComp;
     })(),
@@ -33761,7 +33761,7 @@ export const index: Record<string, any> = {
         }
         return { default: Comp };
       });
-      LazyComp.demoProps = {"animation":{"value":"active","options":{"Active":"active","Inactive":"inactive"}},"cycleFlows":{"value":true,"dependsOn":{"animation":"active"}},"flow":{"type":"select","value":"production","options":{"Production":"production","Test Failed":"test_failed","Canary Rollback":"canary_rollback","Hotfix":"hotfix"},"dependsOn":{"cycleFlows":false}},"autoPlay":{"value":true,"dependsOn":{"animation":"active"}},"pauseOnHover":{"value":true,"dependsOn":{"animation":"active"}},"speed":{"value":1,"min":0.25,"max":4,"step":0.25,"dependsOn":{"animation":"active"}}};
+      LazyComp.demoProps = {"animation":{"value":"active","options":{"Active":"active","Inactive":"inactive"}},"cycleFlows":{"value":true,"dependsOn":{"animation":"active"}},"flow":{"type":"select","value":"production","options":{"Production":"production","Test Failed":"test_failed","Canary Rollback":"canary_rollback","Hotfix":"hotfix"},"dependsOn":{"cycleFlows":false}},"autoPlay":{"value":true,"dependsOn":{"animation":"active"}},"pauseOnHover":{"value":true,"dependsOn":{"animation":"active"}},"speed":{"value":1,"min":0.25,"max":5,"step":0.25,"dependsOn":{"animation":"active"}}};
       LazyComp.cycleDurationMs = 16700;
       return LazyComp;
     })(),
@@ -33799,7 +33799,7 @@ export const index: Record<string, any> = {
         }
         return { default: Comp };
       });
-      LazyComp.demoProps = {"animation":{"value":"active","options":{"Active":"active","Inactive":"inactive"}},"cyclePreset":{"value":true,"dependsOn":{"animation":"active"}},"preset":{"type":"select","value":"developer","options":{"Dev & Perf":"developer","Design & Motion":"designer","Agent Fleet":"orchestrator","SRE War Room":"incident","Podcast Co-Host":"podcast","Founder Copilot":"copilot"},"dependsOn":{"cyclePreset":false}},"autoPlay":{"value":true,"dependsOn":{"animation":"active"}},"pauseOnHover":{"value":true,"dependsOn":{"animation":"active"}},"speed":{"value":1,"min":0.5,"max":3,"step":0.25,"dependsOn":{"animation":"active"}}};
+      LazyComp.demoProps = {"animation":{"value":"active","options":{"Active":"active","Inactive":"inactive"}},"cyclePreset":{"value":true,"dependsOn":{"animation":"active"}},"preset":{"type":"select","value":"developer","options":{"Dev & Perf":"developer","Design & Motion":"designer","Agent Fleet":"orchestrator","SRE War Room":"incident","Podcast Co-Host":"podcast","Founder Copilot":"copilot"},"dependsOn":{"cyclePreset":false}},"autoPlay":{"value":true,"dependsOn":{"animation":"active"}},"pauseOnHover":{"value":true,"dependsOn":{"animation":"active"}},"speed":{"value":1,"min":0.5,"max":5,"step":0.25,"dependsOn":{"animation":"active"}}};
       LazyComp.cycleDurationMs = 10000;
       return LazyComp;
     })(),

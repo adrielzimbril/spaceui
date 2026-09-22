@@ -9,7 +9,7 @@ import { Frame, FrameFooter, FrameHeader, FramePanel, FrameTitle } from '@/regis
 import { ScrollArea } from '@/registry/primitives/scroll-area'
 import { capitalizeText, randomWord } from '@/registry/utils/format-text'
 import { Check } from '@keyline-icons/react'
-import { bloom, deny } from '@usespaceui/sounds'
+import { bloom, deny, ready, whisper } from '@usespaceui/sounds'
 import { Squishmoji } from '@usespaceui/squishmoji/react'
 import {
   animate,
@@ -136,7 +136,7 @@ function AgentNode({ agent, state, blinkTrigger }: AgentNodeProps) {
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.5, opacity: 0 }}
               transition={{ duration: 0.15 }}
-              className="absolute -top-1 -right-1 grid size-4 place-items-center rounded-full bg-rose-500 text-white ring-2 ring-background shadow-none font-bold text-[0.625rem]"
+              className="absolute -bottom-1 -right-1 grid size-4 place-items-center rounded-full bg-rose-500 text-white ring-2 ring-background shadow-none font-bold text-[0.625rem]"
             >
               !
             </motion.span>
@@ -550,7 +550,13 @@ export function AgentPipeline({
         setLogs((prev) => [...prev, item])
         if (item.kind === 'milestone') {
           setBlinkTrigger((prev) => prev + 1)
-          safeSound(bloom)
+          if (item.id === 'start') {
+            safeSound(whisper)
+          } else if (item.final) {
+            safeSound(ready)
+          } else {
+            safeSound(bloom)
+          }
         } else if (item.kind === 'error') {
           setBlinkTrigger((prev) => prev + 1)
           safeSound(deny)
@@ -647,7 +653,6 @@ export function AgentPipeline({
           lineMotion.set(1)
           setProgressVal(100)
           setBlinkTrigger((prev) => prev + 1)
-          safeSound(bloom)
         }
       },
     })
@@ -718,7 +723,7 @@ export function AgentPipeline({
     if (status !== 'idle' && !isPaused) {
       startPipeline()
     }
-  }, [currentPresetKey, currentFlowIdx])
+  }, [currentPresetKey, currentFlowIdx, startPipeline])
 
   // Loop timer: when pipeline finishes (done or error), advance loop after delay if autoPlay is active
   React.useEffect(() => {

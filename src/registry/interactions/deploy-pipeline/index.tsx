@@ -19,7 +19,7 @@ import { Collapsible, CollapsibleContent, CollapsibleTrigger } from '@/registry/
 import { Frame, FrameFooter, FrameHeader, FramePanel } from '@/registry/primitives/frame'
 import { Spinner } from '@/registry/primitives/spinner'
 import { Check, ChevronRight, Circle, X } from '@keyline-icons/react'
-import { bloom, deny } from '@usespaceui/sounds'
+import { bloom, deny, nudge, ready, whisper } from '@usespaceui/sounds'
 import { Squishmoji } from '@usespaceui/squishmoji/react'
 import { motion } from 'motion/react'
 import * as React from 'react'
@@ -181,12 +181,9 @@ export function DeployPipeline({
   const isCurrentFailed = current?.steps.some((s) => s.status === 'failed') ?? false
   const isAllCompleted = current?.steps.every((s) => s.status === 'completed') ?? false
 
-  // Reset cycle index when flow switches
-  React.useEffect(() => {
-    setCycleIndex(0)
-    setOpenSteps({ 1: true })
-    lastActiveStepRef.current = null
-  }, [activeFlowKey])
+  const prevFlowKeyRef = React.useRef(activeFlowKey)
+  const prevCycleIndexRef = React.useRef(0)
+  const isMountedRef = React.useRef(false)
 
   // Auto-expand step when it becomes active or failed
   React.useEffect(() => {
@@ -196,26 +193,49 @@ export function DeployPipeline({
     }
   }, [current?.activeStep])
 
-  // Sound effects on step changes
+  // Sound effects: whisper at start/flow-switch, bloom on step completed, ready on allDone, deny on error
   React.useEffect(() => {
-    if (cycleIndex > 0) {
+    // 1. Initial mount on page load
+    if (!isMountedRef.current) {
+      isMountedRef.current = true
+      if (autoPlay && !isPaused) {
+        safeSound(whisper)
+      }
+      return
+    }
+
+    // 2. Flow changed (new scenario)
+    if (prevFlowKeyRef.current !== activeFlowKey) {
+      prevFlowKeyRef.current = activeFlowKey
+      prevCycleIndexRef.current = 0
+      setCycleIndex(0)
+      setOpenSteps({ 1: true })
+      lastActiveStepRef.current = null
+      safeSound(whisper)
+      return
+    }
+
+    // 3. Step changed within the SAME flow
+    if (cycleIndex > 0 && cycleIndex !== prevCycleIndexRef.current) {
+      prevCycleIndexRef.current = cycleIndex
       setBlinkTrigger((prev) => prev + 1)
+
       const currentFrame = activeCycle[cycleIndex % activeCycle.length]
+      const prevFrame = activeCycle[(cycleIndex - 1 + activeCycle.length) % activeCycle.length]
       const hasFailed = currentFrame?.steps.some((s) => s.status === 'failed')
       const allDone = currentFrame?.steps.every((s) => s.status === 'completed')
+      const currentCompletedCount = currentFrame?.steps.filter((s) => s.status === 'completed').length ?? 0
+      const prevCompletedCount = prevFrame?.steps.filter((s) => s.status === 'completed').length ?? 0
 
       if (hasFailed) {
         safeSound(deny)
       } else if (allDone) {
+        safeSound(ready)
+      } else if (currentCompletedCount > prevCompletedCount) {
         safeSound(bloom)
-      } else {
-        const hasActive = currentFrame?.steps.some((s) => s.status === 'active')
-        if (hasActive) {
-          safeSound(bloom)
-        }
       }
     }
-  }, [cycleIndex, activeCycle])
+  }, [cycleIndex, activeFlowKey, activeCycle, autoPlay, isPaused])
 
   // Clear pending loop timeout
   React.useEffect(() => {
@@ -254,6 +274,8 @@ export function DeployPipeline({
           if (cycleFlows && flowKeys.length > 1) {
             setCurrentFlowIdx((prev) => (prev + 1) % flowKeys.length)
           } else {
+            safeSound(whisper)
+            prevCycleIndexRef.current = 0
             setCycleIndex(0)
           }
         }, duration)
@@ -287,9 +309,7 @@ export function DeployPipeline({
     >
       <FrameHeader className="flex flex-row shrink-0 items-center justify-between gap-3 px-2 py-1.5 pb-2 border-none">
         <div className="flex items-center gap-2 min-w-0">
-          <div
-            className="relative size-6 shrink-0 overflow-hidden rounded-full bg-background flex items-center justify-center shadow-none cursor-pointer"
-          >
+          <div className="relative size-6 shrink-0 overflow-hidden rounded-full bg-background flex items-center justify-center shadow-none cursor-pointer">
             <Squishmoji
               seed="deploy-pipeline"
               size={24}
@@ -378,6 +398,7 @@ export function DeployPipeline({
 
                 const handleOpenChange = (open: boolean) => {
                   if (isLocked) return
+                  safeSound(() => nudge(open ? 'up' : 'down'))
                   setOpenSteps((prev) => ({
                     ...prev,
                     [step.id]: open,

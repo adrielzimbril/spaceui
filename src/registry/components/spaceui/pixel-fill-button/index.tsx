@@ -278,10 +278,7 @@ export const PixelFillButton = React.forwardRef<HTMLButtonElement, PixelFillButt
         <span className="sr-only">{children}</span>
 
         {/* Crisp Typography: Initial resting state (blur-reveal motion) */}
-        <span
-          aria-hidden="true"
-          className="relative z-10 pointer-events-none inline-flex items-center gap-2 text-foreground"
-        >
+        <span aria-hidden="true" className="relative z-10 pointer-events-none inline-flex items-center gap-2">
           {renderAnimatedText(false)}
         </span>
 
@@ -355,7 +352,7 @@ export const PixelFillButton = React.forwardRef<HTMLButtonElement, PixelFillButt
         <LiquidBorder
           preset={metalPreset}
           className={cn(
-            'inline-flex transition-transform duration-300 hover:scale-105 p-0.75 cursor-pointer leading-none',
+            'inline-flex transition-transform duration-300 hover:scale-105 p-0.75 cursor-pointer leading-none [&_canvas]:squircle [&_canvas]:rounded-7xl!',
             squircle ? 'squircle rounded-7xl' : 'rounded-lg',
             borderClassName,
           )}
