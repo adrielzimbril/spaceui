@@ -131,7 +131,9 @@ export function OgControlPanel({
       <div className="flex h-10 shrink-0 items-center px-3 border-b border-border/40">
         <div className="flex items-center gap-2">
           <h2 className="text-xs font-semibold">Appearance & Content</h2>
-          {/* <span className="text-[0.625rem] text-muted-foreground">Appearance & Content</span> */}
+          {/* <Badge variant="secondary" size="xs">
+            Appearance & Content
+          </Badge> */}
         </div>
       </div>
 

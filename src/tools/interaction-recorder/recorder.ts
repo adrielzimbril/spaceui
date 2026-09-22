@@ -115,6 +115,7 @@ async function tryCreateVideoEncoder(
         video: { codec: 'avc', width, height, frameRate: fps },
         ...(hasAudio ? { audio: { codec: 'aac', numberOfChannels: 2, sampleRate: 48000 } } : {}),
         fastStart: 'in-memory',
+        firstTimestampBehavior: 'offset',
       })
 
       const videoChunkCountRef = { current: 0 }
@@ -124,14 +125,15 @@ async function tryCreateVideoEncoder(
       const encoder = new VideoEncoder({
         output: (chunk, meta) => {
           videoChunkCountRef.current++
-          if (meta?.decoderConfig) {
+          if (meta && meta.decoderConfig) {
+            const rawColorSpace = meta.decoderConfig.colorSpace || {}
             cachedDecoderConfig = {
               ...meta.decoderConfig,
-              colorSpace: meta.decoderConfig.colorSpace ?? {
-                primaries: 'bt709',
-                transfer: 'iec61966-2-1',
-                matrix: 'bt709',
-                fullRange: false,
+              colorSpace: {
+                primaries: rawColorSpace.primaries ?? 'bt709',
+                transfer: rawColorSpace.transfer ?? 'iec61966-2-1',
+                matrix: rawColorSpace.matrix ?? 'bt709',
+                fullRange: Boolean(rawColorSpace.fullRange),
               },
             }
           }
@@ -153,7 +155,11 @@ async function tryCreateVideoEncoder(
                     },
                   },
                 }
-          muxer.addVideoChunk(chunk, finalMeta)
+          try {
+            muxer.addVideoChunk(chunk, finalMeta)
+          } catch (chunkErr) {
+            console.warn('muxer addVideoChunk warning:', chunkErr)
+          }
         },
         error: (err) => {
           encoderError = err
@@ -321,6 +327,36 @@ export async function recordInteraction(options: RecordInteractionOptions): Prom
   let stopped: Promise<void> | null = null
   const chunks: BlobPart[] = []
 
+  const releaseStream = () => {
+    if (onEndedListener && videoTrack) {
+      try {
+        videoTrack.removeEventListener('ended', onEndedListener)
+      } catch {}
+      onEndedListener = null
+    }
+    if (displayStream) {
+      try {
+        displayStream.getTracks().forEach((track) => {
+          try {
+            track.stop()
+          } catch {}
+        })
+      } catch {}
+      displayStream = null
+    }
+    if (sourceVideo) {
+      try {
+        sourceVideo.pause()
+        sourceVideo.srcObject = null
+        sourceVideo.load()
+      } catch {}
+      try {
+        sourceVideo.remove()
+      } catch {}
+      sourceVideo = null
+    }
+  }
+
   try {
     onStatusChange(withSound ? 'Pick this tab and enable "Share tab audio"…' : 'Pick this tab to share…')
     displayStream = await navigator.mediaDevices.getDisplayMedia({
@@ -451,52 +487,84 @@ export async function recordInteraction(options: RecordInteractionOptions): Prom
     }
 
     let frameIndex = 0
-    let nextFrameTime = 0
+    let lastFrameTime = -1000
+    let lastFrameTimestampUs = -1
+    let lastKeyFrameTimeUs = -10_000_000
+    const frameIntervalMs = 1000 / fps
     const startedAt = performance.now()
+
+    // Cache geometry to avoid synchronous DOM reflows inside requestAnimationFrame
+    let sx = 0
+    let sy = 0
+    let sw = 0
+    let sh = 0
+    let elementWidth = 0
+    let elementHeight = 0
+    let drawX = 0
+    let drawY = 0
+
+    const updateGeometry = () => {
+      if (!stage || !sourceVideo || sourceVideo.videoWidth === 0) return
+      const rect = stage.getBoundingClientRect()
+      const videoScaleX = sourceVideo.videoWidth / window.innerWidth
+      const videoScaleY = sourceVideo.videoHeight / window.innerHeight
+      sx = rect.left * videoScaleX
+      sy = rect.top * videoScaleY
+      sw = rect.width * videoScaleX
+      sh = rect.height * videoScaleY
+      elementWidth = Math.round(rect.width * scale)
+      elementHeight = Math.round(rect.height * scale)
+      drawX = Math.round((outputWidth - elementWidth) / 2 + pan.x * scale)
+      drawY = Math.round((outputHeight - elementHeight) / 2 + pan.y * scale)
+    }
+
+    updateGeometry()
+    let lastGeometryUpdate = startedAt
 
     await new Promise<void>((resolve) => {
       const drawFrame = () => {
         const elapsed = performance.now() - startedAt
-        if (checkCancelled() || checkSequenceFinished() || elapsed >= maxWatchdogMs) {
+        if (checkCancelled() || checkSequenceFinished() || streamEnded || elapsed >= maxWatchdogMs) {
           resolve()
           return
         }
 
-        // Map the stage element's on-screen rect onto captured video's pixel space
-        const rect = stage.getBoundingClientRect()
-        const videoScaleX = sourceVideo!.videoWidth / window.innerWidth
-        const videoScaleY = sourceVideo!.videoHeight / window.innerHeight
-        const sx = rect.left * videoScaleX
-        const sy = rect.top * videoScaleY
-        const sw = rect.width * videoScaleX
-        const sh = rect.height * videoScaleY
-
-        const elementWidth = Math.round(rect.width * scale)
-        const elementHeight = Math.round(rect.height * scale)
-
-        // Draw with pan offset applied
-        const drawX = Math.round((outputWidth - elementWidth) / 2 + pan.x * scale)
-        const drawY = Math.round((outputHeight - elementHeight) / 2 + pan.y * scale)
+        // Periodically refresh geometry in case layout shifts, without reflowing every frame
+        if (performance.now() - lastGeometryUpdate > 500) {
+          updateGeometry()
+          lastGeometryUpdate = performance.now()
+        }
 
         if (useWebCodecs && encoder) {
-          if (elapsed >= nextFrameTime) {
+          if (elapsed - lastFrameTime >= frameIntervalMs * 0.92) {
+            lastFrameTime = elapsed
+
             ctx.fillStyle = backgroundColor
             ctx.fillRect(0, 0, outputWidth, outputHeight)
-            if (sw > 0 && sh > 0) {
+            if (sw > 0 && sh > 0 && sourceVideo) {
               ctx.imageSmoothingEnabled = true
               ctx.imageSmoothingQuality = 'high'
-              ctx.drawImage(sourceVideo!, sx, sy, sw, sh, drawX, drawY, elementWidth, elementHeight)
+              ctx.drawImage(sourceVideo, sx, sy, sw, sh, drawX, drawY, elementWidth, elementHeight)
             }
 
             if (encoder.state === 'configured') {
-              const frameTimestampUs = Math.round((frameIndex * 1_000_000) / fps)
-              const frameDurationUs = Math.round(1_000_000 / fps)
+              // Real-time microsecond timestamp strictly matching wall-clock elapsed time
+              const elapsedUs = frameIndex === 0 ? 0 : Math.round(elapsed * 1000)
+              const frameTimestampUs = frameIndex === 0 ? 0 : Math.max(lastFrameTimestampUs + 1000, elapsedUs)
+              const frameDurationUs = Math.max(1000, Math.round(1_000_000 / fps))
+              lastFrameTimestampUs = frameTimestampUs
+
+              const isKeyFrame = frameIndex === 0 || frameTimestampUs - lastKeyFrameTimeUs >= 2_000_000
+              if (isKeyFrame) {
+                lastKeyFrameTimeUs = frameTimestampUs
+              }
+
               const videoFrame = new VideoFrame(canvas, {
                 timestamp: frameTimestampUs,
                 duration: frameDurationUs,
               })
               try {
-                encoder.encode(videoFrame, { keyFrame: frameIndex === 0 || frameIndex % (fps * 2) === 0 })
+                encoder.encode(videoFrame, { keyFrame: isKeyFrame })
               } catch (err) {
                 console.warn('Encoding frame error:', err)
               } finally {
@@ -505,14 +573,13 @@ export async function recordInteraction(options: RecordInteractionOptions): Prom
             }
 
             frameIndex++
-            nextFrameTime = (frameIndex * 1000) / fps
           }
         } else {
           // Fallback for MediaRecorder
           ctx.fillStyle = backgroundColor
           ctx.fillRect(0, 0, outputWidth, outputHeight)
-          if (sw > 0 && sh > 0) {
-            ctx.drawImage(sourceVideo!, sx, sy, sw, sh, drawX, drawY, elementWidth, elementHeight)
+          if (sw > 0 && sh > 0 && sourceVideo) {
+            ctx.drawImage(sourceVideo, sx, sy, sw, sh, drawX, drawY, elementWidth, elementHeight)
           }
         }
 
@@ -521,6 +588,9 @@ export async function recordInteraction(options: RecordInteractionOptions): Prom
       }
       rafId = requestAnimationFrame(drawFrame)
     })
+
+    // Instantly terminate display capture so the browser screen sharing banner disappears immediately
+    releaseStream()
 
     onStatusChange('Finalizing MP4…')
 
@@ -573,6 +643,7 @@ export async function recordInteraction(options: RecordInteractionOptions): Prom
     return { blob: finalBlob, fileName }
   } finally {
     if (rafId !== null) cancelAnimationFrame(rafId)
+    releaseStream()
     if (audioPackage?.audioEncoder) {
       try {
         audioPackage.audioEncoder.close()
@@ -596,8 +667,6 @@ export async function recordInteraction(options: RecordInteractionOptions): Prom
         /* ignored */
       }
     }
-    displayStream?.getTracks().forEach((t) => t.stop())
-    sourceVideo?.remove()
     recordCanvas?.remove()
   }
 }

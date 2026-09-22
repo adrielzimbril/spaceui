@@ -20,6 +20,7 @@ import { Button } from '@/registry/components/spaceui/button-squircle'
 import type { ReactNode } from 'react'
 import type { ResourceViewMode } from '@/tools/shared/types'
 import { DEFAULT_SEEDS } from '@/tools/shared/seeds'
+import { Badge } from '@/registry/components/spaceui/badge-squircle'
 
 const SIZE_MIN = 64
 const SIZE_MAX = 256
@@ -115,9 +116,9 @@ export function SquishmojiControlPanel({
       <div className="flex h-10 shrink-0 items-center px-3">
         <div className="flex items-center gap-2">
           <h2 className="text-xs font-semibold">Squishmoji</h2>
-          <span className="text-[0.625rem] text-muted-foreground">
+          <Badge variant="secondary" size="xs">
             {view === 'mockup' ? 'Mockup' : view === 'gallery' ? 'Gallery' : view === 'video' ? 'Video' : 'Seed'}
-          </span>
+          </Badge>
         </div>
       </div>
       <ScrollArea className="min-h-0 flex-1">

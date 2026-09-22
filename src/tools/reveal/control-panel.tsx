@@ -116,7 +116,7 @@ export function RevealControlPanel({
       <div className="flex h-10 shrink-0 items-center px-3">
         <div className="flex items-center gap-2">
           <h2 className="text-xs font-semibold">3D Reveal</h2>
-          <Badge variant="secondary" size="sm">
+          <Badge variant="secondary" size="xs">
             Brush to reveal
           </Badge>
         </div>

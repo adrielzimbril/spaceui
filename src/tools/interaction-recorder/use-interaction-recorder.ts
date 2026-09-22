@@ -57,10 +57,10 @@ export function useInteractionRecorder({
     const outputWidth = Math.max(2, Math.round(BASE_CANVAS_SIZE * aspectRatio * scale) & ~1)
     const outputHeight = Math.max(2, Math.round(BASE_CANVAS_SIZE * scale) & ~1)
     const durationMs = Math.max(1000, Math.round(sequenceTiming.totalDurationSeconds * 1000))
-    const maxWatchdogMs = durationMs + 2500
-
-    // Restart animation cleanly from beginning right as recording starts
-    // onResetAnimation?.()
+    const hasSequenceCallback = Boolean(
+      selected.shortName?.includes('pipeline') || selected.name?.includes('pipeline'),
+    )
+    const maxWatchdogMs = hasSequenceCallback ? durationMs + 2500 : durationMs + 350
 
     try {
       const result = await recordInteraction({
@@ -77,7 +77,7 @@ export function useInteractionRecorder({
         onProgress: setProgress,
         onStatusChange: setBusy,
         checkCancelled: () => cancelRef.current,
-        checkSequenceFinished: () => sequenceFinishedRef.current,
+        checkSequenceFinished: () => (hasSequenceCallback ? sequenceFinishedRef.current : false),
         onStartCapture: async () => {
           // Keep resolver null during reset so unmount events cannot trigger sequence completion
           sequenceCompleteResolverRef.current = null

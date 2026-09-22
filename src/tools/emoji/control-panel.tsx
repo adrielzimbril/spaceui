@@ -21,6 +21,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@
 import { TickSlider } from '@/registry/components/spaceui/tick-slider'
 import type { ResourceViewMode } from '@/tools/shared/types'
 import { DEFAULT_EMOJI } from './pool'
+import { Badge } from '@/registry/components/spaceui/badge-squircle'
 
 const SOURCES = Object.values(EmojiSource)
 
@@ -110,7 +111,9 @@ export function EmojiControlPanel({
       <div className="flex h-10 shrink-0 items-center px-3">
         <div className="flex items-center gap-2">
           <h2 className="text-xs font-semibold">Emoji</h2>
-          <span className="text-[0.625rem] text-muted-foreground">{view === 'seed' ? 'Seed' : 'Gallery'}</span>
+          <Badge variant="secondary" size="xs">
+            {view === 'seed' ? 'Seed' : 'Gallery'}
+          </Badge>
         </div>
       </div>
       <ScrollArea className="min-h-0 flex-1">

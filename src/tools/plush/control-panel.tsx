@@ -12,6 +12,7 @@ import { confirmSound, pageSound, tickSound, toggleSound } from '@/components/pr
 import { cn } from '@/registry/lib/utils'
 import { PLUSH_PRESETS } from './presets'
 import type { PlushConfig, PlushPreset, ArtworkData } from './types'
+import { Badge } from '@/registry/components/spaceui/badge-squircle'
 
 interface PlushControlPanelProps {
   config: PlushConfig
@@ -81,7 +82,9 @@ export function PlushControlPanel({
       <div className="flex h-10 shrink-0 items-center px-3">
         <div className="flex items-center gap-2">
           <h2 className="text-xs font-semibold">Plush</h2>
-          <span className="text-[0.625rem] text-muted-foreground">Tactile 3D Studio</span>
+          <Badge variant="secondary" size="xs">
+            Tactile 3D Studio
+          </Badge>
         </div>
       </div>
 

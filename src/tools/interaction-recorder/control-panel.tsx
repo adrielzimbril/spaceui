@@ -31,6 +31,7 @@ import {
   type InteractionRecorderItem,
   type ScaleValue,
 } from './types'
+import { Badge } from '@/registry/components/spaceui/badge-squircle'
 
 function OffsetSlider({
   label,
@@ -171,7 +172,12 @@ export function InteractionControlPanel({
   return (
     <div className="flex h-full min-h-0 flex-col bg-background text-foreground">
       <div className="flex h-10 shrink-0 items-center px-3">
-        <h2 className="text-xs font-semibold">Interaction Recorder</h2>
+        <div className="flex items-center gap-2">
+          <h2 className="text-xs font-semibold">Interaction Recorder</h2>
+          <Badge variant="secondary" size="xs">
+            GPU Renderer
+          </Badge>
+        </div>
       </div>
 
       <ScrollArea className="min-h-0 flex-1">

@@ -153,7 +153,7 @@ export function ImageSplitControlPanel({
       <div className="flex h-10 shrink-0 items-center px-3">
         <div className="flex items-center gap-2">
           <h2 className="text-xs font-semibold">Image Split</h2>
-          <Badge variant="secondary" size="sm">
+          <Badge variant="secondary" size="xs">
             Drag to pan
           </Badge>
         </div>

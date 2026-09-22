@@ -17,6 +17,7 @@ import { ToggleGroup, ToggleGroupItem } from '@/registry/primitives/toggle-group
 import { AvatarVariantSelect, PaletteSelect } from './option-select'
 import { DEFAULT_SEEDS } from '@/tools/shared/seeds'
 import { toLabel, type AvatarViewMode } from './utils'
+import { Badge } from '@/registry/components/spaceui/badge-squircle'
 
 const SIZE_MIN = 64
 const SIZE_MAX = 256
@@ -73,9 +74,9 @@ export function AvatarControlPanel({
       <div className="flex h-10 shrink-0 items-center px-3">
         <div className="flex items-center gap-2">
           <h2 className="text-xs font-semibold">Avatar</h2>
-          <span className="text-[0.625rem] text-muted-foreground">
+          <Badge variant="secondary" size="xs">
             {view === 'mockup' ? 'Mockup' : view === 'gallery' ? 'Gallery' : 'Seed'}
-          </span>
+          </Badge>
         </div>
       </div>
       <ScrollArea className="min-h-0 flex-1">

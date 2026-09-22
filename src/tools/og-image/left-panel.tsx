@@ -11,6 +11,7 @@ import { openSound, pageSound, tapSound, tickSound, toggleSound } from '@/compon
 import { cn } from '@/registry/lib/utils'
 import type { Layout, OgState, Preset } from './types'
 import { LAYOUTS, PRESETS, SIZES } from './presets'
+import { Badge } from '@/registry/components/spaceui/badge-squircle'
 
 interface OgLeftPanelProps {
   s: OgState
@@ -34,7 +35,9 @@ export function OgLeftPanel({ s, set, onSelectPreset, activePresetId, onSelectSi
       <div className="flex h-10 shrink-0 items-center px-3 border-b border-border/40">
         <div className="flex items-center gap-2">
           <h2 className="text-xs font-semibold">Presets & Layout</h2>
-          <span className="text-[0.625rem] text-muted-foreground">Styles & Structure</span>
+          <Badge variant="secondary" size="xs">
+            Styles & Structure
+          </Badge>
         </div>
       </div>
 
