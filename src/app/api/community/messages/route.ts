@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server'
 import { cookies } from 'next/headers'
 import { createClient, createAdminClient } from '@/integrations/supabase/server'
+import { logger } from '@/registry/utils/logger'
 
 export async function GET() {
   try {
@@ -21,7 +22,7 @@ export async function GET() {
       .limit(200)
 
     if (error) {
-      console.error('[Community Messages GET Error]', error)
+      logger.error('[Community Messages GET Error]', error)
       return NextResponse.json({ success: false, error: error.message, messages: [] }, { status: 500 })
     }
 
@@ -30,7 +31,7 @@ export async function GET() {
       messages: data || [],
     })
   } catch (err: any) {
-    console.error('[Community Messages GET Exception]', err)
+    logger.error('[Community Messages GET Exception]', err)
     return NextResponse.json(
       { success: false, error: err?.message || 'Failed to fetch messages', messages: [] },
       { status: 500 },
@@ -103,7 +104,7 @@ export async function POST(req: Request) {
       .single()
 
     if (error) {
-      console.error('[Community Messages POST Error]', error)
+      logger.error('[Community Messages POST Error]', error)
       return NextResponse.json({ success: false, error: error.message }, { status: 500 })
     }
 
@@ -112,7 +113,7 @@ export async function POST(req: Request) {
       message: data,
     })
   } catch (err: any) {
-    console.error('[Community Messages POST Exception]', err)
+    logger.error('[Community Messages POST Exception]', err)
     return NextResponse.json({ success: false, error: err?.message || 'Failed to submit message' }, { status: 500 })
   }
 }

@@ -6,6 +6,7 @@ import { Button } from '@/registry/primitives/button'
 import { Field, FieldLabel } from '@/registry/primitives/field'
 import { Form } from '@/registry/primitives/form'
 import { Switch } from '@/registry/primitives/switch'
+import { logger } from '@/registry/utils/logger'
 
 export default function Demo() {
   const [loading, setLoading] = useState(false)
@@ -16,7 +17,7 @@ export default function Demo() {
     setLoading(true)
     await new Promise((r) => setTimeout(r, 800))
     setLoading(false)
-    console.log(formData.get('marketing'))
+    logger.log(formData.get('marketing'))
 
     const enabled = formData.get('marketing')
     alert(`Marketing emails: ${enabled}`)

@@ -6,6 +6,7 @@
   "description": "An interactive GitHub ecosystem showcase featuring stars, forks, and commits KPI cards with floating particles and a 52-week contribution heatmap matrix.",
   "dependencies": ["motion", "@tabler/icons-react"],
   "registryDependencies": [
+    "https://www.spaceui.one/r/hooks-utils-logger.json",
     "https://www.spaceui.one/r/primitives-frame.json",
     "https://www.spaceui.one/r/primitives-card.json",
     "https://www.spaceui.one/r/primitives-button.json",

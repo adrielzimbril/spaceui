@@ -2,6 +2,7 @@ import { cookies } from 'next/headers'
 import { NextResponse } from 'next/server'
 import { createServerClient } from '@supabase/ssr'
 import { supabaseConfig } from '@/integrations/supabase/client'
+import { logger } from '@/registry/utils/logger'
 
 export async function GET(request: Request) {
   const { searchParams, origin } = new URL(request.url)
@@ -46,7 +47,7 @@ export async function GET(request: Request) {
   })
 
   if (error || !data.url) {
-    console.error('OAuth sign in error:', error)
+    logger.error('OAuth sign in error:', error)
     return NextResponse.redirect(`${origin}/community?error=login_failed`)
   }
 

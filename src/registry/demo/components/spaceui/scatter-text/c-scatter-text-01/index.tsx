@@ -1,6 +1,7 @@
 'use client'
 
 import { ScatterText } from '@/registry/components/spaceui/scatter-text'
+import { logger } from '@/registry/utils/logger'
 
 export default function Demo() {
   return (
@@ -9,7 +10,7 @@ export default function Demo() {
         <ScatterText
           placeholder="hello@spaceui.one"
           onSubmit={(value) => {
-            console.log('submitted', value)
+            logger.log('submitted', value)
           }}
         />
       </div>

@@ -1,12 +1,13 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { validateEvent, WebhookVerificationError } from '@polar-sh/sdk/webhooks'
 import { createAdminClient } from '@/integrations/supabase/server'
+import { logger } from '@/registry/utils/logger'
 
 export async function POST(request: NextRequest) {
   const secret = process.env.POLAR_WEBHOOK_SECRET
 
   if (!secret) {
-    console.error('POLAR_WEBHOOK_SECRET is not configured')
+    logger.error('POLAR_WEBHOOK_SECRET is not configured')
     return NextResponse.json({ error: 'Webhook secret not configured' }, { status: 500 })
   }
 
@@ -25,7 +26,7 @@ export async function POST(request: NextRequest) {
     if (error instanceof WebhookVerificationError) {
       return NextResponse.json({ received: false, error: 'Invalid signature' }, { status: 403 })
     }
-    console.error('Unexpected webhook error:', error)
+    logger.error('Unexpected webhook error:', error)
     return NextResponse.json({ received: false, error: 'Webhook processing error' }, { status: 500 })
   }
 
@@ -95,7 +96,7 @@ export async function POST(request: NextRequest) {
                 created_at: new Date().toISOString(),
               })
             } catch (tableErr) {
-              console.warn('[Polar Webhook] Note: orders table not available or insert failed:', tableErr)
+              logger.warn('[Polar Webhook] Note: orders table not available or insert failed:', tableErr)
             }
           }
         }
@@ -145,7 +146,7 @@ export async function POST(request: NextRequest) {
                 updated_at: new Date().toISOString(),
               })
             } catch (tableErr) {
-              console.warn('[Polar Webhook] Note: subscriptions table not available or insert failed:', tableErr)
+              logger.warn('[Polar Webhook] Note: subscriptions table not available or insert failed:', tableErr)
             }
           }
         }
@@ -156,7 +157,7 @@ export async function POST(request: NextRequest) {
         break
     }
   } catch (syncError) {
-    console.error('[Polar Webhook] Sync error:', syncError)
+    logger.error('[Polar Webhook] Sync error:', syncError)
     return NextResponse.json({ received: true, syncError: String(syncError) })
   }
 

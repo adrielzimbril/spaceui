@@ -5,6 +5,7 @@ import * as THREE from 'three'
 import gsap from 'gsap'
 import { cn } from '@/registry/lib/utils'
 import { getOptimizedImageUrl } from '@/registry/lib/next-image-url'
+import { logger } from '@/registry/utils/logger'
 
 export interface FluidDitherCrossfadeProps {
   imageA?: string
@@ -545,7 +546,7 @@ export function FluidDitherCrossfade({
         }
       })
       .catch((err) => {
-        console.warn('FluidDitherCrossfade: primary texture load failed, trying fallback', err)
+        logger.warn('FluidDitherCrossfade: primary texture load failed, trying fallback', err)
         if (!isAliveRef.current) return
         Promise.all([
           loadSafe('https://cdn.spaceui.one/atom/samples/image-0-f.png'),
@@ -561,7 +562,7 @@ export function FluidDitherCrossfade({
             renderer.domElement.style.opacity = '1'
           })
           .catch((e) => {
-            console.error('FluidDitherCrossfade: fallback texture load also failed', e)
+            logger.error('FluidDitherCrossfade: fallback texture load also failed', e)
           })
       })
 

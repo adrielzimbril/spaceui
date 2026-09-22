@@ -6,6 +6,7 @@ import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { cn } from '@/registry/lib/utils'
 import { getOptimizedImageUrl } from '@/registry/lib/next-image-url'
+import { logger } from '@/registry/utils/logger'
 
 if (typeof window !== 'undefined') {
   gsap.registerPlugin(ScrollTrigger)
@@ -284,7 +285,7 @@ export function PixelRevealImage({
               applyImageToTexture(localImg)
               return
             } catch (localErr) {
-              console.error('Failed to load image texture:', url, localErr)
+              logger.error('Failed to load image texture:', url, localErr)
             }
           }
         }

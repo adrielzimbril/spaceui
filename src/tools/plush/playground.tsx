@@ -23,6 +23,7 @@ import { ResourceToolbar, type ResourceToolbarConfig } from '@/tools/components/
 import { useResourceSidebars } from '@/tools/components/shared/layout/viewport'
 import { PlushControlPanel } from './control-panel'
 import { PlushEngine, loadPlushArtwork } from './engine'
+import { logger } from '@/registry/utils/logger'
 import { DEFAULT_CONFIG, DEFAULT_PRESET, PLUSH_PRESETS } from './presets'
 import type { PlushConfig, PlushPreset, ArtworkData } from './types'
 import posthog from 'posthog-js'
@@ -71,7 +72,7 @@ export function PlushPlayground() {
         }
       })
       .catch((err) => {
-        console.error('Failed to load initial artwork:', err)
+        logger.error('[Plush] Failed to load initial artwork:', err)
       })
 
     return () => {
@@ -97,7 +98,7 @@ export function PlushPlayground() {
         setActiveArtwork(art)
       })
       .catch((err) => {
-        console.error('Error resetting artwork:', err)
+        logger.error('[Plush] Error resetting artwork:', err)
       })
     engineRef.current?.updateConfig(DEFAULT_CONFIG)
     engineRef.current?.resetOrientation()
@@ -137,7 +138,7 @@ export function PlushPlayground() {
           confirmSound()
         })
         .catch((err) => {
-          console.error('Error loading preset:', err)
+          logger.error('[Plush] Error loading preset:', err)
         })
         .finally(() => {
           setIsUploading(false)
@@ -169,7 +170,7 @@ export function PlushPlayground() {
           sparkleSound()
         })
         .catch((err) => {
-          console.error('Error loading custom file:', err)
+          logger.error('[Plush] Error loading custom file:', err)
         })
         .finally(() => {
           setIsUploading(false)

@@ -3,6 +3,7 @@
 import * as React from 'react'
 import { cn } from '@/registry/lib/utils'
 import { attachGpuGate, deferUntilVisible } from '@/registry/lib/gpu-runtime'
+import { logger } from '@/registry/utils/logger'
 import { SILK_FLARE_WGSL } from './silk-flare.wgsl'
 
 export type SilkFlareFrom = 'bottom' | 'top'
@@ -215,7 +216,7 @@ export function SilkFlare({
       canvas,
       () => {
         mount().catch((error) => {
-          console.error('SilkFlare WebGPU init failed:', error)
+          logger.error('SilkFlare WebGPU init failed:', error)
         })
       },
       rootMargin,

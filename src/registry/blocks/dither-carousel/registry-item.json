@@ -5,6 +5,7 @@
   "title": "Dither Carousel Block",
   "description": "3D cylindrical spiral carousel in WebGL2 with curved cards, axial directional blur, and matrix dither pattern.",
   "registryDependencies": [
+    "https://www.spaceui.one/r/hooks-utils-logger.json",
     "https://www.spaceui.one/r/lib-utils.json",
     "https://www.spaceui.one/r/lib-next-image-url.json"
   ],

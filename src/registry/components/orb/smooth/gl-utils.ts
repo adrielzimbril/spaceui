@@ -2,13 +2,15 @@
 // WebGL & FBO Helpers for Smooth Orb
 // ============================================
 
+import { logger } from '@/registry/utils/logger'
+
 export function compileShader(gl: WebGLRenderingContext, type: number, source: string): WebGLShader | null {
   const shader = gl.createShader(type)
   if (!shader) return null
   gl.shaderSource(shader, source)
   gl.compileShader(shader)
   if (!gl.getShaderParameter(shader, gl.COMPILE_STATUS)) {
-    console.error('Shader compile error:', gl.getShaderInfoLog(shader))
+    logger.error('Shader compile error:', gl.getShaderInfoLog(shader))
     gl.deleteShader(shader)
     return null
   }
@@ -24,7 +26,7 @@ export function createProgram(gl: WebGLRenderingContext, vertSrc: string, fragSr
   gl.attachShader(prog, frag)
   gl.linkProgram(prog)
   if (!gl.getProgramParameter(prog, gl.LINK_STATUS)) {
-    console.error('Program link error:', gl.getProgramInfoLog(prog))
+    logger.error('Program link error:', gl.getProgramInfoLog(prog))
     return null
   }
   return prog

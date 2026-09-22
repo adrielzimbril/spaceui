@@ -1,5 +1,6 @@
 import { ArrayBufferTarget, Muxer } from 'mp4-muxer'
 import { toCanvas } from 'html-to-image'
+import { logger } from '@/registry/utils/logger'
 
 export interface RecordInteractionOptions {
   stage: HTMLElement
@@ -158,12 +159,12 @@ async function tryCreateVideoEncoder(
           try {
             muxer.addVideoChunk(chunk, finalMeta)
           } catch (chunkErr) {
-            console.warn('muxer addVideoChunk warning:', chunkErr)
+            logger.warn('[InteractionRecorder] muxer addVideoChunk warning:', chunkErr)
           }
         },
         error: (err) => {
           encoderError = err
-          console.error('VideoEncoder error:', err)
+          logger.error('[InteractionRecorder] VideoEncoder error:', err)
         },
       })
 
@@ -215,7 +216,7 @@ async function tryCreateAudioEncoder(
       output: (chunk: any, meta: any) => muxer.addAudioChunk(chunk, meta),
       error: (err: any) => {
         encoderError = err
-        console.warn('AudioEncoder error:', err)
+        logger.warn('[InteractionRecorder] AudioEncoder error:', err)
       },
     })
 
@@ -269,7 +270,7 @@ async function tryCreateAudioEncoder(
         audioEncoder.encode(audioData)
         audioData.close()
       } catch (err) {
-        console.warn('Audio encode frame error:', err)
+        logger.warn('[InteractionRecorder] Audio encode frame error:', err)
       }
     }
 
@@ -283,7 +284,7 @@ async function tryCreateAudioEncoder(
       scriptNode,
     }
   } catch (err) {
-    console.warn('Audio encoder setup failed:', err)
+    logger.warn('[InteractionRecorder] Audio encoder setup failed:', err)
     return null
   }
 }
@@ -566,7 +567,7 @@ export async function recordInteraction(options: RecordInteractionOptions): Prom
               try {
                 encoder.encode(videoFrame, { keyFrame: isKeyFrame })
               } catch (err) {
-                console.warn('Encoding frame error:', err)
+                logger.warn('[InteractionRecorder] Encoding frame error:', err)
               } finally {
                 videoFrame.close()
               }

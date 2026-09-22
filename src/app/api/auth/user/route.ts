@@ -2,6 +2,7 @@ import { cookies } from 'next/headers'
 import { NextResponse } from 'next/server'
 import { createServerClient } from '@supabase/ssr'
 import { supabaseConfig } from '@/integrations/supabase/client'
+import { logger } from '@/registry/utils/logger'
 
 export async function GET() {
   if (!supabaseConfig.url || !supabaseConfig.anonKey) {
@@ -41,7 +42,7 @@ export async function GET() {
     ) {
       return NextResponse.json({ user: null })
     }
-    console.error('[/api/auth/user] error:', err)
+    logger.error('[/api/auth/user] error:', err)
     return NextResponse.json({ user: null })
   }
 }

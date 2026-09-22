@@ -1,3 +1,5 @@
+import { logger } from '@/registry/utils/logger'
+
 export const VERTEX_SHADER = `attribute vec2 a_position;uniform mat4 u_matrix;uniform float u_depthScale;uniform sampler2D u_depthMap;uniform sampler2D u_depthRevealMap;uniform vec2 u_texelSize;varying vec2 v_texCoord;void main(){v_texCoord=a_position;float d1=0.,d2=0.,ws=0.;for(int x=-3;x<=3;x++){for(int y=-3;y<=3;y++){float w=exp(-(float(x*x+y*y))/8.);vec2 uv=v_texCoord+vec2(float(x),float(y))*u_texelSize*2.5;d1+=texture2D(u_depthMap,uv).r*w;d2+=texture2D(u_depthRevealMap,uv).r*w;ws+=w;}}float d=((d1/ws)+(d2/ws))*.5;float z=(d-.5)*u_depthScale;vec4 pos=vec4(a_position.x-.5,a_position.y-.5,z,1.);gl_Position=u_matrix*pos;}`
 
 export const FRAGMENT_SHADER = `precision mediump float;
@@ -122,7 +124,7 @@ export function compileProgram(gl: WebGLRenderingContext): {
     gl.shaderSource(sh, src)
     gl.compileShader(sh)
     if (!gl.getShaderParameter(sh, gl.COMPILE_STATUS)) {
-      console.error('Shader compile error:', gl.getShaderInfoLog(sh))
+      logger.error('[RevealShader] Shader compile error:', gl.getShaderInfoLog(sh))
     }
     return sh
   }
@@ -134,7 +136,7 @@ export function compileProgram(gl: WebGLRenderingContext): {
   gl.attachShader(program, fs)
   gl.linkProgram(program)
   if (!gl.getProgramParameter(program, gl.LINK_STATUS)) {
-    console.error('Shader link error:', gl.getProgramInfoLog(program))
+    logger.error('[RevealShader] Shader link error:', gl.getProgramInfoLog(program))
   }
   // The program keeps the compiled code once linked — the shader objects
   // themselves are safe (and correct practice) to delete right away.

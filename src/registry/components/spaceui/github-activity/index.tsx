@@ -6,6 +6,7 @@ import { Tooltip, TooltipTrigger, TooltipContent } from '@/registry/primitives/t
 import { Badge } from '@/registry/components/spaceui/badge-squircle'
 import { ScrollArea } from '@/registry/primitives/scroll-area'
 import { cn } from '@/registry/lib/utils'
+import { logger } from '@/registry/utils/logger'
 
 export type GitHubActivityShape = 'square' | 'rounded' | 'circle'
 
@@ -388,7 +389,7 @@ export function useGitHubActivity(inputTarget?: string, initialData?: Contributi
         }
       } catch (err: any) {
         if (err.name === 'AbortError') return
-        console.warn(`[GitHubActivity] Could not fetch activity for ${cacheKey}:`, err)
+        logger.warn(`[GitHubActivity] Could not fetch activity for ${cacheKey}:`, err)
         if (isMounted) {
           setError(err)
           setLoading(false)

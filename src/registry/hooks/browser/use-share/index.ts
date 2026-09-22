@@ -1,6 +1,7 @@
 'use client'
 
 import { useCallback } from 'react'
+import { logger } from '@/registry/utils/logger'
 
 /**
  * React hook to trigger the Web Share API on supported devices.
@@ -19,7 +20,7 @@ export function useShare() {
   const share = useCallback(
     async (data: ShareData): Promise<boolean> => {
       if (!isSupported) {
-        console.warn('Web Share API is not supported on this browser.')
+        logger.warn('Web Share API is not supported on this browser.')
         return false
       }
       try {
@@ -27,7 +28,7 @@ export function useShare() {
         return true
       } catch (err) {
         if ((err as Error).name !== 'AbortError') {
-          console.error('Error sharing content:', err)
+          logger.error('Error sharing content:', err)
         }
         return false
       }

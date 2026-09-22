@@ -6,6 +6,7 @@
   "description": "Interactive volumetric cloud material rendered as a full-bleed shader surface.",
   "dependencies": ["vgpu"],
   "registryDependencies": [
+    "https://www.spaceui.one/r/hooks-utils-logger.json",
     "https://www.spaceui.one/r/lib-gpu-runtime.json",
     "https://www.spaceui.one/r/lib-utils.json"
   ],

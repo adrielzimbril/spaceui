@@ -2,6 +2,7 @@ import { type NextRequest, NextResponse } from 'next/server'
 import { getLLMText } from '@/lib/get-llm-text'
 import { source, librarySource, resourcesSource } from '@/lib/source'
 import { notFound } from 'next/navigation'
+import { logger } from '@/registry/utils/logger'
 
 export async function GET(_req: NextRequest, { params }: { params: Promise<{ slug?: string[] }> }) {
   const { slug = [] } = await params
@@ -33,7 +34,7 @@ export async function GET(_req: NextRequest, { params }: { params: Promise<{ slu
       },
     })
   } catch (error) {
-    console.error(`[llms.mdx] Error reading ${cleanSlug.join('/')}:`, error)
+    logger.error(`[llms.mdx] Error reading ${cleanSlug.join('/')}:`, error)
     notFound()
   }
 }

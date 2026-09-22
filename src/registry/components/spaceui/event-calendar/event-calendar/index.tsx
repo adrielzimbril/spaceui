@@ -20,6 +20,7 @@ import {
   type EventCalendarI18nConfig,
   type EventCalendarI18nOverrides,
 } from '@/registry/components/spaceui/event-calendar/event-calendar-i18n'
+import { logger } from '@/registry/utils/logger'
 import {
   buildEventIndex,
   defaultEventOrder,
@@ -314,7 +315,7 @@ const warned = new Set<string>()
 function warnOnce(key: string, message: string) {
   if (process.env.NODE_ENV !== 'production' && !warned.has(key)) {
     warned.add(key)
-    console.warn(`[event-calendar] ${message}`)
+    logger.warn(`[event-calendar] ${message}`)
   }
 }
 

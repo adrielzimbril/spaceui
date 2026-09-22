@@ -4,6 +4,7 @@ import { createServerClient } from '@supabase/ssr'
 import { supabaseConfig } from '@/integrations/supabase/client'
 import { createAdminClient } from '@/integrations/supabase/server'
 import { generateSignedLicenseToken } from '@/lib/token-security'
+import { logger } from '@/registry/utils/logger'
 
 export async function GET() {
   if (!supabaseConfig.url || !supabaseConfig.anonKey) {
@@ -81,7 +82,7 @@ export async function GET() {
         status: 'active',
       })
       if (insertError) {
-        console.error('[/api/license] Failed to persist license key:', insertError)
+        logger.error('[/api/license] Failed to persist license key:', insertError)
         return NextResponse.json({ error: 'Failed to issue license key' }, { status: 500 })
       }
     }
@@ -107,7 +108,7 @@ export async function GET() {
     ) {
       return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
     }
-    console.error('[/api/license] error:', err)
+    logger.error('[/api/license] error:', err)
     return NextResponse.json({ error: 'Internal server error' }, { status: 500 })
   }
 }

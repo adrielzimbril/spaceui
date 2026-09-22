@@ -5,7 +5,10 @@
   "title": "Sortable",
   "description": "Sortable component for Space UI.",
   "dependencies": ["@base-ui/react", "@dnd-kit/core", "@dnd-kit/sortable", "@dnd-kit/utilities"],
-  "registryDependencies": ["https://www.spaceui.one/r/lib-utils.json"],
+  "registryDependencies": [
+    "https://www.spaceui.one/r/hooks-utils-logger.json",
+    "https://www.spaceui.one/r/lib-utils.json"
+  ],
   "categories": ["component", "sortable"],
   "files": [
     {

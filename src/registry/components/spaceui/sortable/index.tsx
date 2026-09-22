@@ -15,6 +15,7 @@ import {
 } from 'react'
 import { mergeProps } from '@base-ui/react/merge-props'
 import { useRender } from '@base-ui/react/use-render'
+import { logger } from '@/registry/utils/logger'
 import type {
   DragCancelEvent,
   DragEndEvent,
@@ -221,7 +222,7 @@ function Sortable<T>({
       const seen = new Set<string>()
       for (const id of ids) {
         if (seen.has(id)) {
-          console.warn(
+          logger.warn(
             `[Sortable] Duplicate item id "${id}". Item ids must be unique, or drag and drop will misbehave.`,
           )
           break

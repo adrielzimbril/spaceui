@@ -17,6 +17,8 @@ import { toCanvas, toPng } from 'html-to-image'
 import { ArrayBufferTarget, Muxer } from 'mp4-muxer'
 import { Button } from '@/registry/components/spaceui/button-squircle'
 import { Badge } from '@/registry/primitives/badge'
+import { logger } from '@/registry/utils/logger'
+import { toastManager } from '@/registry/primitives/toast'
 import { TickSlider } from '@/registry/components/spaceui/tick-slider'
 import { Switch } from '@/registry/primitives/switch'
 import { Tabs, TabsList, TabsPanel, TabsTab } from '@/registry/primitives/tabs'
@@ -114,7 +116,7 @@ export function OgExportDrawer({ open, onClose, s, cardRef, presetName, onImport
       })
       confirmSound()
     } catch (err) {
-      console.error(err)
+      logger.error('[OgExport] Failed to export PNG:', err)
       nudgeSound()
     } finally {
       setBusy(null)
@@ -142,7 +144,7 @@ export function OgExportDrawer({ open, onClose, s, cardRef, presetName, onImport
       confirmSound()
       setTimeout(() => setCopiedImg(false), 2500)
     } catch (err) {
-      console.error(err)
+      logger.error('[OgExport] Failed to copy image to clipboard:', err)
       nudgeSound()
     } finally {
       setBusy(null)
@@ -221,7 +223,7 @@ export function OgExportDrawer({ open, onClose, s, cardRef, presetName, onImport
             output: (chunk, meta) => m.addVideoChunk(chunk, meta),
             error: (err) => {
               encoderError = err
-              console.error(err)
+              logger.error('[OgExport] VideoEncoder error:', err)
             },
           })
           await e.configure(config)
@@ -272,7 +274,7 @@ export function OgExportDrawer({ open, onClose, s, cardRef, presetName, onImport
           try {
             encoder.encode(frame, { keyFrame: i % fps === 0 })
           } catch (err) {
-            console.error(err)
+            logger.error('[OgExport] Encode frame error, falling back to WebP:', err)
             useMp4 = false
             encoder.close()
             encoder = null
@@ -371,9 +373,13 @@ export function OgExportDrawer({ open, onClose, s, cardRef, presetName, onImport
         await sleep(300)
       }
     } catch (err) {
-      console.error(err)
+      logger.error('[OgExport] Video render error:', err)
       nudgeSound()
-      alert(`Video render error: ${(err as Error)?.message || String(err)}`)
+      toastManager.add({
+        type: 'error',
+        title: 'Video render error',
+        description: (err as Error)?.message || String(err),
+      })
     } finally {
       setBusy(null)
       setProgressPercent(0)
@@ -686,7 +692,7 @@ export const metadata: Metadata = {
                             confirmSound()
                           } catch (err) {
                             nudgeSound()
-                            console.error(err)
+                            logger.error('[OgExport] Failed to parse imported JSON:', err)
                           }
                         }
                         reader.readAsText(file)

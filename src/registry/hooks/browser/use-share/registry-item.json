@@ -12,6 +12,9 @@
       "target": "hooks/use-share.ts"
     }
   ],
+  "registryDependencies": [
+    "https://www.spaceui.one/r/hooks-utils-logger.json"
+  ],
   "createdAt": "2026-09-03",
   "updatedAt": "2026-09-03"
 }

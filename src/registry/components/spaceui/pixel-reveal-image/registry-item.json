@@ -7,6 +7,7 @@
   "isPro": true,
   "dependencies": ["three", "gsap"],
   "registryDependencies": [
+    "https://www.spaceui.one/r/hooks-utils-logger.json",
     "https://www.spaceui.one/r/lib-utils.json",
     "https://www.spaceui.one/r/lib-next-image-url.json"
   ],

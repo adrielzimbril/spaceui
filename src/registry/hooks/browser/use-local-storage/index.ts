@@ -2,6 +2,7 @@
 
 import { useState, useCallback, useEffect } from 'react'
 import { useEventListener } from '@/registry/hooks/dom/use-event-listener'
+import { logger } from '@/registry/utils/logger'
 
 /**
  * React hook to synchronize state with the browser's `localStorage`.
@@ -30,7 +31,7 @@ export function useLocalStorage<T>(
         setStoredValue(item as unknown as T)
       }
     } catch (error) {
-      console.warn(`Error reading localStorage key "${key}":`, error)
+      logger.warn(`Error reading localStorage key "${key}":`, error)
     }
   }, [key])
 
@@ -42,7 +43,7 @@ export function useLocalStorage<T>(
         setStoredValue(valueToStore)
         window.localStorage.setItem(key, JSON.stringify(valueToStore))
       } catch (error) {
-        console.warn(`Error setting localStorage key "${key}":`, error)
+        logger.warn(`Error setting localStorage key "${key}":`, error)
       }
     },
     [key, storedValue],
@@ -54,7 +55,7 @@ export function useLocalStorage<T>(
       window.localStorage.removeItem(key)
       setStoredValue(initialValue)
     } catch (error) {
-      console.warn(`Error removing localStorage key "${key}":`, error)
+      logger.warn(`Error removing localStorage key "${key}":`, error)
     }
   }, [key, initialValue])
 
@@ -71,7 +72,7 @@ export function useLocalStorage<T>(
         setStoredValue(e.newValue as unknown as T)
       }
     } catch (error) {
-      console.warn(`Error syncing localStorage key "${key}":`, error)
+      logger.warn(`Error syncing localStorage key "${key}":`, error)
     }
   })
 

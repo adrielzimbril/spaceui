@@ -3,6 +3,7 @@
 import React, { useEffect, useRef } from 'react'
 import { cn } from '@/registry/lib/utils'
 import { attachGpuGate, deferUntilVisible } from '@/registry/lib/gpu-runtime'
+import { logger } from '@/registry/utils/logger'
 import { BloopState, type OrbBloopProps } from './types'
 import { useOrbAudio } from '@/registry/components/orb/smooth/use-orb-audio'
 import { BLOOP_WGSL } from './bloop.wgsl'
@@ -140,7 +141,7 @@ export function OrbBloop({
     }
 
     disposeDefer = deferUntilVisible(canvas, () => {
-      mount().catch((error) => console.error('OrbBloop WebGPU init failed:', error))
+      mount().catch((error) => logger.error('OrbBloop WebGPU init failed:', error))
     })
     return () => {
       cancelled = true

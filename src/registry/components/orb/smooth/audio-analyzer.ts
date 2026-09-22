@@ -2,6 +2,8 @@
 // Audio Analyzer (Web Audio API helper)
 // ============================================
 
+import { logger } from '@/registry/utils/logger'
+
 let sharedAudioCtx: AudioContext | null = null
 
 function getOrCreateAudioContext(): AudioContext {
@@ -53,7 +55,7 @@ export class AudioAnalyzer {
       }
       return true
     } catch (e) {
-      console.warn('Microphone access denied or error:', e)
+      logger.warn('Microphone access denied or error:', e)
       return false
     }
   }
@@ -104,7 +106,7 @@ export class AudioAnalyzer {
       }
       return true
     } catch (e) {
-      console.warn('Audio element routing error:', e)
+      logger.warn('Audio element routing error:', e)
       return false
     }
   }

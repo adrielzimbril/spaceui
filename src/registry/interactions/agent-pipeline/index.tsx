@@ -908,7 +908,7 @@ export function AgentPipeline({
             max={100}
             height={28}
             showTicks={false}
-            className="w-full [&>div]:opacity-100! cursor-default"
+            className="w-full [&>div]:opacity-100! [&_*]:cursor-default!"
             disabled
             onValueChange={(val) => {
               if (Math.abs(val - progressVal) > 1) {

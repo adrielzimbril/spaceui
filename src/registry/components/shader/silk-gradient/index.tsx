@@ -3,6 +3,7 @@
 import * as React from 'react'
 import { cn } from '@/registry/lib/utils'
 import { attachGpuGate, deferUntilVisible } from '@/registry/lib/gpu-runtime'
+import { logger } from '@/registry/utils/logger'
 import { SILK_GRADIENT_WGSL } from './silk-gradient.wgsl'
 
 export type SilkGradientProps = {
@@ -148,7 +149,7 @@ export function SilkGradient({
       canvas,
       () => {
         mount().catch((error) => {
-          console.error('SilkGradient WebGPU init failed:', error)
+          logger.error('SilkGradient WebGPU init failed:', error)
         })
       },
       rootMargin,

@@ -32,6 +32,7 @@ import { OgCanvas } from './canvas'
 import { OgLeftPanel } from './left-panel'
 import { OgControlPanel } from './control-panel'
 import { OgExportDrawer } from './export-drawer'
+import { logger } from '@/registry/utils/logger'
 
 export function OgPlayground() {
   const [s, setS] = useState<OgState>(() => presetState(PRESETS[0], DEFAULT_OG_STATE))
@@ -79,7 +80,7 @@ export function OgPlayground() {
         setRev((r) => r + 1)
         confirmSound()
       } catch (err) {
-        console.error('Invalid JSON file:', err)
+        logger.error('[OgPlayground] Invalid JSON file:', err)
         nudgeSound()
       }
     }

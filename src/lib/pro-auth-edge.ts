@@ -3,6 +3,7 @@ import { createServerClient } from '@supabase/ssr'
 import { supabaseConfig } from '@/integrations/supabase/client'
 import { createAdminClient } from '@/integrations/supabase/server'
 import registryMeta from '@/__registry__/meta.json'
+import { logger } from '@/registry/utils/logger'
 
 const proStatusCache = new Map<string, boolean>()
 
@@ -131,7 +132,7 @@ export async function verifyProAuthorization(
         }
       }
     } catch (err) {
-      console.warn('[pro-auth] Supabase check error:', err)
+      logger.warn('[pro-auth] Supabase check error:', err)
     }
   }
 
@@ -152,7 +153,7 @@ export async function verifyProAuthorization(
         }
       }
     } catch (err) {
-      console.warn('[pro-auth] License key check error:', err)
+      logger.warn('[pro-auth] License key check error:', err)
     }
   }
 

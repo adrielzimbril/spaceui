@@ -5,6 +5,8 @@ import { bloomSound, confirmSound, nudgeSound, tapSound } from '@/components/pro
 import { captureScreenshot, recordInteraction, saveBlob } from './recorder'
 import type { SequenceTiming } from './timing'
 import { BASE_CANVAS_SIZE, type AspectRatioValue, type InteractionRecorderItem, type ScaleValue } from './types'
+import { logger } from '@/registry/utils/logger'
+import { toastManager } from '@/registry/primitives/toast'
 
 export interface UseInteractionRecorderProps {
   stageRef: React.RefObject<HTMLDivElement | null>
@@ -111,10 +113,13 @@ export function useInteractionRecorder({
         // User cancelled the browser screen share picker
         return
       }
-      console.error(err)
+      logger.error('[InteractionRecorder] Recording failed:', err)
       nudgeSound()
-      // eslint-disable-next-line no-alert
-      alert(`Recording failed: ${(err as Error)?.message || String(err)}`)
+      toastManager.add({
+        type: 'error',
+        title: 'Recording failed',
+        description: (err as Error)?.message || String(err),
+      })
     } finally {
       sequenceCompleteResolverRef.current = null
       sequenceFinishedRef.current = false
@@ -150,10 +155,13 @@ export function useInteractionRecorder({
       saveBlob(result.blob, result.fileName)
       confirmSound()
     } catch (err) {
-      console.error(err)
+      logger.error('[InteractionRecorder] Screenshot failed:', err)
       nudgeSound()
-      // eslint-disable-next-line no-alert
-      alert(`Screenshot failed: ${(err as Error)?.message || String(err)}`)
+      toastManager.add({
+        type: 'error',
+        title: 'Screenshot failed',
+        description: (err as Error)?.message || String(err),
+      })
     } finally {
       setBusy(null)
     }

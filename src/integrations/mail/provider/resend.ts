@@ -1,5 +1,6 @@
 import { Resend } from 'resend'
 import { siteConfig } from '@/config/space-config'
+import { logger } from '@/registry/utils/logger'
 
 const resendApiKey = process.env.RESEND_API_KEY
 
@@ -26,7 +27,7 @@ export async function sendEmail({
 }: SendEmailOptions) {
   if (!resend) {
     if (process.env.NODE_ENV === 'development') {
-      console.warn('[Mail:Resend] RESEND_API_KEY is not defined. Email simulated to:', to)
+      logger.warn('[Mail:Resend] RESEND_API_KEY is not defined. Email simulated to:', to)
       return { success: true, simulated: true }
     }
     throw new Error('Missing RESEND_API_KEY environment variable')
@@ -43,7 +44,7 @@ export async function sendEmail({
   })
 
   if (error) {
-    console.error('[Mail:Resend] Error sending email:', error)
+    logger.error('[Mail:Resend] Error sending email:', error)
     throw new Error(error.message)
   }
 

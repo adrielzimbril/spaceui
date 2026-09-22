@@ -4,6 +4,7 @@ import * as React from 'react'
 import NextImage from 'next/image'
 import { cn } from '@/registry/lib/utils'
 import { getOptimizedImageUrl } from '@/registry/lib/next-image-url'
+import { logger } from '@/registry/utils/logger'
 import { FULLSCREEN_VERTEX_SHADER, LIQUID_GOOEY_FRAGMENT_SHADER, MAX_CARDS, MAX_STRANDS } from './shaders'
 import type { GooeyCardTransform, LiquidGooeyCarouselProps } from './types'
 
@@ -77,7 +78,7 @@ function compileGooeyProgram(gl: WebGL2RenderingContext, vert: string, frag: str
     gl.shaderSource(shader, src)
     gl.compileShader(shader)
     if (!gl.getShaderParameter(shader, gl.COMPILE_STATUS)) {
-      console.error(gl.getShaderInfoLog(shader))
+      logger.error('liquid-gooey-carousel: shader compilation error', gl.getShaderInfoLog(shader))
       return null
     }
     gl.attachShader(program, shader)
@@ -87,7 +88,7 @@ function compileGooeyProgram(gl: WebGL2RenderingContext, vert: string, frag: str
   gl.bindAttribLocation(program, 0, 'aPos')
   gl.linkProgram(program)
   if (!gl.getProgramParameter(program, gl.LINK_STATUS)) {
-    console.error(gl.getProgramInfoLog(program))
+    logger.error('liquid-gooey-carousel: program linking error', gl.getProgramInfoLog(program))
     return null
   }
   return program
@@ -295,7 +296,7 @@ export function LiquidGooeyCarousel({
 
       img.onload = onImageSettle
       img.onerror = () => {
-        console.warn('liquid-gooey-carousel: failed to load image', item.image)
+        logger.warn('liquid-gooey-carousel: failed to load image', item.image)
         onImageSettle()
       }
       img.src = getOptimizedImageUrl(item.image, { width: TEXTURE_SOURCE_WIDTH })

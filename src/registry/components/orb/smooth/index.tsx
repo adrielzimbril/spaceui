@@ -4,6 +4,7 @@ import React, { useRef, useEffect } from 'react'
 import { cn } from '@/registry/lib/utils'
 import { attachGpuGate, deferUntilVisible } from '@/registry/lib/gpu-runtime'
 import { getOptimizedImageUrl } from '@/registry/lib/next-image-url'
+import { logger } from '@/registry/utils/logger'
 import type { OrbSmoothProps } from './types'
 import { useOrbAudio } from './use-orb-audio'
 import {
@@ -414,7 +415,7 @@ export function OrbSmooth({
     }
 
     disposeDefer = deferUntilVisible(canvas, () => {
-      mount().catch((error) => console.error('OrbSmooth WebGPU init failed:', error))
+      mount().catch((error) => logger.error('OrbSmooth WebGPU init failed:', error))
     })
     return () => {
       cancelled = true

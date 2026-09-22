@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from 'next/server'
 import { cookies } from 'next/headers'
 import { polar } from '@/lib/polar'
 import { createClient } from '@/integrations/supabase/server'
+import { logger } from '@/registry/utils/logger'
 
 export async function GET(request: NextRequest) {
   const cookieStore = await cookies()
@@ -56,7 +57,7 @@ export async function GET(request: NextRequest) {
 
     return NextResponse.redirect(session.customerPortalUrl)
   } catch (error: any) {
-    console.error('Failed to create Polar customer portal session:', error)
+    logger.error('Failed to create Polar customer portal session:', error)
     return NextResponse.redirect(new URL('/pricing?error=portal-error', request.url))
   }
 }

@@ -1,6 +1,7 @@
 import { cookies } from 'next/headers'
 import { connection } from 'next/server'
 import { createClient } from '@/integrations/supabase/server'
+import { logger } from '@/registry/utils/logger'
 
 export interface UserSubscriptionStatus {
   isPro: boolean
@@ -28,9 +29,12 @@ export async function getCurrentUserSubscription(): Promise<UserSubscriptionStat
 
     const {
       data: { user },
+      error: userError,
     } = await supabase.auth.getUser()
 
-    if (!user) return defaultStatus
+    if (userError || !user) {
+      return defaultStatus
+    }
 
     const appMeta = (user.app_metadata || {}) as any
     const plan = appMeta.plan ?? (appMeta.has_paid ? 'pro' : 'free')
@@ -53,7 +57,7 @@ export async function getCurrentUserSubscription(): Promise<UserSubscriptionStat
     ) {
       return defaultStatus
     }
-    console.error('Error getting user subscription status:', error)
+    logger.error('Error getting user subscription status:', error)
     return defaultStatus
   }
 }

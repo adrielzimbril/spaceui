@@ -1,6 +1,7 @@
 import { cookies } from 'next/headers'
 import { NextResponse } from 'next/server'
 import { createClient } from '@/integrations/supabase/server'
+import { logger } from '@/registry/utils/logger'
 
 export async function POST() {
   try {
@@ -16,7 +17,7 @@ export async function POST() {
 
     return NextResponse.json({ success: true })
   } catch (err: any) {
-    console.error('Logout error:', err)
+    logger.error('Logout error:', err)
     return NextResponse.json({ error: err?.message || 'Logout failed' }, { status: 500 })
   }
 }
@@ -31,7 +32,7 @@ export async function GET(request: Request) {
       await supabase.auth.signOut()
     }
   } catch (err) {
-    console.error('Logout error:', err)
+    logger.error('Logout error:', err)
   }
 
   return NextResponse.redirect(`${origin}/community`)

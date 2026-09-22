@@ -4,6 +4,7 @@ import * as React from 'react'
 import NextImage from 'next/image'
 import { cn } from '@/registry/lib/utils'
 import { getOptimizedImageUrl } from '@/registry/lib/next-image-url'
+import { logger } from '@/registry/utils/logger'
 import {
   BLUR_FRAG,
   CARD_FRAG,
@@ -57,7 +58,7 @@ function buildProgram(gl: WebGL2RenderingContext, vert: string, frag: string) {
     gl.shaderSource(shader, source)
     gl.compileShader(shader)
     if (!gl.getShaderParameter(shader, gl.COMPILE_STATUS)) {
-      console.error(gl.getShaderInfoLog(shader))
+      logger.error('DitherCarousel shader error:', gl.getShaderInfoLog(shader))
       return null
     }
     gl.attachShader(program, shader)
@@ -66,7 +67,7 @@ function buildProgram(gl: WebGL2RenderingContext, vert: string, frag: string) {
   gl.bindAttribLocation(program, 0, 'aPos')
   gl.linkProgram(program)
   if (!gl.getProgramParameter(program, gl.LINK_STATUS)) {
-    console.error(gl.getProgramInfoLog(program))
+    logger.error('DitherCarousel program link error:', gl.getProgramInfoLog(program))
     return null
   }
   return program

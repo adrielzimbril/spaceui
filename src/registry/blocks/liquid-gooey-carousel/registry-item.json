@@ -6,6 +6,7 @@
   "description": "Smooth-minimum signed distance field WebGL2 carousel with liquid fusing cards that pull organic metaball strands when separated.",
   "isPro": true,
   "registryDependencies": [
+    "https://www.spaceui.one/r/hooks-utils-logger.json",
     "https://www.spaceui.one/r/lib-utils.json",
     "https://www.spaceui.one/r/lib-next-image-url.json"
   ],

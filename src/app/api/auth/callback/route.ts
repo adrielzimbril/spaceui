@@ -1,6 +1,7 @@
 import { cookies } from 'next/headers'
 import { NextResponse } from 'next/server'
 import { createClient } from '@/integrations/supabase/server'
+import { logger } from '@/registry/utils/logger'
 
 export async function GET(request: Request) {
   const { searchParams, origin } = new URL(request.url)
@@ -19,7 +20,7 @@ export async function GET(request: Request) {
         return NextResponse.redirect(redirectUrl)
       }
       if (error) {
-        console.error('Supabase auth callback error:', error)
+        logger.error('Supabase auth callback error:', error)
       }
     }
   }

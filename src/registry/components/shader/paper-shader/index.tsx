@@ -3,10 +3,11 @@
 // @ts-nocheck
 'use client'
 import React from 'react'
+import { logger } from '@/registry/utils/logger'
 
 function PA() {
   if (typeof window > 'u') {
-    console.warn('Paper Shaders: can’t create an image on the server')
+    logger.warn('Paper Shaders: can’t create an image on the server')
     return
   }
   const i = new Image()
@@ -27,7 +28,7 @@ function Xg(i, l, s) {
       i.compileShader(o),
       i.getShaderParameter(o, i.COMPILE_STATUS)
         ? o
-        : (console.error('An error occurred compiling the shaders: ' + i.getShaderInfoLog(o)), i.deleteShader(o), null))
+        : (logger.error('An error occurred compiling the shaders: ' + i.getShaderInfoLog(o)), i.deleteShader(o), null))
     : null
 }
 const kg = 1920 * 1080 * 4
@@ -217,7 +218,7 @@ function VA(i, l, s) {
       i.linkProgram(m),
       i.getProgramParameter(m, i.LINK_STATUS)
         ? (i.detachShader(m, d), i.detachShader(m, f), i.deleteShader(d), i.deleteShader(f), m)
-        : (console.error('Unable to initialize the shader program: ' + i.getProgramInfoLog(m)),
+        : (logger.error('Unable to initialize the shader program: ' + i.getProgramInfoLog(m)),
           i.deleteProgram(m),
           i.deleteShader(d),
           i.deleteShader(f),
@@ -250,7 +251,7 @@ async function Jg(i) {
           return
         }
         if (!o(f)) {
-          console.warn(`Uniform "${d}" has invalid URL "${f}". Skipping image loading.`)
+          logger.warn(`Uniform "${d}" has invalid URL "${f}". Skipping image loading.`)
           return
         }
         const m = new Promise((g, p) => {
@@ -260,7 +261,7 @@ async function Jg(i) {
               ;(Kg(v), (l[d] = v), g())
             }),
             (v.onerror = () => {
-              ;(console.error(`Could not set uniforms. Failed to load image at ${f}`), p())
+              ;(logger.error(`Could not set uniforms. Failed to load image at ${f}`), p())
             }),
             (v.src = f))
         })
@@ -445,7 +446,7 @@ class DA {
   render = (l) => {
     if (this.hasBeenDisposed) return
     if (this.program === null) {
-      console.warn('Tried to render before program or gl was initialized')
+      logger.warn('Tried to render before program or gl was initialized')
       return
     }
     const s = l - this.lastRenderTime
@@ -483,7 +484,7 @@ class DA {
         this.gl.texParameteri(this.gl.TEXTURE_2D, this.gl.TEXTURE_MIN_FILTER, this.gl.LINEAR_MIPMAP_LINEAR)))
     const f = this.gl.getError()
     if (f !== this.gl.NO_ERROR || d === null) {
-      console.error('Paper Shaders: WebGL error when uploading texture:', f)
+      logger.error('Paper Shaders: WebGL error when uploading texture:', f)
       return
     }
     this.textures.set(l, d)
@@ -516,7 +517,7 @@ class DA {
         this.uniformCache[s] = c
         const d = this.uniformLocations[s]
         if (!d) {
-          console.warn(`Uniform location for ${s} not found`)
+          logger.warn(`Uniform location for ${s} not found`)
           return
         }
         if (o instanceof HTMLImageElement) this.setTextureUniform(s, o)
@@ -527,7 +528,7 @@ class DA {
             const g = o[0].length
             if (o.every((p) => p.length === g)) ((f = o.flat()), (m = g))
             else {
-              console.warn(`All child arrays must be the same length for ${s}`)
+              logger.warn(`All child arrays must be the same length for ${s}`)
               return
             }
           } else ((f = o), (m = f.length))
@@ -548,14 +549,14 @@ class DA {
               this.gl.uniformMatrix4fv(d, !1, f)
               break
             default:
-              console.warn(`Unsupported uniform array length: ${m}`)
+              logger.warn(`Unsupported uniform array length: ${m}`)
           }
         } else
           typeof o == 'number'
             ? this.gl.uniform1f(d, o)
             : typeof o == 'boolean'
               ? this.gl.uniform1i(d, o ? 1 : 0)
-              : console.warn(`Unsupported uniform type for ${s}: ${typeof o}`)
+              : logger.warn(`Unsupported uniform type for ${s}: ${typeof o}`)
       }))
   }
   getCurrentFrame = () => this.currentFrame

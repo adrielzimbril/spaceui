@@ -14,6 +14,7 @@ import {
 } from 'react'
 import { mergeProps } from '@base-ui/react/merge-props'
 import { useRender } from '@base-ui/react/use-render'
+import { logger } from '@/registry/utils/logger'
 import type {
   DragCancelEvent,
   DragEndEvent,
@@ -225,7 +226,7 @@ function Kanban<T>({
         for (const item of columns[key]) {
           const itemId = getItemValue(item)
           if (seen.has(itemId)) {
-            console.warn(
+            logger.warn(
               `[Kanban] Duplicate item id "${itemId}". Item ids must be unique across all columns, or drag and drop will misbehave.`,
             )
             break

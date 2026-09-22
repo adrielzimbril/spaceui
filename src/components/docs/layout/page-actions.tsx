@@ -20,6 +20,7 @@ import { useUiSound } from '@/components/providers/sound-provider'
 import { useClipboard } from '@/registry/hooks/browser/use-clipboard'
 import { siteConfig } from '@/config/space-config'
 import { TextMorph } from 'torph/react'
+import { logger } from '@/registry/utils/logger'
 
 const cache = new Map<string, string>()
 
@@ -56,7 +57,7 @@ export function PageActions({
       }
       void copy(text)
     } catch (err) {
-      console.error('Failed to copy page:', err)
+      logger.error('Failed to copy page:', err)
     }
   }
 

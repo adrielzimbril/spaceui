@@ -5,6 +5,7 @@ import { isAPNG, parseAPNG, APNGPlayer } from './apng'
 import { generateDistanceMap } from './distance-map'
 import { analyzeArtwork, detectEdgeColor, extractDominantPalette } from './color-detect'
 import type { PlushConfig, ArtworkData } from './types'
+import { logger } from '@/registry/utils/logger'
 
 const lerp = (a: number, b: number, t: number) => a + (b - a) * t
 const clamp = (val: number, min: number, max: number) => Math.max(min, Math.min(max, val))
@@ -330,7 +331,7 @@ export async function loadPlushArtwork(
           }
         }
       } catch (err) {
-        console.warn('SVG processing fallback:', err)
+        logger.warn('[PlushEngine] SVG processing fallback:', err)
       }
     }
 
@@ -416,7 +417,7 @@ export async function loadPlushArtwork(
         }
       })
       .catch((err) => {
-        console.warn('Non-APNG or failed background stream:', err)
+        logger.warn('[PlushEngine] Non-APNG or failed background stream:', err)
       })
 
     return art

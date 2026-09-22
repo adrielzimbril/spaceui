@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useCallback } from 'react'
+import { logger } from '@/registry/utils/logger'
 
 /**
  * React hook to synchronize state with the browser's `sessionStorage`.
@@ -23,7 +24,7 @@ export function useSessionStorage<T>(
       const item = window.sessionStorage.getItem(key)
       return item ? JSON.parse(item) : initialValue
     } catch (error) {
-      console.warn(`Error reading sessionStorage key "${key}":`, error)
+      logger.warn(`Error reading sessionStorage key "${key}":`, error)
       return initialValue
     }
   })
@@ -36,7 +37,7 @@ export function useSessionStorage<T>(
         setStoredValue(valueToStore)
         window.sessionStorage.setItem(key, JSON.stringify(valueToStore))
       } catch (error) {
-        console.warn(`Error setting sessionStorage key "${key}":`, error)
+        logger.warn(`Error setting sessionStorage key "${key}":`, error)
       }
     },
     [key, storedValue],
@@ -48,7 +49,7 @@ export function useSessionStorage<T>(
       window.sessionStorage.removeItem(key)
       setStoredValue(initialValue)
     } catch (error) {
-      console.warn(`Error removing sessionStorage key "${key}":`, error)
+      logger.warn(`Error removing sessionStorage key "${key}":`, error)
     }
   }, [key, initialValue])
 

@@ -3,6 +3,7 @@
 import * as React from 'react'
 import { cn } from '@/registry/lib/utils'
 import { attachGpuGate, deferUntilVisible } from '@/registry/lib/gpu-runtime'
+import { logger } from '@/registry/utils/logger'
 import { HEAT_SHADE_WGSL } from './heat-shade.wgsl'
 import { HEAT_LICKS_WGSL } from './heat-licks.wgsl'
 
@@ -145,7 +146,7 @@ export function HeatShade({
       canvas,
       () => {
         mount().catch((error) => {
-          console.error('HeatShade WebGPU init failed:', error)
+          logger.error('HeatShade WebGPU init failed:', error)
         })
       },
       rootMargin,

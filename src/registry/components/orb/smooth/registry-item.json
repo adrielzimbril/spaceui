@@ -41,6 +41,7 @@
   "createdAt": "2026-09-03",
   "updatedAt": "2026-09-03",
   "registryDependencies": [
+    "https://www.spaceui.one/r/hooks-utils-logger.json",
     "https://www.spaceui.one/r/lib-gpu-runtime.json",
     "https://www.spaceui.one/r/lib-utils.json",
     "https://www.spaceui.one/r/lib-next-image-url.json",

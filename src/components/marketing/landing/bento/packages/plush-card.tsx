@@ -14,6 +14,7 @@ import type { PlushPreset } from '@/tools/plush/types'
 import { BENTO_CYCLE_INTERVAL, USER_INTERACTION_DEBOUNCE } from '@/config/space-config'
 import { cn } from '@/registry/lib/utils'
 import { useStaggeredInterval } from '@/hooks/use-staggered-interval'
+import { logger } from '@/registry/utils/logger'
 
 const SHOWCASE_PLUSH_PRESETS = PLUSH_PRESETS.filter((p) =>
   ['spaceui', 'logo', 'squish', 'invader', 'squiggle', 'kendo', 'doddle'].includes(p.id),
@@ -72,11 +73,11 @@ export function PlushCard({ isVisible = true, hasBeenVisible = true }: PlushCard
           }
         })
         .catch((err) => {
-          console.error('Failed to load plush artwork:', err)
+          logger.error('Failed to load plush artwork:', err)
           if (isMounted) setPlushLoading(false)
         })
     } catch (err) {
-      console.error('Failed to init plush engine:', err)
+      logger.error('Failed to init plush engine:', err)
       if (isMounted) setPlushLoading(false)
     }
 
@@ -114,7 +115,7 @@ export function PlushCard({ isVisible = true, hasBeenVisible = true }: PlushCard
           }
         }
       } catch (err) {
-        console.error('Error switching plush preset:', err)
+        logger.error('Error switching plush preset:', err)
       } finally {
         const elapsed = Date.now() - startTime
         if (elapsed < 250) {

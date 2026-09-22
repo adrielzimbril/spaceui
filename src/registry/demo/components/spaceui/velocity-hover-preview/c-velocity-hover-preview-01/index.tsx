@@ -1,6 +1,7 @@
 'use client'
 
 import { VelocityHoverPreview } from '@/registry/components/spaceui/velocity-hover-preview'
+import { logger } from '@/registry/utils/logger'
 
 const sampleServices = [
   {
@@ -50,7 +51,7 @@ export default function Demo({ accentColor = '#ffe9a8' }: VelocityHoverPreviewDe
       <VelocityHoverPreview
         items={sampleServices}
         accentColor={accentColor}
-        onItemSelect={(item) => console.log('Selected:', item.title)}
+        onItemSelect={(item) => logger.log('Selected:', item.title)}
       />
     </div>
   )

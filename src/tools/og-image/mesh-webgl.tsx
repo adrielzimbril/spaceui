@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useMemo, useRef } from 'react'
+import { logger } from '@/registry/utils/logger'
 
 /**
  * WebGL shader background inspired by paper-design/shaders (mesh gradient,
@@ -683,7 +684,7 @@ export function MeshWebGL({
       gl.shaderSource(sh, src)
       gl.compileShader(sh)
       if (!gl.getShaderParameter(sh, gl.COMPILE_STATUS)) {
-        console.error('[MeshWebGL] shader compile failed:', gl.getShaderInfoLog(sh))
+        logger.error('[MeshWebGL] shader compile failed:', gl.getShaderInfoLog(sh))
       }
       return sh
     }
@@ -694,7 +695,7 @@ export function MeshWebGL({
     gl.attachShader(prog, fs)
     gl.linkProgram(prog)
     if (!gl.getProgramParameter(prog, gl.LINK_STATUS)) {
-      console.error('[MeshWebGL] program link failed:', gl.getProgramInfoLog(prog))
+      logger.error('[MeshWebGL] program link failed:', gl.getProgramInfoLog(prog))
       return
     }
     gl.useProgram(prog)
