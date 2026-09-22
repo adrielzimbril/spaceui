@@ -15,6 +15,7 @@ import {
   IconExternalLink,
   IconAdjustments,
   IconDeviceDesktop,
+  IconGrid4x4,
 } from '@tabler/icons-react'
 import { useTheme } from 'next-themes'
 import { triggerThemeTransition, type ThemeValue } from '@/registry/components/spaceui/mode-switcher'
@@ -39,6 +40,9 @@ export interface PlaygroundToolbarProps {
   themeOverride?: 'system' | 'light' | 'dark'
   onThemeOverrideChange?: (theme: 'system' | 'light' | 'dark') => void
   className?: string
+  isInteractions?: boolean
+  showBackground?: boolean
+  onToggleBackground?: () => void
 }
 
 export function PlaygroundToolbar({
@@ -58,6 +62,9 @@ export function PlaygroundToolbar({
   themeOverride = 'system',
   onThemeOverrideChange,
   className,
+  isInteractions = false,
+  showBackground = true,
+  onToggleBackground,
 }: PlaygroundToolbarProps) {
   const { theme, resolvedTheme, setTheme } = useTheme()
   const effectiveTheme: ThemeValue = getEffectivePreviewTheme(themeOverride, resolvedTheme || theme)
@@ -172,6 +179,17 @@ export function PlaygroundToolbar({
       {hasBinds && onToggleTweakpane && (
         <ToolbarButton label="Configure props" pressed={tweakpaneOpen} onClick={onToggleTweakpane}>
           <IconAdjustments className="size-4" />
+        </ToolbarButton>
+      )}
+
+      {/* 6. Background grid toggle (interactions only) */}
+      {isInteractions && onToggleBackground && (
+        <ToolbarButton
+          label={showBackground ? 'Hide background grid' : 'Show background grid'}
+          pressed={showBackground}
+          onClick={onToggleBackground}
+        >
+          <IconGrid4x4 className="size-4" />
         </ToolbarButton>
       )}
     </ToolbarSection>

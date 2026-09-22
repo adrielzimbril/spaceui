@@ -53,14 +53,21 @@ async function tryCreateVideoEncoder(
 } | null> {
   if (typeof window === 'undefined' || !('VideoEncoder' in window)) return null
 
-  const candidateCodecs = [
-    'avc1.4d002a', // Main Profile Level 4.2 (1080p standard, widely supported on Windows & Mac)
-    'avc1.64002a', // High Profile Level 4.2
-    'avc1.42002a', // Baseline Profile Level 4.2
-    'avc1.420028', // Baseline Profile Level 4.0
-    'avc1.4d0033', // Main Profile Level 5.1 (up to 4K)
-    'avc1.640033', // High Profile Level 5.1 (up to 4K)
-  ]
+  const is4K = width > 1920 || height > 1080
+  const candidateCodecs = is4K
+    ? [
+        'avc1.640033', // High Profile Level 5.1 (Full 4K UHD, NVENC hardware accelerated)
+        'avc1.4d0033', // Main Profile Level 5.1 (Full 4K UHD)
+        'avc1.640034', // High Profile Level 5.2 (4K 60fps)
+        'avc1.64002a', // High Profile Level 4.2
+        'avc1.4d002a', // Main Profile Level 4.2
+      ]
+    : [
+        'avc1.64002a', // High Profile Level 4.2 (1080p High Quality)
+        'avc1.4d002a', // Main Profile Level 4.2
+        'avc1.640033', // High Profile Level 5.1
+        'avc1.42002a', // Baseline Profile Level 4.2
+      ]
 
   for (const codec of candidateCodecs) {
     try {
@@ -312,7 +319,12 @@ export async function recordInteraction(options: RecordInteractionOptions): Prom
   try {
     onStatusChange(withSound ? 'Pick this tab and enable "Share tab audio"…' : 'Pick this tab to share…')
     displayStream = await navigator.mediaDevices.getDisplayMedia({
-      video: { frameRate: fps },
+      video: {
+        width: { ideal: Math.max(3840, outputWidth) },
+        height: { ideal: Math.max(2160, outputHeight) },
+        frameRate: { ideal: fps, max: 60 },
+        displaySurface: 'browser',
+      },
       audio: withSound,
       preferCurrentTab: true,
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -355,7 +367,8 @@ export async function recordInteraction(options: RecordInteractionOptions): Prom
     if (!ctx) throw new Error('Canvas 2D context unavailable')
     const backgroundColor = getComputedStyle(document.body).backgroundColor || '#000000'
 
-    const bitrate = Math.min(48_000_000, Math.round(outputWidth * outputHeight * fps * 0.12))
+    // High bitrate for 4K Retina encoding (up to 45 Mbps on RTX 3070 NVENC)
+    const bitrate = Math.min(50_000_000, Math.max(16_000_000, Math.round(outputWidth * outputHeight * fps * 0.18)))
     const audioTrack = displayStream.getAudioTracks()[0]
     const wantAudio = Boolean(withSound && audioTrack)
 
@@ -452,6 +465,8 @@ export async function recordInteraction(options: RecordInteractionOptions): Prom
             ctx.fillStyle = backgroundColor
             ctx.fillRect(0, 0, outputWidth, outputHeight)
             if (sw > 0 && sh > 0) {
+              ctx.imageSmoothingEnabled = true
+              ctx.imageSmoothingQuality = 'high'
               ctx.drawImage(sourceVideo!, sx, sy, sw, sh, drawX, drawY, elementWidth, elementHeight)
             }
 
@@ -582,10 +597,28 @@ export interface CaptureScreenshotOptions {
 export async function captureScreenshot(options: CaptureScreenshotOptions): Promise<RecordResult> {
   const { stage, shortName, outputWidth, outputHeight, scale, pan, elementZoom = 1.6 } = options
 
-  // Render the interaction element via html-to-image
+  // Wait for web fonts to be fully rendered
+  if (typeof document !== 'undefined' && 'fonts' in document) {
+    try {
+      await document.fonts.ready
+    } catch {}
+  }
+
+  // Super-sampled pixel ratio to guarantee true 4K/Retina vector fidelity
+  const deviceDpr = typeof window !== 'undefined' ? window.devicePixelRatio || 1 : 1
+  const neededMultiplier = Math.max(3, Math.ceil(elementZoom * scale * Math.max(1, deviceDpr)))
+  // Cap between 3 and 6 to guarantee pristine subpixel vector precision without memory overflow
+  const superSampleRatio = Math.min(6, Math.max(3, neededMultiplier))
+
+  // Render the interaction element via html-to-image with super-sampling
   const stageCanvas = await toCanvas(stage, {
-    pixelRatio: 2,
+    pixelRatio: superSampleRatio,
     cacheBust: true,
+    skipAutoScale: true,
+    style: {
+      transform: 'none',
+      transformOrigin: 'center center',
+    },
   })
 
   // Create composite framed canvas at the requested export dimensions
@@ -595,8 +628,11 @@ export async function captureScreenshot(options: CaptureScreenshotOptions): Prom
   finalCanvas.width = finalWidth
   finalCanvas.height = finalHeight
 
-  const ctx = finalCanvas.getContext('2d')
+  const ctx = finalCanvas.getContext('2d', { alpha: false })
   if (!ctx) throw new Error('Canvas 2D context unavailable')
+
+  ctx.imageSmoothingEnabled = true
+  ctx.imageSmoothingQuality = 'high'
 
   // Theme-aware background
   const backgroundColor =
@@ -606,9 +642,9 @@ export async function captureScreenshot(options: CaptureScreenshotOptions): Prom
   ctx.fillStyle = backgroundColor
   ctx.fillRect(0, 0, finalWidth, finalHeight)
 
-  // Natural 1x dimensions of stageCanvas (rendered with pixelRatio: 2)
-  const naturalW = stageCanvas.width / 2
-  const naturalH = stageCanvas.height / 2
+  // Natural 1x dimensions of stageCanvas (since rendered with superSampleRatio)
+  const naturalW = stageCanvas.width / superSampleRatio
+  const naturalH = stageCanvas.height / superSampleRatio
   const drawW = Math.round(naturalW * elementZoom * scale)
   const drawH = Math.round(naturalH * elementZoom * scale)
   const drawX = Math.round((finalWidth - drawW) / 2 + pan.x * scale)

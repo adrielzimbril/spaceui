@@ -1,7 +1,7 @@
 'use client'
 
 import React, { useState, useEffect, useRef } from 'react'
-import { motion } from 'motion/react'
+import { motion, useMotionValue } from 'motion/react'
 import { IconLayout2 } from '@tabler/icons-react'
 import { ToolbarButton } from './playground-toolbar-button'
 import { ToolbarSection } from './playground-toolbar-section'
@@ -19,6 +19,7 @@ import { REGISTRY_NAMESPACE } from '@/lib/install-command'
 import { MobileNavDrawer } from '@/components/layout/mobile-nav-drawer'
 import { source, librarySource, resourcesSource } from '@/lib/source'
 import { index } from '@/__registry__/index'
+import { ProximityGrid } from '@/registry/blocks/interactive-grid-hero/interactive-grid-hero-1/proximity-grid'
 
 export interface PlaygroundCanvasStageProps {
   showInfo: boolean
@@ -85,7 +86,29 @@ export function PlaygroundCanvasStage({
   const { setActivePreview, isInteractions } = useLayoutMode()
   const { entry } = useRegistryEntry(activePreview?.name ?? null)
   const [tweakMode, setTweakMode] = useState(false)
+  const [showBackground, setShowBackground] = useState(false)
   const hasAutoOpenedRef = useRef(false)
+  const stageWrapperRef = useRef<HTMLDivElement>(null)
+  const gridPointerX = useMotionValue(-1000)
+  const gridPointerY = useMotionValue(-1000)
+  const gridPointerActive = useMotionValue(0)
+
+  // Each interaction gets its own off-by-default background toggle
+  useEffect(() => {
+    setShowBackground(false)
+  }, [activePreview?.name])
+
+  // The interaction preview sits above the grid in stacking order, so it — not the grid —
+  // receives the raw pointermove. Track position on the shared stage wrapper instead (pointer
+  // events still bubble to it) and feed the grid via external MotionValues.
+  const handleStagePointerMove = (e: React.PointerEvent<HTMLDivElement>) => {
+    const rect = stageWrapperRef.current?.getBoundingClientRect()
+    if (!rect) return
+    gridPointerX.set(e.clientX - rect.left)
+    gridPointerY.set(e.clientY - rect.top)
+    gridPointerActive.set(1)
+  }
+  const handleStagePointerLeave = () => gridPointerActive.set(0)
 
   useEffect(() => {
     if (!hasAutoOpenedRef.current && !isMobile) {
@@ -247,13 +270,35 @@ export function PlaygroundCanvasStage({
               })
             }
           }}
+          isInteractions={isInteractions}
+          showBackground={showBackground}
+          onToggleBackground={() => setShowBackground((v) => !v)}
         />
 
         {/* Active Canvas Stage */}
-        <div key={reloadKey} className="relative size-full min-h-0 min-w-0">
+        <div
+          key={reloadKey}
+          ref={stageWrapperRef}
+          className="relative isolate size-full min-h-0 min-w-0"
+          onPointerMove={isInteractions && showBackground ? handleStagePointerMove : undefined}
+          onPointerLeave={isInteractions && showBackground ? handleStagePointerLeave : undefined}
+        >
+          {isInteractions && showBackground && (
+            <ProximityGrid
+              cellSize={56}
+              gap={4}
+              radius="rounded"
+              proximity={4}
+              inset={6}
+              pointerX={gridPointerX}
+              pointerY={gridPointerY}
+              pointerActive={gridPointerActive}
+              className="absolute inset-0 z-0 size-full min-h-0 overflow-hidden select-none"
+            />
+          )}
           <div
             className={cn(
-              'relative size-full min-h-0 min-w-0 transition-all duration-300',
+              'relative z-10 size-full min-h-0 min-w-0 transition-all duration-300',
               !isImmersive && !isInteractions && VIEWPORT_WIDTH_CLASSES[viewport],
             )}
             data-loaded={activePreview ? 'true' : 'false'}

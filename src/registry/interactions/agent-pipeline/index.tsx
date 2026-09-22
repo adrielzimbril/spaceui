@@ -834,21 +834,13 @@ export function AgentPipeline({
               <span
                 className={cn(
                   'absolute inline-flex h-full w-full rounded-full animate-ping animation-duration-[2.25s]',
-                  status === 'error'
-                    ? 'bg-rose-300'
-                    : status === 'paused'
-                      ? 'bg-amber-300'
-                      : isRunning && 'bg-emerald-300',
+                  status === 'error' ? 'bg-rose-300' : status === 'paused' ? 'bg-amber-300' : 'bg-emerald-300',
                 )}
               />
               <span
                 className={cn(
                   'relative inline-flex rounded-full size-2 animate-pulse',
-                  status === 'error'
-                    ? 'bg-rose-500'
-                    : status === 'paused'
-                      ? 'bg-amber-500'
-                      : isRunning && 'bg-emerald-500',
+                  status === 'error' ? 'bg-rose-500' : status === 'paused' ? 'bg-amber-500' : 'bg-emerald-500',
                 )}
               />
             </span>

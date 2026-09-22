@@ -1,23 +1,23 @@
 'use client'
 
-import * as React from 'react'
-import { useMemo, useRef, useState, useEffect } from 'react'
-import { IconCrop, IconAdjustments } from '@tabler/icons-react'
-import { ResourceStudio } from '@/tools/components/shared/layout/studio'
-import { ResourceNav } from '@/tools/components/shared/layout/nav'
-import { ResourceToolbar, type ResourceToolbarConfig } from '@/tools/components/shared/layout/toolbar'
 import { ToolbarButton } from '@/components/playground/playground-toolbar-button'
-import { useResourceSidebars } from '@/tools/components/shared/layout/viewport'
-import { tapSound } from '@/components/providers/sound-provider'
 import { useFloatNav } from '@/components/providers/float-nav-provider'
+import { tapSound } from '@/components/providers/sound-provider'
+import { ResourceNav } from '@/tools/components/shared/layout/nav'
+import { ResourceStudio } from '@/tools/components/shared/layout/studio'
+import { ResourceToolbar, type ResourceToolbarConfig } from '@/tools/components/shared/layout/toolbar'
+import { useResourceSidebars } from '@/tools/components/shared/layout/viewport'
+import { IconAdjustments, IconCrop, IconGrid4x4 } from '@tabler/icons-react'
+import * as React from 'react'
+import { useEffect, useMemo, useRef, useState } from 'react'
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 import { index as registryIndex } from '@/__registry__/index'
 import { Tweakpane, type Binds } from '@/components/docs/preview/tweakpane'
 import { InteractionCanvas } from './canvas'
 import { InteractionControlPanel } from './control-panel'
 import { computeSequenceTiming } from './timing'
-import { useInteractionRecorder } from './use-interaction-recorder'
 import { type AspectRatioValue, type InteractionGroup, type InteractionRecorderItem, type ScaleValue } from './types'
+import { useInteractionRecorder } from './use-interaction-recorder'
 
 function groupByCategory(items: InteractionRecorderItem[]): InteractionGroup[] {
   const groups: Record<string, InteractionRecorderItem[]> = {}
@@ -57,8 +57,9 @@ export function InteractionRecorderPlayground({ items }: { items: InteractionRec
   const [loops, setLoops] = useState(1)
   const [cycleSeconds, setCycleSeconds] = useState<number | null>(null)
   const [showGuide, setShowGuide] = useState(true)
+  const [showBackground, setShowBackground] = useState(false)
   const [withSound, setWithSound] = useState(false)
-  const [showTweakpane, setShowTweakpane] = useState(false)
+  const [showTweakpane, setShowTweakpane] = useState(true)
   const [resetKey, setResetKey] = useState(0)
   const { showRight, setShowRight } = useResourceSidebars()
   const stageRef = useRef<HTMLDivElement>(null)
@@ -72,6 +73,22 @@ export function InteractionRecorderPlayground({ items }: { items: InteractionRec
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const dp = (Component as any)?.demoProps ?? (entry as any)?.meta?.demoProps ?? (entry as any)?.demoProps
     if (dp && typeof dp === 'object' && Object.keys(dp).length > 0) {
+      // const cloned = JSON.parse(JSON.stringify(dp)) as Binds
+      // // In the recorder tool, default cycling presets/flows to false so the recording
+      // // captures the focused, clean single flow rather than chaining all presets for 50s.
+      // if ('cyclePreset' in cloned && cloned.cyclePreset && typeof cloned.cyclePreset === 'object') {
+      //   ;(cloned.cyclePreset as any).value = false
+      // }
+      // if ('cyclePresets' in cloned && cloned.cyclePresets && typeof cloned.cyclePresets === 'object') {
+      //   ;(cloned.cyclePresets as any).value = false
+      // }
+      // if ('cycleFlows' in cloned && cloned.cycleFlows && typeof cloned.cycleFlows === 'object') {
+      //   ;(cloned.cycleFlows as any).value = false
+      // }
+      // if ('cycleFlow' in cloned && cloned.cycleFlow && typeof cloned.cycleFlow === 'object') {
+      //   ;(cloned.cycleFlow as any).value = false
+      // }
+      // return cloned
       return JSON.parse(JSON.stringify(dp)) as Binds
     }
     return null
@@ -101,6 +118,7 @@ export function InteractionRecorderPlayground({ items }: { items: InteractionRec
       setBinds(JSON.parse(JSON.stringify(initialBinds)))
       setInteractionProps(unwrapValues(initialBinds))
     }
+    setShowBackground(false)
     setPan({ x: 0, y: 0 })
     setElementZoom(1.6)
     setResetKey((k) => k + 1)
@@ -134,7 +152,7 @@ export function InteractionRecorderPlayground({ items }: { items: InteractionRec
 
   return (
     <ResourceStudio
-      showRight={showRight}
+      showRight={showRight && !isRecording}
       rightWidth="20rem"
       onToggleRight={setShowRight}
       canvas={
@@ -154,6 +172,7 @@ export function InteractionRecorderPlayground({ items }: { items: InteractionRec
             resetKey={resetKey}
             targetLoops={loops}
             onSequenceComplete={() => sequenceCompleteResolverRef.current?.()}
+            showBackground={showBackground}
           />
 
           {hasBinds && binds && (
@@ -176,6 +195,17 @@ export function InteractionRecorderPlayground({ items }: { items: InteractionRec
           left={<ResourceNav />}
           right={
             <div className="flex items-center gap-1">
+              <ToolbarButton
+                onClick={() => {
+                  tapSound()
+                  setShowBackground((v) => !v)
+                }}
+                label={showBackground ? 'Hide background grid' : 'Show background grid'}
+                pressed={showBackground}
+              >
+                <IconGrid4x4 className="size-3.5" />
+              </ToolbarButton>
+
               {hasBinds && (
                 <ToolbarButton
                   onClick={() => {
@@ -218,6 +248,7 @@ export function InteractionRecorderPlayground({ items }: { items: InteractionRec
           elementZoom={elementZoom}
           onElementZoomChange={setElementZoom}
           pan={pan}
+          onPanChange={setPan}
           onResetFraming={() => {
             setPan({ x: 0, y: 0 })
             setElementZoom(1.6)

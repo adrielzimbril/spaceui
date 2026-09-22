@@ -1,6 +1,7 @@
 'use client'
 
 import { PreviewLoading } from '@/components/shared/preview-loading'
+import { ProximityGrid } from '@/registry/blocks/interactive-grid-hero/interactive-grid-hero-1/proximity-grid'
 import { Badge } from '@/registry/components/spaceui/badge-squircle'
 import { cn } from '@/registry/lib/utils'
 import * as React from 'react'
@@ -25,6 +26,8 @@ export interface InteractionCanvasProps {
   targetLoops?: number
   /** Callback fired when targetLoops sequence cycles have completed */
   onSequenceComplete?: () => void
+  /** Proximity-reactive grid rendered behind the interaction, same effect as the /community canvas. */
+  showBackground?: boolean
 }
 
 export function InteractionCanvas({
@@ -42,6 +45,7 @@ export function InteractionCanvas({
   resetKey = 0,
   targetLoops,
   onSequenceComplete,
+  showBackground = true,
 }: InteractionCanvasProps) {
   const wrapperRef = React.useRef<HTMLDivElement>(null)
   const [fitScale, setFitScale] = React.useState(1)
@@ -115,7 +119,7 @@ export function InteractionCanvas({
 
   const stageContent =
     item && Component ? (
-      <div ref={stageRef} className="flex w-full max-w-xl items-center justify-center">
+      <div ref={stageRef} className="flex w-full max-w-4xl items-center justify-center">
         <React.Suspense fallback={<PreviewLoading />}>
           <Component key={resetKey} {...demoProps} targetLoops={targetLoops} onSequenceComplete={onSequenceComplete} />
         </React.Suspense>
@@ -129,12 +133,23 @@ export function InteractionCanvas({
   return (
     <div
       ref={wrapperRef}
-      className="relative flex size-full items-center justify-center overflow-hidden p-6 sm:p-10 select-none"
+      className="relative isolate flex size-full items-center justify-center overflow-hidden p-6 sm:p-10 select-none"
     >
+      {showBackground && (
+        <ProximityGrid
+          cellSize={56}
+          gap={4}
+          radius="rounded"
+          proximity={4}
+          inset={6}
+          className="absolute inset-0 z-0 size-full min-h-0 overflow-hidden select-none"
+        />
+      )}
+
       {showGuide ? (
         <div
           className={cn(
-            'relative shrink-0 overflow-hidden',
+            'relative z-10 shrink-0 overflow-hidden',
             !isRecording && 'cursor-grab',
             isDragging && 'cursor-grabbing',
           )}
@@ -156,18 +171,19 @@ export function InteractionCanvas({
             }}
           >
             <div
-              className="absolute inset-0 flex items-center justify-center pointer-events-none"
+              className="absolute inset-0 flex items-center justify-center pointer-events-none z-5"
               style={{
                 transform: `translate(${pan.x}px, ${pan.y}px) scale(${expectedElementFit})`,
               }}
             >
-              <div className="pointer-events-auto flex flex-col w-full items-center [&>div]:flex-1 [&>div]:w-xl!">
-                {stageContent}
-              </div>
+              <div className="pointer-events-auto flex flex-col w-full items-center [&>div]:flex-1">{stageContent}</div>
             </div>
 
             {!isRecording && (
-              <div aria-hidden="true" className="pointer-events-none absolute inset-0 border-2 border-muted">
+              <div
+                aria-hidden="true"
+                className="pointer-events-none absolute inset-0 border-4 border-muted bg-background"
+              >
                 <Badge className="absolute left-2 top-2">
                   {Math.round(outputWidth * scale)}×{Math.round(outputHeight * scale)}
                 </Badge>
@@ -177,7 +193,10 @@ export function InteractionCanvas({
         </div>
       ) : (
         <div
-          className={cn('size-full flex items-center justify-center', isDragging ? 'cursor-grabbing' : 'cursor-grab')}
+          className={cn(
+            'relative z-10 size-full flex items-center justify-center',
+            isDragging ? 'cursor-grabbing' : 'cursor-grab',
+          )}
           onPointerDown={handlePointerDown}
           onPointerMove={handlePointerMove}
           onPointerUp={handlePointerUp}

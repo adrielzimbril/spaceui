@@ -21,6 +21,7 @@ import { Tabs, TabsList, TabsTab } from '@/registry/primitives/tabs'
 import { IconCapture, IconPlayerStop } from '@tabler/icons-react'
 import { Avatar } from '@usespaceui/avatars/react'
 import { Fragment } from 'react'
+import { cn } from '@/registry/lib/utils'
 import type { SequenceTiming } from './timing'
 import {
   ASPECT_RATIOS,
@@ -30,6 +31,85 @@ import {
   type InteractionRecorderItem,
   type ScaleValue,
 } from './types'
+
+function OffsetSlider({
+  label,
+  value,
+  onChange,
+  min = -400,
+  max = 400,
+  step = 5,
+}: {
+  label: string
+  value: number
+  onChange: (v: number) => void
+  min?: number
+  max?: number
+  step?: number
+}) {
+  const fraction = Math.min(1, Math.max(0, (value - min) / (max - min)))
+  const markCount = 21
+  const centerIndex = Math.floor(markCount / 2)
+
+  return (
+    <div className="flex flex-col gap-1.5">
+      <div className="flex justify-between text-xs">
+        <span className="text-muted-foreground">{label}</span>
+        <span className="text-muted-foreground tabular-nums">{value > 0 ? `+${value}` : value}px</span>
+      </div>
+      <div className="relative flex h-9 items-center rounded-lg bg-muted px-3 transition-opacity overflow-hidden focus-within:ring-2 focus-within:ring-ring">
+        {/* Ruler ticks */}
+        <div aria-hidden="true" className="flex h-full w-full items-center justify-between pointer-events-none">
+          {Array.from({ length: markCount }).map((_, i) => {
+            const isCenter = i === centerIndex
+            const isMajor = isCenter || i === 0 || i === markCount - 1 || i % 5 === 0
+            const markFrac = i / (markCount - 1)
+            const markVal = min + markFrac * (max - min)
+            const isActive =
+              isCenter ||
+              (value > 0 && markVal > 0 && markVal <= value) ||
+              (value < 0 && markVal < 0 && markVal >= value)
+
+            return (
+              <span
+                key={i}
+                className={cn(
+                  'w-0.5 rounded-full transition-colors',
+                  isCenter ? 'h-4' : isMajor ? 'h-3' : 'h-2',
+                  isActive ? 'bg-foreground' : 'bg-muted-foreground/30',
+                )}
+              />
+            )
+          })}
+        </div>
+
+        {/* Thumb */}
+        <span
+          aria-hidden="true"
+          className="pointer-events-none absolute top-1/2 h-4 w-7 -translate-x-1/2 -translate-y-1/2 rounded-full border border-black/5 bg-white shadow-sm transition-[left] duration-150 ease-out"
+          style={{
+            left: `calc(14px + ${fraction} * (100% - 28px))`,
+          }}
+        />
+
+        {/* Range Input */}
+        <input
+          type="range"
+          min={min}
+          max={max}
+          step={step}
+          value={value}
+          onChange={(e) => {
+            tickSound()
+            onChange(e.currentTarget.valueAsNumber)
+          }}
+          aria-label={label}
+          className="absolute inset-0 h-full w-full cursor-pointer appearance-none bg-transparent opacity-0 [&::-moz-range-thumb]:h-4 [&::-moz-range-thumb]:w-7 [&::-moz-range-thumb]:border-0 [&::-webkit-slider-thumb]:h-4 [&::-webkit-slider-thumb]:w-7 [&::-webkit-slider-thumb]:appearance-none"
+        />
+      </div>
+    </div>
+  )
+}
 
 export interface InteractionControlPanelProps {
   groups: InteractionGroup[]
@@ -55,6 +135,7 @@ export interface InteractionControlPanelProps {
   onToggleTweakpane?: () => void
   timing?: SequenceTiming
   pan?: { x: number; y: number }
+  onPanChange?: (pan: { x: number; y: number }) => void
   onResetFraming?: () => void
   onScreenshot?: () => void
 }
@@ -84,6 +165,7 @@ export function InteractionControlPanel({
   onToggleTweakpane,
   timing,
   pan,
+  onPanChange,
   onResetFraming,
 }: InteractionControlPanelProps) {
   return (
@@ -171,39 +253,64 @@ export function InteractionControlPanel({
             </Tabs>
           </div>
 
-          <div className="flex flex-col gap-2">
+          <div className="flex flex-col gap-3">
             <div className="flex items-center justify-between">
-              <span className="text-[0.6875rem] font-semibold text-muted-foreground">Element Zoom</span>
-              <div className="flex items-center gap-2">
-                {onResetFraming && ((pan && (pan.x !== 0 || pan.y !== 0)) || elementZoom !== 1.6) && (
-                  <Button
-                    type="button"
-                    variant="ghost"
-                    size="xs"
-                    onClick={() => {
-                      tapSound()
-                      onResetFraming()
-                    }}
-                    data-space-hover="tick"
-                    className="h-5 px-1.5 text-[0.625rem] font-medium text-muted-foreground hover:text-foreground cursor-pointer"
-                  >
-                    Reset
-                  </Button>
-                )}
-                <span className="text-xs text-muted-foreground">{elementZoom.toFixed(1)}×</span>
-              </div>
+              <span className="text-[0.6875rem] font-semibold text-muted-foreground">Framing & Position</span>
+              {onResetFraming && ((pan && (pan.x !== 0 || pan.y !== 0)) || elementZoom !== 1.6) && (
+                <Button
+                  type="button"
+                  variant="ghost"
+                  size="xs"
+                  onClick={() => {
+                    tapSound()
+                    onResetFraming()
+                  }}
+                  data-space-hover="tick"
+                  className="h-5 px-1.5 text-[0.625rem] font-medium text-muted-foreground hover:text-foreground cursor-pointer"
+                >
+                  Reset
+                </Button>
+              )}
             </div>
-            <TickSlider
-              label="Element zoom"
-              value={elementZoom}
-              onChange={(next) => {
-                tickSound()
-                onElementZoomChange(next)
-              }}
-              min={0.5}
-              max={3}
-              step={0.1}
-              showValue={false}
+
+            {/* Element Zoom */}
+            <div className="flex flex-col gap-1.5">
+              <div className="flex justify-between text-xs">
+                <span className="text-muted-foreground">Zoom</span>
+                <span className="text-muted-foreground tabular-nums">{elementZoom.toFixed(1)}×</span>
+              </div>
+              <TickSlider
+                label="Element zoom"
+                value={elementZoom}
+                onChange={(next) => {
+                  tickSound()
+                  onElementZoomChange(next)
+                }}
+                min={0.5}
+                max={3}
+                step={0.1}
+                showValue={false}
+              />
+            </div>
+
+            {/* Position X */}
+            <OffsetSlider
+              label="Position X"
+              value={pan?.x ?? 0}
+              onChange={(next) => onPanChange?.({ x: next, y: pan?.y ?? 0 })}
+              min={-500}
+              max={500}
+              step={5}
+            />
+
+            {/* Position Y */}
+            <OffsetSlider
+              label="Position Y"
+              value={pan?.y ?? 0}
+              onChange={(next) => onPanChange?.({ x: pan?.x ?? 0, y: next })}
+              min={-400}
+              max={400}
+              step={5}
             />
           </div>
 
@@ -250,7 +357,7 @@ export function InteractionControlPanel({
                 <div className="flex items-center justify-between font-medium">
                   <span className="truncate text-foreground font-semibold">{timing.scopeLabel}</span>
                   <span className="shrink-0 text-muted-foreground tabular-nums text-[0.6875rem]">
-                    {timing.unitDurationSeconds.toFixed(1)}s / run
+                    {timing.unitDurationSeconds.toFixed(1)}s
                   </span>
                 </div>
                 <span className="text-[0.6875rem] truncate">{timing.detailLabel}</span>

@@ -64,7 +64,7 @@ function calculateAgentPipelineTiming(props: Record<string, any>, loops: number)
       unitDurationSeconds: totalUnit,
       totalDurationSeconds: totalUnit * loops,
       scopeLabel: `All ${allPresetKeys.length} Presets · ${totalFlows} Flows`,
-      detailLabel: `Full matrix cycle at ${speed}× speed`,
+      detailLabel: `Full matrix cycle`,
       presetsCount: allPresetKeys.length,
       flowsCount: totalFlows,
     }
@@ -82,7 +82,7 @@ function calculateAgentPipelineTiming(props: Record<string, any>, loops: number)
       unitDurationSeconds: totalUnit,
       totalDurationSeconds: totalUnit * loops,
       scopeLabel: `All ${allPresetKeys.length} Presets · Flow: ${flowId}`,
-      detailLabel: `Cycling presets on "${flowId}" variant at ${speed}×`,
+      detailLabel: `Cycling presets on "${flowId}" variant`,
       presetsCount: allPresetKeys.length,
       flowsCount: allPresetKeys.length,
     }
@@ -99,7 +99,7 @@ function calculateAgentPipelineTiming(props: Record<string, any>, loops: number)
       unitDurationSeconds: totalUnit,
       totalDurationSeconds: totalUnit * loops,
       scopeLabel: `${currentPreset.name} · ${currentPreset.flows.length} Flows`,
-      detailLabel: `Flows: ${flowLabels} at ${speed}×`,
+      detailLabel: `Flows: ${flowLabels}`,
       presetsCount: 1,
       flowsCount: currentPreset.flows.length,
     }
@@ -112,7 +112,7 @@ function calculateAgentPipelineTiming(props: Record<string, any>, loops: number)
     unitDurationSeconds: unitSeconds,
     totalDurationSeconds: unitSeconds * loops,
     scopeLabel: `${currentPreset.name} · Flow: ${singleFlow.label}`,
-    detailLabel: `Single flow (${singleFlow.id}) at ${speed}×`,
+    detailLabel: `Single flow (${singleFlow.id})`,
     presetsCount: 1,
     flowsCount: 1,
   }
