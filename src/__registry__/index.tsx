@@ -33799,7 +33799,7 @@ export const index: Record<string, any> = {
         }
         return { default: Comp };
       });
-      LazyComp.demoProps = {"animation":{"value":"active","options":{"Active":"active","Inactive":"inactive"}},"cyclePreset":{"value":true,"dependsOn":{"animation":"active"}},"preset":{"type":"select","value":"developer","options":{"Dev & Perf":"developer","Design & Motion":"designer","Agent Fleet":"orchestrator","SRE War Room":"incident","Podcast Co-Host":"podcast","Founder Copilot":"copilot"},"dependsOn":{"cyclePreset":false}},"autoPlay":{"value":true,"dependsOn":{"animation":"active"}},"pauseOnHover":{"value":true,"dependsOn":{"animation":"active"}},"speed":{"value":1,"min":0.5,"max":5,"step":0.25,"dependsOn":{"animation":"active"}}};
+      LazyComp.demoProps = {"animation":{"value":"active","options":{"Active":"active","Inactive":"inactive"}},"cyclePreset":{"value":true,"dependsOn":{"animation":"active"}},"preset":{"type":"select","value":"developer","options":{"Dev & Perf":"developer","Design & Motion":"designer","Agent Fleet":"orchestrator","Model Watch":"incident","Podcast Co-Host":"podcast","Founder Copilot":"copilot"},"dependsOn":{"cyclePreset":false}},"autoPlay":{"value":true,"dependsOn":{"animation":"active"}},"pauseOnHover":{"value":true,"dependsOn":{"animation":"active"}},"speed":{"value":1,"min":0.5,"max":5,"step":0.25,"dependsOn":{"animation":"active"}}};
       LazyComp.cycleDurationMs = 10000;
       return LazyComp;
     })(),

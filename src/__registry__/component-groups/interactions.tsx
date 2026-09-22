@@ -42,6 +42,6 @@ export const registryComponents: Record<string, RegistryComponent> = {
   ),
   "interactions-realtime-voice": lazyRegistryComponent(
     () => import("@/registry/interactions/realtime-voice/index.tsx"),
-    {"animation":{"value":"active","options":{"Active":"active","Inactive":"inactive"}},"cyclePreset":{"value":true,"dependsOn":{"animation":"active"}},"preset":{"type":"select","value":"developer","options":{"Dev & Perf":"developer","Design & Motion":"designer","Agent Fleet":"orchestrator","SRE War Room":"incident","Podcast Co-Host":"podcast","Founder Copilot":"copilot"},"dependsOn":{"cyclePreset":false}},"autoPlay":{"value":true,"dependsOn":{"animation":"active"}},"pauseOnHover":{"value":true,"dependsOn":{"animation":"active"}},"speed":{"value":1,"min":0.5,"max":5,"step":0.25,"dependsOn":{"animation":"active"}}},
+    {"animation":{"value":"active","options":{"Active":"active","Inactive":"inactive"}},"cyclePreset":{"value":true,"dependsOn":{"animation":"active"}},"preset":{"type":"select","value":"developer","options":{"Dev & Perf":"developer","Design & Motion":"designer","Agent Fleet":"orchestrator","Model Watch":"incident","Podcast Co-Host":"podcast","Founder Copilot":"copilot"},"dependsOn":{"cyclePreset":false}},"autoPlay":{"value":true,"dependsOn":{"animation":"active"}},"pauseOnHover":{"value":true,"dependsOn":{"animation":"active"}},"speed":{"value":1,"min":0.5,"max":5,"step":0.25,"dependsOn":{"animation":"active"}}},
   ),
 };

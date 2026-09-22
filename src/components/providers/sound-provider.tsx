@@ -156,11 +156,14 @@ export function SoundProvider({ children }: { children: React.ReactNode }) {
   // Initialize Space UI sound bindings once on mount
   useEffect(() => {
     try {
-      if (typeof spaceSounds.setVoice === 'function') {
+      const setVoiceSeed = (spaceSounds as { setVoiceSeed?: (seed: string | null) => void }).setVoiceSeed
+      if (typeof setVoiceSeed === 'function') {
+        setVoiceSeed('Space UI')
+      } else if (typeof spaceSounds.setVoice === 'function') {
         spaceSounds.setVoice('Space UI')
       }
       if (typeof spaceSounds.setVolume === 'function') {
-        spaceSounds.setVolume(0.35)
+        spaceSounds.setVolume(0.8)
       }
       if (typeof spaceSounds.bind === 'function') {
         spaceSounds.bind()

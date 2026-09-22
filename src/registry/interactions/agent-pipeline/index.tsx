@@ -707,16 +707,15 @@ export function AgentPipeline({
     }
   }, [speed])
 
-  // Auto-start when autoPlay is true and status is idle
   React.useEffect(() => {
     if (!isAnimated || isPaused) return
-    if (autoPlay && status === 'idle') {
+    if (status === 'idle') {
       const timer = setTimeout(() => {
         startPipeline()
       }, 50)
       return () => clearTimeout(timer)
     }
-  }, [status, autoPlay, isAnimated, isPaused, startPipeline])
+  }, [status, isAnimated, isPaused, startPipeline])
 
   // Handle preset or flow changes to restart cleanly
   React.useEffect(() => {

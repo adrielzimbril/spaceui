@@ -101,7 +101,7 @@ export function RealtimeVoice({
 
   const [dialogueIndex, setDialogueIndex] = React.useState(0)
   const [voiceState, setVoiceState] = React.useState<VoiceState>('idle')
-  const [isActive, setIsActive] = React.useState(Boolean(autoPlay && isAnimationActive))
+  const [isActive, setIsActive] = React.useState(Boolean(isAnimationActive))
   const [isHovered, setIsHovered] = React.useState(false)
   const [blinkTrigger, setBlinkTrigger] = React.useState(0)
   const [elapsedMs, setElapsedMs] = React.useState(0)
@@ -146,7 +146,6 @@ export function RealtimeVoice({
     }
   }, [voiceState])
 
-  // Reset timer on preset change
   const isFirstMount = React.useRef(true)
   React.useEffect(() => {
     if (isFirstMount.current) {
@@ -155,6 +154,9 @@ export function RealtimeVoice({
     }
     setElapsedMs(0)
     setDialogueIndex(0)
+    setBlinkTrigger((prev) => prev + 1)
+    setIsActive(isAnimationActive)
+    setVoiceState(isAnimationActive ? 'listening' : 'idle')
   }, [currentPresetKey])
 
   React.useEffect(() => {
@@ -166,14 +168,13 @@ export function RealtimeVoice({
   }, [isPaused, voiceState, speed])
 
   React.useEffect(() => {
-    const shouldBeActive = Boolean(autoPlay && isAnimationActive)
-    setIsActive(shouldBeActive)
-    if (shouldBeActive && voiceState === 'idle') {
+    setIsActive(isAnimationActive)
+    if (isAnimationActive && voiceState === 'idle') {
       setVoiceState('listening')
-    } else if (!shouldBeActive) {
+    } else if (!isAnimationActive) {
       setVoiceState('idle')
     }
-  }, [autoPlay, isAnimationActive])
+  }, [isAnimationActive])
 
   React.useEffect(() => {
     if (isPaused) return
@@ -196,8 +197,10 @@ export function RealtimeVoice({
 
       if (voiceState === 'idle') {
         setVoiceState('listening')
+        safeSound(whisper)
       } else if (voiceState === 'listening') {
         setVoiceState('thinking')
+        safeSound(whisper)
       } else if (voiceState === 'thinking') {
         setVoiceState('speaking')
         safeSound(whisper)
@@ -235,6 +238,7 @@ export function RealtimeVoice({
             setIsActive(false)
             setVoiceState('idle')
             setElapsedMs(0)
+            safeSound(bloom)
             return
           }
         } else {
@@ -424,23 +428,26 @@ export function RealtimeVoice({
         <div className="flex items-center gap-1.5">
           <Button
             size="icon-sm"
-            variant={isActive || voiceState !== 'idle' ? 'secondary' : 'default'}
+            // variant={isActive || voiceState !== 'idle' ? 'secondary' : 'default'}
+            variant={isActive || voiceState !== 'idle' ? 'destructive' : 'default'}
             // variant={'secondary'}
             onClick={handleToggleActive}
             squircle
-            className={cn((isActive || voiceState !== 'idle') && 'bg-background! border-background!')}
+            // className={cn((isActive || voiceState !== 'idle') && 'bg-background! border-background!')}
+            // className={cn((isActive || voiceState !== 'idle') && 'bg-background! border-background!')}
           >
             <MorphIcon activeKey={isActive ? 'mic-off' : 'mic'} variant="blur-scale" duration={0.22}>
-              {isActive ? <MicOff className="size-3" /> : <AudioLines className="size-3" />}
+              {/* {isActive ? <MicOff className="size-3" /> : <AudioLines className="size-3" />} */}
+              {isActive ? <PhoneOff className="size-3" /> : <AudioLines className="size-3" />}
             </MorphIcon>
           </Button>
 
-          {(isActive || voiceState !== 'idle') && (
-            <Button size="icon-sm" variant="destructive" onClick={handleEndCall} aria-label="End conversation" squircle>
-              {/* <X className="size-3" /> */}
-              <PhoneOff className="size-3" />
+          {/* {(isActive || voiceState !== 'idle' || dialogueIndex !== 0) && (
+            <Button size="icon-sm" variant="destructive" onClick={handleEndCall} aria-label="End conversation" squircle> */}
+          {/* <X className="size-3" /> */}
+          {/* <PhoneOff className="size-3" />
             </Button>
-          )}
+          )} */}
         </div>
 
         <div className="flex items-center gap-2">

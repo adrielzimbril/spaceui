@@ -121,7 +121,7 @@ export function InteractionCanvas({
     item && Component ? (
       <div ref={stageRef} className="flex w-full max-w-4xl items-center justify-center">
         <React.Suspense fallback={<PreviewLoading />}>
-          <Component key={resetKey} {...demoProps} targetLoops={targetLoops} onSequenceComplete={onSequenceComplete} />
+          <Component key={resetKey} {...demoProps} {...(isRecording ? { targetLoops, onSequenceComplete } : {})} />
         </React.Suspense>
       </div>
     ) : (
