@@ -60,7 +60,7 @@ export function useInteractionRecorder({
     const maxWatchdogMs = durationMs + 2500
 
     // Restart animation cleanly from beginning right as recording starts
-    onResetAnimation?.()
+    // onResetAnimation?.()
 
     try {
       const result = await recordInteraction({
@@ -78,12 +78,39 @@ export function useInteractionRecorder({
         onStatusChange: setBusy,
         checkCancelled: () => cancelRef.current,
         checkSequenceFinished: () => sequenceFinishedRef.current,
+        onStartCapture: async () => {
+          // Keep resolver null during reset so unmount events cannot trigger sequence completion
+          sequenceCompleteResolverRef.current = null
+          sequenceFinishedRef.current = false
+
+          // Reset the animation to frame 0
+          onResetAnimation?.()
+
+          // Wait 2 animation frames plus a settling tick for React to mount the clean component
+          await new Promise<void>((resolve) => {
+            requestAnimationFrame(() => {
+              requestAnimationFrame(() => {
+                setTimeout(() => resolve(), 80)
+              })
+            })
+          })
+
+          // Now that the new component is mounted and running at t=0, attach completion resolver
+          sequenceFinishedRef.current = false
+          sequenceCompleteResolverRef.current = () => {
+            sequenceFinishedRef.current = true
+          }
+        },
       })
 
       saveBlob(result.blob, result.fileName)
       setProgress(100)
       confirmSound()
     } catch (err) {
+      if ((err as Error)?.name === 'NotAllowedError') {
+        // User cancelled the browser screen share picker
+        return
+      }
       console.error(err)
       nudgeSound()
       // eslint-disable-next-line no-alert

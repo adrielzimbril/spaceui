@@ -16,6 +16,7 @@ export interface RecordInteractionOptions {
   onStatusChange: (status: string | null) => void
   checkCancelled: () => boolean
   checkSequenceFinished: () => boolean
+  onStartCapture?: () => Promise<void> | void
 }
 
 export interface RecordResult {
@@ -297,11 +298,15 @@ export async function recordInteraction(options: RecordInteractionOptions): Prom
     onStatusChange,
     checkCancelled,
     checkSequenceFinished,
+    onStartCapture,
   } = options
 
   let displayStream: MediaStream | null = null
   let recordCanvas: HTMLCanvasElement | null = null
   let sourceVideo: HTMLVideoElement | null = null
+  let videoTrack: MediaStreamTrack | null = null
+  let onEndedListener: (() => void) | null = null
+  let streamEnded = false
   let rafId: number | null = null
 
   let encoder: VideoEncoder | null = null
@@ -330,11 +335,16 @@ export async function recordInteraction(options: RecordInteractionOptions): Prom
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
     } as any)
 
-    const videoTrack = displayStream.getVideoTracks()[0]
+    videoTrack = displayStream.getVideoTracks()[0]
     if (!videoTrack) throw new Error('No video was shared.')
     if (withSound && displayStream.getAudioTracks().length === 0) {
       throw new Error('No audio track was shared — retry and enable "Share tab audio".')
     }
+
+    onEndedListener = () => {
+      streamEnded = true
+    }
+    videoTrack.addEventListener('ended', onEndedListener)
 
     sourceVideo = document.createElement('video')
     sourceVideo.srcObject = displayStream
@@ -431,6 +441,14 @@ export async function recordInteraction(options: RecordInteractionOptions): Prom
     }
 
     onStatusChange('Recording…')
+
+    if (onStartCapture) {
+      await onStartCapture()
+    }
+
+    if (recorder && recorder.state === 'inactive') {
+      recorder.start()
+    }
 
     let frameIndex = 0
     let nextFrameTime = 0
@@ -551,7 +569,7 @@ export async function recordInteraction(options: RecordInteractionOptions): Prom
       throw new Error('Recording ended before any video frames could be captured. Please retry.')
     }
 
-    const fileName = `record-${shortName}-${formatTimestamp()}.${ext}`
+    const fileName = `${shortName}-spaceui-atom-record-${formatTimestamp()}.${ext}`
     return { blob: finalBlob, fileName }
   } finally {
     if (rafId !== null) cancelAnimationFrame(rafId)
@@ -636,9 +654,7 @@ export async function captureScreenshot(options: CaptureScreenshotOptions): Prom
 
   // Theme-aware background
   const backgroundColor =
-    typeof document !== 'undefined'
-      ? getComputedStyle(document.body).backgroundColor || '#000000'
-      : '#000000'
+    typeof document !== 'undefined' ? getComputedStyle(document.body).backgroundColor || '#000000' : '#000000'
   ctx.fillStyle = backgroundColor
   ctx.fillRect(0, 0, finalWidth, finalHeight)
 
@@ -659,6 +675,6 @@ export async function captureScreenshot(options: CaptureScreenshotOptions): Prom
     }, 'image/png')
   })
 
-  const fileName = `${shortName || 'interaction'}-${formatTimestamp()}.png`
+  const fileName = `${shortName || 'interaction'}-spaceui-atom-screenshot-${formatTimestamp()}.png`
   return { blob, fileName }
 }
