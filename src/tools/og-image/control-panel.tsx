@@ -1,29 +1,5 @@
 'use client'
 
-import React, { useRef, useState } from 'react'
-import Image from 'next/image'
-import {
-  IconArrowsShuffle,
-  IconCheck,
-  IconCopy,
-  IconDownload,
-  IconLayersLinked,
-  IconMovie,
-  IconPalette,
-  IconPhoto,
-  IconTypography,
-  IconUpload,
-  IconX,
-} from '@tabler/icons-react'
-import { Button } from '@/registry/components/spaceui/button-squircle'
-import { TickSlider } from '@/registry/components/spaceui/tick-slider'
-import { Switch } from '@/registry/primitives/switch'
-import { Input } from '@/registry/primitives/input'
-import { ScrollArea } from '@/registry/primitives/scroll-area'
-import { Tabs, TabsList, TabsTab } from '@/registry/primitives/tabs'
-import { Select, SelectItem, SelectPopup, SelectTrigger, SelectValue } from '@/registry/primitives/select'
-import { PRESET_PALETTES } from '@usespaceui/gradients'
-import { useFileUpload } from '@/registry/hooks/form/use-file-upload'
 import {
   bloomSound,
   confirmSound,
@@ -33,11 +9,34 @@ import {
   tickSound,
   toggleSound,
 } from '@/components/providers/sound-provider'
+import { Button } from '@/registry/components/spaceui/button-squircle'
+import { TickSlider } from '@/registry/components/spaceui/tick-slider'
+import { useFileUpload } from '@/registry/hooks/form/use-file-upload'
 import { cn } from '@/registry/lib/utils'
-import type { AnimType, BgMode, Chip, ChipKey, OgState, ShowcaseLayout, ShowcaseShape, ShowcaseType } from './types'
-import { ANIMS, CHIP_KEYS, PRESETS } from './presets'
+import { Input } from '@/registry/primitives/input'
+import { ScrollArea } from '@/registry/primitives/scroll-area'
+import { Select, SelectItem, SelectPopup, SelectTrigger } from '@/registry/primitives/select'
+import { Switch } from '@/registry/primitives/switch'
+import { Tabs, TabsList, TabsTab } from '@/registry/primitives/tabs'
+import {
+  IconArrowsShuffle,
+  IconCheck,
+  IconCopy,
+  IconDownload,
+  IconLayersLinked,
+  IconMovie,
+  IconPalette,
+  IconTypography,
+  IconUpload,
+  IconX,
+} from '@tabler/icons-react'
+import { PRESET_PALETTES } from '@usespaceui/gradients'
+import Image from 'next/image'
+import { useState } from 'react'
 import { colorToHex, hexToRgbString } from './color'
+import { ANIMS, CHIP_KEYS, PRESETS } from './presets'
 import { TECH_KEYS, TECH_LABELS } from './showcase-gallery'
+import type { AnimType, BgMode, Chip, ChipKey, OgState, ShowcaseLayout, ShowcaseShape, ShowcaseType } from './types'
 
 interface OgControlPanelProps {
   s: OgState
@@ -131,7 +130,7 @@ export function OgControlPanel({
       <div className="flex h-10 shrink-0 items-center px-3 border-b border-border/40">
         <div className="flex items-center gap-2">
           <h2 className="text-xs font-semibold">Appearance & Content</h2>
-          {/* <Badge variant="secondary" size="xs">
+          {/* <Badge variant="secondary" size="sm">
             Appearance & Content
           </Badge> */}
         </div>

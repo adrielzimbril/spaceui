@@ -1,18 +1,18 @@
 'use client'
 
-import React, { useRef } from 'react'
-import Image from 'next/image'
-import { IconSparkles, IconUpload, IconDownload } from '@tabler/icons-react'
+import { confirmSound, pageSound, tickSound, toggleSound } from '@/components/providers/sound-provider'
+import { Badge } from '@/registry/components/spaceui/badge-squircle'
 import { Button } from '@/registry/components/spaceui/button-squircle'
 import { TickSlider } from '@/registry/components/spaceui/tick-slider'
-import { Switch } from '@/registry/primitives/switch'
-import { ScrollArea } from '@/registry/primitives/scroll-area'
-import { ToggleGroup, ToggleGroupItem } from '@/registry/primitives/toggle-group'
-import { confirmSound, pageSound, tickSound, toggleSound } from '@/components/providers/sound-provider'
 import { cn } from '@/registry/lib/utils'
+import { ScrollArea } from '@/registry/primitives/scroll-area'
+import { Switch } from '@/registry/primitives/switch'
+import { ToggleGroup, ToggleGroupItem } from '@/registry/primitives/toggle-group'
+import { IconDownload, IconSparkles, IconUpload } from '@tabler/icons-react'
+import Image from 'next/image'
+import React, { useRef } from 'react'
 import { PLUSH_PRESETS } from './presets'
-import type { PlushConfig, PlushPreset, ArtworkData } from './types'
-import { Badge } from '@/registry/components/spaceui/badge-squircle'
+import type { ArtworkData, PlushConfig, PlushPreset } from './types'
 
 interface PlushControlPanelProps {
   config: PlushConfig
@@ -82,7 +82,7 @@ export function PlushControlPanel({
       <div className="flex h-10 shrink-0 items-center px-3">
         <div className="flex items-center gap-2">
           <h2 className="text-xs font-semibold">Plush</h2>
-          <Badge variant="secondary" size="xs">
+          <Badge variant="secondary" size="sm">
             Tactile 3D Studio
           </Badge>
         </div>

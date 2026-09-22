@@ -1009,6 +1009,7 @@ export const componentGroups: Record<string, string> = {
   "hooks-lifecycle-use-urgent-update": "hooks-lifecycle",
   "interactions-agent-pipeline": "interactions",
   "interactions-deploy-pipeline": "interactions",
+  "interactions-realtime-voice": "interactions",
   "lib-base-ui": "lib-base-ui",
   "lib-base-ui-csp-provider": "lib-base-ui",
   "lib-base-ui-direction-provider": "lib-base-ui",

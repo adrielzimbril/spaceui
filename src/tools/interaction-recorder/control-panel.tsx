@@ -1,9 +1,11 @@
 'use client'
 
 import { nudgeSound, tapSound, tickSound, toggleSound } from '@/components/providers/sound-provider'
+import { Badge } from '@/registry/components/spaceui/badge-squircle'
 import { Button } from '@/registry/components/spaceui/button-squircle'
 import { SloshSlider } from '@/registry/components/spaceui/slosh-slider'
 import { TickSlider } from '@/registry/components/spaceui/tick-slider'
+import { cn } from '@/registry/lib/utils'
 import {
   Combobox,
   ComboboxCollection,
@@ -21,7 +23,6 @@ import { Tabs, TabsList, TabsTab } from '@/registry/primitives/tabs'
 import { IconCapture, IconPlayerStop } from '@tabler/icons-react'
 import { Avatar } from '@usespaceui/avatars/react'
 import { Fragment } from 'react'
-import { cn } from '@/registry/lib/utils'
 import type { SequenceTiming } from './timing'
 import {
   ASPECT_RATIOS,
@@ -31,7 +32,6 @@ import {
   type InteractionRecorderItem,
   type ScaleValue,
 } from './types'
-import { Badge } from '@/registry/components/spaceui/badge-squircle'
 
 function OffsetSlider({
   label,
@@ -174,7 +174,7 @@ export function InteractionControlPanel({
       <div className="flex h-10 shrink-0 items-center px-3">
         <div className="flex items-center gap-2">
           <h2 className="text-xs font-semibold">Interaction Recorder</h2>
-          <Badge variant="secondary" size="xs">
+          <Badge variant="secondary" size="sm">
             GPU Renderer
           </Badge>
         </div>

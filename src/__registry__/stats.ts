@@ -3,9 +3,9 @@ export const registryStats = {
   "components": 101,
   "componentsFree": 82,
   "componentsPro": 19,
-  "interactions": 2,
+  "interactions": 3,
   "interactionsFree": 0,
-  "interactionsPro": 2,
+  "interactionsPro": 3,
   "primitives": 60,
   "primitivesFree": 60,
   "primitivesPro": 0,
@@ -23,6 +23,6 @@ export const registryStats = {
   "hooksOnly": 61,
   "hookComponents": 8,
   "hookUtils": 13,
-  "totalPro": 35,
+  "totalPro": 36,
   "totalFree": 247
 } as const;

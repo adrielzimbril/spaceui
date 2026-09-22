@@ -1,0 +1,44 @@
+---
+title: Realtime Voice
+description: An interactive conversational AI voice interface with dynamic Bloop Orb visualizer, audio waveform ripples, live transcription, and turn-taking orchestration.
+component: true
+base: base
+isPro: true
+preview:
+  name: interactions-realtime-voice
+  contained: false
+  className: '**:[.preview]:h-auto'
+---
+
+## Installation
+
+<ComponentInstallation name="interactions-realtime-voice" />
+
+## Usage
+
+```tsx
+import { RealtimeVoice } from '@/components/interactions/realtime-voice'
+```
+
+```tsx
+<RealtimeVoice />
+```
+
+## API Reference
+
+### RealtimeVoice
+
+| Prop                 | Type                  | Default       | Description                                                             |
+| :------------------- | :-------------------- | :------------ | :---------------------------------------------------------------------- |
+| `preset`             | `VoicePresetKey`      | `'developer'` | Active scenario preset (`'developer'`, `'designer'`, `'support'`, etc.) |
+| `dialogues`          | `VoiceDialogueTurn[]` | Preset turns  | Custom conversational turns overriding preset dialogues.                |
+| `modelName`          | `string`              | Preset model  | Label displayed for the AI voice model (e.g. `'GPT-4o Voice'`).         |
+| `autoPlay`           | `boolean`             | `true`        | Whether the conversation plays and advances automatically.              |
+| `loop`               | `boolean`             | `true`        | Whether the conversation loops continuously upon completing all turns.  |
+| `cyclePresets`       | `boolean`             | `true`        | Automatically advance to the next preset scenario on cycle completion.  |
+| `speed`              | `number`              | `1`           | Speed multiplier for speech timing and state transitions.               |
+| `showWaveform`       | `boolean`             | `true`        | Whether to render animated audio waveform bars.                         |
+| `enableSounds`       | `boolean`             | `true`        | Enable or mute tactile audio micro-interactions and speech chimes.      |
+| `targetLoops`        | `number`              | `undefined`   | Target number of sequence cycles before halting (for recorder sync).    |
+| `onSequenceComplete` | `() => void`          | `undefined`   | Callback triggered once target sequence loops are finished.             |
+| `className`          | `string`              | -             | Additional CSS classes for the outer container.                         |

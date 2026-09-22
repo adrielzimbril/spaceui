@@ -114,7 +114,12 @@ export const BlurRevealText: React.FC<BlurRevealTextProps> = ({
     <MotionComponent
       ref={containerRef as React.Ref<any>}
       key={replayKey}
-      className={cn('inline-flex flex-wrap items-baseline', className)}
+      className={cn(
+        'inline-flex flex-wrap items-baseline',
+        className?.includes('text-center') && 'justify-center',
+        className?.includes('text-right') && 'justify-end',
+        className,
+      )}
       initial="hidden"
       animate={shouldAnimate ? 'visible' : 'hidden'}
       variants={containerVariants}

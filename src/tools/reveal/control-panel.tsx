@@ -1,15 +1,15 @@
 'use client'
 
-import * as React from 'react'
-import Image from 'next/image'
-import { AnimatePresence, motion } from 'motion/react'
-import { IconCircle, IconPhoto, IconPlayerStop, IconUpload } from '@tabler/icons-react'
+import { tickSound, toggleSound } from '@/components/providers/sound-provider'
 import { Button } from '@/registry/components/spaceui/button-squircle'
+import { cn } from '@/registry/lib/utils'
 import { Badge } from '@/registry/primitives/badge'
 import { ScrollArea } from '@/registry/primitives/scroll-area'
 import { Switch } from '@/registry/primitives/switch'
-import { cn } from '@/registry/lib/utils'
-import { tickSound, toggleSound } from '@/components/providers/sound-provider'
+import { IconCircle, IconPhoto, IconPlayerStop, IconUpload } from '@tabler/icons-react'
+import { AnimatePresence, motion } from 'motion/react'
+import Image from 'next/image'
+import * as React from 'react'
 import { SliderRow } from './slider-row'
 import type { RevealConfig } from './state'
 import { TRAJECTORY_ICONS } from './trajectories'
@@ -116,7 +116,7 @@ export function RevealControlPanel({
       <div className="flex h-10 shrink-0 items-center px-3">
         <div className="flex items-center gap-2">
           <h2 className="text-xs font-semibold">3D Reveal</h2>
-          <Badge variant="secondary" size="xs">
+          <Badge variant="secondary" size="sm">
             Brush to reveal
           </Badge>
         </div>

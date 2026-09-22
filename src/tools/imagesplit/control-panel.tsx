@@ -1,19 +1,7 @@
 'use client'
 
-import React from 'react'
-import Image from 'next/image'
-import { IconCut, IconPhoto, IconUpload } from '@tabler/icons-react'
-import { Button } from '@/registry/components/spaceui/button-squircle'
-import { ScrollArea } from '@/registry/primitives/scroll-area'
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/registry/primitives/select'
-import { TickSlider } from '@/registry/components/spaceui/tick-slider'
-import { Badge } from '@/registry/primitives/badge'
-import { Tabs, TabsList, TabsTab } from '@/registry/primitives/tabs'
-import { ToggleGroup, ToggleGroupItem } from '@/registry/primitives/toggle-group'
 import {
-  bloomSound,
   chimeSound,
-  confirmSound,
   nudgeSound,
   openSound,
   pageSound,
@@ -22,7 +10,17 @@ import {
   tickSound,
   toggleSound,
 } from '@/components/providers/sound-provider'
+import { Button } from '@/registry/components/spaceui/button-squircle'
+import { TickSlider } from '@/registry/components/spaceui/tick-slider'
 import { cn } from '@/registry/lib/utils'
+import { Badge } from '@/registry/primitives/badge'
+import { ScrollArea } from '@/registry/primitives/scroll-area'
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/registry/primitives/select'
+import { Tabs, TabsList, TabsTab } from '@/registry/primitives/tabs'
+import { ToggleGroup, ToggleGroupItem } from '@/registry/primitives/toggle-group'
+import { IconCut, IconPhoto, IconUpload } from '@tabler/icons-react'
+import Image from 'next/image'
+import React from 'react'
 import { formatBytes, getColFlex, type Ratio, type SplitConfig } from './split'
 
 const RATIO_TABS: { label: string; value: string; ratio: Ratio }[] = [
@@ -153,7 +151,7 @@ export function ImageSplitControlPanel({
       <div className="flex h-10 shrink-0 items-center px-3">
         <div className="flex items-center gap-2">
           <h2 className="text-xs font-semibold">Image Split</h2>
-          <Badge variant="secondary" size="xs">
+          <Badge variant="secondary" size="sm">
             Drag to pan
           </Badge>
         </div>

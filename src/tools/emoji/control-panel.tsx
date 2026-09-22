@@ -1,5 +1,12 @@
 'use client'
 
+import { Badge } from '@/registry/components/spaceui/badge-squircle'
+import { Button } from '@/registry/components/spaceui/button-squircle'
+import { TickSlider } from '@/registry/components/spaceui/tick-slider'
+import { Input } from '@/registry/primitives/input'
+import { ScrollArea } from '@/registry/primitives/scroll-area'
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/registry/primitives/select'
+import type { ResourceViewMode } from '@/tools/shared/types'
 import { IconRefresh } from '@tabler/icons-react'
 import {
   EMOJI_PROVIDERS_META,
@@ -14,14 +21,7 @@ import {
 } from '@usespaceui/emoji'
 import { AssetEmoji } from './asset-emoji'
 import { assetId } from './catalog'
-import { Button } from '@/registry/components/spaceui/button-squircle'
-import { Input } from '@/registry/primitives/input'
-import { ScrollArea } from '@/registry/primitives/scroll-area'
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/registry/primitives/select'
-import { TickSlider } from '@/registry/components/spaceui/tick-slider'
-import type { ResourceViewMode } from '@/tools/shared/types'
 import { DEFAULT_EMOJI } from './pool'
-import { Badge } from '@/registry/components/spaceui/badge-squircle'
 
 const SOURCES = Object.values(EmojiSource)
 
@@ -111,7 +111,7 @@ export function EmojiControlPanel({
       <div className="flex h-10 shrink-0 items-center px-3">
         <div className="flex items-center gap-2">
           <h2 className="text-xs font-semibold">Emoji</h2>
-          <Badge variant="secondary" size="xs">
+          <Badge variant="secondary" size="sm">
             {view === 'seed' ? 'Seed' : 'Gallery'}
           </Badge>
         </div>

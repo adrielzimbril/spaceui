@@ -1,5 +1,13 @@
 'use client'
 
+import { Badge } from '@/registry/components/spaceui/badge-squircle'
+import { Button } from '@/registry/components/spaceui/button-squircle'
+import { TickSlider } from '@/registry/components/spaceui/tick-slider'
+import { ScrollArea } from '@/registry/primitives/scroll-area'
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/registry/primitives/select'
+import { ToggleGroup, ToggleGroupItem } from '@/registry/primitives/toggle-group'
+import { DEFAULT_SEEDS } from '@/tools/shared/seeds'
+import type { ResourceViewMode } from '@/tools/shared/types'
 import { IconRefresh } from '@tabler/icons-react'
 import {
   EXPRESSION_VALUES,
@@ -12,15 +20,7 @@ import {
   type SquishShapeChoice,
 } from '@usespaceui/squishmoji'
 import { Squishmoji } from '@usespaceui/squishmoji/react'
-import { ScrollArea } from '@/registry/primitives/scroll-area'
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/registry/primitives/select'
-import { TickSlider } from '@/registry/components/spaceui/tick-slider'
-import { ToggleGroup, ToggleGroupItem } from '@/registry/primitives/toggle-group'
-import { Button } from '@/registry/components/spaceui/button-squircle'
 import type { ReactNode } from 'react'
-import type { ResourceViewMode } from '@/tools/shared/types'
-import { DEFAULT_SEEDS } from '@/tools/shared/seeds'
-import { Badge } from '@/registry/components/spaceui/badge-squircle'
 
 const SIZE_MIN = 64
 const SIZE_MAX = 256
@@ -116,7 +116,7 @@ export function SquishmojiControlPanel({
       <div className="flex h-10 shrink-0 items-center px-3">
         <div className="flex items-center gap-2">
           <h2 className="text-xs font-semibold">Squishmoji</h2>
-          <Badge variant="secondary" size="xs">
+          <Badge variant="secondary" size="sm">
             {view === 'mockup' ? 'Mockup' : view === 'gallery' ? 'Gallery' : view === 'video' ? 'Video' : 'Seed'}
           </Badge>
         </div>

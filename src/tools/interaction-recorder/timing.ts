@@ -1,5 +1,10 @@
 import { AGENT_PRESETS, type PresetKey } from '@/registry/interactions/agent-pipeline/data'
 import { DEPLOY_FLOWS, type DeployFlowKey } from '@/registry/interactions/deploy-pipeline/data'
+import {
+  DEFAULT_VOICE_DURATIONS,
+  VOICE_PRESETS,
+  type VoicePresetKey,
+} from '@/registry/interactions/realtime-voice/data'
 
 export interface SequenceTiming {
   /** Duration of 1 complete sequence cycle in seconds */
@@ -159,6 +164,43 @@ function calculateDeployPipelineTiming(props: Record<string, any>, loops: number
   }
 }
 
+function calculateRealtimeVoiceTiming(props: Record<string, any>, loops: number): SequenceTiming {
+  const presetKey: VoicePresetKey = (props.preset as VoicePresetKey) || 'developer'
+  const willCyclePresets = Boolean(props.cyclePresets ?? props.cyclePreset ?? true)
+  const speed = typeof props.speed === 'number' && props.speed > 0 ? props.speed : 1
+
+  const allPresetKeys = Object.keys(VOICE_PRESETS) as VoicePresetKey[]
+  const targetPresets = willCyclePresets ? allPresetKeys : [presetKey]
+
+  let totalUnitSeconds = 0
+  let totalDialogues = 0
+
+  for (const pKey of targetPresets) {
+    const preset = VOICE_PRESETS[pKey] ?? VOICE_PRESETS.developer
+    for (const d of preset.dialogues) {
+      const listenMs = d.durations?.listening ?? DEFAULT_VOICE_DURATIONS.listening
+      const thinkMs = d.durations?.thinking ?? DEFAULT_VOICE_DURATIONS.thinking
+      const speakMs = d.durations?.speaking ?? DEFAULT_VOICE_DURATIONS.speaking
+      totalUnitSeconds += (listenMs + thinkMs + speakMs) / 1000 / speed
+      totalDialogues++
+    }
+  }
+
+  const currentPreset = VOICE_PRESETS[presetKey] ?? VOICE_PRESETS.developer
+  return {
+    unitDurationSeconds: totalUnitSeconds,
+    totalDurationSeconds: totalUnitSeconds * loops,
+    scopeLabel: willCyclePresets
+      ? `All ${allPresetKeys.length} Presets · ${totalDialogues} Turns`
+      : `${currentPreset.title} · ${totalDialogues} Turns`,
+    detailLabel: willCyclePresets
+      ? `Full conversational cycle across all presets at ${speed}×`
+      : `Single scenario dialogue at ${speed}×`,
+    presetsCount: targetPresets.length,
+    flowsCount: totalDialogues,
+  }
+}
+
 /**
  * Computes exact duration & human breakdown for any interaction sequence
  * based on current Tweakpane props and requested loop count.
@@ -177,6 +219,10 @@ export function computeSequenceTiming(
 
   if (itemName?.includes('deploy-pipeline')) {
     return calculateDeployPipelineTiming(props, safeLoops)
+  }
+
+  if (itemName?.includes('realtime-voice')) {
+    return calculateRealtimeVoiceTiming(props, safeLoops)
   }
 
   // Fallback for generic interactions

@@ -1,5 +1,13 @@
 'use client'
 
+import { Badge } from '@/registry/components/spaceui/badge-squircle'
+import { Button } from '@/registry/components/spaceui/button-squircle'
+import { TickSlider } from '@/registry/components/spaceui/tick-slider'
+import { ScrollArea } from '@/registry/primitives/scroll-area'
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/registry/primitives/select'
+import { ToggleGroup, ToggleGroupItem } from '@/registry/primitives/toggle-group'
+import { DEFAULT_SEEDS } from '@/tools/shared/seeds'
+import { IconRefresh } from '@tabler/icons-react'
 import {
   AvatarEffect,
   type AvatarDetails,
@@ -8,16 +16,8 @@ import {
 } from '@usespaceui/avatars'
 import { Avatar } from '@usespaceui/avatars/react'
 import { PRESET_PALETTES } from '@usespaceui/gradients'
-import { IconRefresh } from '@tabler/icons-react'
-import { Button } from '@/registry/components/spaceui/button-squircle'
-import { ScrollArea } from '@/registry/primitives/scroll-area'
-import { TickSlider } from '@/registry/components/spaceui/tick-slider'
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/registry/primitives/select'
-import { ToggleGroup, ToggleGroupItem } from '@/registry/primitives/toggle-group'
 import { AvatarVariantSelect, PaletteSelect } from './option-select'
-import { DEFAULT_SEEDS } from '@/tools/shared/seeds'
 import { toLabel, type AvatarViewMode } from './utils'
-import { Badge } from '@/registry/components/spaceui/badge-squircle'
 
 const SIZE_MIN = 64
 const SIZE_MAX = 256
@@ -74,7 +74,7 @@ export function AvatarControlPanel({
       <div className="flex h-10 shrink-0 items-center px-3">
         <div className="flex items-center gap-2">
           <h2 className="text-xs font-semibold">Avatar</h2>
-          <Badge variant="secondary" size="xs">
+          <Badge variant="secondary" size="sm">
             {view === 'mockup' ? 'Mockup' : view === 'gallery' ? 'Gallery' : 'Seed'}
           </Badge>
         </div>

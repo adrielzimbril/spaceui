@@ -1,17 +1,16 @@
 'use client'
 
-import React from 'react'
-import { IconUpload } from '@tabler/icons-react'
+import { openSound, pageSound, tapSound, tickSound, toggleSound } from '@/components/providers/sound-provider'
+import { Badge } from '@/registry/components/spaceui/badge-squircle'
 import { Button } from '@/registry/components/spaceui/button-squircle'
 import { TickSlider } from '@/registry/components/spaceui/tick-slider'
-import { Switch } from '@/registry/primitives/switch'
-import { ScrollArea } from '@/registry/primitives/scroll-area'
-import { Tabs, TabsList, TabsTab } from '@/registry/primitives/tabs'
-import { openSound, pageSound, tapSound, tickSound, toggleSound } from '@/components/providers/sound-provider'
 import { cn } from '@/registry/lib/utils'
-import type { Layout, OgState, Preset } from './types'
+import { ScrollArea } from '@/registry/primitives/scroll-area'
+import { Switch } from '@/registry/primitives/switch'
+import { Tabs, TabsList, TabsTab } from '@/registry/primitives/tabs'
+import { IconUpload } from '@tabler/icons-react'
 import { LAYOUTS, PRESETS, SIZES } from './presets'
-import { Badge } from '@/registry/components/spaceui/badge-squircle'
+import type { Layout, OgState, Preset } from './types'
 
 interface OgLeftPanelProps {
   s: OgState
@@ -35,7 +34,7 @@ export function OgLeftPanel({ s, set, onSelectPreset, activePresetId, onSelectSi
       <div className="flex h-10 shrink-0 items-center px-3 border-b border-border/40">
         <div className="flex items-center gap-2">
           <h2 className="text-xs font-semibold">Presets & Layout</h2>
-          <Badge variant="secondary" size="xs">
+          <Badge variant="secondary" size="sm">
             Styles & Structure
           </Badge>
         </div>

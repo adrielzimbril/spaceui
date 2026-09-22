@@ -1,0 +1,89 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "interactions-realtime-voice",
+  "type": "registry:component",
+  "title": "Realtime Voice",
+  "description": "An interactive conversational AI voice interface built with Frame, Card, Squishmoji, Bloop Orb, and audio frequency ripples.",
+  "isPro": true,
+  "dependencies": ["motion", "@keyline-icons/react", "@usespaceui/squishmoji", "@usespaceui/sounds"],
+  "registryDependencies": [
+    "https://www.spaceui.one/r/lib-utils.json",
+    "https://www.spaceui.one/r/components-orb-bloop.json",
+    "https://www.spaceui.one/r/components-spaceui-badge-squircle.json",
+    "https://www.spaceui.one/r/components-spaceui-blur-reveal-text.json",
+    "https://www.spaceui.one/r/components-spaceui-button-squircle.json",
+    "https://www.spaceui.one/r/components-spaceui-morph-icon.json",
+    "https://www.spaceui.one/r/primitives-card.json",
+    "https://www.spaceui.one/r/primitives-frame.json",
+    "https://www.spaceui.one/r/hooks-utils-logger.json"
+  ],
+  "categories": ["interaction", "agents", "voice", "audio"],
+  "meta": {
+    "cycleDurationMs": 10000,
+    "demoProps": {
+      "animation": {
+        "value": "active",
+        "options": {
+          "Active": "active",
+          "Inactive": "inactive"
+        }
+      },
+      "cyclePreset": {
+        "value": true,
+        "dependsOn": {
+          "animation": "active"
+        }
+      },
+      "preset": {
+        "type": "select",
+        "value": "developer",
+        "options": {
+          "Dev & Perf": "developer",
+          "Design & Motion": "designer",
+          "Agent Fleet": "orchestrator",
+          "SRE War Room": "incident",
+          "Podcast Co-Host": "podcast",
+          "Founder Copilot": "copilot"
+        },
+        "dependsOn": {
+          "cyclePreset": false
+        }
+      },
+      "autoPlay": {
+        "value": true,
+        "dependsOn": {
+          "animation": "active"
+        }
+      },
+      "pauseOnHover": {
+        "value": true,
+        "dependsOn": {
+          "animation": "active"
+        }
+      },
+      "speed": {
+        "value": 1,
+        "min": 0.5,
+        "max": 3,
+        "step": 0.25,
+        "dependsOn": {
+          "animation": "active"
+        }
+      }
+    }
+  },
+  "files": [
+    {
+      "path": "src/registry/interactions/realtime-voice/index.tsx",
+      "type": "registry:component",
+      "target": "components/interactions/realtime-voice.tsx"
+    },
+    {
+      "path": "src/registry/interactions/realtime-voice/data.ts",
+      "type": "registry:component",
+      "target": "components/interactions/realtime-voice-data.ts"
+    }
+  ],
+  "createdAt": "2026-09-22",
+  "updatedAt": "2026-09-22"
+}

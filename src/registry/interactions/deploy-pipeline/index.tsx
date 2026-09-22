@@ -19,7 +19,7 @@ import { Collapsible, CollapsibleContent, CollapsibleTrigger } from '@/registry/
 import { Frame, FrameFooter, FrameHeader, FramePanel } from '@/registry/primitives/frame'
 import { Spinner } from '@/registry/primitives/spinner'
 import { Check, ChevronRight, Circle, X } from '@keyline-icons/react'
-import { bloom, confirm, droplet, loading, page, ready, sparkle, tap, tick } from '@usespaceui/sounds'
+import { bloom, deny } from '@usespaceui/sounds'
 import { Squishmoji } from '@usespaceui/squishmoji/react'
 import { motion } from 'motion/react'
 import * as React from 'react'
@@ -154,6 +154,26 @@ export function DeployPipeline({
     onSequenceCompleteRef.current = onSequenceComplete
   }, [onSequenceComplete])
 
+  const contentRef = React.useRef<HTMLDivElement>(null)
+  const [contentHeight, setContentHeight] = React.useState<number | undefined>(undefined)
+
+  React.useLayoutEffect(() => {
+    const el = contentRef.current
+    if (!el) return
+
+    const ro = new ResizeObserver((entries) => {
+      const entry = entries[0]
+      if (!entry) return
+      const h = entry.borderBoxSize?.[0]?.blockSize ?? entry.contentRect.height
+      if (h > 0) {
+        setContentHeight(Math.round(h))
+      }
+    })
+
+    ro.observe(el)
+    return () => ro.disconnect()
+  }, [])
+
   const current = activeCycle[cycleIndex % activeCycle.length]
   const isPaused = !isAnimated || (paused ?? (pauseOnHover && isHovered))
 
@@ -185,17 +205,12 @@ export function DeployPipeline({
       const allDone = currentFrame?.steps.every((s) => s.status === 'completed')
 
       if (hasFailed) {
-        safeSound(droplet)
+        safeSound(deny)
       } else if (allDone) {
-        safeSound(confirm)
-        setTimeout(() => safeSound(ready), 160)
-        setTimeout(() => safeSound(sparkle), 340)
+        safeSound(bloom)
       } else {
         const hasActive = currentFrame?.steps.some((s) => s.status === 'active')
         if (hasActive) {
-          safeSound(loading)
-          setTimeout(() => safeSound(droplet), 90)
-        } else {
           safeSound(bloom)
         }
       }
@@ -263,7 +278,6 @@ export function DeployPipeline({
     <Frame
       onMouseEnter={() => {
         setIsHovered(true)
-        if (pauseOnHover) safeSound(tick)
       }}
       onMouseLeave={() => setIsHovered(false)}
       className={cn(
@@ -274,7 +288,6 @@ export function DeployPipeline({
       <FrameHeader className="flex flex-row shrink-0 items-center justify-between gap-3 px-2 py-1.5 pb-2 border-none">
         <div className="flex items-center gap-2 min-w-0">
           <div
-            onClick={() => safeSound(tap)}
             className="relative size-6 shrink-0 overflow-hidden rounded-full bg-background flex items-center justify-center shadow-none cursor-pointer"
           >
             <Squishmoji
@@ -342,129 +355,117 @@ export function DeployPipeline({
       </FrameHeader>
 
       <Card className="flex flex-col squircle rounded-[1.125rem] bg-background p-4 sm:p-5 border-none shadow-none">
-        {/* Release Metadata Header */}
-        {/* <div className="flex items-center justify-between gap-3 pb-3 border-none">
-          <div className="flex min-w-0 items-center gap-2">
-            <Badge
-              variant="default"
-              size="xs"
-              squircle
-              className="shrink-0 bg-muted px-1.5 py-0.5 text-[0.5625rem] font-medium text-muted-foreground uppercase shadow-none"
-            >
-              Release
-            </Badge>
-            <span className="truncate text-xs font-medium text-foreground">{activeTitle}</span>
-          </div>
-          <span className="shrink-0 text-[0.6875rem] text-muted-foreground font-mono font-normal">
-            {activeBranch}@{activeCommit}
-          </span>
-        </div> */}
+        <motion.div
+          animate={contentHeight ? { height: contentHeight } : {}}
+          transition={{ duration: 0.32, ease: [0.16, 1, 0.3, 1] }}
+          className="relative flex flex-col gap-3 w-full"
+        >
+          <div ref={contentRef} className="w-full select-none">
+            <Timeline value={current.activeStep}>
+              {activeSteps.map((step, idx) => {
+                const stepState = current.steps[idx]
+                const isLineFilled = current.lines[idx] ?? false
+                if (!stepState) return null
 
-        <div className="w-full select-none">
-          <Timeline value={current.activeStep}>
-            {activeSteps.map((step, idx) => {
-              const stepState = current.steps[idx]
-              const isLineFilled = current.lines[idx] ?? false
-              if (!stepState) return null
+                const isLocked = stepState.status === 'pending'
+                const isFailed = stepState.status === 'failed'
+                const isOpen = !isLocked && Boolean(openSteps[step.id])
+                const stepDescription = isFailed
+                  ? (step.errorDescription ?? step.completedDescription ?? step.description)
+                  : stepState.status === 'active'
+                    ? (step.activeDescription ?? step.description)
+                    : (step.completedDescription ?? step.description)
 
-              const isLocked = stepState.status === 'pending'
-              const isFailed = stepState.status === 'failed'
-              const isOpen = !isLocked && Boolean(openSteps[step.id])
-              const stepDescription = isFailed
-                ? (step.errorDescription ?? step.completedDescription ?? step.description)
-                : stepState.status === 'active'
-                  ? (step.activeDescription ?? step.description)
-                  : (step.completedDescription ?? step.description)
+                const handleOpenChange = (open: boolean) => {
+                  if (isLocked) return
+                  setOpenSteps((prev) => ({
+                    ...prev,
+                    [step.id]: open,
+                  }))
+                }
 
-              const handleOpenChange = (open: boolean) => {
-                if (isLocked) return
-                safeSound(page)
-                setOpenSteps((prev) => ({
-                  ...prev,
-                  [step.id]: open,
-                }))
-              }
-
-              return (
-                <TimelineItem key={step.id} step={step.id} className="ms-10 pb-5">
-                  <TimelineHeader>
-                    <TimelineSeparator className="group-data-[orientation=vertical]/timeline:-left-7 group-data-[orientation=vertical]/timeline:h-[calc(100%-1.5rem-0.25rem)] group-data-[orientation=vertical]/timeline:translate-y-7 [&&]:!bg-primary/15 overflow-hidden rounded-full">
-                      <motion.div
-                        className={cn('w-full rounded-full origin-top', isFailed ? 'bg-rose-500' : 'bg-primary')}
-                        initial={false}
-                        animate={{
-                          scaleY: isLineFilled ? 1 : 0,
-                          opacity: isLineFilled ? 1 : 0,
-                        }}
-                        transition={{
-                          scaleY: {
-                            duration: isLineFilled ? 0.7 : 0.15,
-                            ease: [0.16, 1, 0.3, 1],
-                          },
-                          opacity: {
-                            duration: isLineFilled ? 0.05 : 0.15,
-                          },
-                        }}
-                        style={{
-                          height: '100%',
-                          transformOrigin: 'top',
-                        }}
-                      />
-                    </TimelineSeparator>
-                    <div className="flex items-center gap-2">
-                      <TimelineTitle className="text-sm font-semibold">{step.title}</TimelineTitle>
-                      <PipelineStatusBadge status={stepState.status} duration={stepState.duration} />
-                    </div>
-                    <TimelineIndicator
-                      className={cn(
-                        'flex size-6 items-center justify-center border-none group-data-[orientation=vertical]/timeline:-left-7 transition-all duration-300',
-                        stepState.status === 'completed' && '[&&]:bg-primary [&&]:text-primary-foreground [&&]:ring-0',
-                        stepState.status === 'active' &&
-                          '[&&]:bg-primary [&&]:text-primary-foreground ring-primary/20 ring-2',
-                        stepState.status === 'failed' &&
-                          '[&&]:bg-error [&&]:text-error-foreground ring-error/20 ring-2',
-                        stepState.status === 'pending' && '[&&]:bg-muted [&&]:text-muted-foreground [&&]:ring-0',
-                      )}
-                    >
-                      <PipelineStatusIcon status={stepState.status} />
-                    </TimelineIndicator>
-                  </TimelineHeader>
-                  <TimelineContent className="mt-1.5">
-                    <Frame>
-                      <Collapsible open={isOpen} onOpenChange={handleOpenChange} className="group/collapsible">
-                        <CollapsibleTrigger
-                          disabled={isLocked}
-                          className={cn('flex w-full', isLocked ? 'cursor-not-allowed opacity-50' : 'cursor-pointer')}
-                        >
-                          <div className="flex grow flex-row items-center justify-between gap-2 p-1.5">
-                            <div className="flex items-center gap-2">
-                              <Avatar className="size-5">
-                                <AvatarImage src={step.user.avatar} alt={step.user.name} />
-                                <AvatarFallback>{step.user.name.charAt(0)}</AvatarFallback>
-                              </Avatar>
-                              <span className="text-muted-foreground text-xs font-medium">{step.user.name}</span>
+                return (
+                  <TimelineItem key={step.id} step={step.id} className="ms-10 pb-5">
+                    <TimelineHeader>
+                      <TimelineSeparator className="group-data-[orientation=vertical]/timeline:-left-7 group-data-[orientation=vertical]/timeline:h-[calc(100%-1.5rem-0.25rem)] group-data-[orientation=vertical]/timeline:translate-y-7 [&&]:!bg-primary/15 overflow-hidden rounded-full">
+                        <motion.div
+                          className={cn('w-full rounded-full origin-top', isFailed ? 'bg-rose-500' : 'bg-primary')}
+                          initial={false}
+                          animate={{
+                            scaleY: isLineFilled ? 1 : 0,
+                            opacity: isLineFilled ? 1 : 0,
+                          }}
+                          transition={{
+                            scaleY: {
+                              duration: isLineFilled ? 0.7 : 0.15,
+                              ease: [0.16, 1, 0.3, 1],
+                            },
+                            opacity: {
+                              duration: isLineFilled ? 0.05 : 0.15,
+                            },
+                          }}
+                          style={{
+                            height: '100%',
+                            transformOrigin: 'top',
+                          }}
+                        />
+                      </TimelineSeparator>
+                      <div className="flex items-center gap-2">
+                        <TimelineTitle className="text-sm font-semibold">{step.title}</TimelineTitle>
+                        <PipelineStatusBadge status={stepState.status} duration={stepState.duration} />
+                      </div>
+                      <TimelineIndicator
+                        className={cn(
+                          'flex size-6 items-center justify-center border-none group-data-[orientation=vertical]/timeline:-left-7 transition-all duration-300',
+                          stepState.status === 'completed' &&
+                            '[&&]:bg-primary [&&]:text-primary-foreground [&&]:ring-0',
+                          stepState.status === 'active' &&
+                            '[&&]:bg-primary [&&]:text-primary-foreground ring-primary/20 ring-2',
+                          stepState.status === 'failed' &&
+                            '[&&]:bg-error [&&]:text-error-foreground ring-error/20 ring-2',
+                          stepState.status === 'pending' && '[&&]:bg-muted [&&]:text-muted-foreground [&&]:ring-0',
+                        )}
+                      >
+                        <PipelineStatusIcon status={stepState.status} />
+                      </TimelineIndicator>
+                    </TimelineHeader>
+                    <TimelineContent className="mt-1.5">
+                      <Frame>
+                        <Collapsible open={isOpen} onOpenChange={handleOpenChange} className="group/collapsible">
+                          <CollapsibleTrigger
+                            disabled={isLocked}
+                            className={cn('flex w-full', isLocked ? 'cursor-not-allowed opacity-50' : 'cursor-pointer')}
+                          >
+                            <div className="flex grow flex-row items-center justify-between gap-2 p-1.5">
+                              <div className="flex items-center gap-2">
+                                <Avatar className="size-5">
+                                  <AvatarImage src={step.user.avatar} alt={step.user.name} />
+                                  <AvatarFallback>{step.user.name.charAt(0)}</AvatarFallback>
+                                </Avatar>
+                                <span className="text-muted-foreground text-xs font-medium">{step.user.name}</span>
+                              </div>
+                              <ChevronRight
+                                className={cn(
+                                  'text-muted-foreground size-4 transition-transform duration-200 group-data-open/collapsible:rotate-90',
+                                  isLocked && 'opacity-30',
+                                )}
+                              />
                             </div>
-                            <ChevronRight
-                              className={cn(
-                                'text-muted-foreground size-4 transition-transform duration-200 group-data-open/collapsible:rotate-90',
-                                isLocked && 'opacity-30',
-                              )}
-                            />
-                          </div>
-                        </CollapsibleTrigger>
-                        <CollapsibleContent>
-                          <FramePanel className="p-2.5">
-                            <p className="text-muted-foreground text-sm leading-relaxed">{stepDescription}</p>
-                          </FramePanel>
-                        </CollapsibleContent>
-                      </Collapsible>
-                    </Frame>
-                  </TimelineContent>
-                </TimelineItem>
-              )
-            })}
-          </Timeline>
-        </div>
+                          </CollapsibleTrigger>
+                          <CollapsibleContent>
+                            <FramePanel className="p-2.5">
+                              <p className="text-muted-foreground text-sm leading-relaxed">{stepDescription}</p>
+                            </FramePanel>
+                          </CollapsibleContent>
+                        </Collapsible>
+                      </Frame>
+                    </TimelineContent>
+                  </TimelineItem>
+                )
+              })}
+            </Timeline>
+          </div>
+        </motion.div>
       </Card>
 
       <FrameFooter className="flex shrink-0 items-center justify-between gap-3 px-3 py-1.5 pt-2 border-none">

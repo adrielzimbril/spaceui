@@ -2032,7 +2032,7 @@
     "createdAt": "2026-09-03",
     "updatedAt": "2026-09-03",
     "size": "38.9 KB",
-    "rawSize": 39836,
+    "rawSize": 39819,
     "directSize": "38.9 KB",
     "fileCount": 6,
     "dependencies": [
@@ -2102,7 +2102,7 @@
     "createdAt": "2026-09-03",
     "updatedAt": "2026-09-03",
     "size": "38.9 KB",
-    "rawSize": 39836,
+    "rawSize": 39819,
     "directSize": "38.9 KB",
     "fileCount": 6,
     "dependencies": [
@@ -3397,9 +3397,9 @@
     ],
     "createdAt": "2026-09-14",
     "updatedAt": "2026-09-14",
-    "size": "4.2 KB",
-    "rawSize": 4256,
-    "directSize": "4.2 KB",
+    "size": "4.3 KB",
+    "rawSize": 4405,
+    "directSize": "4.3 KB",
     "fileCount": 1,
     "dependencies": [
       "motion"
@@ -3438,9 +3438,9 @@
     ],
     "createdAt": "2026-09-14",
     "updatedAt": "2026-09-14",
-    "size": "4.2 KB",
-    "rawSize": 4256,
-    "directSize": "4.2 KB",
+    "size": "4.3 KB",
+    "rawSize": 4405,
+    "directSize": "4.3 KB",
     "fileCount": 1,
     "dependencies": [
       "motion"
@@ -23588,6 +23588,19 @@
           "developer",
           "pipeline"
         ]
+      },
+      {
+        "name": "realtime-voice",
+        "title": "Realtime Voice",
+        "description": "An interactive conversational AI voice interface built with Frame, Card, Squishmoji, Bloop Orb, and audio frequency ripples.",
+        "url": "/ui-kit/interactions/realtime-voice",
+        "category": "Interaction",
+        "categories": [
+          "interaction",
+          "agents",
+          "voice",
+          "audio"
+        ]
       }
     ]
   },
@@ -23639,6 +23652,19 @@
           "interaction",
           "developer",
           "pipeline"
+        ]
+      },
+      {
+        "name": "realtime-voice",
+        "title": "Realtime Voice",
+        "description": "An interactive conversational AI voice interface built with Frame, Card, Squishmoji, Bloop Orb, and audio frequency ripples.",
+        "url": "/ui-kit/interactions/realtime-voice",
+        "category": "Interaction",
+        "categories": [
+          "interaction",
+          "agents",
+          "voice",
+          "audio"
         ]
       }
     ]
@@ -23694,6 +23720,19 @@
           "agents",
           "pipeline"
         ]
+      },
+      {
+        "name": "realtime-voice",
+        "title": "Realtime Voice",
+        "description": "An interactive conversational AI voice interface built with Frame, Card, Squishmoji, Bloop Orb, and audio frequency ripples.",
+        "url": "/ui-kit/interactions/realtime-voice",
+        "category": "Interaction",
+        "categories": [
+          "interaction",
+          "agents",
+          "voice",
+          "audio"
+        ]
       }
     ]
   },
@@ -23746,6 +23785,151 @@
         "categories": [
           "interaction",
           "agents",
+          "pipeline"
+        ]
+      },
+      {
+        "name": "realtime-voice",
+        "title": "Realtime Voice",
+        "description": "An interactive conversational AI voice interface built with Frame, Card, Squishmoji, Bloop Orb, and audio frequency ripples.",
+        "url": "/ui-kit/interactions/realtime-voice",
+        "category": "Interaction",
+        "categories": [
+          "interaction",
+          "agents",
+          "voice",
+          "audio"
+        ]
+      }
+    ]
+  },
+  "realtime-voice": {
+    "name": "interactions-realtime-voice",
+    "shortName": "realtime-voice",
+    "title": "Realtime Voice",
+    "description": "An interactive conversational AI voice interface built with Frame, Card, Squishmoji, Bloop Orb, and audio frequency ripples.",
+    "type": "registry:component",
+    "url": "/ui-kit/interactions/realtime-voice",
+    "category": "Interaction",
+    "categories": [
+      "interaction",
+      "agents",
+      "voice",
+      "audio"
+    ],
+    "createdAt": "2026-09-22",
+    "updatedAt": "2026-09-22",
+    "isPro": true,
+    "size": "22.4 KB",
+    "rawSize": 22977,
+    "directSize": "22.4 KB",
+    "fileCount": 2,
+    "dependencies": [
+      "motion",
+      "@keyline-icons/react",
+      "@usespaceui/squishmoji",
+      "@usespaceui/sounds"
+    ],
+    "registryDependencies": [
+      "https://www.spaceui.one/r/lib-utils.json",
+      "https://www.spaceui.one/r/components-orb-bloop.json",
+      "https://www.spaceui.one/r/components-spaceui-badge-squircle.json",
+      "https://www.spaceui.one/r/components-spaceui-blur-reveal-text.json",
+      "https://www.spaceui.one/r/components-spaceui-button-squircle.json",
+      "https://www.spaceui.one/r/components-spaceui-morph-icon.json",
+      "https://www.spaceui.one/r/primitives-card.json",
+      "https://www.spaceui.one/r/primitives-frame.json",
+      "https://www.spaceui.one/r/hooks-utils-logger.json"
+    ],
+    "dependents": [],
+    "related": [
+      {
+        "name": "agent-pipeline",
+        "title": "Agent Pipeline",
+        "description": "An interactive multi-agent pipeline visualization with real-time physics, event logs, and playback controls.",
+        "url": "/ui-kit/interactions/agent-pipeline",
+        "category": "Interaction",
+        "categories": [
+          "interaction",
+          "agents",
+          "pipeline"
+        ]
+      },
+      {
+        "name": "deploy-pipeline",
+        "title": "Deploy Pipeline",
+        "description": "A self-playing deploy pipeline that advances on its own, pauses on hover, and reveals per-step detail — drop it in to turn a static log into a living status feed.",
+        "url": "/ui-kit/interactions/deploy-pipeline",
+        "category": "Interaction",
+        "categories": [
+          "interaction",
+          "developer",
+          "pipeline"
+        ]
+      }
+    ]
+  },
+  "interactions-realtime-voice": {
+    "name": "interactions-realtime-voice",
+    "shortName": "realtime-voice",
+    "title": "Realtime Voice",
+    "description": "An interactive conversational AI voice interface built with Frame, Card, Squishmoji, Bloop Orb, and audio frequency ripples.",
+    "type": "registry:component",
+    "url": "/ui-kit/interactions/realtime-voice",
+    "category": "Interaction",
+    "categories": [
+      "interaction",
+      "agents",
+      "voice",
+      "audio"
+    ],
+    "createdAt": "2026-09-22",
+    "updatedAt": "2026-09-22",
+    "isPro": true,
+    "size": "22.4 KB",
+    "rawSize": 22977,
+    "directSize": "22.4 KB",
+    "fileCount": 2,
+    "dependencies": [
+      "motion",
+      "@keyline-icons/react",
+      "@usespaceui/squishmoji",
+      "@usespaceui/sounds"
+    ],
+    "registryDependencies": [
+      "https://www.spaceui.one/r/lib-utils.json",
+      "https://www.spaceui.one/r/components-orb-bloop.json",
+      "https://www.spaceui.one/r/components-spaceui-badge-squircle.json",
+      "https://www.spaceui.one/r/components-spaceui-blur-reveal-text.json",
+      "https://www.spaceui.one/r/components-spaceui-button-squircle.json",
+      "https://www.spaceui.one/r/components-spaceui-morph-icon.json",
+      "https://www.spaceui.one/r/primitives-card.json",
+      "https://www.spaceui.one/r/primitives-frame.json",
+      "https://www.spaceui.one/r/hooks-utils-logger.json"
+    ],
+    "dependents": [],
+    "related": [
+      {
+        "name": "agent-pipeline",
+        "title": "Agent Pipeline",
+        "description": "An interactive multi-agent pipeline visualization with real-time physics, event logs, and playback controls.",
+        "url": "/ui-kit/interactions/agent-pipeline",
+        "category": "Interaction",
+        "categories": [
+          "interaction",
+          "agents",
+          "pipeline"
+        ]
+      },
+      {
+        "name": "deploy-pipeline",
+        "title": "Deploy Pipeline",
+        "description": "A self-playing deploy pipeline that advances on its own, pauses on hover, and reveals per-step detail — drop it in to turn a static log into a living status feed.",
+        "url": "/ui-kit/interactions/deploy-pipeline",
+        "category": "Interaction",
+        "categories": [
+          "interaction",
+          "developer",
           "pipeline"
         ]
       }

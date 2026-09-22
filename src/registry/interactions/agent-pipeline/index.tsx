@@ -9,7 +9,7 @@ import { Frame, FrameFooter, FrameHeader, FramePanel, FrameTitle } from '@/regis
 import { ScrollArea } from '@/registry/primitives/scroll-area'
 import { capitalizeText, randomWord } from '@/registry/utils/format-text'
 import { Check } from '@keyline-icons/react'
-import { chime, confirm, droplet, sparkle, tap, tick, toggle } from '@usespaceui/sounds'
+import { bloom, deny } from '@usespaceui/sounds'
 import { Squishmoji } from '@usespaceui/squishmoji/react'
 import {
   animate,
@@ -193,6 +193,26 @@ export function AgentPipeline({
   const [blinkTrigger, setBlinkTrigger] = React.useState(0)
   const [progressVal, setProgressVal] = React.useState(0)
   const [isHovered, setIsHovered] = React.useState(false)
+
+  const contentRef = React.useRef<HTMLDivElement>(null)
+  const [contentHeight, setContentHeight] = React.useState<number | undefined>(undefined)
+
+  React.useLayoutEffect(() => {
+    const el = contentRef.current
+    if (!el) return
+
+    const ro = new ResizeObserver((entries) => {
+      const entry = entries[0]
+      if (!entry) return
+      const h = entry.borderBoxSize?.[0]?.blockSize ?? entry.contentRect.height
+      if (h > 0) {
+        setContentHeight(Math.round(h))
+      }
+    })
+
+    ro.observe(el)
+    return () => ro.disconnect()
+  }, [])
 
   // Dynamic runId generator: sp_XXXX using randomWord from format-text
   const [generatedRunId, setGeneratedRunId] = React.useState(
@@ -530,12 +550,10 @@ export function AgentPipeline({
         setLogs((prev) => [...prev, item])
         if (item.kind === 'milestone') {
           setBlinkTrigger((prev) => prev + 1)
-          safeSound(chime)
+          safeSound(bloom)
         } else if (item.kind === 'error') {
           setBlinkTrigger((prev) => prev + 1)
-          safeSound(droplet)
-        } else {
-          safeSound(tick)
+          safeSound(deny)
         }
       }
     }
@@ -548,9 +566,6 @@ export function AgentPipeline({
             ? { active: seg.idx, done: seg.idx, travel: -1, errorAgent: -1 }
             : { active: -1, done: seg.idx + 1, travel: seg.idx, errorAgent: -1 }
         setPipelineState((prev) => {
-          if (nextState.travel >= 0 && prev.travel !== nextState.travel) {
-            safeSound(droplet)
-          }
           return prev.active === nextState.active &&
             prev.done === nextState.done &&
             prev.travel === nextState.travel &&
@@ -594,7 +609,6 @@ export function AgentPipeline({
       clearTimeout(loopTimeoutRef.current)
       loopTimeoutRef.current = null
     }
-    safeSound(tap)
     stopAnimation()
 
     // Generate new random runId on each run if no runId was passed as prop
@@ -633,8 +647,7 @@ export function AgentPipeline({
           lineMotion.set(1)
           setProgressVal(100)
           setBlinkTrigger((prev) => prev + 1)
-          safeSound(confirm)
-          setTimeout(() => safeSound(sparkle), 160)
+          safeSound(bloom)
         }
       },
     })
@@ -763,13 +776,11 @@ export function AgentPipeline({
         animControlsRef.current.pause()
         setPausedAt(progressMotion.get() * rawDuration)
         setStatus('paused')
-        safeSound(() => toggle('off'))
       }
     } else if (!isPaused && status === 'paused') {
       if (animControlsRef.current) {
         animControlsRef.current.play()
         setStatus('running')
-        safeSound(() => toggle('on'))
       }
     }
   }, [isPaused, status, progressMotion, rawDuration])
@@ -796,7 +807,6 @@ export function AgentPipeline({
       )}
       onMouseEnter={() => {
         setIsHovered(true)
-        if (pauseOnHover && isRunning) safeSound(tick)
       }}
       onMouseLeave={() => setIsHovered(false)}
     >
@@ -872,55 +882,61 @@ export function AgentPipeline({
         </div>
       </FrameHeader>
 
-      <Card className="flex flex-col gap-3 overflow-hidden squircle rounded-[1.125rem] bg-background p-4 sm:p-5 border-none shadow-none">
-        <div className="relative w-full h-fit">
-          <div className="relative flex items-center justify-between">
-            <div className="absolute top-1/3 left-[4%] right-[4%] max-w-[92%] h-1 rounded-full bg-muted overflow-hidden z-0 pointer-events-none">
-              <motion.div
-                className={cn('h-full rounded-full origin-left', status === 'error' ? 'bg-rose-500' : 'bg-primary')}
-                style={{ scaleX: lineMotion, transformOrigin: 'left' }}
-              />
+      <Card className="flex flex-col squircle rounded-[1.125rem] bg-background p-4 sm:p-5 border-none shadow-none">
+        <motion.div
+          animate={contentHeight ? { height: contentHeight } : {}}
+          transition={{ duration: 0.32, ease: [0.16, 1, 0.3, 1] }}
+          className="relative flex flex-col gap-3 w-full"
+        >
+          <div ref={contentRef} className="w-full flex flex-col gap-3">
+            <div className="relative w-full h-fit">
+              <div className="relative flex items-center justify-between">
+                <div className="absolute top-1/3 left-[4%] right-[4%] max-w-[92%] h-1 rounded-full bg-muted overflow-hidden z-0 pointer-events-none">
+                  <motion.div
+                    className={cn('h-full rounded-full origin-left', status === 'error' ? 'bg-rose-500' : 'bg-primary')}
+                    style={{ scaleX: lineMotion, transformOrigin: 'left' }}
+                  />
+                </div>
+
+                {currentAgents.map((ag, idx) => (
+                  <AgentNode
+                    key={ag.id}
+                    agent={ag}
+                    state={
+                      idx === pipelineState.errorAgent
+                        ? 'error'
+                        : idx === activeIdx
+                          ? 'active'
+                          : idx < doneIdx
+                            ? 'done'
+                            : 'idle'
+                    }
+                    blinkTrigger={blinkTrigger}
+                  />
+                ))}
+              </div>
             </div>
 
-            {currentAgents.map((ag, idx) => (
-              <AgentNode
-                key={ag.id}
-                agent={ag}
-                state={
-                  idx === pipelineState.errorAgent
-                    ? 'error'
-                    : idx === activeIdx
-                      ? 'active'
-                      : idx < doneIdx
-                        ? 'done'
-                        : 'idle'
-                }
-                blinkTrigger={blinkTrigger}
+            <div className="relative w-full">
+              <SmoothSlider
+                value={progressVal}
+                min={0}
+                max={100}
+                height={28}
+                showTicks={false}
+                className="w-full [&>div]:opacity-100! [&_*]:cursor-default!"
+                disabled
+                onValueChange={(val) => {
+                  if (Math.abs(val - progressVal) > 1) {
+                    const timeP = getTimeProgress(val / 100)
+                    progressMotion.jump(timeP)
+                    lineMotion.jump(val / 100)
+                    setProgressVal(val)
+                  }
+                }}
               />
-            ))}
-          </div>
-        </div>
 
-        <div className="relative w-full">
-          <SmoothSlider
-            value={progressVal}
-            min={0}
-            max={100}
-            height={28}
-            showTicks={false}
-            className="w-full [&>div]:opacity-100! [&_*]:cursor-default!"
-            disabled
-            onValueChange={(val) => {
-              if (Math.abs(val - progressVal) > 1) {
-                const timeP = getTimeProgress(val / 100)
-                progressMotion.jump(timeP)
-                lineMotion.jump(val / 100)
-                setProgressVal(val)
-              }
-            }}
-          />
-
-          {/* <SloshSlider
+              {/* <SloshSlider
             value={progressVal}
             min={0}
             max={100}
@@ -935,177 +951,179 @@ export function AgentPipeline({
               }
             }}
           /> */}
-        </div>
-
-        <Frame className="border-none shadow-none bg-muted">
-          <div className="flex items-center justify-between p-3 gap-3">
-            <div className="flex items-center gap-2.5 min-w-0 flex-1">
-              <div className="relative size-11 shrink-0 overflow-hidden [corner-shape:superellipse(1.25)] rounded-xl bg-background flex items-center justify-center shadow-none">
-                <Squishmoji
-                  seed={currentAgent?.seed ?? 'agent'}
-                  size={24}
-                  animate
-                  // animWobble
-                  animOnHover
-                  animOnClick
-                  shape="all"
-                  expression="all"
-                  backgroundStyle="all"
-                  blinkTrigger={blinkTrigger}
-                  className="scale-175 origin-center"
-                />
-              </div>
-              <div className="min-w-0 flex-1">
-                <div className="flex items-center gap-2">
-                  <span className="text-xs font-semibold text-foreground truncate">{currentAgent?.name}</span>
-                  <Badge
-                    variant={
-                      status === 'error'
-                        ? 'error'
-                        : status === 'done'
-                          ? 'success'
-                          : pipelineState.travel >= 0
-                            ? 'info'
-                            : 'secondary'
-                    }
-                    size="xs"
-                    squircle
-                    className={cn(!(status === 'error') && 'shadow-none bg-background text-foreground')}
-                  >
-                    {status === 'error'
-                      ? 'Failed'
-                      : status === 'done'
-                        ? 'Approved'
-                        : pipelineState.travel >= 0
-                          ? 'Relay'
-                          : status === 'paused'
-                            ? 'Paused'
-                            : 'Active'}
-                  </Badge>
-                </div>
-                <p
-                  className={cn(
-                    'text-xs truncate mt-0.5',
-                    // status === 'error' ? 'text-rose-600 dark:text-rose-400 font-medium' : 'text-muted-foreground',
-                  )}
-                >
-                  {status === 'error'
-                    ? (currentAgent?.errorNote ?? 'Pipeline execution halted on error.')
-                    : status === 'done'
-                      ? 'All agent milestones successfully executed and approved.'
-                      : pipelineState.travel >= 0
-                        ? `Relay note: "${currentAgent?.note}"`
-                        : `Currently ${currentAgent?.action}...`}
-                </p>
-              </div>
             </div>
-          </div>
-        </Frame>
 
-        <Frame className="border-none shadow-none bg-muted">
-          <FrameHeader className="flex flex-row items-center justify-between px-3 pt-1 pb-2 border-none">
-            <FrameTitle className="text-xs font-semibold text-foreground">Activity Log</FrameTitle>
-            <Badge
-              variant="default"
-              size="xs"
-              squircle
-              className="bg-background text-muted-foreground font-medium text-[0.625rem] shadow-none tabular-nums"
-            >
-              {logs.length} events
-            </Badge>
-          </FrameHeader>
-
-          <FramePanel className="px-2.5 py-1.5 border-none bg-background rounded-xl">
-            <ScrollArea scrollFade className="h-32">
-              {logs.length === 0 ? (
-                <div className="grid h-32 place-items-center">
-                  <span className="text-xs text-muted-foreground">
-                    {status === 'idle' ? 'Ready to route task through agents' : 'Listening for pipeline events...'}
-                  </span>
-                </div>
-              ) : (
-                <div ref={logContainerRef} className="space-y-1 pr-2">
-                  {logs.map((item) => {
-                    const isMilestone = item.kind === 'milestone'
-                    const isErr = item.kind === 'error'
-
-                    return (
-                      <motion.div
-                        key={item.id}
-                        initial={{ opacity: 0, y: 3 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.15 }}
-                        className={cn(
-                          'flex items-center gap-2 text-xs py-0.5',
-                          isMilestone && 'mt-1.5 first:mt-0 font-medium',
-                          isErr && 'mt-1.5 font-medium',
-                        )}
+            <Frame className="border-none shadow-none bg-muted">
+              <div className="flex items-center justify-between p-3 gap-3">
+                <div className="flex items-center gap-2.5 min-w-0 flex-1">
+                  <div className="relative size-11 shrink-0 overflow-hidden [corner-shape:superellipse(1.25)] rounded-xl bg-background flex items-center justify-center shadow-none">
+                    <Squishmoji
+                      seed={currentAgent?.seed ?? 'agent'}
+                      size={24}
+                      animate
+                      // animWobble
+                      animOnHover
+                      animOnClick
+                      shape="all"
+                      expression="all"
+                      backgroundStyle="all"
+                      blinkTrigger={blinkTrigger}
+                      className="scale-175 origin-center"
+                    />
+                  </div>
+                  <div className="min-w-0 flex-1">
+                    <div className="flex items-center gap-2">
+                      <span className="text-xs font-semibold text-foreground truncate">{currentAgent?.name}</span>
+                      <Badge
+                        variant={
+                          status === 'error'
+                            ? 'error'
+                            : status === 'done'
+                              ? 'success'
+                              : pipelineState.travel >= 0
+                                ? 'info'
+                                : 'secondary'
+                        }
+                        size="xs"
+                        squircle
+                        className={cn(!(status === 'error') && 'shadow-none bg-background text-foreground')}
                       >
-                        <span className="w-8 shrink-0 text-[0.625rem] font-medium text-muted-foreground tabular-nums">
-                          {item.atS.toFixed(1)}s
-                        </span>
+                        {status === 'error'
+                          ? 'Failed'
+                          : status === 'done'
+                            ? 'Approved'
+                            : pipelineState.travel >= 0
+                              ? 'Relay'
+                              : status === 'paused'
+                                ? 'Paused'
+                                : 'Active'}
+                      </Badge>
+                    </div>
+                    <p
+                      className={cn(
+                        'text-xs truncate mt-0.5',
+                        // status === 'error' ? 'text-rose-600 dark:text-rose-400 font-medium' : 'text-muted-foreground',
+                      )}
+                    >
+                      {status === 'error'
+                        ? (currentAgent?.errorNote ?? 'Pipeline execution halted on error.')
+                        : status === 'done'
+                          ? 'All agent milestones successfully executed and approved.'
+                          : pipelineState.travel >= 0
+                            ? `Relay note: "${currentAgent?.note}"`
+                            : `Currently ${currentAgent?.action}...`}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </Frame>
 
-                        <span
-                          className={cn(
-                            'shrink-0 rounded-full',
-                            isErr
-                              ? 'size-2 bg-rose-500'
-                              : item.final
-                                ? 'size-2 bg-emerald-500'
-                                : isMilestone
-                                  ? 'size-2 bg-primary'
-                                  : 'size-1 bg-muted-foreground ml-4',
-                          )}
-                        />
+            <Frame className="border-none shadow-none bg-muted">
+              <FrameHeader className="flex flex-row items-center justify-between px-3 pt-1 pb-2 border-none">
+                <FrameTitle className="text-xs font-semibold text-foreground">Activity Log</FrameTitle>
+                <Badge
+                  variant="default"
+                  size="xs"
+                  squircle
+                  className="bg-background text-muted-foreground font-medium text-[0.625rem] shadow-none tabular-nums"
+                >
+                  {logs.length} events
+                </Badge>
+              </FrameHeader>
 
-                        {isErr ? (
-                          <div className="flex min-w-0 items-center gap-1.5">
-                            <span className="shrink-0 font-semibold text-rose-600 dark:text-rose-400">
-                              {capitalizeText(item.label, 'words')}
+              <FramePanel className="px-2.5 py-1.5 border-none bg-background rounded-xl">
+                <ScrollArea scrollFade className="h-32">
+                  {logs.length === 0 ? (
+                    <div className="grid h-32 place-items-center">
+                      <span className="text-xs text-muted-foreground">
+                        {status === 'idle' ? 'Ready to route task through agents' : 'Listening for pipeline events...'}
+                      </span>
+                    </div>
+                  ) : (
+                    <div ref={logContainerRef} className="space-y-1 pr-2">
+                      {logs.map((item) => {
+                        const isMilestone = item.kind === 'milestone'
+                        const isErr = item.kind === 'error'
+
+                        return (
+                          <motion.div
+                            key={item.id}
+                            initial={{ opacity: 0, y: 3 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.15 }}
+                            className={cn(
+                              'flex items-center gap-2 text-xs py-0.5',
+                              isMilestone && 'mt-1.5 first:mt-0 font-medium',
+                              isErr && 'mt-1.5 font-medium',
+                            )}
+                          >
+                            <span className="w-8 shrink-0 text-[0.625rem] font-medium text-muted-foreground tabular-nums">
+                              {item.atS.toFixed(1)}s
                             </span>
-                            <span className="truncate text-rose-600 dark:text-rose-400 font-medium">
-                              · {capitalizeText(item.detail)}
-                            </span>
-                          </div>
-                        ) : isMilestone ? (
-                          <div className="flex min-w-0 items-center gap-1.5">
+
                             <span
                               className={cn(
-                                'shrink-0 font-semibold',
-                                item.final ? 'text-emerald-600 dark:text-emerald-400' : 'text-foreground',
+                                'shrink-0 rounded-full',
+                                isErr
+                                  ? 'size-2 bg-rose-500'
+                                  : item.final
+                                    ? 'size-2 bg-emerald-500'
+                                    : isMilestone
+                                      ? 'size-2 bg-primary'
+                                      : 'size-1 bg-muted-foreground ml-4',
                               )}
-                            >
-                              {capitalizeText(item.label, 'words')}
-                            </span>
-                            <span className="truncate text-muted-foreground">· {capitalizeText(item.detail)}</span>
-                          </div>
-                        ) : (
-                          <span className="truncate text-muted-foreground">{capitalizeText(item.detail)}</span>
-                        )}
-                      </motion.div>
-                    )
-                  })}
-                  <div ref={scrollBottomRef} className="h-px w-full" />
-                </div>
-              )}
-            </ScrollArea>
-          </FramePanel>
-        </Frame>
+                            />
 
-        <div className="flex hidden! items-center justify-between gap-3">
-          <div className="flex min-w-0 items-center gap-2">
-            <Badge
-              variant="default"
-              size="xs"
-              squircle
-              className="shrink-0 bg-muted px-1.5 py-0.5 text-[0.5625rem] font-medium text-muted-foreground uppercase shadow-none"
-            >
-              Task
-            </Badge>
-            <span className="truncate text-xs font-medium text-foreground">{currentTitle}</span>
+                            {isErr ? (
+                              <div className="flex min-w-0 items-center gap-1.5">
+                                <span className="shrink-0 font-semibold text-rose-600 dark:text-rose-400">
+                                  {capitalizeText(item.label, 'words')}
+                                </span>
+                                <span className="truncate text-rose-600 dark:text-rose-400 font-medium">
+                                  · {capitalizeText(item.detail)}
+                                </span>
+                              </div>
+                            ) : isMilestone ? (
+                              <div className="flex min-w-0 items-center gap-1.5">
+                                <span
+                                  className={cn(
+                                    'shrink-0 font-semibold',
+                                    item.final ? 'text-emerald-600 dark:text-emerald-400' : 'text-foreground',
+                                  )}
+                                >
+                                  {capitalizeText(item.label, 'words')}
+                                </span>
+                                <span className="truncate text-muted-foreground">· {capitalizeText(item.detail)}</span>
+                              </div>
+                            ) : (
+                              <span className="truncate text-muted-foreground">{capitalizeText(item.detail)}</span>
+                            )}
+                          </motion.div>
+                        )
+                      })}
+                      <div ref={scrollBottomRef} className="h-px w-full" />
+                    </div>
+                  )}
+                </ScrollArea>
+              </FramePanel>
+            </Frame>
+
+            <div className="flex hidden! items-center justify-between gap-3">
+              <div className="flex min-w-0 items-center gap-2">
+                <Badge
+                  variant="default"
+                  size="xs"
+                  squircle
+                  className="shrink-0 bg-muted px-1.5 py-0.5 text-[0.5625rem] font-medium text-muted-foreground uppercase shadow-none"
+                >
+                  Task
+                </Badge>
+                <span className="truncate text-xs font-medium text-foreground">{currentTitle}</span>
+              </div>
+              <span className="shrink-0 text-[0.6875rem] text-muted-foreground font-normal">{activeRunId}</span>
+            </div>
           </div>
-          <span className="shrink-0 text-[0.6875rem] text-muted-foreground font-normal">{activeRunId}</span>
-        </div>
+        </motion.div>
       </Card>
 
       <FrameFooter className="flex shrink-0 items-center justify-between gap-3 px-3 py-1.5 pt-2 border-none">
