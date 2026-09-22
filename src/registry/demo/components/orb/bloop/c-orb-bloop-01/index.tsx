@@ -53,6 +53,7 @@ export default function Demo({
       <OrbBloop
         size={size}
         audioMode={audioMode}
+        demoMode={audioMode === 'ambient'}
         audioElement={audioRef}
         audioSrc={playSrc}
         state={orbState}

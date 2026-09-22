@@ -15,6 +15,7 @@ export type BloopState = (typeof BloopState)[keyof typeof BloopState]
 
 export interface OrbBloopProps {
   audioMode?: 'ambient' | 'mic' | 'file'
+  demoMode?: boolean
   audioElement?: React.RefObject<HTMLAudioElement | null>
   audioSrc?: string
   state?: BloopState

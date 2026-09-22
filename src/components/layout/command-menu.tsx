@@ -81,16 +81,17 @@ const GROUP_ORDER = [
   'Documentation',
   'Primitives',
   'Components',
-  'Backgrounds',
+  'Interactions',
   'Shader',
   'Orb',
   'Effects',
   'Texts',
+  'Backgrounds',
+  'Templates',
   'Hooks',
   'Hook Components',
   'Utils',
   'Blocks',
-  'Templates',
   'Icons',
   'Tools',
 ]
@@ -99,12 +100,14 @@ function getGroupIcon(group: string, isComponent: boolean) {
   switch (group) {
     case 'Navigation':
       return IconCompass
+    case 'Documentation':
+      return IconBook2
     case 'Primitives':
       return IconBox
     case 'Components':
       return IconAtom
-    case 'Backgrounds':
-      return IconSparkles
+    case 'Interactions':
+      return IconPointerSearch
     case 'Shader':
       return IconWaveSine
     case 'Orb':
@@ -113,6 +116,10 @@ function getGroupIcon(group: string, isComponent: boolean) {
       return IconWand
     case 'Texts':
       return IconTypography
+    case 'Backgrounds':
+      return IconSparkles
+    case 'Templates':
+      return IconDeviceDesktop
     case 'Hooks':
       return IconCode
     case 'Hook Components':
@@ -121,12 +128,8 @@ function getGroupIcon(group: string, isComponent: boolean) {
       return IconTool
     case 'Blocks':
       return IconLayout
-    case 'Templates':
-      return IconDeviceDesktop
     case 'Icons':
       return IconMoodSmile
-    case 'Documentation':
-      return IconBook2
     case 'Tools':
       return IconFolderHeart
     default:
@@ -168,6 +171,10 @@ export function CommandMenu({
     const collectPages = (node: any, defaultGroup = 'Documentation') => {
       if (!node) return
 
+      if (node.index) {
+        collectPages(node.index, defaultGroup)
+      }
+
       if (node.type === 'page' && node.url) {
         const url = node.url as string
         const urlParts = url.split('/').filter(Boolean)
@@ -178,6 +185,9 @@ export function CommandMenu({
 
         if (url.startsWith('/primitives')) {
           group = 'Primitives'
+          isComponent = true
+        } else if (url.startsWith('/interactions') || url.includes('/interactions/')) {
+          group = 'Interactions'
           isComponent = true
         } else if (url.startsWith('/components')) {
           const category = componentCategoryMap.get(slug)
@@ -233,6 +243,11 @@ export function CommandMenu({
           (registryMeta as Record<string, any>)[slug]?.meta?.isPro,
         )
 
+        const isInteraction = group === 'Interactions' || url.startsWith('/interactions')
+        const extraKeywords = isInteraction
+          ? ['interactions', 'interaction', 'agents', 'motion', 'interactive', 'pipeline', 'voice']
+          : []
+
         if (!allItems.some((i) => i.url === url)) {
           allItems.push({
             value: `${group.toLowerCase()}-${slug}-${label.toLowerCase().replace(/\s+/g, '-')}`,
@@ -241,7 +256,7 @@ export function CommandMenu({
             group,
             isComponent,
             isPro,
-            keywords: [group.toLowerCase(), slug, label.toLowerCase(), ...slug.split('-')],
+            keywords: [group.toLowerCase(), slug, label.toLowerCase(), ...slug.split('-'), ...extraKeywords],
           })
         }
       }
@@ -343,7 +358,9 @@ export function CommandMenu({
           ? `primitives-${componentName}`
           : item.group === 'Blocks' && !componentName.startsWith('block-')
             ? `block-${componentName}`
-            : componentName
+            : item.group === 'Interactions' && !componentName.startsWith('interactions-')
+              ? `interactions-${componentName}`
+              : componentName
       setSelectedType('component')
       const commands = getShadcnAddCommands(registryName)
       setCopyPayload(commands[packageManager] || commands.pnpm)
@@ -378,7 +395,9 @@ export function CommandMenu({
               ? `primitives-${componentName}`
               : item.group === 'Blocks' && !componentName.startsWith('block-')
                 ? `block-${componentName}`
-                : componentName
+                : item.group === 'Interactions' && !componentName.startsWith('interactions-')
+                  ? `interactions-${componentName}`
+                  : componentName
           const commands = getShadcnAddCommands(registryName)
           return commands[packageManager] || commands.pnpm
         }
@@ -388,6 +407,10 @@ export function CommandMenu({
     // 2. Direct path matching fallback
     if (pathname.includes('/primitives/')) {
       const commands = getShadcnAddCommands(`primitives-${slug}`)
+      return commands[packageManager] || commands.pnpm
+    }
+    if (pathname.includes('/interactions/')) {
+      const commands = getShadcnAddCommands(`interactions-${slug}`)
       return commands[packageManager] || commands.pnpm
     }
     if (pathname.includes('/blocks/')) {
@@ -489,7 +512,7 @@ export function CommandMenu({
         >
           <CommandInput
             onChange={(e) => setSearchQuery(e.target.value)}
-            placeholder="Search components, primitives, hooks, utils, docs…"
+            placeholder="Search components, interactions, primitives, hooks, docs…"
             className="bg-background! rounded-xl px-0 "
           />
           <CommandPanel>

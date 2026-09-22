@@ -10,6 +10,7 @@ import { BLOOP_WGSL } from './bloop.wgsl'
 
 export function OrbBloop({
   audioMode = 'ambient',
+  demoMode = false,
   audioElement,
   audioSrc,
   state = BloopState.idle,
@@ -33,6 +34,7 @@ export function OrbBloop({
   const propsRef = useRef({
     state,
     audioMode,
+    demoMode,
     bloopColorMain,
     bloopColorLow,
     bloopColorMid,
@@ -43,6 +45,7 @@ export function OrbBloop({
   propsRef.current = {
     state,
     audioMode,
+    demoMode,
     bloopColorMain,
     bloopColorLow,
     bloopColorMid,
@@ -61,21 +64,22 @@ export function OrbBloop({
     let disposeDefer: (() => void) | undefined
 
     async function mount() {
+      const currentCanvas = canvasRef.current
+      if (cancelled || !currentCanvas) return
       const { init, effect, surface, frameLoop } = await import('vgpu')
-      if (cancelled || !canvasRef.current) return
       const gpu = await init()
-      if (cancelled) {
+      if (cancelled || !canvasRef.current) {
         gpu.dispose()
         return
       }
 
-      const gate = attachGpuGate(canvas)
+      const gate = attachGpuGate(currentCanvas)
       disposeGate = gate.dispose
       if (gate.state.lowPower) {
-        canvas.width = 160
-        canvas.height = 160
+        currentCanvas.width = 160
+        currentCanvas.height = 160
       }
-      const canvasSurface = surface(gpu, canvasRef.current, {
+      const canvasSurface = surface(gpu, currentCanvas, {
         format: 'bgra8unorm',
         alphaMode: 'premultiplied',
         ...(gate.state.lowPower ? { dpr: 1 } : {}),
@@ -88,6 +92,14 @@ export function OrbBloop({
         if (gate.frameMs && now - lastDraw < gate.frameMs) return
         lastDraw = now
         const time = (now - startTime.current) / 1000
+        const p = propsRef.current
+        const activeState = p.state
+        if (stateTrackingRef.current.current !== activeState) {
+          stateTrackingRef.current.current = activeState
+          stateTrackingRef.current.enteredAt = time
+        }
+        const enteredAt = stateTrackingRef.current.enteredAt
+
         let avg = [0, 0, 0, 0]
         let micLevel = 0
         if (audioAnalyzerRef.current) {
@@ -95,7 +107,37 @@ export function OrbBloop({
           const a = audioAnalyzerRef.current
           avg = [a.allAvg / 255, a.lowAvg / 255, a.midAvg / 255, a.highAvg / 255]
           micLevel = avg[0]
-        } else if (propsRef.current.audioMode === 'ambient') {
+        } else if (p.demoMode) {
+          const stateTime = time - enteredAt
+          if (activeState === BloopState.speak) {
+            // Speech prosody simulation: syllabic pulses, vowel formants, consonant bursts
+            const wordRhythm = Math.sin(stateTime * 4.2) * 0.5 + 0.5
+            const syllable = Math.sin(stateTime * 14.8) * 0.5 + 0.5
+            const microJitter = Math.sin(stateTime * 28.0) * 0.5 + 0.5
+            const burst = Math.pow(syllable * wordRhythm, 1.4)
+
+            const low = Math.min(1.0, 0.28 + burst * 0.65 + Math.sin(stateTime * 7.0) * 0.12)
+            const mid = Math.min(1.0, 0.22 + (Math.sin(stateTime * 11.5) * 0.5 + 0.5) * 0.62)
+            const high = Math.min(1.0, 0.16 + microJitter * 0.42)
+            micLevel = Math.min(1.0, low * 0.5 + mid * 0.35 + high * 0.15)
+            avg = [micLevel, low, mid, high]
+          } else if (activeState === BloopState.listen) {
+            // Attentive listening wave: smooth undulating swells
+            const wave = Math.sin(stateTime * 3.0) * 0.5 + 0.5
+            const pulse = Math.sin(stateTime * 8.2) * 0.15 + 0.15
+            micLevel = 0.2 + wave * 0.35 + pulse
+            avg = [micLevel, micLevel * 0.65, micLevel * 0.85, micLevel * 0.45]
+          } else if (activeState === BloopState.think) {
+            // Hypnotic processing breathing pulse
+            const breath = Math.sin(time * 3.6) * 0.5 + 0.5
+            micLevel = 0.16 + breath * 0.26
+            avg = [micLevel, micLevel * 0.45, micLevel * 0.85, micLevel * 0.35]
+          } else {
+            // Idle standby
+            micLevel = Math.sin(time * 1.8) * 0.06 + 0.06
+            avg = [micLevel, micLevel * 0.5, micLevel * 0.35, micLevel * 0.2]
+          }
+        } else if (p.audioMode === 'ambient') {
           micLevel = Math.sin(time * 2.0) * 0.1 + 0.1
           avg = [micLevel, micLevel * 0.6, micLevel * 0.4, micLevel]
         }
@@ -105,13 +147,6 @@ export function OrbBloop({
           audioAverageRef.current[i] += (avg[i] - audioAverageRef.current[i]) * 0.55
           cumulativeAudioRef.current[i] += audioAverageRef.current[i] * (60 * dt) * 0.25
         }
-        const p = propsRef.current
-        const activeState = p.state
-        if (stateTrackingRef.current.current !== activeState) {
-          stateTrackingRef.current.current = activeState
-          stateTrackingRef.current.enteredAt = time
-        }
-        const enteredAt = stateTrackingRef.current.enteredAt
 
         fx.set({
           ubo: {

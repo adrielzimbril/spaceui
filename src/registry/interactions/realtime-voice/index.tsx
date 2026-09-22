@@ -10,7 +10,7 @@ import { Card } from '@/registry/primitives/card'
 import { Frame, FrameFooter, FrameHeader } from '@/registry/primitives/frame'
 import { logger } from '@/registry/utils/logger'
 import { Mic, MicOff, Pause, Phone, PhoneOff, AudioLines, X } from '@keyline-icons/react'
-import { bloom, ready, tap, whisper } from '@usespaceui/sounds'
+import { bloom, ready, tap, whisper, nudge, droplet, loading, deny, remove } from '@usespaceui/sounds'
 import { Squishmoji } from '@usespaceui/squishmoji/react'
 import { AnimatePresence, motion } from 'motion/react'
 import * as React from 'react'
@@ -43,6 +43,8 @@ export interface RealtimeVoiceProps {
   pauseOnHover?: boolean
   targetLoops?: number
   onSequenceComplete?: () => void
+  /** Enables procedural speech reactivity for the Orb in showcase and demo mode. @default true */
+  demoMode?: boolean
   className?: string
 }
 
@@ -59,6 +61,7 @@ export function RealtimeVoice({
   pauseOnHover = true,
   targetLoops,
   onSequenceComplete,
+  demoMode = true,
   className,
 }: RealtimeVoiceProps) {
   const shouldCyclePresets = Boolean(propCyclePresets ?? cyclePreset ?? true)
@@ -113,14 +116,15 @@ export function RealtimeVoice({
   const stateMeta = VOICE_STATE_META[voiceState]
 
   const handleToggleActive = React.useCallback(() => {
-    safeSound(tap)
     setIsActive((prev) => {
       const next = !prev
       if (next) {
+        safeSound(loading)
         setElapsedMs(0)
         setDialogueIndex(0)
         setVoiceState('listening')
       } else {
+        safeSound(deny)
         setVoiceState('idle')
         setElapsedMs(0)
       }
@@ -129,7 +133,7 @@ export function RealtimeVoice({
   }, [])
 
   const handleEndCall = React.useCallback(() => {
-    safeSound(tap)
+    safeSound(loading)
     setIsActive(false)
     setVoiceState('idle')
     setElapsedMs(0)
@@ -170,8 +174,10 @@ export function RealtimeVoice({
   React.useEffect(() => {
     setIsActive(isAnimationActive)
     if (isAnimationActive && voiceState === 'idle') {
+      safeSound(loading)
       setVoiceState('listening')
     } else if (!isAnimationActive) {
+      safeSound(deny)
       setVoiceState('idle')
     }
   }, [isAnimationActive])
@@ -197,13 +203,13 @@ export function RealtimeVoice({
 
       if (voiceState === 'idle') {
         setVoiceState('listening')
-        safeSound(whisper)
+        safeSound(() => nudge('up'))
       } else if (voiceState === 'listening') {
         setVoiceState('thinking')
         safeSound(whisper)
       } else if (voiceState === 'thinking') {
         setVoiceState('speaking')
-        safeSound(whisper)
+        safeSound(droplet)
       } else if (voiceState === 'speaking') {
         const nextTurn = dialogueIndex + 1
         const finishedCurrentPreset = nextTurn >= activeDialogues.length
@@ -212,6 +218,7 @@ export function RealtimeVoice({
           const currentPIdx = presetKeys.indexOf(currentPresetKey)
           const isLastPreset = currentPIdx === presetKeys.length - 1
           const finishesFullCycle = shouldCyclePresets ? isLastPreset : true
+          safeSound(() => nudge('up'))
 
           if (finishesFullCycle) {
             completedCyclesRef.current += 1
@@ -238,10 +245,10 @@ export function RealtimeVoice({
             setIsActive(false)
             setVoiceState('idle')
             setElapsedMs(0)
-            safeSound(bloom)
             return
           }
         } else {
+          safeSound(bloom)
           setDialogueIndex(nextTurn)
         }
 
@@ -369,6 +376,7 @@ export function RealtimeVoice({
                 size={180}
                 state={stateMeta.bloopState}
                 audioMode="ambient"
+                demoMode={demoMode}
                 bloopColorMain={stateMeta.bloopColors.main}
                 bloopColorLow={stateMeta.bloopColors.low}
                 bloopColorMid={stateMeta.bloopColors.mid}
