@@ -137,6 +137,7 @@
       "title": "Dither Carousel Block",
       "description": "3D cylindrical spiral carousel in WebGL2 with curved cards, axial directional blur, and matrix dither pattern.",
       "registryDependencies": [
+        "https://www.spaceui.one/r/hooks-utils-logger.json",
         "https://www.spaceui.one/r/lib-utils.json",
         "https://www.spaceui.one/r/lib-next-image-url.json"
       ],
@@ -429,6 +430,7 @@
       "description": "Smooth-minimum signed distance field WebGL2 carousel with liquid fusing cards that pull organic metaball strands when separated.",
       "isPro": true,
       "registryDependencies": [
+        "https://www.spaceui.one/r/hooks-utils-logger.json",
         "https://www.spaceui.one/r/lib-utils.json",
         "https://www.spaceui.one/r/lib-next-image-url.json"
       ],
@@ -468,6 +470,7 @@
       "description": "Continuous image strip rendered to an offscreen texture and sampled through a thick optical glass lens shader with radial refraction and chromatic aberration.",
       "isPro": true,
       "registryDependencies": [
+        "https://www.spaceui.one/r/hooks-utils-logger.json",
         "https://www.spaceui.one/r/lib-utils.json",
         "https://www.spaceui.one/r/lib-next-image-url.json"
       ],
@@ -976,6 +979,7 @@
       "createdAt": "2026-09-03",
       "updatedAt": "2026-09-03",
       "registryDependencies": [
+        "https://www.spaceui.one/r/hooks-utils-logger.json",
         "https://www.spaceui.one/r/lib-gpu-runtime.json",
         "https://www.spaceui.one/r/lib-utils.json",
         "https://www.spaceui.one/r/primitives-toast.json"
@@ -1093,6 +1097,7 @@
       "createdAt": "2026-09-03",
       "updatedAt": "2026-09-03",
       "registryDependencies": [
+        "https://www.spaceui.one/r/hooks-utils-logger.json",
         "https://www.spaceui.one/r/lib-gpu-runtime.json",
         "https://www.spaceui.one/r/lib-utils.json",
         "https://www.spaceui.one/r/lib-next-image-url.json",
@@ -1206,6 +1211,7 @@
         "vgpu"
       ],
       "registryDependencies": [
+        "https://www.spaceui.one/r/hooks-utils-logger.json",
         "https://www.spaceui.one/r/lib-gpu-runtime.json",
         "https://www.spaceui.one/r/lib-utils.json"
       ],
@@ -1238,6 +1244,7 @@
         "vgpu"
       ],
       "registryDependencies": [
+        "https://www.spaceui.one/r/hooks-utils-logger.json",
         "https://www.spaceui.one/r/lib-gpu-runtime.json",
         "https://www.spaceui.one/r/lib-utils.json"
       ],
@@ -1275,6 +1282,9 @@
         "shader",
         "webgl"
       ],
+      "registryDependencies": [
+        "https://www.spaceui.one/r/hooks-utils-logger.json"
+      ],
       "files": [
         {
           "path": "src/registry/components/shader/paper-shader/index.tsx",
@@ -1295,6 +1305,7 @@
         "vgpu"
       ],
       "registryDependencies": [
+        "https://www.spaceui.one/r/hooks-utils-logger.json",
         "https://www.spaceui.one/r/lib-gpu-runtime.json",
         "https://www.spaceui.one/r/lib-utils.json"
       ],
@@ -1327,6 +1338,7 @@
         "vgpu"
       ],
       "registryDependencies": [
+        "https://www.spaceui.one/r/hooks-utils-logger.json",
         "https://www.spaceui.one/r/lib-gpu-runtime.json",
         "https://www.spaceui.one/r/lib-utils.json"
       ],
@@ -2039,6 +2051,7 @@
         "date-fns"
       ],
       "registryDependencies": [
+        "https://www.spaceui.one/r/hooks-utils-logger.json",
         "https://www.spaceui.one/r/components-spaceui-event-calendar-i18n.json",
         "https://www.spaceui.one/r/components-spaceui-event-calendar-lib.json",
         "https://www.spaceui.one/r/components-spaceui-event-calendar-types.json",
@@ -2529,6 +2542,7 @@
         "gsap"
       ],
       "registryDependencies": [
+        "https://www.spaceui.one/r/hooks-utils-logger.json",
         "https://www.spaceui.one/r/lib-utils.json",
         "https://www.spaceui.one/r/lib-next-image-url.json"
       ],
@@ -2558,6 +2572,7 @@
         "three"
       ],
       "registryDependencies": [
+        "https://www.spaceui.one/r/hooks-utils-logger.json",
         "https://www.spaceui.one/r/lib-utils.json",
         "https://www.spaceui.one/r/lib-next-image-url.json"
       ],
@@ -2611,6 +2626,7 @@
         "@tabler/icons-react"
       ],
       "registryDependencies": [
+        "https://www.spaceui.one/r/hooks-utils-logger.json",
         "https://www.spaceui.one/r/primitives-frame.json",
         "https://www.spaceui.one/r/primitives-card.json",
         "https://www.spaceui.one/r/primitives-button.json",
@@ -2905,6 +2921,7 @@
         "@dnd-kit/utilities"
       ],
       "registryDependencies": [
+        "https://www.spaceui.one/r/hooks-utils-logger.json",
         "https://www.spaceui.one/r/lib-utils.json"
       ],
       "categories": [
@@ -3256,6 +3273,7 @@
         "gsap"
       ],
       "registryDependencies": [
+        "https://www.spaceui.one/r/hooks-utils-logger.json",
         "https://www.spaceui.one/r/lib-utils.json",
         "https://www.spaceui.one/r/lib-next-image-url.json"
       ],
@@ -3539,6 +3557,7 @@
         "@dnd-kit/utilities"
       ],
       "registryDependencies": [
+        "https://www.spaceui.one/r/hooks-utils-logger.json",
         "https://www.spaceui.one/r/lib-utils.json"
       ],
       "categories": [
@@ -4257,7 +4276,7 @@
             }
           },
           "textureUrl": {
-            "value": "https://avatars.spaceui.one/v1?name=luna&variant=lumina&size=2000&format=png",
+            "value": "https://avatars.spaceui.one/v1?name=space&variant=lumina&format=svg",
             "dependsOn": {
               "textureSource": "url"
             }
@@ -26604,6 +26623,7 @@
       "title": "useLocalStorage",
       "description": "useLocalStorage hook.",
       "registryDependencies": [
+        "https://www.spaceui.one/r/hooks-utils-logger.json",
         "https://www.spaceui.one/r/hooks-dom-use-event-listener.json"
       ],
       "categories": [
@@ -26745,6 +26765,9 @@
           "target": "hooks/use-session-storage.ts"
         }
       ],
+      "registryDependencies": [
+        "https://www.spaceui.one/r/hooks-utils-logger.json"
+      ],
       "createdAt": "2026-09-03",
       "updatedAt": "2026-09-03"
     },
@@ -26764,6 +26787,9 @@
           "type": "registry:hook",
           "target": "hooks/use-share.ts"
         }
+      ],
+      "registryDependencies": [
+        "https://www.spaceui.one/r/hooks-utils-logger.json"
       ],
       "createdAt": "2026-09-03",
       "updatedAt": "2026-09-03"

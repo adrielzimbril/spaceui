@@ -16,7 +16,7 @@
         }
       },
       "textureUrl": {
-        "value": "https://avatars.spaceui.one/v1?name=luna&variant=lumina&size=2000&format=png",
+        "value": "https://avatars.spaceui.one/v1?name=space&variant=lumina&format=svg",
         "dependsOn": {
           "textureSource": "url"
         }

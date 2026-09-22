@@ -59,9 +59,7 @@ export function useInteractionRecorder({
     const outputWidth = Math.max(2, Math.round(BASE_CANVAS_SIZE * aspectRatio * scale) & ~1)
     const outputHeight = Math.max(2, Math.round(BASE_CANVAS_SIZE * scale) & ~1)
     const durationMs = Math.max(1000, Math.round(sequenceTiming.totalDurationSeconds * 1000))
-    const hasSequenceCallback = Boolean(
-      selected.shortName?.includes('pipeline') || selected.name?.includes('pipeline'),
-    )
+    const hasSequenceCallback = Boolean(selected.shortName?.includes('pipeline') || selected.name?.includes('pipeline'))
     const maxWatchdogMs = hasSequenceCallback ? durationMs + 2500 : durationMs + 350
 
     try {

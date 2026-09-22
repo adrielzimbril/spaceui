@@ -222,9 +222,7 @@ function Sortable<T>({
       const seen = new Set<string>()
       for (const id of ids) {
         if (seen.has(id)) {
-          logger.warn(
-            `[Sortable] Duplicate item id "${id}". Item ids must be unique, or drag and drop will misbehave.`,
-          )
+          logger.warn(`[Sortable] Duplicate item id "${id}". Item ids must be unique, or drag and drop will misbehave.`)
           break
         }
         seen.add(id)

@@ -5,9 +5,7 @@
   "title": "Paper Shader",
   "description": "Paper Shaders WebGL2 canvas driven by a fragment shader and live uniforms.",
   "categories": ["shader", "webgl"],
-  "registryDependencies": [
-    "https://www.spaceui.one/r/hooks-utils-logger.json"
-  ],
+  "registryDependencies": ["https://www.spaceui.one/r/hooks-utils-logger.json"],
   "files": [
     {
       "path": "src/registry/components/shader/paper-shader/index.tsx",

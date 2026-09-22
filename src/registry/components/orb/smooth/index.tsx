@@ -1,27 +1,27 @@
 'use client'
 
-import React, { useRef, useEffect } from 'react'
-import { cn } from '@/registry/lib/utils'
 import { attachGpuGate, deferUntilVisible } from '@/registry/lib/gpu-runtime'
 import { getOptimizedImageUrl } from '@/registry/lib/next-image-url'
+import { cn } from '@/registry/lib/utils'
 import { logger } from '@/registry/utils/logger'
+import { useEffect, useRef } from 'react'
+import { DISPLAY_WGSL } from './display.wgsl'
+import {
+  ADVECTION_WGSL,
+  BLUR_WGSL,
+  CLEAR_WGSL,
+  CURL_WGSL,
+  DIVERGENCE_WGSL,
+  GRAD_SUB_WGSL,
+  PRESSURE_WGSL,
+  SPLAT_WGSL,
+  VORTICITY_WGSL,
+} from './sim.wgsl'
 import type { OrbSmoothProps } from './types'
 import { useOrbAudio } from './use-orb-audio'
-import {
-  CLEAR_WGSL,
-  SPLAT_WGSL,
-  ADVECTION_WGSL,
-  DIVERGENCE_WGSL,
-  CURL_WGSL,
-  VORTICITY_WGSL,
-  PRESSURE_WGSL,
-  GRAD_SUB_WGSL,
-  BLUR_WGSL,
-} from './sim.wgsl'
-import { DISPLAY_WGSL } from './display.wgsl'
 
 export function OrbSmooth({
-  textureUrl = 'https://avatars.spaceui.one/v1?name=orion&variant=shaula&size=2000&format=png',
+  textureUrl = 'https://avatars.spaceui.one/v1?name=orion&variant=shaula&format=svg',
   audioMode,
   audioElement,
   audioSrc,

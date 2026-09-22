@@ -3,10 +3,13 @@
   "name": "hooks-browser-use-share",
   "title": "useShare",
   "description": "useShare hook.",
+  "registryDependencies": [
+    "https://www.spaceui.one/r/hooks-utils-logger.json"
+  ],
   "files": [
     {
       "path": "src/registry/hooks/browser/use-share/index.ts",
-      "content": "'use client'\n\nimport { useCallback } from 'react'\n\n/**\n * React hook to trigger the Web Share API on supported devices.\n *\n * @returns {[(data: ShareData) => Promise<boolean>, { isSupported: boolean }]} A tuple of [shareFunction, { isSupported }].\n *\n * @example\n * const [share, { isSupported }] = useShare();\n * if (isSupported) {\n *   await share({ title: 'Space UI', url: 'https://spaceui.dev' });\n * }\n */\nexport function useShare() {\n  const isSupported = typeof navigator !== 'undefined' && Boolean(navigator.share)\n\n  const share = useCallback(\n    async (data: ShareData): Promise<boolean> => {\n      if (!isSupported) {\n        console.warn('Web Share API is not supported on this browser.')\n        return false\n      }\n      try {\n        await navigator.share(data)\n        return true\n      } catch (err) {\n        if ((err as Error).name !== 'AbortError') {\n          console.error('Error sharing content:', err)\n        }\n        return false\n      }\n    },\n    [isSupported],\n  )\n\n  return [share, { isSupported }] as const\n}\n",
+      "content": "'use client'\n\nimport { useCallback } from 'react'\nimport { logger } from '@/utils/logger'\n\n/**\n * React hook to trigger the Web Share API on supported devices.\n *\n * @returns {[(data: ShareData) => Promise<boolean>, { isSupported: boolean }]} A tuple of [shareFunction, { isSupported }].\n *\n * @example\n * const [share, { isSupported }] = useShare();\n * if (isSupported) {\n *   await share({ title: 'Space UI', url: 'https://spaceui.dev' });\n * }\n */\nexport function useShare() {\n  const isSupported = typeof navigator !== 'undefined' && Boolean(navigator.share)\n\n  const share = useCallback(\n    async (data: ShareData): Promise<boolean> => {\n      if (!isSupported) {\n        logger.warn('Web Share API is not supported on this browser.')\n        return false\n      }\n      try {\n        await navigator.share(data)\n        return true\n      } catch (err) {\n        if ((err as Error).name !== 'AbortError') {\n          logger.error('Error sharing content:', err)\n        }\n        return false\n      }\n    },\n    [isSupported],\n  )\n\n  return [share, { isSupported }] as const\n}\n",
       "type": "registry:hook",
       "target": "hooks/use-share.ts"
     }

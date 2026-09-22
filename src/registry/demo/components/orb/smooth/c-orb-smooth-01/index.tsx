@@ -1,8 +1,8 @@
 'use client'
 
-import * as React from 'react'
 import { OrbSmooth } from '@/registry/components/orb/smooth'
 import { useCorsAudioSrc } from '@/registry/components/orb/smooth/use-orb-audio'
+import * as React from 'react'
 
 type AudioMode = 'ambient' | 'mic' | 'file'
 
@@ -28,7 +28,7 @@ export default function Demo({
   audioUrl = '',
   audioFile,
   textureSource = 'url',
-  textureUrl = 'https://avatars.spaceui.one/v1?name=luna&variant=lumina&size=2000&format=png',
+  textureUrl = 'https://avatars.spaceui.one/v1?name=space&variant=lumina&format=svg',
   textureFile,
   grain = true,
   grainOpacity = 0.67,
